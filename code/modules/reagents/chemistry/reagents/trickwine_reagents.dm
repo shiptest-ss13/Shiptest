@@ -162,7 +162,7 @@
 		M.adjust_drugginess(5)
 		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
-		M.adjustToxLoss(-1 * seconds_per_tick)
+		M.adjustToxLoss(-1 * REM * seconds_per_tick)
 		if(SPT_PROB(5, seconds_per_tick))
 			to_chat(M, span_notice("[cleanse_message]"))
 	return ..()
@@ -213,7 +213,7 @@
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	M.adjustFireLoss(-0.25)
+	M.adjustFireLoss(-0.25 * REM * seconds_per_tick)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		to_chat(M, span_notice("Sweat runs down your body."))
 	return ..()

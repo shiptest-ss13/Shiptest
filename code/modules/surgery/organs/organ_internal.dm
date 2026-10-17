@@ -37,7 +37,6 @@
 	var/external = FALSE
 	//whether to call Remove() when qdeling the organ.
 	var/remove_on_qdel = TRUE
-	var/synthetic = FALSE // To distinguish between organic and synthetic organs
 
 /obj/item/organ/Initialize()
 	. = ..()

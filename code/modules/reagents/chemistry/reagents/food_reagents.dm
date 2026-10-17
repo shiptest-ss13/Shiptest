@@ -17,12 +17,12 @@
 	bad_type = /datum/reagent/consumable
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	current_cycle++
+	current_time += seconds_per_tick
 	if(ishuman(metabolizer))
 		var/mob/living/carbon/human/H = metabolizer
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
-			H.adjust_nutrition(nutriment_factor)
-	holder.remove_reagent(type, metabolization_rate)
+			H.adjust_nutrition(nutriment_factor * REM * seconds_per_tick)
+	holder.remove_reagent(type, metabolization_rate * seconds_per_tick)
 
 /datum/reagent/consumable/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == INGEST)
@@ -54,7 +54,7 @@
 
 /datum/reagent/consumable/nutriment/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(prob(50))
-		metabolizer.heal_bodypart_damage(brute_heal,burn_heal, 0)
+		metabolizer.heal_bodypart_damage(brute_heal * REM * seconds_per_tick ,burn_heal * REM * seconds_per_tick, 0)
 		. = 1
 	..()
 
@@ -101,7 +101,7 @@
 
 /datum/reagent/consumable/nutriment/vitamin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.satiety < 600)
-		metabolizer.satiety += 30
+		metabolizer.satiety += 30 * REM * seconds_per_tick
 	. = ..()
 
 /datum/reagent/consumable/nutriment/protein
@@ -186,11 +186,11 @@
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("You go into hyperglycaemic shock! Lay off the twinkies!"))
-	M.AdjustSleeping(600)
+	M.AdjustSleeping(60 SECONDS)
 	. = 1
 
-/datum/reagent/consumable/sugar/overdose_process(mob/living/overdoser)
-	overdoser.AdjustSleeping(40)
+/datum/reagent/consumable/sugar/overdose_process(mob/living/overdoser, seconds_per_tick, times_fired)
+	overdoser.AdjustSleeping(4 SECONDS)
 	..()
 	. = 1
 
@@ -236,30 +236,30 @@
 
 /datum/reagent/consumable/frostoil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	var/cooling = 0
-	switch(current_cycle)
-		if(1 to 15)
+	switch(current_time)
+		if(1 to 30)
 			cooling = -10 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 				holder.remove_reagent(/datum/reagent/consumable/capsaicin, 5)
 			if(isslime(metabolizer))
 				cooling = -rand(1,2)
-		if(15 to 25)
+		if(30 to 50)
 			cooling = -20 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(isslime(metabolizer))
 				cooling = -rand(2,4)
-		if(25 to 35)
+		if(50 to 70)
 			cooling = -30 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(1))
 				metabolizer.emote("shiver")
 			if(isslime(metabolizer))
 				cooling = -rand(4,8)
-		if(35 to INFINITY)
+		if(70 to INFINITY)
 			cooling = -40 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(5))
 				metabolizer.emote("shiver")
 			if(isslime(metabolizer))
 				cooling = -rand(8,10)
-	metabolizer.adjust_bodytemperature(cooling, 10)
+	metabolizer.adjust_bodytemperature(cooling, 10 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/frostoil/expose_turf(turf/T, reac_volume)
@@ -303,7 +303,7 @@
 			if(prob(15))
 				to_chat(victim, span_danger("[pick("Your head pounds.", "Your mouth feels like it's on fire.", "You feel dizzy.")]"))
 			if(prob(10))
-				victim.blur_eyes(1)
+				victim.blur_eyes(1) // 2 seconds
 			if(prob(10))
 				victim.set_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(5))
@@ -346,7 +346,7 @@
 
 /datum/reagent/drug/mushroomhallucinogen
 	name = "Mushroom Hallucinogen"
-	description = "A strong hallucinogenic drug derived from certain species of mushroometabolizer."
+	description = "A strong hallucinogenic drug derived from certain species of mushroom."
 	color = "#E700E7" // rgb: 231, 0, 231
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	taste_description = "mushroom"
@@ -354,18 +354,18 @@
 /datum/reagent/drug/mushroomhallucinogen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(!metabolizer.slurring)
 		metabolizer.slurring = 1
-	switch(current_cycle)
-		if(1 to 5)
+	switch(current_time)
+		if(1 to 10)
 			metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			metabolizer.set_drugginess(30)
-		if(5 to 10)
+			metabolizer.set_drugginess(30) // 1 minute
+		if(10 to 20)
 			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			metabolizer.set_drugginess(35)
-		if (10 to INFINITY)
+			metabolizer.set_drugginess(35) // 1 minute 10
+		if (20 to INFINITY)
 			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			metabolizer.set_drugginess(40)
+			metabolizer.set_drugginess(40) // 1 minute 20
 	..()
 
 /datum/reagent/consumable/garlic //NOTE: having garlic in your blood stops vampires from biting you.
@@ -524,7 +524,7 @@
 	taste_description = "sweet slime"
 
 /datum/reagent/consumable/corn_syrup/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	holder.add_reagent(/datum/reagent/consumable/sugar, 3)
+	holder.add_reagent(/datum/reagent/consumable/sugar, 3 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/honey
@@ -536,12 +536,12 @@
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	holder.add_reagent(/datum/reagent/consumable/sugar,3)
+	holder.add_reagent(/datum/reagent/consumable/sugar,3 * REM * seconds_per_tick)
 	if(prob(55))
-		metabolizer.adjustBruteLoss(-1*REM, 0)
-		metabolizer.adjustFireLoss(-1*REM, 0)
-		metabolizer.adjustOxyLoss(-1*REM, 0)
-		metabolizer.adjustToxLoss(-1*REM, 0)
+		metabolizer.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustOxyLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -588,17 +588,17 @@
 		else
 			if(!expose_target.eye_blurry)
 				to_chat(expose_target, span_warning("Tears well up in your eyes!"))
-			expose_target.blind_eyes(2)
-			expose_target.blur_eyes(5)
+			expose_target.blind_eyes(2) // +4 seconds
+			expose_target.blur_eyes(5) // set 10 seconds
 	..()
 
 /datum/reagent/consumable/tearjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	..()
 	if(metabolizer.eye_blurry)	//Don't worsen vision if it was otherwise fine
-		metabolizer.blur_eyes(4)
+		metabolizer.blur_eyes(4) // set 8 seconds
 		if(prob(10))
 			to_chat(metabolizer, span_warning("Your eyes sting!"))
-			metabolizer.blind_eyes(2)
+			metabolizer.blind_eyes(2) // +4 seconds
 
 
 /datum/reagent/consumable/nutriment/stabilized
@@ -622,14 +622,14 @@
 	taste_description = "bitter mushroom"
 
 /datum/reagent/consumable/entpoly/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(current_cycle >= 10)
-		metabolizer.Unconscious(40, 0)
+	if(current_time >= 20)
+		metabolizer.Unconscious(4 SECONDS, 0)
 		. = 1
-	if(prob(20))
+	if(SPT_PROB(10, seconds_per_tick))
 		metabolizer.losebreath += 4
-		metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM, 150)
-		metabolizer.adjustToxLoss(3*REM,0)
-		metabolizer.adjustStaminaLoss(10*REM,0)
+		metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, 150)
+		metabolizer.adjustToxLoss(3, 0)
+		metabolizer.adjustStaminaLoss(10, 0)
 		metabolizer.blur_eyes(5)
 		. = TRUE
 	..()
@@ -672,9 +672,9 @@
 	taste_description = "fruity mushroom"
 
 /datum/reagent/consumable/vitfro/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(prob(80))
-		metabolizer.adjustBruteLoss(-1*REM, 0)
-		metabolizer.adjustFireLoss(-1*REM, 0)
+	if(SPT_PROB(40, seconds_per_tick))
+		metabolizer.adjustBruteLoss(-1, 0)
+		metabolizer.adjustFireLoss(-1, 0)
 		. = TRUE
 	..()
 
@@ -686,7 +686,7 @@
 	taste_description = "pure electricity"
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(prob(25) && !iselzuose(metabolizer))
+	if(SPT_PROB(13, seconds_per_tick) && !iselzuose(metabolizer))
 		metabolizer.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(metabolizer, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	return ..()
@@ -702,7 +702,7 @@
 		var/mob/living/carbon/C = M
 		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
+			stomach.adjust_charge(reac_volume * ELZUOSE_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/astrotame
 	name = "Astrotame"
@@ -715,9 +715,9 @@
 	taste_description = "sweetness"
 	overdose_threshold = 17
 
-/datum/reagent/consumable/astrotame/overdose_process(mob/living/carbon/overdoser)
+/datum/reagent/consumable/astrotame/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
 	if(overdoser.disgust < 80)
-		overdoser.adjust_disgust(10)
+		overdoser.adjust_disgust(10 * REM * seconds_per_tick)
 	..()
 	. = 1
 
@@ -787,7 +787,7 @@
 /datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)		// Doesn't kill you like capsaicin
 	if(!ingested)							// Unless you didn't eat it
-		metabolizer.adjustFireLoss(0.25*REM, 0)
+		metabolizer.adjustFireLoss(0.25 * REM * seconds_per_tick, 0)
 	..()
 
 /datum/reagent/consumable/pyre_elementum/on_mob_end_metabolize(mob/living/M)
@@ -802,10 +802,10 @@
 	nutriment_factor = -1 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/fervor/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(prob(80))
-		metabolizer.adjustBruteLoss(-2*REM, 0)
-		metabolizer.adjustFireLoss(-2*REM, 0)
-	metabolizer.adjustStaminaLoss(-5*REM, 0)
+	if(SPT_PROB(40, seconds_per_tick))
+		metabolizer.adjustBruteLoss(-2, 0)
+		metabolizer.adjustFireLoss(-2, 0)
+	metabolizer.adjustStaminaLoss(-5 * REM * seconds_per_tick, 0)
 	..()
 
 /datum/reagent/consumable/cheese_spread

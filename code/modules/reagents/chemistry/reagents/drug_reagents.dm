@@ -49,17 +49,17 @@
 		to_chat(metabolizer, span_notice("[smoke_message]"))
 	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	metabolizer.remove_status_effect(/datum/status_effect/jitter)
-	metabolizer.AdjustStun(-5)
-	metabolizer.AdjustKnockdown(-5)
-	metabolizer.AdjustUnconscious(-5)
-	metabolizer.AdjustParalyzed(-5)
-	metabolizer.AdjustImmobilized(-5)
+	metabolizer.AdjustStun(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustKnockdown(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustUnconscious(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustParalyzed(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustImmobilized(-5 * REM * seconds_per_tick)
 	..()
 	. = 1
 
 /datum/reagent/drug/nicotine/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
-	overdoser.adjustToxLoss(0.1*REM, 0)
-	overdoser.adjustOxyLoss(1.1*REM, 0)
+	overdoser.adjustToxLoss(0.1 * REM * seconds_per_tick, 0)
+	overdoser.adjustOxyLoss(1.1 * REM * seconds_per_tick, 0)
 	..()
 	. = 1
 
@@ -93,12 +93,12 @@
 	if(SPT_PROB(15, seconds_per_tick))
 		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_heavy, name)
-	metabolizer.AdjustStun(-40)
-	metabolizer.AdjustKnockdown(-40)
-	metabolizer.AdjustUnconscious(-40)
-	metabolizer.AdjustParalyzed(-40)
-	metabolizer.AdjustImmobilized(-40)
-	metabolizer.adjustStaminaLoss(-4 * seconds_per_tick, 0)
+	metabolizer.AdjustStun(-4 SECONDS * REM * seconds_per_tick)
+	metabolizer.AdjustKnockdown(-4 SECONDS * REM * seconds_per_tick)
+	metabolizer.AdjustUnconscious(-4 SECONDS * REM * seconds_per_tick)
+	metabolizer.AdjustParalyzed(-4 SECONDS * REM * seconds_per_tick)
+	metabolizer.AdjustImmobilized(-4 SECONDS * REM * seconds_per_tick)
+	metabolizer.adjustStaminaLoss(-4 SECONDS * seconds_per_tick, 0)
 	metabolizer.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
@@ -110,7 +110,7 @@
 	if(SPT_PROB(17, seconds_per_tick))
 		overdoser.visible_message(span_danger("[overdoser]'s hands flip out and flail everywhere!"))
 		overdoser.drop_all_held_items()
-	overdoser.adjustToxLoss(1, 0)
+	overdoser.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
 	..()
 	. = 1
@@ -152,7 +152,7 @@
 		var/high_message = pick("Flatten them", "Crush them", "Smash them", "Kill them") //flat it. crush it. smash it. bop it.
 		to_chat(metabolizer, span_boldwarning("[high_message]"))
 	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
-	metabolizer.adjustStaminaLoss(-5 * seconds_per_tick, 0)
+	metabolizer.adjustStaminaLoss(-10 * REM * seconds_per_tick, 0)
 	metabolizer.hallucination += 5
 	..()
 	. = 1
@@ -176,9 +176,9 @@
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(SPT_PROB(2.5, seconds_per_tick))
 		to_chat(metabolizer, span_notice("[high_message]"))
-	metabolizer.adjustStaminaLoss(-18, 0)
-	metabolizer.adjustToxLoss(0.5, 0)
-	if(prob(35))
+	metabolizer.adjustStaminaLoss(-18 * REM * seconds_per_tick, 0)
+	metabolizer.adjustToxLoss(0.5 * REM * seconds_per_tick, 0)
+	if(SPT_PROB(17.5, seconds_per_tick))
 		metabolizer.losebreath++
 		metabolizer.adjustOxyLoss(1, 0)
 	..()
@@ -206,7 +206,7 @@
 	metabolizer.adjust_timed_status_effect(-20 SECONDS, /datum/status_effect/jitter)
 	metabolizer.confused = 0
 	metabolizer.disgust = 0
-	metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.1 * seconds_per_tick)
+	metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2 * REM * seconds_per_tick)
 	..()
 	. = 1
 
@@ -220,7 +220,7 @@
 				overdoser.set_timed_status_effect(50 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(3)
 				SEND_SIGNAL(overdoser, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_bad_od)
-	overdoser.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
+	overdoser.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5 * REM * seconds_per_tick)
 	..()
 	. = 1
 
@@ -247,7 +247,7 @@
 		to_chat(metabolizer, span_notice("[pick("Go! Go! GO!", "You feel ready...", "You feel invincible...")]"))
 	if(SPT_PROB(7.5, seconds_per_tick))
 		metabolizer.losebreath++
-		metabolizer.adjustToxLoss(1 * seconds_per_tick, 0)
+		metabolizer.adjustToxLoss(2, 0)
 	..()
 	. = 1
 
@@ -258,7 +258,7 @@
 	overdoser.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		overdoser.drop_all_held_items()
-	if(SPT_PROB(5, seconds_per_tick))
+	if(SPT_PROB(10, seconds_per_tick))
 		overdoser.losebreath++
 		overdoser.adjustStaminaLoss(4, 0)
 	if(SPT_PROB(7.5, seconds_per_tick))
@@ -342,11 +342,11 @@
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	..()
-	metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	metabolizer.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	metabolizer.adjustStaminaLoss(-9 * seconds_per_tick, 0)
 	if(SPT_PROB(15, seconds_per_tick) && !isvox(metabolizer))
 		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
-		metabolizer.adjustOrganLoss(ORGAN_SLOT_HEART, 1.5 * seconds_per_tick)
+		metabolizer.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
 	if(SPT_PROB(10, seconds_per_tick))
 		to_chat(metabolizer, span_boldwarning("MOVE!! MOVE!! MOVE!!"))
 
@@ -356,7 +356,7 @@
 		var/mob/living/carbon/human/uh_oh = overdoser
 		if(uh_oh.can_heartattack())
 			uh_oh.set_heartattack(TRUE)
-	overdoser.set_timed_status_effect(160 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(160 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	overdoser.drop_all_held_items()
 	..()
 
@@ -421,12 +421,12 @@
 /datum/reagent/drug/stardrop/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	..()
 	if(SPT_PROB(2.5, seconds_per_tick))
-		metabolizer.blur_eyes(rand(5,12))
+		metabolizer.blur_eyes(rand(5,12)) // Set 10 to 24 seconds
 
 /datum/reagent/drug/stardrop/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_EYES, 0.5 * seconds_per_tick)
 	if(SPT_PROB(20, seconds_per_tick))
-		overdoser.blur_eyes(rand(3,12))
+		overdoser.blur_eyes(rand(3,12)) // set 6 to 24 seconds
 
 /datum/reagent/drug/stardrop/starlight
 	name = "Starlight"
@@ -480,13 +480,13 @@
 
 /datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	..()
-	metabolizer.adjustStaminaLoss(-5 * seconds_per_tick, 0)
-	metabolizer.adjustBruteLoss(-0.5 * seconds_per_tick, 0)
+	metabolizer.adjustStaminaLoss(-10 * REM * seconds_per_tick, 0)
+	metabolizer.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
 	if(SPT_PROB(5, seconds_per_tick))
 		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 
 /datum/reagent/drug/cinesia/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
-	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, 2 * REM * seconds_per_tick)
 	if(SPT_PROB(10, seconds_per_tick))
 		var/obj/item/bodypart/muscle_seizure = overdoser.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG))
 		if(muscle_seizure)
@@ -530,7 +530,7 @@
 	if(SPT_PROB(5, seconds_per_tick))
 		overdoser.drop_all_held_items()
 	if(SPT_PROB(20, seconds_per_tick))
-		overdoser.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		overdoser.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 /datum/reagent/drug/sting
 	name = "Sting"
@@ -565,6 +565,6 @@
 /datum/reagent/drug/sting/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
 	. = ..()
 	if(SPT_PROB(15, seconds_per_tick))
-		overdoser.blur_eyes(rand(5,12))
+		overdoser.blur_eyes(rand(5,12)) // set from 10 to 24 seconds
 	if(SPT_PROB(5, seconds_per_tick))
 		overdoser.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)

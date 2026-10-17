@@ -27,9 +27,9 @@
 	glass_desc = "Bitter from the coffee and alcohol alike!"
 
 /datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_timed_status_effect(-5 SECONDS * seconds_per_tick, /datum/status_effect/dizziness)
-	M.drowsyness = max(0,M.drowsyness-3)
-	M.AdjustSleeping(-20 * seconds_per_tick)
+	M.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
+	M.drowsyness = max(0,M.drowsyness-3 * REM * seconds_per_tick)
+	M.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
 	..()
 	. = 1
 
@@ -53,8 +53,8 @@
 	glass_name = "glass of vodka"
 	glass_desc = "It's almost difficult to tell the glass is full of vodka until you tip it around. The smell makes your nose wrinkle... but it might just be worth it."
 
-/datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M)
-	M.radiation = max(M.radiation-2,0)
+/datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.radiation = max(M.radiation-2 * REM * seconds_per_tick,0)
 	return ..()
 
 /datum/reagent/consumable/ethanol/gin
@@ -154,7 +154,7 @@
 
 /datum/reagent/consumable/ethanol/absinthe/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(5, seconds_per_tick) && !HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.hallucination += 2*seconds_per_tick //Reference to the urban myth
+		M.hallucination += 4 //Reference to the urban myth
 	..()
 
 /datum/reagent/consumable/ethanol/hooch
@@ -303,7 +303,7 @@
 
 /datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.25 * REM * seconds_per_tick, 0)
-	M.adjust_nutrition(-1 * seconds_per_tick)
+		M.adjustToxLoss(0.5 * REM * seconds_per_tick, 0)
+	M.adjust_nutrition(-0.5 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
