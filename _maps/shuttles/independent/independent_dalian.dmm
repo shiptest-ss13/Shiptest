@@ -173,9 +173,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner/ebony,
-/obj/effect/turf_decal/corner/opaque/yellow/bordercorner{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -392,9 +389,6 @@
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/yellow/bordercorner{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
@@ -533,6 +527,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/smoking)
 "dS" = (
@@ -571,9 +566,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/border{
 	dir = 8
 	},
 /obj/structure/closet/emcloset/wall/directional/south,
@@ -1419,7 +1411,7 @@
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "kR" = (
@@ -1729,7 +1721,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "frabeast_south_eng"
+	id = "fragbeast_south_eng"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1937,6 +1929,11 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/north,
+/obj/item/kirbyplants{
+	icon_state = "plant-27";
+	pixel_x = -10;
+	pixel_y = 17
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "nT" = (
@@ -2399,6 +2396,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/item/kirbyplants{
+	icon_state = "plant-11";
+	pixel_x = 0;
+	pixel_y = 12
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "qK" = (
@@ -2479,6 +2481,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-02";
+	pixel_x = -1;
+	pixel_y = -2
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2680,9 +2687,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/border{
-	dir = 4
-	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore/starboard)
@@ -2770,6 +2774,11 @@
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = 22
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-02";
+	pixel_x = 0;
+	pixel_y = 21
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2974,6 +2983,7 @@
 /obj/structure/platform/ship_three{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/bridge)
 "uE" = (
@@ -3238,6 +3248,11 @@
 /obj/effect/turf_decal/siding/wood/corner/ebony,
 /obj/effect/turf_decal/siding/black{
 	dir = 9
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-23";
+	pixel_y = 21;
+	pixel_x = -10
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
@@ -3849,6 +3864,18 @@
 	pixel_x = 0;
 	pixel_y = 33
 	},
+/obj/machinery/button/door{
+	name = "Air Shutters";
+	id = "fragbeast_airtank";
+	pixel_x = -10;
+	pixel_y = 24
+	},
+/obj/machinery/button/door{
+	name = "Air Shutters";
+	id = "fragbeast_fueltank";
+	pixel_x = 10;
+	pixel_y = 24
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zS" = (
@@ -3984,10 +4011,10 @@
 "AJ" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "fragbeast_airtank"
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/poddoor/shutters{
+	id = "fragbeast_fueltank"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "AM" = (
@@ -4674,8 +4701,23 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/machinery/light/directional/west,
+/obj/machinery/light/directional/west{
+	pixel_x = -34;
+	pixel_y = 0
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "fragbeast_port_ion";
+	pixel_x = -20;
+	pixel_y = 7
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "fragbeast_port_combustion";
+	pixel_x = -20;
+	pixel_y = -6
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Fw" = (
@@ -4752,9 +4794,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/bordercorner{
-	dir = 4
 	},
 /obj/machinery/light_switch{
 	dir = 8;
@@ -5276,6 +5315,11 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small/directional/north,
+/obj/item/kirbyplants{
+	icon_state = "plant-23";
+	pixel_y = 21;
+	pixel_x = -10
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore/starboard)
 "Ja" = (
@@ -5785,12 +5829,21 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/port)
+"LU" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "fragbeast_fueltank"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Mb" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/shutters{
-	id = "frabeast_north_eng"
+	id = "fragbeast_north_eng"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -5900,6 +5953,7 @@
 "MQ" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/platform/ship_three,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/bridge)
 "MS" = (
@@ -6209,10 +6263,12 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/bordercorner{
-	dir = 4
-	},
 /obj/machinery/light/small/directional/south,
+/obj/item/kirbyplants{
+	icon_state = "plant-23";
+	pixel_y = 1;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "Pb" = (
@@ -6302,6 +6358,11 @@
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 5
 	},
+/obj/item/kirbyplants{
+	icon_state = "plant-23";
+	pixel_y = 1;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/janitor)
 "Pr" = (
@@ -6319,6 +6380,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light_switch{
+	pixel_x = -11;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore/port)
 "PE" = (
@@ -6613,6 +6678,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/smoking)
 "Sv" = (
@@ -7143,6 +7209,10 @@
 /obj/machinery/firealarm/directional/east{
 	pixel_y = 6
 	},
+/obj/item/kirbyplants{
+	pixel_x = 5;
+	pixel_y = 19
+	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "UR" = (
@@ -7184,6 +7254,11 @@
 	dir = 10
 	},
 /obj/machinery/light/directional/south,
+/obj/item/kirbyplants{
+	icon_state = "plant-26";
+	pixel_x = -11;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Vh" = (
@@ -7218,7 +7293,22 @@
 	pixel_x = 5;
 	pixel_y = 2
 	},
-/obj/machinery/light/directional/west,
+/obj/machinery/light/directional/west{
+	pixel_x = -34;
+	pixel_y = 0
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "fragbeast_starboard_combustion";
+	pixel_x = -20;
+	pixel_y = 7
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "fragbeast_starboard_ion";
+	pixel_x = -20;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/electrical)
 "VA" = (
@@ -7240,7 +7330,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/bordercorner,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
@@ -7377,10 +7466,15 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "fragbeast_southhall";
+	id = "fragbeast_canteen";
 	name = "Window Controls";
 	pixel_x = 0;
 	pixel_y = -23
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-29";
+	pixel_x = 11;
+	pixel_y = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -7830,7 +7924,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "fragbeast_auxcargo";
+	id = "fragbeast_cargo";
 	pixel_x = 7;
 	pixel_y = -4;
 	name = "Bay Door"
@@ -8160,7 +8254,7 @@ FX
 FX
 PE
 CK
-AJ
+LU
 ke
 iC
 bM
