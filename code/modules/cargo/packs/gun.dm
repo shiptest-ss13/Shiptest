@@ -880,7 +880,7 @@
 //	faction_discount = 0
 //	faction_locked = TRUE
 
-/obj/item/storage/guncase/barghest
+/datum/supply_pack/gun/barghest
 	name = "PP20 'Barghest' Plasma Assault Rifle Crate"
 	desc = "Contains a high-energy, automatic electroplasma rifle. Refitted for IRMG use."
 	cost = 5000
