@@ -210,6 +210,10 @@
 #define BB_BASIC_MOB_NO_PATH_TO "BB_basic_no_path_to"
 ///When our movement gave up on finding a way to BB_BASIC_MOB_NO_PATH_TO, as a world.time
 #define BB_BASIC_MOB_NO_PATH_SINCE "BB_basic_no_path_since"
+///Something climbable, like a table or sandbags, we picked to bash through rather than climb over
+#define BB_BASIC_MOB_BASHING_THROUGH "BB_basic_bashing_through"
+///Hits we've taken behind the cover we fight from by someone we couldn't see, as list(where, how many, when the last was)
+#define BB_BASIC_MOB_DUG_IN_HITS "BB_basic_dug_in_hits"
 ///Where we were, and where BB_BASIC_MOB_NO_PATH_TO was, when we gave up on it, so we don't search again for a way that can't have opened up
 #define BB_BASIC_MOB_NO_PATH_FROM "BB_basic_no_path_from"
 #define BB_BASIC_MOB_NO_PATH_TARGET_TURF "BB_basic_no_path_target_turf"

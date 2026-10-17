@@ -500,6 +500,12 @@ multiple modular subtrees with behaviors
 		var/datum/ai_behavior/current_behavior = i
 		finish_behavior(current_behavior)
 
+/// Ends only the behaviors that need us to get somewhere, like when our movement's given up on getting there, leaving the rest, like firing back where we were shot from
+/datum/ai_controller/proc/cancel_movement_actions()
+	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
+		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT)
+			finish_behavior(current_behavior)
+
 /// Ends behavior, passing along the arguments it was queued with, like if we've given up on it or are doing something else instead
 /datum/ai_controller/proc/finish_behavior(datum/ai_behavior/behavior, succeeded = FALSE)
 	var/list/arguments = list(src, succeeded)

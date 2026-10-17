@@ -239,7 +239,7 @@
 			return thing
 	return null
 
-/proc/find_fighting_cover_spot(mob/living/fighter, atom/threat, range, pass_flags)
+/proc/find_fighting_cover_spot(mob/living/fighter, atom/threat, range, pass_flags, turf/exclude)
 	var/turf/our_turf = get_turf(fighter)
 	var/turf/their_turf = get_turf(threat)
 	// where our allies are, or are heading to fight from, so we don't pile up behind each other or shoot through them
@@ -255,7 +255,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
+		if(candidate == exclude || candidate_distance >= best_distance || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
 			continue
 		if(!can_walk_straight_to(fighter, candidate))
 			continue

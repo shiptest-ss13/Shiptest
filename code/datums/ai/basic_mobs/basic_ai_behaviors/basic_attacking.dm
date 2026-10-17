@@ -201,7 +201,8 @@
 /datum/ai_behavior/fire_at_position
 	action_cooldown = 1.5 SECONDS
 	behavior_flags = AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
-	var/max_range = 9
+	// past how far we can see, so we can fire back at someone shooting us from out of sight
+	var/max_range = 15
 	var/shots = 1
 	var/burst_interval = 0.2 SECONDS
 	//if TRUE, shots scatter around the spot rather than landing on it exactly

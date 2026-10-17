@@ -56,12 +56,12 @@
 			var/turf/old_turf = get_turf(movable_pawn)
 			take_step(controller, movable_pawn, next_step)
 			var/turf/new_turf = get_turf(movable_pawn)
+			if(new_turf == old_turf && bash_flimsy_thing_in_the_way(controller, movable_pawn, next_step))
+				continue // swatting it aside, so we wait for that rather than looking for another way round
 			if(new_turf == old_turf && try_climb(controller, movable_pawn, next_step))
 				continue // over whatever's in the way, like a player would, rather than looking for another way round
 			if(new_turf == old_turf)
 				bump_door_in_the_way(movable_pawn, next_step)
-				if(break_holobarrier_in_the_way(controller, movable_pawn, next_step))
-					continue // swatting it aside, so we wait for that rather than looking for another way round
 			if(new_turf == next_step)
 				controller.movement_path.Cut(1,2)
 				controller.pathing_attempts = 0
@@ -84,7 +84,7 @@
 			if(still_no_path(controller, movable_pawn))
 				AI_LOG_DECISION(controller, "movement: still no way to [controller.current_movement_target] at [AREACOORD(controller.current_movement_target)], giving up on what we were doing")
 				stop_moving_towards(controller)
-				controller.CancelActions()
+				controller.cancel_movement_actions()
 				continue
 			controller.pathing_attempts++
 			if(controller.pathing_attempts >= max_pathing_attempts)
@@ -94,7 +94,7 @@
 				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_FROM, get_turf(movable_pawn))
 				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_TARGET_TURF, get_turf(controller.current_movement_target))
 				stop_moving_towards(controller) // or we'd stay on our way there with our tries used up, giving up again every time we're planned back onto it
-				controller.CancelActions()
+				controller.cancel_movement_actions()
 				continue
 
 			COOLDOWN_START(controller, repath_cooldown, 2 SECONDS)
@@ -197,16 +197,45 @@
 			mover.Bump(door)
 			return
 
-/datum/ai_movement/jps/proc/break_holobarrier_in_the_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
+// a holobarrier in the way gets a swing, or a table, if we fight up close and decide to go through it rather than over it. TRUE if we took one
+/datum/ai_movement/jps/proc/bash_flimsy_thing_in_the_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
 	var/mob/living/basic/basic_mob = mover
 	if(!istype(basic_mob) || !basic_mob.obj_damage)
 		return FALSE
-	var/obj/structure/holosign/barrier/barrier = locate() in next_step
-	if(!barrier?.density)
-		return FALSE
-	basic_mob.melee_attack(barrier)
+	var/obj/structure/flimsy_thing = locate(/obj/structure/holosign/barrier) in next_step
+	if(!flimsy_thing?.density)
+		flimsy_thing = get_climb_blocker(basic_mob, next_step)
+		if(!should_bash_through(controller, basic_mob, flimsy_thing))
+			return FALSE
+	basic_mob.melee_attack(flimsy_thing)
 	controller.movement_cooldown = world.time + CLICK_CD_MELEE // a swing takes as long as a player's
 	return TRUE
+
+// whether we go through something climbable in our way, like a table or sandbags, rather than over it, as it'd be quicker, decided once for each thing.
+// Those with guns always climb, as they'd sooner have it to shoot from
+/datum/ai_movement/jps/proc/should_bash_through(datum/ai_controller/controller, mob/living/basic/basic_mob, obj/structure/climbable)
+	if(!istype(climbable) || !climbable.density || basic_mob.GetComponent(/datum/component/ranged_attacks) || controller.blackboard[BB_BASIC_MOB_CLIMBING] == climbable)
+		return FALSE
+	if(controller.blackboard[BB_BASIC_MOB_BASHING_THROUGH] == climbable)
+		return TRUE
+	var/hits = melee_hits_to_break(basic_mob, climbable)
+	if(isnull(hits) || hits * CLICK_CD_MELEE >= get_climb_duration(basic_mob, climbable))
+		// over it then, which try_climb() takes from here
+		controller.set_blackboard_key(BB_BASIC_MOB_CLIMBING, climbable)
+		controller.set_blackboard_key(BB_BASIC_MOB_CLIMBING_SINCE, world.time)
+		return FALSE
+	AI_LOG_DECISION(controller, "movement: bashing through [climbable] at [AREACOORD(climbable)] in [hits] hits, quicker than climbing it")
+	controller.set_blackboard_key(BB_BASIC_MOB_BASHING_THROUGH, climbable)
+	return TRUE
+
+// how long climbing structure takes climber, start to finish, worked out as /datum/element/climbable/proc/climb_structure() does
+/datum/ai_movement/jps/proc/get_climb_duration(mob/living/climber, obj/structure/structure)
+	var/duration = structure.climb_time
+	if(HAS_TRAIT(climber, TRAIT_HANDS_BLOCKED))
+		duration *= 2
+	if(HAS_TRAIT(climber, TRAIT_FREERUNNING))
+		duration *= 0.8
+	return duration * climber.do_after_coefficent() + structure.climb_stun
 
 // the climbable thing in the way of stepping from where mover is onto next_step, like sandbags on it or a railing on the edge between
 /datum/ai_movement/jps/proc/get_climb_blocker(atom/movable/mover, turf/next_step)

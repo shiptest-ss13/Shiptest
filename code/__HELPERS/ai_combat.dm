@@ -30,6 +30,10 @@
 	var/damage_per_hit = thing.run_atom_armor(basic_mob.obj_damage, basic_mob.melee_damage_type, MELEE, null, basic_mob.armour_penetration)
 	if(damage_per_hit <= 0)
 		return null
+	var/obj/structure/barricade/sandbags/sandbags = thing
+	if(istype(sandbags))
+		var/hits_per_bag = CEILING(48 / damage_per_hit, 1)
+		return max(sandbags.effective_bags * hits_per_bag - round(sandbags.bag_damage / damage_per_hit), 1)
 	return CEILING(thing.atom_integrity / damage_per_hit, 1)
 
 /proc/ai_lash_out(datum/ai_controller/controller, interval = 2 SECONDS)

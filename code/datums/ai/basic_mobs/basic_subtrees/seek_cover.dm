@@ -3,8 +3,8 @@
 	var/cover_duration = 8 SECONDS
 	var/datum/ai_behavior/take_cover/cover_behavior = /datum/ai_behavior/take_cover
 	var/datum/ai_behavior/fire_at_position/fire_back_behavior = /datum/ai_behavior/fire_at_position
-	// chance to shoot back before taking cover
-	var/return_fire_chance = 30
+	// chance to shoot back before taking cover, at someone we can't see, going by where their shot came from, as every bullet's a tracer
+	var/return_fire_chance = 100
 	// chance to trade fire instead of looking for cover
 	var/trade_fire_chance = 70
 	var/trade_fire_duration = 4 SECONDS
@@ -14,6 +14,11 @@
 	var/fights_from_partial_cover = TRUE
 	var/partial_cover_range = 3
 	var/partial_cover_search_interval = 4 SECONDS
+	// how many hits by someone we can't see it takes, at the cover we fight from, for us to give it up, as some shots get past even good cover like sandbags. Fewer if we can't fire back
+	var/dug_in_hits_to_move = 3
+	var/dug_in_hits_to_move_unanswered = 2
+	// how close together those hits have to be to count
+	var/dug_in_hit_window = 10 SECONDS
 
 /datum/ai_planning_subtree/seek_cover/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -67,9 +72,25 @@
 		AI_LOG_DECISION(controller, "seek_cover: got shot in our cover at [our_turf], so it's no good")
 		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_CHECKED_AT)
+	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
+	if(our_turf == controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE)
+		// shot at behind the cover we're fighting from, by someone we can't see, so we fire back blind where it came from if we can. Some hits get past even good cover,
+		// so we only give it up once we've been hit there a few times, and one going past is what it's for
+		var/can_fire_back = !reloading && ranged_attack && !get_shot_blocker(our_turf, danger, pass_flags = ranged_attack.get_pass_flags())
+		var/hits = controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS] ? 0 : count_dug_in_hit(controller, our_turf)
+		if(hits < (can_fire_back ? dug_in_hits_to_move : dug_in_hits_to_move_unanswered))
+			if(can_fire_back)
+				controller.set_blackboard_key(BB_BASIC_MOB_TRADING_FIRE_UNTIL, world.time + trade_fire_duration)
+				AI_LOG_DECISION(controller, "seek_cover: shot at in our fighting cover at [our_turf] by someone we can't see, firing back blind at [danger]")
+			return
+		controller.clear_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS)
+		controller.set_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF, our_turf)
+		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF)
+		controller.clear_blackboard_key(BB_BASIC_MOB_TRADING_FIRE_UNTIL)
+		AI_LOG_DECISION(controller, "seek_cover: hit [hits] times in our fighting cover at [our_turf] by someone we can't see, so it's not doing enough, moving")
+		return
 	if(reloading || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		return // nothing to fire back with, or we can see them and our attack's already on it
-	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
 	if(!ranged_attack)
 		return
 	if(prob(trade_fire_chance) && !get_shot_blocker(our_turf, danger, pass_flags = ranged_attack.get_pass_flags()))
@@ -78,6 +99,15 @@
 	else if(prob(return_fire_chance))
 		controller.queue_behavior(fire_back_behavior, BB_BASIC_MOB_SHOT_FROM) // a volley back on our way to cover
 		AI_LOG_DECISION(controller, "seek_cover: firing back at [danger] on the way to cover")
+
+// counts a hit at spot towards giving up the cover there, as how many we've had there lately, starting over if it's somewhere new or it's been a while
+/datum/ai_planning_subtree/seek_cover/proc/count_dug_in_hit(datum/ai_controller/controller, turf/spot)
+	var/list/tally = controller.blackboard[BB_BASIC_MOB_DUG_IN_HITS]
+	if(!tally || tally[1] != spot || world.time - tally[3] > dug_in_hit_window)
+		tally = list(spot, 0, world.time)
+	tally = list(spot, tally[2] + 1, world.time)
+	controller.set_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS, tally)
+	return tally[2]
 
 /datum/ai_planning_subtree/seek_cover/proc/leave_cover(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
@@ -96,7 +126,7 @@
 		return FALSE
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_COVER_SEARCH])
 		return FALSE
-	fighting_spot = find_fighting_cover_spot(controller.pawn, target, partial_cover_range, get_ai_shot_pass_flags(controller.pawn))
+	fighting_spot = find_fighting_cover_spot(controller.pawn, target, partial_cover_range, get_ai_shot_pass_flags(controller.pawn), controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
 	if(!fighting_spot)
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_COVER_SEARCH, world.time + partial_cover_search_interval)
 		return FALSE
