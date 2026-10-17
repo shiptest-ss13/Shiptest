@@ -26,7 +26,7 @@
 	)
 
 /datum/export/scratch_ticket/get_amount(obj/item/scratch_ticket/ticket)
-	if(ticket.scratched_off) // scratch my tickets
+	if(ticket.scratched_off && !ticket.fake) // scratch my tickets
 		return ticket.redeem_value
 	else
 		return 0
