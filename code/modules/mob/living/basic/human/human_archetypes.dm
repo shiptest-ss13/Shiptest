@@ -85,11 +85,14 @@
 		AI_HUMAN_PLANNING_OPENING,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/sequence/suppress_dug_in,
-		/datum/ai_planning_subtree/flank,
+		/datum/ai_planning_subtree/flank/support_gunner,
 		/datum/ai_planning_subtree/fighting_cover,
 		/datum/ai_planning_subtree/search_lost_target/support_gunner,
 		AI_HUMAN_RANGED_PLANNING_CLOSING,
 	)
+
+/datum/ai_planning_subtree/flank/support_gunner
+	holds_good_cover = TRUE
 
 /datum/ai_planning_subtree/search_lost_target/support_gunner
 	search_style = AI_SEARCH_STYLE_SUPPRESS

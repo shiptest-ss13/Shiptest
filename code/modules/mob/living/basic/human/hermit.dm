@@ -210,6 +210,7 @@
 	aggro_say_chance = 100
 	alert_range = 15 // calls the whole settlement to arms
 	summons_backup = TRUE
+	ai_controller = /datum/ai_controller/basic_controller/human/ranged/support_gunner // digs in to hold the settlement rather than chasing anyone out of it
 
 /mob/living/basic/human/hermit/swampboss
 	name = "Hermit Warlord"
