@@ -255,7 +255,7 @@
 /datum/species/ipc/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	. = ..()
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
-		H.adjustFireLoss(2, ignore_reduction = INFINITY)
+		H.adjustFireLoss(0.5, ignore_reduction = INFINITY)
 		if(SPT_PROB(2.5, seconds_per_tick))
 			to_chat(H, span_warning("Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent."))
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
