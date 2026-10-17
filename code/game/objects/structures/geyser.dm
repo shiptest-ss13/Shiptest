@@ -75,6 +75,12 @@
 	reagent_id = pick_weight(options)
 	. = ..()
 
+/obj/structure/geyser/water
+	desc = "An eagerly steaming source of hot water. The foundation to life in inhospitable conditions."
+	reagent_id = /datum/reagent/water
+	//'s water no one gives a fuck
+	mission_scanned = TRUE
+
 /obj/item/plunger
 	name = "plunger"
 	desc = "It's a plunger for plunging."

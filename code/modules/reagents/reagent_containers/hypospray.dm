@@ -391,6 +391,36 @@
 	base_icon_state = "penacid"
 	item_state = "penacid"
 
+/obj/item/reagent_containers/hypospray/medipen/chrono
+	name = "chrono cocktail"
+	desc = "An injector filled with an anomalous time-altering substance. Are you sure this is a good idea?"
+	list_reagents = list(/datum/reagent/drug/chrono = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "chronopen"
+	base_icon_state = "chronopen"
+	item_state = "chronopen"
+
+/obj/item/reagent_containers/hypospray/medipen/chrono/fatal
+	name = "Perfect Kiss"
+	desc = "Romanticism surrounding the final death. The death that cannot be undone. The death that finally kills you. It doesn't look the same when you're staring at it, does it? One plunge of this injector and you'll live. You won't stop living. Then it all ends. Wouldn't that be beautiful?"
+	list_reagents = list(/datum/reagent/drug/chrono = 20)
+	volume = 20
+	amount_per_transfer_from_this = 20
+	icon_state = "chronopen"
+	base_icon_state = "chronopen"
+	item_state = "chronopen"
+
+/obj/item/reagent_containers/hypospray/medipen/assault_pack
+	name = "\improper Assault Pack"
+	desc = "A combat stimulant pack loaded with a dose of an anomalous substance. Keep moving forward. When you fall, everything'll be okay."
+	list_reagents = list(/datum/reagent/drug/chrono = 15, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/dimorlin = 10)
+	volume = 35
+	amount_per_transfer_from_this = 35
+	icon_state = "combat_hypo"
+	base_icon_state = "combat_hypo"
+	item_state = "combat_hypo"
+
 /obj/item/reagent_containers/hypospray/medipen/placebatol
 	name = "prescription medipen"
 	desc = "An injector filled with some prescribed substance."
