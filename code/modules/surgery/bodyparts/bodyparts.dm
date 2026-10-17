@@ -20,6 +20,8 @@
 
 	///Whether the clothing being worn forces the limb into being "squished" to plantigrade/standard humanoid compliance
 	var/plantigrade_forced = FALSE
+	///Whether the limb is of the digitigrade_clawed type
+	var/digitigrade_clawed = FALSE
 	///Whether the limb is husked
 	var/is_husked = FALSE
 	///This is effectively the icon_state prefix for limbs.
@@ -979,6 +981,33 @@
 		return
 
 	if(!animal_origin && ishuman(C))
+		var/mob/living/carbon/human/H = C
+
+		var/datum/species/S = H.dna.species
+		species_flags_list = H.dna.species.species_traits //Literally only exists for a single use of NOBLOOD, but, no reason to remove it i guess...?
+		limb_gender = (H.gender == MALE) ? "m" : "f"
+
+		if(S.use_skintones)
+			skin_tone = H.skin_tone
+		else
+			skin_tone = ""
+
+		use_damage_color = S.use_damage_color
+		if(((MUTCOLORS in S.species_traits) || (DYNCOLORS in S.species_traits)) && uses_mutcolor) //Ethereal code. Motherfuckers.
+			if(S.fixed_mut_color)
+				species_color = S.fixed_mut_color
+			else
+				species_color = H.dna.features["mcolor"]
+		else
+			species_color = null
+
+		if(overlay_use_primary_color || overlay2_use_primary_color)
+			species_color = H.dna.features["mcolor"]
+
+		if(overlay_icon_state || overlay2_icon_state)
+			if(!digitigrade_clawed)
+				species_secondary_color = H.dna.features["mcolor2"]
+
 		copy_from_human(C)
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 
@@ -1102,6 +1131,8 @@
 		limb.icon_state += "_[limb_gender]"
 	if(bodytype & BODYTYPE_DIGITIGRADE && !plantigrade_forced)
 		limb.icon_state += "_digitigrade"
+		if(digitigrade_clawed)
+			limb.icon_state += "_clawed"
 
 	if(!icon_exists(limb.icon, limb.icon_state))
 		limb_stacktrace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]", GLOB.Debug) //If you *really* want more of these, you can set the *other* global debug flag manually.
