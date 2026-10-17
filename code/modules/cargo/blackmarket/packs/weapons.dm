@@ -314,7 +314,7 @@
 
 /datum/blackmarket_item/weapon/guncase/maguey
 	name = "ECM-20 Maguey"
-	desc = "No fuckin' clue how someone got their hands on one of these. An original production Clover Photonics ECM-20 Electroplasma Assault Rifle, with the overcharge function still intact. They only made a couple hundred of these before CLIP said no thanks. Uses Heavy Eoehoma cells - I reccomend stocking up."
+	desc = "No fuckin' clue how someone got their hands on one of these. An original production Clover Photonics ECM-20 Electroplasma Assault Rifle, with the overcharge function still intact. They only made a couple hundred of these before CLIP said no thanks. Uses Eoehoma cells - I reccomend stocking up."
 	item = /obj/item/gun/energy/clover/maguey/clip
 
 	cost_min = 4500
