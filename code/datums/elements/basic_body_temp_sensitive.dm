@@ -19,13 +19,14 @@
 	if(!isbasicmob(target))
 		return ELEMENT_INCOMPATIBLE
 
-	if(min_body_temp)
+	// checking for null rather than falsy, as 0 is a real temperature
+	if(!isnull(min_body_temp))
 		src.min_body_temp = min_body_temp
-	if(max_body_temp)
+	if(!isnull(max_body_temp))
 		src.max_body_temp = max_body_temp
-	if(cold_damage)
+	if(!isnull(cold_damage))
 		src.cold_damage = cold_damage
-	if(heat_damage)
+	if(!isnull(heat_damage))
 		src.heat_damage = heat_damage
 	RegisterSignal(target, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 

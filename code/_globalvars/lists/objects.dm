@@ -6,6 +6,8 @@ GLOBAL_LIST_EMPTY(portals)
 GLOBAL_LIST_EMPTY(airlocks)
 /// List of all mechs. Used by hostile mobs target tracking.
 GLOBAL_LIST_EMPTY(mechas_list)
+/// List of all turrets, so AI can find ones to fight without searching everything around it
+GLOBAL_LIST_EMPTY(porta_turrets)
 /// NOTE: this is a list of ALL machines now. The processing machines list is SSmachine.processing!
 GLOBAL_LIST_EMPTY(machines)
 /// List of all bot nagivation beacons, used for patrolling.

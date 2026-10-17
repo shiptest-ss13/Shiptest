@@ -8,5 +8,11 @@
 
 	if(SPT_PROB(walk_chance, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby)
 		var/move_dir = pick(GLOB.alldirs)
-		living_pawn.Move(get_step(living_pawn, move_dir), move_dir)
+		var/turf/destination = get_step(living_pawn, move_dir)
+		if(destination && is_ai_hazard_turf(destination))
+			return // don't wander off into a chasm or lava
+		living_pawn.Move(destination, move_dir)
 
+// human NPCs mill about less, so they're not forever shuffling round their posts
+/datum/idle_behavior/idle_random_walk/human
+	walk_chance = 10

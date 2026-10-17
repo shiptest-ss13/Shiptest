@@ -40,6 +40,10 @@
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
+	///How far AI hears this gun, in tiles
+	var/gunfire_hearing_range = AI_GUNFIRE_HEARING_RANGE
+	///How far AI hears it when suppressed. Null to go by AI_SUPPRESSED_HEARING_REDUCTION
+	var/suppressed_gunfire_hearing_range
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
 

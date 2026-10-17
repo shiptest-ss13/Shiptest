@@ -18,6 +18,7 @@ SUBSYSTEM_DEF(idlenpcpool)
 	virt_z = "[virt_z]"
 	for(var/mob/living/simple_animal/animal as anything in LAZYACCESS(idle_mobs_by_virtual_level, virt_z))
 		animal.check_should_sleep()
+	SSai_controllers.wake_virtual_level(virt_z) // and anything with an ai_controller
 
 /datum/controller/subsystem/idlenpcpool/fire(resumed = FALSE)
 

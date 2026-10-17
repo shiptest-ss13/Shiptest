@@ -61,7 +61,7 @@
 /area/ruin/lavaland/holdout/warehousea)
 "az" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -465,7 +465,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/dark,
@@ -885,7 +885,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
 "hG" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/sledge/engi,
+/mob/living/basic/human/ramzi/melee/sledge/engi,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/lavaland/holdout/ramzihq)
 "hJ" = (
@@ -893,7 +893,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/runt,
+/mob/living/basic/human/ramzi/ranged/runt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1069,7 +1069,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -2396,7 +2396,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /obj/item/stock_parts/subspace/ansible{
@@ -2516,7 +2516,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile");
 	name = "Ms. Viscerator"
 	},
@@ -3384,7 +3384,7 @@
 /obj/item/trash/energybar,
 /obj/item/trash/pistachios,
 /obj/item/trash/gummycarps,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -3626,7 +3626,7 @@
 	pixel_x = 9
 	},
 /obj/item/shard,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/dark,
@@ -4117,7 +4117,7 @@
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/white,
@@ -4333,7 +4333,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/barracks)
 "KC" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/asp,
+/mob/living/basic/human/ramzi/ranged/officer/asp,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9;
 	layer = 2.041
@@ -4820,7 +4820,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/dark,
@@ -4944,7 +4944,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
 "Pc" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry/ballistic,
+/mob/living/basic/human/ramzi/ranged/hydra/dmr/sentry/ballistic,
 /obj/effect/turf_decal/trimline/opaque/red/end{
 	dir = 1
 	},
@@ -5204,7 +5204,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel,
@@ -5266,7 +5266,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/white,
@@ -5858,7 +5858,7 @@
 /turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "WL" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
+/mob/living/basic/human/ramzi/ranged/cottonmouth{
 	wander = 0
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
@@ -6069,7 +6069,7 @@
 /area/ruin/lavaland/holdout/engineering)
 "Yu" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6133,7 +6133,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/viscerator{
+/mob/living/basic/viscerator{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel,
@@ -6252,7 +6252,7 @@
 "ZC" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /obj/effect/decal/cleanable/blood/squirt,
-/mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
+/mob/living/basic/human/ramzi/melee/sledge,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},

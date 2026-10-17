@@ -15,8 +15,9 @@
  * * id: An ID card representing what access we have and what doors we can open. Its location relative to the pathing atom is irrelevant
  * * simulated_only: Whether we consider turfs without atmos simulation (AKA do we want to ignore space)
  * * exclude: If we want to avoid a specific turf, like if we're a mulebot who already got blocked by some turf
+ * * climbing: If TRUE, we can go over things we could climb, like sandbags, tables and railings
  */
-/proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude)
+/proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE)
 	if(!requester || !get_turf(end))
 		return
 
@@ -26,7 +27,7 @@
 		l = SSpathfinder.mobs.getfree(requester)
 
 	var/list/path
-	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude)
+	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude, climbing)
 	path = pathfind_datum.search()
 	qdel(pathfind_datum)
 
@@ -38,9 +39,11 @@
  * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.LinkBlockedWithAccess(next,requester, id) && (next != avoid))
+#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing) && (next != avoid) && !(avoid_hazards && hazard_at(next)) && !(avoid_bad_air && bad_air_at(next)))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
+/// Whether we can turn off to one side here when we couldn't from the turf before, which STEP_NOT_HERE_BUT_THERE misses when it's an edge in the way rather than a tile, like a railing along a hallway that ends
+#define OPENS_UP_HERE(lag_turf, cur_turf, side_dir) (CAN_STEP(cur_turf, get_step(cur_turf, side_dir)) && !CAN_STEP(lag_turf, get_step(lag_turf, side_dir)))
 
 /// The JPS Node datum represents a turf that we find interesting enough to add to the open list and possibly search for new tiles from
 /datum/jps_node
@@ -114,9 +117,20 @@
 	var/simulated_only
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
 	var/turf/avoid
+	/// If TRUE, we don't route over hazards like chasms or lava
+	var/avoid_hazards = FALSE
+	/// If TRUE, we can go over things we could climb, like sandbags
+	var/climbing = FALSE
+	/// If TRUE, we don't route through air that'd hurt us, like a vented room behind a door
+	var/avoid_bad_air = FALSE
+	/// What bad_air_at() made of each turf it's looked at, as it's asked about the same ones a lot
+	var/list/bad_air_cache
+	/// What hazard_at() made of each turf it's looked at, for the same reason
+	var/list/hazard_cache
 
-/datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid)
+/datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, climbing = FALSE)
 	src.requester = requester
+	src.climbing = climbing
 	end = get_turf(goal)
 	open = new /datum/heap(/proc/HeapPathWeightCompare)
 	sources = new()
@@ -125,6 +139,8 @@
 	src.mintargetdist = mintargetdist
 	src.simulated_only = simulated_only
 	src.avoid = avoid
+	var/mob/living/living_requester = requester
+	avoid_hazards = istype(living_requester) && living_requester.ai_controller && !living_requester.client
 
 /// The proc you use to run the search, returns a list with the steps to the destination if one is available, or nothing if one couldn't be found
 /datum/pathfind/proc/search()
@@ -136,6 +152,10 @@
 		return FALSE
 	if(max_distance && (max_distance < get_dist(start, end))) //if start turf is farther than max_distance from end turf, no need to do anything
 		return FALSE
+	// only if we're somewhere safe now, as if we're already in bad air we need a way out through it
+	avoid_bad_air = avoid_hazards && isbasicmob(requester) && is_environment_safe_for(requester, start)
+	if(avoid_bad_air)
+		bad_air_cache = list()
 
 	//initialization
 	var/datum/jps_node/current_processed_node = new (start, -1, 0, end)
@@ -166,6 +186,22 @@
 	sources = null
 	qdel(open)
 	return path
+
+/// Whether spot's a hazard like a chasm or electrified water, remembered for the rest of the search
+/datum/pathfind/proc/hazard_at(turf/spot)
+	if(!hazard_cache)
+		hazard_cache = list()
+	. = hazard_cache[spot]
+	if(isnull(.))
+		. = is_ai_hazard_turf(spot)
+		hazard_cache[spot] = .
+
+/// Whether the air at spot would hurt the mob we're pathing for, remembered for the rest of the search
+/datum/pathfind/proc/bad_air_at(turf/spot)
+	. = bad_air_cache[spot]
+	if(isnull(.))
+		. = !is_environment_safe_for(requester, spot)
+		bad_air_cache[spot] = .
 
 /// Called when we've hit the goal with the node that represents the last tile, then sets the path var to that path so it can be returned by [datum/pathfind/proc/search]
 /datum/pathfind/proc/unwind_path(datum/jps_node/unwind_node)
@@ -237,6 +273,11 @@
 			if(WEST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
 					interesting = TRUE
+
+		if(!interesting)
+			var/side_dir = turn(heading, 90)
+			if(OPENS_UP_HERE(lag_turf, current_turf, side_dir) || OPENS_UP_HERE(lag_turf, current_turf, REVERSE_DIR(side_dir)))
+				interesting = TRUE
 
 		if(interesting)
 			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
@@ -325,23 +366,31 @@
  * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
  * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
 */
-/turf/proc/LinkBlockedWithAccess(turf/destination_turf, requester, ID)
+/turf/proc/LinkBlockedWithAccess(turf/destination_turf, requester, ID, climbing = FALSE)
 	var/actual_dir = get_dir(src, destination_turf)
 
 	for(var/obj/structure/window/iter_window in src)
-		if(!iter_window.CanAStarPass(ID, actual_dir))
+		if(!iter_window.CanAStarPass(ID, actual_dir) && !(climbing && ai_can_climb(iter_window)))
 			return TRUE
 
 	for(var/obj/machinery/door/window/iter_windoor in src)
-		if(!iter_windoor.CanAStarPass(ID, actual_dir))
+		if(!iter_windoor.CanAStarPass(ID, actual_dir, requester))
+			return TRUE
+
+	// anything else on an edge of the tile we're leaving that stops us stepping off that way, like a platform, a railing or an edge firelock
+	for(var/obj/iter_border in src)
+		if(!(iter_border.flags_1 & ON_BORDER_1) || istype(iter_border, /obj/structure/window) || istype(iter_border, /obj/machinery/door/window))
+			continue
+		if(!iter_border.CanAStarPass(ID, actual_dir, requester) && !(climbing && ai_can_climb(iter_border)))
 			return TRUE
 
 	var/reverse_dir = get_dir(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)
-		if(!iter_object.CanAStarPass(ID, reverse_dir, requester))
+		if(!iter_object.CanAStarPass(ID, reverse_dir, requester) && !(climbing && ai_can_climb(iter_object)))
 			return TRUE
 
 	return FALSE
 
 #undef CAN_STEP
 #undef STEP_NOT_HERE_BUT_THERE
+#undef OPENS_UP_HERE

@@ -20,6 +20,8 @@
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
 	///How much bare wounding power it has
+	var/wound_bonus = 0
+	///How much more wounding power it has against bare skin
 	var/bare_wound_bonus = 0
 	///If the attacks from this are sharp
 	var/sharpness = NONE
@@ -151,6 +153,8 @@
 	return ..()
 
 /mob/living/basic/death(gibbed)
+	if(stat != DEAD)
+		SEND_SIGNAL(src, COMSIG_BASICMOB_PRE_DEATH, gibbed)
 	. = ..()
 	if(nest)
 		if(QDELETED(nest))
@@ -173,6 +177,7 @@
 		return FALSE //but more importantly return before attack_animal called
 	var/result = target.attack_basic_mob(src)
 	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
+	ai_controller?.set_blackboard_key(BB_BASIC_MOB_LAST_MELEE_HIT_TIME, world.time) // for AI that backs off after a hit, see /datum/ai_planning_subtree/maintain_distance
 	return result
 
 /mob/living/basic/set_varspeed(var_value)
@@ -184,3 +189,16 @@
 		remove_movespeed_modifier(/datum/movespeed_modifier/basicmob_varspeed)
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/basicmob_varspeed, multiplicative_slowdown = speed)
 	SEND_SIGNAL(src, POST_BASIC_MOB_UPDATE_VARSPEED)
+
+/mob/living/basic/vv_get_dropdown()
+	. = ..()
+	if(ai_controller)
+		VV_DROPDOWN_OPTION(VV_HK_AI_STATE, "Show AI State")
+		VV_DROPDOWN_OPTION(VV_HK_AI_LOG_DECISIONS, "Toggle AI Decision Logging")
+
+/mob/living/basic/vv_do_topic(list/href_list)
+	. = ..()
+	if(href_list[VV_HK_AI_STATE] && ai_controller && check_rights(R_DEBUG))
+		to_chat(usr, span_notice(ai_controller.get_debug_state()))
+	if(href_list[VV_HK_AI_LOG_DECISIONS] && ai_controller && check_rights(R_DEBUG))
+		to_chat(usr, span_notice("[src] [ai_controller.toggle_decision_logging() ? "is now" : "is no longer"] logging its AI decisions."))

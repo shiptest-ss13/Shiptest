@@ -23,6 +23,9 @@
 #define VV_TEXT_LOCATE "Custom Reference Locate"
 #define VV_PROCCALL_RETVAL "Return Value of Proccall"
 #define VV_HK_ADD_AI "add_ai"
+#define VV_HK_AI_STATE "ai_state"
+#define VV_HK_AI_LOG_DECISIONS "ai_log_decisions"
+#define VV_HK_AI_TREE "ai_tree"
 
 #define VV_MSG_MARKED "<br><font size='1' color='red'><b>Marked Object</b></font>"
 #define VV_MSG_EDITED "<br><font size='1' color='red'><b>Var Edited</b></font>"

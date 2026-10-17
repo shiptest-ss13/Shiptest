@@ -54,10 +54,28 @@
 
 	STOP_PROCESSING(SSprocessing, src)
 	deltimer(current_timerid)
-	for(var/mob/living/simple_animal/L in spawned_mobs)
-		if(L.nest == src)
-			L.nest = null
+	for(var/mob/living/spawned_mob in spawned_mobs)
+		if(get_nest(spawned_mob) == src)
+			set_nest(spawned_mob, null)
 	spawned_mobs = null
+
+/// The spawner a mob we made is linked to. Simple and basic mobs each have their own nest var
+/datum/component/spawner/proc/get_nest(mob/living/spawned_mob)
+	if(isanimal(spawned_mob))
+		var/mob/living/simple_animal/animal = spawned_mob
+		return animal.nest
+	if(isbasicmob(spawned_mob))
+		var/mob/living/basic/basic_mob = spawned_mob
+		return basic_mob.nest
+
+/// Links a mob we made to a spawner, or unlinks it with null. Simple and basic mobs each have their own nest var
+/datum/component/spawner/proc/set_nest(mob/living/spawned_mob, datum/component/spawner/new_nest)
+	if(isanimal(spawned_mob))
+		var/mob/living/simple_animal/animal = spawned_mob
+		animal.nest = new_nest
+	else if(isbasicmob(spawned_mob))
+		var/mob/living/basic/basic_mob = spawned_mob
+		basic_mob.nest = new_nest
 
 //Different from stop_spawning() as it doesn't untether all mobs from it and is meant for temporarily stopping spawning
 /datum/component/spawner/proc/toggle_spawning(datum/source, currently_spawning)
@@ -103,10 +121,10 @@
 			else
 				spot = pick(circleviewturfs(origin, spawn_distance_max))
 		var/chosen_mob_type = pick_weight(mob_types)
-		var/mob/living/simple_animal/L = new chosen_mob_type(spot)
+		var/mob/living/L = new chosen_mob_type(spot)
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
 		spawned_mobs += L
-		L.nest = src
+		set_nest(L, src)
 		L.faction = src.faction
 		P.visible_message(span_danger("[L] [pick(spawn_text)] [P]."))
 		if(length(spawn_sound))
