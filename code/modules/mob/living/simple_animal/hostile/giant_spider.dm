@@ -329,7 +329,7 @@
 					if(L.blood_volume && (L.stat != DEAD || !consumed_mobs[REF(L)])) //if they're not dead, you can consume them anyway
 						consumed_mobs[REF(L)] = TRUE
 						fed++
-						lay_eggs.UpdateButtonIcon(TRUE)
+						lay_eggs.UpdateButtons(TRUE)
 						visible_message(span_danger("[src] sticks a proboscis into [L] and sucks a viscous substance out."),span_notice("You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs."))
 						L.death() //you just ate them, they're dead.
 					else
@@ -397,7 +397,7 @@
 
 /obj/effect/proc_holder/wrap/update_icon()
 	action.button_icon_state = "wrap_[active]"
-	action.UpdateButtonIcon()
+	action.UpdateButtons()
 	return ..()
 
 /obj/effect/proc_holder/wrap/Click()
@@ -479,7 +479,7 @@
 					C.poison_per_bite = S.poison_per_bite
 					C.faction = S.faction.Copy()
 					S.fed--
-					UpdateButtonIcon(TRUE)
+					UpdateButtons(TRUE)
 		S.busy = SPIDER_IDLE
 		S.stop_automated_movement = FALSE
 
@@ -527,7 +527,7 @@
 		return FALSE
 	return TRUE
 
-/datum/action/innate/spider/comm/Trigger()
+/datum/action/innate/spider/comm/Trigger(trigger_flags)
 	var/input = stripped_input(owner, "Input a command for your legions to follow.", "Command", "")
 	if(QDELETED(src) || !input || !IsAvailable())
 		return FALSE

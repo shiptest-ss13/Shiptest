@@ -51,7 +51,7 @@
 	usr.update_inv_wear_suit()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/suit/toggle/pufferjacket/white
 	current_skin = "white pufferjacket"
@@ -119,7 +119,7 @@
 	usr.update_inv_wear_suit()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/suit/toggle/puffervest/white
 	current_skin = "white puffervest"
