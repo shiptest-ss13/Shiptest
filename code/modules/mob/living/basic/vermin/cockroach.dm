@@ -38,6 +38,7 @@
 		squash_chance = 50, \
 		squash_damage = 1, \
 	)
+	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 
 /mob/living/basic/cockroach/ex_act() //Explosions are a terrible way to handle a cockroach.
 	return FALSE
