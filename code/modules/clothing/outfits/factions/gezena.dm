@@ -89,7 +89,7 @@
 
 /datum/outfit/job/gezena/security/paramedic
 	name = "PGF - Marine Corpsman"
-	id_assignment = "Marine Corpsman"
+	id_assignment = "Hospital Corpsman"
 	jobtype = /datum/job/brig_phys
 	job_icon = "paramedic"
 
