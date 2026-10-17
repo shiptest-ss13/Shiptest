@@ -383,9 +383,8 @@
 	suit = null
 
 /datum/outfit/job/independent/hos/merc/naked/gown
-	name = "Independent - Mercenary XO (Naked)"
+	name = "Independent - Mercenary XO (Gowned)"
 	id_assignment = "Lieutenant"
-
 
 	uniform = /obj/item/clothing/under/rank/medical/gown
 	shoes = /obj/item/clothing/shoes/sandal/slippers
