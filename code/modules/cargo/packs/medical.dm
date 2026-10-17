@@ -249,7 +249,7 @@
 	faction = /datum/faction/syndicate/cybersun
 
 /datum/supply_pack/medical/mkii_hypo_standalone
-	name = "mk.II Hypospray kit"
+	name = "Stadalone mk.II Hypospray"
 	desc = "Contains a standalone Matahari Pharmaceutical Hypospray, for on the field medical care."
 	cost = 600
 	contains = list(/obj/item/hypospray/mkii)
@@ -257,7 +257,7 @@
 	faction = /datum/faction/warra
 
 /datum/supply_pack/medical/mkiii_hypo_standalone
-	name = "mk.III Hypospray kit"
+	name = "Standalone mk.III Hypospray"
 	desc = "Contains a standalone Matahari Pharmaceutical mk.III Hypospray, for on the field medical care."
 	cost = 1250
 	contains = list(/obj/item/hypospray/mkii/mkiii/empty)
