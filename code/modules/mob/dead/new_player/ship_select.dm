@@ -40,10 +40,20 @@
 					var/datum/ship_application/app = new(spawnee, target, selected_job)
 					if(app.get_user_response())
 						to_chat(spawnee, span_notice("Ship application sent. You will be notified if the application is accepted."))
+					else if(QDELETED(target))
+						to_chat(spawnee, span_warning("[target] no longer exists, application cancelled."))
+					else if(!target.has_applications_open())
+						to_chat(spawnee, span_warning("[target] stopped accepting applications before submission."))
 					else
 						to_chat(spawnee, span_notice("Application cancelled, or there was an error sending the application."))
 					return
 				switch(current_application.status)
+					if(SHIP_APPLICATION_UNFINISHED)
+						alert(spawnee, "You already have an application window open for this ship!")
+						return
+					if(SHIP_APPLICATION_CANCELLED)
+						alert(spawnee, "Your previous application is still closing. Please try again.")
+						return
 					if(SHIP_APPLICATION_ACCEPTED)
 						to_chat(spawnee, span_notice("Your ship application was accepted, continuing..."))
 					if(SHIP_APPLICATION_PENDING)

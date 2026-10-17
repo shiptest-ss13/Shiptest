@@ -334,6 +334,27 @@
 	stock_max = 2
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/guncase/lensman
+	name = "Lensman-5 Energy Magnum"
+	desc = "I got no clue what the secret of this lens is, but damn if it doesn't pack a punch. Fuckin great holdout weapon even if it looks dumb as fuck."
+	item = /obj/item/gun/energy/cybersun/troubleshooter/lensman
+	pair_item = list(/datum/blackmarket_item/ammo/cs_mini)
+	cost_min = 900
+	cost_max = 2100
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/opportunist
+	name = "Opportunist Lorentz Magnum"
+	desc = "This is the same type of gun that they were gonna use to kill Relisi Namosane back in 499 FSC. Fuckin doohickey if I've ever seen it. Either burns the cell out or fires fuckin lightning claps."
+
+	item = /obj/item/gun/energy/cybersun/lorentz/opportunist
+	pair_item = list(/datum/blackmarket_item/ammo/cs_cell)
+	cost_min = 1750
+	cost_max = 3500
+	stock_max = 2
+	availability_prob = 30
+
 /datum/blackmarket_item/weapon/guncase/cm5
 	name = "CM-5 SMG"
 	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
@@ -590,6 +611,16 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/weapon/guncase/invictus_old
+	name = "Old Model Invictus"
+	desc = "Found some croaked hunters who were straight up skeletons with these laying by 'em. Kinda old, kicks like a mule but damn does it put holes through EVERYTHING."
+	item = /obj/item/gun/ballistic/automatic/assault/invictus/old
+
+	cost_min = 5500
+	cost_max = 6500
+	stock_max = 2
+	availability_prob = 15
+
 /datum/blackmarket_item/weapon/guncase/rail_cannon
 	name = "Model 'Atelier' Railgun"
 	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
@@ -602,6 +633,17 @@
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/cinder
+	name = "HP Cinder"
+	desc = "My buddy Keith shot this shotgun one handed. Lemme tell ya, broken bones throughout his arm. If you want a streetsweeper with enough oomfh to blow a fist-sized hole right through a guy when you board their ship, you're in luck."
+	item = /obj/item/gun/ballistic/rifle/cinder
+	pair_item = list(/obj/item/storage/box/ammo/a4g_buckshot, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas)
+
+	cost_min = 4000
+	cost_max = 6000
+	stock = 1
+	availability_prob = 15
 
 /// mecha equipment
 

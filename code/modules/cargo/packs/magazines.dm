@@ -31,10 +31,10 @@
 	faction_discount = 20
 	faction = /datum/faction/srm
 
-/datum/supply_pack/magazine/m45_mag
-	name = ".45 ACP Candor Magazine Crate"
-	desc = "Contains a .45 ACP magazine for the Candor pistol, with a capacity of eight rounds."
-	contains = list(/obj/item/ammo_box/magazine/m45/empty)
+/datum/supply_pack/magazine/m44_mag
+	name = ".44 Roumain Candor Magazine Crate"
+	desc = "Contains a .44 Roumain magazine for the Candor pistol, with a capacity of eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m44/empty)
 	cost = 100
 	faction = /datum/faction/srm
 
@@ -161,11 +161,11 @@
 	cost = 300
 	faction = /datum/faction/syndicate/scarborough
 
-/datum/supply_pack/magazine/c45_cobra_mag
+/datum/supply_pack/magazine/c10_cobra_mag
 	name = "Cobra Magazine Crate"
-	desc = "Contains a .45 magazine for the Cobra-20, with a capacity of 24 rounds."
+	desc = "Contains a 10mm magazine for the Cobra-20, with a capacity of 24 rounds."
 	cost = 300
-	contains = list(/obj/item/ammo_box/magazine/m45_cobra/empty)
+	contains = list(/obj/item/ammo_box/magazine/m10_cobra/empty)
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/short_hydra_mag
@@ -394,6 +394,26 @@
 	contains = list(/obj/item/ammo_box/magazine/e40/empty)
 	cost = 400
 
+/* CS Gauss */
+
+/datum/supply_pack/magazine/convergence
+	name = "Convergence Magazine"
+	desc = "Contains a 60-round magazine for the SG49 Convergence filled with 2x15mm Tav'Sha Dart."
+	contains = list(/obj/item/ammo_box/magazine/cs_gauss)
+	cost = 100
+
+/datum/supply_pack/magazine/rectifier
+	name = "Rectifier Magazine"
+	desc = "Contains a 30-round magazine for the SG29 Convergence filled with 2x15mm Tav'Sha Dart."
+	contains = list(/obj/item/ammo_box/magazine/cs_gauss/pistol)
+	cost = 50
+
+/datum/supply_pack/magazine/vector
+	name = "Vector Magazine"
+	desc = "Contains a 40-round magazine for the SG95 Vector filled with 3x20mm Deu'Sha Dart."
+	contains = list(/obj/item/ammo_box/magazine/cs_gauss/rifle)
+	cost = 150
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/miniguncell
@@ -479,3 +499,25 @@
 	faction_locked = TRUE
 
 /* Expand once the energy weapons have been actually expanded upon */
+
+/datum/supply_pack/magazine/cybersun_cell
+	name = "Cybersun Plasma Cell"
+	desc = "Contains a Cybersun Plasma Cell, compatible with most Cybersun energy weapons"
+	contains = list(/obj/item/stock_parts/cell/gun/cybersun)
+	cost = 750
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 10
+
+/datum/supply_pack/magazine/cybersun_cell/mini
+	name = "Micro Cybersun Plasma Cell"
+	desc = "Contains a micro Cybersun Plasma Cell, compatible with pistol-scale Cybersun energy weapons"
+	contains = list(/obj/item/stock_parts/cell/gun/cybersun/mini)
+	cost = 300
+
+/datum/supply_pack/magazine/cybersun_cell/heavy
+	name = "Heavy Cybersun Plasma  Cell"
+	desc = "Contains the heaviest plasma cell manufactured by Cybersun. Perfect for heavy weaponry."
+	contains = list(/obj/item/stock_parts/cell/gun/cybersun/heavy)
+	cost = 1500
+	faction_discount = 0
+	faction_locked = TRUE

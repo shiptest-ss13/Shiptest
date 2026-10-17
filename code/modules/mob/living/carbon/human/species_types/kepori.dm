@@ -3,7 +3,6 @@
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, MUTCOLORS_SECONDARY)
-	inherent_traits = list(TRAIT_TAILED)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None")
 	meat = /obj/item/food/meat/slab/chicken
@@ -69,12 +68,13 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/kepori,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/kepori,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/kepori,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/kepori,
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/kepori
 
-	//I'm not emotionally prepared to spend ten more hours splicing overlays together
-	damage_overlay_type = ""
+	damage_overlay_type = "kepori"
+	custom_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 
 /datum/species/kepori/New()
 	. = ..()

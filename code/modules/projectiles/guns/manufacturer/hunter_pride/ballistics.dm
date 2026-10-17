@@ -46,8 +46,12 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
 	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
+
+	zoom_amt = 4 //You can put attachments on but you can't take them off, this bakes the function of allowing the revolver to be a long ranged sidearm into the gun without needing an attachment
+	aimed_wield_slowdown = 0.2
+
 	spread_unwielded = 6
-	spread = 6
+	spread = 1
 	recoil = 2
 	recoil_unwielded = 4
 
@@ -204,7 +208,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .44 Roumain."
 	icon_state = "candor"
 	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
@@ -212,9 +216,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m45
+	default_ammo_type = /obj/item/ammo_box/magazine/m44
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45,
+		/obj/item/ammo_box/magazine/m44,
 	)
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -248,7 +252,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .44."
 	item_state = "hp_generic_fresh"
 	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
@@ -260,7 +264,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/phenex
 	name = "\improper HP Phenex"
-	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
+	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .44."
 	icon_state = "phenex"
 	item_state = "hp_phenex"
 
@@ -659,6 +663,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
+	autowiki_hidden = TRUE //admin only?
 	name = "HP Huntsman"
 	desc = "A comically huge double-barreled rifle replete with brass inlays depicting flames and naturalistic scenes, clearly meant for the nastiest monsters the Frontier has to offer. If you want an intact trophy, don't aim for the head. Chambered in two-bore."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
@@ -690,6 +695,101 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO) //no dual burst for you
+	default_firemode = FIREMODE_SEMIAUTO
+
+/obj/item/gun/ballistic/rifle/cinder/factory//it uses bolt action mechanics, but for all intents and purposes, is a SHOTGUN! It's just that the pump is probably heavy enough to warrant turning it into a bolt action mechanically
+	autowiki_hidden = TRUE //
+	name = "HP Cinder"
+	desc = "A large, and bulky pump-action shotgun holding four rounds. Manufactured by Hunter's Pride, and used on hunts within the Saint Roumain Militia where normal shot will not easily take down their quarry."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "cinder_factory"
+	item_state = "cinder_factory"
+	attack_verb = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+	)
+	slot_available = list(		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		),
+		)
+
+	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	force = 15
+	recoil = 3
+	pb_knockback = 10
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 50
+	rack_sound_volume = 30
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+/obj/item/gun/ballistic/rifle/cinder
+	autowiki_hidden = TRUE //
+	name = "HP Cinder"
+	desc = "A large, and bulky pump-action shotgun holding four rounds. Manufactured by Hunter's Pride, and used on hunts within the Saint Roumain Militia where normal shot will not easily take down their quarry. This one is noticably missing its stock, and your arms figuratively warn you of using this shotgun."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "cinder"
+	item_state = "cinder"
+	attack_verb = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+	)
+	slot_available = list(		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 11,
+			"y" = 22,
+		),
+		)
+
+	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = SMG_SLOWDOWN
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	spread = 6
+	force = 15
+	recoil = 4
+	pb_knockback = 10
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 50
+	rack_sound_volume = 30
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 /// Rifles
@@ -1133,6 +1233,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "HP Beacon"
 	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
@@ -1275,7 +1376,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	fire_delay = 0.25 SECONDS
 
-	spread = 3
+	spread = 1
 	spread_unwielded = 20
 
 	recoil = 1

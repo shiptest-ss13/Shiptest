@@ -37,8 +37,6 @@
 #define CLEAN_BOT (1<<3)	// Cleanbots
 #define MED_BOT (1<<4)	// Medibots
 #define HONK_BOT (1<<5)	// Honkbots & ED-Honks
-#define FIRE_BOT (1<<6) // Firebots
-#define HYGIENE_BOT (1<<7) // Hygienebots
 
 //AI notification defines
 #define NEW_BORG 1
