@@ -2002,7 +2002,9 @@
 /area/ruin/beach/bunker)
 "zI" = (
 /obj/effect/turf_decal/road,
-/mob/living/basic/human/frontier/ranged/officer/rifle,
+/mob/living/basic/human/frontier/ranged/officer/rifle{
+	vision_range = 14
+	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "zJ" = (
