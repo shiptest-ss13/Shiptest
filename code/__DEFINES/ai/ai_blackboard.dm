@@ -82,6 +82,8 @@
 ///Percent chance we throw a grenade by us back rather than running from it, and TRUE while we're going to
 #define BB_BASIC_MOB_THROW_BACK_CHANCE "BB_basic_throw_back_chance"
 #define BB_BASIC_MOB_THROWING_BACK "BB_basic_throwing_back"
+///When we'll have got over the surprise of a grenade landing by us enough to grab it, as a world.time
+#define BB_BASIC_MOB_THROW_BACK_AT "BB_basic_throw_back_at"
 ///If TRUE, we stick with who we're after for a moment like those who fight up close do, for those who rush in with a gun
 #define BB_BASIC_MOB_STICKS_TO_TARGET "BB_basic_sticks_to_target"
 ///What we watched our target shut themselves in, like a locker, so we still know they're in there
@@ -208,6 +210,9 @@
 #define BB_BASIC_MOB_NO_PATH_TO "BB_basic_no_path_to"
 ///When our movement gave up on finding a way to BB_BASIC_MOB_NO_PATH_TO, as a world.time
 #define BB_BASIC_MOB_NO_PATH_SINCE "BB_basic_no_path_since"
+///Where we were, and where BB_BASIC_MOB_NO_PATH_TO was, when we gave up on it, so we don't search again for a way that can't have opened up
+#define BB_BASIC_MOB_NO_PATH_FROM "BB_basic_no_path_from"
+#define BB_BASIC_MOB_NO_PATH_TARGET_TURF "BB_basic_no_path_target_turf"
 ///A safe spot we couldn't find our way to, so we don't keep picking it
 #define BB_BASIC_MOB_BAD_SAFE_TURF "BB_basic_bad_safe_turf"
 ///How many times in a row we've looked for a safe spot and found none, giving up for a while once it's too many

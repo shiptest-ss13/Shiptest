@@ -12,6 +12,8 @@
 
 ///For JPS pathing, the maximum length of a path we'll try to generate. Should be modularized depending on what we're doing later on
 #define AI_MAX_PATH_LENGTH 30 // 30 is possibly overkill since by default we lose interest after 14 tiles of distance, but this gives wiggle room for weaving around obstacles
+///How long JPS movement gives up straight away on somewhere it found no way to, while neither it nor we have moved, as a failed search is the costliest kind
+#define AI_NO_PATH_MEMORY (10 SECONDS)
 
 ///Whether mobs's close enough to target for something needing to be within distance of it.
 #define AI_IN_RANGE(mover, target, distance) (get_dist(mover, target) <= (distance) && ((distance) != 1 || (target).Adjacent(mover)))

@@ -20,20 +20,39 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	. = ..()
 	var/list/danger = find_danger(controller)
 	if(!danger)
-		controller.clear_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE)
+		// remembered until it goes off, so stepping back near it doesn't make us call it out again
+		var/atom/fled_explosive = controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE]
+		if(fled_explosive && (QDELETED(fled_explosive) || !GLOB.ai_live_explosives[fled_explosive]))
+			controller.clear_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE)
 		return
 	var/atom/explosive = danger[1]
 	if(controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE] != explosive)
 		controller.set_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE, explosive)
 		// decided once for each explosive, as a long shot rather than something we keep trying
-		var/throwing_back = can_throw_back(controller, explosive) && prob(controller.blackboard[BB_BASIC_MOB_THROW_BACK_CHANCE])
+		var/throwing_back = istype(explosive, /obj/item/grenade) && !istype(explosive, /obj/item/grenade/c4) && prob(controller.blackboard[BB_BASIC_MOB_THROW_BACK_CHANCE])
 		controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, throwing_back)
-		AI_LOG_DECISION(controller, "flee_explosives: [explosive] is about to go off, [throwing_back ? "throwing it back" : "getting clear"]")
-		ai_callout(controller.pawn, throwing_back ? AI_CALLOUT_THROW_BACK : AI_CALLOUT_GRENADE, interrupt = TRUE)
-	if(controller.blackboard[BB_BASIC_MOB_THROWING_BACK] && can_throw_back(controller, explosive))
-		controller.queue_behavior(/datum/ai_behavior/throw_back_explosive, BB_BASIC_MOB_FLEEING_EXPLOSIVE)
-		return SUBTREE_RETURN_FINISH_PLANNING
-	controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, FALSE) // too late for that now, so we run
+		controller.clear_blackboard_key(BB_BASIC_MOB_THROW_BACK_AT)
+		AI_LOG_DECISION(controller, "flee_explosives: [explosive] is about to go off, [throwing_back ? "throwing it back if it lands by us" : "getting clear"]")
+		if(!throwing_back)
+			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // or we call it once we know if we're grabbing it or running
+	if(controller.blackboard[BB_BASIC_MOB_THROWING_BACK])
+		var/atom/movable/thrown_explosive = explosive
+		if(thrown_explosive.throwing)
+			return SUBTREE_RETURN_FINISH_PLANNING // still coming at us, so we see where it lands
+		if(can_throw_back(controller, explosive))
+			var/throw_back_at = controller.blackboard[BB_BASIC_MOB_THROW_BACK_AT]
+			if(isnull(throw_back_at))
+				controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_AT, world.time + AI_THROW_BACK_REACTION_TIME)
+				ai_callout(controller.pawn, AI_CALLOUT_THROW_BACK, interrupt = TRUE)
+				return SUBTREE_RETURN_FINISH_PLANNING
+			if(world.time < throw_back_at)
+				return SUBTREE_RETURN_FINISH_PLANNING // a moment to react, rather than snatching it up the instant it lands
+			controller.queue_behavior(/datum/ai_behavior/throw_back_explosive, BB_BASIC_MOB_FLEEING_EXPLOSIVE)
+			return SUBTREE_RETURN_FINISH_PLANNING
+	if(controller.blackboard[BB_BASIC_MOB_THROWING_BACK])
+		controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, FALSE) // too late for that now, or it's out of reach, so we run
+		if(isnull(controller.blackboard[BB_BASIC_MOB_THROW_BACK_AT]))
+			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // we never went for it, so we've not called it yet
 	controller.queue_behavior(/datum/ai_behavior/run_away_from_target, BB_BASIC_MOB_FLEEING_EXPLOSIVE, danger[2] + safety_margin)
 	return SUBTREE_RETURN_FINISH_PLANNING
 
@@ -52,6 +71,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	if(!length(GLOB.ai_live_explosives))
 		return null
 	var/turf/our_turf = get_turf(controller.pawn)
+	var/atom/fled_explosive = controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE]
 	var/list/nearest
 	var/nearest_distance = INFINITY
 	for(var/atom/explosive as anything in GLOB.ai_live_explosives)
@@ -65,7 +85,9 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		if(!our_turf || !explosive_turf || explosive_turf.z != our_turf.z)
 			continue
 		var/distance = get_dist(our_turf, explosive_turf)
-		if(distance > info[1] + 1 || distance >= nearest_distance || !ai_can_see(controller.pawn, explosive, controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+		// stop ducking back in!!!!
+		var/reach = info[1] + (explosive == fled_explosive ? safety_margin : 1)
+		if(distance > reach || distance >= nearest_distance || !ai_can_see(controller.pawn, explosive, controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
 			continue
 		nearest = list(explosive, info[1])
 		nearest_distance = distance

@@ -15,7 +15,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi
 	callout_set = /datum/ai_callout_set/human/ramzi
 	flashlight_chance = 50
-	throw_back_chance = 10 // drilled for it
+	throw_back_chance = 10
 	armor_base = /obj/item/clothing/suit/armor/vest/syndie
 
 /mob/living/basic/human/ramzi/space

@@ -14,7 +14,7 @@
 
 	maxHealth = 100
 	health = 100
-	speed = 1.5 // same RUN_DELAY as a running player, slightly slower than the simplemobs used to be I think
+	speed = 1.7 // a touch slower than a running player, see RUN_DELAY, so they can be outrun, slightly slower than the simplemobs used to be I think
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -151,8 +151,8 @@
 	if(gun_type)
 		move_delay += initial(gun_type.wield_slowdown)
 	else
-		// those who fight up close have to catch people, so they're always a bit quicker than a running player, armour and all
-		move_delay = min(move_delay, AI_MELEE_MAX_MOVE_DELAY)
+		// melee folks move FAST
+		move_delay = AI_MELEE_MOVE_DELAY
 	if(move_delay != speed)
 		set_varspeed(move_delay)
 	if(mob_spawner)
@@ -325,6 +325,10 @@
 	if(!client && !noncombatant)
 		return TRUE
 	return ..()
+
+// basic mobs keep their speed as basicmob_varspeed, but /mob/living/Initialize() also applies the same speed var as living_varspeed, which counts it twice. Only fixed for us, as other basic mobs are balanced around it
+/mob/living/basic/human/update_living_varspeed()
+	remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
 
 // actually go fast
 /mob/living/basic/human/update_move_intent_slowdown()

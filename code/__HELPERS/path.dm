@@ -16,8 +16,9 @@
  * * simulated_only: Whether we consider turfs without atmos simulation (AKA do we want to ignore space)
  * * exclude: If we want to avoid a specific turf, like if we're a mulebot who already got blocked by some turf
  * * climbing: If TRUE, we can go over things we could climb, like sandbags, tables and railings
+ * * search_notes: If given a list, we note on it what we found along the way, as "found_climbable" = TRUE if something we could've climbed was in our way
  */
-/proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE)
+/proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE, list/search_notes)
 	if(!requester || !get_turf(end))
 		return
 
@@ -29,6 +30,8 @@
 	var/list/path
 	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude, climbing)
 	path = pathfind_datum.search()
+	if(search_notes)
+		search_notes["found_climbable"] = pathfind_datum.found_climbable
 	qdel(pathfind_datum)
 
 	SSpathfinder.mobs.found(l)
@@ -39,11 +42,10 @@
  * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing) && (next != avoid) && !(avoid_hazards && hazard_at(next)) && !(avoid_bad_air && bad_air_at(next)))
+// cheapest checks first, with the hazard and air caches looked at here before calling out to fill them, as this gets called millions of times. Adjacent() is only for diagonals, to not cut corners, as LinkBlockedWithAccess() covers what's on the edges of a straight step
+#define CAN_STEP(cur_turf, next) (next && !next.density && (next != avoid) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !(avoid_hazards && (isnull(hazard_cache[next]) ? hazard_at(next) : hazard_cache[next])) && !(avoid_bad_air && (isnull(bad_air_cache[next]) ? bad_air_at(next) : bad_air_cache[next])) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing, src) && (cur_turf.x == next.x || cur_turf.y == next.y || cur_turf.Adjacent(next)))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
-/// Whether we can turn off to one side here when we couldn't from the turf before, which STEP_NOT_HERE_BUT_THERE misses when it's an edge in the way rather than a tile, like a railing along a hallway that ends
-#define OPENS_UP_HERE(lag_turf, cur_turf, side_dir) (CAN_STEP(cur_turf, get_step(cur_turf, side_dir)) && !CAN_STEP(lag_turf, get_step(lag_turf, side_dir)))
 
 /// The JPS Node datum represents a turf that we find interesting enough to add to the open list and possibly search for new tiles from
 /datum/jps_node
@@ -127,6 +129,8 @@
 	var/list/bad_air_cache
 	/// What hazard_at() made of each turf it's looked at, for the same reason
 	var/list/hazard_cache
+	/// If TRUE, something we could've climbed was in our way, so a search that's climbing might get through where we didn't
+	var/found_climbable = FALSE
 
 /datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, climbing = FALSE)
 	src.requester = requester
@@ -154,6 +158,8 @@
 		return FALSE
 	// only if we're somewhere safe now, as if we're already in bad air we need a way out through it
 	avoid_bad_air = avoid_hazards && isbasicmob(requester) && is_environment_safe_for(requester, start)
+	if(avoid_hazards)
+		hazard_cache = list()
 	if(avoid_bad_air)
 		bad_air_cache = list()
 
@@ -189,8 +195,6 @@
 
 /// Whether spot's a hazard like a chasm or electrified water, remembered for the rest of the search
 /datum/pathfind/proc/hazard_at(turf/spot)
-	if(!hazard_cache)
-		hazard_cache = list()
 	. = hazard_cache[spot]
 	if(isnull(.))
 		. = is_ai_hazard_turf(spot)
@@ -234,6 +238,10 @@
 
 	var/turf/current_turf = original_turf
 	var/turf/lag_turf = original_turf
+	var/side_dir = turn(heading, 90)
+	var/other_side_dir = turn(heading, -90)
+	var/side_was_open = CAN_STEP(original_turf, get_step(original_turf, side_dir))
+	var/other_side_was_open = CAN_STEP(original_turf, get_step(original_turf, other_side_dir))
 
 	while(TRUE)
 		if(path)
@@ -241,6 +249,8 @@
 		lag_turf = current_turf
 		current_turf = get_step(current_turf, heading)
 		steps_taken++
+		if(current_turf != end && sources[current_turf])
+			return // already visited, skip checking again
 		if(!CAN_STEP(lag_turf, current_turf))
 			return
 
@@ -260,24 +270,16 @@
 
 		var/interesting = FALSE // have we found a forced neighbor that would make us add this turf to the open list?
 
-		switch(heading)
-			if(NORTH)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST))
-					interesting = TRUE
-			if(SOUTH)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST))
-					interesting = TRUE
-			if(EAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
-					interesting = TRUE
-			if(WEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
-					interesting = TRUE
-
-		if(!interesting)
-			var/side_dir = turn(heading, 90)
-			if(OPENS_UP_HERE(lag_turf, current_turf, side_dir) || OPENS_UP_HERE(lag_turf, current_turf, REVERSE_DIR(side_dir)))
-				interesting = TRUE
+		var/side_open = CAN_STEP(current_turf, get_step(current_turf, side_dir))
+		var/other_side_open = CAN_STEP(current_turf, get_step(current_turf, other_side_dir))
+		// blocked to the side but open on ahead of it, the usual forced neighbor
+		if((!side_open && CAN_STEP(current_turf, get_step(current_turf, heading | side_dir))) || (!other_side_open && CAN_STEP(current_turf, get_step(current_turf, heading | other_side_dir))))
+			interesting = TRUE
+		// or we can turn off to one side here when we couldn't from the turf before, which that misses when it's an edge in the way rather than a tile, like a railing along a hallway that ends
+		else if((side_open && !side_was_open) || (other_side_open && !other_side_was_open))
+			interesting = TRUE
+		side_was_open = side_open
+		other_side_was_open = other_side_open
 
 		if(interesting)
 			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
@@ -285,17 +287,6 @@
 				open.insert(newnode)
 			return newnode
 
-/**
- * For performing diagonal scans from a given starting turf.
- *
- * Unlike lateral scans, these only are called from the main search loop, so we don't need to worry about returning anything,
- * though we do need to handle the return values of our lateral subscans of course.
- *
- * Arguments:
- * * original_turf: What turf did we start this scan at?
- * * heading: What direction are we going in? Obviously, should be diagonal
- * * parent_node: We should always have a parent node for diagonals
-*/
 /datum/pathfind/proc/diag_scan_spec(turf/original_turf, heading, datum/jps_node/parent_node)
 	var/steps_taken = 0
 	var/turf/current_turf = original_turf
@@ -307,6 +298,8 @@
 		lag_turf = current_turf
 		current_turf = get_step(current_turf, heading)
 		steps_taken++
+		if(current_turf != end && sources[current_turf])
+			return // already visited, don't check again
 		if(!CAN_STEP(lag_turf, current_turf))
 			return
 
@@ -366,11 +359,11 @@
  * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
  * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
 */
-/turf/proc/LinkBlockedWithAccess(turf/destination_turf, requester, ID, climbing = FALSE)
+/turf/proc/LinkBlockedWithAccess(turf/destination_turf, requester, ID, climbing = FALSE, datum/pathfind/search)
 	var/actual_dir = get_dir(src, destination_turf)
 
 	for(var/obj/structure/window/iter_window in src)
-		if(!iter_window.CanAStarPass(ID, actual_dir) && !(climbing && ai_can_climb(iter_window)))
+		if(!iter_window.CanAStarPass(ID, actual_dir) && !path_can_climb_over(iter_window, climbing, search))
 			return TRUE
 
 	for(var/obj/machinery/door/window/iter_windoor in src)
@@ -381,16 +374,25 @@
 	for(var/obj/iter_border in src)
 		if(!(iter_border.flags_1 & ON_BORDER_1) || istype(iter_border, /obj/structure/window) || istype(iter_border, /obj/machinery/door/window))
 			continue
-		if(!iter_border.CanAStarPass(ID, actual_dir, requester) && !(climbing && ai_can_climb(iter_border)))
+		if(!iter_border.CanAStarPass(ID, actual_dir, requester) && !path_can_climb_over(iter_border, climbing, search))
 			return TRUE
 
 	var/reverse_dir = get_dir(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)
-		if(!iter_object.CanAStarPass(ID, reverse_dir, requester) && !(climbing && ai_can_climb(iter_object)))
+		if(!iter_object.CanAStarPass(ID, reverse_dir, requester) && !path_can_climb_over(iter_object, climbing, search))
 			return TRUE
 
 	return FALSE
 
+/// For LinkBlockedWithAccess(), whether we can go over blocker, as we're climbing
+/proc/path_can_climb_over(obj/blocker, climbing, datum/pathfind/search)
+	if(!ai_can_climb(blocker))
+		return FALSE
+	if(climbing)
+		return TRUE
+	if(search)
+		search.found_climbable = TRUE
+	return FALSE
+
 #undef CAN_STEP
 #undef STEP_NOT_HERE_BUT_THERE
-#undef OPENS_UP_HERE

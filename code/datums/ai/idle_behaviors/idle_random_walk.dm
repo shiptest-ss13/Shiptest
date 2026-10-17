@@ -6,7 +6,7 @@
 	. = ..()
 	var/mob/living/living_pawn = controller.pawn
 
-	if(SPT_PROB(walk_chance, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby)
+	if(SPT_PROB(walk_chance, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby && !LAZYLEN(living_pawn.do_afters))
 		var/move_dir = pick(GLOB.alldirs)
 		var/turf/destination = get_step(living_pawn, move_dir)
 		if(destination && is_ai_hazard_turf(destination))

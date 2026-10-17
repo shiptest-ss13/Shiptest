@@ -28,6 +28,10 @@
 		if(controller.ai_traits & STOP_MOVING_WHEN_PULLED && movable_pawn.pulledby)
 			continue
 
+		var/mob/mob_pawn = movable_pawn
+		if(ismob(mob_pawn) && LAZYLEN(mob_pawn.do_afters))
+			continue // in the middle of something, like climbing a platform or prying a firelock, which any step we managed would cancel
+
 		var/minimum_distance = controller.max_target_distance
 		// right now I'm just taking the shortest minimum distance of our current behaviors, at some point in the future
 		// we should let whatever sets the current_movement_target also set the min distance and max path length
@@ -56,6 +60,8 @@
 				continue // over whatever's in the way, like a player would, rather than looking for another way round
 			if(new_turf == old_turf)
 				bump_door_in_the_way(movable_pawn, next_step)
+				if(break_holobarrier_in_the_way(controller, movable_pawn, next_step))
+					continue // swatting it aside, so we wait for that rather than looking for another way round
 			if(new_turf == next_step)
 				controller.movement_path.Cut(1,2)
 				controller.pathing_attempts = 0
@@ -75,11 +81,18 @@
 		if(generate_path)
 			if(controller.calculating_path || !COOLDOWN_FINISHED(controller, repath_cooldown))
 				continue
+			if(still_no_path(controller, movable_pawn))
+				AI_LOG_DECISION(controller, "movement: still no way to [controller.current_movement_target] at [AREACOORD(controller.current_movement_target)], giving up on what we were doing")
+				stop_moving_towards(controller)
+				controller.CancelActions()
+				continue
 			controller.pathing_attempts++
 			if(controller.pathing_attempts >= max_pathing_attempts)
 				AI_LOG_DECISION(controller, "movement: no way to [controller.current_movement_target] at [AREACOORD(controller.current_movement_target)] after [max_pathing_attempts] tries, giving up on what we were doing")
 				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_TO, controller.current_movement_target)
 				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_SINCE, world.time)
+				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_FROM, get_turf(movable_pawn))
+				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_TARGET_TURF, get_turf(controller.current_movement_target))
 				stop_moving_towards(controller) // or we'd stay on our way there with our tries used up, giving up again every time we're planned back onto it
 				controller.CancelActions()
 				continue
@@ -152,12 +165,16 @@
 	if(!controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] || !isliving(movable_pawn) || get_dist(movable_pawn, next_step) != 1)
 		return FALSE
 	var/mob/living/climber = movable_pawn
-	if(LAZYLEN(climber.do_afters))
-		return TRUE // already at it
 	var/obj/climbed_thing = get_climb_blocker(climber, next_step)
 	if(!climbed_thing)
 		return FALSE
-	if(controller.blackboard[BB_BASIC_MOB_CLIMBING] == climbed_thing && world.time - controller.blackboard[BB_BASIC_MOB_CLIMBING_SINCE] > climb_give_up_time)
+	for(var/mob/living/in_the_way in next_step)
+		if(in_the_way != climber && in_the_way.density)
+			return FALSE // someone's stood where we'd climb to, so we'd only fail to get there
+	// long enough for the climb itself, which can be slow, like a platform, and twice that if our hands are full
+	var/obj/structure/climbed_structure = climbed_thing
+	var/give_up_time = max(climb_give_up_time, istype(climbed_structure) ? climbed_structure.climb_time * 2 + 1 SECONDS : 0)
+	if(controller.blackboard[BB_BASIC_MOB_CLIMBING] == climbed_thing && world.time - controller.blackboard[BB_BASIC_MOB_CLIMBING_SINCE] > give_up_time)
 		return FALSE // it's not working, like a railing we're the wrong side of, so we find another way or give up as usual
 	if(controller.blackboard[BB_BASIC_MOB_CLIMBING] != climbed_thing)
 		controller.set_blackboard_key(BB_BASIC_MOB_CLIMBING, climbed_thing)
@@ -180,6 +197,17 @@
 			mover.Bump(door)
 			return
 
+/datum/ai_movement/jps/proc/break_holobarrier_in_the_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
+	var/mob/living/basic/basic_mob = mover
+	if(!istype(basic_mob) || !basic_mob.obj_damage)
+		return FALSE
+	var/obj/structure/holosign/barrier/barrier = locate() in next_step
+	if(!barrier?.density)
+		return FALSE
+	basic_mob.melee_attack(barrier)
+	controller.movement_cooldown = world.time + CLICK_CD_MELEE // a swing takes as long as a player's
+	return TRUE
+
 // the climbable thing in the way of stepping from where mover is onto next_step, like sandbags on it or a railing on the edge between
 /datum/ai_movement/jps/proc/get_climb_blocker(atom/movable/mover, turf/next_step)
 	var/turf/our_turf = get_turf(mover)
@@ -194,12 +222,20 @@
 			return thing
 	return null
 
+// whether we gave up on finding a way to where we're going lately, and nothing's moved since, so searching again would only fail the same way
+/datum/ai_movement/jps/proc/still_no_path(datum/ai_controller/controller, atom/movable/movable_pawn)
+	var/atom/target = controller.current_movement_target
+	if(controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] != target || world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] >= AI_NO_PATH_MEMORY)
+		return FALSE
+	return controller.blackboard[BB_BASIC_MOB_NO_PATH_FROM] == get_turf(movable_pawn) && controller.blackboard[BB_BASIC_MOB_NO_PATH_TARGET_TURF] == get_turf(target)
+
 /datum/ai_movement/jps/proc/calculate_path(datum/ai_controller/controller, atom/target, minimum_distance, turf/avoid)
 	var/access = controller.get_access()
 	var/ground_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
-	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid)
-	if(!length(new_path) && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
-		// no way round, so over, like sandbags piled in a doorway. Only once there's no other way, as climbing's slow
+	var/list/search_notes = list()
+	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, search_notes = search_notes)
+	if(!length(new_path) && search_notes["found_climbable"] && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
+		// no way round, so over, like sandbags piled in a doorway. Only once there's no other way, as climbing's slow, and only if something we could climb was in the way, as a failed search is the costliest kind
 		new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, climbing = TRUE)
 	if(QDELETED(controller))
 		return
@@ -207,6 +243,9 @@
 	if(QDELETED(controller.pawn) || moving_controllers[controller] != target || controller.current_movement_target != target)
 		return // we've moved on to something else while we worked it out
 	controller.movement_path = new_path
+	if(!length(new_path) && !avoid)
+		// no way there at all, not just someone in the way we might wait out, so searching again every couple of seconds would only fail the same way
+		controller.pathing_attempts = max_pathing_attempts - 1
 
 /datum/ai_movement/jps/start_moving_towards(datum/ai_controller/controller, atom/current_movement_target)
 	controller.movement_path = null

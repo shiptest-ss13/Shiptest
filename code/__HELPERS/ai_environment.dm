@@ -17,11 +17,19 @@
 			if(ai_needs_to_breathe(basic_mob))
 				return AI_ENVIRONMENT_UNBREATHABLE
 		else
-			var/static/list/gas_by_need = list("oxy" = GAS_O2, "plas" = GAS_PLASMA, "tox" = GAS_PLASMA, "n2" = GAS_N2, "co2" = GAS_CO2)
-			for(var/gas_name in gas_by_need)
-				var/moles = air.get_moles(gas_by_need[gas_name])
-				var/minimum = needs["min_[gas_name]"]
-				var/maximum = needs["max_[gas_name]"]
+			// only check a few gases that are the most relevant, probably
+			var/static/list/gas_needs = list(
+				list("min_oxy", "max_oxy", GAS_O2),
+				list("min_plas", "max_plas", GAS_PLASMA),
+				list("min_n2", "max_n2", GAS_N2),
+				list("min_co2", "max_co2", GAS_CO2),
+			)
+			for(var/list/gas_need as anything in gas_needs)
+				var/minimum = needs[gas_need[1]]
+				var/maximum = needs[gas_need[2]]
+				if(!minimum && !maximum)
+					continue // we don't care how much, just if we hit thresholds
+				var/moles = air.get_moles(gas_need[3])
 				if((minimum && moles < minimum) || (maximum && moles > maximum))
 					return AI_ENVIRONMENT_UNBREATHABLE
 	var/temperature = air ? air.return_temperature() : TCMB // no air at all is vacuum, as cold as space

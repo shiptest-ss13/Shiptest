@@ -157,6 +157,8 @@
 	return FALSE
 
 /datum/ai_behavior/basic_ranged_attack/proc/adjust_position(mob/living/living_pawn, atom/target)
+	if(LAZYLEN(living_pawn.do_afters))
+		return // mid-climb, or anything else that moving would cancel
 	var/turf/our_turf = get_turf(living_pawn)
 	var/list/possible_turfs = list()
 

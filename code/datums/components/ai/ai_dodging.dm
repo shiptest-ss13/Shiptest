@@ -92,8 +92,8 @@
 // Returns TRUE if we dodge successfully (nothing blocked us)
 /datum/component/ai_dodging/proc/dodge_to(turf/spot)
 	var/mob/living/basic/basic_mob = parent
-	if(!spot || (locate(/mob/living) in spot))
-		return FALSE
+	if(!spot || (locate(/mob/living) in spot) || LAZYLEN(basic_mob.do_afters))
+		return FALSE // or mid-climb, or anything else that moving would cancel
 	if(spot.is_blocked_turf(TRUE, basic_mob) || is_ai_hazard_turf(spot))
 		return FALSE // cancel the entire dodge if it can't complete the full move, so it doesnt do a half move
 	swerving = TRUE
