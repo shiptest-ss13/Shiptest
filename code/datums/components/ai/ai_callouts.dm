@@ -9,6 +9,8 @@
 		AI_CALLOUT_SPOTTED = 100,
 		AI_CALLOUT_HEARD_GUNFIRE = 100,
 		AI_CALLOUT_BROKEN = 100,
+		AI_CALLOUT_GRENADE = 100,
+		AI_CALLOUT_THROW_BACK = 100,
 		AI_CALLOUT_TARGET_KILLED = 75,
 		AI_CALLOUT_FLANKING = 60,
 		AI_CALLOUT_RALLIED = 60,
@@ -138,6 +140,8 @@
 	if(in_fight()) // getting hurt by someone we know about is on_hurt()'s
 		return
 	var/atom/shooter = projectile.firer
+	if(!ai_is_shooter(shooter))
+		return // like grenade shrapnel, which has its own callout
 	if(isliving(shooter) && ai_is_ally(parent, shooter))
 		return // ignore friendly fire
 	if(isatom(shooter) && ai_can_see(parent, shooter, hearing_range))

@@ -71,12 +71,23 @@
 #define BB_BASIC_MOB_HOLD_FIRE_UNTIL "BB_basic_hold_fire_until"
 ///TRUE while we can see our current target, FALSE while they're out of sight, null when we're not tracking them, like with no target
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
+///When we last picked who we're after, so those who fight up close don't turn between everyone in reach
+#define BB_BASIC_MOB_TARGET_SINCE "BB_basic_target_since"
+///The live explosive we're running from, like a primed grenade
+#define BB_BASIC_MOB_FLEEING_EXPLOSIVE "BB_basic_fleeing_explosive"
+///Percent chance we throw a grenade by us back rather than running from it, and TRUE while we're going to
+#define BB_BASIC_MOB_THROW_BACK_CHANCE "BB_basic_throw_back_chance"
+#define BB_BASIC_MOB_THROWING_BACK "BB_basic_throwing_back"
+///If TRUE, we stick with who we're after for a moment like those who fight up close do, for those who rush in with a gun
+#define BB_BASIC_MOB_STICKS_TO_TARGET "BB_basic_sticks_to_target"
 ///What we watched our target shut themselves in, like a locker, so we still know they're in there
 #define BB_BASIC_MOB_TARGET_HIDING_IN "BB_basic_target_hiding_in"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
 #define BB_BASIC_MOB_LAST_KNOWN_TARGET "BB_basic_last_known_target"
 ///Where we live and go back to once there's nothing to do
 #define BB_BASIC_MOB_HOME_TURF "BB_basic_home_turf"
+///This mob's own leash, how far from home it chases someone before letting them go, in place of its AI's. 0 for none
+#define BB_BASIC_MOB_LEASH_DISTANCE "BB_basic_leash_distance"
 ///TRUE while all we know about our target is what an ally told us, so we don't pass it on and set off a chain of alerts. Cleared once we see them ourselves
 #define BB_BASIC_MOB_TOLD_ABOUT_TARGET "BB_basic_told_about_target"
 ///Who we've already told our allies about, so we only call it out once per target

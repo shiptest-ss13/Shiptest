@@ -876,7 +876,7 @@ multiple modular subtrees with behaviors
 /// The AI_CONDITION_* flags true for our mob itself
 /datum/ai_controller/proc/get_pawn_conditions()
 	. = NONE
-	if(isbasicmob(pawn) && !is_environment_safe_for(pawn, get_turf(pawn)))
+	if(isbasicmob(pawn) && (!is_environment_safe_for(pawn, get_turf(pawn)) || is_ai_hazard_turf(get_turf(pawn))))
 		. |= AI_CONDITION_UNSAFE_SPOT
 	if(pawn.GetComponent(/datum/component/ranged_attacks))
 		. |= AI_CONDITION_HAS_RANGED_ATTACK

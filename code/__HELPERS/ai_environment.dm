@@ -53,6 +53,23 @@
 	if(istype(spot, /turf/open/lava))
 		var/turf/open/lava/lava_spot = spot
 		return !lava_spot.is_safe()
+	for(var/obj/structure/hazard/hazard in spot)
+		if(ai_harmful_hazard(hazard))
+			return TRUE
+	return FALSE
+
+// special cases for ruin hazards
+/proc/ai_harmful_hazard(obj/structure/hazard/hazard)
+	if(hazard.disabled)
+		return FALSE
+	if(istype(hazard, /obj/structure/hazard/fire))
+		return TRUE
+	var/obj/structure/hazard/electrical/electrical_hazard = hazard
+	if(istype(electrical_hazard))
+		return electrical_hazard.contact_damage > 1
+	var/obj/structure/hazard/floor/floor_hazard = hazard
+	if(istype(floor_hazard))
+		return floor_hazard.contact_damage > 1
 	return FALSE
 
 // whether breaking blocker would make our environment unsafe
@@ -90,11 +107,15 @@
 	return !basic_mob.unsuitable_cold_damage || basic_mob.minimum_survivable_temperature <= TCMB
 
 // whether mover can let the air out, for prying airlocks
-/proc/ai_safe_to_vent(atom/movable/mover, range = 7)
+/proc/ai_safe_to_vent(atom/movable/mover, atom/vent_point, range = 7)
 	if(!ai_unbothered_by_vacuum(mover))
 		return FALSE
-	for(var/mob/living/ally as anything in get_ai_allies_in_range(mover, range))
-		if(!ai_unbothered_by_vacuum(ally))
+	var/mob/living/living_mover = mover
+	if(!istype(living_mover))
+		return TRUE
+	// only those who'd be caught in it, in sight of where the air gets out, not anyone of ours behind another wall or door
+	for(var/mob/living/ally in hearers(range, vent_point || mover))
+		if(ally != mover && ally.stat == CONSCIOUS && !ally.client && ally.ai_controller && living_mover.faction_check_mob(ally) && !ai_unbothered_by_vacuum(ally))
 			return FALSE
 	return TRUE
 
@@ -107,3 +128,7 @@
 		if(!thing.CanAStarPass(null, direction, mover))
 			return thing
 	return null
+
+// flipped tables still inherit the climbable = TRUE var for some reason, so we exclude that from the AI's climbing logic.
+/proc/ai_can_climb(atom/thing)
+	return HAS_TRAIT(thing, TRAIT_CLIMBABLE) && !istype(thing, /obj/structure/barricade/directional/flippedtable)

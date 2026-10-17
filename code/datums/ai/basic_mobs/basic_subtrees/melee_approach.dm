@@ -15,13 +15,15 @@
 	var/minimum_progress = 2
 	//how often to search for a new spot, so we dont do it every tick
 	var/search_interval = 2 SECONDS
+	//after making it to a spot, how long we rush them before looking for another, so we don't stop and start
+	var/commit_time = 4 SECONDS
 
 /datum/ai_planning_subtree/sequence/melee_approach/can_start(datum/ai_controller/controller)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(get_dist(controller.pawn, target) <= charge_distance || !target_can_shoot_back(target))
 		return FALSE // close enough to rush them, or they've nothing to shoot us with on the way
-	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= quiet_time)
-		return FALSE // they're not shooting at us, so go for them
+	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= quiet_time || controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
+		return FALSE // they're not hitting us, so go for them
 	return world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_APPROACH_SEARCH]
 
 /datum/ai_planning_subtree/sequence/melee_approach/on_start(datum/ai_controller/controller)
@@ -34,8 +36,7 @@
 
 /datum/ai_planning_subtree/sequence/melee_approach/on_end(datum/ai_controller/controller, finished)
 	controller.clear_blackboard_key(BB_BASIC_MOB_APPROACH_TURF)
-	if(!finished)
-		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_APPROACH_SEARCH, world.time + search_interval)
+	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_APPROACH_SEARCH, world.time + (finished ? commit_time : search_interval))
 
 /datum/ai_planning_subtree/sequence/melee_approach/proc/find_next_spot(datum/ai_controller/controller)
 	var/mob/living/living_pawn = controller.pawn

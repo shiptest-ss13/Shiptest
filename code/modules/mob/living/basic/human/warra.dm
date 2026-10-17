@@ -13,6 +13,7 @@
 	dodging = TRUE
 	callout_set = /datum/ai_callout_set/human/vigilitas
 	flashlight_chance = 50
+	throw_back_chance = 10
 
 /* ranged guys */
 

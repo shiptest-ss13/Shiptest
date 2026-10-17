@@ -9,6 +9,8 @@
 	var/attacker_memory = 2 SECONDS
 	//how much closer someone else has to be than who we're fighting before we turn on them instead, so we don't flit between two at much the same range
 	var/closer_switch_margin = 3
+	//for those who fight up close, how long we stick with who we're after before turning on someone else in reach, so we don't swap between everyone around us
+	var/melee_commitment = 2 SECONDS
 	//how recently we have to have seen someone still on their feet to go after them, rather than finishing off whoever we've downed
 	var/recent_enemy_memory = 5 SECONDS
 
@@ -31,6 +33,7 @@
 		return
 	AI_LOG_DECISION(controller, "update_combat_targets: [target ? "switching from [target] to [best]" : "going after [best]"]")
 	controller.set_blackboard_key(target_key, best)
+	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
 
 /datum/ai_sensor/update_combat_targets/proc/find_candidates(datum/ai_controller/controller, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
@@ -102,6 +105,9 @@
 		var/mob/living/armed_up_close = find_adjacent_candidate(living_pawn, candidates, target, needs_melee_weapon = TRUE)
 		if(armed_up_close)
 			return armed_up_close
+	var/fights_up_close = !living_pawn.GetComponent(/datum/component/ranged_attacks) || controller.blackboard[BB_BASIC_MOB_STICKS_TO_TARGET]
+	if(target && !target_down && !target_unseen && fights_up_close && world.time - controller.blackboard[BB_BASIC_MOB_TARGET_SINCE] < melee_commitment)
+		return target
 	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
 	if(attacker && attacker != target && (attacker in candidates) && !ai_is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < attacker_memory)
 		// ai cheese prevention

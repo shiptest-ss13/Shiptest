@@ -39,7 +39,7 @@
  * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing) && (next != avoid) && !(avoid_hazards && is_ai_hazard_turf(next)) && !(avoid_bad_air && bad_air_at(next)))
+#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing) && (next != avoid) && !(avoid_hazards && hazard_at(next)) && !(avoid_bad_air && bad_air_at(next)))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 /// Whether we can turn off to one side here when we couldn't from the turf before, which STEP_NOT_HERE_BUT_THERE misses when it's an edge in the way rather than a tile, like a railing along a hallway that ends
@@ -125,6 +125,8 @@
 	var/avoid_bad_air = FALSE
 	/// What bad_air_at() made of each turf it's looked at, as it's asked about the same ones a lot
 	var/list/bad_air_cache
+	/// What hazard_at() made of each turf it's looked at, for the same reason
+	var/list/hazard_cache
 
 /datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, climbing = FALSE)
 	src.requester = requester
@@ -184,6 +186,15 @@
 	sources = null
 	qdel(open)
 	return path
+
+/// Whether spot's a hazard like a chasm or electrified water, remembered for the rest of the search
+/datum/pathfind/proc/hazard_at(turf/spot)
+	if(!hazard_cache)
+		hazard_cache = list()
+	. = hazard_cache[spot]
+	if(isnull(.))
+		. = is_ai_hazard_turf(spot)
+		hazard_cache[spot] = .
 
 /// Whether the air at spot would hurt the mob we're pathing for, remembered for the rest of the search
 /datum/pathfind/proc/bad_air_at(turf/spot)
@@ -359,7 +370,7 @@
 	var/actual_dir = get_dir(src, destination_turf)
 
 	for(var/obj/structure/window/iter_window in src)
-		if(!iter_window.CanAStarPass(ID, actual_dir) && !(climbing && HAS_TRAIT(iter_window, TRAIT_CLIMBABLE)))
+		if(!iter_window.CanAStarPass(ID, actual_dir) && !(climbing && ai_can_climb(iter_window)))
 			return TRUE
 
 	for(var/obj/machinery/door/window/iter_windoor in src)
@@ -370,12 +381,12 @@
 	for(var/obj/iter_border in src)
 		if(!(iter_border.flags_1 & ON_BORDER_1) || istype(iter_border, /obj/structure/window) || istype(iter_border, /obj/machinery/door/window))
 			continue
-		if(!iter_border.CanAStarPass(ID, actual_dir, requester) && !(climbing && HAS_TRAIT(iter_border, TRAIT_CLIMBABLE)))
+		if(!iter_border.CanAStarPass(ID, actual_dir, requester) && !(climbing && ai_can_climb(iter_border)))
 			return TRUE
 
 	var/reverse_dir = get_dir(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)
-		if(!iter_object.CanAStarPass(ID, reverse_dir, requester) && !(climbing && HAS_TRAIT(iter_object, TRAIT_CLIMBABLE)))
+		if(!iter_object.CanAStarPass(ID, reverse_dir, requester) && !(climbing && ai_can_climb(iter_object)))
 			return TRUE
 
 	return FALSE

@@ -5,6 +5,7 @@
 		AI_CALLOUT_MELEE = list("Get away from me!", "Back off!", "Leave me alone!", "Don't touch me!", "Somebody help!"),
 		AI_CALLOUT_HURT = list("Help!", "Stop! Please!", "Please, no!", "I'm not armed!"),
 		AI_CALLOUT_DEATH_RATTLE = list("I didn't... even...", "Why...", "I just... worked here...", "Tell them... I tried..."),
+		AI_CALLOUT_GRENADE = list("Bomb!", "It's gonna blow!", "Run!", "Get away from it!"),
 	)
 	chances = list(
 		AI_CALLOUT_MELEE = 50, // they're not ones for fighting, so it's worth a word when they do
@@ -15,6 +16,8 @@
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("Contact!", "We've got company!", "Intruders!", "Hostile spotted!", "Eyes up, we've got one!"),
 		AI_CALLOUT_TAKING_FIRE = list("Taking fire!", "Where's that coming from?!", "Incoming!", "We're under fire!"),
+		AI_CALLOUT_GRENADE = list("Grenade!", "Get clear!", "Explosive!", "Move, move!", "It's gonna blow!"),
+		AI_CALLOUT_THROW_BACK = list("Sending it back!", "Return to sender!", "Catch!", "Throwing it back!"),
 		AI_CALLOUT_HURT = list("Argh!", "I'm hit!", "Damn it!", "I'm bleeding!"),
 		AI_CALLOUT_TARGET_DOWN = list("They're down!", "Got one!", "I think I got 'em!", "Down they go!", "Target's on the ground!"),
 		AI_CALLOUT_TARGET_KILLED = list("Scratch one.", "That's one less.", "They're dead.", "That one's done.", "Not getting back up."),
@@ -58,6 +61,8 @@
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("We got company!", "Hostiles! Get 'em!", "Somebody's poking around!", "Eyes up, crew! Visitors!", "Somebody wandered in!"),
 		AI_CALLOUT_TAKING_FIRE = list("Taking fire!", "Where's that coming from?!", "They're shooting! Get down!", "Incoming, crew!"),
+		AI_CALLOUT_GRENADE = list("Grenade! Scatter, crew!", "Bomb! Get clear!", "Move it, it's live!", "Nade! Off the line!"),
+		AI_CALLOUT_THROW_BACK = list("Sending it back, crew!", "Here, have it back!", "Not on my watch!"),
 		AI_CALLOUT_HURT = list("Argh!", "I'm hit!", "Ah, that one stung!", "Damn it, I'm bleeding!"),
 		AI_CALLOUT_TARGET_DOWN = list("Got one!", "They're down!", "Dropped 'em!", "One down! Keep at it!"),
 		AI_CALLOUT_TARGET_KILLED = list("Scratch one.", "Check 'em for anything good later.", "Shouldn't have got in the way.", "Nobody's paying for that one.", "Should've kept walking."),
@@ -93,6 +98,8 @@
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("Strangers!", "Outsiders! Get them!", "Someone's here!", "Who's there?!", "They've come for our things!"),
 		AI_CALLOUT_TAKING_FIRE = list("They're shooting at us!", "Get down! Get down!", "Bullets! Hide!", "They're attacking!"),
+		AI_CALLOUT_GRENADE = list("Fire-rock! Run!", "It's gonna blow! Away!", "Bomb! Scatter!", "Get away from it!"),
+		AI_CALLOUT_THROW_BACK = list("Take it back!", "Not ours! Yours!", "Back to you!"),
 		AI_CALLOUT_HURT = list("Grah!", "It hurts!", "Argh!", "Gah! It burns!", "Not again...!"),
 		AI_CALLOUT_TARGET_DOWN = list("Got one!", "They're down!", "Down in the dirt!", "They fell!"),
 		AI_CALLOUT_TARGET_KILLED = list("Strip them. Waste nothing.", "Should've stayed away.", "One less mouth out here.", "Nothing goes to waste.", "The wastes can have them."),
@@ -127,6 +134,8 @@
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("Fresh meat!", "Someone's come to die!", "Intruders! Gut them!", "Visitors! Let's give 'em a welcome!", "Look what wandered in!"),
 		AI_CALLOUT_TAKING_FIRE = list("Who's shooting?!", "Find that shooter!", "Someone's got a death wish!", "They're shooting at us! Return fire!"),
+		AI_CALLOUT_GRENADE = list("Frag out, scatter!", "Grenade, break left, break right!", "Live one! Clear the blast!", "Explosive! Move!"),
+		AI_CALLOUT_THROW_BACK = list("Return to sender!", "Your toy, take it back!", "Back at you!"),
 		AI_CALLOUT_HURT = list("Is that all you've got?!", "You'll pay for that!", "Argh!", "That just made me angry!", "Lucky shot!"),
 		AI_CALLOUT_TARGET_DOWN = list("They're on the floor!", "One down!", "Weak.", "Down you go!", "Look at 'em crawl!"),
 		AI_CALLOUT_TARGET_KILLED = list("Too weak to keep breathing.", "Strip them later.", "That's what you get.", "Pathetic.", "Dibs on their gear."),
@@ -168,6 +177,8 @@
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("Halt! Vigilitas Security!", "Unauthorized personnel on site!", "This is a restricted area!", "Security! Stop right there!", "Trespasser on site!"),
 		AI_CALLOUT_TAKING_FIRE = list("Shots fired! Shots fired!", "Taking fire, requesting backup!", "Under fire! Need support!", "They're armed! Taking fire!"),
+		AI_CALLOUT_GRENADE = list("Grenade! Clear the area!", "Explosive device, fall back!", "Ordnance! Disperse!", "Take cover, live grenade!"),
+		AI_CALLOUT_THROW_BACK = list("Returning the device!", "Throwing it back, cover!", "Sending it downrange!"),
 		AI_CALLOUT_HURT = list("I'm hit!", "Agh! That's coming out of my hazard pay!", "Ow! This wasn't in the job posting!", "I'm hurt!"),
 		AI_CALLOUT_TARGET_DOWN = list("Suspect down!", "Suspect is down, keep them covered!", "Suspect's down!", "Got them, stay back!"),
 		AI_CALLOUT_TARGET_KILLED = list("Hostile neutralized.", "Threat eliminated. I'll file the report.", "Suspect neutralized.", "Call it in. Hostile down for good."),
@@ -223,6 +234,8 @@
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("Contact.", "Hostile in sector. Engaging.", "Target acquired.", "Visual.", "Hostile. Engaging."),
 		AI_CALLOUT_TAKING_FIRE = list("Under fire. Locating shooter.", "Incoming.", "Taking fire.", "Contact, under fire."),
+		AI_CALLOUT_GRENADE = list("Grenade. Clear.", "Explosive. Move.", "Ordnance, disperse."),
+		AI_CALLOUT_THROW_BACK = list("Returning it.", "Handled.", "Sending it back."),
 		AI_CALLOUT_HURT = list("Hit. Still in it.", "Armor's holding.", "Hit. Continuing.", "Minor wound."),
 		AI_CALLOUT_TARGET_DOWN = list("Target down.", "Hostile incapacitated.", "Down.", "Target's on the floor."),
 		AI_CALLOUT_TARGET_KILLED = list("Liability removed.", "Target eliminated.", "That's billable.", "Confirmed.", "Contract terms met."),
@@ -245,4 +258,20 @@
 		AI_MORALE_EMBOLDENED = list(
 			AI_CALLOUT_TAUNT = list("This won't take long.", "Clean this up."),
 		),
+	)
+
+// the Supercollider, stimmed up and half feral, in it for the hurting more than the job
+/datum/ai_callout_set/human/ramzi/supercollider
+	lines = list(
+		AI_CALLOUT_SPOTTED = list("There you are!", "I see you...", "Mine! That one's mine!", "Come here! Come HERE!", "Oh, you'll do nicely!"),
+		AI_CALLOUT_TAUNT = list("Run! I like it when they run!", "Hold still!", "I can hear your heart going!", "Nowhere left to hide!", "I'm going to break every bone you've got!"),
+		AI_CALLOUT_MELEE = list("CRACK!", "Again! AGAIN!", "Break!", "Hah!", "Scream for me!"),
+		AI_CALLOUT_HURT = list("More! Give me more!", "That tickles!", "Hah! Is that it?!", "I don't feel a thing!", "Yes! YES!"),
+		AI_CALLOUT_TARGET_DOWN = list("Get up! I'm not done!", "Down you go!", "Crawl! Go on, crawl!", "Not yet, not yet..."),
+		AI_CALLOUT_TARGET_KILLED = list("Too quick...", "Next!", "Broke that one.", "Who's next?!", "Aw, it stopped moving."),
+		AI_CALLOUT_ALLY_DOWN = list("Weak!", "More for me!", "Should've been faster!", "Their loss!"),
+		AI_CALLOUT_LOST_THEM = list("Come out, come out!", "I'll find you!", "I can smell you!", "Hiding won't save you!"),
+		AI_CALLOUT_PUSHING = list("Here I come!", "Coming for you!", "Out of my way!", "RAAAAH!"),
+		AI_CALLOUT_GRENADE = list("Ooh, a loud one!", "Fireworks!", "Hah, boom!"),
+		AI_CALLOUT_DEATH_RATTLE = list("Not... done...", "More...", "Hah... hah...", "Worth it..."),
 	)

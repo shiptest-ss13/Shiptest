@@ -26,8 +26,8 @@
 /datum/element/ai_reacts_to_harm/proc/on_shot(mob/source, obj/projectile/projectile)
 	SIGNAL_HANDLER
 	var/datum/ai_controller/controller = source.ai_controller
-	if(!controller || !projectile.starting)
-		return
+	if(!controller || !projectile.starting || !ai_is_shooter(projectile.firer))
+		return // shrapnel from a grenade isn't anyone to shoot back at, the blast's heard and the hurt's on_hurt()'s
 	controller.clear_blackboard_key(BB_BASIC_MOB_SHOT_NEAR_MISS) // it hit us
 	shot_at(source, controller, projectile)
 
@@ -35,8 +35,8 @@
 /datum/element/ai_reacts_to_harm/proc/on_near_miss(mob/source, obj/projectile/projectile)
 	SIGNAL_HANDLER
 	var/datum/ai_controller/controller = source.ai_controller
-	if(!controller || source.stat == DEAD || !projectile.starting || controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] == world.time)
-		return // the same shot passes us a tile at a time, or it's hit us just now
+	if(!controller || source.stat == DEAD || !projectile.starting || controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] == world.time || !ai_is_shooter(projectile.firer))
+		return
 	var/atom/shooter = projectile.firer
 	var/mob/living/living_source = source
 	if(shooter == source || (istype(living_source) && isliving(shooter) && living_source.faction_check_mob(shooter)))

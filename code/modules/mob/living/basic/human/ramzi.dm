@@ -15,6 +15,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi
 	callout_set = /datum/ai_callout_set/human/ramzi
 	flashlight_chance = 50
+	throw_back_chance = 10 // drilled for it
 	armor_base = /obj/item/clothing/suit/armor/vest/syndie
 
 /mob/living/basic/human/ramzi/space
@@ -254,6 +255,7 @@
 /mob/living/basic/human/ramzi/melee/space/stormtrooper/sledge
 	melee_knockback = 3
 	name = "Ramzi Clique Supercollider"
+	callout_set = /datum/ai_callout_set/human/ramzi/supercollider
 	desc = "Rapid, practiced motions permeate the body underneath the crimson suit of this radiantly hateful being. Each one ripples to the surface, the eyes of a suit tracking you as it brings a sledgehammer to bear."
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"

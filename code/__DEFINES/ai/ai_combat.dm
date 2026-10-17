@@ -11,6 +11,7 @@
 // The start and end every human NPC's plan shares, so a subtree all of them need goes in once
 ///Getting out of bad air, heading home, calling out what we've seen, and falling back when our nerve's gone, before anything else
 #define AI_HUMAN_PLANNING_OPENING \
+	/datum/ai_planning_subtree/flee_explosives, \
 	/datum/ai_planning_subtree/seek_safe_environment, \
 	/datum/ai_planning_subtree/return_home/human, \
 	/datum/ai_planning_subtree/call_allies, \
@@ -50,7 +51,7 @@
 #define AI_DEFAULT_ENGAGE_DISTANCE 6
 
 // How much a mob moves about in a fight
-///Holds its ground, like someone lugging a machine gun or lining up a sniper shot
+///Holds its ground, like someone lugging a machine gun or lining up a sniper shot, or wearing heavy gear
 #define AI_MOBILITY_LOW 1
 #define AI_MOBILITY_NORMAL 2
 ///Always on the move, darting about and jinking out of the way
@@ -112,6 +113,10 @@
 #define AI_CALLOUT_MELEE "melee"
 ///Lost its nerve and is falling back
 #define AI_CALLOUT_BROKEN "broken"
+///Saw an explosive about to go off nearby, and is getting clear
+#define AI_CALLOUT_GRENADE "grenade"
+///Throwing a grenade back where it came from
+#define AI_CALLOUT_THROW_BACK "throw_back"
 ///Pulled itself together after breaking
 #define AI_CALLOUT_RALLIED "rallied"
 ///Whispered with its last breath
@@ -131,13 +136,20 @@
 // How far AI with /datum/element/ai_hears_gunfire hears gunshots, in tiles. Walls can muffle sounds. Guns can set their own, see gunfire_hearing_range and suppressed_gunfire_hearing_range
 #define AI_GUNFIRE_HEARING_RANGE 12
 ///Lasers are quieter than an unsuppressed gunshot
-#define AI_LASER_HEARING_RANGE 7
+#define AI_LASER_HEARING_RANGE 8
 ///Suppressed shots carry this many times less far, as a divisor
 #define AI_SUPPRESSED_HEARING_REDUCTION 3
 ///A shooter firing from the same spot, no louder, alerts mobs at most this often, so automatic fire isn't a scan per shot
 #define AI_GUNFIRE_ALERT_COOLDOWN (2 SECONDS)
 ///Each wall between an AI mob and something it's trying to hear counts as this many more tiles of distance
 #define AI_HEARING_WALL_PENALTY 3
+// How many shots an AI with an automatic gun fires in a volley, if its type doesn't ask for more
+#define AI_AUTOMATIC_BURST_SHOTS 4
+// The least fuse a grenade can have left for AI to try throwing it back, rather than it going off in their hand
+#define AI_THROW_BACK_MINIMUM_FUSE (1.5 SECONDS)
+// How far AI hears an explosion, in tiles, before adding twice its biggest blast range, and how close to it someone has to be for AI to go looking for them
+#define AI_EXPLOSION_HEARING_RANGE 12
+#define AI_EXPLOSION_SUSPECT_RANGE 4
 
 ///Below this much light, as from /turf/proc/get_lumcount(), AI only makes someone out up close, see ai_can_see()
 #define AI_DARKNESS_THRESHOLD SHADOW_SPECIES_LIGHT_THRESHOLD

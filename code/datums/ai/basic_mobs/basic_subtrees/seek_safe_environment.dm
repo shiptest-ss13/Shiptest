@@ -49,7 +49,7 @@
 				ai_callout(basic_mob, AI_CALLOUT_TOO_HOT)
 			if(AI_ENVIRONMENT_TOO_COLD)
 				ai_callout(basic_mob, AI_CALLOUT_TOO_COLD)
-			else
+			if(AI_ENVIRONMENT_UNBREATHABLE)
 				ai_callout(basic_mob, AI_CALLOUT_BAD_AIR)
 		AI_LOG_DECISION(controller, "seek_safe_environment: it's not safe here, heading for [safe_turf]")
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_SAFE_TURF)

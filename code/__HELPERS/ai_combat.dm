@@ -72,3 +72,7 @@
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[targetting_datum_key]
 	if(QDELETED(target) || !targetting_datum || !targetting_datum.can_attack(controller.pawn, target))
 		controller.clear_blackboard_key(target_key)
+
+// so we don't try to shoot a grenade
+/proc/ai_is_shooter(atom/firer)
+	return ismob(firer) || ismecha(firer) || istype(firer, /obj/machinery/porta_turret)

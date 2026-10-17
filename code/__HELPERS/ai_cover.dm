@@ -49,7 +49,10 @@
 
 // whether thing stops a shot with pass_flags
 /proc/blocks_shot_on_tile(obj/thing, pass_flags)
-	return thing.density && !(thing.flags_1 & ON_BORDER_1) && !(thing.pass_flags_self & pass_flags) && !ai_is_cover(thing)
+	if(!thing.density || (thing.flags_1 & ON_BORDER_1) || (thing.pass_flags_self & pass_flags) || ai_is_cover(thing))
+		return FALSE
+	// a door you can see through lets through shots that pass glass, as /obj/machinery/door/CanAllowThrough() does, so a glass airlock's no cover from lasers
+	return !(istype(thing, /obj/machinery/door) && !thing.opacity && (pass_flags & PASSGLASS))
 
 // more edge blocker handling
 /proc/get_edge_shot_blocker(turf/from_turf, turf/to_turf, pass_flags)
@@ -159,14 +162,14 @@
 		return FALSE // walls and the like, or we're not firing anything that'd break it
 	if(breaking_would_vent(shooter, blocker))
 		return FALSE // dont vent if we cant survive it!!!
-	var/shots_needed = shots_to_break(blocker, projectile_type)
+	var/shots_needed = shots_to_break(blocker, projectile_type, shooter)
 	if(isnull(shots_needed))
 		return FALSE
 	var/pass_flags = initial(projectile_type.pass_flags)
 	for(var/obj/thing in get_turf(blocker))
 		if(thing == blocker || !blocks_shot_on_tile(thing, pass_flags))
 			continue
-		var/more_shots = shots_to_break(thing, projectile_type)
+		var/more_shots = shots_to_break(thing, projectile_type, shooter)
 		if(isnull(more_shots))
 			return FALSE
 		shots_needed += more_shots
@@ -174,9 +177,9 @@
 	return shots_needed <= min(AI_MAX_SHOTS_THROUGH_COVER, magazine?.magazine_size || AI_MAX_SHOTS_THROUGH_COVER)
 
 // how many shots it'd take to break thing as it is now, after its armour, the way /obj/bullet_act() does it. Null if we can't or shouldn't
-/proc/shots_to_break(obj/thing, obj/projectile/projectile_type)
-	if(ai_is_door(thing))
-		return null // there's a quicker way through a door than shooting it down
+/proc/shots_to_break(obj/thing, obj/projectile/projectile_type, mob/living/shooter)
+	if(ai_is_door(thing) && (!shooter || thing.CanAStarPass(shooter.ai_controller?.get_access(), get_dir(shooter, thing), shooter)))
+		return null // there's a quicker way through a door we can open than shooting it down, but not one that's locked to us
 	if(thing.resistance_flags & INDESTRUCTIBLE)
 		return null
 	var/damage_type = initial(projectile_type.damage_type)

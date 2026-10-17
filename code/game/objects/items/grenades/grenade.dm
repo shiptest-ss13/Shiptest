@@ -91,6 +91,7 @@
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	SEND_SIGNAL(src, COMSIG_GRENADE_ARMED, det_time, delayoverride)
+	ai_note_live_explosive(src, ai_grenade_danger_radius(src), isnull(delayoverride)? det_time : delayoverride) // notify nearby mobs/AI
 	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/proc/prime()

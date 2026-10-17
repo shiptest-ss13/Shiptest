@@ -34,12 +34,16 @@
 			INVOKE_ASYNC(src, PROC_REF(pry_firelock), source, firelock)
 
 /datum/element/ai_door_opener/proc/pry_firelock(mob/living/source, obj/machinery/door/firedoor/firelock)
-	if(firelock.is_holding_pressure() && !ai_safe_to_vent(source))
+	var/holding_pressure = firelock.is_holding_pressure()
+	if(holding_pressure && !ai_safe_to_vent(source, firelock))
 		return
-	if(!do_after(source, 3 SECONDS, firelock))
+	// as long as a player with a crowbar takes, see /obj/machinery/door/firedoor/try_to_crowbar(): no time at all, unless there's air behind it
+	if(holding_pressure && !do_after(source, 2 SECONDS, firelock))
 		return
-	if(!firelock.density || firelock.welded || firelock.operating || (firelock.is_holding_pressure() && !ai_safe_to_vent(source)))
+	if(!firelock.density || firelock.welded || firelock.operating || (firelock.is_holding_pressure() && !ai_safe_to_vent(source, firelock)))
 		return // things changed while we were at it
+	if(holding_pressure)
+		firelock.whack_a_mole() // nearby firelocks slam shut to box the leak in, as they do for a player
 	firelock.emergency_close_timer = world.time + 6 SECONDS // so it doesn't snap shut again instantly
 	firelock.open()
 

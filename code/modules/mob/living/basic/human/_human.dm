@@ -14,8 +14,7 @@
 
 	maxHealth = 100
 	health = 100
-	// about as quick as the hostile simplehumans they replace, which chased at 0.3 seconds a tile
-	speed = 1 // a touch quicker than a running player, see RUN_DELAY, so they can be run down, plus whatever our outfit slows us by, see Initialize()
+	speed = 1.5 // same RUN_DELAY as a running player, slightly slower than the simplemobs used to be I think
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -84,6 +83,8 @@
 	var/aim_spread = 5
 	/// Extra spread on our first volley at someone, before we've settled our aim on them
 	var/first_contact_spread = 10
+	/// Percent chance we throw a grenade that lands by us back, rather than running from it
+	var/throw_back_chance = 5
 	/// If TRUE, the mob sprays fire with a flamethrower rather than firing a gun
 	var/fires_flames = FALSE
 	/// If TRUE, the mob holds their fire when one of theirs is in the way
@@ -118,6 +119,8 @@
 	var/stat_attack = CONSCIOUS
 	/// How far the mob sees targets from. Null leaves it to their AI
 	var/vision_range
+	/// How far from home the mob chases someone before letting them go, twice that while they're fighting. 0 for no leash. Null leaves it to their AI
+	var/leash_distance
 	/// If FALSE, the mob stands still rather than wandering about when there's nothing to do, like sentries
 	var/wander = TRUE
 	/// If TRUE, the mob doesn't fight, but runs and shouts for help instead
@@ -145,6 +148,9 @@
 	// what we wear and carry slows us as much as it would a player: a hardsuit, or a heavy gun held ready
 	var/extra_slowdown = mob_spawner ? get_spawner_slowdown(mob_spawner) : 0
 	var/obj/item/gun/gun_type = get_gun_type()
+	if(!gun_type)
+		// those who fight up close have to catch people, so armour never slows them below a running player
+		extra_slowdown = min(extra_slowdown, max(0, CONFIG_GET(number/movedelay/run_delay) - speed))
 	if(gun_type)
 		extra_slowdown += initial(gun_type.wield_slowdown)
 	if(extra_slowdown)
@@ -168,12 +174,12 @@
 	setup_weapon()
 	setup_ai()
 
-/mob/living/basic/human/Life(seconds_per_tick = SSMOBS_DT, times_fired)
+// pressure check for damage
+/mob/living/basic/human/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
 	. = ..()
 	if(stat == DEAD || pressure_sealed || !isturf(loc))
 		return
-	var/datum/gas_mixture/air = loc.return_air()
-	if((air ? air.return_pressure() : 0) < HAZARD_LOW_PRESSURE)
+	if(environment.return_pressure() < HAZARD_LOW_PRESSURE)
 		adjustBruteLoss(LOW_PRESSURE_DAMAGE)
 
 /mob/living/basic/human/InitializeAIController()
@@ -266,7 +272,16 @@
 	if(isnull(shot_spread))
 		shot_spread = gun_type ? initial(gun_type.spread) : 2
 	shot_spread = max(shot_spread, 0) + aim_spread
-	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, burst_shots, burst_interval, ranged_cooldown, shot_spread, first_contact_spread)
+	var/volley_shots = burst_shots
+	var/volley_interval = burst_interval
+	var/list/fire_pattern = get_gun_fire_pattern(gun_type)
+	if(fire_pattern)
+		volley_interval = fire_pattern[2]
+		var/obj/item/ammo_casing/casing = casing_type
+		if(!ispath(casing) || initial(casing.pellets) <= 1)
+			volley_shots = max(volley_shots, fire_pattern[1]) // not for shotguns, bursting would be horrifying
+
+	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, volley_shots, volley_interval, ranged_cooldown, shot_spread, first_contact_spread)
 	if(gun_type)
 		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading
 
@@ -344,6 +359,9 @@
 /mob/living/basic/human/proc/setup_ai_blackboard()
 	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
+	if(!isnull(leash_distance))
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE, leash_distance)
+	ai_controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_CHANCE, noncombatant ? 0 : throw_back_chance) // civilians just run
 	if(mob_spawner && spawner_has_jetpack(mob_spawner))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
 	if(!casing_type && !projectile_type)
@@ -455,6 +473,13 @@
 
 /mob/living/basic/human/vv_edit_var(var_name, var_value)
 	switch(var_name)
+		if(NAMEOF(src, leash_distance))
+			. = ..()
+			if(isnull(leash_distance))
+				ai_controller?.clear_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE)
+			else
+				ai_controller?.set_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE, leash_distance) // so it takes effect on a mob that's already about
+			return
 		if(NAMEOF(src, armor_base))
 			if(ispath(var_value, /obj/item/clothing))
 				armor = get_clothing_armor(var_value)
@@ -462,6 +487,27 @@
 				return TRUE
 			return FALSE
 	return ..()
+
+
+/// How a gun of this type fires in a burst, as list(shots, time between them) or null
+/proc/get_gun_fire_pattern(gun_type)
+	var/static/list/pattern_by_type = list()
+	if(!ispath(gun_type, /obj/item/gun))
+		return null
+	if(gun_type in pattern_by_type)
+		return pattern_by_type[gun_type]
+	var/obj/item/gun/gun = new gun_type
+	var/list/pattern
+	var/list/modes = gun.gun_firemodes
+	// a gun that never set its own modes has every one of them, which isn't it being automatic
+	if(!(FIREMODE_OTHER_TWO in modes))
+		if(FIREMODE_FULLAUTO in modes)
+			pattern = list(AI_AUTOMATIC_BURST_SHOTS, gun.fire_delay)
+		else if(FIREMODE_BURST in modes)
+			pattern = list(gun.burst_size, gun.burst_delay)
+	qdel(gun)
+	pattern_by_type[gun_type] = pattern
+	return pattern
 
 /// The attachments a gun of this type spawns with, worked out by making one, once per type, and remembered
 /proc/get_gun_default_attachments(gun_type)

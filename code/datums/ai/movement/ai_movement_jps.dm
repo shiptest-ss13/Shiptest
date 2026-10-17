@@ -54,6 +54,8 @@
 			var/turf/new_turf = get_turf(movable_pawn)
 			if(new_turf == old_turf && try_climb(controller, movable_pawn, next_step))
 				continue // over whatever's in the way, like a player would, rather than looking for another way round
+			if(new_turf == old_turf)
+				bump_door_in_the_way(movable_pawn, next_step)
 			if(new_turf == next_step)
 				controller.movement_path.Cut(1,2)
 				controller.pathing_attempts = 0
@@ -165,15 +167,28 @@
 	controller.movement_cooldown = world.time + 0.5 SECONDS // checked on again soon, and held up while the climb's going by the check above
 	return TRUE
 
+// for cases when someone is stood in a doorway, but there's still viable doors they can bump into other than the door, like firelocks
+/datum/ai_movement/jps/proc/bump_door_in_the_way(atom/movable/mover, turf/next_step)
+	var/turf/our_turf = get_turf(mover)
+	var/step_dir = get_dir(our_turf, next_step)
+	for(var/obj/machinery/door/door in our_turf)
+		if(door.density && (door.flags_1 & ON_BORDER_1) && (door.dir & step_dir))
+			mover.Bump(door)
+			return
+	for(var/obj/machinery/door/door in next_step)
+		if(door.density && (!(door.flags_1 & ON_BORDER_1) || (door.dir & REVERSE_DIR(step_dir))))
+			mover.Bump(door)
+			return
+
 // the climbable thing in the way of stepping from where mover is onto next_step, like sandbags on it or a railing on the edge between
 /datum/ai_movement/jps/proc/get_climb_blocker(atom/movable/mover, turf/next_step)
 	var/turf/our_turf = get_turf(mover)
 	var/step_dir = get_dir(our_turf, next_step)
 	for(var/obj/thing in our_turf)
-		if((thing.flags_1 & ON_BORDER_1) && thing.density && (thing.dir & step_dir) && HAS_TRAIT(thing, TRAIT_CLIMBABLE))
+		if((thing.flags_1 & ON_BORDER_1) && thing.density && (thing.dir & step_dir) && ai_can_climb(thing))
 			return thing
 	for(var/obj/thing in next_step)
-		if(!thing.density || !HAS_TRAIT(thing, TRAIT_CLIMBABLE))
+		if(!thing.density || !ai_can_climb(thing))
 			continue
 		if(!(thing.flags_1 & ON_BORDER_1) || (thing.dir & REVERSE_DIR(step_dir)))
 			return thing

@@ -7,6 +7,8 @@
 	var/last_needed = 0
 	//if TRUE, we drop it when we die, for lights our corpse wouldn't otherwise have
 	var/drops_on_death = FALSE
+	//TRUE while we check on it every life tick, only from when there's a fight until the light's back off, so a mob with nobody about costs nothing
+	var/ticking = FALSE
 
 /datum/component/ai_flashlight/Initialize(light_type = /obj/item/flashlight/seclite, drops_on_death = FALSE)
 	. = ..()
@@ -21,7 +23,6 @@
 
 /datum/component/ai_flashlight/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_LIVING_LIFE, PROC_REF(update_flashlight))
 	RegisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(BB_BASIC_MOB_CURRENT_TARGET), PROC_REF(update_flashlight))
 	RegisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(BB_BASIC_MOB_LAST_SHOT_TIME), PROC_REF(on_shot_at))
 	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(on_death))
@@ -43,12 +44,25 @@
 	var/datum/ai_controller/controller = basic_mob.ai_controller
 	if(basic_mob.client || !controller || basic_mob.stat != CONSCIOUS)
 		set_light_on(FALSE) // whoever's in control can see to it themselves
+		set_ticking(FALSE)
 		return
 	if(needs_light(controller))
 		last_needed = world.time
 		set_light_on(TRUE)
 	else if(light.on && world.time - last_needed > quiet_time)
 		set_light_on(FALSE)
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	set_ticking(light.on || !QDELETED(target) || world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < quiet_time)
+
+// only checking on the light every life tick while it might be needed, as most mobs spend most of their time with nobody about
+/datum/component/ai_flashlight/proc/set_ticking(should_tick)
+	if(ticking == should_tick)
+		return
+	ticking = should_tick
+	if(ticking)
+		RegisterSignal(parent, COMSIG_LIVING_LIFE, PROC_REF(update_flashlight))
+	else
+		UnregisterSignal(parent, COMSIG_LIVING_LIFE)
 
 // fighting or looking for someone, and somewhere it matters is dark, like where we are, or where they are or were last
 /datum/component/ai_flashlight/proc/needs_light(datum/ai_controller/controller)

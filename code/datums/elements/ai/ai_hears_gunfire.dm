@@ -3,6 +3,7 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 
 /datum/element/ai_hears_gunfire
 	element_flags = ELEMENT_DETACH
+	var/listening_for_explosions = FALSE
 
 /datum/element/ai_hears_gunfire/Attach(datum/target)
 	. = ..()
@@ -10,6 +11,10 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 		return ELEMENT_INCOMPATIBLE
 	ADD_TRAIT(target, TRAIT_AI_HEARS_GUNFIRE, ELEMENT_TRAIT(type))
 	GLOB.ai_gunfire_listeners |= target
+	// the element's shared, so one listener for everyone. Left registered, as it costs nothing with nobody to tell
+	if(!listening_for_explosions)
+		listening_for_explosions = TRUE
+		RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(on_explosion))
 
 /datum/element/ai_hears_gunfire/Detach(datum/source, ...)
 	REMOVE_TRAIT(source, TRAIT_AI_HEARS_GUNFIRE, ELEMENT_TRAIT(type))
@@ -54,6 +59,31 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 		var/heard_distance = get_heard_distance(origin, listener, hearing_range, AI_HEARING_WALL_PENALTY)
 		if(!isnull(heard_distance))
 			ai_hear_gunfire(listener, shooter, origin, heard_distance)
+
+// an explosion has ogne off, go hear it
+/datum/element/ai_hears_gunfire/proc/on_explosion(datum/source, atom/epicenter, devastation_range, heavy_impact_range, light_impact_range)
+	SIGNAL_HANDLER
+	var/turf/origin = get_turf(epicenter)
+	if(!origin)
+		return
+	var/hearing_range = AI_EXPLOSION_HEARING_RANGE + max(devastation_range, heavy_impact_range, light_impact_range) * 2
+	var/list/near_the_blast = list()
+	for(var/mob/living/someone in range(AI_EXPLOSION_SUSPECT_RANGE, origin))
+		if(someone.stat != DEAD)
+			near_the_blast += someone
+	if(!length(near_the_blast))
+		return
+	for(var/mob/living/listener as anything in GLOB.ai_gunfire_listeners)
+		if(QDELETED(listener) || listener.z != origin.z || get_dist(listener, origin) > hearing_range)
+			continue
+		var/heard_distance = get_heard_distance(origin, listener, hearing_range, AI_HEARING_WALL_PENALTY)
+		if(isnull(heard_distance))
+			continue
+		var/datum/targetting_datum/targetting_datum = listener.ai_controller?.blackboard[BB_TARGETTING_DATUM]
+		for(var/mob/living/suspect as anything in near_the_blast)
+			if(suspect != listener && targetting_datum?.can_attack(listener, suspect))
+				ai_hear_gunfire(listener, suspect, origin, heard_distance)
+				break
 
 // goes after someone we heard shooting, if they're an enemy and we're not busy. heard_distance is how far away it sounded, walls and all
 /proc/ai_hear_gunfire(mob/living/listener, mob/living/shooter, turf/origin, heard_distance)
