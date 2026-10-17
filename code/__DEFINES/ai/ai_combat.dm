@@ -146,6 +146,9 @@
 #define AI_HEARING_WALL_PENALTY 3
 // How many shots an AI with an automatic gun fires in a volley, if its type doesn't ask for more
 #define AI_AUTOMATIC_BURST_SHOTS 4
+// How much more to reduce the firerate of AI, and it's minimum interval
+#define AI_VOLLEY_INTERVAL_MULTIPLIER 1.15
+#define AI_MINIMUM_VOLLEY_INTERVAL (0.15 SECONDS)
 // How fast melee mobs move, whatever they're wearing, a touch slower than a running player, see RUN_DELAY
 #define AI_MELEE_MOVE_DELAY 1.8
 // The least fuse a grenade can have left for AI to try throwing it back, rather than it going off in their hand

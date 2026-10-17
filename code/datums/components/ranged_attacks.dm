@@ -162,13 +162,13 @@
 		return // no more clear shot so stop shooting
 	firer.RangedAttack(target || fallback_turf)
 
-/datum/component/ranged_attacks/proc/try_start_volley(blind_fire = FALSE)
+// aimed or blind, every volley waits out the same cooldown, so firing blind on top of aimed fire doesn't double how fast we shoot
+/datum/component/ranged_attacks/proc/try_start_volley()
 	if(!cooldown_time)
 		return TRUE
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return FALSE
-	if(!blind_fire)
-		COOLDOWN_START(src, fire_cooldown, cooldown_time)
+	COOLDOWN_START(src, fire_cooldown, cooldown_time)
 	return TRUE
 
 // what our shots get through, like glass for lasers, for AI working out if it's got a clear shot

@@ -276,7 +276,7 @@
 	var/volley_interval = burst_interval
 	var/list/fire_pattern = get_gun_fire_pattern(gun_type)
 	if(fire_pattern)
-		volley_interval = fire_pattern[2]
+		volley_interval = max(fire_pattern[2] * AI_VOLLEY_INTERVAL_MULTIPLIER, AI_MINIMUM_VOLLEY_INTERVAL)
 		var/obj/item/ammo_casing/casing = casing_type
 		if(!ispath(casing) || initial(casing.pellets) <= 1)
 			volley_shots = max(volley_shots, fire_pattern[1]) // not for shotguns, bursting would be horrifying

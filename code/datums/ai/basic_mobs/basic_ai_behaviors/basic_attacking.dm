@@ -231,7 +231,7 @@
 		aim = guess_sound_origin(spot, clamp(round(get_dist(basic_mob, spot) / 4), 1, 3))
 		if(aim != spot && !can_fire_blind_at(basic_mob, aim, ranged_attack, pass_flags))
 			aim = spot
-	if(!ranged_attack.try_start_volley(blind_fire = TRUE))
+	if(!ranged_attack.try_start_volley())
 		return AI_BEHAVIOR_DELAY
 	ranged_attack.fire_volley(aim, shots, burst_interval)
 	return AI_BEHAVIOR_DELAY
