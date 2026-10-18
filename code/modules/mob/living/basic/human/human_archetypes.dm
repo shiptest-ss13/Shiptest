@@ -3,7 +3,7 @@
 // Human mobs get one from their gun, or their type sets ai_controller.
 // The mob's own range, retreat_distance, still wins over the ones here
 
- // hangs back behind cover, retreats if approached, doesnt flank often, holds aiming at last seen position
+// hangs back behind cover, retreats if approached, doesnt flank often, holds aiming at last seen position
 /datum/ai_controller/basic_controller/human/ranged/marksman
 	blackboard = list(
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
@@ -75,7 +75,7 @@
 /datum/ai_planning_subtree/fighting_cover/when_outmatched
 	fights_from_cover_unprovoked = FALSE
 
- // would rather dig in behind cover and lay down fire
+// would rather dig in behind cover and lay down fire
 /datum/ai_controller/basic_controller/human/ranged/support_gunner
 	blackboard = list(
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,

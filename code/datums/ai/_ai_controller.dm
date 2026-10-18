@@ -279,9 +279,9 @@ multiple modular subtrees with behaviors
 		walk(pawn, 0) //stop moving
 		ai_movement.stop_moving_towards(src) // and our ai_movement too, or it keeps moving us
 		return //this should remove them from processing in the future through event-based stuff.
-	if(!LAZYLEN(current_behaviors) && idle_behavior)
-		idle_behavior.perform_idle_behavior(seconds_per_tick, src) //Do some stupid shit while we have nothing to do
-		return
+	if(!LAZYLEN(current_behaviors))
+		idle_behavior?.perform_idle_behavior(seconds_per_tick, src) //Do some stupid shit while we have nothing to do
+		return // nothing to do, and those that stay put, like sentries, don't even have that
 
 	if(current_movement_target && get_dist(pawn, current_movement_target) > max_target_distance) //The distance is out of range
 		CancelActions()

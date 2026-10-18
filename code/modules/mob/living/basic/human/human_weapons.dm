@@ -68,8 +68,8 @@
 			volley_shots = max(volley_shots, fire_pattern[1]) // not for shotguns, bursting would be horrifying
 
 	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, volley_shots, volley_interval, ranged_cooldown, shot_spread, first_contact_spread)
-	if(gun_type)
-		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading
+	if(gun_type && get_gun_capacity(gun_type))
+		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading, if it's got rounds or charge to count
 
 // mobility based on weapon type
 /mob/living/basic/human/proc/pick_mobility()
