@@ -94,7 +94,7 @@
 	var/mob/living/basic/basic_mob = parent
 	if(!spot || (locate(/mob/living) in spot) || LAZYLEN(basic_mob.do_afters))
 		return FALSE // or mid-climb, or anything else that moving would cancel
-	if(spot.is_blocked_turf(TRUE, basic_mob) || is_ai_hazard_turf(spot))
+	if(spot.is_blocked_turf(TRUE, basic_mob) || is_ai_hazard_turf(spot) || ai_diagonal_crosses_hazard(get_turf(basic_mob), spot))
 		return FALSE // cancel the entire dodge if it can't complete the full move, so it doesnt do a half move
 	swerving = TRUE
 	if(basic_mob.ai_controller)

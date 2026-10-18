@@ -55,6 +55,12 @@
 /proc/is_bare_space(turf/spot)
 	return isspaceturf(spot) && !(locate(/obj/structure/lattice) in spot)
 
+// do hazard check on diagonal steps too, as its actually two steps
+/proc/ai_diagonal_crosses_hazard(turf/start, turf/finish)
+	if(!start || !finish || start.x == finish.x || start.y == finish.y)
+		return FALSE
+	return is_ai_hazard_turf(locate(finish.x, start.y, start.z)) || is_ai_hazard_turf(locate(start.x, finish.y, start.z))
+
 /proc/is_ai_hazard_turf(turf/spot)
 	if(istype(spot, /turf/open/chasm))
 		return !HAS_TRAIT(spot, TRAIT_CHASM_STOPPED)

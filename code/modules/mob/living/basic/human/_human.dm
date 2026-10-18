@@ -326,7 +326,7 @@
 		return TRUE
 	return ..()
 
-// basic mobs keep their speed as basicmob_varspeed, but /mob/living/Initialize() also applies the same speed var as living_varspeed, which counts it twice. Only fixed for us, as other basic mobs are balanced around it
+// basic mobs keep their speed as basicmob_varspeed, but /mob/living/Initialize() also applies the same speed var as living_varspeed, which counts it twice. Only fixed for humans, as other basic mobs are balanced around it
 /mob/living/basic/human/update_living_varspeed()
 	remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
 
@@ -514,6 +514,8 @@
 			pattern = list(AI_AUTOMATIC_BURST_SHOTS, gun.fire_delay)
 		else if(FIREMODE_BURST in modes)
 			pattern = list(gun.burst_size, gun.burst_delay)
+	if(!pattern && (istype(gun, /obj/item/gun/ballistic/automatic/pistol) || istype(gun, /obj/item/gun/ballistic/revolver) || (istype(gun, /obj/item/gun/energy) && gun.w_class <= WEIGHT_CLASS_SMALL)))
+		pattern = list(AI_HANDGUN_VOLLEY_SHOTS, gun.fire_delay) // a single-shot handgun, fired as quick as its trigger allows
 	qdel(gun)
 	pattern_by_type[gun_type] = pattern
 	return pattern

@@ -118,6 +118,8 @@
 	var/turf/next_step = get_step_towards(movable_pawn, goal_turf)
 	if(!next_step || (next_step != goal_turf && !direct_line_clear(controller, movable_pawn, next_step, goal_turf)))
 		return FALSE // edge case L shaped things mitigation
+	if(!direct_line_clear(controller, movable_pawn, our_turf, next_step))
+		return FALSE // the step itself, as it needn't be on the line we checked, like a diagonal into lava
 	take_step(controller, movable_pawn, next_step)
 	if(get_turf(movable_pawn) == our_turf)
 		return FALSE
@@ -148,6 +150,8 @@
 			var/turf/second_side = locate(previous.x, line_turf.y, line_turf.z)
 			if(first_side?.is_blocked_turf(TRUE, movable_pawn) && second_side?.is_blocked_turf(TRUE, movable_pawn))
 				return FALSE
+			if(is_ai_hazard_turf(first_side) || is_ai_hazard_turf(second_side))
+				return FALSE // we'd cut through it on the way, as a diagonal step is really two
 		previous = line_turf
 	return TRUE
 
@@ -266,7 +270,7 @@
 	var/step_dir = get_dir(mover_turf, spot)
 	for(var/direction in list(turn(step_dir, 90), turn(step_dir, -90), turn(step_dir, 45), turn(step_dir, -45), step_dir))
 		var/turf/aside = get_step(spot, direction)
-		if(!aside || aside == mover_turf || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside))
+		if(!aside || aside == mover_turf || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside) || ai_diagonal_crosses_hazard(spot, aside))
 			continue
 		if(spot.LinkBlockedWithAccess(aside, ally))
 			continue

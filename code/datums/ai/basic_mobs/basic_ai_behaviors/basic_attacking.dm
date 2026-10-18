@@ -166,7 +166,7 @@
 		var/turf/target_turf = get_step(our_turf, direction)
 		if(isnull(target_turf))
 			continue
-		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf) || get_dist(target_turf, target) > get_dist(living_pawn, target))
+		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf) || ai_diagonal_crosses_hazard(our_turf, target_turf) || get_dist(target_turf, target) > get_dist(living_pawn, target))
 			continue
 		possible_turfs += target_turf
 

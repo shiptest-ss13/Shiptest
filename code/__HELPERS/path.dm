@@ -43,7 +43,7 @@
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
 // cheapest checks first, with the hazard and air caches looked at here before calling out to fill them, as this gets called millions of times. Adjacent() is only for diagonals, to not cut corners, as LinkBlockedWithAccess() covers what's on the edges of a straight step
-#define CAN_STEP(cur_turf, next) (next && !next.density && (next != avoid) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !(avoid_hazards && (isnull(hazard_cache[next]) ? hazard_at(next) : hazard_cache[next])) && !(avoid_bad_air && (isnull(bad_air_cache[next]) ? bad_air_at(next) : bad_air_cache[next])) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing, src) && (cur_turf.x == next.x || cur_turf.y == next.y || cur_turf.Adjacent(next)))
+#define CAN_STEP(cur_turf, next) (next && !next.density && (next != avoid) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !(avoid_hazards && (isnull(hazard_cache[next]) ? hazard_at(next) : hazard_cache[next])) && !(avoid_bad_air && (isnull(bad_air_cache[next]) ? bad_air_at(next) : bad_air_cache[next])) && !cur_turf.LinkBlockedWithAccess(next,requester, id, climbing, src) && (cur_turf.x == next.x || cur_turf.y == next.y || (cur_turf.Adjacent(next) && !(avoid_hazards && diagonal_hazard_at(cur_turf, next)))))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
@@ -192,6 +192,12 @@
 	sources = null
 	qdel(open)
 	return path
+
+/// Whether a diagonal step from start to finish cuts through a hazard on a corner, as a diagonal move is really two steps
+/datum/pathfind/proc/diagonal_hazard_at(turf/start, turf/finish)
+	var/turf/first_corner = locate(finish.x, start.y, start.z)
+	var/turf/second_corner = locate(start.x, finish.y, start.z)
+	return (first_corner && hazard_at(first_corner)) || (second_corner && hazard_at(second_corner))
 
 /// Whether spot's a hazard like a chasm or electrified water, remembered for the rest of the search
 /datum/pathfind/proc/hazard_at(turf/spot)

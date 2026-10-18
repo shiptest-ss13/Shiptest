@@ -46,7 +46,7 @@
 	var/best_distance = get_dist(our_turf, target)
 	for(var/direction in GLOB.alldirs)
 		var/turf/next_turf = get_step(our_turf, direction)
-		if(!next_turf || next_turf.is_blocked_turf(TRUE, controller.pawn) || is_ai_hazard_turf(next_turf))
+		if(!next_turf || next_turf.is_blocked_turf(TRUE, controller.pawn) || is_ai_hazard_turf(next_turf) || ai_diagonal_crosses_hazard(our_turf, next_turf))
 			continue
 		var/distance = get_dist(next_turf, target)
 		if(distance > best_distance)
