@@ -147,7 +147,7 @@
 // How many shots an AI with an automatic gun fires in a volley, if its type doesn't ask for more
 #define AI_AUTOMATIC_BURST_SHOTS 4
 // How many shots an AI with a single-shot handgun, like a pistol or revolver, fires in a volley
-#define AI_HANDGUN_VOLLEY_SHOTS 3
+#define AI_HANDGUN_VOLLEY_SHOTS 2
 // How much more to reduce the firerate of AI, and it's minimum interval
 #define AI_VOLLEY_INTERVAL_MULTIPLIER 1.10
 #define AI_MINIMUM_VOLLEY_INTERVAL (0.10 SECONDS)
