@@ -210,11 +210,10 @@
 	icon_state = "zippy_chocolate"
 	spread = 30 // it's made of chocolate...
 	spread_unwielded = 30
-	var/datum/component/edible/my_component // holds reference to our edible component
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate/Initialize()
 	. = ..()
-	my_component = AddComponent(/datum/component/edible,\
+	AddComponent(/datum/component/edible,\
 		initial_reagents = list(/datum/reagent/consumable/nutriment = 10),\
 		volume = 10,\
 		eat_time = 1 SECONDS,\
@@ -228,6 +227,7 @@
 	process_fire(eater, feeder, FALSE, null, BODY_ZONE_HEAD) // hope it isn't loaded
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate/attack(mob/victim, mob/user)
+	var/datum/component/edible/my_component = GetComponent(/datum/component/edible)
 	my_component.TryToEat(victim, user) // abhorrent! but it works
 	return ..()
 
