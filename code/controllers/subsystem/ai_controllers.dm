@@ -48,7 +48,8 @@ SUBSYSTEM_DEF(ai_controllers)
 		if(ai_controller.able_to_plan())
 			ai_controller.SelectBehaviors(wait * 0.1)
 			if(!LAZYLEN(ai_controller.current_behaviors)) //Still no plan
-				COOLDOWN_START(ai_controller, failed_planning_cooldown, AI_FAILED_PLANNING_COOLDOWN)
+				if(!live_explosive_on_level(ai_controller.pawn))
+					COOLDOWN_START(ai_controller, failed_planning_cooldown, AI_FAILED_PLANNING_COOLDOWN)
 				ai_controller.check_should_sleep() // nothing to do, so if nobody's around, sleep until someone is
 
 /// Wakes up the AI asleep on a virtual z-level, as a player's arrived there.

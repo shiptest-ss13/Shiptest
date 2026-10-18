@@ -29,8 +29,8 @@
 			continue
 
 		var/mob/mob_pawn = movable_pawn
-		if(ismob(mob_pawn) && LAZYLEN(mob_pawn.do_afters))
-			continue // in the middle of something, like climbing a platform or prying a firelock, which any step we managed would cancel
+		if(ismob(mob_pawn) && LAZYLEN(mob_pawn.do_afters) && !controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE] && !controller.blackboard[BB_BASIC_MOB_SAFE_TURF])
+			continue // in the middle of something, like climbing a platform or prying a firelock, which any step we managed would cancel. Unless we're running for our life, when giving it up is the point
 
 		var/minimum_distance = controller.max_target_distance
 		// right now I'm just taking the shortest minimum distance of our current behaviors, at some point in the future

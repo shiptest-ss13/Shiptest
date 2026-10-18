@@ -188,6 +188,8 @@
 #define BB_BASIC_MOB_NEXT_WAIT_SEARCH "BB_basic_next_wait_search"
 ///What we're breaking through to get at someone we've no other way to, like a window
 #define BB_BASIC_MOB_SMASH_TARGET "BB_basic_smash_target"
+///A sealed airlock we're pulling the pneumatic seal off
+#define BB_BASIC_MOB_UNSEAL_DOOR "BB_basic_unseal_door"
 ///Where we're waiting out of sight of someone dug in, and until when
 #define BB_BASIC_MOB_AMBUSH_TURF "BB_basic_ambush_turf"
 #define BB_BASIC_MOB_AMBUSH_UNTIL "BB_basic_ambush_until"

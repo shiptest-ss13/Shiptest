@@ -1160,17 +1160,21 @@
  * Arguments:
  * * user - Whoever is attempting to remove the seal
  */
+/// Whether there's a pneumatic seal on us, for stopping someone partway through removing it when someone else beats them to it
+/obj/machinery/door/airlock/proc/is_sealed()
+	return !!seal
+
 /obj/machinery/door/airlock/try_remove_seal(mob/living/user)
 	if(!seal)
 		return FALSE
 	var/obj/item/door_seal/airlockseal = seal
-	if(!ishuman(user))
+	if(!ishuman(user) && !istype(user, /mob/living/basic/human))
 		to_chat(user, span_warning("You don't have the dexterity to remove the seal!"))
 		return TRUE
 	user.visible_message(span_notice("[user] begins removing the seal from [src]."), span_notice("You begin removing [src]'s pneumatic seal."))
 	playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
-	if(!do_after(user, airlockseal.unseal_time, target = src))
-		return TRUE
+	if(!do_after(user, airlockseal.unseal_time, target = src, extra_checks = CALLBACK(src, PROC_REF(is_sealed))))
+		return TRUE // or someone else got it off first
 	if(!seal)
 		return TRUE
 	playsound(src, 'sound/items/jaws_pry.ogg', 30, TRUE)

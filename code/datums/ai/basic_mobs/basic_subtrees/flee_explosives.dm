@@ -1,15 +1,31 @@
 // explosives about to go off, like a primed grenade or ticking c4, as list(explosive = list(danger radius, when it goes off))
 GLOBAL_LIST_EMPTY(ai_live_explosives)
 
-// tell AI an explosive's about to go off, and how far it'd hurt them, see /datum/ai_planning_subtree/flee_explosives
+// tell AI an explosive's about to go off, and how far it'd hurt them
 /proc/ai_note_live_explosive(atom/explosive, danger_radius, fuse_time)
 	if(danger_radius <= 0)
 		return
 	GLOB.ai_live_explosives[explosive] = list(danger_radius, world.time + fuse_time)
+	var/turf/explosive_turf = get_turf(explosive)
+	if(!explosive_turf)
+		return
+	for(var/mob/living/listener as anything in GLOB.ai_gunfire_listeners) // notify nearby mobs too
+		var/datum/ai_controller/controller = listener.ai_controller
+		if(!controller || listener.z != explosive_turf.z || get_dist(listener, explosive_turf) > danger_radius + AI_DEFAULT_VISION_RANGE)
+			continue
+		controller.wake_up()
+		COOLDOWN_RESET(controller, failed_planning_cooldown)
+		controller.next_low_priority_plan = 0
 
 // how far a grenade's blast or shrapnel would hurt, or 0 if it's not that kind of grenade, like smoke
 /proc/ai_grenade_danger_radius(obj/item/grenade/grenade)
-	return max(grenade.ex_dev, grenade.ex_heavy, grenade.ex_light, grenade.ex_flame, grenade.shrapnel_radius)
+	. = max(grenade.ex_dev, grenade.ex_heavy, grenade.ex_light, grenade.ex_flame, grenade.shrapnel_radius)
+	var/obj/item/grenade/flashbang/flashbang = grenade
+	if(istype(flashbang))
+		. = max(., min(flashbang.flashbang_range, AI_FLASHBANG_DANGER_RADIUS))
+	var/obj/item/grenade/stingbang/stingbang = grenade
+	if(istype(stingbang))
+		. = max(., min(stingbang.flashbang_range, AI_FLASHBANG_DANGER_RADIUS))
 
 // get clear of explosives we can see that are about to go off, before anything else
 /datum/ai_planning_subtree/flee_explosives
@@ -79,15 +95,21 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		if(QDELETED(explosive) || world.time > info[2] + 1 SECONDS)
 			GLOB.ai_live_explosives -= explosive // gone off, or defused and thrown away
 			continue
-		if(ismob(explosive.loc))
-			continue // still in someone's hand
+		// ied in sack cheese prevention
+		var/atom/movable/outermost = explosive
+		while(ismovable(outermost.loc) && !ismob(outermost))
+			outermost = outermost.loc
+		if(ismob(outermost))
+			continue
 		var/turf/explosive_turf = get_turf(explosive)
 		if(!our_turf || !explosive_turf || explosive_turf.z != our_turf.z)
 			continue
 		var/distance = get_dist(our_turf, explosive_turf)
 		// stop ducking back in!!!!
 		var/reach = info[1] + (explosive == fled_explosive ? safety_margin : 1)
-		if(distance > reach || distance >= nearest_distance || !ai_can_see(controller.pawn, explosive, controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+		if(distance > reach || distance >= nearest_distance)
+			continue
+		if(distance > AI_EXPLOSIVE_NOTICE_RANGE && !ai_can_see(controller.pawn, outermost, controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
 			continue
 		nearest = list(explosive, info[1])
 		nearest_distance = distance
@@ -132,3 +154,14 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	stop_our_movement(controller)
 	if(!succeeded)
 		controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, FALSE) // run instead
+
+// whether there's an explosive about to go off on the same z-level as thing, usually none at all, so this is quick
+/proc/live_explosive_on_level(atom/thing)
+	if(!length(GLOB.ai_live_explosives) || !thing)
+		return FALSE
+	var/our_z = thing.z
+	for(var/atom/explosive as anything in GLOB.ai_live_explosives)
+		var/turf/explosive_turf = get_turf(explosive)
+		if(explosive_turf?.z == our_z)
+			return TRUE
+	return FALSE

@@ -16,7 +16,8 @@
 	/datum/ai_planning_subtree/investigate_noise, \
 	/datum/ai_planning_subtree/return_home/human, \
 	/datum/ai_planning_subtree/call_allies, \
-	/datum/ai_planning_subtree/broken_fall_back/human
+	/datum/ai_planning_subtree/broken_fall_back/human, \
+	/datum/ai_planning_subtree/unseal_door
 ///For those with guns: reloading, taunting, moving about at range, smashing out of corners, hitting whoever's up close, then shooting, and chatter between fights
 #define AI_HUMAN_RANGED_PLANNING_CLOSING \
 	/datum/ai_planning_subtree/tactical_reload, \
@@ -155,6 +156,10 @@
 #define AI_MELEE_MOVE_DELAY 1.8
 // The least fuse a grenade can have left for AI to try throwing it back, rather than it going off in their hand
 #define AI_THROW_BACK_MINIMUM_FUSE (1.5 SECONDS)
+// How close a live explosive has to be for AI to notice it without seeing it, like an IED in a sack or something landing by them in the dark
+#define AI_EXPLOSIVE_NOTICE_RANGE 3
+// How far AI counts a flashbang as dangerous, as its flash and bang reach further but hit hardest up close
+#define AI_FLASHBANG_DANGER_RADIUS 3
 // How long AI takes to react to a grenade landing by them before it can grab it to throw back
 #define AI_THROW_BACK_REACTION_TIME (1 SECONDS)
 // How far AI hears an explosion, in tiles, before adding twice its biggest blast range
