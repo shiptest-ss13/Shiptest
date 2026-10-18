@@ -303,7 +303,13 @@
 	icon_state = "pl20"
 	item_state = "pl20"
 
-	default_ammo_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun/heavy
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/heavy,
+		/obj/item/stock_parts/cell/gun/heavy/empty,
+		/obj/item/stock_parts/cell/gun/heavy/upgraded,
+		/obj/item/stock_parts/cell/gun/heavy/upgraded/empty,
+	)
 
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_RIFLE_SLOWDOWN

@@ -447,7 +447,7 @@
 	name = "heavy high-capacity clover photonics power cell"
 	icon_state = "e-class2-heavy"
 	desc = "An extremely high-charge weapon cell, designed to provide exceptional magazine depth to Clover Photonics heavy weapons."
-	maxcharge = 26666
+	maxcharge = 30000
 
 /obj/item/stock_parts/cell/gun/heavy/upgraded/empty
 	start_empty = TRUE
