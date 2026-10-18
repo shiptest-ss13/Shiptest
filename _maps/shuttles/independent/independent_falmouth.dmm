@@ -156,6 +156,7 @@
 	pixel_x = 1;
 	pixel_y = -4
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "bz" = (
@@ -193,7 +194,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "cc" = (
-/obj/machinery/newscaster/directional/east,
+/obj/machinery/newscaster/directional/east{
+	pixel_x = 30;
+	pixel_y = 18
+	},
+/obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken6"
 	},
@@ -3260,8 +3265,7 @@
 	dwidth = 20;
 	height = 30;
 	name = "Falmouth Stern Dock";
-	width = 40;
-	disable_on_owner_ship_dock = 1
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3559,6 +3563,7 @@
 /obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Xd" = (
