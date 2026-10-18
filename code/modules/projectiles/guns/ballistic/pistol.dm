@@ -192,7 +192,7 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo
 	name = "true disposable gun"
 	desc = "The brutal conclusion of arms development research. Gaze upon it and despair. Chambered in .22 LR."
-	fire_delay = 0.05 SECONDS
+	fire_delay = 0.01 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 	spread = 0
