@@ -882,13 +882,27 @@ multiple modular subtrees with behaviors
 /// The AI_CONDITION_* flags true for our mob itself
 /datum/ai_controller/proc/get_pawn_conditions()
 	. = NONE
-	if(isbasicmob(pawn) && (!is_environment_safe_for(pawn, get_turf(pawn)) || is_ai_hazard_turf(get_turf(pawn))))
+	var/mob/living/basic/basic_pawn = pawn
+	if(istype(basic_pawn) && (!is_environment_safe_for(basic_pawn, get_turf(basic_pawn)) || is_ai_hazard_turf(get_turf(basic_pawn))))
 		. |= AI_CONDITION_UNSAFE_SPOT
+	else if(istype(basic_pawn) && !ai_immune_to_tear_gas(basic_pawn) && is_ai_irritant_smoke(get_turf(basic_pawn)))
+		. |= AI_CONDITION_UNSAFE_SPOT // in tear gas, so we get out of it
+	else if(istype(basic_pawn) && !(basic_pawn.movement_type & FLYING) && is_ai_swimming_water(get_turf(basic_pawn)) && !passing_through_water())
+		. |= AI_CONDITION_UNSAFE_SPOT // stood about in deep water, slowed and in the open, rather than crossing it on our way somewhere, so we get out
 	if(pawn.GetComponent(/datum/component/ranged_attacks))
 		. |= AI_CONDITION_HAS_RANGED_ATTACK
 	var/datum/component/ai_magazine/magazine = pawn.GetComponent(/datum/component/ai_magazine)
 	if(magazine?.reloading)
 		. |= AI_CONDITION_RELOADING
+
+/// Whether we're in deep water on our way somewhere, rather than stood about in it.
+/datum/ai_controller/proc/passing_through_water()
+	if(blackboard[BB_BASIC_MOB_SAFE_TURF])
+		return FALSE
+	var/atom/destination = current_movement_target
+	if(!destination || !ai_movement?.moving_controllers[src])
+		return FALSE
+	return ismob(destination) || !is_ai_swimming_water(get_turf(destination))
 
 /// The AI_CONDITION_* flags true going by what's on our blackboard
 /datum/ai_controller/proc/get_blackboard_conditions()

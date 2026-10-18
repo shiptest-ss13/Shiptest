@@ -11,8 +11,8 @@
 	basic_mob_flags = DEL_ON_DEATH
 	health = 25
 	maxHealth = 25
-	// about as quick as the simplemob, which chased at 0.3 seconds a tile
-	speed = 3
+	speed = 1.9
+	speed_is_move_delay = TRUE
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	wound_bonus = -10

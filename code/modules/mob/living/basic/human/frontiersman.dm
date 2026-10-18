@@ -79,7 +79,6 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/internals
 
 /mob/living/basic/human/frontier/hullpiercer
-	on_aggro_say = list("IN OUR HEARTS AND IN OUR BLOOD, I'LL KILL UNTIL OUR FREEDOM'S WON!!")
 	aggro_say_chance = 100
 	in_hardsuit = TRUE
 	name = "Frontiersman Hullpiercer"
@@ -97,12 +96,14 @@
 	attack_sound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
 	stat_attack = HARD_CRIT
 	rapid_melee = 2
+	knockdowns_slow_instead = TRUE
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	l_hand = /obj/item/melee/axe/frontiersmen_axe
 	r_hand = null
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/hullpiercer
+	on_aggro_say = list("IN OUR HEARTS AND IN OUR BLOOD, I'LL KILL UNTIL OUR FREEDOM'S WON!!")
 
 /mob/living/basic/human/frontier/ranged
 	name = "Frontiersman Quickdraw"

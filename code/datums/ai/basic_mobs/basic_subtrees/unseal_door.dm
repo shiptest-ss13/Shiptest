@@ -7,6 +7,8 @@
 	var/under_fire_time = 5 SECONDS
 	//how far off the seal can be for us to go and get it
 	var/max_distance = 8
+	//how long after picking a door we give up if the seal's still on, like if we keep getting pulled away, so we're never stuck at it
+	var/give_up_time = 25 SECONDS
 
 /datum/ai_planning_subtree/unseal_door/on_skipped(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_UNSEAL_DOOR)
@@ -18,6 +20,9 @@
 		return
 	var/obj/machinery/door/airlock/door = controller.blackboard[BB_BASIC_MOB_UNSEAL_DOOR]
 	if(!QDELETED(door) && door.seal)
+		if(world.time - controller.blackboard[BB_BASIC_MOB_UNSEAL_SINCE] > give_up_time)
+			ai_give_up_on_unsealing(controller, door, "it's taken too long")
+			return
 		controller.queue_behavior(/datum/ai_behavior/unseal_door, BB_BASIC_MOB_UNSEAL_DOOR)
 		return SUBTREE_RETURN_FINISH_PLANNING
 	controller.clear_blackboard_key(BB_BASIC_MOB_UNSEAL_DOOR)
@@ -35,13 +40,24 @@
 	door = get_shot_blocker(our_turf, their_turf, pass_flags = NONE)
 	if(!istype(door) || !door.seal || door.welded || get_dist(our_turf, door) > max_distance)
 		return
+	if(controller.blackboard[BB_BASIC_MOB_UNSEAL_GAVE_UP_ON] == door && world.time < controller.blackboard[BB_BASIC_MOB_UNSEAL_GAVE_UP_UNTIL])
+		return // we tried it lately and couldn't
 	for(var/mob/living/ally as anything in get_ai_allies_in_range(controller.pawn, max_distance))
 		if(ally.ai_controller.blackboard[BB_BASIC_MOB_UNSEAL_DOOR] == door)
 			return // one of ours is already at it, so we leave it to them
 	AI_LOG_DECISION(controller, "unseal_door: no way to [no_path_to] but through [door] at [AREACOORD(door)], pulling its seal off")
 	controller.set_blackboard_key(BB_BASIC_MOB_UNSEAL_DOOR, door)
+	controller.set_blackboard_key(BB_BASIC_MOB_UNSEAL_SINCE, world.time)
 	controller.queue_behavior(/datum/ai_behavior/unseal_door, BB_BASIC_MOB_UNSEAL_DOOR)
 	return SUBTREE_RETURN_FINISH_PLANNING
+
+// stops trying to get the seal off door, and leaves it alone for a while, as whatever stopped us is likely still stopping us
+/proc/ai_give_up_on_unsealing(datum/ai_controller/controller, obj/machinery/door/airlock/door, reason)
+	AI_LOG_DECISION(controller, "unseal_door: giving up on [door], [reason]")
+	controller.clear_blackboard_key(BB_BASIC_MOB_UNSEAL_DOOR)
+	controller.clear_blackboard_key(BB_BASIC_MOB_UNSEAL_SINCE)
+	controller.set_blackboard_key(BB_BASIC_MOB_UNSEAL_GAVE_UP_ON, door)
+	controller.set_blackboard_key(BB_BASIC_MOB_UNSEAL_GAVE_UP_UNTIL, world.time + AI_UNSEAL_RETRY_TIME)
 
 /datum/ai_behavior/unseal_door
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
@@ -71,4 +87,8 @@
 
 /datum/ai_behavior/unseal_door/finish_action(datum/ai_controller/controller, succeeded, door_key)
 	. = ..()
+	var/obj/machinery/door/airlock/door = controller.blackboard[door_key]
+	if(!succeeded && door && controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == door)
+		ai_give_up_on_unsealing(controller, door, "we can't get to it") // or we'd keep picking it, and keep failing to find a way there
+		return
 	controller.clear_blackboard_key(door_key)

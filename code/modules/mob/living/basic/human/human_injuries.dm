@@ -182,3 +182,33 @@
 			bloody_clothing_overlays += bloody_clothing
 			break
 	add_overlay(bloody_clothing_overlays)
+
+// wound the corpse the mob spawns
+/mob/living/basic/human/proc/wound_corpse(mob/living/carbon/human/corpse)
+	// anything we took that slipped past note_damage(), like heat or cold, which hurt basic mobs directly, counts as from all over
+	var/noted_damage = untracked_brute + untracked_burn + oxy_damage_taken + tox_damage_taken
+	for(var/zone in zone_brute)
+		noted_damage += zone_brute[zone]
+	for(var/zone in zone_burn)
+		noted_damage += zone_burn[zone]
+	untracked_brute += max(0, bruteloss - noted_damage) // basic mobs keep all their damage as bruteloss
+	if(length(zone_brute) || length(zone_burn) || untracked_brute || untracked_burn)
+		var/static/list/all_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+		corpse.heal_overall_damage(corpse.getBruteLoss(), corpse.getFireLoss())
+		for(var/zone in all_zones)
+			var/brute = LAZYACCESS(zone_brute, zone) + untracked_brute / length(all_zones)
+			var/burn = LAZYACCESS(zone_burn, zone) + untracked_burn / length(all_zones)
+			if(brute > 0)
+				corpse.apply_damage(brute, BRUTE, zone, wound_bonus = CANT_WOUND)
+			if(burn > 0)
+				corpse.apply_damage(burn, BURN, zone, wound_bonus = CANT_WOUND)
+	if(oxy_damage_taken)
+		corpse.adjustOxyLoss(oxy_damage_taken)
+	if(tox_damage_taken)
+		corpse.adjustToxLoss(tox_damage_taken)
+	if(length(bloodied_clothing_kinds) && blood_volume)
+		var/list/blood_dna = get_blood_dna_list()
+		for(var/obj/item/clothing/worn in corpse.get_equipped_items())
+			if(is_type_in_list(worn, bloodied_clothing_kinds))
+				worn.add_blood_DNA(blood_dna) // the blood that got on them, which shows on them and stays on them if they're taken
+	corpse.regenerate_icons()

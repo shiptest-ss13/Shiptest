@@ -11,6 +11,10 @@
 		AI_CALLOUT_BROKEN = 100,
 		AI_CALLOUT_GRENADE = 100,
 		AI_CALLOUT_THROW_BACK = 100,
+		AI_CALLOUT_FLASHED = 80,
+		AI_CALLOUT_KNOCKED_DOWN = 60,
+		AI_CALLOUT_GASSED = 60,
+		AI_CALLOUT_STAGGERED = 50,
 		AI_CALLOUT_TARGET_KILLED = 75,
 		AI_CALLOUT_FLANKING = 60,
 		AI_CALLOUT_RALLIED = 60,
@@ -91,6 +95,8 @@
 	var/mob/living/downed_victim
 	//stop yapping so much
 	COOLDOWN_DECLARE(speech_cooldown)
+	//when we last said something urgent over everything else, as one thing can set off several at once, but we only want to say one
+	var/last_interrupt_time = 0
 	var/list/spotted_lines
 	var/spotted_chance = 100
 
@@ -249,6 +255,8 @@
 	var/line = pick_line(event, last_words, interrupt)
 	if(!line)
 		return FALSE
+	if(interrupt)
+		last_interrupt_time = world.time
 	COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
 	say_line(line, last_words)
 	var/list/allies_in_earshot
@@ -293,6 +301,8 @@
 		chance = spotted_chance
 	if(!lines || (!last_words && !interrupt && !COOLDOWN_FINISHED(src, speech_cooldown)))
 		return null
+	if(interrupt && !last_words && world.time < last_interrupt_time + AI_CALLOUT_INTERRUPT_GAP)
+		return null // we've only just said something urgent, which covers this too
 	if(!own_lines && world.time < LAZYACCESS(line_cooldowns, event))
 		return null // someone in earshot's just said it
 	if(!prob(isnull(chance) ? callouts.default_chance : chance))
@@ -352,6 +362,11 @@
 		AI_CALLOUT_FALLING_BACK = 25 SECONDS,
 		AI_CALLOUT_TAUNT = 25 SECONDS,
 		AI_CALLOUT_MELEE = 8 SECONDS,
+		AI_CALLOUT_GRENADE = 4 SECONDS, // one or two voices for it, not the whole room
+		AI_CALLOUT_KNOCKED_DOWN = 6 SECONDS,
+		AI_CALLOUT_FLASHED = 8 SECONDS, // a flashbang likely gets a whole group at once, so one of us says so
+		AI_CALLOUT_GASSED = 10 SECONDS,
+		AI_CALLOUT_STAGGERED = 15 SECONDS,
 	)
 	var/group_cooldown = group_line_cooldowns[event]
 	if(!group_cooldown)

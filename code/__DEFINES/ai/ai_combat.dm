@@ -119,6 +119,16 @@
 #define AI_CALLOUT_GRENADE "grenade"
 ///Throwing a grenade back where it came from
 #define AI_CALLOUT_THROW_BACK "throw_back"
+///Knocked flat
+#define AI_CALLOUT_KNOCKED_DOWN "knocked_down"
+///Blinded by a flash
+#define AI_CALLOUT_FLASHED "flashed"
+///Caught in tear gas or pepper spray
+#define AI_CALLOUT_GASSED "gassed"
+///Slowdown instead of knockdown, for mobs that we set to not get knocked down
+#define AI_CALLOUT_STAGGERED "staggered"
+///How long after one urgent callout, said over everything else, before another can be
+#define AI_CALLOUT_INTERRUPT_GAP (2 SECONDS)
 ///Pulled itself together after breaking
 #define AI_CALLOUT_RALLIED "rallied"
 ///Whispered with its last breath
@@ -158,8 +168,17 @@
 #define AI_THROW_BACK_MINIMUM_FUSE (1.5 SECONDS)
 // How close a live explosive has to be for AI to notice it without seeing it, like an IED in a sack or something landing by them in the dark
 #define AI_EXPLOSIVE_NOTICE_RANGE 3
-// How far AI counts a flashbang as dangerous, as its flash and bang reach further but hit hardest up close
-#define AI_FLASHBANG_DANGER_RADIUS 3
+// How much further than an explosive's blast AI gets clear by, and keeps clear of until it goes off
+#define AI_EXPLOSIVE_SAFETY_MARGIN 2
+// How long AI leaves a sealed door alone after giving up on getting the seal off it
+#define AI_UNSEAL_RETRY_TIME (60 SECONDS)
+// How long AI takes after getting up from a knockdown before it can fire again, getting its gun back on target
+#define AI_GET_UP_FIRE_DELAY (1.5 SECONDS)
+// How long AI shoved away is off balance and can't swing, and how long after that before another shove can put it off balance again
+#define AI_SHOVE_OFF_BALANCE_TIME (1.5 SECONDS)
+#define AI_SHOVE_OFF_BALANCE_IMMUNITY (2 SECONDS)
+// The longest AI that only staggers, rather than being knocked down, stays slowed
+#define AI_STAGGER_MAX_TIME (5 SECONDS)
 // How long AI takes to react to a grenade landing by them before it can grab it to throw back
 #define AI_THROW_BACK_REACTION_TIME (1 SECONDS)
 // How far AI hears an explosion, in tiles, before adding twice its biggest blast range

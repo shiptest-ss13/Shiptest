@@ -61,6 +61,31 @@
 		return FALSE
 	return is_ai_hazard_turf(locate(finish.x, start.y, start.z)) || is_ai_hazard_turf(locate(start.x, finish.y, start.z))
 
+/proc/ai_immune_to_tear_gas(mob/living/victim)
+	var/mob/living/basic/human/basic_human = victim
+	return !istype(basic_human) || basic_human.pepper_proof
+
+// whether smoke will irritate eyes, like tear gas
+/proc/is_ai_irritant_smoke(turf/spot)
+	if(!spot || !(locate(/obj/effect/particle_effect/smoke/chem) in spot))
+		return FALSE // short circuit so we dont check a billion turfs
+	for(var/obj/effect/particle_effect/smoke/chem/smoke in spot)
+		if(smoke.reagents?.has_reagent(/datum/reagent/consumable/condensedcapsaicin))
+			return TRUE
+	return FALSE
+
+// whether stepping from start to finish would take mover from clear air into tear gas that'd get to them, which we keep out of once we're out
+/proc/ai_steps_into_tear_gas(atom/movable/mover, turf/start, turf/finish)
+	var/mob/living/living_mover = mover
+	if(!istype(living_mover) || ai_immune_to_tear_gas(living_mover))
+		return FALSE
+	return !is_ai_irritant_smoke(start) && is_ai_irritant_smoke(finish)
+
+// whether spot is water deep enough to swim in
+/proc/is_ai_swimming_water(turf/spot)
+	var/turf/open/water/water = spot
+	return istype(water) && water.is_swimming_tile
+
 /proc/is_ai_hazard_turf(turf/spot)
 	if(istype(spot, /turf/open/chasm))
 		return !HAS_TRAIT(spot, TRAIT_CHASM_STOPPED)

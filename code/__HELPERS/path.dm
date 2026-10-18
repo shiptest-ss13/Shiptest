@@ -125,6 +125,8 @@
 	var/climbing = FALSE
 	/// If TRUE, we don't route through air that'd hurt us, like a vented room behind a door
 	var/avoid_bad_air = FALSE
+	/// If TRUE, we don't route through tear gas either, as it'd get to us and we're not in it already
+	var/avoid_tear_gas = FALSE
 	/// What bad_air_at() made of each turf it's looked at, as it's asked about the same ones a lot
 	var/list/bad_air_cache
 	/// What hazard_at() made of each turf it's looked at, for the same reason
@@ -158,6 +160,7 @@
 		return FALSE
 	// only if we're somewhere safe now, as if we're already in bad air we need a way out through it
 	avoid_bad_air = avoid_hazards && isbasicmob(requester) && is_environment_safe_for(requester, start)
+	avoid_tear_gas = avoid_bad_air && !ai_immune_to_tear_gas(requester) && !is_ai_irritant_smoke(start)
 	if(avoid_hazards)
 		hazard_cache = list()
 	if(avoid_bad_air)
@@ -213,7 +216,7 @@
 /datum/pathfind/proc/bad_air_at(turf/spot)
 	. = bad_air_cache[spot]
 	if(isnull(.))
-		. = !is_environment_safe_for(requester, spot)
+		. = !is_environment_safe_for(requester, spot) || (avoid_tear_gas && is_ai_irritant_smoke(spot))
 		bad_air_cache[spot] = .
 
 /// Called when we've hit the goal with the node that represents the last tile, then sets the path var to that path so it can be returned by [datum/pathfind/proc/search]

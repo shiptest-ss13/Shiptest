@@ -148,6 +148,8 @@
 
 // whether mob could go stand on spot, not blocked, not in a doorway, and nothing there that'd hurt it
 /proc/ai_can_take_spot(mob/living/mover, turf/spot)
+	if(is_ai_swimming_water(spot) && !(mover.movement_type & FLYING))
+		return FALSE // no swimming in the pool!!!!
 	return !spot.is_blocked_turf(TRUE, mover) && !ai_is_doorway(spot) && ai_can_stand_on(mover, spot)
 
 /proc/get_ai_fight_range(datum/ai_controller/controller)
@@ -219,6 +221,26 @@
 /proc/ai_holding_cover_against(datum/ai_controller/controller, atom/threat)
 	var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
 	return fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, threat)
+
+// check if shield is "facing" somewhere on a cone, so AI know what to do about it
+/proc/ai_shield_facing(atom/target, turf/spot)
+	var/mob/living/carbon/human/shield_bearer = target
+	if(!istype(shield_bearer) || !spot)
+		return FALSE
+	var/turf/their_turf = get_turf(shield_bearer)
+	if(!their_turf || their_turf == spot)
+		return FALSE
+	var/holding_shield = FALSE
+	for(var/obj/item/shield/shield in shield_bearer.held_items)
+		if(!shield.broken)
+			holding_shield = TRUE
+			break
+	if(!holding_shield)
+		return FALSE
+	var/angle_off_facing = abs(dir2angle(shield_bearer.dir) - dir2angle(get_dir(their_turf, spot)))
+	if(angle_off_facing > 180)
+		angle_off_facing = 360 - angle_off_facing
+	return angle_off_facing <= 45
 
 // the cover between spot and threat, if there is any, so threat's shots at spot would mostly hit it, while ours from spot go over it. for sandbags and flipped tables and such
 /proc/cover_between(turf/spot, atom/threat)

@@ -22,15 +22,15 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	. = max(grenade.ex_dev, grenade.ex_heavy, grenade.ex_light, grenade.ex_flame, grenade.shrapnel_radius)
 	var/obj/item/grenade/flashbang/flashbang = grenade
 	if(istype(flashbang))
-		. = max(., min(flashbang.flashbang_range, AI_FLASHBANG_DANGER_RADIUS))
+		. = max(., flashbang.flashbang_range)
 	var/obj/item/grenade/stingbang/stingbang = grenade
 	if(istype(stingbang))
-		. = max(., min(stingbang.flashbang_range, AI_FLASHBANG_DANGER_RADIUS))
+		. = max(., stingbang.flashbang_range)
 
 // get clear of explosives we can see that are about to go off, before anything else
 /datum/ai_planning_subtree/flee_explosives
 	//how much further than its blast we run, to be sure
-	var/safety_margin = 2
+	var/safety_margin = AI_EXPLOSIVE_SAFETY_MARGIN
 
 /datum/ai_planning_subtree/flee_explosives/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -52,11 +52,12 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		if(!throwing_back)
 			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // or we call it once we know if we're grabbing it or running
 	if(controller.blackboard[BB_BASIC_MOB_THROWING_BACK])
-		var/atom/movable/thrown_explosive = explosive
+		var/atom/movable/thrown_explosive = ai_explosive_holder(explosive) // or the sack it's in
 		if(thrown_explosive.throwing)
 			return SUBTREE_RETURN_FINISH_PLANNING // still coming at us, so we see where it lands
-		if(can_throw_back(controller, explosive))
-			var/throw_back_at = controller.blackboard[BB_BASIC_MOB_THROW_BACK_AT]
+		var/throw_back_at = controller.blackboard[BB_BASIC_MOB_THROW_BACK_AT]
+		// before we start reacting, there has to be time left for the throw once we're done, or we'd stand there only to run with a second less
+		if(can_throw_back(controller, explosive, isnull(throw_back_at) ? AI_THROW_BACK_REACTION_TIME : 0))
 			if(isnull(throw_back_at))
 				controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_AT, world.time + AI_THROW_BACK_REACTION_TIME)
 				ai_callout(controller.pawn, AI_CALLOUT_THROW_BACK, interrupt = TRUE)
@@ -69,18 +70,23 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, FALSE) // too late for that now, or it's out of reach, so we run
 		if(isnull(controller.blackboard[BB_BASIC_MOB_THROW_BACK_AT]))
 			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // we never went for it, so we've not called it yet
+	if(get_dist(controller.pawn, get_turf(explosive)) >= danger[2] + safety_margin)
+		return // far enough off already, so we get on with the fight while it goes off, and run again if we're drawn back in
 	controller.queue_behavior(/datum/ai_behavior/run_away_from_target, BB_BASIC_MOB_FLEEING_EXPLOSIVE, danger[2] + safety_margin)
 	return SUBTREE_RETURN_FINISH_PLANNING
 
-// whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4
-/datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive)
+// whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4. Or something loose it's in, like a sack, which goes back sack and all
+/datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive, time_before_throw = 0)
 	var/obj/item/grenade/grenade = explosive
-	if(!istype(grenade) || istype(grenade, /obj/item/grenade/c4) || grenade.anchored || !isturf(grenade.loc))
+	if(!istype(grenade) || istype(grenade, /obj/item/grenade/c4))
 		return FALSE
-	if(get_dist(controller.pawn, grenade) > 1)
+	var/obj/item/thrown = ai_explosive_holder(grenade)
+	if(!istype(thrown) || thrown.anchored || !isturf(thrown.loc))
+		return FALSE // in someone's hand or bag, or in something nobody could throw, like a locker
+	if(get_dist(controller.pawn, thrown) > 1)
 		return FALSE
 	var/list/info = GLOB.ai_live_explosives[grenade]
-	return info && info[2] - world.time >= AI_THROW_BACK_MINIMUM_FUSE
+	return info && info[2] - world.time - time_before_throw >= AI_THROW_BACK_MINIMUM_FUSE
 
 // the nearest live explosive we can see that we're within reach of, as list(explosive, danger radius), or null
 /datum/ai_planning_subtree/flee_explosives/proc/find_danger(datum/ai_controller/controller)
@@ -96,9 +102,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 			GLOB.ai_live_explosives -= explosive // gone off, or defused and thrown away
 			continue
 		// ied in sack cheese prevention
-		var/atom/movable/outermost = explosive
-		while(ismovable(outermost.loc) && !ismob(outermost))
-			outermost = outermost.loc
+		var/atom/movable/outermost = ai_explosive_holder(explosive)
 		if(ismob(outermost))
 			continue
 		var/turf/explosive_turf = get_turf(explosive)
@@ -130,7 +134,8 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 /datum/ai_behavior/throw_back_explosive/perform(seconds_per_tick, datum/ai_controller/controller, explosive_key)
 	var/mob/living/basic/basic_mob = controller.pawn
 	var/obj/item/grenade/grenade = controller.blackboard[explosive_key]
-	if(!istype(grenade) || !isturf(grenade.loc))
+	var/obj/item/thrown = istype(grenade) ? ai_explosive_holder(grenade) : null // the grenade, or the sack it's in
+	if(!istype(thrown) || thrown.anchored || !isturf(thrown.loc))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
 	var/turf/our_turf = get_turf(basic_mob)
 	var/turf/throw_at_turf
@@ -139,13 +144,13 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		throw_at_turf = get_ranged_target_turf_direct(basic_mob, target, throw_range)
 	if(!throw_at_turf || ally_in_line_of_fire(basic_mob, our_turf, throw_at_turf))
 		// nobody to throw it at, or one of ours is in the way, so just away from where it landed
-		var/away_dir = get_turf(grenade) == our_turf ? pick(GLOB.alldirs) : get_dir(grenade, basic_mob)
+		var/away_dir = get_turf(thrown) == our_turf ? pick(GLOB.alldirs) : get_dir(thrown, basic_mob)
 		throw_at_turf = get_ranged_target_turf(basic_mob, away_dir, throw_range)
 		if(ally_in_line_of_fire(basic_mob, our_turf, throw_at_turf))
 			return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED // nowhere safe to throw it, so we run instead
-	basic_mob.visible_message(span_danger("[basic_mob] grabs [grenade] and throws it back!"))
-	grenade.forceMove(our_turf)
-	grenade.throw_at(throw_at_turf, throw_range, 2, basic_mob)
+	basic_mob.visible_message(span_danger("[basic_mob] grabs [thrown] and throws it back!"))
+	thrown.forceMove(our_turf)
+	thrown.throw_at(throw_at_turf, throw_range, 2, basic_mob)
 	controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, FALSE)
 	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
 
@@ -165,3 +170,22 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		if(explosive_turf?.z == our_z)
 			return TRUE
 	return FALSE
+
+// see if explosives is in another container
+/proc/ai_explosive_holder(atom/movable/explosive)
+	var/atom/movable/outermost = explosive
+	while(ismovable(outermost.loc) && !ismob(outermost))
+		outermost = outermost.loc
+	return outermost
+
+// DONT pathfind back into the blastrange dummy
+/proc/ai_steps_into_blast(datum/ai_controller/controller, turf/start, turf/finish)
+	var/atom/explosive = controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE]
+	if(!explosive || !start || !finish)
+		return FALSE
+	var/list/info = GLOB.ai_live_explosives[explosive]
+	var/turf/explosive_turf = get_turf(explosive)
+	if(!info || !explosive_turf || explosive_turf.z != finish.z)
+		return FALSE
+	var/safe_distance = info[1] + AI_EXPLOSIVE_SAFETY_MARGIN
+	return get_dist(start, explosive_turf) >= safe_distance && get_dist(finish, explosive_turf) < safe_distance

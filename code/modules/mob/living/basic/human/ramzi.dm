@@ -253,7 +253,6 @@
 	summons_backup = TRUE
 
 /mob/living/basic/human/ramzi/melee/space/stormtrooper/sledge
-	melee_knockback = 3
 	name = "Ramzi Clique Supercollider"
 	callout_set = /datum/ai_callout_set/human/ramzi/supercollider
 	desc = "Rapid, practiced motions permeate the body underneath the crimson suit of this radiantly hateful being. Each one ripples to the surface, the eyes of a suit tracking you as it brings a sledgehammer to bear."
@@ -264,6 +263,8 @@
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
+	melee_knockback = 3
+	knockdowns_slow_instead = TRUE // too juiced up to go down, it just staggers
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
@@ -711,6 +712,7 @@
 
 /mob/living/basic/human/ramzi/ranged/space/stormtrooper/shotgun
 	name = "Ramzi Clique Executioner"
+	knockdowns_slow_instead = TRUE // too heavily armoured to be put down, it just staggers
 	desc = "Ink and black glass poured into the shape of an armored commando, dripping menace with every step. Their combat shotgun follows you with lethal intent, promising a blizzard of buckshot in less than a blink."
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"

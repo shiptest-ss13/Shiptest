@@ -14,7 +14,9 @@
 /mob/living/basic/human/hermit/Initialize(mapload)
 	// the same mix of species as the hermit corpses they leave, otherwise theres a mismatch sometimes
 	species_weights = GLOB.hermit_species_weights
-	return ..()
+	. = ..()
+	if(ispath(mob_spawner, /obj/effect/mob_spawn/human/corpse/damaged/whitesands))
+		pepper_proof = TRUE // gasmask is in initialize for some reason??? outfit check won't work then
 
 /mob/living/basic/human/hermit/survivor
 	name = "Hermit Wanderer"

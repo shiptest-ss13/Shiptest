@@ -12,6 +12,10 @@
 
 	///How much stamina the mob recovers per second
 	var/stamina_recovery = 10
+	///How long after taking stamina damage before we start getting our stamina back, as a player has to wait. 0 to start straight away, as most basic mobs do
+	var/stamina_regen_delay = 0
+	///When we can start getting our stamina back, going by stamina_regen_delay
+	var/stamina_regen_start_time = 0
 
 	///how much damage this basic mob does to objects, if any.
 	var/obj_damage = 0
@@ -21,6 +25,8 @@
 	var/melee_damage_type = BRUTE
 	///How much bare wounding power it has
 	var/wound_bonus = 0
+	///If TRUE, speed is our whole move delay, as it reads, like for mobs ported from simplemobs with their speed. Upstream basic mobs leave it off, as they're balanced around also getting the player walk/run delay and having speed counted twice
+	var/speed_is_move_delay = FALSE
 	///How much more wounding power it has against bare skin
 	var/bare_wound_bonus = 0
 	///If the attacks from this are sharp
@@ -144,7 +150,7 @@
 /mob/living/basic/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	///Automatic stamina re-gain
-	if(staminaloss > 0)
+	if(staminaloss > 0 && world.time >= stamina_regen_start_time)
 		adjustStaminaLoss(-stamina_recovery * seconds_per_tick, FALSE, TRUE)
 
 /mob/living/basic/say_mod(input, datum/language/message_language, list/message_mods = list())
@@ -179,6 +185,19 @@
 	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
 	ai_controller?.set_blackboard_key(BB_BASIC_MOB_LAST_MELEE_HIT_TIME, world.time) // for AI that backs off after a hit, see /datum/ai_planning_subtree/maintain_distance
 	return result
+
+// basic mobs keep their speed as basicmob_varspeed, but /mob/living/Initialize() also applies the same speed var as living_varspeed, which counts it twice
+/mob/living/basic/update_living_varspeed()
+	if(!speed_is_move_delay)
+		return ..()
+	remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
+
+// actually go fast
+/mob/living/basic/update_move_intent_slowdown()
+	if(!speed_is_move_delay)
+		return ..()
+	remove_movespeed_modifier(/datum/movespeed_modifier/config_walk_run/walk)
+	remove_movespeed_modifier(/datum/movespeed_modifier/config_walk_run/run)
 
 /mob/living/basic/set_varspeed(var_value)
 	speed = var_value

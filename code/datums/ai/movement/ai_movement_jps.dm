@@ -29,8 +29,8 @@
 			continue
 
 		var/mob/mob_pawn = movable_pawn
-		if(ismob(mob_pawn) && LAZYLEN(mob_pawn.do_afters) && !controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE] && !controller.blackboard[BB_BASIC_MOB_SAFE_TURF])
-			continue // in the middle of something, like climbing a platform or prying a firelock, which any step we managed would cancel. Unless we're running for our life, when giving it up is the point
+		if(ismob(mob_pawn) && LAZYLEN(mob_pawn.do_afters) && !breaks_off_for_safety(controller, mob_pawn))
+			continue // in the middle of something, like climbing a platform or prying a firelock, which any step we managed would cancel
 
 		var/minimum_distance = controller.max_target_distance
 		// right now I'm just taking the shortest minimum distance of our current behaviors, at some point in the future
@@ -54,6 +54,8 @@
 		if(length(controller.movement_path))
 			var/turf/next_step = controller.movement_path[1]
 			var/turf/old_turf = get_turf(movable_pawn)
+			if(ai_steps_into_blast(controller, old_turf, next_step) || ai_steps_into_tear_gas(movable_pawn, old_turf, next_step))
+				continue // we wait clear of the grenade or the gas rather than walking back into it
 			take_step(controller, movable_pawn, next_step)
 			var/turf/new_turf = get_turf(movable_pawn)
 			if(new_turf == old_turf && bash_flimsy_thing_in_the_way(controller, movable_pawn, next_step))
@@ -107,6 +109,15 @@
 			// if someone's in our way, a way round them. If there isn't one, we wait behind them until they move or we run out of tries and give up
 			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, path_distance, blocked_turf)
 
+// whether we give up what we're in the middle of to get away, as a player would step off. Always for a live explosive, and for bad air unless it's a climb, as climbing is how we get out, like over a moat's edge
+/datum/ai_movement/jps/proc/breaks_off_for_safety(datum/ai_controller/controller, mob/mob_pawn)
+	if(controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE])
+		return TRUE
+	if(!controller.blackboard[BB_BASIC_MOB_SAFE_TURF])
+		return FALSE
+	var/atom/climbing = controller.blackboard[BB_BASIC_MOB_CLIMBING]
+	return !(climbing && LAZYACCESS(mob_pawn.do_afters, climbing))
+
 // if we can go directly go directly
 /datum/ai_movement/jps/proc/try_direct_step(datum/ai_controller/controller, atom/movable/movable_pawn)
 	var/turf/our_turf = get_turf(movable_pawn)
@@ -120,6 +131,8 @@
 		return FALSE // edge case L shaped things mitigation
 	if(!direct_line_clear(controller, movable_pawn, our_turf, next_step))
 		return FALSE // the step itself, as it needn't be on the line we checked, like a diagonal into lava
+	if(ai_steps_into_blast(controller, our_turf, next_step) || ai_steps_into_tear_gas(movable_pawn, our_turf, next_step))
+		return TRUE // we wait clear of the grenade or the gas rather than walking back into it
 	take_step(controller, movable_pawn, next_step)
 	if(get_turf(movable_pawn) == our_turf)
 		return FALSE
@@ -133,6 +146,7 @@
 	var/can_cross_space = controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
 	// as our pathfinding does, see /datum/pathfind/proc/bad_air_at()
 	var/avoid_bad_air = isbasicmob(movable_pawn) && is_environment_safe_for(movable_pawn, start)
+	var/avoid_tear_gas = avoid_bad_air && !ai_immune_to_tear_gas(movable_pawn) && !is_ai_irritant_smoke(start)
 	var/access = controller.get_access()
 	var/turf/previous = start
 	for(var/turf/line_turf as anything in get_line(start, finish))
@@ -141,6 +155,8 @@
 		if(line_turf.density || is_ai_hazard_turf(line_turf) || (!can_cross_space && is_bare_space(line_turf)))
 			return FALSE
 		if(avoid_bad_air && !is_environment_safe_for(movable_pawn, line_turf))
+			return FALSE
+		if(avoid_tear_gas && is_ai_irritant_smoke(line_turf))
 			return FALSE
 		// each step the way our pathfinding would judge it, so edges count, like a platform's raised side or a railing, not just what's on the tiles
 		if(previous.LinkBlockedWithAccess(line_turf, movable_pawn, access))

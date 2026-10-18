@@ -157,6 +157,8 @@
 		if(player_follow_ups_owed > 0)
 			player_follow_ups_owed-- // still gone, so a player doesn't get it as a free shot later
 		return
+	if(!firer.client && HAS_TRAIT(firer, TRAIT_FLOORED))
+		return // stop shooting, we've fallen down
 	var/atom/target = target_ref?.resolve()
 	if(!firer.client && target && !has_clear_shot(firer, target))
 		return // no more clear shot so stop shooting
@@ -164,12 +166,20 @@
 
 // aimed or blind, every volley waits out the same cooldown, so firing blind on top of aimed fire doesn't double how fast we shoot
 /datum/component/ranged_attacks/proc/try_start_volley()
+	var/mob/living/firer = parent
+	if(!firer.client && HAS_TRAIT(firer, TRAIT_FLOORED))
+		return FALSE // knocked flat, don't shoot, kinda like a player dropping a gun
 	if(!cooldown_time)
 		return TRUE
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return FALSE
 	COOLDOWN_START(src, fire_cooldown, cooldown_time)
 	return TRUE
+
+// delay shooting until we get back up
+/datum/component/ranged_attacks/proc/delay_next_volley(delay)
+	if(COOLDOWN_TIMELEFT(src, fire_cooldown) < delay)
+		COOLDOWN_START(src, fire_cooldown, delay)
 
 // what our shots get through, like glass for lasers, for AI working out if it's got a clear shot
 /datum/component/ranged_attacks/proc/get_pass_flags()

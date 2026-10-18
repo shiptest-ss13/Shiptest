@@ -42,6 +42,28 @@
 		return FALSE
 	return (initial(suit.clothing_flags) & STOPSPRESSUREDAMAGE) && (initial(head.clothing_flags) & STOPSPRESSUREDAMAGE)
 
+/proc/spawner_is_pepper_proof(spawner_type)
+	var/obj/effect/mob_spawn/human/spawner = spawner_type
+	var/datum/outfit/outfit = initial(spawner.outfit)
+	var/obj/item/clothing/mask = SPAWNER_SLOT(spawner, outfit, mask)
+	var/obj/item/clothing/head = SPAWNER_SLOT(spawner, outfit, head)
+	return (ispath(mask, /obj/item/clothing) && (initial(mask.flags_cover) & PEPPERPROOF)) || (ispath(head, /obj/item/clothing) && (initial(head.flags_cover) & PEPPERPROOF))
+
+/proc/get_spawner_flash_protection(spawner_type)
+	var/obj/effect/mob_spawn/human/spawner = spawner_type
+	var/datum/outfit/outfit = initial(spawner.outfit)
+	. = hardsuit_helmet_flash_protection(SPAWNER_SLOT(spawner, outfit, suit)) // a hardsuit's helmet isn't in the head slot, as it comes out of the suit
+	for(var/obj/item/clothing/worn as anything in list(SPAWNER_SLOT(spawner, outfit, head), SPAWNER_SLOT(spawner, outfit, glasses), SPAWNER_SLOT(spawner, outfit, mask)))
+		if(ispath(worn, /obj/item/clothing))
+			. += initial(worn.flash_protect)
+
+/proc/hardsuit_helmet_flash_protection(suit_type)
+	var/obj/item/clothing/suit/space/hardsuit/hardsuit = suit_type
+	if(!ispath(hardsuit, /obj/item/clothing/suit/space/hardsuit))
+		return 0
+	var/obj/item/clothing/helmet = initial(hardsuit.helmettype)
+	return ispath(helmet, /obj/item/clothing) ? initial(helmet.flash_protect) : 0
+
 // how much a corpse spawner's outfit slows whoever wears it, all its clothes together
 /proc/get_spawner_slowdown(spawner_type)
 	var/static/list/slowdown_by_spawner = list()

@@ -6,6 +6,9 @@
 		AI_CALLOUT_HURT = list("Help!", "Stop! Please!", "Please, no!", "I'm not armed!"),
 		AI_CALLOUT_DEATH_RATTLE = list("I didn't... even...", "Why...", "I just... worked here...", "Tell them... I tried..."),
 		AI_CALLOUT_GRENADE = list("Bomb!", "It's gonna blow!", "Run!", "Get away from it!"),
+		AI_CALLOUT_KNOCKED_DOWN = list("Ow! Please, stop!", "Don't hurt me!", "I'm down, I'm down!", "Okay! Okay!"),
+		AI_CALLOUT_FLASHED = list("I can't see!", "What was that?!", "My eyes!", "Help, I can't see!"),
+		AI_CALLOUT_GASSED = list("It burns!", "I can't breathe!", "Help! Gas!", "My eyes!"),
 	)
 	chances = list(
 		AI_CALLOUT_MELEE = 50, // they're not ones for fighting, so it's worth a word when they do
@@ -18,6 +21,10 @@
 		AI_CALLOUT_TAKING_FIRE = list("Taking fire!", "Where's that coming from?!", "Incoming!", "We're under fire!"),
 		AI_CALLOUT_GRENADE = list("Grenade!", "Get clear!", "Explosive!", "Move, move!", "It's gonna blow!"),
 		AI_CALLOUT_THROW_BACK = list("Sending it back!", "Return to sender!", "Catch!", "Throwing it back!"),
+		AI_CALLOUT_KNOCKED_DOWN = list("I'm down!", "Agh, I'm down!", "Knocked me flat!", "Cover me, I'm down!", "Help me up!"),
+		AI_CALLOUT_FLASHED = list("I can't see!", "My eyes!", "Flash! I'm blind!", "Everything's white!", "Can't see a thing!"),
+		AI_CALLOUT_GASSED = list("Gas! Gas!", "My eyes are burning!", "Can't breathe!", "Get out of the gas!", "Tear gas!"),
+		AI_CALLOUT_STAGGERED = list("That all you've got?", "Still standing!", "Not going down!", "Barely felt that!"),
 		AI_CALLOUT_HURT = list("Argh!", "I'm hit!", "Damn it!", "I'm bleeding!"),
 		AI_CALLOUT_TARGET_DOWN = list("They're down!", "Got one!", "I think I got 'em!", "Down they go!", "Target's on the ground!"),
 		AI_CALLOUT_TARGET_KILLED = list("Scratch one.", "That's one less.", "They're dead.", "That one's done.", "Not getting back up."),
@@ -78,7 +85,7 @@
 		AI_CALLOUT_FALLING_BACK = list("Fall back!", "Back up, back up!", "Get back, crew!", "Give 'em room!"),
 		AI_CALLOUT_WARY = list("Careful, they got teeth!", "Keep your head down, nobody else is dying today!", "Slow it down, we lost one already!", "Stay in cover, crew!"),
 		AI_CALLOUT_EMBOLDENED = list("They're running! After 'em!", "We got 'em now!", "Keep it up, crew!", "They're folding!"),
-		AI_CALLOUT_TAUNT = list("Wrong place, wrong time!" = 3, "Nothing personal, you're just in the way!" = 3, "Nowhere to run!" = 3, "Keep the Frontier free!" = 1, "Should've picked another rock!" = 3, "The Frontier is ours!" = 3),
+		AI_CALLOUT_TAUNT = list("Wrong place, wrong time!" = 3, "Nothing personal, you're just in the way!" = 3, "Nowhere to run!" = 3, "FUCK THE LEAGUE!!!" = 1, "Keep the Frontier free!" = 1, "Should've picked another rock!" = 3, "The Frontier is ours!" = 3),
 		AI_CALLOUT_MELEE = list("Should've run!", "Down you go!", "That's for the crew!", "Nothing personal!", "Out of the way!"),
 		AI_CALLOUT_BROKEN = list("Pull back!!", "We can't hold 'em! Get out!", "Fall back!", "Run!", "We're done here! Move!"),
 		AI_CALLOUT_RALLIED = list("Alright, crew, form up!", "Everyone here? Good. Let's go again.", "Crew's together, we go again!", "Let's go, we're not done!"),
@@ -183,6 +190,9 @@
 		AI_CALLOUT_LOST_THEM = list("Come out, come out!", "I'll find you!", "I can smell you!", "Hiding won't save you!"),
 		AI_CALLOUT_PUSHING = list("Here I come!", "Coming for you!", "Out of my way!", "RAAAAH!", "MOTHERFUCCCKKKEERR!!!"),
 		AI_CALLOUT_GRENADE = list("Ooh, a loud one!", "Fireworks!", "Hah, boom!"),
+		AI_CALLOUT_STAGGERED = list("Hah! That's it?!", "More! Hit me again!", "Still coming!", "You'll have to do better!", "Is that all?!"),
+		AI_CALLOUT_FLASHED = list("Pretty lights!", "Can't see you... can still HEAR you!", "I'll find you blind!"),
+		AI_CALLOUT_GASSED = list("Burns so GOOD!", "I can taste it!", "More! Gas me again!"),
 		AI_CALLOUT_DEATH_RATTLE = list("Not... done...", "More...", "Hah... hah...", "Worth it..."),
 	)
 

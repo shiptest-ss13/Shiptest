@@ -190,6 +190,11 @@
 #define BB_BASIC_MOB_SMASH_TARGET "BB_basic_smash_target"
 ///A sealed airlock we're pulling the pneumatic seal off
 #define BB_BASIC_MOB_UNSEAL_DOOR "BB_basic_unseal_door"
+///When we picked BB_BASIC_MOB_UNSEAL_DOOR, as a world.time
+#define BB_BASIC_MOB_UNSEAL_SINCE "BB_basic_unseal_since"
+///A sealed door we gave up on unsealing, and until when we leave it be
+#define BB_BASIC_MOB_UNSEAL_GAVE_UP_ON "BB_basic_unseal_gave_up_on"
+#define BB_BASIC_MOB_UNSEAL_GAVE_UP_UNTIL "BB_basic_unseal_gave_up_until"
 ///Where we're waiting out of sight of someone dug in, and until when
 #define BB_BASIC_MOB_AMBUSH_TURF "BB_basic_ambush_turf"
 #define BB_BASIC_MOB_AMBUSH_UNTIL "BB_basic_ambush_until"

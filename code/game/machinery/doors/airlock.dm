@@ -1152,15 +1152,7 @@
 /obj/machinery/door/airlock/proc/weld_checks(obj/item/weldingtool/W, mob/user)
 	return !operating && density
 
-/**
- * Used when attempting to remove a seal from an airlock
- *
- * Called when attacking an airlock with an empty hand, returns TRUE (there was a seal and we removed it, or failed to remove it)
- * or FALSE (there was no seal)
- * Arguments:
- * * user - Whoever is attempting to remove the seal
- */
-/// Whether there's a pneumatic seal on us, for stopping someone partway through removing it when someone else beats them to it
+
 /obj/machinery/door/airlock/proc/is_sealed()
 	return !!seal
 
