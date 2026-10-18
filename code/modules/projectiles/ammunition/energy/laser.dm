@@ -85,7 +85,7 @@
 /obj/item/ammo_casing/energy/lasergun/eoehoma/wasp
 	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
 	fire_sound = 'sound/weapons/laser4.ogg'
-	e_cost = 799
+	e_cost = 625
 	delay = 0.1 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
