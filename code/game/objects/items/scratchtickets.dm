@@ -14,7 +14,6 @@
 	pickup_sound = 'sound/items/handling/paper_pickup.ogg'
 	resistance_flags = FLAMMABLE
 	grind_results = list(/datum/reagent/cellulose = 3, /datum/reagent/iodine = 3)
-	world_file = 'icons/obj/item/lottery_world.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	bad_type = /obj/item/scratch_ticket
 
@@ -24,12 +23,25 @@
 	var/force_prize = null // set this to rig the ticket to this value
 	var/redeem_value = null // current sell value
 	var/fake = FALSE // if this is a fake ticket you can't redeem
+	var/jackpot_alerts_admins = FALSE // if a max prize on this should alert admins
+
 	var/l_state = null // left scratchoff overlay
 	var/m_state = null // middle scratchoff overlay
 	var/r_state = null // right scratchoff overlay
 
+/obj/item/scratch_ticket/update_overlays()
+	. = ..()
+	if(scratched_off)
+		. += "l_[l_state]"
+		. += "m_[m_state]"
+		. += "r_[r_state]"
+
 /obj/item/scratch_ticket/proc/scratch_off()
 	scratched_off = TRUE
+	roll_prize_amount()
+	set_overlay_states()
+
+/obj/item/scratch_ticket/proc/roll_prize_amount()
 	// if this has a forced value, use it
 	if(force_prize != null)
 		redeem_value = force_prize
@@ -46,6 +58,25 @@
 	// not a winner! womp womp
 	redeem_value = 0
 
+/obj/item/scratch_ticket/proc/set_overlay_states()
+	if(force_prize > 0 || redeem_value == prize_amounts[1])
+		l_state = "green"
+		m_state = "green"
+		r_state = "green"
+		return
+	var/list/losers = list("yellow","red")
+	l_state = pick(losers)
+	m_state = pick(losers)
+	r_state = pick(losers)
+	if(redeem_value > 0)
+		if(prob(100 / 3))
+			l_state = "green"
+		else if(prob(50))
+			m_state = "green"
+		else
+			r_state = "green"
+	update_icon()
+
 /obj/item/scratch_ticket/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
 	if(scratched_off)
@@ -61,7 +92,7 @@
 	var/format_redeem = num2text(redeem_value, 12)
 	if(redeem_value == prize_amounts[1]) // jackpot!
 		to_chat(user, span_notice("HOLY SHIT! You've won a prize of [format_redeem] credits!"))
-		if(!fake && !force_prize) // notify admins of natural jackpot
+		if(!fake && !force_prize && jackpot_alerts_admins)
 			message_admins("[ADMIN_LOOKUPFLW(user)] just won a jackpot of [format_redeem] credits! [ADMIN_LOOKUPFLW(src)]")
 	else if(redeem_value)
 		to_chat(user, span_notice("You've won a prize of [format_redeem] credits!"))
@@ -84,42 +115,23 @@
 
 /obj/item/scratch_ticket/small
 	name = "FAST CASH ticket"
-	desc = "A lottery ticket, advertising a jackpot of 100,000 credits. The artwork depicts a rain of various denominations of paper credits. Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
+	desc = "A lottery ticket, advertising prizes up to 10,000 credits. The artwork depicts a rain of various denominations of paper credits being sprayed from a hose. Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
 	icon_state = "ticket"
-	custom_price = 10
-	prize_chances = list(0.00001, 0.001, 0.1, 5, 5, 5, 10)
-	prize_amounts = list(100000, 10000, 100, 50, 20, 10, 5)
+	custom_price = 20
+	prize_chances = list(0.001, 1, 5, 8, 8, 10)
+	prize_amounts = list(10000, 100, 50, 20, 15, 10)
 
 FAKE_TICKET_HELPER(small)
 
-/obj/item/scratch_ticket/med
-	name = "GOLD GOLD GOLD ticket"
-	desc = "A lottery ticket, advertising a jackpot of 1,000,000 credits. The artwork depicts a spray of golden coins erupting from a fountain. Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
-	icon_state = "ticket"
-	custom_price = 100
-	prize_chances = list(0.00001, 0.001, 0.1, 5, 5, 5, 5)
-	prize_amounts = list(1000000, 50000, 1000, 500, 200, 100, 60)
-
-FAKE_TICKET_HELPER(med)
-
 /obj/item/scratch_ticket/large
-	name = "LUCKY NUMBER 12 ticket"
-	desc = "A lottery ticket, advertising a jackpot of 12,000,000 credits. The artwork depicts a large pile of traditional Shoal luck charms. Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
-	icon_state = "ticket"
-	custom_price = 200
-	prize_chances = list(0.00001, 0.001, 0.1, 5, 5, 5, 5)
-	prize_amounts = list(12000000, 100000, 2000, 1000, 400, 200, 150)
-
-FAKE_TICKET_HELPER(large)
-
-/obj/item/scratch_ticket/xl
-	name = "WARP DRIVE ticket"
+	name = "FORTUNE AWAITS ticket"
 	desc = "A lottery ticket, advertising a jackpot of 100,000,000 credits. The artwork depicts a burning spaceship jumping into the \"Money Dimension\". Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
 	icon_state = "ticket"
 	custom_price = 500
-	prize_chances = list(0.00001, 0.001, 0.1, 5, 5, 5, 5)
-	prize_amounts = list(100000000, 1000000, 25000, 5000, 1000, 500, 200)
+	jackpot_alerts_admins = TRUE
+	prize_chances = list(0.00001, 0.001, 0.01, 0.1, 1, 5, 5, 10, 10)
+	prize_amounts = list(100000000, 1000000, 500000, 25000, 5000, 1000, 500, 250, 150)
 
-FAKE_TICKET_HELPER(xl)
+FAKE_TICKET_HELPER(large)
 
 #undef FAKE_TICKET_HELPER

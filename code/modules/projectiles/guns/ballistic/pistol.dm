@@ -110,6 +110,7 @@
 	manufacturer = MANUFACTURER_NONE
 	has_safety = FALSE // you get what you pay for
 	safety = FALSE
+	no_bolt_overlay = TRUE
 
 	var/desc_more = null // for appending variant descriptions
 
