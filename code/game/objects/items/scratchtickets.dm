@@ -116,7 +116,7 @@
 /obj/item/scratch_ticket/small
 	name = "FAST CASH ticket"
 	desc = "A lottery ticket, advertising prizes up to 10,000 credits. The artwork depicts a rain of various denominations of paper credits being sprayed from a hose. Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
-	icon_state = "ticket"
+	icon_state = "ticket_red"
 	custom_price = 20
 	prize_chances = list(0.001, 1, 5, 8, 8, 10)
 	prize_amounts = list(10000, 100, 50, 20, 15, 10)
@@ -126,7 +126,7 @@ FAKE_TICKET_HELPER(small)
 /obj/item/scratch_ticket/large
 	name = "FORTUNE AWAITS ticket"
 	desc = "A lottery ticket, advertising a jackpot of 100,000,000 credits. The artwork depicts a burning spaceship jumping into the \"Money Dimension\". Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
-	icon_state = "ticket"
+	icon_state = "ticket_blue"
 	custom_price = 500
 	jackpot_alerts_admins = TRUE
 	prize_chances = list(0.00001, 0.001, 0.01, 0.1, 1, 5, 5, 10, 10)
