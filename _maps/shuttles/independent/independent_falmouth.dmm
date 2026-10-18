@@ -978,6 +978,7 @@
 /obj/structure/cable/pink{
 	icon_state = "6-10"
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "mG" = (
@@ -1502,6 +1503,7 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "tj" = (
@@ -1515,6 +1517,10 @@
 /obj/machinery/firealarm/directional/east{
 	pixel_x = 32;
 	pixel_y = -10
+	},
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	pixel_x = 17;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -3256,6 +3262,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Sb" = (
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Se" = (
@@ -3471,6 +3478,9 @@
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "VB" = (
@@ -3543,6 +3553,7 @@
 	pixel_y = -7
 	},
 /obj/machinery/light/small/directional/north,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Wm" = (
