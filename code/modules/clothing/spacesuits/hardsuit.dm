@@ -753,7 +753,7 @@
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95, "wound" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
-	slowdown = 0.7
+	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 	//SWAT MKII
