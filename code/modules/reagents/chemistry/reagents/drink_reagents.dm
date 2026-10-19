@@ -316,7 +316,7 @@
 	glass_name = "iced coffee"
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on its own, though!"
 
-/datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
+/datum/reagent/consumable/icecoffee/overdose_process(mob/living/M, seconds_per_tick)
 	M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
@@ -339,14 +339,14 @@
 	glass_name = "hot ice coffee"
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
-/datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/overdoser)
+/datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/overdoser, seconds_per_tick)
 	overdoser.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
-	metabolizer.AdjustSleeping(-60)
+	metabolizer.AdjustSleeping(-6 SECONDS)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	metabolizer.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	..()
@@ -609,8 +609,8 @@
 	glass_name = "soy latte"
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
-/datum/reagent/consumable/soy_latte/overdose_process(mob/living/overdoser)
-	overdoser.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+/datum/reagent/consumable/soy_latte/overdose_process(mob/living/overdoser, seconds_per_tick)
+	overdoser.set_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
@@ -633,8 +633,8 @@
 	glass_name = "cafe latte"
 	glass_desc = "A nice, strong, refreshing beverage. It goes well with a book, if you have the time to read."
 
-/datum/reagent/consumable/cafe_latte/overdose_process(mob/living/overdoser)
-	overdoser.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+/datum/reagent/consumable/cafe_latte/overdose_process(mob/living/overdoser, seconds_per_tick)
+	overdoser.set_timed_status_effect(4 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
@@ -806,7 +806,7 @@
 	glass_name = "glass of menthol"
 	glass_desc = "Tastes naturally and sharply minty, with a mild numbing sensation."
 
-/datum/reagent/consumable/menthol/on_mob_life(mob/living/L)
+/datum/reagent/consumable/menthol/on_mob_life(mob/living/L, seconds_per_tick)
 	L.apply_status_effect(/datum/status_effect/throat_soothed)
 	..()
 

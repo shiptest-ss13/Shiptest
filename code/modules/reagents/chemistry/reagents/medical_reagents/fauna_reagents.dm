@@ -32,7 +32,7 @@
 	M.adjustToxLoss(tox_dam * REM * seconds_per_tick, 0)
 	..()
 
-/datum/reagent/medicine/soulus/overdose_process(mob/living/M)
+/datum/reagent/medicine/soulus/overdose_start(mob/living/M)
 	var/mob/living/carbon/C = M
 	if(!istype(C.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull))
 		var/obj/item/organ/legion_skull/spare_ribs = new()

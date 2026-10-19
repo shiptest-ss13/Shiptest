@@ -13,7 +13,8 @@
 	taste_description = "badmins"
 	autowiki_hidden = TRUE
 
-/datum/reagent/medicine/adminordrazine/on_mob_life(mob/living/carbon/M)
+// This probably should be expose_mob or on_mob_metabolize and then delete the reagent, it's admin stuff but still expensive af
+/datum/reagent/medicine/adminordrazine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.reagents.remove_all_type(/datum/reagent/toxin, 5*REM, 0, 1)
 	M.setCloneLoss(0, 0)
 	M.setOxyLoss(0, 0)

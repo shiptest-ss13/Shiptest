@@ -218,7 +218,7 @@
 		if(istype(zombiepowder))
 			zombiepowder.fakedeath_active = TRUE
 
-/datum/reagent/toxin/zombiepowder/on_mob_life(mob/living/metabolizer)
+/datum/reagent/toxin/zombiepowder/on_mob_life(mob/living/metabolizer, seconds_per_tick)
 	..()
 	if(fakedeath_active)
 		return TRUE
@@ -330,7 +330,7 @@
 	color = "#9ACD32"
 	toxpwr = 0.5
 
-/datum/reagent/toxin/spore/on_mob_life(mob/living/carbon/C)
+/datum/reagent/toxin/spore/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	C.damageoverlaytemp = 60
 	C.update_damage_hud()
 	C.blur_eyes(3) // set 6 seconds
@@ -960,8 +960,8 @@
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "sourness"
 
-/datum/reagent/cryptobiolin/on_mob_life(mob/living/carbon/M)
-	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+/datum/reagent/cryptobiolin/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.set_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if(!M.confused)
 		M.confused = 1
 	M.confused = max(M.confused, 20) // 40 seconds

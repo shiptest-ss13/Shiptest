@@ -632,7 +632,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "metal"
 
-/datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
+/datum/reagent/lithium/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
 	..()
@@ -699,8 +699,8 @@
 		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 1))
 		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 2))
 
-/datum/reagent/uranium/on_mob_life(mob/living/carbon/M)
-	M.apply_effect(irradiation_level/M.metabolism_efficiency,EFFECT_IRRADIATE,0)
+/datum/reagent/uranium/on_mob_life(mob/living/carbon/M,seconds_per_tick)
+	M.apply_effect(irradiation_level*seconds_per_tick/M.metabolism_efficiency,EFFECT_IRRADIATE,0)
 	..()
 
 /datum/reagent/uranium/expose_turf(turf/T, reac_volume)
@@ -1299,7 +1299,7 @@
 /datum/reagent/colorful_reagent/proc/UpdateColor()
 	color = pick(random_color_list)
 
-/datum/reagent/colorful_reagent/on_mob_life(mob/living/carbon/M)
+/datum/reagent/colorful_reagent/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(can_colour_mobs)
 		M.add_atom_colour(pick(random_color_list), WASHABLE_COLOUR_PRIORITY)
 	return ..()
@@ -1486,7 +1486,7 @@
 	message_admins("[M] was forced to eat cement when [M.p_they()] [M.p_were()] [age]!")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "cement", /datum/mood_event/cement) // pluh
 
-/datum/reagent/cement/on_mob_life(mob/living/carbon/M)
+/datum/reagent/cement/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = ..()
 	if(prob(min(current_time/4, 5)))
 		M.adjustToxLoss(potency)
@@ -1566,7 +1566,7 @@
 	color = "#3f4543"
 	floor_type = /turf/open/floor/concrete/pavement
 
-/datum/reagent/asphalt/on_mob_life(mob/living/carbon/M)
+/datum/reagent/asphalt/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = ..()
 	if(prob(min(current_time/4, 5)))
 		M.adjustToxLoss(2)
@@ -1892,7 +1892,7 @@
 	taste_description = "acrid cinnamon"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 
-/datum/reagent/bz_metabolites/on_mob_metabolize(mob/living/L, seconds_per_tick, times_fired)
+/datum/reagent/bz_metabolites/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, CHANGELING_HIVEMIND_MUTE, type)
 
@@ -2026,7 +2026,7 @@
 	metabolization_rate = INFINITY
 	taste_description = "slime"
 
-/datum/reagent/mulligan/on_mob_life(mob/living/carbon/human/H)
+/datum/reagent/mulligan/on_mob_life(mob/living/carbon/human/H, seconds_per_tick)
 	..()
 	if (!istype(H))
 		return
@@ -2040,7 +2040,7 @@
 	reagent_state = LIQUID
 	color = "#00f041"
 
-/datum/reagent/magillitis/on_mob_life(mob/living/carbon/M)
+/datum/reagent/magillitis/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	..()
 	if((ismonkey(M) || ishuman(M)) && current_time >= 20)
 		M.gorillize()

@@ -114,7 +114,7 @@
 /datum/reagent/medicine/chartreuse/on_mob_end_metabolize(mob/living/M)
 	M.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, color)		// Removes temporary (not permanent) chartreuse
 
-/datum/reagent/medicine/chartreuse/overdose_process(mob/living/M)
+/datum/reagent/medicine/chartreuse/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.add_atom_colour(color, FIXED_COLOUR_PRIORITY)		// Eternal chartreuse
 	M.set_drugginess(15)		// Also druggy
 	..()

@@ -115,7 +115,7 @@
 	glass_name = "Three Mile Island Ice Tea"
 	glass_desc = "A glass of Three Mile Island Ice Tea, named after a cordoned-off set of islands on Earth, for some reason. You almost can't taste the alcohol in it..."
 
-/datum/reagent/consumable/ethanol/threemileisland/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/threemileisland/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.set_drugginess(50)
 	return ..()
 
@@ -293,7 +293,7 @@
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#FFCC00") //Tequila Sunrise makes you radiate dim light, like a sunrise!
 
-/datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(QDELETED(light_holder))
 		M.reagents.del_reagent(/datum/reagent/consumable/ethanol/tequila_sunrise) //If we lost our light object somehow, remove the reagent
 	else if(light_holder.loc != M)
@@ -1156,7 +1156,7 @@
 			to_chat(thehuman, span_notice("[theshield] appears polished, although you don't recall polishing it."))
 			return TRUE
 
-/datum/reagent/consumable/ethanol/alexander/on_mob_life(mob/living/L)
+/datum/reagent/consumable/ethanol/alexander/on_mob_life(mob/living/L, seconds_per_tick)
 	..()
 	if(mighty_shield && !(mighty_shield in L.contents)) //If you had a shield and lose it, you lose the reagent as well. Otherwise this is just a normal drink.
 		L.reagents.del_reagent(/datum/reagent/consumable/ethanol/alexander)
@@ -1575,8 +1575,8 @@
 	glass_name = "Hullbreach"
 	glass_desc = "Fire and ice combine in your mouth, like being pulled out into space."
 
-/datum/reagent/consumable/ethanol/freezer_burn/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.2, 0)
+/datum/reagent/consumable/ethanol/freezer_burn/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjustFireLoss(-0.2 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -1616,7 +1616,7 @@
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#8000ff")
 
-/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(QDELETED(light_holder))
 		M.reagents.del_reagent(/datum/reagent/consumable/ethanol/darkest_chocolate)
 	else if(light_holder.loc != M)
@@ -1694,21 +1694,21 @@
 	glass_name = "Eudaimonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
-/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	if(!mood)
 		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL)
-		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
+		mood.setSanity(min(mood.sanity+2.5*seconds_per_tick, SANITY_GREAT))
 	..()
 
-/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	//don't mix uppers and downers, kids.
-	if(prob(6) && iscarbon(M))
+	if(SPT_PROB(3, seconds_per_tick) && iscarbon(M))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)
 		to_chat(M, pick("Your head aches as you struggle to grasp the concepts.", "The world slows down for a precious second, a headache forming within you.", "Clusters of pain open and close within your mind's eye.", "Aches and pains fill your head as your comprehension breaks!"))
-	else if(prob(30))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM)
+	else if(SPT_PROB(15, seconds_per_tick))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 		M.adjust_disgust(5)
 
 /datum/reagent/consumable/ethanol/royal_battery_acid

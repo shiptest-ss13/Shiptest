@@ -202,19 +202,19 @@
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	overdose_threshold = 20
 
-/datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/Mn seconds_per_tick)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	if(!mood)
 		return ..()
 	if(mood.sanity <= SANITY_GREAT)
-		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
+		mood.setSanity(min(mood.sanity+2.5*seconds_per_tick, SANITY_GREAT))
 	..()
 	. = 1
 
-/datum/reagent/medicine/lithium_carbonate/overdose_process(mob/living/M)
-	if(prob(5))
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+/datum/reagent/medicine/lithium_carbonate/overdose_process(mob/living/M, seconds_per_tick)
+	if(SPT_PROB(2.5, seconds_per_tick))
+		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 	. = 1
 

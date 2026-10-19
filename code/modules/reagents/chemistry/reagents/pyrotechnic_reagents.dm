@@ -107,7 +107,7 @@
 	metabolization_rate = 0.05
 	taste_description = "salt"
 
-/datum/reagent/gunpowder/on_mob_life(mob/living/carbon/M)
+/datum/reagent/gunpowder/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = TRUE
 	..()
 	if(!isplasmaman(M))
@@ -235,13 +235,13 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 
-/datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
+/datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M, seconds_per_tick) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
-		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(-5)
+		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.25 * seconds_per_tick)
+		M.adjust_bodytemperature(-2.5*seconds_per_tick)
 		if(ishuman(M))
 			var/mob/living/carbon/human/target_human = M
-			target_human.adjust_coretemperature(-15)
+			target_human.adjust_coretemperature(-7.5*seconds_per_tick)
 	..()
 
 /datum/reagent/cryostylane/expose_turf(turf/T, reac_volume)
@@ -259,13 +259,13 @@
 	self_consuming = TRUE
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
-/datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
+/datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(holder.has_reagent(/datum/reagent/oxygen))
-		holder.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(5)
+		holder.remove_reagent(/datum/reagent/oxygen, 0.25*seconds_per_tick)
+		M.adjust_bodytemperature(2.5*seconds_per_tick)
 		if(ishuman(M))
 			var/mob/living/carbon/human/target_human = M
-			target_human.adjust_coretemperature(15)
+			target_human.adjust_coretemperature(7.5*seconds_per_tick)
 	..()
 
 /datum/reagent/teslium //Teslium. Causes periodic shocks, and makes shocks against the target much more effective.
@@ -280,9 +280,9 @@
 	var/shock_timer = 0
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
-/datum/reagent/teslium/on_mob_life(mob/living/carbon/M)
-	shock_timer++
-	if(shock_timer >= rand(5,30)) //Random shocks are wildly unpredictable
+/datum/reagent/teslium/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	shock_timer += seconds_per_tick
+	if(shock_timer >= rand(10,60)) //Random shocks are wildly unpredictable
 		shock_timer = 0
 		M.electrocute_act(rand(5,20), "Teslium in their body", 1, SHOCK_NOGLOVES) //SHOCK_NOGLOVES because it's caused from INSIDE of you
 		playsound(M, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)

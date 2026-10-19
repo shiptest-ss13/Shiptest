@@ -85,8 +85,8 @@
 /datum/reagent/medicine/metafactor/overdose_start(mob/living/carbon/M)
 	metabolization_rate = 2  * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/metafactor/overdose_process(mob/living/carbon/M)
-	if(prob(25))
+/datum/reagent/medicine/metafactor/overdose_process(mob/living/carbon/M, seconds_per_tick)
+	if(SPT_PROB(12.5, seconds_per_tick))
 		M.vomit()
 	..()
 
@@ -552,7 +552,7 @@
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
 
-/datum/reagent/medicine/salbutamol/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
+/datum/reagent/medicine/salbutamol/overdose_process(mob/living/affected_mob, seconds_per_tick)
 	. = ..()
 
 	if (!iscarbon(affected_mob))
@@ -566,7 +566,7 @@
 			carbon_mob.losebreath += 1
 			to_chat(affected_mob, span_danger("Your diaphram spasms and you find yourself unable to breathe!"))
 		else
-			carbon_mob.breathe(seconds_per_tick, times_fired)
+			carbon_mob.breathe(seconds_per_tick, 1) // 1 because the var isn't even used
 			to_chat(affected_mob, span_danger("Your diaphram spasms and you unintentionally take a breath!"))
 
 	if (current_time > secondary_overdose_effect_seconds_threshold)
@@ -595,7 +595,7 @@
 	reagent_state = LIQUID
 	color = "#A4D8D8"
 
-/datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.losebreath >= 5)
 		M.losebreath -= 5
 	..()
@@ -757,8 +757,8 @@
 	..()
 	return TRUE
 
-/datum/reagent/medicine/hunter_extract/overdose_process(mob/living/M)		// Thanks to actioninja
-	if(prob(2) && iscarbon(M))
+/datum/reagent/medicine/hunter_extract/overdose_process(mob/living/M, seconds_per_tick)		// Thanks to actioninja
+	if(SPT_PROB(1, seconds_per_tick) && iscarbon(M))
 		var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 		var/obj/item/bodypart/bp = M.get_bodypart(selected_part)
 		if(bp)
