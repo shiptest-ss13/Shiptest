@@ -249,7 +249,7 @@
 	faction = /datum/faction/syndicate/cybersun
 
 /datum/supply_pack/medical/mkii_hypo_standalone
-	name = "Stadalone mk.II Hypospray"
+	name = "Standalone mk.II Hypospray"
 	desc = "Contains a standalone Matahari Pharmaceutical Hypospray, for on the field medical care."
 	cost = 600
 	contains = list(/obj/item/hypospray/mkii)
