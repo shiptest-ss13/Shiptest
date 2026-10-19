@@ -857,10 +857,10 @@
 		M.slurring = 1
 	M.slurring += 3 * REM * seconds_per_tick
 	switch(current_time)
-		if(101 to 400)
+		if(100 to 400)
 			M.Sleeping(10 SECONDS)
 			. = 1
-		if(400 to INFINITY)
+		if(401 to INFINITY)
 			M.AdjustSleeping(4 SECONDS * REM * seconds_per_tick)
 			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
@@ -883,12 +883,12 @@
 			if(!M.slurring)
 				M.slurring = 1
 			M.slurring += 3 * REM * seconds_per_tick
-		if(90 to 110)
+		if(91 to 110)
 			if(SPT_PROB(25, seconds_per_tick))
 				M.confused = max(M.confused+3,0)
-		if(110 to 400)
+		if(111 to 400)
 			M.set_drugginess(55) // 1 minute 50
-		if(400 to INFINITY)
+		if(401 to INFINITY)
 			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
 	..()
@@ -957,15 +957,15 @@
 		if(1 to 10)
 			M.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(30) // 1 minute
-		if(10 to 40)
+		if(11 to 40)
 			M.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			M.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(45) // 1 minute 30
-		if (40 to 400)
+		if (41 to 400)
 			M.set_timed_status_effect(80 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			M.set_timed_status_effect(80 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(60) // 2 minutes
-		if(400 to INFINITY)
+		if(401 to INFINITY)
 			M.set_timed_status_effect(120 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			M.set_timed_status_effect(120 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(75) /// 2 minutes 30
@@ -1548,11 +1548,11 @@
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blurry)
 				C.blur_eyes(6)
 				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
-		if(80 to 200)
+		if(81 to 200)
 			C.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(15))
 				new /datum/hallucination/hudscrew(C)
-		if(200 to INFINITY)
+		if(201 to INFINITY)
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blind)
 				C.blind_eyes(6)
 				to_chat(C, span_userdanger("Your vision fades as your eyes are outlined in black!"))

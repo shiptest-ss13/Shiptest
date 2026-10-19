@@ -60,7 +60,7 @@
 	switch(current_time)
 		if(1 to 40)
 			EMPTY_BLOCK_GUARD //nothing
-		if(40 to INFINITY)
+		if(41 to INFINITY)
 			if(SPT_PROB(current_time/2-10, seconds_per_tick))
 				metabolizer.cure_nearsighted(list(EYE_DAMAGE))
 	..()

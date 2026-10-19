@@ -243,17 +243,17 @@
 				holder.remove_reagent(/datum/reagent/consumable/capsaicin, 5)
 			if(isslime(metabolizer))
 				cooling = -rand(1,2)
-		if(30 to 50)
+		if(31 to 50)
 			cooling = -20 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(isslime(metabolizer))
 				cooling = -rand(2,4)
-		if(50 to 70)
+		if(51 to 70)
 			cooling = -30 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(1))
 				metabolizer.emote("shiver")
 			if(isslime(metabolizer))
 				cooling = -rand(4,8)
-		if(70 to INFINITY)
+		if(71 to INFINITY)
 			cooling = -40 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(5))
 				metabolizer.emote("shiver")
@@ -358,11 +358,11 @@
 		if(1 to 10)
 			metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			metabolizer.set_drugginess(30) // 1 minute
-		if(10 to 20)
+		if(11 to 20)
 			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			metabolizer.set_drugginess(35) // 1 minute 10
-		if (20 to INFINITY)
+		if (21 to INFINITY)
 			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			metabolizer.set_drugginess(40) // 1 minute 20

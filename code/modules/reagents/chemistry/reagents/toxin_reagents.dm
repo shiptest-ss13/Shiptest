@@ -227,9 +227,9 @@
 			metabolizer.confused += 1
 			metabolizer.drowsyness += 1
 			metabolizer.slurring += 3
-		if(10 to 16)
+		if(11 to 16)
 			metabolizer.adjustStaminaLoss(40, 0)
-		if(16 to INFINITY)
+		if(17 to INFINITY)
 			fakedeath_active = TRUE
 			metabolizer.fakedeath(type)
 
@@ -363,10 +363,10 @@
 		if(1 to 20)
 			metabolizer.confused += 2
 			metabolizer.drowsyness += 2
-		if(20 to 100)
+		if(21 to 100)
 			metabolizer.Sleeping(4 SECONDS)
 			. = 1
-		if(100 to INFINITY)
+		if(101 to INFINITY)
 			metabolizer.Sleeping(4 SECONDS)
 			metabolizer.adjustToxLoss((current_time/2 - 50) * REM * seconds_per_tick, 0)
 			. = 1
@@ -385,7 +385,7 @@
 	switch(current_time)
 		if(1 to 100)
 			metabolizer.Sleeping(4 SECONDS)
-		if(100 to INFINITY)
+		if(101 to INFINITY)
 			metabolizer.Sleeping(4 SECONDS)
 			metabolizer.adjustToxLoss((current_time/2 - 50) * REM * seconds_per_tick, 0)
 	return ..()

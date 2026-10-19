@@ -14,9 +14,9 @@
 		if(1 to 20)
 			if(C.drowsyness < 10)
 				C.drowsyness += 2
-		if(20 to 60)
+		if(21 to 60)
 			C.adjustStaminaLoss(2.5 * seconds_per_tick)
-		if(60 to INFINITY)
+		if(61 to INFINITY)
 			C.AdjustSleeping(4 SECONDS)
 			//formerly everything-fixing juice
 			for(var/datum/wound/blunt/bone/broken_bone in C.all_wounds)

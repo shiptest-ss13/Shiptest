@@ -74,12 +74,12 @@
 	if(current_time >= 10)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_time)
-		if(101 to 150)
+		if(100 to 150)
 			if(!shown_warn_message)
 				to_chat(M, span_warning("You start to feel tired..."))
 				shown_warn_message = TRUE
 			M.drowsyness += 0.5 * seconds_per_tick
-		if(150 to INFINITY)
+		if(151 to INFINITY)
 			M.Sleeping(2 SECONDS * seconds_per_tick) // honk mimimi
 			. = 1
 	..()
