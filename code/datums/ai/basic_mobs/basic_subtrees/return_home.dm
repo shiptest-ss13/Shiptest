@@ -41,7 +41,8 @@
 			return // close enough to keep going after them
 		AI_LOG_DECISION(controller, "return_home: [home_distance] tiles from home, too far to keep chasing")
 		controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET) // they've led us too far, so let them go
-	if(home_distance <= home_range || try_linger_over_downed(controller))
+	var/post_radius = controller.blackboard[BB_BASIC_MOB_POST_RADIUS]
+	if(home_distance <= (isnull(post_radius) ? home_range : post_radius) || try_linger_over_downed(controller))
 		return
 	var/mob/living/basic/basic_mob = controller.pawn
 	if(istype(basic_mob) && !is_environment_safe_for(basic_mob, home))

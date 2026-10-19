@@ -10,12 +10,13 @@
 		return
 	if(AI_RECENTLY_SAW_ENEMY(controller, after_fight_quiet))
 		return
-	var/list/lines = controller.blackboard[BB_BASIC_MOB_IDLE_LINES]
 	var/list/emotes = controller.blackboard[BB_BASIC_MOB_IDLE_EMOTES]
-	var/total = length(lines) + length(emotes)
+	var/datum/component/ai_callouts/callouts = controller.pawn.GetComponent(/datum/component/ai_callouts)
+	var/line_count = callouts?.idle_line_count() || 0
+	var/total = line_count + length(emotes)
 	if(!total)
 		return
-	if(rand(1, total) <= length(lines))
-		controller.queue_behavior(/datum/ai_behavior/perform_speech, pick(lines))
-	else
-		controller.queue_behavior(/datum/ai_behavior/perform_emote, pick(emotes))
+	if(rand(1, total) <= line_count)
+		ai_callout(controller.pawn, AI_CALLOUT_IDLE)
+		return
+	controller.queue_behavior(/datum/ai_behavior/perform_emote, pick(emotes))

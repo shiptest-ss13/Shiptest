@@ -146,6 +146,8 @@
 	var/turf/cover = find_hiding_spot(controller.pawn, danger, search_range, exclude = controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
 	if(!cover)
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_HIDE_SEARCH, world.time + failed_search_cooldown)
+		if(danger_key == BB_BASIC_MOB_SHOT_FROM)
+			ai_callout(controller.pawn, AI_CALLOUT_NO_COVER) // so staying out in the open looks like we know it
 		return FALSE
 	controller.set_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF, cover)
 	set_movement_target(controller, cover)

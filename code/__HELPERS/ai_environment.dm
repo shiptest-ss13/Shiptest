@@ -87,6 +87,8 @@
 	return istype(water) && water.is_swimming_tile
 
 /proc/is_ai_hazard_turf(turf/spot)
+	if(HAS_TRAIT(spot, TRAIT_AI_AVOID))
+		return TRUE // a mapper wants us kept off it
 	if(istype(spot, /turf/open/chasm))
 		return !HAS_TRAIT(spot, TRAIT_CHASM_STOPPED)
 	if(istype(spot, /turf/open/lava))

@@ -64,6 +64,8 @@
 				continue // over whatever's in the way, like a player would, rather than looking for another way round
 			if(new_turf == old_turf && ask_ally_to_make_way(controller, movable_pawn, next_step))
 				continue // they've stepped aside, so we carry on through rather than looking for another way round
+			if(new_turf == old_turf && unbuckle_body_in_way(controller, movable_pawn, next_step))
+				continue // it's on the floor now, out of the way, so we carry on through
 			if(new_turf == old_turf)
 				bump_door_in_the_way(movable_pawn, next_step)
 			if(new_turf == next_step)
@@ -258,6 +260,21 @@
 	if(HAS_TRAIT(climber, TRAIT_FREERUNNING))
 		duration *= 0.8
 	return duration * climber.do_after_coefficent() + structure.climb_stun
+
+// unbuckle a body if it's in the way
+/datum/ai_movement/jps/proc/unbuckle_body_in_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
+	var/mob/living/living_mover = mover
+	if(!istype(living_mover) || living_mover.incapacitated())
+		return FALSE
+	for(var/mob/living/body in next_step)
+		if(!body.density || !body.buckled || (body.stat == CONSCIOUS && !body.incapacitated()))
+			continue
+		var/atom/movable/seat = body.buckled
+		living_mover.visible_message(span_warning("[living_mover] tips [body] out of [seat]."))
+		seat.unbuckle_mob(body, force = TRUE)
+		controller.movement_cooldown = world.time + CLICK_CD_MELEE // as long as a swing takes
+		return TRUE
+	return FALSE
 
 // one of ours is stood where we're stepping, so we ask them to step aside, as a player would. TRUE if they did
 /datum/ai_movement/jps/proc/ask_ally_to_make_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)

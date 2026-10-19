@@ -22,6 +22,9 @@
 	var/atom/target = controller.blackboard[target_key]
 	if(target && (QDELETED(target) || !targetting_datum.can_attack(living_pawn, target)))
 		AI_LOG_DECISION(controller, "update_combat_targets: can't fight [target] any more, dropping them")
+		var/mob/living/living_target = target
+		if(istype(living_target) && !QDELETED(living_target) && living_target.stat != DEAD && ai_is_downed(living_target))
+			controller.set_blackboard_key(BB_BASIC_MOB_DROPPED_DOWNED, living_target) // down, not out, so we'll know them if they get up
 		controller.clear_blackboard_key(target_key)
 		target = null
 	var/target_unseen = target && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE
@@ -32,6 +35,9 @@
 	if(!best || best == target)
 		return
 	AI_LOG_DECISION(controller, "update_combat_targets: [target ? "switching from [target] to [best]" : "going after [best]"]")
+	if(best == controller.blackboard[BB_BASIC_MOB_DROPPED_DOWNED])
+		controller.clear_blackboard_key(BB_BASIC_MOB_DROPPED_DOWNED)
+		ai_callout(living_pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE) // we left them for down, and they're back on their feet
 	controller.set_blackboard_key(target_key, best)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
 

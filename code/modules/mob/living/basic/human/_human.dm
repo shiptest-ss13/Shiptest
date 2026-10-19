@@ -62,6 +62,9 @@
 	var/obj/l_hand
 	// Prob of us dropping l/r hand loot.
 	var/weapon_drop_chance = 10
+	/// Typepath of the grenade we throw, for grenadiers, and how many we carry. Any we've not thrown we can drop when we die, at weapon_drop_chance each
+	var/obj/item/grenade/grenade_type
+	var/grenade_count = 0
 	///Steals the armor datum from this type of armor. Only if we've no mob_spawner to be armoured by the outfit of, or we're armored_all_over, see human_armor.dm
 	var/obj/item/clothing/armor_base
 	/// If TRUE, armor_base covers us all over even though we've a mob_spawner, rather than what our corpse wears, like armour that isn't part of the outfit
@@ -144,6 +147,10 @@
 	var/leash_distance
 	/// If FALSE, the mob stands still rather than wandering about when there's nothing to do, like sentries
 	var/wander = TRUE
+	/// If TRUE, the mob holds the spot it's put on, like a guard post or a sniper's nest, rather than flanking or going after anyone. Those with guns fight from within post_radius of it, taking cover there, those without only go a few tiles for anyone close. Always on for those that don't wander with a marksman's rifle
+	var/holds_post = FALSE
+	/// For those holding a post, how many tiles from it they'll go to take cover or get a shot. 0 to stay right on it
+	var/post_radius = 2
 	/// If TRUE, the mob doesn't fight, but runs and shouts for help instead
 	var/noncombatant = FALSE
 	/// Typepath of the /datum/ai_callout_set the mob says things from in a fight. Null to stay quiet
@@ -161,8 +168,8 @@
 	/// Emotes the mob does now and then while there's nobody to fight, heard and seen, like "grumbles."
 	var/list/emote_hear
 	var/list/emote_see
-	/// Chance each 2 seconds of one of speak, emote_hear or emote_see, while there's nobody to fight
-	var/speak_chance = 0
+	/// Chance each 2 seconds of a line, ours from speak or our callout set's, or one of emote_hear or emote_see, while there's nobody to fight
+	var/speak_chance = 5
 
 /mob/living/basic/human/Initialize(mapload)
 	. = ..()
@@ -214,7 +221,10 @@
 		if(noncombatant)
 			ai_controller = /datum/ai_controller/basic_controller/human/noncombatant
 		else if(casing_type || projectile_type || fires_flames)
-			ai_controller = pick_ranged_controller()
+			var/ranged_controller = pick_ranged_controller()
+			if(!wander && ranged_controller == /datum/ai_controller/basic_controller/human/ranged/marksman)
+				holds_post = TRUE // a rifleman put somewhere to stand, like a bunker, is there to hold it
+			ai_controller = holds_post ? pick_post_controller() : ranged_controller
 		else
 			ai_controller = pick_melee_controller()
 	return ..()
@@ -239,6 +249,12 @@
 		return /datum/ai_controller/basic_controller/human/ranged/gunslinger
 
 	return /datum/ai_controller/basic_controller/human/ranged
+
+// one holding a post, which only cares whether our gun's one to pin people down with
+/mob/living/basic/human/proc/pick_post_controller()
+	if(pick_ranged_controller() == /datum/ai_controller/basic_controller/human/ranged/support_gunner)
+		return /datum/ai_controller/basic_controller/human/ranged/post/support_gunner
+	return /datum/ai_controller/basic_controller/human/ranged/post
 
 /mob/living/basic/human/MobBump(mob/bumped)
 	if(!client && !noncombatant)
@@ -269,17 +285,27 @@
 	var/obj/item/melee_weapon = get_melee_weapon()
 	// fighting up close with something light, like a knife, we keep up the pressure by sidestepping around them between blows
 	var/light_melee_fighter = !noncombatant && !(casing_type || projectile_type || fires_flames) && melee_weapon && !has_heavy_melee_weapon(melee_weapon)
-	if(dodging || light_melee_fighter || mobility == AI_MOBILITY_HIGH)
+	if(!holds_post && (dodging || light_melee_fighter || mobility == AI_MOBILITY_HIGH))
 		AddComponent(/datum/component/ai_dodging, dodge_chance, sidesteps, mobility == AI_MOBILITY_HIGH ? 50 : 25)
 	if(callout_set || (length(on_aggro_say) && aggro_say_chance))
 		// on_aggro_say is what we shout on spotting someone, in place of our callout set's lines for it, rather than as well
-		AddComponent(/datum/component/ai_callouts, callout_set || /datum/ai_callout_set, mob_species, length(on_aggro_say) && aggro_say_chance ? on_aggro_say : null, aggro_say_chance)
+		AddComponent(/datum/component/ai_callouts, callout_set || /datum/ai_callout_set, mob_species, length(on_aggro_say) && aggro_say_chance ? on_aggro_say : null, aggro_say_chance, length(speak) ? string_list(speak) : null)
 
 /mob/living/basic/human/proc/setup_ai_blackboard()
 	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
 	if(!isnull(leash_distance))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE, leash_distance)
+	else if(holds_post)
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE, max(3, post_radius)) // those without guns still have to go to whoever's close to hit them, but not far
+	if(holds_post)
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_POST_RADIUS, max(0, post_radius))
+		var/turf/post = get_turf(src)
+		if(post && !is_bare_space(post))
+			ai_controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, post) // post holders go back to their spawn post
+	if(ispath(grenade_type, /obj/item/grenade) && grenade_count > 0)
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_TYPE, grenade_type)
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenade_count)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_CHANCE, noncombatant ? 0 : throw_back_chance) // civilians just run
 	if(mob_spawner && spawner_has_jetpack(mob_spawner))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
@@ -296,10 +322,8 @@
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_SUMMONS_BACKUP, TRUE)
 	if(!r_hand && !l_hand)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_SHOVES_WHEN_CORNERED, TRUE) // nothing to swing, so we push them away to get room to run
-	if(speak_chance && (length(speak) || length(emote_hear) || length(emote_see)))
-		ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_CHATTER_CHANCE, speak_chance)
-		if(length(speak))
-			ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_LINES, string_list(speak))
+	if(speak_chance)
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_CHATTER_CHANCE, speak_chance) // our lines are our callouts', so there's always something to say
 		if(length(emote_hear) || length(emote_see))
 			ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_EMOTES, string_list(emote_hear | emote_see))
 	if(check_friendly_fire)
@@ -307,7 +331,7 @@
 	var/obj/item/melee_weapon = get_melee_weapon()
 	if(melee_weapon && !ispath(melee_weapon, /obj/item/gun))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_PREFERS_MELEE, TRUE) // a blade as well as a gun, so up close we'd rather use that
-	if(!wander)
+	if(!wander || holds_post)
 		QDEL_NULL(ai_controller.idle_behavior)
 	if(rapid_melee > 1)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_MELEE_HITS, rapid_melee)
@@ -319,6 +343,8 @@
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_ENGAGE_DISTANCE, engage_distance)
 
 /mob/living/basic/human/death(gibbed)
+	if(ai_controller)
+		ai_drop_held_grenade(ai_controller) // drop the potato
 	if(human_loot && stat != DEAD && isturf(loc))
 		drop_human_loot()
 	return ..()
@@ -332,6 +358,10 @@
 			wound_corpse(corpse)
 	handle_hand_item_destruction(l_hand)
 	handle_hand_item_destruction(r_hand)
+	var/grenades_left = ai_controller?.blackboard[BB_BASIC_MOB_GRENADES_LEFT] || 0
+	for(var/grenade_number in 1 to grenades_left)
+		if(prob(weapon_drop_chance))
+			new grenade_type(loc)
 
 /mob/living/basic/human/vv_edit_var(var_name, var_value)
 	switch(var_name)
@@ -341,6 +371,14 @@
 				ai_controller?.clear_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE)
 			else
 				ai_controller?.set_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE, leash_distance) // so it takes effect on a mob that's already about
+			return
+		if(NAMEOF(src, grenade_type), NAMEOF(src, grenade_count))
+			. = ..()
+			if(ispath(grenade_type, /obj/item/grenade) && grenade_count > 0)
+				ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADE_TYPE, grenade_type) // so a mob that's already about can throw them
+				ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenade_count)
+			else
+				ai_controller?.clear_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT)
 			return
 		if(NAMEOF(src, armor_base))
 			if(ispath(var_value, /obj/item/clothing))

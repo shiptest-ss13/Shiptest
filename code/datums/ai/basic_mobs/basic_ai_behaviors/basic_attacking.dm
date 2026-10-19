@@ -121,11 +121,17 @@
 	if(holds_fire_when_blocked && !has_clear_shot(basic_mob, final_target))
 		return AI_BEHAVIOR_DELAY // we can see them, but they're tucked away where we'd only hit the wall
 
-	if((avoid_friendly_fire || controller.blackboard[BB_BASIC_MOB_AVOID_FRIENDLY_FIRE]) && check_friendly_in_path(basic_mob, target, targetting_datum))
+	var/mob/living/in_the_way = (avoid_friendly_fire || controller.blackboard[BB_BASIC_MOB_AVOID_FRIENDLY_FIRE]) ? check_friendly_in_path(basic_mob, target, targetting_datum) : null
+	if(in_the_way && !taking_the_shot(controller, basic_mob, in_the_way))
 		if(COOLDOWN_FINISHED(controller, movement_cooldown))
 			COOLDOWN_START(controller, movement_cooldown, controller.movement_delay)
-			adjust_position(basic_mob, target)
+			adjust_position(basic_mob, target, targetting_datum)
+		push_past_shield(controller, target)
 		return AI_BEHAVIOR_DELAY
+	if(!in_the_way)
+		controller.clear_blackboard_key(BB_BASIC_MOB_SHIELDED_SINCE)
+		controller.clear_blackboard_key(BB_BASIC_MOB_SHIELDED_FIRST_SINCE)
+		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_THE_SHOT)
 
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
@@ -146,17 +152,48 @@
 	if(!succeeded)
 		forget_invalid_target(controller, target_key, targetting_datum_key)
 
-/datum/ai_behavior/basic_ranged_attack/proc/check_friendly_in_path(mob/living/source, atom/target, datum/targetting_datum/targetting_datum)
-	var/list/turfs_list = calculate_trajectory(source, target)
+// from is where we'd be shooting from, if not where we are
+/datum/ai_behavior/basic_ranged_attack/proc/check_friendly_in_path(mob/living/source, atom/target, datum/targetting_datum/targetting_datum, turf/from)
+	var/list/turfs_list = calculate_trajectory(from || source, target)
 	for(var/turf/possible_turf as anything in turfs_list)
 
 		for(var/mob/living/potential_friend in possible_turf)
+			if(potential_friend == source || ai_shot_passes_over(potential_friend))
+				continue // the dead and the downed don't catch shots, so they're no reason to hold fire, or bodies would stop us shooting for good
 			if(!targetting_datum.can_attack(source, potential_friend))
-				return TRUE
+				return potential_friend // who's in the way
 
-	return FALSE
+	return null
 
-/datum/ai_behavior/basic_ranged_attack/proc/adjust_position(mob/living/living_pawn, atom/target)
+// whether we shoot anyway, past one of ours who's in the way: only if they're helpless, like stunned and dragged about as a shield, and it's gone on long enough that they're being kept that way.
+// Someone of ours who's just stood there can move, so we always wait for them
+/datum/ai_behavior/basic_ranged_attack/proc/taking_the_shot(datum/ai_controller/controller, mob/living/basic/basic_mob, mob/living/in_the_way)
+	var/shielded_since = controller.blackboard[BB_BASIC_MOB_SHIELDED_FIRST_SINCE]
+	if(isnull(shielded_since))
+		controller.set_blackboard_key(BB_BASIC_MOB_SHIELDED_FIRST_SINCE, world.time)
+		return FALSE
+	if(!in_the_way.incapacitated() || world.time - shielded_since < AI_SHIELDED_FIRE_TIME)
+		return FALSE
+	if(!controller.blackboard[BB_BASIC_MOB_TAKING_THE_SHOT])
+		controller.set_blackboard_key(BB_BASIC_MOB_TAKING_THE_SHOT, TRUE)
+		AI_LOG_DECISION(controller, "basic_ranged_attack: [in_the_way] has been kept in our way for [AI_SHIELDED_FIRE_TIME / 10] seconds, shooting anyway")
+		ai_callout(basic_mob, AI_CALLOUT_SHOOTING_THROUGH_ALLY, interrupt = TRUE)
+	return TRUE
+
+// one of ours has been in our way for a while, like someone dragging them about as a shield, so we close in, where a shield's no use against a swing or a shove
+/datum/ai_behavior/basic_ranged_attack/proc/push_past_shield(datum/ai_controller/controller, atom/target)
+	var/shielded_since = controller.blackboard[BB_BASIC_MOB_SHIELDED_SINCE]
+	if(isnull(shielded_since))
+		controller.set_blackboard_key(BB_BASIC_MOB_SHIELDED_SINCE, world.time)
+		return
+	if(world.time - shielded_since < AI_SHIELDED_PUSH_TIME || world.time < controller.blackboard[BB_BASIC_MOB_PRESSING_UNTIL])
+		return
+	AI_LOG_DECISION(controller, "basic_ranged_attack: one of ours has been in the way of [target] for [AI_SHIELDED_PUSH_TIME / 10] seconds, closing in")
+	controller.set_blackboard_key(BB_BASIC_MOB_PRESSING_UNTIL, world.time + AI_PRESS_TIME)
+	controller.set_blackboard_key(BB_BASIC_MOB_SHIELDED_SINCE, world.time) // and again after another while, if it's still going on
+
+// a step to somewhere we'd have a shot past whoever of ours is in the way. If there's nowhere, we stay put rather than shuffling back and forth, like at someone using one of ours as a shield
+/datum/ai_behavior/basic_ranged_attack/proc/adjust_position(mob/living/living_pawn, atom/target, datum/targetting_datum/targetting_datum)
 	if(LAZYLEN(living_pawn.do_afters))
 		return // mid-climb, or anything else that moving would cancel
 	var/turf/our_turf = get_turf(living_pawn)
@@ -168,6 +205,8 @@
 			continue
 		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf) || ai_diagonal_crosses_hazard(our_turf, target_turf) || get_dist(target_turf, target) > get_dist(living_pawn, target))
 			continue
+		if(targetting_datum && check_friendly_in_path(living_pawn, target, targetting_datum, target_turf))
+			continue // no better from there
 		possible_turfs += target_turf
 
 	if(!length(possible_turfs))
@@ -175,7 +214,7 @@
 	var/turf/picked_turf = get_closest_atom(/turf, possible_turfs, target)
 	step(living_pawn, get_dir(living_pawn, picked_turf))
 
-/datum/ai_behavior/basic_ranged_attack/proc/calculate_trajectory(mob/living/source , atom/target)
+/datum/ai_behavior/basic_ranged_attack/proc/calculate_trajectory(atom/source, atom/target)
 	var/list/turf_list = get_line(source, target)
 	var/list_length = length(turf_list) - 1
 	for(var/i in 1 to list_length)

@@ -161,6 +161,8 @@
 	// only if we're somewhere safe now, as if we're already in bad air we need a way out through it
 	avoid_bad_air = avoid_hazards && isbasicmob(requester) && is_environment_safe_for(requester, start)
 	avoid_tear_gas = avoid_bad_air && !ai_immune_to_tear_gas(requester) && !is_ai_irritant_smoke(start)
+	if(avoid_hazards && is_ai_hazard_turf(start))
+		avoid_hazards = FALSE // already stood in one, like a lava pool or a field of path blockers, so we need a way out through it, as with bad air
 	if(avoid_hazards)
 		hazard_cache = list()
 	if(avoid_bad_air)

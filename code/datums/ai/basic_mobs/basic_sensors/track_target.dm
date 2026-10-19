@@ -37,6 +37,8 @@
 		AI_LOG_DECISION(controller, "track_target: haven't seen [target] for [forget_time / 10] seconds, giving up on them")
 		controller.clear_blackboard_key(target_key)
 		forget_target(controller)
+		if(ai_is_person(target))
+			ai_queue_fight_over_check(controller.pawn, AI_CALLOUT_GOT_AWAY) // they're alive, as far as we know, but gone
 	else
 		follow_footsteps(controller, target)
 
@@ -69,7 +71,12 @@
 	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, target, world.time)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know about them for ourselves now
 	clear_search(controller)
-	if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
+	if(controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] == target && !ai_is_downed(target))
+		// we stayed on them while they were down, as those who finish people off do, and they're back up
+		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
+		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
+		ai_callout(controller.pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE)
+	else if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, TRUE)

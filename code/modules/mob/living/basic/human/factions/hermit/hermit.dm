@@ -94,6 +94,7 @@
 	engage_distance = 10
 	retreat_distance = 0
 	wander = FALSE
+	holds_post = TRUE
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
 /mob/living/basic/human/hermit/ranged/shotgun
@@ -115,6 +116,12 @@
 	burst_interval = 0.3 SECONDS
 	casing_type = /obj/item/ammo_casing/c46x30mm/recycled
 	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+
+/mob/living/basic/human/hermit/ranged/gunslinger/bomber
+	name = "Hermit Bomber"
+	desc = "A soot-stained survivor with a satchel of homemade firebombs, cans and fuses rattling with every step. They may not know when those go off, either."
+	grenade_type = /obj/item/grenade/iedcasing
+	grenade_count = 2
 
 /mob/living/basic/human/hermit/ranged/tesla_rifle
 	name = "Hermit Guardsman"

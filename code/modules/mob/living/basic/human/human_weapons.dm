@@ -138,6 +138,22 @@
 					lazor.cell.rigged = TRUE // smiles warmly
 					lazor.cell.show_rigged = FALSE
 
+/mob/living/basic/human/do_attack_animation(atom/A, visual_effect_icon, used_item, no_effect)
+	if(!visual_effect_icon && !used_item)
+		var/obj/item/weapon_type = get_melee_weapon()
+		if(ispath(weapon_type, /obj/item))
+			used_item = get_ai_item_template(weapon_type)
+	return ..()
+
+// One of item_type to copy the look of, for the AI to use for icons, cached
+/proc/get_ai_item_template(item_type)
+	var/static/list/templates = list()
+	var/obj/item/template = templates[item_type]
+	if(QDELETED(template))
+		template = new item_type
+		templates[item_type] = template
+	return template
+
 /mob/living/basic/human/melee_attack(atom/target)
 	. = ..()
 	if(!melee_knockback || !isliving(target))
@@ -146,7 +162,7 @@
 	if(!knocked.anchored)
 		knocked.throw_at(get_edge_target_turf(knocked, dir), rand(1, melee_knockback), 2, src, gentle = gentle_knockback)
 
-/// How a gun of this type fires in a burst, as list(shots, time between them) or null
+// How a gun of this type fires in a burst, as list(shots, time between them) or null
 /proc/get_gun_fire_pattern(gun_type)
 	var/static/list/pattern_by_type = list()
 	if(!ispath(gun_type, /obj/item/gun))
@@ -168,7 +184,7 @@
 	pattern_by_type[gun_type] = pattern
 	return pattern
 
-/// The attachments a gun of this type spawns with, worked out by making one, once per type, and remembered
+// The attachments a gun of this type spawns with, worked out by making one, once per type, and remembered
 /proc/get_gun_default_attachments(gun_type)
 	var/static/list/attachments_by_type = list()
 	if(!ispath(gun_type, /obj/item/gun))

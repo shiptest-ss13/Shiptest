@@ -4,6 +4,8 @@
 	var/list/lines = list()
 	// variants for morale versions
 	var/list/morale_lines = list()
+	// variants for when they're alone. prioritised over morale_lines too
+	var/list/solo_lines = list()
 	// what tells the group something is said near enough always, the rest less often, as our pool of lines is small and they'd soon wear thin
 	var/list/chances = list(
 		AI_CALLOUT_SPOTTED = 100,
@@ -11,6 +13,23 @@
 		AI_CALLOUT_BROKEN = 100,
 		AI_CALLOUT_GRENADE = 100,
 		AI_CALLOUT_THROW_BACK = 100,
+		AI_CALLOUT_GRENADE_OUT = 100, // the warning that it's coming, fair to whoever it's thrown at
+		AI_CALLOUT_TARGETS_STUNNED = 100,
+		AI_CALLOUT_IDLE = 100, // idle chatter rolls its own chance before it asks
+		AI_CALLOUT_LAST_STANDING = 100,
+		AI_CALLOUT_ALL_CLEAR = 100,
+		AI_CALLOUT_GETTING_UP = 100,
+		AI_CALLOUT_RAISING_ALARM = 75,
+		AI_CALLOUT_BREACHING = 75,
+		AI_CALLOUT_GOT_AWAY = 75,
+		AI_CALLOUT_CHECK_IN = 100, // whoever got hurt rolls get_checked_on()'s chance before anyone asks
+		AI_CALLOUT_STATUS_OK = 100, // a question left hanging sounds wrong
+		AI_CALLOUT_STATUS_BAD = 100,
+		AI_CALLOUT_LAST_SEEN = 100, // it's news to the one asking
+		AI_CALLOUT_COVERING = 70,
+		AI_CALLOUT_CANT_REACH = 60,
+		AI_CALLOUT_NO_SIGN = 60,
+		AI_CALLOUT_NO_COVER = 50,
 		AI_CALLOUT_FLASHED = 80,
 		AI_CALLOUT_KNOCKED_DOWN = 60,
 		AI_CALLOUT_GASSED = 60,
@@ -41,9 +60,13 @@
 		return
 	// anything we don't have a line for, we say like the set we're based on
 	var/datum/ai_callout_set/parent = get_ai_callout_set(parent_type)
+	var/list/own_lines = lines.Copy()
 	for(var/event in parent.lines)
 		if(!(event in lines))
 			lines[event] = parent.lines[event]
+	for(var/event in parent.solo_lines)
+		if(!(event in solo_lines) && !(event in own_lines))
+			solo_lines[event] = parent.solo_lines[event]
 	for(var/morale in parent.morale_lines)
 		var/list/parent_mood_lines = parent.morale_lines[morale]
 		var/list/mood_lines = morale_lines[morale]
@@ -93,14 +116,24 @@
 	var/last_downed_callout
 	//whoever we last called out going down, watched so we call it out when they die
 	var/mob/living/downed_victim
+	//TRUE if downed_victim was put down by an ally who's since died, so we only watch for them getting up, and don't call their death our kill
+	var/downed_victim_inherited = FALSE
 	//stop yapping so much
 	COOLDOWN_DECLARE(speech_cooldown)
 	//when we last said something urgent over everything else, as one thing can set off several at once, but we only want to say one
 	var/last_interrupt_time = 0
 	var/list/spotted_lines
 	var/spotted_chance = 100
+	//lines of our own to chat with, for a one-off character set up on a map, in place of our callout set's
+	var/list/idle_lines
+	//chance each time we're hurt that an ally in earshot asks how we're doing, instead of doing pain lines
+	var/check_in_chance = 40
+	//when we're due to answer an ally asking how we're doing, so we don't say pain lines in the meantime
+	var/check_in_answer_due = 0
+	var/alone = FALSE
+	var/alone_checked_until = 0
 
-/datum/component/ai_callouts/Initialize(callout_set, species_path, list/spotted_lines, spotted_chance = 100)
+/datum/component/ai_callouts/Initialize(callout_set, species_path, list/spotted_lines, spotted_chance = 100, list/idle_lines)
 	. = ..()
 	if(!isbasicmob(parent) || !ispath(callout_set, /datum/ai_callout_set))
 		return COMPONENT_INCOMPATIBLE
@@ -108,6 +141,7 @@
 	voice = get_species_voice(species_path)
 	src.spotted_lines = spotted_lines
 	src.spotted_chance = spotted_chance
+	src.idle_lines = idle_lines
 
 /datum/component/ai_callouts/RegisterWithParent()
 	. = ..()
@@ -156,8 +190,41 @@
 
 /datum/component/ai_callouts/proc/on_hurt(datum/source, damage, damagetype, def_zone)
 	SIGNAL_HANDLER
-	if(damage > 0 && in_fight())
+	if(damage <= 0 || world.time < check_in_answer_due || !in_fight())
+		return // or we've been asked how we're doing, and our answer says it
+	// a moment later, so we don't say the line as we die
+	addtimer(CALLBACK(src, PROC_REF(react_to_hurt)), 1, TIMER_UNIQUE)
+
+/datum/component/ai_callouts/proc/react_to_hurt()
+	var/mob/living/basic/basic_mob = parent
+	if(basic_mob.stat != CONSCIOUS || world.time < check_in_answer_due)
+		return // dead or down from it, which has lines of its own
+	if(!get_checked_on())
 		speak_about(AI_CALLOUT_HURT)
+
+// an ally in earshot asks how we're doing, and we answer a moment later. TRUE if they asked
+/datum/component/ai_callouts/proc/get_checked_on()
+	var/mob/living/basic/basic_mob = parent
+	if(basic_mob.stat != CONSCIOUS || world.time < LAZYACCESS(line_cooldowns, AI_CALLOUT_CHECK_IN) || !prob(check_in_chance))
+		return FALSE // cheap checks first, as this is every hit
+	if(!COOLDOWN_FINISHED(src, speech_cooldown))
+		return FALSE // we've only just said something, like that we're hit, so asking would be daft
+	if(basic_mob.ai_controller && AI_MORALE_IS(basic_mob.ai_controller, AI_MORALE_BROKEN))
+		return FALSE // too busy running to chat, and our hurt lines say as much
+	var/list/allies = get_allies_in_earshot()
+	if(!length(allies))
+		return FALSE
+	var/datum/component/ai_callouts/asker = pick(allies)
+	if(!asker.speak_about(AI_CALLOUT_CHECK_IN))
+		return FALSE
+	var/answer_delay = AI_CALLOUT_ANSWER_DELAY
+	check_in_answer_due = world.time + answer_delay
+	addtimer(CALLBACK(src, PROC_REF(answer_check_in)), answer_delay)
+	return TRUE
+
+/datum/component/ai_callouts/proc/answer_check_in()
+	var/mob/living/basic/basic_mob = parent
+	speak_about(basic_mob.health > basic_mob.maxHealth * 0.5 ? AI_CALLOUT_STATUS_OK : AI_CALLOUT_STATUS_BAD, answering = TRUE)
 
 /datum/component/ai_callouts/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)
 	SIGNAL_HANDLER
@@ -187,26 +254,78 @@
 	if(victim_stat == DEAD)
 		watch_downed_victim(null)
 		speak_about(AI_CALLOUT_TARGET_KILLED, interrupt = TRUE) // often just after we called them down, so don't let that silence it
+		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR) // and if they were the last of them, we say so
 	else
 		watch_downed_victim(victim)
 		speak_about(AI_CALLOUT_TARGET_DOWN)
+		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR, victim_ref) // those of us who leave the downed be are done with them too, unless they get back up
 
-/datum/component/ai_callouts/proc/watch_downed_victim(mob/living/victim)
+/proc/ai_queue_fight_over_check(atom/speaker, event)
+	var/datum/component/ai_callouts/callouts = speaker?.GetComponent(/datum/component/ai_callouts)
+	callouts?.queue_fight_over_check(event)
+
+/datum/component/ai_callouts/proc/queue_fight_over_check(event, datum/weakref/downed_ref)
+	addtimer(CALLBACK(src, PROC_REF(check_fight_over), event, downed_ref), AI_CALLOUT_FIGHT_OVER_DELAY, TIMER_UNIQUE)
+
+// if neither we nor any of ours in earshot have anyone to fight, or have been shot at lately, it's over as far as we know, and we say so
+/datum/component/ai_callouts/proc/check_fight_over(event, datum/weakref/downed_ref)
+	var/mob/living/basic/basic_mob = parent
+	if(basic_mob.stat != CONSCIOUS || world.time < LAZYACCESS(line_cooldowns, event) || still_fighting(basic_mob))
+		return
+	var/mob/living/downed = downed_ref?.resolve()
+	if(downed && downed.stat == CONSCIOUS)
+		return // enemy is back up somehow, so it's not over
+	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty))
+		if(still_fighting(ally))
+			return
+	speak_about(event)
+
+/datum/component/ai_callouts/proc/still_fighting(mob/living/someone)
+	var/datum/ai_controller/controller = someone.ai_controller
+	if(!controller)
+		return FALSE
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	if(!QDELETED(target))
+		return TRUE
+	return world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 5 SECONDS // someone we haven't found yet is still shooting
+
+/datum/component/ai_callouts/proc/watch_downed_victim(mob/living/victim, inherited = FALSE)
 	if(downed_victim)
-		UnregisterSignal(downed_victim, list(COMSIG_LIVING_DEATH, COMSIG_QDELETING))
+		UnregisterSignal(downed_victim, list(COMSIG_LIVING_DEATH, COMSIG_QDELETING, COMSIG_MOB_STATCHANGE))
 	downed_victim = victim
+	downed_victim_inherited = inherited
 	if(downed_victim)
 		RegisterSignal(downed_victim, COMSIG_LIVING_DEATH, PROC_REF(on_downed_victim_died))
 		RegisterSignal(downed_victim, COMSIG_QDELETING, PROC_REF(on_downed_victim_deleted))
+		RegisterSignal(downed_victim, COMSIG_MOB_STATCHANGE, PROC_REF(on_downed_victim_stat_change))
+
+// someone we put down is back on their feet, like from meds they had on them, so calling them down again is news again
+/datum/component/ai_callouts/proc/on_downed_victim_stat_change(mob/living/victim, new_stat)
+	SIGNAL_HANDLER
+	if(new_stat != CONSCIOUS)
+		return
+	watch_downed_victim(null)
+	last_downed_callout = null
+	INVOKE_ASYNC(src, PROC_REF(call_out_getting_up), victim)
+
+// someone who sees a downed target get up says so, whoever they're fighting.
+/datum/component/ai_callouts/proc/call_out_getting_up(mob/living/victim)
+	if(QDELETED(victim))
+		return
+	for(var/datum/component/ai_callouts/witness as anything in list(src) + get_allies_in_earshot())
+		var/mob/living/witness_mob = witness.parent
+		if(witness_mob.stat == CONSCIOUS && ai_can_see(witness_mob, victim, witness.hearing_range) && witness.speak_about(AI_CALLOUT_GETTING_UP, interrupt = TRUE))
+			return
 
 /datum/component/ai_callouts/proc/on_downed_victim_died(mob/living/victim)
 	SIGNAL_HANDLER
 	var/datum/weakref/victim_ref = WEAKREF(victim)
 	var/victim_id = REF(victim)
+	var/inherited = downed_victim_inherited
 	watch_downed_victim(null)
 	var/mob/living/basic/basic_mob = parent
-	if(basic_mob.stat != CONSCIOUS || !ai_can_see(basic_mob, victim, hearing_range))
-		return
+	if(inherited || basic_mob.stat != CONSCIOUS || !ai_can_see(basic_mob, victim, hearing_range))
+		return // not ours to call, if whoever downed them is dead
 	INVOKE_ASYNC(src, PROC_REF(call_out_downed), victim_ref, victim_id)
 
 /datum/component/ai_callouts/proc/on_downed_victim_deleted(datum/source)
@@ -220,7 +339,18 @@
 
 /datum/component/ai_callouts/proc/on_death(datum/source)
 	SIGNAL_HANDLER
-	for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot())
+	var/list/allies = get_allies_in_earshot()
+	if(downed_victim)
+		// watch the downed
+		for(var/datum/component/ai_callouts/ally as anything in allies)
+			if(!ally.downed_victim)
+				ally.watch_downed_victim(downed_victim, inherited = TRUE)
+				break
+		watch_downed_victim(null)
+	for(var/datum/component/ai_callouts/ally as anything in allies)
+		// the last of us left, so we call for help, whether or not any's coming
+		if(!length(get_ai_allies_in_earshot(ally.parent, ally.hearing_range, ally.wall_penalty)) && ally.speak_about(AI_CALLOUT_LAST_STANDING, interrupt = TRUE))
+			continue
 		ally.speak_about(AI_CALLOUT_ALLY_DOWN)
 
 // allies_in_earshot is get_ai_allies_in_earshot() if we've already got it to hand
@@ -248,13 +378,16 @@
 			var/heard_line = (get_dist(corpse, listener) > 1 && listener.stat != DEAD) ? starred_line : line
 			listener.create_chat_message(corpse, /datum/language/galactic_common, heard_line, spans + list("italics"))
 
-/datum/component/ai_callouts/proc/speak_about(event, last_words = FALSE, interrupt = FALSE)
+// answering is for answering an ally, which we do even if we've just said something. direction goes where the line says %DIRECTION
+/datum/component/ai_callouts/proc/speak_about(event, last_words = FALSE, interrupt = FALSE, answering = FALSE, direction)
 	var/mob/living/basic/basic_mob = parent
 	if(basic_mob.stat != CONSCIOUS || basic_mob.client)
 		return FALSE
-	var/line = pick_line(event, last_words, interrupt)
+	var/line = pick_line(event, last_words, interrupt, answering)
 	if(!line)
 		return FALSE
+	if(direction)
+		line = replacetext(line, "%DIRECTION", direction)
 	if(interrupt)
 		last_interrupt_time = world.time
 	COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
@@ -264,11 +397,61 @@
 		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
 		for(var/mob/living/ally as anything in allies_in_earshot)
 			ai_try_embolden(ally)
+	else if(event == AI_CALLOUT_LOST_THEM || event == AI_CALLOUT_RELOADING)
+		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
+		prompt_answer(event, allies_in_earshot)
 	share_line_cooldown(event, allies_in_earshot)
 	return TRUE
 
+// an ally in earshot answers what we just said a moment later, for the lines that get one. allies_in_earshot is get_ai_allies_in_earshot()
+/datum/component/ai_callouts/proc/prompt_answer(event, list/allies_in_earshot)
+	var/list/answerers = get_allies_in_earshot(allies_in_earshot)
+	switch(event)
+		if(AI_CALLOUT_LOST_THEM)
+			var/mob/living/basic/basic_mob = parent
+			var/atom/target = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+			if(target && length(answerers))
+				var/datum/component/ai_callouts/answerer = pick(answerers)
+				addtimer(CALLBACK(answerer, PROC_REF(answer_where_they_went), WEAKREF(src), WEAKREF(target)), AI_CALLOUT_ANSWER_DELAY)
+		if(AI_CALLOUT_RELOADING)
+			for(var/datum/component/ai_callouts/answerer as anything in shuffle(answerers))
+				if(answerer.sees_target())
+					addtimer(CALLBACK(answerer, PROC_REF(answer_reloading)), AI_CALLOUT_ANSWER_DELAY)
+					return
+
+// an ally lost sight of target and asked where they went, so we tell them which way, if we know better than they do, and they go and look there
+/datum/component/ai_callouts/proc/answer_where_they_went(datum/weakref/asker_ref, datum/weakref/target_ref)
+	var/datum/component/ai_callouts/asker = asker_ref?.resolve()
+	var/atom/target = target_ref?.resolve()
+	var/mob/living/basic/basic_mob = parent
+	var/mob/living/asking_mob = asker?.parent
+	var/datum/ai_controller/our_controller = basic_mob.ai_controller
+	var/datum/ai_controller/their_controller = asking_mob?.ai_controller
+	if(QDELETED(target) || !our_controller || !their_controller || asking_mob.stat != CONSCIOUS)
+		return
+	var/turf/known_turf
+	var/known_time
+	if(our_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == target && our_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
+		known_turf = get_turf(target)
+		known_time = world.time
+	else if(our_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TARGET] == target)
+		known_turf = our_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+		known_time = our_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TIME]
+	var/their_known_time = their_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TARGET] == target ? their_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TIME] : null
+	var/turf/their_turf = get_turf(asking_mob)
+	if(!known_turf || !their_turf || known_turf.z != their_turf.z || get_dist(their_turf, known_turf) < 3 || (!isnull(their_known_time) && known_time <= their_known_time))
+		speak_about(AI_CALLOUT_NO_SIGN, answering = TRUE) // nothing they don't already know
+		return
+	if(speak_about(AI_CALLOUT_LAST_SEEN, answering = TRUE, direction = dir2text(get_dir(their_turf, known_turf))))
+		their_controller.learn_of_target(target, known_turf, AI_LEARNED_TOLD) // so they go where we said, not somewhere else
+
+// an ally's reloading, and we can see who we're fighting, so we say we've got them
+/datum/component/ai_callouts/proc/answer_reloading()
+	if(sees_target())
+		speak_about(AI_CALLOUT_COVERING, answering = TRUE)
+
 // what we'd say about event right now, or null if we'd keep quiet
-/datum/component/ai_callouts/proc/pick_line(event, last_words = FALSE, interrupt = FALSE)
+/datum/component/ai_callouts/proc/pick_line(event, last_words = FALSE, interrupt = FALSE, answering = FALSE)
 	// what we'd only say about people
 	var/static/list/about_people = list(
 		AI_CALLOUT_SPOTTED = TRUE,
@@ -290,7 +473,9 @@
 	var/lines
 	var/datum/ai_controller/controller = basic_mob.ai_controller
 	var/morale = controller?.blackboard[BB_BASIC_MOB_MORALE]
-	if(morale && AI_MORALE_IS(controller, morale))
+	if(callouts.solo_lines[event] && is_alone())
+		lines = callouts.solo_lines[event] // nobody of ours to say it to, so we say it to ourselves, or to them
+	else if(morale && AI_MORALE_IS(controller, morale))
 		var/list/mood_lines = callouts.morale_lines[morale]
 		lines = mood_lines?[event] // how we'd say it in this mood, if we've a line for that
 	lines ||= callouts.lines[event]
@@ -299,7 +484,9 @@
 	if(own_lines)
 		lines = spotted_lines
 		chance = spotted_chance
-	if(!lines || (!last_words && !interrupt && !COOLDOWN_FINISHED(src, speech_cooldown)))
+	else if(event == AI_CALLOUT_IDLE && length(idle_lines))
+		lines = idle_lines // still paced with the group, unlike our own spotted lines
+	if(!lines || (!last_words && !interrupt && !answering && !COOLDOWN_FINISHED(src, speech_cooldown)))
 		return null
 	if(interrupt && !last_words && world.time < last_interrupt_time + AI_CALLOUT_INTERRUPT_GAP)
 		return null // we've only just said something urgent, which covers this too
@@ -363,10 +550,22 @@
 		AI_CALLOUT_TAUNT = 25 SECONDS,
 		AI_CALLOUT_MELEE = 8 SECONDS,
 		AI_CALLOUT_GRENADE = 4 SECONDS, // one or two voices for it, not the whole room
+		AI_CALLOUT_GRENADE_OUT = 4 SECONDS,
+		AI_CALLOUT_TARGETS_STUNNED = 10 SECONDS,
+		AI_CALLOUT_IDLE = 20 SECONDS, // one of a group chatting now and then, not all of them at once
 		AI_CALLOUT_KNOCKED_DOWN = 6 SECONDS,
 		AI_CALLOUT_FLASHED = 8 SECONDS, // a flashbang likely gets a whole group at once, so one of us says so
 		AI_CALLOUT_GASSED = 10 SECONDS,
 		AI_CALLOUT_STAGGERED = 15 SECONDS,
+		AI_CALLOUT_NO_COVER = 20 SECONDS,
+		AI_CALLOUT_LAST_STANDING = 30 SECONDS,
+		AI_CALLOUT_ALL_CLEAR = 30 SECONDS, // one voice for it, not everyone who got a kill at the end
+		AI_CALLOUT_GOT_AWAY = 30 SECONDS,
+		AI_CALLOUT_GETTING_UP = 8 SECONDS,
+		AI_CALLOUT_RAISING_ALARM = 15 SECONDS,
+		AI_CALLOUT_BREACHING = 20 SECONDS, // said each time we start on something, so not every pane of glass
+		AI_CALLOUT_CANT_REACH = 20 SECONDS,
+		AI_CALLOUT_CHECK_IN = 15 SECONDS, // asking after someone every hit would wear thin fast
 	)
 	var/group_cooldown = group_line_cooldowns[event]
 	if(!group_cooldown)
@@ -383,3 +582,18 @@
 	if(!istype(someone))
 		return FALSE
 	return ishuman(someone) || istype(someone, /mob/living/basic/human) || someone.client
+
+// whether there's none of ours in earshot to hear us
+/datum/component/ai_callouts/proc/is_alone()
+	if(world.time < alone_checked_until)
+		return alone
+	alone = !length(get_ai_allies_in_earshot(parent, hearing_range, wall_penalty))
+	alone_checked_until = world.time + 2 SECONDS
+	return alone
+
+// how many lines we've got to chat with, our own or our callout set's, for idle chatter to weigh against our emotes
+/datum/component/ai_callouts/proc/idle_line_count()
+	if(length(idle_lines))
+		return length(idle_lines)
+	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
+	return length(callouts.lines[AI_CALLOUT_IDLE])

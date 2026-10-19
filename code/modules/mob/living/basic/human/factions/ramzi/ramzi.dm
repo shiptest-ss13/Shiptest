@@ -325,6 +325,12 @@
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 
+/mob/living/basic/human/ramzi/ranged/smg/grenadier
+	name = "Ramzi Clique Grenadier"
+	desc = "A deserter from the Gorlex Marauders turned pirate. A few frag grenades hang off their belt, their thumb never far from a pin."
+	grenade_type = /obj/item/grenade/frag
+	grenade_count = 2
+
 /mob/living/basic/human/ramzi/ranged/smg/sidewinder
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their PDW held at eye level, sweeping every corner."
 	l_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
@@ -368,6 +374,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -412,6 +419,7 @@
 /mob/living/basic/human/ramzi/ranged/officer/ngr
 	name = "New Gorlex Embezzler"
 	desc = "A sleazy official of the New Gorlex Republic, wearing a heavy officer coat. She looks around cautiously, a heavy pistol within her hands."
+	callout_set = /datum/ai_callout_set/human/ramzi/ngr_officer
 	casing_type = /obj/item/ammo_casing/c57x39mm
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/asp
 	projectile_sound = 'sound/weapons/gun/pistol/asp.ogg'
@@ -485,6 +493,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -501,6 +510,7 @@
 	vision_range = 9 //should still be better than standard but theyre using ironsights
 	engage_distance = 9
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -515,6 +525,7 @@
 	engage_distance = 11
 	vision_range = 11 //worse scope but more of a threat than the illestren
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -643,6 +654,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -695,6 +707,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 

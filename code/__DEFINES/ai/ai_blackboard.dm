@@ -96,10 +96,16 @@
 #define BB_BASIC_MOB_HOME_TURF "BB_basic_home_turf"
 ///This mob's own leash, how far from home it chases someone before letting them go, in place of its AI's. 0 for none
 #define BB_BASIC_MOB_LEASH_DISTANCE "BB_basic_leash_distance"
+///Someone we stopped fighting because they went down, so we notice if they get back up somehow, usually because of premeds or determination
+#define BB_BASIC_MOB_DROPPED_DOWNED "BB_basic_dropped_downed"
+///For those holding a post with holds_post, how far from home they'll go to take cover or get a shot, and never further
+#define BB_BASIC_MOB_POST_RADIUS "BB_basic_post_radius"
 ///TRUE while all we know about our target is what an ally told us, so we don't pass it on and set off a chain of alerts. Cleared once we see them ourselves
 #define BB_BASIC_MOB_TOLD_ABOUT_TARGET "BB_basic_told_about_target"
 ///Who we've already told our allies about, so we only call it out once per target
 #define BB_BASIC_MOB_ALERTED_ABOUT "BB_basic_alerted_about"
+///When we can next tell allies about BB_BASIC_MOB_ALERTED_ABOUT again, for any we've come across since who aren't in it yet, as a world.time
+#define BB_BASIC_MOB_NEXT_REALERT "BB_basic_next_realert"
 ///When we were last shot at, as a world.time
 #define BB_BASIC_MOB_LAST_SHOT_TIME "BB_basic_last_shot_time"
 ///When anything last hurt us, shots, blows, bites or otherwise, as a world.time
@@ -132,8 +138,7 @@
 #define BB_BASIC_MOB_NEXT_FLANK_DECISION "BB_basic_next_flank_decision"
 ///Where we're going around to, to get an angle on someone dug in behind cover
 #define BB_BASIC_MOB_FLANK_TURF "BB_basic_flank_turf"
-///What we say and emote now and then while there's nobody to fight, as lists, and the chance each 2 seconds
-#define BB_BASIC_MOB_IDLE_LINES "BB_basic_idle_lines"
+///What we emote now and then while there's nobody to fight, as a list, and the chance each 2 seconds of that or a line. The lines are our callouts', see AI_CALLOUT_IDLE
 #define BB_BASIC_MOB_IDLE_EMOTES "BB_basic_idle_emotes"
 #define BB_BASIC_MOB_IDLE_CHATTER_CHANCE "BB_basic_idle_chatter_chance"
 ///How far we can be heard calling allies to a fight, overriding the behaviour's own
@@ -188,13 +193,31 @@
 #define BB_BASIC_MOB_NEXT_WAIT_SEARCH "BB_basic_next_wait_search"
 ///What we're breaking through to get at someone we've no other way to, like a window
 #define BB_BASIC_MOB_SMASH_TARGET "BB_basic_smash_target"
-///A sealed airlock we're pulling the pneumatic seal off
-#define BB_BASIC_MOB_UNSEAL_DOOR "BB_basic_unseal_door"
-///When we picked BB_BASIC_MOB_UNSEAL_DOOR, as a world.time
-#define BB_BASIC_MOB_UNSEAL_SINCE "BB_basic_unseal_since"
-///A sealed door we gave up on unsealing, and until when we leave it be
-#define BB_BASIC_MOB_UNSEAL_GAVE_UP_ON "BB_basic_unseal_gave_up_on"
-#define BB_BASIC_MOB_UNSEAL_GAVE_UP_UNTIL "BB_basic_unseal_gave_up_until"
+///Who we last rolled for whether to break through to, rather than wait for, when they were out of reach, and whether we are, see /datum/ai_planning_subtree/wait_out_unreachable
+#define BB_BASIC_MOB_BREACH_ROLLED_FOR "BB_basic_breach_rolled_for"
+#define BB_BASIC_MOB_BREACHING "BB_basic_breaching"
+///Since when one of ours has been in the way of our shots, so we stop holding back after a while, as a world.time
+#define BB_BASIC_MOB_SHIELDED_SINCE "BB_basic_shielded_since"
+///Since when one of ours has been in the way of our shots, without a break, and whether we've decided to shoot anyway, see /datum/ai_behavior/basic_ranged_attack/proc/taking_the_shot()
+#define BB_BASIC_MOB_SHIELDED_FIRST_SINCE "BB_basic_shielded_first_since"
+#define BB_BASIC_MOB_TAKING_THE_SHOT "BB_basic_taking_the_shot"
+///Until when we rush whoever we're fighting, as one of our stingbangs or flashbangs put all of them down, as a world.time
+#define BB_BASIC_MOB_PRESSING_UNTIL "BB_basic_pressing_until"
+///Whether the explosive we're fleeing was thrown by our side, so we got clear without calling it, and call it if someone picks it up to throw it back
+#define BB_BASIC_MOB_FLEEING_OUR_OWN "BB_basic_fleeing_our_own"
+///What grenade we throw, how many we've got left, and when we can next throw one, see /datum/ai_planning_subtree/throw_grenade
+#define BB_BASIC_MOB_GRENADE_TYPE "BB_basic_grenade_type"
+#define BB_BASIC_MOB_GRENADES_LEFT "BB_basic_grenades_left"
+#define BB_BASIC_MOB_NEXT_GRENADE "BB_basic_next_grenade"
+///When we next weigh up throwing a grenade, now there's reason to, and where we're throwing it once we have
+#define BB_BASIC_MOB_GRENADE_DECISION_AT "BB_basic_grenade_decision_at"
+#define BB_BASIC_MOB_GRENADE_AIM "BB_basic_grenade_aim"
+///Mid-throw: when we prime the grenade, the primed one in our hand, and when we let it go, see /datum/ai_behavior/throw_grenade
+#define BB_BASIC_MOB_GRENADE_PRIME_AT "BB_basic_grenade_prime_at"
+#define BB_BASIC_MOB_HELD_GRENADE "BB_basic_held_grenade"
+#define BB_BASIC_MOB_GRENADE_THROW_AT "BB_basic_grenade_throw_at"
+///Since when we've had someone we're fighting in sight but no clear shot at them, as a world.time
+#define BB_BASIC_MOB_NO_SHOT_SINCE "BB_basic_no_shot_since"
 ///Where we're waiting out of sight of someone dug in, and until when
 #define BB_BASIC_MOB_AMBUSH_TURF "BB_basic_ambush_turf"
 #define BB_BASIC_MOB_AMBUSH_UNTIL "BB_basic_ambush_until"

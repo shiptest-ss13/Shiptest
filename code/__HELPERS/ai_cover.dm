@@ -122,9 +122,13 @@
 /proc/ally_in_line_of_fire(mob/living/shooter, turf/start, turf/finish)
 	for(var/turf/line_turf as anything in get_line(start, finish))
 		for(var/mob/living/maybe_ally in line_turf)
-			if(maybe_ally != shooter && maybe_ally.stat != DEAD && shooter.faction_check_mob(maybe_ally))
+			if(maybe_ally != shooter && !ai_shot_passes_over(maybe_ally) && shooter.faction_check_mob(maybe_ally))
 				return TRUE
 	return FALSE
+
+// whether a shot not aimed at someone flies over them
+/proc/ai_shot_passes_over(mob/living/someone)
+	return someone.stat != CONSCIOUS || (HAS_TRAIT(someone, TRAIT_IMMOBILIZED) && HAS_TRAIT(someone, TRAIT_FLOORED) && HAS_TRAIT(someone, TRAIT_HANDS_BLOCKED))
 
 /proc/target_can_shoot_back(atom/target)
 	if(!ismob(target))
@@ -146,20 +150,27 @@
 			return TRUE
 	return FALSE
 
-// whether mob could go stand on spot, not blocked, not in a doorway, and nothing there that'd hurt it
+// whether mob could go stand on spot, not blocked, not in a doorway, nothing there that'd hurt it, and not off the post it's holding, if it is
 /proc/ai_can_take_spot(mob/living/mover, turf/spot)
 	if(is_ai_swimming_water(spot) && !(mover.movement_type & FLYING))
 		return FALSE // no swimming in the pool!!!!
+	var/post_radius = mover.ai_controller?.blackboard[BB_BASIC_MOB_POST_RADIUS]
+	if(!isnull(post_radius))
+		var/turf/post = mover.ai_controller.blackboard[BB_BASIC_MOB_HOME_TURF]
+		if(post && get_dist(post, spot) > post_radius)
+			return FALSE
 	return !spot.is_blocked_turf(TRUE, mover) && !ai_is_doorway(spot) && ai_can_stand_on(mover, spot)
 
 /proc/get_ai_fight_range(datum/ai_controller/controller)
+	if(world.time < controller.blackboard[BB_BASIC_MOB_PRESSING_UNTIL])
+		return list(1, 2) // everyone we're fighting is down, so we rush them while it lasts
 	var/retreat_distance = controller.blackboard[BB_BASIC_MOB_RETREAT_DISTANCE]
 	var/engage_distance = controller.blackboard[BB_BASIC_MOB_ENGAGE_DISTANCE]
 	var/closest = isnull(retreat_distance) ? AI_DEFAULT_RETREAT_DISTANCE : retreat_distance
 	return list(closest, max(closest, isnull(engage_distance) ? AI_DEFAULT_ENGAGE_DISTANCE : engage_distance))
 
-// only shoot at something that blocks but it can destroy quickly
-/proc/worth_shooting_through(mob/living/shooter, atom/blocker, obj/projectile/projectile_type)
+// only shoot at something that blocks but it can destroy quickly, max_shots and magazines are how far we'll go for intentional breakage
+/proc/worth_shooting_through(mob/living/shooter, atom/blocker, obj/projectile/projectile_type, max_shots = AI_MAX_SHOTS_THROUGH_COVER, magazines = 1)
 	if(!isobj(blocker) || !projectile_type)
 		return FALSE // walls and the like, or we're not firing anything that'd break it
 	if(breaking_would_vent(shooter, blocker))
@@ -176,7 +187,7 @@
 			return FALSE
 		shots_needed += more_shots
 	var/datum/component/ai_magazine/magazine = shooter.GetComponent(/datum/component/ai_magazine)
-	return shots_needed <= min(AI_MAX_SHOTS_THROUGH_COVER, magazine?.magazine_size || AI_MAX_SHOTS_THROUGH_COVER)
+	return shots_needed <= min(max_shots, magazine?.magazine_size ? magazine.magazine_size * magazines : max_shots)
 
 // how many shots it'd take to break thing as it is now, after its armour, the way /obj/bullet_act() does it. Null if we can't or shouldn't
 /proc/shots_to_break(obj/thing, obj/projectile/projectile_type, mob/living/shooter)
@@ -294,7 +305,8 @@
 		best_distance = candidate_distance
 	return best_turf
 
-/proc/has_clear_shot(mob/living/shooter, atom/target)
+// breaching is whether we're shooting our way through to them on purpose, which lets us put a lot more into it. Null to go by our blackboard
+/proc/has_clear_shot(mob/living/shooter, atom/target, breaching)
 	var/turf/start = get_turf(shooter)
 	var/turf/finish = get_turf(target)
 	if(!start || !finish)
@@ -303,7 +315,14 @@
 	if(!blocker)
 		return TRUE
 	var/datum/component/ranged_attacks/ranged_attack = shooter.GetComponent(/datum/component/ranged_attacks)
-	return ranged_attack && worth_shooting_through(shooter, blocker, ranged_attack.get_projectile_type())
+	if(!ranged_attack)
+		return FALSE
+	if(isnull(breaching))
+		var/datum/ai_controller/controller = shooter.ai_controller
+		breaching = controller && controller.blackboard[BB_BASIC_MOB_BREACHING] && controller.blackboard[BB_BASIC_MOB_BREACH_ROLLED_FOR] == target
+	if(breaching)
+		return worth_shooting_through(shooter, blocker, ranged_attack.get_projectile_type(), AI_MAX_SHOTS_TO_BREACH, 2)
+	return worth_shooting_through(shooter, blocker, ranged_attack.get_projectile_type())
 
 // use this instead of get_shot_blocker() to cache the answer for a shooter, so it doesn't have to recalc every shot
 /proc/get_cached_shot_blocker(mob/living/shooter, atom/target)

@@ -27,6 +27,24 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	if(istype(stingbang))
 		. = max(., stingbang.flashbang_range)
 
+// whether explosive is a grenade we, or one of ours, threw, and nobody's picked up since
+/proc/ai_thrown_by_our_side(mob/living/pawn, atom/explosive)
+	var/obj/item/grenade/grenade = explosive
+	if(!istype(grenade))
+		return FALSE
+	if(grenade.ai_thrower?.resolve() == pawn)
+		return TRUE
+	return length(grenade.ai_thrower_factions) && faction_check(pawn.faction, grenade.ai_thrower_factions) // by its factions, as whoever threw it may be dead and gone by now
+
+// ai_grenade_danger_radius() for a type of grenade, before there's one to ask, worked out once for each type
+/proc/ai_grenade_type_danger_radius(grenade_type)
+	var/static/list/radius_by_type = list()
+	if(isnull(radius_by_type[grenade_type]))
+		var/obj/item/grenade/grenade = new grenade_type
+		radius_by_type[grenade_type] = ai_grenade_danger_radius(grenade)
+		qdel(grenade)
+	return radius_by_type[grenade_type]
+
 // get clear of explosives we can see that are about to go off, before anything else
 /datum/ai_planning_subtree/flee_explosives
 	//how much further than its blast we run, to be sure
@@ -42,15 +60,19 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 			controller.clear_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE)
 		return
 	var/atom/explosive = danger[1]
+	var/ours = ai_thrown_by_our_side(controller.pawn, explosive)
+	if(controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE] == explosive && controller.blackboard[BB_BASIC_MOB_FLEEING_OUR_OWN] && !ours)
+		controller.clear_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE) // one of ours threw it, but someone's picked it up since, likely to throw it back at us, so it's news
 	if(controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE] != explosive)
 		controller.set_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE, explosive)
+		controller.set_blackboard_key(BB_BASIC_MOB_FLEEING_OUR_OWN, ours)
 		// decided once for each explosive, as a long shot rather than something we keep trying
-		var/throwing_back = istype(explosive, /obj/item/grenade) && !istype(explosive, /obj/item/grenade/c4) && prob(controller.blackboard[BB_BASIC_MOB_THROW_BACK_CHANCE])
+		var/throwing_back = !ours && istype(explosive, /obj/item/grenade) && !istype(explosive, /obj/item/grenade/c4) && prob(controller.blackboard[BB_BASIC_MOB_THROW_BACK_CHANCE])
 		controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, throwing_back)
 		controller.clear_blackboard_key(BB_BASIC_MOB_THROW_BACK_AT)
 		AI_LOG_DECISION(controller, "flee_explosives: [explosive] is about to go off, [throwing_back ? "throwing it back if it lands by us" : "getting clear"]")
-		if(!throwing_back)
-			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // or we call it once we know if we're grabbing it or running
+		if(!throwing_back && !ours)
+			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // or we call it once we know if we're grabbing it or running. Ours, our thrower already called
 	if(controller.blackboard[BB_BASIC_MOB_THROWING_BACK])
 		var/atom/movable/thrown_explosive = ai_explosive_holder(explosive) // or the sack it's in
 		if(thrown_explosive.throwing)
@@ -85,6 +107,8 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		return FALSE // in someone's hand or bag, or in something nobody could throw, like a locker
 	if(get_dist(controller.pawn, thrown) > 1)
 		return FALSE
+	if(ai_thrown_by_our_side(controller.pawn, grenade))
+		return FALSE // one of ours threw it, so it's meant for them, and we just get clear
 	var/list/info = GLOB.ai_live_explosives[grenade]
 	return info && info[2] - world.time - time_before_throw >= AI_THROW_BACK_MINIMUM_FUSE
 
@@ -148,6 +172,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		throw_at_turf = get_ranged_target_turf(basic_mob, away_dir, throw_range)
 		if(ally_in_line_of_fire(basic_mob, our_turf, throw_at_turf))
 			return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED // nowhere safe to throw it, so we run instead
+	grenade.set_ai_thrower(basic_mob) // ours now, so those we threw it at call it, and we don't
 	basic_mob.visible_message(span_danger("[basic_mob] grabs [thrown] and throws it back!"))
 	thrown.forceMove(our_turf)
 	thrown.throw_at(throw_at_turf, throw_range, 2, basic_mob)

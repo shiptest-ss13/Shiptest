@@ -231,6 +231,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -245,6 +246,7 @@
 
 /mob/living/basic/human/frontier/ranged/mosin/space/sentry
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -263,6 +265,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -359,6 +362,7 @@
 	vision_range = 14
 	engage_distance = 14
 	wander = FALSE
+	holds_post = TRUE
 	retreat_distance = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
@@ -431,6 +435,12 @@
 	burst_interval = 0.3 SECONDS
 	casing_type = /obj/item/ammo_casing/a762_40
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
+
+/mob/living/basic/human/frontier/ranged/trooper/skm/demolitionist
+	name = "Frontiersman Demolitionist"
+	desc = "A member of the brutal Frontiersman terrorist fleet! Sticks of mining dynamite are tucked into their webbing, and they look all too eager to find a use for them."
+	grenade_type = /obj/item/grenade/firecracker/dynamite
+	grenade_count = 2
 
 /mob/living/basic/human/frontier/ranged/trooper/skm/space
 	in_hardsuit = TRUE

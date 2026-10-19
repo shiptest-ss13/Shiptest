@@ -16,6 +16,9 @@
 	. = ..()
 	if(body_position == LYING_DOWN && !resting && !client && stat == CONSCIOUS && !HAS_TRAIT(src, TRAIT_FLOORED) && !LAZYACCESS(do_afters, DOAFTER_SOURCE_GETTING_UP))
 		get_up()
+	// unbuckle self if you can, chair cheese mitigation
+	if(buckled && !client && stat == CONSCIOUS && !incapacitated())
+		buckled.user_unbuckle_mob(src, src)
 
 // dont melee while down
 /mob/living/basic/human/proc/on_pre_melee(datum/source, atom/target)

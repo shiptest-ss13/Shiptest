@@ -79,6 +79,12 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_trooper
 	callout_set = /datum/ai_callout_set/human/vigilitas/crisis
 
+/mob/living/basic/human/warra/ranged/trooper/grenadier
+	name = "Vigilitas Grenadier"
+	desc = "A Vigilitas Assault Officer with a few stingbangs clipped to their bet, for targets who won't surrender."
+	grenade_type = /obj/item/grenade/stingbang
+	grenade_count = 2
+
 /mob/living/basic/human/warra/ranged/trooper/smg
 	name = "Vigilitas SMG Trooper"
 	desc = "A member of Vigilitas Interstellar. Eyes track motion as they saunter confidently, energy SMG at alert."

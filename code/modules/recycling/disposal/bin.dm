@@ -455,6 +455,20 @@
 	trunk = locate() in loc
 	if(trunk)
 		trunk.linked = src	// link the pipe trunk to self
+	if(isturf(loc))
+		ADD_TRAIT(loc, TRAIT_AI_AVOID, REF(src)) // so NPCs don't blunder in by themselves, though they can still be shoved in
+
+/obj/machinery/disposal/deliveryChute/Moved(atom/old_loc, movement_dir, Forced = FALSE, list/old_locs)
+	. = ..()
+	if(isturf(old_loc))
+		REMOVE_TRAIT(old_loc, TRAIT_AI_AVOID, REF(src))
+	if(isturf(loc))
+		ADD_TRAIT(loc, TRAIT_AI_AVOID, REF(src))
+
+/obj/machinery/disposal/deliveryChute/Destroy()
+	if(isturf(loc))
+		REMOVE_TRAIT(loc, TRAIT_AI_AVOID, REF(src))
+	return ..()
 
 /obj/machinery/disposal/deliveryChute/place_item_in_disposal(obj/item/I, mob/user)
 	if(I.CanEnterDisposals())

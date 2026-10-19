@@ -36,15 +36,7 @@
 
 // how many of our hits it'd take to break blocker
 /datum/ai_planning_subtree/smash_towards_target/proc/hits_to_break_through(mob/living/basic/basic_mob, obj/blocker)
-	var/total_hits = 0
-	for(var/obj/thing in get_turf(blocker))
-		if(thing != blocker && !blocks_shot_on_tile(thing, NONE))
-			continue
-		var/hits = melee_hits_to_break(basic_mob, thing)
-		if(isnull(hits))
-			return null
-		total_hits += hits
-	return total_hits <= max_hits ? total_hits : null
+	return ai_hits_to_break_through(basic_mob, blocker, max_hits)
 
 // goes up to what's in the way and hits it until it's gone
 /datum/ai_behavior/smash_obstacle
@@ -61,6 +53,9 @@
 	var/mob/living/basic/basic_mob = controller.pawn
 	var/obj/target = controller.blackboard[target_key]
 	if(QDELETED(target) || !target.density)
+		// broken through, so look for a way again rather than going by the way we found there wasn't one
+		controller.clear_blackboard_key(BB_BASIC_MOB_NO_PATH_TO)
+		controller.clear_blackboard_key(BB_BASIC_MOB_NO_PATH_SINCE)
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
 	basic_mob.melee_attack(target)
 	return AI_BEHAVIOR_DELAY

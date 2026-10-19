@@ -19,6 +19,8 @@
 	var/sweep_pause_time = 2 SECONDS
 	//how long after losing sight of someone we saw we carry on as we were, without calling it or starting a search, as they've likely only ducked out of view
 	var/lost_grace = 3 SECONDS
+	//never goes looking, whatever our nerve or our allies are doing, only ever search_style, for post holders
+	var/stays_put = FALSE
 
 /datum/ai_planning_subtree/search_lost_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -58,6 +60,8 @@
 		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
 		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
 		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
+	if(stays_put)
+		return (search_style == AI_SEARCH_STYLE_SUPPRESS && !controller.blackboard[BB_BASIC_MOB_HEARD_TARGET]) ? AI_SEARCH_STYLE_SUPPRESS : AI_SEARCH_STYLE_HOLD // only a noise, so we watch it
 	// covering where they went, with fire
 	var/hang_back_style = AI_SEARCH_STYLE_SUPPRESS
 	var/style = controller.blackboard[BB_BASIC_MOB_PICKED_SEARCH_STYLE]

@@ -9,7 +9,7 @@
 #define AI_SEARCH_STYLE_SUPPRESS "suppress"
 
 // The start and end every human NPC's plan shares, so a subtree all of them need goes in once
-///Getting out of bad air, heading home, calling out what we've seen, and falling back when our nerve's gone, before anything else
+///Getting out of bad air, heading home, calling out what we've seen, and falling back when our nerve's gone, before anything else. Then a grenade, for those who carry them
 #define AI_HUMAN_PLANNING_OPENING \
 	/datum/ai_planning_subtree/flee_explosives, \
 	/datum/ai_planning_subtree/seek_safe_environment, \
@@ -17,9 +17,10 @@
 	/datum/ai_planning_subtree/return_home/human, \
 	/datum/ai_planning_subtree/call_allies, \
 	/datum/ai_planning_subtree/broken_fall_back/human, \
-	/datum/ai_planning_subtree/unseal_door
-///For those with guns: reloading, taunting, moving about at range, smashing out of corners, hitting whoever's up close, then shooting, and chatter between fights
+	/datum/ai_planning_subtree/throw_grenade
+///For those with guns: reloading, taunting, moving about at range, smashing out of corners, hitting whoever's up close, then shooting, and chatter between fights. First, waiting out or shooting through to anyone they can see but can't shoot
 #define AI_HUMAN_RANGED_PLANNING_CLOSING \
+	/datum/ai_planning_subtree/wait_out_unreachable/ranged, \
 	/datum/ai_planning_subtree/tactical_reload, \
 	/datum/ai_planning_subtree/taunt, \
 	/datum/ai_planning_subtree/group/positioning, \
@@ -38,6 +39,10 @@
 
 // The most shots a mob will put into something in its way, like a window, to shoot through it
 #define AI_MAX_SHOTS_THROUGH_COVER 10
+// The most shots a mob will put into something in its way to break through to someone it can't otherwise get at, up to two of its magazines
+#define AI_MAX_SHOTS_TO_BREACH 30
+// Something in the way of someone a mob can't get at this quick to smash, like a bare grille, it always smashes rather than waiting
+#define AI_CHEAP_BREACH_HITS 4
 
 // How near someone we gave up on getting to has to be for us to check if there's a straight way to them now
 #define AI_IGNORE_RECHECK_RANGE 8
@@ -71,6 +76,8 @@
 
 ///How long after losing sight of whoever we were fighting we still count as mid-fight, so someone ducking behind cover isn't a stranger again
 #define AI_FIGHT_MEMORY (10 SECONDS)
+///How long after last seeing whoever it was fighting AI still brings allies it comes across into it, as long as track_target keeps them in mind, so running a long way to its friends still raises the alarm
+#define AI_REALERT_MEMORY (20 SECONDS)
 ///Whether controller's mob had eyes on someone it was fighting within memory
 #define AI_RECENTLY_SAW_ENEMY(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME] < (memory))
 
@@ -117,8 +124,22 @@
 #define AI_CALLOUT_BROKEN "broken"
 ///Saw an explosive about to go off nearby, and is getting clear
 #define AI_CALLOUT_GRENADE "grenade"
+///Throwing a grenade of its own
+#define AI_CALLOUT_GRENADE_OUT "grenade_out"
+///One of its side's stingbangs or flashbangs put down someone they were fighting
+#define AI_CALLOUT_TARGETS_STUNNED "targets_stunned"
+///How long AI rushes in when one of its side's stingbangs or flashbangs put down everyone it was fighting, or one of its own is being used as a shield
+#define AI_PRESS_TIME (6 SECONDS)
+///How long one of its own can be in the way of its shots before AI closes in instead, like someone dragging one about as a shield
+#define AI_SHIELDED_PUSH_TIME (4 SECONDS)
+///How long a helpless one of its own can be kept in the way of its shots, like stunned over and over and dragged about as a shield, before AI shoots anyway
+#define AI_SHIELDED_FIRE_TIME (10 SECONDS)
+///Shooting anyway, past one of its own being used as a shield
+#define AI_CALLOUT_SHOOTING_THROUGH_ALLY "shooting_through_ally"
 ///Throwing a grenade back where it came from
 #define AI_CALLOUT_THROW_BACK "throw_back"
+///Chatting to pass the time, with nobody to fight
+#define AI_CALLOUT_IDLE "idle"
 ///Knocked flat
 #define AI_CALLOUT_KNOCKED_DOWN "knocked_down"
 ///Blinded by a flash
@@ -137,6 +158,39 @@
 #define AI_CALLOUT_WARY "wary"
 ///Just turned emboldened, as its side put someone down and has the numbers
 #define AI_CALLOUT_EMBOLDENED "emboldened"
+///Shot at with nowhere to take cover, so staying put looks like the choice it is
+#define AI_CALLOUT_NO_COVER "no cover"
+///An ally just died, and there's nobody else of ours left in earshot
+#define AI_CALLOUT_LAST_STANDING "last standing"
+///Can see someone it has no way to get to
+#define AI_CALLOUT_CANT_REACH "cant reach"
+///Its kill left nobody for it or its allies in earshot to fight, so as far as they know, they've won
+#define AI_CALLOUT_ALL_CLEAR "all clear"
+///Gave up on someone who got away, and nobody in earshot has anyone else to fight
+#define AI_CALLOUT_GOT_AWAY "got away"
+///Breaking through to someone it can see but can't get at, like smashing or shooting out the window between them
+#define AI_CALLOUT_BREACHING "breaching"
+///Bringing allies it's come across into a fight they weren't in yet, like running past them
+#define AI_CALLOUT_RAISING_ALARM "raising alarm"
+///Someone it put down is back on their feet
+#define AI_CALLOUT_GETTING_UP "getting up"
+///How long after the fight seems over we check it still is, before saying so
+#define AI_CALLOUT_FIGHT_OVER_DELAY (3 SECONDS)
+// Answers, said by an ally a moment after the line they answer, so it's a conversation rather than one voice
+///Asking an ally who just got hurt how they're doing, answered with AI_CALLOUT_STATUS_OK or AI_CALLOUT_STATUS_BAD
+#define AI_CALLOUT_CHECK_IN "check in"
+///Answering AI_CALLOUT_CHECK_IN, with more than half our health left
+#define AI_CALLOUT_STATUS_OK "status ok"
+///Answering AI_CALLOUT_CHECK_IN, with half our health or less
+#define AI_CALLOUT_STATUS_BAD "status bad"
+///Answering AI_CALLOUT_LOST_THEM with which way we last saw them, put in the line where it says %DIRECTION
+#define AI_CALLOUT_LAST_SEEN "last seen"
+///Answering AI_CALLOUT_LOST_THEM with nothing new
+#define AI_CALLOUT_NO_SIGN "no sign"
+///Answering AI_CALLOUT_RELOADING, as one who can see who we're fighting
+#define AI_CALLOUT_COVERING "covering"
+///How long after a line an ally answers it
+#define AI_CALLOUT_ANSWER_DELAY rand(1 SECONDS, 1.5 SECONDS)
 
 ///The air's no good, or there's next to none of it
 #define AI_ENVIRONMENT_UNBREATHABLE "unbreathable"
@@ -170,8 +224,6 @@
 #define AI_EXPLOSIVE_NOTICE_RANGE 3
 // How much further than an explosive's blast AI gets clear by, and keeps clear of until it goes off
 #define AI_EXPLOSIVE_SAFETY_MARGIN 2
-// How long AI leaves a sealed door alone after giving up on getting the seal off it
-#define AI_UNSEAL_RETRY_TIME (60 SECONDS)
 // How long AI takes after getting up from a knockdown before it can fire again, getting its gun back on target
 #define AI_GET_UP_FIRE_DELAY (1.5 SECONDS)
 // How long AI shoved away is off balance and can't swing, and how long after that before another shove can put it off balance again

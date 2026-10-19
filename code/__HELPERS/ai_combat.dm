@@ -36,6 +36,18 @@
 		return max(sandbags.effective_bags * hits_per_bag - round(sandbags.bag_damage / damage_per_hit), 1)
 	return CEILING(thing.atom_integrity / damage_per_hit, 1)
 
+// how many of our hits it'd take to break blocker and whatever else on its tile is in the way, or null if more than max_hits or we can't
+/proc/ai_hits_to_break_through(mob/living/basic/basic_mob, obj/blocker, max_hits)
+	var/total_hits = 0
+	for(var/obj/thing in get_turf(blocker))
+		if(thing != blocker && !blocks_shot_on_tile(thing, NONE))
+			continue
+		var/hits = melee_hits_to_break(basic_mob, thing)
+		if(isnull(hits))
+			return null
+		total_hits += hits
+	return total_hits <= max_hits ? total_hits : null
+
 /proc/ai_lash_out(datum/ai_controller/controller, interval = 2 SECONDS)
 	if(!isturf(controller.pawn.loc) || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_LASH_OUT])
 		return FALSE

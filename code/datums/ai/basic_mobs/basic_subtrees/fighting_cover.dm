@@ -14,6 +14,9 @@
 
 /datum/ai_planning_subtree/fighting_cover/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
+	if(world.time < controller.blackboard[BB_BASIC_MOB_PRESSING_UNTIL])
+		leave_fighting_cover(controller)
+		return // they're all down, so we leave our cover to rush them
 	var/atom/target = controller.blackboard[target_key]
 	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
 	var/turf/fighting_cover = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]

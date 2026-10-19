@@ -163,7 +163,7 @@
 			adjustBruteLoss(bloss)
 
 /mob/living/basic/do_attack_animation(atom/A, visual_effect_icon, used_item, no_effect)
-	if(!no_effect && !visual_effect_icon && melee_damage_upper)
+	if(!no_effect && !visual_effect_icon && !used_item && melee_damage_upper)
 		if(attack_vis_effect && !iswallturf(A)) // override the standard visual effect.
 			visual_effect_icon = attack_vis_effect
 		else if(melee_damage_upper < 10)
