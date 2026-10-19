@@ -146,7 +146,7 @@
 	. = ..()
 	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 
-/datum/reagent/determination/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/determination/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
 		significant = TRUE
 		M.apply_status_effect(STATUS_EFFECT_DETERMINED) // in addition to the slight healing, limping cooldowns are divided by 4 during the combat high
@@ -173,7 +173,7 @@
 	M.remove_status_effect(STATUS_EFFECT_DETERMINED)
 	..()
 
-/datum/reagent/determination/overdose_process(mob/living/carbon/human/H, seconds_per_tick, times_fired)
+/datum/reagent/determination/overdose_process(mob/living/carbon/human/H, seconds_per_tick)
 	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10 * REM * seconds_per_tick)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
@@ -199,7 +199,7 @@
 
 #define YUCK_PUKE_CYCLES 3 		// every X cycle is a puke
 #define YUCK_PUKES_TO_STUN 3 	// hit this amount of pukes in a row to start stunning
-/datum/reagent/yuck/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+/datum/reagent/yuck/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	if(!yuck_time)
 		if(SPT_PROB(4, seconds_per_tick))
 			var/dread = pick("Something is moving in your stomach...", \
@@ -244,7 +244,7 @@
 
 	process_flags = ORGANIC | SYNTHETIC
 
-/datum/reagent/water/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/water/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = ..()
 	M.adjust_disgust(-2 * REM * seconds_per_tick)
 	if(M.blood_volume)
@@ -494,7 +494,7 @@
 	color = "#484848" // rgb: 72, 72, 72A
 	taste_mult = 0 // apparently tasteless.
 
-/datum/reagent/mercury/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/mercury/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick)
@@ -528,7 +528,7 @@
 	color = "#FFFB89" //pale yellow? let's make it light gray
 	taste_description = "caustic"
 
-/datum/reagent/chlorine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/chlorine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.take_bodypart_damage(0, 1*REM * seconds_per_tick, 0, 0)
 	if(SPT_PROB(12.5, seconds_per_tick))
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,2*REM)
@@ -571,7 +571,7 @@
 	taste_description = "acid"
 	process_flags = ORGANIC | SYNTHETIC
 
-/datum/reagent/fluorine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/fluorine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	. = 1
 	..()
@@ -660,7 +660,7 @@
 
 	color = "#606060" //pure iron? let's make it violet of course
 
-/datum/reagent/iron/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+/datum/reagent/iron/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	if(C.blood_volume < BLOOD_VOLUME_NORMAL)
 		C.blood_volume += 0.5 * REM * seconds_per_tick
 	..()
@@ -757,7 +757,7 @@
 		do_teleport(M, get_turf(M), (reac_volume / 5), asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE) //4 tiles per crystal
 	..()
 
-/datum/reagent/bluespace/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/bluespace/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(current_time > start_time && prob(teleport_prob))
 		to_chat(M, span_warning("You feel unstable..."))
 		M.adjust_timed_status_effect(2 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter, max_duration = 40 SECONDS)
@@ -819,7 +819,7 @@
 		return
 	..()
 
-/datum/reagent/fuel/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/fuel/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
@@ -879,7 +879,7 @@
 	taste_mult = 1.5
 	process_flags = ORGANIC | SYNTHETIC
 
-/datum/reagent/stable_plasma/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+/datum/reagent/stable_plasma/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	C.adjustPlasma(10 * REM * seconds_per_tick)
 	..()
 
@@ -1100,7 +1100,7 @@
 	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
 	. = ..()
 
-/datum/reagent/rahene/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/rahene/overdose_process(mob/living/M, seconds_per_tick)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc) && prob(33))
 		step(M, pick(GLOB.cardinals))
 	if(SPT_PROB(5, seconds_per_tick))
@@ -1118,7 +1118,7 @@
 	var/tox_prob = 0
 	taste_description = "plant food"
 
-/datum/reagent/plantnutriment/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/plantnutriment/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(tox_prob/2, seconds_per_tick))
 		M.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 		. = 1
@@ -1427,7 +1427,7 @@
 			patient.adjustCloneLoss(10)
 			patient.do_jitter_animation(200)
 
-/datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustToxLoss(-healing*REM * seconds_per_tick, 0)
 	M.adjustOxyLoss(-healing*REM * seconds_per_tick, 0)
 	M.adjustBruteLoss(-healing*REM * seconds_per_tick, 0)
@@ -1435,7 +1435,7 @@
 	..()
 	. = 1
 
-/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H, seconds_per_tick, times_fired)
+/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H, seconds_per_tick)
 	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10 * REM * seconds_per_tick)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
@@ -1667,7 +1667,7 @@
 		M.extinguish_mob()
 	..()
 
-/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.radiation = M.radiation - rand(max(M.radiation * 0.03, 0))
 	..()
 	. = 1
@@ -1711,7 +1711,7 @@
 	color = "#f4ffe0"
 	taste_description = "acid"
 
-/datum/reagent/hydrogen_chloride/on_mob_life(mob/living/carbon/exposed_mob, seconds_per_tick, times_fired)
+/datum/reagent/hydrogen_chloride/on_mob_life(mob/living/carbon/exposed_mob, seconds_per_tick)
 	exposed_mob.take_bodypart_damage(0, 2*REM * seconds_per_tick, 0, 0)
 	exposed_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM * seconds_per_tick)
 	exposed_mob.adjustOrganLoss(ORGAN_SLOT_STOMACH,1*REM * seconds_per_tick)
@@ -1753,7 +1753,7 @@
 	if(method == VAPOR)
 		M.drowsyness += max(round(reac_volume, 1), 2)
 
-/datum/reagent/nitrous_oxide/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/nitrous_oxide/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.drowsyness += 2
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -1866,7 +1866,7 @@
 	color = "#f0e518"
 	taste_mult = 0 // tasteless
 
-/datum/reagent/sulfur_dioxide/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/sulfur_dioxide/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustOxyLoss(1*REM * seconds_per_tick, 0)
 	if(SPT_PROB(20, seconds_per_tick))
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1)
@@ -1900,7 +1900,7 @@
 	..()
 	REMOVE_TRAIT(L, CHANGELING_HIVEMIND_MUTE, type)
 
-/datum/reagent/bz_metabolites/on_mob_life(mob/living/L, seconds_per_tick, times_fired)
+/datum/reagent/bz_metabolites/on_mob_life(mob/living/L, seconds_per_tick)
 	if(L.mind)
 		var/datum/antagonist/changeling/changeling = L.mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
@@ -1925,7 +1925,7 @@
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	..()
 
-/datum/reagent/stimulum/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/stimulum/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustStaminaLoss(-2*REM * seconds_per_tick, 0)
 	..()
 
@@ -2052,7 +2052,7 @@
 	taste_description = "acid"
 	robot_clean_power = 15
 
-/datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustBruteLoss(3.33 * REM * seconds_per_tick)
 	M.adjustFireLoss(3.33 * REM * seconds_per_tick)
 	M.adjustToxLoss(3.33 * REM * seconds_per_tick)
@@ -2137,7 +2137,7 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	to_chat(L, span_danger("Visions of a realm BYOND your own flash across your eyes..."))
 
-/datum/reagent/truesight/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/truesight/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = ..()
 
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
@@ -2163,7 +2163,7 @@
 		var/mob/living/carbon/human/H = M
 		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living, seizure)), rand(1 SECONDS, 5 SECONDS))
 
-/datum/reagent/truesight/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/truesight/overdose_process(mob/living/M, seconds_per_tick)
 	. = ..()
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
@@ -2381,7 +2381,7 @@
 	addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, revive), FALSE, FALSE, excess_healing), 79)
 	..()
 
-/datum/reagent/medicine/strange_reagent/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/strange_reagent/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	var/damage_at_random = rand(0,250)/100 //0 to 2.5
 	M.adjustBruteLoss(damage_at_random*REM * seconds_per_tick, FALSE)
 	M.adjustFireLoss(damage_at_random*REM * seconds_per_tick, FALSE)
@@ -2486,6 +2486,6 @@
 	color = "#550055"
 	taste_description = "extreme sourness"
 
-/datum/reagent/plasmasoul/on_mob_life(mob/living/carbon/plasma_eater, seconds_per_tick, times_fired)
+/datum/reagent/plasmasoul/on_mob_life(mob/living/carbon/plasma_eater, seconds_per_tick)
 	plasma_eater.adjustToxLoss(5 * REM * seconds_per_tick, 0) // what made you think this was a good idea
 	..()

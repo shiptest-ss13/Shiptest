@@ -26,7 +26,7 @@
 	glass_name = "glass of coffee liquor"
 	glass_desc = "Bitter from the coffee and alcohol alike!"
 
-/datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3 * REM * seconds_per_tick)
 	M.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
@@ -53,7 +53,7 @@
 	glass_name = "glass of vodka"
 	glass_desc = "It's almost difficult to tell the glass is full of vodka until you tip it around. The smell makes your nose wrinkle... but it might just be worth it."
 
-/datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.radiation = max(M.radiation-2 * REM * seconds_per_tick,0)
 	return ..()
 
@@ -152,7 +152,7 @@
 	glass_name = "glass of absinthe"
 	glass_desc = "The smell is enough to bring you to the verge of tears. The hint of liquorice threatens to bring you over the edge."
 
-/datum/reagent/consumable/ethanol/absinthe/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/absinthe/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(5, seconds_per_tick) && !HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		M.hallucination += 4 //Reference to the urban myth
 	..()
@@ -301,7 +301,7 @@
 	glass_name = "Sososi-Seta"
 	glass_desc = "A white liquid with small pieces of fruit floating inside it. Typically served as a digestive after a hearty meal."
 
-/datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
 		M.adjustToxLoss(0.5 * REM * seconds_per_tick, 0)
 	M.adjust_nutrition(-0.5 * REM * seconds_per_tick)

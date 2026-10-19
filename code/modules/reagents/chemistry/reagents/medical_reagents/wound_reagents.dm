@@ -8,7 +8,7 @@
 	taste_description = "milk"
 	metabolization_rate = 0
 
-/datum/reagent/medicine/bonefixingjuice/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/bonefixingjuice/on_mob_life(mob/living/M, seconds_per_tick)
 	var/mob/living/carbon/C = M
 	switch(current_time)
 		if(1 to 20)

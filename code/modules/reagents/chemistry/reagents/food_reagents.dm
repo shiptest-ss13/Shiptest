@@ -16,7 +16,7 @@
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 	bad_type = /datum/reagent/consumable
 
-/datum/reagent/consumable/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	current_time += seconds_per_tick
 	if(ishuman(metabolizer))
 		var/mob/living/carbon/human/H = metabolizer
@@ -52,7 +52,7 @@
 	/// Whether this reagent should get the tastes of food it's in applied onto it
 	var/carry_food_tastes = TRUE
 
-/datum/reagent/consumable/nutriment/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/nutriment/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(prob(50))
 		metabolizer.heal_bodypart_damage(brute_heal * REM * seconds_per_tick ,burn_heal * REM * seconds_per_tick, 0)
 		. = 1
@@ -99,7 +99,7 @@
 	brute_heal = 1
 	burn_heal = 1
 
-/datum/reagent/consumable/nutriment/vitamin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/nutriment/vitamin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(metabolizer.satiety < 600)
 		metabolizer.satiety += 30 * REM * seconds_per_tick
 	. = ..()
@@ -189,7 +189,7 @@
 	M.AdjustSleeping(60 SECONDS)
 	. = 1
 
-/datum/reagent/consumable/sugar/overdose_process(mob/living/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/consumable/sugar/overdose_process(mob/living/overdoser, seconds_per_tick)
 	overdoser.AdjustSleeping(4 SECONDS)
 	..()
 	. = 1
@@ -234,7 +234,7 @@
 	color = "#8BA6E9" // rgb: 139, 166, 233
 	taste_description = "mint"
 
-/datum/reagent/consumable/frostoil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/frostoil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	var/cooling = 0
 	switch(current_time)
 		if(1 to 30)
@@ -309,7 +309,7 @@
 			if(prob(5))
 				victim.vomit()
 
-/datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(!holder.has_reagent(/datum/reagent/consumable/milk))
 		if(prob(10))
 			metabolizer.visible_message(span_warning("[metabolizer] [pick("dry heaves!","coughs!","splutters!")]"))
@@ -351,7 +351,7 @@
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	taste_description = "mushroom"
 
-/datum/reagent/drug/mushroomhallucinogen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/mushroomhallucinogen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(!metabolizer.slurring)
 		metabolizer.slurring = 1
 	switch(current_time)
@@ -439,7 +439,7 @@
 	else
 		taste_description = taste_one
 
-/datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 
@@ -450,7 +450,7 @@
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "wet and cheap noodles on fire"
 
-/datum/reagent/consumable/hell_ramen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/hell_ramen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT)
 	..()
 
@@ -523,7 +523,7 @@
 	metabolization_rate = 3 * REAGENTS_METABOLISM
 	taste_description = "sweet slime"
 
-/datum/reagent/consumable/corn_syrup/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/corn_syrup/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	holder.add_reagent(/datum/reagent/consumable/sugar, 3 * REM * seconds_per_tick)
 	..()
 
@@ -535,7 +535,7 @@
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	taste_description = "sweetness"
 
-/datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	holder.add_reagent(/datum/reagent/consumable/sugar,3 * REM * seconds_per_tick)
 	if(prob(55))
 		metabolizer.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
@@ -592,7 +592,7 @@
 			expose_target.blur_eyes(5) // set 10 seconds
 	..()
 
-/datum/reagent/consumable/tearjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/tearjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	..()
 	if(metabolizer.eye_blurry)	//Don't worsen vision if it was otherwise fine
 		metabolizer.blur_eyes(4) // set 8 seconds
@@ -608,7 +608,7 @@
 	nutriment_factor = 15 * REAGENTS_METABOLISM
 	color = "#664330" // rgb: 102, 67, 48
 
-/datum/reagent/consumable/nutriment/stabilized/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/nutriment/stabilized/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(metabolizer.nutrition > NUTRITION_LEVEL_FULL - 25)
 		metabolizer.adjust_nutrition(-3*nutriment_factor)
 	..()
@@ -621,7 +621,7 @@
 	color = "#1d043d"
 	taste_description = "bitter mushroom"
 
-/datum/reagent/consumable/entpoly/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/entpoly/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(current_time >= 20)
 		metabolizer.Unconscious(4 SECONDS, 0)
 		. = 1
@@ -671,7 +671,7 @@
 	nutriment_factor = 3 * REAGENTS_METABOLISM
 	taste_description = "fruity mushroom"
 
-/datum/reagent/consumable/vitfro/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/vitfro/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(SPT_PROB(40, seconds_per_tick))
 		metabolizer.adjustBruteLoss(-1, 0)
 		metabolizer.adjustFireLoss(-1, 0)
@@ -685,7 +685,7 @@
 	color = "#97ee63"
 	taste_description = "pure electricity"
 
-/datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(SPT_PROB(13, seconds_per_tick) && !iselzuose(metabolizer))
 		metabolizer.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(metabolizer, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
@@ -715,7 +715,7 @@
 	taste_description = "sweetness"
 	overdose_threshold = 17
 
-/datum/reagent/consumable/astrotame/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/consumable/astrotame/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	if(overdoser.disgust < 80)
 		overdoser.adjust_disgust(10 * REM * seconds_per_tick)
 	..()
@@ -784,7 +784,7 @@
 		return
 	..()
 
-/datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	metabolizer.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)		// Doesn't kill you like capsaicin
 	if(!ingested)							// Unless you didn't eat it
 		metabolizer.adjustFireLoss(0.25 * REM * seconds_per_tick, 0)
@@ -801,7 +801,7 @@
 	taste_description = "mushrooms"
 	nutriment_factor = -1 * REAGENTS_METABOLISM
 
-/datum/reagent/consumable/fervor/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/consumable/fervor/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(SPT_PROB(40, seconds_per_tick))
 		metabolizer.adjustBruteLoss(-2, 0)
 		metabolizer.adjustFireLoss(-2, 0)

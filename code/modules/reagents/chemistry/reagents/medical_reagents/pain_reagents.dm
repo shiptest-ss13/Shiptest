@@ -22,7 +22,7 @@
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	..()
 
-/datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(current_time >= 10)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
 	if(current_time > 750)
@@ -36,7 +36,7 @@
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/tramal/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/tramal/overdose_process(mob/living/M, seconds_per_tick)
 	if(SPT_PROB(17, seconds_per_tick))
 		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
@@ -70,7 +70,7 @@
 		drugged.impact_effect *= 2
 	..()
 
-/datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(current_time >= 10)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_time)
@@ -88,7 +88,7 @@
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/morphine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/morphine/overdose_process(mob/living/M, seconds_per_tick)
 	if(SPT_PROB(17, seconds_per_tick))
 		M.drop_all_held_items()
 		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
@@ -128,7 +128,7 @@
 		drugged.impact_effect *= 4
 	..()
 
-/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	if(current_time >= 6)
 		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
@@ -138,7 +138,7 @@
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/dimorlin/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/dimorlin/overdose_process(mob/living/M, seconds_per_tick)
 	if(SPT_PROB(17, seconds_per_tick))
 		M.losebreath++
 		M.adjustOxyLoss(4, 0)
@@ -155,7 +155,7 @@
 	color = "#6D6374"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+/datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	C.adjustBruteLoss(-0.25 * REM * seconds_per_tick, 0)
 	C.adjustFireLoss(-0.25 * REM * seconds_per_tick, 0)
@@ -214,7 +214,7 @@
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
-/datum/reagent/medicine/carfencadrizine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/carfencadrizine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(current_time >= 6)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 
@@ -225,7 +225,7 @@
 			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	..()
 
-/datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M, seconds_per_tick)
 	if(SPT_PROB(33, seconds_per_tick))
 		M.losebreath++
 		M.adjustOxyLoss(4, 0)

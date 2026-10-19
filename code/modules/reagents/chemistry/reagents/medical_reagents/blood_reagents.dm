@@ -41,7 +41,7 @@
 
 	return ..()
 
-/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = ..()
 	if(!M.blood_volume || !M.all_wounds)
 		return
@@ -62,7 +62,7 @@
 	else if(was_working)
 		was_working = FALSE
 
-/datum/reagent/medicine/chitosan/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/chitosan/overdose_process(mob/living/carbon/M, seconds_per_tick)
 	. = ..()
 	if(!M.blood_volume)
 		return
@@ -98,7 +98,7 @@
 	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
 	var/extra_regen = 0.125 // in addition to acting as temporary blood, also add this much to their actual blood per second
 
-/datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
@@ -113,7 +113,7 @@
 		. = TRUE
 	..()
 
-/datum/reagent/medicine/salglu_solution/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/salglu_solution/overdose_process(mob/living/M, seconds_per_tick)
 	if(SPT_PROB(1.5, seconds_per_tick))
 		to_chat(M, span_warning("You feel salty."))
 		holder.add_reagent(/datum/reagent/consumable/sodiumchloride, 1)

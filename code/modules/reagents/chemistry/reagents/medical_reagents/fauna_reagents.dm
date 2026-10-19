@@ -26,7 +26,7 @@
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "legion", /datum/mood_event/legion_bad, name)
 	..()
 
-/datum/reagent/medicine/soulus/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/soulus/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustFireLoss(-0.1 * REM * seconds_per_tick, 0)
 	M.adjustBruteLoss(-0.1 * REM * seconds_per_tick, 0)
 	M.adjustToxLoss(tox_dam * REM * seconds_per_tick, 0)

@@ -91,7 +91,7 @@
 		M.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_DRUG_EFFECT)
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, remove_status_effect), STATUS_EFFECT_STASIS, STASIS_DRUG_EFFECT), stasis_duration, TIMER_UNIQUE)
 
-/datum/reagent/medicine/stasis/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/stasis/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustToxLoss(1 * REM * seconds_per_tick)
 	..()
 	. = 1
@@ -106,14 +106,14 @@
 	overdose_threshold = 30
 	taste_description = "fish"
 
-/datum/reagent/medicine/rezadone/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/rezadone/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.setCloneLoss(0)
 	M.heal_bodypart_damage(1 * REM * seconds_per_tick, 1)
 	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 	..()
 	. = 1
 
-/datum/reagent/medicine/rezadone/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/rezadone/overdose_process(mob/living/M, seconds_per_tick)
 	M.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
@@ -140,7 +140,7 @@
 	color = "#FFFFF0"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.AdjustSleeping(-2 SECONDS * seconds_per_tick * REM))
 		. = 1
 	holder.remove_reagent(/datum/reagent/consumable/sugar, 3)
@@ -158,7 +158,7 @@
 	color = "#C1151D"
 	overdose_threshold = 30
 
-/datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	..()
 	M.AdjustAllImmobility(-2 SECONDS)
 	M.adjustStaminaLoss(-5 * seconds_per_tick, 0)
@@ -180,7 +180,7 @@
 	L.remove_status_effect(/datum/status_effect/dizziness)
 	L.remove_status_effect(/datum/status_effect/jitter)
 
-/datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/M, seconds_per_tick)
 	M.adjustToxLoss(0.5 * seconds_per_tick, 0)
 	..()
 	return TRUE
@@ -199,7 +199,7 @@
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/changelinghaste)
 	..()
 
-/datum/reagent/medicine/changelinghaste/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/changelinghaste/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustToxLoss(1 * seconds_per_tick, 0)
 	..()
 	return TRUE

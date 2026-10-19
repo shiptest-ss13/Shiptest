@@ -14,7 +14,7 @@
 	color = "#5096C8"
 	taste_description = "acid"
 
-/datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_timed_status_effect(-100 SECONDS * REM, /datum/status_effect/jitter)
 	if(M.has_dna())
 		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
@@ -27,7 +27,7 @@
 	color = "#00B4C8"
 	taste_description = "raw egg"
 
-/datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.remove_status_effect(/datum/status_effect/dizziness)
 	M.drowsyness = 0
 	M.slurring = 0
@@ -47,7 +47,7 @@
 	color = "#64FFE6"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(5, seconds_per_tick))
 		M.drowsyness += 0.5 * seconds_per_tick
 	M.adjust_timed_status_effect(-12 SECONDS, /datum/status_effect/jitter)
@@ -62,7 +62,7 @@
 	color = "#27870a"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/haloperidol/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/haloperidol/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type, 2.5 * seconds_per_tick)
 	M.drowsyness += 1 * seconds_per_tick
@@ -94,7 +94,7 @@
 	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, type)
 	..()
 
-/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(!overdosed) // We do not want any effects on OD
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
 		M.AdjustAllImmobility(-5)
@@ -108,7 +108,7 @@
 	to_chat(M, span_userdanger("You feel awfully out of breath and jittery!"))
 	metabolization_rate = 0.025 * REM // sets metabolism to 0.01 per tick on overdose
 
-/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(!overdosed) // We do not want any effects on OD
 		overdose_threshold = overdose_threshold + ((rand(-10, 10) / 10) * REM * seconds_per_tick) // for extra fun
 		metabolizer.AdjustAllImmobility(-5 * REM * seconds_per_tick)
@@ -122,7 +122,7 @@
 	to_chat(M, "<span class='userdanger'>You feel awfully out of breath and jittery!</span>")
 	metabolization_rate = 0.025 * REAGENTS_METABOLISM // sets metabolism to 0.005 per second on overdose
 
-/datum/reagent/medicine/modafinil/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/modafinil/overdose_process(mob/living/M, seconds_per_tick)
 	overdose_progress++
 	switch(overdose_progress)
 		if(1 to 40)
@@ -159,7 +159,7 @@
 	description = "Increases resistance to stuns as well as reducing drowsiness and hallucinations."
 	color = "#FF00FF"
 
-/datum/reagent/medicine/synaptizine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/synaptizine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.drowsyness = max(M.drowsyness - (5 * REM * seconds_per_tick), 0)
 	M.AdjustStun(-20 * REM * seconds_per_tick)
 	M.AdjustKnockdown(-20 * REM * seconds_per_tick)
@@ -179,7 +179,7 @@
 	description = "Reduces drowsiness, hallucinations, and Histamine from body."
 	color = "#EC536D" // rgb: 236, 83, 109
 
-/datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.drowsyness = max(M.drowsyness - (5 * REM * seconds_per_tick), 0)
 	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
 		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5 * REM * seconds_per_tick)
@@ -202,7 +202,7 @@
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	overdose_threshold = 20
 
-/datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/Mn seconds_per_tick)
+/datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	if(!mood)
 		return ..()
@@ -236,7 +236,7 @@
 	L.recoil_effect /= 0.8
 	..()
 
-/datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	M.adjust_timed_status_effect(-12 SECONDS * REM, /datum/status_effect/dizziness)
 	M.confused = max(0, M.confused-6)
@@ -249,7 +249,7 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/psicodine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/psicodine/overdose_process(mob/living/M, seconds_per_tick)
 	M.hallucination = min(max(0, M.hallucination + 5), 60)
 	M.adjustToxLoss(1, 0)
 	..()
@@ -273,7 +273,7 @@
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	..()
 
-/datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(10, seconds_per_tick) && iscarbon(M))
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
@@ -285,7 +285,7 @@
 	..()
 	return TRUE
 
-/datum/reagent/medicine/ephedrine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/ephedrine/overdose_process(mob/living/M, seconds_per_tick)
 	if(prob(2) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure
 		M.ForceContractDisease(D)

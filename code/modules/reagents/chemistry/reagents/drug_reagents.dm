@@ -16,7 +16,7 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 30
 
-/datum/reagent/drug/space_drugs/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/space_drugs/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	metabolizer.set_drugginess(15)
 	if(isturf(metabolizer.loc) && !isspaceturf(metabolizer.loc))
 		if(!HAS_TRAIT(metabolizer, TRAIT_IMMOBILIZED))
@@ -28,7 +28,7 @@
 	to_chat(M, span_userdanger("You start tripping hard!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
-/datum/reagent/drug/space_drugs/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/space_drugs/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	if(overdoser.hallucination < volume && SPT_PROB(10, seconds_per_tick))
 		overdoser.hallucination += 5
 	..()
@@ -43,7 +43,7 @@
 	overdose_threshold = 30
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 
-/datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(prob(1))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
 		to_chat(metabolizer, span_notice("[smoke_message]"))
@@ -57,7 +57,7 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/nicotine/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/nicotine/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.adjustToxLoss(0.1 * REM * seconds_per_tick, 0)
 	overdoser.adjustOxyLoss(1.1 * REM * seconds_per_tick, 0)
 	..()
@@ -86,7 +86,7 @@
 	. = ..()
 	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
 
-/datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		var/high_message = pick("YOU NEED TO MOVE.", "INERTIA IS FILLING YOUR HEART", "SEIZE THE MOMENT", "GO GO GO GO GO GO", "YOU NEED TO SPRINT.", "DO NOT STOP MOVING.", "THERE IS NOTHING BUT FORWARDS")
 		to_chat(metabolizer, span_boldwarning("[high_message]"))
@@ -147,7 +147,7 @@
 		QDEL_NULL(rage)
 	..()
 
-/datum/reagent/drug/mammoth/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/mammoth/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		var/high_message = pick("Flatten them", "Crush them", "Smash them", "Kill them") //flat it. crush it. smash it. bop it.
 		to_chat(metabolizer, span_boldwarning("[high_message]"))
@@ -157,7 +157,7 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/mammoth/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/mammoth/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.hallucination += 5
 	if(!HAS_TRAIT(overdoser, TRAIT_IMMOBILIZED) && !ismovable(overdoser.loc))
 		for(var/i in 1 to 8)
@@ -172,7 +172,7 @@
 	reagent_state = LIQUID
 	color = "#78FFF0"
 
-/datum/reagent/drug/aranesp/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/aranesp/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(SPT_PROB(2.5, seconds_per_tick))
 		to_chat(metabolizer, span_notice("[high_message]"))
@@ -202,7 +202,7 @@
 	SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "happiness_drug")
 	..()
 
-/datum/reagent/drug/happiness/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/happiness/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	metabolizer.adjust_timed_status_effect(-20 SECONDS, /datum/status_effect/jitter)
 	metabolizer.confused = 0
 	metabolizer.disgust = 0
@@ -210,7 +210,7 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/happiness/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/happiness/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	if(SPT_PROB(15, seconds_per_tick))
 		var/reaction = rand(1,3)
 		switch(reaction)
@@ -240,7 +240,7 @@
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	..()
 
-/datum/reagent/drug/pumpup/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/pumpup/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 	if(SPT_PROB(2.5, seconds_per_tick))
@@ -254,7 +254,7 @@
 /datum/reagent/drug/pumpup/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("You can't stop shaking, your heart beats faster and faster..."))
 
-/datum/reagent/drug/pumpup/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/pumpup/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		overdoser.drop_all_held_items()
@@ -292,7 +292,7 @@
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.do_after_speed += 0.4
 
-/datum/reagent/drug/finobranc/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/finobranc/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
 	if(ishuman(overdoser))
 		var/mob/living/carbon/human/uh_oh = overdoser
@@ -340,7 +340,7 @@
 		drugged.recoil_effect /= 0.6
 		drugged.impact_effect *= 2
 
-/datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	..()
 	metabolizer.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	metabolizer.adjustStaminaLoss(-9 * seconds_per_tick, 0)
@@ -350,7 +350,7 @@
 	if(SPT_PROB(10, seconds_per_tick))
 		to_chat(metabolizer, span_boldwarning("MOVE!! MOVE!! MOVE!!"))
 
-/datum/reagent/drug/combat_drug/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/combat_drug/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, 2 * seconds_per_tick)
 	if(ishuman(overdoser))
 		var/mob/living/carbon/human/uh_oh = overdoser
@@ -383,7 +383,7 @@
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.hunger_mod -= 1.5
 
-/datum/reagent/drug/retukemi/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/retukemi/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	..()
 	if(SPT_PROB(5, seconds_per_tick))
 		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","Your throat is warm and scratchy...","You could use some water.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.","The world feels softer and warmer...","A humming warmth spreads across your entire body.","You get lost in your thoughts for a moment...","Everything feels a little more comfortable.","You catch yourself in the middle of smiling vacantly.")
@@ -418,12 +418,12 @@
 		REMOVE_TRAIT(drugged, TRAIT_CLOUDED, type)
 		drugged.update_sight()
 
-/datum/reagent/drug/stardrop/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/stardrop/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	..()
 	if(SPT_PROB(2.5, seconds_per_tick))
 		metabolizer.blur_eyes(rand(5,12)) // Set 10 to 24 seconds
 
-/datum/reagent/drug/stardrop/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/stardrop/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_EYES, 0.5 * seconds_per_tick)
 	if(SPT_PROB(20, seconds_per_tick))
 		overdoser.blur_eyes(rand(3,12)) // set 6 to 24 seconds
@@ -446,7 +446,7 @@
 	metabolization_rate = REAGENTS_METABOLISM * 0.25
 	taste_description = "sugar" //effectively a sugar pill, but sugar actually has a use
 
-/datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	if(SPT_PROB(1.5, seconds_per_tick))
 		to_chat(metabolizer, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
 	..()
@@ -478,14 +478,14 @@
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.hunger_mod -= 1
 
-/datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+/datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick)
 	..()
 	metabolizer.adjustStaminaLoss(-10 * REM * seconds_per_tick, 0)
 	metabolizer.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
 	if(SPT_PROB(5, seconds_per_tick))
 		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 
-/datum/reagent/drug/cinesia/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/cinesia/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, 2 * REM * seconds_per_tick)
 	if(SPT_PROB(10, seconds_per_tick))
 		var/obj/item/bodypart/muscle_seizure = overdoser.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG))
@@ -525,7 +525,7 @@
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_bad, name)
 	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
 
-/datum/reagent/drug/cytodron/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/cytodron/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	. = ..()
 	if(SPT_PROB(5, seconds_per_tick))
 		overdoser.drop_all_held_items()
@@ -562,7 +562,7 @@
 	. = ..()
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/headache, name)
 
-/datum/reagent/drug/sting/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
+/datum/reagent/drug/sting/overdose_process(mob/living/carbon/overdoser, seconds_per_tick)
 	. = ..()
 	if(SPT_PROB(15, seconds_per_tick))
 		overdoser.blur_eyes(rand(5,12)) // set from 10 to 24 seconds

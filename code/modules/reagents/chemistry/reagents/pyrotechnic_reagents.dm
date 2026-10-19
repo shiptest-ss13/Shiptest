@@ -12,7 +12,7 @@
 	if(reac_volume >= 1)
 		T.AddComponent(/datum/component/thermite, reac_volume)
 
-/datum/reagent/thermite/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/thermite/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjustFireLoss(1 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
@@ -47,7 +47,7 @@
 	process_flags = ORGANIC | SYNTHETIC
 	accelerant_quality = 20
 
-/datum/reagent/clf3/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/clf3/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_fire_stacks(2 * REM * seconds_per_tick)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
 	M.adjustFireLoss(burndmg * REM * seconds_per_tick, 0)
@@ -189,7 +189,7 @@
 	M.ignite_mob()
 	..()
 
-/datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_fire_stacks(1 * REM * seconds_per_tick)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
 	M.adjustFireLoss(burndmg * REM * seconds_per_tick, 0)
@@ -207,7 +207,7 @@
 	process_flags = ORGANIC | SYNTHETIC
 	accelerant_quality = 20
 
-/datum/reagent/napalm/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/napalm/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_fire_stacks(1 * REM * seconds_per_tick)
 	..()
 

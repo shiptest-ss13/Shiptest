@@ -40,7 +40,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 91-100: Dangerously toxic - swift death
 */
 
-/datum/reagent/consumable/ethanol/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/on_mob_life(mob/living/carbon/drinker, seconds_per_tick)
 	if(drinker.get_drunk_amount() < volume * boozepwr * ALCOHOL_THRESHOLD_MODIFIER || boozepwr < 0)
 		var/booze_power = boozepwr
 		if(HAS_TRAIT(drinker, TRAIT_ALCOHOL_TOLERANCE)) //we're an accomplished drinker

@@ -38,7 +38,7 @@
 	return ..()
 
 
-/datum/reagent/medicine/polypyr/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired) //I wanted a collection of small positive effects, this is as hard to obtain as coniine after all.
+/datum/reagent/medicine/polypyr/on_mob_life(mob/living/carbon/M, seconds_per_tick) //I wanted a collection of small positive effects, this is as hard to obtain as coniine after all.
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25 * REM * seconds_per_tick)
 	M.adjustBruteLoss(-0.5 * REM * seconds_per_tick, 0)
 	..()
@@ -52,7 +52,7 @@
 			H.facial_hair_color = "92f"
 			H.update_hair()
 
-/datum/reagent/medicine/polypyr/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/polypyr/overdose_process(mob/living/M, seconds_per_tick)
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.25 * seconds_per_tick)
 	..()
 	. = 1
@@ -66,7 +66,7 @@
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/puce_essence/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/puce_essence/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(50, seconds_per_tick))
 		M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	else
@@ -97,7 +97,7 @@
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/chartreuse/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)	// Yes, you can chemstack with soulus dust
+/datum/reagent/medicine/chartreuse/on_mob_life(mob/living/carbon/M, seconds_per_tick)	// Yes, you can chemstack with soulus dust
 	if(SPT_PROB(50, seconds_per_tick))
 		M.adjustToxLoss(-2 * REM * seconds_per_tick, 0)
 		M.adjustCloneLoss(-1 * REM * seconds_per_tick, 0)
@@ -114,7 +114,7 @@
 /datum/reagent/medicine/chartreuse/on_mob_end_metabolize(mob/living/M)
 	M.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, color)		// Removes temporary (not permanent) chartreuse
 
-/datum/reagent/medicine/chartreuse/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/chartreuse/overdose_process(mob/living/M, seconds_per_tick)
 	M.add_atom_colour(color, FIXED_COLOUR_PRIORITY)		// Eternal chartreuse
 	M.set_drugginess(15)		// Also druggy
 	..()
@@ -127,7 +127,7 @@
 	metabolization_rate = 0.4 //Math is based on specific metab rate so we want this to be static AKA if define or medicine metab rate changes, we want this to stay until we can rework calculations.
 	overdose_threshold = 25
 
-/datum/reagent/medicine/earthsblood/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/earthsblood/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(current_time <= 50) //10u has to be processed before u get into THE FUN ZONE
 		M.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
 		M.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
@@ -157,7 +157,7 @@
 	REMOVE_TRAIT(L, TRAIT_PACIFISM, type)
 	..()
 
-/datum/reagent/medicine/earthsblood/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/earthsblood/overdose_process(mob/living/M, seconds_per_tick)
 	M.hallucination = min(max(0, M.hallucination + 5), 60)
 	if(current_time > 50)
 		M.adjustToxLoss(4 * REM * seconds_per_tick, 0)
@@ -191,12 +191,12 @@
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/neoxanthin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/neoxanthin/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(prob(80))
 		M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	..()
 
-/datum/reagent/medicine/neoxanthin/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/neoxanthin/overdose_process(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(15, seconds_per_tick))
 		M.vomit()
 	..()
