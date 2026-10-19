@@ -39,6 +39,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/lizard,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard/synth,
 	)
 	replacement_organs = list(
 		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
@@ -60,6 +61,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/kepori,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/kepori,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/kepori,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/kepori/robot,
 	)
 	replacement_organs = list(
 		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
@@ -82,6 +84,16 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/vox,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/vox,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/vox,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/vox/robot,
+	)
+	replacement_organs = list(
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic/vox,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
 	)
 	allowed_species = list(/datum/species/vox)
 	bodytype = BODYTYPE_VOX

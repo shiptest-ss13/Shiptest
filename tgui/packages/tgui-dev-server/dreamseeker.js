@@ -15,14 +15,25 @@ const logger = createLogger('dreamseeker');
 const instanceByPid = new Map();
 
 export class DreamSeeker {
+  /**
+   * @param {number} pid
+   * @param {string} addr
+   */
   constructor(pid, addr) {
+    /** @type {number} */
     this.pid = pid;
+    /** @type {string} */
     this.addr = addr;
+    /** @type {import('axios').AxiosInstance} */
     this.client = axios.create({
-      baseURL: `http://${addr}/`,
+      baseURL: `http://${addr}`,
     });
   }
 
+  /**
+   * @param {Object} params
+   * @returns {Promise<Response>}
+   */
   topic(params = {}) {
     // prettier-ignore
     const query = Object.keys(params)
@@ -30,9 +41,9 @@ export class DreamSeeker {
         + '=' + encodeURIComponent(params[key]))
       .join('&');
     logger.log(
-      `topic call at ${this.client.defaults.baseURL + '/dummy?' + query}`
+      `topic call at ${this.client.defaults.baseURL}/dummy.htm?${query}`
     );
-    return this.client.get('/dummy?' + query);
+    return this.client.get('/dummy.htm?' + query);
   }
 }
 

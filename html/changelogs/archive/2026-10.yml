@@ -74,3 +74,74 @@
 2026-10-10:
   thearbiber:
   - rscadd: invictus sprite modification
+2026-10-11:
+  Retrino:
+  - rscadd: Sunskipper remap
+  - rscadd: White/greyscale versions of sofas, comfy chairs, wooden chairs, stools,
+      and benches
+  - rscadd: Crafting and deconstruction for hedges
+  - rscadd: Green nanoweave carpet
+  - rscadd: Teacups. They can be found in lathes, along with mugs
+  - code_imp: Salt and honey now in biogenerators
+  - code_imp: Platforms that are not indestructible can now be deconstructed with
+      a wrench. Railings can be snipped with wirecutters
+  - code_imp: Rolling tables are constructable with metal sheets
+  - code_imp: Roulette table price lowered from 5k to 1k
+  - code_imp: Half stairs can be added to floors using decal painter
+  - config: Sunskipper description and jobs update
+  thearbiber:
+  - rscadd: Heavy Indie hardsuit
+  - rscadd: red and white pants touchups
+2026-10-14:
+  AnomalousPotato:
+  - rscadd: Adds Vox and Kepori NGR sprites by Mudfish. See PR for full list.
+  - rscadd: Adds rolled sleeve digitgrade variants to NGR uniform and NGR officer
+      uniform by Mudfish.
+  - rscadd: Adds snouted NGR space helmets by DIB_DOG.
+  thearbiber:
+  - rscadd: slighty cheaper 45-70 ammo
+2026-10-15:
+  Erikafox:
+  - rscadd: A few events now add a memory to your IC notes
+  - rscadd: Small end tables. You can craft them with wood.
+  firebudgy:
+  - rscdel: All .45 ammo. Everywhere. It all exploded. It's gone. Goodbye.
+  - rscadd: Cobra is 10mm now. No statistical changes.
+  - balance: Candor is .44 now.
+  goober3:
+  - rscadd: A singular bulb in the Trifuge library is now flickering forever.
+  - bugfix: Lights no longer toggle emergency power when flickering.
+  - soundadd: Lights now make a sound when turning on.
+  - code_imp: Lights can now be turned on with a delay.
+  iamthesilly:
+  - refactor: Tails are now a targetable bodypart
+  - code_imp: All bodyparts now have a "bodypart weight" which determines its chance
+      to get hit and the share of damage received from sources that apply across all
+      limbs
+  - imageadd: Vox and Kepori tails are now separate from the chest sprite
+  - bugfix: Fixed paraplegics being able to use the *thump emote
+  - balance: The TEG's efficiency scaling now reaches usable levels at around the
+      peak burn temperatures of common fuels (hydrogen, methane)
+  - balance: Significantly reduced plasma's burn temperature
+  - bugfix: Fixed an infinite temperature cascade when burning plasma under certain
+      conditions
+  prodirus:
+  - rscadd: Damage and blood overlays for organic Kepori.
+  - bugfix: Vox FBPs now work.
+  - bugfix: Burn overlays are now properly applied instead of reusing brute overlays.
+2026-10-17:
+  DIB-DOG:
+  - rscadd: Remapped the Elated Bolide and modified some PGF ships for continuity's
+      sake.
+  MarkSuckerberg:
+  - bugfix: The youtube audio player should crash less.
+  - bugfix: Saving the chatlog on 516 should crash less.
+  - bugfix: The annoying small character preview/overmap viewer bug should be fixed
+      now.
+  - admin: Enabled edge devtools for debugging
+  generalthrax:
+  - rscadd: Added mining rigs, survival knife, bathroom supplies, privacy shutters,
+      and other misc additions to the Kilo
+2026-10-18:
+  kaylexis:
+  - rscadd: Labeled medicine bottles with dosage limits
