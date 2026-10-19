@@ -372,6 +372,10 @@
 			else
 				ai_controller?.set_blackboard_key(BB_BASIC_MOB_LEASH_DISTANCE, leash_distance) // so it takes effect on a mob that's already about
 			return
+		if(NAMEOF(src, throw_back_chance))
+			. = ..()
+			ai_controller?.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_CHANCE, noncombatant ? 0 : throw_back_chance) // so it takes effect on a mob that's already about
+			return
 		if(NAMEOF(src, grenade_type), NAMEOF(src, grenade_count))
 			. = ..()
 			if(ispath(grenade_type, /obj/item/grenade) && grenade_count > 0)

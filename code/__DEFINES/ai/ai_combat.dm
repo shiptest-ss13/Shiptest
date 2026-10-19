@@ -220,6 +220,10 @@
 #define AI_MELEE_MOVE_DELAY 1.8
 // The least fuse a grenade can have left for AI to try throwing it back, rather than it going off in their hand
 #define AI_THROW_BACK_MINIMUM_FUSE (1.5 SECONDS)
+// How far from AI a live grenade can land for it to go and throw it back,
+#define AI_THROW_BACK_REACH 2
+// Extra fuse time it needs for each step to it on top of AI_THROW_BACK_MINIMUM_FUSE
+#define AI_THROW_BACK_STEP_TIME (0.2 SECONDS)
 // How close a live explosive has to be for AI to notice it without seeing it, like an IED in a sack or something landing by them in the dark
 #define AI_EXPLOSIVE_NOTICE_RANGE 3
 // How much further than an explosive's blast AI gets clear by, and keeps clear of until it goes off

@@ -94,9 +94,38 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 			ai_callout(controller.pawn, AI_CALLOUT_GRENADE, interrupt = TRUE) // we never went for it, so we've not called it yet
 	if(get_dist(controller.pawn, get_turf(explosive)) >= danger[2] + safety_margin)
 		return // far enough off already, so we get on with the fight while it goes off, and run again if we're drawn back in
-	controller.queue_behavior(/datum/ai_behavior/run_away_from_target, BB_BASIC_MOB_FLEEING_EXPLOSIVE, danger[2] + safety_margin)
+	controller.queue_behavior(/datum/ai_behavior/run_away_from_target/explosive, BB_BASIC_MOB_FLEEING_EXPLOSIVE, danger[2] + safety_margin)
 	return SUBTREE_RETURN_FINISH_PLANNING
 
+// running from an explosive, and away from whoever we're fighting too if there's any way to, rather than straight at them
+/datum/ai_behavior/run_away_from_target/explosive
+
+/datum/ai_behavior/run_away_from_target/explosive/plot_path_away(datum/ai_controller/controller, atom/target, flee_distance)
+	var/turf/our_turf = get_turf(controller.pawn)
+	var/turf/explosive_turf = get_turf(target)
+	var/atom/enemy = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/turf/enemy_turf = QDELETED(enemy) ? null : get_turf(enemy)
+	if(!our_turf || !explosive_turf)
+		return ..()
+	var/away_angle = get_angle(explosive_turf, our_turf)
+	var/turf/best
+	var/best_distance_from_enemy = -1
+	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
+		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
+		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination) || get_dist(destination, explosive_turf) < flee_distance)
+			continue // somewhere we couldn't stand, or not clear of it
+		if(!enemy_turf)
+			best = destination
+			break // nobody to keep away from, so the straightest way out
+		var/distance_from_enemy = get_dist(destination, enemy_turf)
+		if(distance_from_enemy > best_distance_from_enemy)
+			best = destination
+			best_distance_from_enemy = distance_from_enemy
+	if(!best)
+		return ..() // nowhere clear of it on those lines, so straight away from it as best we can, whoever's there
+	set_movement_target(controller, best)
+	return TRUE
+-
 // whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4. Or something loose it's in, like a sack, which goes back sack and all
 /datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive, time_before_throw = 0)
 	var/obj/item/grenade/grenade = explosive
@@ -105,8 +134,13 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	var/obj/item/thrown = ai_explosive_holder(grenade)
 	if(!istype(thrown) || thrown.anchored || !isturf(thrown.loc))
 		return FALSE // in someone's hand or bag, or in something nobody could throw, like a locker
-	if(get_dist(controller.pawn, thrown) > 1)
+	var/distance = get_dist(controller.pawn, thrown)
+	if(distance > AI_THROW_BACK_REACH)
 		return FALSE
+	if(distance > 1)
+		if(!can_walk_straight_to(controller.pawn, get_turf(thrown)))
+			return FALSE // nothing in the way of the step to it
+		time_before_throw += AI_THROW_BACK_STEP_TIME
 	if(ai_thrown_by_our_side(controller.pawn, grenade))
 		return FALSE // one of ours threw it, so it's meant for them, and we just get clear
 	var/list/info = GLOB.ai_live_explosives[grenade]
