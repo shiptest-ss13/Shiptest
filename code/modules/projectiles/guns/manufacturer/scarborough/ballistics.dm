@@ -190,6 +190,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/revolver/viper/no_mag
 	spawn_no_ammo = TRUE
@@ -204,6 +205,17 @@ EMPTY_GUN_HELPER(revolver/viper)
 	item_state = "viper23"
 	spread = 5
 	spread_unwielded = 10
+	obj_flags = UNIQUE_RENAME
+
+	unique_reskin = list(\
+		"Pickle" = "viper23_pickle",
+		"Magnate's Daily" = "viper23_classy",
+		"Intranet Defender" = "viper23_rilena",
+		"Cheap Deal" = "viper23_trash",
+		"Merc's Best Friend" = "viper23_larp",
+		"Rancher" = "viper23_cowboy"
+		)
+	unique_reskin_changes_inhand = TRUE
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
