@@ -112,6 +112,7 @@
 	safety = FALSE
 	no_bolt_overlay = TRUE
 
+	var/trigger_pull_fail = 33 // funny snowflake jam chance
 	var/desc_more = null // for appending variant descriptions
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
@@ -126,6 +127,13 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
 	to_chat(user, span_warning("Theres no magazine to replace!"))
 	return
+
+/obj/item/gun/ballistic/automatic/pistol/disposable/fire_gun(atom/target, mob/living/user, flag, params)
+	if(prob(trigger_pull_fail))
+		balloon_alert(user, "stuck!")
+		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 50, TRUE, -15)
+		return
+	return ..()
 
 // now available in fun colors
 /obj/item/gun/ballistic/automatic/pistol/disposable/red
@@ -192,12 +200,11 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo
 	name = "true disposable gun"
 	desc = "The brutal conclusion of arms development research. Gaze upon it and despair. Chambered in .22 LR."
-	fire_delay = 0.01 SECONDS
+	fire_delay = 0.09 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
-	spread = 0
-	spread_unwielded = 0
 	wear_rate = 0
+	trigger_pull_fail = 0
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/process_fire()
 	. = ..()

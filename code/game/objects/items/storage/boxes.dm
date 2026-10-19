@@ -1762,7 +1762,7 @@
 	name = "disposable gun variety pack"
 	desc = "A box containing an assortment of disposable guns. A label reads: COLLECT THEM ALL! Bizarrely, there are no markings identifying the manufacturer."
 	icon_state = "gachabox"
-	custom_price = 450 // 4 for the price of 3!
+	custom_price = 300 // 4 for the price of 3!
 
 /obj/item/storage/box/disposable_gun_gacha/PopulateContents()
 	for(var/i in 1 to 4)
