@@ -16,8 +16,8 @@ AI attacks
 	name = "\"Watcher\" Ancient Machinemind"
 	desc = "A large, alien sphere stares down at you with an intimidating eye. A constantly shifting mess of wires trails down as it gently floats in the air. \
 	The floating objects near the main 'body' of the machine seem to track your movements with eerie accuracy."
-	health = 1500
-	maxHealth = 1500
+	health = 1750
+	maxHealth = 1750
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	attack_verb_continuous = "crushes"
 	attack_verb_simple = "crush"
@@ -52,9 +52,9 @@ AI attacks
 	var/blast_wind_up = 12
 	stat_attack = SOFT_CRIT
 
-	speed = 10
-	move_to_delay = 10
-	ranged_cooldown_time = 30
+	speed = 8
+	move_to_delay = 8
+	ranged_cooldown_time = 20
 	mob_trophy = /obj/item/mob_trophy/obol
 	wander = FALSE
 	gps_name = "Glitchy Signal"
@@ -362,7 +362,7 @@ AI attacks
 	light_power = 2
 	desc = "Get out of the way!"
 	duration = 9
-	var/damage = 10 //how much damage do we do?
+	var/damage = 20 //how much damage do we do?
 	var/monster_damage_boost = TRUE //do we deal extra damage to monsters? Used by the boss
 	var/list/hit_things = list() //we hit these already, ignore them
 	var/friendly_fire_check = FALSE
