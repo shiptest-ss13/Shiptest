@@ -57,7 +57,8 @@
 		/mob/living/basic/human/hermit/ranged/shotgun = 10,
 		/mob/living/basic/human/hermit/survivor/lunatic = 5,
 		/mob/living/basic/human/hermit/ranged/gunslinger = 10,
-		/mob/living/basic/human/hermit/ranged/energy = 5
+		/mob/living/basic/human/hermit/ranged/energy = 5,
+		/mob/living/basic/human/hermit/ranged/gunslinger/bomber = 2, // funny surprise
 	)
 
 /obj/effect/spawner/random/thirtyfive_percent_borerspawner
