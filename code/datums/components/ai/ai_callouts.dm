@@ -26,9 +26,9 @@
 		AI_CALLOUT_STATUS_OK = 100, // a question left hanging sounds wrong
 		AI_CALLOUT_STATUS_BAD = 100,
 		AI_CALLOUT_LAST_SEEN = 100, // it's news to the one asking
-		AI_CALLOUT_COVERING = 70,
+		AI_CALLOUT_COVERING = 100, // only ever said as an answer, so a question isn't left hanging
 		AI_CALLOUT_CANT_REACH = 60,
-		AI_CALLOUT_NO_SIGN = 60,
+		AI_CALLOUT_NO_SIGN = 100,
 		AI_CALLOUT_NO_COVER = 50,
 		AI_CALLOUT_FLASHED = 80,
 		AI_CALLOUT_KNOCKED_DOWN = 60,
@@ -130,6 +130,8 @@
 	var/check_in_chance = 40
 	//when we're due to answer an ally asking how we're doing, so we don't say pain lines in the meantime
 	var/check_in_answer_due = 0
+	//until when we hold our tongue, as one of ours in earshot has just spoken, see AI_CALLOUT_TURN_GAP
+	var/quiet_until = 0
 	var/alone = FALSE
 	var/alone_checked_until = 0
 
@@ -392,43 +394,47 @@
 		last_interrupt_time = world.time
 	COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
 	say_line(line, last_words)
-	var/list/allies_in_earshot
+	// don't speak all at once, one at a time
+	var/list/allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
+	for(var/datum/component/ai_callouts/listener as anything in get_allies_in_earshot(allies_in_earshot))
+		listener.quiet_until = max(listener.quiet_until, world.time + AI_CALLOUT_TURN_GAP)
 	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
-		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
 		for(var/mob/living/ally as anything in allies_in_earshot)
 			ai_try_embolden(ally)
 	else if(event == AI_CALLOUT_LOST_THEM || event == AI_CALLOUT_RELOADING)
-		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
-		prompt_answer(event, allies_in_earshot)
+		prompt_answer(event)
 	share_line_cooldown(event, allies_in_earshot)
 	return TRUE
 
-// an ally in earshot answers what we just said a moment later, for the lines that get one. allies_in_earshot is get_ai_allies_in_earshot()
-/datum/component/ai_callouts/proc/prompt_answer(event, list/allies_in_earshot)
-	var/list/answerers = get_allies_in_earshot(allies_in_earshot)
-	switch(event)
-		if(AI_CALLOUT_LOST_THEM)
-			var/mob/living/basic/basic_mob = parent
-			var/atom/target = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-			if(target && length(answerers))
-				var/datum/component/ai_callouts/answerer = pick(answerers)
-				addtimer(CALLBACK(answerer, PROC_REF(answer_where_they_went), WEAKREF(src), WEAKREF(target)), AI_CALLOUT_ANSWER_DELAY)
-		if(AI_CALLOUT_RELOADING)
-			for(var/datum/component/ai_callouts/answerer as anything in shuffle(answerers))
-				if(answerer.sees_target())
-					addtimer(CALLBACK(answerer, PROC_REF(answer_reloading)), AI_CALLOUT_ANSWER_DELAY)
+// a moment after we say event, one of ours in earshot answers it, for the lines that get one
+/datum/component/ai_callouts/proc/prompt_answer(event)
+	var/mob/living/basic/basic_mob = parent
+	var/atom/target = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	addtimer(CALLBACK(src, PROC_REF(get_answered), event, target ? WEAKREF(target) : null), AI_CALLOUT_ANSWER_DELAY)
+
+// whoever's still about to answer does, picked now rather than when we asked, as whoever we'd have picked may be down or gone by now
+/datum/component/ai_callouts/proc/get_answered(event, datum/weakref/target_ref)
+	var/mob/living/basic/basic_mob = parent
+	if(basic_mob.stat != CONSCIOUS)
+		return // nobody to answer
+	var/atom/target = target_ref?.resolve()
+	for(var/datum/component/ai_callouts/answerer as anything in shuffle(get_allies_in_earshot()))
+		switch(event)
+			if(AI_CALLOUT_LOST_THEM)
+				if(!QDELETED(target) && answerer.answer_where_they_went(src, target))
+					return
+			if(AI_CALLOUT_RELOADING)
+				if(answerer.answer_reloading())
 					return
 
-// an ally lost sight of target and asked where they went, so we tell them which way, if we know better than they do, and they go and look there
-/datum/component/ai_callouts/proc/answer_where_they_went(datum/weakref/asker_ref, datum/weakref/target_ref)
-	var/datum/component/ai_callouts/asker = asker_ref?.resolve()
-	var/atom/target = target_ref?.resolve()
+// an ally lost sight of target and asked where they went, so we tell them which way, if we know better than they do, and they go and look there. TRUE if we answered
+/datum/component/ai_callouts/proc/answer_where_they_went(datum/component/ai_callouts/asker, atom/target)
 	var/mob/living/basic/basic_mob = parent
 	var/mob/living/asking_mob = asker?.parent
 	var/datum/ai_controller/our_controller = basic_mob.ai_controller
 	var/datum/ai_controller/their_controller = asking_mob?.ai_controller
 	if(QDELETED(target) || !our_controller || !their_controller || asking_mob.stat != CONSCIOUS)
-		return
+		return FALSE
 	var/turf/known_turf
 	var/known_time
 	if(our_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == target && our_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
@@ -440,15 +446,15 @@
 	var/their_known_time = their_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TARGET] == target ? their_controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TIME] : null
 	var/turf/their_turf = get_turf(asking_mob)
 	if(!known_turf || !their_turf || known_turf.z != their_turf.z || get_dist(their_turf, known_turf) < 3 || (!isnull(their_known_time) && known_time <= their_known_time))
-		speak_about(AI_CALLOUT_NO_SIGN, answering = TRUE) // nothing they don't already know
-		return
-	if(speak_about(AI_CALLOUT_LAST_SEEN, answering = TRUE, direction = dir2text(get_dir(their_turf, known_turf))))
-		their_controller.learn_of_target(target, known_turf, AI_LEARNED_TOLD) // so they go where we said, not somewhere else
+		return speak_about(AI_CALLOUT_NO_SIGN, answering = TRUE) // nothing they don't already know
+	if(!speak_about(AI_CALLOUT_LAST_SEEN, answering = TRUE, direction = dir2text(get_dir(their_turf, known_turf))))
+		return FALSE
+	their_controller.learn_of_target(target, known_turf, AI_LEARNED_TOLD) // so they go where we said, not somewhere else
+	return TRUE
 
-// an ally's reloading, and we can see who we're fighting, so we say we've got them
+// an ally's reloading, and we can see who we're fighting, so we say we've got them. TRUE if we did
 /datum/component/ai_callouts/proc/answer_reloading()
-	if(sees_target())
-		speak_about(AI_CALLOUT_COVERING, answering = TRUE)
+	return sees_target() && speak_about(AI_CALLOUT_COVERING, answering = TRUE)
 
 // what we'd say about event right now, or null if we'd keep quiet
 /datum/component/ai_callouts/proc/pick_line(event, last_words = FALSE, interrupt = FALSE, answering = FALSE)
@@ -486,7 +492,7 @@
 		chance = spotted_chance
 	else if(event == AI_CALLOUT_IDLE && length(idle_lines))
 		lines = idle_lines // still paced with the group, unlike our own spotted lines
-	if(!lines || (!last_words && !interrupt && !answering && !COOLDOWN_FINISHED(src, speech_cooldown)))
+	if(!lines || (!last_words && !interrupt && !answering && (!COOLDOWN_FINISHED(src, speech_cooldown) || world.time < quiet_until)))
 		return null
 	if(interrupt && !last_words && world.time < last_interrupt_time + AI_CALLOUT_INTERRUPT_GAP)
 		return null // we've only just said something urgent, which covers this too
