@@ -67,41 +67,6 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c9mm/rubber
 
-// .45 (Candor + C20r)
-
-/obj/item/ammo_casing/c45
-	name = ".45 bullet casing"
-	desc = "A .45 bullet casing."
-	icon_state = "pistol-steel"
-	caliber = ".45"
-	projectile_type = /obj/projectile/bullet/c45
-	stack_size = 12
-
-/obj/item/ammo_casing/c45/surplus
-	name = ".45 surplus bullet casing"
-	desc = "A .45 surplus bullet casing."
-	bullet_skin = "surplus"
-	projectile_type = /obj/projectile/bullet/c45/surplus
-	wear_modifier = 2
-
-/obj/item/ammo_casing/c45/ap
-	name = ".45 armor-piercing bullet casing"
-	desc = "A .45 armor-piercing bullet casing."
-	bullet_skin = "ap"
-	projectile_type =/obj/projectile/bullet/c45/ap
-
-/obj/item/ammo_casing/c45/hp
-	name = ".45 hollow-point bullet casing"
-	desc = "A .45 hollow-point bullet casing."
-	bullet_skin = "hollow"
-	projectile_type = /obj/projectile/bullet/c45/hp
-
-/obj/item/ammo_casing/c45/rubber
-	name = ".45 rubber bullet casing"
-	desc = "A .45 rubber bullet casing."
-	bullet_skin = "rubber"
-	projectile_type = /obj/projectile/bullet/c45/rubber
-
 // .22 LR (Himehabu, Pounder)
 
 /obj/item/ammo_casing/c22lr

@@ -367,7 +367,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/dangerous/smg
 	name = "C-20r Submachine Gun"
-	desc = "A fully-loaded Scarborough Arms bullpup submachine gun. The C-20r fires .45 rounds with a \
+	desc = "A fully-loaded Scarborough Arms bullpup submachine gun. The C-20r fires 10mm rounds with a \
 			24-round magazine and is compatible with suppressors."
 	item = /obj/item/gun/ballistic/automatic/smg/cobra
 	cost = 10
@@ -735,16 +735,16 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/ammo/smg/bag
-	name = ".45 Ammo Duffel Bag"
-	desc = "A duffel bag filled with enough .45 ammo to supply an entire team, at a discounted price."
+	name = "10mm Ammo Duffel Bag"
+	desc = "A duffel bag filled with enough 10mm ammo to supply an entire team, at a discounted price."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/smg
 	cost = 20 //instead of 27 TC
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/ammo/smg
-	name = ".45 SMG Magazine"
-	desc = "An additional 24-round .45 magazine suitable for use with the C-20r submachine gun."
-	item = /obj/item/ammo_box/magazine/m45_cobra
+	name = "10mm SMG Magazine"
+	desc = "An additional 24-round 10mm magazine suitable for use with the C-20r submachine gun."
+	item = /obj/item/ammo_box/magazine/m10_cobra
 	cost = 3
 	include_modes = list(/datum/game_mode/nuclear)
 
