@@ -125,7 +125,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		return ..() // nowhere clear of it on those lines, so straight away from it as best we can, whoever's there
 	set_movement_target(controller, best)
 	return TRUE
--
+
 // whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4. Or something loose it's in, like a sack, which goes back sack and all
 /datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive, time_before_throw = 0)
 	var/obj/item/grenade/grenade = explosive
