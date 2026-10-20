@@ -57,6 +57,9 @@
 	var/shot_spread = spread
 	if(isnull(shot_spread))
 		shot_spread = gun_type ? initial(gun_type.spread) : 2
+		var/obj/item/attachment/foldable_stock/stock = get_gun_folding_stock(gun_type)
+		if(stock)
+			shot_spread += initial(stock.toggled_spread_bonus) // use stock if available
 	shot_spread = max(shot_spread, 0) + aim_spread
 	var/volley_shots = burst_shots
 	var/volley_interval = burst_interval
@@ -183,6 +186,14 @@
 	qdel(gun)
 	pattern_by_type[gun_type] = pattern
 	return pattern
+
+
+// The type of folding stock a gun of gun_type comes with, or null
+/proc/get_gun_folding_stock(gun_type)
+	for(var/attachment in get_gun_default_attachments(gun_type))
+		if(ispath(attachment, /obj/item/attachment/foldable_stock))
+			return attachment
+	return null
 
 // The attachments a gun of this type spawns with, worked out by making one, once per type, and remembered
 /proc/get_gun_default_attachments(gun_type)

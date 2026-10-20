@@ -179,6 +179,9 @@
 	var/obj/item/gun/gun_type = get_gun_type()
 	if(gun_type)
 		move_delay += initial(gun_type.wield_slowdown)
+		var/obj/item/attachment/foldable_stock/stock = get_gun_folding_stock(gun_type)
+		if(stock)
+			move_delay += initial(stock.toggled_slowdown) // add stock delay, same as carbons/player
 	else
 		// melee folks move FAST
 		move_delay = AI_MELEE_MOVE_DELAY
