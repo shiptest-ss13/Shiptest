@@ -118,11 +118,14 @@ multiple modular subtrees with behaviors
 	set_ai_status(AI_STATUS_OFF)
 	UnpossessPawn(FALSE)
 	ai_movement.stop_moving_towards(src)
+	set_movement_target(null, null) // so it stops watching it for being deleted
 	return ..()
 
 ///Sets the current movement target, with an optional param to override the movement behavior
 /datum/ai_controller/proc/set_movement_target(source, atom/target, datum/ai_movement/new_movement)
 	movement_target_source = source
+	if(current_movement_target != target)
+		track_movement_target(current_movement_target, target)
 	current_movement_target = target
 	if(new_movement)
 		change_ai_movement_type(new_movement)
@@ -836,6 +839,11 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/sig_remove_from_blackboard(datum/source)
 	SIGNAL_HANDLER
 
+	if(source == current_movement_target)
+		// not on the blackboard, but watched the same way, so whatever we were heading for being deleted doesn't leave us holding it
+		current_movement_target = null
+		ai_movement?.stop_moving_towards(src)
+
 	var/list/list/remove_queue = list(blackboard)
 	var/index = 1
 	while(index <= length(remove_queue))
@@ -861,6 +869,11 @@ multiple modular subtrees with behaviors
 				next_to_clear -= inner_value
 
 		index += 1
+
+/// Swaps which movement target we watch for being deleted, the same way blackboard values are watched, so a deleted one is let go of, even while we sleep
+/datum/ai_controller/proc/track_movement_target(atom/old_target, atom/new_target)
+	CLEAR_AI_DATUM_TARGET(old_target, "movement_target")
+	TRACK_AI_DATUM_TARGET(new_target, "movement_target")
 
 #undef TRACK_AI_DATUM_TARGET
 #undef CLEAR_AI_DATUM_TARGET
