@@ -22,7 +22,7 @@
 	rotate_on_lying = TRUE // so you can see we're down
 	stamina_regen_delay = STAMINA_REGEN_BLOCK_TIME // as long as a player waits before getting their breath back
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 1, OXY = 1) // stamina too, so stingballs, batons and disablers wear us down as they would a player
-	speed = 1.7 // a touch slower than a running player, see RUN_DELAY, so they can be outrun, slightly slower than the simplemobs used to be I think
+	speed = 1.8 // a touch slower than a running player, see RUN_DELAY, so they can be outrun, slightly slower than the simplemobs used to be I think
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
