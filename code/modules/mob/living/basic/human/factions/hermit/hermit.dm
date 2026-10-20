@@ -120,7 +120,7 @@
 /mob/living/basic/human/hermit/ranged/gunslinger/bomber
 	name = "Hermit Bomber"
 	desc = "A soot-stained survivor with a satchel of homemade firebombs, cans and fuses rattling with every step. They may not know when those go off, either."
-	grenade_type = /obj/item/grenade/iedcasing
+	grenade_type = /obj/item/grenade/iedcasing/spawned
 	grenade_count = 2
 
 /mob/living/basic/human/hermit/ranged/tesla_rifle

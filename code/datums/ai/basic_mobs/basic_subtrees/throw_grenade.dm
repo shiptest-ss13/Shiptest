@@ -110,7 +110,7 @@
 	var/list/their_targets = list()
 	for(var/mob/living/someone in range(radius + AI_DEFAULT_VISION_RANGE, center))
 		var/datum/ai_controller/controller = someone.ai_controller
-		if(!controller || someone.client || someone.stat != CONSCIOUS || !faction_check(someone.faction, factions))
+		if(!istype(controller) || someone.client || someone.stat != CONSCIOUS || !faction_check(someone.faction, factions))
 			continue
 		our_side += someone
 		var/mob/living/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]

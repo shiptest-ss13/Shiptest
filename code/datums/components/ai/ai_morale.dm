@@ -210,7 +210,7 @@
 	return list(our_side, their_side)
 
 /datum/component/ai_morale/proc/is_against_us(mob/living/someone)
-	if(someone.client || !someone.ai_controller)
+	if(someone.client || !istype(someone.ai_controller, /datum/ai_controller))
 		return TRUE
 	var/mob/living/their_target = someone.ai_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!isliving(their_target))

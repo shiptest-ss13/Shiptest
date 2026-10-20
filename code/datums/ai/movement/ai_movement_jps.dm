@@ -282,7 +282,7 @@
 	if(!istype(living_mover))
 		return FALSE
 	for(var/mob/living/ally in next_step)
-		if(!ally.density || ally == controller.current_movement_target || ally.client || ally.stat != CONSCIOUS || !ally.ai_controller || !living_mover.faction_check_mob(ally))
+		if(!ally.density || ally == controller.current_movement_target || ally.client || ally.stat != CONSCIOUS || !istype(ally.ai_controller, /datum/ai_controller) || !living_mover.faction_check_mob(ally))
 			continue
 		return make_way(ally, mover, next_step)
 	return FALSE

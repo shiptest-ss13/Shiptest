@@ -281,7 +281,8 @@
 		if(ally == fighter || ally.stat == DEAD || !fighter.faction_check_mob(ally))
 			continue
 		ally_turfs[get_turf(ally)] = TRUE
-		var/turf/ally_cover = ally.ai_controller?.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
+		var/datum/ai_controller/ally_controller = ally.ai_controller
+		var/turf/ally_cover = istype(ally_controller) ? ally_controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] : null
 		if(ally_cover)
 			ally_turfs[ally_cover] = TRUE
 	var/turf/best_turf

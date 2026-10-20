@@ -156,7 +156,7 @@
 		return TRUE
 	// only those who'd be caught in it, in sight of where the air gets out, not anyone of ours behind another wall or door
 	for(var/mob/living/ally in hearers(range, vent_point || mover))
-		if(ally != mover && ally.stat == CONSCIOUS && !ally.client && ally.ai_controller && living_mover.faction_check_mob(ally) && !ai_unbothered_by_vacuum(ally))
+		if(ally != mover && ally.stat == CONSCIOUS && !ally.client && istype(ally.ai_controller, /datum/ai_controller) && living_mover.faction_check_mob(ally) && !ai_unbothered_by_vacuum(ally))
 			return FALSE
 	return TRUE
 
