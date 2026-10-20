@@ -98,7 +98,7 @@
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
-	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
+	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .44 Roumain."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/candor)
 	contains_factional = list(/obj/item/storage/guncase/pistol/candor/factory)
@@ -480,6 +480,15 @@
 	faction_discount = 10
 	faction_locked = FALSE
 
+/datum/supply_pack/gun/energy/maguey
+	name = "PL-20 'Maguey' Energy Repeater"
+	desc = "Contains a single PL-20 Energy Repeater, a powerful pulsed-plasma automatic rifle, manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/pl20)
+	faction = /datum/faction/clip
+	faction_discount = 10
+	faction_locked = FALSE
+
 /*
 		Shotguns
 */
@@ -588,6 +597,15 @@
 	contains = list(/obj/item/storage/guncase/cycler)
 	crate_name = "shotgun crate"
 	faction = /datum/faction/warra
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/cinder
+	name = "Cinder Shotgun Crate"
+	desc = "Contains an unwieldy, and large four-gauge shotgun produced by Hunter's Pride. Holds a shotgun tube of four rounds."
+	cost = 4000
+	contains =list(/obj/item/storage/guncase/cinder/factory)
+	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -861,9 +879,19 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+// /datum/supply_pack/gun/nahual
+// 	name = "PP25 'Nahual' Pulsed Plasma Assault Rifle Crate"
+//	desc = "Contains a high-energy, automatic plasma rifle. Refitted for IRMG use."
+//	cost = 5000
+//	contains = list(/obj/item/storage/guncase/nahual)
+//	crate_name = "laser crate"
+//	faction = /datum/faction/inteq
+//	faction_discount = 0
+//	faction_locked = TRUE
+
 /datum/supply_pack/gun/barghest
 	name = "PP20 'Barghest' Plasma Assault Rifle Crate"
-	desc = "Contains a high-energy, automatic plasma rifle. Refitted for IRMG use."
+	desc = "Contains a high-energy, automatic electroplasma rifle. Refitted for IRMG use."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/barghest)
 	crate_name = "laser crate"

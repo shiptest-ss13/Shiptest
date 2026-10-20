@@ -230,6 +230,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 
 	sleepyhead.play_screen_text("[ship_name]<br>[sector_name]<br>[time]<br>[character_name]")
 
+	sleepyhead.add_memory("I signed on to work aboard the [ship_name], a [linked_ship.current_ship.source_template.name] class vessel.")
+	sleepyhead.add_memory("We are operating out of [sector_name] today!")
+
 /obj/machinery/cryopod/open_machine()
 	..()
 	icon_state = open_state
@@ -441,7 +444,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 	to_chat(target, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round."))
 	name = "[name] ([occupant.name])"
 	log_admin(span_notice("[key_name(target)] entered a stasis pod."))
-	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
+	message_admins("[key_name_admin(target)] entered a stasis pod. (<a href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 	add_fingerprint(target)
 
 /obj/machinery/cryopod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)

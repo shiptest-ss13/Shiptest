@@ -176,14 +176,21 @@
 
 /obj/item/ammo_casing/energy/laser/clover/highpower
 	projectile_type = /obj/projectile/beam/laser/clover/highpower
-	e_cost = 1000
+	e_cost = 333
 	select_name = "kill"
-	delay = 1 SECONDS
+	delay = 0.16 SECONDS
+	fire_sound = 'sound/weapons/laser4.ogg'
+
+/obj/item/ammo_casing/energy/laser/clover/overcharge
+	projectile_type = /obj/projectile/beam/laser/clover/overcharge
+	e_cost = 5000
+	select_name = "overcharge"
+	delay = 2 SECONDS
+	fire_sound = 'sound/weapons/beam_sniper.ogg'
 
 /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
 	delay = 0.4 SECONDS
-
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser

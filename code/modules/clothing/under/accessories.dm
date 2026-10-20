@@ -472,8 +472,8 @@
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
 	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m44(src)
+	new /obj/item/ammo_box/magazine/m44(src)
 
 
 /obj/item/clothing/accessory/holster/cybersun/Initialize()

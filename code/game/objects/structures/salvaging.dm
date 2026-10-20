@@ -353,14 +353,7 @@
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message(span_danger("You hear a buzz from the [src] and a voice,"))
 			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
-
-		if(95 to 100)
-			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message(span_danger("You hear a buzz from the [src] and a voice,"))
-
-			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
-
-		if(90 to 94)
+		if(90 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message(span_danger("You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!"))
 
@@ -602,7 +595,7 @@
 		if(21 to 25)
 			// indie cobra (rather good for this pool!)
 			new /obj/item/gun/ballistic/automatic/smg/cobra/indie(loc)
-			new /obj/item/ammo_box/magazine/m45_cobra(loc)
+			new /obj/item/ammo_box/magazine/m10_cobra(loc)
 		if(26 to 30)
 			// viper and holster
 			new /obj/item/gun/ballistic/revolver/viper(loc)
@@ -751,7 +744,7 @@
 		if(66 to 70)
 			// cobra
 			new /obj/item/gun/ballistic/automatic/smg/cobra(loc)
-			new /obj/item/ammo_box/magazine/m45_cobra(loc)
+			new /obj/item/ammo_box/magazine/m10_cobra(loc)
 		if(71 to 75)
 			// bg-16
 			new /obj/item/gun/energy/kalix/pgf(loc)
