@@ -24,10 +24,20 @@
 	var/redeem_value = null // current sell value
 	var/fake = FALSE // if this is a fake ticket you can't redeem
 	var/jackpot_alerts_admins = FALSE // if a max prize on this should alert admins
+	var/vox_description = "Written in Vox-Pidgin is a short collection of advice for improving ones luck." // examine text if you understand vox
 
 	var/l_state = null // left scratchoff overlay
 	var/m_state = null // middle scratchoff overlay
 	var/r_state = null // right scratchoff overlay
+
+/obj/item/scratch_ticket/examine(mob/examiner)
+	. = ..()
+	if(!vox_description)
+		return
+	if(examiner.has_language(/datum/language/vox_pidgin, UNDERSTOOD_LANGUAGE))
+		. += span_notice(vox_description)
+	else
+		. += span_notice("Most of the wording on the ticket is unrecognizable to you...")
 
 /obj/item/scratch_ticket/update_overlays()
 	. = ..()
@@ -117,7 +127,7 @@
 	name = "FAST CASH ticket"
 	desc = "A lottery ticket, advertising prizes up to 10,000 credits. The artwork depicts a rain of various denominations of paper credits being sprayed from a hose. Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
 	icon_state = "ticket_red"
-	custom_price = 20
+	custom_price = 15
 	prize_chances = list(0.001, 1, 5, 8, 8, 10)
 	prize_amounts = list(10000, 100, 50, 20, 15, 10)
 
@@ -127,7 +137,7 @@ FAKE_TICKET_HELPER(small)
 	name = "FORTUNE AWAITS ticket"
 	desc = "A lottery ticket, advertising a jackpot of 100,000,000 credits. The artwork depicts a burning spaceship jumping into the \"Money Dimension\". Official ticket of Kiyatirawkitchi Lottery. Please play responsibly."
 	icon_state = "ticket_blue"
-	custom_price = 500
+	custom_price = 350
 	jackpot_alerts_admins = TRUE
 	prize_chances = list(0.00001, 0.001, 0.01, 0.1, 1, 5, 5, 10, 10)
 	prize_amounts = list(100000000, 1000000, 500000, 25000, 5000, 1000, 500, 250, 150)
