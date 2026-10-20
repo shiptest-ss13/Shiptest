@@ -34,6 +34,7 @@
 	. = list()
 	for(var/mob/living/ally in range(range, source))
 		if(ally != source && ally.stat == CONSCIOUS && !ally.client && istype(ally.ai_controller, /datum/ai_controller) && source.faction_check_mob(ally))
+			. += ally
 
 /proc/get_ai_allies_in_earshot(mob/living/source, range = 7, wall_penalty = AI_HEARING_WALL_PENALTY)
 	. = list()
