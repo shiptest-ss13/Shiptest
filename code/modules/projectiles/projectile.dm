@@ -27,7 +27,7 @@
 	var/bullet_identifier = null
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	var/def_zone = ""	//Aiming at
+	var/def_zone = null //Aiming at
 	var/atom/movable/firer = null//Who shot it
 	// if the projectile was the result of a misfire. For logging.
 	var/misfire = FALSE
@@ -219,16 +219,11 @@
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
 
-//to get the correct limb (if any) for the projectile hit message
-/mob/living/proc/check_limb_hit(hit_zone)
-	if(has_limbs)
-		return hit_zone
-
-/mob/living/carbon/check_limb_hit(hit_zone)
-	if(get_bodypart(hit_zone))
-		return hit_zone
-	else //when a limb is missing the damage is actually passed to the chest
-		return BODY_ZONE_CHEST
+/// Returns the chance to hit the limb it's aiming for
+/obj/projectile/proc/get_accuracy(atom/target)
+	if(firer && HAS_TRAIT(firer, TRAIT_PERFECT_ATTACKER))
+		return 100
+	return max(80-(7*get_dist(get_turf(target), starting)*accuracy_mod), 5)
 
 /**
  * Called when the projectile hits something
@@ -238,16 +233,12 @@
  * blocked - percentage of hit blocked
  * pierce_hit - are we piercing through or regular hitting
  */
-/obj/projectile/proc/on_hit(atom/target, blocked = FALSE, pierce_hit)
+/obj/projectile/proc/on_hit(atom/target, blocked = FALSE, pierce_hit, hit_zone)
 	if(fired_from)
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle)
 	// i know that this is probably more with wands and gun mods in mind, but it's a bit silly that the projectile on_hit signal doesn't ping the projectile itself.
 	// maybe we care what the projectile thinks! See about combining these via args some time when it's not 5AM
-	var/obj/item/bodypart/hit_limb
-	if(isliving(target))
-		var/mob/living/L = target
-		hit_limb = L.check_limb_hit(def_zone)
-	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_limb)
+	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_zone)
 
 	if(QDELETED(src)) // in case one of the above signals deleted the projectile for whatever reason
 		return
@@ -286,7 +277,7 @@
 				splatter_dir = get_dir(starting, target_loca)
 			if(isalien(L))
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target_loca, splatter_dir)
-			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
+			var/obj/item/bodypart/B = L.get_bodypart(hit_zone)
 			if(B && !IS_ORGANIC_LIMB(B)) // So if you hit a robotic, it sparks instead of bloodspatters
 				do_sparks(2, FALSE, target.loc)
 			else
@@ -301,9 +292,8 @@
 			new impact_effect_type(target_loca, hitx, hity)
 
 		var/organ_hit_text = ""
-		var/limb_hit = hit_limb
-		if(limb_hit)
-			organ_hit_text = " in \the [parse_zone(limb_hit)]"
+		if(hit_zone)
+			organ_hit_text = " in \the [parse_zone(hit_zone)]"
 		if(suppressed >= SUPPRESSED_VERY)
 			playsound(loc, hitsound, 5, TRUE, -1)
 		else if(suppressed)
@@ -401,9 +391,6 @@
 			if(ricochet_sound)
 				playsound(get_turf(src), ricochet_sound, 120, TRUE, 2) //make it loud, we want to make it known when a ricochet happens. for aesthetic reasons mostly
 			return TRUE
-
-	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
-	def_zone = ran_zone(def_zone, max(80-(7*distance*accuracy_mod), 5)) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
 
 	return process_hit(T, select_target(T, A))		// SELECT TARGET FIRST!
 
