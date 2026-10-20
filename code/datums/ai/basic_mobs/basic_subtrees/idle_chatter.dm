@@ -19,4 +19,6 @@
 	if(rand(1, total) <= line_count)
 		ai_callout(controller.pawn, AI_CALLOUT_IDLE)
 		return
-	controller.queue_behavior(/datum/ai_behavior/perform_emote, pick(emotes))
+	var/emote = pick(emotes)
+	if(emote)
+		controller.queue_behavior(/datum/ai_behavior/perform_emote, emote)

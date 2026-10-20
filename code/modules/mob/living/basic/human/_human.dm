@@ -328,7 +328,7 @@
 	if(speak_chance)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_CHATTER_CHANCE, speak_chance) // our lines are our callouts', so there's always something to say
 		if(length(emote_hear) || length(emote_see))
-			ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_EMOTES, string_list(emote_hear | emote_see))
+			ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_EMOTES, string_list((emote_hear || list()) | (emote_see || list())))
 	if(check_friendly_fire)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_AVOID_FRIENDLY_FIRE, TRUE)
 	var/obj/item/melee_weapon = get_melee_weapon()
