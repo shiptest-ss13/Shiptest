@@ -80,6 +80,7 @@
 	icon_state = "ripper_stock"
 	toggled_recoil_bonus = 1
 	toggled_spread_bonus = -3
+	
 
 /obj/item/attachment/foldable_stock/wasp/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
