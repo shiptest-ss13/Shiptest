@@ -167,7 +167,7 @@
 //Marine Corpsman
 /datum/outfit/job/gezena/ert/medic
 	name = "ERT - PGF Marine Corpsman"
-	id_assignment = "Marine Corpsman"
+	id_assignment = "Hospital Corpsman"
 	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
 

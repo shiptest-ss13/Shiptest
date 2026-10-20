@@ -80,7 +80,11 @@
 	icon_state = "ripper_stock"
 	toggled_recoil_bonus = 1
 	toggled_spread_bonus = -3
-	
+
+/obj/item/attachment/foldable_stock/nahual
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	icon_state = "ecm20_inteq_stock"
+	toggled_recoil_bonus = -0.5
 
 /obj/item/attachment/foldable_stock/wasp/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()

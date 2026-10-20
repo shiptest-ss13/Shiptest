@@ -728,6 +728,7 @@
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/head/helmet/space/eva,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "jI" = (
@@ -1016,6 +1017,7 @@
 /area/ship/bridge)
 "nd" = (
 /obj/structure/chair/handrail,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "ng" = (
@@ -1311,9 +1313,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light_switch{
 	pixel_x = -19;
-	pixel_y = -7;
+	pixel_y = -12;
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/port)
 "th" = (
@@ -1577,6 +1580,7 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "wB" = (
@@ -1598,6 +1602,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "xu" = (
@@ -1904,6 +1909,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "DM" = (
@@ -2217,6 +2223,7 @@
 /obj/effect/turf_decal/siding/wood/corner/ebony{
 	dir = 1
 	},
+/obj/structure/dresser/wall/directional/south,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "IC" = (
@@ -2345,6 +2352,10 @@
 /obj/machinery/recharger{
 	pixel_x = -7;
 	pixel_y = 2
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 19;
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2626,6 +2637,7 @@
 	},
 /obj/structure/curtain/thin,
 /obj/machinery/light/small/directional/north,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/hallway/central)
 "Pz" = (
@@ -3074,7 +3086,10 @@
 	pixel_y = 5;
 	mag_count = 3
 	},
-/obj/item/radio/intercom/wideband/directional/south,
+/obj/item/radio/intercom/wideband/directional/south{
+	pixel_x = 5;
+	pixel_y = -26
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Xd" = (
@@ -3126,10 +3141,7 @@
 "Xk" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/transparent/navyblue/mono,
-/obj/structure/sign/poster/clip/clover{
-	pixel_x = 1;
-	pixel_y = -31
-	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Xv" = (
@@ -3172,6 +3184,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/navyblue/mono,
+/obj/structure/sign/poster/clip/clover{
+	pixel_x = 1;
+	pixel_y = -31
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "ZY" = (

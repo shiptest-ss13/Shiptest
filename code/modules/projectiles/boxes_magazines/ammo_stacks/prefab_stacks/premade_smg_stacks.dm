@@ -18,8 +18,8 @@
 	max_ammo = 20
 
 /obj/item/storage/box/ammo/c46x30mm/ap
-	name = "box of 4.6x30mm AP ammo"
-	desc = "A box of standard 4.6x30mm AP ammo."
+	name = "box of armor-piercing 4.6x30mm ammo"
+	desc = "A box of 4.6x30mm armor-piercing ammo."
 	icon_state = "46x30mmbox-ap"
 
 /obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
@@ -32,8 +32,8 @@
 	max_ammo = 20
 
 /obj/item/storage/box/ammo/c46x30mm/hp
-	name = "box of 4.6x30mm HP ammo"
-	desc = "A box of standard 4.6x30mm HP ammo."
+	name = "box of hollow-point 4.6x30mm ammo"
+	desc = "A box of 4.6x30mm hollow-point ammo."
 	icon_state = "46x30mmbox-hp"
 
 /obj/item/storage/box/ammo/c46x30mm/hp/PopulateContents()
@@ -47,7 +47,7 @@
 
 /obj/item/storage/box/ammo/c46x30mm/rubber
 	name = "box of 4.6x30mm rubber ammo"
-	desc = "A box of standard 4.6x30mm rubber ammo."
+	desc = "A box of 4.6x30mm rubber ammo."
 	icon_state = "46x30mmbox-rubbershot"
 
 /obj/item/storage/box/ammo/c46x30mm/rubber/PopulateContents()
@@ -96,7 +96,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/ap
 
 /obj/item/storage/box/ammo/c556mm_ap
-	name = "box of AP 5.56mm HITP caseless ammo"
+	name = "box of armor-piercing 5.56mm HITP caseless ammo"
 	desc = "A box of 5.56mm HITP caseless armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "556mmHITPbox-ap"
 
@@ -109,8 +109,8 @@
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/hp
 
 /obj/item/storage/box/ammo/c556mm_hp
-	name = "box of HP 5.56mm HITP caseless ammo"
-	desc = "A box of 5.56mm HITP caseless hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point 5.56mm HITP caseless ammo"
+	desc = "A box of 5.56mm HITP caseless hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "556mmHITPbox-hp"
 
 /obj/item/storage/box/ammo/c556mm_hp/PopulateContents()
@@ -151,8 +151,8 @@
 	ammo_type = /obj/item/ammo_casing/c57x39mm/hp
 
 /obj/item/storage/box/ammo/c57x39/hp
-	name = "box of 5.7x39mm HP ammo"
-	desc = "A box of standard 5.7x39mm HP ammo."
+	name = "box of hollow-point 5.7x39mm ammo"
+	desc = "A box of standard 5.7x39mm hollow-point ammo."
 	icon_state = "57x39mmbox-hp"
 
 /obj/item/storage/box/ammo/c57x39/hp/PopulateContents()
@@ -164,8 +164,8 @@
 	ammo_type = /obj/item/ammo_casing/c57x39mm/ap
 
 /obj/item/storage/box/ammo/c57x39/ap
-	name = "box of 5.7x39mm AP ammo"
-	desc = "A box of standard 5.7x39mm AP ammo."
+	name = "box of armor-piercing 5.7x39mm ammo"
+	desc = "A box of standard 5.7x39mm armoir-piercing ammo."
 	icon_state = "57x39mmbox-ap"
 
 /obj/item/storage/box/ammo/c57x39/ap/PopulateContents()
