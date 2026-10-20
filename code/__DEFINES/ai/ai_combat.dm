@@ -189,8 +189,10 @@
 #define AI_CALLOUT_NO_SIGN "no sign"
 ///Answering AI_CALLOUT_RELOADING, as one who can see who we're fighting
 #define AI_CALLOUT_COVERING "covering"
-///How long after one of a group speaks the rest in earshot stay quiet, so they talk one at a time. Urgent lines, answers and last words still cut in
+///How long after one of a group speaks the rest in earshot stay quiet, so they talk one at a time. Urgent lines, answers and last words still cut in.
 #define AI_CALLOUT_TURN_GAP (1.5 SECONDS)
+///The most chatter (non action/urgent lines) a group says in one AI_CALLOUT_TURN_GAP.
+#define AI_CALLOUT_CHATTER_PER_TURN 2
 ///How long after a line an ally answers it
 #define AI_CALLOUT_ANSWER_DELAY rand(1 SECONDS, 1.5 SECONDS)
 

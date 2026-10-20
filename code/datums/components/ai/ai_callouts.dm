@@ -100,6 +100,19 @@
 	voices_by_species[voice_key] = voice
 	return voice
 
+// small talk callouts that we can delay if needed
+/proc/ai_callout_is_chatter(event)
+	var/static/list/chatter = list(
+		AI_CALLOUT_TAUNT = TRUE,
+		AI_CALLOUT_MELEE = TRUE,
+		AI_CALLOUT_HURT = TRUE,
+		AI_CALLOUT_IDLE = TRUE,
+		AI_CALLOUT_CHECK_IN = TRUE,
+		AI_CALLOUT_WARY = TRUE,
+		AI_CALLOUT_EMBOLDENED = TRUE,
+	)
+	return chatter[event]
+
 /proc/ai_callout(atom/speaker, event, last_words = FALSE, interrupt = FALSE)
 	var/datum/component/ai_callouts/callouts = speaker?.GetComponent(/datum/component/ai_callouts)
 	return callouts?.speak_about(event, last_words, interrupt)
@@ -120,6 +133,8 @@
 	var/downed_victim_inherited = FALSE
 	//stop yapping so much
 	COOLDOWN_DECLARE(speech_cooldown)
+	//for chatter, so we can be sure it never stops us calling out what we're doing
+	COOLDOWN_DECLARE(chatter_cooldown)
 	//when we last said something urgent over everything else, as one thing can set off several at once, but we only want to say one
 	var/last_interrupt_time = 0
 	var/list/spotted_lines
@@ -130,8 +145,9 @@
 	var/check_in_chance = 40
 	//when we're due to answer an ally asking how we're doing, so we don't say pain lines in the meantime
 	var/check_in_answer_due = 0
-	//until when we hold our tongue, as one of ours in earshot has just spoken, see AI_CALLOUT_TURN_GAP
-	var/quiet_until = 0
+	//when the current turn of talk ends, and how many chatter lines have been said in it. any line heard or said starts a turn if none is going
+	var/turn_ends_at = 0
+	var/turn_chatter = 0
 	var/alone = FALSE
 	var/alone_checked_until = 0
 
@@ -209,7 +225,7 @@
 	var/mob/living/basic/basic_mob = parent
 	if(basic_mob.stat != CONSCIOUS || world.time < LAZYACCESS(line_cooldowns, AI_CALLOUT_CHECK_IN) || !prob(check_in_chance))
 		return FALSE // cheap checks first, as this is every hit
-	if(!COOLDOWN_FINISHED(src, speech_cooldown))
+	if(!COOLDOWN_FINISHED(src, chatter_cooldown))
 		return FALSE // we've only just said something, like that we're hit, so asking would be daft
 	if(basic_mob.ai_controller && AI_MORALE_IS(basic_mob.ai_controller, AI_MORALE_BROKEN))
 		return FALSE // too busy running to chat, and our hurt lines say as much
@@ -392,12 +408,14 @@
 		line = replacetext(line, "%DIRECTION", direction)
 	if(interrupt)
 		last_interrupt_time = world.time
-	COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
+	COOLDOWN_START(src, chatter_cooldown, 5 SECONDS)
+	if(!ai_callout_is_chatter(event))
+		COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
 	say_line(line, last_words)
-	// don't speak all at once, one at a time
 	var/list/allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
-	for(var/datum/component/ai_callouts/listener as anything in get_allies_in_earshot(allies_in_earshot))
-		listener.quiet_until = max(listener.quiet_until, world.time + AI_CALLOUT_TURN_GAP)
+	var/is_chatter = ai_callout_is_chatter(event)
+	for(var/datum/component/ai_callouts/listener as anything in get_allies_in_earshot(allies_in_earshot) + src)
+		listener.note_line_heard(is_chatter)
 	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
 		for(var/mob/living/ally as anything in allies_in_earshot)
 			ai_try_embolden(ally)
@@ -405,6 +423,13 @@
 		prompt_answer(event)
 	share_line_cooldown(event, allies_in_earshot)
 	return TRUE
+
+/datum/component/ai_callouts/proc/note_line_heard(is_chatter)
+	if(world.time >= turn_ends_at)
+		turn_ends_at = world.time + AI_CALLOUT_TURN_GAP
+		turn_chatter = 0
+	if(is_chatter)
+		turn_chatter++
 
 // a moment after we say event, one of ours in earshot answers it, for the lines that get one
 /datum/component/ai_callouts/proc/prompt_answer(event)
@@ -492,8 +517,13 @@
 		chance = spotted_chance
 	else if(event == AI_CALLOUT_IDLE && length(idle_lines))
 		lines = idle_lines // still paced with the group, unlike our own spotted lines
-	if(!lines || (!last_words && !interrupt && !answering && (!COOLDOWN_FINISHED(src, speech_cooldown) || world.time < quiet_until)))
+	if(!lines)
 		return null
+	if(!last_words && !interrupt && !answering)
+		if(!COOLDOWN_FINISHED(src, speech_cooldown))
+			return null
+		if(ai_callout_is_chatter(event) && (!COOLDOWN_FINISHED(src, chatter_cooldown) || (world.time < turn_ends_at && turn_chatter >= AI_CALLOUT_CHATTER_PER_TURN)))
+			return null // chatter waits its turn
 	if(interrupt && !last_words && world.time < last_interrupt_time + AI_CALLOUT_INTERRUPT_GAP)
 		return null // we've only just said something urgent, which covers this too
 	if(!own_lines && world.time < LAZYACCESS(line_cooldowns, event))
