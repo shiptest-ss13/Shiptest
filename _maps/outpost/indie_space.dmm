@@ -963,11 +963,12 @@
 /turf/open/floor/plasteel/mono,
 /area/outpost/crew/bar)
 "ef" = (
+/obj/structure/rack,
 /obj/machinery/light/dim/directional/west,
+/obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 4
 	},
-/obj/machinery/vending/lottery,
 /turf/open/floor/plasteel/dark,
 /area/outpost/storage)
 "eg" = (
@@ -997,10 +998,12 @@
 /turf/closed/indestructible/reinforced,
 /area/outpost/external)
 "en" = (
+/obj/structure/rack,
+/obj/effect/spawner/random/clothing/bowler_or_that,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 4
 	},
-/obj/machinery/vending/disposable_guns,
 /turf/open/floor/plasteel/dark,
 /area/outpost/storage)
 "et" = (
