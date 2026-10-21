@@ -3,8 +3,8 @@
 	desc = "A vending machine selling lottery tickets. A printed message on the side reads \"Remember: Play Responsibly, And Have Fun!\" "
 	icon_state = "lotto"
 	products = list(
-		/obj/item/scratch_ticket/small = 100,
-		/obj/item/scratch_ticket/large = 100)
+		/obj/item/scratch_ticket/small = 1000,
+		/obj/item/scratch_ticket/large = 1000)
 	refill_canister = /obj/item/vending_refill/lottery
 	speak_in = /datum/language/vox_pidgin
 	product_ads = "You can't win if you don't play!;Over three hundred winners last week!;Feeling lucky?;Play! Win! Test your luck today!"
