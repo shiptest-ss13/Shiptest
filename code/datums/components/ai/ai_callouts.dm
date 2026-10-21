@@ -296,6 +296,10 @@
 	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty))
 		if(still_fighting(ally))
 			return
+	if(!COOLDOWN_FINISHED(src, speech_cooldown))
+		// delay lines to after cooldown is over
+		addtimer(CALLBACK(src, PROC_REF(check_fight_over), event, downed_ref), COOLDOWN_TIMELEFT(src, speech_cooldown), TIMER_UNIQUE)
+		return
 	speak_about(event)
 
 /datum/component/ai_callouts/proc/still_fighting(mob/living/someone)
