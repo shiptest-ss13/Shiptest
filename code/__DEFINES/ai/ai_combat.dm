@@ -8,7 +8,7 @@
 ///Stay put and fire at where we last saw them
 #define AI_SEARCH_STYLE_SUPPRESS "suppress"
 
-// The start and end every human NPC's plan shares, so a subtree all of them need goes in once
+// The start and end every human NPC's plan shares, so a subtree that needs all of them goes in once
 ///Getting out of bad air, heading home, calling out what we've seen, and falling back when our nerve's gone, before anything else. Then a grenade, for those who carry them
 #define AI_HUMAN_PLANNING_OPENING \
 	/datum/ai_planning_subtree/flee_explosives, \
