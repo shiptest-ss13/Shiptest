@@ -18,13 +18,23 @@
 	var/first_alert = controller.blackboard[BB_BASIC_MOB_ALERTED_ABOUT] != target
 	var/heard_range = max(alert_range, controller.blackboard[BB_BASIC_MOB_ALERT_RANGE])
 	var/told_anyone = FALSE
-	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(living_pawn, heard_range, wall_penalty))
-		if(tell_ally(ally.ai_controller, target, seen_at, target_key))
+	var/brought_anyone_in = FALSE
+	var/list/allies_in_earshot = get_ai_allies_in_earshot(living_pawn, heard_range, wall_penalty)
+	if(first_alert)
+		controller.clear_blackboard_key(BB_BASIC_MOB_ALERTED_ALLIES)
+	for(var/mob/living/ally as anything in allies_in_earshot)
+		var/ally_ref = REF(ally)
+		var/already_in_it = first_alert || controller.blackboard[BB_BASIC_MOB_ALERTED_ALLIES]?[ally_ref]
+		var/told_them = tell_ally(ally.ai_controller, target, seen_at, target_key)
+		if(told_them)
 			told_anyone = TRUE
+			brought_anyone_in ||= !already_in_it
+		if(first_alert || told_them)
+			controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_ALERTED_ALLIES, ally_ref, TRUE)
 	if(controller.blackboard[BB_BASIC_MOB_SUMMONS_BACKUP] && (first_alert || told_anyone))
 		living_pawn.do_alert_animation()
 		playsound(living_pawn, 'sound/machines/chime.ogg', 50, TRUE, -1)
-	if(!first_alert && told_anyone)
+	if(brought_anyone_in)
 		ai_callout(living_pawn, AI_CALLOUT_RAISING_ALARM) // bringing in ones we've come across, not just telling those who were already with us
 	controller.set_blackboard_key(BB_BASIC_MOB_ALERTED_ABOUT, target)
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REALERT, world.time + realert_interval)

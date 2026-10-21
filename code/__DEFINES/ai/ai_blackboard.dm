@@ -106,6 +106,8 @@
 #define BB_BASIC_MOB_ALERTED_ABOUT "BB_basic_alerted_about"
 ///When we can next tell allies about BB_BASIC_MOB_ALERTED_ABOUT again, for any we've come across since who aren't in it yet, as a world.time
 #define BB_BASIC_MOB_NEXT_REALERT "BB_basic_next_realert"
+///The allies already alerted with BB_BASIC_MOB_ALERTED_ABOUT, so we only raise the alarm for new ones
+#define BB_BASIC_MOB_ALERTED_ALLIES "BB_basic_alerted_allies"
 ///When we were last shot at, as a world.time
 #define BB_BASIC_MOB_LAST_SHOT_TIME "BB_basic_last_shot_time"
 ///When anything last hurt us, shots, blows, bites or otherwise, as a world.time
