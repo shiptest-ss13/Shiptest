@@ -24,7 +24,7 @@
 	var/redeem_value = null // current sell value
 	var/fake = FALSE // if this is a fake ticket you can't redeem
 	var/jackpot_alerts_admins = FALSE // if a max prize on this should alert admins
-	var/vox_description = "Written in Vox-Pidgin is a short collection of advice for improving ones luck." // examine text if you understand vox
+	var/vox_description = "Written in Vox-Pidgin is a short collection of advice for improving ones luck." // added to examine text if you understand vox
 
 	var/l_state = null // left scratchoff overlay
 	var/m_state = null // middle scratchoff overlay
@@ -95,6 +95,8 @@
 		user.visible_message(span_notice("[user] begins scratching off the [src]..."))
 		if(do_after(user, 3 SECONDS, target = src))
 			user.visible_message(span_notice("[user] scratches off the [src]!"))
+			if(HAS_TRAIT(user, TRAIT_LOTTO_CURSE))
+				force_prize = 0
 			scratch_off()
 			send_scratch_feedback(user)
 
