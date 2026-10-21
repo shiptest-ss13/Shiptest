@@ -82,7 +82,7 @@ export const TextInputModal = (props, context) => {
             <Stack.Item>
               <InputButtons
                 input={input}
-                message={`${input.length}/${max_length}`}
+                message={`${input.length}/${max_length || '∞'}`}
               />
             </Stack.Item>
           </Stack>
