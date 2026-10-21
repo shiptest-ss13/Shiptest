@@ -19,6 +19,22 @@
 	// unbuckle self if you can, chair cheese mitigation
 	if(buckled && !client && stat == CONSCIOUS && !incapacitated())
 		buckled.user_unbuckle_mob(src, src)
+	// try to escape from locker/containment unit. same length of time as normal player
+	if(!isturf(loc) && !client && stat == CONSCIOUS && can_resist() && !LAZYACCESS(do_afters, loc))
+		INVOKE_ASYNC(loc, TYPE_PROC_REF(/atom, container_resist_act), src)
+
+// clear out stuttering eventually
+/mob/living/basic/human/handle_status_effects(seconds_per_tick, times_fired)
+	. = ..()
+	if(stuttering)
+		stuttering = max(stuttering - (0.5 * seconds_per_tick), 0)
+	if(slurring)
+		slurring = max(slurring - (0.5 * seconds_per_tick), 0)
+	// do cult and clockcult even exist outside of admemes?
+	if(cultslurring)
+		cultslurring = max(cultslurring - (0.5 * seconds_per_tick), 0)
+	if(clockcultslurring)
+		clockcultslurring = max(clockcultslurring - (0.5 * seconds_per_tick), 0)
 
 // dont melee while down
 /mob/living/basic/human/proc/on_pre_melee(datum/source, atom/target)
