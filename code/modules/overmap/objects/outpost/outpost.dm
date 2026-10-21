@@ -217,10 +217,10 @@
 		name,
 		main_level_ztraits,
 		mapzone,
-		QUADRANT_MAP_SIZE*2,
-		QUADRANT_MAP_SIZE*2,
+		QUADRANT_MAP_SIZE,
+		QUADRANT_MAP_SIZE,
 		ALLOCATION_QUADRANT,
-		QUADRANT_MAP_SIZE*2
+		QUADRANT_MAP_SIZE
 	)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
