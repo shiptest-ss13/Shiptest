@@ -150,7 +150,7 @@
 	/// If TRUE, the mob holds the spot it's put on, like a guard post or a sniper's nest, rather than flanking or going after anyone. Those with guns fight from within post_radius of it, taking cover there, those without only go a few tiles for anyone close. Always on for those that don't wander with a marksman's rifle
 	var/holds_post = FALSE
 	/// For those holding a post, how many tiles from it they'll go to take cover or get a shot. 0 to stay right on it
-	var/post_radius = 2
+	var/post_radius = 3
 	/// If TRUE, the mob doesn't fight, but runs and shouts for help instead
 	var/noncombatant = FALSE
 	/// Typepath of the /datum/ai_callout_set the mob says things from in a fight. Null to stay quiet

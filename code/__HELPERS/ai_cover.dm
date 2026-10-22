@@ -105,11 +105,20 @@
 		previous = line_turf
 	return TRUE
 
+// the turfs within range of center, instead of range() which gives everything including the turf
+/proc/ai_turfs_in_range(turf/center, range)
+	return block(
+		locate(max(center.x - range, 1), max(center.y - range, 1), center.z),
+		locate(min(center.x + range, world.maxx), min(center.y + range, world.maxy), center.z)
+	)
+
 /proc/find_hiding_spot(atom/movable/mover, turf/danger, range = 3, turf/exclude)
 	var/turf/our_turf = get_turf(mover)
+	if(!our_turf)
+		return null
 	var/turf/best_turf
 	var/best_distance = INFINITY
-	for(var/turf/open/candidate in range(range, our_turf))
+	for(var/turf/open/candidate in ai_turfs_in_range(our_turf, range))
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate == exclude || candidate_distance >= best_distance || !ai_can_take_spot(mover, candidate))
 			continue
@@ -275,6 +284,8 @@
 /proc/find_fighting_cover_spot(mob/living/fighter, atom/threat, range, pass_flags, turf/exclude)
 	var/turf/our_turf = get_turf(fighter)
 	var/turf/their_turf = get_turf(threat)
+	if(!our_turf)
+		return null
 	// where our allies are, or are heading to fight from, so we don't pile up behind each other or shoot through them
 	var/list/ally_turfs = list()
 	for(var/mob/living/ally in hearers(range * 3, our_turf))
@@ -287,7 +298,7 @@
 			ally_turfs[ally_cover] = TRUE
 	var/turf/best_turf
 	var/best_distance = INFINITY
-	for(var/turf/open/candidate in range(range, our_turf))
+	for(var/turf/open/candidate in ai_turfs_in_range(our_turf, range))
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate == exclude || candidate_distance >= best_distance || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
 			continue
