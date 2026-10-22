@@ -24,6 +24,6 @@
 	for(var/datum/export/target as anything in GLOB.outpost_exports)
 		target.true_cost = cost
 
-/datum/round_event/high_priority_mission/start()
+/datum/round_event/market_reset/start()
 	notify_ghosts("The export market is resetting at [target_outpost]!")
 
