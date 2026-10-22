@@ -13,6 +13,21 @@
 	if(istype(blocker, /obj/machinery))
 		return TRUE
 
+/*
+/obj/effect/decal/chempuff/proc/loop_ended(datum/source)
+	SIGNAL_HANDLER // COMSIG_QDELETING
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+/obj/effect/decal/chempuff/proc/check_move(datum/move_loop/source, succeeded)
+	SIGNAL_HANDLER // COMSIG_MOVELOOP_POSTPROCESS
+	var/turf/our_turf = get_turf(src)
+	reagents.reaction(our_turf)
+	for(var/atom/T in our_turf)
+		reagents.reaction(T)
+*/
+
 /obj/effect/decal/fakelattice
 	name = "lattice"
 	desc = "A lightweight support lattice."
