@@ -390,6 +390,8 @@
 	l_hand = /obj/item/gun/ballistic/revolver/viper
 	projectile_sound = 'sound/weapons/gun/revolver/viper.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer
+	callout_set =  /datum/ai_callout_set/human/ramzi/officer
+
 
 /mob/living/basic/human/ramzi/ranged/officer/asp
 	name = "Ramzi Clique Ensign"
@@ -777,7 +779,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi //nope
 	noncombatant = TRUE
-	callout_set = /datum/ai_callout_set/noncombatant // they shout for help, and plead when cornered
+	callout_set = /datum/ai_callout_set/noncombatant
 	on_aggro_say = list("GUARDS!!!","INTRUDER!!","HELP!!")
 	aggro_say_chance = 100
 

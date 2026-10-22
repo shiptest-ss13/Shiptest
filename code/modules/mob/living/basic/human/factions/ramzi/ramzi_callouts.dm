@@ -99,7 +99,6 @@
 	)
 
 // the New Gorlex official run off with the Ramzi: some NGR training, but an ensign at heart, who's mostly watched fights through bodycams
-// Written by request; the lines from idle down, and the solo lines, fill in for what they'd otherwise say like a Ramzi pirate
 /datum/ai_callout_set/human/ramzi/ngr_officer
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("We've got someone!", "Oh, shit! Intruders!", "Intruders! Guards, to me!", "We've got company!", "We're under attack!"),
@@ -170,5 +169,49 @@
 		AI_MORALE_WARY = list(
 			AI_CALLOUT_TAUNT = list("Come out!", "Stop hiding!"),
 			AI_CALLOUT_SPOTTED = list("There you are!", "Found them!", "Intruders! Guards, on me!", "They're here!", "There they are!"),
+		),
+	)
+
+/datum/ai_callout_set/human/ramzi/officer
+	lines = list(
+		AI_CALLOUT_IDLE = list("Better haul on the next one, I hope.", "Who drank the last of the good stuff?", "Don't get soft.", "Something oughta happen, I'm bored.", "Did you file the manifest for that last job?", "Stop whining."),
+		AI_CALLOUT_THROW_BACK = list("Return to sender!", "No refunds!", "Back at you!"),
+		AI_CALLOUT_TARGETS_STUNNED = list("They're on the floor. Take advantage.", "Down they go! Finish them.", "We have 'em."),
+		AI_CALLOUT_SHOOTING_THROUGH_ALLY = list("Don't get in the way next time, moron!", "Stay down, you idiot!", "You're paying for the gauze!", "Not waiting on you!"),
+		AI_CALLOUT_TARGET_DOWN = list("They're on the floor!", "One down!", "Weak.", "Down you go!", "Finish them off."),
+		AI_CALLOUT_TARGET_KILLED = list("Too weak to keep breathing.", "Strip them later.", "That's what you get.", "Pathetic.", "I'll distribute shares later, stay focused."),
+		AI_CALLOUT_ALLY_DOWN = list("Man down, watch it!", "Should've been faster.", "Great, now I have to replace another idiot.", "Bigger cut for you lot if you make it out!", "They better not have been important."),
+		AI_CALLOUT_LOST_THEM = list("Coward's fled, find them!", "Find them, damnit!", "Come out, coward!", "Find that damn coward!"),
+		AI_CALLOUT_HOLDING = list("Hold position, idiots!", "Stay put!", "Stay here, let them come.", "Sit tight and let them bleed."),
+		AI_CALLOUT_HEARD_GUNFIRE = list("Shots heard, go look!", "Shots! Go see who's poking around!", "Hear that? Fresh meat!", "Someone's making noise. Shut them up, now."),
+		AI_CALLOUT_PUSHING = list("Advance! Kill them!", "Moving up!", "Get in there!", "On me!"),
+		AI_CALLOUT_FALLING_BACK = list("Pull back!", "Retreat, idiots!", "Get off me!", "Fall back!"),
+		AI_CALLOUT_WARY = list("They're good, stay down!", "Stay down, they're no pushover!", "Stay down, they aren't soft!", "Don't get greedy, stay down!"),
+		AI_CALLOUT_EMBOLDENED = list("They're breaking. Finish them.", "They're weak. Advance.", "Run them down!", "We have the advantage, get moving."),
+		AI_CALLOUT_BROKEN = list("Fall back, now!", "Let's get out of here!", "I'm not dying 'cause you idiots did!", "Run! They're too strong!", "They have the advantage, run!", "Save your own skin!"),
+		AI_CALLOUT_RALLIED = list("On me, let's finish this!", "Get back here, cowards! We're not done!", "Go, back in there!", "Run and I'll shoot you!"),
+		AI_CALLOUT_NO_COVER = list("One of you idiots get me cover!", "I'm out in the open here!", "No cover! Requesting aid!", "Pinned, get me cover fire!"),
+		AI_CALLOUT_LAST_STANDING = list("Useless idiots. I'll finish this.", "If anyone's still alive get over here now!", "Greedy morons.", "I was wrong to rely on those idiots."),
+		AI_CALLOUT_CANT_REACH = list("Coward!", "Get down here and fight!", "No way to them, damn it!", "Hiding up there won't save you!"),
+		AI_CALLOUT_ALL_CLEAR = list("Too easy.", "Get mopping, you gluttons. We'll dole out loot later.", "Right, we're clear.", "All clear. I'll dole out dibs in a bit."),
+		AI_CALLOUT_GOT_AWAY = list("Ran off like a coward.", "They fled, stay sharp.", "Gone. Pity.", "They'll be back, and you'll be waiting."),
+		AI_CALLOUT_RAISING_ALARM = list("Hey, idiots, we've got one!", "We've got intruders, get moving.", "Wake up, idiots, they're here!", "Up on your feet, there's killing to do."),
+		AI_CALLOUT_CHECK_IN = list("Still breathing?", "You dead yet?", "You hit or just slow?", "How're you idiots holding up?"),
+		AI_CALLOUT_STATUS_OK = list("Still kicking.", "None of your concern, get back to work.", "I'm fine, get back to it.", "Still in it."),
+		AI_CALLOUT_STATUS_BAD = list("Get the medic, damnit!", "Wounded!", "Somebody patch me up!", "Not good, damn it!"),
+		AI_CALLOUT_NO_SIGN = list("You should've spotted them.", "Didn't see a thing.", "Your problem, not mine.", "No clue, find them yourself."),
+	)
+	solo_lines = list(
+		AI_CALLOUT_SPOTTED = list("Oooh, fresh meat!", "Look what wandered in!", "Well, hello there!"),
+		AI_CALLOUT_HOLDING = list("I've got all day.", "I can wait.", "Come at me."),
+		AI_CALLOUT_WARY = list("You're pretty good.", "Don't get greedy."),
+		AI_CALLOUT_RALLIED = list("Go on, make this fun!", "Screw it, I'm not done!", "Round two, meat!"),
+	)
+	morale_lines = list(
+		AI_MORALE_BROKEN = list(
+			AI_CALLOUT_RAISING_ALARM = list("They're here, help!", "Get over here, now!"),
+			AI_CALLOUT_HURT = list("Get me away, taking fire!", "Get the medic if they're still alive!"),
+			AI_CALLOUT_RELOADING = list("I'm empty! Cover me, damn it!"),
+			AI_CALLOUT_ALLY_DOWN = list("Another one gone! Get to cover!", "They're butchering us!"),
 		),
 	)
