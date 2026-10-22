@@ -81,7 +81,8 @@
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
 		return
-	if(isspaceturf(tturf))
+	//no tentacles if the target is space or the goliath is.
+	if(isspaceturf(tturf) || isspaceturf(loc))
 		return
 	if(get_dist(src, target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
 		visible_message(span_warning("[src] digs its tentacles under [target]!"))
