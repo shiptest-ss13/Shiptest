@@ -81,6 +81,8 @@
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
 		return
+	if(isspaceturf(tturf))
+		return
 	if(get_dist(src, target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
 		visible_message(span_warning("[src] digs its tentacles under [target]!"))
 		new tentacle_type(tturf, src ,TRUE)
@@ -296,6 +298,8 @@
 	var/difficulty = 3
 
 /obj/effect/temp_visual/goliath_tentacle/Initialize(mapload, mob/living/new_spawner,recursive = FALSE)
+	if(isspaceturf(loc))
+		return INITIALIZE_HINT_QDEL
 	. = ..()
 	flick(wiggle,src)
 	for(var/obj/effect/temp_visual/goliath_tentacle/T in loc)
