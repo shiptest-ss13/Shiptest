@@ -18,13 +18,23 @@
 // Base callout lines for humans. If extending this, missing ones will fall back to these.
 /datum/ai_callout_set/human
 	lines = list(
-		AI_CALLOUT_IDLE = list("Quiet out here.", "Anyone got a light?", "My feet are killing me.", "How long's this shift, again?", "Could really use a coffee.", "Keep your eyes open."),
+		AI_CALLOUT_IDLE = list("Quiet out here.", "Anyone got a light?", "My feet are killing me.", "How long's this shift, again?", "Could really use a coffee.", "Keep your eyes open." ,"Wonder what chow is today...", "Fun times.. mhm.."),
 		AI_CALLOUT_SPOTTED = list("Contact!", "We've got company!", "Intruders!", "Hostile spotted!", "Eyes up, we've got one!"),
 		AI_CALLOUT_TAKING_FIRE = list("Taking fire!", "Where's that coming from?!", "Incoming!", "We're under fire!"),
 		AI_CALLOUT_GRENADE = list("Grenade!", "Get clear!", "Explosive!", "Move, move!", "It's gonna blow!"),
 		AI_CALLOUT_THROW_BACK = list("Sending it back!", "Return to sender!", "Catch!", "Throwing it back!"),
 		AI_CALLOUT_GRENADE_OUT = list("Frag out!", "Grenade out!", "Fire in the hole!", "Grenade, heads down!"),
 		AI_CALLOUT_TARGETS_STUNNED = list("They're down, move in!", "Got them stunned, go!", "They're down! Push, push!"),
+		AI_CALLOUT_SUSPICIOUS = list("...Did that box just move?", "Huh?", "Was that box there before?", "What was that?", "...Hello?"),
+		AI_CALLOUT_LOST_INTEREST = list("Must've been my imagination.", "Just a box.", "Huh. Nothing.", "I need more sleep."),
+		AI_CALLOUT_FOUND_HIDING = list("There's someone in the box!", "Got you! In the box!", "I knew it! Out!", "The box! Get them!"),
+		AI_CALLOUT_COMMANDER_DOWN = list("The boss is down!", "They got the boss!", "Who's in charge now?!", "We lost the boss!"),
+		AI_CALLOUT_PROTECT_COMMANDER = list("They're going for the boss!", "Protect the boss!", "Cover the boss!", "Get whoever's on the boss!"),
+		AI_CALLOUT_ORDER_HOLD = list("Hold position!", "Hold here, don't push!", "Stay put, let them come to us!", "Nobody move up!"),
+		AI_CALLOUT_ORDER_RETREAT = list("Fall back! Fall back!", "Pull back, now!", "Regroup, move!", "Back, everyone back!"),
+		AI_CALLOUT_ORDER_PUSH = list("Push up!", "Move in, now!", "Forward! Get on them!", "Don't just sit there, push!", "Advance!"),
+		AI_CALLOUT_CHARGE = list("Now! Get them!", "Charge!", "All together, go!", "Rush them!", "Go, go, go!"),
+		AI_CALLOUT_ENEMY_RELOADING = list("They're reloading!", "They're dry! Go!", "Reloading, push them!", "Now, while they reload!", "They're empty!"),
 		AI_CALLOUT_SHOOTING_THROUGH_ALLY = list("Sorry! No other way!", "Forgive me!", "Hold still, I'm taking the shot!", "I'm not waiting any longer!"),
 		AI_CALLOUT_KNOCKED_DOWN = list("I'm down!", "Agh, I'm down!", "Knocked me flat!", "Cover me, I'm down!", "Help me up!"),
 		AI_CALLOUT_FLASHED = list("I can't see!", "My eyes!", "Flash! I'm blind!", "Everything's white!", "Can't see a thing!"),
@@ -91,9 +101,9 @@
 		AI_MORALE_BROKEN = list(
 			AI_CALLOUT_RAISING_ALARM = list("They're right behind me!", "Help! They're coming!"),
 			AI_CALLOUT_HURT = list("I'm hit! Get me out of here!", "Help me!"),
-			AI_CALLOUT_RELOADING = list("I'm out, I'm out!"),
+			AI_CALLOUT_RELOADING = list("I'm out, I'm out!", "I need more bullets!"),
 			AI_CALLOUT_ALLY_DOWN = list("They're dropping like flies!", "Another one down! Go, go!"),
-			AI_CALLOUT_MELEE = list("Get away from me!", "Back off!"),
+			AI_CALLOUT_MELEE = list("Get away from me!", "Back off!", "Don't touch me!"),
 		),
 		AI_MORALE_WARY = list(
 			AI_CALLOUT_RELOADING = list("Reloading, keep me covered!"),

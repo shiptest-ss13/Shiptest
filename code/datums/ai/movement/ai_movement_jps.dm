@@ -133,6 +133,8 @@
 		return FALSE // edge case L shaped things mitigation
 	if(!direct_line_clear(controller, movable_pawn, our_turf, next_step))
 		return FALSE // the step itself, as it needn't be on the line we checked, like a diagonal into lava
+	if(ismob(controller.current_movement_target) && get_dist(our_turf, goal_turf) > 2 && ally_ahead_on_line(movable_pawn, our_turf, goal_turf))
+		next_step = spread_out_step(controller, movable_pawn, our_turf, goal_turf, next_step) // so a group going after someone doesn't all queue up behind each other
 	if(ai_steps_into_blast(controller, our_turf, next_step) || ai_steps_into_tear_gas(movable_pawn, our_turf, next_step))
 		return TRUE // we wait clear of the grenade or the gas rather than walking back into it
 	take_step(controller, movable_pawn, next_step)
@@ -142,6 +144,36 @@
 	controller.pathing_attempts = 0
 	COOLDOWN_RESET(controller, repath_cooldown)
 	return TRUE
+
+// whether one of ours is in the next couple of tiles on our straight line to goal_turf, so following the line would have us trailing them
+/datum/ai_movement/jps/proc/ally_ahead_on_line(atom/movable/movable_pawn, turf/our_turf, turf/goal_turf)
+	var/mob/living/living_pawn = movable_pawn
+	if(!istype(living_pawn))
+		return FALSE
+	var/list/line = get_line(our_turf, goal_turf)
+	for(var/line_index in 2 to min(3, length(line)))
+		for(var/mob/living/ally in line[line_index])
+			if(ally != living_pawn && ally.stat == CONSCIOUS && living_pawn.faction_check_mob(ally))
+				return TRUE
+	return FALSE
+
+// a step 45 degrees off our line to goal_turf that still gets us no further from it, on the side we keep to, or the other if that's no good, or straight_step if neither is
+/datum/ai_movement/jps/proc/spread_out_step(datum/ai_controller/controller, atom/movable/movable_pawn, turf/our_turf, turf/goal_turf, turf/straight_step)
+	var/side = controller.blackboard[BB_BASIC_MOB_SPREAD_SIDE]
+	if(!side)
+		side = pick(1, -1) // once, so we keep to it rather than weaving
+		controller.set_blackboard_key(BB_BASIC_MOB_SPREAD_SIDE, side)
+	var/step_dir = get_dir(our_turf, straight_step)
+	var/distance = get_dist(our_turf, goal_turf)
+	for(var/turn_by in list(45 * side, -45 * side))
+		var/turf/candidate = get_step(our_turf, turn(step_dir, turn_by))
+		if(!candidate || get_dist(candidate, goal_turf) > distance)
+			continue
+		if(locate(/mob/living) in candidate)
+			continue // someone's there already
+		if(direct_line_clear(controller, movable_pawn, our_turf, candidate) && direct_line_clear(controller, movable_pawn, candidate, goal_turf))
+			return candidate
+	return straight_step
 
 // whether we could walk straight from start to finish, used by try_direct_step()
 /datum/ai_movement/jps/proc/direct_line_clear(datum/ai_controller/controller, atom/movable/movable_pawn, turf/start, turf/finish)

@@ -145,14 +145,19 @@
 	var/vision_range
 	/// How far from home the mob chases someone before letting them go, twice that while they're fighting. 0 for no leash. Null leaves it to their AI
 	var/leash_distance
-	/// If FALSE, the mob stands still rather than wandering about when there's nothing to do, like sentries
+	/// If FALSE, the mob stands still rather than wandering about when there's nothing to do, like sentries. Only while idle, it fights as it otherwise would, unless it holds_post
 	var/wander = TRUE
-	/// If TRUE, the mob holds the spot it's put on, like a guard post or a sniper's nest, rather than flanking or going after anyone. Those with guns fight from within post_radius of it, taking cover there, those without only go a few tiles for anyone close. Always on for those that don't wander with a marksman's rifle
-	var/holds_post = FALSE
+	/// If TRUE, the mob holds the spot it's put on, like a guard post or a sniper's nest, rather than flanking or going after anyone. Those with guns fight from within post_radius of it, taking cover there, those without only go a few tiles for anyone close.
+	/// Null to decide for itself, holding it if it doesn't wander and has a marksman's rifle. FALSE never to, so one that doesn't wander still fights freely
+	var/holds_post
 	/// For those holding a post, how many tiles from it they'll go to take cover or get a shot. 0 to stay right on it
 	var/post_radius = 3
 	/// If TRUE, the mob doesn't fight, but runs and shouts for help instead
 	var/noncombatant = FALSE
+	/// For melee users who don't ambush, and always charge in directly
+	var/melee_reckless
+	/// Commanders stay back and give orders, try to stay out of harms way
+	var/is_commander = FALSE
 	/// Typepath of the /datum/ai_callout_set the mob says things from in a fight. Null to stay quiet
 	var/callout_set = /datum/ai_callout_set/human
 	/// Lines the mob might shout when they pick a fight with someone, for one-off characters set up on a map. Said when we spot them, in place of our callout set's lines for it
@@ -216,7 +221,7 @@
 // pressure check for damage
 /mob/living/basic/human/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
 	. = ..()
-	if(stat == DEAD || pressure_sealed || !isturf(loc))
+	if(stat == DEAD || pressure_sealed || !isturf(loc) || world.time < environment_grace_until)
 		return
 	if(environment.return_pressure() < HAZARD_LOW_PRESSURE)
 		adjustBruteLoss(LOW_PRESSURE_DAMAGE)
@@ -227,8 +232,8 @@
 			ai_controller = /datum/ai_controller/basic_controller/human/noncombatant
 		else if(casing_type || projectile_type || fires_flames)
 			var/ranged_controller = pick_ranged_controller()
-			if(!wander && ranged_controller == /datum/ai_controller/basic_controller/human/ranged/marksman)
-				holds_post = TRUE // a rifleman put somewhere to stand, like a bunker, is there to hold it
+			if(isnull(holds_post))
+				holds_post = !wander && ranged_controller == /datum/ai_controller/basic_controller/human/ranged/marksman // a rifleman put somewhere to stand, like a bunker, is there to hold it
 			ai_controller = holds_post ? pick_post_controller() : ranged_controller
 		else
 			ai_controller = pick_melee_controller()
@@ -298,6 +303,8 @@
 
 /mob/living/basic/human/proc/setup_ai_blackboard()
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
+	if(isnull(melee_reckless) && !noncombatant && !(casing_type || projectile_type || fires_flames))
+		melee_reckless = prob(AI_MELEE_RECKLESS_CHANCE)
 	apply_ai_vars()
 	if(holds_post)
 		var/turf/post = get_turf(src)
@@ -339,10 +346,20 @@
 		idle_emotes = string_list((emote_hear || list()) | (emote_see || list()))
 	set_ai_var_key(BB_BASIC_MOB_IDLE_EMOTES, idle_emotes)
 	set_ai_var_key(BB_BASIC_MOB_AVOID_FRIENDLY_FIRE, check_friendly_fire || null)
+	set_ai_var_key(BB_BASIC_MOB_MELEE_RECKLESS, melee_reckless || null)
+	set_ai_var_key(BB_BASIC_MOB_COMMANDER, is_commander || null)
 	set_ai_var_key(BB_BASIC_MOB_MELEE_HITS, rapid_melee > 1 ? rapid_melee : null)
 	var/retreat = retreat_distance
 	if(isnull(retreat) && !isnull(engage_distance))
 		retreat = 0
+	// commander stay back ok
+	var/ranged_commander = is_commander && (casing_type || projectile_type || fires_flames)
+	if(ranged_commander)
+		var/usual_retreat = retreat
+		if(isnull(usual_retreat))
+			usual_retreat = (BB_BASIC_MOB_RETREAT_DISTANCE in archetype_blackboard) ? archetype_blackboard[BB_BASIC_MOB_RETREAT_DISTANCE] : ai_controller.blackboard[BB_BASIC_MOB_RETREAT_DISTANCE]
+		retreat = max(usual_retreat || 0, AI_COMMANDER_RETREAT_DISTANCE)
+	set_ai_var_key(BB_BASIC_MOB_HOLDS_POSITION, ranged_commander || null)
 	set_ai_var_key(BB_BASIC_MOB_RETREAT_DISTANCE, retreat)
 	set_ai_var_key(BB_BASIC_MOB_ENGAGE_DISTANCE, engage_distance)
 
@@ -428,6 +445,8 @@
 			NAMEOF(src, emote_hear),
 			NAMEOF(src, emote_see),
 			NAMEOF(src, check_friendly_fire),
+			NAMEOF(src, melee_reckless),
+			NAMEOF(src, is_commander),
 			NAMEOF(src, rapid_melee),
 			NAMEOF(src, retreat_distance),
 			NAMEOF(src, engage_distance),

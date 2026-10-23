@@ -38,6 +38,7 @@
 		BB_BASIC_MOB_ENGAGE_DISTANCE = 2,
 		BB_BASIC_MOB_FLANK_PRIORITY = 5,
 		BB_BASIC_MOB_STICKS_TO_TARGET = TRUE,
+		BB_BASIC_MOB_PUSHES_ON_RELOAD = TRUE,
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
@@ -110,8 +111,10 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_explosives,
 		/datum/ai_planning_subtree/seek_safe_environment,
+		/datum/ai_planning_subtree/investigate_box,
 		/datum/ai_planning_subtree/return_home/post,
 		/datum/ai_planning_subtree/call_allies,
+		/datum/ai_planning_subtree/order_push,
 		/datum/ai_planning_subtree/throw_grenade,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/fighting_cover,
@@ -129,8 +132,10 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_explosives,
 		/datum/ai_planning_subtree/seek_safe_environment,
+		/datum/ai_planning_subtree/investigate_box,
 		/datum/ai_planning_subtree/return_home/post,
 		/datum/ai_planning_subtree/call_allies,
+		/datum/ai_planning_subtree/order_push,
 		/datum/ai_planning_subtree/throw_grenade,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/sequence/suppress_dug_in,
@@ -158,6 +163,10 @@
 // ---------- up close ----------
 
 /datum/ai_controller/basic_controller/human/brute
+	blackboard = list(
+		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
+		BB_BASIC_MOB_SPEARHEAD = TRUE, // the rest who fight up close follow us in, rather than waiting
+	)
 	sensors = list(
 		/datum/ai_sensor/update_combat_targets,
 		/datum/ai_sensor/track_target/relentless,

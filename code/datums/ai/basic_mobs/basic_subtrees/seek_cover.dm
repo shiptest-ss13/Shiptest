@@ -161,6 +161,11 @@
 /datum/ai_planning_subtree/sequence/peek/can_start(datum/ai_controller/controller)
 	return get_turf(controller.pawn) == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] // only from our cover, once we're in it
 
+/datum/ai_planning_subtree/sequence/peek/delay_passed(datum/ai_controller/controller)
+	if(AI_TARGET_RELOADING(controller))
+		return TRUE
+	return ..()
+
 /datum/ai_planning_subtree/sequence/peek/on_start(datum/ai_controller/controller)
 	var/turf/peek_turf = find_peek_turf(controller)
 	if(!peek_turf)

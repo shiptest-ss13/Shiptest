@@ -1,6 +1,4 @@
-
 /datum/ai_callout_set
-
 	var/list/lines = list()
 	// variants for morale versions
 	var/list/morale_lines = list()
@@ -15,6 +13,16 @@
 		AI_CALLOUT_THROW_BACK = 100,
 		AI_CALLOUT_GRENADE_OUT = 100, // the warning that it's coming, fair to whoever it's thrown at
 		AI_CALLOUT_TARGETS_STUNNED = 100,
+		AI_CALLOUT_ENEMY_RELOADING = 100, // the tell that a push is coming, fair to whoever's reloading
+		AI_CALLOUT_CHARGE = 100, // the warning that several are about to come at once
+		AI_CALLOUT_ORDER_PUSH = 100, // the order, and the warning that a push is coming
+		AI_CALLOUT_ORDER_HOLD = 100, // orders are only orders if they're heard
+		AI_CALLOUT_PROTECT_COMMANDER = 100, // the warning that going for the one in charge has drawn everyone
+		AI_CALLOUT_COMMANDER_DOWN = 100, // news the whole side wants to hear, or doesn't
+		AI_CALLOUT_ORDER_RETREAT = 100,
+		AI_CALLOUT_SUSPICIOUS = 100, // the warning to whoever's in the box that they've been noticed
+		AI_CALLOUT_FOUND_HIDING = 100,
+		AI_CALLOUT_LOST_INTEREST = 75,
 		AI_CALLOUT_IDLE = 100, // idle chatter rolls its own chance before it asks
 		AI_CALLOUT_LAST_STANDING = 100,
 		AI_CALLOUT_ALL_CLEAR = 100,
@@ -369,10 +377,14 @@
 				ally.watch_downed_victim(downed_victim, inherited = TRUE)
 				break
 		watch_downed_victim(null)
+	var/mob/living/basic/basic_mob = parent
+	var/was_commander = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_COMMANDER]
 	for(var/datum/component/ai_callouts/ally as anything in allies)
 		// the last of us left, so we call for help, whether or not any's coming
 		if(!length(get_ai_allies_in_earshot(ally.parent, ally.hearing_range, ally.wall_penalty)) && ally.speak_about(AI_CALLOUT_LAST_STANDING, interrupt = TRUE))
 			continue
+		if(was_commander && ally.speak_about(AI_CALLOUT_COMMANDER_DOWN, interrupt = TRUE))
+			continue // the one giving the orders, which is worse news than any of the rest of us
 		ally.speak_about(AI_CALLOUT_ALLY_DOWN)
 
 // allies_in_earshot is get_ai_allies_in_earshot() if we've already got it to hand
@@ -410,11 +422,18 @@
 		return FALSE
 	if(direction)
 		line = replacetext(line, "%DIRECTION", direction)
+	line = replacetext(line, "%PLANET", pick(GLOB.major_planets))
 	if(interrupt)
 		last_interrupt_time = world.time
 	COOLDOWN_START(src, chatter_cooldown, 5 SECONDS)
 	if(!ai_callout_is_chatter(event))
 		COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
+	//we do this after the cooldown because its mildly more intensive
+	//could be replaced w/ a more generic sfx but I wanted whistles in particular
+	//whistle & replace it with nothing
+	if(findtext(line, "%WHISTLE"))
+		line = trim(replacetext(line, "%WHISTLE", "")) // and the space it leaves
+		playsound(basic_mob, 'sound/misc/trenchwhistle.ogg', 80, FALSE, 4)
 	say_line(line, last_words)
 	var/list/allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
 	var/is_chatter = ai_callout_is_chatter(event)
@@ -539,6 +558,14 @@
 // actually says line, in our voice, or whispers it if it's our last words
 /datum/component/ai_callouts/proc/say_line(line, last_words = FALSE)
 	var/mob/living/basic/basic_mob = parent
+	if(!last_words && length(line) > 1)
+		switch(copytext(line, 1, 2))
+			if("*")
+				basic_mob.manual_emote(copytext(line, 2)) // an emote, like "*whistles", as a player's would be
+				return
+			if("%")
+				INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), line) // sung, as a player's would be, so it goes without a verb of our own
+				return
 	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
 	var/list/speech_args = list(line, null, list(), null, /datum/language/galactic_common)
 	if(voice.modifies_speech)
@@ -592,6 +619,16 @@
 		AI_CALLOUT_GRENADE = 4 SECONDS, // one or two voices for it, not the whole room
 		AI_CALLOUT_GRENADE_OUT = 4 SECONDS,
 		AI_CALLOUT_TARGETS_STUNNED = 10 SECONDS,
+		AI_CALLOUT_ENEMY_RELOADING = 10 SECONDS,
+		AI_CALLOUT_CHARGE = 15 SECONDS,
+		AI_CALLOUT_ORDER_PUSH = 20 SECONDS,
+		AI_CALLOUT_ORDER_HOLD = 20 SECONDS,
+		AI_CALLOUT_PROTECT_COMMANDER = 10 SECONDS,
+		AI_CALLOUT_COMMANDER_DOWN = 10 SECONDS, // one voice for it
+		AI_CALLOUT_ORDER_RETREAT = 20 SECONDS,
+		AI_CALLOUT_SUSPICIOUS = 8 SECONDS,
+		AI_CALLOUT_FOUND_HIDING = 8 SECONDS,
+		AI_CALLOUT_LOST_INTEREST = 15 SECONDS,
 		AI_CALLOUT_IDLE = 20 SECONDS, // one of a group chatting now and then, not all of them at once
 		AI_CALLOUT_KNOCKED_DOWN = 6 SECONDS,
 		AI_CALLOUT_FLASHED = 8 SECONDS, // a flashbang likely gets a whole group at once, so one of us says so

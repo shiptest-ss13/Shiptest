@@ -542,10 +542,22 @@ multiple modular subtrees with behaviors
 
 // whether we gave up on getting to them lately, unless they've just shot at us
 /datum/ai_controller/proc/check_still_ignoring(atom/target)
+	var/leashed_until = LAZYACCESS(blackboard[BB_BASIC_MOB_LEASHED_OFF], target)
 	var/ignore_until = LAZYACCESS(blackboard[BB_BASIC_MOB_IGNORED_TARGETS], target)
-	if(!ignore_until || world.time >= ignore_until)
+	if((!leashed_until || world.time >= leashed_until) && (!ignore_until || world.time >= ignore_until))
 		return FALSE
 	if(blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 2 SECONDS)
+		if(leashed_until)
+			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target) // they've picked the fight back up, so it's on again until they lead us too far again
+		return FALSE
+	if(leashed_until && world.time < leashed_until)
+		var/turf/home = blackboard[BB_BASIC_MOB_HOME_TURF]
+		var/turf/their_turf = get_turf(target)
+		if(their_turf && (get_dist(pawn, their_turf) <= 1 || (home && their_turf.z == home.z && get_dist(home, their_turf) <= blackboard[BB_BASIC_MOB_LEASHED_OFF_RANGE])))
+			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target)
+		else
+			return TRUE
+	if(!ignore_until || world.time >= ignore_until)
 		return FALSE
 	// a way's opened up, like the window's gone or they've come round it. Only the straight line, as pathing every look would cost too much
 	var/turf/their_turf = get_turf(target)

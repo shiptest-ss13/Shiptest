@@ -526,6 +526,8 @@
 	if(!safety)
 		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
+		if(isliving(user))
+			ai_note_enemy_reloading(user, AI_DRY_FIRE_HEARING_RANGE)
 		return
 	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 

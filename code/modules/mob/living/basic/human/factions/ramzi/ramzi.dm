@@ -67,6 +67,7 @@
 	name = "Ramzi Clique Runt"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a razor-sharp knife shakily, moving with less precision than their colleagues."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt
+	callout_set = /datum/ai_callout_set/human/ramzi/runt
 
 /mob/living/basic/human/ramzi/melee/runt/chef
 	name = "Ramzi Clique Ration Cook"
@@ -248,6 +249,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
 /mob/living/basic/human/ramzi/melee/space/stormtrooper/commander
+	is_commander = TRUE
 	on_aggro_say = list("SIC 'EM!!")
 	aggro_say_chance = 100
 	summons_backup = TRUE
@@ -383,6 +385,7 @@
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
 /mob/living/basic/human/ramzi/ranged/officer
+
 	name = "Ramzi Clique Quartermaster"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They hold themselves high, clad in well-taken care of officer garbs. They clutch a blackened revolver in their hands."
 	icon_state = "syndicate_officer"
@@ -391,6 +394,7 @@
 	projectile_sound = 'sound/weapons/gun/revolver/viper.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer
 	callout_set =  /datum/ai_callout_set/human/ramzi/officer
+	is_commander = TRUE // gives orders, hangs back
 
 
 /mob/living/basic/human/ramzi/ranged/officer/asp
@@ -429,6 +433,7 @@
 	mob_species = /datum/species/human
 
 	armor_base = /obj/item/clothing/suit/armor/ngr/lieutenant
+	is_commander = FALSE
 
 /mob/living/basic/human/ramzi/ranged/officer/lieutenant
 	name = "Ramzi Clique Lieutenant"

@@ -20,8 +20,10 @@
 
 /datum/ai_planning_subtree/sequence/melee_approach/can_start(datum/ai_controller/controller)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	if(get_dist(controller.pawn, target) <= charge_distance || !target_can_shoot_back(target))
-		return FALSE // close enough to rush them, or they've nothing to shoot us with on the way
+	if(get_dist(controller.pawn, target) <= charge_distance || !target_can_shoot_back(target) || AI_TARGET_RELOADING(controller))
+		return FALSE // close enough to rush them, or they have no weapon in hand/are reloading
+	if(controller.blackboard[BB_BASIC_MOB_MELEE_RECKLESS] || world.time < controller.blackboard[BB_BASIC_MOB_GROUP_CHARGE_UNTIL])
+		return FALSE // reckless, or we're going in together
 	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= quiet_time || controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
 		return FALSE // they're not hitting us, so go for them
 	return world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_APPROACH_SEARCH]

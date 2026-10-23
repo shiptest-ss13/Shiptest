@@ -52,6 +52,20 @@
 	var/mob/living/basic/basic_mover = mover
 	return !istype(basic_mover) || is_environment_safe_for(basic_mover, spot)
 
+// pick a spot to path to on the way to destination, as far as we can get to in this pathfinding hop, or null if we can't get anywhere useful
+/proc/ai_pick_waypoint(mob/living/mover, turf/start, turf/destination, hop_distance, search_radius = 3)
+	var/list/line = get_line(start, destination)
+	var/turf/along = line[clamp(hop_distance + 1, 1, length(line))]
+	var/turf/best_turf
+	var/best_distance = INFINITY
+	for(var/turf/open/candidate in ai_turfs_in_range(along, search_radius))
+		var/candidate_distance = get_dist(along, candidate)
+		if(candidate_distance >= best_distance || !ai_can_stand_on(mover, candidate))
+			continue
+		best_turf = candidate
+		best_distance = candidate_distance
+	return best_turf
+
 /proc/is_bare_space(turf/spot)
 	return isspaceturf(spot) && !(locate(/obj/structure/lattice) in spot)
 

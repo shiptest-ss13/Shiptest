@@ -27,6 +27,9 @@
 
 /datum/ai_planning_subtree/flank/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
+	if(controller.blackboard[BB_BASIC_MOB_COMMANDER])
+		end_flank(controller) // we send the others round, rather than going ourselves
+		return
 	var/atom/target = controller.blackboard[target_key]
 	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
 	if(get_dist(controller.pawn, target) <= minimum_distance)
@@ -122,7 +125,8 @@
 		return TRUE // an obvious way through, or no point staying
 	if(better_flankers >= max_flankers - allies_going_around)
 		return FALSE
-	return prob((allies_keeping_them_busy || AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED)) ? supported_flank_chance : flank_chance)
+	var/good_moment = AI_TARGET_RELOADING(controller) || world.time < controller.blackboard[BB_BASIC_MOB_ORDERED_PUSH_UNTIL] // they're reloading, or we've been told to push
+	return prob((allies_keeping_them_busy || AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED) || good_moment) ? supported_flank_chance : flank_chance)
 
 /datum/ai_planning_subtree/flank/proc/find_clear_target(datum/ai_controller/controller, atom/target, pass_flags)
 	var/mob/living/living_pawn = controller.pawn

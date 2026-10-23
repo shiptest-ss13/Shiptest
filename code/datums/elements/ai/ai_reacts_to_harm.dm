@@ -8,10 +8,16 @@
 	RegisterSignal(target, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_shot))
 	RegisterSignal(target, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_hurt))
 	RegisterSignal(target, COMSIG_LIVING_NEAR_MISS, PROC_REF(on_near_miss))
+	RegisterSignal(target, COMSIG_ATOM_ATTACKBY, PROC_REF(on_attacked_with))
 
 /datum/element/ai_reacts_to_harm/Detach(datum/source, ...)
 	. = ..()
-	UnregisterSignal(source, list(COMSIG_ATOM_BULLET_ACT, COMSIG_MOB_APPLY_DAMAGE, COMSIG_LIVING_NEAR_MISS))
+	UnregisterSignal(source, list(COMSIG_ATOM_BULLET_ACT, COMSIG_MOB_APPLY_DAMAGE, COMSIG_LIVING_NEAR_MISS, COMSIG_ATOM_ATTACKBY))
+
+/datum/element/ai_reacts_to_harm/proc/on_attacked_with(mob/source, obj/item/weapon, mob/living/user)
+	SIGNAL_HANDLER
+	if(user && weapon?.force)
+		ai_commander_attacked(source, user)
 
 // anything hurting us wakes us up and has us look about for whoever it is straight away
 /datum/element/ai_reacts_to_harm/proc/on_hurt(mob/source, damage, damagetype, def_zone)
@@ -30,6 +36,8 @@
 		return // shrapnel from a grenade isn't anyone to shoot back at, the blast's heard and the hurt's on_hurt()'s
 	controller.clear_blackboard_key(BB_BASIC_MOB_SHOT_NEAR_MISS) // it hit us
 	shot_at(source, controller, projectile)
+	if(controller.blackboard[BB_BASIC_MOB_COMMANDER])
+		ai_commander_attacked(source, projectile.firer)
 
 // a shot going close past us, which tells us we're being shot at as much as one hitting us does
 /datum/element/ai_reacts_to_harm/proc/on_near_miss(mob/source, obj/projectile/projectile)

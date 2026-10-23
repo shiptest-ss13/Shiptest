@@ -101,9 +101,12 @@
 
 	///conneceted nest datum, used to talk to the monster's 'nest'/spawner
 	var/datum/component/spawner/nest
+	///Until when the air and pressure don't hurt us, just after we spawn. Primarily for mobs spawning in ruins
+	var/environment_grace_until = 0
 
 /mob/living/basic/Initialize(mapload)
 	. = ..()
+	environment_grace_until = world.time + BASIC_MOB_ENVIRONMENT_GRACE
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
 	else if (!armor)

@@ -39,7 +39,7 @@
 // dont melee while down
 /mob/living/basic/human/proc/on_pre_melee(datum/source, atom/target)
 	SIGNAL_HANDLER
-	if(!client && (HAS_TRAIT(src, TRAIT_FLOORED) || world.time < off_balance_until))
+	if(!client && (HAS_TRAIT(src, TRAIT_FLOORED) || body_position == LYING_DOWN || world.time < off_balance_until)) // still on the floor while we get up, too
 		return COMPONENT_HOSTILE_NO_ATTACK
 
 // back on our feet after a knockdown, delaying firing and resetting aim
@@ -49,6 +49,7 @@
 	var/datum/component/ranged_attacks/ranged_attack = GetComponent(/datum/component/ranged_attacks)
 	ranged_attack?.delay_next_volley(AI_GET_UP_FIRE_DELAY)
 	ai_controller?.clear_blackboard_key(BB_BASIC_MOB_LAST_FIRED_TIME) // first contact spread again after getting up, as if recovering
+	ai_controller?.clear_blackboard_key(BB_BASIC_MOB_AIMED_AT) // on everyone, as it's our aim that's off
 
 // knocked flat by a blast, less their bomb armour, on top of the damage every basic mob takes
 /mob/living/basic/human/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM, origin)

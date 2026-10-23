@@ -143,6 +143,8 @@
 	if(!ismob(target))
 		return TRUE // turrets and mechs
 	var/mob/target_mob = target
+	if(!isturf(target_mob.loc))
+		return FALSE
 	return target_mob.is_holding_item_of_type(/obj/item/gun) || target_mob.GetComponent(/datum/component/ranged_attacks)
 
 /proc/get_ai_shot_pass_flags(mob/living/shooter)

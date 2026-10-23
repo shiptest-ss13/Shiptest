@@ -222,6 +222,7 @@
 	ai_controller = /datum/ai_controller/basic_controller/human/ranged/support_gunner // digs in to hold the settlement rather than chasing anyone out of it
 
 /mob/living/basic/human/hermit/swampboss
+	is_commander = TRUE // what passes for orders, out here
 	name = "Hermit Warlord"
 	desc = "A figure covered in dirty Roumainist plate, slinging around a pristine HP Pyre. They carry the weapon with finesse, though they are still clearly high off their mind."
 	burst_shots = 3

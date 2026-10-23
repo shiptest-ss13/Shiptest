@@ -530,6 +530,7 @@
 	weapon_drop_chance = 0
 
 /mob/living/basic/human/frontier/ranged/officer
+	is_commander = TRUE // keeps the crew in line, and moving
 	name = "Frontiersman Boss"
 	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. They leer at their underlings, one hand resting consciously over the machine pistol at their hip."
 	icon_state = "frontiersmanofficer"

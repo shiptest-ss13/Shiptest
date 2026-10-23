@@ -131,8 +131,9 @@
 	return TRUE
 
 // broken for another broken_duration, then we see if we can rally
-/datum/component/ai_morale/proc/stay_broken()
-	set_morale(AI_MORALE_BROKEN, broken_duration + 1 SECONDS)
+// ordered is TRUE if our commander told us to fall back, rather than our own nerve going
+/datum/component/ai_morale/proc/stay_broken(ordered = FALSE)
+	set_morale(AI_MORALE_BROKEN, broken_duration + 1 SECONDS, ordered = ordered)
 	addtimer(CALLBACK(src, PROC_REF(try_rally)), broken_duration, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /datum/component/ai_morale/proc/badly_outnumbered(list/sides)
@@ -170,7 +171,8 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_MORALE)
 		controller.clear_blackboard_key(BB_BASIC_MOB_MORALE_UNTIL)
 
-/datum/component/ai_morale/proc/set_morale(morale, duration, callout)
+// ordered is TRUE if our commander told us to, so we keep quiet, as they've said it for us, and don't pass it on
+/datum/component/ai_morale/proc/set_morale(morale, duration, callout, ordered = FALSE)
 	var/mob/living/living_parent = parent
 	var/datum/ai_controller/controller = living_parent.ai_controller
 	if(!controller || living_parent.stat != CONSCIOUS)
@@ -178,17 +180,42 @@
 	var/already_feeling_it = AI_MORALE_IS(controller, morale)
 	controller.set_blackboard_key(BB_BASIC_MOB_MORALE, morale)
 	controller.set_blackboard_key(BB_BASIC_MOB_MORALE_UNTIL, world.time + duration)
-	AI_LOG_DECISION(controller, "ai_morale: now [morale] for [duration / 10] seconds")
-	if(already_feeling_it)
+	AI_LOG_DECISION(controller, "ai_morale: now [morale] for [duration / 10] seconds[ordered ? ", as ordered" : ""]")
+	if(already_feeling_it || ordered)
 		return
 	if(callout)
 		ai_callout(living_parent, callout)
 		return
+	if(controller.blackboard[BB_BASIC_MOB_COMMANDER] && (morale == AI_MORALE_WARY || morale == AI_MORALE_BROKEN) && order_squad(morale))
+		return // we've said it as an order instead
 	switch(morale)
 		if(AI_MORALE_EMBOLDENED)
 			ai_callout(living_parent, AI_CALLOUT_EMBOLDENED)
 		if(AI_MORALE_BROKEN)
 			ai_callout(living_parent, AI_CALLOUT_BROKEN, interrupt = TRUE)
+
+/datum/component/ai_morale/proc/order_squad(morale)
+	var/mob/living/living_parent = parent
+	var/atom/target = living_parent.ai_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/list/followers = list()
+	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(living_parent, hearing_range))
+		var/datum/component/ai_morale/ally_morale = ally.GetComponent(/datum/component/ai_morale)
+		var/datum/ai_controller/ally_controller = ally.ai_controller
+		if(!ally_morale || ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] != target || AI_MORALE_IS(ally_controller, AI_MORALE_BROKEN))
+			continue
+		if(morale == AI_MORALE_BROKEN ? !ally_morale.can_break : AI_MORALE_IS(ally_controller, AI_MORALE_WARY))
+			continue // too stubborn to run, or already holding
+		followers += ally_morale
+	if(!length(followers))
+		return FALSE
+	AI_LOG_DECISION(living_parent.ai_controller, "ai_morale: ordering [length(followers)] of ours to [morale == AI_MORALE_BROKEN ? "fall back" : "hold"] with us")
+	ai_callout(living_parent, morale == AI_MORALE_BROKEN ? AI_CALLOUT_ORDER_RETREAT : AI_CALLOUT_ORDER_HOLD, interrupt = TRUE)
+	for(var/datum/component/ai_morale/follower as anything in followers)
+		if(morale == AI_MORALE_BROKEN)
+			follower.stay_broken(ordered = TRUE)
+		else
+			follower.set_morale(AI_MORALE_WARY, follower.wary_duration, ordered = TRUE)
+	return TRUE
 
 // counting allies and enemies, including self
 /datum/component/ai_morale/proc/count_sides()

@@ -92,3 +92,62 @@
 // so we don't try to shoot a grenade
 /proc/ai_is_shooter(atom/firer)
 	return ismob(firer) || ismecha(firer) || istype(firer, /obj/machinery/porta_turret)
+
+// check if an enemy is reloading, or firing on an empty gun
+/proc/ai_note_enemy_reloading(mob/living/reloader, range = AI_DEFAULT_VISION_RANGE)
+	var/static/list/next_notice_by_reloader = list()
+	var/static/list/last_reload_by_mob = list()
+	if(!isliving(reloader) || !isturf(reloader.loc))
+		return
+	var/reloader_ref = REF(reloader)
+	// whether or not anyone notices, so they don't count as covering someone reloading alongside them
+	if(length(last_reload_by_mob) > 100)
+		for(var/old_ref in last_reload_by_mob.Copy())
+			if(world.time - last_reload_by_mob[old_ref] > AI_ENEMY_RELOAD_WINDOW)
+				last_reload_by_mob -= old_ref
+	last_reload_by_mob[reloader_ref] = world.time
+	if(world.time < next_notice_by_reloader[reloader_ref] || !prob(AI_ENEMY_RELOAD_NOTICE_CHANCE))
+		return
+	var/list/noticed = list()
+	for(var/mob/living/basic/watcher in ai_cached_hearers(reloader, range))
+		var/datum/ai_controller/controller = watcher.ai_controller
+		if(!istype(controller) || watcher.client || watcher.stat != CONSCIOUS || controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] != reloader)
+			continue
+		noticed += watcher
+	if(!length(noticed))
+		return
+	next_notice_by_reloader[reloader_ref] = world.time + AI_ENEMY_RELOAD_NOTICE_COOLDOWN
+	var/mob/living/basic/spotter = get_nearest_of(reloader, noticed)
+	ai_callout(spotter, AI_CALLOUT_ENEMY_RELOADING) // notify our pals too
+	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(spotter))
+		if(!(ally in noticed) && ally.ai_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == reloader)
+			noticed += ally
+	// the enemy got an ally of theirs near them, assume danger
+	var/covered = ai_reloader_covered(reloader, spotter, last_reload_by_mob)
+	for(var/mob/living/watcher as anything in noticed)
+		var/datum/ai_controller/controller = watcher.ai_controller
+		var/pushes = !watcher.GetComponent(/datum/component/ranged_attacks) || controller.blackboard[BB_BASIC_MOB_PUSHES_ON_RELOAD]
+		if(pushes && covered)
+			AI_LOG_DECISION(controller, "[reloader] is reloading, but someone of theirs is covering them")
+			continue
+		AI_LOG_DECISION(controller, "[reloader] is reloading, making the most of it")
+		controller.set_blackboard_key(BB_BASIC_MOB_TARGET_RELOADING_UNTIL, world.time + AI_ENEMY_RELOAD_WINDOW)
+		if(!watcher.GetComponent(/datum/component/ranged_attacks))
+			continue
+		if(pushes)
+			controller.set_blackboard_key(BB_BASIC_MOB_PRESSING_UNTIL, world.time + AI_ENEMY_RELOAD_WINDOW) // push up while they're empty
+		else
+			controller.clear_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION) // decide whether to flank NOW
+
+// can the mob see someone else nearby that could cover the reloader?
+/proc/ai_reloader_covered(mob/living/reloader, mob/living/basic/spotter, list/last_reload_by_mob)
+	var/datum/targetting_datum/targetting_datum = spotter.ai_controller?.blackboard[BB_TARGETTING_DATUM]
+	for(var/mob/living/cover in ai_cached_hearers(reloader, AI_ENEMY_RELOAD_COVER_RANGE))
+		if(cover == reloader || cover.stat != CONSCIOUS || !target_can_shoot_back(cover))
+			continue
+		if(world.time - last_reload_by_mob[REF(cover)] <= AI_ENEMY_RELOAD_WINDOW)
+			continue // they're reloading too, so they're no cover
+		if(!targetting_datum?.can_attack(spotter, cover) || !ai_can_see(spotter, cover))
+			continue // one of ours, or someone we'd not know is there
+		return TRUE
+	return FALSE

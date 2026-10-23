@@ -43,6 +43,16 @@
 		AI_CALLOUT_LAST_SEEN = list("Suspect last seen heading %DIRECTION!", "They went %DIRECTION!", "Check %DIRECTION!", "Last visual was %DIRECTION!"),
 		AI_CALLOUT_NO_SIGN = list("Negative, no visual.", "Didn't see where they went.", "Nothing on my end.", "No sign of the suspect."),
 		AI_CALLOUT_COVERING = list("Covering!", "Go, I've got you!", "Covering, move!", "I've got eyes on, go!"),
+		AI_CALLOUT_ENEMY_RELOADING = list("Suspect's reloading, move in!", "They're dry, close in now!", "Suspect's weapon is empty, go!", "They're reloading, take them down!"),
+		AI_CALLOUT_CHARGE = list("All units, move in!", "Go, go, go!", "Converge on the suspect!", "Move in, together!"),
+		AI_CALLOUT_SUSPICIOUS = list("...Did that box just move?", "Hold on. That box.", "Huh. Movement?", "Checking something out."),
+		AI_CALLOUT_LOST_INTEREST = list("False alarm. Just a box.", "Nothing. Logging it anyway.", "Area's clear, it's a box.", "I need a longer break."),
+		AI_CALLOUT_FOUND_HIDING = list("Suspect concealed in a container!", "Out of the box, hands up!", "Found the suspect, in the box!", "Got one hiding, move in!"),
+		AI_CALLOUT_ORDER_PUSH = list("All units, advance!", "Move up, keep them contained!", "Push in!", "Advance on the suspect!"),
+		AI_CALLOUT_ORDER_HOLD = list("Hold position!", "Hold the line, wait for backup!", "Nobody advance!", "Stay in cover, hold!"),
+		AI_CALLOUT_ORDER_RETREAT = list("All units, fall back!", "Pull back, we're outgunned!", "Fall back and regroup!", "Retreat, wait for backup!"),
+		AI_CALLOUT_PROTECT_COMMANDER = list("Supervisor under fire!", "Cover the supervisor!", "Engage whoever's on the supervisor!", "Protect the supervisor!"),
+		AI_CALLOUT_COMMANDER_DOWN = list("Supervisor down!", "We lost the supervisor!", "Who's in command now?!", "Supervisor's down, need direction!"),
 	)
 	solo_lines = list(
 		AI_CALLOUT_LOST_THEM = list("Lost visual on the suspect.", "Come out, this is Vigilitas Security!", "I know you're in here!"),

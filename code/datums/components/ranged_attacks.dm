@@ -79,6 +79,8 @@
 	controller?.set_blackboard_key(BB_BASIC_MOB_SHOTS_FIRED, controller.blackboard[BB_BASIC_MOB_SHOTS_FIRED] + 1)
 	controller?.set_blackboard_key(BB_BASIC_MOB_LAST_FIRED_AT, target)
 	controller?.set_blackboard_key(BB_BASIC_MOB_LAST_FIRED_TIME, world.time)
+	if(controller)
+		note_aimed_at(controller, target)
 	var/shot_spread = spread + (!firer.client && world.time <= unsettled_until ? first_contact_spread : 0)
 	INVOKE_ASYNC(src, PROC_REF(async_fire_ranged_attack), firer, target, modifiers, shot_spread)
 
@@ -139,10 +141,31 @@
 	var/volley_shots = get_burst_shots() || shots
 	var/volley_interval = burst_shots ? burst_intervals : interval
 	var/datum/ai_controller/controller = firer.ai_controller
-	if(first_contact_spread && controller && (controller.blackboard[BB_BASIC_MOB_LAST_FIRED_AT] != target || world.time - controller.blackboard[BB_BASIC_MOB_LAST_FIRED_TIME] > AI_AIM_SETTLED_MEMORY))
+	if(first_contact_spread && controller && !aim_settled_on(controller, target))
 		unsettled_until = world.time + (volley_shots - 1) * volley_interval // for the duration of this volley minus the first
 	firer.RangedAttack(target)
 	schedule_follow_ups(target, volley_shots - 1, volley_interval)
+
+// anti multi target peekabo cheese
+/datum/component/ranged_attacks/proc/aim_settled_on(datum/ai_controller/controller, atom/target)
+	var/fired_at = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_AIMED_AT], get_aim_subject(controller, target))
+	return !isnull(fired_at) && world.time - fired_at <= AI_AIM_SETTLED_MEMORY
+
+// so we can still maintain aim on people who were in containers
+/datum/component/ranged_attacks/proc/get_aim_subject(datum/ai_controller/controller, atom/target)
+	var/atom/current_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	if(!QDELETED(current_target) && current_target.loc == target)
+		return current_target
+	return target
+
+// remembers when we last fired at target, forgetting anyone we've not fired at lately
+/datum/component/ranged_attacks/proc/note_aimed_at(datum/ai_controller/controller, atom/target)
+	target = get_aim_subject(controller, target)
+	var/list/aimed_at = controller.blackboard[BB_BASIC_MOB_AIMED_AT]
+	for(var/atom/old_target as anything in aimed_at?.Copy())
+		if(world.time - aimed_at[old_target] > AI_AIM_SETTLED_MEMORY)
+			controller.remove_thing_from_blackboard_key(BB_BASIC_MOB_AIMED_AT, old_target)
+	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_AIMED_AT, target, world.time)
 
 // the rest of a volley after its first shot, one every interval, at where target was now if they're gone by then
 /datum/component/ranged_attacks/proc/schedule_follow_ups(atom/target, count, interval)
@@ -157,7 +180,7 @@
 		if(player_follow_ups_owed > 0)
 			player_follow_ups_owed-- // still gone, so a player doesn't get it as a free shot later
 		return
-	if(!firer.client && HAS_TRAIT(firer, TRAIT_FLOORED))
+	if(!firer.client && (HAS_TRAIT(firer, TRAIT_FLOORED) || firer.body_position == LYING_DOWN))
 		return // stop shooting, we've fallen down
 	var/atom/target = target_ref?.resolve()
 	if(!firer.client && target && !has_clear_shot(firer, target))
@@ -167,7 +190,7 @@
 // aimed or blind, every volley waits out the same cooldown, so firing blind on top of aimed fire doesn't double how fast we shoot
 /datum/component/ranged_attacks/proc/try_start_volley()
 	var/mob/living/firer = parent
-	if(!firer.client && HAS_TRAIT(firer, TRAIT_FLOORED))
+	if(!firer.client && (HAS_TRAIT(firer, TRAIT_FLOORED) || firer.body_position == LYING_DOWN))
 		return FALSE // knocked flat, don't shoot, kinda like a player dropping a gun
 	if(!cooldown_time)
 		return TRUE
