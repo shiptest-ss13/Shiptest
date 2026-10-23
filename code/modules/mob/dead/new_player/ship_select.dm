@@ -93,6 +93,7 @@
 			var/mob/dead/new_player/spawnee = get_lobby_mob(user)
 			if(!spawnee)
 				return
+			usr = spawnee
 
 			// Attempts the spawn itself. This checks for playtime requirements.
 			if(!spawnee.AttemptLateSpawn(selected_job, target))
@@ -152,6 +153,7 @@
 			var/mob/dead/new_player/spawnee = get_lobby_mob(user)
 			if(!spawnee)
 				return
+			usr = spawnee
 
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template, ship_loc, selected_system)
