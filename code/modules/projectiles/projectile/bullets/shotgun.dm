@@ -145,7 +145,7 @@
 	name = "four-bore shrapnel pellet"
 	damage = 13
 	armour_penetration = -10
-	bullet_identifier = "small pellet
+	bullet_identifier = "small pellet"
 	speed = BULLET_SPEED_SHOTGUN
 
 
