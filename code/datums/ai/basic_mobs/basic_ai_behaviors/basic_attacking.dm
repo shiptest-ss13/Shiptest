@@ -317,5 +317,5 @@
 			span_danger("You shove [target]!"), span_hear("You hear aggressive shuffling!"), COMBAT_MESSAGE_RANGE, list(target))
 		to_chat(target, span_userdanger("You're shoved by [living_pawn]!"))
 		log_combat(living_pawn, target, "shoved", "failing to move them")
-	ai_callout(living_pawn, AI_CALLOUT_MELEE)
+	ai_callout(living_pawn, AI_CALLOUT_MELEE, subject = target)
 	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED

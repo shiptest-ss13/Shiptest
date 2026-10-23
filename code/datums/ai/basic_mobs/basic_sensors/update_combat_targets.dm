@@ -37,7 +37,7 @@
 	AI_LOG_DECISION(controller, "update_combat_targets: [target ? "switching from [target] to [best]" : "going after [best]"]")
 	if(best == controller.blackboard[BB_BASIC_MOB_DROPPED_DOWNED])
 		controller.clear_blackboard_key(BB_BASIC_MOB_DROPPED_DOWNED)
-		ai_callout(living_pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE) // we left them for down, and they're back on their feet
+		ai_callout(living_pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE, subject = best) // we left them for down, and they're back on their feet
 	controller.set_blackboard_key(target_key, best)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
 

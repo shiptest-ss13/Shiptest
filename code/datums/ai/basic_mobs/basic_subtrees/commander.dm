@@ -57,7 +57,7 @@
 	if(!length(guards))
 		return
 	next_guard_by_commander[commander_ref] = world.time + AI_COMMANDER_GUARD_COOLDOWN
-	ai_callout(get_nearest_of(commander, guards), AI_CALLOUT_PROTECT_COMMANDER, interrupt = TRUE)
+	ai_callout(get_nearest_of(commander, guards), AI_CALLOUT_PROTECT_COMMANDER, interrupt = TRUE, subject = attacker)
 	for(var/mob/living/guard as anything in guards)
 		AI_LOG_DECISION(guard.ai_controller, "[attacker] attacked [commander], going after them")
 		guard.ai_controller.learn_of_target(attacker, attacker_turf, AI_LEARNED_SHOT) // seen for ourselves, so first hand

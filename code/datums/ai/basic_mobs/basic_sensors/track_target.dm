@@ -65,7 +65,7 @@
 	// news, unless we've seen them lately, like someone popping back out of cover, or we switched to someone else and back
 	var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], target)
 	if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
-		ai_callout(controller.pawn, AI_CALLOUT_SPOTTED) // nobody told us about them, so it's news to the group
+		ai_callout(controller.pawn, AI_CALLOUT_SPOTTED, subject = target) // nobody told us about them, so it's news to the group
 		AI_LOG_DECISION(controller, "track_target: spotted [target]")
 		if(!AI_RECENTLY_SAW_ENEMY(controller, 5 SECONDS))
 			controller.set_blackboard_key(BB_BASIC_MOB_HOLD_FIRE_UNTIL, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
@@ -76,7 +76,7 @@
 		// we stayed on them while they were down, as those who finish people off do, and they're back up
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
-		ai_callout(controller.pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE)
+		ai_callout(controller.pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE, subject = target)
 	else if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)

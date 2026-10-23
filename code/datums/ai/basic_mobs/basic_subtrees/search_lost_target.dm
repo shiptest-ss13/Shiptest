@@ -154,8 +154,8 @@
 		return // whoever told us has already said something
 	switch(style)
 		if(AI_SEARCH_STYLE_INVESTIGATE)
-			ai_callout(controller.pawn, controller.blackboard[BB_BASIC_MOB_HEARD_TARGET] ? AI_CALLOUT_HEARD_GUNFIRE : AI_CALLOUT_LOST_THEM)
+			ai_callout(controller.pawn, controller.blackboard[BB_BASIC_MOB_HEARD_TARGET] ? AI_CALLOUT_HEARD_GUNFIRE : AI_CALLOUT_LOST_THEM, subject = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])
 		if(AI_SEARCH_STYLE_HOLD)
 			ai_callout(controller.pawn, AI_CALLOUT_HOLDING)
 		if(AI_SEARCH_STYLE_SUPPRESS)
-			ai_callout(controller.pawn, AI_CALLOUT_SUPPRESSING)
+			ai_callout(controller.pawn, AI_CALLOUT_SUPPRESSING, subject = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])

@@ -71,7 +71,13 @@
 	if(!single_loads || reloading || shots_left >= magazine_size)
 		return
 	// a couple of seconds after our last shot, we start feeding rounds in between fights
-	var/loading_time = world.time - max(topped_off_since, last_fired_time + 2 SECONDS)
+	// dont top up between volleys in a fight! looks weird and leads to seemingly infinite ammo situations
+	var/mob/living/basic/basic_mob = parent
+	var/datum/ai_controller/controller = basic_mob.ai_controller
+	var/fight_ended = 0
+	if(controller && !isnull(controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]))
+		fight_ended = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME] + AI_FIGHT_MEMORY
+	var/loading_time = world.time - max(topped_off_since, last_fired_time + 2 SECONDS, fight_ended)
 	if(loading_time <= 0)
 		return
 	var/rounds = min(magazine_size - shots_left, round(loading_time / single_load_time))

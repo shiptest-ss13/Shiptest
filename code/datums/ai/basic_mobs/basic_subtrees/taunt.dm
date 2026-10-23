@@ -9,4 +9,4 @@
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_TAUNT])
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_TAUNT, world.time + taunt_interval)
-	ai_callout(controller.pawn, AI_CALLOUT_TAUNT)
+	ai_callout(controller.pawn, AI_CALLOUT_TAUNT, subject = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])

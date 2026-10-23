@@ -76,7 +76,7 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION, world.time + (flanking ? flank_duration : hold_duration))
 	controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
 	if(flanking)
-		ai_callout(controller.pawn, AI_CALLOUT_FLANKING)
+		ai_callout(controller.pawn, AI_CALLOUT_FLANKING, subject = target)
 		controller.queue_behavior(/datum/ai_behavior/alert_allies, target_key)
 	return flanking
 

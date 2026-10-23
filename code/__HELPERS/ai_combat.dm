@@ -118,7 +118,7 @@
 		return
 	next_notice_by_reloader[reloader_ref] = world.time + AI_ENEMY_RELOAD_NOTICE_COOLDOWN
 	var/mob/living/basic/spotter = get_nearest_of(reloader, noticed)
-	ai_callout(spotter, AI_CALLOUT_ENEMY_RELOADING) // notify our pals too
+	ai_callout(spotter, AI_CALLOUT_ENEMY_RELOADING, subject = reloader) // notify our pals too
 	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(spotter))
 		if(!(ally in noticed) && ally.ai_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == reloader)
 			noticed += ally

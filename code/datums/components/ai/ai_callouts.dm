@@ -126,9 +126,38 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	"%WHISTLE" = list('sound/misc/trenchwhistle.ogg', 80, 4, 15),
 ))
 
-/proc/ai_callout(atom/speaker, event, last_words = FALSE, interrupt = FALSE)
+/proc/ai_callout(atom/speaker, event, last_words = FALSE, interrupt = FALSE, atom/subject)
 	var/datum/component/ai_callouts/callouts = speaker?.GetComponent(/datum/component/ai_callouts)
-	return callouts?.speak_about(event, last_words, interrupt)
+	return callouts?.speak_about(event, last_words, interrupt, subject = subject)
+
+/proc/ai_callout_adjective(atom/subject)
+	var/mob/living/carbon/human/person = subject
+	if(!istype(person) || QDELETED(person) || !person.generic_adjective)
+		return null
+	var/hides_face = (person.wear_mask && (person.wear_mask.flags_inv & HIDEFACE)) || (person.head && (person.head.flags_inv & HIDEFACE))
+	if(hides_face && (person.check_obscured_slots() & ITEM_SLOT_ICLOTHING))
+		return null
+	return lowertext(person.generic_adjective)
+
+/proc/ai_callout_species(atom/subject)
+	var/mob/living/carbon/human/person = subject
+	if(!istype(person) || QDELETED(person) || !person.dna?.species)
+		return null
+	return lowertext(format_text(person.dna.species.name))
+
+/proc/ai_callout_descriptors(atom/subject)
+	return list(
+		"%ADJ" = ai_callout_adjective(subject),
+		"%SPECIES" = ai_callout_species(subject),
+	)
+
+/proc/ai_callout_missing_descriptor(line, list/descriptors)
+	if(!istext(line) || !findtext(line, "%"))
+		return FALSE
+	for(var/marker in descriptors)
+		if(!descriptors[marker] && findtext(line, marker))
+			return TRUE
+	return FALSE
 
 /datum/component/ai_callouts
 	var/callout_set
@@ -269,7 +298,7 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 		return
 	var/mob/living/victim = hit_target
 	if(victim.stat == CONSCIOUS)
-		speak_about(AI_CALLOUT_MELEE) // still up, so something to go with the blow
+		speak_about(AI_CALLOUT_MELEE, subject = victim) // still up, so something to go with the blow
 		return
 	call_out_downed(WEAKREF(hit_target), REF(hit_target))
 
@@ -284,11 +313,11 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	last_downed_callout = callout
 	if(victim_stat == DEAD)
 		watch_downed_victim(null)
-		speak_about(AI_CALLOUT_TARGET_KILLED, interrupt = TRUE) // often just after we called them down, so don't let that silence it
+		speak_about(AI_CALLOUT_TARGET_KILLED, interrupt = TRUE, subject = victim) // often just after we called them down, so don't let that silence it
 		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR) // and if they were the last of them, we say so
 	else
 		watch_downed_victim(victim)
-		speak_about(AI_CALLOUT_TARGET_DOWN)
+		speak_about(AI_CALLOUT_TARGET_DOWN, subject = victim)
 		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR, victim_ref) // those of us who leave the downed be are done with them too, unless they get back up
 
 /proc/ai_queue_fight_over_check(atom/speaker, event)
@@ -349,7 +378,7 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 		return
 	for(var/datum/component/ai_callouts/witness as anything in list(src) + get_allies_in_earshot())
 		var/mob/living/witness_mob = witness.parent
-		if(witness_mob.stat == CONSCIOUS && ai_can_see(witness_mob, victim, witness.hearing_range) && witness.speak_about(AI_CALLOUT_GETTING_UP, interrupt = TRUE))
+		if(witness_mob.stat == CONSCIOUS && ai_can_see(witness_mob, victim, witness.hearing_range) && witness.speak_about(AI_CALLOUT_GETTING_UP, interrupt = TRUE, subject = victim))
 			return
 
 /datum/component/ai_callouts/proc/on_downed_victim_died(mob/living/victim)
@@ -418,19 +447,24 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 			listener.create_chat_message(corpse, /datum/language/galactic_common, heard_line, spans + list("italics"))
 
 // answering is for answering an ally, which we do even if we've just said something. direction goes where the line says %DIRECTION
-/datum/component/ai_callouts/proc/speak_about(event, last_words = FALSE, interrupt = FALSE, answering = FALSE, direction)
+// subject is who it's about, if anyone in particular, so lines with %ADJ or %SPECIES can say what they look like, and are left out if we can't tell
+/datum/component/ai_callouts/proc/speak_about(event, last_words = FALSE, interrupt = FALSE, answering = FALSE, direction, atom/subject)
 	var/mob/living/basic/basic_mob = parent
 	if(basic_mob.stat != CONSCIOUS || basic_mob.client)
 		return FALSE
-	var/line = pick_line(event, last_words, interrupt, answering)
+	var/list/descriptors = ai_callout_descriptors(subject)
+	var/line = pick_line(event, last_words, interrupt, answering, descriptors)
 	if(!line)
 		return FALSE
 	var/is_commander = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_COMMANDER]
 	var/sounds_alarm = is_commander && event == AI_CALLOUT_RAISING_ALARM && world.time >= basic_mob.ai_controller.blackboard[BB_BASIC_MOB_NEXT_ALARM_SOUNDED]
 	if(is_commander && event == AI_CALLOUT_RAISING_ALARM)
-		line = get_alarm_line(event, carries_alarm = sounds_alarm) || line
+		line = get_alarm_line(event, carries_alarm = sounds_alarm, descriptors = descriptors) || line
 	if(direction)
 		line = replacetext(line, "%DIRECTION", direction)
+	for(var/marker in descriptors)
+		if(descriptors[marker])
+			line = replacetext(line, marker, descriptors[marker])
 	line = replacetext(line, "%PLANET", pick(GLOB.major_planets))
 	if(interrupt)
 		last_interrupt_time = world.time
@@ -467,11 +501,11 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	return TRUE
 
 // one of our lines for event that carries an alarm, like with a whistle in it, see GLOB.ai_callout_sounds, or if carries_alarm is FALSE, one that doesn't. Null if we've none
-/datum/component/ai_callouts/proc/get_alarm_line(event, carries_alarm = TRUE)
+/datum/component/ai_callouts/proc/get_alarm_line(event, carries_alarm = TRUE, list/descriptors)
 	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
 	var/list/fitting_lines = list()
 	for(var/candidate in callouts.lines[event])
-		if(!istext(candidate))
+		if(!istext(candidate) || ai_callout_missing_descriptor(candidate, descriptors))
 			continue
 		var/has_alarm = FALSE
 		for(var/marker in GLOB.ai_callout_sounds)
@@ -547,7 +581,7 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	var/turf/their_turf = get_turf(asking_mob)
 	if(!known_turf || !their_turf || known_turf.z != their_turf.z || get_dist(their_turf, known_turf) < 3 || (!isnull(their_known_time) && known_time <= their_known_time))
 		return speak_about(AI_CALLOUT_NO_SIGN, answering = TRUE) // nothing they don't already know
-	if(!speak_about(AI_CALLOUT_LAST_SEEN, answering = TRUE, direction = dir2text(get_dir(their_turf, known_turf))))
+	if(!speak_about(AI_CALLOUT_LAST_SEEN, answering = TRUE, direction = dir2text(get_dir(their_turf, known_turf)), subject = target))
 		return FALSE
 	their_controller.learn_of_target(target, known_turf, AI_LEARNED_TOLD) // so they go where we said, not somewhere else
 	return TRUE
@@ -556,8 +590,8 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 /datum/component/ai_callouts/proc/answer_reloading()
 	return sees_target() && speak_about(AI_CALLOUT_COVERING, answering = TRUE)
 
-// what we'd say about event right now, or null if we'd keep quiet
-/datum/component/ai_callouts/proc/pick_line(event, last_words = FALSE, interrupt = FALSE, answering = FALSE)
+// what we'd say about event right now, or null if we'd keep quiet. Lines with %ADJ or %SPECIES only if descriptors, from ai_callout_descriptors(), has it for who it's about
+/datum/component/ai_callouts/proc/pick_line(event, last_words = FALSE, interrupt = FALSE, answering = FALSE, list/descriptors)
 	// what we'd only say about people
 	var/static/list/about_people = list(
 		AI_CALLOUT_SPOTTED = TRUE,
@@ -605,7 +639,15 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 		return null // someone in earshot's just said it
 	if(!prob(isnull(chance) ? callouts.default_chance : chance))
 		return null
-	return islist(lines) ? pick_weight_recursive(lines) : lines
+	var/line = islist(lines) ? pick_weight_recursive(lines) : lines
+	// one that says what they look like, when we can't tell, so another. Lines can be weighted and nested, so we pick again rather than filter
+	for(var/attempt in 1 to 5)
+		if(!islist(lines) || !ai_callout_missing_descriptor(line, descriptors))
+			break
+		line = pick_weight_recursive(lines)
+	if(ai_callout_missing_descriptor(line, descriptors))
+		return null
+	return line
 
 // actually says line, in our voice, or whispers it if it's our last words
 /datum/component/ai_callouts/proc/say_line(line, last_words = FALSE)
