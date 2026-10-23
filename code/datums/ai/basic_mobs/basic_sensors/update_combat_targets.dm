@@ -102,6 +102,17 @@
 			return candidate
 	return null
 
+/datum/ai_sensor/update_combat_targets/proc/get_nearest_clear_shot(mob/living/living_pawn, list/candidates, atom/exclude)
+	var/atom/best
+	var/best_distance = INFINITY
+	for(var/atom/candidate as anything in candidates)
+		var/candidate_distance = get_dist(living_pawn, candidate)
+		if(candidate == exclude || candidate_distance >= best_distance || !has_clear_shot(living_pawn, candidate))
+			continue
+		best = candidate
+		best_distance = candidate_distance
+	return best
+
 /datum/ai_sensor/update_combat_targets/proc/pick_target(datum/ai_controller/controller, atom/target, target_unseen, list/candidates, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
 	var/target_down = target && ai_is_downed(target)
@@ -130,8 +141,13 @@
 			standing += candidate
 	var/atom/nearest = length(standing) ? get_nearest_of(living_pawn, standing) : null
 	if(target && !target_down && !target_unseen)
-		if(nearest && nearest != target && get_dist(living_pawn, nearest) + closer_switch_margin <= get_dist(living_pawn, target))
-			return nearest // someone's come a good deal closer than who we're fighting
+		var/target_shootable = fights_up_close || has_clear_shot(living_pawn, target)
+		if(!target_shootable)
+			var/atom/open_shot = get_nearest_clear_shot(living_pawn, standing, target)
+			if(open_shot)
+				return open_shot
+		if(nearest && nearest != target && get_dist(living_pawn, nearest) + closer_switch_margin <= get_dist(living_pawn, target) && (!target_shootable || has_clear_shot(living_pawn, nearest)))
+			return nearest
 		return target
 	if(nearest)
 		return nearest

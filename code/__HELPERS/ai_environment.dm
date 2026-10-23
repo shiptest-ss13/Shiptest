@@ -111,6 +111,9 @@
 	for(var/obj/structure/hazard/hazard in spot)
 		if(ai_harmful_hazard(hazard))
 			return TRUE
+	for(var/obj/item/mine/mine in spot)
+		if(mine.armed && !mine.invisibility)
+			return TRUE
 	return FALSE
 
 // special cases for ruin hazards
