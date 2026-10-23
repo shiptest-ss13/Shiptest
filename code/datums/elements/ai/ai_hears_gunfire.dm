@@ -90,7 +90,7 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 	AI_LOG_DECISION(controller, "ai_hears_gunfire: heard [shooter] shooting at [origin], [round(heard_distance)] tiles away by ear")
 	// we only roughly know where it came from, so we'll have a look around there once we arrive
 	var/inaccuracy = round(heard_distance / 4)
-	var/turf/guess = guess_sound_origin(origin, inaccuracy, somewhere_to_stand = TRUE)
+	var/turf/guess = guess_sound_origin(origin, inaccuracy, somewhere_to_stand = TRUE, listener = listener)
 	if(controller.learn_of_target(shooter, guess, AI_LEARNED_HEARD))
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_SWEEP_CENTER, guess)

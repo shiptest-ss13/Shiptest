@@ -17,6 +17,7 @@
 	flashlight_chance = 50
 	throw_back_chance = 10
 	armor_base = /obj/item/clothing/suit/armor/vest/syndie
+	aim_spread = 3
 
 /mob/living/basic/human/ramzi/space
 	in_hardsuit = TRUE

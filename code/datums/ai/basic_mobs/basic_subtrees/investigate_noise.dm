@@ -17,13 +17,14 @@
 	if(world.time >= controller.blackboard[BB_BASIC_MOB_NOISE_UNTIL])
 		forget_noise(controller)
 		return
-	if(get_dist(controller.pawn, noise_turf) > arrive_distance)
+	var/no_way_there = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == noise_turf
+	if(get_dist(controller.pawn, noise_turf) > arrive_distance && !no_way_there)
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_NOISE_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING
 	var/look_until = controller.blackboard[BB_BASIC_MOB_NOISE_LOOK_UNTIL]
 	if(isnull(look_until))
 		controller.set_blackboard_key(BB_BASIC_MOB_NOISE_LOOK_UNTIL, world.time + look_time)
-		controller.pawn.setDir(pick(GLOB.cardinals))
+		controller.pawn.setDir(no_way_there ? get_dir(controller.pawn, noise_turf) : pick(GLOB.cardinals))
 		return SUBTREE_RETURN_FINISH_PLANNING
 	if(world.time < look_until)
 		if(prob(25))
@@ -50,7 +51,9 @@
 		leash = AI_NOISE_LEASH_DISTANCE
 	if(home && leash > 0 && get_dist(home, origin) > leash)
 		return // too far from where we keep watch
-	var/turf/guess = guess_sound_origin(origin, clamp(round(heard_distance / 4), 1, 3), somewhere_to_stand = TRUE)
+	if(ai_can_see(listener, origin))
+		return // we can see the original source spot and didnt see anyone, so don't bother
+	var/turf/guess = guess_sound_origin(origin, clamp(round(heard_distance / 4), 1, 3), somewhere_to_stand = TRUE, listener = listener)
 	AI_LOG_DECISION(controller, "investigate_noise: heard something around [guess], going to look")
 	controller.set_blackboard_key(BB_BASIC_MOB_NOISE_TURF, guess)
 	controller.set_blackboard_key(BB_BASIC_MOB_NOISE_UNTIL, world.time + AI_NOISE_MEMORY)

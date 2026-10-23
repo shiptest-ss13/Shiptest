@@ -42,12 +42,17 @@
 		if(!isnull(get_heard_distance(source, ally, range, wall_penalty, through_air = FALSE))) // over the radio, so the air doesn't matter
 			. += ally
 
-// fuzz sound origin so they dont always home in the direct location. can be in a wall but thats intentional
-/proc/guess_sound_origin(turf/origin, inaccuracy, somewhere_to_stand = FALSE)
+// fuzz sound origin so they dont always home in the direct location.
+/proc/guess_sound_origin(turf/origin, inaccuracy, somewhere_to_stand = FALSE, atom/listener)
 	if(inaccuracy < 1)
 		return origin
+	var/origin_distance = listener ? get_dist(listener, origin) : 0
 	for(var/attempt in 1 to 5)
 		var/turf/guess = locate(origin.x + rand(-inaccuracy, inaccuracy), origin.y + rand(-inaccuracy, inaccuracy), origin.z)
-		if(guess && (!somewhere_to_stand || (isopenturf(guess) && !guess.is_blocked_turf(TRUE))))
+		if(!guess)
+			continue
+		if(listener && get_dist(listener, guess) < origin_distance && ai_can_see(listener, guess))
+			continue // if we can see the guessed spot dont bother guessing
+		if(!somewhere_to_stand || (isopenturf(guess) && !guess.is_blocked_turf(TRUE)))
 			return guess
 	return origin
