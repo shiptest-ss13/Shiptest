@@ -61,7 +61,7 @@
 	if(!entrenched)
 		return
 	// we can't fight them on even terms, so get out of their sight and hold rather than standing in their line of fire
-	var/turf/hiding_spot = find_hiding_spot(controller.pawn, their_turf, search_range)
+	var/turf/hiding_spot = find_hiding_spot(controller.pawn, their_turf, search_range, out_of_sight = TRUE)
 	if(!hiding_spot)
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, hiding_spot)

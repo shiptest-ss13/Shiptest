@@ -63,7 +63,7 @@
 				return
 			if(our_turf == controller.blackboard[BB_BASIC_MOB_AMBUSH_TURF])
 				// they can see us where we're waiting, so somewhere else, keeping how long we've left
-				var/turf/new_wait_turf = find_hiding_spot(controller.pawn, their_turf, search_range, exclude = our_turf)
+				var/turf/new_wait_turf = find_hiding_spot(controller.pawn, their_turf, search_range, exclude = our_turf, out_of_sight = TRUE)
 				if(!new_wait_turf)
 					AI_LOG_DECISION(controller, "ambush_dug_in: [target] can see us, and there's nowhere else to wait, so going for them")
 					end_ambush(controller)
@@ -90,7 +90,7 @@
 		return SUBTREE_RETURN_FINISH_PLANNING
 	if(!cover && try_group_charge(controller, target))
 		return // a spearhead of ours is already going for them, so rather than hiding, we're in with them
-	var/turf/wait_turf = find_hiding_spot(controller.pawn, their_turf, search_range)
+	var/turf/wait_turf = find_hiding_spot(controller.pawn, their_turf, search_range, out_of_sight = TRUE)
 	if(!wait_turf)
 		return // nowhere to wait out of their sight, so we take our chances
 	AI_LOG_DECISION(controller, "ambush_dug_in: [target]'s [cover ? "dug in behind [cover]" : "armed"], waiting for them at [wait_turf]")

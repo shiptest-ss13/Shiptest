@@ -120,7 +120,7 @@
 
 // where we wait for them, out of their sight, so we can jump them when they come out
 /datum/ai_planning_subtree/wait_out_unreachable/proc/find_wait_spot(datum/ai_controller/controller, atom/target, turf/their_turf)
-	return find_hiding_spot(controller.pawn, their_turf, search_range)
+	return find_hiding_spot(controller.pawn, their_turf, search_range, out_of_sight = TRUE)
 
 // forget where we were waiting them out and since when
 /datum/ai_planning_subtree/wait_out_unreachable/proc/forget_wait(datum/ai_controller/controller)

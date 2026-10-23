@@ -505,3 +505,8 @@
 	var/atom/target = ai_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target) && ai_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		face_atom(target)
+
+/mob/living/basic/human/PushAM(atom/movable/pushed_thing, force = move_force)
+	if(!client && ai_controller && isobj(pushed_thing) && !ai_can_push_aside(src, pushed_thing, get_dir(src, pushed_thing)))
+		return
+	return ..()

@@ -15,6 +15,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
 	weapon_drop_chance = 0
 	mob_species = /datum/species/vox
+	is_commander = TRUE // runs the lodge
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
 	mob_species = /datum/species/vox
@@ -26,4 +27,3 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	back = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/storage/box/ammo/pulseslug = 2)
-

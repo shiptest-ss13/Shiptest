@@ -190,3 +190,23 @@
 // flipped tables still inherit the climbable = TRUE var for some reason, so we exclude that from the AI's climbing logic.
 /proc/ai_can_climb(atom/thing)
 	return HAS_TRAIT(thing, TRAIT_CLIMBABLE) && !istype(thing, /obj/structure/barricade/directional/flippedtable)
+
+/proc/ai_can_push_aside(atom/movable/mover, obj/thing, push_dir)
+	var/mob/living/basic/human/pusher = mover
+	if(!istype(pusher) || pusher.client || !pusher.ai_controller || ISDIAGONALDIR(push_dir))
+		return FALSE // no pushing on a diagonal
+	if(thing.anchored || !thing.density || (thing.flags_1 & ON_BORDER_1) || pusher.move_force < thing.move_resist * MOVE_FORCE_PUSH_RATIO)
+		return FALSE
+	var/turf/beyond = get_step(thing, push_dir)
+	if(!beyond || beyond.is_blocked_turf(FALSE, thing) || ai_is_doorway(beyond))
+		return FALSE // nowhere for it to go, or it'd jam the way through
+	// check for room, don't jam it!
+	var/turf/one_side = get_step(beyond, turn(push_dir, 90))
+	var/turf/other_side = get_step(beyond, turn(push_dir, -90))
+	return (one_side && !one_side.is_blocked_turf(TRUE)) || (other_side && !other_side.is_blocked_turf(TRUE))
+
+/proc/ai_can_open_closet(atom/movable/mover, obj/structure/closet/closet)
+	var/mob/living/basic/human/opener = mover
+	if(!istype(opener) || opener.client || !opener.ai_controller || istype(closet, /obj/structure/closet/cardboard))
+		return FALSE // boxes are for investigate_box to find
+	return closet.density && !closet.opened && !closet.dense_when_open && !closet.wall_mounted && !closet.welded && !closet.locked

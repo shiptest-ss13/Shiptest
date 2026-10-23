@@ -60,6 +60,8 @@
 			var/turf/new_turf = get_turf(movable_pawn)
 			if(new_turf == old_turf && bash_flimsy_thing_in_the_way(controller, movable_pawn, next_step))
 				continue // swatting it aside, so we wait for that rather than looking for another way round
+			if(new_turf == old_turf && try_open_closet(controller, movable_pawn, next_step))
+				continue // open now, so we walk through on our next step
 			if(new_turf == old_turf && try_climb(controller, movable_pawn, next_step))
 				continue // over whatever's in the way, like a player would, rather than looking for another way round
 			if(new_turf == old_turf && ask_ally_to_make_way(controller, movable_pawn, next_step))
@@ -79,8 +81,8 @@
 						if(blocker.density && blocker != controller.current_movement_target)
 							blocked_turf = next_step
 							break
-			else if(length(controller.movement_path) >= 2 && new_turf.Adjacent(controller.movement_path[2]))
-				controller.movement_path.Cut(1,2)
+			else if(length(controller.movement_path) >= 2 && new_turf.Adjacent(controller.movement_path[2]) && !new_turf.LinkBlockedWithAccess(controller.movement_path[2], movable_pawn, controller.get_access()))
+				controller.movement_path.Cut(1,2) // ended up beside the step after, so skip to it, but only if we could step there as our pathfinding would judge it. Adjacent() lets reaching over a railing or platform edge count
 		else
 			generate_path = TRUE
 
@@ -216,6 +218,26 @@
 	controller.movement_cooldown += step_delay - controller.movement_delay // the extra a diagonal takes
 	return TRUE
 
+/datum/ai_movement/jps/proc/try_open_closet(datum/ai_controller/controller, atom/movable/movable_pawn, turf/next_step)
+	if(get_dist(movable_pawn, next_step) != 1)
+		return FALSE
+	for(var/obj/structure/closet/closet in next_step)
+		if(!ai_can_open_closet(movable_pawn, closet) || !closet.open(movable_pawn))
+			continue
+		AI_LOG_DECISION(controller, "movement: opened [closet] at [AREACOORD(closet)] in our way")
+		controller.movement_cooldown = world.time + CLICK_CD_MELEE // a moment to get it open, as a player clicking it would
+		return TRUE
+	return FALSE
+
+/datum/ai_movement/jps/proc/get_corner_climb_params(obj/climbed_thing, step_dir)
+	var/icon_x = ICON_SIZE_X / 2
+	var/icon_y = ICON_SIZE_Y / 2
+	if(step_dir & (EAST|WEST))
+		icon_x = (climbed_thing.dir & WEST) ? 0 : ICON_SIZE_X
+	else
+		icon_y = (climbed_thing.dir & SOUTH) ? 0 : ICON_SIZE_Y
+	return list2params(list(ICON_X = "[icon_x]", ICON_Y = "[icon_y]"))
+
 // climbs whatever's stopping us stepping onto next_step, if we can, the way a player does. TRUE if we've started
 /datum/ai_movement/jps/proc/try_climb(datum/ai_controller/controller, atom/movable/movable_pawn, turf/next_step)
 	if(!controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] || !isliving(movable_pawn) || get_dist(movable_pawn, next_step) != 1)
@@ -236,7 +258,10 @@
 		controller.set_blackboard_key(BB_BASIC_MOB_CLIMBING, climbed_thing)
 		controller.set_blackboard_key(BB_BASIC_MOB_CLIMBING_SINCE, world.time)
 	AI_LOG_DECISION(controller, "movement: climbing [climbed_thing] at [AREACOORD(climbed_thing)]")
-	SEND_SIGNAL(climbed_thing, COMSIG_CLICK_CTRL_SHIFT, climber)
+	var/climb_params
+	if(ISDIAGONALDIR(climbed_thing.dir) && climbed_thing.loc == climber.loc)
+		climb_params = get_corner_climb_params(climbed_thing, get_dir(climber, next_step))
+	SEND_SIGNAL(climbed_thing, COMSIG_CLICK_CTRL_SHIFT, climber, climb_params)
 	controller.movement_cooldown = world.time + 0.5 SECONDS // checked on again soon, and held up while the climb's going by the check above
 	return TRUE
 

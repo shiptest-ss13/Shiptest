@@ -187,6 +187,13 @@
 ///Group boxes moving together as a single group
 #define AI_BOX_GROUP_RANGE 3
 
+///How long AI holding a post stays off it after breaking from it, for someone right on top of it or coming round where it can't cover from, kept up for as long as that lasts
+#define AI_POST_BREAK_TIME (8 SECONDS)
+///How much further than its post_radius AI that's broken from its post can go
+#define AI_POST_BREAK_EXTRA_RADIUS 3
+///Whether controller's mob has broken from the post it holds, for now
+#define AI_POST_BROKEN(controller) (world.time < controller.blackboard[BB_BASIC_MOB_POST_BROKEN_UNTIL])
+
 // What can be wrong with where a mob is stood
 ///The air's no good, or there's next to none of it
 #define AI_ENVIRONMENT_UNBREATHABLE "unbreathable"

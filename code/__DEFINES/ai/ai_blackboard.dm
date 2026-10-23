@@ -171,8 +171,12 @@
 #define BB_BASIC_MOB_HOME_TURF "BB_basic_home_turf"
 ///This mob's own leash, how far from home it chases someone before letting them go, in place of its AI's. 0 for none
 #define BB_BASIC_MOB_LEASH_DISTANCE "BB_basic_leash_distance"
-///For those holding a post with holds_post, how far from home they'll go to take cover or get a shot, and never further
+///For those holding a post with holds_post, how far from home they'll go to take cover or get a shot, unless flanked or approached
 #define BB_BASIC_MOB_POST_RADIUS "BB_basic_post_radius"
+///Until when we're off the post we hold, as someone's right on us or we've been flanked
+#define BB_BASIC_MOB_POST_BROKEN_UNTIL "BB_basic_post_broken_until"
+///When we next look for cover on our post from whoever's shooting us in the open, to see if they've flanked it
+#define BB_BASIC_MOB_NEXT_FLANK_CHECK "BB_basic_next_flank_check"
 ///Those who led us further from home than our leash, so we don't instantly go after them again
 #define BB_BASIC_MOB_LEASHED_OFF "BB_basic_leashed_off"
 ///How far from home they have to come back for us to go after them again, our leash when we let them go
@@ -182,6 +186,14 @@
 #define BB_BASIC_MOB_HOME_WAYPOINT_SINCE "BB_basic_home_waypoint_since"
 ///How far on towards home we picked BB_BASIC_MOB_HOME_WAYPOINT, shorter each time we couldn't get to one
 #define BB_BASIC_MOB_HOME_WAYPOINT_HOP "BB_basic_home_waypoint_hop"
+///Spots we left on our way out from home, oldest first, that we follow back the way we came, and when we last left one
+#define BB_BASIC_MOB_HOME_TRAIL "BB_basic_home_trail"
+#define BB_BASIC_MOB_HOME_TRAIL_NOTED_AT "BB_basic_home_trail_noted_at"
+///The spot back along our trail we're heading for, and since when
+#define BB_BASIC_MOB_HOME_TRAIL_NEXT "BB_basic_home_trail_next"
+#define BB_BASIC_MOB_HOME_TRAIL_SINCE "BB_basic_home_trail_since"
+///Heading back home, so don't leave breadcrumb trail
+#define BB_BASIC_MOB_HEADING_HOME "BB_basic_heading_home"
 
 // Cover
 ///Where we're taking cover. While set, the cover subtree is in charge of where we stand

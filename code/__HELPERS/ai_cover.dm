@@ -112,17 +112,19 @@
 		locate(min(center.x + range, world.maxx), min(center.y + range, world.maxy), center.z)
 	)
 
-/proc/find_hiding_spot(atom/movable/mover, turf/danger, range = 3, turf/exclude)
+// out_of_sight for hiding where they can't see us too, not just shoot us, as some things stop shots but not eyes, like a smashed airlock's frame or a window
+/proc/find_hiding_spot(atom/movable/mover, turf/danger, range = 3, turf/exclude, out_of_sight = FALSE)
 	var/turf/our_turf = get_turf(mover)
 	if(!our_turf)
 		return null
+	var/list/seen_from_danger = out_of_sight ? view(get_dist(danger, our_turf) + range, danger) : null
 	var/turf/best_turf
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in ai_turfs_in_range(our_turf, range))
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate == exclude || candidate_distance >= best_distance || !ai_can_take_spot(mover, candidate))
 			continue
-		if(!is_spot_safe_from(candidate, danger) || !can_walk_straight_to(mover, candidate))
+		if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && (candidate in seen_from_danger)) || !can_walk_straight_to(mover, candidate))
 			continue
 		best_turf = candidate
 		best_distance = candidate_distance
@@ -165,12 +167,19 @@
 /proc/ai_can_take_spot(mob/living/mover, turf/spot)
 	if(is_ai_swimming_water(spot) && !(mover.movement_type & FLYING))
 		return FALSE // no swimming in the pool!!!!
-	var/post_radius = mover.ai_controller?.blackboard[BB_BASIC_MOB_POST_RADIUS]
+	var/post_radius = ai_post_radius(mover.ai_controller)
 	if(!isnull(post_radius))
 		var/turf/post = mover.ai_controller.blackboard[BB_BASIC_MOB_HOME_TURF]
 		if(post && get_dist(post, spot) > post_radius)
 			return FALSE
 	return !spot.is_blocked_turf(TRUE, mover) && !ai_is_doorway(spot) && ai_can_stand_on(mover, spot)
+
+// how far from a post a post holder can go
+/proc/ai_post_radius(datum/ai_controller/controller)
+	var/post_radius = controller?.blackboard[BB_BASIC_MOB_POST_RADIUS]
+	if(isnull(post_radius) || !AI_POST_BROKEN(controller))
+		return post_radius
+	return post_radius + AI_POST_BREAK_EXTRA_RADIUS
 
 /proc/get_ai_fight_range(datum/ai_controller/controller)
 	if(world.time < controller.blackboard[BB_BASIC_MOB_PRESSING_UNTIL])

@@ -166,22 +166,22 @@
 		if(cover_between(their_turf, candidate) || ai_shield_facing(target, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue
 		var/atom/blocker = get_shot_blocker(candidate, their_turf, pass_flags = pass_flags)
-		if(blocker)
-			if(!ai_is_door(blocker))
-				continue
-			var/round_the_back = (candidate.x - their_turf.x) * from_x + (candidate.y - their_turf.y) * from_y <= 0
-			if(!round_the_back)
-				continue
-			// and there's a way round that doesn't go right past them, like when they're in an airlock with doors both ends
-			reachable_without_passing_them ||= get_reachable_turfs(our_turf, their_turf, max_flank_distance * 2, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
+		if(blocker && !ai_is_door(blocker))
+			continue
+		var/round_the_back = (candidate.x - their_turf.x) * from_x + (candidate.y - their_turf.y) * from_y <= 0
+		if(blocker && !round_the_back)
+			continue
+		if(round_the_back)
+			// and there's a way round that doesn't go right past them, like when they're in an airlock with doors both ends. Clear shots too, as the only way there might be through them
+			reachable_without_passing_them ||= get_reachable_turfs(our_turf, their_turf, minimum_distance, max_flank_distance * 2, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 			if(!reachable_without_passing_them[candidate])
 				continue
 		best_turf = candidate
 		best_distance = candidate_distance
 	return best_turf
 
-// every spot we could walk to from start within max_steps without going through avoid, doors and all, as list(turf = TRUE)
-/datum/ai_planning_subtree/flank/proc/get_reachable_turfs(turf/start, turf/avoid, max_steps, can_cross_space = FALSE)
+// every spot we could walk to from start within max_steps without going within 2 tiles or through avoid turfs, doors and all, as list(turf = TRUE)
+/datum/ai_planning_subtree/flank/proc/get_reachable_turfs(turf/start, turf/avoid, avoid_range, max_steps, can_cross_space = FALSE)
 	var/list/reachable = list()
 	reachable[start] = TRUE
 	var/list/frontier = list(start)
@@ -190,7 +190,7 @@
 		for(var/turf/from_turf as anything in frontier)
 			for(var/direction in GLOB.cardinals)
 				var/turf/next_turf = get_step(from_turf, direction)
-				if(!next_turf || reachable[next_turf] || next_turf == avoid || !walkable_for_flank(next_turf, can_cross_space))
+				if(!next_turf || reachable[next_turf] || get_dist(next_turf, avoid) <= avoid_range || !walkable_for_flank(next_turf, can_cross_space))
 					continue
 				reachable[next_turf] = TRUE
 				next_frontier += next_turf

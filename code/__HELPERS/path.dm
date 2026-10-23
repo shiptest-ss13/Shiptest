@@ -400,6 +400,8 @@
 	var/reverse_dir = get_dir(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)
 		if(!iter_object.CanAStarPass(ID, reverse_dir, requester))
+			if(ai_can_push_aside(requester, iter_object, actual_dir))
+				continue
 			if(!path_can_climb_over(iter_object, climbing, search) || (climbed_over && climbed_over != iter_object))
 				return TRUE
 			climbed_over = iter_object

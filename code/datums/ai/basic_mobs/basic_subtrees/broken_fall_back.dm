@@ -67,4 +67,4 @@
 				best_distance = candidate_distance
 		if(best_turf)
 			return best_turf
-	return find_hiding_spot(living_pawn, threat_turf, hide_range)
+	return find_hiding_spot(living_pawn, threat_turf, hide_range, out_of_sight = TRUE)
