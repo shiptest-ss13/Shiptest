@@ -775,6 +775,41 @@
 	for(var/line in tag_fluff)
 		. += span_boldnotice(line)
 
+/obj/item/clothing/neck/dogtag/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_NECK)
+		RegisterSignal(user, COMSIG_MOUSEDROP_ONTO, PROC_REF(on_wearer_dragged), override = TRUE)
+	else
+		UnregisterSignal(user, COMSIG_MOUSEDROP_ONTO)
+
+/obj/item/clothing/neck/dogtag/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOUSEDROP_ONTO)
+
+/obj/item/clothing/neck/dogtag/proc/on_wearer_dragged(mob/living/carbon/human/wearer, atom/over, mob/living/carbon/human/user)
+	SIGNAL_HANDLER
+	if(over != user || !ishuman(user) || user == wearer || wearer.stat != DEAD || user.zone_selected != BODY_ZONE_HEAD)
+		return
+	if(user.pulling == wearer && user.a_intent == INTENT_GRAB)
+		return
+	if(!canStrip(wearer) || !user.Adjacent(wearer) || user.incapacitated())
+		return
+	INVOKE_ASYNC(src, PROC_REF(pull_from_wearer), wearer, user)
+	return COMPONENT_NO_MOUSEDROP
+
+/obj/item/clothing/neck/dogtag/proc/pull_from_wearer(mob/living/carbon/human/wearer, mob/living/carbon/human/user)
+	user.visible_message(span_notice("[user] starts pulling the dogtag from [wearer]'s neck."), \
+					span_notice("You start pulling [src] from [wearer]'s neck..."))
+	add_fingerprint(user)
+	if(!do_after(user, strip_delay, wearer, interaction_key = src))
+		return
+	if(QDELETED(src) || wearer.wear_neck != src || !user.Adjacent(wearer))
+		return
+	if(!doStrip(user, wearer))
+		return
+	log_combat(user, wearer, "stripped [src] off")
+	user.put_in_hands(src)
+
 /obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen))
 		if(length(tag_fluff) >= 5)
