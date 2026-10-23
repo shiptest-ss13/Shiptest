@@ -38,6 +38,8 @@
 
 /datum/element/basic_body_temp_sensetive/proc/on_life(datum/target, seconds_per_tick, times_fired)
 	var/mob/living/basic/basic_mob = target
+	if(world.time < basic_mob.environment_grace_until)
+		return // just spawned, keep protection up
 	var/gave_alert = FALSE
 
 	if(basic_mob.bodytemperature < min_body_temp)

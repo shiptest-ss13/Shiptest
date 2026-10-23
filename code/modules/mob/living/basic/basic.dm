@@ -107,6 +107,9 @@
 /mob/living/basic/Initialize(mapload)
 	. = ..()
 	environment_grace_until = world.time + BASIC_MOB_ENVIRONMENT_GRACE
+	if(GLOB.levels_generating)
+		environment_grace_until = world.time + BASIC_MOB_LEVEL_GENERATION_GRACE_CAP
+		GLOB.basic_mobs_awaiting_level += src
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
 	else if (!armor)
@@ -144,6 +147,33 @@
 	if((unsuitable_cold_damage == 0 && unsuitable_heat_damage == 0) || (minimum_survivable_temperature <= 0 && maximum_survivable_temperature >= INFINITY))
 		return
 	AddElement(/datum/element/basic_body_temp_sensetive, minimum_survivable_temperature, maximum_survivable_temperature, unsuitable_cold_damage, unsuitable_heat_damage, mapload)
+
+/mob/living/basic/Destroy()
+	GLOB.basic_mobs_awaiting_level -= src
+	return ..()
+
+// our body temperature holds steady while the air settles, just after we spawn, rather than drifting off to hurt us once our grace is up
+/mob/living/basic/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
+	if(world.time < environment_grace_until)
+		return
+	return ..()
+
+// how many planets are being generated right now, and the basic mobs made in them, whose grace starts once they're done
+GLOBAL_VAR_INIT(levels_generating, 0)
+GLOBAL_LIST_EMPTY(basic_mobs_awaiting_level)
+
+// a planet's started generating, see /datum/overmap/dynamic/proc/load_level()
+/proc/start_level_generation_grace()
+	GLOB.levels_generating++
+
+// and it's done, so the grace of the basic mobs made in it starts now, once every planet generating at the same time is done too
+/proc/end_level_generation_grace()
+	GLOB.levels_generating = max(GLOB.levels_generating - 1, 0)
+	if(GLOB.levels_generating)
+		return
+	for(var/mob/living/basic/basic_mob as anything in GLOB.basic_mobs_awaiting_level)
+		basic_mob.environment_grace_until = world.time + BASIC_MOB_ENVIRONMENT_GRACE
+	GLOB.basic_mobs_awaiting_level.Cut()
 
 /mob/living/basic/getarmor(def_zone, type)
 	if(armor)

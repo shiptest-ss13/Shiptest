@@ -306,6 +306,10 @@
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
 	living_pawn.do_attack_animation(target, ATTACK_EFFECT_DISARM)
 	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+	var/mob/living/carbon/human/human_target = target
+	if(istype(human_target) && human_target.check_shields(living_pawn, 0, "[living_pawn]'s shove", attack_type = UNARMED_ATTACK))
+		log_combat(living_pawn, target, "shoved", "blocked by their shield")
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 	var/shove_dir = get_dir(living_pawn, target)
 	if(!target.anchored && !target.buckled && target.Move(get_step(target, shove_dir), shove_dir))
 		living_pawn.visible_message(span_danger("[living_pawn] shoves [target], pushing [target.p_them()]!"), \

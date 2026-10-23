@@ -191,12 +191,18 @@
 /mob/living/basic/human/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	if(user.a_intent != INTENT_DISARM || stat != CONSCIOUS || user == src)
 		return ..()
+	if(blocks_shove_with_shield(user))
+		user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
+		user.changeNext_move(CLICK_CD_BLOCKED) // as a player's shield blocking it would
+		log_combat(user, src, "shoved", "blocked by their shield")
+		return
 	var/turf/old_turf = loc
 	. = ..()
 	if(stat != CONSCIOUS)
 		return
 	if(loc == old_turf)
-		Stun(1.5 SECONDS) // up against something, so we're sent reeling
+		if(!blocks_shove_knockdown())
+			Stun(1.5 SECONDS) // up against something, so we're sent reeling, unless we're in something like riot armour, as players are
 		return
 	if(!has_movespeed_modifier(/datum/movespeed_modifier/shove))
 		add_movespeed_modifier(/datum/movespeed_modifier/shove)

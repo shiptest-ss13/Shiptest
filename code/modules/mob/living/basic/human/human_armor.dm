@@ -65,3 +65,44 @@ GLOBAL_LIST_INIT(ai_hit_zone_weights, list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST =
 	qdel(clothing)
 	armor_by_type[clothing_type] = clothing_armor
 	return clothing_armor
+
+/mob/living/basic/human/proc/blocks_shove_knockdown()
+	var/static/list/blocks_by_outfit = list()
+	var/outfit_key = "[mob_spawner]|[armor_base]|[armored_all_over]"
+	if(!isnull(blocks_by_outfit[outfit_key]))
+		return blocks_by_outfit[outfit_key]
+	var/list/worn = list()
+	if(mob_spawner && !armored_all_over)
+		worn += get_spawner_clothing(mob_spawner)
+	if(ispath(armor_base, /obj/item/clothing))
+		worn += armor_base
+	var/blocks = FALSE
+	for(var/obj/item/clothing/clothing_type as anything in worn)
+		if(ispath(clothing_type, /obj/item/clothing) && (initial(clothing_type.clothing_flags) & BLOCKS_SHOVE_KNOCKDOWN))
+			blocks = TRUE
+			break
+	blocks_by_outfit[outfit_key] = blocks
+	return blocks
+
+/mob/living/basic/human/proc/get_held_shield_type()
+	for(var/held in list(r_hand, l_hand))
+		var/held_type = held
+		if(isobj(held))
+			var/obj/held_object = held
+			held_type = held_object.type
+		if(ispath(held_type, /obj/item/shield))
+			return held_type
+	return null
+
+/mob/living/basic/human/proc/blocks_shove_with_shield(mob/living/shover)
+	var/obj/item/shield/shield_type = get_held_shield_type()
+	if(!shield_type || stat != CONSCIOUS || body_position == LYING_DOWN)
+		return FALSE
+	var/angle_off_facing = abs(dir2angle(dir) - dir2angle(get_dir(src, shover)))
+	if(angle_off_facing > 180)
+		angle_off_facing = 360 - angle_off_facing
+	if(angle_off_facing > 45 || !prob(initial(shield_type.block_chance)))
+		return FALSE
+	visible_message(span_danger("[src] blocks [shover]'s shove with [p_their()] [initial(shield_type.name)]!"))
+	playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
+	return TRUE
