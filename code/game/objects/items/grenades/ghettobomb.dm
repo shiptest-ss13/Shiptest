@@ -66,6 +66,11 @@
 			cut_overlay("improvised_grenade_filled")
 			preprime(user, null, FALSE)
 
+/obj/item/grenade/iedcasing/prime()
+	. = ..()
+	update_mob()
+	resolve()
+
 /obj/item/grenade/iedcasing/change_det_time()
 	return //always be random.
 
