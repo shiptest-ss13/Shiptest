@@ -3,7 +3,7 @@
 	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_HAS_RANGED_ATTACK
 	blocking_conditions = AI_CONDITION_TAKING_COVER | AI_CONDITION_FLANKING
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
-	var/search_range = 3
+	var/search_range = 4
 	var/search_interval = 4 SECONDS
 	var/shot_at_memory = 5 SECONDS
 	var/hide_duration = 15 SECONDS

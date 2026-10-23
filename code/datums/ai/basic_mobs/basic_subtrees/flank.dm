@@ -180,7 +180,7 @@
 		best_distance = candidate_distance
 	return best_turf
 
-// every spot we could walk to from start within max_steps without going within 2 tiles or through avoid turfs, doors and all, as list(turf = TRUE)
+// every spot we could walk to from start within max_steps without going within avoid_range tiles or through avoid turfs, doors and all, as list(turf = TRUE)
 /datum/ai_planning_subtree/flank/proc/get_reachable_turfs(turf/start, turf/avoid, avoid_range, max_steps, can_cross_space = FALSE)
 	var/list/reachable = list()
 	reachable[start] = TRUE

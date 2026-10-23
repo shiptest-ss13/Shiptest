@@ -134,7 +134,7 @@
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
 	required_distance = 0
 	action_cooldown = 0
-	var/search_range = 3
+	var/search_range = 4
 	//how long we wait before looking again, if there was nowhere to hide
 	var/failed_search_cooldown = 2 SECONDS
 

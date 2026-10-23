@@ -194,6 +194,19 @@
 ///Whether controller's mob has broken from the post it holds, for now
 #define AI_POST_BROKEN(controller) (world.time < controller.blackboard[BB_BASIC_MOB_POST_BROKEN_UNTIL])
 
+// Picking somewhere to hide or fight from
+///The nearest spot out of their sight that'll do
+#define AI_HIDE_NEAREST "nearest"
+///The spot that'll do nearest to the enemy, like lying in wait to jump them when they come out
+#define AI_HIDE_NEAR_THREAT "near threat"
+///The spot that'll do furthest from them, like falling back
+#define AI_HIDE_FAR_FROM_THREAT "far from threat"
+///Penalise cover if it knows it's exposed to threats
+#define AI_COVER_EXPOSED_PENALTY 3
+#define AI_COVER_ENEMY_MEMORY (5 SECONDS)
+///How much worse cover is for each tile outside the range it fights at
+#define AI_COVER_OUT_OF_RANGE_PENALTY 2
+
 // What can be wrong with where a mob is stood
 ///The air's no good, or there's next to none of it
 #define AI_ENVIRONMENT_UNBREATHABLE "unbreathable"

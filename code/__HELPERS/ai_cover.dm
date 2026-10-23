@@ -112,22 +112,53 @@
 		locate(min(center.x + range, world.maxx), min(center.y + range, world.maxy), center.z)
 	)
 
-// out_of_sight for hiding where they can't see us too, not just shoot us, as some things stop shots but not eyes, like a smashed airlock's frame or a window
-/proc/find_hiding_spot(atom/movable/mover, turf/danger, range = 3, turf/exclude, out_of_sight = FALSE)
+
+// for radius search, search in rings so we get the closest first
+/proc/ai_turfs_in_ring(turf/center, radius)
+	if(radius <= 0)
+		return list(center)
+	. = list()
+	for(var/ring_x in center.x - radius to center.x + radius)
+		for(var/ring_y in list(center.y - radius, center.y + radius))
+			var/turf/ring_turf = locate(ring_x, ring_y, center.z)
+			if(ring_turf)
+				. += ring_turf
+	for(var/ring_y in center.y - radius + 1 to center.y + radius - 1)
+		for(var/ring_x in list(center.x - radius, center.x + radius))
+			var/turf/ring_turf = locate(ring_x, ring_y, center.z)
+			if(ring_turf)
+				. += ring_turf
+
+// out_of_sight for hiding where they can't see us too, not just shoot us, as some things stop shots but not vision
+// prefer is one of AI_HIDE_, for which of the spots that'll do we'd rather have
+/proc/find_hiding_spot(atom/movable/mover, turf/danger, range = 3, turf/exclude, out_of_sight = FALSE, prefer = AI_HIDE_NEAREST)
 	var/turf/our_turf = get_turf(mover)
 	if(!our_turf)
 		return null
 	var/list/seen_from_danger = out_of_sight ? view(get_dist(danger, our_turf) + range, danger) : null
+	// nearest first, so we only look further out when there's nowhere close
+	var/list/candidates = list()
+	var/last_radius = range
+	for(var/radius in 0 to range)
+		if(radius > last_radius)
+			break
+		for(var/turf/open/candidate in ai_turfs_in_ring(our_turf, radius))
+			if(candidate == exclude || !ai_can_take_spot(mover, candidate))
+				continue
+			if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && (candidate in seen_from_danger)) || !can_walk_straight_to(mover, candidate))
+				continue
+			if(prefer == AI_HIDE_NEAREST)
+				return candidate
+			candidates += candidate
+			last_radius = min(last_radius, radius + 1) // and one further out, in case it's somewhere better
 	var/turf/best_turf
-	var/best_distance = INFINITY
-	for(var/turf/open/candidate in ai_turfs_in_range(our_turf, range))
-		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == exclude || candidate_distance >= best_distance || !ai_can_take_spot(mover, candidate))
-			continue
-		if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && (candidate in seen_from_danger)) || !can_walk_straight_to(mover, candidate))
-			continue
-		best_turf = candidate
-		best_distance = candidate_distance
+	var/best_score = INFINITY
+	for(var/turf/candidate as anything in candidates)
+		var/danger_distance = get_dist(candidate, danger)
+		var/score = get_dist(our_turf, candidate) + (prefer == AI_HIDE_NEAR_THREAT ? danger_distance : -danger_distance) * 2
+		if(score < best_score)
+			best_turf = candidate
+			best_score = score
 	return best_turf
 
 /proc/ally_in_line_of_fire(mob/living/shooter, turf/start, turf/finish)
@@ -307,25 +338,61 @@
 		var/turf/ally_cover = istype(ally_controller) ? ally_controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] : null
 		if(ally_cover)
 			ally_turfs[ally_cover] = TRUE
+	// nearest first, so we only look further out when there's nowhere close
+	var/list/candidates = list()
+	var/last_radius = range
+	for(var/radius in 0 to range)
+		if(radius > last_radius)
+			break
+		for(var/turf/open/candidate in ai_turfs_in_ring(our_turf, radius))
+			if(candidate == exclude || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
+				continue
+			if(!can_walk_straight_to(fighter, candidate))
+				continue
+			if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags))
+				continue
+			var/shooting_through_ally = FALSE
+			for(var/turf/line_turf as anything in get_line(candidate, their_turf))
+				if(line_turf != candidate && ally_turfs[line_turf])
+					shooting_through_ally = TRUE // we'd be shooting through one of ours
+					break
+			if(shooting_through_ally)
+				continue
+			candidates += candidate
+			last_radius = min(last_radius, radius + 1) // and one further out, in case it's somewhere better
+	if(length(candidates) <= 1)
+		return length(candidates) ? candidates[1] : null
+	return pick_best_fighting_cover(fighter, threat, candidates)
+
+// the best of candidates to fight threat from: not open to the others we're fighting, in the range we fight at, and not too far away
+/proc/pick_best_fighting_cover(mob/living/fighter, atom/threat, list/candidates)
+	var/turf/our_turf = get_turf(fighter)
+	var/turf/their_turf = get_turf(threat)
+	var/datum/ai_controller/controller = fighter.ai_controller
+	var/list/fight_range = controller ? get_ai_fight_range(controller) : null
+	// other enemies we know about that could take a shot at us
+	var/list/other_enemies = list()
+	var/list/seen_enemies = controller?.blackboard[BB_BASIC_MOB_SEEN_ENEMIES]
+	for(var/atom/enemy as anything in seen_enemies)
+		if(enemy == threat || QDELETED(enemy) || enemy.z != our_turf.z || world.time - seen_enemies[enemy] > AI_COVER_ENEMY_MEMORY || ai_is_downed(enemy))
+			continue
+		other_enemies += enemy
+		if(length(other_enemies) >= 4)
+			break
 	var/turf/best_turf
-	var/best_distance = INFINITY
-	for(var/turf/open/candidate in ai_turfs_in_range(our_turf, range))
-		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == exclude || candidate_distance >= best_distance || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
-			continue
-		if(!can_walk_straight_to(fighter, candidate))
-			continue
-		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags))
-			continue
-		var/shooting_through_ally = FALSE
-		for(var/turf/line_turf as anything in get_line(candidate, their_turf))
-			if(line_turf != candidate && ally_turfs[line_turf])
-				shooting_through_ally = TRUE // we'd be shooting through one of ours
-				break
-		if(shooting_through_ally)
-			continue
-		best_turf = candidate
-		best_distance = candidate_distance
+	var/best_score = INFINITY
+	for(var/turf/candidate as anything in candidates)
+		var/score = get_dist(our_turf, candidate)
+		if(fight_range)
+			var/threat_distance = get_dist(candidate, their_turf)
+			score += max(fight_range[1] - threat_distance, threat_distance - fight_range[2], 0) * AI_COVER_OUT_OF_RANGE_PENALTY
+		for(var/atom/enemy as anything in other_enemies)
+			var/turf/enemy_turf = get_turf(enemy)
+			if(!cover_between(candidate, enemy) && !get_shot_blocker(enemy_turf, candidate))
+				score += AI_COVER_EXPOSED_PENALTY
+		if(score < best_score)
+			best_turf = candidate
+			best_score = score
 	return best_turf
 
 // breaching is whether we're shooting our way through to them on purpose, which lets us put a lot more into it. Null to go by our blackboard
