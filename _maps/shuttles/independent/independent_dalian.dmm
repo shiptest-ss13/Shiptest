@@ -406,7 +406,9 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "cJ" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/structure/cable/orange{
 	icon_state = "0-8"
 	},
@@ -500,6 +502,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore/port)
 "dH" = (
@@ -1084,6 +1087,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 10
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "iw" = (
@@ -1331,6 +1337,9 @@
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 8
 	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "kC" = (
@@ -1406,6 +1415,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "kR" = (
@@ -1447,7 +1459,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "lv" = (
-/obj/structure/table/reinforced,
 /obj/item/radio/headset/alt{
 	pixel_x = 2;
 	pixel_y = 6
@@ -1492,7 +1503,11 @@
 	pixel_x = 0;
 	pixel_y = 3
 	},
-/obj/structure/closet/wall/red/directional/east,
+/obj/structure/closet/secure_closet/armory1{
+	anchored = 1;
+	populate = 0;
+	name = "armory equipment locker"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "lC" = (
@@ -1553,6 +1568,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "mh" = (
@@ -1953,7 +1971,7 @@
 	dheight = 1
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "oh" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -2016,6 +2034,9 @@
 /obj/structure/closet/crate/rations,
 /obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/port)
 "oz" = (
@@ -2028,6 +2049,9 @@
 	dir = 5
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/smoking)
 "oI" = (
@@ -2177,6 +2201,9 @@
 	},
 /obj/effect/turf_decal/box/corners,
 /obj/structure/platform/ship_three,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/starboard)
 "pp" = (
@@ -2601,7 +2628,7 @@
 /obj/machinery/door/poddoor{
 	id = "fragbeast_cargo"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/port)
 "sh" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3236,6 +3263,9 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/starboard)
 "wM" = (
@@ -3365,7 +3395,7 @@
 /obj/machinery/button/door{
 	pixel_x = 23;
 	pixel_y = -4;
-	id = "fragbeast_dorm2";
+	id = "fragbeast_dorm1";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
 	name = "Dorm Lock";
@@ -3729,6 +3759,10 @@
 	},
 /obj/structure/bed/dogbed,
 /obj/machinery/light/small/directional/south,
+/mob/living/simple_animal/hostile/asteroid/wolf/hound{
+	name = "Afterpartie";
+	desc = "A mutt, no one knows exactly where it came from. Only that it was sleeping in a newly-bought dog bed after a long night of drinking."
+	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "yZ" = (
@@ -4141,6 +4175,9 @@
 "BQ" = (
 /obj/structure/platform/ship_three/corner{
 	dir = 1
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/port)
@@ -4795,7 +4832,17 @@
 /area/ship/hallway/starboard)
 "FX" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
+"Gb" = (
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/black,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/port)
 "Gc" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo/port)
@@ -4879,7 +4926,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "GS" = (
-/obj/structure/table/reinforced,
 /obj/item/clothing/suit/armor/vest/alt{
 	pixel_x = -8;
 	pixel_y = -2
@@ -4948,7 +4994,11 @@
 	pixel_x = -2;
 	pixel_y = 10
 	},
-/obj/structure/closet/wall/red/directional/east,
+/obj/structure/closet/secure_closet/armory1{
+	anchored = 1;
+	populate = 0;
+	name = "armory gear locker"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "GT" = (
@@ -5921,7 +5971,7 @@
 /obj/machinery/door/poddoor{
 	id = "fragbeast_cargo"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/port)
 "ML" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -6245,6 +6295,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "OT" = (
@@ -6311,6 +6364,9 @@
 /area/ship/hallway/fore/starboard)
 "Pl" = (
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/electrical)
 "Pp" = (
@@ -6518,7 +6574,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/starboard)
 "Re" = (
 /obj/structure/cable{
@@ -6692,7 +6748,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/starboard)
 "SF" = (
 /obj/effect/turf_decal/siding/black{
@@ -6786,6 +6842,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "SX" = (
@@ -7027,7 +7084,7 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "TQ" = (
@@ -7613,7 +7670,7 @@
 /obj/machinery/door/poddoor{
 	id = "fragbeast_cargo"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/port)
 "XP" = (
 /obj/structure/railing/thin,
@@ -7857,7 +7914,9 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "Zr" = (
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
 /obj/structure/cable/orange{
 	icon_state = "0-8"
 	},
@@ -8625,7 +8684,7 @@ ON
 mO
 UD
 ci
-sG
+Gb
 Ja
 Rm
 BP
@@ -8645,7 +8704,7 @@ kb
 Xp
 bZ
 Mc
-UL
+TO
 EC
 yd
 wd
@@ -8759,7 +8818,7 @@ ZB
 ZB
 bZ
 zX
-TO
+UL
 bp
 sv
 Dw
