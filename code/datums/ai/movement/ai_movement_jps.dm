@@ -145,7 +145,7 @@
 	COOLDOWN_RESET(controller, repath_cooldown)
 	return TRUE
 
-// whether one of ours is in the next couple of tiles on our straight line to goal_turf, so following the line would have us trailing them
+// conga line avoidance
 /datum/ai_movement/jps/proc/ally_ahead_on_line(atom/movable/movable_pawn, turf/our_turf, turf/goal_turf)
 	var/mob/living/living_pawn = movable_pawn
 	if(!istype(living_pawn))

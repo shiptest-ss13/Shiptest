@@ -121,6 +121,11 @@
 	)
 	return chatter[event]
 
+// use a sound file in a callout, as list(marker = list(sound, volume, extra range, alarm range)).
+GLOBAL_LIST_INIT(ai_callout_sounds, list(
+	"%WHISTLE" = list('sound/misc/trenchwhistle.ogg', 80, 4, 15),
+))
+
 /proc/ai_callout(atom/speaker, event, last_words = FALSE, interrupt = FALSE)
 	var/datum/component/ai_callouts/callouts = speaker?.GetComponent(/datum/component/ai_callouts)
 	return callouts?.speak_about(event, last_words, interrupt)
@@ -420,6 +425,10 @@
 	var/line = pick_line(event, last_words, interrupt, answering)
 	if(!line)
 		return FALSE
+	var/is_commander = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_COMMANDER]
+	var/sounds_alarm = is_commander && event == AI_CALLOUT_RAISING_ALARM && world.time >= basic_mob.ai_controller.blackboard[BB_BASIC_MOB_NEXT_ALARM_SOUNDED]
+	if(is_commander && event == AI_CALLOUT_RAISING_ALARM)
+		line = get_alarm_line(event, carries_alarm = sounds_alarm) || line
 	if(direction)
 		line = replacetext(line, "%DIRECTION", direction)
 	line = replacetext(line, "%PLANET", pick(GLOB.major_planets))
@@ -429,12 +438,22 @@
 	if(!ai_callout_is_chatter(event))
 		COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
 	//we do this after the cooldown because its mildly more intensive
-	//could be replaced w/ a more generic sfx but I wanted whistles in particular
-	//whistle & replace it with nothing
-	if(findtext(line, "%WHISTLE"))
-		line = trim(replacetext(line, "%WHISTLE", "")) // and the space it leaves
-		playsound(basic_mob, 'sound/misc/trenchwhistle.ogg', 80, FALSE, 4)
+	//any marker in GLOB.ai_callout_sounds, so another sound's a line there rather than adding snowflakes here
+	var/alarm_range = 0
+	if(findtext(line, "%"))
+		for(var/marker in GLOB.ai_callout_sounds)
+			if(!findtext(line, marker))
+				continue
+			var/list/marker_sound = GLOB.ai_callout_sounds[marker]
+			line = trim(replacetext(line, marker, "")) // and the space it leaves
+			if(marker_sound[4] && !is_commander)
+				continue // one that carries an alarm is a commander's, like the whistle, so it means something when it's heard. Anyone else just says the line
+			playsound(basic_mob, marker_sound[1], marker_sound[2], FALSE, marker_sound[3])
+			alarm_range = max(alarm_range, marker_sound[4] || 0)
 	say_line(line, last_words)
+	if(alarm_range && sounds_alarm)
+		sound_the_alarm(alarm_range) // only a commander's, or a sentry spotting someone far off would have everyone run out across open ground to them
+		basic_mob.ai_controller.set_blackboard_key(BB_BASIC_MOB_NEXT_ALARM_SOUNDED, world.time + AI_COMMANDER_ALARM_COOLDOWN)
 	var/list/allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
 	var/is_chatter = ai_callout_is_chatter(event)
 	for(var/datum/component/ai_callouts/listener as anything in get_allies_in_earshot(allies_in_earshot) + src)
@@ -446,6 +465,39 @@
 		prompt_answer(event)
 	share_line_cooldown(event, allies_in_earshot)
 	return TRUE
+
+// one of our lines for event that carries an alarm, like with a whistle in it, see GLOB.ai_callout_sounds, or if carries_alarm is FALSE, one that doesn't. Null if we've none
+/datum/component/ai_callouts/proc/get_alarm_line(event, carries_alarm = TRUE)
+	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
+	var/list/fitting_lines = list()
+	for(var/candidate in callouts.lines[event])
+		if(!istext(candidate))
+			continue
+		var/has_alarm = FALSE
+		for(var/marker in GLOB.ai_callout_sounds)
+			var/list/marker_sound = GLOB.ai_callout_sounds[marker]
+			if(marker_sound[4] && findtext(candidate, marker))
+				has_alarm = TRUE
+				break
+		if(has_alarm == carries_alarm)
+			fitting_lines += candidate
+	return length(fitting_lines) ? pick(fitting_lines) : null
+
+/datum/component/ai_callouts/proc/sound_the_alarm(range)
+	var/mob/living/basic/basic_mob = parent
+	var/datum/ai_controller/controller = basic_mob.ai_controller
+	var/atom/target = controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/turf/our_turf = get_turf(basic_mob)
+	if(QDELETED(target) || !our_turf)
+		return
+	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(basic_mob, range, wall_penalty))
+		var/datum/ai_controller/ally_controller = ally.ai_controller
+		var/atom/their_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+		if(!QDELETED(their_target) || AI_RECENTLY_SAW_ENEMY(ally_controller, AI_FIGHT_MEMORY))
+			continue
+		AI_LOG_DECISION(ally_controller, "heard [basic_mob] raise the alarm, rallying on them against [target]")
+		ally_controller.learn_of_target(target, guess_sound_origin(our_turf, 3, somewhere_to_stand = TRUE), AI_LEARNED_TOLD) // round us, so they don't all pile onto the one tile
+		ally_controller.set_blackboard_key(BB_BASIC_MOB_RALLYING, TRUE) // so they walk to it, rather than firing at it, until they see who they're after
 
 /datum/component/ai_callouts/proc/note_line_heard(is_chatter)
 	if(world.time >= turn_ends_at)
@@ -560,12 +612,13 @@
 	var/mob/living/basic/basic_mob = parent
 	if(!last_words && length(line) > 1)
 		switch(copytext(line, 1, 2))
-			if("*")
-				basic_mob.manual_emote(copytext(line, 2)) // an emote, like "*whistles", as a player's would be
+			if("*") //whistle
+				basic_mob.manual_emote(copytext(line, 2))
 				return
-			if("%")
-				INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), line) // sung, as a player's would be, so it goes without a verb of our own
-				return
+			if("%") //singing
+				if(!(text2ascii(line, 2) in 65 to 90))
+					INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), line)
+					return
 	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
 	var/list/speech_args = list(line, null, list(), null, /datum/language/galactic_common)
 	if(voice.modifies_speech)

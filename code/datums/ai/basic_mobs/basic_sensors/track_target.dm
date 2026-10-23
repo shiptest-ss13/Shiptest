@@ -61,6 +61,7 @@
 
 // they're in sight, so we know where they are, and if it's news, we tell the group
 /datum/ai_sensor/track_target/proc/on_target_seen(datum/ai_controller/controller, atom/target)
+	controller.clear_blackboard_key(BB_BASIC_MOB_RALLYING) // seen enemies, so we fight them instead of going to whoever called us in
 	// news, unless we've seen them lately, like someone popping back out of cover, or we switched to someone else and back
 	var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], target)
 	if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
@@ -101,6 +102,7 @@
 		controller.set_movement_target(/datum/ai_behavior/travel_towards, their_turf)
 
 /datum/ai_sensor/track_target/proc/forget_target(datum/ai_controller/controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_RALLYING)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_HIDING_IN)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_ADJACENT_SINCE)

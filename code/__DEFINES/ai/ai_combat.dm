@@ -160,6 +160,8 @@
 #define AI_COMMANDER_RETREAT_DISTANCE 5
 ///How long after its side turned on whoever attacked a commander before they will again
 #define AI_COMMANDER_GUARD_COOLDOWN (10 SECONDS)
+///Cooldown until the next time a commander can sound the alarm with a callout that has an alarm range
+#define AI_COMMANDER_ALARM_COOLDOWN (60 SECONDS)
 
 // Making the most of someone reloading
 ///How long after AI notices someone reloading or out of ammo it treats them as unable to shoot back, see ai_note_enemy_reloading()

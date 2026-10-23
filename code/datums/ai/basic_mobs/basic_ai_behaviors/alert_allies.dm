@@ -19,6 +19,7 @@
 	var/heard_range = max(alert_range, controller.blackboard[BB_BASIC_MOB_ALERT_RANGE])
 	var/told_anyone = FALSE
 	var/brought_anyone_in = FALSE
+	var/list/commanders_told = list()
 	var/list/allies_in_earshot = get_ai_allies_in_earshot(living_pawn, heard_range, wall_penalty)
 	if(first_alert)
 		controller.clear_blackboard_key(BB_BASIC_MOB_ALERTED_ALLIES)
@@ -29,13 +30,17 @@
 		if(told_them)
 			told_anyone = TRUE
 			brought_anyone_in ||= !already_in_it
+			if(ally.ai_controller.blackboard[BB_BASIC_MOB_COMMANDER])
+				commanders_told += ally
 		if(first_alert || told_them)
 			controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_ALERTED_ALLIES, ally_ref, TRUE)
 	if(controller.blackboard[BB_BASIC_MOB_SUMMONS_BACKUP] && (first_alert || told_anyone))
 		living_pawn.do_alert_animation()
 		playsound(living_pawn, 'sound/machines/chime.ogg', 50, TRUE, -1)
-	if(brought_anyone_in)
-		ai_callout(living_pawn, AI_CALLOUT_RAISING_ALARM) // bringing in ones we've come across, not just telling those who were already with us
+	if(brought_anyone_in || (first_alert && controller.blackboard[BB_BASIC_MOB_COMMANDER]))
+		ai_callout(living_pawn, AI_CALLOUT_RAISING_ALARM, interrupt = controller.blackboard[BB_BASIC_MOB_COMMANDER]) // bringing in ones we've come across, not just telling those who were already with us. Or, giving the orders, calling everyone to it the moment we see them
+	for(var/mob/living/commander as anything in commanders_told)
+		ai_callout(commander, AI_CALLOUT_RAISING_ALARM, interrupt = TRUE) // we told whoever gives the orders, so they call everyone in, from where they are
 	controller.set_blackboard_key(BB_BASIC_MOB_ALERTED_ABOUT, target)
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REALERT, world.time + realert_interval)
 	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED

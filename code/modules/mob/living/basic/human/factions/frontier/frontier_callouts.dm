@@ -422,6 +422,8 @@
 			"Move your asses, get on 'em!",
 			"Forward, goddammit!",
 			"What are you waiting for? Push!",
+			"%WHISTLE Over the top, crew!",
+			"%WHISTLE Go, go, go! Push!!",
 		),
 		AI_CALLOUT_ORDER_HOLD = list(
 			"Hold, crew! Nobody move!",

@@ -157,8 +157,12 @@
 #define BB_BASIC_MOB_NEXT_REALERT "BB_basic_next_realert"
 ///The allies already alerted with BB_BASIC_MOB_ALERTED_ABOUT, so we only raise the alarm for new ones
 #define BB_BASIC_MOB_ALERTED_ALLIES "BB_basic_alerted_allies"
-///When we, a commander, can next look to order a pushe
+///For mobs to rally to a commander when outside of view range
+#define BB_BASIC_MOB_RALLYING "BB_basic_rallying"
+///When a commander can next order a push
 #define BB_BASIC_MOB_NEXT_PUSH_ORDER "BB_basic_next_push_order"
+///Cooldown until the next time a commander can sound the alarm with a callout that has an alarm range
+#define BB_BASIC_MOB_NEXT_ALARM_SOUNDED "BB_basic_next_alarm_sounded"
 ///Until when we've been ordered to push up, so those of us with guns are keener to go round them
 #define BB_BASIC_MOB_ORDERED_PUSH_UNTIL "BB_basic_ordered_push_until"
 

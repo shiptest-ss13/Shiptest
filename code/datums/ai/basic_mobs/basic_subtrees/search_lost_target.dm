@@ -60,6 +60,9 @@
 		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
 		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
 		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
+	if(controller.blackboard[BB_BASIC_MOB_RALLYING])
+		// DONT blindfire or shoot at rally targets
+		return stays_put ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
 	if(stays_put)
 		return (search_style == AI_SEARCH_STYLE_SUPPRESS && !controller.blackboard[BB_BASIC_MOB_HEARD_TARGET]) ? AI_SEARCH_STYLE_SUPPRESS : AI_SEARCH_STYLE_HOLD // only a noise, so we watch it
 	// covering where they went, with fire
