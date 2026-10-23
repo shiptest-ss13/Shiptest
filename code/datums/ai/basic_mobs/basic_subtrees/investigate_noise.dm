@@ -51,8 +51,6 @@
 		leash = AI_NOISE_LEASH_DISTANCE
 	if(home && leash > 0 && get_dist(home, origin) > leash)
 		return // too far from where we keep watch
-	if(ai_can_see(listener, origin))
-		return // we can see the original source spot and didnt see anyone, so don't bother
 	var/turf/guess = guess_sound_origin(origin, clamp(round(heard_distance / 4), 1, 3), somewhere_to_stand = TRUE, listener = listener)
 	AI_LOG_DECISION(controller, "investigate_noise: heard something around [guess], going to look")
 	controller.set_blackboard_key(BB_BASIC_MOB_NOISE_TURF, guess)
