@@ -3757,11 +3757,14 @@
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 6
 	},
-/obj/structure/bed/dogbed,
+/obj/structure/bed/dogbed{
+	name = "cushioned charging bed";
+	desc = "A charging pad disguised as a dog bed. Frequently used for domestic robots of all forms and sizes."
+	},
 /obj/machinery/light/small/directional/south,
-/mob/living/simple_animal/hostile/asteroid/wolf/hound{
-	name = "Afterpartie";
-	desc = "A mutt, no one knows exactly where it came from. Only that it was sleeping in a newly-bought dog bed after a long night of drinking."
+/mob/living/simple_animal/hostile/automated/agrav{
+	name = "'Hors dóeuvre' Loitering Party Drone";
+	desc = "An Advanced, Loitering gravity drone modified to serve drinks and party snacks."
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
