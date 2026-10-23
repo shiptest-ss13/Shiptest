@@ -42,8 +42,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/reagent_state = LIQUID
 	/// special data associated with this like viruses etc
 	var/list/data
-	/// increments everytime on_mob_life is called
-	var/current_cycle = 0
+	/// number of seconds that the reagent ticked increments everytime on_mob_life is called
+	var/current_time = 0
 	///pretend this is moles
 	var/volume = 0
 	/// color it looks in containers etc
@@ -117,8 +117,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return
 
 /// Called from [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	current_cycle++
+/datum/reagent/proc/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	current_time += seconds_per_tick
 	holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency * seconds_per_tick) //By default it slowly disappears.
 	return
 
@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return FALSE
 
 /// Called if the reagent has passed the overdose threshold and is set to be triggering overdose effects
-/datum/reagent/proc/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/proc/overdose_process(mob/living/M, seconds_per_tick)
 	return
 
 /// Called when an overdose starts

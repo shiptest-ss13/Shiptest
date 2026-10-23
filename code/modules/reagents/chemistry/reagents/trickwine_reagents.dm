@@ -155,14 +155,14 @@
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
 	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
 
-/datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M, seconds_per_tick)
 	var/high_message = pick("You feel far more devoted to the cause.", "You feel like you should go on a hunt.")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(SPT_PROB(5, seconds_per_tick))
 		M.adjust_drugginess(5)
 		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
-		M.adjustToxLoss(-1 * seconds_per_tick)
+		M.adjustToxLoss(-1 * REM * seconds_per_tick)
 		if(SPT_PROB(5, seconds_per_tick))
 			to_chat(M, span_notice("[cleanse_message]"))
 	return ..()
@@ -211,9 +211,9 @@
 	debuff_effect = /datum/status_effect/trickwine/debuff/ice
 	dip_ammo_type = /obj/item/ammo_casing/c38/iceblox
 
-/datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M, seconds_per_tick)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	M.adjustFireLoss(-0.25)
+	M.adjustFireLoss(-0.25 * REM * seconds_per_tick)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		to_chat(M, span_notice("Sweat runs down your body."))
 	return ..()
@@ -349,7 +349,7 @@
 
 	return ..()
 
-/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M, seconds_per_tick)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	if(!ishuman(M))
 		return ..()

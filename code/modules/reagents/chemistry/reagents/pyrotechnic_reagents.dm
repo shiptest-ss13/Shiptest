@@ -12,8 +12,8 @@
 	if(reac_volume >= 1)
 		T.AddComponent(/datum/component/thermite, reac_volume)
 
-/datum/reagent/thermite/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(1, 0)
+/datum/reagent/thermite/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjustFireLoss(1 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -47,10 +47,10 @@
 	process_flags = ORGANIC | SYNTHETIC
 	accelerant_quality = 20
 
-/datum/reagent/clf3/on_mob_life(mob/living/carbon/M)
-	M.adjust_fire_stacks(2)
+/datum/reagent/clf3/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_fire_stacks(2 * REM * seconds_per_tick)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
-	M.adjustFireLoss(burndmg, 0)
+	M.adjustFireLoss(burndmg * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -107,7 +107,7 @@
 	metabolization_rate = 0.05
 	taste_description = "salt"
 
-/datum/reagent/gunpowder/on_mob_life(mob/living/carbon/M)
+/datum/reagent/gunpowder/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	. = TRUE
 	..()
 	if(!isplasmaman(M))
@@ -189,10 +189,10 @@
 	M.ignite_mob()
 	..()
 
-/datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M)
-	M.adjust_fire_stacks(1)
+/datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_fire_stacks(1 * REM * seconds_per_tick)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
-	M.adjustFireLoss(burndmg, 0)
+	M.adjustFireLoss(burndmg * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -207,8 +207,8 @@
 	process_flags = ORGANIC | SYNTHETIC
 	accelerant_quality = 20
 
-/datum/reagent/napalm/on_mob_life(mob/living/carbon/M)
-	M.adjust_fire_stacks(1)
+/datum/reagent/napalm/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_fire_stacks(1 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/napalm/expose_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -235,13 +235,13 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 
-/datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
+/datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M, seconds_per_tick) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
-		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(-5)
+		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.25 * seconds_per_tick)
+		M.adjust_bodytemperature(-2.5*seconds_per_tick)
 		if(ishuman(M))
 			var/mob/living/carbon/human/target_human = M
-			target_human.adjust_coretemperature(-15)
+			target_human.adjust_coretemperature(-7.5*seconds_per_tick)
 	..()
 
 /datum/reagent/cryostylane/expose_turf(turf/T, reac_volume)
@@ -259,13 +259,13 @@
 	self_consuming = TRUE
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
-/datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
+/datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(holder.has_reagent(/datum/reagent/oxygen))
-		holder.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(5)
+		holder.remove_reagent(/datum/reagent/oxygen, 0.25*seconds_per_tick)
+		M.adjust_bodytemperature(2.5*seconds_per_tick)
 		if(ishuman(M))
 			var/mob/living/carbon/human/target_human = M
-			target_human.adjust_coretemperature(15)
+			target_human.adjust_coretemperature(7.5*seconds_per_tick)
 	..()
 
 /datum/reagent/teslium //Teslium. Causes periodic shocks, and makes shocks against the target much more effective.
@@ -280,9 +280,9 @@
 	var/shock_timer = 0
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
-/datum/reagent/teslium/on_mob_life(mob/living/carbon/M)
-	shock_timer++
-	if(shock_timer >= rand(5,30)) //Random shocks are wildly unpredictable
+/datum/reagent/teslium/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	shock_timer += seconds_per_tick
+	if(shock_timer >= rand(10,60)) //Random shocks are wildly unpredictable
 		shock_timer = 0
 		M.electrocute_act(rand(5,20), "Teslium in their body", 1, SHOCK_NOGLOVES) //SHOCK_NOGLOVES because it's caused from INSIDE of you
 		playsound(M, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
