@@ -106,6 +106,7 @@
 	if(!tally || tally[1] != spot || world.time - tally[3] > dug_in_hit_window)
 		tally = list(spot, 0, world.time)
 	tally = list(spot, tally[2] + 1, world.time)
+	controller.clear_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS)
 	controller.set_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS, tally)
 	return tally[2]
 
