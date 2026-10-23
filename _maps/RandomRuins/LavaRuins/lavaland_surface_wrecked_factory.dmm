@@ -2268,8 +2268,10 @@
 /obj/structure/chair/comfy/beige,
 /mob/living/basic/human/warra/elite{
 	aggro_say_chance = 100;
+	ai_controller = /datum/ai_controller/basic_controller/human/ranged/post/support_gunner;
 	environment_smash = 0;
 	health = 200;
+	holds_post = 1;
 	maxHealth = 200;
 	name = "Manager";
 	on_aggro_say = list("I'll kill all you Ramzi scum! COME AND GET SOME!", "I'll kill every last one of you Ramzi bastards!", "Finally got the nerve to finish me off you scum sucking Ramzi assholes...  YOU WON'T GET ME TOO YOU BASTARDS!!");
