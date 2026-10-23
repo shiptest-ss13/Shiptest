@@ -200,12 +200,6 @@
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
-/datum/supply_pack/ammo/scattershells
-	name = "Scatter Laser Shell Crate"
-	desc = "Contains a box of 32 shells modified to fire Sharplite lasers. Perfect for high-velocity crowd control."
-	cost = 380
-	contains = list(/obj/item/storage/box/ammo/a12g_scatter)
-
 /datum/supply_pack/ammo/pulseshells
 	name = "Pulse Slug Crate"
 	desc = "Contains a box of 32 shells modified to fire a strong pulse projectile. Decent damage and respectable at demolishing fortifications."
