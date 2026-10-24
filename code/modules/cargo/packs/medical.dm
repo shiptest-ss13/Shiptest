@@ -230,12 +230,6 @@
 	cost = 300
 	contains = list(/obj/item/storage/medpack/epipens)
 
-/datum/supply_pack/medical/cheap_stims
-	name = "First Aid Stimpacks Pack"
-	desc = "Contains a pack of affordable stimpacks suitable for first-aid."
-	cost = 400
-	contains = list(/obj/item/storage/medpack/cheap_stims)
-
 /* Hypospray supplies */
 
 /datum/supply_pack/medical/mkii_hypo

@@ -711,11 +711,3 @@
 /obj/item/storage/medpack/epipens/PopulateContents()
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
 	generate_items_inside(items_inside,src)
-
-/obj/item/storage/medpack/cheap_stims
-	name = "pack of first aid stimpacks"
-	desc = "a sealed, sterile-white plastic package full of first aid stimpacks."
-
-/obj/item/storage/medpack/cheap_stims/PopulateContents()
-	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/cheap_stim = 4)
-	generate_items_inside(items_inside,src)
