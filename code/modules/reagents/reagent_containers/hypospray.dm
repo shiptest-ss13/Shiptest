@@ -166,7 +166,7 @@
 	amount_per_transfer_from_this = 20
 	list_reagents = list(
 		/datum/reagent/medicine/salglu_solution = 6,
-		/datum/reagent/medicine/ephedrine = 3,
+		/datum/reagent/medicine/cinesia = 3,
 		/datum/reagent/medicine/hunter_extract = 6,
 		/datum/reagent/medicine/morphine = 5)
 
