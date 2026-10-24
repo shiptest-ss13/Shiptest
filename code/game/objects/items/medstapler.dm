@@ -73,6 +73,10 @@
 	if(!IS_ORGANIC_LIMB(limb))
 		to_chat(user, span_warning("This won't work on a robotic limb!"))
 		return
+	// is our target pierce-proof?
+	if(!target.can_inject(user))
+		to_chat(user, span_warning("The staples won't punch through that!"))
+		return
 	// do we have a cartridge?
 	if(!cart)
 		to_chat(user, span_notice("There is no staple cartridge loaded!"))
@@ -122,6 +126,11 @@
 	. = ..()
 	cart = new /obj/item/med_staple_cart
 	update_appearance()
+
+// subtype that starts half full, for med pouches
+/obj/item/med_stapler/full/half/Initialize()
+	. = ..()
+	cart.qty = 20
 
 // STAPLE CARTRIDGE //
 /obj/item/med_staple_cart

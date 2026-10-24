@@ -52,7 +52,9 @@
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/hypospray/medipen,
-		/obj/item/reagent_containers/glass/bottle/vial
+		/obj/item/reagent_containers/glass/bottle/vial,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart
 		))
 
 /obj/item/storage/pouch/medical/PopulateContents()
@@ -60,7 +62,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze/five = 1,
-		/obj/item/stack/medical/suture/five = 1,
+		/obj/item/med_stapler/full/half = 1,
 		/obj/item/stack/medical/mesh/five = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
