@@ -350,11 +350,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				var/datum/effect_system/smoke_spread/bad/smoke = new
 				smoke.set_up(smoke_amt, location)
 				smoke.start()
-			else if(smoke_spread == 3)
-				var/datum/effect_system/smoke_spread/sleeping/smoke = new
-				smoke.set_up(smoke_amt, location)
-				smoke.start()
-
 
 /obj/effect/proc_holder/spell/proc/cast(list/targets, mob/user = usr)
 	return

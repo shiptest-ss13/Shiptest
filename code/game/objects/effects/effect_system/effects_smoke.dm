@@ -67,10 +67,10 @@
 		return FALSE
 	smoked.smoke_delay++
 	addtimer(CALLBACK(src, PROC_REF(remove_smoke_delay), smoked), 10)
-	SEND_SIGNAL(C, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
+	SEND_SIGNAL(smoked, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
 	//then our actions
 	if(opaque)
-		C.apply_status_effect(/datum/status_effect/concealed)
+		smoked.apply_status_effect(/datum/status_effect/concealed)
 	if(toxic)
 		if(SPT_PROB(20, seconds_per_tick))
 			smoked.drop_all_held_items()
