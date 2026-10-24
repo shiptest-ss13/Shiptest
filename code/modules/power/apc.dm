@@ -133,7 +133,7 @@
 	var/start_charge = 90				// initial cell charge %
 	var/cell_type = /obj/item/stock_parts/cell/upgraded		//Base cell has 2500 capacity. Enter the path of a different cell you want to use. cell determines charge rates, max capacity, ect. These can also be changed with other APC vars, but isn't recommended to minimize the risk of accidental usage of dirty editted APCs
 	var/opened = APC_COVER_CLOSED
-	var/shorted = 0
+	var/shorted = FALSE
 	var/lighting = APC_CHANNEL_AUTO_ON
 	var/equipment = APC_CHANNEL_AUTO_ON
 	var/environ = APC_CHANNEL_AUTO_ON
@@ -722,7 +722,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 
 /obj/machinery/power/apc/bullet_act(obj/projectile/hitting_projectile)
 	if(prob(50))
-		do_sparks(4, FALSE, src)
+		switch(rand(1,6))
+			if(1,2)
+				do_sparks(4, FALSE, src)
+			if(3)
+				shorted = TRUE
+				update()
+			if(4,5)
+				overload_lighting()
+			if(6)
+				area.power_environ = FALSE
+				area.power_change()
 	. = ..()
 
 /obj/machinery/power/apc/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)

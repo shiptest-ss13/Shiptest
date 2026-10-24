@@ -925,12 +925,19 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 
 /obj/machinery/airalarm/bullet_act(obj/projectile/hitting_projectile)
 	if(prob(50))
-		visible_message(span_warning("[src] lets out a plume of smoke as it's shot!"), vision_distance = 3)
-		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
-		var/datum/effect_system/smoke_spread/bad/smoke = new
-		smoke.set_up(3, src)
-		smoke.start()
-		del(smoke)
+		switch(rand(1,3))
+			if(1 to 2)
+				visible_message(span_warning("[src] lets out a plume of smoke as it's shot!"), vision_distance = 3)
+				playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+				var/datum/effect_system/smoke_spread/transparent/bad/smoke = new
+				smoke.set_up(3, src)
+				smoke.start()
+				del(smoke)
+			if(3)
+				visible_message(span_warning("[src]'s internal heater shorts and shoots flames!"), vision_distance = 3)
+				if(isturf(loc))
+					var/turf/open/fire = loc
+					fire.ignite_turf(10)
 	. = ..()
 
 
