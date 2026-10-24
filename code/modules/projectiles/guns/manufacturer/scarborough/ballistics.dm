@@ -847,7 +847,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 
 /obj/item/gun/ballistic/automatic/hmg/python
 	name = "\improper SAW-90 Python"
-	desc = "Scarborough Arms' premier Squad-Automatic Weapon. A unique bullpup LMG with best-in-class weight and capacity. The reloading process has been described with every colorful name in the Tecetian book. Chambered in 5.56mm CLIP."
+	desc = "Scarborough Arms' premier Squad-Automatic Weapon. A unique bullpup LMG with best-in-class weight and capacity. The reloading process has been described with every colorful name in the Tecetian language. Chambered in 5.56mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
