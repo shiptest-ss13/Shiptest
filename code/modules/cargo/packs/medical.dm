@@ -209,7 +209,7 @@
 /datum/supply_pack/medical/bruise
 	name = "Bruise Pack Pack"
 	desc = "Contains a pack of bruise packs, for refilling medical kits, or simply building up a stock."
-	cost = 200
+	cost = 300
 	contains = list(/obj/item/storage/medpack/bruisepacks)
 
 /datum/supply_pack/medical/mesh
