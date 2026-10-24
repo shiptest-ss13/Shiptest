@@ -16,4 +16,3 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner
 	l_hand = /obj/item/melee/duelenergy/halberd
-	dodging = TRUE
