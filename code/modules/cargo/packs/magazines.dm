@@ -205,6 +205,12 @@
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
 
+/datum/supply_pack/magazine/python
+	name = "SAW-90 Python Magazine Crate"
+	desc = "Contains a 90-round 5.56x42mm CLIP box for the Python Squad Automatic Weapon. Consider designating an ammo bearer."
+	contains = list(/obj/item/ammo_box/magazine/python_box/empty)
+	cost = 1000
+	faction = /datum/faction/syndicate/scarborough
 
 /* CM Lancaster */
 

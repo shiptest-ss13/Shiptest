@@ -941,11 +941,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/saw80
-	name = "SAW-80 Squad Automatic Weapon"
-	desc = "Contains one of the rarely-produced SAW-80 Squad Automatic Weapon platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
-	cost = 7000
-	contains = list(/obj/item/storage/guncase/saw80)
+/datum/supply_pack/gun/python
+	name = "SAW-90 Python"
+	desc = "Contains one of the rarely-produced SAW-90 Python platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/python)
 	crate_name = "LMG crate"
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0

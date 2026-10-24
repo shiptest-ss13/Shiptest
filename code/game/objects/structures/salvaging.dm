@@ -792,8 +792,8 @@
 			new /obj/item/ammo_box/magazine/cm40_762_40_box(loc)
 		if(21 to 25)
 			// hydra SAW
-			new /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended(loc)
-			new /obj/item/ammo_box/magazine/m556_42_hydra/extended(loc)
+			new /obj/item/gun/ballistic/automatic/hmg/python(loc)
+			new /obj/item/ammo_box/magazine/python_box(loc)
 		if(26 to 30)
 			// VG-A5
 			new /obj/item/gun/energy/kalix/pgf/nock(loc)
