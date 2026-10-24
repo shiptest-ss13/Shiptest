@@ -367,15 +367,15 @@
 /* Shotguns */
 
 /datum/supply_pack/magazine/bulldog
-	name = "Bulldog Box Magazine Crate"
-	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
+	name = "Bullsnake Box Magazine Crate"
+	desc = "Contains an 8-round 12ga box magazine for the Bullsnake weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
 	cost = 400
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/bulldog_12
-	name = "Bulldog Drum Magazine Crate"
-	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
+	name = "Bullsnake Drum Magazine Crate"
+	desc = "Contains a 12-round 12ga drum magazine for the Bullsnake weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
 	cost = 1200
 	faction = /datum/faction/syndicate/scarborough

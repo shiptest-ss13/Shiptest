@@ -507,8 +507,8 @@
 	icon_state = "poster-aclf_antiwarra"
 
 /obj/structure/sign/poster/contraband/bulldog
-	name = "Bulldog Shotgun"
-	desc = "A poster advertising the Scarborough Arms Bulldog Automatic Shotgun. \"No need to pump it, simply load the drum, and pull away.\""
+	name = "Bullsnake Shotgun"
+	desc = "A poster advertising the Scarborough Arms Bullsnake Automatic Shotgun. \"No need to pump it, simply load the drum, and pull away.\""
 	icon_state = "poster-bulldog"
 
 /obj/structure/sign/poster/contraband/m90

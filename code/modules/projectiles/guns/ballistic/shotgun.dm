@@ -119,7 +119,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
-	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
+	desc = "A variation of the Bullsnake, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
 	icon_state = "bulldog_inteq"
 	item_state = "bulldog_inteq"
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog

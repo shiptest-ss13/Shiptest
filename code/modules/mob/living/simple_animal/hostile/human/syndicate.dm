@@ -750,7 +750,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
-	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bulldog shotgun, elegance in its movements."
+	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bullsnake shotgun, elegance in its movements."
 	rapid = 1
 	casingtype = /obj/item/ammo_casing/shotgun/incendiary
 

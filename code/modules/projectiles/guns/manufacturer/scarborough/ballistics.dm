@@ -976,7 +976,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 // Bulldog shotgun //
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog
-	name = "SG-60r \"Bulldog\""
+	name = "SG-60r \"Bullsnake\""
 	desc = "A bullpup combat shotgun usually seen with a characteristic drum magazine. Wildly popular among Syndicate strike teams during the ICW, although it proved less useful against military-grade equipment. Still popular among former Syndicate factions, especially the Ramzi Clique pirates. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -1077,7 +1077,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog
 	name = "shotgun box magazine (12g buckshot)"
-	desc = "A single-stack, 8-round box magazine for the Bulldog shotgun and it's derivatives."
+	desc = "A single-stack, 8-round box magazine for the Bullsnake shotgun and it's derivatives."
 	icon_state = "bulldog_mag-1"
 	base_icon_state = "bulldog_mag"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -1094,7 +1094,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog/drum
 	name = "shotgun drum magazine (12g buckshot)"
-	desc = "A bulky 12-round drum designed for the Bulldog shotgun and it's derivatives."
+	desc = "A bulky 12-round drum designed for the Bullsnake shotgun and it's derivatives."
 	icon_state = "bulldog_drum-1"
 	base_icon_state = "bulldog_drum"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -1128,7 +1128,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/gun/ballistic/shotgun/gaboon
 	name = "CSG-12 \"Gaboon\""
-	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bulldog, its larger, modern sister. Chambered in 12g."
+	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bullsnake, its larger, modern sister. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'

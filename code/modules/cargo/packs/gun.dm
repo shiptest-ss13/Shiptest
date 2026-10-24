@@ -541,7 +541,7 @@
 	crate_name = "shotgun crate"
 
 /datum/supply_pack/gun/bulldog
-	name = "Bulldog Shotgun Crate"
+	name = "Bullsnake Shotgun Crate"
 	desc = "An automatic shotgun chambered in 12ga produced by Scarborough Arms for exclusive use by licensed buyers. Comes with 8-round box magazines."
 	contains = list(/obj/item/storage/guncase/bulldog)
 	cost = 4000
