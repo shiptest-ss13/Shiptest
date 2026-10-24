@@ -23,6 +23,8 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	name = "hangar numbers landmark"
 
 /obj/effect/landmark/outpost/hangar_numbers/proc/write_number(num)
+	if(!num)
+		return
 	num = round(num)
 	var/low_digit = num % 10
 	var/high_digit = ((num - low_digit) / 10) % 10
