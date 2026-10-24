@@ -429,7 +429,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cO" = (
-/obj/effect/turf_decal/siding/black/corner,
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 8
 	},
@@ -534,9 +533,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "dV" = (
-/obj/effect/turf_decal/siding/black/corner{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
 	},
@@ -817,18 +813,6 @@
 "gl" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/ccommons)
-"go" = (
-/obj/effect/turf_decal/siding/black/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/blue/border{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "gp" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2181,9 +2165,6 @@
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "pi" = (
-/obj/effect/turf_decal/siding/black/corner{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
 	},
@@ -2910,7 +2891,7 @@
 "tF" = (
 /obj/structure/closet/wall/blue/directional/north{
 	req_access_txt = "19";
-	name = "Sergeant's Locker"
+	name = "Lieutenant's Locker"
 	},
 /obj/item/clothing/glasses/sunglasses{
 	pixel_x = 1;
@@ -4315,6 +4296,7 @@
 	pixel_x = 7;
 	pixel_y = -1
 	},
+/obj/item/megaphone/command,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "Cn" = (
@@ -5235,18 +5217,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
-"HZ" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/blue/bordercorner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "Ib" = (
 /obj/structure/closet/wall/directional/north{
 	name = "cleaning supplies"
@@ -5440,7 +5410,8 @@
 	},
 /obj/machinery/door/airlock{
 	id_tag = "fragwash_lock";
-	dir = 4
+	dir = 4;
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
@@ -5822,19 +5793,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/canteen)
-"Lt" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/bordercorner{
-	dir = 1
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "Lu" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/internals,
@@ -6141,9 +6099,6 @@
 	},
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/bordercorner{
-	dir = 8
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono,
@@ -7103,16 +7058,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"TK" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/blue/bordercorner,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "TO" = (
 /obj/effect/turf_decal/corner/transparent/yellow/diagonal,
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
@@ -8025,6 +7970,11 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 11;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/janitor)
 
@@ -8466,7 +8416,7 @@ Nu
 dV
 TY
 pi
-Lt
+Nu
 uo
 Qi
 NI
@@ -8538,11 +8488,11 @@ EL
 if
 SX
 by
-TK
-go
+gO
+cO
 dg
 cO
-HZ
+gO
 xu
 gO
 sm
