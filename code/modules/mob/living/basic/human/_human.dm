@@ -77,6 +77,8 @@
 	var/pressure_sealed = FALSE
 	/// If TRUE, what would knock us down or out only staggers us, slowing us for as long instead, capped, so we stay on our feet. For the likes of juiced-up brutes
 	var/knockdowns_slow_instead = FALSE
+	/// TRUE just while we're rolling to put out a fire
+	var/rolling_out_fire = FALSE
 	/// Until when we're staggered, with knockdowns_slow_instead
 	var/staggered_until = 0
 	/// How long stuns, knockdowns, paralysis and being knocked out last on us, as a multiplier, like 0.5 for a tough boss, or 0 to shrug them all off

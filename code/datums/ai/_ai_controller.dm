@@ -908,7 +908,7 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/get_pawn_conditions()
 	. = NONE
 	var/mob/living/basic/basic_pawn = pawn
-	if(istype(basic_pawn) && (!is_environment_safe_for(basic_pawn, get_turf(basic_pawn)) || is_ai_hazard_turf(get_turf(basic_pawn))))
+	if(istype(basic_pawn) && (!is_environment_safe_for(basic_pawn, get_turf(basic_pawn)) || is_ai_hazard_turf(get_turf(basic_pawn), basic_pawn)))
 		. |= AI_CONDITION_UNSAFE_SPOT
 	else if(istype(basic_pawn) && !ai_immune_to_tear_gas(basic_pawn) && is_ai_irritant_smoke(get_turf(basic_pawn)))
 		. |= AI_CONDITION_UNSAFE_SPOT // in tear gas, so we get out of it

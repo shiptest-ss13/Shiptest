@@ -47,7 +47,7 @@
 /proc/ai_can_stand_on(mob/living/mover, turf/spot)
 	if(is_bare_space(spot) && !mover.ai_controller?.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 		return FALSE
-	if(is_ai_hazard_turf(spot))
+	if(is_ai_hazard_turf(spot, mover))
 		return FALSE
 	var/mob/living/basic/basic_mover = mover
 	return !istype(basic_mover) || is_environment_safe_for(basic_mover, spot)
@@ -100,7 +100,8 @@
 	var/turf/open/water/water = spot
 	return istype(water) && water.is_swimming_tile
 
-/proc/is_ai_hazard_turf(turf/spot)
+// mover is who it might hurt, as some, like those in fire suits, can walk through fire
+/proc/is_ai_hazard_turf(turf/spot, atom/movable/mover)
 	if(HAS_TRAIT(spot, TRAIT_AI_AVOID))
 		return TRUE // a mapper wants us kept off it
 	if(istype(spot, /turf/open/chasm))
@@ -111,10 +112,21 @@
 	for(var/obj/structure/hazard/hazard in spot)
 		if(ai_harmful_hazard(hazard))
 			return TRUE
+	if(((locate(/obj/effect/hotspot) in spot) || (locate(/obj/effect/abstract/turf_fire) in spot)) && !ai_is_fireproof(mover))
+		return TRUE
+	for(var/mob/living/burning in spot)
+		if(burning != mover && burning.on_fire && !ai_is_fireproof(mover))
+			return TRUE // for burning objects or bodies
 	for(var/obj/item/mine/mine in spot)
 		if(mine.armed && !mine.invisibility)
 			return TRUE
 	return FALSE
+
+/proc/ai_is_fireproof(atom/movable/mover)
+	var/mob/living/basic/human/basic_human = mover
+	if(istype(basic_human))
+		return basic_human.get_outfit_thermal_protection() >= FIRE_SUIT_MAX_TEMP_PROTECT
+	return isliving(mover) && HAS_TRAIT(mover, TRAIT_RESISTHEAT)
 
 // special cases for ruin hazards
 /proc/ai_harmful_hazard(obj/structure/hazard/hazard)

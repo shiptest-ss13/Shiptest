@@ -56,6 +56,9 @@
 			var/turf/old_turf = get_turf(movable_pawn)
 			if(ai_steps_into_blast(controller, old_turf, next_step) || ai_steps_into_tear_gas(movable_pawn, old_turf, next_step))
 				continue // we wait clear of the grenade or the gas rather than walking back into it
+			if(is_ai_hazard_turf(next_step, movable_pawn) && !is_ai_hazard_turf(old_turf, movable_pawn))
+				controller.movement_path = null // something's come up on our way since we planned it, like a flamer's spray, so we find another way round rather than walk into it
+				continue
 			take_step(controller, movable_pawn, next_step)
 			var/turf/new_turf = get_turf(movable_pawn)
 			if(new_turf == old_turf && bash_flimsy_thing_in_the_way(controller, movable_pawn, next_step))
@@ -188,7 +191,7 @@
 	for(var/turf/line_turf as anything in get_line(start, finish))
 		if(line_turf == start)
 			continue
-		if(line_turf.density || is_ai_hazard_turf(line_turf) || (!can_cross_space && is_bare_space(line_turf)))
+		if(line_turf.density || is_ai_hazard_turf(line_turf, movable_pawn) || (!can_cross_space && is_bare_space(line_turf)))
 			return FALSE
 		if(avoid_bad_air && !is_environment_safe_for(movable_pawn, line_turf))
 			return FALSE
@@ -202,7 +205,7 @@
 			var/turf/second_side = locate(previous.x, line_turf.y, line_turf.z)
 			if(first_side?.is_blocked_turf(TRUE, movable_pawn) && second_side?.is_blocked_turf(TRUE, movable_pawn))
 				return FALSE
-			if(is_ai_hazard_turf(first_side) || is_ai_hazard_turf(second_side))
+			if(is_ai_hazard_turf(first_side, movable_pawn) || is_ai_hazard_turf(second_side, movable_pawn))
 				return FALSE // we'd cut through it on the way, as a diagonal step is really two
 		previous = line_turf
 	return TRUE

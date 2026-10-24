@@ -346,6 +346,16 @@
 #define BB_BASIC_MOB_SAFE_TURF "BB_basic_safe_turf"
 #define BB_BASIC_MOB_NEXT_SAFETY_SEARCH "BB_basic_next_safety_search"
 
+// Fire, see /datum/ai_planning_subtree/put_out_fire
+///Since when we've been on fire, so we only call it out once
+#define BB_BASIC_MOB_BURNING_SINCE "BB_basic_burning_since"
+///Since when we've been out of the fire while still burning, so we roll where we are once we've had long enough to get to cover
+#define BB_BASIC_MOB_OUT_OF_FIRE_SINCE "BB_basic_out_of_fire_since"
+///One of ours who's on fire that we're going to pat out
+#define BB_BASIC_MOB_BURNING_ALLY "BB_basic_burning_ally"
+///When we can next walk into who we're fighting to set them alight, while we burn
+#define BB_BASIC_MOB_NEXT_FIRE_SPREAD "BB_basic_next_fire_spread"
+
 // Explosives and grenades
 ///The live explosive we're running from, like a primed grenade
 #define BB_BASIC_MOB_FLEEING_EXPLOSIVE "BB_basic_fleeing_explosive"
@@ -356,14 +366,14 @@
 #define BB_BASIC_MOB_THROW_BACK_AT "BB_basic_throw_back_at"
 ///Whether the explosive we're fleeing was thrown by our side, so we got clear without calling it, and call it if someone picks it up to throw it back
 #define BB_BASIC_MOB_FLEEING_OUR_OWN "BB_basic_fleeing_our_own"
-///What grenade we throw, how many we've got left, and when we can next throw one, see /datum/ai_planning_subtree/throw_grenade
+///What grenade we throw, how many we've got left, and when we can next throw one
 #define BB_BASIC_MOB_GRENADE_TYPE "BB_basic_grenade_type"
 #define BB_BASIC_MOB_GRENADES_LEFT "BB_basic_grenades_left"
 #define BB_BASIC_MOB_NEXT_GRENADE "BB_basic_next_grenade"
 ///When we next weigh up throwing a grenade, now there's reason to, and where we're throwing it once we have
 #define BB_BASIC_MOB_GRENADE_DECISION_AT "BB_basic_grenade_decision_at"
 #define BB_BASIC_MOB_GRENADE_AIM "BB_basic_grenade_aim"
-///Mid-throw: when we prime the grenade, the primed one in our hand, and when we let it go, see /datum/ai_behavior/throw_grenade
+///Mid-throw: when we prime the grenade, the primed one in our hand, and when we let it go
 #define BB_BASIC_MOB_GRENADE_PRIME_AT "BB_basic_grenade_prime_at"
 #define BB_BASIC_MOB_HELD_GRENADE "BB_basic_held_grenade"
 #define BB_BASIC_MOB_GRENADE_THROW_AT "BB_basic_grenade_throw_at"

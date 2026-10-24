@@ -68,6 +68,8 @@
 	return ..(amount * stun_multiplier, ignore_canstun)
 
 /mob/living/basic/human/Knockdown(amount, ignore_canstun = FALSE)
+	if(rolling_out_fire || HAS_TRAIT_FROM(src, TRAIT_HANDS_BLOCKED, "stop_drop_roll"))
+		return ..(amount, ignore_canstun)
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
 	var/was_down = HAS_TRAIT(src, TRAIT_FLOORED)

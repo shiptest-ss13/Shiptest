@@ -111,6 +111,8 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_explosives,
 		/datum/ai_planning_subtree/seek_safe_environment,
+		/datum/ai_planning_subtree/put_out_fire,
+		/datum/ai_planning_subtree/pat_out_burning_ally,
 		/datum/ai_planning_subtree/investigate_box,
 		/datum/ai_planning_subtree/break_post,
 		/datum/ai_planning_subtree/return_home/post,
@@ -134,6 +136,8 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_explosives,
 		/datum/ai_planning_subtree/seek_safe_environment,
+		/datum/ai_planning_subtree/put_out_fire,
+		/datum/ai_planning_subtree/pat_out_burning_ally,
 		/datum/ai_planning_subtree/investigate_box,
 		/datum/ai_planning_subtree/break_post,
 		/datum/ai_planning_subtree/return_home/post,

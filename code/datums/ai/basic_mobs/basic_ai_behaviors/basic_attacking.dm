@@ -142,6 +142,9 @@
 	if(!ranged_attack)
 		basic_mob.RangedAttack(final_target)
 		return AI_BEHAVIOR_DELAY
+	var/datum/component/ranged_attacks/flamethrower/flamer = ranged_attack
+	if(istype(flamer) && flamer.get_ally_in_spray(basic_mob, final_target))
+		return AI_BEHAVIOR_DELAY // dont burn allies
 	if(!ranged_attack.try_start_volley())
 		return AI_BEHAVIOR_DELAY
 	ranged_attack.fire_volley(final_target, shots, burst_interval)
@@ -283,6 +286,9 @@
 		return FALSE // something's in the way we'd only be shooting
 	// not just up to where we're aiming, as the shot carries on past it
 	var/turf/shot_end = get_ranged_target_turf_direct(basic_mob, spot, max_range) || spot
+	var/datum/component/ranged_attacks/flamethrower/flamer = ranged_attack
+	if(istype(flamer) && flamer.get_ally_in_spray(basic_mob, spot))
+		return FALSE
 	return !ally_in_line_of_fire(basic_mob, get_turf(basic_mob), shot_end)
 
 /datum/ai_behavior/fire_at_position/proc/shot_wasted_on(mob/living/basic/basic_mob, atom/blocker, datum/component/ranged_attacks/ranged_attack)

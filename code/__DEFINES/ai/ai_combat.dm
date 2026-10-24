@@ -5,6 +5,8 @@
 #define AI_HUMAN_PLANNING_OPENING \
 	/datum/ai_planning_subtree/flee_explosives, \
 	/datum/ai_planning_subtree/seek_safe_environment, \
+	/datum/ai_planning_subtree/put_out_fire, \
+	/datum/ai_planning_subtree/pat_out_burning_ally, \
 	/datum/ai_planning_subtree/investigate_noise, \
 	/datum/ai_planning_subtree/investigate_box, \
 	/datum/ai_planning_subtree/return_home/human, \
@@ -194,6 +196,10 @@
 ///Whether controller's mob has broken from the post it holds, for now
 #define AI_POST_BROKEN(controller) (world.time < controller.blackboard[BB_BASIC_MOB_POST_BROKEN_UNTIL])
 
+// Fire
+///The cooldown for how often a mob tries to set someone else on fire
+#define AI_FIRE_SPREAD_COOLDOWN (3 SECONDS)
+
 // Picking somewhere to hide or fight from
 ///The nearest spot out of their sight that'll do
 #define AI_HIDE_NEAREST "nearest"
@@ -320,6 +326,12 @@
 #define AI_CALLOUT_RAISING_ALARM "raising alarm"
 ///Someone it put down is back on their feet
 #define AI_CALLOUT_GETTING_UP "getting up"
+///It's caught fire
+#define AI_CALLOUT_ON_FIRE "on fire"
+///It's patting out one of its own who's on fire
+#define AI_CALLOUT_PUTTING_OUT "putting out"
+///It's burning, and walking into who it's fighting to set them alight too
+#define AI_CALLOUT_SPREADING_FIRE "spreading fire"
 
 // Answers, said by an ally a moment after the line they answer, so it's a conversation rather than one voice
 ///Asking an ally who just got hurt how they're doing, answered with AI_CALLOUT_STATUS_OK or AI_CALLOUT_STATUS_BAD

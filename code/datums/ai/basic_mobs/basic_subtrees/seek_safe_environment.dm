@@ -34,7 +34,7 @@
 		controller.set_blackboard_key(BB_BASIC_MOB_SAFETY_FAILURES, failures)
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_SAFETY_SEARCH, world.time + search_interval)
 		return
-	if(!safe_turf || !is_environment_safe_for(basic_mob, safe_turf) || is_ai_swimming_water(safe_turf) || (!ai_immune_to_tear_gas(basic_mob) && is_ai_irritant_smoke(safe_turf)))
+	if(!safe_turf || !is_environment_safe_for(basic_mob, safe_turf) || is_ai_hazard_turf(safe_turf, basic_mob) || is_ai_swimming_water(safe_turf) || (!ai_immune_to_tear_gas(basic_mob) && is_ai_irritant_smoke(safe_turf)))
 		if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_SAFETY_SEARCH])
 			return // nowhere safe last we looked, so carry on as best we can
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_SAFETY_SEARCH, world.time + search_interval)
@@ -75,7 +75,7 @@
 			score += 2
 			if(score >= best_score)
 				continue
-		if(!is_environment_safe_for(basic_mob, candidate) || is_ai_swimming_water(candidate) || (!ai_immune_to_tear_gas(basic_mob) && is_ai_irritant_smoke(candidate)))
+		if(!is_environment_safe_for(basic_mob, candidate) || is_ai_hazard_turf(candidate, basic_mob) || is_ai_swimming_water(candidate) || (!ai_immune_to_tear_gas(basic_mob) && is_ai_irritant_smoke(candidate)))
 			continue
 		best_turf = candidate
 		best_score = score

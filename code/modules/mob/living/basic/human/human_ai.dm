@@ -45,6 +45,7 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_explosives,
 		/datum/ai_planning_subtree/seek_safe_environment,
+		/datum/ai_planning_subtree/put_out_fire,
 		/datum/ai_planning_subtree/return_home/human,
 		/datum/ai_planning_subtree/call_allies/shout_for_help,
 		/datum/ai_planning_subtree/flee_target,

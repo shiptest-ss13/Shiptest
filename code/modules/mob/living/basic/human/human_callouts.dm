@@ -69,6 +69,9 @@
 		AI_CALLOUT_ALL_CLEAR = list("That's the last of them.", "Area's clear.", "All clear. Check the bodies.", "Looks like that's all of them.", "Clear. Stay sharp anyway."),
 		AI_CALLOUT_GOT_AWAY = list("They're gone. Stay sharp.", "Lost them. Keep your eyes open.", "They got away.", "Gone. They'll be back."),
 		AI_CALLOUT_GETTING_UP = list("They're getting back up!", "Still moving! Put them down!", "They're up again!", "Not dead yet, watch it!"),
+		AI_CALLOUT_ON_FIRE = list("I'm on fire!", "I'm burning! Get it off!", "Fire! Put me out!", "It burns!"),
+		AI_CALLOUT_PUTTING_OUT = list("Hold still, I've got you!", "Stop moving, I'll put it out!", "Get down, I've got it!"),
+		AI_CALLOUT_SPREADING_FIRE = list("Burn with me!", "If I burn, you burn!", "Come here!", "We go together!"),
 		AI_CALLOUT_RAISING_ALARM = list("On me, we've got company!", "Wake up, they're here!", "Hostiles inbound, get up!", "They're coming, grab your gear!"),
 		AI_CALLOUT_BREACHING = list("Breaking through!", "Glass won't save you!", "Coming through, one way or another!", "I'll make a way in!"),
 		// answers, said by an ally a moment after a line. CHECK_IN is an ally asking whoever just got hurt, who answers with STATUS_OK or STATUS_BAD.

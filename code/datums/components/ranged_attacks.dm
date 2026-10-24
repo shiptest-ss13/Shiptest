@@ -214,8 +214,21 @@
 	effective_range = 4
 
 /datum/component/ranged_attacks/flamethrower/async_fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers)
-	var/turf/flame_end = get_ranged_target_turf_direct(firer, target, effective_range)
-	var/list/burn_turfs = get_line(firer, flame_end) - get_turf(firer)
+	var/list/burn_turfs = get_burn_turfs(firer, target)
 	firer.visible_message(span_danger("<b>[firer]</b> sprays fire at [target]!"))
 	playsound(firer, projectile_sound, 100, TRUE)
 	spray_fire_line(firer, burn_turfs, "flamethrower", TRUE, 10)
+
+// get turfs we'd be setting on fire, for friendly fire avoidance
+/datum/component/ranged_attacks/flamethrower/proc/get_burn_turfs(mob/living/basic/firer, atom/target)
+	var/turf/flame_end = get_ranged_target_turf_direct(firer, target, effective_range)
+	return get_line(firer, flame_end) - get_turf(firer)
+
+/datum/component/ranged_attacks/flamethrower/proc/get_ally_in_spray(mob/living/basic/firer, atom/target)
+	for(var/turf/burn_turf as anything in get_burn_turfs(firer, target))
+		if(burn_turf.density)
+			return null // the spray stops at the wall, see spray_fire_line()
+		for(var/mob/living/ally in burn_turf)
+			if(ally != firer && ally.stat != DEAD && firer.faction_check_mob(ally) && !ai_is_fireproof(ally))
+				return ally
+	return null
