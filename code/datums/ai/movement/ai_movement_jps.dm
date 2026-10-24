@@ -398,9 +398,13 @@
 	var/ground_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
 	var/list/search_notes = list()
 	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, search_notes = search_notes)
-	if(!length(new_path) && search_notes["found_climbable"] && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
-		// no way round, so over, like sandbags piled in a doorway. Only once there's no other way, as climbing's slow, and only if something we could climb was in the way, as a failed search is the costliest kind
-		new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, climbing = TRUE)
+	var/long_way_round = length(new_path) > get_dist(controller.pawn, target) + AI_CLIMB_DETOUR_STEPS
+	if((!length(new_path) || long_way_round) && search_notes["found_climbable"] && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
+		// no way round, or a long one, so over, like sandbags piled in a doorway, or off a platform rather than round to its stairs. Only if something we could climb was in the way, as a failed search is the costliest kind
+		var/list/climbing_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, climbing = TRUE)
+		// climbing's slow, so a climb counts as AI_CLIMB_STEP_COST steps against the way round
+		if(length(climbing_path) && (!length(new_path) || length(climbing_path) + count_climbs(controller, climbing_path) * AI_CLIMB_STEP_COST < length(new_path)))
+			new_path = climbing_path
 	if(QDELETED(controller))
 		return
 	controller.calculating_path = FALSE
@@ -410,6 +414,16 @@
 	if(!length(new_path) && !avoid)
 		// no way there at all, not just someone in the way we might wait out, so searching again every couple of seconds would only fail the same way
 		controller.pathing_attempts = max_pathing_attempts - 1
+
+// counting the cost of climbing, so we only do it if we need to
+/datum/ai_movement/jps/proc/count_climbs(datum/ai_controller/controller, list/path)
+	var/turf/previous = get_turf(controller.pawn)
+	var/access = controller.get_access()
+	. = 0
+	for(var/turf/step_turf as anything in path)
+		if(previous && previous.LinkBlockedWithAccess(step_turf, controller.pawn, access))
+			.++
+		previous = step_turf
 
 /datum/ai_movement/jps/start_moving_towards(datum/ai_controller/controller, atom/current_movement_target)
 	controller.movement_path = null

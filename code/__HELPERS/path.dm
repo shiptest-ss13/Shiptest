@@ -375,12 +375,13 @@
 */
 /turf/proc/LinkBlockedWithAccess(turf/destination_turf, requester, ID, climbing = FALSE, datum/pathfind/search)
 	var/actual_dir = get_dir(src, destination_turf)
-	// what we'd climb over on this step. Only the one, as getting over one, like a platform, leaves us stuck on the next, like a railing on the same edge
+	// what we'd climb over on this step.
 	var/obj/climbed_over
+	var/diagonal = ISDIAGONALDIR(actual_dir)
 
 	for(var/obj/structure/window/iter_window in src)
 		if(!iter_window.CanAStarPass(ID, actual_dir))
-			if(!path_can_climb_over(iter_window, climbing, search) || (climbed_over && climbed_over != iter_window))
+			if(!path_can_climb_over(iter_window, climbing, search) || (diagonal && climbed_over && climbed_over != iter_window))
 				return TRUE
 			climbed_over = iter_window
 
@@ -393,7 +394,7 @@
 		if(!(iter_border.flags_1 & ON_BORDER_1) || istype(iter_border, /obj/structure/window) || istype(iter_border, /obj/machinery/door/window))
 			continue
 		if(!iter_border.CanAStarPass(ID, actual_dir, requester))
-			if(!path_can_climb_over(iter_border, climbing, search) || (climbed_over && climbed_over != iter_border))
+			if(!path_can_climb_over(iter_border, climbing, search) || (diagonal && climbed_over && climbed_over != iter_border))
 				return TRUE
 			climbed_over = iter_border
 
@@ -402,7 +403,7 @@
 		if(!iter_object.CanAStarPass(ID, reverse_dir, requester))
 			if(ai_can_push_aside(requester, iter_object, actual_dir))
 				continue
-			if(!path_can_climb_over(iter_object, climbing, search) || (climbed_over && climbed_over != iter_object))
+			if(!path_can_climb_over(iter_object, climbing, search) || (diagonal && climbed_over && climbed_over != iter_object))
 				return TRUE
 			climbed_over = iter_object
 
