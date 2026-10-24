@@ -784,6 +784,9 @@
 	set name = "Respawn"
 	set category = "OOC"
 
+	return_to_lobby()
+
+/mob/proc/return_to_lobby()
 	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
 		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
@@ -828,15 +831,15 @@
 		log_game("[key_name(usr)] AM failed due to disconnect.")
 		return
 
-	var/mob/dead/new_player/M = new /mob/dead/new_player()
+	var/mob/dead/new_player/lobby_mob = new /mob/dead/new_player()
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
-		qdel(M)
+		qdel(lobby_mob)
 		return
 
-	M.key = key
-//	M.Login()	//wat
-	return
+	lobby_mob.key = key
+//	lobby_mob.Login()	//wat
+	return lobby_mob
 
 
 /**
