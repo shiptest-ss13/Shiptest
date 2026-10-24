@@ -139,19 +139,21 @@
 	armour_penetration = 10
 	bullet_identifier = "huge pellet"
 	tile_dropoff = 3
+	speed = BULLET_SPEED_FOURBORE
 
 /obj/projectile/bullet/pellet/fourbore/shrapnel
 	name = "four-bore shrapnel pellet"
 	damage = 13
 	armour_penetration = -10
 	bullet_identifier = "small pellet"
+	speed = BULLET_SPEED_SHOTGUN
 
 
 /obj/projectile/bullet/slug/fourbore
 	name = "four-bore shotgun slug"
 	damage = 50
 	armour_penetration = 20
-	speed = BULLET_SPEED_SHOTGUN
+	speed = BULLET_SPEED_FOURBORE
 	bullet_identifier = "huge slug"
 	wall_damage_override = 400
 	demolition_mod = 5
@@ -160,7 +162,6 @@
 /obj/projectile/bullet/slug/fourbore/flashbang
 	name = "four-bore flashbang shell"
 	damage = 25
-	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "huge shell"
 	wall_damage_override = null
 	demolition_mod = 0
@@ -179,7 +180,6 @@
 /obj/projectile/bullet/slug/fourbore/teargas
 	name = "four-bore teargas shell"
 	damage = 25
-	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "huge shell"
 	wall_damage_override = null
 	demolition_mod = 0
