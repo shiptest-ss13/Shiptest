@@ -214,6 +214,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/mammoth = 10,
 		/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 10,
 		/obj/item/reagent_containers/hypospray/medipen/combat_drug = 10,
+		/obj/item/reagent_containers/hypospray/medipen/gambling = 10,
 		/obj/item/hypospray/mkii = 5,
 		/obj/item/hypospray/mkii/mkiii = 5)
 
@@ -241,24 +242,26 @@
 		/obj/item/gem/rupee = 60,
 		/obj/item/gem/fdiamond = 40,
 		/obj/item/strange_crystal = 35,
-		/obj/item/gem/amber = 15,
-		/obj/item/gem/bloodstone = 5,
-		/obj/item/gem/phoron = 3,
-		/obj/item/gem/void = 1)
+		/obj/item/gem/amber = 20,
+		/obj/item/gem/bloodstone = 15,
+		/obj/item/gem/phoron = 10,
+		/obj/item/gem/void = 5)
 
 // fucked up shit
 /obj/effect/spawner/random/salvage/analyzer/evil
 	loot = list(
 		/obj/machinery/syndicatebomb/live_fucking_bomb = 10,
-		/obj/effect/anomaly/tvstatic/planetary = 10)
+		/obj/effect/anomaly/tvstatic/planetary = 10,
+		/obj/effect/anomaly/grav/planetary = 5,
+		/obj/effect/anomaly/grav/high/planetary = 5)
 
 /obj/effect/spawner/random/salvage/analyzer
 	loot = list(
-		/obj/effect/spawner/random/salvage/analyzer/gadget = 25,
-		/obj/effect/spawner/random/salvage/analyzer/medical = 25,
-		/obj/effect/spawner/random/salvage/analyzer/gem_alarm = 2,
-		/obj/effect/spawner/random/salvage/analyzer/anomaly_core = 2,
-		/obj/effect/spawner/random/salvage/analyzer/evil = 1)
+		/obj/effect/spawner/random/salvage/analyzer/gadget = 30,
+		/obj/effect/spawner/random/salvage/analyzer/medical = 30,
+		/obj/effect/spawner/random/salvage/analyzer/gem_alarm = 5,
+		/obj/effect/spawner/random/salvage/analyzer/anomaly_core = 5,
+		/obj/effect/spawner/random/salvage/analyzer/evil = 5)
 
 /obj/effect/spawner/random/salvage/machine
 	name = "salvageable machine spawner"
