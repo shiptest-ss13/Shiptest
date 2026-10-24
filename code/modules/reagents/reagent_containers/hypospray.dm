@@ -156,6 +156,20 @@
 	desc = "A modified stimulant autoinjector, containing a cocktail of potent nerve excitants and long-release healing chemicals. Designed for use in emergency situations where medical help may be hours or days away."
 	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 5, /datum/reagent/medicine/panacea = 15)
 
+/obj/item/reagent_containers/hypospray/medipen/cheap_stim
+	name = "first aid stimpack"
+	icon_state = "stimpen"
+	item_state = "stimpen"
+	base_icon_state = "stimpen"
+	desc = "The lifeblood of the mining industry. Contains a cheap and easy to produce mixture of healing compounds, stimulants, and painkillers. Do not overdose."
+	volume = 20
+	amount_per_transfer_from_this = 20
+	list_reagents = list(
+		/datum/reagent/medicine/salglu_solution = 6,
+		/datum/reagent/medicine/ephedrine = 3,
+		/datum/reagent/medicine/hunter_extract = 6,
+		/datum/reagent/medicine/morphine = 5)
+
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."

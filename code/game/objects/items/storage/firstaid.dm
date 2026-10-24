@@ -41,7 +41,8 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/suture = 2,
+		/obj/item/med_stapler/full = 1,
+		/obj/item/stack/medical/bruise_pack = 1,
 		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/healthanalyzer = 1,
@@ -109,6 +110,8 @@
 		/obj/item/holosign_creator/medical,
 		/obj/item/stack/sticky_tape,
 		/obj/item/stack/medical/bone_gel,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart,
 	))
 
 /obj/item/storage/firstaid/medical/PopulateContents()
@@ -707,4 +710,12 @@
 
 /obj/item/storage/medpack/epipens/PopulateContents()
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/cheap_stims
+	name = "pack of first aid stimpacks"
+	desc = "a sealed, sterile-white plastic package full of first aid stimpacks."
+
+/obj/item/storage/medpack/cheap_stims/PopulateContents()
+	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/cheap_stim = 4)
 	generate_items_inside(items_inside,src)

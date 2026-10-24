@@ -230,6 +230,12 @@
 	cost = 300
 	contains = list(/obj/item/storage/medpack/epipens)
 
+/datum/supply_pack/medical/cheap_stims
+	name = "First Aid Stimpacks Pack"
+	desc = "Contains a pack of affordable stimpacks suitable for first-aid."
+	cost = 400
+	contains = list(/obj/item/storage/medpack/cheap_stims)
+
 /* Hypospray supplies */
 
 /datum/supply_pack/medical/mkii_hypo
@@ -436,3 +442,17 @@
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan)
 	crate_name = "chitosan vial crate"
+
+/datum/supply_pack/medical/stapler
+	name = "Medical Stapler Crate"
+	desc = "Contains a medical stapler for rapidly sealing bleeding wounds."
+	cost = 200
+	contains = list(/obj/item/med_stapler/full)
+	crate_name = "medical stapler crate"
+
+/datum/supply_pack/medical/stapler_refill
+	name = "Medical Staple Cartridge"
+	desc = "Contains a cartridge for refilling a medical stapler."
+	cost = 100
+	contains = list(/obj/item/med_staple_cart)
+	crate_name = "medical staples crate"
