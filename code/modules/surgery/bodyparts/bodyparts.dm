@@ -20,6 +20,8 @@
 
 	///Whether the clothing being worn forces the limb into being "squished" to plantigrade/standard humanoid compliance
 	var/plantigrade_forced = FALSE
+	///Whether the limb is of the digitigrade_clawed type
+	var/digitigrade_clawed = FALSE
 	///Whether the limb is husked
 	var/is_husked = FALSE
 	///This is effectively the icon_state prefix for limbs.
@@ -1002,10 +1004,11 @@
 		limb_gender = (source.gender == FEMALE) ? "f" : "m" // need to make this its own setting later
 
 	if(overlay_icon_state) // throwing rye into a volcano for this
-		if(overlay_use_primary_color)
-			draw_color_overlay = source.dna.features["mcolor"]
-		else
-			draw_color_overlay = source.dna.features["mcolor2"]
+		if(!digitigrade_clawed) //skip it if it is the digitigrade clawed type
+			if(overlay_use_primary_color)
+				draw_color_overlay = source.dna.features["mcolor"]
+			else
+				draw_color_overlay = source.dna.features["mcolor2"]
 	if(overlay2_icon_state)
 		if(overlay2_use_primary_color)
 			draw_color_overlay_secondary = source.dna.features["mcolor"]
@@ -1102,6 +1105,8 @@
 		limb.icon_state += "_[limb_gender]"
 	if(bodytype & BODYTYPE_DIGITIGRADE && !plantigrade_forced)
 		limb.icon_state += "_digitigrade"
+		if(digitigrade_clawed)
+			limb.icon_state += "_clawed"
 
 	if(!icon_exists(limb.icon, limb.icon_state))
 		limb_stacktrace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]", GLOB.Debug) //If you *really* want more of these, you can set the *other* global debug flag manually.
