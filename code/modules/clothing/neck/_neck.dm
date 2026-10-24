@@ -779,12 +779,18 @@
 	. = ..()
 	if(slot == ITEM_SLOT_NECK)
 		RegisterSignal(user, COMSIG_MOUSEDROP_ONTO, PROC_REF(on_wearer_dragged), override = TRUE)
+		RegisterSignal(user, COMSIG_ATOM_EXAMINE, PROC_REF(on_wearer_examine), override = TRUE)
 	else
-		UnregisterSignal(user, COMSIG_MOUSEDROP_ONTO)
+		UnregisterSignal(user, list(COMSIG_MOUSEDROP_ONTO, COMSIG_ATOM_EXAMINE))
 
 /obj/item/clothing/neck/dogtag/dropped(mob/user)
 	. = ..()
-	UnregisterSignal(user, COMSIG_MOUSEDROP_ONTO)
+	UnregisterSignal(user, list(COMSIG_MOUSEDROP_ONTO, COMSIG_ATOM_EXAMINE))
+
+/obj/item/clothing/neck/dogtag/proc/on_wearer_examine(mob/living/carbon/human/wearer, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+	if(wearer.stat == DEAD)
+		examine_list += span_notice("You could take [src] by dragging [wearer.p_them()] onto yourself while aiming for the head.")
 
 /obj/item/clothing/neck/dogtag/proc/on_wearer_dragged(mob/living/carbon/human/wearer, atom/over, mob/living/carbon/human/user)
 	SIGNAL_HANDLER
