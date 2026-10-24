@@ -50,6 +50,7 @@
 	scratched_off = TRUE
 	roll_prize_amount()
 	set_overlay_states()
+	update_icon()
 
 /obj/item/scratch_ticket/proc/roll_prize_amount()
 	// if this has a forced value, use it
@@ -85,13 +86,12 @@
 			m_state = "green"
 		else
 			r_state = "green"
-	update_icon()
 
 /obj/item/scratch_ticket/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
 	if(scratched_off)
 		return
-	if(istype(attacking_item, /obj/item/screwdriver) || istype(attacking_item, /obj/item/coin))
+	if(istype(attacking_item, /obj/item/screwdriver) || istype(attacking_item, /obj/item/coin) || istype(attacking_item, /obj/item/spacecash))
 		user.visible_message(span_notice("[user] begins scratching off the [src]..."))
 		if(do_after(user, 3 SECONDS, target = src))
 			user.visible_message(span_notice("[user] scratches off the [src]!"))
