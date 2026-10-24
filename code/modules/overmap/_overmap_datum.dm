@@ -197,11 +197,12 @@
 	if(!current_overmap)
 		current_overmap = SSovermap.tracked_star_systems[1]
 		CRASH("Overmap datum [src] tried to move() with no valid overmap! What?? Moving to the default sector of SSovermap as a failsafe!")
-	//no overmap looping hack
-	if(new_x > current_overmap.size || new_x == 0) // I don't know how to do this better atm
-		return
-	if(new_y > current_overmap.size || new_y == 0)
-		return
+	new_x %= current_overmap.size
+	new_y %= current_overmap.size
+	if(new_x == 0) // I don't know how to do this better atm
+		new_x = current_overmap.size
+	if(new_y == 0)
+		new_y = current_overmap.size
 	try
 		current_overmap.overmap_container[x][y] -= src
 	catch(var/exception/error)
