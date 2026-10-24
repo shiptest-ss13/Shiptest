@@ -681,3 +681,57 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 
 /obj/item/ammo_box/magazine/m12g_slammer/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/assault/ripper
+	name = "Ripper"
+	desc = "A cut-down variant of the venerable CLIP F4. This one seems to have been cobbled together with various parts of various guns. Its bolt seems different than the conventional F4."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "ripper"
+	item_state = "ripper"
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	bolt_type = BOLT_TYPE_OPEN
+	default_ammo_type = /obj/item/ammo_box/magazine/f4_308
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/f4_308,
+	)
+	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	fire_delay = 3.5
+	actions_types = list()
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	manufacturer = MANUFACTURER_IMPORT
+
+	valid_attachments = list(
+		/obj/item/attachment/foldable_stock/ripper
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+	unique_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+	spread = 10
+	recoil = 2
+
