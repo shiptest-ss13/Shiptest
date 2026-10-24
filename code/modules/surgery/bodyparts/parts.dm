@@ -418,6 +418,20 @@
 	icon_state = "human_r_leg_digitigrade"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
 
+/obj/item/bodypart/leg/left/clawed
+	name = "clawed left leg"
+	icon_state = "human_l_leg_digitigrade_clawed"
+	digitigrade_clawed = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/clawed
+	name = "clawed right leg"
+	icon_state = "human_r_leg_digitigrade_clawed"
+	digitigrade_clawed = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
 /obj/item/bodypart/tail
 	name = "tail"
 	desc = "A severed tail. What did you cut this off of?"
