@@ -482,6 +482,7 @@
 	..()
 	metabolizer.adjustStaminaLoss(-5 * seconds_per_tick, 0)
 	metabolizer.adjustBruteLoss(-0.5 * seconds_per_tick, 0)
+	metabolizer.adjustOrganLoss(ORGAN_SLOT_HEART, 0.6)
 	if(SPT_PROB(5, seconds_per_tick))
 		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 

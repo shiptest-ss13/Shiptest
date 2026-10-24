@@ -118,7 +118,7 @@
 		/obj/item/assembly/flash/handheld = 2,
 		/obj/item/flashlight/seclite = 2,
 		/obj/item/ammo_box/magazine/m10mm_ringneck = 3,
-		/obj/item/ammo_box/magazine/m45_cobra = 3,
+		/obj/item/ammo_box/magazine/m10_cobra = 3,
 		/obj/item/ammo_box/magazine/sniper_rounds = 3,
 		/obj/item/ammo_box/magazine/m556_42_hydra = 2,
 		/obj/item/ammo_box/magazine/m12g_bulldog/drum = 3,
