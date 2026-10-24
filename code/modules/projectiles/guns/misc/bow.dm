@@ -50,6 +50,10 @@
 	var/draw_time = 1 SECONDS // time to draw the bow all the way
 	var/draw_slowdown = 0.5 // slowdown during draw
 
+/obj/item/gun/ballistic/bow/examine(mob/examiner)
+	. = ..()
+	. += span_notice("Use <b>unique action</b> to draw the bow.")
+
 /obj/item/gun/ballistic/bow/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
