@@ -1,7 +1,7 @@
 /datum/computer_file/program/chatclient
 	filename = "ntnrc_client"
 	filedesc = "Chat Client"
-	program_icon_state = "command"
+	program_icon_state = "chat"
 	extended_desc = "This program allows communication over NTNRC network"
 	size = 8
 	requires_ntnet = 1

@@ -52,6 +52,9 @@
 	/// If the computer has a flashlight/LED light/what-have-you installed
 	var/has_light = FALSE
 
+	///If the computer has an emissive screen
+	var/emissive_screen = TRUE
+
 
 /obj/item/modular_computer/Initialize()
 	. = ..()
@@ -181,7 +184,12 @@
 	if(!display_overlays)
 		return
 	if(enabled)
-		. += active_program?.program_icon_state || icon_state_menu
+		if(emissive_screen)
+			var/current_program_icon = active_program?.program_icon_state || icon_state_menu
+			SSvis_overlays.add_vis_overlay(src, icon, current_program_icon, layer, plane, dir)
+			SSvis_overlays.add_vis_overlay(src, icon, current_program_icon, layer, EMISSIVE_PLANE, dir)
+		else
+			. += active_program?.program_icon_state || icon_state_menu
 
 	if(atom_integrity <= integrity_failure * max_integrity)
 		. += "bsod"
