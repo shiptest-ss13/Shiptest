@@ -64,7 +64,7 @@
 /datum/component/movable_physics/proc/throw_impact_ricochet(datum/source, atom/hit_atom, datum/thrownthing/throwingdatum)
 	SIGNAL_HANDLER
 	var/atom/movable/atom_source = source
-	ricochet(atom_source, Get_Angle(atom_source, throwingdatum.target_turf))
+	ricochet(atom_source, get_angle(atom_source, throwingdatum.target_turf))
 
 /datum/component/movable_physics/proc/z_floor_bounce(atom/movable/moving_atom)
 	angle_of_movement += rand(-3000, 3000) / 100
