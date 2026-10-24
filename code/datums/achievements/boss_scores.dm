@@ -33,11 +33,6 @@
 	desc = "You've killed HOW many?"
 	database_id = DRAKE_SCORE
 
-/datum/award/score/hierophant_score
-	name = "Hierophants Killed"
-	desc = "You've killed HOW many?"
-	database_id = HIEROPHANT_SCORE
-
 /datum/award/score/legion_score
 	name = "Legions Killed"
 	desc = "You've killed HOW many?"
