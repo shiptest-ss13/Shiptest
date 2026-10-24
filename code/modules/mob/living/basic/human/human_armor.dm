@@ -67,22 +67,7 @@ GLOBAL_LIST_INIT(ai_hit_zone_weights, list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST =
 	return clothing_armor
 
 /mob/living/basic/human/proc/blocks_shove_knockdown()
-	var/static/list/blocks_by_outfit = list()
-	var/outfit_key = "[mob_spawner]|[armor_base]|[armored_all_over]"
-	if(!isnull(blocks_by_outfit[outfit_key]))
-		return blocks_by_outfit[outfit_key]
-	var/list/worn = list()
-	if(mob_spawner && !armored_all_over)
-		worn += get_spawner_clothing(mob_spawner)
-	if(ispath(armor_base, /obj/item/clothing))
-		worn += armor_base
-	var/blocks = FALSE
-	for(var/obj/item/clothing/clothing_type as anything in worn)
-		if(ispath(clothing_type, /obj/item/clothing) && (initial(clothing_type.clothing_flags) & BLOCKS_SHOVE_KNOCKDOWN))
-			blocks = TRUE
-			break
-	blocks_by_outfit[outfit_key] = blocks
-	return blocks
+	return get_outfit_protection()[OUTFIT_SHOVE_PROOF]
 
 /mob/living/basic/human/proc/get_held_shield_type()
 	for(var/held in list(r_hand, l_hand))
@@ -106,3 +91,49 @@ GLOBAL_LIST_INIT(ai_hit_zone_weights, list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST =
 	visible_message(span_danger("[src] blocks [shover]'s shove with [p_their()] [initial(shield_type.name)]!"))
 	playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
 	return TRUE
+
+/mob/living/basic/human/proc/has_acidproof_outfit()
+	return get_outfit_protection()[OUTFIT_ACID_PROOF]
+
+/mob/living/basic/human/proc/get_outfit_protection()
+	var/static/list/protection_by_outfit = list()
+	var/outfit_key = "[mob_spawner]|[armor_base]|[armored_all_over]"
+	if(protection_by_outfit[outfit_key])
+		return protection_by_outfit[outfit_key]
+	var/list/worn = list()
+	if(mob_spawner && !armored_all_over)
+		worn += get_spawner_clothing(mob_spawner)
+	if(ispath(armor_base, /obj/item/clothing))
+		worn += armor_base
+	var/shove_proof = FALSE
+	var/hot_hands = FALSE
+	var/suit_heat_protection = 0
+	var/head_heat_protection = 0
+	var/acidproof_suit = FALSE
+	var/acidproof_head = FALSE
+	for(var/obj/item/clothing/clothing_type as anything in worn)
+		if(!ispath(clothing_type, /obj/item/clothing))
+			continue
+		if(initial(clothing_type.clothing_flags) & BLOCKS_SHOVE_KNOCKDOWN)
+			shove_proof = TRUE
+		var/max_heat = initial(clothing_type.max_heat_protection_temperature)
+		var/datum/armor/clothing_armor = get_clothing_armor(clothing_type)
+		var/acidproof = clothing_armor && clothing_armor.acid >= 100
+		if(ispath(clothing_type, /obj/item/clothing/suit))
+			if(max_heat >= FIRE_SUIT_MAX_TEMP_PROTECT)
+				suit_heat_protection = max(suit_heat_protection, max_heat * 0.7)
+			acidproof_suit ||= acidproof
+		else if(ispath(clothing_type, /obj/item/clothing/head))
+			if(max_heat >= FIRE_HELM_MAX_TEMP_PROTECT)
+				head_heat_protection = max(head_heat_protection, max_heat * 0.3)
+			acidproof_head ||= acidproof
+		else if(ispath(clothing_type, /obj/item/clothing/gloves) && max_heat > 360)
+			hot_hands = TRUE
+	var/list/protection = list(
+		OUTFIT_SHOVE_PROOF = shove_proof,
+		OUTFIT_HOT_HANDS = hot_hands,
+		OUTFIT_THERMAL_PROTECTION = round(suit_heat_protection + head_heat_protection),
+		OUTFIT_ACID_PROOF = acidproof_suit && acidproof_head,
+	)
+	protection_by_outfit[outfit_key] = protection
+	return protection

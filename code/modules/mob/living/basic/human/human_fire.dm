@@ -29,41 +29,7 @@
 /mob/living/basic/human/proc/has_hot_hands()
 	if(HAS_TRAIT(src, TRAIT_RESISTHEAT) || HAS_TRAIT(src, TRAIT_RESISTHEATHANDS))
 		return TRUE
-	var/static/list/hot_hands_by_outfit = list()
-	var/outfit_key = "[mob_spawner]|[armor_base]|[armored_all_over]"
-	if(!isnull(hot_hands_by_outfit[outfit_key]))
-		return hot_hands_by_outfit[outfit_key]
-	var/list/worn = list()
-	if(mob_spawner && !armored_all_over)
-		worn += get_spawner_clothing(mob_spawner)
-	if(ispath(armor_base, /obj/item/clothing))
-		worn += armor_base
-	var/hot_hands = FALSE
-	for(var/obj/item/clothing/gloves/gloves_type as anything in worn)
-		if(ispath(gloves_type, /obj/item/clothing/gloves) && initial(gloves_type.max_heat_protection_temperature) > 360)
-			hot_hands = TRUE
-			break
-	hot_hands_by_outfit[outfit_key] = hot_hands
-	return hot_hands
+	return get_outfit_protection()[OUTFIT_HOT_HANDS]
 
 /mob/living/basic/human/proc/get_outfit_thermal_protection()
-	var/static/list/protection_by_outfit = list()
-	var/outfit_key = "[mob_spawner]|[armor_base]|[armored_all_over]"
-	if(!isnull(protection_by_outfit[outfit_key]))
-		return protection_by_outfit[outfit_key]
-	var/list/worn = list()
-	if(mob_spawner && !armored_all_over)
-		worn += get_spawner_clothing(mob_spawner)
-	if(ispath(armor_base, /obj/item/clothing))
-		worn += armor_base
-	var/suit_protection = 0
-	var/head_protection = 0
-	for(var/obj/item/clothing/clothing_type as anything in worn)
-		var/max_heat = ispath(clothing_type, /obj/item/clothing) ? initial(clothing_type.max_heat_protection_temperature) : 0
-		if(ispath(clothing_type, /obj/item/clothing/suit) && max_heat >= FIRE_SUIT_MAX_TEMP_PROTECT)
-			suit_protection = max(suit_protection, max_heat * 0.7)
-		else if(ispath(clothing_type, /obj/item/clothing/head) && max_heat >= FIRE_HELM_MAX_TEMP_PROTECT)
-			head_protection = max(head_protection, max_heat * 0.3)
-	var/thermal_protection = round(suit_protection + head_protection)
-	protection_by_outfit[outfit_key] = thermal_protection
-	return thermal_protection
+	return get_outfit_protection()[OUTFIT_THERMAL_PROTECTION]

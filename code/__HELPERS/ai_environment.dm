@@ -109,6 +109,9 @@
 	if(istype(spot, /turf/open/lava))
 		var/turf/open/lava/lava_spot = spot
 		return !lava_spot.is_safe()
+	if(istype(spot, /turf/open/water/acid))
+		var/turf/open/water/acid/acid_spot = spot
+		return !acid_spot.is_safe_to_cross() && !ai_is_acidproof(mover)
 	for(var/obj/structure/hazard/hazard in spot)
 		if(ai_harmful_hazard(hazard))
 			return TRUE
@@ -127,6 +130,15 @@
 	if(istype(basic_human))
 		return basic_human.get_outfit_thermal_protection() >= FIRE_SUIT_MAX_TEMP_PROTECT
 	return isliving(mover) && HAS_TRAIT(mover, TRAIT_RESISTHEAT)
+
+/proc/ai_is_acidproof(atom/movable/mover)
+	var/mob/living/living_mover = mover
+	if(!istype(living_mover))
+		return FALSE
+	if((living_mover.movement_type & FLYING) || ("acid" in living_mover.weather_immunities))
+		return TRUE
+	var/mob/living/basic/human/basic_human = mover
+	return istype(basic_human) && basic_human.has_acidproof_outfit()
 
 // special cases for ruin hazards
 /proc/ai_harmful_hazard(obj/structure/hazard/hazard)
