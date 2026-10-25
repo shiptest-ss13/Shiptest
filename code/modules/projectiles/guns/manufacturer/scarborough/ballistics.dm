@@ -293,6 +293,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
