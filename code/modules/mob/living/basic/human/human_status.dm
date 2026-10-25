@@ -65,7 +65,7 @@
 			Knockdown(max(16 SECONDS - bomb_armor * 1.6, 0))
 
 /mob/living/basic/human/Stun(amount, ignore_canstun = FALSE)
-	return ..(amount * stun_multiplier, ignore_canstun)
+	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD), ignore_canstun)
 
 /mob/living/basic/human/Knockdown(amount, ignore_canstun = FALSE)
 	if(rolling_out_fire || HAS_TRAIT_FROM(src, TRAIT_HANDS_BLOCKED, "stop_drop_roll"))
@@ -73,18 +73,37 @@
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
 	var/was_down = HAS_TRAIT(src, TRAIT_FLOORED)
-	. = ..(amount * stun_multiplier, ignore_canstun)
+	. = ..(diminish_stun(amount * stun_multiplier, STUN_DR_KNOCKDOWN), ignore_canstun)
 	call_out_going_down(was_down)
 
 /mob/living/basic/human/Immobilize(amount, ignore_canstun = FALSE)
-	return ..(amount * stun_multiplier, ignore_canstun)
+	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_IMMOBILIZE), ignore_canstun)
 
 /mob/living/basic/human/Paralyze(amount, ignore_canstun = FALSE)
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
 	var/was_down = HAS_TRAIT(src, TRAIT_FLOORED)
-	. = ..(amount * stun_multiplier, ignore_canstun)
+	. = ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD), ignore_canstun)
 	call_out_going_down(was_down)
+
+// diminishing returns on stuns on basicmobs
+/mob/living/basic/human/proc/diminish_stun(amount, kind)
+	if(amount <= 0 || client || rolling_out_fire || HAS_TRAIT_FROM(src, TRAIT_HANDS_BLOCKED, "stop_drop_roll"))
+		return amount
+	if(world.time >= stun_dr_reset_at)
+		stun_dr_steps = null // free of every kind for long enough that it's a fresh start
+	var/times_already = LAZYACCESS(stun_dr_steps, kind) || 0
+	LAZYSET(stun_dr_steps, kind, times_already + 1)
+	var/diminished_amount = 0 // assume we're already immune
+	if(times_already < BASIC_MOB_STUN_DR_STEPS)
+		diminished_amount = amount * (0.5 ** times_already) // halved for each we've had already: all of it, then half, then a quarter
+	note_disabled_until(world.time + diminished_amount)
+	return diminished_amount
+
+
+// shared timer, so swapping between different CCs can't keep us down by letting each one recover while another's on us
+/mob/living/basic/human/proc/note_disabled_until(until)
+	stun_dr_reset_at = max(stun_dr_reset_at, until + BASIC_MOB_STUN_DR_WINDOW)
 
 /mob/living/basic/human/proc/call_out_going_down(was_down)
 	if(!was_down && HAS_TRAIT(src, TRAIT_FLOORED) && stat == CONSCIOUS && !client)
@@ -101,7 +120,7 @@
 /mob/living/basic/human/Unconscious(amount, ignore_canstun = FALSE)
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
-	return ..(amount * stun_multiplier, ignore_canstun)
+	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD), ignore_canstun)
 
 // with knockdowns_slow_instead, slowed for a while rather than knocked down, up to AI_STAGGER_MAX_TIME
 /mob/living/basic/human/proc/stagger(amount)
@@ -125,6 +144,8 @@
 	if(stamina_damage > DAMAGE_PRECISION && health - stamina_damage <= 0 && stat == CONSCIOUS)
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 			return
+		if(world.time < stamina_collapse_grace_until && !client)
+			return // only just back up from it, so we stay on our feet a moment, rather than being kept down for as long as they keep at us
 		if(knockdowns_slow_instead)
 			stagger(AI_STAGGER_MAX_TIME) // too hardy to collapse, it just slows us down
 			return
@@ -135,11 +156,24 @@
 		ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, STAMINA)
 		if(maxHealth - health + stamina_damage > 120) // a little further in, so it isn't over the moment it starts
 			adjustStaminaLoss(30, FALSE)
+		if(!client)
+			addtimer(CALLBACK(src, PROC_REF(end_stamina_collapse)), BASIC_MOB_STAMINA_COLLAPSE_MAX, TIMER_UNIQUE | TIMER_OVERRIDE)
+			note_disabled_until(world.time + BASIC_MOB_STAMINA_COLLAPSE_MAX) // floored is floored, so it keeps the rest from wearing off too
 	else if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_FLOORED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAMINA)
+		stamina_collapse_grace_until = world.time + BASIC_MOB_STAMINA_COLLAPSE_GRACE
+
+// down from exhaustion for BASIC_MOB_STAMINA_COLLAPSE_MAX, so we get back up with just enough left in us to stand, rather than staying down for as long as they keep hitting us
+// update_stamina() then has us up, and keeps us up for BASIC_MOB_STAMINA_COLLAPSE_GRACE
+/mob/living/basic/human/proc/end_stamina_collapse()
+	if(client || stat != CONSCIOUS || !HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
+		return
+	visible_message(span_warning("[src] staggers back to [p_their()] feet!"))
+	setStaminaLoss(max(health - 10, 0), FALSE)
+	update_stamina()
 
 /mob/living/basic/human/proc/pepper_act()
 	if(pepper_proof || stat == DEAD)

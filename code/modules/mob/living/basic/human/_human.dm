@@ -83,6 +83,12 @@
 	var/staggered_until = 0
 	/// How long stuns, knockdowns, paralysis and being knocked out last on us, as a multiplier, like 0.5 for a tough boss, or 0 to shrug them all off
 	var/stun_multiplier = 1
+	/// For each STUN_DR_ kind, how many have landed in a row, until stun_dr_reset_at
+	var/list/stun_dr_steps
+	/// When they're all forgotten, once we've been free of every kind for a while
+	var/stun_dr_reset_at = 0
+	/// Time until when exhaustion can't floor us again, having just got back up from it
+	var/stamina_collapse_grace_until = 0
 	/// Until when we're off balance from being shoved away, and can't swing at anyone, and until when we can't be put off balance again, so we can't be shoved about forever
 	var/off_balance_until = 0
 	var/off_balance_immune_until = 0

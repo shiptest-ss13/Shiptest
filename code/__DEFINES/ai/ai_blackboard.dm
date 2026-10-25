@@ -356,7 +356,7 @@
 ///When we can next walk into who we're fighting to set them alight, while we burn
 #define BB_BASIC_MOB_NEXT_FIRE_SPREAD "BB_basic_next_fire_spread"
 
-// Friendly fire, see /datum/ai_planning_subtree/clear_friendly_fire
+// Friendly fire
 ///One of ours who just shot us, and when, so we step out of their line of fire
 #define BB_BASIC_MOB_HIT_BY_ALLY "BB_basic_hit_by_ally"
 #define BB_BASIC_MOB_HIT_BY_ALLY_AT "BB_basic_hit_by_ally_at"
