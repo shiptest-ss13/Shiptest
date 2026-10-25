@@ -228,6 +228,29 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"dI" = (
+/obj/structure/table,
+/obj/item/food/grilled_cheese_sandwich{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -4;
+	pixel_y = 18
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 6;
+	pixel_y = 16
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "dM" = (
 /obj/docking_port/stationary{
 	dheight = 1;
@@ -355,11 +378,14 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/emergency_panel,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/machinery/emergency_panel/dark{
+	pixel_x = -8;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "gr" = (
@@ -492,17 +518,15 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "jJ" = (
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/chair,
+/obj/structure/table,
+/obj/item/food/garlicbread{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "jQ" = (
@@ -1872,19 +1896,16 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "HG" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
+/obj/structure/chair{
+	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/beige{
+/obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
-	dir = 8
+	dir = 10
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 6;
-	layer = 2.5
-	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "HT" = (
@@ -1939,17 +1960,23 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "Jg" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/table,
-/obj/item/food/grilled_cheese_sandwich{
-	pixel_x = 2;
-	pixel_y = 8
+/obj/structure/chair{
+	dir = 8
 	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = 12;
-	pixel_y = 2
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6;
+	layer = 2.5
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "JH" = (
 /obj/effect/turf_decal/hardline_small{
@@ -2257,17 +2284,21 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Ny" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/table,
-/obj/item/food/garlicbread{
-	pixel_x = -2;
-	pixel_y = 6
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -11;
-	pixel_y = 2
+/obj/structure/chair{
+	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner/opaque/tan,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "NE" = (
 /obj/structure/table/reinforced,
@@ -2485,17 +2516,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "QD" = (
-/obj/effect/turf_decal/corner/opaque/tan,
-/obj/effect/turf_decal/corner/opaque/beige{
-	dir = 9
-	},
-/obj/effect/turf_decal/corner/opaque/beige{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "QX" = (
@@ -3374,7 +3401,7 @@ wd
 cO
 HT
 jJ
-Jg
+dI
 VT
 aT
 Hv
@@ -3392,8 +3419,8 @@ fZ
 jd
 vE
 MZ
-jJ
 Ny
+Jg
 VT
 nk
 XB
