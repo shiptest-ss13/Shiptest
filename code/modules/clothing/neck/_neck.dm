@@ -768,6 +768,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 	strip_delay = 10
+	pickup_sound = "dogtag"
 	var/list/tag_fluff = list()
 
 /obj/item/clothing/neck/dogtag/examine_more(mob/user)
@@ -813,7 +814,6 @@
 		return
 	if(!doStrip(user, wearer))
 		return
-	playsound(wearer, pick('sound/items/dogtag1.ogg', 'sound/items/dogtag2.ogg'), 40, TRUE, -1)
 	log_combat(user, wearer, "stripped [src] off")
 	user.put_in_hands(src)
 
