@@ -262,17 +262,16 @@
 /turf/open/floor/noslip,
 /area/ship/crew/toilet)
 "eG" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/docking_port/mobile{
 	port_direction = 8;
 	preferred_direction = 4;
 	dir = 2
 	},
-/obj/effect/turf_decal/corner/opaque/tan/border{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/arrow_ccw,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "eN" = (
 /obj/structure/table,
 /obj/machinery/computer/security/telescreen/entertainment/wall/directional/south,
@@ -409,6 +408,14 @@
 /area/ship/engineering/communications)
 "iH" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
+"iM" = (
+/obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "iT" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
@@ -878,15 +885,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "pu" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer5{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/north,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
-	dir = 6
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1719,11 +1725,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "EP" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2165,10 +2174,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Mt" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Mu" = (
 /obj/structure/table/reinforced,
@@ -2382,8 +2392,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/arrow_ccw,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "OU" = (
 /obj/structure/window,
 /obj/structure/toilet{
@@ -2662,11 +2672,9 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer5,
 /obj/machinery/advanced_airlock_controller/directional/south,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "SL" = (
@@ -2887,9 +2895,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -2899,6 +2904,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Vx" = (
@@ -3192,13 +3198,11 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
 	dir = 4
 	},
 /obj/structure/closet/emcloset/wall/directional/south,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 
@@ -3546,8 +3550,8 @@ Tf
 "}
 (19,1,1) = {"
 Tf
-OP
 iH
+iM
 pu
 SJ
 Ib
@@ -3584,9 +3588,9 @@ Tf
 "}
 (21,1,1) = {"
 Tf
-OP
 iH
 jh
+iH
 rE
 Ib
 NE
