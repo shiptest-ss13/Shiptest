@@ -18,7 +18,7 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/pulse,
 	) //somone make this backpack mounted, or connected to the deathsquad suit at some point
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 	ammo_x_offset = 2
 	charge_sections = 6
 

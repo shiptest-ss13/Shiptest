@@ -190,6 +190,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 
 EMPTY_GUN_HELPER(automatic/pistol/derringer)

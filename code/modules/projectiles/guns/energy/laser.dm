@@ -33,7 +33,7 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/retro
 	autowiki_hidden = TRUE //not obtainable afaik
@@ -63,7 +63,7 @@
 	ammo_x_offset = 3
 	selfcharge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 
 	autowiki_hidden = TRUE
 

@@ -38,7 +38,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 	spread = 2
 	spread_unwielded = 4
 

@@ -10,7 +10,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -43,7 +43,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
-	manufacturer = NONE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
