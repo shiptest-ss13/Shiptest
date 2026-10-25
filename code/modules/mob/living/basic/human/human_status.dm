@@ -65,7 +65,7 @@
 			Knockdown(max(16 SECONDS - bomb_armor * 1.6, 0))
 
 /mob/living/basic/human/Stun(amount, ignore_canstun = FALSE)
-	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD), ignore_canstun)
+	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD, IsStun()), ignore_canstun)
 
 /mob/living/basic/human/Knockdown(amount, ignore_canstun = FALSE)
 	if(rolling_out_fire || HAS_TRAIT_FROM(src, TRAIT_HANDS_BLOCKED, "stop_drop_roll"))
@@ -73,23 +73,25 @@
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
 	var/was_down = HAS_TRAIT(src, TRAIT_FLOORED)
-	. = ..(diminish_stun(amount * stun_multiplier, STUN_DR_KNOCKDOWN), ignore_canstun)
+	. = ..(diminish_stun(amount * stun_multiplier, STUN_DR_KNOCKDOWN, IsKnockdown()), ignore_canstun)
 	call_out_going_down(was_down)
 
 /mob/living/basic/human/Immobilize(amount, ignore_canstun = FALSE)
-	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_IMMOBILIZE), ignore_canstun)
+	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_IMMOBILIZE, IsImmobilized()), ignore_canstun)
 
 /mob/living/basic/human/Paralyze(amount, ignore_canstun = FALSE)
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
 	var/was_down = HAS_TRAIT(src, TRAIT_FLOORED)
-	. = ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD), ignore_canstun)
+	. = ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD, IsParalyzed()), ignore_canstun)
 	call_out_going_down(was_down)
 
 // diminishing returns on stuns on basicmobs
-/mob/living/basic/human/proc/diminish_stun(amount, kind)
+/mob/living/basic/human/proc/diminish_stun(amount, kind, datum/status_effect/already_on)
 	if(amount <= 0 || client || rolling_out_fire || HAS_TRAIT_FROM(src, TRAIT_HANDS_BLOCKED, "stop_drop_roll"))
 		return amount
+	if(already_on && (already_on.duration == -1 || world.time + amount <= already_on.duration))
+		return amount // ends before what's already on us, so don't count it
 	if(world.time >= stun_dr_reset_at)
 		stun_dr_steps = null // free of every kind for long enough that it's a fresh start
 	var/times_already = LAZYACCESS(stun_dr_steps, kind) || 0
@@ -120,7 +122,7 @@
 /mob/living/basic/human/Unconscious(amount, ignore_canstun = FALSE)
 	if(knockdowns_slow_instead)
 		return stagger(amount * stun_multiplier)
-	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD), ignore_canstun)
+	return ..(diminish_stun(amount * stun_multiplier, STUN_DR_HARD, IsUnconscious()), ignore_canstun)
 
 // with knockdowns_slow_instead, slowed for a while rather than knocked down, up to AI_STAGGER_MAX_TIME
 /mob/living/basic/human/proc/stagger(amount)

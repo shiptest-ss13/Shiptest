@@ -1,11 +1,13 @@
 // on fire, so we get somewhere they can't shoot us and stop, drop and roll, or roll where we are if it's bad or we can't get to cover in time
 /datum/ai_planning_subtree/put_out_fire
-	//this many fire stacks or more, and we roll where we are rather than looking for cover first
-	var/urgent_stacks = 15
 	//below this share of our health, and we roll where we are
 	var/urgent_health_fraction = 0.5
 	//how long we look for cover once we're out of the fire before we roll anyway
 	var/cover_time = 5 SECONDS
+	//up to this much longer than cover_time, picked for each of us, so a squad set alight together don't all give up on cover at once
+	var/cover_time_jitter = 2 SECONDS
+	//up to this long, picked for each of us, between deciding to roll and dropping to do it, so we don't all hit the floor in the same moment
+	var/roll_hesitation = 1.5 SECONDS
 
 /datum/ai_planning_subtree/put_out_fire/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -13,6 +15,8 @@
 	if(!istype(living_pawn) || !living_pawn.on_fire || ai_is_fireproof(living_pawn))
 		controller.clear_blackboard_key(BB_BASIC_MOB_BURNING_SINCE)
 		controller.clear_blackboard_key(BB_BASIC_MOB_OUT_OF_FIRE_SINCE)
+		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TIME_EXTRA)
+		controller.clear_blackboard_key(BB_BASIC_MOB_ROLL_AT)
 		return
 	if(living_pawn.has_status_effect(/datum/status_effect/stop_drop_roll))
 		return SUBTREE_RETURN_FINISH_PLANNING // rolling, so nothing else until we're done
@@ -26,7 +30,9 @@
 	if(isnull(out_of_fire_since))
 		out_of_fire_since = world.time
 		controller.set_blackboard_key(BB_BASIC_MOB_OUT_OF_FIRE_SINCE, out_of_fire_since)
-	var/urgent = living_pawn.fire_stacks >= urgent_stacks || living_pawn.health < living_pawn.maxHealth * urgent_health_fraction || world.time - out_of_fire_since >= cover_time
+		controller.set_blackboard_key(BB_BASIC_MOB_COVER_TIME_EXTRA, rand(0, cover_time_jitter))
+	// not on how many stacks we've got, as walking out of a molotov piles them on, so we'd always drop where we were hit. Getting hurt badly enough covers that
+	var/urgent = living_pawn.health < living_pawn.maxHealth * urgent_health_fraction || world.time - out_of_fire_since >= cover_time + controller.blackboard[BB_BASIC_MOB_COVER_TIME_EXTRA]
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	var/seen = !QDELETED(target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE
 	if(seen && !urgent)
@@ -35,6 +41,13 @@
 			return
 		controller.queue_behavior(/datum/ai_behavior/take_cover, BB_BASIC_MOB_CURRENT_TARGET) // out of their sight first, so we're not rolling about in front of them
 		return SUBTREE_RETURN_FINISH_PLANNING
+	var/roll_at = controller.blackboard[BB_BASIC_MOB_ROLL_AT]
+	if(isnull(roll_at))
+		roll_at = world.time + rand(0, roll_hesitation)
+		controller.set_blackboard_key(BB_BASIC_MOB_ROLL_AT, roll_at)
+	if(world.time < roll_at)
+		return // a moment before we drop, getting on with things meanwhile, like firing back
+	controller.clear_blackboard_key(BB_BASIC_MOB_ROLL_AT)
 	AI_LOG_DECISION(controller, "put_out_fire: on fire with [living_pawn.fire_stacks] stacks, rolling[seen ? " where we are, as it's bad" : ""]")
 	controller.CancelActions()
 	living_pawn.resist_fire()

@@ -67,7 +67,10 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		controller.set_blackboard_key(BB_BASIC_MOB_FLEEING_EXPLOSIVE, explosive)
 		controller.set_blackboard_key(BB_BASIC_MOB_FLEEING_OUR_OWN, ours)
 		// decided once for each explosive, as a long shot rather than something we keep trying
-		var/throwing_back = !ours && istype(explosive, /obj/item/grenade) && !istype(explosive, /obj/item/grenade/c4) && prob(controller.blackboard[BB_BASIC_MOB_THROW_BACK_CHANCE])
+		var/throw_back_chance = controller.blackboard[BB_BASIC_MOB_THROW_BACK_CHANCE]
+		if(throw_back_chance && !has_straight_escape(controller, get_turf(explosive), danger[2] + safety_margin))
+			throw_back_chance = min(throw_back_chance * AI_CORNERED_THROW_BACK_FACTOR, 100) // boxed in with it, like in an alcove it's landed in the mouth of, so we're likelier to chance it, though still rare
+		var/throwing_back = !ours && istype(explosive, /obj/item/grenade) && !istype(explosive, /obj/item/grenade/c4) && prob(throw_back_chance)
 		controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, throwing_back)
 		controller.clear_blackboard_key(BB_BASIC_MOB_THROW_BACK_AT)
 		AI_LOG_DECISION(controller, "flee_explosives: [explosive] is about to go off, [throwing_back ? "throwing it back if it lands by us" : "getting clear"]")
@@ -122,9 +125,42 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 			best = destination
 			best_distance_from_enemy = distance_from_enemy
 	if(!best)
-		return ..() // nowhere clear of it on those lines, so straight away from it as best we can, whoever's there
+		best = find_blast_shelter(controller, our_turf, explosive_turf, flee_distance, enemy_turf) // nowhere clear of it straight away from it, like in a corridor, so anywhere that is, even past it or towards them, as stood by it is worst of all
+	if(!best)
+		return ..() // nowhere clear of it at all, so straight away from it as best we can, whoever's there
 	set_movement_target(controller, best)
 	return TRUE
+
+// the nearest spot we could stand that's clear of the blast, past flee_distance from it or round a wall from it, in any direction. Nearest first, as it's going off, then furthest from who we're fighting
+/datum/ai_behavior/run_away_from_target/explosive/proc/find_blast_shelter(datum/ai_controller/controller, turf/our_turf, turf/explosive_turf, flee_distance, turf/enemy_turf)
+	var/mob/living/living_pawn = controller.pawn
+	for(var/radius in 1 to flee_distance + 2)
+		var/turf/best
+		var/best_distance_from_enemy = -1
+		for(var/turf/open/candidate in ai_turfs_in_ring(our_turf, radius))
+			if(candidate.is_blocked_turf(TRUE, living_pawn) || !ai_can_stand_on(living_pawn, candidate))
+				continue
+			if(get_dist(candidate, explosive_turf) < flee_distance && !isclosedturf(get_shot_blocker(explosive_turf, candidate, pass_flags = NONE)))
+				continue // still in it, with nothing solid between us and it
+			var/distance_from_enemy = enemy_turf ? get_dist(candidate, enemy_turf) : 0
+			if(distance_from_enemy > best_distance_from_enemy)
+				best = candidate
+				best_distance_from_enemy = distance_from_enemy
+		if(best)
+			return best
+	return null
+
+// whether there's a straight way out from the explosive at explosive_turf, as /datum/ai_behavior/run_away_from_target/explosive looks for first, rather than being boxed in with it
+/datum/ai_planning_subtree/flee_explosives/proc/has_straight_escape(datum/ai_controller/controller, turf/explosive_turf, flee_distance)
+	var/turf/our_turf = get_turf(controller.pawn)
+	if(!our_turf || !explosive_turf)
+		return TRUE
+	var/away_angle = get_angle(explosive_turf, our_turf)
+	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
+		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
+		if(destination && destination != our_turf && !destination.density && !is_ai_hazard_turf(destination) && get_dist(destination, explosive_turf) >= flee_distance)
+			return TRUE
+	return FALSE
 
 // whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4. Or something loose it's in, like a sack, which goes back sack and all
 /datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive, time_before_throw = 0)

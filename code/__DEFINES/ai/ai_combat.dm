@@ -137,6 +137,8 @@
 #define AI_THROW_BACK_STEP_TIME (0.2 SECONDS)
 // How long AI takes to react to a grenade landing by them before it can grab it to throw back
 #define AI_THROW_BACK_REACTION_TIME (1 SECONDS)
+// What AI's chance to throw a grenade back is multiplied by when it's boxed in with it, with no straight way out
+#define AI_CORNERED_THROW_BACK_FACTOR 2
 // How close a live explosive has to be for AI to notice it without seeing it, like an IED in a sack or something landing by them in the dark
 #define AI_EXPLOSIVE_NOTICE_RANGE 3
 // How much further than an explosive's blast AI gets clear by, and keeps clear of until it goes off

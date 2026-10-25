@@ -24,8 +24,8 @@
 
 /obj/projectile/bullet/csweet/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
+	if(isliving(target))
+		var/mob/living/M = target
 		M.adjust_fire_stacks(8)
 		M.ignite_mob()
 

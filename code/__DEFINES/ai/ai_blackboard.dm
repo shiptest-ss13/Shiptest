@@ -351,6 +351,10 @@
 #define BB_BASIC_MOB_BURNING_SINCE "BB_basic_burning_since"
 ///Since when we've been out of the fire while still burning, so we roll where we are once we've had long enough to get to cover
 #define BB_BASIC_MOB_OUT_OF_FIRE_SINCE "BB_basic_out_of_fire_since"
+///How much longer than usual we look for cover this time, so a squad don't all give up on it at once
+#define BB_BASIC_MOB_COVER_TIME_EXTRA "BB_basic_cover_time_extra"
+///When we drop to roll, a moment after deciding to, so a squad don't all hit the floor together
+#define BB_BASIC_MOB_ROLL_AT "BB_basic_roll_at"
 ///One of ours who's on fire that we're going to pat out
 #define BB_BASIC_MOB_BURNING_ALLY "BB_basic_burning_ally"
 ///When we can next walk into who we're fighting to set them alight, while we burn
