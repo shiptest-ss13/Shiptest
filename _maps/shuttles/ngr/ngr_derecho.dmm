@@ -325,7 +325,7 @@
 /area/ship/crew)
 "dB" = (
 /obj/mecha/working/ripley/cargo{
-	name = "\improper APLU \"Old Rosy\""
+	name = "\improper APLU "Old Rosy""
 	},
 /obj/effect/turf_decal/box/white,
 /obj/structure/sign/poster/contraband/engis_unite{
@@ -886,7 +886,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "iH" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 4
@@ -995,7 +995,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "jF" = (
 /turf/open/floor/pod,
 /area/ship/storage/equip)
@@ -1100,7 +1100,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "kH" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
@@ -1746,12 +1746,6 @@
 	id = "derecho_armory"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/bin{
-	pixel_x = -7;
-	pixel_y = 11;
-	dense_when_open = 0;
-	density = 0
-	},
 /obj/machinery/light/directional/north{
 	pixel_y = 33
 	},
@@ -2126,14 +2120,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
-"sH" = (
-/obj/effect/turf_decal/industrial/warning/orange{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "sL" = (
 /obj/structure/dresser,
 /obj/structure/sign/flag/ngr{
@@ -3782,7 +3768,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw,
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "HP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3999,7 +3985,7 @@
 /obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "JA" = (
 /obj/effect/turf_decal/corner/opaque/beige/half,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -5215,7 +5201,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "TY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -5314,8 +5300,12 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "UO" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 8
@@ -5391,8 +5381,13 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/hallway/starboard)
 "VL" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
@@ -6780,7 +6775,7 @@ Tq
 Tq
 TG
 PZ
-sH
+Eu
 yv
 BL
 iA
