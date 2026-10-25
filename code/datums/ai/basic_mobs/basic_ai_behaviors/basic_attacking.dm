@@ -117,7 +117,9 @@
 
 	// as far as we can see, for those with a longer sight than our attack's usual reach, like marksmen, or they'd spot someone they'd never shoot at
 	if(!ai_can_see(basic_mob, final_target, max(required_distance, controller.blackboard[BB_BASIC_MOB_VISION_RANGE])))
-		return AI_BEHAVIOR_DELAY
+		// or further, down our scope, see ai_can_see_through_scope()
+		if(!controller.blackboard[BB_BASIC_MOB_TARGET_SCOPED] || !ai_can_see_through_scope(basic_mob, final_target, get_turf(final_target)))
+			return AI_BEHAVIOR_DELAY
 	if(holds_fire_when_blocked && !has_clear_shot(basic_mob, final_target))
 		return AI_BEHAVIOR_DELAY // we can see them, but they're tucked away where we'd only hit the wall
 
@@ -277,6 +279,11 @@
 		return AI_BEHAVIOR_DELAY
 	ranged_attack.fire_volley(aim, shots, burst_interval)
 	return AI_BEHAVIOR_DELAY
+
+// whether firing at spot would get anywhere near it, for whether firing back is any use at all
+/datum/ai_behavior/fire_at_position/proc/can_reach(mob/living/basic/basic_mob, turf/spot, datum/component/ranged_attacks/ranged_attack)
+	var/distance = get_dist(basic_mob, spot)
+	return distance <= max_range && (!ranged_attack.effective_range || distance <= ranged_attack.effective_range)
 
 /datum/ai_behavior/fire_at_position/proc/can_fire_blind_at(mob/living/basic/basic_mob, turf/spot, datum/component/ranged_attacks/ranged_attack, pass_flags)
 	if(ranged_attack.effective_range && get_dist(basic_mob, spot) > ranged_attack.effective_range)

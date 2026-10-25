@@ -25,8 +25,17 @@
 		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
 	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
 	if(ai_can_see(controller.pawn, target, our_vision_range) || watched_them_hide(controller, target, our_vision_range))
+		controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_SCOPED)
 		on_target_seen(controller, target)
 		return
+	// further than we'd see them, but we're looking down our scope where they were, like at whoever's sniping us
+	if(ai_can_see_through_scope(controller.pawn, target, controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]))
+		if(!controller.blackboard[BB_BASIC_MOB_TARGET_SCOPED])
+			AI_LOG_DECISION(controller, "track_target: got [target] in our scope at [get_dist(controller.pawn, target)] tiles")
+		controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SCOPED, TRUE)
+		on_target_seen(controller, target)
+		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_SCOPED)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_HIDING_IN)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, FALSE)
 	var/last_known_time = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TIME]
@@ -104,6 +113,7 @@
 /datum/ai_sensor/track_target/proc/forget_target(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_RALLYING)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT)
+	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_SCOPED)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_HIDING_IN)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_ADJACENT_SINCE)
 	controller.clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)

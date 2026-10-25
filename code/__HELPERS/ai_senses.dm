@@ -14,6 +14,22 @@
 		return FALSE
 	return viewer in ai_cached_hearers(target, range)
 
+// through a scope, view pushed out towards looking_at and widened, so only that way, and only while we're facing it.
+// For marksmen spotting whoever's sniping them from further than they'd otherwise see
+/proc/ai_can_see_through_scope(mob/viewer, atom/target, turf/looking_at)
+	var/datum/ai_controller/controller = viewer.ai_controller
+	var/zoom = controller?.blackboard[BB_BASIC_MOB_SCOPE_ZOOM]
+	if(!zoom || !looking_at)
+		return FALSE
+	var/turf/viewer_turf = get_turf(viewer)
+	var/turf/target_turf = get_turf(target)
+	if(!viewer_turf || !target_turf || viewer_turf.z != target_turf.z || viewer_turf == looking_at || !(get_dir(viewer_turf, looking_at) & viewer.dir))
+		return FALSE
+	var/turf/scope_center = get_ranged_target_turf_direct(viewer_turf, looking_at, zoom)
+	if(get_dist(scope_center, target_turf) > controller.blackboard[BB_BASIC_MOB_SCOPE_VIEW])
+		return FALSE
+	return ai_can_see(viewer, target, get_dist(viewer_turf, target_turf)) // the line of sight and the dark, as ever
+
 // whether it's too dark for viewer to make out target from distance tiles off, for when we already know there's a line of sight, like from hearers()
 /proc/ai_too_dark_to_see(atom/viewer, atom/target, turf/target_turf, distance, range)
 	if(distance <= max(2, round(range / 3)) || !ai_is_dark(target_turf) || is_ai_revealed_in_dark(target))

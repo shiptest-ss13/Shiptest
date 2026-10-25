@@ -32,12 +32,27 @@
 	if(distance < closest)
 		call_out_move(controller, AI_CALLOUT_FALLING_BACK)
 		controller.queue_behavior(/datum/ai_behavior/step_away, target_key)
+	else if(holds_at_scope_range(controller, distance))
+		controller.clear_blackboard_key(BB_BASIC_MOB_LAST_RANGE_CALLOUT) // we've a shot at them within our scope's reach, so we take it from here rather than walking into theirs
 	else if(distance > furthest || !ai_can_see(controller.pawn, target, furthest))
 		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE)
 			call_out_move(controller, AI_CALLOUT_PUSHING) // walking up on someone we can't see isn't much of a push
 		controller.queue_behavior(/datum/ai_behavior/pursue_to_range, target_key, furthest)
 	else
 		controller.clear_blackboard_key(BB_BASIC_MOB_LAST_RANGE_CALLOUT) // happy where we are
+
+// with a scope, whether they're somewhere we'd stay put and shoot them from, whether we saw them through it or not, so it's as far as our scope reaches, not engage_distance.
+// Not when we're emboldened, or pressing those we've downed, as then we mean to close in.
+/datum/ai_planning_subtree/maintain_distance/proc/holds_at_scope_range(datum/ai_controller/controller, distance)
+	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE || AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED) || world.time < controller.blackboard[BB_BASIC_MOB_PRESSING_UNTIL])
+		return FALSE
+	if(controller.blackboard[BB_BASIC_MOB_TARGET_SCOPED])
+		return TRUE
+	var/zoom = controller.blackboard[BB_BASIC_MOB_SCOPE_ZOOM]
+	if(!zoom)
+		return FALSE
+	// or as far as we see, if a mob's own vision_range is further, as that's often been set to stand in for its scope
+	return distance <= max(zoom + controller.blackboard[BB_BASIC_MOB_SCOPE_VIEW], controller.blackboard[BB_BASIC_MOB_VISION_RANGE])
 
 // with hit_and_run, whether we're backing off after getting a hit in
 /datum/ai_planning_subtree/maintain_distance/proc/should_back_off(datum/ai_controller/controller, distance, furthest)

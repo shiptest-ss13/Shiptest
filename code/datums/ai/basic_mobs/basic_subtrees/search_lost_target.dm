@@ -21,6 +21,8 @@
 	var/lost_grace = 3 SECONDS
 	//never goes looking, whatever our nerve or our allies are doing, only ever search_style, for post holders
 	var/stays_put = FALSE
+	//how long after being shot by them, from too far off to see or fire back at, we keep closing in on them
+	var/pinned_time = 6 SECONDS
 
 /datum/ai_planning_subtree/search_lost_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -28,6 +30,8 @@
 	if(!last_known_turf)
 		return
 	if((controller.get_conditions() & AI_CONDITION_TAKING_COVER) || world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
+		return SUBTREE_RETURN_FINISH_PLANNING
+	if(pinned_from_afar(controller) && close_in(controller, last_known_turf))
 		return SUBTREE_RETURN_FINISH_PLANNING
 	var/style = pick_style(controller)
 	// those who fight up close go right to where they last saw them, like the corner they went round, as watching it from a few tiles off does us no good
@@ -82,6 +86,46 @@
 	if(style == AI_SEARCH_STYLE_SUPPRESS && controller.blackboard[BB_BASIC_MOB_HEARD_TARGET])
 		style = AI_SEARCH_STYLE_HOLD // all we've got is a noise, so watch it rather than firing blind at it
 	return style
+
+// whether our target's lately shot us from too far off for our shots to reach. Post holders only once they've broken from it or out in the open with no cover
+/datum/ai_planning_subtree/search_lost_target/proc/pinned_from_afar(datum/ai_controller/controller)
+	if((stays_put && !AI_POST_BROKEN(controller)) || world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= pinned_time)
+		return FALSE
+	// cover comes first, so only once seek_cover's just looked and found nowhere to hide, and not while we're behind cover we're fighting from, which it gives up on itself if it's not enough
+	if(world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_HIDE_SEARCH] || controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF])
+		return FALSE
+	var/turf/shot_from = controller.blackboard[BB_BASIC_MOB_SHOT_FROM]
+	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
+	if(!shot_from || !ranged_attack || controller.blackboard[BB_BASIC_MOB_SHOT_BY] != controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])
+		return FALSE
+	var/datum/ai_behavior/fire_at_position/fire_back = GET_AI_BEHAVIOR(suppress_behavior)
+	return !fire_back.can_reach(controller.pawn, shot_from, ranged_attack)
+
+// they're picking us off from out past where we can see or hit back, and there's no cover to be had, as we'd be in it. Watching for them only gets us shot, so we close in until we can.
+// FALSE if we're as close as we can go, for post holders
+/datum/ai_planning_subtree/search_lost_target/proc/close_in(datum/ai_controller/controller, turf/last_known_turf)
+	var/advance_key = BB_BASIC_MOB_LAST_KNOWN_TURF
+	if(stays_put)
+		// only as far as our broken post lets us, which is often enough to get them in reach. Once it's quiet, return_home has us back on it
+		var/turf/advance_turf = pick_post_advance_spot(controller, last_known_turf)
+		if(!advance_turf)
+			controller.clear_blackboard_key(BB_BASIC_MOB_ADVANCE_TURF)
+			return FALSE
+		controller.set_blackboard_key(BB_BASIC_MOB_ADVANCE_TURF, advance_turf)
+		advance_key = BB_BASIC_MOB_ADVANCE_TURF
+	if(controller.current_movement_target != controller.blackboard[advance_key])
+		AI_LOG_DECISION(controller, "search_lost_target: shot by [controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]] from out of reach, closing in on them")
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, advance_key)
+	return TRUE
+
+// the furthest spot towards them, on the straight line there, that's somewhere we could stand within our post's radius. Null if that's where we are
+/datum/ai_planning_subtree/search_lost_target/proc/pick_post_advance_spot(datum/ai_controller/controller, turf/toward)
+	var/turf/our_turf = get_turf(controller.pawn)
+	var/turf/best
+	for(var/turf/spot as anything in get_line(our_turf, toward))
+		if(spot != our_turf && ai_can_take_spot(controller.pawn, spot))
+			best = spot
+	return best
 
 /datum/ai_planning_subtree/search_lost_target/proc/should_hang_back(datum/ai_controller/controller)
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))

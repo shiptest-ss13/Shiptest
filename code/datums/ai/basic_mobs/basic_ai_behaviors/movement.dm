@@ -137,13 +137,21 @@
 	var/search_range = 4
 	//how long we wait before looking again, if there was nowhere to hide
 	var/failed_search_cooldown = 2 SECONDS
+	//hiding from shots from further off than this, we look further for cover, a tile more for every far_range_step tiles, up to far_search_range.
+	//scale distance they'd run with distance of shot taken
+	var/far_threshold = 10
+	var/far_range_step = 3
+	var/far_search_range = 8
 
 /datum/ai_behavior/take_cover/setup(datum/ai_controller/controller, danger_key)
 	. = ..()
 	var/turf/danger = get_turf(controller.blackboard[danger_key])
 	if(!danger)
 		return FALSE
-	var/turf/cover = find_hiding_spot(controller.pawn, danger, search_range, exclude = controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
+	var/range = search_range
+	if(danger_key == BB_BASIC_MOB_SHOT_FROM) // not for the likes of getting out of sight to put ourselves out, as we're burning all the while
+		range = clamp(search_range + round((get_dist(controller.pawn, danger) - far_threshold) / far_range_step), search_range, far_search_range)
+	var/turf/cover = find_hiding_spot(controller.pawn, danger, range, exclude = controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
 	if(!cover)
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_HIDE_SEARCH, world.time + failed_search_cooldown)
 		if(danger_key == BB_BASIC_MOB_SHOT_FROM)

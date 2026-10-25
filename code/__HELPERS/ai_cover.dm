@@ -129,6 +129,60 @@
 			if(ring_turf)
 				. += ring_turf
 
+// every turf within range of mover that it could get to, nearest first by how far it'd have to go, as list(turf = steps).
+/proc/ai_reachable_turfs(atom/movable/mover, range)
+	var/turf/start = get_turf(mover)
+	if(!start)
+		return list()
+	var/datum/ai_controller/controller = mover.ai_controller
+	var/access = controller?.get_access()
+	var/can_climb = controller?.blackboard[BB_BASIC_MOB_CAN_CLIMB]
+	var/can_cross_space = controller?.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
+	// detours up to as long again as going straight there, and one climb on top
+	var/max_cost = range * 2 + (can_climb ? AI_CLIMB_STEP_COST : 0)
+	var/list/costs = list()
+	costs[start] = 0
+	// whether we could stand on each turf at all, worked out once for each rather than from every side we come at it
+	var/list/passable = list()
+	// a list of turfs for each cost, so we go out cheapest first
+	var/list/buckets = new /list(max_cost + 1)
+	buckets[1] = list(start)
+	. = list()
+	for(var/cost in 0 to max_cost)
+		var/list/bucket = buckets[cost + 1]
+		for(var/turf/current as anything in bucket)
+			if(costs[current] != cost)
+				continue // got to it cheaper another way
+			.[current] = cost
+			for(var/direction in GLOB.alldirs)
+				var/turf/next = get_step(current, direction)
+				if(!next || get_dist(start, next) > range)
+					continue
+				// a step costs at least 1, so if we've got there for that already, this way's no better.
+				if(!isnull(costs[next]) && costs[next] <= cost + 1)
+					continue
+				if(isnull(passable[next]))
+					passable[next] = !next.density && (can_cross_space || !is_bare_space(next)) && !is_ai_hazard_turf(next, mover)
+				if(!passable[next])
+					continue
+				if(ISDIAGONALDIR(direction))
+					var/turf/side_one = get_step(current, direction & (NORTH|SOUTH))
+					var/turf/side_two = get_step(current, direction & (EAST|WEST))
+					if(!side_one || !side_two || side_one.density || side_two.density)
+						continue // no cutting round wall corners
+				var/step_cost = 1
+				if(current.LinkBlockedWithAccess(next, mover, access))
+					if(!can_climb || current.LinkBlockedWithAccess(next, mover, access, climbing = TRUE))
+						continue
+					step_cost = AI_CLIMB_STEP_COST
+				var/next_cost = cost + step_cost
+				if(next_cost > max_cost || (!isnull(costs[next]) && costs[next] <= next_cost))
+					continue
+				costs[next] = next_cost
+				if(!buckets[next_cost + 1])
+					buckets[next_cost + 1] = list()
+				buckets[next_cost + 1] += next
+
 // out_of_sight for hiding where they can't see us too, not just shoot us, as some things stop shots but not vision
 // prefer is one of AI_HIDE_, for which of the spots that'll do we'd rather have
 /proc/find_hiding_spot(atom/movable/mover, turf/danger, range = 3, turf/exclude, out_of_sight = FALSE, prefer = AI_HIDE_NEAREST)
@@ -136,26 +190,27 @@
 	if(!our_turf)
 		return null
 	var/list/seen_from_danger = out_of_sight ? view(get_dist(danger, our_turf) + range, danger) : null
-	// nearest first, so we only look further out when there's nowhere close
+	// nearest first by how far we'd go to get there, round or over what's in the way, so we only look further when there's nowhere close
+	var/list/reachable = ai_reachable_turfs(mover, range)
 	var/list/candidates = list()
-	var/last_radius = range
-	for(var/radius in 0 to range)
-		if(radius > last_radius)
+	var/last_cost = INFINITY
+	for(var/turf/open/candidate in reachable)
+		var/cost = reachable[candidate]
+		if(cost > last_cost)
 			break
-		for(var/turf/open/candidate in ai_turfs_in_ring(our_turf, radius))
-			if(candidate == exclude || !ai_can_take_spot(mover, candidate))
-				continue
-			if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && (candidate in seen_from_danger)) || !can_walk_straight_to(mover, candidate))
-				continue
-			if(prefer == AI_HIDE_NEAREST)
-				return candidate
-			candidates += candidate
-			last_radius = min(last_radius, radius + 1) // and one further out, in case it's somewhere better
+		if(candidate == exclude || !ai_can_take_spot(mover, candidate))
+			continue
+		if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && (candidate in seen_from_danger)))
+			continue
+		if(prefer == AI_HIDE_NEAREST)
+			return candidate
+		candidates[candidate] = cost
+		last_cost = min(last_cost, cost + 1) // and one further, in case it's somewhere better
 	var/turf/best_turf
 	var/best_score = INFINITY
 	for(var/turf/candidate as anything in candidates)
 		var/danger_distance = get_dist(candidate, danger)
-		var/score = get_dist(our_turf, candidate) + (prefer == AI_HIDE_NEAR_THREAT ? danger_distance : -danger_distance) * 2
+		var/score = candidates[candidate] + (prefer == AI_HIDE_NEAR_THREAT ? danger_distance : -danger_distance) * 2
 		if(score < best_score)
 			best_turf = candidate
 			best_score = score
@@ -338,28 +393,26 @@
 		var/turf/ally_cover = istype(ally_controller) ? ally_controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] : null
 		if(ally_cover)
 			ally_turfs[ally_cover] = TRUE
-	// nearest first, so we only look further out when there's nowhere close
+	// nearest first by how far we'd go to get there, round or over what's in the way, so we only look further when there's nowhere close
+	var/list/reachable = ai_reachable_turfs(fighter, range)
 	var/list/candidates = list()
-	var/last_radius = range
-	for(var/radius in 0 to range)
-		if(radius > last_radius)
+	var/last_cost = INFINITY
+	for(var/turf/open/candidate in reachable)
+		if(reachable[candidate] > last_cost)
 			break
-		for(var/turf/open/candidate in ai_turfs_in_ring(our_turf, radius))
-			if(candidate == exclude || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
-				continue
-			if(!can_walk_straight_to(fighter, candidate))
-				continue
-			if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags))
-				continue
-			var/shooting_through_ally = FALSE
-			for(var/turf/line_turf as anything in get_line(candidate, their_turf))
-				if(line_turf != candidate && ally_turfs[line_turf])
-					shooting_through_ally = TRUE // we'd be shooting through one of ours
-					break
-			if(shooting_through_ally)
-				continue
-			candidates += candidate
-			last_radius = min(last_radius, radius + 1) // and one further out, in case it's somewhere better
+		if(candidate == exclude || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
+			continue
+		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags))
+			continue
+		var/shooting_through_ally = FALSE
+		for(var/turf/line_turf as anything in get_line(candidate, their_turf))
+			if(line_turf != candidate && ally_turfs[line_turf])
+				shooting_through_ally = TRUE // we'd be shooting through one of ours
+				break
+		if(shooting_through_ally)
+			continue
+		candidates += candidate
+		last_cost = min(last_cost, reachable[candidate] + 1) // and one further, in case it's somewhere better
 	if(length(candidates) <= 1)
 		return length(candidates) ? candidates[1] : null
 	return pick_best_fighting_cover(fighter, threat, candidates)

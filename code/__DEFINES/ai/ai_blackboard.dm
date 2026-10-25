@@ -92,6 +92,9 @@
 #define BB_BASIC_MOB_MELEE_HITS "BB_basic_melee_hits"
 ///How far a mob sees targets, overriding what its subtrees and behaviours would use, like for sentries with a scope
 #define BB_BASIC_MOB_VISION_RANGE "BB_basic_vision_range"
+///For those with a scope, how far out it pushes our view towards where we're looking, and how far around that it shows, as a player's does. Null for no scope
+#define BB_BASIC_MOB_SCOPE_ZOOM "BB_basic_scope_zoom"
+#define BB_BASIC_MOB_SCOPE_VIEW "BB_basic_scope_view"
 ///If TRUE, the mob holds its fire when one of its own is in the way
 #define BB_BASIC_MOB_AVOID_FRIENDLY_FIRE "BB_basic_avoid_friendly_fire"
 ///If TRUE, a mob with a ranged attack would rather hit someone right next to it than shoot them, like with a knife in its other hand
@@ -114,6 +117,8 @@
 #define BB_BASIC_MOB_HOLD_FIRE_UNTIL "BB_basic_hold_fire_until"
 ///TRUE while we can see our current target, FALSE while they're out of sight, null when we're not tracking them, like with no target
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
+///TRUE while we only see our current target through our scope, out past how far we'd see them otherwise
+#define BB_BASIC_MOB_TARGET_SCOPED "BB_basic_target_scoped"
 ///When we last picked who we're after, so those who fight up close don't turn between everyone in reach
 #define BB_BASIC_MOB_TARGET_SINCE "BB_basic_target_since"
 ///Until when who we're fighting is reloading or out of ammo, as far as we know, having seen or heard it, see ai_note_enemy_reloading()
@@ -260,6 +265,8 @@
 #define BB_BASIC_MOB_BACKING_OFF_UNTIL "BB_basic_backing_off_until"
 ///Where we're moving to between shots, and when we'll next move
 #define BB_BASIC_MOB_REPOSITION_TURF "BB_basic_reposition_turf"
+///For a post holder shot at from out of reach, as far towards them as its broken post lets it go, see /datum/ai_planning_subtree/search_lost_target/proc/pinned_from_afar()
+#define BB_BASIC_MOB_ADVANCE_TURF "BB_basic_advance_turf"
 #define BB_BASIC_MOB_NEXT_REPOSITION "BB_basic_next_reposition"
 ///Until when we don't hurry to look for somewhere to shoot from again, after looking and finding nowhere
 #define BB_BASIC_MOB_REPOSITION_FAILED_UNTIL "BB_basic_reposition_failed_until"

@@ -57,6 +57,8 @@
 		var/leash = controller.blackboard[BB_BASIC_MOB_LEASH_DISTANCE] // this mob's own, if it has one
 		if(isnull(leash))
 			leash = leash_distance
+		if(leash > 0 && AI_POST_BROKEN(controller))
+			leash = max(leash, ai_post_radius(controller))
 		if(leash <= 0)
 			return // no leash, so we go after them however far it takes us
 		var/base_leash = leash

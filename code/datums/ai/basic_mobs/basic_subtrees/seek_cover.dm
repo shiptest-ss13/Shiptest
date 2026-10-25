@@ -73,10 +73,13 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_CHECKED_AT)
 	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
+	// someone shooting from further than our shots would go, is no one to trade fire with. Standing there for it only gets us shot, so we get out of their line instead
+	var/datum/ai_behavior/fire_at_position/fire_back = GET_AI_BEHAVIOR(fire_back_behavior)
+	var/in_reach = ranged_attack && fire_back.can_reach(controller.pawn, danger, ranged_attack)
 	if(our_turf == controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE)
 		// shot at behind the cover we're fighting from, by someone we can't see, so we fire back blind where it came from if we can. Some hits get past even good cover,
 		// so we only give it up once we've been hit there a few times, and one going past is what it's for
-		var/can_fire_back = !reloading && ranged_attack && !get_shot_blocker(our_turf, danger, pass_flags = ranged_attack.get_pass_flags())
+		var/can_fire_back = !reloading && in_reach && !get_shot_blocker(our_turf, danger, pass_flags = ranged_attack.get_pass_flags())
 		var/hits = controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS] ? 0 : count_dug_in_hit(controller, our_turf)
 		if(hits < (can_fire_back ? dug_in_hits_to_move : dug_in_hits_to_move_unanswered))
 			if(can_fire_back)
@@ -92,6 +95,9 @@
 	if(reloading || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		return // nothing to fire back with, or we can see them and our attack's already on it
 	if(!ranged_attack)
+		return
+	if(!in_reach)
+		AI_LOG_DECISION(controller, "seek_cover: shot at from [danger], too far off to fire back at, so getting out of their line")
 		return
 	if(prob(trade_fire_chance) && !get_shot_blocker(our_turf, danger, pass_flags = ranged_attack.get_pass_flags()))
 		controller.set_blackboard_key(BB_BASIC_MOB_TRADING_FIRE_UNTIL, world.time + trade_fire_duration)

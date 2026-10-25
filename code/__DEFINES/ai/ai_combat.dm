@@ -69,6 +69,8 @@
 #define AI_NIGHT_VISION 8
 ///How far AI sees, unless its sensor or BB_BASIC_MOB_VISION_RANGE says otherwise
 #define AI_DEFAULT_VISION_RANGE 9
+///How far a player sees around them before a scope widens it, which an AI's scope is worked out from
+#define AI_PLAYER_VIEW_RADIUS 7
 
 // How AI learnt about a target it can't see yet
 ///An ally called them out to us
