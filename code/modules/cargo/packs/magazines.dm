@@ -183,8 +183,8 @@
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/saw_mag
-	name = "SAW-80 Magazine Crate"
-	desc = "Contains a 5.56x42mm CLIP magazine for the SAW-80 Squad Automatic Weapon, with a capacity of sixty rounds. Count your shots, they run out fast."
+	name = "Hydra Extended Magazine Crate"
+	desc = "Contains a 5.56x42mm CLIP magazine for the Hydra, with a capacity of sixty rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
