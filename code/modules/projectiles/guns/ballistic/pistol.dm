@@ -122,8 +122,8 @@
 
 //not technically a pistol but whatever
 /obj/item/gun/ballistic/automatic/pistol/derringer
-	name = ".38 Derringer"
-	desc = "An easily concealable derringer. Uses .38 special ammo."
+	name = "HP Hummingbird"
+	desc = "An easily concealable derringer. The Hummingbirds are usually made by trainee HP gunsmiths due to the design's simplicity and low demand. Chambered in .38."
 	icon_state = "derringer"
 	item_state = "hp_generic"
 
@@ -131,6 +131,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr38
 	allowed_ammo_types = list(
@@ -162,13 +163,14 @@
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
-	name = "\improper .357 Syndicate Derringer"
-	desc = "An easily concealable derriger, if not for the bright red-and-black. Uses .357 ammo."
+	name = "D-9 \"Temblor\""
+	desc = "An easily concealable derriger. It is rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations. Chambered in .357."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon_state = "derringer_syndie"
 	item_state = "sa_generic"
@@ -186,5 +188,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
+	manufacturer = MANUFACTURER_NONE
 
 EMPTY_GUN_HELPER(automatic/pistol/derringer)

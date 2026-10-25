@@ -15,7 +15,7 @@
 	crate_name = "disposable gun crate"
 
 /datum/supply_pack/gun/derringer
-	name = ".38 Derringer Crate"
+	name = "HP Hummingbird"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."
 	cost = 350
 	contains = list(/obj/item/storage/guncase/pistol/derringer)
