@@ -49,6 +49,7 @@
 
 	belt = /obj/item/gun/ballistic/revolver/flint
 	suit_store = /obj/item/gun/ballistic/rifle/scout
+	l_pocket = /obj/item/ammo_box/c38
 
 	backpack_contents = list(/obj/item/ammo_box/a300 = 5)
 
