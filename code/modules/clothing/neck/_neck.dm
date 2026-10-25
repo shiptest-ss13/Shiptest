@@ -813,6 +813,7 @@
 		return
 	if(!doStrip(user, wearer))
 		return
+	playsound(wearer, pick('sound/items/dogtag1.ogg', 'sound/items/dogtag2.ogg'), 40, TRUE, -1)
 	log_combat(user, wearer, "stripped [src] off")
 	user.put_in_hands(src)
 
