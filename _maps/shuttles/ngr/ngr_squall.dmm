@@ -1,4 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/machinery/griddle,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "am" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4{
 	dir = 5
@@ -518,15 +523,13 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "jJ" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/table,
-/obj/item/food/garlicbread{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/corner/opaque/beige/mono,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "jQ" = (
@@ -850,13 +853,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "oL" = (
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -1203,9 +1200,17 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "xH" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/griddle,
-/turf/open/floor/plasteel,
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "xV" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -1510,8 +1515,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "BB" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Ck" = (
@@ -1960,21 +1974,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "Jg" = (
-/obj/structure/chair{
-	dir = 8
+/obj/structure/table,
+/obj/item/food/garlicbread{
+	pixel_x = -2;
+	pixel_y = 6
 	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 6;
-	layer = 2.5
-	},
-/obj/effect/turf_decal/corner/opaque/beige{
 	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -2284,21 +2291,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Ny" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 1
 	},
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner,
-/obj/effect/turf_decal/corner/opaque/beige{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/beige{
-	dir = 9
-	},
-/obj/effect/turf_decal/corner/opaque/tan,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "NE" = (
 /obj/structure/table/reinforced,
@@ -2516,13 +2516,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "QD" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "QX" = (
@@ -2570,17 +2570,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Sd" = (
+/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 1
+	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
+	dir = 6
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "Sm" = (
@@ -3400,7 +3399,7 @@ sY
 wd
 cO
 HT
-jJ
+Jg
 dI
 VT
 aT
@@ -3419,8 +3418,8 @@ fZ
 jd
 vE
 MZ
-Ny
-Jg
+jJ
+xH
 VT
 nk
 XB
@@ -3439,7 +3438,7 @@ iH
 UN
 WP
 oL
-VT
+Ny
 VT
 mx
 XB
@@ -3459,7 +3458,7 @@ Xc
 zW
 Sd
 BB
-xH
+ae
 XW
 Hv
 Tf
