@@ -33,3 +33,5 @@
 	wield_delay = 1 SECONDS
 	fire_select_icon_state_prefix = "pellet_"
 	wear_rate = 0 // magnetically accelerated, very little if any wear to the gun
+
+	autowiki_hidden = TRUE

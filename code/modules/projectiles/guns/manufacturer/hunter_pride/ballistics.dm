@@ -267,6 +267,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .44."
 	icon_state = "phenex"
 	item_state = "hp_phenex"
+	autowiki_hidden = TRUE
 
 /// SMG ///
 

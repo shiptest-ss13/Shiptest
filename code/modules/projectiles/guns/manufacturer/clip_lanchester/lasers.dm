@@ -329,6 +329,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "ecm20_inteq"
 	item_state = "ecm20_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 	wield_delay = 0.4 SECONDS
 

@@ -5,6 +5,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
+	bad_type = /obj/item/gun/energy/sharplite
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 
@@ -273,6 +274,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	manufacturer = MANUFACTURER_INTEQ
 
 	icon_state = "x12_inteq"
 	item_state = "x12_inteq"
@@ -413,6 +415,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	manufacturer = MANUFACTURER_INTEQ
 
 	icon_state = "al655_inteq"
 	item_state = "al655_inteq"

@@ -55,6 +55,8 @@
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_HANDS && funnysounds) // We do this instead of equip_sound as we only want this to play when it's wielded
@@ -131,6 +133,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr38
 	allowed_ammo_types = list(
@@ -169,6 +172,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon_state = "derringer_syndie"
 	item_state = "sa_generic"
@@ -186,5 +190,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
+	manufacturer = NONE
 
 EMPTY_GUN_HELPER(automatic/pistol/derringer)

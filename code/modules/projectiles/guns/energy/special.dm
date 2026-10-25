@@ -10,7 +10,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = NONE
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -43,6 +43,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
+	manufacturer = NONE
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -50,6 +51,8 @@
 	icon_state = "decloner"
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
 	ammo_x_offset = 1
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/decloner/update_overlays()
 	. = ..()
@@ -272,6 +275,8 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/temperature/security
 	name = "security temperature gun"
 	desc = "A weapon that can only be used to its full potential by the truly robust."
@@ -339,6 +344,8 @@
 	fire_delay = 0.1 SECONDS
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/buster
 	name = "replica buster cannon"
