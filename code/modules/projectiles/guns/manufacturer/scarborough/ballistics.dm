@@ -901,7 +901,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 48,
+			"x" = 42,
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
