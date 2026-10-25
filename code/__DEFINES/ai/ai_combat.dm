@@ -7,6 +7,7 @@
 	/datum/ai_planning_subtree/seek_safe_environment, \
 	/datum/ai_planning_subtree/put_out_fire, \
 	/datum/ai_planning_subtree/pat_out_burning_ally, \
+	/datum/ai_planning_subtree/clear_friendly_fire, \
 	/datum/ai_planning_subtree/investigate_noise, \
 	/datum/ai_planning_subtree/investigate_box, \
 	/datum/ai_planning_subtree/return_home/human, \
@@ -162,6 +163,8 @@
 #define AI_COMMANDER_RETREAT_DISTANCE 5
 ///How long after its side turned on whoever attacked a commander before they will again
 #define AI_COMMANDER_GUARD_COOLDOWN (10 SECONDS)
+///How long after its side saw one of theirs get shot before they'll react to seeing it shot again, see ai_witness_shooting()
+#define AI_WITNESS_COOLDOWN (5 SECONDS)
 ///Cooldown until the next time a commander can sound the alarm with a callout that has an alarm range
 #define AI_COMMANDER_ALARM_COOLDOWN (60 SECONDS)
 
@@ -332,6 +335,8 @@
 #define AI_CALLOUT_PUTTING_OUT "putting out"
 ///It's burning, and walking into who it's fighting to set them alight too
 #define AI_CALLOUT_SPREADING_FIRE "spreading fire"
+///One of its own just shot it
+#define AI_CALLOUT_FRIENDLY_FIRE "friendly fire"
 
 // Answers, said by an ally a moment after the line they answer, so it's a conversation rather than one voice
 ///Asking an ally who just got hurt how they're doing, answered with AI_CALLOUT_STATUS_OK or AI_CALLOUT_STATUS_BAD

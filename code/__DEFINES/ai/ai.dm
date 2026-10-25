@@ -14,7 +14,7 @@
 #define AI_MAX_PATH_LENGTH 30 // 30 is possibly overkill since by default we lose interest after 14 tiles of distance, but this gives wiggle room for weaving around obstacles
 ///How long JPS movement gives up straight away on somewhere it found no way to, while neither it nor we have moved, as a failed search is the costliest kind
 #define AI_NO_PATH_MEMORY (10 SECONDS)
-///How many steps of walking a climb's worth, a couple of seconds getting over something, for weighing a way over against a way round
+///How many steps of walking a climb's worth of time, when we can't tell what's being climbed
 #define AI_CLIMB_STEP_COST 8
 ///How many steps longer than a straight line a walking route has to be before JPS movement also searches for a climbing route, since a second search is costly
 #define AI_CLIMB_DETOUR_STEPS 6

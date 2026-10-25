@@ -356,6 +356,15 @@
 ///When we can next walk into who we're fighting to set them alight, while we burn
 #define BB_BASIC_MOB_NEXT_FIRE_SPREAD "BB_basic_next_fire_spread"
 
+// Friendly fire, see /datum/ai_planning_subtree/clear_friendly_fire
+///One of ours who just shot us, and when, so we step out of their line of fire
+#define BB_BASIC_MOB_HIT_BY_ALLY "BB_basic_hit_by_ally"
+#define BB_BASIC_MOB_HIT_BY_ALLY_AT "BB_basic_hit_by_ally_at"
+///Where we're stepping to, out of their line of fire
+#define BB_BASIC_MOB_FRIENDLY_FIRE_STEP "BB_basic_friendly_fire_step"
+///When one of ours last hit us, so being hit again soon after has us leave our cover to get out of their way
+#define BB_BASIC_MOB_LAST_HIT_BY_ALLY_AT "BB_basic_last_hit_by_ally_at"
+
 // Explosives and grenades
 ///The live explosive we're running from, like a primed grenade
 #define BB_BASIC_MOB_FLEEING_EXPLOSIVE "BB_basic_fleeing_explosive"

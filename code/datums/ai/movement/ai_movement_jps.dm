@@ -405,8 +405,8 @@
 	if((!length(new_path) || long_way_round) && search_notes["found_climbable"] && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
 		// no way round, or a long one, so over, like sandbags piled in a doorway, or off a platform rather than round to its stairs. Only if something we could climb was in the way, as a failed search is the costliest kind
 		var/list/climbing_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, climbing = TRUE)
-		// climbing's slow, so a climb counts as AI_CLIMB_STEP_COST steps against the way round
-		if(length(climbing_path) && (!length(new_path) || length(climbing_path) + count_climbs(controller, climbing_path) * AI_CLIMB_STEP_COST < length(new_path)))
+		// climbing's slow, so each climb counts as however many steps we'd walk in the time it takes, against the way round
+		if(length(climbing_path) && (!length(new_path) || length(climbing_path) + get_climbing_cost(controller, climbing_path) < length(new_path)))
 			new_path = climbing_path
 	if(QDELETED(controller))
 		return
@@ -418,14 +418,19 @@
 		// no way there at all, not just someone in the way we might wait out, so searching again every couple of seconds would only fail the same way
 		controller.pathing_attempts = max_pathing_attempts - 1
 
-// counting the cost of climbing, so we only do it if we need to
-/datum/ai_movement/jps/proc/count_climbs(datum/ai_controller/controller, list/path)
-	var/turf/previous = get_turf(controller.pawn)
+// counting the cost of climbing, so we only do it if we need to or if its actually faster
+/datum/ai_movement/jps/proc/get_climbing_cost(datum/ai_controller/controller, list/path)
+	var/mob/living/climber = controller.pawn
+	var/turf/previous = get_turf(climber)
 	var/access = controller.get_access()
+	var/step_time = max(controller.movement_delay, 1)
 	. = 0
 	for(var/turf/step_turf as anything in path)
-		if(previous && previous.LinkBlockedWithAccess(step_turf, controller.pawn, access))
-			.++
+		if(previous && previous.LinkBlockedWithAccess(step_turf, climber, access))
+			var/climb_time = 0
+			for(var/obj/structure/climbable in get_climbables_in_step(previous, step_turf))
+				climb_time = max(climb_time, get_climb_duration(climber, climbable))
+			. += climb_time ? climb_time / step_time : AI_CLIMB_STEP_COST // a diagonal, or something we can't tell, so a rough guess
 		previous = step_turf
 
 /datum/ai_movement/jps/start_moving_towards(datum/ai_controller/controller, atom/current_movement_target)

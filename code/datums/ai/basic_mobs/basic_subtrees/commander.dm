@@ -48,19 +48,30 @@
 	if(!attacker_turf || world.time < next_guard_by_commander[commander_ref])
 		return
 	var/list/guards = list()
+	var/list/unsighted_guards = list() // those of ours who can't see who's at it, like round a corner, who we tell where it's coming from
 	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(commander))
 		var/datum/ai_controller/ally_controller = ally.ai_controller
 		var/datum/targetting_datum/targetting_datum = ally_controller.blackboard[BB_TARGETTING_DATUM]
-		if(ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == attacker || !targetting_datum?.can_attack(ally, attacker) || !ai_can_see(ally, attacker))
+		var/atom/their_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+		if(their_target == attacker || !targetting_datum?.can_attack(ally, attacker))
 			continue
-		guards += ally
-	if(!length(guards))
+		if(ai_can_see(ally, attacker))
+			guards += ally
+		else if((QDELETED(their_target) || ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE) && !AI_MORALE_IS(ally_controller, AI_MORALE_BROKEN))
+			unsighted_guards += ally // not busy with anyone they can see, and with the nerve for it
+	if(!length(guards) && !length(unsighted_guards))
 		return
 	next_guard_by_commander[commander_ref] = world.time + AI_COMMANDER_GUARD_COOLDOWN
-	ai_callout(get_nearest_of(commander, guards), AI_CALLOUT_PROTECT_COMMANDER, interrupt = TRUE, subject = attacker)
+	ai_callout(get_nearest_of(commander, length(guards) ? guards : unsighted_guards), AI_CALLOUT_PROTECT_COMMANDER, interrupt = TRUE, subject = attacker)
 	for(var/mob/living/guard as anything in guards)
 		AI_LOG_DECISION(guard.ai_controller, "[attacker] attacked [commander], going after them")
 		guard.ai_controller.learn_of_target(attacker, attacker_turf, AI_LEARNED_SHOT) // seen for ourselves, so first hand
+	for(var/mob/living/guard as anything in unsighted_guards)
+		var/datum/ai_controller/guard_controller = guard.ai_controller
+		if(!guard_controller.learn_of_target(attacker, attacker_turf, AI_LEARNED_TOLD))
+			continue
+		AI_LOG_DECISION(guard_controller, "[attacker] attacked [commander] from where we can't see, going to get eyes on them")
+		guard_controller.set_blackboard_key(BB_BASIC_MOB_RALLYING, TRUE) // so even those who'd usually hold and watch go and get a line on them
 
 // follower's been ordered to push up
 /proc/ai_follow_push_order(mob/living/follower)

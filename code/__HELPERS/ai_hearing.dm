@@ -30,10 +30,43 @@
 /proc/ai_is_ally(mob/living/source, mob/living/victim)
 	return victim == source || source.faction_check_mob(victim)
 
+// the AI-controlled mobs on z_level, awake or asleep, worked out once a tick for everyone asking, rather than each of us going through everything in range(). Don't change the list it gives
+/proc/get_ai_mobs_on_z(z_level)
+	var/static/list/mobs_by_z = list()
+	var/static/cache_time = -1
+	if(cache_time != world.time)
+		mobs_by_z.Cut()
+		cache_time = world.time
+		var/list/controllers = SSai_controllers.active_ai_controllers.Copy()
+		for(var/virtual_level in SSai_controllers.sleeping_ai_by_virtual_level)
+			controllers += SSai_controllers.sleeping_ai_by_virtual_level[virtual_level]
+		for(var/datum/ai_controller/controller as anything in controllers)
+			var/mob/living/pawn = controller.pawn
+			if(!isliving(pawn) || !isturf(pawn.loc))
+				continue // only those out on a turf, as range() would give us, so not someone shut in a locker
+			LAZYADD(mobs_by_z["[pawn.z]"], pawn)
+	return mobs_by_z["[z_level]"] || list()
+
+// ours within range of source, awake and AI-controlled. Asked a lot, by morale, callouts, orders and the like, so worked out once a tick for each of us and range
 /proc/get_ai_allies_in_range(mob/living/source, range)
+	var/static/list/allies_by_asker = list()
+	var/static/cache_time = -1
+	if(cache_time != world.time)
+		allies_by_asker.Cut()
+		cache_time = world.time
+	var/asker_key = "[REF(source)]|[range]"
+	var/list/allies = allies_by_asker[asker_key]
+	if(isnull(allies))
+		allies = list()
+		var/turf/source_turf = get_turf(source)
+		if(source_turf)
+			for(var/mob/living/ally as anything in get_ai_mobs_on_z(source_turf.z))
+				if(ally != source && get_dist(source_turf, ally) <= range && !ally.client && source.faction_check_mob(ally))
+					allies += ally
+		allies_by_asker[asker_key] = allies
 	. = list()
-	for(var/mob/living/ally in range(range, source))
-		if(ally != source && ally.stat == CONSCIOUS && !ally.client && istype(ally.ai_controller, /datum/ai_controller) && source.faction_check_mob(ally))
+	for(var/mob/living/ally as anything in allies)
+		if(!QDELETED(ally) && ally.stat == CONSCIOUS) // checked fresh, as one of ours may go down between askings in the same tick
 			. += ally
 
 /proc/get_ai_allies_in_earshot(mob/living/source, range = 7, wall_penalty = AI_HEARING_WALL_PENALTY)

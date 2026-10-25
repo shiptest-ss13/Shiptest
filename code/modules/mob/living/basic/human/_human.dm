@@ -509,6 +509,9 @@
 		face_atom(target)
 
 /mob/living/basic/human/PushAM(atom/movable/pushed_thing, force = move_force)
-	if(!client && ai_controller && isobj(pushed_thing) && !ai_can_push_aside(src, pushed_thing, get_dir(src, pushed_thing)))
-		return
+	if(!client && ai_controller && isobj(pushed_thing))
+		var/refusal = ai_push_refusal(src, pushed_thing, get_dir(src, pushed_thing))
+		if(refusal)
+			AI_LOG_DECISION(ai_controller, "movement: not pushing [pushed_thing] at [AREACOORD(pushed_thing)], [refusal]")
+			return
 	return ..()

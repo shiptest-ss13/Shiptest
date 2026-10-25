@@ -216,18 +216,32 @@
 	return HAS_TRAIT(thing, TRAIT_CLIMBABLE) && !istype(thing, /obj/structure/barricade/directional/flippedtable)
 
 /proc/ai_can_push_aside(atom/movable/mover, obj/thing, push_dir)
+	return !ai_push_refusal(mover, thing, push_dir)
+
+// why mover wouldn't push thing along in push_dir, as text for the AI's log, or null if it would. Fixed strings only, as pathfinding asks this a lot
+/proc/ai_push_refusal(atom/movable/mover, obj/thing, push_dir)
 	var/mob/living/basic/human/pusher = mover
-	if(!istype(pusher) || pusher.client || !pusher.ai_controller || ISDIAGONALDIR(push_dir))
-		return FALSE // no pushing on a diagonal
-	if(thing.anchored || !thing.density || (thing.flags_1 & ON_BORDER_1) || pusher.move_force < thing.move_resist * MOVE_FORCE_PUSH_RATIO)
-		return FALSE
+	if(!istype(pusher) || pusher.client || !pusher.ai_controller)
+		return "not a pusher AI"
+	if(ISDIAGONALDIR(push_dir))
+		return "pushing on a diagonal" // no pushing on a diagonal
+	if(thing.anchored)
+		return "it's anchored"
+	if(!thing.density || (thing.flags_1 & ON_BORDER_1))
+		return "it's not in the way, or it's an edge piece"
+	if(pusher.move_force < thing.move_resist * MOVE_FORCE_PUSH_RATIO)
+		return "too heavy to push"
 	var/turf/beyond = get_step(thing, push_dir)
-	if(!beyond || beyond.is_blocked_turf(FALSE, thing) || ai_is_doorway(beyond))
-		return FALSE // nowhere for it to go, or it'd jam the way through
+	if(!beyond || beyond.is_blocked_turf(FALSE, thing))
+		return "nowhere for it to go"
+	if(ai_is_doorway(beyond))
+		return "it'd jam a doorway"
 	// check for room, don't jam it!
 	var/turf/one_side = get_step(beyond, turn(push_dir, 90))
 	var/turf/other_side = get_step(beyond, turn(push_dir, -90))
-	return (one_side && !one_side.is_blocked_turf(TRUE)) || (other_side && !other_side.is_blocked_turf(TRUE))
+	if((one_side && !one_side.is_blocked_turf(TRUE)) || (other_side && !other_side.is_blocked_turf(TRUE)))
+		return null
+	return "no room to get round it after"
 
 /proc/ai_can_open_closet(atom/movable/mover, obj/structure/closet/closet)
 	var/mob/living/basic/human/opener = mover
