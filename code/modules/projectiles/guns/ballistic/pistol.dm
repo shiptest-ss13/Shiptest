@@ -181,7 +181,7 @@
 	fire_sound_volume = 50 //Tactical stealth firing
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/gold
-	name = "\improper Golden Derringer"
+	name = "\improper golden derringer"
 	desc = "The golden sheen is somewhat counter-intuitive on a holdout weapon, but it looks cool. Uses .357 ammo."
 	icon_state = "derringer_gold"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
