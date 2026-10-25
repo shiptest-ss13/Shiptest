@@ -884,7 +884,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	spread = 8
 	spread_unwielded = 35
 
-	recoil = 2 //identical to other LMGS
+	recoil = 1.5 //identical to other LMGS
 	recoil_unwielded = 7 //same as skm
 
 	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
@@ -910,7 +910,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 		)
 	)
 
-	deploy_recoil_bonus = -2
+	deploy_recoil_bonus = -1
 	deploy_spread_bonus = -6
 
 /obj/item/gun/ballistic/automatic/hmg/python/ComponentInitialize()
