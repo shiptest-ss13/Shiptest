@@ -193,6 +193,14 @@
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 
+/datum/supply_pack/spacesuits/indie_heavy
+	name = "Bullshark Marine Hardsuit Crate"
+	desc = "Contains one marine hardsuit for heavy EVA operations."
+	cost = 4000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent/heavy)
+	crate_name = "marine hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
 /datum/supply_pack/spacesuits/esh_hardsuit
 	name = "ESH Hardsuit Crate"
 	desc = "Contains one ESH hardsuit, to provide the best protection against the elements. MediPen not included for injector module."
@@ -271,8 +279,19 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/spacesuits/heavy_sec_hardsuit
-	name = "Heavy Security Hardsuit Crate"
+/datum/supply_pack/spacesuits/guardian_hardsuit
+	name = "Guardian Security Hardsuit Crate"
+	desc = "Contains a standard-issue Vigilitas security hardsuit for light combat duty."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security)
+	crate_name = "security hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/warra
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/sentinel_hardsuit
+	name = "Sentinel Heavy Security Hardsuit Crate"
 	desc = "Makosso-Warra's premier solution to security hazards in low pressure environments, a well armored, highly mobile combat suit. The wearer is advised to have their zero-g training completed before utilizing the jetpack module."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/hos)

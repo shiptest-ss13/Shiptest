@@ -33,7 +33,7 @@
 	projectilesound = 'sound/weapons/gun/pistol/candor.ogg'
 	retreat_distance = 3
 	minimum_distance = 4
-	casingtype = /obj/projectile/bullet/c45
+	casingtype = /obj/projectile/bullet/c10mm
 	deathmessage = "falls to the ground, sparking as its rotors grind to a halt."
 	is_flying_animal = TRUE
 
@@ -250,6 +250,7 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+
 //boxer
 
 /mob/living/simple_animal/hostile/automated/boxer
@@ -289,6 +290,12 @@
 		if(!bonk.anchored)
 			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
 			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = TRUE)
+
+/mob/living/simple_animal/hostile/automated/boxer/crap
+	name = "Degraded B.A.P II 'Boxer'"
+	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. This one appears to be in terrible condition."
+	health = 60
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"
@@ -365,6 +372,36 @@
 
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi
 	faction = list("Ramzi Clique")
+
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary
+	name = "G-82 Incendiary Walkmine"
+	desc = "Walking ordinance making use of a flame projecter, a G-82 Incendiary mine seated at its base, and a mechanically pressurized bag filled with a mixture of gasoline, plasma, and napalm. Sometimes captured and used for impromptu cooking."
+	icon_state = "mine_walker-incendiary"
+	light_color = "#f89421"
+	move_to_delay = 5
+
+	mine_heavy = 0
+	mine_light = 2
+	mine_flame = 6
+
+	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
+	shrapnel_magnitude = 4
+
+	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
+
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary/OpenFire(atom/victim)
+	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
+	var/list/burn_turfs = getline(src, T) - get_turf(src)
+	visible_message(span_danger("<b>[src]</b> fires a jet of hot flame at [target.name]!"))
+	playsound(src, projectilesound, 100, TRUE)
+	fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
+	ranged_cooldown = world.time + ranged_cooldown_time
+
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary/death()
+	for(var/turf/T in view(4,src))
+		T.ignite_turf(15, "#fc7b48")
+		new /obj/effect/hotspot(T)
+	. = ..()
 
 // shotgun hoppers (To-do, make them "jump" around like the antlions do?)
 
@@ -513,7 +550,7 @@
 /mob/living/simple_animal/hostile/automated/tripod/ramzi
 	name = "Sav'sha'syn 'Gun Drone'"
 	desc = "A Sye-Port Industrial converted Sav'cla drone. Its plating seems rusted and worn; its optical sensor suite flickers as it points its heavy rifle at you."
-	icon_state = "tripod_ramzi"
+	icon_state = "tripod_clique"
 	ranged = TRUE
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 	casingtype = /obj/item/ammo_casing/a65clip

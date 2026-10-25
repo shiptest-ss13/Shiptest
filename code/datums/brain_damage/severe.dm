@@ -49,12 +49,12 @@
 	if(specific_type)
 		paralysis_type = specific_type
 	if(!paralysis_type)
-		paralysis_type = pick("full","left","right","arms","legs","r_arm","l_arm","r_leg","l_leg")
+		paralysis_type = pick("full","left","right","arms","legs","r_arm","l_arm","r_leg","l_leg", "tail")
 	var/subject
 	switch(paralysis_type)
 		if("full")
 			subject = "your body"
-			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG)
+			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_TAIL)
 		if("left")
 			subject = "the left side of your body"
 			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_L_LEG)
@@ -66,7 +66,7 @@
 			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM)
 		if("legs")
 			subject = "your legs"
-			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG)
+			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_TAIL)
 		if("r_arm")
 			subject = "your right arm"
 			paralysis_traits = list(TRAIT_PARALYSIS_R_ARM)
@@ -79,6 +79,9 @@
 		if("l_leg")
 			subject = "your left leg"
 			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG)
+		if("tail")
+			subject = "your tail"
+			paralysis_traits = list(TRAIT_PARALYSIS_TAIL)
 
 	gain_text = span_warning("You can't feel [subject] anymore!")
 	lose_text = span_notice("You can feel [subject] again!")
