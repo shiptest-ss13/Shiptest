@@ -23,7 +23,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	charge_sections = 4
 	ammo_x_offset = 2
-	manufacturer = MANUFACTURER_WARRA
+	manufacturer = MANUFACTURER_NONE
 
 	spread = 0
 	spread_unwielded = 25

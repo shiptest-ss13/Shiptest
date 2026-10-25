@@ -48,8 +48,6 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = MANUFACTURER_SHARPLITE
-
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -209,7 +207,6 @@
 		/obj/item/stock_parts/cell/gun/mini,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
-	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
 	. = ..()
