@@ -1919,6 +1919,10 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 5;
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "HT" = (
@@ -2417,7 +2421,6 @@
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/mask/breath/ngr,
 /obj/item/clothing/mask/balaclava/ngr,
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/item/storage/belt/military/assault,
 /obj/item/clothing/head/ngr/flap,
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
@@ -2453,6 +2456,7 @@
 	pixel_x = -4;
 	pixel_y = 1
 	},
+/obj/item/radio/headset/syndicate/alt/captain/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ps" = (
