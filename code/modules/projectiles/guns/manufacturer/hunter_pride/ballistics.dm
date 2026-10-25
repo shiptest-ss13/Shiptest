@@ -123,11 +123,11 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 
 EMPTY_GUN_HELPER(revolver/shadow)
 
-/obj/item/gun/ballistic/revolver/detective
-	name = "\improper HP Detective Special"
+/obj/item/gun/ballistic/revolver/flint
+	name = "\improper HP Flint"
 	desc = "A small law enforcement firearm. Originally commissioned by Vigilitas Interstellar for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
-	icon_state = "detective"
+	icon_state = "flint"
 	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
@@ -141,12 +141,12 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
-	unique_reskin = list("Default" = "detective",
-		"Stainless Steel" = "detective_stainless",
-		"Gold Trim" = "detective_gold",
-		"Leopard Spots" = "detective_leopard",
-		"The Peacemaker" = "detective_peacemaker",
-		"Black Panther" = "detective_panther"
+	unique_reskin = list("Default" = "flint",
+		"Stainless Steel" = "flint_stainless",
+		"Gold Trim" = "flint_gold",
+		"Leopard Spots" = "flint_leopard",
+		"The Peacemaker" = "flint_peacemaker",
+		"Black Panther" = "flint_panther"
 		)
 	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -154,13 +154,13 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	recoil = 0
 	fire_delay = 0.2 SECONDS
 
-EMPTY_GUN_HELPER(revolver/detective)
+EMPTY_GUN_HELPER(revolver/flint)
 
-/obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
+/obj/item/gun/ballistic/revolver/flint/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
 //...why...?
-/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
+/obj/item/gun/ballistic/revolver/flint/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
@@ -171,7 +171,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 			return 0
 	..()
 
-/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
+/obj/item/gun/ballistic/revolver/flint/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
 		return TRUE
 	if(magazine.caliber == "38")

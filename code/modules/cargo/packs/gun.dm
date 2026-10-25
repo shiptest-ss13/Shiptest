@@ -166,11 +166,11 @@
 	contains = list(/obj/item/storage/guncase/pistol/firebrand)
 	faction = /datum/faction/srm
 
-/datum/supply_pack/gun/detrevolver
-	name = "Hunter's Pride Detective Revolver Crate"
+/datum/supply_pack/gun/flintrevolver
+	name = "HP Flint Revolver Crate"
 	desc = "Contains a concealable revolver favored by police departments around the sector, chambered in .38."
-	cost = 600
-	contains = list(/obj/item/storage/guncase/pistol/detective)
+	cost = 400
+	contains = list(/obj/item/storage/guncase/pistol/flint)
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/shadowrevolver
