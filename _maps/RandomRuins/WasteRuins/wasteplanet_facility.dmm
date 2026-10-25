@@ -1373,7 +1373,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/viscerator/reprogrammed,
+/mob/living/basic/viscerator/reprogrammed,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
 "iE" = (
@@ -2766,7 +2766,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
-/mob/living/simple_animal/hostile/viscerator/reprogrammed,
+/mob/living/basic/viscerator/reprogrammed,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/northwing)
 "sP" = (
@@ -3232,7 +3232,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/viscerator/reprogrammed,
+/mob/living/basic/viscerator/reprogrammed,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
 "vX" = (
@@ -6024,7 +6024,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
 "MT" = (
-/mob/living/simple_animal/hostile/viscerator/reprogrammed,
+/mob/living/basic/viscerator/reprogrammed,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Nc" = (
@@ -6566,11 +6566,11 @@
 /area/ruin/wasteplanet/facility/westbay)
 "QG" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
-	ranged_cooldown_time = 100;
-	rapid = 1;
+/mob/living/basic/human/hermit/ranged/tesla_rifle{
 	loot = list(/obj/effect/spawner/random/tesla_bullets);
-	name = "Hermit Inventor"
+	name = "Hermit Inventor";
+	burst_shots = 1;
+	ranged_cooldown = 100
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/eastbay)
@@ -7916,7 +7916,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
 "Yb" = (
-/mob/living/simple_animal/hostile/viscerator/reprogrammed,
+/mob/living/basic/viscerator/reprogrammed,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Yk" = (

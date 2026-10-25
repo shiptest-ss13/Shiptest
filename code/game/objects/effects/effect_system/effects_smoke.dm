@@ -255,6 +255,11 @@
 /obj/effect/particle_effect/smoke/chem/smoke_mob(mob/living/carbon/M, seconds_per_tick = SSOBJ_DT)
 	if(lifetime<1)
 		return 0
+	var/mob/living/basic/human/basic_human = M
+	if(istype(basic_human))
+		if(reagents.has_reagent(/datum/reagent/consumable/condensedcapsaicin))
+			basic_human.pepper_act()
+		return TRUE
 	if(!istype(M))
 		return 0
 	var/mob/living/carbon/C = M

@@ -124,6 +124,11 @@
 	if(wall_mounted)
 		return TRUE
 
+/obj/structure/closet/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(ai_can_open_closet(requester, src))
+		return TRUE
+	return ..()
+
 /obj/structure/closet/proc/can_open(mob/living/user, force = FALSE)
 	if(force)
 		return TRUE

@@ -19,13 +19,14 @@
 	if(!isbasicmob(target))
 		return ELEMENT_INCOMPATIBLE
 
-	if(min_body_temp)
+	// checking for null rather than falsy, as 0 is a real temperature
+	if(!isnull(min_body_temp))
 		src.min_body_temp = min_body_temp
-	if(max_body_temp)
+	if(!isnull(max_body_temp))
 		src.max_body_temp = max_body_temp
-	if(cold_damage)
+	if(!isnull(cold_damage))
 		src.cold_damage = cold_damage
-	if(heat_damage)
+	if(!isnull(heat_damage))
 		src.heat_damage = heat_damage
 	RegisterSignal(target, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 
@@ -37,6 +38,8 @@
 
 /datum/element/basic_body_temp_sensetive/proc/on_life(datum/target, seconds_per_tick, times_fired)
 	var/mob/living/basic/basic_mob = target
+	if(world.time < basic_mob.environment_grace_until)
+		return // just spawned, keep protection up
 	var/gave_alert = FALSE
 
 	if(basic_mob.bodytemperature < min_body_temp)

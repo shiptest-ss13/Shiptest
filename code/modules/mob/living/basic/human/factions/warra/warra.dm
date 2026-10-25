@@ -1,200 +1,176 @@
-/mob/living/simple_animal/hostile/human/warra
+/mob/living/basic/human/warra
 	name = "\improper Vigilitas Security Officer"
 	desc = "A member of Vigilitas Interstellar, vacantly staring into the distance, hands near their weapons."
 	icon_state = "warra"
 	icon_living = "warra"
-	speak_chance = 0
 	stat_attack = HARD_CRIT
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	atmos_requirements = IMMUNE_ATMOS_REQS
+	habitable_atmos = IMMUNE_ATMOS_REQS
 	faction = list(ROLE_DEATHSQUAD)
-	check_friendly_fire = TRUE
-	loot = list()
-	dodging = TRUE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_private
 	armor_base = /obj/item/clothing/suit/armor/warra
+	dodging = TRUE
+	callout_set = /datum/ai_callout_set/human/vigilitas
+	flashlight_chance = 50
+	throw_back_chance = 10
 
 /* ranged guys */
 
-/mob/living/simple_animal/hostile/human/warra/ranged
+/mob/living/basic/human/warra/ranged
 	desc = "A member of Vigilitas Interstellar, vacantly staring into the distance. Their hands are wrapped around the familiarity of a Commander."
 	icon_state = "warraranged"
 	icon_living = "warraranged"
-	ranged = 1
 	retreat_distance = 3
-	minimum_distance = 5
-	casingtype = /obj/item/ammo_casing/c9mm
-	rapid = 2
+	engage_distance = 5
+	casing_type = /obj/item/ammo_casing/c9mm
+	burst_shots = 2
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/challenger
-	projectilesound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
+	projectile_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/smg
+/mob/living/basic/human/warra/ranged/smg
 	name = "\improper Vigilitas Watch"
 	desc = "A member of Vigilitas Interstellar, their eyes scan the horizon for motion, tracking flutters of the world with a Resolution PDW."
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
-	rapid = 3
-	casingtype = /obj/item/ammo_casing/c46x30mm
+	burst_shots = 3
+	casing_type = /obj/item/ammo_casing/c46x30mm
 	r_hand = /obj/item/gun/ballistic/automatic/smg/resolution
-	projectilesound = 'sound/weapons/gun/smg/resolution.ogg'
+	projectile_sound = 'sound/weapons/gun/smg/resolution.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/shotgun
+/mob/living/basic/human/warra/ranged/shotgun
 	name = "\improper Vigilitas Pointman"
 	desc = "A member of Vigilitas Interstellar, posture low to the ground. Their palms tightly grip onto the body of a Negotiator shotgun, ready to fire."
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
-	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	casing_type = /obj/item/ammo_casing/shotgun/buckshot
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/negotiator
-	rapid = 1
-	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
+	burst_shots = 1
+	projectile_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/laser
+/mob/living/basic/human/warra/ranged/laser
 	name = "\improper Vigilitas Defender"
 	desc = "A member of Vigilitas Interstellar, their hands are locked around a laser rifle, actively aiming it at potential threats."
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
-	rapid = 2
-	rapid_fire_delay = 7
-	casingtype = null
-	projectiletype = /obj/projectile/beam/laser/sharplite
+	burst_shots = 2
+	burst_interval = 0.7 SECONDS
+	casing_type = null
+	projectile_type = /obj/projectile/beam/laser/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/surge/resistor
-	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/laser/space
-	minbodytemp = 0
-	maxbodytemp = 1000
+/mob/living/basic/human/warra/ranged/laser/space
+	minimum_survivable_temperature = 0
+	maximum_survivable_temperature = 1000
 	icon_state = "warra_laserspace"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
-
-/mob/living/simple_animal/hostile/human/warra/ranged/laser/space/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	set_light(4)
+	in_hardsuit = TRUE
 
 /* Assault trooper guys */
 
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper
+/mob/living/basic/human/warra/ranged/trooper
 	name = "Vigilitas Trooper"
 	desc = "A Vigilitas Assault Officer. Their hands are cradled around a Commander Pistol, ready to bring their aim onto a target."
 	icon_state = "warrarangedassault"
 	icon_living = "warrarangedassault"
-	icon_dead = null
-	icon_gib = "syndicate_gib"
 	rapid_melee = 2
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_trooper
+	callout_set = /datum/ai_callout_set/human/vigilitas/crisis
 
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/smg
+/mob/living/basic/human/warra/ranged/trooper/grenadier
+	name = "Vigilitas Grenadier"
+	desc = "A Vigilitas Assault Officer with a few stingbangs clipped to their bet, for targets who won't surrender."
+	grenade_type = /obj/item/grenade/stingbang
+	grenade_count = 2
+
+/mob/living/basic/human/warra/ranged/trooper/smg
 	name = "Vigilitas SMG Trooper"
 	desc = "A member of Vigilitas Interstellar. Eyes track motion as they saunter confidently, energy SMG at alert."
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
-	rapid = 5
-	rapid_fire_delay = 2
-	casingtype = null
-	projectiletype = /obj/projectile/beam/weak/sharplite
+	burst_shots = 5
+	casing_type = null
+	projectile_type = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/rush
-	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/shotgun
+/mob/living/basic/human/warra/ranged/trooper/smg/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security
+	minimum_survivable_temperature = 0
+	maximum_survivable_temperature = 1000
+	icon_state = "warra_etar"
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
+	in_hardsuit = TRUE
+
+/mob/living/basic/human/warra/ranged/trooper/shotgun
 	name = "\improper Vigilitas Pointman"
 	desc = "A member of Vigilitas Interstellar, with their chin high up. They confidently aim around their shotgun, ready to burn away any trespassers."
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
-	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
+	casing_type = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/amperage
-	rapid = 2
-	rapid_fire_delay = 5
+	burst_shots = 2
+	burst_interval = 0.5 SECONDS
 	retreat_distance = 0
-	minimum_distance = 1
-	shoot_point_blank = TRUE
-	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	engage_distance = 1
+	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/shotgun/space
-	name = "\improper Vigilitas Pointman"
+/mob/living/basic/human/warra/ranged/trooper/shotgun/space
 	desc = "A member of Vigilitas Interstellar, clad in white-striped hardsuit. They confidently aim around their shotgun, ready to burn away any trespassers."
 	icon_state = "warra_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
-	minbodytemp = 0
-	maxbodytemp = 1000
+	minimum_survivable_temperature = 0
+	maximum_survivable_temperature = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
+	in_hardsuit = TRUE
 
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/shotgun/space/Initialize()
-
-	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	set_light(4)
-
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/smg/space
-	armor_base = /obj/item/clothing/suit/space/hardsuit/security
-	minbodytemp = 0
-	maxbodytemp = 1000
-	icon_state = "warra_etar"
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
-
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/smg/space/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	set_light(4)
-
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/rifle
+/mob/living/basic/human/warra/ranged/trooper/rifle
 	name = "\improper Vigilitas Rifleman"
 	desc = "A well-armed member of Vigilitas Interstellar. They stand at the ready with a Hades energy rifle, smirking underneath their gas mask."
-	rapid = 4
-	rapid_fire_delay = 4
-	casingtype = null
-	projectiletype = /obj/projectile/beam/laser/assault/sharplite
+	burst_shots = 4
+	burst_interval = 0.4 SECONDS
+	casing_type = null
+	projectile_type = /obj/projectile/beam/laser/assault/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/hades
-	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
+	projectile_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/rifle/space
+/mob/living/basic/human/warra/ranged/trooper/rifle/space
 	name = "Vigilitas Trooper"
 	desc = "A member of Vigilitas Interstellar. White stripes painted red with every shot of their rifle, they aim around cautiously."
 	icon_state = "warra_hades"
 	icon_living = "warra_hades"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
-	minbodytemp = 0
-	maxbodytemp = 1000
+	minimum_survivable_temperature = 0
+	maximum_survivable_temperature = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
-
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/rifle/space/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	set_light(4)
+	in_hardsuit = TRUE
 
 /* the elite guy */
 
-/mob/living/simple_animal/hostile/human/warra/elite
+/mob/living/basic/human/warra/elite
 	name = "Vigilitas Response Team"
 	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, their rifle raises, and they start to move with practiced precision."
-	ranged = TRUE
-	rapid = 3
-	rapid_fire_delay = 4
+	burst_shots = 3
+	burst_interval = 0.4 SECONDS
 	rapid_melee = 3
 	retreat_distance = 0
-	minimum_distance = 1
-	atmos_requirements = IMMUNE_ATMOS_REQS
-	minbodytemp = 0
-	projectiletype = /obj/projectile/beam/laser/assault/sharplite
-	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
-	faction = list(ROLE_DEATHSQUAD)
+	engage_distance = 1
+	minimum_survivable_temperature = 0
+	projectile_type = /obj/projectile/beam/laser/assault/sharplite
+	projectile_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_elite
 	armor_base = /obj/item/clothing/suit/space/hardsuit/ert/sec
 	r_hand = /obj/item/gun/energy/sharplite/hades
+	ai_controller = /datum/ai_controller/basic_controller/human/ranged/rusher // response teams push right in on whoever they're sent after
+	morale_breaks = FALSE // professionals, paid to see it through
+	callout_set = /datum/ai_callout_set/human/vigilitas/intervention
 
-/mob/living/simple_animal/hostile/human/warra/elite/shotgun
-	name = "Vigilitas Response Team"
+/mob/living/basic/human/warra/elite/shotgun
 	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, Their shotgun blinks, and they glare coldly into your eyes."
-	ranged = TRUE
-	rapid = 2
-	rapid_fire_delay = 4
-	rapid_melee = 3
-	retreat_distance = 0
-	minimum_distance = 1
-	atmos_requirements = IMMUNE_ATMOS_REQS
-	minbodytemp = 0
-	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
-	projectiletype = null
-	projectilesound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
+	burst_shots = 2
+	casing_type = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
+	projectile_type = null
+	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
 	r_hand = /obj/item/gun/energy/sharplite/amperage

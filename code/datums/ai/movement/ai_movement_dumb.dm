@@ -5,6 +5,9 @@
 ///Put your movement behavior in here!
 /datum/ai_movement/dumb/process(seconds_per_tick)
 	for(var/datum/ai_controller/controller as anything in moving_controllers)
+		if(!controller.able_to_run())
+			stop_moving_towards(controller)
+			continue
 		if(!COOLDOWN_FINISHED(controller, movement_cooldown))
 			continue
 		COOLDOWN_START(controller, movement_cooldown, controller.movement_delay)

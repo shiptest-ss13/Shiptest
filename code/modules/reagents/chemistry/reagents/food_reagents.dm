@@ -279,6 +279,10 @@
 	taste_description = "scorching agony"
 
 /datum/reagent/consumable/condensedcapsaicin/expose_mob(mob/living/expose_target, method=TOUCH, reac_volume)
+	var/mob/living/basic/human/basic_human = expose_target
+	if(istype(basic_human) && (method == TOUCH || method == INHALE || method == VAPOR))
+		basic_human.pepper_act() // human NPCs, which aren't carbons, get it in the eyes too
+		return
 	if(!ishuman(expose_target) && !ismonkey(expose_target))
 		return
 

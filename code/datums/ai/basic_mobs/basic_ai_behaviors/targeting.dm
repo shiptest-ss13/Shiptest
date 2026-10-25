@@ -13,10 +13,11 @@
 	if(!targetting_datum)
 		CRASH("No target datum was supplied in the blackboard for [controller.pawn]")
 
-	potential_targets = hearers(vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
+	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
+	potential_targets = hearers(our_vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
 
-	for(var/HM in typecache_filter_list(range(vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
-		if(can_see(living_mob, HM, vision_range))
+	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
+		if(ai_can_see(living_mob, HM, our_vision_range))
 			potential_targets += HM
 
 	if(!potential_targets.len)
@@ -32,7 +33,7 @@
 	if(!filtered_targets.len)
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
-	var/atom/target = pick(filtered_targets)
+	var/atom/target = pick_final_target(controller, filtered_targets)
 	controller.set_blackboard_key(target_key, target)
 
 	var/atom/potential_hiding_location = targetting_datum.find_hidden_mobs(living_mob, target)
@@ -41,3 +42,13 @@
 		controller.set_blackboard_key(hiding_location_key, potential_hiding_location)
 
 	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+
+/datum/ai_behavior/find_potential_targets/proc/pick_final_target(datum/ai_controller/controller, list/filtered_targets)
+	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
+	if(attacker && (attacker in filtered_targets) && !ai_is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 5 SECONDS)
+		return attacker
+	var/list/standing_targets = list()
+	for(var/atom/possible_target as anything in filtered_targets)
+		if(!ai_is_downed(possible_target))
+			standing_targets += possible_target
+	return get_nearest_of(controller.pawn, length(standing_targets) ? standing_targets : filtered_targets)

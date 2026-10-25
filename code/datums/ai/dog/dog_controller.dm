@@ -74,7 +74,7 @@
 	if(!istype(thrown_thing) || !isturf(thrown_thing.loc) || !can_see(pawn, thrown_thing, length=AI_DOG_VISION_RANGE))
 		return
 
-	current_movement_target = thrown_thing
+	set_movement_target(/datum/ai_behavior/fetch, thrown_thing)
 	blackboard[BB_FETCH_TARGET] = thrown_thing
 	blackboard[BB_FETCH_DELIVER_TO] = throwing_datum.thrower
 	LAZYADD(current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/fetch))
@@ -239,12 +239,12 @@
 			if(ismob(pointed_movable) || pointed_movable.anchored)
 				return
 			pawn.visible_message(span_notice("[pawn] follows [pointing_friend]'s gesture towards [pointed_movable] and barks excitedly!"))
-			current_movement_target = pointed_movable
+			set_movement_target(/datum/ai_behavior/fetch, pointed_movable)
 			blackboard[BB_FETCH_TARGET] = pointed_movable
 			blackboard[BB_FETCH_DELIVER_TO] = pointing_friend
 			current_behaviors += GET_AI_BEHAVIOR(/datum/ai_behavior/fetch)
 		if(DOG_COMMAND_ATTACK)
 			pawn.visible_message(span_notice("[pawn] follows [pointing_friend]'s gesture towards [pointed_movable] and growls intensely!"))
-			current_movement_target = pointed_movable
+			set_movement_target(/datum/ai_behavior/harass, pointed_movable)
 			blackboard[BB_DOG_HARASS_TARGET] = pointed_movable
 			current_behaviors += GET_AI_BEHAVIOR(/datum/ai_behavior/harass)

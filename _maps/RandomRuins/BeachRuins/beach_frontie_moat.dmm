@@ -270,7 +270,7 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/beach/village/dorm)
 "eW" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer,
+/mob/living/basic/human/frontier/ranged/officer,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/black,
@@ -295,7 +295,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/neuter,
+/mob/living/basic/human/frontier/ranged/surgeon/neutered,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/beach/village/infirmary)
 "fC" = (
@@ -571,7 +571,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/ruin/beach/village/armory)
 "jn" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier,
 /turf/open/floor/carpet/orange,
 /area/ruin/beach/village/dorm)
 "jD" = (
@@ -1016,7 +1016,7 @@
 /area/ruin/beach/village/dorm)
 "rv" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/mob/living/basic/human/frontier/ranged,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "rz" = (
@@ -1253,7 +1253,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/officers)
 "vR" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
+/mob/living/basic/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "vU" = (
@@ -1322,7 +1322,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "wW" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier,
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xc" = (
@@ -1407,7 +1407,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "xO" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered/sentry,
+/mob/living/basic/human/frontier/ranged/mosin/neutered/sentry,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xR" = (
@@ -1619,7 +1619,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/officers)
 "BP" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/sentry{
+/mob/living/basic/human/frontier/ranged/trooper/f3/sentry{
 	weapon_drop_chance = 100;
 	desc = "A member of the brutal Frontiersman terrorist fleet! Bedecked in military-grade armor, they steadily hold their well-kept DMR in your direction."
 	},
@@ -1836,9 +1836,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "Fa" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper{
+/mob/living/basic/human/frontier/ranged/trooper{
 	retreat_distance = 0;
-	minimum_distance = 0
+	engage_distance = 0
 	},
 /obj/structure/chair/bench/beige/directional/west,
 /obj/machinery/light/directional/east,
@@ -2079,7 +2079,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/kitchen)
 "IM" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder,
+/mob/living/basic/human/frontier/ranged/pounder,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "IO" = (
@@ -2144,7 +2144,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "Kp" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/wasp,
+/mob/living/basic/human/frontier/ranged/wasp,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/village/dorm)
@@ -2222,7 +2222,7 @@
 	},
 /area/ruin/beach/village/dorm)
 "ML" = (
-/mob/living/simple_animal/hostile/human/frontier{
+/mob/living/basic/human/frontier{
 	name = "Frontiersman Chef";
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one clutches an average looking kitchen knife, and seems quite frustrated."
 	},
@@ -2623,7 +2623,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "TP" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/mob/living/basic/human/frontier/ranged,
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
@@ -2634,7 +2634,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "TV" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/sentry,
+/mob/living/basic/human/frontier/ranged/trooper/f3/sentry,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ud" = (
@@ -2823,7 +2823,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ya" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer,
+/mob/living/basic/human/frontier/ranged/officer,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "Ye" = (
