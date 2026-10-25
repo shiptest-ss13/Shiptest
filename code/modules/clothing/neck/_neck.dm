@@ -815,7 +815,8 @@
 	if(!doStrip(user, wearer))
 		return
 	log_combat(user, wearer, "stripped [src] off")
-	user.put_in_hands(src)
+	if(!user.put_in_hands(src))
+		playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 
 /obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen))
