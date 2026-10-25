@@ -1,9 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ae" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/griddle,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "am" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4{
 	dir = 5
@@ -234,27 +229,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "dI" = (
-/obj/structure/table,
-/obj/item/food/grilled_cheese_sandwich{
-	pixel_x = 2;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -4;
-	pixel_y = 18
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 6;
-	pixel_y = 16
-	},
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/machinery/griddle,
+/turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "dM" = (
 /obj/docking_port/stationary{
@@ -523,8 +500,10 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "jJ" = (
-/obj/structure/chair{
-	dir = 8
+/obj/structure/table,
+/obj/item/food/garlicbread{
+	pixel_x = -2;
+	pixel_y = 6
 	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -723,6 +702,29 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo)
+"md" = (
+/obj/structure/table,
+/obj/item/food/grilled_cheese_sandwich{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -4;
+	pixel_y = 18
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 6;
+	pixel_y = 16
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "mf" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/effect/turf_decal/industrial/warning,
@@ -1203,13 +1205,10 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/corner/opaque/beige/half{
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "xV" = (
@@ -1974,15 +1973,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "Jg" = (
-/obj/structure/table,
-/obj/item/food/garlicbread{
-	pixel_x = -2;
-	pixel_y = 6
+/obj/structure/chair{
+	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/siding/thinplating/dark{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "JH" = (
@@ -3399,9 +3399,9 @@ sY
 wd
 cO
 HT
-Jg
-dI
-VT
+jJ
+md
+mx
 aT
 Hv
 Tf
@@ -3418,8 +3418,8 @@ fZ
 jd
 vE
 MZ
-jJ
 xH
+Jg
 VT
 nk
 XB
@@ -3440,7 +3440,7 @@ WP
 oL
 Ny
 VT
-mx
+VT
 XB
 Tf
 ui
@@ -3458,7 +3458,7 @@ Xc
 zW
 Sd
 BB
-ae
+dI
 XW
 Hv
 Tf
