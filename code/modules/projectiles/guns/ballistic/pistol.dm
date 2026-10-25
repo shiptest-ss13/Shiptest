@@ -122,8 +122,8 @@
 
 //not technically a pistol but whatever
 /obj/item/gun/ballistic/automatic/pistol/derringer
-	name = "HP Hummingbird"
-	desc = "An easily concealable derringer. Its simple design and modest demand make the Hummingbird a common project for trainee HP gunsmiths. Chambered in .38."
+	name = "HP Spark"
+	desc = "An easily concealable derringer. Its simple design and modest demand make the Spark a common project for trainee HP gunsmiths. Chambered in .38."
 	icon_state = "derringer"
 	item_state = "hp_generic"
 

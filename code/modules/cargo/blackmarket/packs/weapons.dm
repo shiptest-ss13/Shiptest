@@ -200,7 +200,7 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/derringer
-	name = "HP Hummingbird"
+	name = "HP Spark"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/automatic/pistol/derringer
 	gun_unloaded = FALSE
