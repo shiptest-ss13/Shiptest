@@ -206,8 +206,8 @@
 	gun_unloaded = FALSE
 	mag_number = 0
 
-	cost_min = 100
-	cost_max = 300
+	cost_min = 50
+	cost_max = 200
 	stock_max = 6
 	availability_prob = 50
 
