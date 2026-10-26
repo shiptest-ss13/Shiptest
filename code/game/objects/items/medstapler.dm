@@ -57,7 +57,7 @@
 	try_staple(target, user)
 
 // main loop for the repeating staple doafter
-/obj/item/med_stapler/proc/try_staple(mob/living/target, mob/user)
+/obj/item/med_stapler/proc/try_staple(mob/living/target, mob/user, was_bleeding)
 	// check if for whatever reason we do NOT want to staple the target
 	// is our target a carbon that has limbs and such?
 	if(!iscarbon(target))
@@ -92,12 +92,17 @@
 		if(this_wound.blood_flow)
 			am_i_bleeding = TRUE
 			break
+	// if we have plugged all bleeding on the limb, beep at our doctor and stop
+	if(was_bleeding && !am_i_bleeding)
+		to_chat(user, span_green("[src] reports that the bleeding on this limb has been stopped!"))
+		playsound(loc, 'sound/effects/fastbeep.ogg', 25)
+		return
 	// do we actually need to heal the limb? (has brute or bleeding)
 	if(!limb.brute_dam && !am_i_bleeding)
 		to_chat(user, span_notice("Nothing more needs to be done here."))
 		return
 	// use a longer delay if we're stapling ourselves
-	var/delay = user == target ? 0.8 : 0.4
+	var/delay = user == target ? 0.8 SECONDS : 0.4 SECONDS
 	// did we successfully complete our do_after?
 	if(!do_after(user, delay, target = target))
 		return
@@ -105,7 +110,7 @@
 	staple(target, user, limb)
 	// then repeat until we can't
 	if(cart.qty > 0)
-		try_staple(target, user)
+		try_staple(target, user, am_i_bleeding)
 
 // proc for actually performing the staple
 /obj/item/med_stapler/proc/staple(mob/living/target, mob/user, obj/item/bodypart/limb)
