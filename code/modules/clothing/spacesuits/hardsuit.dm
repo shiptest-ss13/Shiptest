@@ -720,7 +720,7 @@
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security
@@ -728,7 +728,7 @@
 	name = "\improper Vigilitas Guardian hardsuit"
 	desc = "A hardsuit commonly employed in security operations by Vigilitas Interstellar, often used for basic patrol duty and light engagements."
 	item_state = "sec_hardsuit"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -753,7 +753,7 @@
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95, "wound" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
-	slowdown = 0.7
+	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 	//SWAT MKII
