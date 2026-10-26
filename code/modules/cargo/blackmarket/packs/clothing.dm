@@ -399,14 +399,3 @@
 	stock_max = 3
 	availability_prob = 30
 	spawn_weighting = FALSE
-
-/datum/blackmarket_item/clothing/krav_gloves
-	name = "Krav Maga Gloves"
-	desc = "Go for the throat! These special gloves will let you perform advanced Krav Maga techniques like a pro without any of the usual hurdles like \"talent\", \"training\", or \"hard work\"."
-	item = /obj/item/clothing/gloves/krav_maga/sec
-
-	cost_min = 1000
-	cost_max = 2000
-	stock = 1
-	availability_prob = 15
-	spawn_weighting = FALSE
