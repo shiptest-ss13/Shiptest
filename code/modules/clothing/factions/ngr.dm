@@ -281,7 +281,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider
 	name = "NGR outrider hardsuit helmet"
-	desc = "A light helmet, providing modest and an integrated nightvision set, comfortable for long patrols."
+	desc = "A light helmet, providing modest protection and an integrated nightvision set, comfortable for long patrols."
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	icon_state = "hardsuit0-ngroutrider"
