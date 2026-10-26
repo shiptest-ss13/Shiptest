@@ -25,6 +25,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/gold, /obj/structure/falsewall/gold)
 	max_integrity = 150
 	brute_mod = 1.5
+	scrap_type = null
 
 /turf/closed/wall/mineral/gold/yesdiag
 	icon_state = "gold_wall-255"
@@ -45,6 +46,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/silver, /obj/structure/falsewall/silver)
 	max_integrity = 150
 	brute_mod = 1.5
+	scrap_type = null
 
 /turf/closed/wall/mineral/silver/yesdiag
 	icon_state = "silver_wall-255"
@@ -68,6 +70,7 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
 	max_integrity = 800
+	scrap_type = null
 
 /turf/closed/wall/mineral/diamond/yesdiag
 	icon_state = "diamond_wall-255"
@@ -91,6 +94,7 @@
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	max_integrity = 150
 	minimum_damage = 15
+	scrap_type = null
 
 /turf/closed/wall/mineral/sandstone/yesdiag
 	icon_state = "sandstone_wall-255"
@@ -111,6 +115,7 @@
 	connector_icon_state = "uranium_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/uranium, /obj/structure/falsewall/uranium)
 	max_integrity = 600
+	scrap_type = null
 
 /turf/closed/wall/mineral/uranium/yesdiag
 	icon_state = "uranium_wall-255"
@@ -180,6 +185,7 @@
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
 	max_integrity = 300
 	burn_mod = 3
+	scrap_type = null
 
 /turf/closed/wall/mineral/plasma/yesdiag
 	icon_state = "plasma_wall-255"
@@ -234,6 +240,8 @@
 	max_integrity = 75
 	burn_mod = 3
 	minimum_damage = 8
+	//wood shards 2027
+	scrap_type = null
 
 /turf/closed/wall/mineral/wood/yesdiag
 	icon_state = "wood_wall-255"
@@ -276,6 +284,7 @@
 	max_integrity = 300
 
 	minimum_damage = 10
+	scrap_type = null
 
 /turf/closed/wall/mineral/iron/yesdiag
 	icon_state = "iron_wall-255"
@@ -308,6 +317,7 @@
 	burn_mod = 3
 	brute_mod = 1.5
 	minimum_damage = 1
+	scrap_type = null
 
 /turf/closed/wall/mineral/snow/yesdiag
 	icon_state = "snow_wall-255"
@@ -327,6 +337,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_WALLS,SMOOTH_GROUP_AIRLOCK)
 
 	max_integrity = 1000
+	scrap_type = null
 
 /////////////////////Titanium walls/////////////////////
 
@@ -351,6 +362,7 @@
 	burn_mod = 0.75
 
 	max_integrity = 450
+	scrap_type = /obj/item/stack/ore/salvage/scraptitanium
 
 /turf/closed/wall/mineral/titanium/exterior
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR)
@@ -436,6 +448,9 @@
 
 	burn_mod = 0.9
 	brute_mod = 0.9
+
+	//need to ask phoenix for sprite for scrap plastit
+	scrap_type = null
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'

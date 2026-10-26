@@ -549,6 +549,28 @@
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5
 
+/obj/item/stack/ore/salvage/scrapplasteel
+	name = "plasteel shreds"
+	desc = "Shattered plasteel still contains a fair amount of the plasma and iron composing it"
+	icon_state = "splasteel"
+	points = 16
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplasteel/five
+	amount = 5
+
+/obj/item/stack/ore/salvage/scrapplastitanium
+	name = "ruined plastitanium lattice"
+	desc = "The structure surrounding the lattice of this durable material has shattered, leaving nothing but scrap."
+	icon_state = "splastitanium"
+	points = 65
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplastitanium/five
+	amount = 5
+
 // gpu item. does nothing except sell for money
 /obj/item/gpu
 	name = "high power GPU"

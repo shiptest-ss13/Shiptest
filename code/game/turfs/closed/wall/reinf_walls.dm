@@ -28,6 +28,9 @@
 	minimum_damage = 20
 	damage_reduction = 20
 
+	//need to ask phoenix for sprite for scrap plasteel
+	scrap_type = null
+
 /turf/closed/wall/r_wall/yesdiag
 	icon_state = "reinforced_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS

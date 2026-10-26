@@ -171,7 +171,7 @@
 				the_targets -= my_target
 
 /obj/item/extinguisher/bullet_act(obj/projectile/hitting_projectile)
-	if(hitting_projectile.damage_type == BRUTE && prob(hitting_projectile.get_demolition_damage()))
+	if(prob(hitting_projectile.get_demolition_damage() + 20))
 		visible_message(span_danger("\The [src] ruptures!"))
 		chem_splash(get_turf(src), 2, list(reagents))
 		atom_integrity = 1 //so the bullet actually explodes it.

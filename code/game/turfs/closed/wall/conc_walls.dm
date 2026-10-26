@@ -15,6 +15,7 @@
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 	sheet_type = null
 	girder_type = /obj/structure/grille
+	scrap_type = null
 
 	var/time_to_harden = 30 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened

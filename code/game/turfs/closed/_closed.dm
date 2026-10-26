@@ -107,28 +107,28 @@
 		atom_integrity = max_integrity
 	if(atom_integrity <= 0)
 		if(safe_decon)
-			dismantle_wall(FALSE, user)
+			dismantle_wall(FALSE, user, safe_decon)
 			return FALSE
 		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
 		if(atom_integrity <= -50)
-			dismantle_wall(TRUE, user)
+			dismantle_wall(TRUE, user, FALSE)
 			return FALSE
 		if(devastate)
-			dismantle_wall(TRUE, user)
+			dismantle_wall(TRUE, user, FALSE)
 			return FALSE
-		dismantle_wall(FALSE,user)
+		dismantle_wall(FALSE, user, safe_decon)
 		return FALSE
 	atom_integrity = min(atom_integrity, max_integrity)
 	update_stats()
 	return atom_integrity
 
-/turf/closed/proc/set_integrity(amount,devastate = FALSE, mob/user)
+/turf/closed/proc/set_integrity(amount, devastate = FALSE, mob/user)
 	atom_integrity = amount
 	update_stats()
 	if(atom_integrity <= 0)
 		dismantle_wall(devastate, user)
 
-/turf/closed/proc/dismantle_wall(devastate = FALSE, mob/user)
+/turf/closed/proc/dismantle_wall(devastate = FALSE, mob/user, safe_decon = TRUE)
 	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
 		P.roll_and_drop(src)
 

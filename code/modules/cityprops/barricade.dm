@@ -21,6 +21,13 @@
 	if(.) //received damage
 		update_appearance()
 
+/obj/structure/barricade/concrete/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(25))
+		var/datum/effect_system/smoke_spread/transparent/concrete/smokepuff = new
+		smokepuff.set_up(1, hitting_projectile.loc)
+		smokepuff.start()
+
 /obj/structure/barricade/concrete/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
