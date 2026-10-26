@@ -308,7 +308,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/can_shoot()
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	return chambered || (bolt_type == BOLT_TYPE_OPEN && !bolt_locked && magazine && magazine.ammo_count()) // loathsome kludge but it works...
 
@@ -496,7 +496,7 @@
 // remember: you can always trust a loaded gun to go off at least once!
 /obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)
 	. = TRUE
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	if(!magazine && !chambered)
 		return
