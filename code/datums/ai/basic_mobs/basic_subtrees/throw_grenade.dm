@@ -48,6 +48,8 @@
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(QDELETED(target))
 		return null
+	if(HAS_TRAIT(target, TRAIT_AI_EXECUTION_CLAIMED))
+		return null // one of ours is on their way over to finish them, and would walk into it
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		var/turf/their_turf = get_turf(target)

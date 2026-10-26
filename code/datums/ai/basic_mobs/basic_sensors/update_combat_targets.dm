@@ -20,11 +20,14 @@
 	if(!targetting_datum)
 		return
 	var/atom/target = controller.blackboard[target_key]
+	note_confirming_down(controller, target)
 	if(target && (QDELETED(target) || !targetting_datum.can_attack(living_pawn, target)))
 		AI_LOG_DECISION(controller, "update_combat_targets: can't fight [target] any more, dropping them")
 		var/mob/living/living_target = target
 		if(istype(living_target) && !QDELETED(living_target) && living_target.stat != DEAD && ai_is_downed(living_target))
 			controller.set_blackboard_key(BB_BASIC_MOB_DROPPED_DOWNED, living_target) // down, not out, so we'll know them if they get up
+		if(istype(living_target) && !QDELETED(living_target) && living_target.stat != CONSCIOUS)
+			ai_witness_downed(living_pawn, living_target)
 		controller.clear_blackboard_key(target_key)
 		target = null
 	var/target_unseen = target && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE
@@ -40,6 +43,20 @@
 		ai_callout(living_pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE, subject = best) // we left them for down, and they're back on their feet
 	controller.set_blackboard_key(target_key, best)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
+	if(ai_is_downed(best))
+		controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN, best)
+		controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN_SINCE, world.time - AI_CONFIRM_DOWN_TIME)
+
+// who we're fighting has just gone down, so we start making sure of it, see ai_confirming_down(). Or they're up again, so next time they drop is news again
+/datum/ai_sensor/update_combat_targets/proc/note_confirming_down(datum/ai_controller/controller, atom/target)
+	var/mob/living/living_target = target
+	if(istype(living_target) && !QDELETED(living_target) && ai_is_downed(living_target) && living_target.stat != DEAD)
+		if(controller.blackboard[BB_BASIC_MOB_CONFIRMING_DOWN] != living_target)
+			controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN, living_target)
+			controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN_SINCE, world.time)
+		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN)
+	controller.clear_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN_SINCE)
 
 /datum/ai_sensor/update_combat_targets/proc/find_candidates(datum/ai_controller/controller, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
@@ -113,8 +130,18 @@
 		best_distance = candidate_distance
 	return best
 
+// finish execution unless shot at or someone gets too close
+/datum/ai_sensor/update_combat_targets/proc/see_execution_through(datum/ai_controller/controller, atom/target, list/candidates)
+	var/list/too_close = list()
+	for(var/atom/candidate as anything in candidates)
+		if(candidate != target && !ai_is_downed(candidate) && get_dist(controller.pawn, candidate) <= AI_EXECUTION_THREAT_RANGE)
+			too_close += candidate
+	return length(too_close) ? get_nearest_of(controller.pawn, too_close) : target
+
 /datum/ai_sensor/update_combat_targets/proc/pick_target(datum/ai_controller/controller, atom/target, target_unseen, list/candidates, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
+	if(target && (controller.blackboard[BB_BASIC_MOB_EXECUTION_STARTED] || controller.blackboard[BB_BASIC_MOB_EXECUTION_SPOT]) && target == controller.blackboard[BB_BASIC_MOB_EXECUTION_VICTIM])
+		return see_execution_through(controller, target, candidates)
 	var/target_down = target && ai_is_downed(target)
 	var/target_in_reach = target && !target_down && target.Adjacent(living_pawn)
 	// prio someone coming next to us with a melee weapon

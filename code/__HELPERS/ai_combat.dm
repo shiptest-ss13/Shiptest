@@ -6,6 +6,14 @@
 	var/mob/living/living_thing = thing
 	return living_thing.stat != CONSCIOUS
 
+// whether we're still making sure target, is down, holding our fire and watching them a moment from range. Up close we can tell
+/proc/ai_confirming_down(datum/ai_controller/controller, atom/target)
+	if(!controller || !target || controller.blackboard[BB_BASIC_MOB_CONFIRMING_DOWN] != target)
+		return FALSE
+	if(!controller.pawn.GetComponent(/datum/component/ranged_attacks) || target.Adjacent(controller.pawn))
+		return FALSE
+	return world.time < controller.blackboard[BB_BASIC_MOB_CONFIRMING_DOWN_SINCE] + AI_CONFIRM_DOWN_TIME
+
 /proc/get_nearest_of(atom/source, list/candidates)
 	var/nearest_distance = INFINITY
 	var/list/nearest_targets = list()

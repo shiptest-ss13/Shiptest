@@ -32,15 +32,7 @@
 		if(ismob(mob_pawn) && LAZYLEN(mob_pawn.do_afters) && !breaks_off_for_safety(controller, mob_pawn))
 			continue // in the middle of something, like climbing a platform or prying a firelock, which any step we managed would cancel
 
-		var/minimum_distance = controller.max_target_distance
-		// right now I'm just taking the shortest minimum distance of our current behaviors, at some point in the future
-		// we should let whatever sets the current_movement_target also set the min distance and max path length
-		// (or at least cache it on the controller)
-		if(LAZYLEN(controller.current_behaviors))
-			for(var/datum/ai_behavior/iter_behavior as anything in controller.current_behaviors)
-				if(iter_behavior.required_distance < minimum_distance)
-					minimum_distance = iter_behavior.required_distance
-
+		var/minimum_distance = get_minimum_distance(controller)
 		if(AI_IN_RANGE(movable_pawn, controller.current_movement_target, minimum_distance))
 			continue
 
@@ -56,7 +48,8 @@
 			var/turf/old_turf = get_turf(movable_pawn)
 			if(ai_steps_into_blast(controller, old_turf, next_step) || ai_steps_into_tear_gas(movable_pawn, old_turf, next_step))
 				continue // we wait clear of the grenade or the gas rather than walking back into it
-			if(is_ai_hazard_turf(next_step, movable_pawn) && !is_ai_hazard_turf(old_turf, movable_pawn))
+			var/through_fire = ai_escaping_through_fire(movable_pawn)
+			if(is_ai_hazard_turf(next_step, movable_pawn, through_fire) && !is_ai_hazard_turf(old_turf, movable_pawn, through_fire))
 				controller.movement_path = null // something's come up on our way since we planned it, like a flamer's spray, so we find another way round rather than walk into it
 				continue
 			take_step(controller, movable_pawn, next_step)
@@ -116,6 +109,16 @@
 			// if someone's in our way, a way round them. If there isn't one, we wait behind them until they move or we run out of tries and give up
 			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, path_distance, blocked_turf)
 
+/datum/ai_movement/jps/proc/get_minimum_distance(datum/ai_controller/controller)
+	. = controller.max_target_distance
+	// right now I'm just taking the shortest minimum distance of our current behaviors, at some point in the future
+	// we should let whatever sets the current_movement_target also set the min distance and max path length
+	// (or at least cache it on the controller)
+	if(LAZYLEN(controller.current_behaviors))
+		for(var/datum/ai_behavior/iter_behavior as anything in controller.current_behaviors)
+			if(iter_behavior.required_distance < .)
+				. = iter_behavior.required_distance
+
 // whether we give up what we're in the middle of to get away, as a player would step off. Always for a live explosive, and for bad air unless it's a climb, as climbing is how we get out, like over a moat's edge
 /datum/ai_movement/jps/proc/breaks_off_for_safety(datum/ai_controller/controller, mob/mob_pawn)
 	if(controller.blackboard[BB_BASIC_MOB_FLEEING_EXPLOSIVE])
@@ -144,7 +147,8 @@
 		return TRUE // we wait clear of the grenade or the gas rather than walking back into it
 	take_step(controller, movable_pawn, next_step)
 	if(get_turf(movable_pawn) == our_turf)
-		return FALSE
+		// one of ours in the way, so we ask them to shift, as we'd never get round to asking from a path while the line stays clear
+		return ask_ally_to_make_way(controller, movable_pawn, next_step)
 	controller.movement_path = null // whatever path we had is behind us now
 	controller.pathing_attempts = 0
 	COOLDOWN_RESET(controller, repath_cooldown)
@@ -187,11 +191,13 @@
 	var/avoid_bad_air = isbasicmob(movable_pawn) && is_environment_safe_for(movable_pawn, start)
 	var/avoid_tear_gas = avoid_bad_air && !ai_immune_to_tear_gas(movable_pawn) && !is_ai_irritant_smoke(start)
 	var/access = controller.get_access()
+	// who we're going after, as their burning only makes it a hazard to stand where they are, and we stop beside them
+	var/atom/movable/goal_mob = isliving(controller.current_movement_target) ? controller.current_movement_target : null
 	var/turf/previous = start
 	for(var/turf/line_turf as anything in get_line(start, finish))
 		if(line_turf == start)
 			continue
-		if(line_turf.density || is_ai_hazard_turf(line_turf, movable_pawn) || (!can_cross_space && is_bare_space(line_turf)))
+		if(line_turf.density || is_ai_hazard_turf(line_turf, movable_pawn, ignoring = goal_mob) || (!can_cross_space && is_bare_space(line_turf)))
 			return FALSE
 		if(avoid_bad_air && !is_environment_safe_for(movable_pawn, line_turf))
 			return FALSE
@@ -352,6 +358,9 @@
 	var/datum/ai_controller/ally_controller = ally.ai_controller
 	if(LAZYLEN(ally.do_afters) || ally.buckled || ally.anchored || !(ally.mobility_flags & MOBILITY_MOVE))
 		return FALSE
+	var/turf/mover_turf = get_turf(mover)
+	if(wants_to_step_onto(ally_controller, ally, mover_turf))
+		return swap_places(ally, mover, spot) // head on, like one going after someone and the other falling back to cover down the same corridor, so we swap, as both get where they're going
 	if(length(ally_controller.movement_path) && ally_controller.ai_movement?.moving_controllers[ally_controller])
 		return FALSE // on their way somewhere themselves, so they'll be out of it soon enough
 	var/atom/ally_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
@@ -359,11 +368,10 @@
 		return FALSE // in a fight, so they're stood where they mean to be, and we go round
 	if(world.time < ally_controller.blackboard[BB_BASIC_MOB_MADE_WAY_UNTIL])
 		return FALSE // only just did, so we don't shuffle them about all day
-	var/turf/mover_turf = get_turf(mover)
 	var/step_dir = get_dir(mover_turf, spot)
 	for(var/direction in list(turn(step_dir, 90), turn(step_dir, -90), turn(step_dir, 45), turn(step_dir, -45), step_dir))
 		var/turf/aside = get_step(spot, direction)
-		if(!aside || aside == mover_turf || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside) || ai_diagonal_crosses_hazard(spot, aside))
+		if(!aside || aside == mover_turf || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside) || ai_diagonal_crosses_hazard(spot, aside, ally))
 			continue
 		if(spot.LinkBlockedWithAccess(aside, ally))
 			continue
@@ -374,6 +382,44 @@
 		AI_LOG_DECISION(ally_controller, "movement: stepped aside to [aside] to let [mover] through")
 		return TRUE
 	return FALSE
+
+// whether ally is on their way somewhere and their next step would take them onto spot
+/datum/ai_movement/jps/proc/wants_to_step_onto(datum/ai_controller/ally_controller, mob/living/ally, turf/spot)
+	if(!ally_controller.ai_movement?.moving_controllers[ally_controller])
+		return FALSE
+	if(length(ally_controller.movement_path))
+		return ally_controller.movement_path[1] == spot
+	// stepping straight at it, with no path. Only if they're not there yet, or one holding a spot in range would be pulled off it
+	var/atom/goal = ally_controller.current_movement_target
+	if(!goal || AI_IN_RANGE(ally, goal, get_minimum_distance(ally_controller)))
+		return FALSE
+	return get_dist(spot, goal) < get_dist(ally, goal)
+
+// ally and mover trade spots, as players on help intent do when they bump. TRUE if they did
+/datum/ai_movement/jps/proc/swap_places(mob/living/ally, atom/movable/mover, turf/spot)
+	var/turf/mover_turf = get_turf(mover)
+	if(get_dist(mover_turf, spot) != 1 || spot.LinkBlockedWithAccess(mover_turf, ally, ally.ai_controller.get_access()))
+		return FALSE
+	// PASSMOB on both while we do it, as /mob/living/proc/MobBump() does, so neither bumps the other
+	var/ally_passmob = ally.pass_flags & PASSMOB
+	var/mover_passmob = mover.pass_flags & PASSMOB
+	ally.pass_flags |= PASSMOB
+	mover.pass_flags |= PASSMOB
+	var/datum/ai_controller/ally_controller = ally.ai_controller
+	ally.set_glide_size(DELAY_TO_GLIDE_SIZE(ally_controller.movement_delay))
+	var/swapped = ally.Move(mover_turf, get_dir(spot, mover_turf)) && mover.Move(spot, get_dir(mover_turf, spot))
+	if(!swapped)
+		ally.forceMove(spot)
+		mover.forceMove(mover_turf)
+	if(!ally_passmob)
+		ally.pass_flags &= ~PASSMOB
+	if(!mover_passmob)
+		mover.pass_flags &= ~PASSMOB
+	if(!swapped)
+		return FALSE
+	ally_controller.movement_cooldown = world.time + ally_controller.movement_delay // that was their step
+	AI_LOG_DECISION(ally_controller, "movement: swapped places with [mover] at [AREACOORD(mover_turf)], as we were both heading the other's way")
+	return TRUE
 
 // the climbable thing in the way of stepping from where mover is onto next_step, like sandbags on it or a railing on the edge between
 /datum/ai_movement/jps/proc/get_climb_blocker(atom/movable/mover, turf/next_step)
@@ -401,6 +447,9 @@
 	var/ground_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
 	var/list/search_notes = list()
 	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, search_notes = search_notes)
+	if(!length(new_path) && !QDELETED(controller.pawn) && ai_escaping_through_fire(controller.pawn))
+		// fire all round us, so through it, as a dash through the flames beats burning where we are
+		new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, through_fire = TRUE)
 	var/long_way_round = length(new_path) > get_dist(controller.pawn, target) + AI_CLIMB_DETOUR_STEPS
 	if((!length(new_path) || long_way_round) && search_notes["found_climbable"] && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
 		// no way round, or a long one, so over, like sandbags piled in a doorway, or off a platform rather than round to its stairs. Only if something we could climb was in the way, as a failed search is the costliest kind

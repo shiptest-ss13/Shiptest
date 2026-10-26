@@ -17,8 +17,9 @@
  * * exclude: If we want to avoid a specific turf, like if we're a mulebot who already got blocked by some turf
  * * climbing: If TRUE, we can go over things we could climb, like sandbags, tables and railings
  * * search_notes: If given a list, we note on it what we found along the way, as "found_climbable" = TRUE if something we could've climbed was in our way
+ * * through_fire: If TRUE, an AI requester goes through fire rather than round it, for getting out of one
  */
-/proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE, list/search_notes)
+/proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE, list/search_notes, through_fire = FALSE)
 	if(!requester || !get_turf(end))
 		return
 
@@ -28,7 +29,7 @@
 		l = SSpathfinder.mobs.getfree(requester)
 
 	var/list/path
-	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude, climbing)
+	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude, climbing, through_fire)
 	path = pathfind_datum.search()
 	if(search_notes)
 		search_notes["found_climbable"] = pathfind_datum.found_climbable
@@ -133,10 +134,17 @@
 	var/list/hazard_cache
 	/// If TRUE, something we could've climbed was in our way, so a search that's climbing might get through where we didn't
 	var/found_climbable = FALSE
+	/// If TRUE, fire doesn't count as a hazard, for getting out of one
+	var/through_fire = FALSE
+	/// The mob we're pathing to, for the sake of chasing after them so we don't consider them a hazard
+	var/mob/living/goal_mob
 
-/datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, climbing = FALSE)
+/datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, climbing = FALSE, through_fire = FALSE)
 	src.requester = requester
 	src.climbing = climbing
+	src.through_fire = through_fire
+	if(isliving(goal))
+		goal_mob = goal
 	end = get_turf(goal)
 	open = new /datum/heap(/proc/HeapPathWeightCompare)
 	sources = new()
@@ -161,7 +169,7 @@
 	// only if we're somewhere safe now, as if we're already in bad air we need a way out through it
 	avoid_bad_air = avoid_hazards && isbasicmob(requester) && is_environment_safe_for(requester, start)
 	avoid_tear_gas = avoid_bad_air && !ai_immune_to_tear_gas(requester) && !is_ai_irritant_smoke(start)
-	if(avoid_hazards && is_ai_hazard_turf(start, requester))
+	if(avoid_hazards && is_ai_hazard_turf(start, requester, through_fire))
 		avoid_hazards = FALSE // already stood in one
 	if(avoid_hazards)
 		hazard_cache = list()
@@ -211,7 +219,7 @@
 /datum/pathfind/proc/hazard_at(turf/spot)
 	. = hazard_cache[spot]
 	if(isnull(.))
-		. = is_ai_hazard_turf(spot, requester)
+		. = is_ai_hazard_turf(spot, requester, through_fire, goal_mob)
 		hazard_cache[spot] = .
 
 /// Whether the air at spot would hurt the mob we're pathing for, remembered for the rest of the search

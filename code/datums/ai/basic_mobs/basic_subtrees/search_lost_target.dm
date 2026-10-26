@@ -63,7 +63,7 @@
 	if(!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK))
 		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
 		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
-		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
+		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf, ignoring = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])) ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
 	if(controller.blackboard[BB_BASIC_MOB_RALLYING])
 		// DONT blindfire or shoot at rally targets
 		return stays_put ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
@@ -133,7 +133,7 @@
 	if(world.time < controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
 		return TRUE // they're dug in behind cover we can't match, so don't walk back into their line of fire
 	var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
-	if(last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf))
+	if(last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf, ignoring = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]))
 		return TRUE // they were somewhere we can't go, like out in open space, so watch for them coming back instead
 	var/turf/fighting_cover = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
 	if(fighting_cover && get_turf(controller.pawn) == fighting_cover && cover_between(fighting_cover, controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]))

@@ -122,6 +122,11 @@
 			return AI_BEHAVIOR_DELAY
 	if(holds_fire_when_blocked && !has_clear_shot(basic_mob, final_target))
 		return AI_BEHAVIOR_DELAY // we can see them, but they're tucked away where we'd only hit the wall
+	if(HAS_TRAIT(final_target, TRAIT_AI_EXECUTION_CLAIMED) && !HAS_TRAIT_FROM(final_target, TRAIT_AI_EXECUTION_CLAIMED, REF(basic_mob)))
+		return AI_BEHAVIOR_DELAY // don't shoot at someone else's execution target, we'll just hit em too
+	if(ai_confirming_down(controller, final_target))
+		basic_mob.face_atom(final_target)
+		return AI_BEHAVIOR_DELAY // they've only just dropped, so we hold our fire and watch them a moment to be sure
 
 	var/mob/living/in_the_way = (avoid_friendly_fire || controller.blackboard[BB_BASIC_MOB_AVOID_FRIENDLY_FIRE]) ? check_friendly_in_path(basic_mob, target, targetting_datum) : null
 	if(in_the_way && !taking_the_shot(controller, basic_mob, in_the_way))
@@ -208,7 +213,7 @@
 		var/turf/target_turf = get_step(our_turf, direction)
 		if(isnull(target_turf))
 			continue
-		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf) || ai_diagonal_crosses_hazard(our_turf, target_turf) || get_dist(target_turf, target) > get_dist(living_pawn, target))
+		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf, living_pawn) || ai_diagonal_crosses_hazard(our_turf, target_turf, living_pawn) || get_dist(target_turf, target) > get_dist(living_pawn, target))
 			continue
 		if(targetting_datum && check_friendly_in_path(living_pawn, target, targetting_datum, target_turf))
 			continue // no better from there

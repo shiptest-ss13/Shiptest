@@ -35,7 +35,7 @@
 	var/temperature = air ? air.return_temperature() : TCMB // no air at all is vacuum, as cold as space
 	if(basic_mob.unsuitable_cold_damage && temperature < basic_mob.minimum_survivable_temperature)
 		return AI_ENVIRONMENT_TOO_COLD
-	if(basic_mob.unsuitable_heat_damage && temperature > basic_mob.maximum_survivable_temperature)
+	if(basic_mob.unsuitable_heat_damage && temperature > basic_mob.maximum_survivable_temperature && !(istype(human_mob) && human_mob.insulated_from_heat(temperature)))
 		return AI_ENVIRONMENT_TOO_HOT
 	return null
 
@@ -44,10 +44,11 @@
 	var/list/needs = basic_mob.habitable_atmos
 	return basic_mob.unsuitable_atmos_damage && length(needs) && (needs["min_oxy"] || needs["min_tox"] || needs["min_plas"] || needs["min_n2"] || needs["min_co2"])
 
-/proc/ai_can_stand_on(mob/living/mover, turf/spot)
+// ignoring is someone on spot whose burning doesn't count, like who we're going after, as we'd stand beside them rather than on them
+/proc/ai_can_stand_on(mob/living/mover, turf/spot, atom/movable/ignoring)
 	if(is_bare_space(spot) && !mover.ai_controller?.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 		return FALSE
-	if(is_ai_hazard_turf(spot, mover))
+	if(is_ai_hazard_turf(spot, mover, ignoring = ignoring))
 		return FALSE
 	var/mob/living/basic/basic_mover = mover
 	return !istype(basic_mover) || is_environment_safe_for(basic_mover, spot)
@@ -70,10 +71,10 @@
 	return isspaceturf(spot) && !(locate(/obj/structure/lattice) in spot)
 
 // do hazard check on diagonal steps too, as its actually two steps
-/proc/ai_diagonal_crosses_hazard(turf/start, turf/finish)
+/proc/ai_diagonal_crosses_hazard(turf/start, turf/finish, atom/movable/mover)
 	if(!start || !finish || start.x == finish.x || start.y == finish.y)
 		return FALSE
-	return is_ai_hazard_turf(locate(finish.x, start.y, start.z)) || is_ai_hazard_turf(locate(start.x, finish.y, start.z))
+	return is_ai_hazard_turf(locate(finish.x, start.y, start.z), mover) || is_ai_hazard_turf(locate(start.x, finish.y, start.z), mover)
 
 /proc/ai_immune_to_tear_gas(mob/living/victim)
 	var/mob/living/basic/human/basic_human = victim
@@ -101,7 +102,8 @@
 	return istype(water) && water.is_swimming_tile
 
 // mover is who it might hurt, as some, like those in fire suits, can walk through fire
-/proc/is_ai_hazard_turf(turf/spot, atom/movable/mover)
+// through_fire is for getting out of a fire, when a dash through the flames beats burning where we are, unlike a chasm. ignoring is a burning mob on spot that doesn't count, see ai_can_stand_on()
+/proc/is_ai_hazard_turf(turf/spot, atom/movable/mover, through_fire = FALSE, atom/movable/ignoring)
 	if(HAS_TRAIT(spot, TRAIT_AI_AVOID))
 		return TRUE // a mapper wants us kept off it
 	if(istype(spot, /turf/open/chasm))
@@ -113,13 +115,14 @@
 		var/turf/open/water/acid/acid_spot = spot
 		return !acid_spot.is_safe_to_cross() && !ai_is_acidproof(mover)
 	for(var/obj/structure/hazard/hazard in spot)
-		if(ai_harmful_hazard(hazard))
+		if(ai_harmful_hazard(hazard, mover, through_fire))
 			return TRUE
-	if(((locate(/obj/effect/hotspot) in spot) || (locate(/obj/effect/abstract/turf_fire) in spot)) && !ai_is_fireproof(mover))
-		return TRUE
-	for(var/mob/living/burning in spot)
-		if(burning != mover && burning.on_fire && !ai_is_fireproof(mover))
-			return TRUE // for burning objects or bodies
+	if(!through_fire && !ai_is_fireproof(mover))
+		if((locate(/obj/effect/hotspot) in spot) || (locate(/obj/effect/abstract/turf_fire) in spot))
+			return TRUE
+		for(var/mob/living/burning in spot)
+			if(burning != mover && burning != ignoring && burning.on_fire)
+				return TRUE // for burning objects or bodies
 	for(var/obj/item/mine/mine in spot)
 		if(mine.armed && !mine.invisibility)
 			return TRUE
@@ -131,6 +134,11 @@
 		return basic_human.get_outfit_thermal_protection() >= FIRE_SUIT_MAX_TEMP_PROTECT
 	return isliving(mover) && HAS_TRAIT(mover, TRAIT_RESISTHEAT)
 
+// whether mover's getting out of somewhere that's hurting it, so it'd go through fire to get clear
+/proc/ai_escaping_through_fire(atom/movable/mover)
+	var/mob/living/living_mover = mover
+	return istype(living_mover) && living_mover.ai_controller?.blackboard[BB_BASIC_MOB_SAFE_TURF] && living_mover.ai_controller.current_movement_target == living_mover.ai_controller.blackboard[BB_BASIC_MOB_SAFE_TURF]
+
 /proc/ai_is_acidproof(atom/movable/mover)
 	var/mob/living/living_mover = mover
 	if(!istype(living_mover))
@@ -141,11 +149,11 @@
 	return istype(basic_human) && basic_human.has_acidproof_outfit()
 
 // special cases for ruin hazards
-/proc/ai_harmful_hazard(obj/structure/hazard/hazard)
+/proc/ai_harmful_hazard(obj/structure/hazard/hazard, atom/movable/mover, through_fire = FALSE)
 	if(hazard.disabled)
 		return FALSE
 	if(istype(hazard, /obj/structure/hazard/fire))
-		return TRUE
+		return !through_fire && !ai_is_fireproof(mover) // all it does is set the floor alight, so no worse than the fire itself
 	var/obj/structure/hazard/electrical/electrical_hazard = hazard
 	if(istype(electrical_hazard))
 		return electrical_hazard.contact_damage > 1

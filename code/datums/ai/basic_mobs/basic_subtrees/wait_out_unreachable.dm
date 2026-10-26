@@ -15,6 +15,9 @@
 	var/max_breach_hits = 20
 	//how recently they have to have shot us, while we were waiting, to make us break through after all
 	var/shot_while_waiting_memory = 5 SECONDS
+	//how long we'll watch them holed up, counting only while we can see them, before we break through after all. Halved when we're emboldened
+	var/patience_min = 15 SECONDS
+	var/patience_max = 30 SECONDS
 	//whether we'll go and smash what's first on a straight line to them, rather than only what's right beside us
 	var/smashes_line_blocker = TRUE
 	//whether we break through anyway when there's nowhere out of their sight to wait for them
@@ -29,6 +32,10 @@
 	var/turf/their_turf = get_turf(target)
 	if(!their_turf || can_get_at(controller, target, their_turf))
 		forget_wait(controller)
+		if(!in_grace(controller))
+			// the standoff's over, so our patience starts afresh next time
+			controller.clear_blackboard_key(BB_BASIC_MOB_WAIT_PATIENCE)
+			controller.clear_blackboard_key(BB_BASIC_MOB_WAITED_IN_SIGHT)
 		return // we can get to them, so we go for them
 	var/unreachable_since = controller.blackboard[BB_BASIC_MOB_UNREACHABLE_SINCE]
 	if(isnull(unreachable_since))
@@ -37,6 +44,7 @@
 	else if(world.time - unreachable_since >= give_up_time)
 		give_up_on(controller, target)
 		return SUBTREE_RETURN_FINISH_PLANNING
+	note_waited_in_sight(controller, target, seconds_per_tick)
 	if(try_break_through(controller, target, their_turf))
 		return SUBTREE_RETURN_FINISH_PLANNING
 	// lying in wait for them out of their sight, for when they come out
@@ -60,18 +68,44 @@
 	var/no_way_to_them = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == target && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < no_path_memory
 	if(no_way_to_them && can_walk_straight_to(controller.pawn, their_turf))
 		no_way_to_them = FALSE // there's nothing between us, so whatever our movement made of it, we can get to them
-	return !no_way_to_them && ai_can_stand_on(controller.pawn, their_turf)
+	return !no_way_to_them && ai_can_stand_on(controller.pawn, their_turf, ignoring = target) // them burning is no reason to keep off them
+
+// whether can_get_at() only let us at them for a moment's grace, rather than because we really can, see the ranged one
+/datum/ai_planning_subtree/wait_out_unreachable/proc/in_grace(datum/ai_controller/controller)
+	return FALSE
 
 // whether we break through to target rather than waiting
 /datum/ai_planning_subtree/wait_out_unreachable/proc/will_breach(datum/ai_controller/controller, atom/target)
 	if(controller.blackboard[BB_BASIC_MOB_BREACH_ROLLED_FOR] != target)
 		controller.set_blackboard_key(BB_BASIC_MOB_BREACH_ROLLED_FOR, target)
-		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, controller.blackboard[BB_BASIC_MOB_MELEE_RECKLESS] || prob(breach_chance)) // the reckless never wait
+		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, controller.blackboard[BB_BASIC_MOB_MELEE_RECKLESS] || out_of_patience(controller) || prob(breach_chance)) // the reckless never wait, nor do we once we're done waiting on any of them
 		AI_LOG_DECISION(controller, "wait_out_unreachable: [controller.blackboard[BB_BASIC_MOB_BREACHING] ? "breaking through to" : "lying in wait for"] [target]")
 	else if(!controller.blackboard[BB_BASIC_MOB_BREACHING] && controller.blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_while_waiting_memory)
 		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, TRUE)
 		AI_LOG_DECISION(controller, "wait_out_unreachable: [target] is shooting us from where we can't get at them, breaking through instead of waiting")
+	else if(!controller.blackboard[BB_BASIC_MOB_BREACHING] && out_of_patience(controller))
+		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, TRUE)
+		AI_LOG_DECISION(controller, "wait_out_unreachable: watched them holed up for [controller.blackboard[BB_BASIC_MOB_WAITED_IN_SIGHT] / 10] seconds, breaking through to [target] instead of waiting")
 	return controller.blackboard[BB_BASIC_MOB_BREACHING]
+
+// counts up how long we've watched those we're fighting holed up where we can't get at them, while we're waiting them out rather than breaking through, whichever of them we're after.
+/datum/ai_planning_subtree/wait_out_unreachable/proc/note_waited_in_sight(datum/ai_controller/controller, atom/target, seconds_per_tick)
+	if(isnull(controller.blackboard[BB_BASIC_MOB_WAIT_PATIENCE]))
+		controller.set_blackboard_key(BB_BASIC_MOB_WAIT_PATIENCE, rand(patience_min, patience_max))
+	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE)
+		return
+	if(controller.blackboard[BB_BASIC_MOB_BREACH_ROLLED_FOR] == target && controller.blackboard[BB_BASIC_MOB_BREACHING])
+		return // already breaking through to them
+	controller.set_blackboard_key(BB_BASIC_MOB_WAITED_IN_SIGHT, controller.blackboard[BB_BASIC_MOB_WAITED_IN_SIGHT] + seconds_per_tick SECONDS)
+
+// whether we've watched them holed up long enough that we're done waiting
+/datum/ai_planning_subtree/wait_out_unreachable/proc/out_of_patience(datum/ai_controller/controller)
+	var/patience = controller.blackboard[BB_BASIC_MOB_WAIT_PATIENCE]
+	if(isnull(patience))
+		return FALSE
+	if(AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED))
+		patience /= 2
+	return controller.blackboard[BB_BASIC_MOB_WAITED_IN_SIGHT] >= patience
 
 // smash our way through to them, if we've chosen to, or it's so quick there's no reason not to, like a bare grille. TRUE if we're at it
 // no_hiding is for when there's nowhere to wait for them instead, so we break through whatever we chose
@@ -147,13 +181,32 @@
 	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_TARGET_SEEN | AI_CONDITION_HAS_RANGED_ATTACK
 	//how long without a clear shot at them before we count them as out of reach, so a moment's blocked shot doesn't count
 	var/no_shot_grace = 4 SECONDS
-	smashes_line_blocker = FALSE // we shoot our way through that instead, see can_get_at(), and only smash what's right beside us
+	//as no_shot_grace, but while we're on our way somewhere, like round something we can't shoot through to get an angle on them
+	var/no_shot_moving_grace = 12 SECONDS
 	breach_chance = 30
-	breaks_through_with_nowhere_to_wait = FALSE // we can still shoot, so we hold where we are
 
-/datum/ai_planning_subtree/wait_out_unreachable/ranged/forget_wait(datum/ai_controller/controller)
+// with nowhere to wait them out, we break through after all, shooting our way through if we can, or smashing if we can't
+/datum/ai_planning_subtree/wait_out_unreachable/ranged/try_break_through(datum/ai_controller/controller, atom/target, turf/their_turf, no_hiding = FALSE)
+	if(no_hiding && !will_breach(controller, target))
+		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, TRUE)
+		AI_LOG_DECISION(controller, "wait_out_unreachable: nowhere to wait for [target], breaking through to them instead")
+		if(has_clear_shot(controller.pawn, target, breaching = TRUE))
+			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_CURRENT_TARGET) // our attack takes it from here, once can_get_at() sees we're shooting through
+			return TRUE
+	return ..()
+
+// not in forget_wait(), as that's also every plan we're still within our grace without a shot, which would start it over every time so it never ran out. can_get_at() clears it once we've a shot
+/datum/ai_planning_subtree/wait_out_unreachable/ranged/on_skipped(datum/ai_controller/controller)
 	. = ..()
 	controller.clear_blackboard_key(BB_BASIC_MOB_NO_SHOT_SINCE)
+
+/datum/ai_planning_subtree/wait_out_unreachable/ranged/give_up_on(datum/ai_controller/controller, atom/target)
+	. = ..()
+	controller.clear_blackboard_key(BB_BASIC_MOB_NO_SHOT_SINCE)
+
+// can_get_at() clears it once we've a shot, so while it's set we're only within our grace without one
+/datum/ai_planning_subtree/wait_out_unreachable/ranged/in_grace(datum/ai_controller/controller)
+	return !isnull(controller.blackboard[BB_BASIC_MOB_NO_SHOT_SINCE])
 
 /datum/ai_planning_subtree/wait_out_unreachable/ranged/can_get_at(datum/ai_controller/controller, atom/target, turf/their_turf)
 	if(has_clear_shot(controller.pawn, target, breaching = FALSE))
@@ -167,12 +220,12 @@
 	if(isnull(no_shot_since))
 		controller.set_blackboard_key(BB_BASIC_MOB_NO_SHOT_SINCE, world.time)
 		return TRUE
-	return world.time - no_shot_since < no_shot_grace
+	// walking round to a shot, not to where we're waiting for them, so we get there before we give up on it
+	var/on_our_way = isnull(controller.blackboard[BB_BASIC_MOB_UNREACHABLE_SINCE]) && length(controller.movement_path)
+	return world.time - no_shot_since < (on_our_way ? no_shot_moving_grace : no_shot_grace)
 
-// behind cover facing them, ready for when they show, or out of their sight if there's none
 /datum/ai_planning_subtree/wait_out_unreachable/ranged/find_wait_spot(datum/ai_controller/controller, atom/target, turf/their_turf)
 	var/turf/cover_spot = find_fighting_cover_spot(controller.pawn, target, search_range, get_ai_shot_pass_flags(controller.pawn), controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
 	if(cover_spot)
 		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, cover_spot) // so we fight from it once they show
-		return cover_spot
-	return ..()
+	return cover_spot

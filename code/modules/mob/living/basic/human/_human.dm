@@ -115,6 +115,12 @@
 	var/aim_spread = 5
 	/// Extra spread on our first volley at someone, before we've settled our aim on them
 	var/first_contact_spread = 10
+	/// Where our shots land, as weights by body zone, like one of the AI_AIM_ZONES_* presets. Null for AI_AIM_ZONES_DEFAULT, mostly the chest, filled in at spawn
+	var/list/aim_zone_weights
+	/// Where our shots land once we've settled our aim on someone, as weights by body zone. Null to go by our gun, so marksmen go for the head, filled in at spawn
+	var/list/settled_aim_zone_weights
+	/// How quickly our shots stray from where they're aimed with range, see /datum/component/ranged_attacks/var/aim_accuracy_mod. Null to go by our gun, filled in at spawn
+	var/aim_accuracy_mod
 	/// Percent chance we throw a grenade that lands by us back, rather than running from it
 	var/throw_back_chance = 5
 	/// If TRUE, the mob sprays fire with a flamethrower rather than firing a gun
@@ -149,6 +155,8 @@
 	var/engage_distance
 	/// How far gone someone can be and still be worth attacking, like HARD_CRIT for those who finish people off. See BB_TARGET_MINIMUM_STAT
 	var/stat_attack = CONSCIOUS
+	/// If TRUE, we walk over to whoever we've downed and finish them up close, a gun to the head or a blade across the throat, rather than from where we stand. For the cruellest, like the Ramzi. Needs a stat_attack past CONSCIOUS
+	var/executes_downed = FALSE
 	/// How far the mob sees targets from. Null leaves it to their AI
 	var/vision_range
 	/// How far from home the mob chases someone before letting them go, twice that while they're fighting. 0 for no leash. Null leaves it to their AI
@@ -228,7 +236,9 @@
 
 // pressure check for damage
 /mob/living/basic/human/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
-	. = ..()
+	var/loc_temp = get_temperature(environment)
+	if(loc_temp <= bodytemperature || !insulated_from_heat(loc_temp))
+		. = ..() // a full fire suit keeps the heat of the air off us, so we don't warm up to it
 	if(stat == DEAD || pressure_sealed || !isturf(loc) || world.time < environment_grace_until)
 		return
 	if(environment.return_pressure() < HAZARD_LOW_PRESSURE)
@@ -343,6 +353,7 @@
 // proc for putting our vars onto the blackboard, so we can use it both at spawn and when rebuilding AI
 /mob/living/basic/human/proc/apply_ai_vars()
 	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
+	set_ai_var_key(BB_BASIC_MOB_EXECUTES_DOWNED, executes_downed || null)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_CHANCE, noncombatant ? 0 : throw_back_chance)
 	var/leash = leash_distance
 	if(isnull(leash) && holds_post)
@@ -447,6 +458,7 @@
 	if(!live_ai_vars)
 		live_ai_vars = list(
 			NAMEOF(src, stat_attack),
+			NAMEOF(src, executes_downed),
 			NAMEOF(src, leash_distance),
 			NAMEOF(src, post_radius),
 			NAMEOF(src, throw_back_chance),
@@ -482,6 +494,10 @@
 				ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenade_count)
 			else
 				ai_controller?.clear_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT)
+			return
+		if(NAMEOF(src, aim_zone_weights), NAMEOF(src, settled_aim_zone_weights), NAMEOF(src, aim_accuracy_mod))
+			. = ..()
+			apply_aim() // so a mob that already exists aims there, nulls going back to our gun's
 			return
 		if(NAMEOF(src, armor_base))
 			if(ispath(var_value, /obj/item/clothing))

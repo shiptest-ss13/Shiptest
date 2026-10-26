@@ -49,6 +49,12 @@
 		AI_CALLOUT_WARY = 50,
 		AI_CALLOUT_EMBOLDENED = 50,
 		AI_CALLOUT_TARGET_DOWN = 35,
+		AI_CALLOUT_HEADSHOT = 80, // only for hits that do enough to the head, see AI_HEADSHOT_CALLOUT_DAMAGE
+		AI_CALLOUT_HEADSHOT_DOWN = 80, // the usual down or kill line if these don't come up
+		AI_CALLOUT_HEADSHOT_KILLED = 80,
+		AI_CALLOUT_TARGET_DROPPED = 50,
+		AI_CALLOUT_TARGET_DIED = 50,
+		AI_CALLOUT_EXECUTING = 100, // the warning that someone downed is about to be finished off, fair to whoever might save them
 		AI_CALLOUT_HOLDING = 35,
 		AI_CALLOUT_PUSHING = 35,
 		AI_CALLOUT_FALLING_BACK = 35,
@@ -192,6 +198,13 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	var/turn_chatter = 0
 	var/alone = FALSE
 	var/alone_checked_until = 0
+	//who our shots last hit in the head, how much damage those hits added up to, and until when more hits add to it, see AI_HEADSHOT_CALLOUT_DAMAGE
+	var/datum/weakref/head_hits_on
+	var/head_hit_damage = 0
+	var/head_hits_until = 0
+	//who our last headshot was on, and when, so whatever calls out them going down or dying a moment later knows it was one
+	var/datum/weakref/headshot_on
+	var/headshot_at = 0
 
 /datum/component/ai_callouts/Initialize(callout_set, species_path, list/spotted_lines, spotted_chance = 100, list/idle_lines)
 	. = ..()
@@ -286,11 +299,28 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	var/mob/living/basic/basic_mob = parent
 	speak_about(basic_mob.health > basic_mob.maxHealth * 0.5 ? AI_CALLOUT_STATUS_OK : AI_CALLOUT_STATUS_BAD, answering = TRUE)
 
-/datum/component/ai_callouts/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)
+/datum/component/ai_callouts/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle, hit_zone, blocked)
 	SIGNAL_HANDLER
 	// projectiles tell us they've hit before the damage lands, so see how they're doing a moment later
 	if(isliving(hit_target) && !ai_is_ally(parent, hit_target) && ai_is_person(hit_target))
+		if(check_zone(hit_zone) == BODY_ZONE_HEAD && blocked < 100 && add_head_hit(hit_target)) // not if a shield took it
+			headshot_on = WEAKREF(hit_target)
+			headshot_at = world.time
 		addtimer(CALLBACK(src, PROC_REF(call_out_downed), WEAKREF(hit_target), REF(hit_target)), 1)
+
+// adds one of our shots to the damage our hits have done to victim's head lately, TRUE once that's enough to call out a headshot
+/datum/component/ai_callouts/proc/add_head_hit(mob/living/victim)
+	if(world.time > head_hits_until || head_hits_on?.resolve() != victim)
+		head_hits_on = WEAKREF(victim)
+		head_hit_damage = 0
+		head_hits_until = world.time + AI_HEADSHOT_CALLOUT_WINDOW
+	var/datum/component/ranged_attacks/ranged_attack = parent.GetComponent(/datum/component/ranged_attacks)
+	var/obj/projectile/fired_type = ranged_attack?.get_projectile_type()
+	head_hit_damage += fired_type ? initial(fired_type.damage) : 0 // before armour, so a helmet doesn't keep us quiet. we've no gun to multiply it
+	if(head_hit_damage < AI_HEADSHOT_CALLOUT_DAMAGE)
+		return FALSE
+	head_hit_damage = 0 // once per enough, not on every hit after
+	return TRUE
 
 /datum/component/ai_callouts/proc/on_our_melee_hit(datum/source, atom/hit_target, result)
 	SIGNAL_HANDLER
@@ -305,20 +335,94 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 /datum/component/ai_callouts/proc/call_out_downed(datum/weakref/victim_ref, victim_id)
 	var/mob/living/victim = victim_ref?.resolve()
 	var/victim_stat = QDELETED(victim) ? DEAD : victim.stat
+	// our hit just now was a headshot, whether we're here from it a moment later or from watching them die from it, which comes first
+	var/headshot = headshot_on && headshot_on.resolve() == victim && world.time - headshot_at <= 1
 	if(victim_stat == CONSCIOUS)
+		if(!headshot)
+			return
+		// still up, or it'd be the down or kill line instead. Floored by it, like by stamina crit, sounds down too, though they'll be up again soon, so we don't watch them like the downed
+		if(HAS_TRAIT(victim, TRAIT_FLOORED))
+			addtimer(CALLBACK(src, PROC_REF(confirm_floored_headshot), victim_ref), rand(AI_CALLOUT_CONFIRM_DELAY_MIN, AI_CALLOUT_CONFIRM_DELAY_MAX))
+		else
+			speak_about(AI_CALLOUT_HEADSHOT, subject = victim)
 		return
 	var/callout = "[victim_id] [victim_stat == DEAD ? "dead" : "down"]" // crit, unconscious and the rest are all just down, so we don't call it out at each
 	if(callout == last_downed_callout)
 		return
 	last_downed_callout = callout
+	ai_mark_called_down(callout) // ours to say, so those of us who only saw it leave it be
+	// a moment to be sure before we say so, rather than the instant they drop
+	addtimer(CALLBACK(src, PROC_REF(confirm_downed), victim_ref, victim_stat == DEAD, headshot), rand(AI_CALLOUT_CONFIRM_DELAY_MIN, AI_CALLOUT_CONFIRM_DELAY_MAX))
 	if(victim_stat == DEAD)
 		watch_downed_victim(null)
-		speak_about(AI_CALLOUT_TARGET_KILLED, interrupt = TRUE, subject = victim) // often just after we called them down, so don't let that silence it
 		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR) // and if they were the last of them, we say so
 	else
 		watch_downed_victim(victim)
-		speak_about(AI_CALLOUT_TARGET_DOWN, subject = victim)
 		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR, victim_ref) // those of us who leave the downed be are done with them too, unless they get back up
+
+// says we downed or killed them, a moment after, if that's still how it is
+/datum/component/ai_callouts/proc/confirm_downed(datum/weakref/victim_ref, killed, headshot)
+	var/mob/living/victim = victim_ref?.resolve()
+	if(killed)
+		if(!QDELETED(victim) && victim.stat != DEAD)
+			return // somehow not, after all
+		if(!headshot || !speak_about(AI_CALLOUT_HEADSHOT_KILLED, interrupt = TRUE, subject = victim)) // the headshot version if we can, the usual otherwise
+			speak_about(AI_CALLOUT_TARGET_KILLED, interrupt = TRUE, subject = victim) // often just after we called them down, so don't let that silence it
+		return
+	if(QDELETED(victim) || victim.stat == CONSCIOUS || victim.stat == DEAD)
+		return // back up already, or dead, which gets its own line
+	if(!headshot || !speak_about(AI_CALLOUT_HEADSHOT_DOWN, interrupt = TRUE, subject = victim)) // often just after we called the headshot, so don't let that silence it
+		speak_about(AI_CALLOUT_TARGET_DOWN, subject = victim)
+
+/datum/component/ai_callouts/proc/confirm_floored_headshot(datum/weakref/victim_ref)
+	var/mob/living/victim = victim_ref?.resolve()
+	if(!QDELETED(victim) && victim.stat == CONSCIOUS && HAS_TRAIT(victim, TRAIT_FLOORED))
+		speak_about(AI_CALLOUT_HEADSHOT_DOWN, interrupt = TRUE, subject = victim)
+
+// who's been called down or dead lately, by anyone, as list("[REF] down" or "[REF] dead" = world.time), so those who only saw it happen leave it to whoever did it
+GLOBAL_LIST_EMPTY(ai_called_down)
+
+/proc/ai_mark_called_down(callout)
+	if(length(GLOB.ai_called_down) > 200) // forget the old ones, so this doesn't grow forever
+		for(var/old_callout in GLOB.ai_called_down)
+			if(world.time - GLOB.ai_called_down[old_callout] > 1 MINUTES)
+				GLOB.ai_called_down -= old_callout
+	GLOB.ai_called_down[callout] = world.time
+
+// witness saw victim, someone it was fighting, go down or die
+/proc/ai_witness_downed(atom/witness, mob/living/victim)
+	var/datum/component/ai_callouts/callouts = witness?.GetComponent(/datum/component/ai_callouts)
+	callouts?.witness_downed(victim)
+
+// someone we're fighting went down or died where we could see. Whoever of ours put them there calls that out, so we wait a moment, and if nobody did, like when they bled out, one of us who saw it says so
+/datum/component/ai_callouts/proc/witness_downed(mob/living/victim)
+	if(!ai_is_person(victim) || ai_is_ally(parent, victim))
+		return
+	addtimer(CALLBACK(src, PROC_REF(call_out_witnessed), WEAKREF(victim), REF(victim)), AI_CALLOUT_WITNESS_DELAY)
+
+/datum/component/ai_callouts/proc/call_out_witnessed(datum/weakref/victim_ref, victim_id)
+	var/mob/living/victim = victim_ref?.resolve()
+	var/mob/living/basic/basic_mob = parent
+	if(QDELETED(victim) || victim.stat == CONSCIOUS || basic_mob.stat != CONSCIOUS)
+		return // back up already, or gone
+	var/callout = "[victim_id] [victim.stat == DEAD ? "dead" : "down"]"
+	var/called_at = GLOB.ai_called_down[callout]
+	if(!isnull(called_at) && world.time - called_at < 2 SECONDS)
+		return // whoever put them there said so, or another of us who saw it did
+	if(!ai_can_see(basic_mob, victim, basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+		return
+	last_downed_callout = callout
+	ai_mark_called_down(callout) // one of us to say it, whether or not the line comes up
+	if(victim.stat == DEAD)
+		if(downed_victim == victim)
+			watch_downed_victim(null)
+		speak_about(AI_CALLOUT_TARGET_DIED, subject = victim)
+		queue_fight_over_check(AI_CALLOUT_ALL_CLEAR)
+		return
+	if(!downed_victim)
+		watch_downed_victim(victim, inherited = TRUE) // for them getting up, or dying, which isn't our kill to call
+	speak_about(AI_CALLOUT_TARGET_DROPPED, subject = victim)
+	queue_fight_over_check(AI_CALLOUT_ALL_CLEAR, victim_ref)
 
 /proc/ai_queue_fight_over_check(atom/speaker, event)
 	var/datum/component/ai_callouts/callouts = speaker?.GetComponent(/datum/component/ai_callouts)
@@ -388,9 +492,20 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	var/inherited = downed_victim_inherited
 	watch_downed_victim(null)
 	var/mob/living/basic/basic_mob = parent
-	if(inherited || basic_mob.stat != CONSCIOUS || !ai_can_see(basic_mob, victim, hearing_range))
-		return // not ours to call, if whoever downed them is dead
-	INVOKE_ASYNC(src, PROC_REF(call_out_downed), victim_ref, victim_id)
+	if(basic_mob.stat != CONSCIOUS || !ai_can_see(basic_mob, victim, hearing_range))
+		return
+	if(inherited)
+		witness_downed(victim) // not ours to call, if whoever downed them is dead, or we only saw them go down. But we saw them die, so we say so if nobody else does
+		return
+	// ours if they bled out from it, but if someone else's hit finished them, it's theirs, and they call it a moment after it lands, so we wait to see
+	addtimer(CALLBACK(src, PROC_REF(call_out_watched_death), victim_ref, victim_id), AI_CALLOUT_WITNESS_DELAY)
+
+// someone we downed has died, and nobody else has called it their kill, so it's ours
+/datum/component/ai_callouts/proc/call_out_watched_death(datum/weakref/victim_ref, victim_id)
+	var/called_at = GLOB.ai_called_down["[victim_id] dead"]
+	if(!isnull(called_at) && world.time - called_at < 2 SECONDS)
+		return
+	call_out_downed(victim_ref, victim_id)
 
 /datum/component/ai_callouts/proc/on_downed_victim_deleted(datum/source)
 	SIGNAL_HANDLER
@@ -492,7 +607,15 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	var/is_chatter = ai_callout_is_chatter(event)
 	for(var/datum/component/ai_callouts/listener as anything in get_allies_in_earshot(allies_in_earshot) + src)
 		listener.note_line_heard(is_chatter)
-	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
+	var/static/list/good_news = list(
+		AI_CALLOUT_TARGET_DOWN = TRUE,
+		AI_CALLOUT_TARGET_KILLED = TRUE,
+		AI_CALLOUT_HEADSHOT_DOWN = TRUE,
+		AI_CALLOUT_HEADSHOT_KILLED = TRUE,
+		AI_CALLOUT_TARGET_DROPPED = TRUE,
+		AI_CALLOUT_TARGET_DIED = TRUE,
+	)
+	if(good_news[event])
 		for(var/mob/living/ally as anything in allies_in_earshot)
 			ai_try_embolden(ally)
 	else if(event == AI_CALLOUT_LOST_THEM || event == AI_CALLOUT_RELOADING)
@@ -603,6 +726,11 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 		AI_CALLOUT_SUPPRESSING = TRUE,
 		AI_CALLOUT_TARGET_DOWN = TRUE,
 		AI_CALLOUT_TARGET_KILLED = TRUE,
+		AI_CALLOUT_HEADSHOT_DOWN = TRUE,
+		AI_CALLOUT_HEADSHOT_KILLED = TRUE,
+		AI_CALLOUT_TARGET_DROPPED = TRUE,
+		AI_CALLOUT_TARGET_DIED = TRUE,
+		AI_CALLOUT_EXECUTING = TRUE,
 	)
 	var/mob/living/basic/basic_mob = parent
 	if(about_people[event])
@@ -693,6 +821,10 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 		AI_CALLOUT_SPOTTED = 15 SECONDS,
 		AI_CALLOUT_TARGET_DOWN = 20 SECONDS,
 		AI_CALLOUT_TARGET_KILLED = 20 SECONDS,
+		AI_CALLOUT_HEADSHOT_DOWN = 20 SECONDS,
+		AI_CALLOUT_HEADSHOT_KILLED = 20 SECONDS,
+		AI_CALLOUT_TARGET_DROPPED = 20 SECONDS,
+		AI_CALLOUT_TARGET_DIED = 20 SECONDS,
 		AI_CALLOUT_ALLY_DOWN = 10 SECONDS,
 		AI_CALLOUT_LOST_THEM = 20 SECONDS,
 		AI_CALLOUT_HOLDING = 30 SECONDS,

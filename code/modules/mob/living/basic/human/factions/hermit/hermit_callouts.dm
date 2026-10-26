@@ -82,6 +82,36 @@
 			"Let the winds take them.",
 			"Like we learned, use everything."
 		),
+		AI_CALLOUT_HEADSHOT = list(
+			"Took the top off!",
+			"Right in the head!",
+			"Head hit!",
+			"Cracked their skull!"
+		),
+		AI_CALLOUT_HEADSHOT_DOWN = list(
+			"Head hit, they're down in the dirt!",
+			"Cracked their skull, they fell!",
+			"Took the top off, they're down!",
+			"One to the head, they dropped!"
+		),
+		AI_CALLOUT_HEADSHOT_KILLED = list(
+			"Through the skull. Waste nothing.",
+			"Head shot. The wastes take them.",
+			"Cracked open. Done.",
+			"Clean through the head. Strip them."
+		),
+		AI_CALLOUT_TARGET_DROPPED = list(
+			"They fell!",
+			"Down in the dirt!",
+			"One collapsed!",
+			"They're down! Leave them to the dirt!"
+		),
+		AI_CALLOUT_TARGET_DIED = list(
+			"Gone quiet. Leave nothing.",
+			"That one's for the wastes now.",
+			"Dead. Strip them later.",
+			"Not moving. Good."
+		),
 		AI_CALLOUT_ALLY_DOWN = list(
 			"They got one of us!",
 			"No! Not them too!",

@@ -6,6 +6,7 @@
 	icon_state = "syndicate"
 	icon_living = "syndicate"
 	stat_attack = HARD_CRIT
+	executes_downed = TRUE
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	maximum_survivable_temperature = 400
 	faction = list(FACTION_RAMZI)
@@ -239,7 +240,6 @@
 /* stormtroopers */
 
 /mob/living/basic/human/ramzi/melee/space/stormtrooper
-	morale_breaks = FALSE // hardened killers, who'd sooner die than run
 	name = "Ramzi Clique Assassin"
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
@@ -248,6 +248,7 @@
 	health = 200
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+	morale_breaks = FALSE // sooner die than run
 
 /mob/living/basic/human/ramzi/melee/space/stormtrooper/commander
 	is_commander = TRUE
@@ -268,6 +269,7 @@
 	melee_damage_upper = 30
 	melee_knockback = 3
 	knockdowns_slow_instead = TRUE // too juiced up to go down, it just staggers
+	executes_downed = FALSE // no ceremony, it just keeps hammering
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'

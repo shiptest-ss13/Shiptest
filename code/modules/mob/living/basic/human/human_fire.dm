@@ -33,3 +33,7 @@
 
 /mob/living/basic/human/proc/get_outfit_thermal_protection()
 	return get_outfit_protection()[OUTFIT_THERMAL_PROTECTION]
+
+// whether a full fire suit keeps air this hot off us
+/mob/living/basic/human/proc/insulated_from_heat(temperature)
+	return get_outfit_thermal_protection() >= max(temperature, FIRE_SUIT_MAX_TEMP_PROTECT)

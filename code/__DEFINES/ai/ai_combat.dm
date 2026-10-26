@@ -14,7 +14,8 @@
 	/datum/ai_planning_subtree/call_allies, \
 	/datum/ai_planning_subtree/order_push, \
 	/datum/ai_planning_subtree/broken_fall_back/human, \
-	/datum/ai_planning_subtree/throw_grenade
+	/datum/ai_planning_subtree/throw_grenade, \
+	/datum/ai_planning_subtree/execute_downed
 ///For those with guns: reloading, taunting, moving about at range, smashing out of corners, hitting whoever's up close, then shooting, and chatter between fights. First, waiting out or shooting through to anyone they can see but can't shoot
 #define AI_HUMAN_RANGED_PLANNING_CLOSING \
 	/datum/ai_planning_subtree/wait_out_unreachable/ranged, \
@@ -121,6 +122,32 @@
 #define AI_STAGGER_MAX_TIME (5 SECONDS)
 // How long AI takes after getting up from a knockdown before it can fire again, getting its gun back on target
 #define AI_GET_UP_FIRE_DELAY (0.5 SECONDS)
+// How far from where it was firing from AI can be and still go back there after getting out of sight to reload, so further means something else has since moved it on
+#define AI_RELOAD_RETURN_RANGE 7
+
+// Making sure someone's down
+///How long AI with a gun holds its fire on someone who's just gone down, watching them to be sure.
+#define AI_CONFIRM_DOWN_TIME (1 SECONDS)
+
+// Finishing off a downed but alive target
+///How far off someone downed can be for AI to walk over to finish them
+#define AI_EXECUTION_RANGE 6
+///How long since AI was last shot at before it'll walk over to finish someone off
+#define AI_EXECUTION_CALM_TIME (5 SECONDS)
+///How long a mob takes to finish an execution
+#define AI_EXECUTION_TIME (6 SECONDS)
+///How long AI leaves it before trying again, after being hurt in the middle of finishing someone off
+#define AI_EXECUTION_RETRY_DELAY (5 SECONDS)
+///Once AI's started finishing someone off, how close one of theirs still standing has to come for it to break off, rather than seeing it through while they look on
+#define AI_EXECUTION_THREAT_RANGE 4
+///How often AI in the middle of a fight looks for someone downed it could finish off from somewhere covered from the rest of theirs
+#define AI_EXECUTION_CHANCE_INTERVAL (2 SECONDS)
+///How long AI keeps following someone it's finishing off after losing sight of them, like round a corner, before looking for them like anyone else
+#define AI_EXECUTION_LOST_SIGHT_TIME (3 SECONDS)
+///A gun to the head
+#define AI_EXECUTION_GUN "gun"
+///A blade across the throat
+#define AI_EXECUTION_BLADE "blade"
 
 // Getting at someone past something in the way
 // The most shots a mob will put into something in its way to break through to someone it can't otherwise get at, up to two of its magazines
@@ -239,6 +266,18 @@
 #define AI_CALLOUT_TARGET_DOWN "target down"
 ///Its shot or blow killed someone
 #define AI_CALLOUT_TARGET_KILLED "target killed"
+///Its shot hit someone in the head, and they're still up.
+#define AI_CALLOUT_HEADSHOT "headshot"
+///AI_CALLOUT_TARGET_DOWN for a hit that would've been AI_CALLOUT_HEADSHOT
+#define AI_CALLOUT_HEADSHOT_DOWN "headshot down"
+///AI_CALLOUT_TARGET_KILLED for a hit that would've been AI_CALLOUT_HEADSHOT
+#define AI_CALLOUT_HEADSHOT_KILLED "headshot killed"
+///Someone it's fighting went down where it could see, with nobody of its side having put them there, like from bleeding
+#define AI_CALLOUT_TARGET_DROPPED "target dropped"
+///Someone it's fighting died where it could see, with nobody of its side having killed them, like a downed one bleeding out
+#define AI_CALLOUT_TARGET_DIED "target died"
+///About to finish off someone downed up close, the warning to whoever might save them
+#define AI_CALLOUT_EXECUTING "executing"
 ///An ally in earshot died
 #define AI_CALLOUT_ALLY_DOWN "ally down"
 ///Lost sight of its target and is going to look for them
@@ -367,3 +406,12 @@
 #define AI_CALLOUT_CHATTER_PER_TURN 2
 ///How long after a line an ally answers it
 #define AI_CALLOUT_ANSWER_DELAY rand(1 SECONDS, 1.5 SECONDS)
+///How much damage, before armour, our shots have to do to someone's head within AI_HEADSHOT_CALLOUT_WINDOW for AI_CALLOUT_HEADSHOT
+#define AI_HEADSHOT_CALLOUT_DAMAGE 30
+///How long our head hits on someone add up towards AI_HEADSHOT_CALLOUT_DAMAGE, about a volley
+#define AI_HEADSHOT_CALLOUT_WINDOW (1 SECONDS)
+///How long AI takes to call out someone it downed or killed, picked between these, as if making sure first rather than the instant they drop
+#define AI_CALLOUT_CONFIRM_DELAY_MIN (0.6 SECONDS)
+#define AI_CALLOUT_CONFIRM_DELAY_MAX (1.2 SECONDS)
+///How long after seeing someone go down or die AI waits to say so itself, so whoever of its side put them there gets to first, see AI_CALLOUT_TARGET_DROPPED
+#define AI_CALLOUT_WITNESS_DELAY (0.5 SECONDS)

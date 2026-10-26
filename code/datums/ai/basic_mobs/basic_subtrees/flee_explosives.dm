@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	var/best_distance_from_enemy = -1
 	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
 		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination) || get_dist(destination, explosive_turf) < flee_distance)
+		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination, controller.pawn) || get_dist(destination, explosive_turf) < flee_distance)
 			continue // somewhere we couldn't stand, or not clear of it
 		if(!enemy_turf)
 			best = destination
@@ -150,7 +150,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 			return best
 	return null
 
-// whether there's a straight way out from the explosive at explosive_turf, as /datum/ai_behavior/run_away_from_target/explosive looks for first, rather than being boxed in with it
+// whether there's a straight way out from the explosive at explosive_turf, rather than being boxed in with it
 /datum/ai_planning_subtree/flee_explosives/proc/has_straight_escape(datum/ai_controller/controller, turf/explosive_turf, flee_distance)
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(!our_turf || !explosive_turf)
@@ -158,7 +158,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	var/away_angle = get_angle(explosive_turf, our_turf)
 	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
 		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(destination && destination != our_turf && !destination.density && !is_ai_hazard_turf(destination) && get_dist(destination, explosive_turf) >= flee_distance)
+		if(destination && destination != our_turf && !destination.density && !is_ai_hazard_turf(destination, controller.pawn) && get_dist(destination, explosive_turf) >= flee_distance)
 			return TRUE
 	return FALSE
 

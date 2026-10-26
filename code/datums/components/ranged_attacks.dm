@@ -26,8 +26,14 @@
 	var/player_follow_ups_owed = 0
 	/// Extra spread on the AI's first volley at someone, before it's settled its aim
 	var/first_contact_spread = 0
-	/// Until when our shots get first_contact_spread, for the rest of that first volley
+	/// Until when our shots get first_contact_spread, for the rest of that first volley. Nor do they go for settled_aim_zone_weights till then
 	var/unsettled_until = 0
+	/// Where the AI's shots land on whoever they hit, as weights by body zone. Null for AI_AIM_ZONES_DEFAULT, mostly the chest
+	var/list/aim_zone_weights
+	/// Where the AI's shots land once it's settled its aim on someone, like a marksman going for the head. Null to keep to aim_zone_weights
+	var/list/settled_aim_zone_weights
+	/// How quickly the AI's shots stray from the zone they're aimed at with range, multiplying the projectile's accuracy_mod, see /obj/projectile/proc/get_accuracy(). Lower stays on target further
+	var/aim_accuracy_mod = 1
 
 /datum/component/ranged_attacks/Initialize(
 	casing_type,
@@ -37,7 +43,9 @@
 	burst_intervals = 0.2 SECONDS,
 	cooldown_time,
 	spread = 2,
-	first_contact_spread = 0
+	first_contact_spread = 0,
+	aim_zone_weights,
+	settled_aim_zone_weights
 )
 	. = ..()
 	if(!isbasicmob(parent))
@@ -49,6 +57,8 @@
 	src.cooldown_time = cooldown_time
 	src.spread = spread
 	src.first_contact_spread = first_contact_spread
+	src.aim_zone_weights = aim_zone_weights || AI_AIM_ZONES_DEFAULT
+	src.settled_aim_zone_weights = settled_aim_zone_weights
 
 	if(!needs_ammo)
 		return
@@ -79,20 +89,25 @@
 	controller?.set_blackboard_key(BB_BASIC_MOB_SHOTS_FIRED, controller.blackboard[BB_BASIC_MOB_SHOTS_FIRED] + 1)
 	controller?.set_blackboard_key(BB_BASIC_MOB_LAST_FIRED_AT, target)
 	controller?.set_blackboard_key(BB_BASIC_MOB_LAST_FIRED_TIME, world.time)
+	var/aim_zone
+	if(controller && !firer.client) // a player aims with their own zone selection
+		aim_zone = pick_aim_zone(aim_settled_on(controller, target) && world.time > unsettled_until)
 	if(controller)
 		note_aimed_at(controller, target)
 	var/shot_spread = spread + (!firer.client && world.time <= unsettled_until ? first_contact_spread : 0)
-	INVOKE_ASYNC(src, PROC_REF(async_fire_ranged_attack), firer, target, modifiers, shot_spread)
+	INVOKE_ASYNC(src, PROC_REF(async_fire_ranged_attack), firer, target, modifiers, shot_spread, aim_zone)
 
 
-/datum/component/ranged_attacks/proc/async_fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers, shot_spread = spread)
+/datum/component/ranged_attacks/proc/async_fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers, shot_spread = spread, aim_zone)
 	var/turf/startloc = get_turf(firer)
 	firer.face_atom(target) // turn to whatever we're shooting at, rather than wherever we happened to be facing
 
 	if(casing_type)
 		var/obj/item/ammo_casing/casing = new casing_type(startloc)
+		if(aim_zone && casing.BB)
+			casing.BB.accuracy_mod *= aim_accuracy_mod
 		playsound(firer, projectile_sound, 100, TRUE)
-		casing.fire_casing(target, firer, null, null, null, null, rand(-shot_spread, shot_spread), firer)
+		casing.fire_casing(target, firer, null, null, null, aim_zone, rand(-shot_spread, shot_spread), firer)
 		casing.on_eject(firer)
 
 	else if(projectile_type)
@@ -104,6 +119,9 @@
 		P.yo = target.y - startloc.y
 		P.xo = target.x - startloc.x
 		P.original = target
+		P.def_zone = aim_zone
+		if(aim_zone)
+			P.accuracy_mod *= aim_accuracy_mod
 		P.preparePixelProjectile(target, firer, spread = rand(-shot_spread, shot_spread))
 		P.fire()
 		alert_ai_to_gunfire(firer, SUPPRESSED_NONE, FALSE, firer) // casings do this themselves
@@ -141,10 +159,14 @@
 	var/volley_shots = get_burst_shots() || shots
 	var/volley_interval = burst_shots ? burst_intervals : interval
 	var/datum/ai_controller/controller = firer.ai_controller
-	if(first_contact_spread && controller && !aim_settled_on(controller, target))
+	if(controller && !aim_settled_on(controller, target))
 		unsettled_until = world.time + (volley_shots - 1) * volley_interval // for the duration of this volley minus the first
 	firer.RangedAttack(target)
 	schedule_follow_ups(target, volley_shots - 1, volley_interval)
+
+// the body zone a shot is aimed at
+/datum/component/ranged_attacks/proc/pick_aim_zone(aim_settled)
+	return pick_weight((aim_settled && settled_aim_zone_weights) || aim_zone_weights)
 
 // anti multi target peekabo cheese
 /datum/component/ranged_attacks/proc/aim_settled_on(datum/ai_controller/controller, atom/target)

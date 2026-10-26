@@ -115,6 +115,36 @@
 			"HAAHAHAHAHAHAHAHAH!!",
 			"Bagged one of 'em!"
 		),
+		AI_CALLOUT_HEADSHOT = list(
+			"Right in the skull!",
+			"Headshot, ha!",
+			"Rang their bell!",
+			"Clipped 'em in the noggin!"
+		),
+		AI_CALLOUT_HEADSHOT_DOWN = list(
+			"Headshot! They're down!",
+			"Rang their bell, they're down!",
+			"Dropped 'em with one to the head!",
+			"Skull shot, they're flat!"
+		),
+		AI_CALLOUT_HEADSHOT_KILLED = list(
+			"Blew their brains out!",
+			"Headshot! Lights out!",
+			"One in the skull, done.",
+			"Nobody's walking that one off!"
+		),
+		AI_CALLOUT_TARGET_DROPPED = list(
+			"One of 'em dropped!",
+			"They're down! Stay on 'em!",
+			"Someone's on the floor!",
+			"They keeled over!"
+		),
+		AI_CALLOUT_TARGET_DIED = list(
+			"That one's done. Check 'em later.",
+			"That one's quit kicking.",
+			"Not moving anymore.",
+			"Dead as dirt."
+		),
 		AI_CALLOUT_ALLY_DOWN = list(
 			"They got one of ours!",
 			"Crewman down!",

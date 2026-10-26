@@ -37,7 +37,7 @@
 			return FALSE
 		// how far down they can be and still be worth attacking, set by BB_TARGET_MINIMUM_STAT, like HARD_CRIT for mobs that finish people off
 		var/stat_attack = living_mob.ai_controller?.blackboard[BB_TARGET_MINIMUM_STAT]
-		if(L.stat > (isnull(stat_attack) ? CONSCIOUS : stat_attack))
+		if(L.stat > (isnull(stat_attack) ? CONSCIOUS : stat_attack) && !(L.stat != DEAD && ai_confirming_down(living_mob.ai_controller, L))) // we stay on whoever just dropped a moment, watching to be sure
 			return FALSE
 		return TRUE
 

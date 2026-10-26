@@ -28,6 +28,14 @@
 	. += "Moving to: [current_movement_target ? debug_describe(current_movement_target) : "nowhere"][calculating_path ? ", working out a path" : ""][length(movement_path) ? ", [length(movement_path)] steps left" : ""]"
 	pawn_conditions = null // as things are now, rather than as of our last plan
 	. += "Conditions: [ai_conditions_to_text(get_conditions()) || "none"]"
+	var/turf/pawn_turf = get_turf(pawn)
+	. += "Standing at: [pawn_turf ? "[pawn_turf.x],[pawn_turf.y]" : "nowhere"]"
+	// what our shot checks make of the line to who we're fighting, for working out why we are or aren't shooting
+	var/atom/target = blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/mob/living/living_pawn = pawn
+	if(istype(living_pawn) && living_pawn.GetComponent(/datum/component/ranged_attacks) && isatom(target) && !QDELETED(target))
+		var/atom/blocker = get_shot_blocker(pawn_turf, get_turf(target), pass_flags = get_ai_shot_pass_flags(living_pawn))
+		. += "Shot at target: [blocker ? "blocked by [debug_describe(blocker)], [has_clear_shot(living_pawn, target) ? "worth shooting through" : "<b>not worth shooting through</b>"]" : "clear"]"
 	if(logging_decisions)
 		. += "<b>Last plan:</b>"
 		for(var/line in last_plan)

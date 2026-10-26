@@ -136,6 +136,21 @@
 ///Someone we fought who's gone down, and when, so we can stick around a while before heading home
 #define BB_BASIC_MOB_DOWNED_TARGET "BB_basic_downed_target"
 #define BB_BASIC_MOB_DOWNED_AT "BB_basic_downed_at"
+///Who we're fighting that's just gone down, and when, while we make sure of it
+#define BB_BASIC_MOB_CONFIRMING_DOWN "BB_basic_confirming_down"
+#define BB_BASIC_MOB_CONFIRMING_DOWN_SINCE "BB_basic_confirming_down_since"
+///If TRUE, we walk over to whoever we've downed and finish them up close
+#define BB_BASIC_MOB_EXECUTES_DOWNED "BB_basic_executes_downed"
+///Who we're on our way to finish off up close, and have claimed with TRAIT_AI_EXECUTION_CLAIMED
+#define BB_BASIC_MOB_EXECUTION_VICTIM "BB_basic_execution_victim"
+///When we started finishing them off, once we got to them. Null till then
+#define BB_BASIC_MOB_EXECUTION_STARTED "BB_basic_execution_started"
+///Until when we don't try to finish anyone off up close, after being hurt in the middle of it
+#define BB_BASIC_MOB_NEXT_EXECUTION "BB_basic_next_execution"
+///Where we're finishing someone off from, beside the target while in cover from enemies during a fight
+#define BB_BASIC_MOB_EXECUTION_SPOT "BB_basic_execution_spot"
+///When we next look for the chance to finish someone off from cover in the middle of a fight
+#define BB_BASIC_MOB_NEXT_EXECUTION_CHANCE "BB_basic_next_execution_chance"
 
 // Being shot at and hurt
 ///When we were last shot at, as a world.time
@@ -205,6 +220,8 @@
 #define BB_BASIC_MOB_TAKING_COVER_TURF "BB_basic_taking_cover_turf"
 ///Where we're stepping out of cover to fire from, while we do
 #define BB_BASIC_MOB_PEEK_TURF "BB_basic_peek_turf"
+///Where we were firing from before we got out of sight to reload, so we can go back
+#define BB_BASIC_MOB_RELOAD_LEFT_FROM "BB_basic_reload_left_from"
 ///Somewhere we thought was cover, until we got shot there, so we don't go back to it
 #define BB_BASIC_MOB_BAD_COVER_TURF "BB_basic_bad_cover_turf"
 ///When we last checked our cover was still safe, and from where, so we don't trace every shot line every time we plan
@@ -315,6 +332,9 @@
 ///Who we last rolled for whether to break through to, rather than wait for, when they were out of reach, and whether we are, see /datum/ai_planning_subtree/wait_out_unreachable
 #define BB_BASIC_MOB_BREACH_ROLLED_FOR "BB_basic_breach_rolled_for"
 #define BB_BASIC_MOB_BREACHING "BB_basic_breaching"
+///How long we'll watch those we're fighting holed up where we can't get at them before we break through anyway, rolled when we start waiting, and how long we've watched so far, whichever of them it was. Both kept until we can get at someone
+#define BB_BASIC_MOB_WAIT_PATIENCE "BB_basic_wait_patience"
+#define BB_BASIC_MOB_WAITED_IN_SIGHT "BB_basic_waited_in_sight"
 ///Where we're waiting out of sight of someone dug in, and until when
 #define BB_BASIC_MOB_AMBUSH_TURF "BB_basic_ambush_turf"
 #define BB_BASIC_MOB_AMBUSH_UNTIL "BB_basic_ambush_until"
@@ -352,6 +372,8 @@
 ///Somewhere nearby that's safe for us to stand, while where we are isn't, and when we'll next look for one
 #define BB_BASIC_MOB_SAFE_TURF "BB_basic_safe_turf"
 #define BB_BASIC_MOB_NEXT_SAFETY_SEARCH "BB_basic_next_safety_search"
+///TRUE if our safe spot isn't really safe, just the coolest spot out of the flames we could find, with the fire all round us
+#define BB_BASIC_MOB_SAFE_TURF_LEAST_BAD "BB_basic_safe_turf_least_bad"
 
 // Fire, see /datum/ai_planning_subtree/put_out_fire
 ///Since when we've been on fire, so we only call it out once

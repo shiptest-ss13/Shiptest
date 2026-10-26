@@ -566,6 +566,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_AI_OPENS_DOORS "ai_opens_doors"
 /// AI that comes looking when it hears enemy gunfire
 #define TRAIT_AI_HEARS_GUNFIRE "ai_hears_gunfire"
+/// One of an AI's side is on its way to finish off this downed mob up close, so the rest leave it to them. Sourced from the executioner's REF
+#define TRAIT_AI_EXECUTION_CLAIMED "ai_execution_claimed"
 
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"

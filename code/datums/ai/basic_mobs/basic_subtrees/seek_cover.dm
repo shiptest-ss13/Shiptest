@@ -30,12 +30,16 @@
 		var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 		if(!reloading || QDELETED(target) || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE || target.Adjacent(controller.pawn))
 			leave_cover(controller) // it's been quiet a while, so carry on as usual
+			if(!reloading)
+				return_to_firing_spot(controller, target)
 			return
 		if(ai_holding_cover_against(controller, target))
 			return // don't give up good cover
 		// not being shot at, but we've an empty gun and someone who can see us, so get out of their sight while we reload
 		danger = get_turf(target)
 		danger_key = BB_BASIC_MOB_CURRENT_TARGET
+		if(!controller.blackboard[BB_BASIC_MOB_RELOAD_LEFT_FROM])
+			controller.set_blackboard_key(BB_BASIC_MOB_RELOAD_LEFT_FROM, get_turf(controller.pawn))
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(danger_key == BB_BASIC_MOB_SHOT_FROM && controller.blackboard[BB_BASIC_MOB_LAST_HANDLED_SHOT_TIME] != last_shot_time)
 		controller.set_blackboard_key(BB_BASIC_MOB_LAST_HANDLED_SHOT_TIME, last_shot_time)
@@ -66,6 +70,7 @@
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_TAKING_COVER_TURF)
 
 /datum/ai_planning_subtree/seek_cover/proc/react_to_shot(datum/ai_controller/controller, turf/danger, turf/our_turf, reloading)
+	controller.clear_blackboard_key(BB_BASIC_MOB_RELOAD_LEFT_FROM) // under fire, hit or not, so where we stand is down to taking cover now, not going back where we were
 	if(our_turf == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] && !controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
 		// we got hit sitting in the cover we picked, so it isn't covering us, whatever it looked like. One going past is what cover's for
 		controller.set_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF, our_turf)
@@ -115,6 +120,18 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS)
 	controller.set_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS, tally)
 	return tally[2]
+
+// if we ducked into cover to reload and can't see anyone, duck back out to where we came from
+/datum/ai_planning_subtree/seek_cover/proc/return_to_firing_spot(datum/ai_controller/controller, atom/target)
+	var/turf/firing_spot = controller.blackboard[BB_BASIC_MOB_RELOAD_LEFT_FROM]
+	if(!firing_spot)
+		return
+	var/turf/our_turf = get_turf(controller.pawn)
+	// or something else since has taken us well away from it, like a search
+	if(QDELETED(target) || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE || our_turf == firing_spot || get_dist(our_turf, firing_spot) > AI_RELOAD_RETURN_RANGE || !ai_can_take_spot(controller.pawn, firing_spot))
+		controller.clear_blackboard_key(BB_BASIC_MOB_RELOAD_LEFT_FROM)
+		return
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_RELOAD_LEFT_FROM)
 
 /datum/ai_planning_subtree/seek_cover/proc/leave_cover(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)

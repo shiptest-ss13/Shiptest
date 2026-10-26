@@ -73,7 +73,7 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_RALLYING) // seen enemies, so we fight them instead of going to whoever called us in
 	// news, unless we've seen them lately, like someone popping back out of cover, or we switched to someone else and back
 	var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], target)
-	if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
+	if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET] && !ai_is_downed(target)) // someone down is no new threat
 		ai_callout(controller.pawn, AI_CALLOUT_SPOTTED, subject = target) // nobody told us about them, so it's news to the group
 		AI_LOG_DECISION(controller, "track_target: spotted [target]")
 		if(!AI_RECENTLY_SAW_ENEMY(controller, 5 SECONDS))
@@ -89,6 +89,7 @@
 	else if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)
+		ai_witness_downed(controller.pawn, target)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, TRUE)
 	controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, get_turf(target))
 	controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)

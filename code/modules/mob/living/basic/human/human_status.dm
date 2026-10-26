@@ -240,7 +240,7 @@
 		return
 	if(loc == old_turf)
 		if(!blocks_shove_knockdown())
-			Stun(1.5 SECONDS) // up against something, so we're sent reeling, unless we're in something like riot armour, as players are
+			Knockdown(SHOVE_KNOCKDOWN_SOLID) // up against something, so we're knocked down, as a player is, unless we're in something like riot armour
 		return
 	if(!has_movespeed_modifier(/datum/movespeed_modifier/shove))
 		add_movespeed_modifier(/datum/movespeed_modifier/shove)

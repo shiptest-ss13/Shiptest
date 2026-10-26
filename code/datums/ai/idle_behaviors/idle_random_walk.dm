@@ -9,7 +9,7 @@
 	if(SPT_PROB(walk_chance, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby && !LAZYLEN(living_pawn.do_afters))
 		var/move_dir = pick(GLOB.alldirs)
 		var/turf/destination = get_step(living_pawn, move_dir)
-		if(destination && (is_ai_hazard_turf(destination) || ai_diagonal_crosses_hazard(get_turf(living_pawn), destination)))
+		if(destination && (is_ai_hazard_turf(destination, living_pawn) || ai_diagonal_crosses_hazard(get_turf(living_pawn), destination, living_pawn)))
 			return // don't wander off into a chasm or lava
 		if(destination && is_ai_swimming_water(destination) && !is_ai_swimming_water(get_turf(living_pawn)))
 			return // or off for a swim, like into a moat we'd struggle to climb back out of

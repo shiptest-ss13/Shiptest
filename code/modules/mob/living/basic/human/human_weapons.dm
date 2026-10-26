@@ -47,6 +47,22 @@
 			return attachment
 	return gun_type
 
+/mob/living/basic/human/proc/get_execution_style()
+	if(get_execution_blade())
+		return AI_EXECUTION_BLADE
+	if((casing_type || projectile_type) && !fires_flames)
+		return AI_EXECUTION_GUN
+	return null
+
+/mob/living/basic/human/proc/get_execution_blade()
+	for(var/obj/item/held as anything in list(l_hand, r_hand))
+		if(!ispath(held, /obj/item) || ispath(held, /obj/item/gun) || ispath(held, /obj/item/shield))
+			continue
+		var/obj/item/template = get_ai_item_template(held)
+		if(template.force && template.get_sharpness())
+			return held
+	return null
+
 /mob/living/basic/human/proc/setup_weapon()
 	if(fires_flames)
 		AddComponent(/datum/component/ranged_attacks/flamethrower, projectile_sound = projectile_sound, cooldown_time = ranged_cooldown)
@@ -71,8 +87,24 @@
 			volley_shots = max(volley_shots, fire_pattern[1]) // not for shotguns, bursting would be horrifying
 
 	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, volley_shots, volley_interval, ranged_cooldown, shot_spread, first_contact_spread)
+	apply_aim()
 	if(gun_type && get_gun_capacity(gun_type))
 		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading, if it's got rounds or charge to count
+
+// fills in whatever of our aim isn't set from our gun, and hands it to our ranged attacks, which share our lists, so editing them on us changes how we shoot
+/mob/living/basic/human/proc/apply_aim()
+	var/marksman = pick_ranged_controller() == /datum/ai_controller/basic_controller/human/ranged/marksman // even holding a post, where it isn't our controller
+	aim_zone_weights ||= AI_AIM_ZONES_DEFAULT
+	if(!settled_aim_zone_weights && marksman)
+		settled_aim_zone_weights = AI_AIM_ZONES_MARKSMAN
+	if(isnull(aim_accuracy_mod))
+		aim_accuracy_mod = marksman ? AI_MARKSMAN_AIM_ACCURACY_MOD : 1
+	var/datum/component/ranged_attacks/ranged_attack = GetComponent(/datum/component/ranged_attacks)
+	if(!ranged_attack)
+		return
+	ranged_attack.aim_zone_weights = aim_zone_weights
+	ranged_attack.settled_aim_zone_weights = settled_aim_zone_weights
+	ranged_attack.aim_accuracy_mod = aim_accuracy_mod
 
 // mobility based on weapon type
 /mob/living/basic/human/proc/pick_mobility()
@@ -187,6 +219,26 @@
 	pattern_by_type[gun_type] = pattern
 	return pattern
 
+
+// How many shots one pull of the trigger fires from a gun of this type, as list(shots, time between them), or null if it can fire just the one, like for executes_downed
+/proc/get_gun_trigger_pattern(gun_type)
+	var/static/list/pattern_by_type = list()
+	if(!ispath(gun_type, /obj/item/gun))
+		return null
+	if(gun_type in pattern_by_type)
+		return pattern_by_type[gun_type]
+	var/obj/item/gun/gun = new gun_type
+	var/list/modes = gun.gun_firemodes
+	var/list/pattern
+	// a gun that never set its own modes has every one of them, so it can fire single
+	if(!(FIREMODE_SEMIAUTO in modes) && !(FIREMODE_OTHER_TWO in modes))
+		if(FIREMODE_BURST in modes)
+			pattern = list(gun.burst_size, gun.burst_delay)
+		else if(FIREMODE_FULLAUTO in modes)
+			pattern = list(AI_AUTOMATIC_BURST_SHOTS, gun.fire_delay)
+	qdel(gun)
+	pattern_by_type[gun_type] = pattern
+	return pattern
 
 // The type of folding stock a gun of gun_type comes with, or null
 /proc/get_gun_folding_stock(gun_type)
