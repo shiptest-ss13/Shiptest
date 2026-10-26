@@ -4020,7 +4020,10 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "UZ" = (
-/obj/machinery/suit_storage_unit/inherit/locked,
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "20";
+	name = "Captain's suit storage"
+	},
 /obj/item/clothing/suit/space/hardsuit/syndi/hl,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor,
