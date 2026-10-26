@@ -17,7 +17,7 @@
 /datum/supply_pack/gun/derringer
 	name = "HP Spark"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."
-	cost = 350
+	cost = 150
 	contains = list(/obj/item/storage/guncase/pistol/derringer)
 	crate_name = "derringer crate"
 	faction = /datum/faction/srm
