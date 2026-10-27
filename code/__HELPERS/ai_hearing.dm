@@ -61,6 +61,18 @@ GLOBAL_VAR_INIT(ai_tick_cache_time, -1)
 			LAZYADD(mobs_by_z["[pawn.z]"], pawn)
 	return mobs_by_z["[z_level]"] || list()
 
+// turrets and mechas on z_level, worked out once a tick for everyone looking, rather than each mob going through every one there is
+/proc/get_ai_machines_on_z(z_level)
+	var/list/machines_by_z = ai_tick_cache("machines_by_z")
+	if(!machines_by_z["built"])
+		machines_by_z["built"] = TRUE
+		for(var/list/machines as anything in list(GLOB.porta_turrets, GLOB.mechas_list))
+			for(var/atom/machine as anything in machines)
+				var/turf/machine_turf = get_turf(machine)
+				if(machine_turf)
+					LAZYADD(machines_by_z["[machine_turf.z]"], machine)
+	return machines_by_z["[z_level]"] || list()
+
 // ours within range of source, awake and AI-controlled. Asked a lot, by morale, callouts, orders and the like, so worked out once a tick for each of us and range
 /proc/get_ai_allies_in_range(mob/living/source, range)
 	var/list/allies_by_asker = ai_tick_cache("allies_by_asker")

@@ -17,6 +17,10 @@ SUBSYSTEM_DEF(ai_controllers)
 	var/list/list/sleeping_ai_by_virtual_level = list()
 	///If FALSE, AI that nobody alive can see thinks just as often as AI that someone can
 	var/low_priority_enabled = TRUE
+	///The active AI controllers still to plan this fire, so we can pick back up from where we had to yield
+	var/list/currentrun = list()
+	///Whether there's anyone alive on each virtual z-level, worked out once each fire
+	var/list/watched_levels = list()
 
 /datum/controller/subsystem/ai_controllers/Initialize(timeofday)
 	setup_subtrees()
@@ -32,9 +36,19 @@ SUBSYSTEM_DEF(ai_controllers)
 		ai_sensors[sensor_type] = new sensor_type
 
 /datum/controller/subsystem/ai_controllers/fire(resumed)
-	clear_ai_tick_caches() // so they don't hold onto anything deleted since they were last asked for
-	var/list/watched_levels = list() // whether there's anyone alive on each virtual z-level, worked out once each fire
-	for(var/datum/ai_controller/ai_controller as anything in active_ai_controllers)
+	if(!resumed)
+		clear_ai_tick_caches() // so they don't hold onto anything deleted since they were last asked for
+		currentrun = active_ai_controllers.Copy()
+		watched_levels = list()
+	var/list/current_run = currentrun
+	while(current_run.len)
+		var/datum/ai_controller/ai_controller = current_run[current_run.len]
+		current_run.len--
+		if(MC_TICK_CHECK)
+			current_run += ai_controller // not got to yet, so it's first when we pick back up
+			return
+		if(QDELETED(ai_controller) || ai_controller.ai_status != AI_STATUS_ON)
+			continue // gone to sleep, switched off or deleted since this fire began
 		var/virtual_level = "[ai_controller.pawn?.virtual_z()]"
 		if(isnull(watched_levels[virtual_level]))
 			watched_levels[virtual_level] = length(LAZYACCESS(SSmobs.players_by_virtual_z, virtual_level)) > 0

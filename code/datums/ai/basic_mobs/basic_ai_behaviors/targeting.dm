@@ -2,8 +2,6 @@
 	action_cooldown = 2 SECONDS
 	/// How far can we see stuff?
 	var/vision_range = 9
-	/// Static typecache list of potentially dangerous objs
-	var/static/list/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 
 /datum/ai_behavior/find_potential_targets/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	var/list/potential_targets
@@ -16,8 +14,9 @@
 	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
 	potential_targets = hearers(our_vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
 
-	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
-		if(ai_can_see(living_mob, HM, our_vision_range))
+	var/turf/our_turf = get_turf(living_mob)
+	for(var/atom/HM as anything in (our_turf ? get_ai_machines_on_z(our_turf.z) : list()))
+		if(!QDELETED(HM) && isturf(HM.loc) && get_dist(our_turf, HM) <= our_vision_range && ai_can_see(living_mob, HM, our_vision_range)) // only those out on a turf, as range() would give us
 			potential_targets += HM
 
 	if(!potential_targets.len)

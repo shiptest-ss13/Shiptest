@@ -73,23 +73,11 @@
 			continue // hidden in the dark
 		. += someone
 	// turrets and mechas
-	for(var/atom/machine as anything in get_machines_on_z(our_turf.z))
-		if(get_dist(our_turf, machine) > our_vision_range)
+	for(var/atom/machine as anything in get_ai_machines_on_z(our_turf.z))
+		if(QDELETED(machine) || get_dist(our_turf, machine) > our_vision_range)
 			continue
 		if(!controller.check_still_ignoring(machine) && ai_can_see(living_pawn, machine, our_vision_range) && targetting_datum.can_attack(living_pawn, machine))
 			. += machine
-
-// turrets and mechas on z_level, worked out once a tick for everyone looking, rather than each of us going through every one there is
-/datum/ai_sensor/update_combat_targets/proc/get_machines_on_z(z_level)
-	var/list/machines_by_z = ai_tick_cache("machines_by_z")
-	if(!machines_by_z["built"])
-		machines_by_z["built"] = TRUE
-		for(var/list/machines as anything in list(GLOB.porta_turrets, GLOB.mechas_list))
-			for(var/atom/machine as anything in machines)
-				var/turf/machine_turf = get_turf(machine)
-				if(machine_turf)
-					LAZYADD(machines_by_z["[machine_turf.z]"], machine)
-	return machines_by_z["[z_level]"] || list()
 
 // someone we've seen in the last recent_enemy_memory who's still on their feet and fair game, other than exclude, the most recently seen, or null
 /datum/ai_sensor/update_combat_targets/proc/get_recent_enemy(datum/ai_controller/controller, atom/exclude, datum/targetting_datum/targetting_datum)

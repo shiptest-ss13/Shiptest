@@ -123,6 +123,15 @@
 		play_if_alive(reload_sound)
 	if(chamber_sound && !tactical)
 		addtimer(CALLBACK(src, PROC_REF(play_if_alive), chamber_sound), 0.4 SECONDS)
+	var/mob/living/basic/basic_mob = parent
+	if(basic_mob.stat == DEAD)
+		return
+	if(!tactical)
+		basic_mob.visible_message(span_notice("[basic_mob] finishes reloading."))
+	else if(single_loads)
+		basic_mob.visible_message(span_notice("[basic_mob] finishes topping off [basic_mob.p_their()] [weapon_name]."))
+	else
+		basic_mob.visible_message(span_notice("[basic_mob] finishes swapping out [basic_mob.p_their()] [magazine_name]."))
 
 /datum/component/ai_magazine/proc/load_round(rounds_left, id)
 	if(id != reload_id)
