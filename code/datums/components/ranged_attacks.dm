@@ -37,6 +37,8 @@
 	/// The gun whose muzzle flash and light we show when we fire, as a type, or null for none, like for something spitting acid
 	var/obj/item/gun/flash_gun
 	var/obj/effect/muzzle_flash/muzzle_flash
+	/// Carried about inside us and switched on for each shot, like a gun's own light, so we're not making a new one every time
+	var/obj/effect/dummy/lighting_obj/moblight/muzzle_light
 
 /datum/component/ranged_attacks/Initialize(
 	casing_type,
@@ -78,6 +80,7 @@
 
 /datum/component/ranged_attacks/Destroy(force)
 	QDEL_NULL(muzzle_flash)
+	QDEL_NULL(muzzle_light)
 	return ..()
 
 /datum/component/ranged_attacks/RegisterWithParent()
@@ -145,7 +148,14 @@
 	muzzle_flash ||= new(null, initial(flash_gun.muzzleflash_iconstate))
 	if(muzzle_flash.applied)
 		return // still showing from the last shot of a burst
-	new /obj/effect/dummy/lighting_obj(get_turf(firer), initial(flash_gun.light_range), null, initial(flash_gun.light_color), 3)
+	if(!muzzle_light)
+		muzzle_light = new(firer)
+		muzzle_light.set_light_on(FALSE)
+		muzzle_light.set_light_range(initial(flash_gun.light_range))
+		muzzle_light.set_light_color(initial(flash_gun.light_color))
+	if(!muzzle_light.light_on)
+		muzzle_light.set_light_on(TRUE)
+		addtimer(CALLBACK(muzzle_light, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
 	muzzle_flash.aim(Get_Angle(get_turf(firer), target))
 	firer.vis_contents += muzzle_flash
 	muzzle_flash.applied = TRUE
@@ -198,6 +208,16 @@
 // the body zone a shot is aimed at
 /datum/component/ranged_attacks/proc/pick_aim_zone(aim_settled)
 	return pick_weight((aim_settled && settled_aim_zone_weights) || aim_zone_weights)
+
+// whether, once our aim settles, the head's where we mostly put it, like a marksman
+/datum/component/ranged_attacks/proc/settles_on_head()
+	var/head_weight = LAZYACCESS(settled_aim_zone_weights, BODY_ZONE_HEAD)
+	if(!head_weight)
+		return FALSE
+	for(var/zone in settled_aim_zone_weights)
+		if(settled_aim_zone_weights[zone] > head_weight)
+			return FALSE
+	return TRUE
 
 // anti multi target peekabo cheese
 /datum/component/ranged_attacks/proc/aim_settled_on(datum/ai_controller/controller, atom/target)

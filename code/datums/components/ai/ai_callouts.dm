@@ -317,7 +317,8 @@ GLOBAL_LIST_INIT(ai_callout_sounds, list(
 	var/datum/component/ranged_attacks/ranged_attack = parent.GetComponent(/datum/component/ranged_attacks)
 	var/obj/projectile/fired_type = ranged_attack?.get_projectile_type()
 	head_hit_damage += fired_type ? initial(fired_type.damage) : 0 // before armour, so a helmet doesn't keep us quiet. we've no gun to multiply it
-	if(head_hit_damage < AI_HEADSHOT_CALLOUT_DAMAGE)
+	// those who aim for the head probably want to call it out
+	if(head_hit_damage < AI_HEADSHOT_CALLOUT_DAMAGE && !ranged_attack?.settles_on_head())
 		return FALSE
 	head_hit_damage = 0 // once per enough, not on every hit after
 	return TRUE
