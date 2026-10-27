@@ -42,13 +42,18 @@
 
 
 /datum/computer_file/program/secureye/ui_interact(mob/user, datum/tgui/ui)
-	. = ..()
-
 	// Update UI
 	ui = SStgui.try_update_ui(user, src, ui)
 
 	// Update the camera, showing static if necessary and updating data if the location has moved.
 	update_active_camera_screen()
+
+	if(ui)
+		return
+	ui = new(user, src, tgui_id, filedesc)
+	if(!ui.open())
+		return
+	ui.send_asset(get_asset_datum(/datum/asset/simple/headers))
 
 	var/user_ref = REF(user)
 	var/is_living = isliving(user)
@@ -115,6 +120,7 @@
 		var/list/cameras = get_available_cameras()
 		var/obj/selected_camera = cameras[c_tag]
 		active_camera = selected_camera
+		last_camera_turf = null
 		playsound(src, get_sfx("terminal_type"), 25, FALSE)
 
 		if(!selected_camera)
@@ -142,21 +148,19 @@
 	if(istype(active_camera, /obj/machinery/camera))
 		var/obj/machinery/camera/active_camera_S = active_camera
 		if(!active_camera_S?.can_use())
-			cam_screen.show_camera_static()
+			show_static()
 			return
 	else if(istype(active_camera, /obj/item/bodycamera))
 		var/obj/item/bodycamera/active_camera_B = active_camera
 		if(!active_camera_B?.can_use())
-			cam_screen.show_camera_static()
+			show_static()
 			return
 
-	var/list/visible_turfs = list()
-
 	if(!active_camera)
-		cam_screen.show_camera_static()
+		show_static()
 		return
 	else if (active_camera.loc == null)
-		cam_screen.show_camera_static()
+		show_static()
 		return
 
 	var/cam_location = active_camera.loc
@@ -167,24 +171,33 @@
 	// If we're not forcing an update for some reason and the cameras are in the same location,
 	// we don't need to update anything.
 	// Most security cameras will end here as they're not moving.
-	if(istype(active_camera, /obj/machinery/camera))
-		var/newturf = get_turf(cam_location)
-		if(last_camera_turf == newturf)
-			return
+	var/newturf = get_turf(cam_location)
+	if(last_camera_turf == newturf)
+		return
 
 	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
-	last_camera_turf = get_turf(cam_location)
+	last_camera_turf = newturf
 
-	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
-
-	for(var/turf/visible_turf in visible_things)
-		visible_turfs += visible_turf
+	var/list/visible_turfs = get_visible_turfs(cam_location)
 
 	var/list/bbox = get_bbox_of_atoms(visible_turfs)
 	var/size_x = bbox[3] - bbox[1] + 1
 	var/size_y = bbox[4] - bbox[2] + 1
 
 	cam_screen.show_camera(visible_turfs, size_x, size_y)
+
+// Clear last_camera_turf before showing static so that it doesn't get stuck when turned off and on again
+/datum/computer_file/program/secureye/proc/show_static()
+	last_camera_turf = null
+	cam_screen.show_camera_static()
+
+// Returns the turfs the active camera can see from cam_location.
+/datum/computer_file/program/secureye/proc/get_visible_turfs(cam_location)
+	var/list/visible_turfs = list()
+	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
+	for(var/turf/visible_turf in visible_things)
+		visible_turfs += visible_turf
+	return visible_turfs
 
 // Returns the list of cameras accessible from this computer
 /datum/computer_file/program/secureye/proc/get_available_cameras()

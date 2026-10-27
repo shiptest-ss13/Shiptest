@@ -139,6 +139,30 @@
 	else
 		. += span_notice("It is spent.")
 
+/obj/item/reagent_containers/hypospray/medipen/gambling
+	name = "unlabeled medipen" // floorpill... 2!
+	desc = "A degraded autoinjector, its faded label revealing absolutely no information regarding its contents."
+	icon_state = "atropen"
+	var/static/list/special_descs = list(
+		"Here's your chance. Do it. Do it now.",
+		"This is almost certainly a terrible idea.",
+		"Don't.")
+	reagent_flags = NO_REACT
+	volume = 0
+	amount_per_transfer_from_this = 0
+
+/obj/item/reagent_containers/hypospray/medipen/gambling/Initialize()
+	list_reagents = list()
+	var/fun_types = rand(2, 5)
+	for(var/i = 0, i < fun_types, i++)
+		var/fun_quantity = rand(5, 20)
+		list_reagents += list(get_random_reagent_id() = fun_quantity)
+		volume += fun_quantity
+		amount_per_transfer_from_this += fun_quantity
+	. = ..()
+	if(prob(10))
+		desc = pick(special_descs)
+
 /obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
 	name = "stimpack medipen"
 	desc = "A rapid way to stimulate your body's adrenaline, allowing for freer movement in restrictive armor."
