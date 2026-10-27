@@ -1739,3 +1739,16 @@
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+\\ Custom Humaniform
+
+/obj/item/bodypart/head/ipc/humaniformc
+	name = "\improper Custom 'Humaniform' head"
+	examine_id = "\improper Custom 'Humaniform'"
+	icon_state = "chumanipc_head"
+	limb_id = "chumanipc"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	
