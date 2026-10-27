@@ -498,6 +498,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/magazine/g12
+	name = "G-12 Breaching Tool Magazine Crate"
+	desc = "Contains an empty 4 round box magazine for the G-12 'Torch' breaching tool."
+	contains = list(/obj/item/ammo_box/magazine/g12/empty)
+	cost = 200
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /* Expand once the energy weapons have been actually expanded upon */
 
 /datum/supply_pack/magazine/cybersun_cell

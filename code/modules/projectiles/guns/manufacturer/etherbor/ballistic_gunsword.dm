@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/g12
-	name = "\improper G-12 'Torch'"
-	desc = "TEST."
+	name = "\improper Etherbor G-12 'Torch'"
+	desc = "Begrudgingly designed at the behest of the PGFMC, the Etherbor G-12 breaching tool offers a compact, if awkward, solution to all sort of shipboard obstacles. Most notably, locked doors. Nicknamed the 'Torch' for its resemblance to an idustrial cutting tool, the G-12's official name is no more creative. 'Gun, 12 gauge'."
 	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/etherbor/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/etherbor/righthand.dmi'
@@ -18,7 +18,7 @@
 	weapon_weight = WEAPON_MEDIUM
 	default_ammo_type = /obj/item/ammo_box/magazine/g12
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/g12_12g,
+		/obj/item/ammo_box/magazine/g12,
 	)
 
 	empty_indicator = FALSE
@@ -40,23 +40,19 @@
 
 	spread = 8
 	spread_unwielded = 15
-	recoil = 4
-	recoil_unwielded = 8
+	recoil = 3
+	recoil_unwielded = 6
 	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.4 SECONDS
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 34,
-			"y" = 15,
+			"x" = 21,
+			"y" = 16,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 44,
-			"y" = 19,
-		),
-		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 21,
-			"y" = 25,
+			"x" = 20,
+			"y" = 18,
 		)
 	)
 
@@ -65,7 +61,7 @@
 
 /obj/item/ammo_box/magazine/g12
 	name = "G-12 'Torch' magazine (12g buckshot)"
-	desc = "A single-stack, 4-round box magazine for G-12 'Torch'."
+	desc = "A single-stack, 4-round box magazine for Etherbor's G-12 'Torch' breaching tool."
 	icon_state = "g12_mag-1"
 	base_icon_state = "g12_mag"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
