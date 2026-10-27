@@ -1290,3 +1290,14 @@
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
+
+// BOW //
+
+/datum/supply_pack/gun/bow
+	name = "Bow Crate"
+	desc = "Contains a bow for large game, manufactured by Hunter's Pride. Great for the discerning hunter!"
+	cost = 500
+	contains = list(/obj/item/storage/guncase/bow)
+	crate_name = "bow crate"
+	faction = /datum/faction/srm
+	faction_discount = 10
