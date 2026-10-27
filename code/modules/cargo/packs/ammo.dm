@@ -174,7 +174,7 @@
 	contains = list(/obj/item/storage/box/ammo/c57x39/hp)
 	cost = 370
 
-/* 12 Gauge */
+/* shotgun shells */
 
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
@@ -200,12 +200,6 @@
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
-/datum/supply_pack/ammo/scattershells
-	name = "Scatter Laser Shell Crate"
-	desc = "Contains a box of 32 shells modified to fire Sharplite lasers. Perfect for high-velocity crowd control."
-	cost = 380
-	contains = list(/obj/item/storage/box/ammo/a12g_scatter)
-
 /datum/supply_pack/ammo/pulseshells
 	name = "Pulse Slug Crate"
 	desc = "Contains a box of 32 shells modified to fire a strong pulse projectile. Decent damage and respectable at demolishing fortifications."
@@ -223,6 +217,24 @@
 	desc = "Contains a box of 32 shells filled with an electromagnetic payload. No damage but EMPs the target."
 	cost = 800
 	contains = list(/obj/item/storage/box/ammo/a12g_ion)
+
+/datum/supply_pack/ammo/fourborebuckshot
+	name = "Four Bore Buckshot Crate"
+	desc = "Contains a box of 32 4-gauge buckshot shells. For when you really need more bang for your buck."
+	cost = 500
+	contains = list(/obj/item/storage/box/ammo/a4g_buckshot)
+
+/datum/supply_pack/ammo/fourboreslug
+	name = "Four Bore Slug Crate"
+	desc = "Contains a box of 32 4-gauge slugs. They are rated to render a ship's engine inoperable in one shot."
+	cost = 600
+	contains = list(/obj/item/storage/box/ammo/a4g_slug)
+
+/datum/supply_pack/ammo/fourboreshrapnel
+	name = "Four Bore Shrapnel Crate"
+	desc = "Contains a box of 32 4-gauge shrapnel shells. Fitted to hold 16 normal buckshot pellets. Beware of its higher spread."
+	cost = 550
+	contains = list(/obj/item/storage/box/ammo/a4g_shrapnel)
 
 /* .45-70 */
 
@@ -472,3 +484,15 @@
 	desc = "Contains 4 40 round box magazines for the SG95 Vector"
 	contains = list(/obj/item/storage/box/ammo/c320)
 	cost = 600
+
+/datum/supply_pack/ammo/arrow
+	name = "Arrow Crate"
+	desc = "Contains 4 handcrafted arrows for hunting large game."
+	cost = 200
+	contains = list(
+		/obj/item/ammo_casing/caseless/arrow,
+		/obj/item/ammo_casing/caseless/arrow,
+		/obj/item/ammo_casing/caseless/arrow,
+		/obj/item/ammo_casing/caseless/arrow)
+	faction = /datum/faction/srm
+	faction_discount = 10

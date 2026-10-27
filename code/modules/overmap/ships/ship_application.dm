@@ -1,8 +1,8 @@
 /datum/ship_application
 	/// The ship this application is linked to.
 	var/datum/overmap/ship/controlled/parent_ship
-	/// The applicant's new player mob. Kept so we can cancel the fill-out if they leave the lobby mid-write.
-	var/mob/dead/new_player/app_mob
+	/// The applicant's lobby or observer mob. Kept so we can cancel the fill-out if they leave the lobby or stop observing mid-write.
+	var/mob/dead/app_mob
 	/// String of the applicant's actual ckey. We'll use this later to reference the client, so we can
 	/// send the notification regardless of mob status. Not using app_key because that can be faked.
 	var/app_ckey
@@ -22,7 +22,7 @@
 	/// The application's status -- whether or not it has been accepted, rejected, or hasn't been answered yet.
 	var/status = SHIP_APPLICATION_UNFINISHED
 
-/datum/ship_application/New(mob/dead/new_player/applicant, datum/overmap/ship/controlled/parent, datum/job/applied_job)
+/datum/ship_application/New(mob/dead/applicant, datum/overmap/ship/controlled/parent, datum/job/applied_job)
 	// If the admin is in stealth mode, we use their fakekey.
 	app_mob = applicant
 	app_name = app_mob.client?.prefs.real_name
@@ -73,7 +73,7 @@
 		SEND_SOUND(parent_ship.owner_mob, sound('sound/misc/server-ready.ogg', volume=50))
 		var/message = \
 			"<span class='looc'>[app_name] [show_key ? "([app_key]) " : null]applied to your ship for [app_job]: [app_msg]\n" + \
-			"<a href=?src=[REF(src)];application_accept=1>(ACCEPT)</a> / <a href=?src=[REF(src)];application_deny=1>(DENY)</a></span>"
+			"<a href='byond://?src=[REF(src)];application_accept=1'>(ACCEPT)</a> / <a href='byond://?src=[REF(src)];application_deny=1'>(DENY)</a></span>"
 		to_chat(parent_ship.owner_mob, message, MESSAGE_TYPE_INFO)
 	return TRUE
 
@@ -174,8 +174,8 @@
 
 	switch(status)
 		if(SHIP_APPLICATION_ACCEPTED)
-			// they may have gone off to observe while waiting, in which case they need to come back to join
-			var/lobby_hint = isnewplayer(app_client.mob) ? null : " Return to the lobby to join."
+			// they may have gone off to observe while waiting
+			var/lobby_hint = isnewplayer(app_client.mob) ? null : " Open the ship list or return to the lobby to join."
 			to_chat(app_client, span_notice("Your application to [parent_ship] was accepted![lobby_hint]"), MESSAGE_TYPE_INFO)
 			SEND_SOUND(app_client, sound('sound/misc/server-ready.ogg', volume=50))
 		if(SHIP_APPLICATION_DENIED)

@@ -42,6 +42,13 @@
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
 
+/obj/item/storage/guncase/cinder/factory
+	gun_type = /obj/item/gun/ballistic/rifle/cinder/factory
+
+/obj/item/storage/guncase/cinder
+	gun_type = /obj/item/gun/ballistic/rifle/cinder
+
+
 /obj/item/storage/guncase/illestren
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
@@ -95,7 +102,11 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
 	mag_type = /obj/item/ammo_box/magazine/invictus_308_mag
 
+/obj/item/storage/guncase/bow
+	gun_type = /obj/item/gun/ballistic/bow
+
 /* Scarbourough */
+
 
 /obj/item/storage/guncase/pistol/a357
 	gun_type = /obj/item/gun/ballistic/revolver/viper
@@ -445,6 +456,14 @@
 	gun_type = /obj/item/gun/energy/clover/faveleira
 	mag_type = /obj/item/stock_parts/cell/gun
 
+/obj/item/storage/guncase/ecm20
+	gun_type = /obj/item/gun/energy/clover/maguey/clip
+	mag_type = /obj/item/stock_parts/cell/gun
+
+/obj/item/storage/guncase/pl20
+	gun_type = /obj/item/gun/energy/clover/maguey
+	mag_type = /obj/item/stock_parts/cell/gun
+
 /* Inteq */
 
 /obj/item/storage/guncase/skm_inteq
@@ -490,6 +509,10 @@
 /obj/item/storage/guncase/barghest
 	gun_type = /obj/item/gun/energy/sharplite/hades/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+
+/obj/item/storage/guncase/nahual
+	gun_type = /obj/item/gun/energy/clover/maguey/clip/inteq
+	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/bdm50
 	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution/inteq
