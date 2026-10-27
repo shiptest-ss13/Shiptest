@@ -168,7 +168,7 @@
 
 /datum/supply_pack/gun/flintrevolver
 	name = "HP Flint Revolver Crate"
-	desc = "Contains a concealable Flint, chambered in .38."
+	desc = "Contains a concealable Flint revolver, chambered in .38."
 	cost = 400
 	contains = list(/obj/item/storage/guncase/pistol/flint)
 	faction = /datum/faction/srm
