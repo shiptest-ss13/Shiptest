@@ -125,7 +125,7 @@ EMPTY_GUN_HELPER(revolver/shadow)
 
 /obj/item/gun/ballistic/revolver/flint
 	name = "\improper HP Flint"
-	desc = "A small revolver. It is cheap and very light, making it a popular self-defense option among civilians. Uses .38 Special rounds."
+	desc = "A small revolver. Its low price and weight make it a popular self-defense option among civilians. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "flint"
 	item_state = "hp_generic"
@@ -159,50 +159,6 @@ EMPTY_GUN_HELPER(revolver/flint)
 /obj/item/gun/ballistic/revolver/flint/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
-//...why...?
-/obj/item/gun/ballistic/revolver/flint/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
-	if(magazine.caliber != initial(magazine.caliber))
-		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
-			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
-			to_chat(user, span_userdanger("[src] blows up in your face!"))
-			user.take_bodypart_damage(0,20)
-			explosion(src, 0, 0, 1, 1)
-			user.dropItemToGround(src)
-			return 0
-	..()
-
-/obj/item/gun/ballistic/revolver/flint/screwdriver_act(mob/living/user, obj/item/I)
-	if(..())
-		return TRUE
-	if(magazine.caliber == "38")
-		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//you know the drill
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return TRUE
-			magazine.caliber = ".357"
-			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
-			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
-	else
-		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//and again
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return
-			magazine.caliber = ".38"
-			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
-			desc = initial(desc)
-			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
-	return TRUE
 
 ///pistols
 
