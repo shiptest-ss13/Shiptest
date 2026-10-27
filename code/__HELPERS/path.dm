@@ -387,24 +387,17 @@
 	var/obj/climbed_over
 	var/diagonal = ISDIAGONALDIR(actual_dir)
 
-	for(var/obj/structure/window/iter_window in src)
-		if(!iter_window.CanAStarPass(ID, actual_dir))
-			if(!path_can_climb_over(iter_window, climbing, search) || (diagonal && climbed_over && climbed_over != iter_window))
-				return TRUE
-			climbed_over = iter_window
-
-	for(var/obj/machinery/door/window/iter_windoor in src)
-		if(!iter_windoor.CanAStarPass(ID, actual_dir, requester))
-			return TRUE
-
-	// anything else on an edge of the tile we're leaving that stops us stepping off that way, like a platform, a railing or an edge firelock
+	// any border object an edge of the tile we're leaving that stops us stepping off that way. One pass, as this gets called millions of times
 	for(var/obj/iter_border in src)
-		if(!(iter_border.flags_1 & ON_BORDER_1) || istype(iter_border, /obj/structure/window) || istype(iter_border, /obj/machinery/door/window))
+		if(!(iter_border.flags_1 & ON_BORDER_1) && !istype(iter_border, /obj/structure/window))
 			continue
-		if(!iter_border.CanAStarPass(ID, actual_dir, requester))
-			if(!path_can_climb_over(iter_border, climbing, search) || (diagonal && climbed_over && climbed_over != iter_border))
-				return TRUE
-			climbed_over = iter_border
+		if(iter_border.CanAStarPass(ID, actual_dir, requester))
+			continue
+		if(istype(iter_border, /obj/machinery/door/window))
+			return TRUE
+		if(!path_can_climb_over(iter_border, climbing, search) || (diagonal && climbed_over && climbed_over != iter_border))
+			return TRUE
+		climbed_over = iter_border
 
 	var/reverse_dir = get_dir(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)

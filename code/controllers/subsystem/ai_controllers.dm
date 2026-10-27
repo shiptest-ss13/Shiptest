@@ -32,6 +32,7 @@ SUBSYSTEM_DEF(ai_controllers)
 		ai_sensors[sensor_type] = new sensor_type
 
 /datum/controller/subsystem/ai_controllers/fire(resumed)
+	clear_ai_tick_caches() // so they don't hold onto anything deleted since they were last asked for
 	var/list/watched_levels = list() // whether there's anyone alive on each virtual z-level, worked out once each fire
 	for(var/datum/ai_controller/ai_controller as anything in active_ai_controllers)
 		var/virtual_level = "[ai_controller.pawn?.virtual_z()]"

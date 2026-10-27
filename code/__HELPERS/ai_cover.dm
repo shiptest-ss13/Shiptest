@@ -105,7 +105,7 @@
 		previous = line_turf
 	return TRUE
 
-// the turfs within range of center, instead of range() which gives everything including the turf
+// the turfs within range of center, instead of range() which gives everything including the turf. RANGE_TURFS, for helpers that load before game.dm defines it
 /proc/ai_turfs_in_range(turf/center, range)
 	return block(
 		locate(max(center.x - range, 1), max(center.y - range, 1), center.z),
@@ -189,7 +189,12 @@
 	var/turf/our_turf = get_turf(mover)
 	if(!our_turf)
 		return null
-	var/list/seen_from_danger = out_of_sight ? view(get_dist(danger, our_turf) + range, danger) : null
+	// as a lookup, since view() gives every atom in sight and we'd otherwise scan all of them per candidate
+	var/list/seen_from_danger
+	if(out_of_sight)
+		seen_from_danger = list()
+		for(var/turf/seen_turf in view(get_dist(danger, our_turf) + range, danger))
+			seen_from_danger[seen_turf] = TRUE
 	// nearest first by how far we'd go to get there, round or over what's in the way, so we only look further when there's nowhere close
 	var/list/reachable = ai_reachable_turfs(mover, range)
 	var/list/candidates = list()
@@ -200,7 +205,7 @@
 			break
 		if(candidate == exclude || !ai_can_take_spot(mover, candidate))
 			continue
-		if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && (candidate in seen_from_danger)))
+		if(!is_spot_safe_from(candidate, danger) || (seen_from_danger && seen_from_danger[candidate]))
 			continue
 		if(prefer == AI_HIDE_NEAREST)
 			return candidate
@@ -362,13 +367,13 @@
 // the cover between spot and threat, if there is any, so threat's shots at spot would mostly hit it, while ours from spot go over it. for sandbags and flipped tables and such
 /proc/cover_between(turf/spot, atom/threat)
 	var/turf/threat_turf = get_turf(threat)
-	var/list/line = get_line(spot, threat_turf)
-	if(length(line) < 3)
+	if(!threat_turf || get_dist(spot, threat_turf) < 2)
 		return null // they're right next to it, so cover's no use
 	var/towards = get_dir(spot, threat_turf)
 	for(var/obj/thing in spot)
 		if((thing.flags_1 & ON_BORDER_1) && (thing.dir & towards) && ai_is_cover(thing))
 			return thing
+	var/list/line = get_line(spot, threat_turf) // only now, as it's the costly part
 	var/turf/in_front = line[2]
 	for(var/obj/thing in in_front)
 		if(!ai_is_cover(thing))

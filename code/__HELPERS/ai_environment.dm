@@ -117,12 +117,15 @@
 	for(var/obj/structure/hazard/hazard in spot)
 		if(ai_harmful_hazard(hazard, mover, through_fire))
 			return TRUE
-	if(!through_fire && !ai_is_fireproof(mover))
-		if((locate(/obj/effect/hotspot) in spot) || (locate(/obj/effect/abstract/turf_fire) in spot))
+	if(!through_fire)
+		var/on_fire = (locate(/obj/effect/hotspot) in spot) || (locate(/obj/effect/abstract/turf_fire) in spot)
+		if(!on_fire)
+			for(var/mob/living/burning in spot)
+				if(burning != mover && burning != ignoring && burning.on_fire)
+					on_fire = TRUE // for burning objects or bodies
+					break
+		if(on_fire && !ai_is_fireproof(mover)) // last, as working out the outfit is expensive
 			return TRUE
-		for(var/mob/living/burning in spot)
-			if(burning != mover && burning != ignoring && burning.on_fire)
-				return TRUE // for burning objects or bodies
 	for(var/obj/item/mine/mine in spot)
 		if(mine.armed && !mine.invisibility)
 			return TRUE

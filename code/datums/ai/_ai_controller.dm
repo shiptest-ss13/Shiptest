@@ -25,6 +25,8 @@ multiple modular subtrees with behaviors
 	var/list/planned_behaviors
 	///Blackboard keys that make us plan again straight away when something changes them, rather than waiting until we'd next plan anyway
 	var/list/interrupt_keys
+	///TRUE while an interrupt_planning is queued, so several changes at once don't each make a timer
+	var/interrupt_queued = FALSE
 	///TRUE while we're working out a plan, so what we change while planning doesn't interrupt it
 	var/planning = FALSE
 	///plan and act less often if no one is in the virtual z-level
@@ -156,8 +158,9 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/run_subtrees(list/subtrees, seconds_per_tick)
 	var/list/plan_record = current_plan_record
 	var/indent = ""
-	for(var/level in 1 to plan_depth)
-		indent += "&nbsp;&nbsp;"
+	if(plan_record)
+		for(var/level in 1 to plan_depth)
+			indent += "&nbsp;&nbsp;"
 	for(var/datum/ai_planning_subtree/subtree as anything in subtrees)
 		if(subtree.required_conditions || subtree.blocking_conditions)
 			var/current_conditions = get_conditions()
@@ -582,7 +585,7 @@ multiple modular subtrees with behaviors
 		clear_blackboard_key(BB_BASIC_MOB_HEARD_TARGET)
 	clear_blackboard_key(BB_BASIC_MOB_SEARCH_CALLED_OUT)
 	wake_up()
-	if(ai_can_see(pawn, target, blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+	if(ai_can_see(pawn, target, AI_VISION_RANGE(src)))
 		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME) // they're right there, so spot them the usual way
 		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)
 		return TRUE
@@ -806,6 +809,8 @@ multiple modular subtrees with behaviors
  * * key - A blackboard key
  */
 /datum/ai_controller/proc/clear_blackboard_key(key)
+	if(isnull(blackboard[key]))
+		return // already clear, so nothing listening needs telling, and an interrupt key would replan for nothing
 	CLEAR_AI_DATUM_TARGET(blackboard[key], key)
 	blackboard[key] = null
 	conditions_stale = TRUE
@@ -908,12 +913,14 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/get_pawn_conditions()
 	. = NONE
 	var/mob/living/basic/basic_pawn = pawn
-	if(istype(basic_pawn) && (!is_environment_safe_for(basic_pawn, get_turf(basic_pawn)) || is_ai_hazard_turf(get_turf(basic_pawn), basic_pawn)))
-		. |= AI_CONDITION_UNSAFE_SPOT
-	else if(istype(basic_pawn) && !ai_immune_to_tear_gas(basic_pawn) && is_ai_irritant_smoke(get_turf(basic_pawn)))
-		. |= AI_CONDITION_UNSAFE_SPOT // in tear gas, so we get out of it
-	else if(istype(basic_pawn) && !(basic_pawn.movement_type & FLYING) && is_ai_swimming_water(get_turf(basic_pawn)) && !passing_through_water())
-		. |= AI_CONDITION_UNSAFE_SPOT // stood about in deep water, slowed and in the open, rather than crossing it on our way somewhere, so we get out
+	if(istype(basic_pawn))
+		var/turf/our_turf = get_turf(basic_pawn)
+		if(!is_environment_safe_for(basic_pawn, our_turf) || is_ai_hazard_turf(our_turf, basic_pawn))
+			. |= AI_CONDITION_UNSAFE_SPOT
+		else if(!ai_immune_to_tear_gas(basic_pawn) && is_ai_irritant_smoke(our_turf))
+			. |= AI_CONDITION_UNSAFE_SPOT // in tear gas, so we get out of it
+		else if(!(basic_pawn.movement_type & FLYING) && is_ai_swimming_water(our_turf) && !passing_through_water())
+			. |= AI_CONDITION_UNSAFE_SPOT // stood about in deep water, slowed and in the open, rather than crossing it on our way somewhere, so we get out
 	if(pawn.GetComponent(/datum/component/ranged_attacks))
 		. |= AI_CONDITION_HAS_RANGED_ATTACK
 	var/datum/component/ai_magazine/magazine = pawn.GetComponent(/datum/component/ai_magazine)
@@ -960,15 +967,17 @@ multiple modular subtrees with behaviors
 /// Plans again straight away when one of our interrupt_keys changes, rather than waiting until we'd next plan anyway, so we react to things like a target turning up or getting shot at once
 /datum/ai_controller/proc/on_interrupt_key_changed(datum/source)
 	SIGNAL_HANDLER
-	if(planning || ai_status != AI_STATUS_ON)
-		return // we're planning already, so it's being taken into account
-	addtimer(CALLBACK(src, PROC_REF(interrupt_planning)), 0, TIMER_UNIQUE) // once whatever changed it is done, and once for several changes at once
+	if(planning || interrupt_queued || ai_status != AI_STATUS_ON)
+		return // we're planning already, or about to, so it's being taken into account
+	interrupt_queued = TRUE
+	addtimer(CALLBACK(src, PROC_REF(interrupt_planning)), 0) // once whatever changed it is done, and once for several changes at once
 
 /**
  * Plans again now, because something important's changed. Plans even if what we're doing would normally keep us from planning,
  * so anything that no longer makes sense gets dropped, rather than carrying on until it finishes
  */
 /datum/ai_controller/proc/interrupt_planning()
+	interrupt_queued = FALSE
 	if(QDELETED(pawn) || ai_status != AI_STATUS_ON || !able_to_run())
 		return
 	AI_LOG_DECISION(src, "something changed, so planning again now")

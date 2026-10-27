@@ -84,8 +84,7 @@
 		),
 	)
 
-	// the Supercollider, stimmed up and half feral, in it for the hurting
-
+// the Supercollider, stimmed up and half feral, in it for the hurting
 /datum/ai_callout_set/human/ramzi/supercollider
 	lines = list(
 		AI_CALLOUT_IDLE = list("So quiet... so BORING.", "Need something to break.", "Hah... hah...", "Come on, come on, someone come by...", "Hands won't stop shaking..."),
@@ -112,6 +111,15 @@
 		AI_CALLOUT_STATUS_OK = list("Barely felt it!", "More! I want more!", "Hah! Nothing!"),
 		AI_CALLOUT_STATUS_BAD = list("Hah... still... standing...", "Leaking... feels... good...", "More... still more..."),
 		AI_CALLOUT_COVERING = list("Go! I'll break anything that moves!", "Go on, leave them to me!", "Mine while you're busy!"),
+	)
+	solo_lines = list(
+		AI_CALLOUT_SPOTTED = list("There you are!", "Ha!", "Mine, mine!", "Come here! Come here!", "Oh, you'll do nicely!"),
+		AI_CALLOUT_HEARD_GUNFIRE = list("Oooh, this'll be fun!", "I hear you!", "Ooooh, fireworks!"),
+		AI_CALLOUT_PUSHING = list("Here I come!", "Coming for you!", "RAAAH!!!", "MOTHERFUCKER!"),
+		AI_CALLOUT_GRENADE = list("Oooh, a loud one!", "Fireworks!", "Haha, boom!"),
+		AI_CALLOUT_WARY = list("Ooooh, you're fun!", "Give me a challenge! Come on!", "Hah! Go on, bite!"),
+		AI_CALLOUT_FLANKING = list("Other way in! Hah!", "Round the side... round the side...", "Can't hide from this side!"),
+		AI_CALLOUT_HOLDING = list("Come to me... come on...", "Waiting... waiting...", "I can hear you breathing..."),
 	)
 
 // the New Gorlex official run off with the Ramzi: some NGR training, but an ensign at heart, who's mostly watched fights through bodycams
@@ -230,7 +238,6 @@
 		AI_MORALE_BROKEN = list(
 			AI_CALLOUT_RAISING_ALARM = list("They're here, help!", "Get over here, now!"),
 			AI_CALLOUT_HURT = list("Get me away, taking fire!", "Get the medic if they're still alive!"),
-			AI_CALLOUT_RELOADING = list("I'm empty! Cover me, damn it!"),
 			AI_CALLOUT_ALLY_DOWN = list("Another one gone! Get to cover!", "They're butchering us!"),
 		),
 	)
@@ -248,7 +255,6 @@
 		AI_CALLOUT_TARGET_DOWN = list("They're on the floor!", "One down!", "Down you go!", "They're crawling!"),
 		AI_CALLOUT_TARGET_KILLED = list("We got one!", "You owe me a share!", "That's what you get!", "Hah! I got one!", "Dibs on their gear!"),
 		AI_CALLOUT_ALLY_DOWN = list("Oh, shit!", "Man down!", "Shit, they're dead!", "Do I get their gear after this?", "We lost someone!"),
-		AI_CALLOUT_LOST_THEM = list("Where'd the coward go?!", "Running won't save you!", "Come out, come out!", "Hiding won't help!"),
 		AI_CALLOUT_HOLDING = list("Let them come to us!", "Stay put!", "I'll hold here!", "I'm staying here, thanks!"),
 		AI_CALLOUT_SUPPRESSING = list("Gonna keep them down!", "Keeping them down!", "Uhh, shred them!", "Laying some cover!"),
 		AI_CALLOUT_DEATH_RATTLE = list("Nobody's... taking me alive...", "I'm... sorry...", "Never earned... anything...", "Wasn't... worth... it...", "Damn... you..."),
@@ -258,7 +264,6 @@
 		AI_CALLOUT_FALLING_BACK = list("Back off!", "Too close!", "Get off me!", "Go away!"),
 		AI_CALLOUT_WARY = list("Watch it, this one bites!", "Keep your heads down, please!", "They aren't soft!", "This one's strong, guys!"),
 		AI_CALLOUT_EMBOLDENED = list("They're breaking! Let's go!", "They're weak! Push!", "Run them down!", "They're done!", "We've got this!"),
-		AI_CALLOUT_TAUNT = list("Nobody's coming to save you!", "If you can't keep it, it isn't yours!", "Come on, then!", "FUCK YOU!!", "The strong take, the weak bleed!", "Scream for me!"),
 		AI_CALLOUT_MELEE = list("Bleed for me!", "I'll gut you!", "Squeal!", "Stay down, damnit!", "Get out!", "This'll hurt!"),
 		AI_CALLOUT_BROKEN = list("I'm out, I'm out!!", "Every one for themselves!", "Holy shit, run!", "Run! They're too strong!", "Not worth the cut! Run!", "Save your own skin!"),
 		AI_CALLOUT_RALLIED = list("Let's get them!", "We're still in this!", "Get back in there!", "Quit running, we're not done!"),
@@ -267,7 +272,6 @@
 		AI_CALLOUT_ALL_CLEAR = list("Oh, I've got this!", "I think we're clear!", "They're all gone, I think!", "Did I earn a share?"),
 		AI_CALLOUT_GOT_AWAY = list("They're gone!", "They ran off!", "They'll be back, I think!"),
 		AI_CALLOUT_GETTING_UP = list("They're getting up!", "They aren't dead!", "They're still alive!", "Someone help, they're still alive!"),
-		AI_CALLOUT_RAISING_ALARM = list("Up! Fresh meat's here!", "Get up, we've got visitors!", "Wake up, idiots, they're here!", "On your feet, there's killing to do!"),
 		AI_CALLOUT_BREACHING = list("Breaking that!", "Getting that out of the way!", "Here's Ramzi!", "Smashing through!"),
 		AI_CALLOUT_CHECK_IN = list("Still good?", "You okay?", "You hit?", "Can you still shoot?"),
 		AI_CALLOUT_STATUS_OK = list("Okay, I think!", "Still standing!", "I'm fine!", "Still in it!"),
@@ -290,7 +294,6 @@
 	morale_lines = list(
 		AI_MORALE_BROKEN = list(
 			AI_CALLOUT_RAISING_ALARM = list("They're right behind me!", "Help! They're on me!", "Guys! Help!"),
-			AI_CALLOUT_ALLY_DOWN = list("Another one gone! Run!", "They're butchering us!"),
 		),
 		AI_MORALE_EMBOLDENED = list(
 			AI_CALLOUT_TAUNT = list("Who's next?!", "I've got this!"),

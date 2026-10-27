@@ -248,7 +248,7 @@
 	if(!ai_controller)
 		if(noncombatant)
 			ai_controller = /datum/ai_controller/basic_controller/human/noncombatant
-		else if(casing_type || projectile_type || fires_flames)
+		else if(has_ranged_attack())
 			var/ranged_controller = pick_ranged_controller()
 			if(isnull(holds_post))
 				holds_post = !wander && ranged_controller == /datum/ai_controller/basic_controller/human/ranged/marksman // a rifleman put somewhere to stand, like a bunker, is there to hold it
@@ -312,7 +312,7 @@
 		mobility = pick_mobility()
 	var/obj/item/melee_weapon = get_melee_weapon()
 	// fighting up close with something light, like a knife, we keep up the pressure by sidestepping around them between blows
-	var/light_melee_fighter = !noncombatant && !(casing_type || projectile_type || fires_flames) && melee_weapon && !has_heavy_melee_weapon(melee_weapon)
+	var/light_melee_fighter = !noncombatant && !has_ranged_attack() && melee_weapon && !has_heavy_melee_weapon(melee_weapon)
 	if(!holds_post && (dodging || light_melee_fighter || mobility == AI_MOBILITY_HIGH))
 		AddComponent(/datum/component/ai_dodging, dodge_chance, sidesteps, mobility == AI_MOBILITY_HIGH ? 50 : 25)
 	if(callout_set || (length(on_aggro_say) && aggro_say_chance))
@@ -321,26 +321,24 @@
 
 /mob/living/basic/human/proc/setup_ai_blackboard()
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
-	if(isnull(melee_reckless) && !noncombatant && !(casing_type || projectile_type || fires_flames))
+	if(isnull(melee_reckless) && !noncombatant && !has_ranged_attack())
 		melee_reckless = prob(AI_MELEE_RECKLESS_CHANCE)
 	apply_ai_vars()
 	if(holds_post)
 		var/turf/post = get_turf(src)
 		if(post && !is_bare_space(post))
 			ai_controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, post) // post holders go back to their spawn post
-	if(ispath(grenade_type, /obj/item/grenade) && grenade_count > 0)
-		ai_controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_TYPE, grenade_type)
-		ai_controller.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenade_count)
+	apply_grenades()
 	var/obj/item/gun/gun_type = get_gun_type()
 	if(gun_type && initial(gun_type.zoomable) && initial(gun_type.zoom_amt) >= DMR_ZOOM)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_SCOPE_ZOOM, initial(gun_type.zoom_amt))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_SCOPE_VIEW, AI_PLAYER_VIEW_RADIUS + initial(gun_type.zoom_out_amt))
 	if(mob_spawner && spawner_has_jetpack(mob_spawner))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
-	if(!casing_type && !projectile_type)
+	if(!has_gun())
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_FLANK_PRIORITY, 0) // melee and flamers, the archetypes on the blackboard are for who flanks first with a gun
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_MOBILITY, mobility)
-	if(mobility == AI_MOBILITY_HIGH && (casing_type || projectile_type))
+	if(mobility == AI_MOBILITY_HIGH && has_gun())
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_HIT_AND_RUN, TRUE) // dart in for a few shots, then back off and come again
 	if(!r_hand && !l_hand)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_SHOVES_WHEN_CORNERED, TRUE) // nothing to swing, so we push them away to get room to run
@@ -349,6 +347,15 @@
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_PREFERS_MELEE, TRUE) // a blade as well as a gun, so up close we'd rather use that
 	if(!wander || holds_post)
 		QDEL_NULL(ai_controller.idle_behavior)
+
+
+// puts our grenades on the blackboard, or takes them off if we've none to throw
+/mob/living/basic/human/proc/apply_grenades()
+	if(ispath(grenade_type, /obj/item/grenade) && grenade_count > 0)
+		ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADE_TYPE, grenade_type)
+		ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenade_count)
+	else
+		ai_controller?.clear_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT)
 
 // proc for putting our vars onto the blackboard, so we can use it both at spawn and when rebuilding AI
 /mob/living/basic/human/proc/apply_ai_vars()
@@ -376,7 +383,7 @@
 	if(isnull(retreat) && !isnull(engage_distance))
 		retreat = 0
 	// commander stay back ok
-	var/ranged_commander = is_commander && (casing_type || projectile_type || fires_flames)
+	var/ranged_commander = is_commander && has_ranged_attack()
 	if(ranged_commander)
 		var/usual_retreat = retreat
 		if(isnull(usual_retreat))
@@ -489,11 +496,7 @@
 			return TRUE
 		if(NAMEOF(src, grenade_type), NAMEOF(src, grenade_count))
 			. = ..()
-			if(ispath(grenade_type, /obj/item/grenade) && grenade_count > 0)
-				ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADE_TYPE, grenade_type) // so a mob that already exists can throw them
-				ai_controller?.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenade_count)
-			else
-				ai_controller?.clear_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT)
+			apply_grenades() // so a mob that already exists can throw them
 			return
 		if(NAMEOF(src, aim_zone_weights), NAMEOF(src, settled_aim_zone_weights), NAMEOF(src, aim_accuracy_mod))
 			. = ..()

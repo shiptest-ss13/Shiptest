@@ -40,11 +40,15 @@
 	var/has_shot = has_clear_shot(living_pawn, target)
 	if(has_shot && (distance < fight_range[1] || distance > fight_range[2]))
 		return // closing in or backing off
-	var/urgent = !has_shot || (ai_is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
+	var/waiting = world.time < controller.blackboard[BB_BASIC_MOB_NEXT_REPOSITION]
+	var/search_failed_recently = world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]
+	var/urgent = !has_shot
+	if(!urgent && !(waiting && search_failed_recently)) // the costly part, so only when it'd change what we do
+		urgent = (ai_is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
 	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it
-	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_REPOSITION] && (!urgent || world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]))
+	if(waiting && (!urgent || search_failed_recently))
 		if(!has_shot)
 			work_towards_firing_line(controller, target, distance) // we looked just now and there was nowhere, so keep at it
 		return
@@ -88,10 +92,10 @@
 	var/to_target_y = their_turf.y - our_turf.y
 	var/to_target_length = max(1, sqrt(to_target_x ** 2 + to_target_y ** 2))
 	for(var/turf/open/candidate in RANGE_TURFS(step_ranges[get_mobility(controller)], our_turf))
-		if(candidate == our_turf || !ai_can_take_spot(living_pawn, candidate))
+		if(candidate == our_turf)
 			continue
 		var/candidate_distance = get_dist(candidate, their_turf)
-		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2])
+		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2] || !ai_can_take_spot(living_pawn, candidate))
 			continue
 		if(!can_walk_straight_to(living_pawn, candidate) || get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue

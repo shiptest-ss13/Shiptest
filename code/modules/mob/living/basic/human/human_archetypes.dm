@@ -64,14 +64,6 @@
 		BB_BASIC_MOB_HIT_AND_RUN = TRUE,
 		BB_BASIC_MOB_FLANK_PRIORITY = 4,
 	)
-	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
-		/datum/ai_planning_subtree/group/cover,
-		/datum/ai_planning_subtree/flank,
-		/datum/ai_planning_subtree/fighting_cover/when_outmatched,
-		/datum/ai_planning_subtree/search_lost_target/human,
-		AI_HUMAN_RANGED_PLANNING_CLOSING,
-	)
 
 /datum/ai_planning_subtree/fighting_cover/when_outmatched
 	fights_from_cover_unprovoked = FALSE
@@ -109,54 +101,22 @@
 		BB_BASIC_MOB_FLANK_PRIORITY = 0,
 	)
 	planning_subtrees = list(
-		/datum/ai_planning_subtree/flee_explosives,
-		/datum/ai_planning_subtree/seek_safe_environment,
-		/datum/ai_planning_subtree/put_out_fire,
-		/datum/ai_planning_subtree/pat_out_burning_ally,
-		/datum/ai_planning_subtree/clear_friendly_fire,
-		/datum/ai_planning_subtree/investigate_box,
-		/datum/ai_planning_subtree/break_post,
-		/datum/ai_planning_subtree/return_home/post,
-		/datum/ai_planning_subtree/call_allies,
-		/datum/ai_planning_subtree/order_push,
-		/datum/ai_planning_subtree/throw_grenade,
-		/datum/ai_planning_subtree/group/cover,
+		AI_HUMAN_POST_PLANNING_OPENING,
 		/datum/ai_planning_subtree/fighting_cover,
 		/datum/ai_planning_subtree/reposition/broken_post,
 		/datum/ai_planning_subtree/search_lost_target/post,
-		/datum/ai_planning_subtree/wait_out_unreachable/ranged,
-		/datum/ai_planning_subtree/tactical_reload,
-		/datum/ai_planning_subtree/taunt,
-		/datum/ai_planning_subtree/melee_when_adjacent,
-		/datum/ai_planning_subtree/basic_ranged_attack_subtree/human,
-		/datum/ai_planning_subtree/idle_chatter,
+		AI_HUMAN_POST_PLANNING_CLOSING,
 	)
 
 // an emplaced gun, like an HMG nest, that pins down anyone behind cover and fires blind where they went
 /datum/ai_controller/basic_controller/human/ranged/post/support_gunner
 	planning_subtrees = list(
-		/datum/ai_planning_subtree/flee_explosives,
-		/datum/ai_planning_subtree/seek_safe_environment,
-		/datum/ai_planning_subtree/put_out_fire,
-		/datum/ai_planning_subtree/pat_out_burning_ally,
-		/datum/ai_planning_subtree/clear_friendly_fire,
-		/datum/ai_planning_subtree/investigate_box,
-		/datum/ai_planning_subtree/break_post,
-		/datum/ai_planning_subtree/return_home/post,
-		/datum/ai_planning_subtree/call_allies,
-		/datum/ai_planning_subtree/order_push,
-		/datum/ai_planning_subtree/throw_grenade,
-		/datum/ai_planning_subtree/group/cover,
+		AI_HUMAN_POST_PLANNING_OPENING,
 		/datum/ai_planning_subtree/sequence/suppress_dug_in,
 		/datum/ai_planning_subtree/fighting_cover,
 		/datum/ai_planning_subtree/reposition/broken_post,
 		/datum/ai_planning_subtree/search_lost_target/post/suppress,
-		/datum/ai_planning_subtree/wait_out_unreachable/ranged,
-		/datum/ai_planning_subtree/tactical_reload,
-		/datum/ai_planning_subtree/taunt,
-		/datum/ai_planning_subtree/melee_when_adjacent,
-		/datum/ai_planning_subtree/basic_ranged_attack_subtree/human,
-		/datum/ai_planning_subtree/idle_chatter,
+		AI_HUMAN_POST_PLANNING_CLOSING,
 	)
 
 // home is anywhere within our post radius

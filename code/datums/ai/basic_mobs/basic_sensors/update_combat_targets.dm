@@ -81,11 +81,9 @@
 
 // turrets and mechas on z_level, worked out once a tick for everyone looking, rather than each of us going through every one there is
 /datum/ai_sensor/update_combat_targets/proc/get_machines_on_z(z_level)
-	var/static/list/machines_by_z = list()
-	var/static/cache_time = -1
-	if(cache_time != world.time)
-		machines_by_z.Cut()
-		cache_time = world.time
+	var/list/machines_by_z = ai_tick_cache("machines_by_z")
+	if(!machines_by_z["built"])
+		machines_by_z["built"] = TRUE
 		for(var/list/machines as anything in list(GLOB.porta_turrets, GLOB.mechas_list))
 			for(var/atom/machine as anything in machines)
 				var/turf/machine_turf = get_turf(machine)

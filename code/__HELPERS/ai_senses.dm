@@ -40,11 +40,7 @@
 
 // hearers(range, target), worked out once a tick for each target and range, as several AI looking at the same someone in the same tick would otherwise each work out the same thing
 /proc/ai_cached_hearers(atom/target, range)
-	var/static/list/hearers_cache = list()
-	var/static/cache_time = -1
-	if(cache_time != world.time)
-		hearers_cache.Cut()
-		cache_time = world.time
+	var/list/hearers_cache = ai_tick_cache("hearers")
 	var/key = "[REF(target)]-[range]"
 	var/list/cached = hearers_cache[key]
 	if(cached && cached[1] == target.loc)

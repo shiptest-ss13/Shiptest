@@ -30,13 +30,27 @@
 /proc/ai_is_ally(mob/living/source, mob/living/victim)
 	return victim == source || source.faction_check_mob(victim)
 
+GLOBAL_LIST_EMPTY(ai_tick_caches)
+GLOBAL_VAR_INIT(ai_tick_cache_time, -1)
+
+// a list kept under cache_name for the rest of this tick, for working something out once for every AI asking. Emptied the first time it's asked for on a later tick, and at the start of each SSai_controllers fire, so it doesn't hold onto anything deleted since while every AI is asleep
+/proc/ai_tick_cache(cache_name)
+	if(GLOB.ai_tick_cache_time != world.time)
+		clear_ai_tick_caches()
+	. = GLOB.ai_tick_caches[cache_name]
+	if(isnull(.))
+		. = list()
+		GLOB.ai_tick_caches[cache_name] = .
+
+/proc/clear_ai_tick_caches()
+	GLOB.ai_tick_caches.Cut()
+	GLOB.ai_tick_cache_time = world.time
+
 // the AI-controlled mobs on z_level, awake or asleep, worked out once a tick for everyone asking, rather than each of us going through everything in range(). Don't change the list it gives
 /proc/get_ai_mobs_on_z(z_level)
-	var/static/list/mobs_by_z = list()
-	var/static/cache_time = -1
-	if(cache_time != world.time)
-		mobs_by_z.Cut()
-		cache_time = world.time
+	var/list/mobs_by_z = ai_tick_cache("mobs_by_z")
+	if(!mobs_by_z["built"])
+		mobs_by_z["built"] = TRUE
 		var/list/controllers = SSai_controllers.active_ai_controllers.Copy()
 		for(var/virtual_level in SSai_controllers.sleeping_ai_by_virtual_level)
 			controllers += SSai_controllers.sleeping_ai_by_virtual_level[virtual_level]
@@ -49,11 +63,7 @@
 
 // ours within range of source, awake and AI-controlled. Asked a lot, by morale, callouts, orders and the like, so worked out once a tick for each of us and range
 /proc/get_ai_allies_in_range(mob/living/source, range)
-	var/static/list/allies_by_asker = list()
-	var/static/cache_time = -1
-	if(cache_time != world.time)
-		allies_by_asker.Cut()
-		cache_time = world.time
+	var/list/allies_by_asker = ai_tick_cache("allies_by_asker")
 	var/asker_key = "[REF(source)]|[range]"
 	var/list/allies = allies_by_asker[asker_key]
 	if(isnull(allies))

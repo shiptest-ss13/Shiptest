@@ -47,10 +47,18 @@
 			return attachment
 	return gun_type
 
+// fires anything at all, flames included
+/mob/living/basic/human/proc/has_ranged_attack()
+	return casing_type || projectile_type || fires_flames
+
+// fires bullets or beams, so not a flamer
+/mob/living/basic/human/proc/has_gun()
+	return casing_type || projectile_type
+
 /mob/living/basic/human/proc/get_execution_style()
 	if(get_execution_blade())
 		return AI_EXECUTION_BLADE
-	if((casing_type || projectile_type) && !fires_flames)
+	if(has_gun() && !fires_flames)
 		return AI_EXECUTION_GUN
 	return null
 
@@ -67,7 +75,7 @@
 	if(fires_flames)
 		AddComponent(/datum/component/ranged_attacks/flamethrower, projectile_sound = projectile_sound, cooldown_time = ranged_cooldown)
 		return
-	if(!casing_type && !projectile_type)
+	if(!has_gun())
 		return
 	var/obj/item/gun/gun_type = get_gun_type()
 	var/shot_spread = spread

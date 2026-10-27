@@ -27,16 +27,12 @@
 	if(!our_turf || !their_turf)
 		return
 	var/atom/blocker = get_shot_blocker(our_turf, their_turf, pass_flags = NONE) // the first solid thing on a straight line to them
-	if(!isobj(blocker) || breaking_would_vent(basic_mob, blocker) || !hits_to_break_through(basic_mob, blocker))
+	if(!isobj(blocker) || breaking_would_vent(basic_mob, blocker) || !ai_hits_to_break_through(basic_mob, blocker, max_hits))
 		return // a wall, nothing we can break in good time, or a window onto space we've no suit for
 	AI_LOG_DECISION(controller, "smash_towards_target: no way round to [target], breaking through [blocker] at [AREACOORD(blocker)]")
 	controller.set_blackboard_key(BB_BASIC_MOB_SMASH_TARGET, blocker)
 	controller.queue_behavior(/datum/ai_behavior/smash_obstacle, BB_BASIC_MOB_SMASH_TARGET)
 	return SUBTREE_RETURN_FINISH_PLANNING
-
-// how many of our hits it'd take to break blocker
-/datum/ai_planning_subtree/smash_towards_target/proc/hits_to_break_through(mob/living/basic/basic_mob, obj/blocker)
-	return ai_hits_to_break_through(basic_mob, blocker, max_hits)
 
 // goes up to what's in the way and hits it until it's gone
 /datum/ai_behavior/smash_obstacle

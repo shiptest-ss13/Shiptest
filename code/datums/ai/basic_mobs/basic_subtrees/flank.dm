@@ -138,7 +138,10 @@
 	for(var/mob/living/someone in hearers(ally_range, living_pawn))
 		if(someone == living_pawn || someone == target || ai_is_downed(someone) || !targetting_datum.can_attack(living_pawn, someone))
 			continue
-		if(!get_shot_blocker(our_turf, get_turf(someone), pass_flags = pass_flags))
+		var/turf/their_turf = get_turf(someone)
+		if(ai_too_dark_to_see(living_pawn, someone, their_turf, get_dist(our_turf, their_turf), ally_range))
+			continue // in sight, but too dark to make out from here
+		if(!get_shot_blocker(our_turf, their_turf, pass_flags = pass_flags))
 			clear_targets += someone
 	return length(clear_targets) ? get_nearest_of(living_pawn, clear_targets) : null
 

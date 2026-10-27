@@ -187,6 +187,7 @@
 	icon_state = "frontiersmanpounder"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	in_hardsuit = TRUE
 
 /mob/living/basic/human/frontier/ranged/surgeon
 	name = "Frontiersman Sawbones"
@@ -501,6 +502,8 @@
 	maximum_survivable_temperature = 1000
 	icon_state = "frontiersmanrangedminigun_space"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	in_hardsuit = TRUE
 
 /mob/living/basic/human/frontier/ranged/trooper/heavy/internals
 	icon_state = "frontiersmanrangedminigun_mask"

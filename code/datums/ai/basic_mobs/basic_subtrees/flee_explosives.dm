@@ -110,13 +110,9 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	var/turf/enemy_turf = QDELETED(enemy) ? null : get_turf(enemy)
 	if(!our_turf || !explosive_turf)
 		return ..()
-	var/away_angle = get_angle(explosive_turf, our_turf)
 	var/turf/best
 	var/best_distance_from_enemy = -1
-	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
-		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination, controller.pawn) || get_dist(destination, explosive_turf) < flee_distance)
-			continue // somewhere we couldn't stand, or not clear of it
+	for(var/turf/destination as anything in ai_straight_escape_spots(controller.pawn, our_turf, explosive_turf, flee_distance))
 		if(!enemy_turf)
 			best = destination
 			break // nobody to keep away from, so the straightest way out
@@ -155,12 +151,17 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(!our_turf || !explosive_turf)
 		return TRUE
+	return length(ai_straight_escape_spots(controller.pawn, our_turf, explosive_turf, flee_distance)) > 0
+
+// get straight line escape route first
+/proc/ai_straight_escape_spots(mob/living/mover, turf/our_turf, turf/explosive_turf, flee_distance)
+	. = list()
 	var/away_angle = get_angle(explosive_turf, our_turf)
 	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
 		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(destination && destination != our_turf && !destination.density && !is_ai_hazard_turf(destination, controller.pawn) && get_dist(destination, explosive_turf) >= flee_distance)
-			return TRUE
-	return FALSE
+		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination, mover) || get_dist(destination, explosive_turf) < flee_distance)
+			continue // somewhere we couldn't stand, or not clear of it
+		. += destination
 
 // whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4. Or something loose it's in, like a sack, which goes back sack and all
 /datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive, time_before_throw = 0)
@@ -207,7 +208,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		var/reach = info[1] + (explosive == fled_explosive ? safety_margin : 1)
 		if(distance > reach || distance >= nearest_distance)
 			continue
-		if(distance > AI_EXPLOSIVE_NOTICE_RANGE && !ai_can_see(controller.pawn, outermost, controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+		if(distance > AI_EXPLOSIVE_NOTICE_RANGE && !ai_can_see(controller.pawn, outermost, AI_VISION_RANGE(controller)))
 			continue
 		nearest = list(explosive, info[1])
 		nearest_distance = distance
@@ -261,6 +262,10 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		return FALSE
 	var/our_z = thing.z
 	for(var/atom/explosive as anything in GLOB.ai_live_explosives)
+		var/list/info = GLOB.ai_live_explosives[explosive]
+		if(QDELETED(explosive) || world.time > info[2] + 1 SECONDS)
+			GLOB.ai_live_explosives -= explosive // gone off, or defused and thrown away, so it's not held onto until someone flees
+			continue
 		var/turf/explosive_turf = get_turf(explosive)
 		if(explosive_turf?.z == our_z)
 			return TRUE

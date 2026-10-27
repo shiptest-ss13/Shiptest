@@ -5,6 +5,7 @@
 ///Put your movement behavior in here!
 /datum/ai_movement/basic_avoidance/process(seconds_per_tick)
 	for(var/datum/ai_controller/controller as anything in moving_controllers)
+		// Check if this controller can actually run, so we don't chase people with corpses
 		if(!controller.able_to_run())
 			stop_moving_towards(controller)
 			continue
@@ -13,12 +14,6 @@
 		COOLDOWN_START(controller, movement_cooldown, controller.movement_delay)
 
 		var/atom/movable/movable_pawn = controller.pawn
-
-		// Check if this controller can actually run, so we don't chase people with corpses
-		if(!controller.able_to_run())
-			walk(controller.pawn, 0) //stop moving
-			controller.CancelActions()
-			continue
 
 		var/can_move = TRUE
 

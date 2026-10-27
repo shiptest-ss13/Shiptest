@@ -67,14 +67,7 @@
 	var/list/standing = get_standing_enemies(controller)
 	if(!length(standing))
 		return FALSE // whoever we're fighting is out of sight, so we can't tell where'd be covered from them
-	var/turf/our_turf = get_turf(executioner)
-	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
-	var/list/downed_nearby = list()
-	for(var/mob/living/carbon/human/downed in hearers(AI_EXECUTION_RANGE, executioner))
-		if(!ai_is_downed(downed) || downed.stat == DEAD || !isturf(downed.loc) || HAS_TRAIT(downed, TRAIT_AI_EXECUTION_CLAIMED) || !targetting_datum?.can_attack(executioner, downed))
-			continue
-		if(!ai_too_dark_to_see(executioner, downed, get_turf(downed), get_dist(our_turf, downed), AI_EXECUTION_RANGE))
-			downed_nearby += downed
+	var/list/downed_nearby = get_unclaimed_downed(controller, executioner)
 	while(length(downed_nearby))
 		var/mob/living/carbon/human/victim = get_nearest_of(executioner, downed_nearby)
 		downed_nearby -= victim
@@ -82,14 +75,31 @@
 		if(!spot)
 			continue
 		AI_LOG_DECISION(controller, "execute_downed: [victim] is down beside [spot], out of reach of the rest of theirs, taking the chance")
-		controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, victim)
-		controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
-		controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, victim, world.time) // not news, they're plain to see
-		controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN, victim)
-		controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN_SINCE, world.time - AI_CONFIRM_DOWN_TIME) // and plain to see they're down
+		switch_to_victim(controller, victim)
 		controller.set_blackboard_key(BB_BASIC_MOB_EXECUTION_SPOT, spot)
 		return TRUE
 	return FALSE
+
+// those of theirs down in sight within AI_EXECUTION_RANGE that nobody's seeing to yet
+/datum/ai_planning_subtree/execute_downed/proc/get_unclaimed_downed(datum/ai_controller/controller, mob/living/executioner)
+	var/turf/our_turf = get_turf(executioner)
+	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
+	. = list()
+	for(var/mob/living/carbon/human/downed in hearers(AI_EXECUTION_RANGE, executioner))
+		if(!ai_is_downed(downed) || downed.stat == DEAD || !isturf(downed.loc) || HAS_TRAIT(downed, TRAIT_AI_EXECUTION_CLAIMED))
+			continue
+		if(ai_too_dark_to_see(executioner, downed, get_turf(downed), get_dist(our_turf, downed), AI_EXECUTION_RANGE))
+			continue
+		if(!targetting_datum?.can_attack(executioner, downed))
+			continue
+		. += downed
+
+/datum/ai_planning_subtree/execute_downed/proc/switch_to_victim(datum/ai_controller/controller, mob/living/victim)
+	controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, victim)
+	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
+	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, victim, world.time) // not news, they're plain to see
+	controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN, victim)
+	controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN_SINCE, world.time - AI_CONFIRM_DOWN_TIME) // and plain to see they're down
 
 // a spot beside victim we could stand on that none of standing could shoot at or are close to, the nearest to us, or null if there's none
 /datum/ai_planning_subtree/execute_downed/proc/find_covered_spot(mob/living/executioner, mob/living/victim, list/standing)
@@ -118,37 +128,32 @@
 // those of theirs still on their feet we can see
 /datum/ai_planning_subtree/execute_downed/proc/get_standing_enemies(datum/ai_controller/controller)
 	var/mob/living/pawn = controller.pawn
+	var/turf/our_turf = get_turf(pawn)
+	var/vision_range = AI_VISION_RANGE(controller)
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	. = list()
-	for(var/mob/living/someone in hearers(controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE, pawn))
-		if(someone != pawn && !ai_is_downed(someone) && targetting_datum?.can_attack(pawn, someone))
-			. += someone
+	for(var/mob/living/someone in hearers(vision_range, pawn))
+		if(someone == pawn || ai_is_downed(someone) || !targetting_datum?.can_attack(pawn, someone))
+			continue
+		var/turf/their_turf = get_turf(someone)
+		if(ai_too_dark_to_see(pawn, someone, their_turf, get_dist(our_turf, their_turf), vision_range))
+			continue // in sight, but too dark to make out from here
+		. += someone
 
 // whoever we're on is being seen to by one of ours, so the nearest other downed one we can see that nobody's seeing to becomes ours instead. TRUE if there was one
 /datum/ai_planning_subtree/execute_downed/proc/switch_to_unclaimed(datum/ai_controller/controller)
 	var/mob/living/basic/human/executioner = controller.pawn
 	if(!istype(executioner) || !ready_to_execute(controller, executioner))
 		return FALSE
-	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	var/mob/living/carbon/human/nearest
 	var/nearest_distance = INFINITY
-	for(var/mob/living/carbon/human/downed in hearers(AI_EXECUTION_RANGE, executioner))
-		if(!ai_is_downed(downed) || downed.stat == DEAD || !isturf(downed.loc) || HAS_TRAIT(downed, TRAIT_AI_EXECUTION_CLAIMED))
-			continue
+	for(var/mob/living/carbon/human/downed as anything in get_unclaimed_downed(controller, executioner))
 		var/distance = get_dist(executioner, downed)
-		if(ai_too_dark_to_see(executioner, downed, get_turf(downed), distance, AI_EXECUTION_RANGE))
-			continue // in sight, but too dark to make out from here
-		if(!targetting_datum?.can_attack(executioner, downed))
-			continue // one of ours, or someone we've no quarrel with
 		if(distance < nearest_distance)
 			nearest = downed
 			nearest_distance = distance
 	if(!nearest)
 		return FALSE
 	AI_LOG_DECISION(controller, "execute_downed: [controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]] is being seen to, going for [nearest] instead")
-	controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, nearest)
-	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time)
-	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, nearest, world.time) // not news, they're plain to see
-	controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN, nearest)
-	controller.set_blackboard_key(BB_BASIC_MOB_CONFIRMING_DOWN_SINCE, world.time - AI_CONFIRM_DOWN_TIME)
+	switch_to_victim(controller, nearest)
 	return TRUE

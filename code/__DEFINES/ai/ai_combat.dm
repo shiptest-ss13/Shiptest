@@ -33,6 +33,28 @@
 	/datum/ai_planning_subtree/smash_when_stuck, \
 	/datum/ai_planning_subtree/basic_melee_attack_subtree, \
 	/datum/ai_planning_subtree/idle_chatter
+///For those holding a post: the same opening, but they never leave their post to investigate a noise, fall back, or execute anyone
+#define AI_HUMAN_POST_PLANNING_OPENING \
+	/datum/ai_planning_subtree/flee_explosives, \
+	/datum/ai_planning_subtree/seek_safe_environment, \
+	/datum/ai_planning_subtree/put_out_fire, \
+	/datum/ai_planning_subtree/pat_out_burning_ally, \
+	/datum/ai_planning_subtree/clear_friendly_fire, \
+	/datum/ai_planning_subtree/investigate_box, \
+	/datum/ai_planning_subtree/break_post, \
+	/datum/ai_planning_subtree/return_home/post, \
+	/datum/ai_planning_subtree/call_allies, \
+	/datum/ai_planning_subtree/order_push, \
+	/datum/ai_planning_subtree/throw_grenade, \
+	/datum/ai_planning_subtree/group/cover
+///For those holding a post: the ranged closing, minus moving about and smashing out of corners
+#define AI_HUMAN_POST_PLANNING_CLOSING \
+	/datum/ai_planning_subtree/wait_out_unreachable/ranged, \
+	/datum/ai_planning_subtree/tactical_reload, \
+	/datum/ai_planning_subtree/taunt, \
+	/datum/ai_planning_subtree/melee_when_adjacent, \
+	/datum/ai_planning_subtree/basic_ranged_attack_subtree/human, \
+	/datum/ai_planning_subtree/idle_chatter
 
 // How a mob looks for a target it's lost sight of
 ///Walk to where we last saw them
@@ -45,6 +67,8 @@
 // What a mob sees and hears, and how long it keeps someone in mind
 ///How long after losing sight of whoever we were fighting we still count as mid-fight, so someone ducking behind cover isn't a stranger again
 #define AI_FIGHT_MEMORY (10 SECONDS)
+///How far controller's mob can see, as it's set on its blackboard or the default
+#define AI_VISION_RANGE(controller) (controller?.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE)
 ///Whether controller's mob had eyes on someone it was fighting within memory
 #define AI_RECENTLY_SAW_ENEMY(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME] < (memory))
 // The least of its usual range a sound carries for AI, even with no air

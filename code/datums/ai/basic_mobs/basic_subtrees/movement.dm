@@ -3,8 +3,6 @@
 
 	blocking_conditions = AI_CONDITION_REPOSITIONING
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
-	//if TRUE, we back off for hit_and_run_duration after getting hit_and_run_shots shots or a melee hit in, then go back in
-	var/hit_and_run = FALSE
 	//with hit_and_run, how many shots we fire up close before backing off. A melee hit always sends us back
 	var/hit_and_run_shots = 2
 	//with hit_and_run, how many tiles further out than our usual range we back off to, and for how long
@@ -26,7 +24,7 @@
 	var/furthest = fight_range[2]
 	if(AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED))
 		furthest = min(furthest, closest + 1)
-	if((hit_and_run || controller.blackboard[BB_BASIC_MOB_HIT_AND_RUN]) && should_back_off(controller, distance, furthest))
+	if(controller.blackboard[BB_BASIC_MOB_HIT_AND_RUN] && should_back_off(controller, distance, furthest))
 		closest = furthest + hit_and_run_distance
 		furthest = closest
 	if(distance < closest)

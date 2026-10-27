@@ -409,7 +409,7 @@ GLOBAL_LIST_EMPTY(ai_called_down)
 	var/called_at = GLOB.ai_called_down[callout]
 	if(!isnull(called_at) && world.time - called_at < 2 SECONDS)
 		return // whoever put them there said so, or another of us who saw it did
-	if(!ai_can_see(basic_mob, victim, basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+	if(!ai_can_see(basic_mob, victim, AI_VISION_RANGE(basic_mob.ai_controller)))
 		return
 	last_downed_callout = callout
 	ai_mark_called_down(callout) // one of us to say it, whether or not the line comes up
@@ -604,8 +604,10 @@ GLOBAL_LIST_EMPTY(ai_called_down)
 		sound_the_alarm(alarm_range) // only a commander's, or a sentry spotting someone far off would have everyone run out across open ground to them
 		basic_mob.ai_controller.set_blackboard_key(BB_BASIC_MOB_NEXT_ALARM_SOUNDED, world.time + AI_COMMANDER_ALARM_COOLDOWN)
 	var/list/allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
+	var/list/listening_callouts = get_allies_in_earshot(allies_in_earshot)
 	var/is_chatter = ai_callout_is_chatter(event)
-	for(var/datum/component/ai_callouts/listener as anything in get_allies_in_earshot(allies_in_earshot) + src)
+	note_line_heard(is_chatter)
+	for(var/datum/component/ai_callouts/listener as anything in listening_callouts)
 		listener.note_line_heard(is_chatter)
 	var/static/list/good_news = list(
 		AI_CALLOUT_TARGET_DOWN = TRUE,
@@ -620,7 +622,7 @@ GLOBAL_LIST_EMPTY(ai_called_down)
 			ai_try_embolden(ally)
 	else if(event == AI_CALLOUT_LOST_THEM || event == AI_CALLOUT_RELOADING)
 		prompt_answer(event)
-	share_line_cooldown(event, allies_in_earshot)
+	share_line_cooldown(event, listening_callouts)
 	return TRUE
 
 // one of our lines for event that carries an alarm, like with a whistle in it, see GLOB.ai_callout_sounds, or if carries_alarm is FALSE, one that doesn't. Null if we've none
@@ -814,8 +816,8 @@ GLOBAL_LIST_EMPTY(ai_called_down)
 	else
 		INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), message, null, spans)
 
-// puts event on cooldown for us and everyone in earshot, so the group doesn't all say it at once. allies_in_earshot is get_ai_allies_in_earshot() if we've already got it to hand
-/datum/component/ai_callouts/proc/share_line_cooldown(event, list/allies_in_earshot)
+// puts event on cooldown for us and everyone in earshot, so the group doesn't all say it at once. listening_callouts is get_allies_in_earshot() if we've already got it to hand
+/datum/component/ai_callouts/proc/share_line_cooldown(event, list/listening_callouts)
 	// how long a callout goes on cooldown for a group
 	var/static/list/group_line_cooldowns = list(
 		AI_CALLOUT_SPOTTED = 15 SECONDS,
@@ -875,7 +877,7 @@ GLOBAL_LIST_EMPTY(ai_called_down)
 	if(!group_cooldown)
 		return
 	LAZYSET(line_cooldowns, event, world.time + group_cooldown) // so we don't repeat ourselves either
-	for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot(allies_in_earshot))
+	for(var/datum/component/ai_callouts/ally as anything in listening_callouts || get_allies_in_earshot())
 		LAZYSET(ally.line_cooldowns, event, world.time + group_cooldown)
 
 /// whether thing is someone worth calling out like a person: humans and human NPCs, anyone a player's controlling, and mechs, as there's someone inside

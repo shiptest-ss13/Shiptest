@@ -40,16 +40,16 @@
 	var/pass_flags = ranged_attack.get_pass_flags()
 	var/recently_shot_at = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_at_memory
 	var/atom/blocker = get_cached_shot_blocker(controller.pawn, target)
-	// they're dug in behind cover, or we're getting hurt through something we can't shoot back through, like lasers through glass
-	var/entrenched = cover_between(their_turf, our_turf) || (recently_shot_at && blocker && !worth_shooting_through(controller.pawn, blocker, projectile_type))
 	if(cover_between(our_turf, target) && !blocker && our_turf != controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
 		// already as good as it gets, and remember it so you don't immediately wander off
 		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, our_turf)
 		AI_LOG_DECISION(controller, "fighting_cover: already behind cover from [target], fighting from here")
 		return
-	if(!entrenched && !recently_shot_at && !fights_from_cover_unprovoked)
-		return
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_COVER_SEARCH])
+		return
+	// they're dug in behind cover, or we're getting hurt through something we can't shoot back through, like lasers through glass
+	var/entrenched = cover_between(their_turf, our_turf) || (recently_shot_at && blocker && !worth_shooting_through(controller.pawn, blocker, projectile_type))
+	if(!entrenched && !recently_shot_at && !fights_from_cover_unprovoked)
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_COVER_SEARCH, world.time + search_interval)
 	var/turf/cover_spot = find_fighting_cover_spot(controller.pawn, target, search_range, pass_flags, controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
