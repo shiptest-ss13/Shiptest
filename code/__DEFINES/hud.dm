@@ -201,6 +201,7 @@
 #define ui_ghost_reenter_corpse "SOUTH:6,CENTER-1:24"
 #define ui_ghost_teleport "SOUTH:6,CENTER:24"
 #define ui_ghost_pai "SOUTH: 6, CENTER+1:24"
+#define ui_ghost_ship_select "SOUTH:6,CENTER+2:24"
 
 // Defines relating to action button positions
 
