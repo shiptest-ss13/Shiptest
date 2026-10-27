@@ -586,6 +586,12 @@
 	if(!can_see(our_turf, target, scan_range))
 		return FALSE
 
+	var/what_we_are_gonna_hit = get_firing_line_object(our_turf, target, lethal ? lethal_projectile : stun_projectile)
+	if (ismob(what_we_are_gonna_hit) && in_faction(what_we_are_gonna_hit)) // No friendly fire
+		return FALSE
+	else if(!(turret_flags & TURRET_FLAG_SHOOT_WALLS) && iswallturf(what_we_are_gonna_hit))
+		return FALSE
+
 	setDir(get_dir(our_turf, target))
 
 	if(!manual_control)
@@ -608,14 +614,12 @@
 
 	//Shooting Code:
 	var/turf/target_turf = get_turf(target)
-	// Set damemolition mod to 0 unless it's a ruin turret or the mob is inside an obj
-	var/destroy_walls = turret_flags & TURRET_FLAG_SHOOT_WALLS || isobj(target.loc)
 	for(var/i = 1 to burst_size)
-		addtimer(CALLBACK(src, PROC_REF(turret_fire), our_turf, target_turf, destroy_walls), burst_delay * (i - 1))
+		addtimer(CALLBACK(src, PROC_REF(turret_fire), our_turf, target_turf), burst_delay * (i - 1))
 
 	return TRUE
 
-/obj/machinery/porta_turret/proc/turret_fire(our_turf, target_turf, destroy_walls)
+/obj/machinery/porta_turret/proc/turret_fire(our_turf, target_turf)
 	var/obj/projectile/shot
 	//any lethaling turrets drain 2x the power and use a different projectile
 	if(lethal)
@@ -630,7 +634,6 @@
 	shot.preparePixelProjectile(target_turf, our_turf)
 	shot.firer = src
 	shot.fired_from = src
-	shot.demolition_mod *= destroy_walls
 	shot.fire()
 	return shot
 

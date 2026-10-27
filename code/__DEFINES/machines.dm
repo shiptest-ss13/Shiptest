@@ -158,8 +158,6 @@
 #define TURRET_FLAG_SHOOT_HUMANS (1<<3)
 /// Will shoot at silicons
 #define TURRET_FLAG_SHOOT_SILICONS (1<<4)
-/// Will destroy walls in the way of the target
-#define TURRET_FLAG_SHOOT_WALLS (1<<5)
 /// Will shoot at any kind of mob
 #define TURRET_FLAG_SHOOT_ALLMOBS TURRET_FLAG_SHOOT_FAUNA|TURRET_FLAG_SHOOT_HUMANS|TURRET_FLAG_SHOOT_SILICONS
 
@@ -167,6 +165,8 @@
 #define TURRET_FLAG_SHOOT_NONFACTION (1<<5)
 /// Will only shoot at things that ARE in the turret's set faction
 #define TURRET_FLAG_SHOOT_SPECIFIC_FACTION (1<<6)
+/// Will destroy walls in the way of the target
+#define TURRET_FLAG_SHOOT_WALLS (1<<7)
 /// Will totally ignore targets' factions - the same as not setting the above two flags
 //#define TURRET_FLAG_SHOOT_ALLFACTION (1<<8)
 
