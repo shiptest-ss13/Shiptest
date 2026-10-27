@@ -20,8 +20,8 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	mag_type = /obj/item/ammo_box/magazine/m44
 
-/obj/item/storage/guncase/pistol/detective
-	gun_type = /obj/item/gun/ballistic/revolver/detective
+/obj/item/storage/guncase/pistol/flint
+	gun_type = /obj/item/gun/ballistic/revolver/flint
 	mag_type = /obj/item/ammo_box/c38
 
 /obj/item/storage/guncase/pistol/shadow
