@@ -9,6 +9,7 @@
 	speak_in = /datum/language/vox_pidgin
 	product_ads = "You can't win if you don't play!;Over three hundred winners last week!;Feeling lucky?;Play! Win! Test your luck today!"
 	default_price = 50
+	restock_hourly = TRUE
 	light_mask = "lotto-light-mask"
 
 /obj/machinery/vending/lottery/examine(mob/examiner)

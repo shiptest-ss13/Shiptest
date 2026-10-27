@@ -9,6 +9,7 @@
 	refill_canister = /obj/item/vending_refill/disposable_guns
 	product_ads = "Affordable self defense!;Great for bounty hunters!;You know you want one!;Better safe than sorry!"
 	default_price = 100
+	restock_hourly = TRUE
 	light_mask = "disposagun-light-mask"
 
 /obj/machinery/vending/disposable_guns/update_overlays()
