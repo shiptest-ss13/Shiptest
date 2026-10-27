@@ -34,6 +34,9 @@
 	var/list/settled_aim_zone_weights
 	/// How quickly the AI's shots stray from the zone they're aimed at with range, multiplying the projectile's accuracy_mod, see /obj/projectile/proc/get_accuracy(). Lower stays on target further
 	var/aim_accuracy_mod = 1
+	/// The gun whose muzzle flash and light we show when we fire, as a type, or null for none, like for something spitting acid
+	var/obj/item/gun/flash_gun
+	var/obj/effect/muzzle_flash/muzzle_flash
 
 /datum/component/ranged_attacks/Initialize(
 	casing_type,
@@ -45,7 +48,8 @@
 	spread = 2,
 	first_contact_spread = 0,
 	aim_zone_weights,
-	settled_aim_zone_weights
+	settled_aim_zone_weights,
+	flash_gun
 )
 	. = ..()
 	if(!isbasicmob(parent))
@@ -59,6 +63,7 @@
 	src.first_contact_spread = first_contact_spread
 	src.aim_zone_weights = aim_zone_weights || AI_AIM_ZONES_DEFAULT
 	src.settled_aim_zone_weights = settled_aim_zone_weights
+	src.flash_gun = flash_gun
 
 	if(!needs_ammo)
 		return
@@ -70,6 +75,10 @@
 		return
 	src.burst_shots = burst_shots
 	src.burst_intervals = burst_intervals
+
+/datum/component/ranged_attacks/Destroy(force)
+	QDEL_NULL(muzzle_flash)
+	return ..()
 
 /datum/component/ranged_attacks/RegisterWithParent()
 	. = ..()
@@ -107,12 +116,14 @@
 		if(aim_zone && casing.BB)
 			casing.BB.accuracy_mod *= aim_accuracy_mod
 		playsound(firer, projectile_sound, 100, TRUE)
+		flash_muzzle(target)
 		casing.fire_casing(target, firer, null, null, null, aim_zone, rand(-shot_spread, shot_spread), firer)
 		casing.on_eject(firer)
 
 	else if(projectile_type)
 		var/obj/projectile/P = new projectile_type(startloc)
 		playsound(firer, projectile_sound, 100, TRUE)
+		flash_muzzle(target)
 		P.starting = startloc
 		P.firer = firer
 		P.fired_from = firer
@@ -125,6 +136,26 @@
 		P.preparePixelProjectile(target, firer, spread = rand(-shot_spread, shot_spread))
 		P.fire()
 		alert_ai_to_gunfire(firer, SUPPRESSED_NONE, FALSE, firer) // casings do this themselves
+
+// muzzleflash for basicmobs too!
+/datum/component/ranged_attacks/proc/flash_muzzle(atom/target)
+	var/mob/living/basic/firer = parent
+	if(!flash_gun || QDELETED(target))
+		return
+	muzzle_flash ||= new(null, initial(flash_gun.muzzleflash_iconstate))
+	if(muzzle_flash.applied)
+		return // still showing from the last shot of a burst
+	new /obj/effect/dummy/lighting_obj(get_turf(firer), initial(flash_gun.light_range), null, initial(flash_gun.light_color), 3)
+	muzzle_flash.aim(Get_Angle(get_turf(firer), target))
+	firer.vis_contents += muzzle_flash
+	muzzle_flash.applied = TRUE
+	addtimer(CALLBACK(src, PROC_REF(remove_muzzle_flash)), 0.2 SECONDS)
+
+/datum/component/ranged_attacks/proc/remove_muzzle_flash()
+	var/mob/living/basic/firer = parent
+	if(!QDELETED(firer) && muzzle_flash)
+		firer.vis_contents -= muzzle_flash
+	muzzle_flash?.applied = FALSE
 
 // player controlled nonsense
 /datum/component/ranged_attacks/proc/try_player_volley(mob/living/basic/firer, atom/target)

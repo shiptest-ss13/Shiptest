@@ -94,7 +94,7 @@
 		if(!ispath(casing) || initial(casing.pellets) <= 1)
 			volley_shots = max(volley_shots, fire_pattern[1]) // not for shotguns, bursting would be horrifying
 
-	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, volley_shots, volley_interval, ranged_cooldown, shot_spread, first_contact_spread)
+	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, volley_shots, volley_interval, ranged_cooldown, shot_spread, first_contact_spread, flash_gun = gun_type || /obj/item/gun)
 	apply_aim()
 	if(gun_type && get_gun_capacity(gun_type))
 		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading, if it's got rounds or charge to count

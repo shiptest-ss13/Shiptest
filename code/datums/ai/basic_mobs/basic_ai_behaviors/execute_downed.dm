@@ -118,6 +118,7 @@
 	if(SEND_SIGNAL(executioner, COMSIG_BASICMOB_PRE_RANGED_ATTACK, victim) & COMPONENT_CANCEL_RANGED_ATTACK)
 		return
 	playsound(executioner, executioner.projectile_sound, 100, TRUE)
+	flash_muzzle(executioner, victim)
 	announce_hit(executioner, victim)
 	spray_blood(executioner, victim)
 
@@ -138,6 +139,10 @@
 		return
 	victim.visible_message(span_danger("[victim] is hit by \a [proj_name] in the head!"), span_userdanger("You're hit by \a [proj_name] in the head!"), null, COMBAT_MESSAGE_RANGE)
 
+/datum/ai_behavior/execute_downed/proc/flash_muzzle(mob/living/basic/human/executioner, mob/living/carbon/human/victim)
+	var/datum/component/ranged_attacks/ranged_attack = executioner.GetComponent(/datum/component/ranged_attacks)
+	ranged_attack?.flash_muzzle(victim)
+
 // cosmetic blood since the damage is "faked"
 /datum/ai_behavior/execute_downed/proc/spray_blood(mob/living/basic/human/executioner, mob/living/carbon/human/victim)
 	if(!victim.blood_volume)
@@ -156,6 +161,7 @@
 		victim.visible_message(span_warning("[executioner] pulls the trigger!"), span_big(span_userdanger("[executioner] pulls the trigger!")))
 		tell_unseeing(victim, span_big(span_userdanger("A deafening crack, and then nothing.")))
 		playsound(executioner, executioner.projectile_sound, 100, TRUE)
+		flash_muzzle(executioner, victim)
 		alert_ai_to_gunfire(executioner, SUPPRESSED_NONE, FALSE, executioner)
 		announce_hit(executioner, victim)
 		var/list/pattern = get_gun_trigger_pattern(executioner.get_gun_type())
@@ -163,7 +169,8 @@
 			for(var/shot in 2 to pattern[1])
 				addtimer(CALLBACK(src, PROC_REF(fire_follow_up), WEAKREF(executioner), WEAKREF(victim)), (shot - 1) * pattern[2])
 	else
-		victim.visible_message(span_danger("[executioner] slits [victim]'s throat!"), span_big(span_userdanger("[executioner] slits your throat!")))
+		victim.visible_message(span_danger("[executioner] slits [victim]'s throat!"), blind_message = span_hear("You hear a sickening slash!"), ignored_mobs = victim)
+		victim.show_message(span_big(span_userdanger("[executioner] slits your throat!")), MSG_VISUAL)
 		tell_unseeing(victim, span_big(span_userdanger("The blade draws across, and everything fades.")))
 		playsound(victim, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 	spray_blood(executioner, victim)
