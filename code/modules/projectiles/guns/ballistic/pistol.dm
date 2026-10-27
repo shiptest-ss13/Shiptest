@@ -164,7 +164,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
 	name = "D-9 \"Temblor\""
-	desc = "An easily concealable derriger. It is rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations. Chambered in .357."
+	desc = "An easily concealable derriger. It was rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations. Chambered in .357."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
