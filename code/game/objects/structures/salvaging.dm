@@ -139,9 +139,9 @@
 		/obj/item/circuitboard/machine/autolathe = 25,
 
 		// lathe junk - what was jammed inside?
-		/obj/effect/spawner/random/salvage/autolathe_junk = 80,
-		/obj/effect/spawner/random/salvage/autolathe_junk = 30,
-		/obj/effect/spawner/random/salvage/autolathe_junk = 10,
+		/obj/effect/spawner/random/salvage/autolathe_junk = 95,
+		/obj/effect/spawner/random/salvage/autolathe_junk = 50,
+		/obj/effect/spawner/random/salvage/autolathe_junk = 50,
 
 		// lathe reserves - low value
 		/obj/item/stack/sheet/metal/five = 80,
@@ -357,7 +357,7 @@
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message(span_danger("You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!"))
 
-			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
+			new /mob/living/simple_animal/hostile/automated/boxer/crap(get_turf(src))
 
 /obj/structure/salvageable/server/safe
 	safe = TRUE
@@ -560,6 +560,7 @@
 	density = TRUE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	max_integrity = 400
+	integrity_failure = 0.25
 	armor = list("melee" = 30, "bullet" = 60, "laser" = 60, "energy" = 100, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
 	drag_slowdown = 2.5
 	color = "#c3a28a" // orange-ish
@@ -690,7 +691,7 @@
 
 // uncommon drop pool
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
-	var/roll = rand(1,100)
+	var/roll = rand(1,110)
 	switch(roll)
 		if(1 to 5)
 			// gaboon
@@ -769,10 +770,18 @@
 			// bockadam
 			new /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam(loc)
 			new /obj/item/ammo_box/magazine/m12g_bulldog(loc)
+		if(101 to 105)
+			// anode
+			new /obj/item/gun/energy/cybersun/anode(loc)
+			new /obj/item/stock_parts/cell/gun/cybersun(loc)
+		if(106 to 110)
+			// director
+			new /obj/item/gun/ballistic/cs_gauss/vector/export(loc)
+			new /obj/item/ammo_box/magazine/cs_gauss/rifle(loc)
 
 // rare drop pool
 /obj/structure/rusted_gun_safe/proc/drop_rare()
-	var/roll = rand(1,45)
+	var/roll = rand(1,50)
 	switch(roll)
 		if(1 to 5)
 			// invictus
@@ -811,6 +820,11 @@
 			// atelier
 			new /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon(loc)
 			new /obj/item/storage/box/ammo/ferrorods(loc)
+		if(46 to 50)
+			// opportunist
+			new /obj/item/gun/energy/cybersun/lorentz/opportunist(loc)
+			new /obj/item/stock_parts/cell/gun/cybersun(loc)
+
 
 // weird drop pool
 /obj/structure/rusted_gun_safe/proc/drop_weird()
@@ -823,6 +837,45 @@
 			new /obj/structure/rusted_gun_safe/matyroshka(loc)
 			visible_message(span_warning("Another safe falls out!"))
 
+// evil drop pool
+/obj/structure/rusted_gun_safe/proc/drop_evil()
+	playsound(src, 'sound/machines/chime.ogg', 100, FALSE, FALSE) // wuh oh
+	do_sparks(4, TRUE, src)
+	Shake(5, 5, 4 SECONDS)
+	visible_message(span_warning("Something stirs to life inside [src]!"))
+	addtimer(CALLBACK(src, PROC_REF(deploy_evil)), 4 SECONDS)
+
+// spawn our mob
+/obj/structure/rusted_gun_safe/proc/deploy_evil()
+	var/roll = rand(1,40)
+	switch(roll)
+		if(1 to 5)
+			// walkmine swarm
+			var/lmao = rand(1, 5)
+			for (var/i = 0, i < lmao, i++)
+				new /mob/living/simple_animal/hostile/automated/walkmine(loc)
+		if(6 to 10)
+			// temere-lito
+			new /mob/living/simple_animal/hostile/automated/rover/coalition/dmr(loc)
+		if(11 to 15)
+			// verefasa
+			new /mob/living/simple_animal/hostile/automated/agrav/cybersun(loc)
+		if(16 to 20)
+			// vi tripod
+			new /mob/living/simple_animal/hostile/automated/tripod/warra(loc)
+		if(21 to 25)
+			// boxer bap
+			playsound(src, 'sound/effects/bang.ogg', 100, FALSE, FALSE)
+			new /mob/living/simple_animal/hostile/automated/boxer/crap(loc)
+		if(26 to 30)
+			// quad rotor drone
+			new /mob/living/simple_animal/hostile/automated/quadrotor(loc)
+		if(31 to 35)
+			// hopper
+			new /mob/living/simple_animal/hostile/automated/hopper/coalition(loc)
+		if(36 to 40)
+			// hivebot
+			new /mob/living/basic/hivebot(loc)
 
 /obj/structure/rusted_gun_safe/proc/open_sesame()
 	open = TRUE
@@ -830,12 +883,15 @@
 	desc = "A long-abandoned gun safe. It has been broken into, exposing its contents to the world."
 	density = FALSE
 	spawn_loot()
+	spawn_extra_loot()
+
+/obj/structure/rusted_gun_safe/proc/spawn_extra_loot()
 	if(prob(10))
 		spawn_loot() // you may occasionally double-dip
 
 /obj/structure/rusted_gun_safe/proc/spawn_loot()
 	// handle the primary drop
-	var/rarity = rand(1, 101)
+	var/rarity = rand(1, 116)
 	switch(rarity)
 		if(1 to 60)
 			drop_common()
@@ -845,6 +901,8 @@
 			drop_rare()
 		if(101)
 			drop_weird()
+		if(102 to 116)
+			drop_evil()
 	// as well as secondary drops
 	if(prob(20))
 		new /obj/effect/spawner/random/entertainment/plushie(loc)
@@ -881,6 +939,11 @@
 	if(!open) // barely explosion resistant - use the mines!
 		open_sesame()
 
+/obj/structure/rusted_gun_safe/atom_break(damage_flag)
+	if(!open && !(flags_1 & NODECONSTRUCT_1))
+		open_sesame()
+	. = ..()
+
 // funny nested variant
 /obj/structure/rusted_gun_safe/matyroshka
 	name = "rusted gun safe...?"
@@ -893,3 +956,6 @@
 			visible_message(span_warning("Another safe falls out!"))
 		if(96 to 100)
 			drop_rare()
+
+/obj/structure/rusted_gun_safe/matyroshka/spawn_extra_loot()
+	return // no secondary drop chance to avoid safesplosion
