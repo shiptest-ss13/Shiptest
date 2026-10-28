@@ -530,7 +530,6 @@
 		list(fax_name = "IRMG Mothership", fax_id = "inteq", color = "yellow", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "black", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/clip
@@ -538,14 +537,12 @@
 		list(fax_name = "Confederated League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "black", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/indie
 	special_networks = list(
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "black", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/tricorp
@@ -555,7 +552,6 @@
 		list(fax_name = "Viligitas Interstellar High Command", fax_id = "vi", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "black", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/syndicate
@@ -563,7 +559,6 @@
 		list(fax_name = "Syndicate Coalition Coordination Center", fax_id = "syndicate", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/ngr
@@ -571,7 +566,6 @@
 		list(fax_name = "2nd Battlegroup High Command", fax_id = "ngr", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/suns
@@ -579,7 +573,6 @@
 		list(fax_name = "Student-Union Academic Headquarters", fax_id = "suns", color = "purple", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/cybersun
@@ -587,7 +580,6 @@
 		list(fax_name = "Cybersun Corporate", fax_id = "cybersun", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/hardliners
@@ -596,7 +588,6 @@
 		list(fax_name = "Cybersun Corporate", fax_id = "cybersun", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/solgov
@@ -604,7 +595,6 @@
 		list(fax_name = "Solarian Confederation Frontier Affairs", fax_id = "solgov", color = "teal", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/roumain
@@ -612,7 +602,6 @@
 		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 /obj/machinery/fax/pgf
@@ -620,7 +609,6 @@
 		list(fax_name = "PGF Military High Command", fax_id = "gezena", color = "olive", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-		list(fax_name = "Zohil Explorat Communications", fax_id = "zohil", color = "black", emag_needed = TRUE)
 	)
 
 
