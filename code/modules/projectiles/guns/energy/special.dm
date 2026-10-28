@@ -203,9 +203,9 @@
 
 /obj/item/gun/energy/printer
 	autowiki_hidden = TRUE //not a handheld weapon i dont want this i think
-	name = "integrated SAW-80 LMG"
-	desc = "A modified Hydra-80 SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
-	icon_state = "hydra_lmg"
+	name = "integrated SAW-90 LMG"
+	desc = "A modified Python SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
+	icon_state = "python"
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	default_ammo_type = /obj/item/stock_parts/cell/secborg
 	allowed_ammo_types = list(
