@@ -78,7 +78,9 @@
 	var/atom/current_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(current_target == shooter)
 		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE)
-			controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, shot_from) // a fresher idea of where they are
+			var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+			if(!last_known_turf || get_dist(last_known_turf, shot_from) > AI_SHOOTER_MOVED_DISTANCE)
+				controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, shot_from)
 			controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
 		return
 	if(!QDELETED(current_target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])

@@ -220,6 +220,8 @@
 #define AI_COMMANDER_GUARD_COOLDOWN (10 SECONDS)
 ///How long after its side saw one of theirs get shot before they'll react to seeing it shot again, see ai_witness_shooting()
 #define AI_WITNESS_COOLDOWN (5 SECONDS)
+///How far someone shooting at us from out of view has to have moved since their last shot before we change where we're heading for them
+#define AI_SHOOTER_MOVED_DISTANCE 3
 ///Cooldown until the next time a commander can sound the alarm with a callout that has an alarm range
 #define AI_COMMANDER_ALARM_COOLDOWN (60 SECONDS)
 

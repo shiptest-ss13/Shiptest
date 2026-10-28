@@ -72,6 +72,8 @@
 	SIGNAL_HANDLER
 	if(!jink_chance || !COOLDOWN_FINISHED(src, jink_cooldown) || !COOLDOWN_FINISHED(src, straight_run) || !prob(jink_chance))
 		return
+	if(projectile.homing)
+		return // it'd follow us across anyway, so the step only loses us ground
 	var/turf/shot_from = get_turf(projectile.starting)
 	if(!shot_from || !isturf(source.loc) || source.stat != CONSCIOUS || source.incapacitated())
 		return
@@ -82,9 +84,8 @@
 	var/shot_dir = get_dir(shot_from, source)
 	if(!shot_dir)
 		return
-	// if we can't go straight across, we go across and forward if we're closing in to hit them, or across and back if we fight from range
-	var/list/diagonals = source.GetComponent(/datum/component/ranged_attacks) ? list(45, -45) : list(135, -135)
-	for(var/angle in shuffle(list(90, -90)) + shuffle(diagonals))
+	var/list/angles = source.GetComponent(/datum/component/ranged_attacks) ? shuffle(list(90, -90)) + shuffle(list(45, -45)) : shuffle(list(135, -135))
+	for(var/angle in angles)
 		if(dodge_to(get_step(source, turn(shot_dir, angle))))
 			COOLDOWN_START(src, straight_run, straight_run_time)
 			break
