@@ -115,7 +115,8 @@
 /obj/machinery/firealarm/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()
 	if(prob(80))
-		if(A.fire)
+		var/area/our_area = get_area(src)
+		if(our_area.fire)
 			reset()
 		else
 			alarm()
