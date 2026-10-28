@@ -21,6 +21,8 @@
 	var/harmful = TRUE
 	/// String, used to determine the appearance of the bullet on the casing sprite if the casing is filled.
 	var/bullet_skin
+	// can the ammo cook off
+	var/can_cookoff = TRUE
 
 	/// The sound played when this ammo is fired by an energy gun.
 	var/fire_sound = null

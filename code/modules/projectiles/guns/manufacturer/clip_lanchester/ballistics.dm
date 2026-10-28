@@ -412,6 +412,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	manufacturer = MANUFACTURER_IMPORT
 
 	icon_state = "f4_indie"
 	item_state = "f4_indie"

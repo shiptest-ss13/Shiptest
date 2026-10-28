@@ -1,0 +1,13 @@
+author: Erikafox
+changes:
+  - {rscadd: '64 new greebles will spawn on ice worlds, with 6 contributions by madtankdriver
+      and yazym'}
+  - {rscadd: 'chronograph anomaly, chronograph anomaly chem'}
+  - {code_imp: some iceworld tile cleanup that I need to make a separate PR to 
+      finish up.}
+  - {code_imp: defines inventory flags as a bitfield}
+  - {code_imp: adds a type argument to /proc/do_sparks(...) to allow for 
+      quantum/blue/whatever sparks to be made w/ the proc.}
+  - {code_imp: adds an override to particle holders for static particle spawning}
+  - {rscadd: chronograph related fullscreen overlay}
+delete-after: true
