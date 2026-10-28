@@ -24,9 +24,7 @@ export const HydrogenExchange = (props, context) => {
               {' '}
               {credit_tax + '%'}
             </LabeledList.Item>
-            <LabeledList.Item
-              label='Current merits'
-            >
+            <LabeledList.Item label="Current merits">
               {' '}
               {merits}
             </LabeledList.Item>
