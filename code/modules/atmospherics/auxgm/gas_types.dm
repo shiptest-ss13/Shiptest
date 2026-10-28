@@ -68,7 +68,7 @@
 
 /datum/gas/plasma
 	id = GAS_PLASMA
-	specific_heat = 200
+	specific_heat = 100
 	molar_mass = 126
 	name = "Plasma"
 	gas_overlay = "plasma"
@@ -84,10 +84,6 @@
 			alert_type = /atom/movable/screen/alert/too_much_tox
 		)
 	)
-	fire_burn_rate = PLASMA_BURN_RATE_BASE // named when plasma fires were the only fires, surely
-	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
-	fire_products = FIRE_PRODUCT_PLASMA
-	enthalpy = FIRE_PLASMA_ENERGY_RELEASED // 3000000, 3 megajoules, 3000 kj
 
 	odor = GAS_ODOR_SMOG
 	odor_emotes = TRUE
@@ -120,7 +116,7 @@
 
 /datum/gas/tritium
 	id = GAS_TRITIUM
-	specific_heat = 10
+	specific_heat = 30
 	molar_mass = 6
 	name = "Tritium"
 	gas_overlay = "tritium"
@@ -169,7 +165,7 @@
 
 /datum/gas/freon
 	id = GAS_FREON
-	specific_heat = 600
+	specific_heat = 160
 	molar_mass = 408 // 2x plasma + 1x co2 + 1/3x bz
 	name = "Freon"
 	gas_overlay = "freon"
@@ -178,7 +174,7 @@
 
 /datum/gas/hydrogen
 	id = GAS_HYDROGEN
-	specific_heat = 10
+	specific_heat = 30
 	molar_mass = 2
 	name = "Hydrogen"
 	flags = GAS_FLAG_DANGEROUS

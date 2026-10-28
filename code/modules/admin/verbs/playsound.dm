@@ -162,7 +162,7 @@ GLOBAL_VAR_INIT(web_sound_cooldown, 0)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Internet Sound")
 
 /client/proc/play_web_sound()
-	set category = "Admin.Fun"
+	set category = "Event.Fun"
 	set name = "Play Internet Sound"
 	if(!check_rights(R_SOUND))
 		return
