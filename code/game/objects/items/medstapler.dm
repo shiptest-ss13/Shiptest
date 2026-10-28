@@ -132,11 +132,6 @@
 	cart = new /obj/item/med_staple_cart
 	update_appearance()
 
-// subtype that starts half full, for med pouches
-/obj/item/med_stapler/full/half/Initialize()
-	. = ..()
-	cart.qty = 20
-
 // STAPLE CARTRIDGE //
 /obj/item/med_staple_cart
 	name = "medical staple cartridge"
