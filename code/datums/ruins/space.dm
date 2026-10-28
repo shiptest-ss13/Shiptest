@@ -13,13 +13,6 @@
 	description = "An overgrown facility, home to an inactive singularity and many plants"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 
-/datum/map_template/ruin/space/spacemall
-	id = "spacemall"
-	suffix = "spacemall.dmm"
-	name = "Space Mall"
-	description = "An old shopping centre, owned by a former member of Makosso-Warra's board of directors.."
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-
 /datum/map_template/ruin/space/scrapstation
 	id = "scrapstation"
 	suffix = "scrapstation.dmm"

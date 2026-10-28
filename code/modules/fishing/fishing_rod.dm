@@ -23,8 +23,8 @@
 	var/ui_description = "A classic fishing rod, with no special qualities."
 
 	var/obj/item/bait
-	var/obj/item/fishing_line/line
-	var/obj/item/fishing_hook/hook
+	var/obj/item/fishing_line/line = /obj/item/fishing_line
+	var/obj/item/fishing_hook/hook = /obj/item/fishing_hook
 
 	/// Currently hooked item for item reeling
 	var/obj/item/currently_hooked_item
@@ -40,6 +40,32 @@
 
 	var/default_line_color = "gray"
 
+	///Prevents spamming the line casting, without affecting the player's click cooldown.
+	COOLDOWN_DECLARE(casting_cd)
+
+/obj/item/fishing_rod/Initialize(mapload)
+	. = ..()
+	if(ispath(bait))
+		set_slot(new bait(src), ROD_SLOT_BAIT)
+	if(ispath(hook))
+		set_slot(new hook(src), ROD_SLOT_HOOK)
+	if(ispath(line))
+		set_slot(new line(src), ROD_SLOT_LINE)
+	update_appearance()
+
+/obj/item/fishing_rod/examine(mob/user)
+	. = ..()
+	var/list/equipped_stuff = list()
+	if(line)
+		equipped_stuff += "[icon2html(line, user)] <b>[line.name]</b>"
+	if(hook)
+		equipped_stuff += "[icon2html(hook, user)] <b>[hook.name]</b>"
+	if(bait)
+		equipped_stuff += "[icon2html(bait, user)] <b>[bait]</b>"
+	if(length(equipped_stuff))
+		. += span_notice("It has \a [english_list(equipped_stuff)] equipped.")
+	if(!bait)
+		. += span_warning("It doesn't have a bait attached to it. Fishing will be more tedious!")
 
 /obj/item/fishing_rod/Destroy(force)
 	. = ..()
@@ -53,8 +79,8 @@
 
 /obj/item/fishing_rod/proc/consume_bait(atom/movable/reward)
 	if(bait)
-		QDEL_NULL(bait)
-		update_appearance()
+		qdel(bait)
+		update_icon()
 
 /obj/item/fishing_rod/attack_self(mob/user)
 	if(currently_hooked_item)
@@ -63,6 +89,7 @@
 /obj/item/fishing_rod/proc/reel(mob/user)
 	//Could use sound here for feedback
 	if(do_after(user, 1 SECONDS, currently_hooked_item))
+		playsound(src, pick('sound/items/reel/reel1.ogg', 'sound/items/reel/reel2.ogg', 'sound/items/reel/reel3.ogg', 'sound/items/reel/reel4.ogg', 'sound/items/reel/reel5.ogg',), 50, vary = FALSE)
 		// Should probably respect and used force move later
 		step_towards(currently_hooked_item, get_turf(src))
 		if(get_dist(currently_hooked_item,get_turf(src)) < 1)
@@ -136,19 +163,23 @@
 /obj/item/fishing_rod/proc/check_los(datum/beam/source)
 	SIGNAL_HANDLER
 	. = NONE
-
-	if(!isturf(source.origin) || !isturf(source.target) || !CheckToolReach(src, source.target, cast_range))
+	if(!CheckToolReach(src, source.target, cast_range))
 		SEND_SIGNAL(source, COMSIG_FISHING_LINE_SNAPPED) //Stepped out of range or los interrupted
 		return BEAM_CANCEL_DRAW
 
 /obj/item/fishing_rod/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 
+	if(!hook)
+		balloon_alert(user, "install a hook first!")
+		return
 	/// Reel in if able
 	if(currently_hooked_item)
 		reel(user)
 		return
-
+	if(!COOLDOWN_FINISHED(src, casting_cd))
+		return
+	COOLDOWN_START(src, casting_cd, 1 SECONDS)
 	/// If the line to whatever that is is clear and we're not already busy, try fishing in it
 	if(!casting && !currently_hooked_item && !proximity_flag && CheckToolReach(user, target, cast_range))
 		/// Annoyingly pre attack is only called in melee
@@ -160,7 +191,7 @@
 		cast_projectile.original = target
 		cast_projectile.fired_from = src
 		cast_projectile.firer = user
-		LAZYSET(cast_projectile.impacted, user, TRUE)
+		cast_projectile.impacted = list(user = TRUE)
 		cast_projectile.preparePixelProjectile(target, user)
 		cast_projectile.fire()
 
@@ -274,7 +305,7 @@
 				return FALSE
 	return TRUE
 
-/obj/item/fishing_rod/ui_act(action, list/params)
+/obj/item/fishing_rod/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return .
@@ -283,9 +314,7 @@
 		if("slot_action")
 			// Simple click with empty hand to remove, click with item to insert/switch
 			var/obj/item/held_item = user.get_active_held_item()
-			if(held_item == src)
-				return
-			use_slot(params["slot"], user, held_item)
+			use_slot(params["slot"], user, held_item == src ? null : held_item)
 			return TRUE
 
 /// Ideally this will be replaced with generic slotted storage datum + display
@@ -332,6 +361,18 @@
 					line = new_item
 		user.put_in_hands(current_item)
 		update_appearance()
+		playsound(src, 'sound/items/click.ogg', 50, TRUE)
+///assign an item to the given slot and its standard effects, while Exited() should handle unsetting the slot.
+/obj/item/fishing_rod/proc/set_slot(obj/item/equipment, slot)
+	switch(slot)
+		if(ROD_SLOT_BAIT)
+			bait = equipment
+		if(ROD_SLOT_HOOK)
+			hook = equipment
+		if(ROD_SLOT_LINE)
+			line = equipment
+		else
+			CRASH("set_slot called with an undefined slot: [slot]")
 
 
 /obj/item/fishing_rod/Exited(atom/movable/gone, direction)

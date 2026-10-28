@@ -30,6 +30,7 @@
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 90
+	ricochet_incidence_leeway = 75
 	reflectable = REFLECT_NORMAL
 
 /obj/projectile/beam/throw_atom_into_space()
@@ -110,6 +111,11 @@
 	damage = 40
 	speed = 1
 
+/obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
+	return BULLET_ACT_HIT
+
 /obj/projectile/beam/laser/clover
 	icon_state = "clover_pulse_light"
 	damage = 20
@@ -121,18 +127,29 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
 /obj/projectile/beam/laser/clover/smg
-	damage = 20
-	armour_penetration = 0
+	damage = 25
 
 /obj/projectile/beam/laser/clover/magnum
 	icon_state = "clover_pulse"
-	damage = 25
-	armour_penetration = 0
+	damage = 35
+	armour_penetration = 10
 
 /obj/projectile/beam/laser/clover/highpower
 	icon_state = "clover_pulse"
-	damage = 35
+	damage = 25
+	armour_penetration = 10
+
+/obj/projectile/beam/laser/clover/overcharge
+	icon_state = "clover_pulse_heavy"
+	damage = 40
 	armour_penetration = 0
+	speed = 0.6
+
+/obj/projectile/beam/laser/clover/overcharge/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,3,flame_range = 2, light_dam = 20, light_item_dam = 0)
+	return BULLET_ACT_HIT
+
 
 /obj/projectile/beam/laser/clover/shotgun
 	damage = 15
@@ -140,9 +157,9 @@
 
 	wound_bonus = -30
 
-	var/tile_dropoff = 2
+	var/tile_dropoff = 1
 	var/ap_dropoff = 5
-	var/ap_dropoff_cutoff = -40
+	var/ap_dropoff_cutoff = -20
 
 /obj/projectile/beam/laser/clover/shotgun/Range() //10% loss per tile = max range of 10, generally
 	..()
@@ -154,11 +171,6 @@
 		accuracy_mod += 0.3
 	if(damage < 0 && stamina < 0)
 		qdel(src)
-
-/obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
-	..()
-	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
-	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault
 	icon_state = "heavylaser"
@@ -219,6 +231,14 @@
 
 /obj/projectile/beam/weaker
 	damage = 10
+
+/obj/projectile/beam/chaff
+	icon_state = "sharplite_laser_light"
+	damage = 5
+	speed = 0.3
+	light_color = COLOR_BLUE_LIGHT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/weak/low_range
 	damage = 10

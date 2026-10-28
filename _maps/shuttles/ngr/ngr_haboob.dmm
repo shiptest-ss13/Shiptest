@@ -173,18 +173,17 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 9;
-	color = "#eeac2e"
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/suit_storage_unit/inherit/locked{
 	name = "Engineer's suit storage unit"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "cy" = (
@@ -274,13 +273,11 @@
 /area/ship/crew)
 "ec" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	color = "#eeac2e"
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning/orange,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "eh" = (
@@ -421,13 +418,6 @@
 /area/ship/cargo)
 "gn" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10;
-	color = "#eeac2e"
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -435,6 +425,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
@@ -784,9 +780,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4;
-	color = "#eeac2e"
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -1737,13 +1732,6 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/storage/backpack/industrial,
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#eeac2e"
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "cargo_wall";
 	req_access_txt = "10";
@@ -1752,6 +1740,12 @@
 /obj/item/storage/pouch/engi,
 /obj/item/clothing/shoes/magboots/syndie,
 /obj/item/clothing/suit/toggle/ngr,
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "xt" = (
@@ -2119,14 +2113,13 @@
 /area/ship/cargo)
 "DQ" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5;
-	color = "#eeac2e"
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "Em" = (
@@ -2331,9 +2324,8 @@
 /area/ship/bridge)
 "Hs" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6;
-	color = "#eeac2e"
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 6
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -2976,16 +2968,6 @@
 /area/ship/bridge)
 "QU" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#eeac2e"
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2993,6 +2975,15 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/industrial/warning/orange{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)

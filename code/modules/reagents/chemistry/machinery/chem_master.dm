@@ -30,7 +30,7 @@
 
 /obj/machinery/chem_master/Initialize()
 
-	AddComponent(/datum/component/material_container, list(/datum/material/glass, /datum/material/plastic), 10000, _show_on_examine = TRUE)
+	AddComponent(/datum/component/material_container, list(/datum/material/glass, /datum/material/plastic), 10000, _show_on_examine = TRUE, allowed_types=list(/obj/item/stack/sheet))
 
 	create_reagents(100)
 

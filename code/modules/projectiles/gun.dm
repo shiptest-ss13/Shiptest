@@ -25,6 +25,7 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 
 	var/manufacturer = MANUFACTURER_NONE // manufacturer shown in examine text
+	var/autowiki_hidden = FALSE
 
 	// MUZZLE FLASH //
 	var/obj/effect/muzzle_flash/muzzle_flash // effect to use
@@ -35,6 +36,7 @@
 
 	// FIRING //
 	var/actually_shoots = TRUE // is this gun real and not a dud
+	var/glunked = FALSE //controls whether the gun gets a glunked overlay. separate from actually_shoots.
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
@@ -167,6 +169,14 @@
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
 		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
+	if(glunked && !actually_shoots)
+		desc += span_warning("\nIt appears to be irreparably broken.")
+	else if (glunked && actually_shoots)
+		desc += span_warning("\nIt appears to be extremely worn down.")
+
+	if(glunked)
+		glunkify()
+
 /obj/item/gun/ComponentInitialize()
 	. = ..()
 	var/list/attachment_list = valid_attachments
@@ -226,6 +236,22 @@
 		QDEL_NULL(muzzle_flash)
 	return ..()
 
+/obj/item/gun/proc/glunkify()
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/scuff_cache = list()
+	var/icon/scuff = scuff_cache[index]
+	if(!scuff) // we only need to generate each scuff overlay once
+		scuff = icon(initial(icon), initial(icon_state))
+		var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+		temp.Scale(64, 32)
+		temp.Shift(EAST, 32) // we put two side by side so it fits on guns
+		temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+		scuff.Blend("#fff", ICON_ADD)
+		scuff.Blend(temp, ICON_MULTIPLY)
+		scuff_cache[index] = scuff
+	var/mutable_appearance/scuff_instance = new(scuff)
+	add_overlay(scuff_instance)
+
 /obj/item/gun/handle_atom_del(atom/A)
 	if(A == chambered)
 		chambered = null
@@ -252,7 +278,7 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
+	if(user.a_intent == INTENT_DISARM || !actually_shoots) //lets you beat up someone without shooting them
 		return ..()
 	return
 
@@ -264,7 +290,7 @@
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	return TRUE
 
@@ -299,7 +325,7 @@
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
-		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
+		if(!ismob(target) || user.a_intent == INTENT_DISARM) //melee attack
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
@@ -493,7 +519,7 @@
 	current_cooldown = FALSE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	if(!safety)
+	if(!safety && has_safety)
 		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
 		return
@@ -645,6 +671,7 @@
 #define BRAINS_BLOWN_THROW_SPEED 1
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
+	var/killspeople = TRUE
 	if(!ishuman(user) || !ishuman(target))
 		return
 
@@ -675,6 +702,9 @@
 
 	current_cooldown = FALSE
 
+	if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+		killspeople = FALSE
+
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
 	if(chambered && chambered.BB && can_trigger_gun(user))
@@ -687,11 +717,11 @@
 		if(brain_to_blast)
 
 			//Check if the projectile is actually damaging and not of type STAMINA
-			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+				//Remove brain of the mob shot
+			if(killspeople)
+				brain_to_blast.Remove(target)
+			else
 				return
-
-			//Remove brain of the mob shot
-			brain_to_blast.Remove(target)
 
 			var/turf/splat_turf = get_turf(target)
 			//Move the brain of the person shot to selected turf
@@ -844,7 +874,7 @@
 // for guns firing on their own without a user
 /obj/item/gun/proc/discharge(cause, seek_chance = 10)
 	var/target
-	if(!safety && has_safety)
+	if(!safety || !has_safety)
 		// someone is very unlucky and about to be shot
 		if(prob(seek_chance))
 			for(var/mob/living/target_mob in range(6, get_turf(src)))
@@ -864,7 +894,7 @@
 
 /obj/item/gun/proc/unsafe_shot(target)
 	if(chambered)
-		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		chambered.fire_casing(target,null, null, null, suppressed, null, 0, src,TRUE)
 		playsound(src, fire_sound, 100, TRUE)
 
 /mob/living/proc/trip_with_gun(cause)
@@ -879,7 +909,7 @@
 			if(at_risk == human_holder.s_store)
 				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
 				bodyzone = pick_weight(list(BODY_ZONE_CHEST = 10, BODY_ZONE_L_LEG = 45, BODY_ZONE_R_LEG = 45))
-		if(at_risk.safety == FALSE && prob(chance_to_fire))
+		if(at_risk.safety == FALSE && at_risk.has_safety && prob(chance_to_fire))
 			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
 				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))

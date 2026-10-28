@@ -37,7 +37,10 @@
 	default_firemode = FIREMODE_AIMED
 	var/delay = 25
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/beam_rifle/debug
+	autowiki_hidden = TRUE //not obtainable afaik
 	delay = 0
 	default_ammo_type = /obj/item/stock_parts/cell/infinite
 	allowed_ammo_types = list(

@@ -48,6 +48,8 @@
 		/obj/item/attachment/rail_light,
 	)
 
+	autowiki_hidden = FALSE
+
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
 	default_ammo_type = FALSE
 
@@ -121,6 +123,8 @@
 	doesnt_keep_bullet = TRUE
 	casing_ejector = TRUE
 
+	autowiki_hidden = FALSE
+
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Carbine"
 	desc = "A Solarian carbine, unusually modern for its producers. Launches ferromagnetic lances at alarming speeds."
@@ -161,6 +165,8 @@
 
 	wield_delay = 0.7 SECONDS
 	fire_select_icon_state_prefix = "lance_"
+
+	autowiki_hidden = FALSE
 
 ///Sniper
 /obj/item/gun/ballistic/rifle/solgov
@@ -239,3 +245,5 @@
 	empty_indicator = FALSE
 
 	refused_attachments = list(/obj/item/attachment/silencer)
+
+	autowiki_hidden = FALSE

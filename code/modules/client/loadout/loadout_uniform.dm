@@ -54,6 +54,10 @@
 	display_name = "dolphin shorts"
 	path = /obj/item/clothing/under/shorts/dolphin
 
+/datum/gear/uniform/compressionshorts
+	display_name = "compression shorts, colorable"
+	path = /obj/item/clothing/under/shorts/compression
+
 /datum/gear/uniform/jorts
 	display_name = "jorts"
 	path = /obj/item/clothing/under/shorts/jorts
@@ -335,3 +339,7 @@
 /datum/gear/uniform/miniskirt
 	display_name = "mini skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/miniskirt
+
+/datum/gear/uniform/pencilskirt
+	display_name = "pencil skirt (recolorable)"
+	path = /obj/item/clothing/under/shorts/pencilskirt

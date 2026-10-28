@@ -65,9 +65,20 @@
 	pixel_shift_x = 16
 	pixel_shift_y = 0
 
+/obj/item/attachment/foldable_stock/anode
+	icon = 'icons/obj/guns/manufacturer/cybersun/48x32.dmi'
+	icon_state = "anode_stock"
+	toggled_recoil_bonus = 0
+	toggled_spread_bonus = -3
+
 /obj/item/attachment/foldable_stock/gaboon
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	icon_state = "gaboon_stock"
+
+/obj/item/attachment/foldable_stock/nahual
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	icon_state = "ecm20_inteq_stock"
+	toggled_recoil_bonus = -0.5
 
 /obj/item/attachment/foldable_stock/wasp/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()

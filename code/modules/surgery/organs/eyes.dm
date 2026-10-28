@@ -91,7 +91,7 @@
 		return
 
 	var/obj/item/clothing/eye_protection = owner.get_item_by_slot(ITEM_SLOT_EYES)
-	if(isclothing(eye_protection) && (eye_protection.clothing_flags & SEALS_EYES))
+	if(isclothing(eye_protection) && (eye_protection.flags_cover & SEALS_EYES))
 		to_chat(source, span_notice("[proj] strikes your [eye_protection.name]!"))
 		return // you'll shoot your eye out!
 
@@ -233,6 +233,9 @@
 
 /obj/item/organ/eyes/robotic/kepori
 	eye_icon_state = "eyes_kepori_synth"
+
+/obj/item/organ/eyes/robotic/vox
+	eye_icon_state = "eyes_vox_synth"
 
 /obj/item/organ/eyes/robotic/mono
 	name = "monoeye"

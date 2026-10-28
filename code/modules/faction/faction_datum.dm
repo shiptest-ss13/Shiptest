@@ -79,7 +79,7 @@
 	parent_faction = /datum/faction/scarborough
 	prefixes = PREFIX_NONE
 	color = "#B22C20"
-	allowed_factions = list(/datum/faction/ngr,/datum/faction/cybersun,/datum/faction/hardliners)
+	allowed_factions = list(/datum/faction/ngr,/datum/faction/hardliners)
 	wiki_hidden = TRUE
 
 /datum/faction/solgov
