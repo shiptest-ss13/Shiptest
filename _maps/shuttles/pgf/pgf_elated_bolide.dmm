@@ -3003,7 +3003,9 @@
 /area/ship/external/dark)
 "lu" = (
 /obj/effect/turf_decal/trimline/opaque/white/end{
-	dir = 1
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
 	name = "ordnance locker";
@@ -3011,7 +3013,32 @@
 	icon_door = "sec_wall";
 	req_access_txt = "1";
 	pixel_y = 28;
-	dir = 1
+	dir = 1;
+	pixel_x = 0
+	},
+/obj/item/storage/box/smokebombs{
+	pixel_x = -7;
+	pixel_y = 12
+	},
+/obj/item/storage/box/smokebombs{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/storage/box/barriers{
+	pixel_y = 4;
+	pixel_x = -7
+	},
+/obj/item/storage/box/barriers{
+	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/item/storage/box/metalfoam{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/obj/item/storage/box/flashbangs{
+	pixel_x = 8;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -8652,32 +8679,8 @@
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
 	},
-/obj/item/storage/box/metalfoam{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/obj/item/storage/box/metalfoam{
-	pixel_x = -7;
-	pixel_y = 12
-	},
-/obj/item/storage/box/barriers{
-	pixel_y = 4;
-	pixel_x = -7
-	},
-/obj/item/storage/box/barriers{
-	pixel_y = 4;
-	pixel_x = 8
-	},
-/obj/item/storage/box/smokebombs{
-	pixel_x = -7;
-	pixel_y = -4
-	},
-/obj/item/storage/box/smokebombs{
-	pixel_x = 8;
-	pixel_y = -4
-	},
 /obj/item/gun/grenadelauncher{
-	pixel_y = 7;
+	pixel_y = 2;
 	desc = "An automatic grenade launcher utilizing a rotary magazine with space for three grenades.";
 	pixel_x = 0
 	},
@@ -11833,11 +11836,11 @@
 	pixel_y = -1;
 	pixel_x = 8
 	},
-/obj/item/storage/box/flashes{
+/obj/machinery/airalarm/directional/west,
+/obj/item/storage/box/zipties{
 	pixel_y = -1;
 	pixel_x = 0
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "SK" = (
