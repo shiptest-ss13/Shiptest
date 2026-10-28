@@ -101,7 +101,8 @@
 			"Dropped the fucker!",
 			"Down you go, asshole!",
 			"Nailed the bitch!",
-			"Tagged one!"
+			"Tagged one!",
+			"Got the %ADJ one!"
 		),
 		AI_CALLOUT_TARGET_KILLED = list(
 			"Scratch one.",
@@ -113,25 +114,33 @@
 			"Shit outta luck.",
 			"Get fucked!",
 			"HAAHAHAHAHAHAHAHAH!!",
-			"Bagged one of 'em!"
+			"Bagged one of 'em!",
+			"The %SPECIES is dead!",
+			"That %ADJ %SPECIES is done!"
 		),
 		AI_CALLOUT_HEADSHOT = list(
 			"Right in the skull!",
 			"Headshot, ha!",
 			"Rang their bell!",
-			"Clipped 'em in the noggin!"
+			"Clipped 'em in the noggin!",
+			"Boomshakalaka!",
+			"Headshot!!"
 		),
 		AI_CALLOUT_HEADSHOT_DOWN = list(
 			"Headshot! They're down!",
 			"Rang their bell, they're down!",
 			"Dropped 'em with one to the head!",
-			"Skull shot, they're flat!"
+			"Skull shot, they're flat!",
+			"Got them in the noggin!",
+			"Should've worn a helmet!"
 		),
 		AI_CALLOUT_HEADSHOT_KILLED = list(
 			"Blew their brains out!",
 			"Headshot! Lights out!",
 			"One in the skull, done.",
-			"Nobody's walking that one off!"
+			"Nobody's walking that one off!",
+			"Think they look prettier now!",
+			"Not a thought in that head now!"
 		),
 		AI_CALLOUT_TARGET_DROPPED = list(
 			"One of 'em dropped!",
@@ -143,7 +152,8 @@
 			"That one's done. Check 'em later.",
 			"That one's quit kicking.",
 			"Not moving anymore.",
-			"Dead as dirt."
+			"Dead as dirt.",
+			"Their %SPECIES bit it."
 		),
 		AI_CALLOUT_ALLY_DOWN = list(
 			"They got one of ours!",
@@ -219,7 +229,7 @@
 			"Who in the hell's shooting out there?",
 			"They must be fuckin around, lets check it out.",
 			"The bloody hell was that?",
-			"That don' sound right. Lets go!"
+			"That don't sound right. Lets go!"
 		),
 		AI_CALLOUT_PUSHING = list(
 			"Rush 'em!",
@@ -289,7 +299,8 @@
 			"We're done here! Move!",
 			"Fuck this, I'm out!",
 			"Fuck it, run!",
-			"Shit, shit, shit! Go!"
+			"Shit, shit, shit! Go!",
+			"Get outta my way or run faster!"
 		),
 		AI_CALLOUT_RALLIED = list(
 			"Alright, crew, form up!",
@@ -344,7 +355,9 @@
 			"They're up! Drop 'em again!",
 			"Shit, they're still kicking!",
 			"Get 'em, they're getting up!",
-			"They ain't dead! Fix it!"
+			"They ain't dead! Fix it!",
+			"The %SPECIES is moving again!",
+			"The %ADJ bastard is getting up!"
 		),
 		AI_CALLOUT_RAISING_ALARM = list(
 			"Crew, up! We got company!",
@@ -428,6 +441,7 @@
 			"All at once! Go!",
 			"Tear 'em apart!",
 			"Get in there!",
+			"%WHISTLE rip them to shreds!"
 		),
 		AI_CALLOUT_SUSPICIOUS = list(
 			"...The fuck was that?",
@@ -466,6 +480,7 @@
 			"Pull out, now!",
 			"Back, back, get the fuck back!",
 			"Regroup! Move!",
+			"%WHISTLE RETREEEEEAT!!"
 		),
 		AI_CALLOUT_PROTECT_COMMANDER = list(
 			"They're on the boss!",
