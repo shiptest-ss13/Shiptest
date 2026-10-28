@@ -140,8 +140,8 @@
 	self_delay = 2 SECONDS
 	other_delay = 1.5 SECONDS
 	repeating = TRUE
-	heal_brute = 10
-	grind_results = list(/datum/reagent/medicine/indomide = 10)
+	heal_brute = 15
+	grind_results = list(/datum/reagent/medicine/indomide = 5)
 	merge_type = /obj/item/stack/medical/bruise_pack
 
 /obj/item/stack/medical/bruise_pack/six
