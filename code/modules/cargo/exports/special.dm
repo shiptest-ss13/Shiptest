@@ -16,6 +16,21 @@
 		/obj/item/documents
 	)
 
+/datum/export/scratch_ticket
+	unit_name = "Lottery ticket redemption"
+	desc = "Got a winner? Turn it in here. Don't spend it all in once place."
+	cost = 1 // tickets use their credit value as their "quantity"
+	elasticity_coeff = 0
+	export_types = list(
+		/obj/item/scratch_ticket
+	)
+
+/datum/export/scratch_ticket/get_amount(obj/item/scratch_ticket/ticket)
+	if(ticket.scratched_off && !ticket.fake) // scratch my tickets
+		return ticket.redeem_value
+	else
+		return 0
+
 /datum/export/anomaly
 	unit_name = "stabilized anomaly core"
 	desc = "Stabilized anomaly cores are in high demand for research in the Core Worlds, with many believing that the next big technological revolution will be driven by them. A thriving trade has grown around spacers who dedicate themselves to finding and stabilizing anomalies."
