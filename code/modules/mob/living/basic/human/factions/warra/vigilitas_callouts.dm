@@ -359,7 +359,7 @@
 			"Supervisor down!",
 			"We lost the supervisor!",
 			"Who's in command now?!",
-			"Supervisor's down, need direction!"
+			"Supervisor's down, need direction!",
 			"Supervisor's dead! Who's next in command?!"
 		),
 	)
