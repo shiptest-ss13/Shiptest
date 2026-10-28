@@ -54,6 +54,8 @@
 
 	///can this export be targeted with high-value bounty?
 	var/valid_event_target = TRUE
+	///can this export be targeted with price fluctuations?
+	var/price_can_fluctuate = FALSE
 
 /datum/export/New()
 	..()

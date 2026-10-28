@@ -56,3 +56,34 @@ SUBSYSTEM_DEF(missions)
 		"A strange sarathi on the outpost"
 	))
 	return group
+
+/datum/controller/subsystem/missions/proc/get_industrial_name()
+	var/group = pick(list(
+		"Clover Photonics",
+		"Eoehoma Firearms",
+		"Etherbor Industries",
+		"Hunter's Pride",
+		"Lanchester City Firearms Plant",
+		"Lanchester Import Co.",
+		"Makosso-Warra Advantage",
+		"Makosso-Warra Sharplite",
+		"Serene Outdoors",
+		"The Solarbundswaffenkammer",
+		"Tadeusz Armory",
+		"Lanchester Shipyards",
+		"Hardline Salvage and Mining",
+		"Makosso-Warra Spaceworks",
+		"Etherbor Lihmona Shipyards",
+		"Ihejirika Civilian Manufacturing",
+		"ISF Spacecraft",
+		"Kasagi-Fischer Partnership",
+		"Miskilamo Spacefaring",
+		"The NGR Bureau of Industry",
+		"The CLIP-MELD Frontier Prospecting Office",
+		"Cybersun Biodynamics",
+		"The Pan-Gezena Federation Federal Development Administration",
+		"The United Teceti Federation Department of Infrastructure",
+		"The Strixiyos Guild of Stellar Shipwrights",
+		"A strange sarathi on the outpost",
+	))
+	return group
