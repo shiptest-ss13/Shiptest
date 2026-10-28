@@ -58,7 +58,7 @@
 /datum/ai_behavior/alert_allies/shout_for_help
 	alert_range = 15
 
-// stick around someone they took down while they're in view, rather than heading straight home
+// stick around a kill, and go back to them after chasing someone else off
 /datum/ai_planning_subtree/return_home/human
 	linger_duration = INFINITY
 

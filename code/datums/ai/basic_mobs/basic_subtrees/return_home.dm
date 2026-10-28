@@ -73,12 +73,12 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET) // they've led us too far, so let them go
 		controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_LEASHED_OFF, target, world.time + leashed_off_time) // and don't turn back for them the moment we set off
 		controller.set_blackboard_key(BB_BASIC_MOB_LEASHED_OFF_RANGE, base_leash) // unless they come back within it
-		// and whoever we were standing over before they did, as we left them to go after someone else, rather than stopping wherever we can still see them from
-		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
-		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
 	var/post_radius = ai_post_radius(controller)
 	if(home_distance <= (isnull(post_radius) ? home_range : post_radius))
 		controller.clear_blackboard_key(BB_BASIC_MOB_LEASHED_OFF) // home, so anyone who led us away is fair game again
+		// and whoever we were standing over, as we never found our way back to them
+		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
+		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
 		forget_waypoint(controller)
 		forget_trail(controller)
 		close_to_home(controller, our_turf, home, was_heading_home)
@@ -219,16 +219,25 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT_SINCE)
 	controller.clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT_HOP)
 
-// stay near someone we've down, guarding them while they're in view
+// stay near someone we've down, guarding them while they're in view, and going back to them when something else drew us off
 /datum/ai_planning_subtree/return_home/proc/try_linger_over_downed(datum/ai_controller/controller)
 	var/mob/living/downed = controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET]
 	if(!downed)
 		return FALSE
-	if(!linger_duration || QDELETED(downed) || world.time - controller.blackboard[BB_BASIC_MOB_DOWNED_AT] >= linger_duration || !ai_can_see(controller.pawn, downed, linger_range))
+	var/turf/our_turf = get_turf(controller.pawn)
+	var/turf/their_turf = get_turf(downed)
+	if(!linger_duration || QDELETED(downed) || !their_turf || their_turf.z != our_turf.z || world.time - controller.blackboard[BB_BASIC_MOB_DOWNED_AT] >= linger_duration)
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
 		return FALSE
-	controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_DOWNED_TARGET)
+	if(ai_can_see(controller.pawn, downed, linger_range))
+		controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_DOWNED_TARGET)
+		return TRUE
+	var/no_way_there = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == downed && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < AI_NO_PATH_MEMORY
+	if(no_way_there || get_dist(our_turf, their_turf) > controller.max_target_distance - home_range)
+		return FALSE // too far round to path to, so back along our trail, hopefully passing by them again
+	AI_LOG_DECISION(controller, "return_home: heading back to [downed] at [AREACOORD(their_turf)]")
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_DOWNED_TARGET)
 	return TRUE
 
 /datum/ai_planning_subtree/return_home/proc/pick_home(turf/our_turf, can_cross_space = FALSE)
