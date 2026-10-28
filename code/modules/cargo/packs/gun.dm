@@ -15,9 +15,9 @@
 	crate_name = "disposable gun crate"
 
 /datum/supply_pack/gun/derringer
-	name = ".38 Derringer Crate"
+	name = "HP Spark"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."
-	cost = 350
+	cost = 150
 	contains = list(/obj/item/storage/guncase/pistol/derringer)
 	crate_name = "derringer crate"
 	faction = /datum/faction/srm
@@ -166,11 +166,11 @@
 	contains = list(/obj/item/storage/guncase/pistol/firebrand)
 	faction = /datum/faction/srm
 
-/datum/supply_pack/gun/detrevolver
-	name = "Hunter's Pride Detective Revolver Crate"
-	desc = "Contains a concealable revolver favored by police departments around the sector, chambered in .38."
-	cost = 600
-	contains = list(/obj/item/storage/guncase/pistol/detective)
+/datum/supply_pack/gun/flintrevolver
+	name = "HP Flint Revolver Crate"
+	desc = "Contains a concealable Flint revolver, chambered in .38."
+	cost = 400
+	contains = list(/obj/item/storage/guncase/pistol/flint)
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/shadowrevolver
@@ -1290,3 +1290,14 @@
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
+
+// BOW //
+
+/datum/supply_pack/gun/bow
+	name = "Bow Crate"
+	desc = "Contains a bow for large game, manufactured by Hunter's Pride. Great for the discerning hunter!"
+	cost = 500
+	contains = list(/obj/item/storage/guncase/bow)
+	crate_name = "bow crate"
+	faction = /datum/faction/srm
+	faction_discount = 10

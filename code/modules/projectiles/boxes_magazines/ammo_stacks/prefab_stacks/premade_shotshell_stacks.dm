@@ -83,19 +83,6 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug
 	ammo_type = /obj/item/ammo_casing/shotgun/pulseslug
 
-/obj/item/storage/box/ammo/a12g_scatter
-	name = "box of scatter laser shells"
-	desc = "A box of 12-gauge scatter laser shells, designed for delivering laser projectiles at a high velocity."
-	icon_state = "12gbox-scatter"
-
-/obj/item/storage/box/ammo/a12g_scatter/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/scatter = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/scatter
-	ammo_type = /obj/item/ammo_casing/shotgun/laserscatter
-
 /obj/item/storage/box/ammo/a12g_ion
 	name = "box of ion shells"
 	desc = "A box of 12-gauge ion shells, designed for delivering an electromagnetic payload."

@@ -323,7 +323,7 @@
 	icon_state = "clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
@@ -342,7 +342,7 @@
 	icon_state = "hardsuit0-clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	resistance_flags = null
 
 	supports_variations = SNOUTED_VARIATION

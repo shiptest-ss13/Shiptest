@@ -20,8 +20,8 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	mag_type = /obj/item/ammo_box/magazine/m44
 
-/obj/item/storage/guncase/pistol/detective
-	gun_type = /obj/item/gun/ballistic/revolver/detective
+/obj/item/storage/guncase/pistol/flint
+	gun_type = /obj/item/gun/ballistic/revolver/flint
 	mag_type = /obj/item/ammo_box/c38
 
 /obj/item/storage/guncase/pistol/shadow
@@ -102,7 +102,11 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
 	mag_type = /obj/item/ammo_box/magazine/invictus_308_mag
 
+/obj/item/storage/guncase/bow
+	gun_type = /obj/item/gun/ballistic/bow
+
 /* Scarbourough */
+
 
 /obj/item/storage/guncase/pistol/a357
 	gun_type = /obj/item/gun/ballistic/revolver/viper

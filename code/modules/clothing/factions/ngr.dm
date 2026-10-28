@@ -131,7 +131,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION | VOX_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	blood_overlay_type = "armor"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) // 5. additional. bullet armor.
 
@@ -141,7 +141,7 @@
 	body_parts_covered = CHEST|GROIN
 	icon_state = "ngr_lieutenant"
 	item_state = "ngr_lieutenant"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	kepori_override_icon = null
 	vox_override_icon = null
 	blood_overlay_type = "coat"
@@ -155,6 +155,7 @@
 	item_state = "ngr_captain"
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 ///////////////
 //Spacesuits//
