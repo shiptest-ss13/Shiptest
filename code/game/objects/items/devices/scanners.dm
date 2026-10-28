@@ -447,7 +447,7 @@ GENE SCANNER
 			render_list += "<span class='notice ml-2'>[cyberimp_detect]</span>\n"
 
 	//send a signal to add additional lines to the scanner
-	SEND_SIGNAL(M, COMSIG_MOB_HEALTHSCANNED, user, render_list)
+	SEND_SIGNAL(M, COMSIG_MOB_HEALTHSCANNED, render_list)
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
 
 	// we handled the last <br> so we don't need handholding

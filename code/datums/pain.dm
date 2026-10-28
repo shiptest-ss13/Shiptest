@@ -39,8 +39,11 @@
 	parent = new_parent
 
 	body_zones = list()
-	for(var/obj/item/bodypart/parent_bodypart as anything in parent.bodyparts)
-		add_bodypart(parent, parent_bodypart, TRUE)
+	for(var/zone in parent.bodyparts)
+		var/obj/item/bodypart/limb = parent.bodyparts[zone]
+		if(!limb)
+			continue
+		add_bodypart(parent, limb, TRUE)
 
 	if(!length(body_zones))
 		stack_trace("Pain datum failed to find any body_zones to track!")
@@ -54,8 +57,8 @@
 		START_PROCESSING(SSpain, src)
 
 	#ifdef TESTING
-	if(!is_station_level(parent.z))
-		print_debug_messages = FALSE
+	//if(!is_centcom_level(parent.z))
+	//	print_debug_messages = FALSE
 	#endif
 
 /datum/pain/Destroy()
@@ -860,7 +863,7 @@
 
 	if(amount && tip)
 		render_list += "<span class='alert ml-1'>"
-		render_list += span_bold("Subject is experiencing [amount] pain. ")
+		render_list += span_bold("Subject is experiencing [amount] pain. \n")
 		render_list += tip
 		render_list += "</span>\n"
 

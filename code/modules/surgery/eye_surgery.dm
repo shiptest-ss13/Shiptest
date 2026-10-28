@@ -96,7 +96,7 @@
 	target.cure_blind(list(EYE_DAMAGE))
 	target.set_blindness(0)
 	target.cure_nearsighted(list(EYE_DAMAGE))
-	target.blur_eyes(20)
+	target.adjust_eye_blur(20)
 	E.setOrganDamage(0)
 	return ..()
 

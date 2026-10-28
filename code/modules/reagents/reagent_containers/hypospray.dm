@@ -438,7 +438,7 @@
 /obj/item/reagent_containers/hypospray/medipen/assault_pack
 	name = "\improper Assault Pack"
 	desc = "A combat stimulant pack loaded with a dose of an anomalous substance. Keep moving forward. When you fall, everything'll be okay."
-	list_reagents = list(/datum/reagent/drug/chrono = 15, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/dimorlin = 10)
+	list_reagents = list(/datum/reagent/drug/chrono = 15, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/painkiller/dimorlin = 10)
 	volume = 35
 	amount_per_transfer_from_this = 35
 	icon_state = "combat_hypo"

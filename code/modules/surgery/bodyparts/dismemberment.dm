@@ -319,10 +319,10 @@
 		return
 	var/obj/item/bodypart/limb = target_carbon.get_bodypart(body_zone)
 	if(limb)
-		limb.drop_limb(special)
+		limb.drop_limb(special, FALSE)
 	. = attach_limb(target_carbon, special, is_creating)
 	if(!.) //If it failed to replace, just ignore.
-		limb.attach_limb(target_carbon, special)
+		limb.attach_limb(target_carbon, special, is_creating)
 
 /obj/item/bodypart/head/replace_limb(mob/living/carbon/target_carbon, special, is_creating = FALSE)
 	if(!special)
@@ -334,7 +334,7 @@
 	var/obj/item/bodypart/chest/mob_chest = C.get_bodypart(BODY_ZONE_CHEST)
 	if(mob_chest && !(mob_chest.acceptable_bodytype & bodytype))
 		return FALSE
-	if(SEND_SIGNAL(C, COMSIG_CARBON_ATTACH_LIMB, src) & COMPONENT_NO_ATTACH)
+	if(SEND_SIGNAL(C, COMSIG_CARBON_ATTACH_LIMB, src, special) & COMPONENT_NO_ATTACH)
 		return FALSE
 	moveToNullspace()
 	set_owner(C)

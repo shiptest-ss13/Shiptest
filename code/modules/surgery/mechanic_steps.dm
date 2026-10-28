@@ -1,5 +1,3 @@
-#warn add give_surgery_pain to all shiptest mechanic steps
-
 //open shell
 /datum/surgery_step/mechanic_open
 	name = "unscrew shell"
@@ -400,6 +398,7 @@
 		span_notice("[user] starts welding the plating onto [target]'s [parse_zone(target_zone)] with [tool]..."),
 		span_notice("[user] starts welding the plating onto [target]'s [parse_zone(target_zone)]..."),
 	)
+	give_surgery_pain(target, "You feel searing warmth as metal is welded to your [parse_zone(target_zone)]!", TRUE, target_zone)
 
 /datum/surgery_step/weld_plating/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(surgery.operated_wound)

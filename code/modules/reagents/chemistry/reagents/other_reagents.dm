@@ -2072,7 +2072,7 @@
 		M.adjustBruteLoss(1.5)
 		M.adjustFireLoss(1.5)
 
-// Component in ibuprofen.
+// Component in some painkillers.
 /datum/reagent/propionic_acid
 	name = "Propionic Acid"
 	description = "A pungent liquid that's often used in preservatives and synthesizing of other chemicals."

@@ -204,7 +204,7 @@
 #warn fluff better. needs to heal some pain. Used in syndrin
 /datum/reagent/medicine/syndric_sap
 	name = "Syndric Sap"
-	description = "The essence of a Synd tree. Said to have painkilling effects. From Kalixcis"
+	description = "The sap of the Kalixcian Synd tree is a natural painkiller, and frequently processed into the compound syndrin."
 
 /datum/reagent/medicine/syndric_sap/on_mob_life(mob/living/carbon/M)
 	. = ..()

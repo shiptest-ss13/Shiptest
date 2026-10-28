@@ -128,14 +128,7 @@
 	name = "syndrin pill"
 	desc = "Used to treat moderate pain and fever. Metabolizes slowly. Best at treating chest pain."
 	icon_state = "pill7"
-	list_reagents = list(/datum/reagent/medicine/painkiller/aspirin = 10) // Lasts ~4 minutes, heals ~20 pain in chest (lower in other parts)
-	rename_with_volume = TRUE
-
-/obj/item/reagent_containers/pill/ibuprofen
-	name = "ibuprofen pill"
-	desc = "Used to treat mild pain, headaches, and fever. Metabolizes slowly. Best at treating head pain."
-	icon_state = "pill8"
-	list_reagents = list(/datum/reagent/medicine/painkiller/ibuprofen = 10) // Lasts ~4 minutes, heals ~20 pain in head (lower in other parts)
+	list_reagents = list(/datum/reagent/medicine/painkiller/sydrin = 10) // Lasts ~4 minutes, heals ~20 pain in chest (lower in other parts)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/paracetamol
@@ -161,7 +154,6 @@
 /obj/item/storage/pill_bottle/painkillers
 	name = "bottle of painkillers"
 	desc = "Contains multiple pills used to treat anywhere from mild to extreme pain. CAUTION: Do not take in conjunction with alcohol."
-	icon = 'icons/obj/chemical.dmi'
 
 /obj/item/storage/pill_bottle/painkillers/ComponentInitialize()
 	. = ..()
@@ -170,11 +162,9 @@
 	STR.max_combined_w_class = 28
 
 /obj/item/storage/pill_bottle/painkillers/PopulateContents()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/aspirin(src)
-	for(var/i in 1 to 3)
-		new /obj/item/reagent_containers/pill/ibuprofen(src)
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/paracetamol(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/morphine/diluted(src)
@@ -209,7 +199,7 @@
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "burn_painkiller_pen"
 	base_icon_state = "burn_painkiller_pen"
-	inhand_icon_state = "salacid"
+	item_state = "salacid"
 	list_reagents = list(/datum/reagent/medicine/painkiller/specialized/ibaltifen = 10) // ~20-25 pain healing (if brute pain, per limb)
 
 /obj/item/reagent_containers/hypospray/medipen/burn_painkiller
@@ -218,7 +208,7 @@
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "brute_painkiller_pen"
 	base_icon_state = "brute_painkiller_pen"
-	inhand_icon_state = "oxapen"
+	item_state = "oxapen"
 	list_reagents = list(/datum/reagent/medicine/painkiller/specialized/anurifen = 10) // ~20-25 pain healing (if burn pain, per limb)
 
 /*
@@ -228,8 +218,8 @@
 /obj/item/shock_blanket
 	name = "shock blanket"
 	desc = "A metallic looking plastic blanket specifically designed to well insulate anyone seeking comfort underneath."
-	icon = 'icons/obj/medical/pain_objects.dmi'
-	worn_icon = 'icons/mob/pain_items.dmi'
+	icon = 'icons/obj/medical/pain_items.dmi'
+	mob_overlay_icon = 'icons/mob/pain_items.dmi'
 	lefthand_file = 'icons/mob/inhands/pain_items_lhand.dmi'
 	righthand_file = 'icons/mob/inhands/pain_items_rhand.dmi'
 	icon_state = "shockblanket"

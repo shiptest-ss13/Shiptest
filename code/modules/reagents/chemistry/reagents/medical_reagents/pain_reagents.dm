@@ -70,57 +70,6 @@
 	M.adjustBruteLoss(-0.1 * REM * seconds_per_tick, FALSE)
 	M.adjustFireLoss(-0.05 * REM * seconds_per_tick, FALSE)
 	// Numbers seem low, but our metabolism is very slow
-	M.cause_pain(BODY_ZONE_HEAD, -0.02 * REM * seconds_per_tick)
-	M.cause_pain(BODY_ZONES_LIMBS, -0.04 * REM * seconds_per_tick)
-	M.cause_pain(BODY_ZONE_CHEST, -0.08 * REM * seconds_per_tick)
-	// Okay at fevers.
-	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick, M.get_body_temp_normal())
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(33, seconds_per_tick))
-		M.adjust_disgust(1.5 * REM * seconds_per_tick)
-
-	..()
-	return TRUE
-
-/datum/reagent/medicine/painkiller/sydrin/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(!istype(M))
-		return
-
-	// On overdose, heat up the body...
-	M.adjust_bodytemperature(30 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick)
-	// Causes sickness...
-	M.apply_damage(1 * REM * seconds_per_tick, TOX)
-	if(M.disgust < 100 && SPT_PROB(75, seconds_per_tick))
-		M.adjust_disgust(3 * REM * seconds_per_tick)
-	// ...Hallucinations after a while...
-	if(current_cycle >= 15 && SPT_PROB(50, seconds_per_tick))
-		M.hallucination = clamp(M.hallucination + 3 * REM * seconds_per_tick, 0, 20)
-	// ...Dizziness after a longer while...
-	if(current_cycle >= 20 && SPT_PROB(25, seconds_per_tick))
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-
-	// ...And finally, confusion
-	//if(current_cycle >= 25 && SPT_PROB(15, seconds_per_tick))
-	//	M.set_confusion(clamp(M.get_confusion() + 2, 1, 6))
-
-	..()
-	return TRUE
-
-// Sydrin. The more intense over the counter painkiller. Mostly targets the chest and limbs.
-// Use healing chest and limb pain primarily.
-/datum/reagent/medicine/painkiller/sydrin
-	name = "Sydrin"
-	description = "A medication that combats pain and fever. Can cause mild nausea. Overdosing is toxic, and causes high body temperature, sickness, hallucinations, dizziness, and confusion."
-	reagent_state = LIQUID
-	color = "#321652"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 25
-	pain_modifier = 0.8
-
-/datum/reagent/medicine/painkiller/sydrin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	// Not good at headaches, but very good at treating everything else.
-	M.adjustBruteLoss(-0.1 * REM * seconds_per_tick, FALSE)
-	M.adjustFireLoss(-0.05 * REM * seconds_per_tick, FALSE)
-	// Numbers seem low, but our metabolism is very slow
 	M.cause_pain(BODY_ZONE_HEAD, -0.08 * REM * seconds_per_tick)
 	M.cause_pain(BODY_ZONES_LIMBS, -0.04 * REM * seconds_per_tick)
 	M.cause_pain(BODY_ZONE_CHEST, -0.02 * REM * seconds_per_tick)
@@ -200,7 +149,7 @@
 // Combination drug of other painkillers. It's a real thing. Less side effects, heals pain generally, mildly toxic in high doses.
 // Upgrade to paracetamol and aspirin if you go through the effort to get coffee.
 /datum/reagent/medicine/painkiller/aspirin_para_coffee
-	name = "aspirin/paracetamol/caffeine"
+	name = "syndrin/paracetamol/caffeine"
 	description = "A combination drug that effectively treats moderate pain with low side effects when used in low dosage. Toxic in higher dosages."
 	reagent_state = LIQUID
 	color = "#e695ff"

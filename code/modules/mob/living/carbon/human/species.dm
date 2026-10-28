@@ -367,7 +367,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			continue
 		var/obj/item/bodypart/new_part = new_species.new_body_part(C, zone, robotic, FALSE)
 		if(new_part)
-			new_part.replace_limb(C, TRUE)
+			new_part.replace_limb(C, TRUE, TRUE)
 			if(old_part)
 				new_part.brute_dam = old_part.brute_dam
 				new_part.burn_dam = old_part.burn_dam

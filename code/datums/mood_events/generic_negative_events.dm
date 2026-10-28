@@ -308,3 +308,32 @@
 	mood_change = -3
 	description = span_warning("...I don't think I should be coughing up blood")
 	timeout = 5 MINUTES
+
+/datum/mood_event/light_pain
+	description = "<span class='warning'>Everything aches.</span>\n"
+	mood_change = -3
+
+/datum/mood_event/med_pain
+	description = "<span class='warning'>Everything feels sore.</span>\n"
+	mood_change = -6
+
+/datum/mood_event/heavy_pain
+	description = "<span class='boldwarning'>Everything hurts!</span>\n"
+	mood_change = -10
+
+/datum/mood_event/crippling_pain
+	description = "<span class='boldwarning'>STOP THE PAIN!</span>\n"
+	mood_change = -15
+
+// Applied by most surgeries if you get operated on without anesthetics
+/datum/mood_event/surgery
+	description = "They're operating on me while I'm awake!"
+	mood_change = -6
+	timeout = 3 MINUTES
+
+// Applied by some surgeries that are especially bad without anesthetics
+/datum/mood_event/surgery/major
+	mood_change = -9
+	description = "THEY'RE CUTTING ME OPEN!!"
+	mood_change = -10
+	timeout = 6 MINUTES
