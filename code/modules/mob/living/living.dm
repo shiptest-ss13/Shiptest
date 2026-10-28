@@ -1623,8 +1623,6 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 * * new_flipped (bool) The new flipped state for the mob, either true or false
  */
 /mob/living/proc/set_flipped(new_flipped)
-	to_chat(src, "flipped = [flipped]")
-	to_chat(src, "new_flipped = [new_flipped]")
 	if(new_flipped == flipped)
 		return
 	. = new_flipped

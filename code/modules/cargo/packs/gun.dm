@@ -8,9 +8,9 @@
 */
 
 /datum/supply_pack/gun/disposable
-	name = "Disposable Gun Crate"
-	desc = "In some sectors, these disposable pistols are the only firearms that can be legally sold for less than 200cr. That price is still far too high."
-	cost = 300
+	name = "Disposable Guns Crate"
+	desc = "In some sectors, these disposable pistols are the only firearms that can be legally sold for less than 200cr. That price is still far too high. This crate contains two."
+	cost = 200
 	contains = list(/obj/item/storage/guncase/pistol/disposable)
 	crate_name = "disposable gun crate"
 
@@ -278,7 +278,6 @@
 	contains = list(/obj/item/storage/guncase/energy/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/warra
 
 /datum/supply_pack/gun/laser/kalix/pistol
 	name = "Etherbor SG-8 Beam Pistol Crate"
@@ -1019,19 +1018,6 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
-
-//turn into l201
-/*
-/datum/supply_pack/gun/gauss
-	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For Makosso-Warra employee use only."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/gauss)
-	crate_name = "dmr crate"
-	faction = /datum/faction/warra
-	faction_discount = 0
-	faction_locked = TRUE
-*/
 
 /datum/supply_pack/gun/claris
 	name = "'Claris' Gauss Rifle"
