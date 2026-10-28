@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	var/name_part1
 	var/name_part2
 
-	if(check_holidays(HALLOWEEN))
+	if(check_holidays(MEXAPIX))
 		name_action = pick_list(ARCADE_FILE, "rpg_action_halloween")
 		name_part1 = pick_list(ARCADE_FILE, "rpg_adjective_halloween")
 		name_part2 = pick_list(ARCADE_FILE, "rpg_enemy_halloween")
