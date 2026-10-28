@@ -239,6 +239,8 @@
 
 /obj/item/bodypart/leg
 	biological_state = BIO_STANDARD_JOINTED
+	var/footstep_type = FOOTSTEP_MOB_BAREFOOT
+	//which footstep sound type should this leg use?
 
 /obj/item/bodypart/leg/left
 	name = "left leg"

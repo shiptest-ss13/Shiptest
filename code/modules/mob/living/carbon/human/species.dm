@@ -110,8 +110,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/inert_mutation 	= DWARFISM
 	///Used to set the mob's deathsound upon species change
 	var/deathsound
-	///Sounds to override barefeet walking
-	var/list/special_step_sounds
 	///Special sound for grabbing
 	var/grab_sound
 	/// A path to an outfit that is important for species life e.g. plasmaman outfit

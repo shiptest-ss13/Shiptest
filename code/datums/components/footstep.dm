@@ -52,21 +52,19 @@
 		playsound(T, 'sound/effects/footstep/crawl1.ogg', 15 * volume, falloff_distance = 1)
 		return
 
-	if(iscarbon(LM))
-		var/mob/living/carbon/C = LM
-		if(!C.get_bodypart(BODY_ZONE_L_LEG) && !C.get_bodypart(BODY_ZONE_R_LEG))
-			return
-		if(C.m_intent == MOVE_INTENT_WALK)
-			return// stealth
+	if(iscarbon(LM) && LM.m_intent == MOVE_INTENT_WALK)
+		return// stealth
+
 	steps++
 
-	if(steps >= 6)
+	if(steps >= 12) //12 chosen to keep a consistent left/right step pattern in nograv where a footstep plays every 6 steps. 0, 4, and 8 are left; 2, 6, and 10 are right.
 		steps = 0
 
 	if(steps % 2)
+		//only make sound on even (and zero) steps to avoid spam
 		return
 
-	if(steps != 0 && !LM.has_gravity(T)) // don't need to step as often when you hop around
+	if((steps % 6) != 0 && !LM.has_gravity(T)) //don't need to step as often when you hop around, modulo 6 to retain previous behavior of playing sound every 6 steps in no grav
 		return
 	return T
 
@@ -110,18 +108,43 @@
 	var/feetCover = (H.wear_suit && (H.wear_suit.body_parts_covered & FEET)) || (H.w_uniform && (H.w_uniform.body_parts_covered & FEET))
 
 	play_fov_effect(H, 5, "footstep", direction, ignore_self = TRUE)
+
+	var/human_footstep_sounds
+	var/human_turf_footstep
+
 	if(H.shoes || feetCover) //are we wearing shoes
-		playsound(T, pick(GLOB.footstep[T.footstep][1]),
-			GLOB.footstep[T.footstep][2] * volume,
-			TRUE,
-			GLOB.footstep[T.footstep][3] + e_range, falloff_distance = 1)
-	else
-		if(H.dna.species.special_step_sounds)
-			playsound(T, pick(H.dna.species.special_step_sounds), 50, TRUE, falloff_distance = 1)
-		else
-			playsound(T, pick(GLOB.barefootstep[T.barefootstep][1]),
-				GLOB.barefootstep[T.barefootstep][2] * volume,
-				TRUE,
-				GLOB.barefootstep[T.barefootstep][3] + e_range, falloff_distance = 1)
+		human_footstep_sounds  = GLOB.footstep
+		human_turf_footstep = T.footstep
+	else //barefoot
+		var/obj/item/bodypart/leg/leg //which leg is making the step sound
+		if(steps % 4 == 0) //steps 0, 4, and 8
+			leg = H.get_bodypart(BODY_ZONE_L_LEG)
+		else if((steps + 2) % 4 == 0) //steps 2, 6, and 10
+			leg = H.get_bodypart(BODY_ZONE_R_LEG)
+
+		if(leg == null)
+			return
+
+		switch(leg.footstep_type)
+			if(FOOTSTEP_MOB_CLAW)
+				human_footstep_sounds = GLOB.clawfootstep
+				human_turf_footstep = T.clawfootstep
+			if(FOOTSTEP_MOB_BAREFOOT)
+				human_footstep_sounds = GLOB.barefootstep
+				human_turf_footstep = T.barefootstep
+			if(FOOTSTEP_MOB_HEAVY)
+				human_footstep_sounds = GLOB.heavyfootstep
+				human_turf_footstep = T.heavyfootstep
+			if(FOOTSTEP_MOB_SHOE)
+				human_footstep_sounds = GLOB.footstep
+				human_turf_footstep = T.footstep
+
+	if(!human_footstep_sounds || !human_turf_footstep)
+		return
+
+	playsound(T, pick(human_footstep_sounds[human_turf_footstep][1]),
+		human_footstep_sounds[human_turf_footstep][2] * volume,
+		TRUE,
+		human_footstep_sounds[human_turf_footstep][3] + e_range, falloff_distance = 1)
 
 #undef SHOULD_DISABLE_FOOTSTEPS
