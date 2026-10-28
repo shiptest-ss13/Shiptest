@@ -18,7 +18,6 @@
 	unit_name = "Lottery ticket redemption"
 	desc = "Got a winner? Turn it in here. Don't spend it all in once place."
 	cost = 1 // tickets use their credit value as their "quantity"
-	elasticity_coeff = 0
 	export_types = list(
 		/obj/item/scratch_ticket
 	)
