@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/g12
 	name = "\improper Etherbor G-12 'Torch'"
-	desc = "Begrudgingly designed at the behest of the PGFMC, the Etherbor G-12 breaching tool offers a compact, if awkward, solution to all sort of shipboard obstacles. Most notably, locked doors. Nicknamed the 'Torch' for its resemblance to an idustrial cutting tool, the G-12's official name is no more creative. 'Gun, 12 gauge'."
+	desc = "Supplementing PGFAF laser weapons' poor forced entry capabilities, the Etherbor G-12 breaching tool provides a compact solution for urban obstacles. Highly unconventional for an Etherbor design, the G-12 has been nicknamed the 'Torch' for its resemblance to an industrial cutting tool."
 	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/etherbor/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/etherbor/righthand.dmi'

@@ -613,7 +613,7 @@
 	name = "Etherbor G-12 Breaching Tool Crate"
 	desc = "Contains a single G-12 'Torch' breaching tool. Chambered in 12 gauge, using 4 round box magazines."
 	cost = 2000
-	contains = list(/obj/item/storage/guncase/energy/g12)
+	contains = list(/obj/item/storage/guncase/g12)
 	crate_name = "breaching tool crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
