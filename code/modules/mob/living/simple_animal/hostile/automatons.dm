@@ -37,6 +37,9 @@
 	deathmessage = "falls to the ground, sparking as its rotors grind to a halt."
 	is_flying_animal = TRUE
 
+/mob/living/simple_animal/hostile/automated/quadrotor/waste
+	faction = list(FACTION_HIVEBOT)
+
 /mob/living/simple_animal/hostile/automated/quadrotor/frontiersman
 	name = "Gremlin Drone"
 	desc = "A cobbled together drone used by the Frontiersmen fleet for reconnaissance and cheap ranged support. An automatic nine-millimeter machinepistol hoisted underneath it mirrors your movements."
@@ -205,6 +208,9 @@
 	aggro_say_chance = 70
 	faction = list(FACTION_HOSTILE)
 
+/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste
+	faction = list(FACTION_HIVEBOT)
+
 //bipedal
 
 /mob/living/simple_animal/hostile/automated/bipedal
@@ -359,6 +365,9 @@
 /mob/living/simple_animal/hostile/automated/walkmine/Aggro()
 	mob_light(2, 0.25, light_color)
 
+/mob/living/simple_animal/hostile/automated/walkmine/waste
+	faction = list(FACTION_HIVEBOT)
+
 /mob/living/simple_animal/hostile/automated/walkmine/makosso
 	faction = list("Deathsquad")
 	examine_text = span_notice("It has a <span class='boldnotice'>Makosso-Warra</span> logo printed on its outer plating.")
@@ -402,6 +411,9 @@
 		T.ignite_turf(15, "#fc7b48")
 		new /obj/effect/hotspot(T)
 	. = ..()
+
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste
+	faction = list(FACTION_HIVEBOT)
 
 // shotgun hoppers (To-do, make them "jump" around like the antlions do?)
 

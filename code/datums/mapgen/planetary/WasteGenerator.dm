@@ -136,14 +136,15 @@
 	)
 
 	mob_spawn_list = list(
-		//hivebots, they're finally difficult.
+		// hivebots, they're finally difficult.
 		/mob/living/basic/hivebot/strong = 20,
 		/mob/living/basic/hivebot/ranged = 40,
 		/mob/living/basic/hivebot/rapid = 30,
-		//bots, are hostile
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		// variety of hostile robots
+		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
+		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 	)
 
 	flora_spawn_chance = 25
@@ -260,9 +261,10 @@
 		/mob/living/basic/hivebot/strong = 10,
 		/mob/living/basic/hivebot/ranged = 20,
 		/mob/living/basic/hivebot/rapid = 20,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
+		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
 	mob_spawn_chance = 2
@@ -327,9 +329,10 @@
 		/mob/living/basic/hivebot/strong = 20,
 		/mob/living/basic/hivebot/ranged = 40,
 		/mob/living/basic/hivebot/rapid = 30,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
+		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 	)
 
 	flora_spawn_chance = 30
@@ -415,9 +418,10 @@
 		/mob/living/basic/hivebot/strong = 20,
 		/mob/living/basic/hivebot/ranged = 50,
 		/mob/living/basic/hivebot/rapid = 50,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
+		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
 
@@ -453,9 +457,10 @@
 		/mob/living/basic/hivebot/strong = 80,
 		/mob/living/basic/hivebot/ranged = 50,
 		/mob/living/basic/hivebot/rapid = 50,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
+		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
+		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
 
