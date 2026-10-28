@@ -442,7 +442,7 @@
 	name = "Nail-class Boarding Vessel"
 	faction = /datum/faction/pgf
 	token_icon_state = "ship_tiny_generic"
-	prefix = "PGF"
+	prefix = "PGFMC"
 
 /datum/map_template/shuttle/subshuttles/tanto
 	file_name = "independent_tanto"
@@ -539,6 +539,12 @@
 /datum/map_template/shuttle/subshuttles/june
 	file_name = "independent_june"
 	name = "June-class Dropship"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/starchaser
+	file_name = "independent_starchaser"
+	name = "Starchaser-class Delivery Shuttle"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 

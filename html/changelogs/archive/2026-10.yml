@@ -1,0 +1,185 @@
+2026-10-01:
+  Breakingzap:
+  - bugfix: Blank shotgun shells no longer cause damage via pellet, they do however
+      still do damage if you are too close.
+  - bugfix: Execution code checks the bullet you are shooting for its ability to kill
+      people. previously the last round in a magazine could not execute.
+  WaaaWaaaWeee:
+  - rscadd: Adds chemical jug compatibility for smart chemical fridge. Replaces usual
+      smart chemical fridges on Cirrus and Atira with jug loaded ones, while removing
+      jug spam from them.
+  cablefish:
+  - rscadd: The loot pools for waste planet scrappables have been greatly expanded.
+  - rscadd: New "rusted gun safe" that can be found on waste planets.
+  - rscdel: The Saber SMG is no more.
+  - bugfix: Map loading should be ever so slightly faster.
+  - rscadd: Adds a bunch of new guestbook adjectives.
+  - rscadd: You can now print empty ammo boxes from the autolathe.
+  generalthrax:
+  - bugfix: Sleeved Camisole can be selected again
+  zimon9:
+  - bugfix: fixes two runtime sources
+2026-10-02:
+  Aquidu:
+  - imageadd: New icons for PGF hitscan lasers added
+2026-10-03:
+  generalthrax:
+  - rscdel: Harrier removed from the game
+  - bugfix: You can no longer get into the lawnmower room on Agni
+  prodirus:
+  - bugfix: Emergency Radiation Purgant should no longer add rads if your radiation
+      level is too low.
+  thearbiber:
+  - rscadd: Stag bridge adjustment
+2026-10-04:
+  Erika, Apogee, sprites by thearbiber:
+  - rscadd: Cybersun Guns, see github
+  - rscadd: Cybersun outfits have been updated for cybersun guns. Troubleshooters
+      get their doohickeys while trauma team is "practical" and "uses regular guns
+      because they aren't a bunch of lame smelly losers"
+  - rscadd: Cybersun Turrets
+  - code_imp: energy weapons can now have custom latches
+  - code_imp: magazines can now be 'sealed'
+  prodirus:
+  - rscadd: Autowiki generation for weapons, ammo and attachments.
+  thearbiber:
+  - rscadd: tracksuit open state adjustment
+2026-10-05:
+  NovyNovatic:
+  - rscadd: doofus to outpost food vendor
+2026-10-07:
+  '@zimon9, @Erikafox ':
+  - bugfix: fixed autoinjector sprites not updating upon mapload
+  - bugfix: cap overlay layering inhand icon for reagent containers
+  - rscadd: reagent pen helper tool
+  Breakingzap:
+  - rscdel: Ship vending machines recognize that they are objects and have no right
+      to speak unless spoken to. (Some outpost vending machines can still talk)
+  - rscadd: Vending machines can now speak more than galactic common (only when spoken
+      to first)
+  EmptyLullaby:
+  - rscadd: piano crate
+2026-10-08:
+  generalthrax:
+  - rscdel: Broken and unused CM-16 removed
+  prodirus:
+  - bugfix: adds manufacturer to Cybersun ballistic weapons.
+  - bugfix: repaths some of the Cybersun lasers to point at valid variants
+  - rscadd: Corpses now have species appropriate names.
+  thearbiber:
+  - bugfix: tracksuit toggle being reverted sprite wise
+  - rscadd: the Efreet-class
+  - rscadd: restyles ISF hardliner hulls
+  - rscdel: the Banshee-class
+2026-10-10:
+  thearbiber:
+  - rscadd: invictus sprite modification
+2026-10-11:
+  Retrino:
+  - rscadd: Sunskipper remap
+  - rscadd: White/greyscale versions of sofas, comfy chairs, wooden chairs, stools,
+      and benches
+  - rscadd: Crafting and deconstruction for hedges
+  - rscadd: Green nanoweave carpet
+  - rscadd: Teacups. They can be found in lathes, along with mugs
+  - code_imp: Salt and honey now in biogenerators
+  - code_imp: Platforms that are not indestructible can now be deconstructed with
+      a wrench. Railings can be snipped with wirecutters
+  - code_imp: Rolling tables are constructable with metal sheets
+  - code_imp: Roulette table price lowered from 5k to 1k
+  - code_imp: Half stairs can be added to floors using decal painter
+  - config: Sunskipper description and jobs update
+  thearbiber:
+  - rscadd: Heavy Indie hardsuit
+  - rscadd: red and white pants touchups
+2026-10-14:
+  AnomalousPotato:
+  - rscadd: Adds Vox and Kepori NGR sprites by Mudfish. See PR for full list.
+  - rscadd: Adds rolled sleeve digitgrade variants to NGR uniform and NGR officer
+      uniform by Mudfish.
+  - rscadd: Adds snouted NGR space helmets by DIB_DOG.
+  thearbiber:
+  - rscadd: slighty cheaper 45-70 ammo
+2026-10-15:
+  Erikafox:
+  - rscadd: A few events now add a memory to your IC notes
+  - rscadd: Small end tables. You can craft them with wood.
+  firebudgy:
+  - rscdel: All .45 ammo. Everywhere. It all exploded. It's gone. Goodbye.
+  - rscadd: Cobra is 10mm now. No statistical changes.
+  - balance: Candor is .44 now.
+  goober3:
+  - rscadd: A singular bulb in the Trifuge library is now flickering forever.
+  - bugfix: Lights no longer toggle emergency power when flickering.
+  - soundadd: Lights now make a sound when turning on.
+  - code_imp: Lights can now be turned on with a delay.
+  iamthesilly:
+  - refactor: Tails are now a targetable bodypart
+  - code_imp: All bodyparts now have a "bodypart weight" which determines its chance
+      to get hit and the share of damage received from sources that apply across all
+      limbs
+  - imageadd: Vox and Kepori tails are now separate from the chest sprite
+  - bugfix: Fixed paraplegics being able to use the *thump emote
+  - balance: The TEG's efficiency scaling now reaches usable levels at around the
+      peak burn temperatures of common fuels (hydrogen, methane)
+  - balance: Significantly reduced plasma's burn temperature
+  - bugfix: Fixed an infinite temperature cascade when burning plasma under certain
+      conditions
+  prodirus:
+  - rscadd: Damage and blood overlays for organic Kepori.
+  - bugfix: Vox FBPs now work.
+  - bugfix: Burn overlays are now properly applied instead of reusing brute overlays.
+2026-10-17:
+  DIB-DOG:
+  - rscadd: Remapped the Elated Bolide and modified some PGF ships for continuity's
+      sake.
+  MarkSuckerberg:
+  - bugfix: The youtube audio player should crash less.
+  - bugfix: Saving the chatlog on 516 should crash less.
+  - bugfix: The annoying small character preview/overmap viewer bug should be fixed
+      now.
+  - admin: Enabled edge devtools for debugging
+  generalthrax:
+  - rscadd: Added mining rigs, survival knife, bathroom supplies, privacy shutters,
+      and other misc additions to the Kilo
+2026-10-18:
+  kaylexis:
+  - rscadd: Labeled medicine bottles with dosage limits
+2026-10-20:
+  kaylexis:
+  - rscadd: Viper skins
+2026-10-22:
+  prodirus:
+  - bugfix: IEDs are now destroyed in their explosions when detonated.
+  - bugfix: Detonations can no longer detonate a detonated IED.
+2026-10-25:
+  cablefish:
+  - rscadd: Vigilitas Guardian hardsuit is now purchasable in MW factional cargo.
+  - balance: Guardian hardsuit bullet resistance buffed from 30 to 35.
+  - balance: Sentinel hardsuit slowdown buffed from 0.7 to 0.5.
+  - spellcheck: MW sec hardsuit cargo listings are more descriptive.
+  - rscadd: Rusted gun safes can now spawn an enemy. Watch out!
+  - rscadd: You can now get floorpill injectors from the waste lab analyzers.
+  - rscadd: Added a couple Cybersun guns to the waste gun safe pool.
+  - balance: Changed spawn weights for a few of the waste pools.
+  - balance: Thronglers are now in the lab analyzer evil pool.
+  - balance: The ED209 from waste servers has been replaced with a lower-health boxer
+      BAP.
+  - bugfix: Removed safesplosion.
+  - bugfix: You can now bash open rusted gun safes.
+  generalthrax:
+  - rscadd: The Corona, Kilo, Pyxis, Rhode, Larnaca, and Firefly are now open to spawn
+      as newer players, with only half of the required hours to spawn
+  - rscadd: Two Pyxis and two Firefly can now be spawned
+  prodirus:
+  - rscadd: Players can now purchase ships, apply for and join ships while observing.
+2026-10-26:
+  NovyNovatic:
+  - rscadd: Adds Smuggler's Bunker to Waste Planets
+  prodirus:
+  - rscadd: You can now pull dogtags directly off a body by targeting the head and
+      dragging their body to you.
+  - rscadd: Sounds for picking up and pulling out dogtags.
+2026-10-27:
+  AnomalousPotato:
+  - rscadd: Kepori flip over instead of rotating 90 degrees when lying

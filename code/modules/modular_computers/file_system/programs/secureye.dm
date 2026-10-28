@@ -21,10 +21,7 @@
 
 	// Stuff needed to render the map
 	var/map_name
-	var/atom/movable/screen/map_view/cam_screen
-	/// All the plane masters that need to be applied.
-	var/list/cam_plane_masters
-	var/atom/movable/screen/background/cam_background
+	var/atom/movable/screen/map_view/camera/cam_screen
 
 /datum/computer_file/program/secureye/New()
 	. = ..()
@@ -37,26 +34,12 @@
 		network += lowertext(i)
 	// Initialize map objects
 	cam_screen = new
-	cam_screen.name = "screen"
-	cam_screen.assigned_map = map_name
-	cam_screen.del_on_map_removal = FALSE
-	cam_screen.screen_loc = "[map_name]:1,1"
-	cam_plane_masters = list()
-	for(var/plane in subtypesof(/atom/movable/screen/plane_master))
-		var/atom/movable/screen/instance = new plane()
-		instance.assigned_map = map_name
-		instance.del_on_map_removal = FALSE
-		instance.screen_loc = "[map_name]:CENTER"
-		cam_plane_masters += instance
-	cam_background = new
-	cam_background.assigned_map = map_name
-	cam_background.del_on_map_removal = FALSE
+	cam_screen.generate_view(map_name)
 
 /datum/computer_file/program/secureye/Destroy()
-	qdel(cam_screen)
-	QDEL_LIST(cam_plane_masters)
-	qdel(cam_background)
+	QDEL_NULL(cam_screen)
 	return ..()
+
 
 /datum/computer_file/program/secureye/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
@@ -65,19 +48,27 @@
 	// Update the camera, showing static if necessary and updating data if the location has moved.
 	update_active_camera_screen()
 
-	if(!ui)
-		var/user_ref = REF(user)
-		var/is_living = isliving(user)
-		// Ghosts shouldn't count towards concurrent users, which produces
-		// an audible terminal_on click.
-		if(is_living)
-			concurrent_users += user_ref
-		// Register map objects
-		user.client.register_map_obj(cam_screen)
-		for(var/plane in cam_plane_masters)
-			user.client.register_map_obj(plane)
-		user.client.register_map_obj(cam_background)
-		return ..()
+	if(ui)
+		return
+	ui = new(user, src, tgui_id, filedesc)
+	if(!ui.open())
+		return
+	ui.send_asset(get_asset_datum(/datum/asset/simple/headers))
+
+	var/user_ref = REF(user)
+	var/is_living = isliving(user)
+	// Ghosts shouldn't count towards concurrent users, which produces
+	// an audible terminal_on click.
+	if(is_living)
+		concurrent_users += user_ref
+	// Register map objects
+	cam_screen.display_to(user, ui.window)
+
+/datum/computer_file/program/secureye/ui_status(mob/user, datum/ui_state/state)
+	. = ..()
+	if(. == UI_DISABLED)
+		return UI_CLOSE
+	return .
 
 /datum/computer_file/program/secureye/ui_data()
 	var/list/data = get_header_data()
@@ -129,6 +120,7 @@
 		var/list/cameras = get_available_cameras()
 		var/obj/selected_camera = cameras[c_tag]
 		active_camera = selected_camera
+		last_camera_turf = null
 		playsound(src, get_sfx("terminal_type"), 25, FALSE)
 
 		if(!selected_camera)
@@ -145,7 +137,7 @@
 	// Living creature or not, we remove you anyway.
 	concurrent_users -= user_ref
 	// Unregister map objects
-	user.client.clear_map(map_name)
+	cam_screen.hide_from(user)
 	// Turn off the console
 	if(length(concurrent_users) == 0 && is_living)
 		active_camera = null
@@ -156,21 +148,19 @@
 	if(istype(active_camera, /obj/machinery/camera))
 		var/obj/machinery/camera/active_camera_S = active_camera
 		if(!active_camera_S?.can_use())
-			show_camera_static()
+			show_static()
 			return
 	else if(istype(active_camera, /obj/item/bodycamera))
 		var/obj/item/bodycamera/active_camera_B = active_camera
 		if(!active_camera_B?.can_use())
-			show_camera_static()
+			show_static()
 			return
 
-	var/list/visible_turfs = list()
-
 	if(!active_camera)
-		show_camera_static()
+		show_static()
 		return
 	else if (active_camera.loc == null)
-		show_camera_static()
+		show_static()
 		return
 
 	var/cam_location = active_camera.loc
@@ -181,31 +171,33 @@
 	// If we're not forcing an update for some reason and the cameras are in the same location,
 	// we don't need to update anything.
 	// Most security cameras will end here as they're not moving.
-	if(istype(active_camera, /obj/machinery/camera))
-		var/newturf = get_turf(cam_location)
-		if(last_camera_turf == newturf)
-			return
+	var/newturf = get_turf(cam_location)
+	if(last_camera_turf == newturf)
+		return
 
 	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
-	last_camera_turf = get_turf(cam_location)
+	last_camera_turf = newturf
 
-	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
-
-	for(var/turf/visible_turf in visible_things)
-		visible_turfs += visible_turf
+	var/list/visible_turfs = get_visible_turfs(cam_location)
 
 	var/list/bbox = get_bbox_of_atoms(visible_turfs)
 	var/size_x = bbox[3] - bbox[1] + 1
 	var/size_y = bbox[4] - bbox[2] + 1
 
-	cam_screen.vis_contents = visible_turfs
-	cam_background.icon_state = "clear"
-	cam_background.fill_rect(1, 1, size_x, size_y)
+	cam_screen.show_camera(visible_turfs, size_x, size_y)
 
-/datum/computer_file/program/secureye/proc/show_camera_static()
-	cam_screen.vis_contents.Cut()
-	cam_background.icon_state = "scanline2"
-	cam_background.fill_rect(1, 1, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE)
+// Clear last_camera_turf before showing static so that it doesn't get stuck when turned off and on again
+/datum/computer_file/program/secureye/proc/show_static()
+	last_camera_turf = null
+	cam_screen.show_camera_static()
+
+// Returns the turfs the active camera can see from cam_location.
+/datum/computer_file/program/secureye/proc/get_visible_turfs(cam_location)
+	var/list/visible_turfs = list()
+	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
+	for(var/turf/visible_turf in visible_things)
+		visible_turfs += visible_turf
+	return visible_turfs
 
 // Returns the list of cameras accessible from this computer
 /datum/computer_file/program/secureye/proc/get_available_cameras()
@@ -252,3 +244,5 @@
 			if(tempnetwork.len)
 				camlist["[cam_B.c_tag]"] = cam
 	return camlist
+
+#undef DEFAULT_MAP_SIZE

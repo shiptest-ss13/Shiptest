@@ -261,6 +261,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_BRAZIL
+	autowiki_hidden = TRUE //meme weapons
 	gun_firemodes = list(FIREMODE_BURST)
 	default_firemode = FIREMODE_BURST
 

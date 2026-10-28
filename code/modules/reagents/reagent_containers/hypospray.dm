@@ -16,6 +16,14 @@
 #define COMBAT_SELF_SPRAY 0
 #define COMBAT_SELF_INJECT 0
 
+#define SPENT_PEN_HELPER(pen_path) \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty { \
+		list_reagents = list(); \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty/Initialize(mapload, vol) \
+		. = ..(); \
+		name = "spent [name]"; \
+	}
+
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
@@ -130,6 +138,30 @@
 		. += span_notice("It is currently loaded.")
 	else
 		. += span_notice("It is spent.")
+
+/obj/item/reagent_containers/hypospray/medipen/gambling
+	name = "unlabeled medipen" // floorpill... 2!
+	desc = "A degraded autoinjector, its faded label revealing absolutely no information regarding its contents."
+	icon_state = "atropen"
+	var/static/list/special_descs = list(
+		"Here's your chance. Do it. Do it now.",
+		"This is almost certainly a terrible idea.",
+		"Don't.")
+	reagent_flags = NO_REACT
+	volume = 0
+	amount_per_transfer_from_this = 0
+
+/obj/item/reagent_containers/hypospray/medipen/gambling/Initialize()
+	list_reagents = list()
+	var/fun_types = rand(2, 5)
+	for(var/i = 0, i < fun_types, i++)
+		var/fun_quantity = rand(5, 20)
+		list_reagents += list(get_random_reagent_id() = fun_quantity)
+		volume += fun_quantity
+		amount_per_transfer_from_this += fun_quantity
+	. = ..()
+	if(prob(10))
+		desc = pick(special_descs)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
 	name = "stimpack medipen"
@@ -457,6 +489,9 @@
 	spray_wait = DELUXE_WAIT_SPRAY
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
+
+/obj/item/hypospray/mkii/mkiii/empty
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large
 
 /obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
