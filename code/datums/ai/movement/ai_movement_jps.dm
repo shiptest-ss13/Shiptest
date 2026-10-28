@@ -350,6 +350,8 @@
 	for(var/mob/living/ally in next_step)
 		if(!ally.density || ally == controller.current_movement_target || ally.client || ally.stat != CONSCIOUS || !istype(ally.ai_controller, /datum/ai_controller) || !living_mover.faction_check_mob(ally))
 			continue
+		controller.set_blackboard_key(BB_BASIC_MOB_BLOCKED_BY_ALLY_AT, next_step)
+		controller.set_blackboard_key(BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE, world.time)
 		return make_way(ally, mover, next_step)
 	return FALSE
 
@@ -361,6 +363,8 @@
 	var/turf/mover_turf = get_turf(mover)
 	if(wants_to_step_onto(ally_controller, ally, mover_turf))
 		return swap_places(ally, mover, spot) // head on, like one going after someone and the other falling back to cover down the same corridor, so we swap, as both get where they're going
+	if(stuck_on(ally_controller, mover_turf))
+		return swap_places(ally, mover, spot) // they've been trying to get through us too, just not this tick, like waiting to find another way round in a corridor there's none in
 	if(length(ally_controller.movement_path) && ally_controller.ai_movement?.moving_controllers[ally_controller])
 		return FALSE // on their way somewhere themselves, so they'll be out of it soon enough
 	var/atom/ally_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
@@ -394,6 +398,11 @@
 	if(!goal || AI_IN_RANGE(ally, goal, get_minimum_distance(ally_controller)))
 		return FALSE
 	return get_dist(spot, goal) < get_dist(ally, goal)
+
+/datum/ai_movement/jps/proc/stuck_on(datum/ai_controller/ally_controller, turf/spot)
+	if(ally_controller.blackboard[BB_BASIC_MOB_BLOCKED_BY_ALLY_AT] != spot)
+		return FALSE
+	return world.time - ally_controller.blackboard[BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE] <= max(1 SECONDS, ally_controller.movement_delay * 2)
 
 // ally and mover trade spots, as players on help intent do when they bump. TRUE if they did
 /datum/ai_movement/jps/proc/swap_places(mob/living/ally, atom/movable/mover, turf/spot)

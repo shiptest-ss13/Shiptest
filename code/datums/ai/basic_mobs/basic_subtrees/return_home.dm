@@ -15,6 +15,12 @@
 	var/home_search_range = 7
 	//how long we leave be someone who led us too far, unless they shoot us, so we head home rather than turning back for them at the edge of our leash
 	var/leashed_off_time = 10 SECONDS
+	//this close to them, in sight, and we've caught them rather than being led off, so we see it through past our leash
+	var/close_in_range = 3
+	//them below this much of their health, or down, and we're about to finish them, so we see it through past our leash
+	var/finishing_health_fraction = 0.25
+	//the furthest from home we'll see a fight through past our leash like that, so it can't drag us off forever
+	var/max_press_distance = 40
 	//when home's further than we can path to in one go, how long we try for a stop as far on as we can path, before trying one closer. Closer ones get less, by how much closer they are
 	var/waypoint_timeout = 20 SECONDS
 	//the closest we'll pick a stop on the way home, trying closer each time we can't get to one, before settling where we are instead
@@ -35,8 +41,12 @@
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(!our_turf)
 		return
+	var/turf/anchor = controller.blackboard[BB_BASIC_MOB_GUARD_ANCHOR]
+	if(anchor && (anchor.z != our_turf.z || (get_dist(our_turf, anchor) > give_up_distance && !length(controller.blackboard[BB_BASIC_MOB_HOME_TRAIL]))))
+		drop_anchor(controller) // somewhere we can't sensibly get back to, so home instead
+		anchor = null
 	var/turf/home = controller.blackboard[BB_BASIC_MOB_HOME_TURF]
-	if(!home || home.z != our_turf.z || (get_dist(our_turf, home) > give_up_distance && !length(controller.blackboard[BB_BASIC_MOB_HOME_TRAIL]) && !controller.blackboard[BB_BASIC_MOB_HOME_CHOSEN]))
+	if(!home || home.z != our_turf.z || (!anchor && get_dist(our_turf, home) > give_up_distance && !length(controller.blackboard[BB_BASIC_MOB_HOME_TRAIL]) && !controller.blackboard[BB_BASIC_MOB_HOME_CHOSEN]))
 		// first time, or home's somewhere we can't sensibly get back to. With a trail back we can, however far
 		var/turf/new_home = pick_home(our_turf, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 		if(new_home)
@@ -44,6 +54,8 @@
 			controller.clear_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN) // our own pick now
 		forget_trail(controller)
 		return
+	if(anchor)
+		home = anchor // our leash and trail are from there, until we find whoever we were guarding gone
 	var/home_distance = get_dist(our_turf, home)
 	// only on our way out, as heading back we'd leave spots behind us
 	var/was_heading_home = controller.blackboard[BB_BASIC_MOB_HEADING_HOME]
@@ -69,12 +81,24 @@
 		if(home_distance <= leash)
 			forget_waypoint(controller)
 			return // close enough to keep going after them
+		if(home_distance <= max_press_distance && pressing_advantage(controller, target))
+			forget_waypoint(controller)
+			return // they've not led us off, we've got them, so our trail can take us home after
 		AI_LOG_DECISION(controller, "return_home: [home_distance] tiles from home, too far to keep chasing")
 		controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET) // they've led us too far, so let them go
 		controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_LEASHED_OFF, target, world.time + leashed_off_time) // and don't turn back for them the moment we set off
 		controller.set_blackboard_key(BB_BASIC_MOB_LEASHED_OFF_RANGE, base_leash) // unless they come back within it
+	if(anchor && home_distance <= home_range)
+		controller.clear_blackboard_key(BB_BASIC_MOB_LEASHED_OFF) // back, so anyone who led us away is fair game again
+		forget_waypoint(controller)
+		forget_trail(controller)
+		if(try_linger_over_downed(controller))
+			return
+		AI_LOG_DECISION(controller, "return_home: back where we were guarding [controller.blackboard[BB_BASIC_MOB_GUARD_ANCHOR_FOR]], and they're gone, heading home")
+		drop_anchor(controller)
+		return
 	var/post_radius = ai_post_radius(controller)
-	if(home_distance <= (isnull(post_radius) ? home_range : post_radius))
+	if(!anchor && home_distance <= (isnull(post_radius) ? home_range : post_radius))
 		controller.clear_blackboard_key(BB_BASIC_MOB_LEASHED_OFF) // home, so anyone who led us away is fair game again
 		// and whoever we were standing over, as we never found our way back to them
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
@@ -98,7 +122,18 @@
 		return
 	forget_waypoint(controller)
 	// carry on planning, so we can respond to new stimuli
-	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_HOME_TURF)
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, anchor ? BB_BASIC_MOB_GUARD_ANCHOR : BB_BASIC_MOB_HOME_TURF)
+
+// whether we've caught up with them, or nearly have them down, rather than being kited, so our leash can wait
+/datum/ai_planning_subtree/return_home/proc/pressing_advantage(datum/ai_controller/controller, atom/target)
+	if(!ai_can_see(controller.pawn, target))
+		return FALSE // whatever state they're in, we're only following now
+	if(get_dist(controller.pawn, target) <= close_in_range)
+		return TRUE
+	if(!isliving(target))
+		return FALSE
+	var/mob/living/living_target = target
+	return ai_is_downed(living_target) || living_target.health < living_target.maxHealth * finishing_health_fraction
 
 // heads home a stop at a time, as far on as we can path to. If we can't get to one, like it's somewhere the way round is too long, we try one half as far, and settle where we are only once even a short hop fails
 /datum/ai_planning_subtree/return_home/proc/travel_by_waypoint(datum/ai_controller/controller, turf/our_turf, turf/home)
@@ -203,6 +238,9 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_SINCE)
 
 /datum/ai_planning_subtree/return_home/proc/settle_here(datum/ai_controller/controller, turf/our_turf)
+	if(controller.blackboard[BB_BASIC_MOB_GUARD_ANCHOR])
+		drop_anchor(controller) // no way back to where we stood guard, so for home instead, rather than settling here
+		return
 	forget_waypoint(controller)
 	forget_trail(controller)
 	var/turf/new_home = pick_home(our_turf, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
@@ -231,14 +269,55 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
 		return FALSE
 	if(ai_can_see(controller.pawn, downed, linger_range))
+		if(controller.blackboard[BB_BASIC_MOB_GUARD_ANCHOR_FOR] != downed)
+			set_anchor(controller, our_turf, downed)
 		controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_DOWNED_TARGET)
 		return TRUE
+	if(controller.blackboard[BB_BASIC_MOB_GUARD_ANCHOR])
+		return FALSE // our trail takes us back to where we stood guard, and we see if they're still there once we are
 	var/no_way_there = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == downed && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < AI_NO_PATH_MEMORY
 	if(no_way_there || get_dist(our_turf, their_turf) > controller.max_target_distance - home_range)
 		return FALSE // too far round to path to, so back along our trail, hopefully passing by them again
 	AI_LOG_DECISION(controller, "return_home: heading back to [downed] at [AREACOORD(their_turf)]")
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_DOWNED_TARGET)
 	return TRUE
+
+// create a second anchor with its own trail, separate from home.
+/datum/ai_planning_subtree/return_home/proc/set_anchor(datum/ai_controller/controller, turf/our_turf, mob/living/downed)
+	var/turf/home = controller.blackboard[BB_BASIC_MOB_HOME_TURF]
+	var/post_radius = ai_post_radius(controller)
+	if(!home || get_dist(our_turf, home) <= (isnull(post_radius) ? home_range : post_radius))
+		return // we're home anyway
+	var/turf/old_anchor = controller.blackboard[BB_BASIC_MOB_GUARD_ANCHOR]
+	var/list/home_trail = controller.blackboard[BB_BASIC_MOB_GUARD_HOME_TRAIL]
+	home_trail = home_trail ? home_trail.Copy() : list()
+	if(old_anchor)
+		home_trail += old_anchor // another one since, so the way home's back by the last
+	var/list/trail_out = controller.blackboard[BB_BASIC_MOB_HOME_TRAIL]
+	if(length(trail_out))
+		home_trail += trail_out
+	if(length(home_trail) > trail_length * 2)
+		home_trail.Cut(1, length(home_trail) - trail_length * 2 + 1) // from a long way out, so forgetting the oldest, as we would anyway
+	AI_LOG_DECISION(controller, "return_home: standing guard over [downed] at [AREACOORD(our_turf)], our leash is from here until they're gone")
+	forget_trail(controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_GUARD_HOME_TRAIL) // can't set over a list
+	if(length(home_trail))
+		controller.set_blackboard_key(BB_BASIC_MOB_GUARD_HOME_TRAIL, home_trail)
+	controller.set_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR, our_turf)
+	controller.set_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR_FOR, downed)
+
+// back to heading for home, along the trail we put by when we stood guard
+/datum/ai_planning_subtree/return_home/proc/drop_anchor(datum/ai_controller/controller)
+	var/list/home_trail = controller.blackboard[BB_BASIC_MOB_GUARD_HOME_TRAIL]
+	forget_waypoint(controller)
+	forget_trail(controller)
+	if(length(home_trail))
+		set_trail(controller, home_trail.Copy())
+	controller.clear_blackboard_key(BB_BASIC_MOB_GUARD_HOME_TRAIL)
+	controller.clear_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR)
+	controller.clear_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR_FOR)
+	controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
+	controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
 
 /datum/ai_planning_subtree/return_home/proc/pick_home(turf/our_turf, can_cross_space = FALSE)
 	if(can_cross_space || !is_bare_space(our_turf))

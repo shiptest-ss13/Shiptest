@@ -198,13 +198,17 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, PROC_REF(on_pre_melee))
 	// what we wear and carry slows us as much as it would a player: a hardsuit, or a heavy gun held ready
-	var/move_delay = speed + (mob_spawner ? get_spawner_slowdown(mob_spawner) : 0)
+	var/move_delay = speed
 	var/obj/item/gun/gun_type = get_gun_type()
 	if(gun_type)
 		move_delay += initial(gun_type.wield_slowdown)
 		var/obj/item/attachment/foldable_stock/stock = get_gun_folding_stock(gun_type)
 		if(stock)
 			move_delay += initial(stock.toggled_slowdown) // add stock delay, same as carbons/player
+		// our outfit's slowdown is its own modifier, so it drops off in no gravity like a player's does, while the gun's still counts
+		var/outfit_slowdown = mob_spawner ? get_spawner_slowdown(mob_spawner) : 0
+		if(outfit_slowdown)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/basicmob_equipment, multiplicative_slowdown = outfit_slowdown)
 	else
 		// melee folks move FAST
 		move_delay = AI_MELEE_MOVE_DELAY
@@ -217,8 +221,9 @@
 	if(ispath(armor_base, /obj/item/clothing) && (!mob_spawner || armored_all_over)) // otherwise setup_body_armor() dresses us in our corpse's outfit instead
 		armor = get_clothing_armor(armor_base)
 	setup_body_armor()
+	if(in_hardsuit || (mob_spawner && spawner_has_jetpack(mob_spawner)))
+		ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT) // a jetpack lets us steer in space, not just path across it
 	if(in_hardsuit)
-		ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 		set_light(4)
 	pressure_sealed = in_hardsuit || (mob_spawner && spawner_is_pressure_sealed(mob_spawner)) // a gas mask gives us air, not pressure, so it takes a suit and helmet like a player
 	pepper_proof = in_hardsuit || (mob_spawner && spawner_is_pepper_proof(mob_spawner))

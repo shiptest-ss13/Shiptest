@@ -201,7 +201,7 @@
 #define BB_BASIC_MOB_NEXT_FLANK_CHECK "BB_basic_next_flank_check"
 ///Those who led us further from home than our leash, so we don't instantly go after them again
 #define BB_BASIC_MOB_LEASHED_OFF "BB_basic_leashed_off"
-///How far from home they have to come back for us to go after them again, our leash when we let them go
+///How far from home they have to come back for us to go after them again, our leash when we let them go. From BB_BASIC_MOB_GUARD_ANCHOR instead, if we have one
 #define BB_BASIC_MOB_LEASHED_OFF_RANGE "BB_basic_leashed_off_range"
 ///Somewhere on the way home, when home's further than we can path to in one go, and since when we've been heading for it
 #define BB_BASIC_MOB_HOME_WAYPOINT "BB_basic_home_waypoint"
@@ -216,6 +216,11 @@
 #define BB_BASIC_MOB_HOME_TRAIL_SINCE "BB_basic_home_trail_since"
 ///Heading back home, so don't leave breadcrumb trail
 #define BB_BASIC_MOB_HEADING_HOME "BB_basic_heading_home"
+///Where we stood guard over our kill, which we go back to in place of home until we can't find them anymore for some reason
+#define BB_BASIC_MOB_GUARD_ANCHOR "BB_basic_guard_anchor"
+#define BB_BASIC_MOB_GUARD_ANCHOR_FOR "BB_basic_guard_anchor_for"
+///Our trail from home out to BB_BASIC_MOB_GUARD_ANCHOR, put by while BB_BASIC_MOB_HOME_TRAIL leads back to the anchor instead
+#define BB_BASIC_MOB_GUARD_HOME_TRAIL "BB_basic_guard_home_trail"
 
 // Cover
 ///Where we're taking cover. While set, the cover subtree is in charge of where we stand
@@ -325,6 +330,9 @@
 // Getting about: paths, obstacles, hazards, breaching and waiting out
 ///Until when we won't step aside again for one of ours who wants past, as a world.time
 #define BB_BASIC_MOB_MADE_WAY_UNTIL "BB_basic_made_way_until"
+///Where one of ours last stood in our way, and when, so if they're as stuck on us as we are on them, we swap
+#define BB_BASIC_MOB_BLOCKED_BY_ALLY_AT "BB_basic_blocked_by_ally_at"
+#define BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE "BB_basic_blocked_by_ally_since"
 ///Where we wait out of sight of someone we can't get to, like out in open space
 #define BB_BASIC_MOB_WAIT_TURF "BB_basic_wait_turf"
 ///When we next look for somewhere to wait out of sight of someone we can't get to

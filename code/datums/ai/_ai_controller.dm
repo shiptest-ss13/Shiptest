@@ -522,6 +522,9 @@ multiple modular subtrees with behaviors
 	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL)
 	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_NEXT)
 	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_SINCE)
+	clear_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR)
+	clear_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR_FOR)
+	clear_blackboard_key(BB_BASIC_MOB_GUARD_HOME_TRAIL)
 	cancel_movement_actions() // and stop walking back to the old one
 
 /// Makes spot home, and forgets the way back to the old one, like when an admin picks somewhere for us to hold
@@ -573,7 +576,7 @@ multiple modular subtrees with behaviors
 			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target) // they've picked the fight back up, so it's on again until they lead us too far again
 		return FALSE
 	if(leashed_until && world.time < leashed_until)
-		var/turf/home = blackboard[BB_BASIC_MOB_HOME_TURF]
+		var/turf/home = blackboard[BB_BASIC_MOB_GUARD_ANCHOR] || blackboard[BB_BASIC_MOB_HOME_TURF] // where we're guarding someone we downed, if we are, as our leash is from there
 		var/turf/their_turf = get_turf(target)
 		if(their_turf && (get_dist(pawn, their_turf) <= 1 || (home && their_turf.z == home.z && get_dist(home, their_turf) <= blackboard[BB_BASIC_MOB_LEASHED_OFF_RANGE])))
 			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target)

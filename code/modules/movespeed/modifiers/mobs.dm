@@ -127,6 +127,11 @@
 	variable = TRUE
 	flags = IGNORE_NOSLOW
 
+///What a basic mob's worn outfit slows it, which drops off while floating, same as equipment_speedmod for players
+/datum/movespeed_modifier/basicmob_equipment
+	variable = TRUE
+	blacklisted_movetypes = FLOATING
+
 ///Slowdown for wading through water
 /datum/movespeed_modifier/wading
 	blacklisted_movetypes = MOVETYPES_NOT_TOUCHING_GROUND
