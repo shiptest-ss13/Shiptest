@@ -101,3 +101,7 @@
 	if(!LAZYLEN(user.client.screen_texts))
 		return
 	user.client.screen_texts[1].play_to_mob(user)
+
+/atom/movable/screen/text/screen_text/short
+	play_delay = 0.5
+	fade_out_delay = 4 SECONDS

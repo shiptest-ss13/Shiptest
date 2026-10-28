@@ -527,6 +527,30 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			return
 	abandon_mob()
 
+/mob/dead/observer/verb/open_ship_select()
+	set category = "Ghost"
+	set name = "Ship List"
+	set desc = "View the ships you can join or apply to."
+
+	if(!SSticker?.IsRoundInProgress())
+		to_chat(src, span_boldwarning("The round is either not ready, or has already finished..."))
+		return
+
+	var/relevant_cap
+	var/hard_popcap = CONFIG_GET(number/hard_popcap)
+	var/extreme_popcap = CONFIG_GET(number/extreme_popcap)
+	if(hard_popcap && extreme_popcap)
+		relevant_cap = min(hard_popcap, extreme_popcap)
+	else
+		relevant_cap = max(hard_popcap, extreme_popcap)
+
+	// the join queue lives in the lobby, so send them there if they'd need to wait in it
+	if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
+		to_chat(src, span_danger("[CONFIG_GET(string/hard_popcap_message)] Respawn and use Join Game to enter the queue."))
+		return
+
+	LateChoices()
+
 /mob/dead/observer/verb/change_view_range()
 	set category = "Ghost"
 	set name = "View Range"

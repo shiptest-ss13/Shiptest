@@ -18,32 +18,27 @@
 	],
 	"map_path": "_maps/shuttles/independent/independent_falmouth.dmm",
 	"token_icon_state": "ship_small_long_generic",
-	"limit": 1,
-	"starting_funds": 2000,
-	"tranist_x_offset": -5,
-	"tranist_y_offset": -20,
+	"limit": 2,
+	"starting_funds": 1500,
+	"tranist_x_offset": 1,
+	"tranist_y_offset": 3,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain/cheap",
-			"officer": true,
-			"slots": 1
-		},
-		"First Mate": {
-			"outfit": "/datum/outfit/job/independent/hop",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Security Detail": {
-			"outfit": "/datum/outfit/job/independent/security/merc",
+			"outfit": "/datum/outfit/job/independent/security/gown",
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
-		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant/cheap",
-			"slots": 1
+		"Crewman": {
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
+			"slots": 2
 		}
 	},
 	"enabled": true
