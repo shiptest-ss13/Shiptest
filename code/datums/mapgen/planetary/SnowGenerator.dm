@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/snow
-	mountain_height = 65
+	mountain_height = 0.45
 	perlin_zoom = 55
 
 	initial_closed_chance = 45
@@ -110,7 +110,7 @@
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
-	feature_spawn_chance = 1
+	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
 		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 20,
 		/obj/effect/spawner/random/greeble/iceplanet = 60,
