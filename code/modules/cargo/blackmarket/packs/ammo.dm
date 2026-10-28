@@ -209,6 +209,17 @@
 	stock_max = 4
 	availability_prob = 40
 
+/datum/blackmarket_item/ammo/sharplite_superheavy_cell
+	name = "Sharplite Plus Cell"
+	desc = "A sharplite 'super' heavy cell. It's like a plus cell for the biggest of the sharplites."
+	item = /obj/item/stock_parts/cell/gun/sharplite/heavy/plus
+
+	cost_min = 1200
+	cost_max = 2000
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."
@@ -243,11 +254,22 @@
 
 /datum/blackmarket_item/ammo/advanced_weapon_cell
 	name = "Upgraded Eoehoma Power Cells"
-	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
+	desc = "These upgraded weapon powercells come with (almost) twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
 	cost_min = 800
 	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 25
+
+/datum/blackmarket_item/ammo/advanced_weapon_cell
+	name = "Upgraded Clover Heavy Power Cells"
+	desc = "Clover Photonic's secret, limited-run big ass heavy power cells. They only make 'em for CLIP - good thing they lost a whole shipment of them."
+	item = /obj/item/stock_parts/cell/gun/upgraded
+
+	cost_min = 2000
+	cost_max = 2800
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 25

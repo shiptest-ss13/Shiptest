@@ -20,8 +20,8 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	mag_type = /obj/item/ammo_box/magazine/m44
 
-/obj/item/storage/guncase/pistol/detective
-	gun_type = /obj/item/gun/ballistic/revolver/detective
+/obj/item/storage/guncase/pistol/flint
+	gun_type = /obj/item/gun/ballistic/revolver/flint
 	mag_type = /obj/item/ammo_box/c38
 
 /obj/item/storage/guncase/pistol/shadow
@@ -179,9 +179,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
-/obj/item/storage/guncase/saw80
-	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/lmg
-	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+/obj/item/storage/guncase/python
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/python
+	mag_type = /obj/item/ammo_box/magazine/python_box
 
 /obj/item/storage/guncase/hydra80
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/indie
@@ -341,14 +341,14 @@
 
 /obj/item/storage/guncase/energy/al607
 	gun_type = /obj/item/gun/energy/sharplite/sarissa
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
 	gun_type = /obj/item/gun/energy/sharplite/hades
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/x01
 	gun_type = /obj/item/gun/energy/sharplite/yari
@@ -450,11 +450,19 @@
 
 /obj/item/storage/guncase/ecm25
 	gun_type = /obj/item/gun/energy/clover/faveleira/clip
-	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /obj/item/storage/guncase/pl25
 	gun_type = /obj/item/gun/energy/clover/faveleira
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
+
+/obj/item/storage/guncase/ecm20
+	gun_type = /obj/item/gun/energy/clover/maguey/clip
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
+
+/obj/item/storage/guncase/pl20
+	gun_type = /obj/item/gun/energy/clover/maguey
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /obj/item/storage/guncase/ecm20
 	gun_type = /obj/item/gun/energy/clover/maguey/clip
@@ -508,7 +516,11 @@
 
 /obj/item/storage/guncase/barghest
 	gun_type = /obj/item/gun/energy/sharplite/hades/inteq
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
+
+/obj/item/storage/guncase/nahual
+	gun_type = /obj/item/gun/energy/clover/maguey/clip/inteq
+	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/nahual
 	gun_type = /obj/item/gun/energy/clover/maguey/clip/inteq

@@ -613,7 +613,7 @@
 
 	shrapnel_magnitude = 8
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
-	manufacturer = MANUFACTURER_WARRA_OLD
+	manufacturer = MANUFACTURER_VIGILITAS
 
 
 /obj/item/mine/proximity/explosive/plasma

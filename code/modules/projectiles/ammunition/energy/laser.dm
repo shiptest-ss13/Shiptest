@@ -6,9 +6,11 @@
 	projectile_type = /obj/projectile/beam/laser/sharplite
 	select_name = "kill"
 	e_cost = 555
+	delay = 0.35 SECONDS
 
 /obj/item/ammo_casing/energy/laser/sharplite/efficent
-	e_cost = 700  //9 per MW mini cell
+	e_cost = 583  //12 per MW mini cell
+	delay = 0.3 SECONDS
 
 /obj/item/ammo_casing/energy/laser/underbarrel
 	projectile_type = /obj/projectile/beam/laser
@@ -31,12 +33,19 @@
 	projectile_type = /obj/projectile/beam/laser/assault
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
-	e_cost = 666 //30 per upgraded cell, 14 per regular
+	e_cost = 500 //30 per upgraded cell, 20 per regular
 
 /obj/item/ammo_casing/energy/laser/assault/sharplite
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
+	e_cost = 600 //30 per regular cell, 45 per upgraded cell
+
+/obj/item/ammo_casing/energy/laser/assault/sharplite/resistor
+	projectile_type = /obj/projectile/beam/laser/assault
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	delay = 2
+	e_cost = 500 //30 per upgraded cell, 20 per regular
 
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan
@@ -64,7 +73,7 @@
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	delay = 1 SECONDS
-	e_cost = 2000 // 5 per regular cell 10 per upgraded cell
+	e_cost = 2000 // 10 per regular cell 15 per upgraded cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma
@@ -76,25 +85,25 @@
 /obj/item/ammo_casing/energy/lasergun/eoehoma/wasp
 	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
 	fire_sound = 'sound/weapons/laser4.ogg'
-	e_cost = 799
+	e_cost = 625
 	delay = 0.1 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
 	projectile_type = /obj/projectile/beam/laser/eoehoma/heavy
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 10000
+	e_cost = 7500
 	select_name = "overcharge"
 	delay = 1 SECONDS
 
 /obj/item/ammo_casing/energy/laser/smg
 	projectile_type = /obj/projectile/beam/laser/weak
-	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
+	e_cost = 600 //16 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
 
 /obj/item/ammo_casing/energy/laser/sharplite/smg
 	projectile_type = /obj/projectile/beam/weak/sharplite
-	e_cost = 500 //20 shots with a normal power cell, 40 with an upgraded
+	e_cost = 400 //25 shots with a normal power cell, 50 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
 	fire_sound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
@@ -128,7 +137,7 @@
 	projectile_type = /obj/projectile/beam/weak/shotgun
 	pellets = 3
 	variance = 25
-	e_cost = 1000
+	e_cost = 625 //16 per standard, 24 per upgraded
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/shotgun/drone
@@ -160,7 +169,7 @@
 /obj/item/ammo_casing/energy/laser/clover/smg
 	projectile_type = /obj/projectile/beam/laser/clover/smg
 	delay = 0.16 SECONDS
-	e_cost = 666
+	e_cost = 500
 
 /obj/item/ammo_casing/energy/laser/clover/magnum
 	projectile_type = /obj/projectile/beam/laser/clover/magnum
@@ -170,20 +179,20 @@
 	projectile_type = /obj/projectile/beam/laser/clover/shotgun
 	pellets = 5
 	variance = 25
-	e_cost = 1250
+	e_cost = 1666
 	select_name = "scatter"
 	fire_sound = 'sound/weapons/laser.ogg'
 
 /obj/item/ammo_casing/energy/laser/clover/highpower
 	projectile_type = /obj/projectile/beam/laser/clover/highpower
-	e_cost = 333
+	e_cost = 666
 	select_name = "kill"
 	delay = 0.16 SECONDS
 	fire_sound = 'sound/weapons/laser4.ogg'
 
 /obj/item/ammo_casing/energy/laser/clover/overcharge
 	projectile_type = /obj/projectile/beam/laser/clover/overcharge
-	e_cost = 5000
+	e_cost = 10000
 	select_name = "overcharge"
 	delay = 2 SECONDS
 	fire_sound = 'sound/weapons/beam_sniper.ogg'

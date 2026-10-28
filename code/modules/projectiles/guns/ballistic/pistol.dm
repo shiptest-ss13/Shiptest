@@ -55,6 +55,8 @@
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_HANDS && funnysounds) // We do this instead of equip_sound as we only want this to play when it's wielded
@@ -122,8 +124,8 @@
 
 //not technically a pistol but whatever
 /obj/item/gun/ballistic/automatic/pistol/derringer
-	name = ".38 Derringer"
-	desc = "An easily concealable derringer. Uses .38 special ammo."
+	name = "HP Spark"
+	desc = "An easily concealable derringer. Its simple design and modest demand make the Spark a common project for trainee HP gunsmiths. Chambered in .38."
 	icon_state = "derringer"
 	item_state = "hp_generic"
 
@@ -131,6 +133,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr38
 	allowed_ammo_types = list(
@@ -162,13 +165,14 @@
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
-	name = "\improper .357 Syndicate Derringer"
-	desc = "An easily concealable derriger, if not for the bright red-and-black. Uses .357 ammo."
+	name = "D-9 \"Temblor\""
+	desc = "An easily concealable derriger. It was rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations. Chambered in .357."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon_state = "derringer_syndie"
 	item_state = "sa_generic"
@@ -179,12 +183,13 @@
 	fire_sound_volume = 50 //Tactical stealth firing
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/gold
-	name = "\improper Golden Derringer"
+	name = "golden derringer"
 	desc = "The golden sheen is somewhat counter-intuitive on a holdout weapon, but it looks cool. Uses .357 ammo."
 	icon_state = "derringer_gold"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
+	manufacturer = MANUFACTURER_NONE
 
 EMPTY_GUN_HELPER(automatic/pistol/derringer)

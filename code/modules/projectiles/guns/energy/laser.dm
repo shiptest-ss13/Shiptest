@@ -33,7 +33,7 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/retro
 	autowiki_hidden = TRUE //not obtainable afaik
@@ -48,8 +48,6 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = MANUFACTURER_SHARPLITE
-
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -63,7 +61,9 @@
 	ammo_x_offset = 3
 	selfcharge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
@@ -130,6 +130,8 @@
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
+	autowiki_hidden = TRUE
+
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/projectile/beam/laser/accelerator
 	select_name = "accelerator"
@@ -155,6 +157,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	ammo_x_offset = 3
 	w_class = WEIGHT_CLASS_BULKY
+
+	autowiki_hidden = TRUE
 
 ////////Laser Tag////////////////////
 
@@ -203,7 +207,6 @@
 		/obj/item/stock_parts/cell/gun/mini,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
-	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
 	. = ..()
