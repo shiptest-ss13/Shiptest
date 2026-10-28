@@ -512,6 +512,25 @@ multiple modular subtrees with behaviors
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT)
 			finish_behavior(current_behavior)
 
+/// Forgets where home is and the way back to it, so we make wherever we are now home
+/datum/ai_controller/proc/forget_home()
+	clear_blackboard_key(BB_BASIC_MOB_HOME_TURF)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT_SINCE)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT_HOP)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_NEXT)
+	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_SINCE)
+	cancel_movement_actions() // and stop walking back to the old one
+
+/// Makes spot home, and forgets the way back to the old one, like when an admin picks somewhere for us to hold
+/datum/ai_controller/proc/set_home(turf/spot)
+	forget_home()
+	set_blackboard_key(BB_BASIC_MOB_HOME_TURF, spot)
+	set_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN, TRUE)
+	wake_up() // so we go there even if we were asleep
+
 /// Ends behavior, passing along the arguments it was queued with, like if we've given up on it or are doing something else instead
 /datum/ai_controller/proc/finish_behavior(datum/ai_behavior/behavior, succeeded = FALSE)
 	var/list/arguments = list(src, succeeded)

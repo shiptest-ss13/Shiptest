@@ -122,6 +122,33 @@
 // home is anywhere within our post radius
 /datum/ai_planning_subtree/return_home/post
 	under_fire_time = 0 // straight back even under fire, as our post is where we fight from
+	var/shot_at_memory = 8 SECONDS
+
+// back onto the post itself once we're free to, if its cover still faces whoever we're fighting, rather than staying wherever in our post radius we ended up
+/datum/ai_planning_subtree/return_home/post/close_to_home(datum/ai_controller/controller, turf/our_turf, turf/home, was_heading_home)
+	if(our_turf == home || AI_POST_BROKEN(controller))
+		return
+	if(controller.blackboard[BB_BASIC_MOB_PEEK_TURF] || controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL] || world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
+		return
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	if(!QDELETED(target) && !cover_facing(home, target))
+		return // it doesn't cover us from them, so wherever we are is as good
+	var/turf/shot_from = controller.blackboard[BB_BASIC_MOB_SHOT_FROM]
+	if(shot_from && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_at_memory && !cover_facing(home, shot_from))
+		return
+	if(!ai_can_take_spot(controller.pawn, home))
+		return
+	if(controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF] == home)
+		controller.clear_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF) // its cover faces them, so it's good again
+	controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
+	if(QDELETED(target))
+		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF)
+	else
+		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, home) // so fighting_cover doesn't take us back off it
+	if(!was_heading_home)
+		AI_LOG_DECISION(controller, "return_home: back onto our post at [home]")
+	controller.set_blackboard_key(BB_BASIC_MOB_HEADING_HOME, TRUE)
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_HOME_TURF)
 
 /datum/ai_planning_subtree/search_lost_target/post
 	search_style = AI_SEARCH_STYLE_HOLD

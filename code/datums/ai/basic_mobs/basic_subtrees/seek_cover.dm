@@ -71,7 +71,7 @@
 
 /datum/ai_planning_subtree/seek_cover/proc/react_to_shot(datum/ai_controller/controller, turf/danger, turf/our_turf, reloading)
 	controller.clear_blackboard_key(BB_BASIC_MOB_RELOAD_LEFT_FROM) // under fire, hit or not, so where we stand is down to taking cover now, not going back where we were
-	if(our_turf == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] && !controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
+	if(our_turf == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] && !controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS] && !post_holds_against(controller, our_turf, danger))
 		// we got hit sitting in the cover we picked, so it isn't covering us, whatever it looked like. One going past is what cover's for
 		controller.set_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF, our_turf)
 		AI_LOG_DECISION(controller, "seek_cover: got shot in our cover at [our_turf], so it's no good")
@@ -110,6 +110,19 @@
 	else if(prob(return_fire_chance))
 		controller.queue_behavior(fire_back_behavior, BB_BASIC_MOB_SHOT_FROM) // a volley back on our way to cover
 		AI_LOG_DECISION(controller, "seek_cover: firing back at [danger] on the way to cover")
+
+// whether we're on the post we hold with its cover towards danger, which takes a few hits to give up, like fighting cover does
+/datum/ai_planning_subtree/seek_cover/proc/post_holds_against(datum/ai_controller/controller, turf/our_turf, turf/danger)
+	if(isnull(controller.blackboard[BB_BASIC_MOB_POST_RADIUS]) || our_turf != controller.blackboard[BB_BASIC_MOB_HOME_TURF] || !cover_facing(our_turf, danger))
+		return FALSE
+	if(our_turf == controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF])
+		return TRUE // our fighting cover too, so its own count below decides
+	var/hits = count_dug_in_hit(controller, our_turf)
+	if(hits < dug_in_hits_to_move)
+		AI_LOG_DECISION(controller, "seek_cover: hit at our post [our_turf], [hits] of [dug_in_hits_to_move] before we give it up")
+		return TRUE
+	controller.clear_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS)
+	return FALSE
 
 // counts a hit at spot towards giving up the cover there, as how many we've had there lately, starting over if it's somewhere new or it's been a while
 /datum/ai_planning_subtree/seek_cover/proc/count_dug_in_hit(datum/ai_controller/controller, turf/spot)

@@ -36,11 +36,12 @@
 	if(!our_turf)
 		return
 	var/turf/home = controller.blackboard[BB_BASIC_MOB_HOME_TURF]
-	if(!home || home.z != our_turf.z || (get_dist(our_turf, home) > give_up_distance && !length(controller.blackboard[BB_BASIC_MOB_HOME_TRAIL])))
+	if(!home || home.z != our_turf.z || (get_dist(our_turf, home) > give_up_distance && !length(controller.blackboard[BB_BASIC_MOB_HOME_TRAIL]) && !controller.blackboard[BB_BASIC_MOB_HOME_CHOSEN]))
 		// first time, or home's somewhere we can't sensibly get back to. With a trail back we can, however far
 		var/turf/new_home = pick_home(our_turf, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 		if(new_home)
 			controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, new_home)
+			controller.clear_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN) // our own pick now
 		forget_trail(controller)
 		return
 	var/home_distance = get_dist(our_turf, home)
@@ -80,6 +81,7 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_LEASHED_OFF) // home, so anyone who led us away is fair game again
 		forget_waypoint(controller)
 		forget_trail(controller)
+		close_to_home(controller, our_turf, home, was_heading_home)
 		return
 	if(try_linger_over_downed(controller))
 		forget_waypoint(controller)
@@ -206,6 +208,11 @@
 	var/turf/new_home = pick_home(our_turf, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 	if(new_home)
 		controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, new_home)
+		controller.clear_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN) // couldn't get to the one we were given
+
+// once we're close enough to home to count as there, overriden by the mob archetype
+/datum/ai_planning_subtree/return_home/proc/close_to_home(datum/ai_controller/controller, turf/our_turf, turf/home, was_heading_home)
+	return
 
 /datum/ai_planning_subtree/return_home/proc/forget_waypoint(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT)

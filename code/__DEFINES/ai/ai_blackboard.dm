@@ -189,6 +189,8 @@
 // Home, leash and posts
 ///Where we live and go back to once there's nothing to do
 #define BB_BASIC_MOB_HOME_TURF "BB_basic_home_turf"
+///Home was picked for us, like by an admin, so we head there however far it is rather than settling where we are
+#define BB_BASIC_MOB_HOME_CHOSEN "BB_basic_home_chosen"
 ///This mob's own leash, how far from home it chases someone before letting them go, in place of its AI's. 0 for none
 #define BB_BASIC_MOB_LEASH_DISTANCE "BB_basic_leash_distance"
 ///For those holding a post with holds_post, how far from home they'll go to take cover or get a shot, unless flanked or approached
