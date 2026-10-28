@@ -420,9 +420,9 @@
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
 
-/obj/item/storage/belt/security/webbing/ngr/hydra_lmg/PopulateContents()
+/obj/item/storage/belt/security/webbing/ngr/python/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m556_42_hydra/extended(src)
+		new /obj/item/ammo_box/magazine/python_box(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
 
