@@ -41,7 +41,7 @@
 // Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
 /datum/export/material/diamond
-	cost = 125
+	cost = 65
 	unit_name = "cm3 of diamond"
 	material_id = /datum/material/diamond
 
