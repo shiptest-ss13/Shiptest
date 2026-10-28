@@ -22,6 +22,8 @@
 
 	blood_overlay_type = "shoe"
 
+	article = "a pair of"
+
 	var/offset = 0
 	var/equipped_before_drop = FALSE
 	///Whether these shoes have laces that can be tied/untied
