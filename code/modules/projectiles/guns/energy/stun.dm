@@ -7,6 +7,7 @@
 	ammo_x_offset = 3
 	spread = 2
 	spread_unwielded = 4
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/e_gun/advtaser
 	name = "hybrid taser"
@@ -17,6 +18,7 @@
 
 	spread = 2
 	spread_unwielded = 4
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/e_gun/advtaser/cyborg
 	autowiki_hidden = TRUE //cyborg module, not a carryable weapon
@@ -36,7 +38,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_NONE
 	spread = 2
 	spread_unwielded = 4
 

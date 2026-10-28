@@ -37,6 +37,8 @@
 		)
 	)
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
 	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam
 	return

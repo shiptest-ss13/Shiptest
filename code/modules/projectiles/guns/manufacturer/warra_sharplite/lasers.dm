@@ -5,6 +5,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
+	bad_type = /obj/item/gun/energy/sharplite
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 
@@ -101,14 +102,13 @@
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
 	item_state = "hoslaserkill0"
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/sharplite/yari/brazil/true
 	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
 	item_state = "hoslaserkill0"
 	selfcharge = 1
-	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/sharplite/rush
 	name = "\improper L305 “Rush” Tactical Plasma Gun"
@@ -289,6 +289,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	manufacturer = MANUFACTURER_INTEQ
 
 	icon_state = "x12_inteq"
 	item_state = "x12_inteq"
@@ -352,7 +353,6 @@
 	icon_state = "x46_zeta"
 	item_state = "x46_zeta"
 	shaded_charge = TRUE
-	manufacturer = MANUFACTURER_SHARPLITE
 
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
@@ -435,6 +435,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	manufacturer = MANUFACTURER_INTEQ
 
 	icon_state = "al655_inteq"
 	item_state = "al655_inteq"
@@ -527,7 +528,7 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
 
 	allowed_ammo_types = list(
@@ -550,7 +551,8 @@
 	ammo_x_offset = 3
 	selfcharge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	manufacturer = MANUFACTURER_SHARPLITE
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
