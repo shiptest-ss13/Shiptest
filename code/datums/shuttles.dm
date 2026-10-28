@@ -532,7 +532,7 @@
 /datum/map_template/shuttle/subshuttles/gryke
 	file_name = "ngr_gryke"
 	name = "Gryke-class Assault Lander"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
 

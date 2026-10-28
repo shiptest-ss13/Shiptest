@@ -45,7 +45,7 @@
 	cost = 500
 	contains = list(/obj/item/clothing/suit/space/syndicate/surplus,
 					/obj/item/clothing/head/helmet/space/syndicate/surplus)
-	faction = /datum/faction/syndicate
+	faction = /datum/faction/scarborough
 	faction_discount = 30
 
 /datum/supply_pack/spacesuits/armored_engi_spacesuit
@@ -54,7 +54,7 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/syndicate/engie,
 					/obj/item/clothing/head/helmet/space/syndicate/engie)
-	faction = /datum/faction/syndicate
+	faction = /datum/faction/scarborough
 	faction_locked = TRUE
 	faction_discount = 0
 

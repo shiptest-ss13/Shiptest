@@ -265,7 +265,7 @@
 	contains = list(/obj/item/grenade/lorentz)
 	crate_name = "lorentz grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 

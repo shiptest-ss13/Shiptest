@@ -210,7 +210,7 @@
 	desc = "Contains a 90-round 5.56x42mm CLIP box for the Python Squad Automatic Weapon. Consider designating an ammo bearer."
 	contains = list(/obj/item/ammo_box/magazine/python_box/empty)
 	cost = 1000
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 
 /* CM Lancaster */
 
@@ -552,7 +552,7 @@
 	desc = "Contains a Cybersun Plasma Cell, compatible with most Cybersun energy weapons"
 	contains = list(/obj/item/stock_parts/cell/gun/cybersun)
 	cost = 750
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 10
 
 /datum/supply_pack/magazine/cybersun_cell/mini
