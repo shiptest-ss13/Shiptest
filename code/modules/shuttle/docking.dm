@@ -101,7 +101,7 @@
 	var/list/exceptions_list = list()
 	// Recount turfs since we've got them all anyways
 	var/new_turf_count = 0
-	for(var/i in 1 to old_turfs.len)
+	for(var/i in 1 to length(old_turfs))
 		try
 			CHECK_TICK
 			var/turf/oldT = old_turfs[i]
