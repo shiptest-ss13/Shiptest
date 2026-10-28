@@ -101,6 +101,7 @@
 	var/wear_maximum = 300 // wear cap
 
 	// OVERLAYS //
+	var/no_bolt_overlay = FALSE // set to TRUE if we don't want bolt overlays
 	var/mag_display = FALSE // does the sprite show a visible mag
 	var/mag_display_ammo = FALSE // does the sprite have an ammo display
 	var/empty_indicator = FALSE // does the sprite have an empty indicator
@@ -150,9 +151,9 @@
 
 /obj/item/gun/ballistic/update_overlays()
 	. = ..()
-	if (bolt_type == BOLT_TYPE_LOCKING)
+	if (bolt_type == BOLT_TYPE_LOCKING && !no_bolt_overlay)
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
-	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
+	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked && !no_bolt_overlay)
 		. += "[icon_state]_bolt"
 	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
