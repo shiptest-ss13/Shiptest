@@ -46,8 +46,8 @@
 /datum/outfit/job/syndicate/ert/ngr/automatic_rifleman
 	name = "ERT - NGR Automatic Rifleman"
 
-	belt = /obj/item/storage/belt/security/webbing/ngr/python
-	suit_store = /obj/item/gun/ballistic/automatic/hmg/python
+	belt = /obj/item/storage/belt/security/webbing/ngr/hydra_lmg
+	suit_store = /obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
 
 /datum/outfit/job/syndicate/ert/ngr/automatic_rifleman/softsuit
 	name = "ERT - NGR Automatic Rifleman (Softsuit)"

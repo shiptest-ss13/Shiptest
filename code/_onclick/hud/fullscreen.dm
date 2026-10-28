@@ -111,13 +111,6 @@
 	layer = CURSE_LAYER
 	plane = FULLSCREEN_PLANE
 
-/atom/movable/screen/fullscreen/chronograph
-	icon_state = "bluemode"
-
-/atom/movable/screen/fullscreen/chronograph_death
-	icon_state = "bluedeath"
-
-
 /atom/movable/screen/fullscreen/impaired
 	icon_state = "impairedoverlay"
 

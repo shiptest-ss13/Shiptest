@@ -23,9 +23,6 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	name = "hangar numbers landmark"
 
 /obj/effect/landmark/outpost/hangar_numbers/proc/write_number(num)
-	if(!num)
-		qdel(src)
-		return FALSE
 	num = round(num)
 	var/low_digit = num % 10
 	var/high_digit = ((num - low_digit) / 10) % 10
@@ -42,9 +39,6 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	name = "shaft numbers landmark"
 
 /obj/effect/landmark/outpost/shaft_number/proc/write_number(num)
-	if(!num)
-		qdel(src)
-		return FALSE
 	num = text2num(num)
 
 	var/decal_type = get_number_decal(num, WEST)

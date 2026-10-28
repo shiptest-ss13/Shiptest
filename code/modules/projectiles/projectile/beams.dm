@@ -157,9 +157,9 @@
 
 	wound_bonus = -30
 
-	var/tile_dropoff = 1
+	var/tile_dropoff = 2
 	var/ap_dropoff = 5
-	var/ap_dropoff_cutoff = -20
+	var/ap_dropoff_cutoff = -30
 
 /obj/projectile/beam/laser/clover/shotgun/Range() //10% loss per tile = max range of 10, generally
 	..()

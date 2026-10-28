@@ -84,11 +84,13 @@
 	M.set_buckled(src)
 	M.setDir(dir)
 
-	if (HAS_TRAIT(M, TRAIT_FLIP_ON_LYING) && buckle_lying != NO_BUCKLE_LYING && buckle_lying != 0)
+	if(iskepori(M) && buckle_lying != NO_BUCKLE_LYING && buckle_lying != 0) // flip kepori so they aren't vertical on a horizontal bed
 		if(dir & NORTH)
-			M.setDir(WEST)
-		else if(dir & SOUTH)
 			M.setDir(EAST)
+		else if(dir & SOUTH)
+			M.setDir(WEST)
+		M.set_lying_angle(180)
+		M.pixel_x = 8
 
 	buckled_mobs |= M
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)

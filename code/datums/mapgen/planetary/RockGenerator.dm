@@ -90,7 +90,6 @@
 		/obj/structure/vein/rockplanet/classtwo = 40,
 		/obj/effect/spawner/random/anomaly/rock = 10,
 		/obj/structure/vein/rockplanet/classthree = 10,
-		/obj/structure/vein/rockplanet/classthree/rare = 5,
 		/obj/effect/spawner/random/anomaly/big = 1 //get out of here stalker
 	)
 

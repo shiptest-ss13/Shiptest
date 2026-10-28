@@ -47,9 +47,8 @@
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special
 
-	belt = /obj/item/gun/ballistic/revolver/flint
+	belt = /obj/item/gun/ballistic/revolver/detective
 	suit_store = /obj/item/gun/ballistic/rifle/scout
-	l_pocket = /obj/item/ammo_box/c38
 
 	backpack_contents = list(/obj/item/ammo_box/a300 = 5)
 

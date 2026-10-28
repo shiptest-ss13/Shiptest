@@ -15,9 +15,6 @@
 	spread = 6
 	spread_unwielded = 6
 
-	recoil = 0.5
-	recoil_unwielded = 2
-
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma, /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
 	manufacturer = MANUFACTURER_EOEHOMA
 
@@ -41,9 +38,6 @@
 	dual_wield_spread = 40
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA
-
-	recoil = 2
-	recoil_unwielded = 10
 
 /obj/item/gun/energy/e_gun/e11/empty_cell
 	spawn_no_ammo = TRUE

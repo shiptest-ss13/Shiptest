@@ -5,7 +5,6 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
-	bad_type = /obj/item/gun/energy/sharplite
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 
@@ -21,9 +20,6 @@
 
 	muzzleflash_iconstate = "muzzle_flash_sharplite"
 	light_color = COLOR_PALE_BLUE_GRAY
-
-	recoil = 0
-	recoil_unwielded = 1
 
 	modifystate = TRUE
 	ammo_x_offset = 2
@@ -91,9 +87,6 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-	recoil = 0.5
-	recoil_unwielded = 2
-
 /obj/item/gun/energy/sharplite/yari/empty_cell
 	spawn_no_ammo = TRUE
 
@@ -102,13 +95,14 @@
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
 	item_state = "hoslaserkill0"
-	manufacturer = MANUFACTURER_NONE
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/sharplite/yari/brazil/true
 	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
 	item_state = "hoslaserkill0"
 	selfcharge = 1
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/sharplite/rush
 	name = "\improper L305 “Rush” Tactical Plasma Gun"
@@ -187,9 +181,6 @@
 	spread = 0
 	spread_unwielded = 12
 
-	recoil = 1
-	recoil_unwielded = 3
-
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
 	)
@@ -219,9 +210,6 @@
 
 	spread = 2
 	spread_unwielded = 10
-
-	recoil = 0.5
-	recoil_unwielded = 2
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -257,15 +245,11 @@
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
-	fire_delay = 0.15 SECONDS
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	spread = 2
 	spread_unwielded = 10
-
-	recoil = 0.5
-	recoil_unwielded = 1
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -289,7 +273,6 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
-	manufacturer = MANUFACTURER_INTEQ
 
 	icon_state = "x12_inteq"
 	item_state = "x12_inteq"
@@ -324,9 +307,6 @@
 	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
 	wield_delay = 0.8 SECONDS
 
-	recoil = 0.5
-	recoil_unwielded = 2
-
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	zoom_amt = SHOTGUN_ZOOM
@@ -353,6 +333,7 @@
 	icon_state = "x46_zeta"
 	item_state = "x46_zeta"
 	shaded_charge = TRUE
+	manufacturer = MANUFACTURER_SHARPLITE
 
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
@@ -388,13 +369,13 @@
 	item_state = "al655"
 
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite)
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite/heavy,
-		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/heavy/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus/empty,
+		/obj/item/stock_parts/cell/gun/sharplite,
+		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
 	)
 
 	weapon_weight = WEAPON_MEDIUM
@@ -405,9 +386,6 @@
 
 	shaded_charge = TRUE
 	modifystate = FALSE
-
-	recoil = 0.5
-	recoil_unwielded = 3
 
 	fire_delay = 0.2 SECONDS
 
@@ -435,7 +413,6 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
-	manufacturer = MANUFACTURER_INTEQ
 
 	icon_state = "al655_inteq"
 	item_state = "al655_inteq"
@@ -448,13 +425,13 @@
 	item_state = "al607"
 
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite/sniper)
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite/heavy,
-		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/heavy/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus/empty,
+		/obj/item/stock_parts/cell/gun/sharplite,
+		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
 	)
 
 	weapon_weight = WEAPON_MEDIUM
@@ -468,9 +445,6 @@
 
 	spread = -4
 	spread_unwielded = 40
-
-	recoil = 1.5
-	recoil_unwielded = 6
 
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
@@ -528,7 +502,7 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = MANUFACTURER_NONE
+	manufacturer = MANUFACTURER_SHARPLITE
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
 
 	allowed_ammo_types = list(
@@ -551,8 +525,7 @@
 	ammo_x_offset = 3
 	selfcharge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-
-	autowiki_hidden = TRUE
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
