@@ -183,3 +183,33 @@
 2026-10-27:
   AnomalousPotato:
   - rscadd: Kepori flip over instead of rotating 90 degrees when lying
+2026-10-28:
+  Erikafox:
+  - rscadd: 64 new greebles will spawn on ice worlds, with 6 contributions by madtankdriver
+      and yazym
+  - rscadd: chronograph anomaly, chronograph anomaly chem
+  - code_imp: some iceworld tile cleanup that I need to make a separate PR to finish
+      up.
+  - code_imp: defines inventory flags as a bitfield
+  - code_imp: adds a type argument to /proc/do_sparks(...) to allow for quantum/blue/whatever
+      sparks to be made w/ the proc.
+  - code_imp: adds an override to particle holders for static particle spawning
+  - rscadd: chronograph related fullscreen overlay
+  - rscadd: Caldwell's done it again. Some how, Trifuge got larger. There's a whole
+      second elevator now.
+  Retrino:
+  - code_imp: remove ship auto-locking
+  Sadhorizon:
+  - code_imp: Removed a lot of weapons from the wiki
+  - rscadd: A lot of weapons changed their manufacturer
+  - rscadd: The .38 derringer is now known as the HP Spark.
+  - rscadd: The .357 derringer is now known as the D-9 "Temblor".
+  - balance: HP Spark now only costs 150 in cargo. 50-200 on the black market.
+  cablefish (code) + PhoenixTheRedandEvil (sprites) + thearbiber (sprites):
+  - rscadd: Outpost lottery ticket vending machine.
+  - rscadd: Outpost disposable gun vending machine.
+  - imageadd: New disposable gun sprites.
+  - rscadd: Many, many disposable gun variants. Collect them all!
+  - balance: Disposable guns are now small, cheaper, and have a jam chance.
+  thearbiber:
+  - rscadd: NGR uniform updatee
