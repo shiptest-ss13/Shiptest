@@ -21,6 +21,9 @@
 	muzzleflash_iconstate = "muzzle_flash_sharplite"
 	light_color = COLOR_PALE_BLUE_GRAY
 
+	recoil = 0
+	recoil_unwielded = 1
+
 	modifystate = TRUE
 	ammo_x_offset = 2
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
@@ -86,6 +89,9 @@
 	shaded_charge = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+
+	recoil = 0.5
+	recoil_unwielded = 2
 
 /obj/item/gun/energy/sharplite/yari/empty_cell
 	spawn_no_ammo = TRUE
@@ -181,6 +187,9 @@
 	spread = 0
 	spread_unwielded = 12
 
+	recoil = 1
+	recoil_unwielded = 3
+
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
 	)
@@ -210,6 +219,9 @@
 
 	spread = 2
 	spread_unwielded = 10
+
+	recoil = 0.5
+	recoil_unwielded = 2
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -245,11 +257,15 @@
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
+	fire_delay = 0.15 SECONDS
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	spread = 2
 	spread_unwielded = 10
+
+	recoil = 0.5
+	recoil_unwielded = 1
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -306,6 +322,9 @@
 	wield_slowdown = SHOTGUN_SLOWDOWN
 	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
 	wield_delay = 0.8 SECONDS
+
+	recoil = 0.5
+	recoil_unwielded = 2
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
@@ -369,13 +388,13 @@
 	item_state = "al655"
 
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite)
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite,
-		/obj/item/stock_parts/cell/gun/sharplite/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus/empty,
 	)
 
 	weapon_weight = WEAPON_MEDIUM
@@ -386,6 +405,9 @@
 
 	shaded_charge = TRUE
 	modifystate = FALSE
+
+	recoil = 0.5
+	recoil_unwielded = 3
 
 	fire_delay = 0.2 SECONDS
 
@@ -425,13 +447,13 @@
 	item_state = "al607"
 
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite/sniper)
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite,
-		/obj/item/stock_parts/cell/gun/sharplite/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/heavy/plus/empty,
 	)
 
 	weapon_weight = WEAPON_MEDIUM
@@ -445,6 +467,9 @@
 
 	spread = -4
 	spread_unwielded = 40
+
+	recoil = 1.5
+	recoil_unwielded = 6
 
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
