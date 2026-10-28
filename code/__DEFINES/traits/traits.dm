@@ -226,6 +226,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANTIMAGIC "anti_magic"
 #define TRAIT_HOLY "holy"
 #define TRAIT_JOLLY "jolly"
+#define TRAIT_LOTTO_CURSE "lotto_curse"
 #define TRAIT_NOCRITDAMAGE "no_crit"
 #define TRAIT_NOSLIPWATER "noslip_water"
 #define TRAIT_NOSLIPALL "noslip_all"
@@ -325,6 +326,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
+/// You flip over when you lie down.
+#define TRAIT_FLIP_ON_LYING "flip_on_lying"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
