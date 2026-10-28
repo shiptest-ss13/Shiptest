@@ -15,7 +15,8 @@
 
 //vibes based bullet speed
 
-#define BULLET_SPEED_SHOTGUN 0.5
+#define BULLET_SPEED_FOURBORE 0.5
+#define BULLET_SPEED_SHOTGUN 0.35
 #define BULLET_SPEED_HANDGUN 0.4
 #define BULLET_SPEED_REVOLVER 0.4 //why do we have multiple defines for the same thing? future proofing.
 #define BULLET_SPEED_PDW 0.3

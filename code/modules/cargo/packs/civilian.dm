@@ -303,6 +303,14 @@
 	contains = list(/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
+/datum/supply_pack/civilian/pianocrate
+	name = "Piano crate"
+	desc = "Contains a single piano for the somberly tempered."
+	cost = 500
+	contains = list(/obj/structure/musician/piano/unanchored)
+	crate_name = "piano crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
 /datum/supply_pack/civilian/jukebox
 	name = "Jukebox"
 	desc = "Things a bit dull in the workplace? How about jamming out to some tunes!"
@@ -313,9 +321,16 @@
 /datum/supply_pack/civilian/roulette
 	name = "Roulette Table"
 	desc = "Go all in with this premium, computerized roulette table! Requires a valid cash card to play."
-	cost = 5000
+	cost = 1000
 	contains = list(/obj/machinery/roulette)
 	crate_name = "roulette table crate"
+
+/datum/supply_pack/civilian/icecreamsupplies
+	name = "Ice Cream Supplies"
+	desc = "Contains a portable ice cream dispenser, fit with waffle cones and a rainbow of flavors to choose from."
+	cost = 1500
+	contains = list(/obj/machinery/icecream_vat)
+	crate_name = "ice cream vat crate"
 
 /datum/supply_pack/civilian/id_crate
 	name = "Box of Spare IDs"

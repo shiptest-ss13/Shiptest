@@ -189,6 +189,7 @@
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	deathmessage = "falls to the ground."
 	status_flags = CANPUSH
+	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle/broodmother
 	var/datum/weakref/mother_ref
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/Initialize(mapload, mob/living/simple_animal/hostile/asteroid/elite/broodmother/mother)
@@ -208,7 +209,7 @@
 		return
 	if(get_dist(src, target) <= 7)//Screen range check, so it can't attack people off-screen
 		visible_message(span_warning("[src] digs one of its tentacles under [target]!"))
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother(tturf, src)
+		new tentacle_type(tturf, src)
 
 //Tentacles have less stun time compared to regular variant, to balance being able to use them much more often.  Also, 10 more damage.
 /obj/effect/temp_visual/goliath_tentacle/broodmother/trip()
@@ -261,3 +262,4 @@
 	icon_aggro = "gruboid_baby"
 	icon_dead = "gruboid_baby_dead"
 	icon_gib = "syndicate_gib"
+	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet

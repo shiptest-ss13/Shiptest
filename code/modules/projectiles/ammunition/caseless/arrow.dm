@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/caseless/arrow
 	name = "arrow"
-	desc = "An arrow made of... something. It's hella sharp."
+	desc = "A finely crafted wooden arrow."
 	projectile_type = /obj/projectile/bullet/reusable/arrow
 	caliber = "arrow"
 	icon_state = "arrow"
@@ -9,26 +9,17 @@
 	firing_effect_type = null
 	flags_1 = NONE
 	heavy_metal = FALSE
+	auto_rotate = FALSE
+	can_cookoff = FALSE
+	stack_type = null
+	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_casing/caseless/arrow/wood
-	name = "wooden arrow"
-	desc = "An arrow made of wood, typically fired from a bow."
-	projectile_type = /obj/projectile/bullet/reusable/arrow/wood
+/obj/item/ammo_casing/caseless/arrow/examine(mob/examiner)
+	. = ..()
+	. += span_notice("You can use the arrow in hand to load it into a bow in your other hand.")
 
-/obj/item/ammo_casing/caseless/arrow/ash
-	name = "ashen arrow"
-	desc = "An arrow made from wood, hardened by fire"
-	icon_state = "ashenarrow"
-	projectile_type = /obj/projectile/bullet/reusable/arrow/ash
-
-/obj/item/ammo_casing/caseless/arrow/bone
-	name = "bone arrow"
-	desc = "An arrow made of bone and sinew. The tip is sharp enough to pierce goliath hide."
-	icon_state = "bonearrow"
-	projectile_type = /obj/projectile/bullet/reusable/arrow/bone
-
-/obj/item/ammo_casing/caseless/arrow/bronze
-	name = "bronze arrow"
-	desc = "An arrow made from wood. tipped with bronze."
-	icon_state = "bronzearrow"
-	projectile_type = /obj/projectile/bullet/reusable/arrow/bronze
+/obj/item/ammo_casing/caseless/arrow/attack_self(mob/user)
+	. = ..()
+	var/obj/item/potential_bow = user.get_inactive_held_item()
+	if(istype(potential_bow, /obj/item/gun/ballistic/bow))
+		potential_bow.attackby(src, user)
