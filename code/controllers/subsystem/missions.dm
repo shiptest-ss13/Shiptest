@@ -60,7 +60,6 @@ SUBSYSTEM_DEF(missions)
 /datum/controller/subsystem/missions/proc/get_industrial_name()
 	var/group = pick(list(
 		"Clover Photonics",
-		"Eoehoma Firearms",
 		"Etherbor Industries",
 		"Hunter's Pride",
 		"Lanchester City Firearms Plant",
