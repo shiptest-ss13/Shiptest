@@ -37,6 +37,8 @@
 	default_firemode = FIREMODE_AIMED
 	var/delay = 25
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/beam_rifle/debug
 	autowiki_hidden = TRUE //not obtainable afaik
 	delay = 0

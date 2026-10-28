@@ -67,14 +67,11 @@
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
 #define MANUFACTURER_NONE null
-#define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
 #define MANUFACTURER_SHARPLITE_NEW "the Makosso-Warra-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
 #define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
 #define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
-#define MANUFACTURER_WARRA_OLD "an outdated Makosso-Warra logo"
-#define MANUFACTURER_WARRA "the Makosso-Warra logo"
 #define MANUFACTURER_VIGILITAS "the Makosso-Warra Advantage logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"

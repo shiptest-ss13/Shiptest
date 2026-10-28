@@ -1124,7 +1124,7 @@
 	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
-	icon = 'icons/effects/32x64.dmi'
+	icon = 'icons/obj/flora/crystals.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
@@ -1157,3 +1157,25 @@
 			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
 		return
 	return ..()
+
+/obj/structure/flora/rock/crystal/puce
+	name = "colossal puce crystal"
+	desc = "A towering monolith of pucestral growth. There are so many places to cut a chunk off."
+	icon_state = "puce_crystal"
+	base_icon_state = "puce_crystal"
+	icon = 'icons/obj/flora/crystals.dmi'
+	resistance_flags = FIRE_PROOF
+	density = TRUE
+	max_integrity = 300
+	mineResult = /obj/structure/flora/ash/puce
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
+
+	///shaving the rock with a knife gives you this item
+	shaving_type = /obj/item/food/grown/ash_flora/puce
+	///how much can we shave the rock?
+	max_shavings = 18
+	///shaving count on the rock
+	shaving_count = 0
+
+

@@ -164,6 +164,30 @@
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/hl
+	name = "Hardliner mining hardsuit helmet"
+	desc = "A heavy-duty helmet with spacious interior, good for absorbing impacts."
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+	icon_state = "hardsuit0-hardminer"
+	item_state = "hardsuit0-hardminer"
+	hardsuit_type = "ngrminer"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/hl
+	name = "Hardliner mining hardsuit"
+	desc = "A custom made Hardliner mining suit, cobbled together from various other designs. Suprisingly well made."
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	icon_state = "hardsuit-hardminer"
+	item_state = "hardsuit-hardminer"
+	slowdown = 0.7
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/hl
+	hardsuit_type = "ngrminer"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	name = "white-red hardsuit helmet"
 	desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in EVA mode. Manufactured by Cybersun Biodynamics."

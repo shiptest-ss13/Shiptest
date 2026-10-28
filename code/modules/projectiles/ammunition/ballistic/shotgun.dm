@@ -158,16 +158,6 @@
 
 	wear_modifier = 4
 
-/obj/item/ammo_casing/shotgun/laserscatter
-	name = "scatter plasma shell"
-	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of an EP weapon in a ballistic package."
-	icon_state = "laser"
-	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
-	pellets = 6
-	variance = 25
-
-	wear_modifier = 2
-
 /obj/item/ammo_casing/shotgun/pulseslug
 	name = "pulse slug"
 	desc = "A delicate device which can be loaded into a shotgun. The primer acts as a button which triggers the gain medium and fires a powerful \
