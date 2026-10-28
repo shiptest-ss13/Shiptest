@@ -1,4 +1,3 @@
-#define FACTION_SYNDICATE "Syndicate Coalition"
 #define FACTION_NGR "New Gorlex Republic"
 #define FACTION_CYBERSUN "Cybersun Industries"
 #define FACTION_HARDLINERS "Gorlex Hardliners"
@@ -18,7 +17,6 @@
 #define FACTION_RAMZI "Ramzi Clique"
 #define FACTION_UNKNOWN "Unknown"
 
-#define PREFIX_SYNDICATE list("SEV", "SSV")
 #define PREFIX_NGR list("NGRV")
 #define PREFIX_CYBERSUN list("CSSV")
 #define PREFIX_HARDLINERS list("GMV")
