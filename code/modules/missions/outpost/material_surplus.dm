@@ -18,7 +18,7 @@
 /datum/mission/acquire/material/New(...)
 	. = ..()
 	num_wanted = round(rand(200,500), 50)
-	value = round(get_material_value(num_wanted), 1000)
+	value = round(get_material_value(num_wanted), 100)
 	name = "Refined Material Bounty ([capitalize(objective_type.name)])"
 
 //ugly way of doing this
@@ -29,7 +29,7 @@
 /datum/mission/acquire/material/iron
 	desc = "Most industrial groups in the Frontier require bulk quantities of iron and are willing to pay the going market rate for consistent deliveries. This mission fulfills one such contract."
 	container_type = /obj/structure/material_crate/iron
-	objective_type = /obj/item/stack/sheet/plasteel
+	objective_type = /obj/item/stack/sheet/metal
 	weight = 10
 
 /datum/mission/acquire/material/iron/get_material_value(amount)
@@ -39,7 +39,7 @@
 /datum/mission/acquire/material/titanium
 	desc = "Starship-ready titanium plating is in high demand in the Frontier, with the most active buyer being the Clover Corporation. An open purchasing channel is maintained with all major outposts."
 	container_type = /obj/structure/material_crate/titanium
-	objective_type = /obj/item/stack/sheet/plasteel
+	objective_type = /obj/item/stack/sheet/mineral/titanium
 	weight = 10
 
 /datum/mission/acquire/material/titanium/get_material_value(amount)
