@@ -25,17 +25,6 @@
 /datum/mission/acquire/material/proc/get_material_value(amount)
 	return
 
-
-/datum/mission/acquire/material/iron
-	desc = "Most industrial groups in the Frontier require bulk quantities of iron and are willing to pay the going market rate for consistent deliveries. This mission fulfills one such contract."
-	container_type = /obj/structure/material_crate/iron
-	objective_type = /obj/item/stack/sheet/metal
-	weight = 10
-
-/datum/mission/acquire/material/iron/get_material_value(amount)
-	//amount = iron IEV * amount
-	return round(2 * 35)
-
 /datum/mission/acquire/material/titanium
 	desc = "Starship-ready titanium plating is in high demand in the Frontier, with the most active buyer being the Clover Corporation. An open purchasing channel is maintained with all major outposts."
 	container_type = /obj/structure/material_crate/titanium
@@ -88,9 +77,6 @@
 
 /obj/structure/material_crate/plastit
 	icon_state = "matbox_plastitanium"
-
-/obj/structure/material_crate/iron
-	icon_state = "matbox_iron"
 
 /obj/structure/material_crate/titanium
 	icon_state = "matbox_titanium"
