@@ -122,7 +122,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	for(var/atom/exp_atom as anything in cached_valid_exports[exp])
 		if(!exp.applies_to(exp_atom))
 			CRASH("tried to sell [exp_atom] with [exp] but it no longer applies to it")
-		total_payout += exp.sell_object(exp_atom, dry_run = FALSE, apply_elastic = TRUE)
+		total_payout += exp.sell_object(exp_atom, dry_run = FALSE)
 
 		cached_valid_exports[exp] -= exp_atom
 		qdel(exp_atom)
