@@ -549,7 +549,6 @@
 		user.update_inv_w_uniform()
 		user.update_equipment_speed_mods()
 
-
 /obj/item/clothing/suit/space/hardsuit/syndi
 	name = "blood-red hardsuit"
 	desc = "A dual-mode advanced hardsuit designed for special combat operations. It is in EVA mode. Produced by the Gorlex Marauders."

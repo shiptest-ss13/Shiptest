@@ -547,6 +547,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/ngr_outrider
+	name = "NGR Outrider Hardsuit Crate"
+	desc = "A light hardsuit with an integrated night vision, and modest protection against most threats. Designed for reconissance and shock operations."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/ngroutrider)
+	crate_name = "NGR outrider hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
 //srm
 
 /datum/supply_pack/spacesuits/roumain_miningsuit
