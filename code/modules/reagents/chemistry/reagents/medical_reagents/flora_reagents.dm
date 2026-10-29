@@ -202,9 +202,9 @@
 	..()
 
 /datum/reagent/medicine/syndric_sap
-	name = "Syndric Sap"
+	name = "Sydric Sap"
 	description = "The sap of the Kalixcian Synd tree is a natural painkiller, and frequently processed into the compound syndrin."
 
-/datum/reagent/medicine/syndric_sap/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/syndric_sap/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	. = ..()
 	M.cause_pain(BODY_ZONES_ALL, -0.02 * REM * seconds_per_tick)
