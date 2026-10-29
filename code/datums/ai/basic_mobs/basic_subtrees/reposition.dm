@@ -19,8 +19,6 @@
 	var/reposition_timeout = 5 SECONDS
 	//how long we wait before hurrying to look again, if there was nowhere to shoot from
 	var/failed_search_cooldown = 2 SECONDS
-	//how far behind us one of ours can be for us to be holding them up, standing in a doorway
-	var/blocking_check_range = 4
 
 /datum/ai_planning_subtree/reposition/on_skipped(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF)
@@ -44,7 +42,7 @@
 	var/search_failed_recently = world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]
 	var/urgent = !has_shot
 	if(!urgent && !(waiting && search_failed_recently)) // the costly part, so only when it'd change what we do
-		urgent = (ai_is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
+		urgent = ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
 	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it
@@ -68,7 +66,7 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, next_reposition)
 	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF, new_spot)
 	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_GIVE_UP_AT, world.time + reposition_timeout)
-	AI_LOG_DECISION(controller, "reposition: moving to [new_spot][!has_shot ? " to get a shot" : (urgent ? ", out of a doorway or an ally's way" : "")]")
+	AI_LOG_DECISION(controller, "reposition: moving to [new_spot][!has_shot ? " to get a shot" : (urgent ? ", out of an ally's line of fire" : "")]")
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_REPOSITION_TURF)
 
 // nowhere close by to shoot from, so work our way towards them until we've a line, like going around them would. Returns TRUE if we are
@@ -129,16 +127,3 @@
 			nearest_spots = list()
 		nearest_spots += candidate
 	return length(nearest_spots) ? pick(nearest_spots) : null
-
-/datum/ai_planning_subtree/reposition/proc/blocking_an_ally(mob/living/living_pawn, turf/our_turf, atom/target)
-	var/turf/their_turf = get_turf(target)
-	var/our_distance = get_dist(our_turf, their_turf)
-	for(var/mob/living/ally in range(blocking_check_range, our_turf))
-		if(ally == living_pawn || ally.stat == DEAD || !living_pawn.faction_check_mob(ally))
-			continue
-		var/turf/ally_turf = get_turf(ally)
-		if(get_dist(ally_turf, their_turf) <= our_distance)
-			continue // they're as far forward as we are
-		if(ally.Adjacent(living_pawn) || (our_turf in get_line(ally_turf, their_turf)))
-			return TRUE
-	return FALSE

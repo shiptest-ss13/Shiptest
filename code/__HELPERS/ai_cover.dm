@@ -247,14 +247,13 @@
 /proc/ai_is_door(atom/thing)
 	return istype(thing, /obj/machinery/door) || istype(thing, /obj/structure/mineral_door) || istype(thing, /obj/structure/fence/door)
 
-// so it avoids standing in doorways
 /proc/ai_is_doorway(turf/spot)
 	for(var/atom/thing as anything in spot)
 		if(ai_is_door(thing))
 			return TRUE
 	return FALSE
 
-// whether mob could go stand on spot, not blocked, not in a doorway, nothing there that'd hurt it, and not off the post it's holding, if it is
+// whether mob could go stand on spot, not blocked, nothing there that'd hurt it, and not off the post it's holding, if it is
 /proc/ai_can_take_spot(mob/living/mover, turf/spot)
 	if(is_ai_swimming_water(spot) && !(mover.movement_type & FLYING))
 		return FALSE // no swimming in the pool!!!!
@@ -263,7 +262,7 @@
 		var/turf/post = mover.ai_controller.blackboard[BB_BASIC_MOB_HOME_TURF]
 		if(post && get_dist(post, spot) > post_radius)
 			return FALSE
-	return !spot.is_blocked_turf(TRUE, mover) && !ai_is_doorway(spot) && ai_can_stand_on(mover, spot)
+	return !spot.is_blocked_turf(TRUE, mover) && ai_can_stand_on(mover, spot)
 
 // how far from a post a post holder can go
 /proc/ai_post_radius(datum/ai_controller/controller)

@@ -364,6 +364,8 @@
 	if(stuck_on(ally_controller, mover_turf))
 		return swap_places(ally, mover, spot) // head on, like one going after someone and the other falling back to cover down the same corridor, so we swap, as both get where they're going
 	var/hurrying = in_a_hurry(mover)
+	if(!hurrying && ai_is_doorway(spot))
+		return let_through_doorway(ally, mover, spot)
 	if(!hurrying && length(ally_controller.movement_path) && ally_controller.ai_movement?.moving_controllers[ally_controller])
 		return FALSE // on their way somewhere themselves, so they'll be out of it soon enough
 	var/atom/ally_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
@@ -387,6 +389,17 @@
 	if(hurrying)
 		return swap_places(ally, mover, spot, "as they were getting clear of danger")
 	return FALSE
+
+/datum/ai_movement/jps/proc/let_through_doorway(mob/living/ally, atom/movable/mover, turf/doorway)
+	var/datum/ai_controller/ally_controller = ally.ai_controller
+	if(world.time < ally_controller.blackboard[BB_BASIC_MOB_MADE_WAY_UNTIL])
+		return FALSE
+	if(!swap_places(ally, mover, doorway, "to let them through the doorway"))
+		return FALSE
+	ally_controller.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
+	var/mob/living/living_mover = mover
+	living_mover.ai_controller?.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
+	return TRUE
 
 // mover wants to get out of the way quick, move aside for them
 /datum/ai_movement/jps/proc/in_a_hurry(atom/movable/mover)
