@@ -245,7 +245,7 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/proc/do_action()
 	stop_automated_movement = FALSE
-	walk(src,0)
+	GLOB.move_manager.stop_looping(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/proc/GiveUp(mob/living/target)
 	if(busy == MOVING_TO_TARGET)
@@ -320,7 +320,7 @@
 		busy = SPINNING_COCOON
 		visible_message(span_notice("[src] begins to secrete a sticky substance around [cocoon_target]."),span_notice("You begin wrapping [cocoon_target] into a cocoon."))
 		stop_automated_movement = TRUE
-		walk(src,0)
+		GLOB.move_manager.stop_looping(src)
 		if(do_after(src, 50, target = cocoon_target))
 			if(busy == SPINNING_COCOON)
 				var/obj/structure/spider/cocoon/C = new(cocoon_target.loc)

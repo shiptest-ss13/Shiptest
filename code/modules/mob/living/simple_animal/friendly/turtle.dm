@@ -50,7 +50,7 @@
 
 //-----WANDERING - Time to mosey around
 	else
-		walk(src, 0)
+		GLOB.move_manager.stop_looping(src)
 
 		if(prob(10))
 			step(src, pick(GLOB.cardinals))

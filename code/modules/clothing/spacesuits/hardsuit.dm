@@ -111,7 +111,7 @@
 	item_state = "eng_hardsuit"
 	max_integrity = 300
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 50, "acid" = 75, "wound" = 20)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/tank/jetpack)
 	siemens_coefficient = 0.5
 	resistance_flags = FIRE_PROOF
 	//helmet linked to the suit
@@ -287,7 +287,6 @@
 	icon_state = "hardsuit-stealth"
 	item_state = "stealth_hardsuit"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-	allowed = list(/obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 0

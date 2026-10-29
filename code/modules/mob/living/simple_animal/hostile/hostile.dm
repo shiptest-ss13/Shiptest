@@ -86,13 +86,13 @@
 /mob/living/simple_animal/hostile/Destroy()
 	//We can't use losetarget here because fucking cursed blobs override it to do nothing the motherfuckers
 	GiveTarget(null)
-	walk(src, 0)
+	GLOB.move_manager.stop_looping(src)
 	return ..()
 
 /mob/living/simple_animal/hostile/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) //dead
-		walk(src, 0) //stops walking
+		GLOB.move_manager.stop_looping(src) //stops walking
 		return 0
 
 /mob/living/simple_animal/hostile/handle_automated_action()
@@ -315,15 +315,15 @@
 			enter_charge(target)
 			return TRUE
 		if(!Process_Spacemove()) //Drifting
-			walk(src,0)
+			GLOB.move_manager.stop_looping(src)
 			return 1
 		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our target
 			if(target_distance <= retreat_distance) //If target's closer than our retreat distance, run
 				walk_away(src,target,retreat_distance,move_to_delay)
 			else
-				Goto(target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
+				Goto(target, move_to_delay, minimum_distance) //Otherwise, get to our minimum distance so we chase them
 		else
-			Goto(target,move_to_delay,minimum_distance)
+			Goto(target, move_to_delay, minimum_distance)
 		if(target)
 			if(isturf(target_from.loc) && target.Adjacent(target_from)) //If they're next to us, attack
 				if(ranged && shoot_point_blank && ranged_cooldown <= world.time)
@@ -341,7 +341,7 @@
 			if(ranged_ignores_vision && ranged_cooldown <= world.time) //we can't see our target... but we can fire at them!
 				OpenFire(target)
 			if((environment_smash & ENVIRONMENT_SMASH_WALLS) || (environment_smash & ENVIRONMENT_SMASH_RWALLS)) //If we're capable of smashing through walls, forget about vision completely after finding our target
-				Goto(target,move_to_delay,minimum_distance)
+				Goto(target, move_to_delay, minimum_distance)
 				FindHidden()
 				return 1
 			else
@@ -355,7 +355,7 @@
 		approaching_target = TRUE
 	else
 		approaching_target = FALSE
-	walk_to(src, target, minimum_distance, delay)
+	GLOB.move_manager.move_to(src, target, minimum_distance, delay, flags = MOVEMENT_LOOP_IGNORE_GLIDE)
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -399,7 +399,7 @@
 	GiveTarget(null)
 	approaching_target = FALSE
 	in_melee = FALSE
-	walk(src, 0)
+	GLOB.move_manager.stop_looping(src)
 	LoseAggro()
 
 //////////////END HOSTILE MOB TARGETTING AND AGGRESSION////////////
