@@ -302,6 +302,8 @@
 #define BB_BASIC_MOB_NOISE_TURF "BB_basic_noise_turf"
 #define BB_BASIC_MOB_NOISE_UNTIL "BB_basic_noise_until"
 #define BB_BASIC_MOB_NOISE_LOOK_UNTIL "BB_basic_noise_look_until"
+///What we're breaking through to get to a noise we've no other way to
+#define BB_BASIC_MOB_NOISE_SMASH_TARGET "BB_basic_noise_smash_target"
 ///A cardboard box we saw move, and how suspicious of it we are, 1 staring at it, 2 going to look at it, 3 sure someone is in it, and since when, see /datum/ai_planning_subtree/investigate_box
 #define BB_BASIC_MOB_SUSPICIOUS_BOX "BB_basic_suspicious_box"
 #define BB_BASIC_MOB_BOX_STAGE "BB_basic_box_stage"
