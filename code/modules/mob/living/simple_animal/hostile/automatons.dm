@@ -412,9 +412,6 @@
 		new /obj/effect/hotspot(T)
 	. = ..()
 
-/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste
-	faction = list(FACTION_HIVEBOT)
-
 // shotgun hoppers (To-do, make them "jump" around like the antlions do?)
 
 /mob/living/simple_animal/hostile/automated/hopper

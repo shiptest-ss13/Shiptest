@@ -144,7 +144,6 @@
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
 		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
-		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 	)
 
 	flora_spawn_chance = 25
@@ -264,7 +263,6 @@
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
 		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
-		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
 	mob_spawn_chance = 2
@@ -332,7 +330,6 @@
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
 		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
-		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 	)
 
 	flora_spawn_chance = 30
@@ -421,7 +418,6 @@
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
 		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
-		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
 
@@ -460,7 +456,6 @@
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
 		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
-		/mob/living/simple_animal/hostile/automated/walkmine/incendiary/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
 
