@@ -25,7 +25,7 @@
 
 /mob/living/simple_animal/hostile/automated/quadrotor
 	name = "Quadrotor drone"
-	desc = "A lightweight quadrotor drone design carrying a gimbal-mounted .45 pistol. Ubiquitous across the frontier for its ease of manufacture and set-and-forget nature."
+	desc = "A strange looking drone with a mounted 10mm gun. You get the feeling you shouldn't see this and should file a bug report."
 	icon_state = "quadrotor_indie"
 	health = 45
 	maxHealth = 45
@@ -36,9 +36,6 @@
 	casingtype = /obj/projectile/bullet/c10mm
 	deathmessage = "falls to the ground, sparking as its rotors grind to a halt."
 	is_flying_animal = TRUE
-
-/mob/living/simple_animal/hostile/automated/quadrotor/waste
-	faction = list(FACTION_HIVEBOT)
 
 /mob/living/simple_animal/hostile/automated/quadrotor/frontiersman
 	name = "Gremlin Drone"
@@ -62,6 +59,9 @@
 	faction = list(FACTION_HOSTILE)
 	icon_state = "quadrotor_coalition"
 
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste
+	faction = list(FACTION_HIVEBOT)
+
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly
 	name = "Mr. Drone"
 	desc = "A military drone manufactured by Cybersun primarily during the Inter-Corporate War. It whirrs happily in the air."
@@ -77,8 +77,8 @@
 	faction = list(FACTION_RAMZI)
 
 /mob/living/simple_animal/hostile/automated/quadrotor/makosso
-	name = "Vigilitas Drone"
-	desc = "A defensive drone manufactured by Sharplite."
+	name = "Faulty Vigilitas \"Hornet\" Drone"
+	desc = "A defensive drone manufactured by Sharplite. Popular during the Inter-Corporate War as a cheap perimeter defense measure, many can be found continuing to hover around deterring intruders from long-lost sites. This one is no exception, and its electroplasma gun follows your movements closely."
 	health = 60
 	maxHealth = 60
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
@@ -88,6 +88,9 @@
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 	icon_state = "quadrotor_warra"
+
+/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste
+	faction = list(FACTION_HIVEBOT)
 
 //rovers
 

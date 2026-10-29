@@ -142,7 +142,8 @@
 		/mob/living/basic/hivebot/rapid = 30,
 		// variety of hostile robots
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
-		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
 	)
 
@@ -261,7 +262,8 @@
 		/mob/living/basic/hivebot/ranged = 20,
 		/mob/living/basic/hivebot/rapid = 20,
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
-		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
@@ -328,7 +330,8 @@
 		/mob/living/basic/hivebot/ranged = 40,
 		/mob/living/basic/hivebot/rapid = 30,
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
-		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
 	)
 
@@ -416,7 +419,8 @@
 		/mob/living/basic/hivebot/ranged = 50,
 		/mob/living/basic/hivebot/rapid = 50,
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
-		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
@@ -454,7 +458,8 @@
 		/mob/living/basic/hivebot/ranged = 50,
 		/mob/living/basic/hivebot/rapid = 50,
 		/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste = 3,
-		/mob/living/simple_animal/hostile/automated/quadrotor/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste = 15,
+		/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste = 15,
 		/mob/living/simple_animal/hostile/automated/walkmine/waste = 15,
 		/obj/structure/spawner/hivebot = 15
 	)
