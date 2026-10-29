@@ -151,6 +151,7 @@
 	hardsuit_type = "hardstealth"
 	flash_protect = null
 	lighting_alpha = null
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/stealth/hardliners
 	name = "Asura shocktrooper hardsuit"
