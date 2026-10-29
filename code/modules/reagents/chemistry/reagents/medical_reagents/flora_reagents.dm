@@ -201,11 +201,10 @@
 		M.vomit()
 	..()
 
-#warn fluff better. needs to heal some pain. Used in syndrin
 /datum/reagent/medicine/syndric_sap
 	name = "Syndric Sap"
 	description = "The sap of the Kalixcian Synd tree is a natural painkiller, and frequently processed into the compound syndrin."
 
 /datum/reagent/medicine/syndric_sap/on_mob_life(mob/living/carbon/M)
 	. = ..()
-
+	M.cause_pain(BODY_ZONES_ALL, -0.02 * REM * seconds_per_tick)

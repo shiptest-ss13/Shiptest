@@ -110,7 +110,7 @@
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
 			var/pain_points = M.adjustStaminaLoss(reac_volume*4)
-			M.sharp_pain(BODY_ZONES_ALL,pain_points, BRUTE, reac_volume*2 SECONDS)
+			M.sharp_pain(M.zone_selected, pain_points, BRUTE, reac_volume*2 SECONDS)
 			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_danger("You feel your bruises healing! It stings like hell!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -174,7 +174,7 @@
 		if(method in list(INGEST, INJECT, PATCH))
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_boldwarning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
-				M.sharp_pain(BODY_ZONES_ALL, reac_volume*6, BRUTE, reac_volume*6 SECONDS)
+				M.sharp_pain(BODY_ZONES_ALL, reac_volume, BRUTE, reac_volume*6 SECONDS)
 				M.adjustStaminaLoss(reac_volume*4)
 			for(var/owie in paper_cut_victim.all_wounds)
 				var/datum/wound/paper_cut = owie
@@ -256,15 +256,13 @@
 
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	M.adjustFireLoss(-reac_volume/2)
-	M.pain_emote("wince", 5 SECONDS)
-	M.adjustStaminaLoss(reac_volume/2)
+	M.cause_typed_pain(BODY_ZONE_CHEST, reac_volume/2, BURN)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/owie in burn_ward_attendee.all_wounds)
 			var/datum/wound/burn = owie
 			burn.on_tane(reac_volume/4)
 	if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
-		to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	else
 		to_chat(M, span_notice("You feel your burns twisting."))
