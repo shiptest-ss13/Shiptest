@@ -83,3 +83,6 @@
 
 /obj/effect/projectile/muzzle/pgf/sniper
 	icon_state = "muzzle_pgf_sniper"
+
+/obj/effect/projectile/muzzle/e20_pierce
+	icon_state = "muzzle_e20"
