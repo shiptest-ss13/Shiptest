@@ -1,5 +1,13 @@
 // Branches of the plan, subtrees that belong together
 
+/// Getting away from imminent dangerous situations
+/datum/ai_planning_subtree/group/survival
+	subtrees = list(
+		/datum/ai_planning_subtree/flee_explosives,
+		/datum/ai_planning_subtree/seek_safe_environment,
+		/datum/ai_planning_subtree/put_out_fire,
+	)
+
 /// Where we stand while fighting from range, once nothing more pressing has our position in hand, like cover
 /datum/ai_planning_subtree/group/positioning
 	required_conditions = AI_CONDITION_HAS_TARGET

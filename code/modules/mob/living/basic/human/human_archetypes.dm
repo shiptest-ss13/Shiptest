@@ -13,12 +13,12 @@
 		BB_BASIC_MOB_FLANK_PRIORITY = 1,
 	)
 	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_opening,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/flank/marksman,
 		/datum/ai_planning_subtree/fighting_cover/when_outmatched,
 		/datum/ai_planning_subtree/search_lost_target/marksman,
-		AI_HUMAN_RANGED_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_ranged_closing,
 	)
 
 /datum/ai_planning_subtree/flank/marksman
@@ -41,10 +41,10 @@
 		BB_BASIC_MOB_PUSHES_ON_RELOAD = TRUE,
 	)
 	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_opening,
 		/datum/ai_planning_subtree/flank/rusher,
 		/datum/ai_planning_subtree/search_lost_target/rusher,
-		AI_HUMAN_RANGED_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_ranged_closing,
 	)
 
 /datum/ai_planning_subtree/flank/rusher
@@ -75,13 +75,13 @@
 		BB_BASIC_MOB_FLANK_PRIORITY = 2,
 	)
 	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_opening,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/sequence/suppress_dug_in,
 		/datum/ai_planning_subtree/flank/support_gunner,
 		/datum/ai_planning_subtree/fighting_cover,
 		/datum/ai_planning_subtree/search_lost_target/support_gunner,
-		AI_HUMAN_RANGED_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_ranged_closing,
 	)
 
 /datum/ai_planning_subtree/flank/support_gunner
@@ -101,22 +101,22 @@
 		BB_BASIC_MOB_FLANK_PRIORITY = 0,
 	)
 	planning_subtrees = list(
-		AI_HUMAN_POST_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_post_opening,
 		/datum/ai_planning_subtree/fighting_cover,
 		/datum/ai_planning_subtree/reposition/broken_post,
 		/datum/ai_planning_subtree/search_lost_target/post,
-		AI_HUMAN_POST_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_post_closing,
 	)
 
 // an emplaced gun, like an HMG nest, that pins down anyone behind cover and fires blind where they went
 /datum/ai_controller/basic_controller/human/ranged/post/support_gunner
 	planning_subtrees = list(
-		AI_HUMAN_POST_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_post_opening,
 		/datum/ai_planning_subtree/sequence/suppress_dug_in,
 		/datum/ai_planning_subtree/fighting_cover,
 		/datum/ai_planning_subtree/reposition/broken_post,
 		/datum/ai_planning_subtree/search_lost_target/post/suppress,
-		AI_HUMAN_POST_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_post_closing,
 	)
 
 // home is anywhere within our post radius
@@ -169,7 +169,7 @@
 		/datum/ai_sensor/track_target/relentless,
 	)
 	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_opening,
 		/datum/ai_planning_subtree/ambush_dug_in/brute,
 		/datum/ai_planning_subtree/smash_towards_target,
 		/datum/ai_planning_subtree/wait_out_unreachable/brute,

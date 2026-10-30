@@ -39,6 +39,7 @@
 	AddComponent(/datum/component/swarming)
 	AddElement(/datum/element/ai_reacts_to_harm)
 	AddElement(/datum/element/ai_hears_gunfire)
+	setup_ai()
 
 /mob/living/basic/viscerator/death(gibbed)
 	if(stat != DEAD)

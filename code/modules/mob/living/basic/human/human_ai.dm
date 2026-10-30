@@ -20,11 +20,11 @@
 		/datum/ai_sensor/track_target,
 	)
 	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_opening,
 		/datum/ai_planning_subtree/ambush_dug_in/lie_in_wait,
 		/datum/ai_planning_subtree/wait_out_unreachable,
 		/datum/ai_planning_subtree/sequence/melee_approach,
-		AI_HUMAN_MELEE_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_melee_closing,
 	)
 
 /datum/ai_controller/basic_controller/human/ranged
@@ -33,19 +33,17 @@
 		BB_BASIC_MOB_FLANK_PRIORITY = 3, // who flanks first, higher goes before lower
 	)
 	planning_subtrees = list(
-		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/group/human_opening,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/flank,
 		/datum/ai_planning_subtree/fighting_cover/when_outmatched,
 		/datum/ai_planning_subtree/search_lost_target/human,
-		AI_HUMAN_RANGED_PLANNING_CLOSING,
+		/datum/ai_planning_subtree/group/human_ranged_closing,
 	)
 
 /datum/ai_controller/basic_controller/human/noncombatant
 	planning_subtrees = list(
-		/datum/ai_planning_subtree/flee_explosives,
-		/datum/ai_planning_subtree/seek_safe_environment,
-		/datum/ai_planning_subtree/put_out_fire,
+		/datum/ai_planning_subtree/group/survival,
 		/datum/ai_planning_subtree/return_home/human,
 		/datum/ai_planning_subtree/call_allies/shout_for_help,
 		/datum/ai_planning_subtree/flee_target,
@@ -57,10 +55,6 @@
 
 /datum/ai_behavior/alert_allies/shout_for_help
 	alert_range = 15
-
-// stick around a kill, and go back to them after chasing someone else off
-/datum/ai_planning_subtree/return_home/human
-	linger_duration = INFINITY
 
 /datum/ai_planning_subtree/broken_fall_back/human
 	cover_fire_behavior = /datum/ai_behavior/basic_ranged_attack/human
@@ -76,3 +70,69 @@
 	moves_into_range = FALSE
 	required_distance = 9
 	holds_fire_when_blocked = TRUE
+
+// The start and end every human NPC's plan shares, so a subtree that needs all of them goes in once
+///Getting out of hazards, heading home, calling out what we've seen, and falling back when our morale is broken, before anything else. Then a grenade, for those who carry them
+/datum/ai_planning_subtree/group/human_opening
+	subtrees = list(
+		/datum/ai_planning_subtree/group/survival,
+		/datum/ai_planning_subtree/pat_out_burning_ally,
+		/datum/ai_planning_subtree/clear_friendly_fire,
+		/datum/ai_planning_subtree/investigate_noise,
+		/datum/ai_planning_subtree/investigate_box,
+		/datum/ai_planning_subtree/return_home/human,
+		/datum/ai_planning_subtree/call_allies,
+		/datum/ai_planning_subtree/order_push,
+		/datum/ai_planning_subtree/broken_fall_back/human,
+		/datum/ai_planning_subtree/throw_grenade,
+		/datum/ai_planning_subtree/execute_downed,
+	)
+
+///For those with guns
+/datum/ai_planning_subtree/group/human_ranged_closing
+	subtrees = list(
+		/datum/ai_planning_subtree/wait_out_unreachable/ranged,
+		/datum/ai_planning_subtree/tactical_reload,
+		/datum/ai_planning_subtree/taunt,
+		/datum/ai_planning_subtree/group/positioning,
+		/datum/ai_planning_subtree/smash_when_stuck,
+		/datum/ai_planning_subtree/melee_when_adjacent,
+		/datum/ai_planning_subtree/basic_ranged_attack_subtree/human,
+		/datum/ai_planning_subtree/idle_chatter,
+	)
+
+///For those who fight up close
+/datum/ai_planning_subtree/group/human_melee_closing
+	subtrees = list(
+		/datum/ai_planning_subtree/search_lost_target/human,
+		/datum/ai_planning_subtree/taunt,
+		/datum/ai_planning_subtree/smash_when_stuck,
+		/datum/ai_planning_subtree/basic_melee_attack_subtree,
+		/datum/ai_planning_subtree/idle_chatter,
+	)
+
+///For those holding a post: the same ranged opening, but they never leave their post to investigate a noise, fall back, or execute anyone
+/datum/ai_planning_subtree/group/human_post_opening
+	subtrees = list(
+		/datum/ai_planning_subtree/group/survival,
+		/datum/ai_planning_subtree/pat_out_burning_ally,
+		/datum/ai_planning_subtree/clear_friendly_fire,
+		/datum/ai_planning_subtree/investigate_box,
+		/datum/ai_planning_subtree/break_post,
+		/datum/ai_planning_subtree/return_home/post,
+		/datum/ai_planning_subtree/call_allies,
+		/datum/ai_planning_subtree/order_push,
+		/datum/ai_planning_subtree/throw_grenade,
+		/datum/ai_planning_subtree/group/cover,
+	)
+
+///For those holding a post: the ranged closing, minus moving about and smashing out of corners
+/datum/ai_planning_subtree/group/human_post_closing
+	subtrees = list(
+		/datum/ai_planning_subtree/wait_out_unreachable/ranged,
+		/datum/ai_planning_subtree/tactical_reload,
+		/datum/ai_planning_subtree/taunt,
+		/datum/ai_planning_subtree/melee_when_adjacent,
+		/datum/ai_planning_subtree/basic_ranged_attack_subtree/human,
+		/datum/ai_planning_subtree/idle_chatter,
+	)

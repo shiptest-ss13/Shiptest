@@ -149,18 +149,9 @@
 	/// If TRUE, the mob's knockback throws people gently, so they don't get knocked down by what they hit
 	var/gentle_knockback = TRUE
 
-	/// Closer than this and the mob backs off, if they fight from range. Null leaves it to their AI, unless engage_distance is set, in which case they never back off
-	var/retreat_distance
-	/// Further than this and the mob closes in, if they fight from range. Null leaves it to their AI
-	var/engage_distance
-	/// How far gone someone can be and still be worth attacking, like HARD_CRIT for those who finish people off. See BB_TARGET_MINIMUM_STAT
-	var/stat_attack = CONSCIOUS
+	stat_attack = CONSCIOUS
 	/// If TRUE, we walk over to whoever we've downed and finish them up close, a gun to the head or a blade across the throat, rather than from where we stand. For the cruellest, like the Ramzi. Needs a stat_attack past CONSCIOUS
 	var/executes_downed = FALSE
-	/// How far the mob sees targets from. Null leaves it to their AI
-	var/vision_range
-	/// How far from home the mob chases someone before letting them go, twice that while they're fighting. 0 for no leash. Null leaves it to their AI
-	var/leash_distance
 	/// If FALSE, the mob stands still rather than wandering about when there's nothing to do, like sentries. Only while idle, it fights as it otherwise would, unless it holds_post
 	var/wander = TRUE
 	/// If TRUE, the mob holds the spot it's put on, like a guard post or a sniper's nest, rather than flanking or going after anyone. Those with guns fight from within post_radius of it, taking cover there, those without only go a few tiles for anyone close.
@@ -180,19 +171,7 @@
 	var/list/on_aggro_say
 	/// Chance to shout one of on_aggro_say each time
 	var/aggro_say_chance = 0
-	/// How far the mob can be heard calling allies to a fight, if further than usual, like someone rallying a whole settlement.
-	var/alert_range
-	/// If TRUE, the mob makes a show of calling allies to a fight, with a "!" over its head and a chime
-	var/summons_backup = FALSE
-	/// Things the mob says now and then while there's nobody to fight
-	var/list/speak
-	/// Emotes the mob does now and then while there's nobody to fight, heard and seen, like "grumbles."
-	var/list/emote_hear
-	var/list/emote_see
-	/// Chance each 2 seconds of a line, ours from speak or our callout set's, or one of emote_hear or emote_see, while there's nobody to fight
-	var/speak_chance = 5
-	/// What our archetype had on the blackboard for the keys our vars have set, as list(key = value), so setting one of those vars back to null restores the original archetype value
-	var/list/archetype_blackboard
+	speak_chance = 5
 
 /mob/living/basic/human/Initialize(mapload)
 	. = ..()
@@ -236,7 +215,6 @@
 	setup_blood()
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_SHOE)
 	setup_melee()
-	setup_weapon()
 	setup_ai()
 
 // pressure check for damage
@@ -294,7 +272,8 @@
 		return TRUE
 	return ..()
 
-/mob/living/basic/human/proc/setup_ai()
+/mob/living/basic/human/setup_ai()
+	setup_weapon()
 	setup_ai_components()
 	if(!ai_controller)
 		return
@@ -363,67 +342,44 @@
 		ai_controller?.clear_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT)
 
 // proc for putting our vars onto the blackboard, so we can use it both at spawn and when rebuilding AI
-/mob/living/basic/human/proc/apply_ai_vars()
-	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
+/mob/living/basic/human/apply_ai_vars()
+	. = ..()
 	set_ai_var_key(BB_BASIC_MOB_EXECUTES_DOWNED, executes_downed || null)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_CHANCE, noncombatant ? 0 : throw_back_chance)
-	var/leash = leash_distance
-	if(isnull(leash) && holds_post)
-		leash = max(3, post_radius)
-	set_ai_var_key(BB_BASIC_MOB_LEASH_DISTANCE, leash)
 	set_ai_var_key(BB_BASIC_MOB_POST_RADIUS, holds_post ? max(0, post_radius) : null)
-	set_ai_var_key(BB_BASIC_MOB_VISION_RANGE, vision_range || null)
-	set_ai_var_key(BB_BASIC_MOB_ALERT_RANGE, alert_range || null)
-	set_ai_var_key(BB_BASIC_MOB_SUMMONS_BACKUP, summons_backup || null)
-	set_ai_var_key(BB_BASIC_MOB_IDLE_CHATTER_CHANCE, speak_chance || null)
-	var/list/idle_emotes
-	if(speak_chance && (length(emote_hear) || length(emote_see)))
-		idle_emotes = string_list((emote_hear || list()) | (emote_see || list()))
-	set_ai_var_key(BB_BASIC_MOB_IDLE_EMOTES, idle_emotes)
 	set_ai_var_key(BB_BASIC_MOB_AVOID_FRIENDLY_FIRE, check_friendly_fire || null)
 	set_ai_var_key(BB_BASIC_MOB_MELEE_RECKLESS, melee_reckless || null)
 	set_ai_var_key(BB_BASIC_MOB_COMMANDER, is_commander || null)
 	set_ai_var_key(BB_BASIC_MOB_MELEE_HITS, rapid_melee > 1 ? rapid_melee : null)
-	var/retreat = retreat_distance
-	if(isnull(retreat) && !isnull(engage_distance))
-		retreat = 0
+	set_ai_var_key(BB_BASIC_MOB_HOLDS_POSITION, (is_commander && has_ranged_attack()) || null)
+
+/mob/living/basic/human/get_ai_leash_distance()
+	. = ..()
+	if(isnull(.) && holds_post)
+		return max(3, post_radius)
+
+/mob/living/basic/human/get_ai_retreat_distance()
+	var/retreat = ..()
 	// commander stay back ok
-	var/ranged_commander = is_commander && has_ranged_attack()
-	if(ranged_commander)
-		var/usual_retreat = retreat
-		if(isnull(usual_retreat))
-			usual_retreat = (BB_BASIC_MOB_RETREAT_DISTANCE in archetype_blackboard) ? archetype_blackboard[BB_BASIC_MOB_RETREAT_DISTANCE] : ai_controller.blackboard[BB_BASIC_MOB_RETREAT_DISTANCE]
-		retreat = max(usual_retreat || 0, AI_COMMANDER_RETREAT_DISTANCE)
-	set_ai_var_key(BB_BASIC_MOB_HOLDS_POSITION, ranged_commander || null)
-	set_ai_var_key(BB_BASIC_MOB_RETREAT_DISTANCE, retreat)
-	set_ai_var_key(BB_BASIC_MOB_ENGAGE_DISTANCE, engage_distance)
+	if(!is_commander || !has_ranged_attack())
+		return retreat
+	var/usual_retreat = retreat
+	if(isnull(usual_retreat))
+		usual_retreat = (BB_BASIC_MOB_RETREAT_DISTANCE in archetype_blackboard) ? archetype_blackboard[BB_BASIC_MOB_RETREAT_DISTANCE] : ai_controller.blackboard[BB_BASIC_MOB_RETREAT_DISTANCE]
+	return max(usual_retreat || 0, AI_COMMANDER_RETREAT_DISTANCE)
 
-// Sets a blackboard key from one of our vars. Null restores the original archetype value, if it had one.
-/mob/living/basic/human/proc/set_ai_var_key(key, value)
-	if(isnull(value))
-		if(!(key in archetype_blackboard))
-			return // never set it, so it's still our archetype's
-		value = archetype_blackboard[key]
-	else if(!(key in archetype_blackboard))
-		LAZYSET(archetype_blackboard, key, ai_controller.blackboard[key])
-	if(islist(ai_controller.blackboard[key]) || isnull(value))
-		ai_controller.clear_blackboard_key(key) // set_blackboard_key won't set over a list
-	if(!isnull(value))
-		ai_controller.set_blackboard_key(key, value)
-
-// Throws our AI away and builds it again from our vars, for bits that only get read as it's set up
-/mob/living/basic/human/proc/rebuild_ai(new_controller_type)
-	if(stat == DEAD)
-		return
-	var/turf/home
+// keeps the grenades we've not thrown yet
+/mob/living/basic/human/rebuild_ai(new_controller_type)
 	var/grenades_left
 	if(istype(ai_controller, /datum/ai_controller))
-		home = ai_controller.blackboard[BB_BASIC_MOB_HOME_TURF]
 		grenades_left = ai_controller.blackboard[BB_BASIC_MOB_GRENADES_LEFT]
+	. = ..()
+	if(!isnull(grenades_left) && ai_controller?.blackboard[BB_BASIC_MOB_GRENADE_TYPE])
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenades_left)
+
+/mob/living/basic/human/take_down_ai()
+	if(istype(ai_controller, /datum/ai_controller))
 		ai_drop_held_grenade(ai_controller)
-		qdel(ai_controller)
-	ai_controller = null
-	archetype_blackboard = null
 	remove_status_effect(/datum/status_effect/ai_peppered)
 	for(var/component_type in list(/datum/component/ai_morale, /datum/component/ai_dodging, /datum/component/ai_callouts, /datum/component/ranged_attacks, /datum/component/ai_magazine))
 		qdel(GetComponent(component_type))
@@ -432,16 +388,6 @@
 	RemoveElement(/datum/element/ai_hears_gunfire)
 	REMOVE_TRAIT(src, TRAIT_NOMOBSWAP, INNATE_TRAIT)
 	status_flags |= initial(status_flags) & CANPUSH
-	ai_controller = new_controller_type
-	InitializeAIController()
-	setup_weapon()
-	setup_ai()
-	if(!ai_controller)
-		return
-	if(home)
-		ai_controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, home)
-	if(!isnull(grenades_left) && ai_controller.blackboard[BB_BASIC_MOB_GRENADE_TYPE])
-		ai_controller.set_blackboard_key(BB_BASIC_MOB_GRENADES_LEFT, grenades_left)
 
 /mob/living/basic/human/death(gibbed)
 	if(ai_controller)
@@ -464,41 +410,23 @@
 		if(prob(weapon_drop_chance))
 			new grenade_type(loc)
 
-/mob/living/basic/human/vv_edit_var(var_name, var_value)
-	// the vars apply_ai_vars() puts on the blackboard, so editing one actually affects a mob that already exists
+// the vars apply_ai_vars() puts on the blackboard, so editing one actually affects a mob that already exists
+/mob/living/basic/human/get_live_ai_vars()
 	var/static/list/live_ai_vars
 	if(!live_ai_vars)
-		live_ai_vars = list(
-			NAMEOF(src, stat_attack),
+		live_ai_vars = ..() + list(
 			NAMEOF(src, executes_downed),
-			NAMEOF(src, leash_distance),
 			NAMEOF(src, post_radius),
 			NAMEOF(src, throw_back_chance),
-			NAMEOF(src, vision_range),
-			NAMEOF(src, alert_range),
-			NAMEOF(src, summons_backup),
-			NAMEOF(src, speak_chance),
-			NAMEOF(src, emote_hear),
-			NAMEOF(src, emote_see),
 			NAMEOF(src, check_friendly_fire),
 			NAMEOF(src, melee_reckless),
 			NAMEOF(src, is_commander),
 			NAMEOF(src, rapid_melee),
-			NAMEOF(src, retreat_distance),
-			NAMEOF(src, engage_distance),
 		)
-	if(var_name in live_ai_vars)
-		. = ..()
-		if(istype(ai_controller, /datum/ai_controller))
-			apply_ai_vars()
-		return
+	return live_ai_vars
+
+/mob/living/basic/human/vv_edit_var(var_name, var_value)
 	switch(var_name)
-		if(NAMEOF(src, ai_controller))
-			if(!ispath(var_value, /datum/ai_controller))
-				return FALSE // a path to swap to, as a mapper would set it. Anything else would leave our old one running with nothing pointing at it
-			rebuild_ai(var_value)
-			datum_flags |= DF_VAR_EDITED
-			return TRUE
 		if(NAMEOF(src, grenade_type), NAMEOF(src, grenade_count))
 			. = ..()
 			apply_grenades() // so a mob that already exists can throw them
@@ -514,17 +442,6 @@
 				return TRUE
 			return FALSE
 	return ..()
-
-/mob/living/basic/human/vv_get_dropdown()
-	. = ..()
-	VV_DROPDOWN_OPTION(VV_HK_AI_REBUILD, "Rebuild AI")
-
-/mob/living/basic/human/vv_do_topic(list/href_list)
-	. = ..()
-	if(href_list[VV_HK_AI_REBUILD] && check_rights(R_DEBUG))
-		rebuild_ai()
-		log_admin("[key_name(usr)] rebuilt the AI of [key_name(src)].")
-		to_chat(usr, span_notice("Rebuilt [src]'s AI from its vars."))
 
 /mob/living/basic/human/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
 	. = ..()

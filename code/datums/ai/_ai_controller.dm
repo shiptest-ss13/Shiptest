@@ -175,7 +175,7 @@ multiple modular subtrees with behaviors
 		plan_depth++
 		var/result = subtree.SelectBehaviors(src, seconds_per_tick)
 		plan_depth--
-		if(result == SUBTREE_RETURN_FINISH_PLANNING && refused_behaviors > refused_before && length(planned_behaviors) == planned_before)
+		if(result == SUBTREE_RETURN_FINISH_PLANNING && !istype(subtree, /datum/ai_planning_subtree/group) && refused_behaviors > refused_before && length(planned_behaviors) == planned_before)
 			// it wanted to take over, but nothing it wanted would start, so let the next subtree have a go
 			if(plan_record)
 				plan_record += "[indent][subtree.type]: nothing it wanted would start, so falling through"
