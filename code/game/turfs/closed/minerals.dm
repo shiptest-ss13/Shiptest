@@ -306,7 +306,7 @@
 	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	// abundant ore
 	mineralChance = 10
 	mineralSpawnChanceList = list(
@@ -324,37 +324,6 @@
 		/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/titanium = 8,
 		/obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/iron = 95)
 
-
-/turf/closed/mineral/random/labormineral/volcanic
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
-	mineralSpawnChanceList = list(
-		/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/titanium = 8,
-		/obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
-		/obj/item/stack/ore/iron = 95)
-
-// Subtypes for mappers placing ores manually.
-/turf/closed/mineral/random/labormineral/ice
-	name = "snowy mountainside"
-	icon = MAP_SWITCH('icons/turf/walls/mountain_wall.dmi', 'icons/turf/walls/mapping_wall.dmi')
-	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
-	base_icon_state = "mountain_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
-	connector_icon = 'icons/turf/connectors/mountain_wall_connector.dmi'
-	connector_icon_state = "mountain_wall_connector"
-	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/ice)
-	defer_change = TRUE
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	defer_change = TRUE
-	mineralSpawnChanceList = list(
-		/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/titanium = 8,
-		/obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
-		/obj/item/stack/ore/iron = 95)
-
 /turf/closed/mineral/iron
 	mineralType = /obj/item/stack/ore/iron
 	scan_state = "rock_Iron"
@@ -368,8 +337,8 @@
 	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
 	connector_icon_state = "icerock_wall_connector"
 	no_connector_typecache = list(/turf/closed/mineral/iron/ice, /turf/closed/mineral/plasma/ice)
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -396,8 +365,8 @@
 	scan_state = "rock_Silver"
 
 /turf/closed/mineral/silver/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/titanium
@@ -417,8 +386,8 @@
 	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
 	connector_icon_state = "icerock_wall_connector"
 	no_connector_typecache = list(/turf/closed/mineral/plasma/ice, /turf/closed/mineral/iron/ice)
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -541,8 +510,8 @@
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid
+	baseturfs = /turf/open/floor/plating/asteroid
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 

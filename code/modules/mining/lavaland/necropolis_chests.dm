@@ -783,6 +783,8 @@
 	supports_variations = VOX_VARIATION
 	var/chargesound
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
 	. += span_notice("This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.")
@@ -1043,7 +1045,7 @@
 	switch(random)
 		if(1)
 			to_chat(user, span_danger("Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities."))
-			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body")
+			H.dna.features = list("mcolor" = "A02720", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)

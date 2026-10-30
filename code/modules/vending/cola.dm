@@ -1,9 +1,9 @@
 
 /obj/machinery/vending/cola
-	name = "\improper RobustMore Softdrinks"
-	desc = "A softdrink vendor provided by RobustMore DrinkFoods Industries, LLC."
+	name = "\improper Zukeri Softdrinks"
+	desc = "A softdrink vendor provided by the Zukeri Corporation."
 	icon_state = "Cola_Machine"
-	product_slogans = "RobustMore Softdrinks: More robust than a toolbox to the head!"
+	product_slogans = "Disruptions have ended, enjoy our famous low prices once more!;Drinks are guaranteed cold!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 10 trillion drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks this side of the galaxy."
 	products = list(
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
@@ -26,7 +26,7 @@
 	extra_price = 15
 
 /obj/item/vending_refill/cola
-	machine_name = "RobustMore Softdrinks"
+	machine_name = "Zukeri Softdrinks"
 	icon_state = "refill_cola"
 
 /obj/machinery/vending/cola/blue

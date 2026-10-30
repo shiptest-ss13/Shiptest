@@ -121,7 +121,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 0.5
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|TAIL|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -138,16 +138,19 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	hardsuit_type = "frontier"
-	supports_variations = null
+	supports_variations = SNOUTED_VARIATION
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	name = "\improper Frontiersmen hardsuit"
 	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
 	icon_state = "hardsuit_frontier"
 	hardsuit_type = "hardsuit_frontier"
+	supports_variations = DIGITIGRADE_VARIATION
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /////////
 //Hats//
