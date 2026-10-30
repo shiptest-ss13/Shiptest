@@ -149,9 +149,13 @@
 
 /obj/projectile/beam/hitscan/e20_pierce/on_hit(atom/target, blocked = FALSE)
 	. = ..()
+	damage = initial(damage) // prevents infinite damage stacking
 	if(!isclosedturf(target))
 		return BULLET_ACT_HIT
-	damage *= 2
+	if(ismineralturf(target))
+		damage *= 3 // slightly lower to prevent slagging
+	else
+		damage *= 2
 
 	return BULLET_ACT_HIT
 
