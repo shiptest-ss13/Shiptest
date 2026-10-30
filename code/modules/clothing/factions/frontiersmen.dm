@@ -149,6 +149,27 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
 
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
+	name = "\improper Frontiersmen 'Runner' hardsuit helmet"
+	desc = "A helmet for a Runner hardsuit. The design originally raised alarm bells as intelligence agencies suspected Zohilan design - though the original creator was traced to a anti-league anarchist who designed the armor in a shed."
+	icon_state = "hardsuit0-frontierlight"
+	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	hardsuit_type = "frontierlight"
+	supports_variations = SNOUTED_VARIATION
+	lighting_alpha = null
+	darkness_view = 2
+
+/obj/item/clothing/suit/space/hardsuit/stealth/frontier
+	name = "\improper Frontiersmen 'Runner' hardsuit"
+	desc = "A modern, well-designed hardsuit with a stealth cloak draped over it. Utilized by the Frontiersman fleet for those looking for less restrictive movement in space."
+	icon_state = "hardsuit-frontierlight"
+	hardsuit_type = "frontierlight"
+	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
+	supports_variations = DIGITIGRADE_VARIATION
+
 /////////
 //Hats//
 ////////
