@@ -93,8 +93,7 @@
 	if(!tether && home_distance <= (isnull(post_radius) ? home_range : post_radius))
 		controller.clear_blackboard_key(BB_BASIC_MOB_LEASHED_OFF) // home, so anyone who led us away is fair game again
 		// and whoever we were standing over, as we never found our way back to them
-		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
-		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
+		forget_downed(controller)
 		forget_waypoint(controller)
 		forget_trail(controller)
 		close_to_home(controller, our_turf, home, was_heading_home)
@@ -134,9 +133,14 @@
 
 /datum/ai_planning_subtree/return_home/proc/try_linger_over_downed(datum/ai_controller/controller)
 	if(controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET])
-		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
-		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
+		forget_downed(controller)
 	return FALSE
+
+// forget whoever we downed
+/datum/ai_planning_subtree/return_home/proc/forget_downed(datum/ai_controller/controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
+	controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
+	controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_SEEN_AT)
 
 // whether we've caught up with them, or nearly have them down, rather than being kited, so our leash can wait
 /datum/ai_planning_subtree/return_home/proc/pressing_advantage(datum/ai_controller/controller, atom/target)

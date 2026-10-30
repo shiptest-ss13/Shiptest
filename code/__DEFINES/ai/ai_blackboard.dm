@@ -136,6 +136,8 @@
 ///Someone we fought who's gone down, and when, so we can stick around a while before heading home
 #define BB_BASIC_MOB_DOWNED_TARGET "BB_basic_downed_target"
 #define BB_BASIC_MOB_DOWNED_AT "BB_basic_downed_at"
+///Where we last saw BB_BASIC_MOB_DOWNED_TARGET
+#define BB_BASIC_MOB_DOWNED_SEEN_AT "BB_basic_downed_seen_at"
 ///Who we're fighting that's just gone down, and when, while we make sure of it
 #define BB_BASIC_MOB_CONFIRMING_DOWN "BB_basic_confirming_down"
 #define BB_BASIC_MOB_CONFIRMING_DOWN_SINCE "BB_basic_confirming_down_since"

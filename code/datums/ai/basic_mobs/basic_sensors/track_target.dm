@@ -85,10 +85,12 @@
 		// we stayed on them while they were down, as those who finish people off do, and they're back up
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
+		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_SEEN_AT)
 		ai_callout(controller.pawn, AI_CALLOUT_GETTING_UP, interrupt = TRUE, subject = target)
 	else if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
 		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)
+		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_SEEN_AT, get_turf(target))
 		ai_witness_downed(controller.pawn, target)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, TRUE)
 	controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, get_turf(target))
