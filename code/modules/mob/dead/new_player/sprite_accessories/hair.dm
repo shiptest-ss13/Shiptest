@@ -494,6 +494,10 @@
 	name = "Sidecut"
 	icon_state = "hair_sidecut"
 
+/datum/sprite_accessory/hair/sidebang
+	name = "Sidebang"
+	icon_state = "hair_sidebang"
+
 /datum/sprite_accessory/hair/stride
 	name = "Stride"
 	icon_state = "hair_stride"
