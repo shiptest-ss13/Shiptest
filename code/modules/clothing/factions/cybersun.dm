@@ -332,7 +332,7 @@
 	desc = "Impact resistant plasmaglass is inset with plastitanium to make a durable helmet with clean unassisted field-of-view."
 	icon_state = "hardsuit0-collapsar"
 	hardsuit_type = "collapsar"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
