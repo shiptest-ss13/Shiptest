@@ -120,6 +120,11 @@
 	if(!through_fire)
 		var/on_fire = (locate(/obj/effect/hotspot) in spot) || (locate(/obj/effect/abstract/turf_fire) in spot)
 		if(!on_fire)
+			for(var/obj/structure/bonfire/bonfire in spot)
+				if(bonfire.burning)
+					on_fire = TRUE
+					break
+		if(!on_fire)
 			for(var/mob/living/burning in spot)
 				if(burning != mover && burning != ignoring && burning.on_fire)
 					on_fire = TRUE // for burning objects or bodies

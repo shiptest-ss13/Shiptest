@@ -21,9 +21,12 @@
 	var/turf/mover_turf = get_turf(mover)
 	if(stuck_on(ally_controller, mover_turf))
 		return swap_places(ally, mover, spot) // swap if we're going head one towards each other
+	var/mob/living/living_mover = mover
+	if(living_mover.ai_controller?.blackboard[BB_BASIC_MOB_NO_WAY_ROUND] == spot)
+		return let_through(ally, mover, spot, "as there was no way round us") // they can hold where they are, but not block the only way
 	var/hurrying = in_a_hurry(mover)
 	if(!hurrying && ai_is_doorway(spot))
-		return let_through_doorway(ally, mover, spot)
+		return let_through(ally, mover, spot, "to let them through the doorway")
 	if(!hurrying && length(ally_controller.movement_path) && ally_controller.ai_movement?.moving_controllers[ally_controller])
 		return FALSE // on their way somewhere themselves, so they'll be out of it soon enough
 	var/atom/ally_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
@@ -48,15 +51,17 @@
 		return swap_places(ally, mover, spot, "as they were getting clear of danger")
 	return FALSE
 
-/datum/ai_movement/jps/proc/let_through_doorway(mob/living/ally, atom/movable/mover, turf/doorway)
+// ally swaps back off spot to let mover through, whatever they're doing, and goes back to it after. On both, so neither takes it straight back off the other
+/datum/ai_movement/jps/proc/let_through(mob/living/ally, atom/movable/mover, turf/spot, reason)
 	var/datum/ai_controller/ally_controller = ally.ai_controller
 	if(world.time < ally_controller.blackboard[BB_BASIC_MOB_MADE_WAY_UNTIL])
 		return FALSE
-	if(!swap_places(ally, mover, doorway, "to let them through the doorway"))
+	if(!swap_places(ally, mover, spot, reason))
 		return FALSE
 	ally_controller.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
 	var/mob/living/living_mover = mover
 	living_mover.ai_controller?.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
+	living_mover.ai_controller?.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_ROUND)
 	return TRUE
 
 // mover wants to get out of the way quick, move aside for them

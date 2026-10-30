@@ -383,6 +383,11 @@
 	controller.calculating_path = FALSE
 	if(QDELETED(controller.pawn) || moving_controllers[controller] != target || controller.current_movement_target != target)
 		return // we've moved on to something else while we worked it out
+	if(!length(new_path) && avoid && length(controller.movement_path) && controller.movement_path[1] == avoid)
+		// no way round whoever's in our way, so we keep to our way through them
+		controller.set_blackboard_key(BB_BASIC_MOB_NO_WAY_ROUND, avoid)
+		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_ROUND)
 	controller.movement_path = new_path
 	if(!length(new_path) && !avoid)
 		// no way there at all, not just someone in the way we might wait out, so searching again every couple of seconds would only fail the same way

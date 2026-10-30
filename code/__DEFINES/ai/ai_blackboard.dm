@@ -337,6 +337,8 @@
 ///Where one of ours last stood in our way, and when, so if they're as stuck on us as we are on them, we swap
 #define BB_BASIC_MOB_BLOCKED_BY_ALLY_AT "BB_basic_blocked_by_ally_at"
 #define BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE "BB_basic_blocked_by_ally_since"
+///Where someone's in our way with no way round them, so we keep to our way through, and they let us past if they're one of ours
+#define BB_BASIC_MOB_NO_WAY_ROUND "BB_basic_no_way_round"
 ///Where we wait out of sight of someone we can't get to, like out in open space
 #define BB_BASIC_MOB_WAIT_TURF "BB_basic_wait_turf"
 ///When we next look for somewhere to wait out of sight of someone we can't get to
