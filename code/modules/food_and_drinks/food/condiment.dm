@@ -34,7 +34,7 @@
 		/datum/reagent/consumable/tiris_sale = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sale", "desc" = "An intense reduction made from tiris blood."),
 		/datum/reagent/consumable/tiris_sele = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sele", "desc" = "An gravy made from tiris blood."),
 		/datum/reagent/consumable/tiris_milk = list("icon_state" = "tiris-milk", "item_state" = "", "icon_empty" = "", "name" = "tiris milk", "desc" = "A rich and heavy milk taken from a Tiris!"),
-		/datum/reagent/consumable/honey = list("icon_state" = "honey", "item_state" = "", "icon_empty" = "", "name" = "tiris milk", "desc" = "A jar of cloyingly sweet, herbal honey."),
+		/datum/reagent/consumable/honey = list("icon_state" = "honey", "item_state" = "", "icon_empty" = "", "name" = "honey jar", "desc" = "A jar of cloyingly sweet, herbal honey."),
 	)
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 	var/icon_empty = ""
