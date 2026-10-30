@@ -143,7 +143,7 @@
 //////////////
 /obj/item/clothing/head/helmet/space/hardsuit/stealth/hardliners
 	name = "Asura shocktrooper hardsuit helmet"
-	desc = "Parting plates reveal a visor in permanent frown. The night vision sensors this once had appear to be nonfunctional."
+	desc = "A dual-eye setup reminiscent of former Marauder designs. Thick plating make no way for sensitive electronics like night vision."
 	icon_state = "hardsuit0-hardstealth"
 	item_state = "hardsuit0-hardstealth"
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
