@@ -873,8 +873,8 @@
 /mob/living/carbon/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
 	if(check_concealment(P))
 		return BULLET_ACT_FORCE_PIERCE
-	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/limb_to_hit = run_zone(def_zone, P.get_accuracy(src))
+	var/armor = run_armor_check(limb_to_hit, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit, limb_to_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		var/attack_direction = get_dir(P.starting, src)
@@ -884,7 +884,7 @@
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 
 		if(P.dismemberment)
-			check_projectile_dismemberment(P, def_zone)
+			check_projectile_dismemberment(P, limb_to_hit)
 
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
