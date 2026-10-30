@@ -145,6 +145,11 @@
 		FindTarget(list(user), 1)
 	return ..()
 
+/mob/living/simple_animal/hostile/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && user)
+		FindTarget(list(user), 1)
+	return ..()
+
 /mob/living/simple_animal/hostile/bullet_act(obj/projectile/P)
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && P.suppressed != SUPPRESSED_EXTREME)
 		if(P.firer && (get_dist(src, P.firer) <= aggro_vision_range))
