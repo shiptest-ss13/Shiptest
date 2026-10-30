@@ -73,6 +73,9 @@
 	spread = 0
 	spread_unwielded = 10
 
+/obj/item/gun/energy/laser/e20/empty_cell
+	spawn_no_ammo = TRUE
+
 /obj/item/gun/energy/laser/e50
 	name = "E-50 energy emitter"
 	desc = "A heavy and extremely powerful laser. Sets targets on fire and kicks ass, but it uses a massive amount of energy per shot and is generally awkward to handle."
