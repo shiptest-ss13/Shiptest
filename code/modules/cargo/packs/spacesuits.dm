@@ -504,7 +504,7 @@
 /datum/supply_pack/spacesuits/hardstealth
 	name = "Asura Shock Hardsuit Crate"
 	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
-	cost = 4500
+	cost = 3500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/hardliners)
 	crate_name = "Asura Shock Hardsuit Crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
