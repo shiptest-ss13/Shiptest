@@ -1121,6 +1121,7 @@
 		ADMIN_PUNISHMENT_CRACK,
 		ADMIN_PUNISHMENT_BLEED,
 		ADMIN_PUNISHMENT_PERFORATE,
+		ADMIN_PUNISHMENT_LOTTO_CURSE,
 	)
 
 	var/punishment = input("Choose a punishment", "mods kill this guy") as null|anything in sortList(punishment_list)
@@ -1222,6 +1223,8 @@
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
 				type_wound = pick(list(/datum/wound/slash/flesh/critical, /datum/wound/slash/flesh/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
+		if(ADMIN_PUNISHMENT_LOTTO_CURSE)
+			ADD_TRAIT(target, TRAIT_LOTTO_CURSE, "adminabuse")
 
 		if(ADMIN_PUNISHMENT_PERFORATE)
 			if(!iscarbon(target))

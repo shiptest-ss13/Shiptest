@@ -131,7 +131,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION | VOX_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	blood_overlay_type = "armor"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) // 5. additional. bullet armor.
 
@@ -141,7 +141,7 @@
 	body_parts_covered = CHEST|GROIN
 	icon_state = "ngr_lieutenant"
 	item_state = "ngr_lieutenant"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	kepori_override_icon = null
 	vox_override_icon = null
 	blood_overlay_type = "coat"
@@ -155,6 +155,7 @@
 	item_state = "ngr_captain"
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 ///////////////
 //Spacesuits//
@@ -225,7 +226,7 @@
 	icon_state = "hardsuit-ngreod"
 	hardsuit_type = "ngreod"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ngrheavy
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	slowdown = 1.25
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -235,7 +236,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	icon_state = "hardsuit0-ngreod"
 	hardsuit_type = "ngreod"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	desc = "A heavily modified EOD hardsuit helmet produced by the NGR. There are reinforcements made all across the helm, along with a wider visor."
 	supports_variations = SNOUTED_VARIATION
 
@@ -264,6 +265,52 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 	supports_variations = SNOUTED_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/ngroutrider
+	name = "NGR outrider hardsuit"
+	desc = "A light, dual-layer NGR made suit. Built for flexibility and ease of wear, allowing the wearer to operate unburdened in a variety of conditions. Includes built-in night vision."
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	icon_state = "hardsuit-ngroutrider"
+	item_state = "hardsuit-ngroutrider"
+	slowdown = 0
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider
+	hardsuit_type = "ngroutrider"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/ngroutrider
+	name = "NGR outrider hardsuit helmet"
+	desc = "A light helmet, providing modest protection and an integrated nightvision set, comfortable for long patrols."
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	icon_state = "hardsuit0-ngroutrider"
+	item_state = "hardsuit0-nsmining"
+	hardsuit_type = "ngroutrider"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+	supports_variations = SNOUTED_VARIATION
+	actions_types = list(/datum/action/item_action/toggle_helmet_nightvision)
+	var/nightvision = FALSE
+
+/obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/toggle_helmet_nightvision))
+		toggle_nightvision(user)
+	. = ..()
+
+/obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/proc/toggle_nightvision(mob/user)
+	nightvision = !nightvision
+	if(nightvision)
+		darkness_view = 8
+		lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+		flash_protect = FLASH_PROTECTION_SENSITIVE
+	else
+		darkness_view = 2
+		lighting_alpha = null
+		flash_protect = FLASH_PROTECTION_FLASH
+	user.update_sight()
+
 
 /////////
 //Hats//
@@ -419,9 +466,9 @@
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
 
-/obj/item/storage/belt/security/webbing/ngr/hydra_lmg/PopulateContents()
+/obj/item/storage/belt/security/webbing/ngr/python/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m556_42_hydra/extended(src)
+		new /obj/item/ammo_box/magazine/python_box(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
 

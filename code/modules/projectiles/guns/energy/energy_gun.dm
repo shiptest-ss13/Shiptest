@@ -14,6 +14,7 @@
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	w_class = WEIGHT_CLASS_NORMAL
+	bad_type = /obj/item/gun/energy/e_gun
 
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
@@ -57,3 +58,5 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/mini,
 	)
+
+	autowiki_hidden = TRUE

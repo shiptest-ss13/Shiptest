@@ -783,6 +783,8 @@
 	supports_variations = VOX_VARIATION
 	var/chargesound
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
 	. += span_notice("This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.")
