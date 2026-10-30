@@ -1,9 +1,9 @@
 //Basic procedures = Brute, Burn, etc.
 //Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
-//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
-#define COST_BASIC 250
-#define COST_COMPLEX 500
-#define COST_ORGANS 800
+//Organ procedures = Organ repair & prosthetic replacement
+#define COST_BASIC 100
+#define COST_COMPLEX 150
+#define COST_ORGANS 400
 
 //Primary machine. This is where our patient and procedure disk goes.
 /obj/machinery/autodoc
@@ -279,7 +279,7 @@
 	if(!is_operational || state_open)
 		return FALSE
 
-	if(!patient)
+	if(!patient || !patient.mind)
 		error_message = "No valid patient found."
 		return FALSE
 
@@ -536,6 +536,9 @@
 	var/base_cost = 0
 	///Whether we're ignoring cost.
 	var/free = FALSE
+
+/obj/machinery/autodoc_vendor/free
+	free = TRUE
 
 /obj/machinery/autodoc_vendor/ui_interact(mob/user, datum/tgui/ui)
 	if(machine_stat & BROKEN)
