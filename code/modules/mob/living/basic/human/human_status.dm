@@ -7,6 +7,8 @@
 		return
 	if(new_value == LYING_DOWN)
 		add_movespeed_modifier(/datum/movespeed_modifier/carbon_crawling)
+		if(!lying_angle && (!buckled || buckled.buckle_lying != 0))
+			set_lying_angle(pick(90, 270))
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/carbon_crawling)
 		on_get_up() // only once we're actually on our feet, after the second it takes to stand
