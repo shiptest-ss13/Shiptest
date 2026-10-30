@@ -149,7 +149,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 	hardsuit_type = "hardstealth"
-	flash_protect = null
+	flash_protect = FLASH_PROTECTION_FLASH
 	lighting_alpha = null
 	supports_variations = SNOUTED_VARIATION
 
