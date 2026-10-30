@@ -401,3 +401,10 @@
 	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
 	icon_state = "tiris-sauce"
 	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)
+
+/obj/item/reagent_containers/condiment/honey
+	name = "honey jar"
+	desc = "A jar of cloyingly sweet, herbal honey."
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon_state = "honeycomb"
+	list_reagents = list(/datum/reagent/consumable/honey = 50)
