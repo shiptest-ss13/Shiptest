@@ -139,6 +139,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	hardsuit_type = "frontier"
 	supports_variations = SNOUTED_VARIATION
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	name = "\improper Frontiersmen hardsuit"
@@ -149,6 +150,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /////////
 //Hats//
