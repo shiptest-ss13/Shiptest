@@ -469,14 +469,12 @@
 			return FALSE
 		if(1 to RAD_MOB_SAFE)
 			return 0.25
-		if(RAD_MOB_SAFE to RAD_BURN_THRESHOLD)
+		if(RAD_BURN_THRESHOLD to RAD_MOB_SAFE)
 			return 0.5
-		if(RAD_BURN_THRESHOLD to RAD_MOB_MUTATE)
+		if(RAD_MOB_SAFE to RAD_MOB_KNOCKDOWN)
 			return 0.75
-		if(RAD_MOB_MUTATE to RAD_MOB_KNOCKDOWN)
-			return 1
 		else
-			return 1.5
+			return 1
 
 /datum/symptom/heal/radiation/Heal(mob/living/carbon/M, datum/disease/advance/A, actual_power)
 	var/heal_amt = actual_power
