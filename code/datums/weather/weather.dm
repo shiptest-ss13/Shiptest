@@ -66,6 +66,8 @@
 	var/overlay_layer = AREA_LAYER
 	/// Plane for the overlay
 	var/overlay_plane = BLACKNESS_PLANE
+	///Opacity of the overlay
+	var/overlay_alpha = 255
 	/// If the weather has no purpose other than looks
 	var/aesthetic = FALSE
 	/// Used by mobs to prevent them from being affected by the weather
@@ -304,6 +306,7 @@
 			N.set_opacity(FALSE)
 		N.layer = overlay_layer
 		N.plane = overlay_plane
+		N.alpha = overlay_alpha
 		N.icon = 'icons/effects/weather_effects.dmi'
 		N.color = weather_color
 		N.active_weather = src
