@@ -119,3 +119,6 @@
 
 /obj/effect/projectile/tracer/pgf/sniper
 	icon_state = "beam_pgf_sniper"
+
+/obj/effect/projectile/tracer/e20_pierce
+	icon_state = "beam_e20"

@@ -97,15 +97,69 @@
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/laser/eoehoma
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser"
 	damage = 35
 	armour_penetration = 0
 	speed = 0.8
 
 /obj/projectile/beam/laser/eoehoma/wasp
-	icon_state = "heavylaser"
 	damage = 30
 
+// e20 default projectile
+/obj/projectile/beam/laser/eoehoma/mining/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(!isclosedturf(target))
+		return BULLET_ACT_HIT
+	if(ismineralturf(target))
+		damage *= 4
+	else
+		damage *= 2
+
+	return BULLET_ACT_HIT
+
+// e20 heavy beam
+/obj/projectile/beam/emitter/hitscan/e20_heavy
+	icon_state = "eoehoma_laser_heavy"
+	damage = 35
+	fire_color = "red"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	light_color = COLOR_SOFT_RED
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+
+// e20 pierce beam
+/obj/projectile/beam/hitscan/e20_pierce
+	name = "concentrated mining beam"
+	tracer_type = /obj/effect/projectile/tracer/e20_pierce
+	muzzle_type = /obj/effect/projectile/muzzle/e20_pierce
+	impact_type = /obj/effect/projectile/impact/e20_pierce
+
+	projectile_piercing = PASSMOB
+
+	range = 8
+	damage_constant = 0.7
+	damage = 40
+	armour_penetration = 60
+
+/obj/projectile/beam/hitscan/e20_pierce/prehit_pierce(atom/target)
+	. = ..()
+	if(ismineralturf(target))
+		return PROJECTILE_PIERCE_HIT
+
+/obj/projectile/beam/hitscan/e20_pierce/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	damage = initial(damage) // prevents infinite damage stacking
+	if(!isclosedturf(target))
+		return BULLET_ACT_HIT
+	if(ismineralturf(target))
+		damage *= 3 // slightly lower to prevent slagging
+	else
+		damage *= 2
+
+	return BULLET_ACT_HIT
+
+// e10 overcharge projectile
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
 	damage = 40
@@ -173,13 +227,13 @@
 		qdel(src)
 
 /obj/projectile/beam/laser/assault
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 25
 	armour_penetration = 20
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 40
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
@@ -268,13 +322,13 @@
 
 /obj/projectile/beam/laser/slug
 	name = "laser slug"
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 20
 	armour_penetration = 40
 
 /obj/projectile/beam/scatter
 	name = "laser pellet"
-	icon_state = "scatterlaser"
+	icon_state = "eoehoma_laser_light"
 	damage = 5
 	range = 7
 
@@ -496,10 +550,11 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
+	var/fire_color = "green"
 
 /obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.ignite_turf(rand(8,22), "green")
+	targets_turf.ignite_turf(rand(8,22), fire_color)

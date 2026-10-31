@@ -90,3 +90,6 @@
 
 /obj/effect/projectile/impact/pgf/sniper
 	icon_state = "impact_pgf_sniper"
+
+/obj/effect/projectile/impact/e20_pierce
+	icon_state = "impact_e20"
