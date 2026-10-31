@@ -165,7 +165,7 @@
 		update_appearance()
 
 	for(var/datum/action/action as anything in actions)
-		action.UpdateButtonIcon()
+		action.UpdateButtons()
 
 /obj/item/clothing/head/helmet/update_overlays()
 	. = ..()

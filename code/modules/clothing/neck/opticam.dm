@@ -152,7 +152,7 @@
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "power_yellow"
 
-/datum/action/item_action/toggle_opticamo/Trigger()
+/datum/action/item_action/toggle_opticamo/Trigger(trigger_flags)
 	if(!istype(target, /obj/item/clothing/neck/opticamo) || !..())
 		return
 

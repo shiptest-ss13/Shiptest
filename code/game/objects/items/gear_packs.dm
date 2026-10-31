@@ -171,7 +171,7 @@
 	update_power()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 
 /obj/item/gear_pack/equipped(mob/user, slot)

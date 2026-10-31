@@ -794,7 +794,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	update_appearance()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/pda/proc/remove_pen(mob/user)
 
