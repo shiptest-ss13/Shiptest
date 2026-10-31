@@ -592,9 +592,6 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "eS" = (
@@ -1017,10 +1014,8 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/moth/piping{
-	pixel_y = 30
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "jN" = (
@@ -1422,6 +1417,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "mP" = (
@@ -2404,6 +2400,7 @@
 	id = "derecho_starboard_engine_blast"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "wv" = (
@@ -2928,6 +2925,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/official/moth/piping{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "BD" = (
@@ -3611,6 +3611,7 @@
 	pixel_y = 8;
 	id = "derecho_port_engine_blast"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "GC" = (
