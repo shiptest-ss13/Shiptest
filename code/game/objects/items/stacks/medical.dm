@@ -132,14 +132,20 @@
 	singular_name = "bruise pack"
 	desc = "A therapeutic gel pack and bandages designed to treat blunt-force trauma."
 	icon_state = "brutepack"
+	amount = 12
+	max_amount = 12
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 2 SECONDS
 	other_delay = 1.5 SECONDS
-	heal_brute = 10
-	grind_results = list(/datum/reagent/medicine/indomide = 10)
+	repeating = TRUE
+	heal_brute = 15
+	grind_results = list(/datum/reagent/medicine/indomide = 5)
 	merge_type = /obj/item/stack/medical/bruise_pack
+
+/obj/item/stack/medical/bruise_pack/six
+	amount = 6
 
 /obj/item/stack/medical/gauze
 	name = "medical gauze"
