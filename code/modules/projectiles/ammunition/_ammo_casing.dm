@@ -196,8 +196,8 @@
 	bounce_away(FALSE, NONE)
 	. = ..()
 
-/obj/item/ammo_casing/proc/on_eject(atom/shooter)
-	if(caseless) //early return for caseless rounds
+/obj/item/ammo_casing/proc/on_eject(atom/shooter, was_shot = TRUE)
+	if(caseless && was_shot) //early return for caseless rounds if we shot them
 		return
 	if(QDELETED(src))
 		return
