@@ -167,7 +167,7 @@
 	health = 15
 	maxHealth = 15
 	ventcrawler = VENTCRAWLER_ALWAYS
-	var/eggsleft = 0
+	var/eggsleft = 0 ///farm chickens can still hatch chicks but don't start with any
 	var/eggsFertile = TRUE
 	var/body_color
 	var/icon_prefix = "chicken"
@@ -176,7 +176,6 @@
 	var/list/feedMessages = list("It clucks happily.","It clucks happily.")
 	var/list/layMessage = EGG_LAYING_MESSAGES
 	var/list/validColors = list("brown","black","white")
-	var/static/chicken_count = 0
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -189,11 +188,6 @@
 	icon_dead = "[icon_prefix]_[body_color]_dead"
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
-	++chicken_count
-
-/mob/living/simple_animal/chicken/Destroy()
-	--chicken_count
-	return ..()
 
 /mob/living/simple_animal/chicken/attackby(obj/item/O, mob/user, params)
 	if(is_type_in_list(O, food_type)) //feedin' dem chickens
@@ -218,7 +212,7 @@
 		E.pixel_x = E.base_pixel_x + rand(-6, 6)
 		E.pixel_y = E.base_pixel_y + rand(-6, 6)
 		if(eggsFertile)
-			if(chicken_count < MAX_CHICKENS && prob(25))
+			if(prob(25))
 				START_PROCESSING(SSobj, E)
 
 /obj/item/food/egg/var/amount_grown = 0
@@ -256,14 +250,15 @@
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
-	response_harm_continuous = "scratches"
-	response_harm_simple = "scratch"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
 	attack_verb_continuous = "scratches"
 	attack_verb_simple = "scratch"
+	attack_sound = 'sound/weapons/slash.ogg'
 	health = 25
 	maxHealth = 25
-	var/eggsleft = 0
-	var/eggsFertile = TRUE
+	var/eggsleft = 2 ///two eggs to start for wild ones sounds okay. they won't lay more w/o player intervention
+	var/eggsFertile = FALSE ///maybe infinitely proliferating  wild chickens is a bad idea
 	var/body_color
 	var/icon_prefix = "chicken"
 	pass_flags = PASSTABLE
@@ -271,7 +266,6 @@
 	var/list/feedMessages = list("It clucks happily.","It clucks happily.")
 	var/list/layMessage = EGG_LAYING_MESSAGES
 	var/list/validColors = list("brown","black","white")
-	var/static/chicken_count = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	melee_damage_lower = 3
 	melee_damage_upper = 10
@@ -287,11 +281,16 @@
 	icon_dead = "[icon_prefix]_[body_color]_dead"
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
-	++chicken_count
 
-/mob/living/simple_animal/hostile/retaliate/chicken/Destroy()
-	--chicken_count
-	return ..()
+/mob/living/simple_animal/hostile/retaliate/chicken/proc/garden_search() ///copied from carp eating plastic and snow monkey code
+	var/obj/structure/flora/ash/garden/harvestable = locate(/obj/structure/flora/ash/garden) in view(1, src)
+	if(harvestable && (harvestable.harvested == FALSE) && Adjacent(harvestable))
+		visible_message(span_notice("[src] pecks at the [harvestable], searching for food within!"), span_notice("You pick through the [harvestable], looking for food..."))
+
+		new /obj/effect/decal/cleanable/plastic(loc)
+
+		adjustBruteLoss(5)
+		qdel(tasty_plastic)
 
 /mob/living/simple_animal/hostile/retaliate/chicken/attackby(obj/item/O, mob/user, params)
 	if(is_type_in_list(O, food_type))
@@ -304,6 +303,20 @@
 			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
+
+/mob/living/simple_animal/hostile/retaliate/chicken/Life(seconds_per_tick = SSMOBS_DT, times_fired) ///this code is nigh incomprehensible to me but it works.
+	. =..()
+	if(!.)
+		return
+	if((!stat && SPT_PROB(1.5, seconds_per_tick) && eggsleft > 0) && egg_type)
+		visible_message(span_alertalien("[src] [pick(layMessage)]"))
+		eggsleft--
+		var/obj/item/E = new egg_type(get_turf(src))
+		E.pixel_x = E.base_pixel_x + rand(-6, 6)
+		E.pixel_y = E.base_pixel_y + rand(-6, 6)
+		if(eggsFertile)
+			if(prob(25))
+				START_PROCESSING(SSobj, E)
 
 /mob/living/simple_animal/deer
 	name = "doe"
