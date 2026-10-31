@@ -13,13 +13,13 @@
 	if(SPT_PROB(0.5 * GET_MUTATION_SYNCHRONIZER(src), seconds_per_tick) && owner.stat == CONSCIOUS)
 		owner.visible_message(span_danger("[owner] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		owner.Unconscious(200 * GET_MUTATION_POWER(src))
-		owner.set_timed_status_effect(1000 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+		owner.set_timed_status_effect(1000 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "epilepsy", /datum/mood_event/epilepsy)
 		addtimer(CALLBACK(src, PROC_REF(jitter_less)), 90)
 
 /datum/mutation/human/epilepsy/proc/jitter_less()
 	if(owner)
-		owner.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter)
+		owner.set_timed_status_effect(20 SECONDS, STATUS_EFFECT_JITTER)
 
 
 //Unstable DNA induces random mutations!
@@ -374,7 +374,7 @@
 		else
 			to_chat(H, span_userdanger("You are knocked down by a wave of... blood?!"))
 		H.Stun(20)
-		H.blur_eyes(20)
+		H.set_eye_blur_if_lower(40 SECONDS)
 		eyes?.applyOrganDamage(5)
 		H.confused += 3
 	for(var/mob/living/silicon/S in view(2,owner))

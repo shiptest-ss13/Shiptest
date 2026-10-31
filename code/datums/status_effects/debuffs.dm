@@ -119,48 +119,115 @@
 	id = "sleeping"
 	alert_type = /atom/movable/screen/alert/status_effect/asleep
 	needs_update_stat = TRUE
-	var/mob/living/carbon/carbon_owner
-	var/mob/living/carbon/human/human_owner
+	var/healing_power = -0.2
+	var/pain_modifier = 0.8
 
 /datum/status_effect/incapacitating/sleeping/on_apply()
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+	if(!HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE))
+		ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+		tick_interval = -1
+	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), .proc/on_owner_insomniac)
+	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE), .proc/on_owner_sleepy)
+	RegisterSignal(owner, list(
+		SIGNAL_ADDTRAIT(TRAIT_ON_ANESTHETIC),
+		SIGNAL_REMOVETRAIT(TRAIT_ON_ANESTHETIC),
+		COMSIG_MOVABLE_MOVED,
+	), .proc/update_modifiers)
+
+	// Make sure the values are all updated
+	update_modifiers(owner)
 
 /datum/status_effect/incapacitating/sleeping/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
-	return ..()
+	UnregisterSignal(owner, list(
+		SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE),
+		SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE),
+		SIGNAL_ADDTRAIT(TRAIT_ON_ANESTHETIC),
+		SIGNAL_REMOVETRAIT(TRAIT_ON_ANESTHETIC),
+		COMSIG_MOVABLE_MOVED,
+	))
 
-/datum/status_effect/incapacitating/sleeping/tick()
-	if(owner.maxHealth)
-		var/health_ratio = owner.health / owner.maxHealth
-		var/healing = -0.2
-		if((locate(/obj/structure/bed) in owner.loc))
-			healing -= 0.3
-		else if((locate(/obj/structure/table) in owner.loc))
-			healing -= 0.1
-		for(var/obj/item/bedsheet/bedsheet in range(owner.loc,0))
-			if(bedsheet.loc != owner.loc) //bedsheets in your backpack/neck don't give you comfort
-				continue
-			healing -= 0.1
-			break //Only count the first bedsheet
-		if(health_ratio > 0.8)
-			owner.adjustBruteLoss(healing)
-			owner.adjustFireLoss(healing)
-			owner.adjustToxLoss(healing * 0.5, TRUE, TRUE)
-		owner.adjustStaminaLoss(healing)
-
-	// Drunkenness gets reduced by 0.3% per tick (6% per 2 seconds)
-	owner.set_drunk_effect(owner.get_drunk_amount() * 0.997)
+	if(!HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE))
+		REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+		tick_interval = initial(tick_interval)
 
 	if(iscarbon(owner))
 		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.unset_pain_mod(id)
 
-		if(prob(20) && carbon_owner?.client)
-			carbon_owner.handle_dreams()
-			if(prob(10) && owner.health > owner.crit_threshold)
-				owner.emote("snore")
+	return ..()
+
+///If the mob is sleeping and gain the TRAIT_SLEEPIMMUNE we remove the TRAIT_KNOCKEDOUT and stop the tick() from happening
+/datum/status_effect/incapacitating/sleeping/proc/on_owner_insomniac(mob/living/source)
+	SIGNAL_HANDLER
+	REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+	tick_interval = -1
+	update_modifiers()
+
+///If the mob has the TRAIT_SLEEPIMMUNE but somehow looses it we make him sleep and restart the tick()
+/datum/status_effect/incapacitating/sleeping/proc/on_owner_sleepy(mob/living/source)
+	SIGNAL_HANDLER
+	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+	tick_interval = initial(tick_interval)
+	update_modifiers()
+
+/datum/status_effect/incapacitating/sleeping/proc/update_modifiers(mob/living/source)
+	SIGNAL_HANDLER
+
+	calculate_modifiers()
+
+	if(iscarbon(owner))
+		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.set_pain_mod(id, max(pain_modifier, 0.1))
+
+/datum/status_effect/incapacitating/sleeping/proc/calculate_modifiers()
+	healing_power = initial(healing_power)
+	pain_modifier = initial(pain_modifier)
+
+	// Not asleep, don't care
+	if(!HAS_TRAIT(owner, TRAIT_KNOCKEDOUT))
+		return
+
+	if(HAS_TRAIT(owner, TRAIT_ON_ANESTHETIC))
+		healing_power -= 0.2
+		pain_modifier -= 0.5
+
+	if(locate(/obj/structure/bed) in owner.loc)
+		healing_power -= 0.3
+		pain_modifier -= 0.15
+
+	else
+		var/obj/structure/table/back_pain = locate() in owner.loc
+		if(!isnull(back_pain))
+			healing_power -= 0.1
+		if(istype(back_pain, /obj/structure/table/optable))
+			pain_modifier -= 0.2
+			// No, a bedsheet doesn't make surgery more comfortable
+			return
+
+	if(locate(/obj/item/bedsheet) in owner.loc)
+		healing_power -= 0.1
+		pain_modifier -= 0.15
+
+/datum/status_effect/incapacitating/sleeping/tick()
+	owner.adjustBruteLoss(healing_power, FALSE)
+	owner.adjustFireLoss(healing_power, FALSE)
+	owner.adjustToxLoss(healing_power * 0.5, TRUE, TRUE)
+	owner.adjustStaminaLoss(healing_power)
+
+	if(ishuman(owner))
+		var/mob/living/carbon/human_owner = owner
+		if(human_owner.get_drunk_amount())
+			//reduce drunkenness by 0.3% per tick, 6% per 2 seconds
+			human_owner.set_drunk_effect(human_owner.get_drunk_amount() * 0.997)
+
+	if(iscarbon(owner))
+		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.handle_dreams()
+	if(prob(2) && owner.health > owner.crit_threshold)
+		owner.emote("snore")
 
 /atom/movable/screen/alert/status_effect/asleep
 	name = "Asleep"
@@ -476,7 +543,7 @@
 /datum/status_effect/trance/tick()
 	if(stun)
 		owner.Stun(6 SECONDS, TRUE)
-	owner.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness)
+	owner.set_timed_status_effect(40 SECONDS, STATUS_EFFECT_DIZZY)
 
 /datum/status_effect/trance/on_apply()
 	if(!iscarbon(owner))
@@ -496,7 +563,7 @@
 /datum/status_effect/trance/on_remove()
 	UnregisterSignal(owner, COMSIG_MOVABLE_HEAR)
 	REMOVE_TRAIT(owner, TRAIT_MUTE, "trance")
-	owner.remove_status_effect(/datum/status_effect/dizziness)
+	owner.remove_status_effect(STATUS_EFFECT_DIZZY)
 	owner.remove_client_colour(/datum/client_colour/monochrome)
 	to_chat(owner, span_warning("You snap out of your trance!"))
 
@@ -588,7 +655,7 @@
 		var/obj/item/I = H.get_active_held_item()
 		if(I && H.dropItemToGround(I))
 			H.visible_message(span_notice("[H]'s hand convulses, and they drop their [I.name]!"),span_userdanger("Your hand convulses violently, and you drop what you were holding!"))
-			H.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			H.set_timed_status_effect(5 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 
 /atom/movable/screen/alert/status_effect/convulsing
 	name = "Shaky Hands"

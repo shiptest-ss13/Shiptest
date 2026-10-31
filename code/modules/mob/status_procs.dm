@@ -1,6 +1,6 @@
 
 //Here are the procs used to modify status effects of a mob.
-//The effects include: stun, knockdown, unconscious, sleeping, resting, jitteriness, dizziness, ear damage,
+//The effects include: stun, knockdown, unconscious, sleeping, resting, and ear damage,
 // eye damage, eye_blind, eye_blurry, druggy, TRAIT_BLIND trait, and TRAIT_NEARSIGHT trait.
 
 ///Blind a mobs eyes by amount
@@ -54,36 +54,6 @@
 		clear_fullscreen("blind")
 		remove_client_colour(/datum/client_colour/monochrome/blind)
 		update_body()
-
-
-/**
- * Make the mobs vision blurry
- */
-/mob/proc/blur_eyes(amount)
-	if(amount>0)
-		eye_blurry = max(amount, eye_blurry)
-	update_eye_blur()
-
-/**
- * Adjust the current blurriness of the mobs vision by amount
- */
-/mob/proc/adjust_blurriness(amount)
-	eye_blurry = max(eye_blurry+amount, 0)
-	update_eye_blur()
-
-///Set the mobs blurriness of vision to an amount
-/mob/proc/set_blurriness(amount)
-	eye_blurry = max(amount, 0)
-	update_eye_blur()
-
-///Apply the blurry overlays to a mobs clients screen
-/mob/proc/update_eye_blur()
-	if(!client)
-		return
-	var/atom/movable/screen/plane_master/floor/OT = locate(/atom/movable/screen/plane_master/floor) in client.screen
-	var/atom/movable/screen/plane_master/game_world/GW = locate(/atom/movable/screen/plane_master/game_world) in client.screen
-	GW.backdrop(src)
-	OT.backdrop(src)
 
 ///Adjust the drugginess of a mob
 /mob/proc/adjust_drugginess(amount)

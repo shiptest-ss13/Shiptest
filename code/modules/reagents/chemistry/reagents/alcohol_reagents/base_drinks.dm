@@ -27,7 +27,7 @@
 	glass_desc = "Bitter from the coffee and alcohol alike!"
 
 /datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_timed_status_effect(-5 SECONDS * seconds_per_tick, /datum/status_effect/dizziness)
+	M.adjust_timed_status_effect(-5 SECONDS * seconds_per_tick, STATUS_EFFECT_DIZZY)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-20 * seconds_per_tick)
 	..()

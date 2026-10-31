@@ -779,7 +779,7 @@
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > start_cycle && prob(teleport_prob))
 		to_chat(M, span_warning("You feel unstable..."))
-		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
+		M.adjust_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, max_duration = 40 SECONDS)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
@@ -888,6 +888,7 @@
 	color = "#2D2D2D"
 	taste_description = "oil"
 	process_flags = ORGANIC | SYNTHETIC
+
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
@@ -1757,6 +1758,26 @@
 	color = "#808080"
 	taste_description = "sweetness"
 
+/datum/reagent/nitrous_oxide/on_mob_metabolize(mob/living/carbon/user)
+	. = ..()
+	RegisterSignal(user, SIGNAL_ADDTRAIT(TRAIT_KNOCKEDOUT), .proc/apply_anesthetic)
+	RegisterSignal(user, SIGNAL_REMOVETRAIT(TRAIT_KNOCKEDOUT), .proc/remove_anesthetic)
+	if(HAS_TRAIT(user, TRAIT_KNOCKEDOUT))
+		apply_anesthetic(user)
+
+/datum/reagent/nitrous_oxide/on_mob_end_metabolize(mob/living/carbon/user)
+	. = ..()
+	UnregisterSignal(user, list(SIGNAL_ADDTRAIT(TRAIT_KNOCKEDOUT), SIGNAL_REMOVETRAIT(TRAIT_KNOCKEDOUT)))
+	remove_anesthetic(user)
+
+/datum/reagent/nitrous_oxide/proc/apply_anesthetic(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	source.apply_status_effect(/datum/status_effect/grouped/anesthetic, type)
+
+/datum/reagent/nitrous_oxide/proc/remove_anesthetic(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	source.remove_status_effect(/datum/status_effect/grouped/anesthetic, type)
+
 /datum/reagent/nitrous_oxide/expose_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
@@ -2053,17 +2074,6 @@
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
-/datum/reagent/magillitis
-	name = "Magillitis"
-	description = "An experimental serum that causes rapid muscular growth in Hominidae. Side effects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
-	reagent_state = LIQUID
-	color = "#00f041"
-
-/datum/reagent/magillitis/on_mob_life(mob/living/carbon/M)
-	..()
-	if((ismonkey(M) || ishuman(M)) && current_cycle >= 10)
-		M.gorillize()
-
 /datum/reagent/space_cleaner/ez_clean
 	name = "EZ Clean"
 	description = "A powerful, acidic cleaner. Affects organic matter while leaving other objects unaffected."
@@ -2082,6 +2092,13 @@
 	if((method == TOUCH || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)
 		M.adjustFireLoss(1.5)
+
+// Component in some painkillers.
+/datum/reagent/propionic_acid
+	name = "Propionic Acid"
+	description = "A pungent liquid that's often used in preservatives and synthesizing of other chemicals."
+	reagent_state = LIQUID
+	color = "#c7a9c9"
 
 // ANOMALY CHEMS //
 // Gravitational anomaly

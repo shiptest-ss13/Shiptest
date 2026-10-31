@@ -71,10 +71,10 @@
 			if(1)
 				owner.vomit()
 			if(2,3)
-				owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
+				owner.adjust_timed_status_effect(20 SECONDS, STATUS_EFFECT_DIZZY)
 			if(4,5)
 				owner.confused += 10
-				owner.blur_eyes(10)
+				owner.set_eye_blur_if_lower(20 SECONDS)
 			if(6 to 9)
 				owner.slurring += 30
 			if(10)
@@ -258,10 +258,10 @@
 			if(1)
 				owner.vomit()
 			if(2,3)
-				owner.owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
+				owner.owner.adjust_timed_status_effect(20 SECONDS, STATUS_EFFECT_DIZZY)
 			if(4,5)
 				owner.confused += 10
-				owner.blur_eyes(10)
+				owner.set_eye_blur_if_lower(20 SECONDS)
 			if(6 to 9)
 				owner.slurring += 30
 			if(10)

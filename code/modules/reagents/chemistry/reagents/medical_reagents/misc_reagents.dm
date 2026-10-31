@@ -22,7 +22,6 @@
 	M.adjustToxLoss(-5, 0, TRUE)
 	M.hallucination = 0
 	REMOVE_TRAITS_NOT_IN(M, list(SPECIES_TRAIT, ROUNDSTART_TRAIT, ORGAN_TRAIT))
-	M.set_blurriness(0)
 	M.set_blindness(0)
 	M.SetKnockdown(0)
 	M.SetStun(0)
@@ -36,8 +35,9 @@
 	M.slurring = 0
 	M.confused = 0
 	M.set_sleeping(0)
-	M.remove_status_effect(/datum/status_effect/jitter)
-	M.remove_status_effect(/datum/status_effect/dizziness)
+	M.remove_status_effect(/datum/status_effect/eye_blur)
+	M.remove_status_effect(STATUS_EFFECT_JITTER)
+	M.remove_status_effect(STATUS_EFFECT_DIZZY)
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = BLOOD_VOLUME_NORMAL
 
@@ -114,8 +114,8 @@
 
 /datum/reagent/medicine/rezadone/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.adjustToxLoss(1, 0)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -156,13 +156,14 @@
 	description = "Reduces the duration of unconciousness, knockdown and stuns. Restores stamina, but deals toxin damage when overdosed."
 	color = "#C1151D"
 	overdose_threshold = 30
+	pain_modifier = 0.3
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	..()
 	M.AdjustAllImmobility(-20)
 	M.adjustStaminaLoss(-5 * seconds_per_tick, 0)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+	M.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 	return TRUE
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_metabolize(mob/living/L)
@@ -176,8 +177,8 @@
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
-	L.remove_status_effect(/datum/status_effect/dizziness)
-	L.remove_status_effect(/datum/status_effect/jitter)
+	L.remove_status_effect(STATUS_EFFECT_DIZZY)
+	L.remove_status_effect(STATUS_EFFECT_JITTER)
 
 /datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.adjustToxLoss(0.5 * seconds_per_tick, 0)

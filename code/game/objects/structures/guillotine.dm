@@ -154,7 +154,7 @@
 		else
 			H.apply_damage(15 * blade_sharpness, BRUTE, head)
 			log_combat(user, H, "dropped the blade on", src, " non-fatally")
-			H.force_scream()
+			H.pain_emote("scream", 5 SECONDS)
 
 		if (blade_sharpness > 1)
 			blade_sharpness -= 1

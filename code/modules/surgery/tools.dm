@@ -399,7 +399,7 @@
 	playsound(get_turf(patient), 'sound/items/ratchet.ogg', 20, TRUE)
 	if(patient.stat >= UNCONSCIOUS || HAS_TRAIT(patient, TRAIT_INCAPACITATED))
 		amputation_speed_mod = 0.5
-	else if(patient.has_status_effect(/datum/status_effect/jitter))
+	else if(patient.has_status_effect(STATUS_EFFECT_JITTER))
 		amputation_speed_mod = 1.5
 	else
 		amputation_speed_mod = 1

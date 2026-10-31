@@ -241,3 +241,8 @@
 	description = span_nicegreen("I rooted recently, it feels good to charge naturally.")
 	mood_change = 5
 	timeout = 5 MINUTES
+
+/datum/mood_event/anesthetic
+	description = "Thank science for modern medicine."
+	mood_change = 2
+	timeout = 6 MINUTES

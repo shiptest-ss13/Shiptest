@@ -139,7 +139,7 @@
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
-/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/burn_victim, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/carbon/burn_victim, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(burn_victim))
 		return
 	var/boiling = FALSE
@@ -157,7 +157,7 @@
 		burn_victim.visible_message(span_warning("The boiling oil sizzles as it covers [burn_victim]!"), \
 		span_userdanger("You're covered in boiling oil!"))
 		if(FryLoss)
-			burn_victim.force_scream()
+			burn_victim.pain_emote("scream", 3 SECONDS)
 		playsound(burn_victim, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(burn_victim, TRAIT_OIL_FRIED, "cooking_oil_react")
 		addtimer(CALLBACK(burn_victim, TYPE_PROC_REF(/mob/living, unfry_mob)), 3)
@@ -290,8 +290,8 @@
 		//actually handle the pepperspray effects
 		if (!(pepper_proof)) // you need both eye and mouth protection
 			if(prob(5))
-				victim.force_scream()
-			victim.blur_eyes(5) // 10 seconds
+				victim.pain_emote("scream", 5 SECONDS)
+			victim.set_eye_blur_if_lower(10 SECONDS)
 			victim.blind_eyes(3) // 6 seconds
 			victim.confused = max(expose_target.confused, 5) // 10 seconds
 			victim.Knockdown(3 SECONDS)
@@ -303,9 +303,9 @@
 			if(prob(15))
 				to_chat(victim, span_danger("[pick("Your head pounds.", "Your mouth feels like it's on fire.", "You feel dizzy.")]"))
 			if(prob(10))
-				victim.blur_eyes(1)
+				victim.set_eye_blur_if_lower(2 SECONDS)
 			if(prob(10))
-				victim.set_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+				victim.set_timed_status_effect(2 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			if(prob(5))
 				victim.vomit()
 
@@ -356,15 +356,15 @@
 		metabolizer.slurring = 1
 	switch(current_cycle)
 		if(1 to 5)
-			metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			metabolizer.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			metabolizer.set_drugginess(30)
 		if(5 to 10)
-			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			metabolizer.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+			metabolizer.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			metabolizer.set_drugginess(35)
 		if (10 to INFINITY)
-			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			metabolizer.set_timed_status_effect(40 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+			metabolizer.set_timed_status_effect(40 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			metabolizer.set_drugginess(40)
 	..()
 
@@ -589,13 +589,13 @@
 			if(!expose_target.eye_blurry)
 				to_chat(expose_target, span_warning("Tears well up in your eyes!"))
 			expose_target.blind_eyes(2)
-			expose_target.blur_eyes(5)
+			expose_target.set_eye_blur_if_lower(5)
 	..()
 
 /datum/reagent/consumable/tearjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	..()
 	if(metabolizer.eye_blurry)	//Don't worsen vision if it was otherwise fine
-		metabolizer.blur_eyes(4)
+		metabolizer.set_eye_blur_if_lower(4)
 		if(prob(10))
 			to_chat(metabolizer, span_warning("Your eyes sting!"))
 			metabolizer.blind_eyes(2)
@@ -630,7 +630,7 @@
 		metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM, 150)
 		metabolizer.adjustToxLoss(3*REM,0)
 		metabolizer.adjustStaminaLoss(10*REM,0)
-		metabolizer.blur_eyes(5)
+		metabolizer.set_eye_blur_if_lower(10 SECONDS)
 		. = TRUE
 	..()
 

@@ -26,6 +26,8 @@
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
 
+	species_pain_mod = 0.5
+
 	species_organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/mmi_holder/posibrain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic/ipc,

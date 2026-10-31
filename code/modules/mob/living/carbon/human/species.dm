@@ -225,6 +225,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left,
 	)
 
+	/// Pain modifier that this species recieves.
+	var/species_pain_mod = null
+
 	/// Default prosthetic replacements.
 	var/datum/sprite_accessory/body/prosthetic_style = /datum/sprite_accessory/body/prosthetic
 
@@ -364,7 +367,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			continue
 		var/obj/item/bodypart/new_part = new_species.new_body_part(C, zone, robotic, FALSE)
 		if(new_part)
-			new_part.replace_limb(C, TRUE)
+			new_part.replace_limb(C, TRUE, TRUE)
 			if(old_part)
 				new_part.brute_dam = old_part.brute_dam
 				new_part.burn_dam = old_part.burn_dam
@@ -1348,7 +1351,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(H.satiety < 0)
 			H.satiety++
 			if(SPT_PROB(round(-H.satiety/77), seconds_per_tick))
-				H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
+				H.adjust_timed_status_effect(5 SECONDS, STATUS_EFFECT_JITTER)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate * seconds_per_tick)
@@ -1680,7 +1683,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							H.visible_message(span_danger("[H] is knocked senseless!"), \
 											span_userdanger("You're knocked senseless!"))
 							H.confused = max(H.confused, 20)
-							H.adjust_blurriness(10)
+							H.set_eye_blur_if_lower(20 SECONDS)
 						if(prob(10))
 							H.gain_trauma(/datum/brain_trauma/mild/concussion)
 					else
@@ -2160,7 +2163,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(prob(15) && feels_pain)
 			to_chat(target_human, span_danger("Your eyes burn!"))
 			target_human.emote("cry")
-		target_human.set_blurriness(rand(5,15))
+		target_human.set_eye_blur_if_lower(10 SECONDS)
 	if(irritant && prob(5) && feels_pain)
 		to_chat(target_human, span_danger("Your [mechanical ? "outer shell smolders" : "skin itches"]."))
 

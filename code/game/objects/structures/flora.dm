@@ -899,7 +899,7 @@
 			else if (isliving(user))
 				var/mob/living/L = user
 				L.Immobilize(100, TRUE)
-				L.set_timed_status_effect(100 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+				L.set_timed_status_effect(100 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 				L.adjustToxLoss(66)
 		return 1
 	else ..()

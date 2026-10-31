@@ -110,7 +110,7 @@
 		else if(!stat && !(HAS_TRAIT(src, TRAIT_BLIND)))
 			adjust_blindness(-0.5 * seconds_per_tick)
 	else if(eye_blurry)			//blurry eyes heal slowly
-		adjust_blurriness(-0.5 * seconds_per_tick)
+		adjust_eye_blur(-0.5)
 
 /mob/living/proc/update_damage_hud()
 	return

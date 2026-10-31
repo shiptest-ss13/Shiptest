@@ -33,6 +33,8 @@
 	default_features = list("elzu_horns" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 
+	species_pain_mod = 0.9
+
 	species_organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
@@ -163,7 +165,7 @@
 		_human.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 		_human.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 		_human.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-		_human.force_scream()
+		_human.pain_emote("scream", 5 SECONDS)
 		_human.remove_status_effect(/datum/status_effect/rooted)
 		return
 

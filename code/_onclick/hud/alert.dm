@@ -306,6 +306,11 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	desc = "You're getting crushed by high gravity, picking up items and movement will be slowed. You'll also accumulate brute damage!"
 	icon_state = "paralysis"
 
+/atom/movable/screen/alert/numbed
+	name = "Numbed"
+	desc = "Your body is numb, painless. You're under the effect of some kind of painkiller."
+	icon_state = "drugged"
+
 //rest of these should be alerts eventually today tho. lazy.
 #define ALERT_FIRE "fire"
 

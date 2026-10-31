@@ -29,6 +29,7 @@
 		display_results(user, target, span_notice("You begin to insert [tool] into [target]'s [target_zone]..."),
 			span_notice("[user] begins to insert [tool] into [target]'s [target_zone]."),
 			span_notice("[user] begins to insert [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "something"] into [target]'s [target_zone]."))
+		give_surgery_pain(target, "You can feel something being inserted into your [target_zone], it hurts like hell!", target_zone = target_zone)
 	else
 		display_results(user, target, span_notice("You check for items in [target]'s [target_zone]..."),
 			span_notice("[user] checks for items in [target]'s [target_zone]."),
@@ -52,6 +53,7 @@
 			display_results(user, target, span_notice("You pull [IC] out of [target]'s [target_zone]."),
 				span_notice("[user] pulls [IC] out of [target]'s [target_zone]!"),
 				span_notice("[user] pulls [IC.w_class > WEIGHT_CLASS_SMALL ? IC : "something"] out of [target]'s [target_zone]."))
+			give_surgery_pain(target, "Something is pulled out of your [target_zone]! It hurts like hell!", target_zone = target_zone)
 			user.put_in_hands(IC)
 			CH.cavity_item = null
 			return ..()

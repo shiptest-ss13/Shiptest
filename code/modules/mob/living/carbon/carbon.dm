@@ -767,8 +767,6 @@
 
 	//Fire and Brute damage overlay (BSSR)
 	var/hurtdamage = getBruteLoss() + getFireLoss() + damageoverlaytemp
-	if(HAS_TRAIT(src, TRAIT_PAIN_RESIST))
-		hurtdamage = round(hurtdamage/2)
 	if(hurtdamage && !HAS_TRAIT(src, TRAIT_ANALGESIA))
 		var/severity = 0
 		switch(hurtdamage)
@@ -997,20 +995,6 @@
 		limb = bodyparts[zone]
 		if(limb)
 			return limb
-
-/mob/living/carbon/do_after_coefficent()
-	. = ..()
-	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood) //Currently, only carbons or higher use mood, move this once that changes.
-	if(mood)
-		switch(mood.sanity) //Alters do_after delay based on how sane you are
-			if(-INFINITY to SANITY_DISTURBED)
-				. *= 1.25
-			if(SANITY_NEUTRAL to INFINITY)
-				. *= 0.90
-
-	// for(var/i in status_effects)
-	// 	var/datum/status_effect/S = i
-	// 	. *= S.interact_speed_modifier() //todo: fix/remove
 
 /mob/living/carbon/proc/create_internal_organs()
 	for(var/X in internal_organs)
@@ -1315,3 +1299,20 @@
 		)
 
 	return GLOB.fire_appearances[fire_icon]
+
+
+/**
+ * Getter for temperature limits
+ * this one does cold
+ */
+
+/mob/living/carbon/proc/get_body_temp_cold_damage_limit()
+	return dna.species.bodytemp_cold_damage_limit
+
+/**
+ * Getter for temperature limits
+ * this one does hot
+ */
+
+/mob/living/carbon/proc/get_body_temp_heat_damage_limit()
+	return dna.species.bodytemp_heat_damage_limit

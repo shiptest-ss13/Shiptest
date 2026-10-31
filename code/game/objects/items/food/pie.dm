@@ -80,7 +80,7 @@
 			is_creamable = !!(living_target_getting_hit.get_bodypart(BODY_ZONE_HEAD))
 
 		if(is_creamable)
-			living_target_getting_hit.adjust_blurriness(1)
+			living_target_getting_hit.adjust_eye_blur(2 SECONDS)
 
 		living_target_getting_hit.visible_message(
 			span_warning("[living_target_getting_hit] is creamed by [src]!"),
