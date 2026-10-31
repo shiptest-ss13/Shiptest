@@ -171,7 +171,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 	icon_state = "hardsuit0-hardminer"
 	item_state = "hardsuit0-hardminer"
-	hardsuit_type = "ngrminer"
+	hardsuit_type = "hardminer"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 
@@ -184,7 +184,7 @@
 	item_state = "hardsuit-hardminer"
 	slowdown = 0.7
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/hl
-	hardsuit_type = "ngrminer"
+	hardsuit_type = "hardminer"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 
