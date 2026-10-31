@@ -215,8 +215,24 @@
 	gd = new(path, location)
 
 	var/obj/item/clothing/neck/dogtag/loadout/tag_spawn = new gd.path(gd.location)
-	tag_spawn.tag_fluff.Add(owner.real_name)
+	//LAST NAME
+	//FIRST NAME
+	//BLOOD TYPE
+	//GENDER
+	//PROFIT?
+	var/owner_name = owner.real_name
+	var/firstspace = findtext(owner_name, " ")
+	var/name_length = length(owner_name)
+	if(firstspace)
+		tag_spawn.tag_fluff.Add(copytext(owner_name, firstspace+1, name_length+1))
+		tag_spawn.tag_fluff.Add(copytext(owner_name, 1, firstspace))
+	else
+		tag_spawn.tag_fluff.Add(owner_name)
 	tag_spawn.tag_fluff.Add(owner.dna.blood_type.name)
-	tag_spawn.tag_fluff.Add(owner.gender)
+	tag_spawn.tag_fluff.Add(capitalize(owner.gender))
+
+	//dogtag - Cross
+	tag_spawn.name += " - [tag_spawn.tag_fluff[1]]"
+
 
 	return tag_spawn
