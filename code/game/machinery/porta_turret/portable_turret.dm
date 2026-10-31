@@ -586,6 +586,12 @@
 	if(!can_see(our_turf, target, scan_range))
 		return FALSE
 
+	var/what_we_are_gonna_hit = get_firing_line_object(our_turf, target, lethal ? lethal_projectile : stun_projectile)
+	if (ismob(what_we_are_gonna_hit) && in_faction(what_we_are_gonna_hit)) // No friendly fire
+		return FALSE
+	else if(!(turret_flags & TURRET_FLAG_SHOOT_WALLS) && iswallturf(what_we_are_gonna_hit))
+		return FALSE
+
 	setDir(get_dir(our_turf, target))
 
 	if(!manual_control)
