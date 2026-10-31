@@ -14,6 +14,7 @@
 	fire_sound = 'sound/weapons/bowfire.ogg' // pthwung
 	light_range = 0 // no muzzle flash
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	flashy = FALSE
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/bow
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/bow)
