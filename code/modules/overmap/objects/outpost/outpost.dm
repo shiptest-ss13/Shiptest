@@ -189,7 +189,7 @@
 	return FALSE
 
 /datum/overmap/outpost/proc/fill_missions()
-	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
+	max_missions = min(30 + (SSovermap.controlled_ships.len * 2), 50)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type(get_mission_sector())
 		if(!mission_type)
