@@ -1208,7 +1208,7 @@
 		C?.open_filter_editor(src)
 
 	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
-		export_item_and_contents(src, apply_elastic = FALSE)
+		export_item_and_contents(src)
 
 /atom/vv_get_header()
 	. = ..()
