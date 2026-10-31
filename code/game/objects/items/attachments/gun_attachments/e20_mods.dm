@@ -1,5 +1,5 @@
 /obj/item/attachment/e20mod
-	name = "e-20 modification kit"
+	name = "E-20 mod"
 	desc = "This is a basetype item and you should not see this."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/e20_attachment_obj.dmi'
 	icon_state = "e20mod"
@@ -129,7 +129,7 @@
 
 /obj/item/attachment/e20mod/pierce
 	name = "E-20 piercer mod"
-	desc = "An aftermarket conversion kit for the E-20 mining emitter. Replaces the firing assembly with an Etherbor-style laser emitter, making the device shoot a piercing beam."
+	desc = "An aftermarket conversion kit for the E-20 mining emitter. Replaces the firing assembly with an Etherbor-style laser emitter, making the device shoot a piercing beam capable of punching through multiple targets."
 
 	icon_state = "e20_pierce"
 	gun_icon_state = "e20_pierce"

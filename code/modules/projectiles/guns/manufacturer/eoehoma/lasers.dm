@@ -50,7 +50,7 @@
 
 /obj/item/gun/energy/laser/e20
 	name = "E-20 mining emitter"
-	desc = "A mining tool that fires concentrated bolts of light, capable of easily breaking apart stone, metal, and flesh. The design, while ancient, is very well documented, leading to a large amount of third-party modifications over the years."
+	desc = "Eoehoma's first and only mining tool. Fires concentrated bolts of light capable of easily breaking apart stone, metal, and flesh. The design, while ancient, is very well documented, leading to a large amount of third-party modifications appearing over the years."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
