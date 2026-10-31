@@ -25,4 +25,5 @@
 		if(relocate_atom)
 			var/atom/loc = get_turf(object)
 			relocate_atom.forceMove(loc)
+			relocate_atom.ai_controller?.forget_home()
 			log_admin("Build Mode: [key_name(target_client)] relocated [relocate_atom] at [object] ([AREACOORD(object)])")

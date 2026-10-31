@@ -267,6 +267,8 @@
 		return FALSE
 	if(user.transferItemToLoc(inserted_mag, src))
 		magazine = inserted_mag
+		if(isliving(user) && loc == user)
+			ai_note_enemy_reloading(user)
 		if (display_message)
 			to_chat(user, span_notice("You load a new magazine into \the [src]."))
 		if (magazine.ammo_count())
@@ -282,6 +284,8 @@
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
 /obj/item/gun/ballistic/proc/eject_magazine(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
+	if(isliving(user) && loc == user)
+		ai_note_enemy_reloading(user)
 	if (magazine.ammo_count())
 		playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	else

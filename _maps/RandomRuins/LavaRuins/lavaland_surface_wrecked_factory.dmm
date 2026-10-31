@@ -63,7 +63,7 @@
 	},
 /obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
 "aL" = (
@@ -92,7 +92,7 @@
 /obj/effect/turf_decal/trimline/opaque/lime/filled/warning{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "bi" = (
@@ -108,7 +108,7 @@
 "bl" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/basic/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "bm" = (
@@ -587,7 +587,7 @@
 /turf/template_noop,
 /area/template_noop)
 "ga" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/mob/living/basic/human/ramzi/ranged/space,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "gc" = (
@@ -611,7 +611,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "gj" = (
 /obj/item/radio/intercom/directional/north,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/lavaland/factory/manager_office)
 "gk" = (
@@ -790,7 +790,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/lavaland/factory/manager_office)
 "ih" = (
@@ -850,7 +850,7 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "iS" = (
@@ -1212,7 +1212,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "mi" = (
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/cave/explored)
 "mk" = (
@@ -1353,7 +1353,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "nK" = (
@@ -1472,7 +1472,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "or" = (
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "os" = (
@@ -1918,9 +1918,9 @@
 	pixel_x = 5
 	},
 /obj/machinery/light/small/directional/east,
-/mob/living/simple_animal/hostile/viscerator,
-/mob/living/simple_animal/hostile/viscerator,
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
+/mob/living/basic/viscerator,
+/mob/living/basic/viscerator,
 /obj/effect/gibspawner/human,
 /obj/item/clothing/under/rank/cargo/tech,
 /obj/effect/decal/cleanable/blood{
@@ -2029,7 +2029,7 @@
 	icon_state = "trails_2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg,
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "tN" = (
@@ -2076,7 +2076,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/basic/human/ramzi/ranged/space/smg,
 /obj/effect/turf_decal/warra/old/tile/top_left,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
@@ -2266,15 +2266,16 @@
 	icon_state = "2-8"
 	},
 /obj/structure/chair/comfy/beige,
-/mob/living/simple_animal/hostile/human/warra/elite{
+/mob/living/basic/human/warra/elite{
 	aggro_say_chance = 100;
+	ai_controller = /datum/ai_controller/basic_controller/human/ranged/post/support_gunner;
 	environment_smash = 0;
 	health = 200;
+	holds_post = 1;
 	maxHealth = 200;
 	name = "Manager";
 	on_aggro_say = list("I'll kill all you Ramzi scum! COME AND GET SOME!", "I'll kill every last one of you Ramzi bastards!", "Finally got the nerve to finish me off you scum sucking Ramzi assholes...  YOU WON'T GET ME TOO YOU BASTARDS!!");
 	speak_emote = list("rants","screams","sobs");
-	taunt_chance = 100;
 	verb_exclaim = "rants";
 	verb_yell = "rants";
 	weapon_drop_chance = 100
@@ -2490,7 +2491,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/machete,
+/mob/living/basic/human/ramzi/melee/space/machete,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "yK" = (
@@ -2686,7 +2687,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "AG" = (
 /obj/effect/decal/cleanable/plastic,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/mob/living/basic/human/ramzi/ranged/shotgun,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "AI" = (
@@ -2722,7 +2723,7 @@
 "AT" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "AW" = (
@@ -3045,7 +3046,7 @@
 /obj/effect/turf_decal/corner/opaque/warrablue{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "EQ" = (
@@ -3279,7 +3280,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "Hc" = (
@@ -3312,7 +3313,7 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "HJ" = (
@@ -3476,7 +3477,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "Jc" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/mob/living/basic/human/ramzi/ranged/space,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/lavaland/factory/lobby)
 "Jd" = (
@@ -4037,7 +4038,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Pi" = (
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "Pk" = (
@@ -4110,7 +4111,7 @@
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/basic/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "PR" = (
@@ -4517,7 +4518,7 @@
 "TP" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/industrial/warning,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "TS" = (
@@ -4626,7 +4627,7 @@
 /obj/effect/turf_decal/trimline/opaque/warrablue/warning{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
 "Vn" = (
@@ -4698,7 +4699,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/shotgun,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "VO" = (

@@ -1,0 +1,129 @@
+// repositioning during a fight, to get a better shot or avoid being shot at
+/datum/ai_planning_subtree/reposition
+	required_conditions = AI_CONDITION_TARGET_SEEN
+	blocking_conditions = AI_CONDITION_TARGET_ADJACENT | AI_CONDITION_FLANKING | AI_CONDITION_SEEKING_SAFETY | AI_CONDITION_BACKING_OFF
+	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
+	//how long we stay put between moves, picked at random between these so a group doesn't all move at once, for each AI_MOBILITY_ from low to high
+	var/list/intervals = list(list(2.5 SECONDS, 4 SECONDS), list(1 SECONDS, 2.5 SECONDS), list(0.5 SECONDS, 1.2 SECONDS))
+	//similar to intervals, but while we're being shot at out in the open, so we don't stand there and take it
+	var/list/under_fire_intervals = list(list(1.2 SECONDS, 2 SECONDS), list(0.6 SECONDS, 1.2 SECONDS), list(0.4 SECONDS, 0.8 SECONDS))
+	//how far we move each time, at most, for each AI_MOBILITY_ from low to high
+	var/list/step_ranges = list(2, 2, 3)
+	//how long being shot counts as being under fire
+	var/under_fire_time = 4 SECONDS
+	//further than this, with no shot and nowhere close by to get one, we work our way towards them until we've a line. Wary mobs stay put instead
+	var/approach_distance = 2
+	//expanded search for pathfinding if we can't get somewhere, for corner nonsense mostly
+	var/wider_search_range = 5
+	//how long we try to get somewhere before giving up on it, like if there's no way there after all
+	var/reposition_timeout = 5 SECONDS
+	//how long we wait before hurrying to look again, if there was nowhere to shoot from
+	var/failed_search_cooldown = 2 SECONDS
+
+/datum/ai_planning_subtree/reposition/on_skipped(datum/ai_controller/controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF)
+
+/datum/ai_planning_subtree/reposition/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
+	. = ..()
+	var/atom/target = controller.blackboard[target_key]
+	var/mob/living/living_pawn = controller.pawn
+	var/turf/our_turf = get_turf(living_pawn)
+	var/turf/going_to = controller.blackboard[BB_BASIC_MOB_REPOSITION_TURF]
+	if(going_to && our_turf != going_to && world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_GIVE_UP_AT])
+		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_REPOSITION_TURF)
+		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF)
+	var/list/fight_range = get_ai_fight_range(controller)
+	var/distance = get_dist(our_turf, target)
+	var/has_shot = has_clear_shot(living_pawn, target)
+	if(has_shot && (distance < fight_range[1] || distance > fight_range[2]))
+		return // closing in or backing off
+	var/waiting = world.time < controller.blackboard[BB_BASIC_MOB_NEXT_REPOSITION]
+	var/search_failed_recently = world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]
+	var/urgent = !has_shot
+	if(!urgent && !(waiting && search_failed_recently)) // the costly part, so only when it'd change what we do
+		urgent = ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
+	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
+	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
+		return // we've a shot from here, so we keep still and take it
+	if(waiting && (!urgent || search_failed_recently))
+		if(!has_shot)
+			work_towards_firing_line(controller, target, distance) // we looked just now and there was nowhere, so keep at it
+		return
+	var/list/interval = (under_fire ? under_fire_intervals : intervals)[get_mobility(controller)]
+	var/next_reposition = world.time + rand(interval[1], interval[2])
+	var/turf/new_spot = find_new_spot(controller, target, fight_range)
+	if(!new_spot && !has_shot)
+		new_spot = find_new_spot(controller, target, list(1, INFINITY)) // anywhere we'd have a shot from will do
+	if(!new_spot && !has_shot)
+		new_spot = find_wider_spot(controller, target) // somewhere further, that we'd have to find our way to
+	if(!new_spot)
+		controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_FAILED_UNTIL, world.time + failed_search_cooldown)
+		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, max(next_reposition, world.time + failed_search_cooldown))
+		if(!has_shot && work_towards_firing_line(controller, target, distance))
+			AI_LOG_DECISION(controller, "reposition: no shot at [target] and nowhere near to get one, working towards them")
+		return
+	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, next_reposition)
+	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF, new_spot)
+	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_GIVE_UP_AT, world.time + reposition_timeout)
+	AI_LOG_DECISION(controller, "reposition: moving to [new_spot][!has_shot ? " to get a shot" : (urgent ? ", out of an ally's line of fire" : "")]")
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_REPOSITION_TURF)
+
+// nowhere close by to shoot from, so work our way towards them until we've a line, like going around them would. Returns TRUE if we are
+/datum/ai_planning_subtree/reposition/proc/work_towards_firing_line(datum/ai_controller/controller, atom/target, distance)
+	if(distance <= approach_distance || AI_MORALE_IS(controller, AI_MORALE_WARY))
+		return FALSE
+	controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
+	return TRUE
+
+/datum/ai_planning_subtree/reposition/proc/get_mobility(datum/ai_controller/controller)
+	return clamp(controller.blackboard[BB_BASIC_MOB_MOBILITY] || AI_MOBILITY_NORMAL, AI_MOBILITY_LOW, AI_MOBILITY_HIGH)
+
+/datum/ai_planning_subtree/reposition/proc/find_new_spot(datum/ai_controller/controller, atom/target, list/fight_range)
+	var/mob/living/living_pawn = controller.pawn
+	var/turf/our_turf = get_turf(living_pawn)
+	var/turf/their_turf = get_turf(target)
+	var/pass_flags = get_ai_shot_pass_flags(living_pawn)
+	var/list/spots = list()
+	var/list/sideways_spots = list()
+	var/to_target_x = their_turf.x - our_turf.x
+	var/to_target_y = their_turf.y - our_turf.y
+	var/to_target_length = max(1, sqrt(to_target_x ** 2 + to_target_y ** 2))
+	for(var/turf/open/candidate in RANGE_TURFS(step_ranges[get_mobility(controller)], our_turf))
+		if(candidate == our_turf)
+			continue
+		var/candidate_distance = get_dist(candidate, their_turf)
+		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2] || !ai_can_take_spot(living_pawn, candidate))
+			continue
+		if(!can_walk_straight_to(living_pawn, candidate) || get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
+			continue
+		spots += candidate
+		var/step_x = candidate.x - our_turf.x
+		var/step_y = candidate.y - our_turf.y
+		// how directly this step goes towards or away from them: 0 is a pure sidestep across their line of fire, 1 is straight at or away from them.
+		var/along = abs(step_x * to_target_x + step_y * to_target_y) / (to_target_length * max(1, sqrt(step_x ** 2 + step_y ** 2)))
+		if(along <= 0.5)
+			sideways_spots += candidate
+	if(length(sideways_spots))
+		return pick(sideways_spots)
+	return length(spots) ? pick(spots) : null
+
+// used with wider_search_range, to find somewhere further away that we'd have to find our way to, if there's nowhere close by to shoot from
+/datum/ai_planning_subtree/reposition/proc/find_wider_spot(datum/ai_controller/controller, atom/target)
+	var/mob/living/living_pawn = controller.pawn
+	var/turf/our_turf = get_turf(living_pawn)
+	var/turf/their_turf = get_turf(target)
+	var/pass_flags = get_ai_shot_pass_flags(living_pawn)
+	var/list/nearest_spots = list()
+	var/nearest_distance = INFINITY
+	for(var/turf/open/candidate in RANGE_TURFS(wider_search_range, our_turf))
+		var/candidate_distance = get_dist(our_turf, candidate)
+		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || !ai_can_take_spot(living_pawn, candidate))
+			continue
+		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
+			continue
+		if(candidate_distance < nearest_distance)
+			nearest_distance = candidate_distance
+			nearest_spots = list()
+		nearest_spots += candidate
+	return length(nearest_spots) ? pick(nearest_spots) : null

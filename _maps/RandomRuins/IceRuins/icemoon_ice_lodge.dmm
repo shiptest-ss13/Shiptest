@@ -36,7 +36,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
+/mob/living/basic/human/frontier/ranged/trooper/rifle/internals/neutered,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "ao" = (
@@ -319,7 +319,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/mob/living/basic/human/frontier/ranged/trooper/flame/neutered,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "eC" = (
@@ -357,7 +357,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "fn" = (
@@ -369,7 +369,7 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "fu" = (
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
 "fw" = (
@@ -475,10 +475,10 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "hz" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered{
 	check_friendly_fire = 1;
 	retreat_distance = 3;
-	minimum_distance = 2
+	engage_distance = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
@@ -665,7 +665,7 @@
 "kq" = (
 /obj/structure/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals{
+/mob/living/basic/human/frontier/ranged/officer/internals{
 	weapon_drop_chance = 100
 	},
 /turf/open/floor/carpet/black,
@@ -1140,7 +1140,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "rc" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/ice_lodge{
+/mob/living/basic/human/frontier/ranged/trooper/heavy/internals/ice_lodge{
 	environment_smash = 0
 	},
 /turf/open/floor/wood/mahogany,
@@ -1575,7 +1575,7 @@
 /obj/structure/chair/stool{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wD" = (
@@ -1613,9 +1613,9 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "wU" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1
+	engage_distance = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -1669,10 +1669,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
+/mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1
+	check_friendly_fire = 1;
+	engage_distance = 2
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -1874,10 +1874,10 @@
 "Bx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered{
 	check_friendly_fire = 1;
 	retreat_distance = 3;
-	minimum_distance = 2
+	engage_distance = 2
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken5"
@@ -2348,8 +2348,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
-	minimum_distance = 2
+/mob/living/basic/human/frontier/ranged/trooper/rifle/internals/neutered{
+	engage_distance = 2
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -2368,10 +2368,10 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Kn" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
+/mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1
+	check_friendly_fire = 1;
+	engage_distance = 2
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -2535,7 +2535,7 @@
 "Ni" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/mob/living/basic/human/frontier/ranged/trooper/flame/neutered,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "Nl" = (
@@ -2570,7 +2570,7 @@
 /obj/item/ammo_casing/a8_50r{
 	projectile_type = null
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "NH" = (
@@ -2580,7 +2580,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/mob/living/basic/human/frontier/ranged/neutered,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "NL" = (
@@ -2658,10 +2658,10 @@
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Or" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
+/mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1
+	check_friendly_fire = 1;
+	engage_distance = 2
 	},
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2735,10 +2735,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered{
 	check_friendly_fire = 1;
 	retreat_distance = 3;
-	minimum_distance = 2
+	engage_distance = 2
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -2788,9 +2788,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1
+	engage_distance = 1
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -2808,9 +2808,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Rf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
+/mob/living/basic/human/frontier/ranged/mosin/internals/neutered{
 	check_friendly_fire = 1;
-	minimum_distance = 3
+	engage_distance = 3
 	},
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3103,7 +3103,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter,
+/mob/living/basic/human/frontier/ranged/surgeon/internals/neutered,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
 "Wk" = (
@@ -3275,7 +3275,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken3"
 	},

@@ -12,6 +12,10 @@
 
 	///How much stamina the mob recovers per second
 	var/stamina_recovery = 10
+	///How long after taking stamina damage before we start getting our stamina back, as a player has to wait. 0 to start straight away, as most basic mobs do
+	var/stamina_regen_delay = 0
+	///When we can start getting our stamina back, going by stamina_regen_delay
+	var/stamina_regen_start_time = 0
 
 	///how much damage this basic mob does to objects, if any.
 	var/obj_damage = 0
@@ -20,6 +24,10 @@
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
 	///How much bare wounding power it has
+	var/wound_bonus = 0
+	///If TRUE, speed is our whole move delay, as it reads, like for mobs ported from simplemobs with their speed. Upstream basic mobs leave it off, as they're balanced around also getting the player walk/run delay and having speed counted twice
+	var/speed_is_move_delay = FALSE
+	///How much more wounding power it has against bare skin
 	var/bare_wound_bonus = 0
 	///If the attacks from this are sharp
 	var/sharpness = NONE
@@ -93,9 +101,15 @@
 
 	///conneceted nest datum, used to talk to the monster's 'nest'/spawner
 	var/datum/component/spawner/nest
+	///Until when the air and pressure don't hurt us, just after we spawn. Primarily for mobs spawning in ruins
+	var/environment_grace_until = 0
 
 /mob/living/basic/Initialize(mapload)
 	. = ..()
+	environment_grace_until = world.time + BASIC_MOB_ENVIRONMENT_GRACE
+	if(GLOB.levels_generating)
+		environment_grace_until = world.time + BASIC_MOB_LEVEL_GENERATION_GRACE_CAP
+		GLOB.basic_mobs_awaiting_level += src
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
 	else if (!armor)
@@ -134,6 +148,33 @@
 		return
 	AddElement(/datum/element/basic_body_temp_sensetive, minimum_survivable_temperature, maximum_survivable_temperature, unsuitable_cold_damage, unsuitable_heat_damage, mapload)
 
+/mob/living/basic/Destroy()
+	GLOB.basic_mobs_awaiting_level -= src
+	return ..()
+
+// our body temperature holds steady while the air settles, just after we spawn, rather than drifting off to hurt us once our grace is up
+/mob/living/basic/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
+	if(world.time < environment_grace_until)
+		return
+	return ..()
+
+// how many planets are being generated right now, and the basic mobs made in them, whose grace starts once they're done
+GLOBAL_VAR_INIT(levels_generating, 0)
+GLOBAL_LIST_EMPTY(basic_mobs_awaiting_level)
+
+// a planet's started generating, see /datum/overmap/dynamic/proc/load_level()
+/proc/start_level_generation_grace()
+	GLOB.levels_generating++
+
+// and it's done, so the grace of the basic mobs made in it starts now, once every planet generating at the same time is done too
+/proc/end_level_generation_grace()
+	GLOB.levels_generating = max(GLOB.levels_generating - 1, 0)
+	if(GLOB.levels_generating)
+		return
+	for(var/mob/living/basic/basic_mob as anything in GLOB.basic_mobs_awaiting_level)
+		basic_mob.environment_grace_until = world.time + BASIC_MOB_ENVIRONMENT_GRACE
+	GLOB.basic_mobs_awaiting_level.Cut()
+
 /mob/living/basic/getarmor(def_zone, type)
 	if(armor)
 		return armor.getRating(type)
@@ -142,7 +183,7 @@
 /mob/living/basic/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	///Automatic stamina re-gain
-	if(staminaloss > 0)
+	if(staminaloss > 0 && world.time >= stamina_regen_start_time)
 		adjustStaminaLoss(-stamina_recovery * seconds_per_tick, FALSE, TRUE)
 
 /mob/living/basic/say_mod(input, datum/language/message_language, list/message_mods = list())
@@ -151,6 +192,8 @@
 	return ..()
 
 /mob/living/basic/death(gibbed)
+	if(stat != DEAD)
+		SEND_SIGNAL(src, COMSIG_BASICMOB_PRE_DEATH, gibbed)
 	. = ..()
 	if(nest)
 		if(QDELETED(nest))
@@ -173,7 +216,21 @@
 		return FALSE //but more importantly return before attack_animal called
 	var/result = target.attack_basic_mob(src)
 	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
+	ai_controller?.set_blackboard_key(BB_BASIC_MOB_LAST_MELEE_HIT_TIME, world.time) // for AI that backs off after a hit, see /datum/ai_planning_subtree/maintain_distance
 	return result
+
+// basic mobs keep their speed as basicmob_varspeed, but /mob/living/Initialize() also applies the same speed var as living_varspeed, which counts it twice
+/mob/living/basic/update_living_varspeed()
+	if(!speed_is_move_delay)
+		return ..()
+	remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
+
+// actually go fast
+/mob/living/basic/update_move_intent_slowdown()
+	if(!speed_is_move_delay)
+		return ..()
+	remove_movespeed_modifier(/datum/movespeed_modifier/config_walk_run/walk)
+	remove_movespeed_modifier(/datum/movespeed_modifier/config_walk_run/run)
 
 /mob/living/basic/set_varspeed(var_value)
 	speed = var_value
@@ -184,3 +241,24 @@
 		remove_movespeed_modifier(/datum/movespeed_modifier/basicmob_varspeed)
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/basicmob_varspeed, multiplicative_slowdown = speed)
 	SEND_SIGNAL(src, POST_BASIC_MOB_UPDATE_VARSPEED)
+
+/mob/living/basic/vv_get_dropdown()
+	. = ..()
+	VV_DROPDOWN_OPTION(VV_HK_AI_REBUILD, "Rebuild AI")
+	if(ai_controller)
+		VV_DROPDOWN_OPTION(VV_HK_AI_STATE, "Show AI State")
+		VV_DROPDOWN_OPTION(VV_HK_AI_TREE, "Show AI Tree")
+		VV_DROPDOWN_OPTION(VV_HK_AI_LOG_DECISIONS, "Toggle AI Decision Logging")
+
+/mob/living/basic/vv_do_topic(list/href_list)
+	. = ..()
+	if(href_list[VV_HK_AI_STATE] && ai_controller && check_rights(R_DEBUG))
+		to_chat(usr, span_notice(ai_controller.get_debug_state()))
+	if(href_list[VV_HK_AI_TREE] && ai_controller && check_rights(R_DEBUG))
+		to_chat(usr, span_notice(ai_controller.get_debug_tree()))
+	if(href_list[VV_HK_AI_LOG_DECISIONS] && ai_controller && check_rights(R_DEBUG))
+		to_chat(usr, span_notice("[src] [ai_controller.toggle_decision_logging() ? "is now" : "is no longer"] logging its AI decisions."))
+	if(href_list[VV_HK_AI_REBUILD] && check_rights(R_DEBUG))
+		rebuild_ai()
+		log_admin("[key_name(usr)] rebuilt the AI of [key_name(src)].")
+		to_chat(usr, span_notice("Rebuilt [src]'s AI from its vars."))

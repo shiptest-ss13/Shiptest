@@ -41,6 +41,10 @@
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
+	///How far AI hears this gun, in tiles
+	var/gunfire_hearing_range = AI_GUNFIRE_HEARING_RANGE
+	///How far AI hears it when suppressed. Null to go by AI_SUPPRESSED_HEARING_REDUCTION
+	var/suppressed_gunfire_hearing_range
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
 
@@ -523,6 +527,8 @@
 	if(!safety && has_safety)
 		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
+		if(isliving(user))
+			ai_note_enemy_reloading(user, AI_DRY_FIRE_HEARING_RANGE)
 		return
 	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 
@@ -793,75 +799,7 @@
 		set_light_on(TRUE)
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
 
-	//Offset the pixels.
-	switch(firing_angle)
-		if(0, 360)
-			muzzle_flash.pixel_x = 0
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(1 to 44)
-			muzzle_flash.pixel_x = round(4 * ((firing_angle) / 45))
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(45)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(46 to 89)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = round(4 * ((90 - firing_angle) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(90)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = 0
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(91 to 134)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = round(-3 * ((firing_angle - 90) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(135)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(136 to 179)
-			muzzle_flash.pixel_x = round(4 * ((180 - firing_angle) / 45))
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = ABOVE_MOB_LAYER
-		if(180)
-			muzzle_flash.pixel_x = 0
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = ABOVE_MOB_LAYER
-		if(181 to 224)
-			muzzle_flash.pixel_x = round(-6 * ((firing_angle - 180) / 45))
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = ABOVE_MOB_LAYER
-		if(225)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(226 to 269)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = round(-6 * ((270 - firing_angle) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(270)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = 0
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(271 to 314)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = round(8 * ((firing_angle - 270) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(315)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(316 to 359)
-			muzzle_flash.pixel_x = round(-6 * ((360 - firing_angle) / 45))
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-
-	muzzle_flash.transform = null
-	muzzle_flash.transform = turn(muzzle_flash.transform, firing_angle)
+	muzzle_flash.aim(firing_angle)
 	flash_loc.vis_contents += muzzle_flash
 	muzzle_flash.applied = TRUE
 

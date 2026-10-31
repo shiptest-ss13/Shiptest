@@ -219,7 +219,7 @@
 	var/mob/living/target = controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET]
 	var/mob/living/living_pawn = controller.pawn
 
-	controller.current_movement_target = target
+	set_movement_target(controller, target)
 
 	if(target.pulledby != living_pawn && !HAS_AI_CONTROLLER_TYPE(target.pulledby, /datum/ai_controller/monkey)) //Dont steal from my fellow monkeys.
 		if(living_pawn.Adjacent(target) && isturf(target.loc))
@@ -228,7 +228,7 @@
 		return AI_BEHAVIOR_DELAY //Do the rest next turn
 
 	var/obj/machinery/disposal/disposal = controller.blackboard[BB_MONKEY_TARGET_DISPOSAL]
-	controller.current_movement_target = disposal
+	set_movement_target(controller, disposal)
 
 	if(living_pawn.Adjacent(disposal))
 		INVOKE_ASYNC(src, PROC_REF(try_disposal_mob), controller) //put him in!
