@@ -43,6 +43,9 @@
 /area/centcom/commandoffices/ngr
 	name = "2nd Battlegroup High Command"
 
+/area/centcom/commandoffices/hardliners
+	name = "Hardliners Council of Captains"
+
 /area/centcom/commandoffices/cybersun
 	name = "Cybersun Corporate Headquarters"
 
