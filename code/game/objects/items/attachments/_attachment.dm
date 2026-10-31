@@ -13,6 +13,8 @@
 	var/list/valid_parents = list()
 	///Unused.. but could hold extra callbacks I assume?
 	var/list/signals = list()
+	///Flags if it should be hidden in autowiki
+	var/autowiki_hidden = FALSE
 	///Component that handles most of the logic of attachments
 	var/datum/component/attachment/attachment_comp
 

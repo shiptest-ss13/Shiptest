@@ -237,6 +237,7 @@
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "poppy"
 	body_parts_covered = null
+	w_class = WEIGHT_CLASS_SMALL
 	unique_reskin = list(
 		"Poppy" = "poppy",
 		"Sunflower" = "sunflower",

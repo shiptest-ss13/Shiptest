@@ -2,8 +2,8 @@
 	name = "hivebot fabricator"
 	desc = "An active fabrication plant, electrical tendrils reaching into the ground searching for scrap metals, a hunger permeating the world around it."
 
-	icon = 'icons/obj/machines/bsm.dmi'
-	icon_state = "bsm_on"
+	icon = 'icons/obj/machines/hivebot_fabricator.dmi'
+	icon_state = "hivefab"
 
 	faction = list("hivebot")
 	max_integrity = 250

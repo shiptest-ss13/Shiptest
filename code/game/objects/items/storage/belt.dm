@@ -531,6 +531,7 @@
 		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/gun/energy/cybersun/lorentz/opportunist,
 		/obj/item/gun/energy/clover/pistol,
 		/obj/item/bodycamera,
 		))
@@ -543,7 +544,7 @@
 /obj/item/storage/belt/military/cobra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m45_cobra(src)
+		new /obj/item/ammo_box/magazine/m10_cobra(src)
 
 /obj/item/storage/belt/military/hydra/PopulateContents()
 	. = ..()

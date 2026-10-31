@@ -602,7 +602,7 @@
 
 /// Gets the name of the wound with any interactable topic if possible
 /datum/wound/proc/get_topic_name(mob/user)
-	return show_wound_topic(user) ? "<a href='?src=[REF(src)];wound_topic=1'>[lowertext(name)]</a>" : lowertext(name)
+	return show_wound_topic(user) ? "<a href='byond://?src=[REF(src)];wound_topic=1'>[lowertext(name)]</a>" : lowertext(name)
 
 /// Gets the flat percentage chance increment of a dismember occuring, if a dismember is attempted (requires mangled flesh and bone). returning 15 = +15%.
 /datum/wound/proc/get_dismember_chance_bonus(existing_chance)

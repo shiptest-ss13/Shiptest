@@ -83,7 +83,7 @@
 						adding_flags |= ALL
 
 				if(adding_flags & UNDERSTOOD_LANGUAGE)
-					var/partial_understanding = tgui_input_number(user, "Set level of understanding:", "[language_datum]", 100, 1, 100)
+					var/partial_understanding = tgui_input_number(user, "Set level of understanding:", "[language_datum]", 100, 100, 1)
 					if(isnull(partial_understanding))
 						return
 					if(partial_understanding < 100)

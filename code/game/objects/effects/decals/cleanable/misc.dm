@@ -70,6 +70,8 @@
 /obj/effect/decal/cleanable/dirt/Initialize()
 	. = ..()
 	var/turf/T = get_turf(src)
+	if(!T)
+		return
 	if(T.tiled_dirt)
 		smoothing_flags = SMOOTH_BITMASK
 		QUEUE_SMOOTH(src)

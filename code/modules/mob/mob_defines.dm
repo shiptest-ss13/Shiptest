@@ -220,6 +220,9 @@
 	/// Whether the typing indicator is on. Not on /living level because of verbs
 	var/typing_indicator = FALSE
 
+	/// The overlay currently being shown as the typing indicator, so we cut can the same overlay applied
+	var/mutable_appearance/bubble_overlay
+
 	/// The mob's current tone indicator, indicates whether
 	var/tone_indicator
 

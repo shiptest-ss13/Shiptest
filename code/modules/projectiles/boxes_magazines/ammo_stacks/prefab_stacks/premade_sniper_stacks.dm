@@ -58,7 +58,7 @@
 
 /obj/item/storage/box/ammo/a300/trac
 	name = "box of .300 trac ammo"
-	desc = "A box of standard .300 Magnum ammo."
+	desc = "A box of .308 TRAC ammo."
 	icon_state = "300box"
 
 /obj/item/storage/box/ammo/a300/trac/PopulateContents()

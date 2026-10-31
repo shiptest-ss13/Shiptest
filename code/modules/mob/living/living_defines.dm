@@ -48,6 +48,8 @@
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
 	var/resting = FALSE
+	/// Variable to track whether or not the mobs sprite is flipped vertically.
+	var/flipped = FALSE
 
 	/// Variable to track the body position of a mob, regardgless of the actual angle of rotation (usually matching it, but not necessarily).
 	var/body_position = STANDING_UP

@@ -91,6 +91,8 @@ Possible to do for anyone motivated enough:
 	var/admin_pad = FALSE
 	/// The last holopad that called this one.
 	var/caller_history
+	/// the radio linked to this holopad as a weak reference. announces when a call is incoming
+	var/datum/weakref/linked_radio
 
 /obj/machinery/holopad/secure
 	name = "secure holopad"
@@ -159,6 +161,7 @@ Possible to do for anyone motivated enough:
 	. = ..()
 	if(panel_open)
 		. += span_notice("You could use a multitool to alter the circuitry inside..")
+		. += span_notice("A <b>Radio</b> could be connected for notifications.")
 
 /obj/machinery/holopad/Destroy()
 	if(outgoing_call)
@@ -175,6 +178,8 @@ Possible to do for anyone motivated enough:
 		replay_stop()
 	if(record_mode)
 		record_stop()
+
+	QDEL_NULL(linked_radio)
 
 	QDEL_NULL(disk)
 
@@ -232,6 +237,17 @@ Possible to do for anyone motivated enough:
 		disk = P
 		return
 
+	if(istype(P, /obj/item/radio) && panel_open)
+		to_chat(user,  span_notice("You start linking [P] to [src]..."))
+		if(do_after(user, 5 SECONDS, src))
+			if(linked_radio)
+				var/obj/item/radio/unlinked_radio = linked_radio.resolve()
+				if(unlinked_radio.can_receive(unlinked_radio.frequency, list(get_map_zone())) && unlinked_radio != P)
+					unlinked_radio.say("Radio unlinked from holopad")
+			linked_radio = WEAKREF(P)
+			P.say("Radio linked to holopad")
+		return
+
 	return ..()
 
 /obj/machinery/holopad/multitool_act(mob/living/user, obj/item/I, list/modifiers)
@@ -272,7 +288,7 @@ Possible to do for anyone motivated enough:
 /obj/machinery/holopad/proc/holopad_hack(user, state, anchored)
 	if(!state || !anchored)
 		return FALSE
-	if(SPT_PROB(5, 1))
+	if(SPT_PROB(5, 1) && powered())
 		//wear your gloves kids
 		electrocute_mob(user, get_area(src), src, dist_check = TRUE)
 		do_sparks(3, 0, src)

@@ -15,10 +15,14 @@
 	var/projectile_type = null
 	/// Caliber string, used to determine if the casing can be loaded into specific guns or magazines.
 	var/caliber = null
+	/// Flags if it should be hidden in autowiki
+	var/autowiki_hidden = FALSE
 	/// Used for pacifism checks. Set to FALSE if the bullet is non-lethal and pacifists should be able to fire.
 	var/harmful = TRUE
 	/// String, used to determine the appearance of the bullet on the casing sprite if the casing is filled.
 	var/bullet_skin
+	// can the ammo cook off
+	var/can_cookoff = TRUE
 
 	/// The sound played when this ammo is fired by an energy gun.
 	var/fire_sound = null

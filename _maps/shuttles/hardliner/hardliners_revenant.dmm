@@ -315,6 +315,7 @@
 /obj/item/storage/bag/ore{
 	pixel_y = 4
 	},
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "dw" = (
@@ -2838,6 +2839,7 @@
 /obj/item/storage/bag/ore{
 	pixel_y = 4
 	},
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "Hr" = (
@@ -4018,7 +4020,10 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "UZ" = (
-/obj/machinery/suit_storage_unit/inherit/locked,
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "20";
+	name = "Captain's suit storage"
+	},
 /obj/item/clothing/suit/space/hardsuit/syndi/hl,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor,
@@ -4164,10 +4169,9 @@
 "WQ" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/suit_storage_unit/inherit/locked,
-/obj/item/clothing/suit/space/syndicate/white_red,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light/small/directional/north,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/hl,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Xb" = (

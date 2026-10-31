@@ -7,11 +7,15 @@
 /obj/machinery/air_sensor/ship/bolide/fuel_starboard
 	id_tag = "bolide_fuel_starboard"
 
+/obj/machinery/air_sensor/ship/bolide/burn_chamber
+	id_tag = "bolide_burn_chamber"
+
 /obj/machinery/computer/atmos_control/ship/bolide
 	sensors = list(
 		"bolide_air" = "Air Mix Chamber",
 		"bolide_fuel_port" = "Port Fuel Mix Chamber",
 		"bolide_fuel_starboard" = "Starboard Fuel Mix Chamber",
+		"bolide_burn_chamber" = "Burn Chamber",
 	)
 
 //this should go somewhere else
