@@ -15,8 +15,10 @@
 	animate_movement = 0
 	var/amount = 4
 	var/lifetime = 5
-	var/opaque = 1 //whether the smoke can block the view when in enough amount
-
+	///whether the smoke can block a view
+	var/opaque = TRUE
+	///Does this smoke force coughing / potential item drops?
+	var/toxic = FALSE
 
 /obj/effect/particle_effect/smoke/proc/fade_out(frames = 16)
 	if(alpha == 0) //Handle already transparent case
@@ -53,20 +55,27 @@
 		smoke_mob(L, seconds_per_tick)
 	return 1
 
-/obj/effect/particle_effect/smoke/proc/smoke_mob(mob/living/carbon/C, seconds_per_tick = SSOBJ_DT)
-	if(!istype(C))
-		return 0
+/obj/effect/particle_effect/smoke/proc/smoke_mob(mob/living/carbon/smoked, seconds_per_tick = SSOBJ_DT)
+	//perform our checks
+	if(!istype(smoked))
+		return FALSE
 	if(lifetime<1)
-		return 0
+		return FALSE
+	if(smoked.internal != null || smoked.has_smoke_protection())
+		return FALSE
+	if(smoked.smoke_delay)
+		return FALSE
+	smoked.smoke_delay++
+	addtimer(CALLBACK(src, PROC_REF(remove_smoke_delay), smoked), 10)
+	SEND_SIGNAL(smoked, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
+	//then our actions
 	if(opaque)
-		C.apply_status_effect(/datum/status_effect/concealed)
-	if(C.internal != null || C.has_smoke_protection())
-		return 0
-	if(C.smoke_delay)
-		return 0
-	C.smoke_delay++
-	addtimer(CALLBACK(src, PROC_REF(remove_smoke_delay), C), 10)
-	SEND_SIGNAL(C, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
+		smoked.apply_status_effect(/datum/status_effect/concealed)
+	if(toxic)
+		if(SPT_PROB(20, seconds_per_tick))
+			smoked.drop_all_held_items()
+		smoked.adjustOxyLoss(1)
+		smoked.emote(pick("cough","gasp"))
 	return TRUE
 
 /obj/effect/particle_effect/smoke/proc/remove_smoke_delay(mob/living/carbon/C)
@@ -128,13 +137,7 @@
 
 /obj/effect/particle_effect/smoke/bad
 	lifetime = 8
-
-/obj/effect/particle_effect/smoke/bad/smoke_mob(mob/living/carbon/M)
-	if(..())
-		M.drop_all_held_items()
-		M.adjustOxyLoss(1)
-		M.emote("cough")
-		return 1
+	toxic = TRUE
 
 /datum/effect_system/smoke_spread/bad
 	effect_type = /obj/effect/particle_effect/smoke/bad
@@ -145,12 +148,7 @@
 
 /obj/effect/particle_effect/smoke/hazard
 	lifetime = 8
-
-/obj/effect/particle_effect/smoke/hazard/smoke_mob(mob/living/carbon/M)
-	if(..())
-		M.adjustOxyLoss(4)
-		M.emote(pick("cough","gasp"))
-		return 1
+	toxic = TRUE
 
 /datum/effect_system/smoke_spread/hazard
 	effect_type = /obj/effect/particle_effect/smoke/hazard
@@ -209,24 +207,6 @@
 	temperature = 293.15
 	distcheck = FALSE
 	weldvents = FALSE
-
-
-/////////////////////////////////////////////
-// Sleep smoke
-/////////////////////////////////////////////
-
-/obj/effect/particle_effect/smoke/sleeping
-	color = "#9C3636"
-	lifetime = 10
-
-/obj/effect/particle_effect/smoke/sleeping/smoke_mob(mob/living/carbon/M)
-	if(..())
-		M.Sleeping(200)
-		M.emote("cough")
-		return 1
-
-/datum/effect_system/smoke_spread/sleeping
-	effect_type = /obj/effect/particle_effect/smoke/sleeping
 
 /////////////////////////////////////////////
 // Chem smoke
@@ -341,11 +321,34 @@
 /obj/effect/particle_effect/smoke/transparent
 	opaque = FALSE
 
+/datum/effect_system/smoke_spread/transparent/bad
+	effect_type = /obj/effect/particle_effect/smoke/transparent/bad
+
+/obj/effect/particle_effect/smoke/transparent/bad
+	opaque = FALSE
+	toxic = TRUE
+
 /datum/effect_system/smoke_spread/transparent/cigarette
 	effect_type = /obj/effect/particle_effect/smoke/transparent/cigarette
 
 /obj/effect/particle_effect/smoke/transparent/cigarette
 	alpha = 5
+
+/datum/effect_system/smoke_spread/transparent/sandbag
+	effect_type = /obj/effect/particle_effect/smoke/transparent/sandbag
+
+/obj/effect/particle_effect/smoke/transparent/sandbag
+	color = LIGHT_COLOR_YELLOW
+	opaque = FALSE
+	alpha = 30
+
+/datum/effect_system/smoke_spread/transparent/concrete
+	effect_type = /obj/effect/particle_effect/smoke/transparent/concrete
+
+/obj/effect/particle_effect/smoke/transparent/concrete
+	color = COLOR_GRAY
+	opaque = FALSE
+	alpha = 30
 
 /proc/do_smoke(range=0, location=null, smoke_type=/obj/effect/particle_effect/smoke)
 	var/datum/effect_system/smoke_spread/smoke = new

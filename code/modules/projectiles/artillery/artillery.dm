@@ -253,7 +253,7 @@
 	shell.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	shell.firer = src
 	shell.range = shell_range
-	shell.fire(Get_Angle(src,target))
+	shell.fire(get_angle(src,target))
 
 	perform_firing_visuals()
 	qdel(arty_shell)

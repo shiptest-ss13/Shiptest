@@ -25,6 +25,11 @@
 
 	mob_smash_flags = ENVIRONMENT_SMASH_RWALLS
 	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_RWALLS
+	minimum_damage = 20
+	damage_reduction = 20
+
+	//need to ask phoenix for sprite for scrap plasteel
+	scrap_type = /obj/item/stack/ore/salvage/scrapplasteel
 
 /turf/closed/wall/r_wall/yesdiag
 	icon_state = "reinforced_wall-255"

@@ -305,7 +305,7 @@
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
 	projectile_being_shot.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	projectile_being_shot.firer = src
-	projectile_being_shot.fire(Get_Angle(src,target))
+	projectile_being_shot.fire(get_angle(src,target))
 
 /obj/structure/salvageable/server
 	name = "broken server"
@@ -540,6 +540,28 @@
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/ore/salvage/scrapbluespace/five
+	amount = 5
+
+/obj/item/stack/ore/salvage/scrapplasteel
+	name = "plasteel shreds"
+	desc = "Shattered plasteel still contains a fair amount of the plasma and iron composing it"
+	icon_state = "splasteel"
+	points = 16
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplasteel/five
+	amount = 5
+
+/obj/item/stack/ore/salvage/scrapplastitanium
+	name = "ruined plastitanium lattice"
+	desc = "The structure surrounding the lattice of this durable material has shattered, leaving nothing but scrap."
+	icon_state = "splastitanium"
+	points = 65
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplastitanium/five
 	amount = 5
 
 // gpu item. does nothing except sell for money
