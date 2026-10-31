@@ -56,22 +56,26 @@
 
 
 //These procs fetch a cumulative total damage from all bodyparts
-/mob/living/carbon/getBruteLoss()
+/mob/living/carbon/getBruteLoss(required_status)
 	var/amount = 0
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
 		if(!limb)
 			continue
+		if(required_status && !(limb.bodytype & required_status)) //So we can check the health of exclusively organic or robotic bodyparts.
+			continue
 		amount += limb.brute_dam
 	return amount
 
-/mob/living/carbon/getFireLoss()
+/mob/living/carbon/getFireLoss(required_status)
 	var/amount = 0
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
 		if(!limb)
+			continue
+		if(required_status && !(limb.bodytype & required_status))
 			continue
 		amount += limb.burn_dam
 	return amount
