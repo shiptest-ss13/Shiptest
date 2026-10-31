@@ -6,10 +6,6 @@
 	var/alarm_delay = 30 // Don't forget, there's another 3 seconds in queueAlarm()
 
 /obj/machinery/camera/process(seconds_per_tick)
-	// motion camera event loop
-	if(!isMotion())
-		. = PROCESS_KILL
-		return
 	if(machine_stat & EMPED)
 		return
 	if (detectTime > 0)
@@ -84,33 +80,3 @@
 
 /obj/machinery/camera/motion/thunderdome/secondary
 	c_tag = "Arena 2"
-
-
-/obj/machinery/camera/motion/thunderdome/Initialize()
-	. = ..()
-	proximity_monitor.set_range(7)
-
-/obj/machinery/camera/motion/thunderdome/HasProximity(atom/movable/AM as mob|obj)
-	if (!isliving(AM) || get_area(AM) != get_area(src))
-		return
-	localMotionTargets |= WEAKREF(AM)
-	if (!detectTime)
-		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
-			TV.notify(TRUE)
-	detectTime = world.time + 30 SECONDS
-
-/obj/machinery/camera/motion/thunderdome/process(seconds_per_tick)
-	if (!detectTime)
-		return
-
-	for (var/datum/weakref/targetref in localMotionTargets)
-		var/mob/target = targetref.resolve()
-		if(QDELETED(target) || target.stat == DEAD || get_dist(src, target) > 7 || get_area(src) != get_area(target))
-			localMotionTargets -= targetref
-
-	if (localMotionTargets.len)
-		detectTime = world.time + 30 SECONDS
-	else if (world.time > detectTime)
-		detectTime = 0
-		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
-			TV.notify(FALSE)

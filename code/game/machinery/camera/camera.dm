@@ -43,8 +43,6 @@
 	var/datum/component/empprotection/emp_component
 
 	var/internal_light = TRUE //Whether it can light up when an AI views it
-	///Proximity monitor associated with this atom, for motion sensitive cameras.
-	var/datum/proximity_monitor/proximity_monitor
 
 	/// A copy of the last paper object that was shown to this camera.
 	var/obj/item/paper/last_shown_paper
@@ -77,9 +75,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 			upgradeEmpProof()
 		else if(assembly.malf_xray_firmware_present) //if it was secretly upgraded via the MALF AI Upgrade Camera Network ability
 			upgradeEmpProof(TRUE)
-
-		if(assembly.proxy_module)
-			upgradeMotion()
 	else
 		assembly = new(src)
 		assembly.state = 4 //STATE_FINISHED
@@ -98,19 +93,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 	for(var/i in network)
 		network -= i
 		network += "[REF(port)][i]"
-
-/obj/machinery/camera/proc/create_prox_monitor()
-	if(!proximity_monitor)
-		proximity_monitor = new(src, 1)
-		RegisterSignal(proximity_monitor, COMSIG_QDELETING, PROC_REF(proximity_deleted))
-
-/obj/machinery/camera/proc/proximity_deleted()
-	SIGNAL_HANDLER
-	proximity_monitor = null
-
-/obj/machinery/camera/proc/set_area_motion(area/A)
-	area_motion = A
-	create_prox_monitor()
 
 /obj/machinery/camera/Destroy()
 	if(can_use())
@@ -139,11 +121,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 		. += "It has an X-ray photodiode installed."
 	else
 		. += span_info("It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.")
-	if(isMotion())
-		. += "It has a proximity sensor installed."
-	else
-		. += span_info("It can be upgraded with a <b>proximity sensor</b>.")
-
 	if(!status)
 		. += span_info("It's currently deactivated.")
 		if(!panel_open && powered())
@@ -240,9 +217,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 	if(choice == assembly.emp_module)
 		assembly.drop_upgrade(assembly.emp_module)
 		removeEmpProof()
-	if(choice == assembly.proxy_module)
-		assembly.drop_upgrade(assembly.proxy_module)
-		removeMotion()
 	I.play_tool_sound(src)
 	return TRUE
 
@@ -318,17 +292,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 				if(attacking_item.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof(FALSE, TRUE)
 					to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
-			else
-				to_chat(user, span_warning("[src] already has that upgrade!"))
-			return
-
-		else if(istype(attacking_item, /obj/item/assembly/prox_sensor))
-			if(!isMotion())
-				if(!user.temporarilyRemoveItemFromInventory(attacking_item))
-					return
-				upgradeMotion()
-				to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
-				qdel(attacking_item)
 			else
 				to_chat(user, span_warning("[src] already has that upgrade!"))
 			return
