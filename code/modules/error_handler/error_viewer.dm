@@ -91,6 +91,9 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 	else
 		html += "[make_link("organized", null)] | linear<hr>"
 		for(var/datum/error_viewer/error_entry/error_entry as anything in errors)
+			//the client could vanish while waiting, and if so, just give up
+			if(!user)
+				return
 			html += "[error_entry.make_link(null, src, 1)]<br>"
 			CHECK_TICK //you're going to be sitting here aaaaaaaaaaaaaaall day
 

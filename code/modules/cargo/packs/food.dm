@@ -180,6 +180,15 @@
 	)
 
 /datum/supply_pack/food/ingredients_basic/honey
+	name = "Honey Crate"
+	desc = "Crate containing five jars of honey."
+	cost = 300
+	contains = list(/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+	)
 
 /datum/supply_pack/food/ingredients_basic/redbeet
 	name = "Redbeet Crate"
@@ -618,6 +627,18 @@
 		/obj/item/food/meat/slab/miras,
 		/obj/item/food/meat/slab/miras,
 		/obj/item/food/meat/slab/miras
+	)
+
+/datum/supply_pack/food/ingredients_basic/miraseggs
+	name = "Miras Eggs Crate"
+	desc = "An assortment of eggs from a small tecetian game animal."
+	cost = 100
+	contains = list(
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg
 	)
 
 /datum/supply_pack/food/ingredients_basic/tiris

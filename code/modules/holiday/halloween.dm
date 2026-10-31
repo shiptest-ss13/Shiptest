@@ -148,10 +148,6 @@
 /mob/living/simple_animal/shade/howling_ghost/proc/spooky_ghosty()
 	if(prob(20)) //haunt
 		playsound(loc, pick('sound/spookoween/ghosty_wind.ogg','sound/spookoween/ghost_whisper.ogg','sound/spookoween/chain_rattling.ogg'), 300, TRUE)
-	if(prob(10)) //flickers
-		var/obj/machinery/light/L = locate(/obj/machinery/light) in view(5, src)
-		if(L)
-			L.flicker()
 	if(prob(5)) //poltergeist
 		var/obj/item/I = locate(/obj/item) in view(3, src)
 		if(I)

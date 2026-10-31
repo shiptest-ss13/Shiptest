@@ -46,8 +46,12 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
 	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
+
+	zoom_amt = 4 //You can put attachments on but you can't take them off, this bakes the function of allowing the revolver to be a long ranged sidearm into the gun without needing an attachment
+	aimed_wield_slowdown = 0.2
+
 	spread_unwielded = 6
-	spread = 6
+	spread = 1
 	recoil = 2
 	recoil_unwielded = 4
 
@@ -119,11 +123,11 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 
 EMPTY_GUN_HELPER(revolver/shadow)
 
-/obj/item/gun/ballistic/revolver/detective
-	name = "\improper HP Detective Special"
-	desc = "A small law enforcement firearm. Originally commissioned by Vigilitas Interstellar for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
+/obj/item/gun/ballistic/revolver/flint
+	name = "\improper HP Flint"
+	desc = "A small revolver. Its low price and weight make it a popular self-defense option among civilians. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
-	icon_state = "detective"
+	icon_state = "flint"
 	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
@@ -137,12 +141,12 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
-	unique_reskin = list("Default" = "detective",
-		"Stainless Steel" = "detective_stainless",
-		"Gold Trim" = "detective_gold",
-		"Leopard Spots" = "detective_leopard",
-		"The Peacemaker" = "detective_peacemaker",
-		"Black Panther" = "detective_panther"
+	unique_reskin = list("Default" = "flint",
+		"Stainless Steel" = "flint_stainless",
+		"Gold Trim" = "flint_gold",
+		"Leopard Spots" = "flint_leopard",
+		"The Peacemaker" = "flint_peacemaker",
+		"Black Panther" = "flint_panther"
 		)
 	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -150,61 +154,17 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	recoil = 0
 	fire_delay = 0.2 SECONDS
 
-EMPTY_GUN_HELPER(revolver/detective)
+EMPTY_GUN_HELPER(revolver/flint)
 
-/obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
+/obj/item/gun/ballistic/revolver/flint/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
-//...why...?
-/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
-	if(magazine.caliber != initial(magazine.caliber))
-		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
-			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
-			to_chat(user, span_userdanger("[src] blows up in your face!"))
-			user.take_bodypart_damage(0,20)
-			explosion(src, 0, 0, 1, 1)
-			user.dropItemToGround(src)
-			return 0
-	..()
-
-/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
-	if(..())
-		return TRUE
-	if(magazine.caliber == "38")
-		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//you know the drill
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return TRUE
-			magazine.caliber = ".357"
-			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
-			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
-	else
-		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//and again
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return
-			magazine.caliber = ".38"
-			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
-			desc = initial(desc)
-			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
-	return TRUE
 
 ///pistols
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .44 Roumain."
 	icon_state = "candor"
 	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
@@ -212,9 +172,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m45
+	default_ammo_type = /obj/item/ammo_box/magazine/m44
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45,
+		/obj/item/ammo_box/magazine/m44,
 	)
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -248,7 +208,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .44."
 	item_state = "hp_generic_fresh"
 	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
@@ -260,9 +220,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/phenex
 	name = "\improper HP Phenex"
-	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
+	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .44."
 	icon_state = "phenex"
 	item_state = "hp_phenex"
+	autowiki_hidden = TRUE
 
 /// SMG ///
 
@@ -691,6 +652,101 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO) //no dual burst for you
+	default_firemode = FIREMODE_SEMIAUTO
+
+/obj/item/gun/ballistic/rifle/cinder/factory//it uses bolt action mechanics, but for all intents and purposes, is a SHOTGUN! It's just that the pump is probably heavy enough to warrant turning it into a bolt action mechanically
+	autowiki_hidden = TRUE //
+	name = "HP Cinder"
+	desc = "A large, and bulky pump-action shotgun holding four rounds. Manufactured by Hunter's Pride, and used on hunts within the Saint Roumain Militia where normal shot will not easily take down their quarry."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "cinder_factory"
+	item_state = "cinder_factory"
+	attack_verb = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+	)
+	slot_available = list(		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		),
+		)
+
+	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	force = 15
+	recoil = 3
+	pb_knockback = 10
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 50
+	rack_sound_volume = 30
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+/obj/item/gun/ballistic/rifle/cinder
+	autowiki_hidden = TRUE //
+	name = "HP Cinder"
+	desc = "A large, and bulky pump-action shotgun holding four rounds. Manufactured by Hunter's Pride, and used on hunts within the Saint Roumain Militia where normal shot will not easily take down their quarry. This one is noticably missing its stock, and your arms figuratively warn you of using this shotgun."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "cinder"
+	item_state = "cinder"
+	attack_verb = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+	)
+	slot_available = list(		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 11,
+			"y" = 22,
+		),
+		)
+
+	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = SMG_SLOWDOWN
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	spread = 6
+	force = 15
+	recoil = 4
+	pb_knockback = 10
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 50
+	rack_sound_volume = 30
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 /// Rifles

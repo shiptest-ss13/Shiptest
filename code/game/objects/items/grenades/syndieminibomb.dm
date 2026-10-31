@@ -38,6 +38,14 @@
 	light_item_damage = 15
 	ex_flame = 1
 
+/obj/item/grenade/frag/zippy_nuke
+	name = "catastrophic disposable gun vending machine malfunction"
+	desc = "You should not see this. Step away and contact a coder immediately."
+	shrapnel_type = /obj/projectile/bullet/c22lr
+	ex_heavy = 0
+	ex_light = 0
+	ex_flame = 0
+
 /obj/item/grenade/frag/mega
 	name = "FRAG grenade"
 	desc = "An anti-everything fragmentation grenade, this weapon excels at killing anything any everything by shredding them with metal shrapnel."

@@ -171,6 +171,12 @@
 	faction = /datum/faction/suns
 	faction_discount = 25
 
+/datum/supply_pack/medical/rezadone_bottle
+	name = "Rezadone Bottle Crate"
+	desc = "Contains one bottle of rezadone, used to restore dermal husking and extreme infections."
+	cost = 1000
+	contains = list(/obj/item/reagent_containers/glass/bottle/rezadone)
+
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"
 	desc = "Contains a bulk supply of saline-glucose condensed into a single canister that should last a long time, with a large pump to fill containers with. Direct injection of saline should be left to medical professionals as the pump is capable of overdosing patients."
@@ -249,7 +255,7 @@
 	faction = /datum/faction/syndicate/cybersun
 
 /datum/supply_pack/medical/mkii_hypo_standalone
-	name = "mk.II Hypospray kit"
+	name = "Standalone mk.II Hypospray"
 	desc = "Contains a standalone Matahari Pharmaceutical Hypospray, for on the field medical care."
 	cost = 600
 	contains = list(/obj/item/hypospray/mkii)
@@ -257,7 +263,7 @@
 	faction = /datum/faction/warra
 
 /datum/supply_pack/medical/mkiii_hypo_standalone
-	name = "mk.III Hypospray kit"
+	name = "Standalone mk.III Hypospray"
 	desc = "Contains a standalone Matahari Pharmaceutical mk.III Hypospray, for on the field medical care."
 	cost = 1250
 	contains = list(/obj/item/hypospray/mkii/mkiii/empty)

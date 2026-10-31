@@ -7,6 +7,7 @@
 	item_state = "coffee"
 	spillable = TRUE
 	volume = 30
+	custom_materials = list(/datum/material/glass = 400)
 
 ///obj/item/reagent_containers/food/drinks/rilenacup -> /obj/item/reagent_containers/food/drinks/mug/rilena, great subtype
 /obj/item/reagent_containers/food/drinks/rilenacup
@@ -44,3 +45,19 @@
 	else
 		icon_state = "beaglemug"
 		renamedByPlayer = FALSE
+
+/obj/item/reagent_containers/food/drinks/teacup
+	name = "teacup"
+	desc = "A porcelain teacup with a delicate handle."
+	icon = 'icons/obj/drinks/cup.dmi'
+	fill_icon_thresholds = list(30, 50, 70, 90)
+	icon_state = "teacup"
+	item_state = "teacup"
+	spillable = TRUE
+	volume = 30
+	custom_materials = list(/datum/material/glass = 300)
+
+	unique_reskin = list(
+		"gold teacup" = "teacup_gold",
+		"beige teacup" = "teacup_beige",
+		)

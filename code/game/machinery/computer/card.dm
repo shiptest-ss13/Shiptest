@@ -237,7 +237,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 										allJobsSlot.innerHTML = "<a href='#' onclick='showAll()'>show</a>";
 									}
 								</script>"}
-				carddesc += {"<form name='cardcomp' action='?src=[REF(src)]' method='get'>
+				carddesc += {"<form name='cardcomp' action='byond://?src=[REF(src)]' method='get'>
 					<input type='hidden' name='src' value='[REF(src)]'>
 					<input type='hidden' name='choice' value='reg'>
 					<b>registered name:</b> <input type='text' id='namefield' name='reg' value='[target_owner]' style='width:250px; background-color:white;' onchange='markRed()'>
