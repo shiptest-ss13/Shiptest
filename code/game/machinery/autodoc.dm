@@ -153,6 +153,7 @@
 		. += span_notice("There is no procedure disk inserted.")
 	if(patient && user.Adjacent(src))
 		healthscan(user, patient, FALSE, FALSE)
+		chemscan(user, patient)
 
 //Interactions: attackby (insert disk), AltClick (remove disk), interact (open/close)
 // mousedrop_T, (drag/drop patient), attack_hand_secondary (begin/stop procedure)
@@ -300,8 +301,8 @@
 
 	//Check whether we're capable of directly restoring health.
 	if(!heal_tick())
-		//If we're dead and revive flag enabled. 						//If replace flag is enabled and we have valid organ/limb replacements
-		if((proc_disk.heal_flags & DO_REVIVE) && patient.stat == DEAD || (proc_disk.heal_flags & DO_REPLACE) && get_replacements())
+		//If we're dead, revive flag is enabled, and can defib. 								//If replace flag is enabled and we have valid organ/limb replacements
+		if((proc_disk.heal_flags & DO_REVIVE) && patient.stat == DEAD && patient.can_defib()|| (proc_disk.heal_flags & DO_REPLACE) && get_replacements())
 			return TRUE
 		error_message = "Patient cannot be tended by current procedure."
 		return FALSE
@@ -377,19 +378,38 @@
 		total_damage += patient.getBruteLoss(BODYTYPE_ORGANIC)
 		. = TRUE
 
-	if(proc_disk.heal_flags & DO_BURN && patient.getFireLoss(BODYTYPE_ORGANIC) > 0)
-		if(operating)
-			patient.adjustFireLoss(heal_amount * seconds_per_tick)
-			if(HAS_TRAIT(patient, TRAIT_HUSK) && patient.getFireLoss() < THRESHOLD_UNHUSK)
-				patient.cure_husk()
-		total_damage += patient.getFireLoss(BODYTYPE_ORGANIC)
-		. = TRUE
+	if(proc_disk.heal_flags & DO_BURN)
+		if(patient.getFireLoss(BODYTYPE_ORGANIC) > 0 || HAS_TRAIT(patient, TRAIT_HUSK))
+			if(operating)
+				patient.adjustFireLoss(heal_amount * seconds_per_tick)
+				if(HAS_TRAIT(patient, TRAIT_HUSK) && patient.getFireLoss() < THRESHOLD_UNHUSK)
+					patient.cure_husk()
+			total_damage += patient.getFireLoss(BODYTYPE_ORGANIC)
+			. = TRUE
 
-	if(proc_disk.heal_flags & DO_TOX && patient.getToxLoss() > 0 || patient.radiation > 0)
+	if(proc_disk.heal_flags & DO_TOX && patient.getToxLoss() > 0 || patient.radiation > 0 || patient.reagents.reagent_list.len)
+		var/highest_volume = 0
+		var/obj/item/organ/patient_stomach = patient.getorganslot(ORGAN_SLOT_STOMACH)
 		if(operating)
 			patient.adjustToxLoss(heal_amount * seconds_per_tick)
 			patient.radiation -= min(patient.radiation, heal_amount * (seconds_per_tick * 2) * -1) //Debatable whether we should heal radiation here. Remind me to get an opinion on this later.
-		total_damage += patient.getToxLoss() + patient.radiation / 2
+		for(var/thing in patient.reagents.reagent_list) //Find our highest reagent volume and purge it if we're operating.
+			var/datum/reagent/target = thing
+			if(!target)
+				continue
+			if(operating)
+				patient.reagents.remove_reagent(target.type, heal_amount * seconds_per_tick * -1)
+			if(target.volume > highest_volume)
+				highest_volume = target.volume
+		for(var/thing in patient_stomach.reagents.reagent_list) //Do the same for the stomach because simulation sucks.
+			var/datum/reagent/target = thing
+			if(!target)
+				continue
+			if(operating)
+				patient_stomach.reagents.remove_reagent(target.type, heal_amount * seconds_per_tick * -1)
+			if(target.volume > highest_volume)
+				highest_volume = target.volume
+		total_damage += max(patient.getToxLoss(), (patient.radiation / 2), highest_volume)
 		. = TRUE
 
 	if(proc_disk.heal_flags & DO_CLONE && patient.getCloneLoss() > 0)
@@ -404,20 +424,29 @@
 			var/obj/item/organ/target = thing
 			if(!target)
 				continue
-			if(target.organ_flags & ORGAN_SYNTHETIC || target.damage <= 1)
+			if(target.organ_flags & ORGAN_SYNTHETIC || target.damage <= 1 && !istype(target, /obj/item/organ/ears)) //Skip if our target organ is healthy or synthetic. Skip over checking ears because we do that in the next part.
 				continue
-			if(target.damage > highest_damage)
+			if(istype(target, /obj/item/organ/ears)) //If we have ears and they're deaf, treat deafness and skip over damage checks.
+				var/obj/item/organ/ears/ear = target
+				if(ear.deaf > 0)
+					if(ear.deaf > highest_damage)
+						highest_damage = ear.deaf
+					if(operating)
+						ear.deaf += (heal_amount * seconds_per_tick)
+				else if(target.damage <= 1)
+					continue
+			if(target.damage > highest_damage) //Highest damage is calculated for procedure length estimation.
 				highest_damage = target.damage
-			target.applyOrganDamage(heal_amount * seconds_per_tick)
+			if(operating)
+				target.applyOrganDamage(heal_amount * seconds_per_tick)
 			total_damage += highest_damage
 			. = TRUE
 
-/obj/machinery/autodoc/proc/attempt_revive() //Must be a separate proc because timer. Grrrr. My eyes turn red.
+/obj/machinery/autodoc/proc/attempt_revive()
 	var/mob/living/carbon/patient = occupant
-	//If patient has a ckey, and revive() is called successfully, do a bunch of things I stole from defib code.
 	if(patient)
 		playsound(src, 'sound/machines/defib_zap.ogg', 50, FALSE)
-		if(patient.mind)
+		if(patient.mind && patient.can_defib())
 			patient.revive()
 			patient.set_heartattack(FALSE)
 			patient.emote("gasp")
@@ -425,8 +454,8 @@
 			patient.adjustOxyLoss(60)
 			SEND_SIGNAL(occupant, COMSIG_LIVING_MINOR_SHOCK)
 			say("Rescusitation successful.")
-			if (patient.health > HEALTH_THRESHOLD_FULLCRIT) //Call me when you can be awake and unconscious at the same time. This will always be true unless the patient has prosthetics.
-				to_chat(patient, span_notice("<b>You suddenly jolt awake in the cold darkness of an Autodoc.</b> Innumerous small instruments surround you, attentively tending to your wounds."))
+			if (patient.health > HEALTH_THRESHOLD_FULLCRIT)
+				to_chat(patient, span_notice("<b>You suddenly jolt awake in the cold darkness of an AutoDoc®.</b> Innumerous small instruments surround you, attentively tending to your wounds."))
 	//Dramatic pause. Revved is true to prevent infinite loops.
 	if(operating)
 		post_procedure(20, TRUE)
@@ -468,6 +497,14 @@
 		playsound(src, pick('sound/surgery/organ1.ogg','sound/surgery/organ2.ogg'), 30, FALSE)
 		addtimer(CALLBACK(src, PROC_REF(post_procedure)), post_delay)
 		return
+
+//Magic brain surgery to fix traumas
+	if(proc_disk.heal_flags & DO_ORGANS)
+		patient.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
+
+//Cure mutations
+	if(proc_disk.heal_flags & DO_CLONE)
+		patient.dna.remove_all_mutations()
 
 //Cycle through and repair patient's wounds.
 	if(proc_disk.heal_flags & DO_WOUNDS)
