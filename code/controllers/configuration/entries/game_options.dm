@@ -373,19 +373,19 @@
 	min_val = 0
 
 /datum/config_entry/number/max_overmap_event_clusters
-	config_entry_value = 4
+	config_entry_value = 8
 
 /datum/config_entry/number/max_overmap_events
 	config_entry_value = 150
 
 /datum/config_entry/number/max_overmap_dynamic_events
-	config_entry_value = 7
+	config_entry_value = 20
 
 /datum/config_entry/string/overmap_generator_type
 	config_entry_value = "solar_system"
 
 /datum/config_entry/number/overmap_size
-	config_entry_value = 20
+	config_entry_value = 30
 	min_val = 1
 
 /datum/config_entry/number/overmap_encounter_size
