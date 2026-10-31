@@ -50,7 +50,7 @@
 	base_icon_state = "autodoc-dark"
 	icon_state = "autodoc-dark0"
 
-/obj/machinery/autodoc/old
+/obj/machinery/autodoc/ruin
 	name = "AutoDoc Type 485"
 	desc = "A Cybersun Biodynamics Autonomous Doctor Unit Type 485 or AutoDoc®. This ICW-era model doesn't seem to accept holophotonic crystals. It's been a decade since Biodynamics last offered service contracts on these."
 	broken = TRUE
