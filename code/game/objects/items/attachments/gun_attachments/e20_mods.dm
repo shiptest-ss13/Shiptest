@@ -1,6 +1,6 @@
 /obj/item/attachment/e20mod
-	name = "Evil Basetype E-20 Mod"
-	desc = "You should not see this."
+	name = "e-20 modification kit"
+	desc = "This is a basetype item and you should not see this."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/e20_attachment_obj.dmi'
 	icon_state = "e20mod"
 	attach_features_flags = null

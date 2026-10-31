@@ -68,7 +68,13 @@
 	wield_delay = 0.6 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 
-	valid_attachments = list(/obj/item/attachment/e20mod)
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
+		/obj/item/attachment/e20mod,
+	)
 
 	spread = 0
 	spread_unwielded = 10
