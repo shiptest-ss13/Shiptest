@@ -493,7 +493,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/esh/warden
 	name = "\improper Vigilitas Warden heavy hardsuit"
-	desc = "A state of the art hardsuit utilized by Vigilitas Interstellar. Advanced composite armor alongside an easy use injector system around the suit results in a hardsuit as close as can be to heavier power armor. It may be slow, but you will be unbreakable."
+	desc = "A state of the art hardsuit utilized by Vigilitas Interstellar. Heavy composite armor alongside an easy use injector system around the suit results in a hardsuit as close as can be to heavier power armor. It may be slow, but you will be unbreakable."
 	icon = 'icons/obj/clothing/faction/warra/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/warra/suits.dmi'
 	icon_state = "hardsuit-warden"
