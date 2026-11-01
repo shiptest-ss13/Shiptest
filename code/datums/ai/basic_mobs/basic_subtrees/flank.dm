@@ -160,11 +160,12 @@
 	var/from_x = our_turf.x - their_turf.x
 	var/from_y = our_turf.y - their_turf.y
 	var/list/reachable_without_passing_them // worked out only if we need it, as it's a fair bit of work
+	var/list/claimed_turfs = get_ai_ally_claimed_turfs(living_pawn, max_flank_distance * 2)
 	var/turf/best_turf
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(angle_search_range, their_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || !ai_can_take_spot(living_pawn, candidate))
+		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || claimed_turfs[candidate] || !ai_can_take_spot(living_pawn, candidate))
 			continue
 		if(cover_between(their_turf, candidate) || ai_shield_facing(target, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue

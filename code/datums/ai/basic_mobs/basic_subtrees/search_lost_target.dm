@@ -36,8 +36,7 @@
 	var/style = pick_style(controller)
 	// those who fight up close go right to where they last saw them, like the corner they went round, as watching it from a few tiles off does us no good
 	var/go_there = !can_see_spot(controller, last_known_turf) || (!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK) && get_turf(controller.pawn) != last_known_turf)
-	var/last_saw_them = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]
-	if(!isnull(last_saw_them) && world.time - last_saw_them < lost_grace)
+	if(AI_RECENTLY_SAW_ENEMY(controller, lost_grace))
 		// they've only just slipped out of view, so no fuss yet: after them if that's how we'll search, or watching where they went
 		if(style == AI_SEARCH_STYLE_INVESTIGATE && go_there)
 			controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
@@ -91,7 +90,7 @@
 
 // whether our target's lately shot us from too far off for our shots to reach. Post holders only once they've broken from it or out in the open with no cover
 /datum/ai_planning_subtree/search_lost_target/proc/pinned_from_afar(datum/ai_controller/controller)
-	if((stays_put && !AI_POST_BROKEN(controller)) || world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= pinned_time)
+	if((stays_put && !AI_POST_BROKEN(controller)) || !AI_RECENTLY_SHOT_AT(controller, pinned_time))
 		return FALSE
 	// cover comes first, so only once seek_cover's just looked and found nowhere to hide, and not while we're behind cover we're fighting from, which it gives up on itself if it's not enough
 	if(world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_HIDE_SEARCH] || controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF])

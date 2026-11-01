@@ -15,6 +15,12 @@
 #define AI_VISION_RANGE(controller) (controller?.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE)
 ///Whether controller's mob had eyes on someone it was fighting within memory
 #define AI_RECENTLY_SAW_ENEMY(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME] < (memory))
+///Whether controller's mob was shot at within memory, never having been shot at counting as not
+#define AI_RECENTLY_SHOT_AT(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < (memory))
+///Whether anything hurt controller's mob within memory
+#define AI_RECENTLY_HURT(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < (memory))
+///Whether controller's movement gave up finding a way to thing within memory
+#define AI_NO_PATH_TO_RECENTLY(controller, thing, memory) (controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == (thing) && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < (memory))
 // The least of its usual range a sound carries for AI, even with no air
 #define AI_MINIMUM_SOUND_FACTOR 0.1
 // How far AI with /datum/element/ai_hears_gunfire hears gunshots, in tiles. Walls can muffle sounds. Guns can set their own, see gunfire_hearing_range and suppressed_gunfire_hearing_range

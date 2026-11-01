@@ -19,6 +19,8 @@
 	var/give_up_cooldown = 10 SECONDS
 	//how many of the best places for it to land we look for somewhere to throw at from, when we've to move to throw
 	var/max_reposition_landings = 8
+	//how long someone has to stay within a held spot for us to consider it held and a grenade can be used
+	var/holding_spot_time = 5 SECONDS
 
 /datum/ai_planning_subtree/throw_grenade/on_skipped(datum/ai_controller/controller)
 	give_up_throw_spot(controller) // nobody to throw it at any more
@@ -66,7 +68,7 @@
 	return SUBTREE_RETURN_FINISH_PLANNING
 
 /datum/ai_planning_subtree/throw_grenade/proc/head_for_throw_spot(datum/ai_controller/controller, turf/target_turf, turf/throw_spot)
-	var/list/landings = world.time > controller.blackboard[BB_BASIC_MOB_GRENADE_SPOT_UNTIL] || controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == throw_spot ? null : get_landings(controller, target_turf)
+	var/list/landings = world.time > controller.blackboard[BB_BASIC_MOB_GRENADE_SPOT_UNTIL] || AI_NO_PATH_TO_RECENTLY(controller, throw_spot, AI_NO_PATH_MEMORY) ? null : get_landings(controller, target_turf)
 	if(!length(landings))
 		AI_LOG_DECISION(controller, "throw_grenade: giving up on throwing from [throw_spot]")
 		give_up_throw_spot(controller)
@@ -175,29 +177,21 @@
 /datum/ai_planning_subtree/throw_grenade/proc/good_throw_spot(datum/ai_controller/controller, turf/spot, list/landings, list/ally_turfs, list/ally_lines)
 	if(ally_turfs[spot] || ally_lines[spot])
 		return FALSE
-	if(!ai_can_take_spot(controller.pawn, spot) || is_ai_hazard_turf(spot, controller.pawn))
+	if(!ai_can_take_spot(controller.pawn, spot))
 		return FALSE
 	return !!pick_landing_from(controller, spot, landings)
 
 /datum/ai_planning_subtree/throw_grenade/proc/get_ally_spots(datum/ai_controller/controller)
 	var/mob/living/basic/basic_mob = controller.pawn
-	var/list/ally_turfs = list()
+	var/range = reposition_range * 3
 	var/list/ally_lines = list()
-	for(var/mob/living/ally as anything in get_ai_allies_in_range(basic_mob, reposition_range * 3))
+	for(var/mob/living/ally as anything in get_ai_allies_in_range(basic_mob, range))
 		var/datum/ai_controller/ally_controller = ally.ai_controller
-		var/turf/ally_turf = get_turf(ally)
-		ally_turfs[ally_turf] = TRUE
-		if(!istype(ally_controller))
-			continue
-		for(var/key in list(BB_BASIC_MOB_FIGHTING_COVER_TURF, BB_BASIC_MOB_SAFE_TURF, BB_BASIC_MOB_GRENADE_SPOT))
-			var/turf/heading_to = ally_controller.blackboard[key]
-			if(isturf(heading_to))
-				ally_turfs[heading_to] = TRUE
 		var/atom/their_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 		if(!QDELETED(their_target) && ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
-			for(var/turf/line_turf as anything in get_line(ally_turf, get_turf(their_target)))
+			for(var/turf/line_turf as anything in get_line(get_turf(ally), get_turf(their_target)))
 				ally_lines[line_turf] = TRUE
-	return list(ally_turfs, ally_lines)
+	return list(get_ai_ally_claimed_turfs(basic_mob, range), ally_lines)
 
 // where we'd throw one, or null if there's no call for it, like someone out in the open we can just shoot
 // committed is for once we're on our way somewhere to throw from, so we keep after them wherever they go rather than calling it off as we come round their cover
@@ -210,13 +204,38 @@
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		var/turf/their_turf = get_turf(target)
+		var/holding_spot = note_held_spot(controller, target, their_turf)
 		if(committed || cover_between(their_turf, our_turf) || ai_shield_facing(target, our_turf))
 			return their_turf // dug in, and a grenade gets round their cover or shield
+		if(controller.pawn.GetComponent(/datum/component/ranged_attacks) && has_clear_shot(controller.pawn, target) && !ally_in_line_of_fire(controller.pawn, our_turf, their_turf))
+			return null // we can just shoot them, as we would, through glass and all
+		if(holding_spot || dug_in_against_allies(controller, target, their_turf))
+			return their_turf // dug in against one of ours, or holding somewhere like a doorway, and we've no shot of our own
 		return null
-	var/last_saw_them = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]
-	if(isnull(last_saw_them) || world.time - last_saw_them > last_seen_memory || controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TARGET] != target)
+	if(!AI_RECENTLY_SAW_ENEMY(controller, last_seen_memory) || controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TARGET] != target)
 		return null
 	return controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF] // only just ducked out of sight, like round a corner or into a room
+
+// keeps track of where target's been stood, and whether they've stayed within a tile of it for holding_spot_time
+/datum/ai_planning_subtree/throw_grenade/proc/note_held_spot(datum/ai_controller/controller, atom/target, turf/their_turf)
+	var/turf/held_turf = controller.blackboard[BB_BASIC_MOB_ENEMY_HELD_TURF]
+	if(controller.blackboard[BB_BASIC_MOB_ENEMY_HELD_BY] != target || !held_turf || held_turf.z != their_turf.z || get_dist(held_turf, their_turf) > 1)
+		controller.set_blackboard_key(BB_BASIC_MOB_ENEMY_HELD_BY, target)
+		controller.set_blackboard_key(BB_BASIC_MOB_ENEMY_HELD_TURF, their_turf)
+		controller.set_blackboard_key(BB_BASIC_MOB_ENEMY_HELD_SINCE, world.time)
+		return FALSE
+	return world.time - controller.blackboard[BB_BASIC_MOB_ENEMY_HELD_SINCE] >= holding_spot_time
+
+
+// whether target's behind cover from one of ours that's fighting them, as cover facing someone else is no less dug in
+/datum/ai_planning_subtree/throw_grenade/proc/dug_in_against_allies(datum/ai_controller/controller, atom/target, turf/their_turf)
+	for(var/mob/living/ally as anything in get_ai_allies_in_range(controller.pawn, AI_DEFAULT_VISION_RANGE * 2))
+		var/datum/ai_controller/ally_controller = ally.ai_controller
+		if(ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] != target || ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE)
+			continue
+		if(cover_between(their_turf, ally))
+			return TRUE
+	return FALSE
 
 /datum/ai_planning_subtree/throw_grenade/proc/get_danger_radius(datum/ai_controller/controller)
 	var/grenade_type = controller.blackboard[BB_BASIC_MOB_GRENADE_TYPE]

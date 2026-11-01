@@ -64,7 +64,7 @@
 	var/moved_on = FALSE
 	while(length(new_trail))
 		var/turf/next_spot = new_trail[length(new_trail)]
-		var/stuck = next_spot == heading_for && (controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == next_spot || world.time - controller.blackboard[BB_BASIC_MOB_HOME_TRAIL_SINCE] > trail_timeout)
+		var/stuck = next_spot == heading_for && (AI_NO_PATH_TO_RECENTLY(controller, next_spot, AI_NO_PATH_MEMORY) ||world.time - controller.blackboard[BB_BASIC_MOB_HOME_TRAIL_SINCE] > trail_timeout)
 		if(stuck)
 			AI_LOG_DECISION(controller, "return_home: couldn't get back to [AREACOORD(next_spot)] on our trail, trying the one before")
 		else if(get_dist(our_turf, next_spot) > home_range)

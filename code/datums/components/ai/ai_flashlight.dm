@@ -52,7 +52,7 @@
 	else if(light.on && world.time - last_needed > quiet_time)
 		set_light_on(FALSE)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	set_ticking(light.on || !QDELETED(target) || world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < quiet_time)
+	set_ticking(light.on || !QDELETED(target) || AI_RECENTLY_SHOT_AT(controller, quiet_time))
 
 // only checking on the light every life tick while it might be needed, as most mobs spend most of their time with nobody about
 /datum/component/ai_flashlight/proc/set_ticking(should_tick)
@@ -67,7 +67,7 @@
 // fighting or looking for someone, and somewhere it matters is dark, like where we are, or where they are or were last
 /datum/component/ai_flashlight/proc/needs_light(datum/ai_controller/controller)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	var/shot_lately = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < quiet_time
+	var/shot_lately = AI_RECENTLY_SHOT_AT(controller, quiet_time)
 	if(QDELETED(target) && !shot_lately)
 		return FALSE
 	if(light.on)

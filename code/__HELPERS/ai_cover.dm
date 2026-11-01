@@ -221,6 +221,12 @@
 			best_score = score
 	return best_turf
 
+// whether shooter would have an open shot at finish stood on spot
+/proc/ai_shot_open_from(mob/living/shooter, turf/spot, turf/finish, pass_flags)
+	if(isnull(pass_flags))
+		pass_flags = get_ai_shot_pass_flags(shooter)
+	return !get_shot_blocker(spot, finish, pass_flags = pass_flags) && !ally_in_line_of_fire(shooter, spot, finish)
+
 /proc/ally_in_line_of_fire(mob/living/shooter, turf/start, turf/finish)
 	for(var/turf/line_turf as anything in get_line(start, finish))
 		for(var/mob/living/maybe_ally in line_turf)
@@ -263,6 +269,24 @@
 		if(post && get_dist(post, spot) > post_radius)
 			return FALSE
 	return !spot.is_blocked_turf(TRUE, mover) && ai_can_stand_on(mover, spot)
+
+// where those of source's side within range are stood, or have picked to go and stand, as list(turf = TRUE), so source doesn't pick the same spot or pile up behind them
+/proc/get_ai_ally_claimed_turfs(mob/living/source, range)
+	var/static/list/claim_keys = list(
+		BB_BASIC_MOB_FIGHTING_COVER_TURF,
+		BB_BASIC_MOB_TAKING_COVER_TURF,
+		BB_BASIC_MOB_SAFE_TURF,
+		BB_BASIC_MOB_REPOSITION_TURF,
+		BB_BASIC_MOB_FLANK_TURF,
+		BB_BASIC_MOB_GRENADE_SPOT,
+	)
+	. = list()
+	for(var/mob/living/ally as anything in get_ai_allies_in_range(source, range))
+		.[get_turf(ally)] = TRUE
+		for(var/key in claim_keys)
+			var/turf/claimed = ally.ai_controller.blackboard[key]
+			if(isturf(claimed))
+				.[claimed] = TRUE
 
 // how far from a post a post holder can go
 /proc/ai_post_radius(datum/ai_controller/controller)
@@ -388,15 +412,7 @@
 	if(!our_turf)
 		return null
 	// where our allies are, or are heading to fight from, so we don't pile up behind each other or shoot through them
-	var/list/ally_turfs = list()
-	for(var/mob/living/ally in hearers(range * 3, our_turf))
-		if(ally == fighter || ally.stat == DEAD || !fighter.faction_check_mob(ally))
-			continue
-		ally_turfs[get_turf(ally)] = TRUE
-		var/datum/ai_controller/ally_controller = ally.ai_controller
-		var/turf/ally_cover = istype(ally_controller) ? ally_controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] : null
-		if(ally_cover)
-			ally_turfs[ally_cover] = TRUE
+	var/list/ally_turfs = get_ai_ally_claimed_turfs(fighter, range * 3)
 	// nearest first by how far we'd go to get there, round or over what's in the way, so we only look further when there's nowhere close
 	var/list/reachable = ai_reachable_turfs(fighter, range)
 	var/list/candidates = list()
@@ -406,8 +422,8 @@
 			break
 		if(candidate == exclude || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
 			continue
-		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags))
-			continue
+		if(!ai_shot_open_from(fighter, candidate, their_turf, pass_flags))
+			continue // and none of ours in the way, like someone not under our control
 		var/shooting_through_ally = FALSE
 		for(var/turf/line_turf as anything in get_line(candidate, their_turf))
 			if(line_turf != candidate && ally_turfs[line_turf])

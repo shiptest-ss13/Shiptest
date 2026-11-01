@@ -57,7 +57,7 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_HEADING_HOME)
 	if(!was_heading_home)
 		note_trail(controller, our_turf, home)
-	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time)
+	if(AI_RECENTLY_SHOT_AT(controller, under_fire_time))
 		forget_waypoint(controller)
 		return // someone's shooting at us, so deal with that first
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]

@@ -37,7 +37,7 @@
 	var/turf/seen_at = controller.blackboard[BB_BASIC_MOB_DOWNED_SEEN_AT]
 	if(!seen_at || seen_at.z != our_turf.z)
 		return FALSE
-	var/no_way_there = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == seen_at && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < AI_NO_PATH_MEMORY
+	var/no_way_there = AI_NO_PATH_TO_RECENTLY(controller, seen_at, AI_NO_PATH_MEMORY)
 	if(no_way_there || get_dist(our_turf, seen_at) > controller.max_target_distance - home_range)
 		return FALSE // too far round to path to, so back along our trail, hopefully passing by them again
 	if(get_dist(our_turf, seen_at) <= 1)

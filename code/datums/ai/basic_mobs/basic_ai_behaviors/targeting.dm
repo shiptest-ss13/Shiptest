@@ -44,7 +44,7 @@
 
 /datum/ai_behavior/find_potential_targets/proc/pick_final_target(datum/ai_controller/controller, list/filtered_targets)
 	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
-	if(attacker && (attacker in filtered_targets) && !ai_is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 5 SECONDS)
+	if(attacker && (attacker in filtered_targets) && !ai_is_downed(attacker) && AI_RECENTLY_SHOT_AT(controller, 5 SECONDS))
 		return attacker
 	var/list/standing_targets = list()
 	for(var/atom/possible_target as anything in filtered_targets)

@@ -359,7 +359,7 @@
 // whether we gave up on finding a way to where we're going lately, and nothing's moved since, so searching again would only fail the same way
 /datum/ai_movement/jps/proc/still_no_path(datum/ai_controller/controller, atom/movable/movable_pawn)
 	var/atom/target = controller.current_movement_target
-	if(controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] != target || world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] >= AI_NO_PATH_MEMORY)
+	if(!AI_NO_PATH_TO_RECENTLY(controller, target, AI_NO_PATH_MEMORY))
 		return FALSE
 	return controller.blackboard[BB_BASIC_MOB_NO_PATH_FROM] == get_turf(movable_pawn) && controller.blackboard[BB_BASIC_MOB_NO_PATH_TARGET_TURF] == get_turf(target)
 

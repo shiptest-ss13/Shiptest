@@ -139,12 +139,12 @@
 	if(target && !target_down && !target_unseen && fights_up_close && world.time - controller.blackboard[BB_BASIC_MOB_TARGET_SINCE] < melee_commitment)
 		return target
 	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
-	if(attacker && attacker != target && (attacker in candidates) && !ai_is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < attacker_memory)
+	if(attacker && attacker != target && (attacker in candidates) && !ai_is_downed(attacker) && AI_RECENTLY_SHOT_AT(controller, attacker_memory))
 		// ai cheese prevention
 		var/fighting_in_reach = target_in_reach && !living_pawn.GetComponent(/datum/component/ranged_attacks)
 		if(!fighting_in_reach)
 			return attacker
-	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < attacker_memory && !target_in_reach)
+	if(AI_RECENTLY_HURT(controller, attacker_memory) && !target_in_reach)
 		var/atom/up_close = find_adjacent_candidate(living_pawn, candidates, target)
 		if(up_close)
 			return up_close

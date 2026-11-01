@@ -434,6 +434,10 @@
 ///Somewhere we're moving to so we can throw from there, as we're too close, too far or have no clear throw from where we are, and when we give up getting there
 #define BB_BASIC_MOB_GRENADE_SPOT "BB_basic_grenade_spot"
 #define BB_BASIC_MOB_GRENADE_SPOT_UNTIL "BB_basic_grenade_spot_until"
+///Who we're fighting that's stayed put, where, and since when, so we can tell when they're holding a spot and a grenade could be used
+#define BB_BASIC_MOB_ENEMY_HELD_BY "BB_basic_enemy_held_by"
+#define BB_BASIC_MOB_ENEMY_HELD_TURF "BB_basic_enemy_held_turf"
+#define BB_BASIC_MOB_ENEMY_HELD_SINCE "BB_basic_enemy_held_since"
 ///Mid-throw: when we prime the grenade, the primed one in our hand, and when we let it go
 #define BB_BASIC_MOB_GRENADE_PRIME_AT "BB_basic_grenade_prime_at"
 #define BB_BASIC_MOB_HELD_GRENADE "BB_basic_held_grenade"

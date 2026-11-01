@@ -571,7 +571,7 @@ multiple modular subtrees with behaviors
 	var/ignore_until = LAZYACCESS(blackboard[BB_BASIC_MOB_IGNORED_TARGETS], target)
 	if((!leashed_until || world.time >= leashed_until) && (!ignore_until || world.time >= ignore_until))
 		return FALSE
-	if(blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 2 SECONDS)
+	if(blackboard[BB_BASIC_MOB_SHOT_BY] == target && AI_RECENTLY_SHOT_AT(src, 2 SECONDS))
 		if(leashed_until)
 			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target) // they've picked the fight back up, so it's on again until they lead us too far again
 		return FALSE
@@ -595,6 +595,8 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/learn_of_target(atom/target, turf/seen_at, how)
 	if(how != AI_LEARNED_SHOT && check_still_ignoring(target))
 		return FALSE // we know there's no getting to them
+	if(blackboard[BB_BASIC_MOB_CURRENT_TARGET] != target)
+		set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time) // someone new, so how long we've been after them starts now, as it does for anyone we pick ourselves
 	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
 	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
 	if(how == AI_LEARNED_TOLD)

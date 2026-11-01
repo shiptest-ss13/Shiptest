@@ -50,7 +50,7 @@
 	var/atom/their_target = ally_controller.blackboard[target_key]
 	if(!QDELETED(their_target))
 		return FALSE // already busy, or already on it
-	if(AI_RECENTLY_SAW_ENEMY(ally_controller, AI_FIGHT_MEMORY) || world.time - ally_controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < AI_FIGHT_MEMORY)
+	if(AI_RECENTLY_SAW_ENEMY(ally_controller, AI_FIGHT_MEMORY) || AI_RECENTLY_HURT(ally_controller, AI_FIGHT_MEMORY))
 		return FALSE // between targets in a fight of their own, so they'll find the next one themselves rather than running off to ours
 	ally_controller.learn_of_target(target, seen_at, AI_LEARNED_TOLD)
 	return ally_controller.blackboard[target_key] == target

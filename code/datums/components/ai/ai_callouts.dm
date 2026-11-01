@@ -456,7 +456,7 @@ GLOBAL_LIST_EMPTY(ai_called_down)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target))
 		return TRUE
-	return world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 5 SECONDS // someone we haven't found yet is still shooting
+	return AI_RECENTLY_SHOT_AT(controller, 5 SECONDS) // someone we haven't found yet is still shooting
 
 /datum/component/ai_callouts/proc/watch_downed_victim(mob/living/victim, inherited = FALSE)
 	if(downed_victim)

@@ -20,7 +20,7 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_SMASH_TARGET)
 	if(!istype(basic_mob) || !basic_mob.environment_smash || !basic_mob.obj_damage)
 		return
-	if(controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] != target || world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] >= no_path_memory)
+	if(!AI_NO_PATH_TO_RECENTLY(controller, target, no_path_memory))
 		return // we can get to them, or haven't found out we can't yet
 	var/turf/our_turf = get_turf(basic_mob)
 	var/turf/their_turf = get_turf(target)

@@ -38,7 +38,7 @@
 	var/turf/their_turf = get_turf(target)
 	var/obj/projectile/projectile_type = ranged_attack.get_projectile_type()
 	var/pass_flags = ranged_attack.get_pass_flags()
-	var/recently_shot_at = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_at_memory
+	var/recently_shot_at = AI_RECENTLY_SHOT_AT(controller, shot_at_memory)
 	var/atom/blocker = get_cached_shot_blocker(controller.pawn, target)
 	if(cover_between(our_turf, target) && !blocker && our_turf != controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
 		// already as good as it gets, and remember it so you don't immediately wander off

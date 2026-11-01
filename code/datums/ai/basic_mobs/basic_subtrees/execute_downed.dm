@@ -51,7 +51,7 @@
 /datum/ai_planning_subtree/execute_downed/proc/ready_to_execute(datum/ai_controller/controller, mob/living/basic/human/executioner)
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_EXECUTION] || !isnull(ai_post_radius(controller)))
 		return FALSE
-	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < AI_EXECUTION_CALM_TIME || AI_MORALE_IS(controller, AI_MORALE_BROKEN))
+	if(AI_RECENTLY_SHOT_AT(controller, AI_EXECUTION_CALM_TIME) || AI_MORALE_IS(controller, AI_MORALE_BROKEN))
 		return FALSE
 	return !!executioner.get_execution_style()
 

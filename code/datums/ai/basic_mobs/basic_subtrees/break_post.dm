@@ -28,7 +28,7 @@
 
 /datum/ai_planning_subtree/break_post/proc/get_flanked_reason(datum/ai_controller/controller, atom/target, turf/our_turf)
 	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY]
-	if(QDELETED(attacker) || world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= flanked_shot_time || cover_between(our_turf, attacker))
+	if(QDELETED(attacker) || !AI_RECENTLY_SHOT_AT(controller, flanked_shot_time) || cover_between(our_turf, attacker))
 		return null
 	if(attacker != target && cover_between(our_turf, target))
 		return "[attacker]'s got us from the side, while we're covered from [target]"

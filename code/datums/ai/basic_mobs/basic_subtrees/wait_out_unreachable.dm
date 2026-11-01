@@ -84,11 +84,11 @@
 
 // whether target's shot us lately
 /datum/ai_planning_subtree/wait_out_unreachable/proc/shot_by_lately(datum/ai_controller/controller, atom/target)
-	return controller.blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_while_waiting_memory
+	return controller.blackboard[BB_BASIC_MOB_SHOT_BY] == target && AI_RECENTLY_SHOT_AT(controller, shot_while_waiting_memory)
 
 // whether we can get at them from here
 /datum/ai_planning_subtree/wait_out_unreachable/proc/can_get_at(datum/ai_controller/controller, atom/target, turf/their_turf)
-	var/no_way_to_them = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == target && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < no_path_memory
+	var/no_way_to_them = AI_NO_PATH_TO_RECENTLY(controller, target, no_path_memory)
 	if(no_way_to_them && can_walk_straight_to(controller.pawn, their_turf))
 		no_way_to_them = FALSE // there's nothing between us, so whatever our movement made of it, we can get to them
 	return !no_way_to_them && ai_can_stand_on(controller.pawn, their_turf, ignoring = target) // them burning is no reason to keep off them

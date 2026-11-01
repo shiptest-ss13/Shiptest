@@ -19,7 +19,7 @@
 	if(world.time >= controller.blackboard[BB_BASIC_MOB_NOISE_UNTIL])
 		forget_noise(controller)
 		return
-	var/no_way_there = controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == noise_turf
+	var/no_way_there = AI_NO_PATH_TO_RECENTLY(controller, noise_turf, AI_NO_PATH_MEMORY)
 	if(get_dist(controller.pawn, noise_turf) > arrive_distance && !no_way_there)
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_NOISE_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING

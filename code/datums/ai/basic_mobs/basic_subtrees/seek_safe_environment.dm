@@ -25,7 +25,7 @@
 		on_skipped(controller)
 		return
 	var/turf/safe_turf = controller.blackboard[BB_BASIC_MOB_SAFE_TURF]
-	if(safe_turf && controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == safe_turf)
+	if(safe_turf && AI_NO_PATH_TO_RECENTLY(controller, safe_turf, AI_NO_PATH_MEMORY))
 		// our movement couldn't find a way there, so somewhere else, and get on with things here meanwhile
 		AI_LOG_DECISION(controller, "seek_safe_environment: no way to [safe_turf], looking elsewhere")
 		controller.set_blackboard_key(BB_BASIC_MOB_BAD_SAFE_TURF, safe_turf)
@@ -86,7 +86,7 @@
 
 /datum/ai_planning_subtree/seek_safe_environment/proc/find_safe_turf(mob/living/basic/basic_mob, turf/exclude)
 	var/turf/our_turf = get_turf(basic_mob)
-	var/list/taken_turfs = get_taken_turfs(basic_mob)
+	var/list/taken_turfs = get_ai_ally_claimed_turfs(basic_mob, search_range)
 	var/turf/best_turf
 	var/best_score = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(search_range, our_turf))
@@ -112,7 +112,7 @@
 		return null
 	var/in_flames = is_ai_hazard_turf(our_turf, basic_mob)
 	var/our_temperature = our_turf.air ? our_turf.air.return_temperature() : TCMB
-	var/list/taken_turfs = get_taken_turfs(basic_mob)
+	var/list/taken_turfs = get_ai_ally_claimed_turfs(basic_mob, search_range)
 	var/turf/best_turf
 	var/best_temperature = INFINITY
 	var/best_distance = INFINITY
@@ -131,16 +131,6 @@
 		best_temperature = temperature
 		best_distance = distance
 	return best_turf
-
-// see if another mob is already in that turf, don't take it
-/datum/ai_planning_subtree/seek_safe_environment/proc/get_taken_turfs(mob/living/basic/basic_mob)
-	var/list/taken_turfs = list()
-	for(var/mob/living/ally as anything in get_ai_allies_in_range(basic_mob, search_range))
-		taken_turfs[get_turf(ally)] = TRUE
-		var/turf/ally_safe_turf = ally.ai_controller.blackboard[BB_BASIC_MOB_SAFE_TURF]
-		if(ally_safe_turf)
-			taken_turfs[ally_safe_turf] = TRUE
-	return taken_turfs
 
 /datum/ai_planning_subtree/seek_safe_environment/proc/next_to_doorway(turf/spot)
 	for(var/direction in GLOB.cardinals)

@@ -134,7 +134,7 @@
 	if(!QDELETED(target) && !cover_facing(home, target))
 		return // it doesn't cover us from them, so wherever we are is as good
 	var/turf/shot_from = controller.blackboard[BB_BASIC_MOB_SHOT_FROM]
-	if(shot_from && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_at_memory && !cover_facing(home, shot_from))
+	if(shot_from && AI_RECENTLY_SHOT_AT(controller, shot_at_memory) && !cover_facing(home, shot_from))
 		return
 	if(!ai_can_take_spot(controller.pawn, home))
 		return

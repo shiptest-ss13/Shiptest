@@ -24,7 +24,7 @@
 		return FALSE // close enough to rush them, or they have no weapon in hand/are reloading
 	if(controller.blackboard[BB_BASIC_MOB_MELEE_RECKLESS] || world.time < controller.blackboard[BB_BASIC_MOB_GROUP_CHARGE_UNTIL])
 		return FALSE // reckless, or we're going in together
-	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= quiet_time || controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
+	if(!AI_RECENTLY_SHOT_AT(controller, quiet_time) || controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
 		return FALSE // they're not hitting us, so go for them
 	return world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_APPROACH_SEARCH]
 
