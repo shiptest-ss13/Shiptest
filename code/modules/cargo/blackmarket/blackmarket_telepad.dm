@@ -329,7 +329,7 @@
 
 	say("Item placed on the market!")
 	playsound(src, 'sound/effects/cashregister.ogg', 40, FALSE)
-	COOLDOWN_START(src, recharge_cooldown, recharge_time * 3)
+//	COOLDOWN_START(src, recharge_cooldown, recharge_time * 3)
 
 #undef LTSRBT_MAX_MARKET_ITEMS
 

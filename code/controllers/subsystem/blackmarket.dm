@@ -81,6 +81,7 @@ SUBSYSTEM_DEF(blackmarket)
 						pickedloc = vlevel.get_side_turf(startSide)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
+				//purchase.item.move
 				item.Move(get_step(pickedloc,get_dir(pickedloc,T)))
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)]."))
 
