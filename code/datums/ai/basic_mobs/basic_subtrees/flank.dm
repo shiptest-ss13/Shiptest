@@ -90,7 +90,7 @@
 		// we've come round behind them, so through the door at them
 		controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
 		return TRUE
-	if(!angle_turf || our_turf == angle_turf || !still_an_angle(angle_turf, their_turf, pass_flags, target))
+	if(!angle_turf || our_turf == angle_turf || !still_an_angle(controller.pawn, angle_turf, their_turf, pass_flags, target))
 		angle_turf = find_angle_on(controller, target, pass_flags)
 		if(!angle_turf)
 			end_flank(controller) // nowhere to get an angle from any more, so stay put
@@ -164,11 +164,10 @@
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || claimed_turfs[candidate] || !ai_can_take_spot(living_pawn, candidate))
 			continue
-		if(cover_between(their_turf, candidate) || ai_shield_facing(target, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
+		var/angle = check_angle(living_pawn, candidate, their_turf, pass_flags, target)
+		if(!angle)
 			continue
-		var/atom/blocker = get_shot_blocker(candidate, their_turf, pass_flags = pass_flags)
-		if(blocker && !ai_is_door(blocker))
-			continue
+		var/atom/blocker = isatom(angle) ? angle : null // a door in the way
 		var/round_the_back = (candidate.x - their_turf.x) * from_x + (candidate.y - their_turf.y) * from_y <= 0
 		if(blocker && !round_the_back)
 			continue
@@ -209,9 +208,15 @@
 			return FALSE
 	return TRUE
 
-// whether angle_turf still gets us at them, as they move about
-/datum/ai_planning_subtree/flank/proc/still_an_angle(turf/angle_turf, turf/their_turf, pass_flags, atom/target)
-	if(cover_between(their_turf, angle_turf) || ai_shield_facing(target, angle_turf))
-		return FALSE // or they've turned their shield to face it
-	var/atom/blocker = get_shot_blocker(angle_turf, their_turf, pass_flags = pass_flags)
-	return !blocker || ai_is_door(blocker)
+// whether the flank angle is still good
+/datum/ai_planning_subtree/flank/proc/still_an_angle(mob/living/shooter, turf/angle_turf, turf/their_turf, pass_flags, atom/target)
+	return !!check_angle(shooter, angle_turf, their_turf, pass_flags, target)
+
+// whether shooter would have an angle on target from spot
+/datum/ai_planning_subtree/flank/proc/check_angle(mob/living/shooter, turf/spot, turf/their_turf, pass_flags, atom/target)
+	if(cover_between(their_turf, spot) || ai_shield_facing(target, spot) || ally_in_line_of_fire(shooter, spot, their_turf))
+		return FALSE
+	var/atom/blocker = get_shot_blocker(spot, their_turf, pass_flags = pass_flags)
+	if(!blocker)
+		return TRUE
+	return ai_is_door(blocker) ? blocker : FALSE
