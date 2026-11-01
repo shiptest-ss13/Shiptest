@@ -115,3 +115,8 @@
 		item = entry.item
 	uplink = _uplink
 	method = _method
+
+/datum/blackmarket_purchase/proc/get_item()
+	if(!item || ispath(item))
+		item = entry.spawn_item()
+	return item

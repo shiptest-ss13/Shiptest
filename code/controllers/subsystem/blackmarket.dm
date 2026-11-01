@@ -80,8 +80,10 @@ SUBSYSTEM_DEF(blackmarket)
 					else
 						pickedloc = vlevel.get_side_turf(startSide)
 
-				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
-				//purchase.item.move
+
+				//var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
+				var/atom/movable/item = purchase.get_item()
+				item.forceMove(pickedloc)
 				item.Move(get_step(pickedloc,get_dir(pickedloc,T)))
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)]."))
 
@@ -127,7 +129,8 @@ SUBSYSTEM_DEF(blackmarket)
 
 				var/obj/structure/closet/supplypod/pod = new()
 				pod.setStyle(STYLE_BOX)
-				purchase.entry.spawn_item(pod)
+				var/atom/movable/item = purchase.get_item()
+				item.forceMove(pod)
 				pod.explosionSize = list(0,0,0,1)
 				new /obj/effect/pod_landingzone(landing_turf, pod)
 
