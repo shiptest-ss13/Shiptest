@@ -35,6 +35,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/item/scratch_ticket/small/fake,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/port)
 "aZ" = (
@@ -48,11 +49,12 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/spitter,
 /obj/item/gun/ballistic/automatic/smg/pounder,
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular,
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light/small/directional/north,
+/obj/item/gun/ballistic/automatic/smg/heater/scorcher,
+/obj/item/gun/ballistic/automatic/marksman/f4/indie,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "be" = (
@@ -97,11 +99,11 @@
 	},
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_x = -9;
-	pixel_y = 2
+	pixel_y = -2
 	},
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_x = -9;
-	pixel_y = 5
+	pixel_y = 1
 	},
 /obj/item/storage/toolbox/ammo/shotgun{
 	pixel_x = 8;
@@ -111,6 +113,14 @@
 /obj/item/storage/toolbox/ammo/c357{
 	pixel_x = 8;
 	pixel_y = 5
+	},
+/obj/item/storage/toolbox/ammo/c57{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/obj/item/storage/toolbox/ammo/a308{
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -407,6 +417,7 @@
 /obj/structure/cable/pink{
 	icon_state = "2-8"
 	},
+/obj/item/gun/ballistic/automatic/pistol/disposable/sharplite,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
 "eF" = (
@@ -691,9 +702,6 @@
 /obj/item/ammo_box/magazine/m12g_slammer,
 /obj/item/ammo_box/magazine/m12g_slammer,
 /obj/item/ammo_box/magazine/m12g_slammer,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
 /obj/item/ammo_box/magazine/m9mm_mauler,
 /obj/item/ammo_box/magazine/m9mm_mauler,
 /obj/item/ammo_box/magazine/m9mm_mauler,
@@ -702,6 +710,16 @@
 /obj/item/ammo_box/magazine/m9mm_mauler,
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light/small/directional/north,
+/obj/item/ammo_box/magazine/heater,
+/obj/item/ammo_box/magazine/heater,
+/obj/item/ammo_box/magazine/heater,
+/obj/item/ammo_box/magazine/heater,
+/obj/item/ammo_box/magazine/skm_762_40,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/m12g_slammer,
+/obj/item/ammo_box/magazine/f4_308,
+/obj/item/ammo_box/magazine/f4_308,
+/obj/item/ammo_box/magazine/f4_308,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "ho" = (
@@ -863,11 +881,15 @@
 	},
 /obj/item/gun_maint_kit{
 	pixel_x = -1;
-	pixel_y = 0
+	pixel_y = -3
 	},
 /obj/item/gun_maint_kit{
 	pixel_x = -1;
-	pixel_y = 6
+	pixel_y = 3
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -1;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1896,6 +1918,11 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
+/obj/machinery/button/door{
+	pixel_x = -10;
+	pixel_y = 24;
+	id = "madagascar_brig_bridgewindow"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sj" = (
@@ -1961,12 +1988,16 @@
 	pixel_y = -1
 	},
 /obj/item/inhaler/cocktail{
-	pixel_x = 6;
+	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 8;
 	pixel_y = -32
+	},
+/obj/item/inhaler/cocktail{
+	pixel_x = 6;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3901,7 +3932,10 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Ly" = (
-/obj/machinery/suit_storage_unit/frontiersmen,
+/obj/item/clothing/suit/space/hardsuit/stealth/frontier,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/mask/gas/frontiersmen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "Lz" = (
@@ -4126,6 +4160,30 @@
 /area/ship/hallway/fore)
 "Nq" = (
 /obj/structure/dresser,
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = -2;
+	pixel_y = 10
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 8;
+	pixel_y = 5
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Nu" = (
@@ -4579,6 +4637,7 @@
 	pixel_x = 0;
 	pixel_y = 32
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Sb" = (
@@ -4914,8 +4973,8 @@
 /obj/effect/turf_decal/trimline/transparent/green/filled/line{
 	dir = 10
 	},
-/obj/machinery/fax/indie,
 /obj/structure/table,
+/obj/machinery/fax/frontiersmen,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "TT" = (
@@ -5342,7 +5401,6 @@
 	pixel_x = 0;
 	pixel_y = 5
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "WV" = (
@@ -5655,6 +5713,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
+"ZU" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "madagascar_brig_bridgewindow"
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "ZZ" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/half,
 /obj/effect/turf_decal/corner/opaque/lightgrey/half{
@@ -6601,7 +6667,7 @@ Aa
 tI
 NI
 DL
-Kl
+ZU
 WR
 SB
 aZ
