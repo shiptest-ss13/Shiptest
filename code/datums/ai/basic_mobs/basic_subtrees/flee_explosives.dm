@@ -18,8 +18,11 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		controller.next_low_priority_plan = 0
 
 // how far a grenade's blast or shrapnel would hurt, or 0 if it's not that kind of grenade, like smoke
-/proc/ai_grenade_danger_radius(obj/item/grenade/grenade)
-	. = max(grenade.ex_dev, grenade.ex_heavy, grenade.ex_light, grenade.ex_flame, grenade.shrapnel_radius)
+/proc/ai_grenade_danger_radius(obj/item/grenade/grenade, stinging_shrapnel = TRUE)
+	var/shrapnel_radius = grenade.shrapnel_radius
+	if(!stinging_shrapnel && ai_shrapnel_only_stings(grenade.shrapnel_type))
+		shrapnel_radius = 0
+	. = max(grenade.ex_dev, grenade.ex_heavy, grenade.ex_light, grenade.ex_flame, shrapnel_radius)
 	var/obj/item/grenade/flashbang/flashbang = grenade
 	if(istype(flashbang))
 		. = max(., flashbang.flashbang_range)
@@ -37,13 +40,20 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	return length(grenade.ai_thrower_factions) && faction_check(pawn.faction, grenade.ai_thrower_factions) // by its factions, as whoever threw it may be dead and gone by now
 
 // ai_grenade_danger_radius() for a type of grenade, before there's one to ask, worked out once for each type
-/proc/ai_grenade_type_danger_radius(grenade_type)
+/proc/ai_grenade_type_danger_radius(grenade_type, stinging_shrapnel = TRUE)
 	var/static/list/radius_by_type = list()
-	if(isnull(radius_by_type[grenade_type]))
+	var/static/list/harm_radius_by_type = list()
+	var/list/cache = stinging_shrapnel ? radius_by_type : harm_radius_by_type
+	if(isnull(cache[grenade_type]))
 		var/obj/item/grenade/grenade = new grenade_type
-		radius_by_type[grenade_type] = ai_grenade_danger_radius(grenade)
+		cache[grenade_type] = ai_grenade_danger_radius(grenade, stinging_shrapnel)
 		qdel(grenade)
-	return radius_by_type[grenade_type]
+	return cache[grenade_type]
+
+// whether shrapnel of this type does more to wind than to wound, like a stingbang's gel clumps
+/proc/ai_shrapnel_only_stings(projectile_type)
+	var/obj/projectile/projectile = projectile_type
+	return ispath(projectile_type, /obj/projectile) && initial(projectile.stamina) > initial(projectile.damage)
 
 // get clear of explosives we can see that are about to go off, before anything else
 /datum/ai_planning_subtree/flee_explosives

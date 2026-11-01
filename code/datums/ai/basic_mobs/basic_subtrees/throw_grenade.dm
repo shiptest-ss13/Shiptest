@@ -11,20 +11,34 @@
 	var/last_seen_memory = 5 SECONDS
 	//the closest they can be, as we don't throw them at someone right on top of us
 	var/minimum_distance = 4
+	//how far we'll move to get a throw in, when we're not in a good spot to throw
+	var/reposition_range = 4
+	//how long we try getting there before giving up on it, however many times we pick somewhere else on the way
+	var/reposition_time = 4 SECONDS
+	//cooldown after giving up before we try again
+	var/give_up_cooldown = 10 SECONDS
+	//how many of the best places for it to land we look for somewhere to throw at from, when we've to move to throw
+	var/max_reposition_landings = 8
+
+/datum/ai_planning_subtree/throw_grenade/on_skipped(datum/ai_controller/controller)
+	give_up_throw_spot(controller) // nobody to throw it at any more
 
 /datum/ai_planning_subtree/throw_grenade/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
-	if(!controller.blackboard[BB_BASIC_MOB_GRENADES_LEFT] || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_GRENADE])
+	var/turf/throw_spot = controller.blackboard[BB_BASIC_MOB_GRENADE_SPOT]
+	if(!controller.blackboard[BB_BASIC_MOB_GRENADES_LEFT] || (!throw_spot && world.time < controller.blackboard[BB_BASIC_MOB_NEXT_GRENADE]))
 		return // none left, or we've only just thrown one, which is most of us most of the time, so this is first
-	if(AI_MORALE_IS(controller, AI_MORALE_BROKEN))
-		return // too busy running
 	var/mob/living/basic/basic_mob = controller.pawn
-	if(basic_mob.incapacitated() || HAS_TRAIT(basic_mob, TRAIT_FLOORED) || LAZYLEN(basic_mob.do_afters))
+	if(AI_MORALE_IS(controller, AI_MORALE_BROKEN) || basic_mob.incapacitated() || HAS_TRAIT(basic_mob, TRAIT_FLOORED) || LAZYLEN(basic_mob.do_afters))
+		give_up_throw_spot(controller) // too busy running, or can't
 		return
-	var/turf/aim = pick_aim(controller)
-	if(!aim)
+	var/turf/target_turf = pick_aim(controller, committed = !!throw_spot)
+	if(!target_turf)
 		controller.clear_blackboard_key(BB_BASIC_MOB_GRENADE_DECISION_AT)
+		give_up_throw_spot(controller)
 		return
+	if(throw_spot)
+		return head_for_throw_spot(controller, target_turf, throw_spot)
 	var/decide_at = controller.blackboard[BB_BASIC_MOB_GRENADE_DECISION_AT]
 	if(isnull(decide_at))
 		controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_DECISION_AT, world.time + decision_interval) // a moment to weigh it up
@@ -32,19 +46,162 @@
 	if(world.time < decide_at)
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_DECISION_AT, world.time + decision_interval)
-	if(!prob(throw_chance) || !safe_to_throw_at(controller, aim))
+	if(!prob(throw_chance))
 		return
+	var/list/landings = get_landings(controller, target_turf)
+	if(!length(landings))
+		return
+	var/turf/landing = pick_landing_from(controller, get_turf(basic_mob), landings)
+	if(landing)
+		throw_at(controller, landing)
+		return SUBTREE_RETURN_FINISH_PLANNING
+	throw_spot = find_throw_spot(controller, landings)
+	if(!throw_spot)
+		return
+	AI_LOG_DECISION(controller, "throw_grenade: moving to [throw_spot] to throw at [target_turf]")
+	controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_SPOT, throw_spot)
+	controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_SPOT_UNTIL, world.time + reposition_time)
+	hold_allies_grenades(controller)
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_GRENADE_SPOT)
+	return SUBTREE_RETURN_FINISH_PLANNING
+
+/datum/ai_planning_subtree/throw_grenade/proc/head_for_throw_spot(datum/ai_controller/controller, turf/target_turf, turf/throw_spot)
+	var/list/landings = world.time > controller.blackboard[BB_BASIC_MOB_GRENADE_SPOT_UNTIL] || controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == throw_spot ? null : get_landings(controller, target_turf)
+	if(!length(landings))
+		AI_LOG_DECISION(controller, "throw_grenade: giving up on throwing from [throw_spot]")
+		give_up_throw_spot(controller)
+		return
+	var/turf/our_turf = get_turf(controller.pawn)
+	var/turf/landing = pick_landing_from(controller, our_turf, landings)
+	if(landing)
+		clear_throw_spot(controller) // there, or they've moved so we've a throw from here already
+		throw_at(controller, landing)
+		return SUBTREE_RETURN_FINISH_PLANNING
+	if(our_turf == throw_spot)
+		give_up_throw_spot(controller) // they moved as we got here, so it's no good now
+		return
+	var/list/ally_spots = get_ally_spots(controller)
+	if(!good_throw_spot(controller, throw_spot, landings, ally_spots[1], ally_spots[2]))
+		var/turf/new_spot = find_throw_spot(controller, landings, ally_spots)
+		if(!new_spot)
+			AI_LOG_DECISION(controller, "throw_grenade: [throw_spot] is no good for a throw any more, giving up")
+			give_up_throw_spot(controller)
+			return
+		AI_LOG_DECISION(controller, "throw_grenade: [throw_spot] is no good for a throw any more, moving to [new_spot] instead")
+		controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_SPOT, new_spot)
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_GRENADE_SPOT)
+	return SUBTREE_RETURN_FINISH_PLANNING
+
+/datum/ai_planning_subtree/throw_grenade/proc/throw_at(datum/ai_controller/controller, turf/aim)
 	AI_LOG_DECISION(controller, "throw_grenade: throwing at [aim] for [controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]]")
 	controller.set_blackboard_key(BB_BASIC_MOB_GRENADE_AIM, aim)
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_GRENADE, world.time + throw_cooldown)
-	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(basic_mob))
+	hold_allies_grenades(controller)
+	controller.queue_behavior(/datum/ai_behavior/throw_grenade, BB_BASIC_MOB_GRENADE_AIM)
+
+/datum/ai_planning_subtree/throw_grenade/proc/hold_allies_grenades(datum/ai_controller/controller)
+	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(controller.pawn))
 		var/datum/ai_controller/ally_controller = ally.ai_controller
 		ally_controller.set_blackboard_key(BB_BASIC_MOB_NEXT_GRENADE, max(ally_controller.blackboard[BB_BASIC_MOB_NEXT_GRENADE], world.time + group_cooldown))
-	controller.queue_behavior(/datum/ai_behavior/throw_grenade, BB_BASIC_MOB_GRENADE_AIM)
-	return SUBTREE_RETURN_FINISH_PLANNING
+
+/datum/ai_planning_subtree/throw_grenade/proc/clear_throw_spot(datum/ai_controller/controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_GRENADE_SPOT)
+	controller.clear_blackboard_key(BB_BASIC_MOB_GRENADE_SPOT_UNTIL)
+
+/datum/ai_planning_subtree/throw_grenade/proc/give_up_throw_spot(datum/ai_controller/controller)
+	if(!controller.blackboard[BB_BASIC_MOB_GRENADE_SPOT])
+		return
+	clear_throw_spot(controller)
+	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_GRENADE, max(controller.blackboard[BB_BASIC_MOB_NEXT_GRENADE], world.time + give_up_cooldown))
+
+// where it could land and catch whoever's at target_turf, safe for ours, best first: catching the most of those we're fighting, then nearest to target_turf
+/datum/ai_planning_subtree/throw_grenade/proc/get_landings(datum/ai_controller/controller, turf/target_turf)
+	var/blast_radius = get_catch_radius(controller)
+	if(isnull(blast_radius) || !target_turf)
+		return list()
+	// where the others we're fighting are, if we've seen them lately
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/list/enemy_turfs = list()
+	var/list/seen_enemies = controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES]
+	for(var/mob/living/enemy as anything in seen_enemies)
+		if(enemy == target || QDELETED(enemy) || !istype(enemy) || enemy.stat == DEAD || world.time - seen_enemies[enemy] > last_seen_memory)
+			continue
+		var/turf/enemy_turf = get_turf(enemy)
+		if(enemy_turf?.z == target_turf.z && get_dist(enemy_turf, target_turf) <= blast_radius * 2)
+			enemy_turfs += enemy_turf
+	var/list/landings = list()
+	var/list/scores = list()
+	for(var/turf/open/candidate in RANGE_TURFS(blast_radius, target_turf))
+		if(candidate != target_turf && !ai_blast_reaches(candidate, target_turf))
+			continue // wall blocker, no good
+		if(!safe_to_land_at(controller, candidate))
+			continue
+		var/caught = 1 // enemies in potential range
+		for(var/turf/enemy_turf as anything in enemy_turfs)
+			if(get_dist(candidate, enemy_turf) <= blast_radius && ai_blast_reaches(candidate, enemy_turf))
+				caught++
+		var/score = caught * 100 - get_dist(candidate, target_turf)
+		var/index = 1
+		while(index <= length(scores) && scores[index] >= score)
+			index++
+		landings.Insert(index, candidate)
+		scores.Insert(index, score)
+	return landings
+
+// get the highest scored spot
+/datum/ai_planning_subtree/throw_grenade/proc/pick_landing_from(datum/ai_controller/controller, turf/from, list/landings)
+	for(var/turf/landing as anything in landings)
+		if(safe_to_throw_from(controller, from, landing))
+			return landing
+	return null
+
+/datum/ai_planning_subtree/throw_grenade/proc/find_throw_spot(datum/ai_controller/controller, list/landings, list/ally_spots)
+	var/mob/living/basic/basic_mob = controller.pawn
+	var/turf/our_turf = get_turf(basic_mob)
+	ally_spots ||= get_ally_spots(controller)
+	var/list/ally_turfs = ally_spots[1]
+	var/list/ally_lines = ally_spots[2]
+	// only the best few, as we check each against every spot we could go
+	if(length(landings) > max_reposition_landings)
+		landings = landings.Copy(1, max_reposition_landings + 1)
+	// nearest first by how far we'd go to get there
+	var/list/reachable = ai_reachable_turfs(basic_mob, reposition_range)
+	for(var/turf/open/candidate in reachable)
+		if(candidate != our_turf && good_throw_spot(controller, candidate, landings, ally_turfs, ally_lines))
+			return candidate
+	return null
+
+// whether we'd have a good throw at one of landings from spot, without taking one of ours' spot or stepping into their line of fire
+/datum/ai_planning_subtree/throw_grenade/proc/good_throw_spot(datum/ai_controller/controller, turf/spot, list/landings, list/ally_turfs, list/ally_lines)
+	if(ally_turfs[spot] || ally_lines[spot])
+		return FALSE
+	if(!ai_can_take_spot(controller.pawn, spot) || is_ai_hazard_turf(spot, controller.pawn))
+		return FALSE
+	return !!pick_landing_from(controller, spot, landings)
+
+/datum/ai_planning_subtree/throw_grenade/proc/get_ally_spots(datum/ai_controller/controller)
+	var/mob/living/basic/basic_mob = controller.pawn
+	var/list/ally_turfs = list()
+	var/list/ally_lines = list()
+	for(var/mob/living/ally as anything in get_ai_allies_in_range(basic_mob, reposition_range * 3))
+		var/datum/ai_controller/ally_controller = ally.ai_controller
+		var/turf/ally_turf = get_turf(ally)
+		ally_turfs[ally_turf] = TRUE
+		if(!istype(ally_controller))
+			continue
+		for(var/key in list(BB_BASIC_MOB_FIGHTING_COVER_TURF, BB_BASIC_MOB_SAFE_TURF, BB_BASIC_MOB_GRENADE_SPOT))
+			var/turf/heading_to = ally_controller.blackboard[key]
+			if(isturf(heading_to))
+				ally_turfs[heading_to] = TRUE
+		var/atom/their_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+		if(!QDELETED(their_target) && ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
+			for(var/turf/line_turf as anything in get_line(ally_turf, get_turf(their_target)))
+				ally_lines[line_turf] = TRUE
+	return list(ally_turfs, ally_lines)
 
 // where we'd throw one, or null if there's no call for it, like someone out in the open we can just shoot
-/datum/ai_planning_subtree/throw_grenade/proc/pick_aim(datum/ai_controller/controller)
+// committed is for once we're on our way somewhere to throw from, so we keep after them wherever they go rather than calling it off as we come round their cover
+/datum/ai_planning_subtree/throw_grenade/proc/pick_aim(datum/ai_controller/controller, committed = FALSE)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(QDELETED(target))
 		return null
@@ -53,7 +210,7 @@
 	var/turf/our_turf = get_turf(controller.pawn)
 	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		var/turf/their_turf = get_turf(target)
-		if(cover_between(their_turf, our_turf) || ai_shield_facing(target, our_turf))
+		if(committed || cover_between(their_turf, our_turf) || ai_shield_facing(target, our_turf))
 			return their_turf // dug in, and a grenade gets round their cover or shield
 		return null
 	var/last_saw_them = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]
@@ -61,18 +218,37 @@
 		return null
 	return controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF] // only just ducked out of sight, like round a corner or into a room
 
-/datum/ai_planning_subtree/throw_grenade/proc/safe_to_throw_at(datum/ai_controller/controller, turf/aim)
-	var/mob/living/basic/basic_mob = controller.pawn
-	var/turf/our_turf = get_turf(basic_mob)
-	var/obj/item/grenade/grenade_type = controller.blackboard[BB_BASIC_MOB_GRENADE_TYPE]
-	if(!our_turf || !aim || aim.z != our_turf.z || !ispath(grenade_type))
+/datum/ai_planning_subtree/throw_grenade/proc/get_danger_radius(datum/ai_controller/controller)
+	var/grenade_type = controller.blackboard[BB_BASIC_MOB_GRENADE_TYPE]
+	if(!ispath(grenade_type, /obj/item/grenade))
+		return null
+	return ai_grenade_type_danger_radius(grenade_type, stinging_shrapnel = FALSE)
+
+// compared to danger radius, also tries to take into account shrapnel or stingbang projectiles
+/datum/ai_planning_subtree/throw_grenade/proc/get_catch_radius(datum/ai_controller/controller)
+	var/harm_radius = get_danger_radius(controller)
+	if(isnull(harm_radius))
+		return null
+	var/full_radius = ai_grenade_type_danger_radius(controller.blackboard[BB_BASIC_MOB_GRENADE_TYPE])
+	if(full_radius <= harm_radius)
+		return harm_radius
+	return max(harm_radius, CEILING(full_radius / 2, 1))
+
+/datum/ai_planning_subtree/throw_grenade/proc/safe_to_throw_from(datum/ai_controller/controller, turf/from, turf/aim)
+	var/danger_radius = get_danger_radius(controller)
+	if(isnull(danger_radius) || !from || !aim || aim.z != from.z)
 		return FALSE
-	var/danger_radius = ai_grenade_type_danger_radius(grenade_type)
+	var/obj/item/grenade/grenade_type = controller.blackboard[BB_BASIC_MOB_GRENADE_TYPE]
 	var/safe_distance = max(minimum_distance, danger_radius + 1)
-	var/distance = get_dist(our_turf, aim)
+	var/distance = get_dist(from, aim)
 	if(distance < safe_distance || distance > initial(grenade_type.throw_range))
-		return FALSE // it'd catch us too, or we can't throw it that far
-	if(!ai_clear_throw(basic_mob, our_turf, aim, safe_distance) || ally_in_line_of_fire(basic_mob, our_turf, aim))
+		return FALSE
+	return ai_clear_throw(controller.pawn, from, aim, safe_distance) && !ally_in_line_of_fire(controller.pawn, from, aim)
+
+/datum/ai_planning_subtree/throw_grenade/proc/safe_to_land_at(datum/ai_controller/controller, turf/aim)
+	var/mob/living/basic/basic_mob = controller.pawn
+	var/danger_radius = get_danger_radius(controller)
+	if(isnull(danger_radius) || !aim)
 		return FALSE
 	for(var/mob/living/someone in range(danger_radius + 1, aim))
 		if(someone != basic_mob && someone.stat != DEAD && basic_mob.faction_check_mob(someone))
@@ -80,6 +256,13 @@
 	for(var/turf/blast_turf as anything in RANGE_TURFS(danger_radius, aim))
 		if(is_bare_space(blast_turf))
 			return FALSE // it could blow a hole through to space
+	return TRUE
+
+// whether a blast at center would get to spot, with no wall between
+/proc/ai_blast_reaches(turf/center, turf/spot)
+	for(var/turf/line_turf as anything in get_line(center, spot))
+		if(line_turf.density)
+			return FALSE
 	return TRUE
 
 // whether something thrown from start would get to finish, over tables and sandbags as a throw does, without stopping on anything solid,

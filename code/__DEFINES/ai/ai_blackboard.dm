@@ -431,6 +431,9 @@
 ///When we next weigh up throwing a grenade, now there's reason to, and where we're throwing it once we have
 #define BB_BASIC_MOB_GRENADE_DECISION_AT "BB_basic_grenade_decision_at"
 #define BB_BASIC_MOB_GRENADE_AIM "BB_basic_grenade_aim"
+///Somewhere we're moving to so we can throw from there, as we're too close, too far or have no clear throw from where we are, and when we give up getting there
+#define BB_BASIC_MOB_GRENADE_SPOT "BB_basic_grenade_spot"
+#define BB_BASIC_MOB_GRENADE_SPOT_UNTIL "BB_basic_grenade_spot_until"
 ///Mid-throw: when we prime the grenade, the primed one in our hand, and when we let it go
 #define BB_BASIC_MOB_GRENADE_PRIME_AT "BB_basic_grenade_prime_at"
 #define BB_BASIC_MOB_HELD_GRENADE "BB_basic_held_grenade"
