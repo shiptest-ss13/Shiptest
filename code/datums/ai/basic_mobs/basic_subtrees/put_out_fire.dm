@@ -35,6 +35,14 @@
 	var/urgent = living_pawn.health < living_pawn.maxHealth * urgent_health_fraction || world.time - out_of_fire_since >= cover_time + controller.blackboard[BB_BASIC_MOB_COVER_TIME_EXTRA]
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	var/seen = !QDELETED(target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE
+	if(seen && living_pawn.fights_while_burning)
+		try_spreading_fire(controller, living_pawn, target) // no rolling about while there's someone to burn
+		return
+	if(living_pawn.get_outfit_thermal_protection() >= FIRE_SUIT_MAX_TEMP_PROTECT)
+		urgent = urgent || living_pawn.bodytemperature >= living_pawn.maximum_survivable_temperature
+		if(seen && !urgent)
+			try_spreading_fire(controller, living_pawn, target)
+			return
 	if(seen && !urgent)
 		if(controller.blackboard[BB_BASIC_MOB_MELEE_RECKLESS])
 			try_spreading_fire(controller, living_pawn, target) // and take them with us

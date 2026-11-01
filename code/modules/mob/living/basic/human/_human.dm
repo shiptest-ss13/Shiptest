@@ -125,6 +125,8 @@
 	var/throw_back_chance = 5
 	/// If TRUE, the mob sprays fire with a flamethrower rather than firing a gun
 	var/fires_flames = FALSE
+	/// If TRUE, we don't stop to roll while burning as long as we can see who we're after, only once they're out of sight.
+	var/fights_while_burning = FALSE
 	/// If TRUE, the mob holds their fire when one of theirs is in the way
 	var/check_friendly_fire = FALSE
 

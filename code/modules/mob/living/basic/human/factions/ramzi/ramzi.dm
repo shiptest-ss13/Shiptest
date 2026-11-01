@@ -270,6 +270,7 @@
 	melee_knockback = 3
 	knockdowns_slow_instead = TRUE // too juiced up to go down, it just staggers
 	executes_downed = FALSE // no ceremony, it just keeps hammering
+	fights_while_burning = TRUE
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
@@ -752,6 +753,7 @@
 	name = "Ramzi Clique Incinerator"
 	desc = "Crimson and darkness fill the mold of an armored commando, eyes rapidly switching targets as it strides. Its combat shotgun is raised, ready to let loose a roar that shall not be forgotten."
 	casing_type = /obj/item/ammo_casing/shotgun/dragonsbreath
+	fights_while_burning = TRUE
 	burst_shots = 2
 	burst_interval = 0.7 SECONDS
 

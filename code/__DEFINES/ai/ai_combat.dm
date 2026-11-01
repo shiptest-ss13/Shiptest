@@ -203,6 +203,8 @@
 // Fire
 ///The cooldown for how often a mob tries to set someone else on fire
 #define AI_FIRE_SPREAD_COOLDOWN (3 SECONDS)
+///For fireproof mobs, how close to overheating they need to get before they want to stop being on fire.
+#define AI_FIRE_SUIT_OVERHEAT_MARGIN 20
 
 // Picking somewhere to hide or fight from
 ///The nearest spot out of their sight that'll do

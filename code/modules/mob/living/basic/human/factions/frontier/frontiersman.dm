@@ -418,7 +418,6 @@
 	weapon_drop_chance = 0
 
 /mob/living/basic/human/frontier/ranged/trooper/flame
-	fires_flames = TRUE
 	name = "Frontiersman Scorcher"
 	desc = "An ashen revenant wades through a sea of flames, mummified under twenty pounds of blackened asbestos fabric. Mirrored lenses glare inscrutably as they swing their instrument of destruction towards you. You should probably run."
 	icon_state = "frontiersmanflametrooper"
@@ -428,6 +427,8 @@
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
+	fires_flames = TRUE
+	fights_while_burning = TRUE
 
 	engage_distance = 1
 	retreat_distance = null

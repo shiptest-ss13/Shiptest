@@ -139,7 +139,12 @@
 /proc/ai_is_fireproof(atom/movable/mover)
 	var/mob/living/basic/human/basic_human = mover
 	if(istype(basic_human))
-		return basic_human.get_outfit_thermal_protection() >= FIRE_SUIT_MAX_TEMP_PROTECT
+		var/thermal_protection = basic_human.get_outfit_thermal_protection()
+		if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
+			return TRUE
+		if(thermal_protection < FIRE_SUIT_MAX_TEMP_PROTECT)
+			return FALSE
+		return basic_human.ai_controller?.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE && basic_human.bodytemperature < basic_human.maximum_survivable_temperature - AI_FIRE_SUIT_OVERHEAT_MARGIN
 	return isliving(mover) && HAS_TRAIT(mover, TRAIT_RESISTHEAT)
 
 // whether mover's getting out of somewhere that's hurting it, so it'd go through fire to get clear
