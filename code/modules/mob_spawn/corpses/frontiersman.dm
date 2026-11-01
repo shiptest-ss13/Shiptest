@@ -41,6 +41,9 @@
 /obj/effect/mob_spawn/human/corpse/frontier/space
 	outfit = /datum/outfit/frontier/trooper/space
 
+/obj/effect/mob_spawn/human/corpse/frontier/space/light
+	outfit = /datum/outfit/frontier/trooper/space/light
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 	outfit = /datum/outfit/frontier/internals
 
@@ -80,6 +83,11 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
 	mask = /obj/item/clothing/mask/gas/frontiersmen
 	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/frontier/trooper/space/light
+	name = "Frontiersman Runner Space Corpse"
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/frontier
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
 
 /obj/effect/mob_spawn/human/corpse/frontier/hullpiercer
 	name = "Frontiersman Hullpiercer"

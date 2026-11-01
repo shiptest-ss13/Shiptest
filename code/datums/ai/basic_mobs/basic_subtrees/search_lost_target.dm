@@ -63,6 +63,8 @@
 	if(!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK))
 		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
 		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+		if(world.time < controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
+			return AI_SEARCH_STYLE_HOLD // they were shooting us from where we couldn't get at them, so we don't walk back into it
 		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf, ignoring = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])) ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
 	if(controller.blackboard[BB_BASIC_MOB_RALLYING])
 		// DONT blindfire or shoot at rally targets

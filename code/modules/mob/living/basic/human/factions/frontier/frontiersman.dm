@@ -314,12 +314,12 @@
 	icon_state = "frontiersmenrangedelite_space"
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
-	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space/light
+	armor_base = /obj/item/clothing/suit/space/hardsuit/stealth/frontier
 
 /mob/living/basic/human/frontier/ranged/trooper/space/spitter
 	name = "Frontiersman Runner"
-	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun with the bulky gauntlets of their grey hardsuit."
+	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun, a ragged cloak trailing from the shoulders of their light hardsuit."
 	burst_shots = 8
 	burst_interval = 0.1 SECONDS
 	retreat_distance = 4
@@ -403,6 +403,18 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 
 /mob/living/basic/human/frontier/ranged/trooper/wasp/internals/neutered
+	weapon_drop_chance = 0
+
+/mob/living/basic/human/frontier/ranged/trooper/wasp/space
+	habitable_atmos = IMMUNE_ATMOS_REQS
+	icon_state = "frontiersmenrangedelite_space"
+	minimum_survivable_temperature = 0
+	maximum_survivable_temperature = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space/light
+	armor_base = /obj/item/clothing/suit/space/hardsuit/stealth/frontier
+	in_hardsuit = TRUE
+
+/mob/living/basic/human/frontier/ranged/trooper/wasp/space/neutered
 	weapon_drop_chance = 0
 
 /mob/living/basic/human/frontier/ranged/trooper/flame

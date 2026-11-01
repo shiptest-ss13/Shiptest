@@ -22,6 +22,12 @@
 	var/smashes_line_blocker = TRUE
 	//whether we break through anyway when there's nowhere out of their sight to wait for them
 	var/breaks_through_with_nowhere_to_wait = TRUE
+	//how far we'll go to get out of sight of them when they're shooting us from where we can't get at them
+	var/retreat_range = 10
+	//how long after they last shot us like that we keep out of their line, rather than going looking for them where we last saw them
+	var/retreat_hold_time = 15 SECONDS
+	//what we fire back with as we go, for those who can
+	var/datum/ai_behavior/cover_fire_behavior
 
 /datum/ai_planning_subtree/wait_out_unreachable/on_skipped(datum/ai_controller/controller)
 	forget_wait(controller)
@@ -52,16 +58,33 @@
 	if(!wait_turf && world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_WAIT_SEARCH])
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_WAIT_SEARCH, world.time + search_interval)
 		wait_turf = find_wait_spot(controller, target, their_turf)
+		if(!wait_turf && shot_by_lately(controller, target))
+			wait_turf = find_hiding_spot(controller.pawn, their_turf, retreat_range, out_of_sight = TRUE, prefer = AI_HIDE_FAR_FROM_THREAT)
 		if(wait_turf)
 			controller.set_blackboard_key(BB_BASIC_MOB_WAIT_TURF, wait_turf)
 			AI_LOG_DECISION(controller, "wait_out_unreachable: can't get to [target] at [their_turf], waiting for them at [wait_turf]")
 	if(!wait_turf && breaks_through_with_nowhere_to_wait && try_break_through(controller, target, their_turf, no_hiding = TRUE))
 		return SUBTREE_RETURN_FINISH_PLANNING // nowhere out of their sight to wait, so rather than stand there staring, we break through after all
+	// they're shooting us and there's no getting at them, so we get out of their line rather than standing there for it
+	var/retreating = shot_by_lately(controller, target)
+	if(retreating)
+		if(world.time >= controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
+			AI_LOG_DECISION(controller, "wait_out_unreachable: [target]'s shooting us from where we can't get at them, getting out of their line")
+			ai_callout(controller.pawn, AI_CALLOUT_FALLING_BACK)
+		controller.set_blackboard_key(BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL, world.time + retreat_hold_time) // so search_lost_target doesn't walk us back into it once we're out of sight
+		if(cover_fire_behavior)
+			controller.queue_behavior(cover_fire_behavior, BB_BASIC_MOB_CURRENT_TARGET, BB_TARGETTING_DATUM, BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION)
 	if(wait_turf && get_turf(controller.pawn) != wait_turf)
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_WAIT_TURF)
+	else if(!wait_turf && retreating && isnull(ai_post_radius(controller)))
+		controller.queue_behavior(/datum/ai_behavior/run_away_from_target, BB_BASIC_MOB_CURRENT_TARGET, retreat_range) // nowhere out of their sight, so just away from them
 	else
 		controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_CURRENT_TARGET)
 	return SUBTREE_RETURN_FINISH_PLANNING
+
+// whether target's shot us lately
+/datum/ai_planning_subtree/wait_out_unreachable/proc/shot_by_lately(datum/ai_controller/controller, atom/target)
+	return controller.blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_while_waiting_memory
 
 // whether we can get at them from here
 /datum/ai_planning_subtree/wait_out_unreachable/proc/can_get_at(datum/ai_controller/controller, atom/target, turf/their_turf)
@@ -80,7 +103,7 @@
 		controller.set_blackboard_key(BB_BASIC_MOB_BREACH_ROLLED_FOR, target)
 		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, controller.blackboard[BB_BASIC_MOB_MELEE_RECKLESS] || out_of_patience(controller) || prob(breach_chance)) // the reckless never wait, nor do we once we're done waiting on any of them
 		AI_LOG_DECISION(controller, "wait_out_unreachable: [controller.blackboard[BB_BASIC_MOB_BREACHING] ? "breaking through to" : "lying in wait for"] [target]")
-	else if(!controller.blackboard[BB_BASIC_MOB_BREACHING] && controller.blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_while_waiting_memory)
+	else if(!controller.blackboard[BB_BASIC_MOB_BREACHING] && shot_by_lately(controller, target))
 		controller.set_blackboard_key(BB_BASIC_MOB_BREACHING, TRUE)
 		AI_LOG_DECISION(controller, "wait_out_unreachable: [target] is shooting us from where we can't get at them, breaking through instead of waiting")
 	else if(!controller.blackboard[BB_BASIC_MOB_BREACHING] && out_of_patience(controller))
@@ -184,6 +207,7 @@
 	//as no_shot_grace, but while we're on our way somewhere, like round something we can't shoot through to get an angle on them
 	var/no_shot_moving_grace = 12 SECONDS
 	breach_chance = 30
+	cover_fire_behavior = /datum/ai_behavior/basic_ranged_attack/human
 
 // with nowhere to wait them out, we break through after all, shooting our way through if we can, or smashing if we can't
 /datum/ai_planning_subtree/wait_out_unreachable/ranged/try_break_through(datum/ai_controller/controller, atom/target, turf/their_turf, no_hiding = FALSE)

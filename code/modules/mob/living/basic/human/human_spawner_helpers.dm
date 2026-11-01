@@ -52,9 +52,11 @@
 /proc/get_spawner_flash_protection(spawner_type)
 	var/obj/effect/mob_spawn/human/spawner = spawner_type
 	var/datum/outfit/outfit = initial(spawner.outfit)
-	. = hardsuit_helmet_flash_protection(SPAWNER_SLOT(spawner, outfit, suit)) // a hardsuit's helmet isn't in the head slot, as it comes out of the suit
+	var/obj/item/clothing/suit/space/hardsuit/hardsuit = SPAWNER_SLOT(spawner, outfit, suit)
+	. = hardsuit_helmet_flash_protection(hardsuit) // get protection from hardsuit helmet if its integrated
+	var/obj/item/clothing/hardsuit_helmet = ispath(hardsuit, /obj/item/clothing/suit/space/hardsuit) ? initial(hardsuit.helmettype) : null
 	for(var/obj/item/clothing/worn as anything in list(SPAWNER_SLOT(spawner, outfit, head), SPAWNER_SLOT(spawner, outfit, glasses), SPAWNER_SLOT(spawner, outfit, mask)))
-		if(ispath(worn, /obj/item/clothing))
+		if(ispath(worn, /obj/item/clothing) && worn != hardsuit_helmet) // unless the outfit puts the helmet on too, as some space corpses do, so it's only counted once
 			. += initial(worn.flash_protect)
 
 /proc/hardsuit_helmet_flash_protection(suit_type)
