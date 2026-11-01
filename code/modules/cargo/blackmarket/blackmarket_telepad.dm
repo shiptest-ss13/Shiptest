@@ -272,7 +272,7 @@
 			current_desc = trim(value, MAX_MESSAGE_LEN)
 			return TRUE
 		if("change_price")
-			current_price = clamp(params["value"], LTSRBT_MIN_PRICE, LTSRBT_MAX_PRICE)
+			current_price = clamp(params["value"], LTSRBT_MIN_PRICE, LTSRBT_MAX_PRICE) // null price
 			return TRUE
 		if("place_on_market")
 			place_on_market(usr)

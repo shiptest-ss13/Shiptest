@@ -60,12 +60,14 @@
 	return TRUE
 
 /// Handles buying the item, this is mainly for future use and moving the code away from the uplink.
-/datum/blackmarket_market/proc/purchase(item, category, method, obj/item/blackmarket_uplink/uplink, user)
+/datum/blackmarket_market/proc/purchase(datum/blackmarket_item/item_to_buy, category, method, obj/item/blackmarket_uplink/uplink, user)
 	if(!istype(uplink) || !(method in shipping))
 		return FALSE
 
 	for(var/datum/blackmarket_item/I in available_items[category])
-		if(I.type != item)
+		if(I.type != item_to_buy) //needs an identifier, keeps trying to buy the first local good
+			continue
+		if(I.item != item_to_buy.item)
 			continue
 		var/cost = I.cost + shipping[method]
 		// I can't get the cost of the item and shipping in a clean way to the UI, so I have to do this.
