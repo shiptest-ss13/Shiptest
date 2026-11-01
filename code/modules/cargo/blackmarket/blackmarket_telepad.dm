@@ -9,8 +9,10 @@
 /obj/machinery/ltsrbt
 	name = "Long-To-Short-Range-Bluespace-Transciever"
 	desc = "The LTSRBT is a compact teleportation machine for recieving and sending items across extreme distances and through reasonable interference.\nUsing teleportation frequencies stolen from Makosso-Warra it is near undetectable.\nEssential for any illegal market operations or off-the-book frontier settlements.\n"
-	icon_state = "exonet_node"
 	circuit = /obj/item/circuitboard/machine/ltsrbt
+	icon = 'icons/obj/machines/ltsrbt.dmi'
+	icon_state = "ltsrbt"
+	base_icon_state = "ltsrbt"
 	density = TRUE
 
 	idle_power_usage = IDLE_DRAW_LOW
@@ -135,15 +137,15 @@
 	if(queue.len)
 		recieving = pick_n_take(queue)
 
-// /obj/machinery/ltsrbt/update_overlays()
-// 	. = ..()
-// 	if(!state_open)
-// 		. += "[base_icon_state]_closed"
-// 	else
-// 		var/mutable_appearance/overlay = mutable_appearance(icon, "[base_icon_state]_open")
-// 		overlay.pixel_w -= 2
-// 		overlay.pixel_z -= 1
-// 		. += overlay
+/obj/machinery/ltsrbt/update_overlays()
+	. = ..()
+	if(!state_open)
+		. += "[base_icon_state]_closed"
+	else
+		var/mutable_appearance/overlay = mutable_appearance(icon, "[base_icon_state]_open")
+		overlay.pixel_w -= 2
+		overlay.pixel_z -= 1
+		. += overlay
 
 /obj/machinery/ltsrbt/attack_hand(mob/user, list/modifiers)
 	. = ..()
@@ -197,11 +199,8 @@
 	ui_interact(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// /obj/machinery/ltsrbt/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 /obj/machinery/ltsrbt/attacked_by(obj/item/attacking_item, mob/living/user)
 	. = ..()
-	// if(user.a_intent == INTENT_HARM)
-	// 	return NONE
 
 	var/creds_value = attacking_item.get_item_credit_value()
 
@@ -209,21 +208,21 @@
 		if(locate(/mob/living) in attacking_item.get_all_contents())
 			say("Living being detected, cannot sell!")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
-			return FALSE
+			return TRUE
 		if(!user.transferItemToLoc(attacking_item, src))
 			balloon_alert(user, "stuck to your hands!")
-			return FALSE
+			return TRUE
 		balloon_alert(user, "item loaded")
 		close_machine(attacking_item)
-		return FALSE
+		return TRUE
 	else if(!creds_value)
 		balloon_alert(user, "open the machine!")
-		return FALSE
+		return TRUE
 
 	if(machine_stat & NOPOWER)
 		return
 
-	return TRUE
+	return FALSE
 
 /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -242,7 +241,7 @@
 
 /obj/machinery/ltsrbt/ui_static_data(mob/user)
 	var/list/data = list()
-	data["loaded_icon"] = icon2base64(getFlatIcon(occupant, no_anim=TRUE))
+	//data["loaded_icon"] = icon2base64(getFlatIcon(occupant, no_anim=TRUE))
 	data["min_price"] = LTSRBT_MIN_PRICE
 	data["max_price"] = LTSRBT_MAX_PRICE
 	return data
@@ -329,7 +328,6 @@
 	our_market.add_item(new_item)
 
 	say("Item placed on the market!")
-	say("ding ding")
 	playsound(src, 'sound/effects/cashregister.ogg', 40, FALSE)
 	COOLDOWN_START(src, recharge_cooldown, recharge_time * 3)
 
