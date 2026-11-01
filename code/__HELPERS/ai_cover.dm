@@ -270,6 +270,17 @@
 			return FALSE
 	return !spot.is_blocked_turf(TRUE, mover) && ai_can_stand_on(mover, spot)
 
+// the spots right round center that mover could go and stand on
+/proc/ai_takeable_spots_around(mob/living/mover, atom/center)
+	. = list()
+	var/turf/center_turf = get_turf(center)
+	if(!center_turf)
+		return
+	for(var/direction in GLOB.alldirs)
+		var/turf/candidate = get_step(center_turf, direction)
+		if(candidate && ai_can_take_spot(mover, candidate))
+			. += candidate
+
 // where those of source's side within range are stood, or have picked to go and stand, as list(turf = TRUE), so source doesn't pick the same spot or pile up behind them
 /proc/get_ai_ally_claimed_turfs(mob/living/source, range)
 	var/static/list/claim_keys = list(
@@ -366,6 +377,11 @@
 /proc/ai_holding_cover_against(datum/ai_controller/controller, atom/threat)
 	var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
 	return fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, threat)
+
+// stop fighting from the fighting cover the mob picked, and hiding there from someone dug in if that's what it was, so nothing holds it back on account of it
+/proc/ai_leave_fighting_cover(datum/ai_controller/controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF)
+	controller.clear_blackboard_key(BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL)
 
 // check if shield is "facing" somewhere on a cone, so AI know what to do about it
 /proc/ai_shield_facing(atom/target, turf/spot)

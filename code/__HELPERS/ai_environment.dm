@@ -76,6 +76,22 @@
 		return FALSE
 	return is_ai_hazard_turf(locate(finish.x, start.y, start.z), mover) || is_ai_hazard_turf(locate(start.x, finish.y, start.z), mover)
 
+// whether mover could take one step from start onto finish
+/proc/ai_can_step_to(atom/movable/mover, turf/start, turf/finish)
+	return finish && !finish.is_blocked_turf(TRUE, mover) && !is_ai_hazard_turf(finish, mover) && !ai_diagonal_crosses_hazard(start, finish, mover)
+
+// looks for candidate spots it can run away to
+/proc/ai_spots_away_from(atom/movable/mover, turf/start, turf/danger, distance, list/angle_offsets, min_danger_distance = 0)
+	. = list()
+	var/away_angle = get_angle(danger, start)
+	for(var/angle_offset in angle_offsets)
+		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, start, distance)
+		if(!destination || destination == start || destination.density || is_ai_hazard_turf(destination, mover))
+			continue // somewhere we couldn't stand
+		if(get_dist(destination, danger) < min_danger_distance)
+			continue // not clear of it
+		. += destination
+
 /proc/ai_immune_to_tear_gas(mob/living/victim)
 	var/mob/living/basic/human/basic_human = victim
 	return !istype(basic_human) || basic_human.pepper_proof

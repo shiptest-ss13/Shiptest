@@ -82,13 +82,10 @@
 
 // those of theirs down in sight within AI_EXECUTION_RANGE that nobody's seeing to yet
 /datum/ai_planning_subtree/execute_downed/proc/get_unclaimed_downed(datum/ai_controller/controller, mob/living/executioner)
-	var/turf/our_turf = get_turf(executioner)
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	. = list()
-	for(var/mob/living/carbon/human/downed in hearers(AI_EXECUTION_RANGE, executioner))
+	for(var/mob/living/carbon/human/downed in get_ai_visible_mobs(executioner, AI_EXECUTION_RANGE))
 		if(!ai_is_downed(downed) || downed.stat == DEAD || !isturf(downed.loc) || HAS_TRAIT(downed, TRAIT_AI_EXECUTION_CLAIMED))
-			continue
-		if(ai_too_dark_to_see(executioner, downed, get_turf(downed), get_dist(our_turf, downed), AI_EXECUTION_RANGE))
 			continue
 		if(!targetting_datum?.can_attack(executioner, downed))
 			continue
@@ -128,16 +125,11 @@
 // those of theirs still on their feet we can see
 /datum/ai_planning_subtree/execute_downed/proc/get_standing_enemies(datum/ai_controller/controller)
 	var/mob/living/pawn = controller.pawn
-	var/turf/our_turf = get_turf(pawn)
-	var/vision_range = AI_VISION_RANGE(controller)
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	. = list()
-	for(var/mob/living/someone in hearers(vision_range, pawn))
-		if(someone == pawn || ai_is_downed(someone) || !targetting_datum?.can_attack(pawn, someone))
+	for(var/mob/living/someone as anything in get_ai_visible_mobs(pawn, AI_VISION_RANGE(controller)))
+		if(ai_is_downed(someone) || !targetting_datum?.can_attack(pawn, someone))
 			continue
-		var/turf/their_turf = get_turf(someone)
-		if(ai_too_dark_to_see(pawn, someone, their_turf, get_dist(our_turf, their_turf), vision_range))
-			continue // in sight, but too dark to make out from here
 		. += someone
 
 // whoever we're on is being seen to by one of ours, so the nearest other downed one we can see that nobody's seeing to becomes ours instead. TRUE if there was one

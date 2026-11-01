@@ -93,7 +93,7 @@
 			return
 		controller.clear_blackboard_key(BB_BASIC_MOB_DUG_IN_HITS)
 		controller.set_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF, our_turf)
-		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF)
+		ai_leave_fighting_cover(controller)
 		controller.clear_blackboard_key(BB_BASIC_MOB_TRADING_FIRE_UNTIL)
 		AI_LOG_DECISION(controller, "seek_cover: hit [hits] times in our fighting cover at [our_turf] by someone we can't see, so it's not doing enough, moving")
 		return
@@ -220,10 +220,7 @@
 	if(!cover || !aim)
 		return null
 	var/list/peek_turfs = list()
-	for(var/direction in GLOB.alldirs)
-		var/turf/candidate = get_step(cover, direction)
-		if(!candidate || !ai_can_take_spot(controller.pawn, candidate))
-			continue
+	for(var/turf/candidate as anything in ai_takeable_spots_around(controller.pawn, cover))
 		if(!get_shot_blocker(candidate, aim))
 			peek_turfs += candidate
 	return length(peek_turfs) ? pick(peek_turfs) : null

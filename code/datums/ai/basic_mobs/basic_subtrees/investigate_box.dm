@@ -74,13 +74,9 @@
 	var/turf/look_turf = controller.blackboard[BB_BASIC_MOB_BOX_LOOK_TURF]
 	if(look_turf && get_dist(look_turf, box) <= 1)
 		return look_turf
-	var/turf/box_turf = get_turf(box)
 	var/best_distance = INFINITY
 	look_turf = null
-	for(var/direction in GLOB.alldirs)
-		var/turf/candidate = get_step(box_turf, direction)
-		if(!candidate || !ai_can_take_spot(controller.pawn, candidate))
-			continue
+	for(var/turf/candidate as anything in ai_takeable_spots_around(controller.pawn, box))
 		var/candidate_distance = get_dist(controller.pawn, candidate)
 		if(candidate_distance < best_distance)
 			look_turf = candidate

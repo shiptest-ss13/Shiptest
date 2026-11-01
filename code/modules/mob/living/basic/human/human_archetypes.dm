@@ -142,7 +142,7 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF) // its cover faces them, so it's good again
 	controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 	if(QDELETED(target))
-		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF)
+		ai_leave_fighting_cover(controller)
 	else
 		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, home) // so fighting_cover doesn't take us back off it
 	if(!was_heading_home)

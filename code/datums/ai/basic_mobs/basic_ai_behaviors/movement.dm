@@ -46,7 +46,7 @@
 	var/best_distance = get_dist(our_turf, target)
 	for(var/direction in GLOB.alldirs)
 		var/turf/next_turf = get_step(our_turf, direction)
-		if(!next_turf || next_turf.is_blocked_turf(TRUE, controller.pawn) || is_ai_hazard_turf(next_turf, controller.pawn) || ai_diagonal_crosses_hazard(our_turf, next_turf, controller.pawn))
+		if(!ai_can_step_to(controller.pawn, our_turf, next_turf))
 			continue
 		var/distance = get_dist(next_turf, target)
 		if(distance > best_distance)
@@ -109,15 +109,12 @@
 	stop_our_movement(controller)
 
 /datum/ai_behavior/run_away_from_target/proc/plot_path_away(datum/ai_controller/controller, atom/target, flee_distance)
-	var/turf/our_turf = get_turf(controller.pawn)
-	var/away_angle = get_angle(target, our_turf)
-	for(var/angle_offset in list(0, 45, -45, 90, -90))
-		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination, controller.pawn))
-			continue
-		set_movement_target(controller, destination)
-		return TRUE
-	return FALSE
+	var/static/list/angle_offsets = list(0, 45, -45, 90, -90)
+	var/list/spots = ai_spots_away_from(controller.pawn, get_turf(controller.pawn), get_turf(target), flee_distance, angle_offsets)
+	if(!length(spots))
+		return FALSE
+	set_movement_target(controller, spots[1])
+	return TRUE
 
 /datum/ai_behavior/face_target
 	action_cooldown = 1 SECONDS

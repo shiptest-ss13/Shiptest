@@ -65,12 +65,9 @@
 		return list()
 	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
 	. = list()
-	for(var/mob/living/someone in hearers(our_vision_range, living_pawn))
-		if(someone == living_pawn || controller.check_still_ignoring(someone) || !targetting_datum.can_attack(living_pawn, someone))
+	for(var/mob/living/someone as anything in get_ai_visible_mobs(living_pawn, our_vision_range))
+		if(controller.check_still_ignoring(someone) || !targetting_datum.can_attack(living_pawn, someone))
 			continue
-		var/turf/their_turf = get_turf(someone)
-		if(ai_too_dark_to_see(living_pawn, someone, their_turf, get_dist(our_turf, their_turf), our_vision_range))
-			continue // hidden in the dark
 		. += someone
 	// turrets and mechas
 	for(var/atom/machine as anything in get_ai_machines_on_z(our_turf.z))

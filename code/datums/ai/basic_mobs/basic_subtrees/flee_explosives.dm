@@ -165,13 +165,8 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 
 // get straight line escape route first
 /proc/ai_straight_escape_spots(mob/living/mover, turf/our_turf, turf/explosive_turf, flee_distance)
-	. = list()
-	var/away_angle = get_angle(explosive_turf, our_turf)
-	for(var/angle_offset in list(0, 45, -45, 90, -90, 135, -135))
-		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination, mover) || get_dist(destination, explosive_turf) < flee_distance)
-			continue // somewhere we couldn't stand, or not clear of it
-		. += destination
+	var/static/list/angle_offsets = list(0, 45, -45, 90, -90, 135, -135)
+	return ai_spots_away_from(mover, our_turf, explosive_turf, flee_distance, angle_offsets, min_danger_distance = flee_distance)
 
 // whether explosive's a grenade lying right by us with time left on it to pick up and throw, rather than something planted like c4. Or something loose it's in, like a sack, which goes back sack and all
 /datum/ai_planning_subtree/flee_explosives/proc/can_throw_back(datum/ai_controller/controller, atom/explosive, time_before_throw = 0)

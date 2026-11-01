@@ -51,9 +51,8 @@
 	var/in_cover = enemy_turf && (cover_between(our_turf, enemy) || is_spot_safe_from(our_turf, enemy_turf))
 	var/turf/best_turf
 	var/best_score = INFINITY
-	for(var/direction in shuffle(GLOB.alldirs)) // so ties don't always go the same way
-		var/turf/candidate = get_step(our_turf, direction)
-		if(!candidate || line_of_fire[candidate] || !ai_can_take_spot(living_pawn, candidate) || !can_walk_straight_to(living_pawn, candidate))
+	for(var/turf/candidate as anything in shuffle(ai_takeable_spots_around(living_pawn, our_turf))) // so ties don't always go the same way
+		if(line_of_fire[candidate] || !can_walk_straight_to(living_pawn, candidate))
 			continue
 		var/score = 0
 		if(enemy_turf)

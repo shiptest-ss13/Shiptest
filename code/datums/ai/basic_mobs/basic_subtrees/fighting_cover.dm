@@ -10,12 +10,12 @@
 	var/fights_from_cover_unprovoked = TRUE // FALSE to only bother once we're getting hurt or the enemy is dug in
 
 /datum/ai_planning_subtree/fighting_cover/on_skipped(datum/ai_controller/controller)
-	leave_fighting_cover(controller)
+	ai_leave_fighting_cover(controller)
 
 /datum/ai_planning_subtree/fighting_cover/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
 	if(world.time < controller.blackboard[BB_BASIC_MOB_PRESSING_UNTIL])
-		leave_fighting_cover(controller)
+		ai_leave_fighting_cover(controller)
 		return // they're all down, so we leave our cover to rush them
 	var/atom/target = controller.blackboard[target_key]
 	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
@@ -23,10 +23,10 @@
 	var/hiding_until = controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL]
 	if(hiding_until)
 		if(world.time >= hiding_until)
-			leave_fighting_cover(controller) // we've waited them out long enough, so have another look
+			ai_leave_fighting_cover(controller) // we've waited them out long enough, so have another look
 			fighting_cover = null
 	else if(fighting_cover && !cover_facing(fighting_cover, target))
-		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF) // they've come round it, so it's not covering us from them anymore
+		ai_leave_fighting_cover(controller) // they've come round it, so it's not covering us from them anymore
 		fighting_cover = null
 	if(fighting_cover)
 		if(get_turf(controller.pawn) != fighting_cover)
@@ -69,7 +69,3 @@
 	AI_LOG_DECISION(controller, "fighting_cover: [target]'s dug in and we can't match them, hiding at [hiding_spot]")
 	ai_callout(controller.pawn, AI_CALLOUT_HOLDING)
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_FIGHTING_COVER_TURF)
-
-/datum/ai_planning_subtree/fighting_cover/proc/leave_fighting_cover(datum/ai_controller/controller)
-	controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF)
-	controller.clear_blackboard_key(BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL)

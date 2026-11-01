@@ -49,6 +49,25 @@
 	hearers_cache[key] = list(target.loc, heard_by)
 	return heard_by
 
+/proc/get_ai_visible_mobs(mob/living/viewer, range)
+	var/list/visible_cache = ai_tick_cache("visible_mobs")
+	var/key = "[REF(viewer)]-[range]"
+	var/list/cached = visible_cache[key]
+	if(cached && cached[1] == viewer.loc)
+		return cached[2]
+	var/list/visible = list()
+	var/turf/our_turf = get_turf(viewer)
+	if(our_turf)
+		for(var/mob/living/someone in ai_cached_hearers(viewer, range))
+			if(someone == viewer)
+				continue
+			var/turf/their_turf = get_turf(someone)
+			if(ai_too_dark_to_see(viewer, someone, their_turf, get_dist(our_turf, their_turf), range))
+				continue // in sight, but too dark to make out from here
+			visible += someone
+	visible_cache[key] = list(viewer.loc, visible)
+	return visible
+
 GLOBAL_LIST_EMPTY(ai_revealed_in_dark)
 
 /proc/ai_mark_revealed_in_dark(atom/thing, duration)
