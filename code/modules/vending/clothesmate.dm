@@ -89,8 +89,8 @@
 		/obj/item/clothing/suit/toggle/trenchcoat/noir = 3,
 		/obj/item/clothing/suit/toggle/trenchcoat/navy = 3,
 		/obj/item/clothing/suit/toggle/track = 3,
-		/obj/item/clothing/suit/jacket/letterman = 2,
-		/obj/item/clothing/suit/jacket/letterman_red = 2,
+		/obj/item/clothing/suit/toggle/letterman = 2,
+		/obj/item/clothing/suit/toggle/letterman_red = 2,
 		/obj/item/clothing/under/suit/navy = 1,
 		/obj/item/clothing/under/suit/navy/skirt = 1,
 		/obj/item/clothing/under/suit/black_really = 1,
@@ -130,7 +130,7 @@
 	premium = list(
 		/obj/item/clothing/under/suit/checkered = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
-		/obj/item/clothing/suit/jacket/letterman_warra = 1,
+		/obj/item/clothing/suit/toggle/letterman_blue = 1,
 		/obj/item/instrument/piano_synth/headphones/spacepods = 1)
 	refill_canister = /obj/item/vending_refill/clothing
 	default_price = 10

@@ -302,29 +302,29 @@
 	icon_state = "baggy"
 	item_state = "baggy"
 
-/obj/item/clothing/suit/jacket/letterman
+/obj/item/clothing/suit/toggle/letterman
 	name = "letterman jacket"
 	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
 	icon_state = "letterman"
 	item_state = "letterman"
 
-/obj/item/clothing/suit/jacket/letterman_red
+/obj/item/clothing/suit/toggle/letterman_red
 	name = "red letterman jacket"
-	desc = "A letterman jacket in a sick red color. Radical."
-	icon_state = "letterman_red"
-	item_state = "letterman_red"
+	desc = "A red letterman jacket, did you ever outgrow it?"
+	icon_state = "letterred"
+	item_state = "letterred"
 
-/obj/item/clothing/suit/jacket/letterman_syndie
-	name = "blood-red letterman jacket"
-	desc = "Oddly, this jacket seems to have a large S on the back..."
-	icon_state = "letterman_s"
-	item_state = "letterman_s"
+/obj/item/clothing/suit/toggle/letterman_black
+	name = "black letterman jacket"
+	desc = "A black letterman jacket, with thick leather and tough cloth."
+	icon_state = "letterblack"
+	item_state = "letterblack"
 
-/obj/item/clothing/suit/jacket/letterman_warra
+/obj/item/clothing/suit/jacket/letterman_blue
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Makosso-Warra M on the back. It seems cheaply made."
-	icon_state = "letterman_n"
-	item_state = "letterman_n"
+	desc = "A blue letterman jacket, did you ever outgrow it?"
+	icon_state = "letterblue"
+	item_state = "letterblue"
 
 /obj/item/clothing/suit/gothcoat
 	name = "gothic coat"
