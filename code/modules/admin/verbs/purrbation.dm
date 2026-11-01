@@ -14,22 +14,19 @@
 
 /mob/living/carbon/human/proc/purrbation_apply(silent = FALSE)
 	var/obj/item/organ/ears/cat/kitty_ears = new
-	var/obj/item/organ/tail/cat/kitty_tail = new
+	var/obj/item/bodypart/tail/human/cat/kitty_tail = new
 	kitty_ears.Insert(src, special = TRUE, drop_if_replaced = FALSE) //Gives nonhumans cat tail and ears
-	kitty_tail.Insert(src, special = TRUE, drop_if_replaced = FALSE)
+	kitty_tail.replace_limb(src, TRUE, TRUE)
 	if(!silent)
 		to_chat(src, span_boldnotice("Something is nya~t right."))
 		SEND_SOUND(src, 'sound/effects/meow1.ogg')
 
 /mob/living/carbon/human/proc/purrbation_remove(silent = FALSE)
-	var/obj/item/organ/tail/cat/cat_tail = locate() in internal_organs
+	var/obj/item/bodypart/tail/human/cat/cat_tail = get_bodypart(BODY_ZONE_TAIL)
 	var/obj/item/organ/ears/cat/cat_ears = locate() in internal_organs
 	if(cat_tail)
-		cat_tail.Remove(src, TRUE)
-		var/obj/item/organ/tail/new_tail = dna.species.species_organs[ORGAN_SLOT_TAIL]
-		if(new_tail)
-			new_tail = new new_tail()
-			new_tail.Insert(src, TRUE, FALSE)
+		cat_tail.drop_limb(TRUE, FALSE)
+		regenerate_limb(BODY_ZONE_TAIL, robotic = HAS_TRAIT(src, TRAIT_USE_PROSTHETIC))
 	if(cat_ears)
 		var/obj/item/organ/new_ears = new dna.species.species_organs[ORGAN_SLOT_EARS]
 		new_ears.Insert(src, TRUE, FALSE)

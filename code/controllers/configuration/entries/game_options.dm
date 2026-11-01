@@ -318,7 +318,7 @@
 /datum/config_entry/number/bombcap/ValidateAndSet(str_val)
 	. = ..()
 	if(.)
-		GLOB.MAX_EX_DEVESTATION_RANGE = round(config_entry_value / 4)
+		GLOB.MAX_EX_DEVASTATION_RANGE = round(config_entry_value / 4)
 		GLOB.MAX_EX_HEAVY_RANGE = round(config_entry_value / 2)
 		GLOB.MAX_EX_LIGHT_RANGE = config_entry_value
 		GLOB.MAX_EX_FLASH_RANGE = config_entry_value
@@ -395,12 +395,5 @@
 
 /datum/config_entry/number/commendation_percent_poll
 	integer = FALSE
-
-/datum/config_entry/flag/auto_ship_spawn_locking
-	config_entry_value = TRUE
-
-//When the auto ship locking will start counting up, in minutes
-/datum/config_entry/number/ship_locking_starts
-	config_entry_value = 30
 
 /datum/config_entry/flag/native_fov

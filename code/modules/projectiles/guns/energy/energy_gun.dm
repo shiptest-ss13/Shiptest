@@ -14,11 +14,13 @@
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	w_class = WEIGHT_CLASS_NORMAL
+	bad_type = /obj/item/gun/energy/e_gun
 
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/e_gun/turret
+	autowiki_hidden = TRUE //turret stuff, not a gun
 	name = "hybrid turret gun"
 	desc = "A heavy hybrid energy cannon with two settings: Stun and kill. ...It doesn't seem have a trigger, seems it can only be used as a turret."
 	lefthand_file = GUN_LEFTHAND_ICON
@@ -57,4 +59,4 @@
 		/obj/item/stock_parts/cell/gun/mini,
 	)
 
-
+	autowiki_hidden = TRUE

@@ -26,7 +26,7 @@ Borg Hypospray
 	var/inject_flags = INJECT_CHECK_PENETRATE_THICK //If the hypospray can go through armor or thick material
 
 	var/list/datum/reagents/reagent_list = list()
-	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/alvitane, /datum/reagent/medicine/indomide, /datum/reagent/medicine/pancrazine, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/morphine)
+	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/alvitane, /datum/reagent/medicine/indomide, /datum/reagent/medicine/pancrazine, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/antibiotic, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/morphine)
 	var/accepts_reagent_upgrades = TRUE //If upgrades can increase number of reagents dispensed.
 	var/list/modes = list() //Basically the inverse of reagent_ids. Instead of having numbers as "keys" and strings as values it has strings as keys and numbers as values.
 								//Used as list for input() in shakers.
@@ -241,13 +241,13 @@ Borg Shaker
 /obj/item/reagent_containers/borghypo/peace
 	name = "Peace Hypospray"
 
-	reagent_ids = list(/datum/reagent/peaceborg/confuse,/datum/reagent/peaceborg/tire,/datum/reagent/pax/peaceborg)
+	reagent_ids = list(/datum/reagent/cryptobiolin,/datum/reagent/toxin/staminatoxin, /datum/reagent/pax)
 	accepts_reagent_upgrades = FALSE
 
 /obj/item/reagent_containers/borghypo/peace/hacked
 	desc = "Everything's peaceful in death!"
 	icon_state = "borghypo_s"
-	reagent_ids = list(/datum/reagent/peaceborg/confuse,/datum/reagent/peaceborg/tire,/datum/reagent/pax/peaceborg,/datum/reagent/toxin/staminatoxin,/datum/reagent/toxin/sulfonal,/datum/reagent/toxin/sodium_thiopental,/datum/reagent/toxin/cyanide)
+	reagent_ids = list(/datum/reagent/cryptobiolin,/datum/reagent/toxin/staminatoxin,/datum/reagent/pax,/datum/reagent/toxin/staminatoxin,/datum/reagent/toxin/sulfonal,/datum/reagent/toxin/sodium_thiopental,/datum/reagent/toxin/cyanide)
 	accepts_reagent_upgrades = FALSE
 
 /obj/item/reagent_containers/borghypo/epi

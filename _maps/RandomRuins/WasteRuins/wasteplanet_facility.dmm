@@ -220,7 +220,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/northwing)
 "aZ" = (
-/obj/structure/salvageable/safe_server{
+/obj/structure/salvageable/server/safe{
 	anchored = 0
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2088,9 +2088,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/processing_unit_console/directional/west{
-	machinedir = 2
-	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/northwing)
 "nQ" = (
@@ -6613,7 +6610,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/tinted/frosted,
-/obj/structure/closet/wall/chem/directional/north,
+/obj/structure/closet/wall/white/chem/directional/north,
 /obj/item/soap,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/patterned,
@@ -6717,6 +6714,9 @@
 	},
 /obj/item/wrench/crescent{
 	pixel_y = 3
+	},
+/obj/machinery/computer/processing_unit_console/directional/west{
+	dy = -2
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/northwing)
@@ -7373,7 +7373,7 @@
 /area/ruin/wasteplanet/facility/northwing)
 "UU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/salvageable/safe_server,
+/obj/structure/salvageable/server/safe,
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
 	},

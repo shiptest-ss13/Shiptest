@@ -72,7 +72,8 @@
 	contains = list(/obj/item/organ/lungs/cybernetic/tier2,
 					/obj/item/organ/stomach/cybernetic/tier2,
 					/obj/item/organ/liver/cybernetic/tier2,
-					/obj/item/organ/heart/cybernetic/tier2)
+					/obj/item/organ/heart/cybernetic/tier2,
+					/obj/item/organ/eyes/robotic)
 	crate_name = "organs crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate/cybersun

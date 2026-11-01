@@ -37,6 +37,8 @@
 		)
 	)
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
 	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam
 	return
@@ -649,6 +651,7 @@
 	bolt_color = input(user,"","Choose Color",bolt_color) as color|null
 
 /obj/item/gun/energy/kinetic_accelerator/old
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "proto-kinetic accelerator"
 	desc = "A self-recharging concussive blast mining tool, heavily used by N+S Logistics's Mining Corps both for extracting minerals and dealing with unruly locals. Makosso Technologies's prototype line was produced with top-of-the-line cooling mechanisms. "
 	icon_state = "kineticgunold"

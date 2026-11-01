@@ -1695,11 +1695,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 1;
-	pixel_x = 32;
-	pixel_y = 17
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
@@ -1809,7 +1804,6 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/ngr_eng_quarters)
 "dX" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
@@ -1820,7 +1814,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
-/obj/item/binoculars,
+/obj/machinery/vending/disposable_guns,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "dY" = (
@@ -5997,6 +5991,10 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = 1;
+	dx = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "mN" = (
@@ -8911,6 +8909,7 @@
 /obj/machinery/camera/directional/east,
 /obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/binoculars,
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms/shop)
 "te" = (
@@ -9897,7 +9896,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
 	},
-/obj/machinery/vending/custom,
+/obj/machinery/vending/lottery,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "vq" = (
@@ -14385,12 +14384,12 @@
 /obj/effect/turf_decal/borderfloorblack/full,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg,
 /obj/item/gun/ballistic/automatic/assault/hydra/no_mag,
 /obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag,
 /obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag,
 /obj/item/gun/ballistic/automatic/marksman/boomslang/no_mag,
 /obj/machinery/camera/directional/west,
+/obj/item/gun/ballistic/automatic/hmg/python,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "EZ" = (
@@ -15794,8 +15793,6 @@
 /obj/item/ammo_box/magazine/m556_42_hydra/extended,
 /obj/item/ammo_box/magazine/m556_42_hydra/extended,
 /obj/item/ammo_box/magazine/m556_42_hydra/extended,
-/obj/item/ammo_box/magazine/m556_42_hydra/casket,
-/obj/item/ammo_box/magazine/m556_42_hydra/casket,
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
@@ -15806,6 +15803,8 @@
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/item/ammo_box/magazine/boomslang,
 /obj/item/ammo_box/magazine/boomslang,
+/obj/item/ammo_box/magazine/python_box,
+/obj/item/ammo_box/magazine/python_box,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "HY" = (
@@ -29298,10 +29297,10 @@ oQ
 "}
 (47,1,1) = {"
 nX
-aw
-aw
-aw
-aw
+nX
+nX
+nX
+nX
 aw
 aw
 aw
@@ -29766,10 +29765,10 @@ sz
 "}
 (51,1,1) = {"
 nX
-aw
-aw
-aw
-aw
+nX
+nX
+nX
+nX
 aw
 aw
 aw

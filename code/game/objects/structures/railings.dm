@@ -10,7 +10,7 @@
 	anchored = TRUE
 	climbable = TRUE
 	//stack material which is dropped upon deconstruction adn it's ammount
-	var/buildstack = /obj/item/stack/rods
+	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 3
 
 /obj/structure/railing/Initialize()
@@ -49,7 +49,21 @@
 	..()
 	add_fingerprint(user)
 
-	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
+/obj/structure/railing/deconstruct()
+	if(!loc)
+		return
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+		else
+			for(var/i in custom_materials)
+				var/datum/material/M = i
+				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
+	..()
+
+/obj/structure/railing/welder_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
+	if(user.a_intent == INTENT_HELP)
 		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
 				return
@@ -60,16 +74,7 @@
 				to_chat(user, span_notice("You repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
-		return
-
-/obj/structure/railing/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(!anchored)
-		to_chat(user, span_warning("You cut apart the railing."))
-		new buildstack(loc, buildstackamount)
-		I.play_tool_sound(src, 100)
-		deconstruct()
-		return TRUE
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/railing/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -88,6 +93,18 @@
 		return
 	if(!(flags_1 & NODECONSTRUCT_1))
 		qdel(src)
+
+/obj/structure/railing/wirecutter_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(flags_1 & NODECONSTRUCT_1)
+		return
+	to_chat(user, span_notice("You start cutting apart [src]..."))
+	I.play_tool_sound(src)
+	if(I.use_tool(src, user, 3 SECONDS))
+		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
+		deconstruct(TRUE)
+	return COMPONENT_BLOCK_TOOL_ATTACK
+
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -156,12 +173,12 @@
 /obj/structure/railing/wood
 	name = "wooden railing"
 	icon_state = "wood_railing_thin"
-	buildstack = /obj/item/stack/sheet/mineral/wood
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
 	icon_state = "wood_corners_thin"
-	buildstack = /obj/item/stack/sheet/mineral/wood
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/modern
 	name = "modern railing"

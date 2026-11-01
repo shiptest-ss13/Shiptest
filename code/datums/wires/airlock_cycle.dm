@@ -49,4 +49,4 @@
 			if(!mend)
 				A.locked = TRUE
 		if(WIRE_AI)
-			A.aidisabled = mend // Enable/disable AI control.
+			A.aidisabled = !mend // Enable/disable AI control.

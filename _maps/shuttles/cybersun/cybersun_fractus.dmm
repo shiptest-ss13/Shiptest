@@ -1,4 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid";
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "ac" = (
 /obj/structure/sign/poster/contraband/cybersun{
 	pixel_x = 27
@@ -314,30 +323,6 @@
 "bp" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
-"bs" = (
-/obj/structure/closet/secure_closet/armorycage,
-/obj/item/ammo_box/magazine/m45_cobra/empty{
-	pixel_x = 9;
-	pixel_y = -9
-	},
-/obj/item/ammo_box/magazine/m45_cobra/empty{
-	pixel_x = 8;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 5
-	},
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "bx" = (
 /obj/structure/closet/crate{
 	name = "Dr. Flare's Magnificent Lighting Solution"
@@ -363,6 +348,17 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/captain)
+"ca" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid";
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "cb" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/three_quarters{
 	dir = 4
@@ -402,6 +398,18 @@
 "cI" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
+"cV" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 10
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/security/armory)
 "cY" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/three_quarters{
 	dir = 1
@@ -845,21 +853,17 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
-"hW" = (
-/obj/machinery/suit_storage_unit/inherit/locked{
-	req_access_txt = "1"
+"hQ" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
 	},
-/obj/item/clothing/suit/space/hardsuit/stealth/cybersun,
-/obj/item/clothing/mask/gas/cybersun,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid";
+	dir = 1
 	},
-/obj/structure/sign/poster/contraband/bulldog{
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "ib" = (
 /obj/effect/turf_decal/corner/transparent/syndiered{
 	dir = 10
@@ -868,6 +872,42 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
+"ie" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "grav couch";
+	desc = "A comfortable seat designed to support the pilot during high-g manuevers."
+	},
+/obj/structure/safe/floor{
+	number_of_tumblers = 3;
+	tumblers = list(22,9,62)
+	},
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl{
+	pixel_x = 12
+	},
+/obj/item/folder/documents/syndicate/cybersun,
+/obj/item/reagent_containers/food/drinks/flask,
+/obj/item/gun/energy/cybersun/troubleshooter/bridge_safe,
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/bridge)
+"ii" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/security/armory)
 "ik" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
@@ -899,20 +939,6 @@
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
-"iL" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
-	pixel_y = 10
-	},
-/obj/structure/extinguisher_cabinet/directional/west{
-	pixel_x = -23;
-	pixel_y = -3
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/security/armory)
 "iQ" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2007,15 +2033,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
-"vg" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/security/armory)
 "vk" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 8
@@ -2045,19 +2062,6 @@
 "vv" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
-"vD" = (
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag{
-	pixel_x = -7;
-	pixel_y = -8
-	},
-/obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 5
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "wg" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
@@ -2549,38 +2553,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"CD" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4;
-	name = "grav couch";
-	desc = "A comfortable seat designed to support the pilot during high-g manuevers."
-	},
-/obj/structure/safe/floor{
-	number_of_tumblers = 3;
-	tumblers = list(22,9,62)
-	},
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag{
-	name = "PC-83 'Himejin'";
-	desc = "A limited production run of the 'Himehabu' catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle.";
-	pixel_y = -8;
-	pixel_x = -3
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 13
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 13
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 13
-	},
-/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl{
-	pixel_x = 12
-	},
-/obj/item/folder/documents/syndicate/cybersun,
-/obj/item/reagent_containers/food/drinks/flask,
-/turf/open/floor/suns/dark/plain,
-/area/ship/bridge)
 "CE" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -2613,6 +2585,14 @@
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/hallway/central)
+"Db" = (
+/obj/structure/closet/secure_closet/armorycage,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Dg" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
@@ -2752,17 +2732,6 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
-"DZ" = (
-/obj/effect/turf_decal/corner/transparent/syndiered{
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/black,
-/obj/machinery/computer/helm/viewscreen/directional{
-	dir = 2;
-	pixel_y = -18
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
 "Ea" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/eva)
@@ -3359,6 +3328,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
+"JS" = (
+/obj/effect/turf_decal/corner/transparent/syndiered{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/black,
+/obj/machinery/computer/helm/viewscreen/directional{
+	pixel_y = -18
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "JX" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/transparent/syndiered/three_quarters{
@@ -3373,6 +3352,34 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"JY" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 9
+	},
+/obj/structure/closet/wall/red/directional/west{
+	name = "ammo closet"
+	},
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 9
+	},
+/obj/item/storage/box/ammo/c215/long{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/storage/box/ammo/c215/long{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/security/armory)
 "Kf" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced,
@@ -3399,36 +3406,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"Kx" = (
-/obj/structure/table/glass,
-/obj/item/paper_bin{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/obj/item/pen{
-	pixel_y = 9;
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/siding/wood/end/mahogany,
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_y = -22;
-	pixel_x = -9;
-	name = "Window Control";
-	id = "fradb"
-	},
-/obj/machinery/light/small/directional/south,
-/obj/item/card/data/disk{
-	name = "game card - 'Hivecrawl'";
-	desc = "A controversial shooter released in 450FSC. The player takes the role of a trapped Ryuunosukan noblewoman attempting to escape from an underground xenofauna hive during the start of the Xenofauna infestation. Several minutemen companions featured, and the game was eventually developed into an animated series."
-	},
-/obj/machinery/newscaster/directional{
-	dir = 4;
-	pixel_y = 0;
-	pixel_x = 31
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ship/crew/dorm/dormtwo)
 "Ky" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
@@ -3447,13 +3424,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"KM" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
-/obj/machinery/atmospherics/pipe/simple/violet/hidden{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "KN" = (
 /obj/structure/chair/comfy/shuttle{
 	name = "grav couch";
@@ -3671,6 +3641,20 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
+"OT" = (
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "1"
+	},
+/obj/item/clothing/suit/space/hardsuit/stealth/cybersun,
+/obj/item/clothing/mask/gas/cybersun,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/structure/sign/poster/contraband/bulldog{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "OV" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
@@ -3727,39 +3711,6 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
-"PO" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 9
-	},
-/obj/structure/closet/wall/red/directional/west{
-	name = "ammo closet"
-	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 1;
-	pixel_y = -8
-	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = -7;
-	pixel_y = -8
-	},
-/obj/item/storage/box/ammo/c57x39/ap{
-	pixel_x = -7;
-	pixel_y = 7
-	},
-/obj/item/storage/box/ammo/c57x39/ap{
-	pixel_x = -1;
-	pixel_y = 7
-	},
-/obj/item/storage/box/ammo/c57x39/ap{
-	pixel_x = 15;
-	pixel_y = 7
-	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 15;
-	pixel_y = -8
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/security/armory)
 "PS" = (
 /obj/machinery/modular_computer/console/preset/civilian{
 	dir = 4
@@ -3794,19 +3745,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"Qg" = (
-/obj/effect/turf_decal/siding/wood/maple{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/transparent/syndiered/line{
-	dir = 6
-	},
-/obj/effect/turf_decal/siding/wood/corner/maple{
-	dir = 1
-	},
-/obj/structure/table/glass,
-/turf/open/floor/suns/dark/plain,
-/area/ship/bridge)
 "QN" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -4108,6 +4046,17 @@
 /obj/item/clothing/mask/gas/cybersun,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/eva)
+"Up" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/atmospherics/pipe/simple/violet/hidden{
+	dir = 4
+	},
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "UE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -4152,6 +4101,38 @@
 "Vx" = (
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
+"Vy" = (
+/obj/structure/guncloset,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/machinery/light/directional/west,
+/obj/item/gun/ballistic/cs_gauss/convergence/no_mag{
+	pixel_y = -7
+	},
+/obj/item/gun/energy/cybersun/lorentz/impactor/empty_cell{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"VF" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/transparent/syndiered/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood/corner/maple{
+	dir = 1
+	},
+/obj/structure/table/glass,
+/obj/machinery/turretid/ship{
+	pixel_y = 3;
+	id = "fractus_grid"
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/bridge)
 "VI" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
@@ -4188,6 +4169,20 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/hallway/central)
+"VW" = (
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "1"
+	},
+/obj/item/clothing/suit/space/hardsuit/stealth/cybersun,
+/obj/item/clothing/mask/gas/cybersun,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Wl" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -4370,21 +4365,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"XL" = (
-/obj/machinery/suit_storage_unit/inherit/locked{
-	req_access_txt = "1"
-	},
-/obj/item/clothing/suit/space/hardsuit/stealth/cybersun,
-/obj/item/clothing/mask/gas/cybersun,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_x = 32;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "XO" = (
 /obj/machinery/power/ship_gravity,
 /obj/structure/cable/cyan{
@@ -4393,6 +4373,35 @@
 /obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"XT" = (
+/obj/structure/table/glass,
+/obj/item/paper_bin{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 9;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/siding/wood/end/mahogany,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -22;
+	pixel_x = -9;
+	name = "Window Control";
+	id = "fradb"
+	},
+/obj/machinery/light/small/directional/south,
+/obj/item/card/data/disk{
+	name = "game card - 'Hivecrawl'";
+	desc = "A controversial shooter released in 450FSC. The player takes the role of a trapped Ryuunosukan noblewoman attempting to escape from an underground xenofauna hive during the start of the Xenofauna infestation. Several minutemen companions featured, and the game was eventually developed into an animated series."
+	},
+/obj/machinery/newscaster/directional{
+	dir = 4;
+	pixel_x = 31
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/dorm/dormtwo)
 "Ym" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/half{
 	dir = 8
@@ -4644,7 +4653,7 @@ wY
 qI
 "}
 (5,1,1) = {"
-xe
+hQ
 cI
 VI
 ql
@@ -4662,7 +4671,7 @@ zB
 ox
 dn
 cI
-KM
+Up
 qI
 "}
 (6,1,1) = {"
@@ -4808,7 +4817,7 @@ wL
 no
 RI
 fj
-DZ
+JS
 Ea
 sX
 sX
@@ -4889,10 +4898,10 @@ qI
 qI
 qI
 ND
-vD
-PO
+Vy
+JY
 Eb
-iL
+cV
 Rz
 tw
 Zf
@@ -4901,7 +4910,7 @@ eQ
 mG
 bI
 gx
-Kx
+XT
 bI
 qI
 qI
@@ -4911,7 +4920,7 @@ qI
 qI
 qI
 ND
-bs
+Db
 UE
 lw
 qw
@@ -4934,7 +4943,7 @@ qI
 qI
 ND
 aj
-vg
+ii
 en
 fb
 Fa
@@ -4955,11 +4964,11 @@ qI
 qI
 qI
 ND
-hW
+OT
 Id
 RA
 Id
-XL
+VW
 ND
 GS
 Qe
@@ -5219,7 +5228,7 @@ qI
 qI
 qI
 po
-xe
+ca
 eD
 Ff
 Ff
@@ -5231,7 +5240,7 @@ Ff
 Rx
 Rx
 Rs
-po
+ab
 xe
 qI
 qI
@@ -5335,9 +5344,9 @@ ud
 ud
 om
 rb
-CD
+ie
 rd
-Qg
+VF
 ud
 ud
 qI

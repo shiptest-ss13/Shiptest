@@ -4,7 +4,13 @@
 	return GLOB.always_state
 
 /datum/ship_select/ui_status(mob/user, datum/ui_state/state)
-	return isnewplayer(user) ? UI_INTERACTIVE : UI_CLOSE
+	return (isnewplayer(user) || isobserver(user)) ? UI_INTERACTIVE : UI_CLOSE
+
+/// Observers still need to return to lobby to do respawn checks
+/datum/ship_select/proc/get_lobby_mob(mob/dead/user)
+	if(isnewplayer(user))
+		return user
+	return user.return_to_lobby()
 
 /datum/ship_select/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -16,60 +22,78 @@
 	. = ..()
 	if(.)
 		return
-	if(!isnewplayer(usr))
+	if(!isnewplayer(usr) && !isobserver(usr))
 		return
-	var/mob/dead/new_player/spawnee = usr
+	var/mob/dead/user = usr
+	// only set if they're already in the lobby, observers don't have a panel to return to
+	var/mob/dead/new_player/lobby_mob = isnewplayer(user) ? user : null
 	switch(action)
 		if("join")
 			var/datum/overmap/ship/controlled/target = locate(params["ship"]) in SSovermap.controlled_ships
 			if(!target)
-				to_chat(spawnee, span_danger("Unable to locate ship. Please contact admins!"))
-				spawnee.new_player_panel()
+				to_chat(user, span_danger("Unable to locate ship. Please contact admins!"))
+				lobby_mob?.new_player_panel()
 				return
 			if(!target.is_join_option())
-				to_chat(spawnee, span_danger("This ship is not currently accepting new players!"))
-				spawnee.new_player_panel()
+				to_chat(user, span_danger("This ship is not currently accepting new players!"))
+				lobby_mob?.new_player_panel()
 				return
+
+			var/datum/job/selected_job = locate(params["job"]) in target.job_slots
 
 			var/did_application = FALSE
 			if(target.join_mode == SHIP_JOIN_MODE_APPLY)
-				var/datum/ship_application/current_application = target.get_application(spawnee)
+				var/datum/ship_application/current_application = target.get_application(user)
 				if(isnull(current_application))
-					var/datum/ship_application/app = new(spawnee, target)
+					var/datum/ship_application/app = new(user, target, selected_job)
 					if(app.get_user_response())
-						to_chat(spawnee, span_notice("Ship application sent. You will be notified if the application is accepted."))
+						to_chat(user, span_notice("Ship application sent. You will be notified if the application is accepted."))
+					else if(QDELETED(target))
+						to_chat(user, span_warning("[target] no longer exists, application cancelled."))
+					else if(!target.has_applications_open())
+						to_chat(user, span_warning("[target] stopped accepting applications before submission."))
 					else
-						to_chat(spawnee, span_notice("Application cancelled, or there was an error sending the application."))
+						to_chat(user, span_notice("Application cancelled, or there was an error sending the application."))
 					return
 				switch(current_application.status)
+					if(SHIP_APPLICATION_UNFINISHED)
+						alert(user, "You already have an application window open for this ship!")
+						return
+					if(SHIP_APPLICATION_CANCELLED)
+						alert(user, "Your previous application is still closing. Please try again.")
+						return
 					if(SHIP_APPLICATION_ACCEPTED)
-						to_chat(spawnee, span_notice("Your ship application was accepted, continuing..."))
+						to_chat(user, span_notice("Your ship application was accepted, continuing..."))
 					if(SHIP_APPLICATION_PENDING)
-						alert(spawnee, "You already have a pending application for this ship!")
+						alert(user, "You already have a pending application for this ship!")
 						return
 					if(SHIP_APPLICATION_DENIED)
-						alert(spawnee, "You can't join this ship, as a previous application was denied!")
+						alert(user, "You can't join this ship, as a previous application was denied!")
 						return
 				did_application = TRUE
 
 			if(target.join_mode == SHIP_JOIN_MODE_CLOSED || (target.join_mode == SHIP_JOIN_MODE_APPLY && !did_application))
-				to_chat(spawnee, span_warning("You cannot join this ship anymore, as its join mode has changed!"))
+				to_chat(user, span_warning("You cannot join this ship anymore, as its join mode has changed!"))
 				return
 
 			var/datum/faction/registered_faction = target.shuttle_port.registered_faction
 			var/datum/language/official_lang = initial(registered_faction.official_language)
-			if(official_lang != spawnee.client.prefs.native_language && spawnee.client.prefs.learned_languages[official_lang] != LANGUAGE_FLUENT && \
-				tgui_alert(spawnee, "Your character does not fully understand this faction's official language ([initial(official_lang.name)]), are you sure?", "Official language", list("Yes", "No")) != "Yes")
+			if(official_lang != user.client.prefs.native_language && user.client.prefs.learned_languages[official_lang] != LANGUAGE_FLUENT && \
+				tgui_alert(user, "Your character does not fully understand this faction's official language ([initial(official_lang.name)]), are you sure?", "Official language", list("Yes", "No")) != "Yes")
 				return // pop-up warning for new players that forgot to set their
 
 			ui.close()
-			var/datum/job/selected_job = locate(params["job"]) in target.job_slots
 			//boots you out if you're banned from officer roles
-			if(selected_job.officer && is_banned_from(spawnee.ckey, "Ship Command"))
-				to_chat(spawnee, span_danger("You are banned from Officer roles!"))
-				spawnee.new_player_panel()
+			if(selected_job.officer && is_banned_from(user.ckey, "Ship Command"))
+				to_chat(user, span_danger("You are banned from Officer roles!"))
+				lobby_mob?.new_player_panel()
 				ui.close()
 				return
+
+			var/mob/dead/new_player/spawnee = get_lobby_mob(user)
+			if(!spawnee)
+				return
+			usr = spawnee
 
 			// Attempts the spawn itself. This checks for playtime requirements.
 			if(!spawnee.AttemptLateSpawn(selected_job, target))
@@ -77,24 +101,24 @@
 				spawnee.new_player_panel()
 
 		if("buy")
-			if(is_banned_from(spawnee.ckey, "Ship Purchasing"))
-				to_chat(spawnee, span_danger("You are banned from purchasing ships!"))
-				spawnee.new_player_panel()
+			if(is_banned_from(user.ckey, "Ship Purchasing"))
+				to_chat(user, span_danger("You are banned from purchasing ships!"))
+				lobby_mob?.new_player_panel()
 				ui.close()
 				return
 
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
 			if(SSovermap.ship_spawning)
-				to_chat(spawnee, span_danger("A ship is currently spawning. Try again in a little while."))
+				to_chat(user, span_danger("A ship is currently spawning. Try again in a little while."))
 				return
 			if(!SSovermap.player_ship_spawn_allowed())
-				to_chat(spawnee, span_danger("No more ships may be spawned at this time!"))
+				to_chat(user, span_danger("No more ships may be spawned at this time!"))
 				return
 			if(!template.enabled)
-				to_chat(spawnee, span_danger("This ship is not currently available for purchase!"))
+				to_chat(user, span_danger("This ship is not currently available for purchase!"))
 				return
-			if(!template.has_ship_spawn_playtime(spawnee.client))
-				to_chat(spawnee, span_danger("You do not have enough playtime to spawn this ship!"))
+			if(!template.has_ship_spawn_playtime(user.client))
+				to_chat(user, span_danger("You do not have enough playtime to spawn this ship!"))
 				return
 
 			var/num_ships_with_template = 0
@@ -102,7 +126,7 @@
 				if(template == Ship.source_template)
 					num_ships_with_template += 1
 			if(num_ships_with_template >= template.limit)
-				to_chat(spawnee, span_danger("There are already [num_ships_with_template] ships of this type; you cannot spawn more!"))
+				to_chat(user, span_danger("There are already [num_ships_with_template] ships of this type; you cannot spawn more!"))
 				return
 
 			ui.close()
@@ -113,7 +137,7 @@
 			var/list/valid_spawns = SSovermap.get_spawn_outposts()
 
 			if(valid_spawns > 1)
-				var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in valid_spawns
+				var/datum/overmap/outpost/temp_loc = input(user, "Select outpost to spawn at") as null|anything in valid_spawns
 				if(!temp_loc)
 					return
 				selected_system = temp_loc.current_overmap
@@ -125,6 +149,11 @@
 
 			if(!selected_system)
 				CRASH("Ship attemped to be bought at spawn menu, but spawning outpost was not selected! This is bad!") //if selected_system didnt get selected, we nope out, this is very bad
+
+			var/mob/dead/new_player/spawnee = get_lobby_mob(user)
+			if(!spawnee)
+				return
+			usr = spawnee
 
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template, ship_loc, selected_system)

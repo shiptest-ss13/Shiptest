@@ -33,7 +33,7 @@
 	valid_attachments = list()
 	slot_available = list()
 	fire_delay = 0.4 SECONDS
-	spread_unwielded = 15
+	spread_unwielded = 4
 	recoil = 0.5
 	recoil_unwielded = 2
 	semi_auto = FALSE
@@ -459,6 +459,7 @@
 
 // golden revolver. it is here. woe
 /obj/item/gun/ballistic/revolver/golden
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "\improper Golden revolver"
 	desc = "This ain't no game, ain't never been no show, And I'll gladly gun down the oldest lady you know. Uses .357 ammo."
 	icon_state = "goldrevolver"

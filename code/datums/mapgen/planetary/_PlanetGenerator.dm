@@ -189,7 +189,6 @@
 		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 		QUEUE_SMOOTH(gen_turf)
-		QUEUE_SMOOTH_NEIGHBORS(gen_turf)
 
 		for(var/turf/open/space/adj in RANGE_TURFS(1, gen_turf))
 			adj.check_starlight(gen_turf)

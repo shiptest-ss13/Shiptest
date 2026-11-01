@@ -89,6 +89,7 @@
  */
 /obj/structure/bed/roller
 	name = "roller bed"
+	desc = "A foldable, wheeled bed used to transport people with injuries safely. Bed guards and straps prevent the occupant from falling out. Push handles at both ends of the frame allow it to be relocated from either side. Its compact design makes it easy to maneuver and store in the confines of a spacecraft, but rather uncomfortable for rest and recovery."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "down"
 	anchored = FALSE

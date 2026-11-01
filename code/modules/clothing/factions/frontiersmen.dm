@@ -121,7 +121,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 0.5
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|TAIL|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -138,16 +138,40 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	hardsuit_type = "frontier"
-	supports_variations = null
+	supports_variations = SNOUTED_VARIATION
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	name = "\improper Frontiersmen hardsuit"
 	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
 	icon_state = "hardsuit_frontier"
 	hardsuit_type = "hardsuit_frontier"
+	supports_variations = DIGITIGRADE_VARIATION
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
+	name = "\improper Frontiersmen 'Runner' hardsuit helmet"
+	desc = "A helmet for a Runner hardsuit. The design originally raised alarm bells as intelligence agencies suspected Zohilan design - though the original creator was traced to a anti-league anarchist who designed the armor in a shed."
+	icon_state = "hardsuit0-frontierlight"
+	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	hardsuit_type = "frontierlight"
+	supports_variations = SNOUTED_VARIATION
+	lighting_alpha = null
+	darkness_view = 2
+
+/obj/item/clothing/suit/space/hardsuit/stealth/frontier
+	name = "\improper Frontiersmen 'Runner' hardsuit"
+	desc = "A modern, well-designed hardsuit with a stealth cloak draped over it. Utilized by the Frontiersman fleet for those looking for less restrictive movement in space."
+	icon_state = "hardsuit-frontierlight"
+	hardsuit_type = "frontierlight"
+	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
+	supports_variations = DIGITIGRADE_VARIATION
 
 /////////
 //Hats//

@@ -14,6 +14,7 @@
 	//basically so the fire select shows the right icon
 	var/underbarrel_prefix = ""
 	var/has_safety = TRUE
+	bad_type = /obj/item/attachment/gun
 
 /obj/item/attachment/gun/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
@@ -78,5 +79,3 @@
 
 /obj/item/attachment/gun/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
 	return FALSE
-
-

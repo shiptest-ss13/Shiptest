@@ -101,6 +101,7 @@
 	var/wear_maximum = 300 // wear cap
 
 	// OVERLAYS //
+	var/no_bolt_overlay = FALSE // set to TRUE if we don't want bolt overlays
 	var/mag_display = FALSE // does the sprite show a visible mag
 	var/mag_display_ammo = FALSE // does the sprite have an ammo display
 	var/empty_indicator = FALSE // does the sprite have an empty indicator
@@ -150,9 +151,9 @@
 
 /obj/item/gun/ballistic/update_overlays()
 	. = ..()
-	if (bolt_type == BOLT_TYPE_LOCKING)
+	if (bolt_type == BOLT_TYPE_LOCKING && !no_bolt_overlay)
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
-	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
+	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked && !no_bolt_overlay)
 		. += "[icon_state]_bolt"
 	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
@@ -206,7 +207,7 @@
 
 /// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
 /obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE, atom/shooter)
-	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
+	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine?.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
 		return FALSE
 	last_jam++
 	if(gun_wear < wear_minor_threshold)
@@ -308,7 +309,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/can_shoot()
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	return chambered || (bolt_type == BOLT_TYPE_OPEN && !bolt_locked && magazine && magazine.ammo_count()) // loathsome kludge but it works...
 
@@ -384,6 +385,8 @@
 
 // ejects the provided casing from the gun into the world
 /obj/item/gun/ballistic/proc/eject_casing(mob/user, obj/item/ammo_casing/casing)
+	if(casing.caseless) //early return for caseless calibers
+		return
 	casing.forceMove(drop_location())
 	var/angle_of_movement = (rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
 	casing.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing.bounce_sfx_override)
@@ -494,7 +497,7 @@
 // remember: you can always trust a loaded gun to go off at least once!
 /obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)
 	. = TRUE
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	if(!magazine && !chambered)
 		return

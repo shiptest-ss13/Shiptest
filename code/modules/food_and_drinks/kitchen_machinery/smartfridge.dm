@@ -424,7 +424,8 @@
 					/obj/item/reagent_containers/glass/beaker,
 					/obj/item/reagent_containers/spray,
 					/obj/item/reagent_containers/medigel,
-					/obj/item/reagent_containers/chem_pack
+					/obj/item/reagent_containers/chem_pack,
+					/obj/item/reagent_containers/glass/chem_jug
 	))
 
 	if(istype(O, /obj/item/storage/pill_bottle))
@@ -451,6 +452,27 @@
 		/obj/item/reagent_containers/glass/bottle/epinephrine = 1,
 		/obj/item/reagent_containers/glass/bottle/charcoal = 1)
 
+/obj/machinery/smartfridge/chemistry/preloaded/jugs
+	initial_contents = list(
+		/obj/item/reagent_containers/glass/chem_jug/aluminium = 1,
+		/obj/item/reagent_containers/glass/chem_jug/bromine = 1,
+		/obj/item/reagent_containers/glass/chem_jug/carbon = 1,
+		/obj/item/reagent_containers/glass/chem_jug/chlorine = 1,
+		/obj/item/reagent_containers/glass/chem_jug/copper = 1,
+		/obj/item/reagent_containers/glass/chem_jug/ethanol = 1,
+		/obj/item/reagent_containers/glass/chem_jug/fluorine = 1,
+		/obj/item/reagent_containers/glass/chem_jug/hydrogen = 1,
+		/obj/item/reagent_containers/glass/chem_jug/iodine = 1,
+		/obj/item/reagent_containers/glass/chem_jug/lithium = 1,
+		/obj/item/reagent_containers/glass/chem_jug/mercury = 1,
+		/obj/item/reagent_containers/glass/chem_jug/nitrogen = 1,
+		/obj/item/reagent_containers/glass/chem_jug/oxygen = 1,
+		/obj/item/reagent_containers/glass/chem_jug/phosphorus = 1,
+		/obj/item/reagent_containers/glass/chem_jug/potassium = 1,
+		/obj/item/reagent_containers/glass/chem_jug/radium = 1,
+		/obj/item/reagent_containers/glass/chem_jug/sodium = 1,
+		/obj/item/reagent_containers/glass/chem_jug/sulfur = 1)
+
 // ----------------------------
 // Virology Medical Smartfridge
 // ----------------------------
@@ -460,7 +482,7 @@
 
 /obj/machinery/smartfridge/chemistry/virology/preloaded
 	initial_contents = list(
-		/obj/item/reagent_containers/syringe/antiviral = 4,
+		/obj/item/reagent_containers/syringe/antibiotic = 4,
 		/obj/item/reagent_containers/glass/bottle/cold = 1,
 		/obj/item/reagent_containers/glass/bottle/flu_virion = 1,
 		/obj/item/reagent_containers/glass/bottle/mutagen = 1,

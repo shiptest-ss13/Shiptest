@@ -235,7 +235,7 @@
 	item_state = "hostrench"
 	resistance_flags = NONE
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/radio)
 
 /obj/item/clothing/suit/jacket/leather/coat
 	name = "leather coat"
@@ -510,3 +510,10 @@
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/capsule
+	name = "capsule jacket"
+	desc = "A poorly made jacket with a pill capsule resting on the backside. Good for your health, but not good for your education. Take only as prescribed."
+	icon_state = "capsule"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS

@@ -13,7 +13,10 @@
 	icon_state = "muzzle_emitter"
 
 /obj/effect/projectile/muzzle/disabler
-	icon_state = "muzzle_omni"
+	icon_state = "muzzle_disabler"
+
+/obj/effect/projectile/muzzle/disabler_heavy
+	icon_state = "muzzle_disabler_heavy"
 
 /obj/effect/projectile/muzzle/xray
 	icon_state = "muzzle_xray"
@@ -33,9 +36,36 @@
 /obj/effect/projectile/muzzle/wormhole
 	icon_state = "wormhole_g"
 
+/obj/effect/projectile/muzzle/gauss
+	icon_state = "muzzle_gauss_rifle"
+
+//Cybersun
+/obj/effect/projectile/muzzle/ionization
+	icon_state = "muzzle_ionization"
+
+/obj/effect/projectile/muzzle/ionization/sniper
+	icon_state = "muzzle_ionization_sniper"
+
+/obj/effect/projectile/muzzle/lorentz
+	icon_state = "muzzle_lorentz"
+
+/obj/effect/projectile/muzzle/flare
+	icon_state = "muzzle_flare"
+
+///kalix civilian
+/obj/effect/projectile/muzzle/kalix_rifle
+	icon_state = "muzzle_kalix"
+
 /obj/effect/projectile/muzzle/kalix
 	icon_state = "muzzle_kalix"
 
+/obj/effect/projectile/muzzle/nock
+	icon_state = "muzzle_kalix_nock"
+
+/obj/effect/projectile/muzzle/kalix_hunt
+	icon_state = "muzzle_kalix_hunt"
+
+///pgf military
 /obj/effect/projectile/muzzle/pgf
 	icon_state = "muzzle_pgf"
 
@@ -44,3 +74,12 @@
 
 /obj/effect/projectile/muzzle/gauss
 	icon_state = "muzzle_gauss_rifle"
+
+/obj/effect/projectile/muzzle/pgf/pdw
+	icon_state = "muzzle_pgf_pdw"
+
+/obj/effect/projectile/muzzle/pgf/assault
+	icon_state = "muzzle_pgf_assault"
+
+/obj/effect/projectile/muzzle/pgf/sniper
+	icon_state = "muzzle_pgf_sniper"

@@ -45,7 +45,6 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/toggleoocdead,	/*toggles ooc on/off for everyone who is dead*/
 	/datum/admins/proc/toggleenter,		/*toggles whether people can join the current game*/
 	/client/proc/toggle_ship_spawn, /* toggles players spawning ships via the join menu / shuttle creators */
-	/client/proc/toggle_ship_auto_locking,
 	/datum/admins/proc/announce,		/*priority announce something to all clients.*/
 	/datum/admins/proc/set_admin_notice, /*announcement all clients see when joining the server.*/
 	/client/proc/admin_ghost,			/*allows us to ghost/reenter body at will*/
@@ -218,6 +217,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/client/proc/cmd_admin_toggle_fov,
+	/client/proc/allow_browser_inspect,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
@@ -530,7 +530,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if("Big Bomb (3, 5, 7, 5)")
 			explosion(epicenter, 3, 5, 7, 5, TRUE, TRUE)
 		if("Maxcap")
-			explosion(epicenter, GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
+			explosion(epicenter, GLOB.MAX_EX_DEVASTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 		if("Custom Bomb")
 			var/devastation_range = input("Devastation range (in tiles):") as null|num
 			if(devastation_range == null)
@@ -544,7 +544,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			var/flash_range = input("Flash range (in tiles):") as null|num
 			if(flash_range == null)
 				return
-			if(devastation_range > GLOB.MAX_EX_DEVESTATION_RANGE || heavy_impact_range > GLOB.MAX_EX_HEAVY_RANGE || light_impact_range > GLOB.MAX_EX_LIGHT_RANGE || flash_range > GLOB.MAX_EX_FLASH_RANGE)
+			if(devastation_range > GLOB.MAX_EX_DEVASTATION_RANGE || heavy_impact_range > GLOB.MAX_EX_HEAVY_RANGE || light_impact_range > GLOB.MAX_EX_LIGHT_RANGE || flash_range > GLOB.MAX_EX_FLASH_RANGE)
 				if(alert("Bomb is bigger than the maxcap. Continue?",,"Yes","No") != "Yes")
 					return
 			epicenter = mob.loc //We need to reupdate as they may have moved again

@@ -17,6 +17,65 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
 	)
 
+//Tails
+
+/datum/sprite_accessory/body/ipc_tail
+	allowed_species = list(/datum/species/ipc)
+
+/datum/sprite_accessory/body/ipc_tail/plug
+	name = "Power Plug"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/plug
+	)
+
+/datum/sprite_accessory/body/ipc_tail/plug/secondary_color // need to find a better way to do this
+	name = "Power Plug (Secondary Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/plug/secondary_color
+	)
+
+/datum/sprite_accessory/body/ipc_tail/fox
+	name = "Synthetic Fox Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/fox
+	)
+
+/datum/sprite_accessory/body/ipc_tail/fox_alt
+	name = "Synthetic Fox Tail (Alt)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/fox/alt
+	)
+
+/datum/sprite_accessory/body/ipc_tail/cat
+	name = "Synthetic Cat Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/cat
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi
+	name = "Synthetic Sarathi Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi_large
+	name = "Synthetic Large Sarathi Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/large
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi_secondary
+	name = "Synthetic Sarathi Tail (Secondary Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/secondary_color
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi_large_secondary
+	name = "Synthetic Large Sarathi Tail (Secondary Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/large/secondary_color
+	)
+
 //Pawsitrons United N1
 
 /datum/sprite_accessory/body/ipc_chassis/pawsitrons
@@ -159,8 +218,8 @@
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterworker
 	name = "HARDLINE 'Longshore'"
-	desc = "HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, it's\
-	specializiation has made it popular outside the company's production lines, and is commonly sold in volume as a side-buisness for HARDLINE."
+	desc = "HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, its\
+	\nspecialization has made it popular outside the company's production lines, and is commonly sold in volume as a side-business for HARDLINE."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterworker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterworker,

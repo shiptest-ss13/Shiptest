@@ -123,7 +123,10 @@
 		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/gun/energy/clover/pistol,
 		/obj/item/stock_parts/cell/gun,
+		/obj/item/gun/energy/cybersun/troubleshooter,
+		/obj/item/gun/energy/cybersun/lorentz/opportunist,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
 	can_hold_max_of_items = typecacheof(list(
 		/obj/item/gun = 1,
@@ -137,7 +140,7 @@
 	original_parent = parent
 	. = ..()
 	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/revolver/detective,
+		/obj/item/gun/ballistic/revolver/flint,
 		/obj/item/ammo_box/c38))
 
 /datum/component/storage/concrete/pockets/holster/nukie

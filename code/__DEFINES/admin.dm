@@ -86,6 +86,7 @@
 #define ADMIN_PUNISHMENT_BLEED ":B:loodless"
 #define ADMIN_PUNISHMENT_PERFORATE ":B:erforate"
 #define ADMIN_PUNISHMENT_SHOES "Knot Shoes"
+#define ADMIN_PUNISHMENT_LOTTO_CURSE "Never Win Scratch Tickets Again"
 
 #define AHELP_ACTIVE 1
 #define AHELP_CLOSED 2

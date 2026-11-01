@@ -211,8 +211,8 @@
 
 /// status chems
 
-/datum/chemical_reaction/spaceacillin
-	results = list(/datum/reagent/medicine/spaceacillin = 2)
+/datum/chemical_reaction/antibiotic
+	results = list(/datum/reagent/medicine/antibiotic = 2)
 	required_reagents = list(/datum/reagent/cryptobiolin = 1, /datum/reagent/medicine/epinephrine = 1)
 
 /datum/chemical_reaction/synaptizine
@@ -298,10 +298,6 @@
 	results = list(/datum/reagent/medicine/ephedrine = 4)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/fuel/oil = 1, /datum/reagent/hydrogen = 1, /datum/reagent/diethylamine = 1)
 	mix_message = "The solution fizzes and gives off toxic fumes."
-
-/datum/chemical_reaction/pure_soulus_dust_hollow
-	results = list(/datum/reagent/medicine/soulus/pure = 20,)
-	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/water/hollowwater = 10)
 
 /datum/chemical_reaction/pure_soulus_dust_holy
 	results = list(/datum/reagent/medicine/soulus/pure = 20,)

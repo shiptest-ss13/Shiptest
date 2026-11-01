@@ -357,10 +357,12 @@
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
 
-/mob/dead/new_player/proc/LateChoices()
+/mob/dead/new_player/LateChoices()
 	if(auth_check)
 		return
+	return ..()
 
+/mob/dead/proc/LateChoices()
 	if(!can_join_round(FALSE))
 		return
 
@@ -369,7 +371,7 @@
 
 	GLOB.ship_select_tgui.ui_interact(src)
 
-/mob/dead/new_player/proc/can_join_round(silent = FALSE)
+/mob/dead/proc/can_join_round(silent = FALSE)
 	if(SSlag_switch.measures[DISABLE_NON_OBSJOBS])
 		if(silent)
 			return

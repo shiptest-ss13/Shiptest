@@ -166,6 +166,10 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"lg" = (
+/obj/effect/landmark/outpost/shaft_number,
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
 "mi" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
@@ -300,6 +304,10 @@
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"UP" = (
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "VM" = (
 /obj/effect/turf_decal/arrows{
@@ -1382,7 +1390,7 @@ mX
 mX
 mX
 aj
-an
+lg
 aJ
 aN
 aN
@@ -1417,7 +1425,7 @@ mX
 mX
 mX
 aj
-ay
+UP
 aJ
 al
 aN
@@ -1452,7 +1460,7 @@ mX
 mX
 mX
 aj
-an
+ay
 aJ
 aN
 aN

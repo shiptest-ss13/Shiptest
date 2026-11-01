@@ -225,21 +225,21 @@
 	name = "Intravenous Medicine Bag"
 	desc = "A plastic pressure bag for IV administration of drugs."
 	id = "chem_pack"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 	materials = list(/datum/material/plastic = 2000)
 	build_path = /obj/item/reagent_containers/chem_pack
-	category = list("Medical Designs")
+	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/blood_pack
 	name = "Blood Pack"
 	desc = "Is used to contain blood used for transfusion. Must be attached to an IV drip."
 	id = "blood_pack"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 	materials = list(/datum/material/plastic = 1000)
 	build_path = /obj/item/reagent_containers/blood
-	category = list("Medical Designs")
+	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/portable_chem_mixer
 	name = "Portable Chemical Mixer"
@@ -668,7 +668,7 @@
 
 /datum/design/surgery/viral_bonding
 	name = "Viral Bonding"
-	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with spaceacillin, virus food, and formaldehyde."
+	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with broad-spectrum antibiotics, virus food, and formaldehyde."
 	id = "surgery_viral_bond"
 	surgery = /datum/surgery/advanced/viral_bonding
 	research_icon_state = "surgery_chest"

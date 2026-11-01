@@ -103,7 +103,7 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/burn/heat_warping/moderate
-	threshold_minimum = 30
+	threshold_minimum = 40
 
 /datum/wound/burn/heat_warping/oxidation/moderate/set_victim(new_victim)
 	if(victim)
@@ -157,7 +157,7 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/burn/heat_warping/severe
-	threshold_minimum = 75
+	threshold_minimum = 80
 
 /datum/wound/burn/heat_warping/critical
 	name = "Deformed Chassis"
@@ -175,6 +175,6 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/burn/heat_warping/critical
-	threshold_minimum = 130
+	threshold_minimum = 140
 
 #undef CHASSIS_MELTING_POINT

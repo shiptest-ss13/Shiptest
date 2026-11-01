@@ -32,3 +32,9 @@
 	caliber = "8x50mmR"
 	max_ammo = 10
 	instant_load = TRUE
+
+/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	name = "cinder internal magazine"
+	max_ammo = 4
+	caliber = "fourbore"
+	ammo_type = /obj/item/ammo_casing/shotgun/fourbore

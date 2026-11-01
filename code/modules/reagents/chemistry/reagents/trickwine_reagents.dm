@@ -85,6 +85,7 @@
 	//the kind of ammo you get from dipping 38 in this
 	var/obj/item/ammo_casing/c38/dip_ammo_type = null
 	var/dip_consumption = 2
+	bad_type = /datum/reagent/consumable/ethanol/trickwine
 
 /datum/reagent/consumable/ethanol/trickwine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	. = ..()

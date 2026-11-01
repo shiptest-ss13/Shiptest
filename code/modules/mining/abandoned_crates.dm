@@ -1,8 +1,8 @@
 //Originally coded by ISaidNo, later modified by Kelenius. Ported from Baystation12.
 
 /obj/structure/closet/crate/secure/loot
-	name = "abandoned crate"
-	desc = "What could be inside?"
+	name = "tamper-proof crate"
+	desc = "An abandoned crate locked with a Deca-code lock. Next to the lock is a warning: Too many failed attempts will cause the anti-tamper explosive to detonate."
 	icon_state = "securecrate"
 	integrity_failure = 0 //no breaking open the crate
 	var/code = null

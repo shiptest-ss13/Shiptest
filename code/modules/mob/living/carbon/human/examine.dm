@@ -208,7 +208,7 @@
 		body_part = bodyparts[zone]
 		if(!body_part)
 			continue
-		if(body_part.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
+		if((body_part.examine_id ? body_part.examine_id : body_part.limb_id) != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
 			msg += "[span_info("[t_He] [t_has] \an [body_part.name].")]\n"
 
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy

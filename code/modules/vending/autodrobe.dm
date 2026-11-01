@@ -4,7 +4,6 @@
 	icon_state = "theater"
 	icon_deny = "theater-deny"
 	req_access = list(ACCESS_THEATRE)
-	product_slogans = "Dress for success!;Suited and booted!;It's show time!;Why leave style up to fate? Use AutoDrobe!"
 	vend_reply = "Thank you for using AutoDrobe!"
 	products = list(
 		/obj/item/clothing/under/costume/gladiator = 1,
