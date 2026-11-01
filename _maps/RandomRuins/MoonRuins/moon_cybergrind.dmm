@@ -486,9 +486,7 @@
 /area/ruin/moon/cybergrind/lab)
 "bD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/viscerator{
-	faction = list("hostile")
-	},
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "bE" = (
@@ -1920,6 +1918,7 @@
 /mob/living/simple_animal/hostile/viscerator{
 	faction = list("hostile")
 	},
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/northhallway)
 "gy" = (
@@ -2077,9 +2076,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "gW" = (
-/obj/machinery/porta_turret/ruin/hardliners{
-	faction = list("hostile");
-	dir = 8
+/obj/machinery/porta_turret/ruin/cybersun{
+	dir = 4;
+	faction = list("hostile")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/cybergrind/decontam)
@@ -2828,7 +2827,6 @@
 	color = "#FFFFFF"
 	},
 /obj/machinery/door/firedoor/heavy,
-/mob/living/simple_animal/hostile/automated/hopper/coalition,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "jo" = (
@@ -4156,7 +4154,7 @@
 	color = "#FFFFFF"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/ruin/hardliners/heavy{
+/obj/machinery/porta_turret/ruin/cybersun/heavy{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -4502,7 +4500,7 @@
 "pi" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
-/obj/item/gun/ballistic/automatic/assault/hydra/dmr/no_mag,
+/obj/item/gun/ballistic/cs_gauss/vector/no_mag,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "pl" = (
@@ -4645,6 +4643,13 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/secdorm)
+"pH" = (
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 9
+	},
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/simdomeengi)
 "pJ" = (
 /obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 8
@@ -5893,7 +5898,6 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "uC" = (
@@ -6001,9 +6005,9 @@
 	color = "#FFFFFF"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/porta_turret/ruin/hardliners{
-	faction = list("hostile");
-	dir = 4
+/obj/machinery/porta_turret/ruin/cybersun{
+	dir = 4;
+	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
@@ -6278,7 +6282,6 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/automated/agrav/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "vF" = (
@@ -7669,7 +7672,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/machinery/porta_turret/ruin/hardliners{
+/obj/machinery/porta_turret/ruin/cybersun/seeker{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -9128,6 +9131,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "GO" = (
@@ -12350,6 +12354,7 @@
 	icon_state = "xtracks"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "SF" = (
@@ -13557,6 +13562,7 @@
 	dir = 6
 	},
 /obj/machinery/airalarm/directional/east,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "Xq" = (
@@ -15074,7 +15080,7 @@ LK
 XE
 xf
 xf
-iq
+pH
 iq
 in
 ep
@@ -17118,7 +17124,7 @@ Yx
 Yx
 Yx
 jk
-eq
+Qu
 eq
 jk
 Yx
