@@ -78,7 +78,7 @@
 /obj/item/attachment/foldable_stock/ripper
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	icon_state = "ripper_stock"
-	toggled_recoil_bonus = 1
+	toggled_recoil_bonus = -1
 	toggled_spread_bonus = -3
 
 /obj/item/attachment/foldable_stock/nahual
