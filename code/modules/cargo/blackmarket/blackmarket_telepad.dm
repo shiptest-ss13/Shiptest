@@ -215,7 +215,7 @@
 			return FALSE
 		balloon_alert(user, "item loaded")
 		close_machine(attacking_item)
-		return TRUE
+		return FALSE
 	else if(!creds_value)
 		balloon_alert(user, "open the machine!")
 		return FALSE
@@ -223,22 +223,6 @@
 	if(machine_stat & NOPOWER)
 		return
 
-	// if(creds_value < restock_cost)
-	// 	say("Insufficient credits!")
-	// 	playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
-	// 	return ITEM_INTERACT_BLOCKING
-
-	// if(istype(tool, /obj/item/holochip))
-	// 	var/obj/item/holochip/chip = tool
-	// 	chip.spend(restock_cost)
-	// else
-	// 	qdel(tool)
-	// 	if(creds_value != restock_cost)
-	// 		var/obj/item/holochip/change = new(loc, creds_value - restock_cost)
-	// 		user.put_in_hands(change)
-
-	// SSmarket.restock()
-	// restock_cost *= 2
 	return TRUE
 
 /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
@@ -306,7 +290,7 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 		return
 	var/datum/bank_account/account
-	var/datum/blackmarket_market/our_market = SSblackmarket.markets[/datum/blackmarket_market]
+	var/datum/blackmarket_market/our_market = SSblackmarket.markets[/datum/blackmarket_market/blackmarket]
 	if(!isAdminGhostAI(user))
 		if(!isliving(user))
 			return
@@ -345,6 +329,7 @@
 	our_market.add_item(new_item)
 
 	say("Item placed on the market!")
+	say("ding ding")
 	playsound(src, 'sound/effects/cashregister.ogg', 40, FALSE)
 	COOLDOWN_START(src, recharge_cooldown, recharge_time * 3)
 
