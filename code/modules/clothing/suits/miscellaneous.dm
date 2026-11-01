@@ -320,7 +320,7 @@
 	icon_state = "letterblack"
 	item_state = "letterblack"
 
-/obj/item/clothing/suit/jacket/letterman_blue
+/obj/item/clothing/suit/toggle/letterman_blue
 	name = "blue letterman jacket"
 	desc = "A blue letterman jacket, did you ever outgrow it?"
 	icon_state = "letterblue"
