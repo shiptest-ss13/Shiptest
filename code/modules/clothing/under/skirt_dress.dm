@@ -131,7 +131,7 @@
 
 /obj/item/clothing/under/dress/overall_dress
 	name = "overall dress"
-	desc = "Placeholder description"
+	desc = "A practical, yet stylish, pair of overalls with a loose skirt attached."
 	roll_sleeves = TRUE
 	icon_state = "overalldress_denim"
 	item_state = "overalldress_denim"
