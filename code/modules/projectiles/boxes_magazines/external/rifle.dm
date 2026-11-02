@@ -109,14 +109,28 @@
 /obj/item/ammo_box/magazine/p16/casket/empty
 	start_empty = TRUE
 
+// E-40
+/obj/item/ammo_box/magazine/e40
+	name = "E-40 magazine (.299 Eoehoma caseless)"
+	icon_state = "e40_mag-1"
+	base_icon_state = "e40_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	caliber = ".299 caseless"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/e40/empty
+	start_empty = TRUE
+
+// Swiss Cheese
 /obj/item/ammo_box/magazine/swiss
-	name = "\improper Swiss Cheese Magazine (5.56x42mm CLIP)"
-	desc = "A deft, 30-round magazine for the Swiss Cheese assault rifle. These rounds do moderate damage with good armor penetration."
+	name = "\improper Swiss Cheese Magazine (4.73x33mm caseless)"
+	desc = "A 45-round magazine for the Swiss Cheese assault rifle. These rounds do moderate damage with good armor penetration."
 	icon_state = "swissmag-1"
 	base_icon_state = "swissmag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = "5.56x42mm"
-	max_ammo = 30
+	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
+	caliber = "4.73x33mm caseless"
+	max_ammo = 45
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 // 8x50mmR En Bloc Clip (Illestren Hunting Rifle)

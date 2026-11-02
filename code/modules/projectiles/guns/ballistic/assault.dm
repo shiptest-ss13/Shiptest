@@ -124,7 +124,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
-	desc = "An ancient longarm famous for its boxy, modular design. Mass produced by the Terran Confederation in ages past, these often mutiple century old designs have survied due to their sheer ruggedness. The DMA on this unit is sadly broken, but these rifles are known for their excellent burst fire. Uses 5.56mm ammunition for Matter mode."
+	desc = "An ancient longarm, once mass produced by the Terran Confederation. While most have broken down, a few well preserved models can still be found in the hands of dedicated collectors. Known for their excellent burst fire and integrated DMA. Chambered in 4.73x33mm caseless, and uses iron rods for the DMA."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -133,9 +133,8 @@
 	icon_state = "swiss"
 	item_state = "swiss"
 	show_magazine_on_sprite = TRUE
-	empty_indicator = TRUE
 	burst_size = 3
-	burst_delay = 0.08 SECONDS
+	burst_delay = 0.04 SECONDS
 	fire_delay = 0.25 SECONDS
 	spread = 8
 	weapon_weight = WEAPON_MEDIUM
