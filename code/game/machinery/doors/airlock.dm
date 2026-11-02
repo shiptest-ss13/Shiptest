@@ -188,7 +188,7 @@
 				new previous_airlock(loc)
 				qdel(src)
 			if(69)
-				new /obj/effect/decal/cleanable/oil/slippery(loc)
+				new /obj/effect/decal/cleanable/oil(loc)
 
 
 	update_appearance()
