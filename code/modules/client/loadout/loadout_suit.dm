@@ -63,12 +63,16 @@
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
 
+/datum/gear/suit/jacket/two_tone
+	display_name = "two tone coat, colorable"
+	path = /obj/item/clothing/suit/jacket/twotone
+
 /datum/gear/suit/toggle/aclf
 	display_name = "ACLF leather jacket"
 	path = /obj/item/clothing/suit/toggle/aclf
 
 /datum/gear/suit/toggle/bikerjacket
-	display_name = "biker jacket"
+	display_name = "biker jacket, colorable"
 	path = /obj/item/clothing/suit/toggle/biker
 
 /datum/gear/suit/toggle/letterman

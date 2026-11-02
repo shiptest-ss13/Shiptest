@@ -302,6 +302,26 @@
 	icon_state = "baggy"
 	item_state = "baggy"
 
+/obj/item/clothing/suit/jacket/twotone
+	name = "two-tone coat"
+	desc = "An expensive looking two-tone coat. Has no buttons, but is still comfortably warm."
+	icon_state = "twotone"
+	item_state = "twotone"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	unique_reskin = list(
+		"olive two-tone coat" = "twotone",
+		"khaki two-tone coat" = "twotonekhaki",
+		"leather two-tone coat" = "twotoneleather",
+		"black two-tone coat" = "twotoneblack",
+		"white two-tone coat" = "twotonewhite",
+		"red two-tone coat" = "twotonered",
+	)
+	unique_reskin_changes_inhand = TRUE
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
 /obj/item/clothing/suit/toggle/letterman
 	name = "letterman jacket"
 	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
