@@ -73,6 +73,7 @@
 		/obj/item/clothing/under/dress/skirt/pinafore/plaid = 2,
 		/obj/item/clothing/under/dress/skirt/pinafore/plaid/green = 2,
 		/obj/item/clothing/under/dress/skirt/pinafore/plaid/brown = 2,
+		/obj/item/clothing/under/dress/overall_dress = 6,
 		/obj/item/clothing/under/suit/white/skirt = 2,
 		/obj/item/clothing/suit/jacket = 2,
 		/obj/item/clothing/suit/toggle/chorejacket = 3,

@@ -331,6 +331,10 @@
 	display_name = "overalls, brown"
 	path = /obj/item/clothing/under/overalls/brown
 
+/datum/gear/uniform/overall_dress
+	display_name = "overall dress (colorable)"
+	path = /obj/item/clothing/under/dress/overall_dress
+
 // skirts
 /datum/gear/uniform/shortskirt
 	display_name = "short skirt (colorable)"
@@ -341,5 +345,5 @@
 	path = /obj/item/clothing/under/shorts/miniskirt
 
 /datum/gear/uniform/pencilskirt
-	display_name = "pencil skirt (recolorable)"
+	display_name = "pencil skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/pencilskirt
