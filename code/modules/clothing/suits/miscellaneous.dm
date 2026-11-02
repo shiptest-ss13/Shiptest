@@ -510,3 +510,10 @@
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/capsule
+	name = "capsule jacket"
+	desc = "A poorly made jacket with a pill capsule resting on the backside. Good for your health, but not good for your education. Take only as prescribed."
+	icon_state = "capsule"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS

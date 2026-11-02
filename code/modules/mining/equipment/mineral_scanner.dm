@@ -235,8 +235,21 @@
 			return
 
 	if(our_vein.vein_contents.len > 0)
-		to_chat(user, span_notice("Class [our_vein.vein_class] ore vein with [our_vein.mining_charges] possible ore lodes found."))
+		var/threat_message = "Unknown"
+		switch(our_vein.vein_class)
+			if(1)
+				threat_message = "Minimal"
+			if(2)
+				threat_message = "Moderate"
+			if(3)
+				threat_message = "Severe"
+			if(4)
+				threat_message = "EXTREME"
+		to_chat(user, span_notice("Class <b>[our_vein.vein_class]</b> ore vein with <b>[our_vein.mining_charges]</b> ore lodes found."))
+		to_chat(user, span_danger("Expected fauna disturbance: <b>[threat_message]</b>"))
+		var/ore_string = ""
 		for(var/our_ore in our_vein.vein_contents)
-			to_chat(user, span_notice("\tExtractable amounts of [our_ore?:name]."))
+			ore_string += "\t[our_ore?:name]\n"
+		to_chat(user, span_notice("Extractable amounts of the following ores detected:\n[ore_string]"))
 	else
 		to_chat(user, span_notice("No notable mineral deposits found in [our_vein]."))
