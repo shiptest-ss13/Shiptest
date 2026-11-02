@@ -124,7 +124,7 @@
 					/obj/item/roller,
 					/obj/item/stack/sheet/mineral/silver)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -148,7 +148,7 @@
 	cost = 3000
 	contains = list(/obj/item/disk/surgery/t3)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -158,7 +158,7 @@
 	cost = 4000
 	contains = list(/obj/item/disk/surgery/cybersun)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = TRUE
 	faction_discount = 0
 

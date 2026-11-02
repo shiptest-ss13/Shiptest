@@ -554,7 +554,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/ngroutrider)
 	crate_name = "NGR outrider hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 
