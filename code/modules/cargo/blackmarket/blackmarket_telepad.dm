@@ -261,18 +261,18 @@
 	switch(action)
 		if("change_name")
 			var/value = params["value"]
-			// if(!CAN_BYPASS_FILTER(usr) && is_ic_filtered_for_pdas(value))
-			// 	return TRUE
 			current_name = trim(value, MAX_NAME_LEN)
 			return TRUE
 		if("change_desc")
 			var/value = params["value"]
-			// if(!CAN_BYPASS_FILTER(usr) && is_ic_filtered_for_pdas(value))
-			// 	return TRUE
 			current_desc = trim(value, MAX_MESSAGE_LEN)
 			return TRUE
 		if("change_price")
-			current_price = clamp(params["value"], LTSRBT_MIN_PRICE, LTSRBT_MAX_PRICE) // null price
+			var/new_cost = params["value"]
+			if(text2num(new_cost != null))
+				current_price = clamp(text2num(new_cost), LTSRBT_MIN_PRICE, LTSRBT_MAX_PRICE)
+			else
+				current_price = LTSRBT_MIN_PRICE
 			return TRUE
 		if("place_on_market")
 			place_on_market(usr)
