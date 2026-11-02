@@ -102,7 +102,6 @@
 		/obj/effect/decal/cleanable/molten_object = 30,
 		/obj/effect/decal/cleanable/molten_object/large = 30,
 		/obj/effect/decal/cleanable/oil = 30,
-		/obj/effect/decal/cleanable/oil/slippery = 1, // :)
 		/obj/effect/decal/cleanable/plastic = 30,
 		/obj/effect/decal/cleanable/ash = 30,
 		/obj/effect/decal/cleanable/ash/large = 30,
