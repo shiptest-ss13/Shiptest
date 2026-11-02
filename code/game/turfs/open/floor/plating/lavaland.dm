@@ -55,8 +55,6 @@
 	slowdown = 0
 
 	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
 
 	has_footsteps = TRUE
 	footstep_icon_state = "shrouded"
@@ -110,9 +108,6 @@
 	base_icon_state = "moss"
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	layer = HIGH_TURF_LAYER
 	gender = PLURAL
 	light_power = 1
@@ -176,9 +171,6 @@
 	smoothing_flags = null
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_CONCRETE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	planetary_atmos = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS

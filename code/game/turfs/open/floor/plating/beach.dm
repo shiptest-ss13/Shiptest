@@ -9,8 +9,6 @@
 	max_icon_states = 5
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
 	digResult = /obj/item/stack/ore/glass

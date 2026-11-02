@@ -8,8 +8,6 @@
 	base_icon_state = "sand"
 	layer = SAND_TURF_LAYER
 	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
 	planetary_atmos = TRUE
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
 	slowdown = 0
@@ -46,9 +44,6 @@
 	icon_state = "drydesert"
 	base_icon_state = "drydesert"
 	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	layer = STONE_TURF_LAYER
 	floor_variance = 0
 	max_icon_states = 0

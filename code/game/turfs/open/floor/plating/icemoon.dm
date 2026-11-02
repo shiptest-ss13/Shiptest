@@ -14,8 +14,6 @@
 	flags_1 = NONE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SNOW
-	barefootstep = FOOTSTEP_SNOW
-	clawfootstep = FOOTSTEP_SNOW
 	layer = SNOW_TURF_LAYER
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
@@ -114,8 +112,6 @@
 	base_icon_state = "icemoon_ground"
 	flags_1 = NONE
 	footstep = FOOTSTEP_ICE
-	barefootstep = FOOTSTEP_ICE
-	clawfootstep = FOOTSTEP_ICE
 	layer = STONE_TURF_LAYER
 	planetary_atmos = TRUE
 	bullet_sizzle = TRUE
@@ -149,9 +145,6 @@
 	smoothing_flags = null
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_CONCRETE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	dug = TRUE
 
 /turf/open/floor/plating/asteroid/icerock/smooth
@@ -161,9 +154,6 @@
 	smoothing_flags = null
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_CONCRETE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	dug = TRUE
 
 /turf/open/floor/plating/asteroid/icerock/temperate
@@ -187,8 +177,6 @@
 	base_icon_state = "iceberg_"
 	flags_1 = NONE
 	footstep = FOOTSTEP_ICE
-	barefootstep = FOOTSTEP_ICE
-	clawfootstep = FOOTSTEP_ICE
 	planetary_atmos = TRUE
 	broken_states = list("iceberg")
 	burnt_states = list("iceberg")

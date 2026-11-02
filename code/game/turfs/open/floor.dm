@@ -8,9 +8,6 @@
 	baseturfs = /turf/open/floor/plating
 
 	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	flags_1 = CAN_BE_DIRTY_1 | NO_SCREENTIPS_1
 
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR)

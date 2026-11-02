@@ -11,9 +11,6 @@
 	layer = WATER_TURF_LAYER
 
 	footstep = FOOTSTEP_WATER
-	barefootstep = FOOTSTEP_WATER
-	clawfootstep = FOOTSTEP_WATER
-	heavyfootstep = FOOTSTEP_WATER
 
 	///The transparency of the immerse element's overlay
 	var/immerse_overlay_alpha = 180

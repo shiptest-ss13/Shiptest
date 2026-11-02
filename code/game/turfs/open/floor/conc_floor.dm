@@ -8,9 +8,6 @@
 	floor_tile = null
 	tiled_dirt = FALSE
 	footstep = FOOTSTEP_CONCRETE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	var/smash_time = 3 SECONDS
 	var/time_to_harden = 20 SECONDS

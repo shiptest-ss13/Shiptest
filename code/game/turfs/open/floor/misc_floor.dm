@@ -200,9 +200,6 @@
 	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "dig up"
@@ -284,9 +281,6 @@
 	bullet_bounce_sound = null //needs a splashing sound one day.
 
 	footstep = FOOTSTEP_WATER
-	barefootstep = FOOTSTEP_WATER
-	clawfootstep = FOOTSTEP_WATER
-	heavyfootstep = FOOTSTEP_WATER
 
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
