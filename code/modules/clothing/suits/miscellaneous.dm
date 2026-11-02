@@ -517,3 +517,32 @@
 	icon_state = "capsule"
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
+
+/obj/item/clothing/suit/toggle/biker
+	name = "Biker Jacket"
+	desc = "A well made leather jacket for the high-speed biker. Feels comfortably stiff."
+	icon_state = "biker"
+	unique_reskin = list(
+		"Brown Biker Jacket" = "biker",
+		"White Biker Jacket" = "bikerwhite",
+		"Black Biker Jacket" = "bikerblack",
+		"Navy Biker Jacket" = "bikernavy",
+	)
+	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/biker/white
+	name = "White Biker Jacket"
+	icon_state = "bikerwhite"
+
+/obj/item/clothing/suit/toggle/biker/black
+	name = "Black Biker Jacket"
+	icon_state = "bikerblack"
+
+/obj/item/clothing/suit/toggle/biker/navy
+	name = "Navy Biker Jacket"
+	icon_state = "bikernavy"

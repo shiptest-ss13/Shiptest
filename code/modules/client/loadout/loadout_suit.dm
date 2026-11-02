@@ -67,6 +67,10 @@
 	display_name = "ACLF leather jacket"
 	path = /obj/item/clothing/suit/toggle/aclf
 
+/datum/gear/suit/toggle/bikerjacket
+	display_name = "biker jacket"
+	path = /obj/item/clothing/suit/toggle/biker
+
 /datum/gear/suit/toggle/letterman
 	display_name = "letterman jacket"
 	path = /obj/item/clothing/suit/toggle/letterman
