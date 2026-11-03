@@ -206,10 +206,11 @@ GLOBAL_LIST_INIT(footstep_overrides, list(
 
 /proc/get_footsteps_list()
 	var/list/footsteps = list()
-	for(var/footstep_types in GLOB.footstep_mob_types)
-		footsteps[footstep_types] = GLOB.footstep_default
-	for(var/override in GLOB.footstep_overrides)
-		footsteps[override] = GLOB.footstep_overrides[override]
+	for(var/footstep_type in GLOB.footstep_mob_types)
+		footsteps[footstep_type] = GLOB.footstep_default.Copy()
+	for(var/override_step in GLOB.footstep_overrides)
+		for(var/override_turf in GLOB.footstep_overrides[override_step])
+			footsteps[override_step][override_turf] = GLOB.footstep_overrides[override_step][override_turf]
 
 	return footsteps
 
