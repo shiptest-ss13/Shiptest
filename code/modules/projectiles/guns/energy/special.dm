@@ -10,7 +10,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -43,6 +43,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -50,6 +51,8 @@
 	icon_state = "decloner"
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
 	ammo_x_offset = 1
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/decloner/update_overlays()
 	. = ..()
@@ -203,9 +206,9 @@
 
 /obj/item/gun/energy/printer
 	autowiki_hidden = TRUE //not a handheld weapon i dont want this i think
-	name = "integrated SAW-80 LMG"
-	desc = "A modified Hydra-80 SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
-	icon_state = "hydra_lmg"
+	name = "integrated SAW-90 LMG"
+	desc = "A modified Python SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
+	icon_state = "python"
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	default_ammo_type = /obj/item/stock_parts/cell/secborg
 	allowed_ammo_types = list(
@@ -271,6 +274,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/temperature/security
 	name = "security temperature gun"
@@ -339,6 +344,8 @@
 	fire_delay = 0.1 SECONDS
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/buster
 	name = "replica buster cannon"

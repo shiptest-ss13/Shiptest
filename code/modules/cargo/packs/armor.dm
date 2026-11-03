@@ -91,10 +91,24 @@
 
 //gezena
 /datum/supply_pack/armor/pgf_marine_armor
-	name = "Marine Composite Armor Crate"
-	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
+	name = "Marine Combat Armor Crate"
+	desc = "One set of standard issue AR-98 body armor, protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,
+					/obj/item/clothing/head/helmet/gezena,
+					/obj/item/clothing/glasses/sunglasses/pgf,
+					/obj/item/clothing/mask/breath/pgfmask)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/pgf_marine_interceptor_armor
+	name = "Marine Interceptor Armor Crate"
+	desc = "One set of full coverage AR-98 body armor, highly protective and at the expense of additional weight. Comes with a matching L-98 respirator."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/gezena/marine/interceptor,
 					/obj/item/clothing/head/helmet/gezena,
 					/obj/item/clothing/glasses/sunglasses/pgf,
 					/obj/item/clothing/mask/breath/pgfmask)

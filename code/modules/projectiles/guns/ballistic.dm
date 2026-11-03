@@ -101,6 +101,7 @@
 	var/wear_maximum = 300 // wear cap
 
 	// OVERLAYS //
+	var/no_bolt_overlay = FALSE // set to TRUE if we don't want bolt overlays
 	var/mag_display = FALSE // does the sprite show a visible mag
 	var/mag_display_ammo = FALSE // does the sprite have an ammo display
 	var/empty_indicator = FALSE // does the sprite have an empty indicator
@@ -150,9 +151,9 @@
 
 /obj/item/gun/ballistic/update_overlays()
 	. = ..()
-	if (bolt_type == BOLT_TYPE_LOCKING)
+	if (bolt_type == BOLT_TYPE_LOCKING && !no_bolt_overlay)
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
-	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
+	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked && !no_bolt_overlay)
 		. += "[icon_state]_bolt"
 	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
@@ -194,9 +195,9 @@
 				if (catcher.a_intent == INTENT_GRAB && !from_firing && catcher.put_in_hands(casing))
 					to_chat(catcher, span_notice("You grab \the [casing] as it is ejected."))
 				else
-					casing.on_eject(shooter)
+					casing.on_eject(shooter, from_firing)
 			else
-				casing.on_eject(shooter)
+				casing.on_eject(shooter, from_firing)
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
@@ -308,7 +309,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/can_shoot()
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	return chambered || (bolt_type == BOLT_TYPE_OPEN && !bolt_locked && magazine && magazine.ammo_count()) // loathsome kludge but it works...
 
@@ -330,7 +331,7 @@
 	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
 			if ((chambered && !chambered.BB) || (chambered && always_chambers))
-				chambered.on_eject(shooter = user)
+				chambered.on_eject(user, FALSE)
 				chambered = null
 			if(doesnt_keep_bullet && (magazine.stored_ammo.len + (chambered ? 1 : 0)) >= magazine.max_ammo)
 				return
@@ -383,8 +384,8 @@
 	postfire_empty_checks(.)
 
 // ejects the provided casing from the gun into the world
-/obj/item/gun/ballistic/proc/eject_casing(mob/user, obj/item/ammo_casing/casing)
-	if(casing.caseless) //early return for caseless calibers
+/obj/item/gun/ballistic/proc/eject_casing(mob/user, obj/item/ammo_casing/casing, was_shot = TRUE)
+	if(casing.caseless && was_shot) //early return for caseless calibers if we shot them
 		return
 	casing.forceMove(drop_location())
 	var/angle_of_movement = (rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
@@ -403,7 +404,7 @@
 			else
 				chambered = null
 			for(var/obj/item/ammo_casing/CB in get_ammo_list(count_chambered, TRUE))
-				eject_casing(user, CB)
+				eject_casing(user, CB, FALSE)
 				num_unloaded++
 			if (num_unloaded)
 				to_chat(user, span_notice("You unload [num_unloaded] [cartridge_wording]\s from [src]."))
@@ -496,7 +497,7 @@
 // remember: you can always trust a loaded gun to go off at least once!
 /obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)
 	. = TRUE
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	if(!magazine && !chambered)
 		return

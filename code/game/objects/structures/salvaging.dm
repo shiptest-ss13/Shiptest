@@ -741,7 +741,7 @@
 		if(61 to 65)
 			// sarissa
 			new /obj/item/gun/energy/sharplite/sarissa(loc)
-			new /obj/item/stock_parts/cell/gun/sharplite(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite/heavy(loc)
 		if(66 to 70)
 			// cobra
 			new /obj/item/gun/ballistic/automatic/smg/cobra(loc)
@@ -761,7 +761,7 @@
 		if(86 to 90)
 			// clip faveleira
 			new /obj/item/gun/energy/clover/faveleira/clip(loc)
-			new /obj/item/stock_parts/cell/gun/upgraded(loc)
+			new /obj/item/stock_parts/cell/gun/heavy(loc)
 		if(91 to 95)
 			// shillelagh
 			new /obj/item/gun/energy/clover(loc)
@@ -801,8 +801,8 @@
 			new /obj/item/ammo_box/magazine/cm40_762_40_box(loc)
 		if(21 to 25)
 			// hydra SAW
-			new /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended(loc)
-			new /obj/item/ammo_box/magazine/m556_42_hydra/extended(loc)
+			new /obj/item/gun/ballistic/automatic/hmg/python(loc)
+			new /obj/item/ammo_box/magazine/python_box(loc)
 		if(26 to 30)
 			// VG-A5
 			new /obj/item/gun/energy/kalix/pgf/nock(loc)

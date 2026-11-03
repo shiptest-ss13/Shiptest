@@ -81,7 +81,7 @@
 
 /obj/item/ammo_casing/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
-	if(!prob(BULLET_POP_CHANCE) || !BB)
+	if(!prob(BULLET_POP_CHANCE) || !BB || !can_cookoff)
 		return
 	ready_proj()
 	var/fire_dir = pick(GLOB.alldirs)
