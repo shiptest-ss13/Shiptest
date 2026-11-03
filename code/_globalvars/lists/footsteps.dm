@@ -151,12 +151,6 @@ GLOBAL_LIST_INIT(footstep_overrides, list(
 			'sound/effects/footstep/carpetbarefoot3.ogg',
 			'sound/effects/footstep/carpetbarefoot4.ogg',
 			'sound/effects/footstep/carpetbarefoot5.ogg'), 75, -2),
-		FOOTSTEP_ASTEROID = list(list(
-			'sound/effects/footstep/hardclaw1.ogg',
-			'sound/effects/footstep/hardclaw2.ogg',
-			'sound/effects/footstep/hardclaw3.ogg',
-			'sound/effects/footstep/hardclaw4.ogg',
-			'sound/effects/footstep/hardclaw1.ogg'), 90, 1),
 		FOOTSTEP_CATWALK = list(list(
 			'sound/effects/footstep/hardclaw1.ogg',
 			'sound/effects/footstep/hardclaw2.ogg',
