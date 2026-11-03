@@ -336,6 +336,8 @@
 
 // how many shots it'd take to break thing as it is now, after its armour, the way /obj/bullet_act() does it. Null if we can't or shouldn't
 /proc/shots_to_break(obj/thing, obj/projectile/projectile_type, mob/living/shooter)
+	if(!(thing.flags_1 & INITIALIZED_1))
+		return null // a ruin still loading in around us, no armour or integrity yet
 	if(ai_is_door(thing) && (!shooter || thing.CanAStarPass(shooter.ai_controller?.get_access(), get_dir(shooter, thing), shooter)))
 		return null // there's a quicker way through a door we can open than shooting it down, but not one that's locked to us
 	if(thing.resistance_flags & INDESTRUCTIBLE)

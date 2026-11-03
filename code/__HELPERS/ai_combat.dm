@@ -35,6 +35,8 @@
 /proc/melee_hits_to_break(mob/living/basic/basic_mob, obj/thing)
 	if(!basic_mob.obj_damage || !(isstructure(thing) || ismachinery(thing)) || !thing.uses_integrity || (thing.resistance_flags & INDESTRUCTIBLE))
 		return null
+	if(!(thing.flags_1 & INITIALIZED_1))
+		return null // a ruin still loading in around us, no armour or integrity yet
 	var/damage_per_hit = thing.run_atom_armor(basic_mob.obj_damage, basic_mob.melee_damage_type, MELEE, null, basic_mob.armour_penetration)
 	if(damage_per_hit <= 0)
 		return null
