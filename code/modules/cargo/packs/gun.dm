@@ -8,16 +8,16 @@
 */
 
 /datum/supply_pack/gun/disposable
-	name = "Disposable Gun Crate"
-	desc = "In some sectors, these disposable pistols are the only firearms that can be legally sold for less than 200cr. That price is still far too high."
-	cost = 300
+	name = "Disposable Guns Crate"
+	desc = "In some sectors, these disposable pistols are the only firearms that can be legally sold for less than 200cr. That price is still far too high. This crate contains two."
+	cost = 200
 	contains = list(/obj/item/storage/guncase/pistol/disposable)
 	crate_name = "disposable gun crate"
 
 /datum/supply_pack/gun/derringer
-	name = ".38 Derringer Crate"
+	name = "HP Spark"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."
-	cost = 350
+	cost = 150
 	contains = list(/obj/item/storage/guncase/pistol/derringer)
 	crate_name = "derringer crate"
 	faction = /datum/faction/srm
@@ -166,11 +166,11 @@
 	contains = list(/obj/item/storage/guncase/pistol/firebrand)
 	faction = /datum/faction/srm
 
-/datum/supply_pack/gun/detrevolver
-	name = "Hunter's Pride Detective Revolver Crate"
-	desc = "Contains a concealable revolver favored by police departments around the sector, chambered in .38."
-	cost = 600
-	contains = list(/obj/item/storage/guncase/pistol/detective)
+/datum/supply_pack/gun/flintrevolver
+	name = "HP Flint Revolver Crate"
+	desc = "Contains a concealable Flint revolver, chambered in .38."
+	cost = 400
+	contains = list(/obj/item/storage/guncase/pistol/flint)
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/shadowrevolver
@@ -278,7 +278,6 @@
 	contains = list(/obj/item/storage/guncase/energy/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/warra
 
 /datum/supply_pack/gun/laser/kalix/pistol
 	name = "Etherbor SG-8 Beam Pistol Crate"
@@ -464,7 +463,7 @@
 
 /datum/supply_pack/gun/energy/faveleira
 	name = "ECM-25 'Faveleira' Energy Accelerating Scattergun"
-	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma cells."
+	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma heavy cells."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ecm25)
 	crate_name = "beam shotgun crate"
@@ -474,7 +473,7 @@
 
 /datum/supply_pack/gun/energy/faveleira/indie
 	name = "PL-24 'Faveleira' Energy Scattergun"
-	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses Eoehoma cells."
+	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses Eoehoma heavy cells."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/pl25)
 	faction_discount = 10
@@ -482,7 +481,7 @@
 
 /datum/supply_pack/gun/energy/maguey
 	name = "PL-20 'Maguey' Energy Repeater"
-	desc = "Contains a single PL-20 Energy Repeater, a powerful pulsed-plasma automatic rifle, manufactured by Clover Photonics. Uses Eoehoma cells."
+	desc = "Contains a single PL-20 Energy Repeater, a powerful pulsed-plasma automatic rifle, manufactured by Clover Photonics. Uses Eoehoma Heavy cells."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/pl20)
 	faction = /datum/faction/clip
@@ -871,7 +870,7 @@
 
 /datum/supply_pack/gun/hades
 	name = "AL655 'Hades' Plasma Assault Rifle crate"
-	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only."
+	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only. Uses Sharplite Heavy cells"
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
@@ -941,11 +940,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/saw80
-	name = "SAW-80 Squad Automatic Weapon"
-	desc = "Contains one of the rarely-produced SAW-80 Squad Automatic Weapon platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
-	cost = 7000
-	contains = list(/obj/item/storage/guncase/saw80)
+/datum/supply_pack/gun/python
+	name = "SAW-90 Python"
+	desc = "Contains one of the rarely-produced SAW-90 Python platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/python)
 	crate_name = "LMG crate"
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
@@ -1020,19 +1019,6 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-//turn into l201
-/*
-/datum/supply_pack/gun/gauss
-	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For Makosso-Warra employee use only."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/gauss)
-	crate_name = "dmr crate"
-	faction = /datum/faction/warra
-	faction_discount = 0
-	faction_locked = TRUE
-*/
-
 /datum/supply_pack/gun/claris
 	name = "'Claris' Gauss Rifle"
 	desc = "Contains a low-powered gauss rifle, loaded directly via ferromagnetic pellet speedloaders."
@@ -1073,7 +1059,7 @@
 
 /datum/supply_pack/gun/al607
 	name = "AL607 'Sarissa' Plasma Accelerator"
-	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only."
+	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only. Uses Sharplite Heavy cells."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/energy/al607)
 	crate_name = "sniper rifle crate"
@@ -1290,3 +1276,14 @@
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
+
+// BOW //
+
+/datum/supply_pack/gun/bow
+	name = "Bow Crate"
+	desc = "Contains a bow for large game, manufactured by Hunter's Pride. Great for the discerning hunter!"
+	cost = 500
+	contains = list(/obj/item/storage/guncase/bow)
+	crate_name = "bow crate"
+	faction = /datum/faction/srm
+	faction_discount = 10

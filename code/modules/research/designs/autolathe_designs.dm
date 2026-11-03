@@ -684,7 +684,7 @@
 	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/hypospray_vial_tiny
-	name = "Hypospray Vial"
+	name = "Tiny Hypospray Vial"
 	id = "vial_tiny"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 250)
@@ -700,7 +700,7 @@
 	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/hypospray_vial_large
-	name = "Hypospray Vial"
+	name = "Large Hypospray Vial"
 	id = "vial_large"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/silver = 200, /datum/material/glass = 1000)

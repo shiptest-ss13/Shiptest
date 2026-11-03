@@ -3,14 +3,11 @@
 
 /datum/autowiki/weapons/proc/manufacturer_name(raw)
 	var/static/list/names = list(
-		MANUFACTURER_SHARPLITE = "Sharplite Defense",
 		MANUFACTURER_SHARPLITE_NEW = "Makosso-Warra-Sharplite",
 		MANUFACTURER_HUNTERSPRIDE = "Hunter's Pride",
 		MANUFACTURER_SOLARARMORIES = "Solarbundswaffenkammer",
 		MANUFACTURER_SCARBOROUGH = "Scarborough Arms",
 		MANUFACTURER_EOEHOMA = "Eoehoma Firearms",
-		MANUFACTURER_WARRA_OLD = "Makosso-Warra (old)",
-		MANUFACTURER_WARRA = "Makosso-Warra",
 		MANUFACTURER_VIGILITAS = "Makosso-Warra Advantage",
 		MANUFACTURER_INTEQ = "Inteq Risk Management Group",
 		MANUFACTURER_MINUTEMAN = "Lanchester City Firearms Plant",

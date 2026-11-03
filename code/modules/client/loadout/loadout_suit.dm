@@ -67,6 +67,11 @@
 	display_name = "ACLF leather jacket"
 	path = /obj/item/clothing/suit/toggle/aclf
 
+/datum/gear/suit/toggle/capsule
+	display_name = "capsule jacket"
+	path = /obj/item/clothing/suit/toggle/capsule
+	description = "Good for health, bad for education."
+
 /datum/gear/suit/toggle/flight
 	display_name = "flight jacket, colorable"
 	path = /obj/item/clothing/suit/toggle/flight
@@ -150,6 +155,33 @@
 /datum/gear/suit/jacket/track
 	display_name = "track jacket, colorable"
 	path = /obj/item/clothing/suit/toggle/track
+
+//trenchcoats
+
+/datum/gear/suit/jacket/trenchcoat
+	display_name = "trenchcoat"
+	path = /obj/item/clothing/suit/toggle/trenchcoat
+	description = "A heavy trenchcoat with plenty of pocket space."
+
+/datum/gear/suit/jacket/trenchcoat_noir
+	display_name = "trenchcoat, noir"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/noir
+	description = "A sleek grey trenchcoat perfect for rainy nights with androids."
+
+/datum/gear/suit/jacket/trenchcoat_navy
+	display_name = "trenchcoat, navy"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/navy
+	description = "A sleek grey trenchcoat perfect for rainy nights with androids."
+
+/datum/gear/suit/jacket/trenchcoat_aclf
+	display_name = "trenchcoat, ACLF"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/aclf
+	description = "Wanna look like a tryhard? Believe in the ACLF that much? Try this trenchcoat with their iconography on it."
+
+/datum/gear/suit/jacket/trenchcoat_dm
+	display_name = "trenchcoat, deaf-mute"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/dm
+	description = "Golden buttons, inky fabric, and a roundel. I thought what I'd do was wear this."
 
 //Suspenders
 /datum/gear/suit/suspenders

@@ -177,7 +177,7 @@
 	see = view(view_range, pos)
 	return see
 
-/obj/item/bodycamera/proc/isXRay()
+/obj/item/bodycamera/proc/isXRay(ignore_malf_upgrades)
 	return FALSE
 
 /obj/item/bodycamera/update_remote_sight(mob/living/user)
