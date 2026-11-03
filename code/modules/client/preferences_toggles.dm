@@ -202,6 +202,19 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_instruments)()
 /datum/verbs/menu/Settings/Sound/toggle_instruments/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_INSTRUMENTS
 
+/datum/verbs/menu/Settings/Sound/verb/set_instrument_volume()
+	set name = "Set Instrument/Jukebox Volume"
+	set category = "Preferences"
+	set desc = "Set Instrument/Jukebox Volume"
+	var/client/C = usr.client
+	var/new_volume = tgui_input_number(usr, "How loud should instruments and jukeboxes be for you, from 0 to 100?", "Instrument Volume", C.prefs.instrument_volume, 100, 0)
+	if(isnull(new_volume) || !C)
+		return
+	C.prefs.instrument_volume = clamp(round(new_volume), 0, 100)
+	C.prefs.save_preferences()
+	to_chat(usr, "Instruments and jukeboxes will now play at [C.prefs.instrument_volume]% volume for you.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Set Instrument Volume", "[C.prefs.instrument_volume]"))
+
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 	set name = "Hear/Silence Ambience"
