@@ -143,7 +143,7 @@
 // muzzleflash for basicmobs too!
 /datum/component/ranged_attacks/proc/flash_muzzle(atom/target)
 	var/mob/living/basic/firer = parent
-	if(!flash_gun || QDELETED(target))
+	if(!flash_gun || !initial(flash_gun.flashy) || QDELETED(target))
 		return
 	muzzle_flash ||= new(null, initial(flash_gun.muzzleflash_iconstate))
 	if(muzzle_flash.applied)

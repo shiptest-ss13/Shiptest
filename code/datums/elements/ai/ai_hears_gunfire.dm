@@ -25,12 +25,12 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 /proc/alert_ai_to_gunfire(mob/living/shooter, suppression, is_laser, atom/fired_from)
 	if(!istype(shooter) || suppression >= SUPPRESSED_VERY)
 		return
-	if(!suppression)
-		ai_mark_revealed_in_dark(shooter, 2 SECONDS) // the muzzle flash gives them away, 2 seconds so it doesnt hide between ai thinking ticks
-	// guns say how loud they are. Mobs shooting without one go by what they're firing
 	var/obj/item/gun/gun = fired_from
 	if(!istype(gun))
 		gun = null
+	if(!suppression && (!gun || gun.flashy))
+		ai_mark_revealed_in_dark(shooter, 2 SECONDS) // the muzzle flash gives them away, 2 seconds so it doesnt hide between ai thinking ticks
+	// guns say how loud they are. Mobs shooting without one go by what they're firing
 	var/hearing_range = gun ? gun.gunfire_hearing_range : (is_laser ? AI_LASER_HEARING_RANGE : AI_GUNFIRE_HEARING_RANGE)
 	if(suppression)
 		if(!isnull(gun?.suppressed_gunfire_hearing_range))
