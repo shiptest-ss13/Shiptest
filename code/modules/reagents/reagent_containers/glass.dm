@@ -136,7 +136,7 @@
 	item_state = "beaker"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	custom_materials = list(/datum/material/glass=500)
+	custom_materials = list(/datum/material/glass=200)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
 	can_have_cap = TRUE
 	cap_icon_state = "beaker_cap"
@@ -151,7 +151,7 @@
 	name = "large beaker"
 	desc = "A large beaker. Can hold up to 100 units."
 	icon_state = "beakerlarge"
-	custom_materials = list(/datum/material/glass=2500)
+	custom_materials = list(/datum/material/glass=400)
 	volume = 100
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100)

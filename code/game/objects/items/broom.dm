@@ -13,7 +13,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
 	resistance_flags = FLAMMABLE
-	custom_materials = list(/datum/material/iron = 2000) // WS Edit - Item Materials
+	custom_materials = list(/datum/material/iron = 150) // WS Edit - Item Materials
 
 /obj/item/pushbroom/Initialize()
 	. = ..()

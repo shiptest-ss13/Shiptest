@@ -17,13 +17,13 @@
 	cap_on = TRUE
 	drop_sound = 'sound/items/handling/beaker_drop.ogg'
 	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
-	custom_materials = list(/datum/material/glass = 200)
+	custom_materials = list(/datum/material/glass = 120)
 	var/label = null
 
-	/obj/item/reagent_containers/glass/bottle/examine(mob/user)
-		. = ..()
-		if(!isnull(label))
-			. += custom_boxed_message("red_box center", span_red((span_bold(label))))
+/obj/item/reagent_containers/glass/bottle/examine(mob/user)
+	. = ..()
+	if(!isnull(label))
+		. += custom_boxed_message("red_box center", span_red((span_bold(label))))
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
