@@ -13,40 +13,40 @@
 
 // Deckhand uniforms
 
-/obj/item/clothing/under/warra/deckhand
-	name = "deckhand uniform"
+/obj/item/clothing/under/warra/assistant
+	name = "assistant uniform"
 	desc = "A work uniform typical of entry-level employees across Makosso-Warra, N+S Logistics and Vigilitas Interstellar."
-	icon_state = "deckhand"
+	icon_state = "assistant"
 	item_state = "graycloth"
 	unique_reskin = list(
-		"deckhand uniform" = "deckhand",
-		"nurse uniform" = "deckhand_medical",
-		"mechanic uniform" = "deckhand_engi",
-		"cargo handler shorts" = "deckhand_supply",
-		"watchman shorts" = "deckhand_security",
-		"custodial uniform" = "deckhand_janitor",
+		"assistant uniform" = "assistant",
+		"nurse uniform" = "assistant_medical",
+		"mechanic uniform" = "assistant_engi",
+		"cargo handler shorts" = "assistant_supply",
+		"watchman shorts" = "assistant_security",
+		"custodial uniform" = "assistant_janitor",
 		)
 	unique_reskin_changes_name = TRUE
 
-/obj/item/clothing/under/warra/deckhand/supply
+/obj/item/clothing/under/warra/assistant/supply
 	name = "cargo handler shorts"
-	icon_state = "deckhand_supply"
+	icon_state = "assistant_supply"
 
-/obj/item/clothing/under/warra/deckhand/engineering
+/obj/item/clothing/under/warra/assistant/engineering
 	name = "mechanic uniform"
-	icon_state = "deckhand_engi"
+	icon_state = "assistant_engi"
 
-/obj/item/clothing/under/warra/deckhand/medical
+/obj/item/clothing/under/warra/assistant/medical
 	name = "nurse uniform"
-	icon_state = "deckhand_medical"
+	icon_state = "assistant_medical"
 
-/obj/item/clothing/under/warra/deckhand/security
+/obj/item/clothing/under/warra/assistant/security
 	name = "watchman shorts"
-	icon_state = "deckhand_security"
+	icon_state = "assistant_security"
 
-/obj/item/clothing/under/warra/deckhand/janitor
+/obj/item/clothing/under/warra/assistant/janitor
 	name = "custodial uniform"
-	icon_state = "deckhand_janitor"
+	icon_state = "assistant_janitor"
 
 // Engineering uniforms
 /obj/item/clothing/under/warra/engineering

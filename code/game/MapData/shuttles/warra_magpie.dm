@@ -229,7 +229,7 @@
 /datum/outfit/lioplesintern
 	name = "Magpie Holodisk Lioples Intern"
 	head = /obj/item/clothing/head/warra/cap/janitor
-	uniform = /obj/item/clothing/under/warra/deckhand/janitor
+	uniform = /obj/item/clothing/under/warra/assistant/janitor
 	gloves = /obj/item/clothing/gloves/nitrile/pink
 	shoes = /obj/item/clothing/shoes/sneakers/purple
 

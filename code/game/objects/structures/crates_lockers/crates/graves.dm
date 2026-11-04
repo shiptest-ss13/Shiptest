@@ -85,7 +85,7 @@
 		if(2)
 			new /obj/item/clothing/head/papersack/smiley(src)
 		if(3)
-			new /obj/item/clothing/under/warra/deckhand(src)
+			new /obj/item/clothing/under/warra/assistant(src)
 			new /obj/item/clothing/head/warra(src)
 		if(4)
 			new /obj/item/storage/book/bible/booze(src)

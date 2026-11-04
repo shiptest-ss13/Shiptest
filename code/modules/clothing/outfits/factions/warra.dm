@@ -712,7 +712,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
-	uniform = /obj/item/clothing/under/warra/deckhand
+	uniform = /obj/item/clothing/under/warra/assistant
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = /obj/item/pda
 
@@ -721,7 +721,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
-	uniform = /obj/item/clothing/under/warra/deckhand
+	uniform = /obj/item/clothing/under/warra/assistant
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = null
 
@@ -730,13 +730,13 @@
 	jobtype = /datum/job/janitor
 	job_icon = "janitor"
 
-	uniform = /obj/item/clothing/under/warra/deckhand/janitor
+	uniform = /obj/item/clothing/under/warra/assistant/janitor
 	head = /obj/item/clothing/head/warra/cap/janitor
 
 /datum/outfit/job/warra/assistant/security
 	name = "Makosso-Warra - Assistant (Vigilitas)"
 
-	uniform = /obj/item/clothing/under/warra/deckhand/security
+	uniform = /obj/item/clothing/under/warra/assistant/security
 	head = /obj/item/clothing/head/warra/cap/security
 
 /datum/outfit/job/warra/assistant/security/empty
@@ -752,7 +752,7 @@
 	belt = /obj/item/pda/cargo
 	ears = /obj/item/radio/headset/headset_cargo
 	head = /obj/item/clothing/head/warra/cap/supply
-	uniform = /obj/item/clothing/under/warra/deckhand/supply
+	uniform = /obj/item/clothing/under/warra/assistant/supply
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 /datum/outfit/job/warra/assistant/cargo/empty
