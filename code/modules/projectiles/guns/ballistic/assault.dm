@@ -124,12 +124,13 @@
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
-	desc = "An ancient longarm, once mass produced by the Terran Confederation. While most have broken down, a few well preserved models can still be found in the hands of dedicated collectors. Known for their excellent burst fire and integrated DMA. Chambered in 4.73x33mm caseless, and uses iron rods for the DMA."
+	desc = "An ancient longarm, once mass produced by the Terran Confederation. While most have broken down, a few well preserved models can still be found in the hands of dedicated collectors. Known for their excellent burst fire and integrated DMA unit, keeping it useful in times of logistical trouble. Chambered in 4.73x33mm caseless, and uses sharpened iron rods for the DMA."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
+	fire_sound_volume = 35
 	icon_state = "swiss"
 	item_state = "swiss"
 	show_magazine_on_sprite = TRUE
@@ -138,8 +139,8 @@
 	fire_delay = 0.25 SECONDS
 	spread = 8
 	weapon_weight = WEAPON_MEDIUM
-	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto", FIREMODE_OTHER = "hybrid")
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto")
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
 
 	fire_select_icon_state_prefix = "swisschesse_"
 
@@ -148,9 +149,28 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/swiss,
 	)
+	default_attachments = list(/obj/item/attachment/gun/ballistic/swiss_cheese_dma)
+	unique_attachments = list(/obj/item/attachment/gun/ballistic/swiss_cheese_dma)
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = 8
 	spread_unwielded = 15
 
-/obj/item/gun/ballistic/automatic/assault/swiss_cheese/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	to_chat(user, span_danger("You hear a strange sound from the DMA unit. It doesn't appear to be operational."))
+/obj/item/gun/ballistic/automatic/assault/swiss_cheese/examine(mob/examiner)
+	. = ..()
+	. += span_notice("You could use an iron rod on it to sharpen it for use in the DMA.")
+
+/obj/item/gun/ballistic/automatic/assault/attackby(obj/item/thingy, mob/user, params)
+	if(istype(thingy, /obj/item/stack/rods))
+		to_chat(user, span_notice("You begin sharpening a rod on [src]..."))
+		var/obj/item/stack/rods/its_a_cylinder = thingy
+		if(do_after(user, 1 SECONDS))
+			if(!its_a_cylinder.use(1))
+				to_chat(user, span_warning("The rod you were sharpening isn't there anymore! What the hell?"))
+				return ..()
+			to_chat(user, span_notice("You sharpen the rod."))
+			playsound(src, 'sound/items/crowbar.ogg', 25, TRUE)
+			var/obj/item/not_anymore = new /obj/item/ammo_casing/caseless/dma_rod
+			user.put_in_hands(not_anymore)
+			src.attackby_secondary(not_anymore, user, params) // load if we can
+	else
+		return ..()

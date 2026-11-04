@@ -61,12 +61,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/underbarrel, /obj/item/ammo_casing/energy/laser/underbarrel)
 	spawn_no_ammo = TRUE
 
-/obj/item/attachment/gun/energy/e40
-	name = "E-40 laser component"
-	desc = "The laser component of the E-40 energy gun. Somehow, you have ripped this off. Great job. If you put this on something it won't be removable so don't do that."
-	weapon_type = /obj/item/gun/energy/laser/e40_laser_secondary
-	attach_features_flags = ATTACH_NO_SPRITE
-
+// not a proper attachhment yet, but.
 /obj/item/gun/energy/laser/e40_laser_secondary
 	name = "secondary e40 laser gun"
 	autowiki_hidden = TRUE //part of the E-40, not a weapon itself

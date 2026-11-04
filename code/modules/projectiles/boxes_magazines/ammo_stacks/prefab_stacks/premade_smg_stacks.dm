@@ -66,7 +66,7 @@
 
 /obj/item/storage/box/ammo/c47x33mm
 	name = "box of 4.7x33mm caseless ammo"
-	desc = "A box of 4.7x33mm caseless ammo, an antiquated Terran Confederacy cartridge still used in an odd few guns."
+	desc = "A box of 4.7x33mm caseless ammo, an antiquated Solarian cartridge. Proudly manufactured by the Nkansah Historical Firearms Society."
 	icon_state = "47x33box"
 
 /obj/item/storage/box/ammo/c47x33mm/PopulateContents()
