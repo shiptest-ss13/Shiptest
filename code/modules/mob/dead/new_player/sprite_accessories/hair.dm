@@ -650,6 +650,10 @@
 	name = "Splotches"
 	icon_state = "splotches"
 
+/datum/sprite_accessory/hair_gradient/splotches_fade
+	name = "Splotches (Faded)"
+	icon_state = "splotches_fade"
+
 /datum/sprite_accessory/hair_gradient/spots
 	name = "Spots"
 	icon_state = "spots"
