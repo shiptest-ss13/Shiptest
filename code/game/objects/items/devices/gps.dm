@@ -8,11 +8,14 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	obj_flags = UNIQUE_RENAME
+	//what is the tag of the gps
 	var/gpstag
+	//does the gps start on
+	var/gps_active = FALSE
 
 /obj/item/gps/Initialize()
 	. = ..()
-	AddComponent(/datum/component/gps/item, gpstag)
+	AddComponent(/datum/component/gps/item, gpstag, tracking = gps_active)
 
 /obj/item/gps/science
 	icon_state = "gps-s"

@@ -18,11 +18,10 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 ///GPS component subtype. Only gps/item's can be used to open the UI.
 /datum/component/gps/item
-	tracking = FALSE
 	var/updating = TRUE //Automatic updating of GPS list. Can be set to manual by user.
 	var/deep_interact = FALSE // if this item can have it's GPS accessed inside other items.
 
-/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE, has_deep_interact = FALSE)
+/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE, has_deep_interact = FALSE, tracking = FALSE)
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE || !isitem(parent))
 		return COMPONENT_INCOMPATIBLE
