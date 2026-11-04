@@ -198,7 +198,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
 	)
-	faction = /datum/faction/syndicate
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
