@@ -379,7 +379,7 @@
 	name = "Kitchen Knife"
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 12000)
+	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
@@ -591,7 +591,7 @@
 	name = "Hatchet"
 	id = "hatchet"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 750)
 	build_path = /obj/item/hatchet
 	category = list("initial","Misc", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
@@ -671,7 +671,7 @@
 	name = "Large Beaker"
 	id = "large_beaker"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/glass = 2500)
+	materials = list(/datum/material/glass = 1000)
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 	category = list("initial", "Medical", "Medical Designs")
 
@@ -728,7 +728,7 @@
 	name = "Chemical Jug"
 	id = "chem_jug"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/plastic = 4000)
+	materials = list(/datum/material/plastic = 1250)
 	build_path = /obj/item/reagent_containers/glass/chem_jug/open
 	category = list("initial", "Medical", "Medical Designs")
 
@@ -1018,7 +1018,7 @@
 	name = "Butcher's Cleaver"
 	id = "cleaver"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 18000)
+	materials = list(/datum/material/iron = 650)
 	build_path = /obj/item/melee/knife/butcher
 	category = list("initial", "Dinnerware")
 
