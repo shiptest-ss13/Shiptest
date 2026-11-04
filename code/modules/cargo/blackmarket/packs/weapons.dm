@@ -235,56 +235,6 @@
 	availability_prob = 10
 	spawn_weighting = FALSE
 
-/datum/blackmarket_item/weapon/guncase/e50
-	name = "E-50 Energy Emitter"
-	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
-	item = /obj/item/gun/energy/laser/e50
-	pair_item = list(/datum/blackmarket_item/ammo/huge_weapon_cell)
-
-	cost_min = 4000
-	cost_max = 7000
-	stock_max = 2
-	availability_prob = 20
-	spawn_weighting = FALSE
-
-/*
-/datum/blackmarket_item/weapon/guncase/e50_underbarrel
-	name = "Underbarrel Energy Cannon"
-	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor</i> chance of painfully burning your hands."
-	item = /obj/item/attachment/gun/energy/e50
-	mag_type = /obj/item/stock_parts/cell/gun
-
-	cost_min = 4000
-	cost_max = 5000
-	stock_max = 2
-	availability_prob = 20
-	spawn_weighting = FALSE
-*/
-
-/datum/blackmarket_item/weapon/guncase/e60
-	name = "E-60 Disabler"
-	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
-	item = /obj/item/gun/energy/disabler/e60
-
-	cost_min = 500
-	cost_max = 750
-	stock_max = 3
-	availability_prob = 40
-
-/datum/blackmarket_item/weapon/guncase/stingingnettle
-	name = "xPL-7 Stinging Nettle"
-	desc = "An 'off the streets' version of the PL-7 Nettle. Someone installed an electrowhatever chamber on the back, and now it fires like a machine pistol. I also took the liberty of painting over the atrocious paintjob of its previous owner, thank me later."
-	item = /obj/item/gun/energy/clover/pistol/auto
-
-	cost_min = 1500
-	cost_max = 2250
-	stock_max = 2
-	availability_prob = 30
-
-/datum/blackmarket_item/weapon/guncase/faveleira
-	name = "ECM-25 Faveleira"
-	desc = "A fancy Clover Photonics multi-mode energy scattergun, fresh and only lightly used from some poor mining team that bit off more than they could drill. Fun for all ranges. Uses Eoehoma cells, and comes with upgraded ones, you're welcome."
-
 /datum/blackmarket_item/weapon/guncase/e10
 	name = "E-10 Laser Pistol"
 	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
