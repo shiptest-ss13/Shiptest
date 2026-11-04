@@ -68,6 +68,16 @@
 	stock = 4
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/swiss_cheese
+	name = "\"Swiss Cheese\" 4.73 Caseless Magazine"
+	desc = "A 45 round magazine for the \"Swiss Cheese\" Assault Rifle."
+	item = /obj/item/ammo_box/magazine/swiss
+
+	cost_min = 300
+	cost_max = 500
+	stock = 4
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/cm23_mag
 	name = "CM-23 Magazines"
 	desc = "10 round 10mm magazines for use in the CM-23 pistol."
