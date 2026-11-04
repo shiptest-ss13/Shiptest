@@ -1431,11 +1431,3 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
 	build_path = /obj/item/stack/marker_beacon
 	category = list("initial","Misc")
-
-/datum/design/defib_mount
-	name = "Defibrillator Mount"
-	id = "defib_mount"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
-	build_path = /obj/item/wallframe/defib_mount
-	category = list("initial","Construction","Medical")
