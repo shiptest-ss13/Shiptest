@@ -42,6 +42,11 @@
 	if(controller.blackboard[step_key])
 		end_sequence(controller, FALSE, "our guard stopped us")
 
+// something above us took over, so our behavior's cancelled
+/datum/ai_planning_subtree/sequence/on_preempted(datum/ai_controller/controller)
+	if(controller.blackboard[step_key])
+		end_sequence(controller, FALSE, "something above us took over")
+
 // whether we're ready to start, our start_delay having passed since our guard began to hold, starting the wait if it hasn't begun
 /datum/ai_planning_subtree/sequence/proc/delay_passed(datum/ai_controller/controller)
 	if(!start_delay)

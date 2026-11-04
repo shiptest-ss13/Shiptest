@@ -61,7 +61,7 @@ multiple modular subtrees with behaviors
 	var/list/behavior_args = list()
 	///For behaviors that move us to what's in their first blackboard key, what that held when they set up, so we set them up again if it changes for queue_behavior()
 	var/list/behavior_setup_refs
-	///How each behavior last ended on its own, as list(behavior type = TRUE if it succeeded, FALSE if it failed)
+	///How each behavior last ended on its own, as list(behavior type = TRUE if it succeeded, FALSE if it failed or was given up on, like by our movement). Not set when a plan just stops queueing it
 	var/list/behavior_outcomes
 	///How many behaviors have refused to start this planning pass, so a subtree that finishes planning without managing to start anything lets the next one have a go
 	var/refused_behaviors = 0
@@ -161,7 +161,8 @@ multiple modular subtrees with behaviors
 	if(plan_record)
 		for(var/level in 1 to plan_depth)
 			indent += "&nbsp;&nbsp;"
-	for(var/datum/ai_planning_subtree/subtree as anything in subtrees)
+	for(var/subtree_index in 1 to length(subtrees))
+		var/datum/ai_planning_subtree/subtree = subtrees[subtree_index]
 		if(subtree.required_conditions || subtree.blocking_conditions)
 			var/current_conditions = get_conditions()
 			if(!subtree.guard_passes(current_conditions))
@@ -188,6 +189,9 @@ multiple modular subtrees with behaviors
 			// above anything a group's own subtrees noted, so it reads top down
 			plan_record.Insert(record_index, "[indent][subtree.type]: [length(queued) ? queued.Join(", ") : "nothing"][result == SUBTREE_RETURN_FINISH_PLANNING ? " <b>(finished planning)</b>" : ""]")
 		if(result == SUBTREE_RETURN_FINISH_PLANNING)
+			for(var/preempted_index in subtree_index + 1 to length(subtrees))
+				var/datum/ai_planning_subtree/preempted = subtrees[preempted_index]
+				preempted.on_preempted(src)
 			return SUBTREE_RETURN_FINISH_PLANNING
 
 ///Swaps the typepaths in sensors for the shared instances in SSai_controllers, like init_subtrees()
@@ -308,7 +312,7 @@ multiple modular subtrees with behaviors
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
 			if(!current_movement_target)
 				// lost it somehow, so end it, rather than having it wait for a target forever
-				finish_behavior(current_behavior)
+				fail_behavior(current_behavior)
 				continue
 			if(AI_IN_RANGE(pawn, current_movement_target, current_behavior.required_distance)) ///Are we close enough to engage?
 				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.
@@ -491,7 +495,7 @@ multiple modular subtrees with behaviors
 		LAZYSET(behavior_outcomes, behavior.type, TRUE)
 		behavior.finish_action(arglist(arguments))
 
-/// How behavior_type last ended on its own since we last forgot about it: TRUE if it succeeded, FALSE if it failed, or null if it hasn't
+/// How behavior_type last ended on its own since we last forgot about it: TRUE if it succeeded, FALSE if it failed or was given up on, or null if it hasn't
 /datum/ai_controller/proc/get_behavior_outcome(behavior_type)
 	return LAZYACCESS(behavior_outcomes, behavior_type)
 
@@ -504,13 +508,13 @@ multiple modular subtrees with behaviors
 		return
 	for(var/i in current_behaviors)
 		var/datum/ai_behavior/current_behavior = i
-		finish_behavior(current_behavior)
+		fail_behavior(current_behavior)
 
 /// Ends only the behaviors that need us to get somewhere, like when our movement's given up on getting there, leaving the rest, like firing back where we were shot from
 /datum/ai_controller/proc/cancel_movement_actions()
 	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT)
-			finish_behavior(current_behavior)
+			fail_behavior(current_behavior)
 
 /// Forgets where home is and the way back to it, so we make wherever we are now home
 /datum/ai_controller/proc/forget_home()
@@ -541,6 +545,11 @@ multiple modular subtrees with behaviors
 	if(stored_arguments)
 		arguments += stored_arguments
 	behavior.finish_action(arglist(arguments))
+
+/// Ends behavior as having failed. Not for when a plan just stops queueing it, which isn't the behavior failing
+/datum/ai_controller/proc/fail_behavior(datum/ai_behavior/behavior)
+	LAZYSET(behavior_outcomes, behavior.type, FALSE)
+	finish_behavior(behavior, FALSE)
 
 /datum/ai_controller/proc/on_sentience_gained()
 	SIGNAL_HANDLER

@@ -5,7 +5,7 @@
 	)
 	// as far as our pathfinding plans
 	max_target_distance = AI_MAX_PATH_LENGTH
-	// plan again straight away when who we're fighting changes, they come into or out of sight, we're shot at, or our nerve goes or comes back
+	// what makes us interrupt our current plan and replan, in order of priority.
 	interrupt_keys = list(
 		BB_BASIC_MOB_CURRENT_TARGET,
 		BB_BASIC_MOB_TARGET_IN_SIGHT,

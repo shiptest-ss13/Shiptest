@@ -17,6 +17,10 @@
 /datum/ai_planning_subtree/proc/on_skipped(datum/ai_controller/controller)
 	return
 
+///Called when a subtree before us finishes planning, so we miss this plan and anything we'd queued is cancelled. Unlike on_skipped(), our guard may still hold, so only for what can't carry on after a gap, like a sequence partway through
+/datum/ai_planning_subtree/proc/on_preempted(datum/ai_controller/controller)
+	return
+
 ///The subtrees inside us, if we're a group
 /datum/ai_planning_subtree/proc/get_child_subtrees()
 	return null
@@ -59,3 +63,7 @@
 /datum/ai_planning_subtree/group/on_skipped(datum/ai_controller/controller)
 	for(var/datum/ai_planning_subtree/subtree as anything in get_child_subtrees())
 		subtree.on_skipped(controller)
+
+/datum/ai_planning_subtree/group/on_preempted(datum/ai_controller/controller)
+	for(var/datum/ai_planning_subtree/subtree as anything in get_child_subtrees())
+		subtree.on_preempted(controller)
