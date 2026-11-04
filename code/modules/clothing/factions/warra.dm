@@ -1,16 +1,52 @@
 // Uniforms //
 
 /obj/item/clothing/under/warra
-	name = "deckhand's uniform"
-	desc = "A plain grey work uniform with a Makosso-Warra Corporation logo embroidered on the front. Typical of entry-level employees."
+	name = "generic warra uniform"
+	desc = "You should not be seeing this."
 	icon = 'icons/obj/clothing/faction/warra/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/warra/uniforms.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
-	icon_state = "deckhand"
 	item_state = "graycloth"
 	vox_override_icon = 'icons/mob/clothing/faction/warra/vox.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+
+// Deckhand uniforms
+
+/obj/item/clothing/under/warra/deckhand
+	name = "deckhand's uniform"
+	desc = "A work uniform typical of entry-level employees across Makosso-Warra, N+S Logistics and Vigilitas Interstellar."
+	icon_state = "deckhand"
+	item_state = "graycloth"
+	unique_reskin = list(
+		"deckhand's uniform" = "deckhand",
+		"nurse's uniform" = "deckhand_medical",
+		"mechanic's uniform" = "deckhand_engi",
+		"cargo handler shorts" = "deckhand_supply",
+		"watchman shorts" = "deckhand_security",
+		"custodial uniform" = "deckhand_janitor",
+		)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/under/warra/deckhand/supply
+	name = "cargo handler shorts"
+	icon_state = "deckhand_supply"
+
+/obj/item/clothing/under/warra/deckhand/engineering
+	name = "mechanic's uniform"
+	icon_state = "deckhand_engi"
+
+/obj/item/clothing/under/warra/deckhand/medical
+	name = "nurse's uniform"
+	icon_state = "deckhand_medical"
+
+/obj/item/clothing/under/warra/deckhand/security
+	name = "watchman shorts"
+	icon_state = "deckhand_security"
+
+/obj/item/clothing/under/warra/deckhand/janitor
+	name = "custodial uniform"
+	icon_state = "deckhand_janitor"
 
 // Engineering uniforms
 /obj/item/clothing/under/warra/engineering
@@ -33,12 +69,6 @@
 
 
 //Supply uniforms
-/obj/item/clothing/under/warra/supply
-	name = "cargo handler shorts"
-	desc = "A cheap work shirt and black shorts, typical of cargo handlers and clerks at N+S Logistics."
-	icon_state = "supply"
-	item_state = "browncloth"
-
 /obj/item/clothing/under/warra/supply/qm
 	name = "supply director slacks"
 	desc = "Crisp slacks and a pressed brown shirt that any supply director could be proud of. N+S Logistics' compass rose logo is embossed on every button."
@@ -90,13 +120,6 @@
 	item_state = "bluecloth"
 
 //Security/civilian uniforms
-
-/obj/item/clothing/under/warra/janitor
-	name = "custodial jumpsuit"
-	desc = "A grey jumpsuit with purple sleeves and faint stains on the elbows and knees. It looks stiff and cheap, but is surprisingly comfortable."
-	icon_state = "janitor"
-	item_state = "graycloth"
-
 /obj/item/clothing/under/warra/affairs
 	name = "neatly pleated slacks"
 	desc = "Flawlessly pleated slacks and a linen shirt with the Makosso-Warra logo stitched repeatedly into the cuffs and collar. It exudes an aura of quiet authority."
