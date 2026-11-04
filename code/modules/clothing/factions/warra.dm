@@ -14,14 +14,14 @@
 // Deckhand uniforms
 
 /obj/item/clothing/under/warra/deckhand
-	name = "deckhand's uniform"
+	name = "deckhand uniform"
 	desc = "A work uniform typical of entry-level employees across Makosso-Warra, N+S Logistics and Vigilitas Interstellar."
 	icon_state = "deckhand"
 	item_state = "graycloth"
 	unique_reskin = list(
-		"deckhand's uniform" = "deckhand",
-		"nurse's uniform" = "deckhand_medical",
-		"mechanic's uniform" = "deckhand_engi",
+		"deckhand uniform" = "deckhand",
+		"nurse uniform" = "deckhand_medical",
+		"mechanic uniform" = "deckhand_engi",
 		"cargo handler shorts" = "deckhand_supply",
 		"watchman shorts" = "deckhand_security",
 		"custodial uniform" = "deckhand_janitor",
@@ -33,11 +33,11 @@
 	icon_state = "deckhand_supply"
 
 /obj/item/clothing/under/warra/deckhand/engineering
-	name = "mechanic's uniform"
+	name = "mechanic uniform"
 	icon_state = "deckhand_engi"
 
 /obj/item/clothing/under/warra/deckhand/medical
-	name = "nurse's uniform"
+	name = "nurse uniform"
 	icon_state = "deckhand_medical"
 
 /obj/item/clothing/under/warra/deckhand/security
