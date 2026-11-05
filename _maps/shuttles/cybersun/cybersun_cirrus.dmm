@@ -69,6 +69,7 @@
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ay" = (
@@ -168,6 +169,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "aZ" = (
@@ -1966,6 +1968,7 @@
 	pixel_x = 11;
 	pixel_y = 22
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "mJ" = (
@@ -3401,6 +3404,7 @@
 	dir = 9
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Ah" = (
@@ -3976,6 +3980,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "FR" = (
@@ -4089,6 +4094,7 @@
 "GV" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
 /obj/effect/turf_decal/box/white,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "Hi" = (
@@ -4523,7 +4529,8 @@
 /obj/machinery/atmospherics/pipe/manifold/violet/hidden,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 1;
-	name = "exhaust ejector"
+	name = "exhaust ejector";
+	piping_layer = 5
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/starboard)
@@ -4945,6 +4952,12 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Nm" = (
@@ -5275,6 +5288,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Ox" = (
@@ -5592,9 +5606,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "QL" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/structure/closet/wall/directional/west,
 /obj/item/mop/advanced{
 	pixel_y = 1;
@@ -5607,6 +5618,9 @@
 /obj/item/reagent_containers/glass/rag{
 	pixel_x = 8;
 	pixel_y = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -5778,7 +5792,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/valve/blue/on/layer5{
+	name = "exhaust valve"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "RD" = (
@@ -5804,6 +5820,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "cstarwin"
 	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "RK" = (
@@ -6312,6 +6329,12 @@
 /obj/machinery/atmospherics/pipe/simple/violet/visible{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Vn" = (
@@ -6685,6 +6708,7 @@
 "Yz" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
 /obj/effect/turf_decal/box/white,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "YA" = (
