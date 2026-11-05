@@ -1017,6 +1017,7 @@
 	desc = "A compact ball of snow. Good for throwing at people."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snowball"
+	w_class = WEIGHT_CLASS_SMALL
 	var/stam_dam = 8
 
 /obj/item/toy/snowball/afterattack(atom/target as mob|obj|turf|area, mob/user)
