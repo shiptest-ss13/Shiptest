@@ -20,6 +20,7 @@ Most of the time you just place the mob you want, and it picks an archetype to s
 - `is_commander` makes a mob hang back and give orders, with nearby allies protecting it.
 - `executes_downed` makes a mob finish off downed targets up close. It needs `stat_attack` past `CONSCIOUS`.
 - `aim_zone_weights`, `settled_aim_zone_weights` and `aim_accuracy_mod` change where its shots land.
+- `friendly_fire_tolerance` is the highest chance of hitting an ally a mob will still shoot at, worked out from its spread.
 - `leash_distance`, `vision_range`, `engage_distance`, `retreat_distance`, `mobility`, `melee_reckless`, `stun_multiplier`, `morale_breaks`, `callout_set`, `on_aggro_say` and more, see the top of `_human.dm`.
 
 `/obj/effect/mapping_helpers/ai_path_blocker` stops AI pathing through its tile, to keep them out of somewhere.
