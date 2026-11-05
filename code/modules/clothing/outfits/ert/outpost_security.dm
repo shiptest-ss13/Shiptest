@@ -5,8 +5,8 @@
 	uniform = /obj/item/clothing/under/pants/cargo/jeans
 	alt_uniform = /obj/item/clothing/under/overalls
 
-	head = /obj/item/clothing/head/soft/cybersun
-	mask = /obj/item/clothing/mask/gas/cybersun
+	head = /obj/item/clothing/head/soft/utility_olive
+	mask = null
 
 	belt = /obj/item/storage/belt/security/full
 
