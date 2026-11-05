@@ -716,8 +716,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		return
 	if(has_power())
 		on = !on
-		if(on)
-			playsound(src,pick('sound/machines/bulb_ting1.ogg','sound/machines/bulb_ting2.ogg'),10,TRUE, -8)
 		update(0)
 	else
 		pause_flicker = TRUE

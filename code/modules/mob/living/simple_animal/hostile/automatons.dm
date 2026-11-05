@@ -250,6 +250,7 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+
 //boxer
 
 /mob/living/simple_animal/hostile/automated/boxer
@@ -289,6 +290,12 @@
 		if(!bonk.anchored)
 			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
 			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = TRUE)
+
+/mob/living/simple_animal/hostile/automated/boxer/crap
+	name = "Degraded B.A.P II 'Boxer'"
+	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. This one appears to be in terrible condition."
+	health = 60
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"
@@ -375,7 +382,8 @@
 
 	mine_heavy = 0
 	mine_light = 2
-	mine_flame = 6
+	mine_flame = 3
+	var/persistent_flame_range = 1
 
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
 	shrapnel_magnitude = 4
@@ -391,7 +399,7 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/automated/walkmine/incendiary/death()
-	for(var/turf/T in view(4,src))
+	for(var/turf/T in view(persistent_flame_range, src))
 		T.ignite_turf(15, "#fc7b48")
 		new /obj/effect/hotspot(T)
 	. = ..()

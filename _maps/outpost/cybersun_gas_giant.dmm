@@ -1354,9 +1354,6 @@
 /area/outpost/exterior/csoutpost)
 "dr" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost{
-	low_priority = 1
-	},
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
@@ -1462,7 +1459,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost,
+/obj/machinery/fax/admin/outpost/thousandeyed,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/operations)
 "dD" = (
@@ -10224,7 +10221,6 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/outpost/exterior/csoutpost)
 "yJ" = (
-/obj/machinery/vending/custom,
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 5
 	},
@@ -10232,6 +10228,7 @@
 /obj/structure/sign/poster/clip/bard{
 	pixel_x = -29
 	},
+/obj/machinery/vending/lottery,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/vacant_rooms/shop)
 "yK" = (
@@ -12040,10 +12037,10 @@
 /turf/open/floor/plating,
 /area/outpost/engineering)
 "Dj" = (
-/obj/machinery/vending/custom,
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 4
 	},
+/obj/machinery/vending/disposable_guns,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/vacant_rooms/shop)
 "Dk" = (
@@ -21113,11 +21110,11 @@
 	pixel_y = -5;
 	pixel_x = 3
 	},
-/obj/item/clothing/suit/jacket/letterman_syndie{
+/obj/item/clothing/suit/toggle/letterman_red{
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/clothing/suit/jacket/letterman_syndie{
+/obj/item/clothing/suit/toggle/letterman_red{
 	pixel_x = 4;
 	pixel_y = 5
 	},

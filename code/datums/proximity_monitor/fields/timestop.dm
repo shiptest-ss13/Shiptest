@@ -2,7 +2,7 @@
 /obj/effect/timestop
 	anchored = TRUE
 	name = "chronofield"
-	desc = "ZA WARUDO"
+	desc = "Time no longer flows here. It's stopped."
 	icon = 'icons/effects/160x160.dmi'
 	icon_state = "time"
 	layer = FLY_LAYER

@@ -2843,6 +2843,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					custom_limbs[zone] = PROSTHETIC_NORMAL
 					character.regenerate_limb(zone, robotic = is_robotic)
 					continue
+				if(new_part.digitigrade_clawed)
+					new_part.draw_color_overlay = hair_color
 				new_part.copy_from_human(character)
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)

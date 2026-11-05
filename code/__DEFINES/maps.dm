@@ -70,14 +70,6 @@ require only minor tweaks.
 	ZTRAIT_MINING = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
 	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/whitesands)
-#define ZTRAITS_ICEMOON list( \
-	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/snow/ice)
-#define ZTRAITS_ICEMOON_UNDERGROUND list( \
-	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/lava/plasma/ice_moon)
 
 #define DL_NAME "name"
 #define DL_TRAITS "traits"

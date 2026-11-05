@@ -118,7 +118,7 @@
 
 /obj/item/clothing/suit/armor/gezena/marine
 	name = "\improper marine combat vest"
-	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection. Has an internal lining mesh for enhanced thermoregulation."
+	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green. This set is in the most basic configuration. Has an internal lining mesh for enhanced thermoregulation."
 	icon_state = "marinevest"
 	item_state = "marinevest"
 	blood_overlay_type = "armor"
@@ -127,6 +127,21 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
+/obj/item/clothing/suit/armor/gezena/marine/interceptor
+	name = "\improper marine interceptor vest"
+	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green. This set inculdes the full suite of extremity protectors. Has an internal lining mesh for enhanced thermoregulation."
+	icon_state = "marineinterceptor"
+	item_state = "marinevest"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
+	slowdown = 0.4
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
@@ -395,7 +410,7 @@
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon_state = "navyhelmet"
-	item_state = "navyhelmet"
+	item_state = "navyhelm"
 	can_flashlight = TRUE
 	content_overlays = TRUE
 	obj_flags = INFINITE_RESKIN

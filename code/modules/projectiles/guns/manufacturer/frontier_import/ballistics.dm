@@ -5,6 +5,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	manufacturer = MANUFACTURER_IMPORT
 
 	icon_state = "mauler_mp"
 	item_state = "hp_generic"
