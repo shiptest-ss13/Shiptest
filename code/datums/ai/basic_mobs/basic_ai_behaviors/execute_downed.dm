@@ -90,6 +90,12 @@
 			span_userdanger("[executioner] points [executioner.p_their()] [gun_name] at your head, ready to pull the trigger..."))
 		tell_unseeing(victim, span_userdanger("Cold metal presses against your head..."))
 		return
+	if(style == AI_EXECUTION_HEAVY)
+		var/obj/item/weapon = get_ai_item_template(executioner.get_execution_heavy())
+		victim.visible_message(span_warning("[executioner] raises [executioner.p_their()] [weapon.name] high over [victim]'s head..."), \
+			span_userdanger("[executioner] raises [executioner.p_their()] [weapon.name] high over your head..."))
+		tell_unseeing(victim, span_userdanger("A heavy shadow looms over you..."))
+		return
 	victim.visible_message(span_danger("[executioner] is slitting [victim]'s throat!"), \
 		span_userdanger("Your throat is being slit by [executioner]!"))
 	tell_unseeing(victim, span_userdanger("A blade presses against your throat..."))
@@ -168,11 +174,20 @@
 		if(pattern)
 			for(var/shot in 2 to pattern[1])
 				addtimer(CALLBACK(src, PROC_REF(fire_follow_up), WEAKREF(executioner), WEAKREF(victim)), (shot - 1) * pattern[2])
+	else if(style == AI_EXECUTION_HEAVY)
+		var/obj/item/weapon = get_ai_item_template(executioner.get_execution_heavy())
+		victim.visible_message(span_danger("[executioner] brings [executioner.p_their()] [weapon.name] down on [victim]'s head!"), blind_message = span_hear("You hear a sickening crunch!"), ignored_mobs = victim)
+		victim.show_message(span_big(span_userdanger("[executioner] brings [executioner.p_their()] [weapon.name] down on your head!")), MSG_VISUAL)
+		tell_unseeing(victim, span_big(span_userdanger("One crushing blow, and everything goes dark.")))
+		var/hit_sound = islist(weapon.hitsound) ? pick(weapon.hitsound) : weapon.hitsound
+		playsound(victim, hit_sound || 'sound/weapons/genhit1.ogg', 75, TRUE, -1)
+		executioner.do_attack_animation(victim, used_item = weapon)
 	else
 		victim.visible_message(span_danger("[executioner] slits [victim]'s throat!"), blind_message = span_hear("You hear a sickening slash!"), ignored_mobs = victim)
 		victim.show_message(span_big(span_userdanger("[executioner] slits your throat!")), MSG_VISUAL)
 		tell_unseeing(victim, span_big(span_userdanger("The blade draws across, and everything fades.")))
 		playsound(victim, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+		executioner.do_attack_animation(victim, used_item = get_ai_item_template(executioner.get_execution_blade()))
 	spray_blood(executioner, victim)
 	var/damage_type = BRUTE
 	var/sharpness
@@ -187,11 +202,11 @@
 			wound_bonus = initial(fired_type.wound_bonus)
 			bare_wound_bonus = initial(fired_type.bare_wound_bonus)
 	else
-		var/obj/item/blade = get_ai_item_template(executioner.get_execution_blade())
-		damage_type = blade.damtype
-		sharpness = blade.get_sharpness()
-		wound_bonus = blade.wound_bonus
-		bare_wound_bonus = blade.bare_wound_bonus
+		var/obj/item/weapon = get_ai_item_template(style == AI_EXECUTION_HEAVY ? executioner.get_execution_heavy() : executioner.get_execution_blade())
+		damage_type = weapon.damtype
+		sharpness = weapon.get_sharpness()
+		wound_bonus = weapon.wound_bonus
+		bare_wound_bonus = weapon.bare_wound_bonus
 	var/attack_direction = get_dir(executioner, victim)
 	// never ever decap or debrain
 	var/list/kept_dismemberable = list()

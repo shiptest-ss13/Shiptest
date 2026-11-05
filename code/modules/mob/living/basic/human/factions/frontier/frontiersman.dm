@@ -95,6 +95,7 @@
 	attack_verb_simple = "chopped"
 	attack_sound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
 	stat_attack = HARD_CRIT
+	executes_downed = TRUE
 	rapid_melee = 2
 	knockdowns_slow_instead = TRUE
 	minimum_survivable_temperature = 0

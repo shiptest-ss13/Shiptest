@@ -56,10 +56,18 @@
 	return casing_type || projectile_type
 
 /mob/living/basic/human/proc/get_execution_style()
+	if(get_execution_heavy())
+		return AI_EXECUTION_HEAVY
 	if(get_execution_blade())
 		return AI_EXECUTION_BLADE
 	if(has_gun() && !fires_flames)
 		return AI_EXECUTION_GUN
+	return null
+
+/mob/living/basic/human/proc/get_execution_heavy()
+	for(var/obj/item/held as anything in list(l_hand, r_hand))
+		if(has_heavy_melee_weapon(held))
+			return held
 	return null
 
 /mob/living/basic/human/proc/get_execution_blade()

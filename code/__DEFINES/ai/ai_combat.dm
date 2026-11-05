@@ -141,6 +141,8 @@
 #define AI_EXECUTION_GUN "gun"
 ///A blade across the throat
 #define AI_EXECUTION_BLADE "blade"
+///A heavy weapon brought down on the head
+#define AI_EXECUTION_HEAVY "heavy"
 
 // Getting at someone past something in the way
 // The most shots a mob will put into something in its way to break through to someone it can't otherwise get at, up to two of its magazines
