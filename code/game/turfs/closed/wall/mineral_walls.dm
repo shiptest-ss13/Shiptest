@@ -449,7 +449,6 @@
 	burn_mod = 0.9
 	brute_mod = 0.9
 
-	//need to ask phoenix for sprite for scrap plastit
 	scrap_type = /obj/item/stack/ore/salvage/scrapplastitanium
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal

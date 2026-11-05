@@ -28,7 +28,6 @@
 	minimum_damage = 20
 	damage_reduction = 20
 
-	//need to ask phoenix for sprite for scrap plasteel
 	scrap_type = /obj/item/stack/ore/salvage/scrapplasteel
 
 /turf/closed/wall/r_wall/yesdiag
