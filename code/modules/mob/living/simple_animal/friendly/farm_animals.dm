@@ -287,10 +287,6 @@
 	if(harvestable && (harvestable.harvested == FALSE) && Adjacent(harvestable))
 		visible_message(span_notice("[src] pecks at the [harvestable], searching for food within!"), span_notice("You pick through the [harvestable], looking for food..."))
 
-		new /obj/effect/decal/cleanable/plastic(loc)
-
-		adjustBruteLoss(5)
-		qdel(tasty_plastic)
 
 /mob/living/simple_animal/hostile/retaliate/chicken/attackby(obj/item/O, mob/user, params)
 	if(is_type_in_list(O, food_type))
@@ -317,6 +313,8 @@
 		if(eggsFertile)
 			if(prob(25))
 				START_PROCESSING(SSobj, E)
+	if(stat == CONSCIOUS)
+		garden_search()
 
 /mob/living/simple_animal/deer
 	name = "doe"
