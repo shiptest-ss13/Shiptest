@@ -561,7 +561,7 @@
 	amount = 5
 
 /obj/item/stack/ore/salvage/scrapplastitanium
-	name = "ruined plastitanium lattice"
+	name = "ruined plastitanium hexacrystal"
 	desc = "The structure surrounding the lattice of this durable material has shattered, leaving nothing but scrap."
 	icon_state = "splastitanium"
 	points = 65
