@@ -21,6 +21,17 @@
 #define AI_RECENTLY_HURT(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < (memory))
 ///Whether controller's movement gave up finding a way to thing within memory
 #define AI_NO_PATH_TO_RECENTLY(controller, thing, memory) (controller.blackboard[BB_BASIC_MOB_NO_PATH_TO] == (thing) && world.time - controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] < (memory))
+///As AI_NO_PATH_TO_RECENTLY, but only while thing's still on spot, as somewhere else there might be a way to them
+#define AI_NO_PATH_TO_THERE_RECENTLY(controller, thing, spot, memory) (AI_NO_PATH_TO_RECENTLY(controller, thing, memory) && controller.blackboard[BB_BASIC_MOB_NO_PATH_TARGET_TURF] == (spot))
+// Planning a way through by breaking things
+///How far past us and them, each way, we look for a way through
+#define AI_BREACH_PLAN_MARGIN 4
+///How many steps each hit to break something counts as, so a short way through a window beats a long way through crates
+#define AI_BREACH_HIT_COST 2
+///How many steps climbing something counts as, rather than breaking it
+#define AI_BREACH_CLIMB_COST 3
+///How long a planned way through holds, for as long as we and they stay put
+#define AI_BREACH_PLAN_MEMORY (5 SECONDS)
 // The least of its usual range a sound carries for AI, even with no air
 #define AI_MINIMUM_SOUND_FACTOR 0.1
 // How far AI with /datum/element/ai_hears_gunfire hears gunshots, in tiles. Walls can muffle sounds. Guns can set their own, see gunfire_hearing_range and suppressed_gunfire_hearing_range

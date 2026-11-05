@@ -1,8 +1,9 @@
 // Helpers for AI working out where's safe from someone shooting at it, and where it can shoot from
 
-// find if a shot will hit something
-/proc/get_shot_blocker(turf/start, turf/finish, x_offset = 0, y_offset = 0, pass_flags = AI_THREAT_SHOT_PASS_FLAGS)
+// find if a shot will hit something.
+/proc/get_shot_blocker(turf/start, turf/finish, x_offset = 0, y_offset = 0, pass_flags = AI_THREAT_SHOT_PASS_FLAGS, list/all_blockers)
 	if(start.z != finish.z)
+		all_blockers?.Add(finish)
 		return finish
 	var/start_x = start.x * world.icon_size + world.icon_size / 2
 	var/start_y = start.y * world.icon_size + world.icon_size / 2
@@ -20,21 +21,29 @@
 			var/atom/first_side = get_tile_shot_blocker(DIAGONAL_CORNER_X(previous, sample), pass_flags)
 			var/atom/second_side = get_tile_shot_blocker(DIAGONAL_CORNER_Y(previous, sample), pass_flags)
 			if(first_side && second_side)
-				return first_side
+				if(!all_blockers)
+					return first_side
+				all_blockers |= first_side
 			var/atom/corner_edge = get_edge_shot_blocker(previous, sample, pass_flags)
 			if(corner_edge)
-				return corner_edge // a directional window on the corner we're cutting
+				if(!all_blockers)
+					return corner_edge // a directional window on the corner we're cutting
+				all_blockers |= corner_edge
 		else
 			var/atom/edge_blocker = get_edge_shot_blocker(previous, sample, pass_flags)
 			if(edge_blocker)
-				return edge_blocker
+				if(!all_blockers)
+					return edge_blocker
+				all_blockers |= edge_blocker
 		previous = sample
 		if(sample == start || sample == finish)
 			continue
 		var/atom/blocker = get_tile_shot_blocker(sample, pass_flags)
 		if(blocker)
-			return blocker
-	return null
+			if(!all_blockers)
+				return blocker
+			all_blockers |= blocker
+	return length(all_blockers) ? all_blockers[1] : null
 
 // what on spot would stop a shot with pass_flags passing through it, if anything. the turf itself, or something solid on it?
 /proc/get_tile_shot_blocker(turf/spot, pass_flags = AI_THREAT_SHOT_PASS_FLAGS)
@@ -101,6 +110,9 @@
 			return FALSE
 		// edges count too, like a directional window or a railing, the way our pathfinding judges them
 		if(previous.LinkBlockedWithAccess(line_turf, mover, access))
+			return FALSE
+		// no cutting a corner
+		if(previous.x != line_turf.x && previous.y != line_turf.y && !previous.Adjacent(line_turf))
 			return FALSE
 		previous = line_turf
 	return TRUE
@@ -402,23 +414,32 @@
 
 // only shoot at something that blocks but it can destroy quickly, max_shots and magazines are how far we'll go for intentional breakage
 /proc/worth_shooting_through(mob/living/shooter, atom/blocker, obj/projectile/projectile_type, max_shots = AI_MAX_SHOTS_THROUGH_COVER, magazines = 1)
+	var/shots_needed = shots_to_shoot_through(shooter, blocker, projectile_type)
+	return !isnull(shots_needed) && shots_needed <= ai_max_shots_through(shooter, max_shots, magazines)
+
+// the most shots we'll put into getting through, by max_shots and how many magazines' worth
+/proc/ai_max_shots_through(mob/living/shooter, max_shots, magazines)
+	var/datum/component/ai_magazine/magazine = shooter.GetComponent(/datum/component/ai_magazine)
+	return min(max_shots, magazine?.magazine_size ? magazine.magazine_size * magazines : max_shots)
+
+// how many shots it'd take to clear blocker and whatever else on its tile stops them, or null if we can't or shouldn't
+/proc/shots_to_shoot_through(mob/living/shooter, atom/blocker, obj/projectile/projectile_type)
 	if(!isobj(blocker) || !projectile_type)
-		return FALSE // walls and the like, or we're not firing anything that'd break it
+		return null // walls and the like, or we're not firing anything that'd break it
 	if(breaking_would_vent(shooter, blocker))
-		return FALSE // dont vent if we cant survive it!!!
+		return null // dont vent if we cant survive it!!!
 	var/shots_needed = shots_to_break(blocker, projectile_type, shooter)
 	if(isnull(shots_needed))
-		return FALSE
+		return null
 	var/pass_flags = initial(projectile_type.pass_flags)
 	for(var/obj/thing in get_turf(blocker))
 		if(thing == blocker || !blocks_shot_on_tile(thing, pass_flags))
 			continue
 		var/more_shots = shots_to_break(thing, projectile_type, shooter)
 		if(isnull(more_shots))
-			return FALSE
+			return null
 		shots_needed += more_shots
-	var/datum/component/ai_magazine/magazine = shooter.GetComponent(/datum/component/ai_magazine)
-	return shots_needed <= min(max_shots, magazine?.magazine_size ? magazine.magazine_size * magazines : max_shots)
+	return shots_needed
 
 // how many shots it'd take to break thing as it is now, after its armour, the way /obj/bullet_act() does it. Null if we can't or shouldn't
 /proc/shots_to_break(obj/thing, obj/projectile/projectile_type, mob/living/shooter)
@@ -587,9 +608,20 @@
 	if(isnull(breaching))
 		var/datum/ai_controller/controller = shooter.ai_controller
 		breaching = controller && controller.blackboard[BB_BASIC_MOB_BREACHING] && controller.blackboard[BB_BASIC_MOB_BREACH_ROLLED_FOR] == target
-	if(breaching)
-		return worth_shooting_through(shooter, blocker, ranged_attack.get_projectile_type(), AI_MAX_SHOTS_TO_BREACH, 2)
-	return worth_shooting_through(shooter, blocker, ranged_attack.get_projectile_type())
+	var/obj/projectile/projectile_type = ranged_attack.get_projectile_type()
+	var/max_shots = breaching ? ai_max_shots_through(shooter, AI_MAX_SHOTS_TO_BREACH, 2) : ai_max_shots_through(shooter, AI_MAX_SHOTS_THROUGH_COVER, 1)
+	if(isnull(shots_to_shoot_through(shooter, blocker, projectile_type)))
+		return FALSE // the first thing in the way's no good
+	// and everything past it
+	var/list/all_blockers = list()
+	get_shot_blocker(start, finish, pass_flags = get_ai_shot_pass_flags(shooter), all_blockers = all_blockers)
+	var/total_shots = 0
+	for(var/atom/in_the_way as anything in all_blockers)
+		var/shots = shots_to_shoot_through(shooter, in_the_way, projectile_type)
+		if(isnull(shots))
+			return FALSE
+		total_shots += shots
+	return total_shots <= max_shots
 
 // use this instead of get_shot_blocker() to cache the answer for a shooter, so it doesn't have to recalc every shot
 /proc/get_cached_shot_blocker(mob/living/shooter, atom/target)

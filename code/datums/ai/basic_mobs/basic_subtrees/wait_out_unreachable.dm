@@ -1,10 +1,10 @@
 // if they cant reach someone just fall back and wait
 // Or now and then, decided once for each of them, break through what's between us instead, like the window we can see them through, and always if it's as quick as a bare grille
 /datum/ai_planning_subtree/wait_out_unreachable
-	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_TARGET_SEEN
+	required_conditions = AI_CONDITION_HAS_TARGET
 	var/search_range = 4
 	var/search_interval = 2 SECONDS
-	var/no_path_memory = 4 SECONDS
+	var/no_path_memory = AI_NO_PATH_MEMORY
 	//how long we wait for a way to them before we give up on them, so we don't stand staring through a window forever
 	var/give_up_time = 30 SECONDS
 	//how long after giving up on someone we leave them be, unless they shoot us
@@ -18,8 +18,6 @@
 	//how long we'll watch them holed up, counting only while we can see them, before we break through after all. Halved when we're emboldened
 	var/patience_min = 15 SECONDS
 	var/patience_max = 30 SECONDS
-	//whether we'll go and smash what's first on a straight line to them, rather than only what's right beside us
-	var/smashes_line_blocker = TRUE
 	//whether we break through anyway when there's nowhere out of their sight to wait for them
 	var/breaks_through_with_nowhere_to_wait = TRUE
 	//how far we'll go to get out of sight of them when they're shooting us from where we can't get at them
@@ -35,7 +33,12 @@
 /datum/ai_planning_subtree/wait_out_unreachable/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	if(!(controller.get_conditions() & AI_CONDITION_TARGET_SEEN))
+		return break_through_unseen(controller, target)
 	var/turf/their_turf = get_turf(target)
+	if(their_turf && ai_still_breaking_through(controller, target))
+		controller.queue_behavior(/datum/ai_behavior/smash_obstacle, BB_BASIC_MOB_SMASH_TARGET)
+		return SUBTREE_RETURN_FINISH_PLANNING
 	if(!their_turf || can_get_at(controller, target, their_turf))
 		forget_wait(controller)
 		if(!in_grace(controller))
@@ -82,13 +85,28 @@
 		controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_CURRENT_TARGET)
 	return SUBTREE_RETURN_FINISH_PLANNING
 
+// out of sight but remembered, so we break through towards where we last saw them if there's no way there, leaving the rest to search_lost_target
+/datum/ai_planning_subtree/wait_out_unreachable/proc/break_through_unseen(datum/ai_controller/controller, atom/target)
+	forget_wait(controller) // as on_skipped, so our give-up timer starts fresh once we see them again
+	var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+	if(!last_known_turf)
+		return
+	if(ai_still_breaking_through(controller, target))
+		controller.queue_behavior(/datum/ai_behavior/smash_obstacle, BB_BASIC_MOB_SMASH_TARGET)
+	else if(!AI_NO_PATH_TO_RECENTLY(controller, last_known_turf, no_path_memory) && !AI_NO_PATH_TO_THERE_RECENTLY(controller, target, last_known_turf, no_path_memory))
+		return
+	else if(!try_break_through(controller, target, last_known_turf))
+		return
+	controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time) // still after them, so we don't forget them halfway through
+	return SUBTREE_RETURN_FINISH_PLANNING
+
 // whether target's shot us lately
 /datum/ai_planning_subtree/wait_out_unreachable/proc/shot_by_lately(datum/ai_controller/controller, atom/target)
 	return controller.blackboard[BB_BASIC_MOB_SHOT_BY] == target && AI_RECENTLY_SHOT_AT(controller, shot_while_waiting_memory)
 
 // whether we can get at them from here
 /datum/ai_planning_subtree/wait_out_unreachable/proc/can_get_at(datum/ai_controller/controller, atom/target, turf/their_turf)
-	var/no_way_to_them = AI_NO_PATH_TO_RECENTLY(controller, target, no_path_memory)
+	var/no_way_to_them = AI_NO_PATH_TO_THERE_RECENTLY(controller, target, their_turf, no_path_memory)
 	if(no_way_to_them && can_walk_straight_to(controller.pawn, their_turf))
 		no_way_to_them = FALSE // there's nothing between us, so whatever our movement made of it, we can get to them
 	return !no_way_to_them && ai_can_stand_on(controller.pawn, their_turf, ignoring = target) // them burning is no reason to keep off them
@@ -135,6 +153,8 @@
 /datum/ai_planning_subtree/wait_out_unreachable/proc/try_break_through(datum/ai_controller/controller, atom/target, turf/their_turf, no_hiding = FALSE)
 	var/obj/smash_target = controller.blackboard[BB_BASIC_MOB_SMASH_TARGET]
 	if(QDELETED(smash_target) || !smash_target.density)
+		if(!ai_confirmed_no_way(controller, their_turf))
+			return FALSE // only once we're sure there's no other way, not just that an ally's in the doorway
 		var/list/breach = find_breach(controller, their_turf)
 		if(!breach)
 			return FALSE
@@ -142,43 +162,18 @@
 			return FALSE
 		smash_target = breach[1]
 		controller.set_blackboard_key(BB_BASIC_MOB_SMASH_TARGET, smash_target)
+		controller.set_blackboard_key(BB_BASIC_MOB_SMASHING_FOR, target)
 		AI_LOG_DECISION(controller, "wait_out_unreachable: breaking through [smash_target] at [AREACOORD(smash_target)] in [breach[2]] hits to get at [target]")
 		ai_callout(controller.pawn, AI_CALLOUT_BREACHING)
 	controller.queue_behavior(/datum/ai_behavior/smash_obstacle, BB_BASIC_MOB_SMASH_TARGET)
 	return TRUE
 
-// the quickest thing to break to get at them, as list(thing, hits), or null
+// the first thing to break on the cheapest way through to them, as list(thing, hits it'd all take), or null
 /datum/ai_planning_subtree/wait_out_unreachable/proc/find_breach(datum/ai_controller/controller, turf/their_turf)
 	var/mob/living/basic/basic_mob = controller.pawn
-	var/turf/our_turf = get_turf(basic_mob)
-	if(!istype(basic_mob) || !basic_mob.environment_smash || !basic_mob.obj_damage || !our_turf)
+	if(!istype(basic_mob))
 		return null
-	var/list/candidates = list()
-	if(smashes_line_blocker)
-		var/atom/line_blocker = get_shot_blocker(our_turf, their_turf, pass_flags = NONE)
-		if(isobj(line_blocker))
-			candidates += line_blocker
-	var/our_distance = get_dist(our_turf, their_turf)
-	for(var/direction in GLOB.cardinals)
-		var/turf/beside = get_step(our_turf, direction)
-		if(!beside || beside.density || get_dist(beside, their_turf) > our_distance)
-			continue
-		var/obj/edge_blocker = get_edge_movement_blocker(basic_mob, direction)
-		if(edge_blocker)
-			candidates |= edge_blocker
-		for(var/obj/thing in beside)
-			if(thing.density)
-				candidates |= thing
-	var/obj/best
-	var/best_hits = INFINITY
-	for(var/obj/candidate as anything in candidates)
-		if(breaking_would_vent(basic_mob, candidate))
-			continue
-		var/hits = ai_hits_to_break_through(basic_mob, candidate, max_breach_hits)
-		if(!isnull(hits) && hits < best_hits)
-			best = candidate
-			best_hits = hits
-	return best ? list(best, best_hits) : null
+	return ai_plan_breach(basic_mob, their_turf, max_breach_hits)
 
 // where we wait for them, out of their sight, so we can jump them when they come out
 /datum/ai_planning_subtree/wait_out_unreachable/proc/find_wait_spot(datum/ai_controller/controller, atom/target, turf/their_turf)

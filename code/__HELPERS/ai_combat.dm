@@ -58,6 +58,176 @@
 		total_hits += hits
 	return total_hits <= max_hits ? total_hits : null
 
+// whether there's truly no way to destination, not just none our movement found
+/proc/ai_confirmed_no_way(datum/ai_controller/controller, turf/destination)
+	var/turf/our_turf = get_turf(controller.pawn)
+	if(!our_turf || !destination)
+		return FALSE
+	var/list/check = controller.blackboard[BB_BASIC_MOB_NO_WAY_CHECK]
+	if(check && check[1] == our_turf && check[2] == destination)
+		// it found a way, but our movement's tried it since and still can't get there
+		var/found_a_way = !isnull(check[4]) && !check[4]
+		var/movement_failed_since = controller.blackboard[BB_BASIC_MOB_NO_PATH_FROM] == our_turf && controller.blackboard[BB_BASIC_MOB_NO_PATH_TARGET_TURF] == destination && controller.blackboard[BB_BASIC_MOB_NO_PATH_SINCE] > check[3]
+		if(found_a_way && movement_failed_since)
+			AI_LOG_DECISION(controller, "the way to [AREACOORD(destination)] didn't work out, so there's no way after all")
+			controller.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_CHECK)
+			controller.set_blackboard_key(BB_BASIC_MOB_NO_WAY_CHECK, list(our_turf, destination, world.time, TRUE))
+			return TRUE
+		if(world.time - check[3] < AI_NO_PATH_MEMORY)
+			return check[4] == TRUE
+	controller.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_CHECK)
+	controller.set_blackboard_key(BB_BASIC_MOB_NO_WAY_CHECK, list(our_turf, destination, world.time, null))
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(ai_check_for_any_way), controller, our_turf, destination)
+	return FALSE
+
+/proc/ai_check_for_any_way(datum/ai_controller/controller, turf/from, turf/destination)
+	var/access = controller.get_access()
+	var/ground_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
+	var/max_length = AI_MAX_PATH_LENGTH
+	var/list/search_notes = list()
+	var/list/path = get_path_to(controller.pawn, destination, max_length, 0, id = access, simulated_only = ground_only, search_notes = search_notes)
+	if(!length(path) && search_notes["found_climbable"] && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
+		path = get_path_to(controller.pawn, destination, max_length, 0, id = access, simulated_only = ground_only, climbing = TRUE)
+	if(QDELETED(controller) || QDELETED(controller.pawn))
+		return
+	var/list/check = controller.blackboard[BB_BASIC_MOB_NO_WAY_CHECK]
+	if(!check || check[1] != from || check[2] != destination)
+		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_CHECK)
+	controller.set_blackboard_key(BB_BASIC_MOB_NO_WAY_CHECK, list(from, destination, check[3], !length(path)))
+	if(length(path) && controller.blackboard[BB_BASIC_MOB_NO_PATH_TARGET_TURF] == destination)
+		AI_LOG_DECISION(controller, "there's a way to [AREACOORD(destination)] after all, [length(path)] steps, trying it rather than breaking through")
+		controller.clear_blackboard_key(BB_BASIC_MOB_NO_PATH_TO)
+		controller.clear_blackboard_key(BB_BASIC_MOB_NO_PATH_SINCE)
+
+// the cheapest way through to their target turf by breaking through something
+/proc/ai_plan_breach(mob/living/basic/basic_mob, turf/their_turf, max_hits)
+	var/turf/our_turf = get_turf(basic_mob)
+	var/datum/ai_controller/controller = basic_mob.ai_controller
+	if(!controller || !our_turf || !their_turf || our_turf.z != their_turf.z || !basic_mob.environment_smash || !basic_mob.obj_damage)
+		return null
+	var/list/cached = controller.blackboard[BB_BASIC_MOB_BREACH_PLAN]
+	if(cached && cached[1] == our_turf && cached[2] == their_turf && world.time - cached[3] < AI_BREACH_PLAN_MEMORY)
+		var/datum/weakref/planned_ref = cached[4]
+		var/obj/planned_break = planned_ref?.resolve()
+		if(!QDELETED(planned_break) && planned_break.density)
+			return list(planned_break, cached[5])
+	var/list/plan = search_breach(basic_mob, our_turf, their_turf, max_hits)
+	controller.clear_blackboard_key(BB_BASIC_MOB_BREACH_PLAN)
+	controller.set_blackboard_key(BB_BASIC_MOB_BREACH_PLAN, list(our_turf, their_turf, world.time, plan ? WEAKREF(plan[1]) : null, plan?[2]))
+	if(plan)
+		AI_LOG_DECISION(controller, "planned a way through to [AREACOORD(their_turf)], [plan[2]] hits all told, starting with [plan[1]] at [AREACOORD(plan[1])]")
+	return plan
+
+/proc/search_breach(mob/living/basic/basic_mob, turf/our_turf, turf/their_turf, max_hits)
+	var/datum/ai_controller/controller = basic_mob.ai_controller
+	var/access = controller.get_access()
+	var/can_climb = controller.blackboard[BB_BASIC_MOB_CAN_CLIMB]
+	var/can_cross_space = controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
+	var/min_x = min(our_turf.x, their_turf.x) - AI_BREACH_PLAN_MARGIN
+	var/max_x = max(our_turf.x, their_turf.x) + AI_BREACH_PLAN_MARGIN
+	var/min_y = min(our_turf.y, their_turf.y) - AI_BREACH_PLAN_MARGIN
+	var/max_y = max(our_turf.y, their_turf.y) + AI_BREACH_PLAN_MARGIN
+	var/list/cost = list()
+	var/list/hits_to = list()
+	var/list/came_from = list()
+	var/list/broken_on = list()
+	var/list/done = list()
+	cost[our_turf] = 0
+	hits_to[our_turf] = 0
+	var/list/open = list(our_turf)
+	while(length(open))
+		var/turf/current
+		var/best_cost = INFINITY
+		for(var/turf/candidate as anything in open)
+			if(cost[candidate] < best_cost)
+				best_cost = cost[candidate]
+				current = candidate
+		if(current == their_turf)
+			break
+		open -= current
+		done[current] = TRUE
+		for(var/direction in GLOB.cardinals)
+			var/turf/next = get_step(current, direction)
+			if(!next || done[next] || next.x < min_x || next.x > max_x || next.y < min_y || next.y > max_y)
+				continue
+			if(!isopenturf(next) || (!can_cross_space && is_bare_space(next)))
+				continue
+			var/step_cost = 1
+			var/step_hits = 0
+			var/list/to_break
+			for(var/obj/blocker as anything in ai_step_blockers(basic_mob, current, next, direction, access, broken_on[current]))
+				if(can_climb && ai_can_climb(blocker))
+					step_cost += AI_BREACH_CLIMB_COST
+					continue
+				if(ai_can_push_aside(basic_mob, blocker, direction))
+					step_cost += 1
+					continue
+				var/hits = melee_hits_to_break(basic_mob, blocker)
+				if(isnull(hits) || breaking_would_vent(basic_mob, blocker))
+					step_cost = INFINITY
+					break
+				step_hits += hits
+				LAZYADD(to_break, blocker)
+			if(step_cost == INFINITY)
+				continue
+			var/total_hits = hits_to[current] + step_hits
+			if(total_hits > max_hits)
+				continue
+			var/new_cost = cost[current] + step_cost + step_hits * AI_BREACH_HIT_COST
+			if(!isnull(cost[next]) && cost[next] <= new_cost)
+				continue
+			cost[next] = new_cost
+			hits_to[next] = total_hits
+			came_from[next] = current
+			broken_on[next] = to_break
+			open |= next
+	if(isnull(came_from[their_turf]))
+		return null
+	// back along the way to the first thing we'd have to break
+	var/obj/first_break
+	var/turf/step_turf = their_turf
+	while(step_turf != our_turf)
+		var/list/broken = broken_on[step_turf]
+		if(length(broken))
+			first_break = broken[1]
+		step_turf = came_from[step_turf]
+	if(!first_break)
+		return null // a way with nothing to break, which is our movement's to find
+	return list(first_break, hits_to[their_turf])
+
+// what stops mover stepping from one turf onto the next
+/proc/ai_step_blockers(atom/movable/mover, turf/leaving, turf/entering, direction, access, list/already_broken)
+	. = list()
+	for(var/obj/thing in leaving)
+		if(!(thing.flags_1 & ON_BORDER_1) && !istype(thing, /obj/structure/window))
+			continue
+		if(!(thing in already_broken) && !thing.CanAStarPass(access, direction, mover))
+			. += thing
+	var/reverse_dir = REVERSE_DIR(direction)
+	for(var/obj/thing in entering)
+		if(!thing.CanAStarPass(access, reverse_dir, mover))
+			. += thing
+
+// whether we keep breaking through to target, as we started to, until it's down or something better comes up
+/proc/ai_still_breaking_through(datum/ai_controller/controller, atom/target)
+	var/obj/smash_target = controller.blackboard[BB_BASIC_MOB_SMASH_TARGET]
+	if(QDELETED(smash_target) || !smash_target.density || controller.blackboard[BB_BASIC_MOB_SMASHING_FOR] != target)
+		return FALSE
+	if(AI_RECENTLY_SHOT_AT(controller, 2 SECONDS))
+		AI_LOG_DECISION(controller, "breaking through: shot at, leaving off [smash_target] to think again")
+		controller.clear_blackboard_key(BB_BASIC_MOB_SMASH_TARGET)
+		return FALSE
+	var/list/seen_enemies = controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES]
+	for(var/atom/enemy as anything in seen_enemies)
+		if(QDELETED(enemy) || world.time - seen_enemies[enemy] > 2 SECONDS || ai_is_downed(enemy))
+			continue
+		if(can_walk_straight_to(controller.pawn, get_turf(enemy)))
+			AI_LOG_DECISION(controller, "breaking through: can walk straight to [enemy], leaving off [smash_target]")
+			controller.clear_blackboard_key(BB_BASIC_MOB_SMASH_TARGET)
+			return FALSE
+	return TRUE
+
 /proc/ai_lash_out(datum/ai_controller/controller, interval = 2 SECONDS)
 	if(!isturf(controller.pawn.loc) || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_LASH_OUT])
 		return FALSE

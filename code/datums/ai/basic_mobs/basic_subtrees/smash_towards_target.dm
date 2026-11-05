@@ -1,36 +1,37 @@
 // for those built to break things, like sledgehammer bros
 /datum/ai_planning_subtree/smash_towards_target
 	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_TARGET_SEEN
-	//how many hits we'll put into what's in the way before it's not worth it, counting everything on its tile, like the grille under a window
+	//how many hits we'll put into breaking through before it's not worth it, counting everything we'd break on the way
 	var/max_hits = 20
 	//how long after our movement gave up on a way to them we still count them as out of reach
-	var/no_path_memory = 4 SECONDS
+	var/no_path_memory = AI_NO_PATH_MEMORY
 
 /datum/ai_planning_subtree/smash_towards_target/on_skipped(datum/ai_controller/controller)
-	controller.clear_blackboard_key(BB_BASIC_MOB_SMASH_TARGET)
+	if(controller.blackboard[BB_BASIC_MOB_SMASHING_FOR] != controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])
+		controller.clear_blackboard_key(BB_BASIC_MOB_SMASH_TARGET)
 
 /datum/ai_planning_subtree/smash_towards_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
 	var/mob/living/basic/basic_mob = controller.pawn
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	var/obj/smash_target = controller.blackboard[BB_BASIC_MOB_SMASH_TARGET]
-	if(!QDELETED(smash_target) && smash_target.density)
+	if(ai_still_breaking_through(controller, target))
 		controller.queue_behavior(/datum/ai_behavior/smash_obstacle, BB_BASIC_MOB_SMASH_TARGET)
 		return SUBTREE_RETURN_FINISH_PLANNING // already at it
 	controller.clear_blackboard_key(BB_BASIC_MOB_SMASH_TARGET)
 	if(!istype(basic_mob) || !basic_mob.environment_smash || !basic_mob.obj_damage)
 		return
-	if(!AI_NO_PATH_TO_RECENTLY(controller, target, no_path_memory))
-		return // we can get to them, or haven't found out we can't yet
-	var/turf/our_turf = get_turf(basic_mob)
 	var/turf/their_turf = get_turf(target)
-	if(!our_turf || !their_turf)
+	if(!their_turf || !AI_NO_PATH_TO_THERE_RECENTLY(controller, target, their_turf, no_path_memory))
+		return // we can get to them, or haven't found out we can't yet
+	if(!ai_confirmed_no_way(controller, their_turf))
 		return
-	var/atom/blocker = get_shot_blocker(our_turf, their_turf, pass_flags = NONE) // the first solid thing on a straight line to them
-	if(!isobj(blocker) || breaking_would_vent(basic_mob, blocker) || !ai_hits_to_break_through(basic_mob, blocker, max_hits))
-		return // a wall, nothing we can break in good time, or a window onto space we've no suit for
+	var/list/breach = ai_plan_breach(basic_mob, their_turf, max_hits)
+	if(!breach)
+		return
+	var/obj/blocker = breach[1]
 	AI_LOG_DECISION(controller, "smash_towards_target: no way round to [target], breaking through [blocker] at [AREACOORD(blocker)]")
 	controller.set_blackboard_key(BB_BASIC_MOB_SMASH_TARGET, blocker)
+	controller.set_blackboard_key(BB_BASIC_MOB_SMASHING_FOR, target)
 	controller.queue_behavior(/datum/ai_behavior/smash_obstacle, BB_BASIC_MOB_SMASH_TARGET)
 	return SUBTREE_RETURN_FINISH_PLANNING
 

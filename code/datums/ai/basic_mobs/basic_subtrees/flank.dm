@@ -44,7 +44,7 @@
 	if(!blocker && !dug_in && !ally_in_lane)
 		end_flank(controller)
 		return
-	var/must_go_around = blocker && (ai_is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, ranged_attack.get_projectile_type()))
+	var/must_go_around = blocker && (ai_is_door(blocker) || !has_clear_shot(controller.pawn, target, breaching = FALSE)) // all the way along, not just what's first in the way
 	if(holds_good_cover && !controller.blackboard[BB_BASIC_MOB_FLANKING] && ai_holding_cover_against(controller, target))
 		return // we keep our cover and wait for a shot
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))
@@ -159,6 +159,7 @@
 	var/from_x = our_turf.x - their_turf.x
 	var/from_y = our_turf.y - their_turf.y
 	var/list/reachable_without_passing_them // worked out only if we need it, as it's a fair bit of work
+	var/list/reachable_at_all // so we don't pick somewhere we can't get to
 	var/list/claimed_turfs = get_ai_ally_claimed_turfs(living_pawn, max_flank_distance * 2)
 	var/turf/best_turf
 	var/best_distance = INFINITY
@@ -177,6 +178,10 @@
 			// and there's a way round that doesn't go right past them, like when they're in an airlock with doors both ends. Clear shots too, as the only way there might be through them
 			reachable_without_passing_them ||= get_reachable_turfs(our_turf, their_turf, minimum_distance, max_flank_distance * 2, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 			if(!reachable_without_passing_them[candidate])
+				continue
+		else
+			reachable_at_all ||= get_reachable_turfs(our_turf, their_turf, -1, max_flank_distance * 2, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
+			if(!reachable_at_all[candidate])
 				continue
 		best_turf = candidate
 		best_distance = candidate_distance

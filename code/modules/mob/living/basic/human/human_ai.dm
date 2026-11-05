@@ -62,6 +62,7 @@
 /datum/ai_planning_subtree/search_lost_target/human
 	cautious_health_fraction = 0.4
 	splits_search_roles = TRUE
+	ranged_breach_subtree = /datum/ai_planning_subtree/wait_out_unreachable/ranged
 
 /datum/ai_planning_subtree/basic_ranged_attack_subtree/human
 	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/human

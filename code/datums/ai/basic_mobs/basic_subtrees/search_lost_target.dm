@@ -23,6 +23,8 @@
 	var/stays_put = FALSE
 	//how long after being shot by them, from too far off to see or fire back at, we keep closing in on them
 	var/pinned_time = 6 SECONDS
+	//for those with guns, whose wait_out_unreachable only runs once we've seen them, instead we break through to where we last saw them, if there's no way there
+	var/datum/ai_planning_subtree/wait_out_unreachable/ranged_breach_subtree
 
 /datum/ai_planning_subtree/search_lost_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -39,7 +41,8 @@
 	if(AI_RECENTLY_SAW_ENEMY(controller, lost_grace))
 		// they've only just slipped out of view, so no fuss yet: after them if that's how we'll search, or watching where they went
 		if(style == AI_SEARCH_STYLE_INVESTIGATE && go_there)
-			controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
+			if(!break_through(controller))
+				controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
 		else
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING
@@ -48,7 +51,8 @@
 	switch(style)
 		if(AI_SEARCH_STYLE_INVESTIGATE)
 			if(go_there)
-				controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
+				if(!break_through(controller))
+					controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
 			else
 				sweep(controller) // or if there's nowhere to sweep, we watch from here to see if they turn up, until track_target gives up on them
 		if(AI_SEARCH_STYLE_HOLD)
@@ -57,6 +61,13 @@
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
 			controller.queue_behavior(suppress_behavior, BB_BASIC_MOB_LAST_KNOWN_TURF)
 	return SUBTREE_RETURN_FINISH_PLANNING // searching, so don't go after them blind
+
+// going after them, but there's no way to where we last saw them, so we break through towards it. TRUE if we're at it
+/datum/ai_planning_subtree/search_lost_target/proc/break_through(datum/ai_controller/controller)
+	if(!ranged_breach_subtree || !(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK))
+		return FALSE // those who fight up close have their own wait_out_unreachable, ahead of us
+	var/datum/ai_planning_subtree/wait_out_unreachable/breacher = SSai_controllers.ai_subtrees[ranged_breach_subtree]
+	return breacher.break_through_unseen(controller, controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]) == SUBTREE_RETURN_FINISH_PLANNING
 
 /datum/ai_planning_subtree/search_lost_target/proc/pick_style(datum/ai_controller/controller)
 	if(!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK))

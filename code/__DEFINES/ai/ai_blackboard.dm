@@ -347,6 +347,12 @@
 #define BB_BASIC_MOB_NEXT_WAIT_SEARCH "BB_basic_next_wait_search"
 ///What we're breaking through to get at someone we've no other way to, like a window
 #define BB_BASIC_MOB_SMASH_TARGET "BB_basic_smash_target"
+///Who we're breaking through BB_BASIC_MOB_SMASH_TARGET to get at
+#define BB_BASIC_MOB_SMASHING_FOR "BB_basic_smashing_for"
+///Our last planned way through by breaking things, as list(from, to, when, weakref to the first thing to break, hits)
+#define BB_BASIC_MOB_BREACH_PLAN "BB_basic_breach_plan"
+///Our last check for any way at all to somewhere, before breaking through to it, as list(from, to, when, result), result null while it's being worked out
+#define BB_BASIC_MOB_NO_WAY_CHECK "BB_basic_no_way_check"
 ///Who we last rolled for whether to break through to, rather than wait for, when they were out of reach, and whether we are, see /datum/ai_planning_subtree/wait_out_unreachable
 #define BB_BASIC_MOB_BREACH_ROLLED_FOR "BB_basic_breach_rolled_for"
 #define BB_BASIC_MOB_BREACHING "BB_basic_breaching"

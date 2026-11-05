@@ -18,7 +18,7 @@
 		controller.set_blackboard_key(BB_BASIC_MOB_STUCK_SINCE, world.time)
 		AI_LOG_DECISION(controller, "smash_when_stuck: no way to [destination], smashing through if it stays that way")
 		return
-	if(world.time - controller.blackboard[BB_BASIC_MOB_STUCK_SINCE] >= stuck_time)
+	if(world.time - controller.blackboard[BB_BASIC_MOB_STUCK_SINCE] >= stuck_time && ai_confirmed_no_way(controller, get_turf(destination)))
 		controller.queue_behavior(smash_behavior, BB_BASIC_MOB_STUCK_GOING_TO)
 
 // whether we're trying to get to destination, but have no way there, and something's right in the way
