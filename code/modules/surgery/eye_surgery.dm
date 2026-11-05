@@ -36,7 +36,6 @@
 	target.set_blindness(0)
 	target.cure_nearsighted(list(EYE_DAMAGE))
 	target.blur_eyes(35)	//this will fix itself slowly.
-	E.fix_injury_scars()
 	E.setOrganDamage(0)
 	return ..()
 
@@ -50,6 +49,64 @@
 		display_results(user, target, span_warning("You accidentally stab [target] right in the brain! Or would have, if [target] had a brain."),
 			span_warning("[user] accidentally stabs [target] right in the brain! Or would have, if [target] had a brain."),
 			span_warning("[user] accidentally stabs [target] right in the brain!"))
+	return FALSE
+
+/datum/surgery/eye_scar_repair
+	name = "Eye scar repair"
+	desc = "A procedure involving injected synthflesh to repair scarring on the eyes"
+	steps = list(
+		/datum/surgery_step/incise,
+		/datum/surgery_step/retract_skin,
+		/datum/surgery_step/clamp_bleeders,
+		/datum/surgery_step/repair_eye_scarring,
+		/datum/surgery_step/close
+	)
+	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
+	possible_locs = list(BODY_ZONE_PRECISE_EYES)
+	requires_bodypart_type = BODYTYPE_ORGANIC
+
+/datum/surgery/eye_scar_repair/can_start(mob/user, mob/living/carbon/target)
+	var/obj/item/organ/eyes/eyes = target.getorganslot(ORGAN_SLOT_EYES)
+	if(!eyes)
+		return FALSE
+	return eyes.scarring & ~eyes.permanent_scarring
+
+/datum/surgery_step/repair_eye_scarring
+	name = "repair scarring"
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_SCREWDRIVER = 40)
+	time = 10 SECONDS
+	chems_needed = list(/datum/reagent/medicine/synthflesh)
+	experience_given = MEDICAL_SKILL_ORGAN_FIX
+	// Need this many units of Synthflesh at the end of the repair step to succeed
+	var/synthflesh_needed = 8
+
+/datum/surgery_step/repair_eye_scarring/chem_check(mob/living/target)
+	return target.reagents.has_reagent(/datum/reagent/medicine/synthflesh, synthflesh_needed)
+
+/datum/surgery_step/repair_eye_scarring/get_chem_list()
+	return "[synthflesh_needed]u injected [..()]"
+
+/datum/surgery_step/repair_eye_scarring/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	display_results(user, target, span_notice("You begin to repair the scarring on [target]'s eyes..."),
+		span_notice("[user] begins to repair the scarring on [target]'s eyes."),
+		span_notice("[user] begins to perform surgery on [target]'s eyes."))
+
+/datum/surgery_step/repair_eye_scarring/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
+	var/obj/item/organ/eyes/eyes = target.getorganslot(ORGAN_SLOT_EYES)
+	display_results(user, target, span_notice("You successfully repair the scarring on [target]'s eyes."),
+		span_notice("[user] successfully repairs the scarring on [target]'s eyes!"),
+		span_notice("[user] completes the surgery on [target]'s eyes."))
+	target.reagents.remove_reagent(/datum/reagent/medicine/synthflesh, synthflesh_needed)
+	eyes?.fix_injury_scars()
+	target.blur_eyes(35)
+	return ..()
+
+/datum/surgery_step/repair_eye_scarring/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	display_results(user, target, span_warning("You fail to repair the scarring on [target]'s eyes!"),
+		span_warning("[user] fails to repair the scarring on [target]'s eyes!"),
+		span_warning("[user] fails to repair the scarring on [target]'s eyes!"))
 	return FALSE
 
 /datum/surgery/eye_surgery/mechanic
@@ -126,6 +183,6 @@
 		span_notice("[user] starts replacing the electronic components inside [target]'s [parse_zone(target_zone)]...")
 	)
 
-/datum/surgery_step/replace_capacitor/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
+/datum/surgery_step/replace_sensor/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	qdel(tool)
 	return ..()
