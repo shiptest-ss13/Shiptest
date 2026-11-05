@@ -27,6 +27,8 @@
 				if(b_item.available == TRUE)
 					for(var/paired_item in b_item.pair_item)
 						var/datum/blackmarket_item/item_to_set = get_item_in_market(paired_item)
+						if(!prob(item_to_set.as_pair_prob))
+							continue
 						if(!(item_to_set in pair_items_to_handle) && !isnull(item_to_set))
 							pair_items_to_handle += item_to_set
 
