@@ -18,11 +18,16 @@
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 	breakdown_duration = 25
+	//the sheet we make for a clean deconstruction
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
+	//the scrap we make for an aggressive destruction
+	var/scrap_type = /obj/item/stack/ore/salvage/scrapmetal
+	var/scrap_amount = 2
+	//kind of girder used by this
 	var/obj/girder_type = /obj/structure/girder
 
-	min_dam = 8
+	minimum_damage = 15
 	max_integrity = 400
 	brute_mod = 1
 	burn_mod = 1
@@ -60,8 +65,8 @@
 /turf/closed/wall/attack_tk()
 	return
 
-/turf/closed/wall/dismantle_wall(devastated = FALSE)
-	create_sheets()
+/turf/closed/wall/dismantle_wall(devastated = FALSE, mob/user, safe_decon = TRUE)
+	create_sheets(safe_decon)
 	var/obj/newgirder = create_girder()
 	if(devastated)
 		if(newgirder)
@@ -74,7 +79,9 @@
 
 	..()
 
-/turf/closed/wall/proc/create_sheets()
+/turf/closed/wall/proc/create_sheets(safe_decon = TRUE)
+	if(!safe_decon && scrap_type)
+		return new scrap_type(src, scrap_amount)
 	if(sheet_type)
 		return new sheet_type(src, sheet_amount)
 	return null
