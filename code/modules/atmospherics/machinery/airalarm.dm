@@ -932,7 +932,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 				var/datum/effect_system/smoke_spread/transparent/bad/smoke = new
 				smoke.set_up(3, src)
 				smoke.start()
-				del(smoke)
+				qdel(smoke)
 			if(3)
 				visible_message(span_warning("[src]'s internal heater shorts and shoots flames!"), vision_distance = 3)
 				if(isturf(loc))
