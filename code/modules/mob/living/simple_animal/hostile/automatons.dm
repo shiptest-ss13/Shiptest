@@ -382,7 +382,8 @@
 
 	mine_heavy = 0
 	mine_light = 2
-	mine_flame = 6
+	mine_flame = 3
+	var/persistent_flame_range = 1
 
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
 	shrapnel_magnitude = 4
@@ -398,7 +399,7 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/automated/walkmine/incendiary/death()
-	for(var/turf/T in view(4,src))
+	for(var/turf/T in view(persistent_flame_range, src))
 		T.ignite_turf(15, "#fc7b48")
 		new /obj/effect/hotspot(T)
 	. = ..()
