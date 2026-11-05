@@ -1,11 +1,11 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "447 Cirrus-class Medical Carrack",
+	"map_name": "447b Cirrus-class Medical Carrack",
 	"faction": "/datum/faction/syndicate/cybersun",
 	"prefix": "CSSV",
 	"manufacturer": "ISF Spacecraft",
 	"map_short_name": "Cirrus-class",
-	"description": "The Cirrus-class is a Cybersun design originally drafted in 467 FSC, and was put to production by ISF Spacecraft the following year. The original design served faithfully as a transport for Cybersun Executives, but the current revision has been billed as 'Trauma Team Response Vehicle'. A docking port for a Gauze-class subshuttle allows rapid response to medical emergencies, and priority treatment for those in Cybersun's graces.",
+	"description": "Originally commissioned as a transport yacht by Cybersun Industries, the 447b Cirrus Medical Carrack is a retrofit for an aging fleet of transport vehicles designed to extend their lifespan by serving as a mobile base for Biodynamic's Trauma Team. Initially proposed by Biodynamics engineers after the Battle at Kapche-Legnica created demand for additional quick response vehicles, the design wouldn't see widespread use until the end of the Intercorporate War due to complexities in modifying the aft of the hull for transport of the Arcus-class Rapid Response Vehicle. In current year, the Cirrus-class is typically found under command of Biodynamics captains looking to push Cybersun's influence in the Frontier, where the combination of high-tech medical gear, effective crew armament, and rapid shuttlecraft allow it to project Cybersun's power.",
 	"starting_funds": 3000,
 	"limit": 1,
 	"tags": [
@@ -16,7 +16,8 @@
 	"map_path": "_maps/shuttles/cybersun/cybersun_cirrus.dmm",
 	"namelists": [
 		"SPACE",
-		"BEASTS"
+		"BEASTS",
+		"CYBERSUN"
 	],
 	"job_slots": {
 		"Captain": {
@@ -39,7 +40,7 @@
 		},
 		"Trauma Team Technician": {
 			"outfit": "/datum/outfit/job/cybersun/paramedic",
-			"slots": 2
+			"slots": 3
 		},
 		"Ship's Aide": {
 			"outfit": "/datum/outfit/job/cybersun/assistant",

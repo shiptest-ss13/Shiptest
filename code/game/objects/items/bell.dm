@@ -57,6 +57,7 @@ click on it or use it inhand to make a noise, click-drag to bring to inventory, 
 	w_class = WEIGHT_CLASS_NORMAL
 	bell_sound = 'sound/machines/chime.ogg'
 	movable = FALSE
+	anchored = TRUE
 
 /obj/item/table_bell/wall/Initialize(mapload)
 	. = ..()
