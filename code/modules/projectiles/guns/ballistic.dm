@@ -317,6 +317,9 @@
 		return FALSE
 	return chambered || (bolt_type == BOLT_TYPE_OPEN && !bolt_locked && magazine && magazine.ammo_count()) // loathsome kludge but it works...
 
+/obj/item/gun/ballistic/is_out_of_ammo()
+	return !chambered?.BB && !magazine?.ammo_count(FALSE)
+
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	if(..())
 		return FALSE

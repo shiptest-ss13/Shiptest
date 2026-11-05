@@ -527,10 +527,14 @@
 	if(!safety && has_safety)
 		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
-		if(isliving(user))
+		if(isliving(user) && is_out_of_ammo())
 			ai_note_enemy_reloading(user, AI_DRY_FIRE_HEARING_RANGE)
 		return
 	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
+
+// whether a dry fire means we're actually empty, not just needing the action cycled
+/obj/item/gun/proc/is_out_of_ammo()
+	return TRUE
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
