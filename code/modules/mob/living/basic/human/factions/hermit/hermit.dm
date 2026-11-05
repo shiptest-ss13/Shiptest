@@ -6,6 +6,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	armor_base = /obj/item/clothing/suit/hooded/survivor
 	callout_set = /datum/ai_callout_set/human/hermit
+	friendly_fire_tolerance = 0.5
 	flashlight_chance = 15
 	speak_chance = 20
 	speak_emote = list("breathes heavily", "growls", "sharply inhales")

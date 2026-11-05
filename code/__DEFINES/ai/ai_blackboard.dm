@@ -95,8 +95,12 @@
 ///For those with a scope, how far out it pushes our view towards where we're looking, and how far around that it shows, as a player's does. Null for no scope
 #define BB_BASIC_MOB_SCOPE_ZOOM "BB_basic_scope_zoom"
 #define BB_BASIC_MOB_SCOPE_VIEW "BB_basic_scope_view"
-///If TRUE, the mob holds its fire when one of its own is in the way
-#define BB_BASIC_MOB_AVOID_FRIENDLY_FIRE "BB_basic_avoid_friendly_fire"
+///The most chance of hitting an ally the mob shoots anyways, out of 1, holding its fire past that. Null for not looking out for them at all
+#define BB_BASIC_MOB_FRIENDLY_FIRE_TOLERANCE "BB_basic_friendly_fire_tolerance"
+///Since when an ally has been too much in the way of the mob's shots for it to fire
+#define BB_BASIC_MOB_ALLY_IN_LANE_SINCE "BB_basic_ally_in_lane_since"
+///When an ally was last too much in the way of the mob's shots, so a hold that stopped being checked, like losing sight of who it's fighting, doesn't count as still going on
+#define BB_BASIC_MOB_ALLY_IN_LANE_LAST "BB_basic_ally_in_lane_last"
 ///If TRUE, a mob with a ranged attack would rather hit someone right next to it than shoot them, like with a knife in its other hand
 #define BB_BASIC_MOB_PREFERS_MELEE "BB_basic_prefers_melee"
 ///How much we move about in a fight, an AI_MOBILITY_ define. Null for normal
@@ -337,8 +341,6 @@
 ///Where one of ours last stood in our way, and when, so if they're as stuck on us as we are on them, we swap
 #define BB_BASIC_MOB_BLOCKED_BY_ALLY_AT "BB_basic_blocked_by_ally_at"
 #define BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE "BB_basic_blocked_by_ally_since"
-///Where someone's in our way with no way round them, so we keep to our way through, and they let us past if they're one of ours
-#define BB_BASIC_MOB_NO_WAY_ROUND "BB_basic_no_way_round"
 ///Where we wait out of sight of someone we can't get to, like out in open space
 #define BB_BASIC_MOB_WAIT_TURF "BB_basic_wait_turf"
 ///When we next look for somewhere to wait out of sight of someone we can't get to

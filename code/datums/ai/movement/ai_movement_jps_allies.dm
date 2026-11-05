@@ -5,39 +5,66 @@
 	var/mob/living/living_mover = mover
 	if(!istype(living_mover))
 		return FALSE
-	for(var/mob/living/ally in next_step)
-		if(!ally.density || ally == controller.current_movement_target || ally.client || ally.stat != CONSCIOUS || !istype(ally.ai_controller, /datum/ai_controller) || !living_mover.faction_check_mob(ally))
-			continue
+	var/mob/living/ally = get_ally_in_way(controller, living_mover, next_step)
+	if(ally)
 		controller.set_blackboard_key(BB_BASIC_MOB_BLOCKED_BY_ALLY_AT, next_step)
 		controller.set_blackboard_key(BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE, world.time)
 		return make_way(ally, mover, next_step)
+	for(var/mob/living/someone in next_step)
+		if(someone.density)
+			return FALSE // someone not ours is what's blocking us
+	// diagonal step bullshit
+	var/turf/mover_turf = get_turf(mover)
+	if(get_dist(mover_turf, next_step) != 1 || !ISDIAGONALDIR(get_dir(mover_turf, next_step)))
+		return FALSE
+	for(var/turf/corner as anything in list(DIAGONAL_CORNER_Y(mover_turf, next_step), DIAGONAL_CORNER_X(mover_turf, next_step)))
+		ally = get_ally_in_way(controller, living_mover, corner)
+		if(!ally)
+			continue
+		controller.set_blackboard_key(BB_BASIC_MOB_BLOCKED_BY_ALLY_AT, corner)
+		controller.set_blackboard_key(BB_BASIC_MOB_BLOCKED_BY_ALLY_SINCE, world.time)
+		// pathfinding can't see allies on corners, so it'd keep planning the same step
+		return make_way(ally, mover, corner, next_step)
 	return FALSE
 
-// has ally step off spot for mover, if they're not busy: off to the side of mover's way first, then on ahead of them
-/datum/ai_movement/jps/proc/make_way(mob/living/ally, atom/movable/mover, turf/spot)
+// an ally on spot who'd move if asked
+/datum/ai_movement/jps/proc/get_ally_in_way(datum/ai_controller/controller, mob/living/mover, turf/spot)
+	for(var/mob/living/ally in spot)
+		if(!ally.density || ally == controller.current_movement_target || ally.client || ally.stat != CONSCIOUS || !istype(ally.ai_controller, /datum/ai_controller) || !mover.faction_check_mob(ally))
+			continue
+		return ally
+	return null
+
+// gets ally off spot for mover. destination is where mover goes after spot, if different, like round a corner
+/datum/ai_movement/jps/proc/make_way(mob/living/ally, atom/movable/mover, turf/spot, turf/destination = spot)
 	var/datum/ai_controller/ally_controller = ally.ai_controller
 	if(LAZYLEN(ally.do_afters) || ally.buckled || ally.anchored || !(ally.mobility_flags & MOBILITY_MOVE))
 		return FALSE
+	var/datum/component/ranged_attacks/ally_gun = ally.GetComponent(/datum/component/ranged_attacks)
+	if(ally_gun?.mid_volley())
+		return FALSE // try not to get friendly fired ok
 	var/turf/mover_turf = get_turf(mover)
 	if(stuck_on(ally_controller, mover_turf))
 		return swap_places(ally, mover, spot) // swap if we're going head one towards each other
-	var/mob/living/living_mover = mover
-	if(living_mover.ai_controller?.blackboard[BB_BASIC_MOB_NO_WAY_ROUND] == spot)
-		return let_through(ally, mover, spot, "as there was no way round us") // they can hold where they are, but not block the only way
 	var/hurrying = in_a_hurry(mover)
-	if(!hurrying && ai_is_doorway(spot))
-		return let_through(ally, mover, spot, "to let them through the doorway")
-	if(!hurrying && length(ally_controller.movement_path) && ally_controller.ai_movement?.moving_controllers[ally_controller])
+	if(!hurrying && on_their_way(ally_controller))
 		return FALSE // on their way somewhere themselves, so they'll be out of it soon enough
-	var/atom/ally_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	if(!hurrying && !QDELETED(ally_target))
-		return FALSE // in a fight, so they're stood where they mean to be, and we go round
 	if(!hurrying && world.time < ally_controller.blackboard[BB_BASIC_MOB_MADE_WAY_UNTIL])
 		return FALSE // only just did, so we don't shuffle them about all day
+	if(step_aside(ally, mover, spot, destination))
+		return TRUE
+	return let_through(ally, mover, spot, "as there was nowhere to step out of their way")
+
+// ally steps off spot, sideways first, then ahead, but never onto mover's path. TRUE if they did
+/datum/ai_movement/jps/proc/step_aside(mob/living/ally, atom/movable/mover, turf/spot, turf/destination)
+	var/datum/ai_controller/ally_controller = ally.ai_controller
+	var/mob/living/living_mover = mover
+	var/list/mover_path = istype(living_mover) ? living_mover.ai_controller?.movement_path : null
+	var/turf/mover_turf = get_turf(mover)
 	var/step_dir = get_dir(mover_turf, spot)
 	for(var/direction in list(turn(step_dir, 90), turn(step_dir, -90), turn(step_dir, 45), turn(step_dir, -45), step_dir))
 		var/turf/aside = get_step(spot, direction)
-		if(!aside || aside == mover_turf || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside) || ai_diagonal_crosses_hazard(spot, aside, ally))
+		if(!aside || aside == mover_turf || aside == destination || (aside in mover_path) || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside) || ai_diagonal_crosses_hazard(spot, aside, ally))
 			continue
 		if(spot.LinkBlockedWithAccess(aside, ally))
 			continue
@@ -47,22 +74,23 @@
 		ally_controller.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
 		AI_LOG_DECISION(ally_controller, "movement: stepped aside to [aside] to let [mover] through")
 		return TRUE
-	if(hurrying)
-		return swap_places(ally, mover, spot, "as they were getting clear of danger")
 	return FALSE
 
 // ally swaps back off spot to let mover through, whatever they're doing, and goes back to it after. On both, so neither takes it straight back off the other
 /datum/ai_movement/jps/proc/let_through(mob/living/ally, atom/movable/mover, turf/spot, reason)
-	var/datum/ai_controller/ally_controller = ally.ai_controller
-	if(world.time < ally_controller.blackboard[BB_BASIC_MOB_MADE_WAY_UNTIL])
-		return FALSE
 	if(!swap_places(ally, mover, spot, reason))
 		return FALSE
-	ally_controller.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
+	ally.ai_controller.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
 	var/mob/living/living_mover = mover
 	living_mover.ai_controller?.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
-	living_mover.ai_controller?.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_ROUND)
 	return TRUE
+
+// whether ally's still walking somewhere, rather than standing where they mean to be
+/datum/ai_movement/jps/proc/on_their_way(datum/ai_controller/ally_controller)
+	var/atom/heading_to = ally_controller.ai_movement?.moving_controllers[ally_controller]
+	if(!heading_to)
+		return FALSE
+	return !AI_IN_RANGE(ally_controller.pawn, heading_to, get_minimum_distance(ally_controller))
 
 // mover wants to get out of the way quick, move aside for them
 /datum/ai_movement/jps/proc/in_a_hurry(atom/movable/mover)

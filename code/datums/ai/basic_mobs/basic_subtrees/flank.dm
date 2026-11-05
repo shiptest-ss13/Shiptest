@@ -39,7 +39,9 @@
 	var/atom/blocker = get_cached_shot_blocker(controller.pawn, target)
 	// cover like sandbags doesn't block our shots, so it's no blocker, but most of them will hit it rather than them. A shield held up toward us is much the same
 	var/dug_in = !blocker && (cover_between(get_turf(target), controller.pawn) || ai_shield_facing(target, get_turf(controller.pawn)))
-	if(!blocker && !dug_in)
+	// or an ally has kept us from firing for a while
+	var/ally_in_lane = !blocker && !dug_in && ai_held_by_ally_for(controller, AI_ALLY_IN_LANE_MOVE_TIME)
+	if(!blocker && !dug_in && !ally_in_lane)
 		end_flank(controller)
 		return
 	var/must_go_around = blocker && (ai_is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, ranged_attack.get_projectile_type()))
@@ -71,7 +73,7 @@
 	// make sure its actually a valid flank angle
 	var/turf/angle_turf = flanking ? find_angle_on(controller, target, pass_flags) : null
 	flanking = !!angle_turf
-	AI_LOG_DECISION(controller, "flank: [blocker || "their cover"] is in the way of [target], [flanking ? "going round to [angle_turf]" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
+	AI_LOG_DECISION(controller, "flank: [blocker || (ai_held_by_ally_for(controller, 0) ? "one of ours" : "their cover")] is in the way of [target], [flanking ? "going round to [angle_turf]" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
 	controller.set_blackboard_key(BB_BASIC_MOB_FLANKING, flanking)
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION, world.time + (flanking ? flank_duration : hold_duration))
 	controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
@@ -138,7 +140,7 @@
 	for(var/mob/living/someone as anything in get_ai_visible_mobs(living_pawn, ally_range))
 		if(someone == target || ai_is_downed(someone) || !targetting_datum.can_attack(living_pawn, someone))
 			continue
-		if(!get_shot_blocker(our_turf, get_turf(someone), pass_flags = pass_flags))
+		if(!get_shot_blocker(our_turf, get_turf(someone), pass_flags = pass_flags) && !ai_ally_in_lane(living_pawn, someone))
 			clear_targets += someone
 	return length(clear_targets) ? get_nearest_of(living_pawn, clear_targets) : null
 
@@ -214,7 +216,7 @@
 
 // whether shooter would have an angle on target from spot
 /datum/ai_planning_subtree/flank/proc/check_angle(mob/living/shooter, turf/spot, turf/their_turf, pass_flags, atom/target)
-	if(cover_between(their_turf, spot) || ai_shield_facing(target, spot) || ally_in_line_of_fire(shooter, spot, their_turf))
+	if(cover_between(their_turf, spot) || ai_shield_facing(target, spot) || ai_ally_in_lane(shooter, target, spot))
 		return FALSE
 	var/atom/blocker = get_shot_blocker(spot, their_turf, pass_flags = pass_flags)
 	if(!blocker)

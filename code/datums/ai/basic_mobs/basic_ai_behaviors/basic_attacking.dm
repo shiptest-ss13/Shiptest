@@ -128,22 +128,30 @@
 		basic_mob.face_atom(final_target)
 		return AI_BEHAVIOR_DELAY // they've only just dropped, so we hold our fire and watch them a moment to be sure
 
-	var/mob/living/in_the_way = (avoid_friendly_fire || controller.blackboard[BB_BASIC_MOB_AVOID_FRIENDLY_FIRE]) ? check_friendly_in_path(basic_mob, target, targetting_datum) : null
+	// the mob's own burst and fire rate, if it has them, like from the gun it's meant to be holding
+	var/datum/component/ranged_attacks/ranged_attack = basic_mob.GetComponent(/datum/component/ranged_attacks)
+	var/friendly_fire_tolerance = ai_friendly_fire_tolerance(controller)
+	var/mob/living/in_the_way = get_friendly_in_the_way(basic_mob, target, targetting_datum, ranged_attack, friendly_fire_tolerance)
+	if(in_the_way)
+		// track how long, so cover and flank can react if it goes on
+		if(isnull(controller.blackboard[BB_BASIC_MOB_ALLY_IN_LANE_SINCE]))
+			controller.set_blackboard_key(BB_BASIC_MOB_ALLY_IN_LANE_SINCE, world.time)
+		controller.set_blackboard_key(BB_BASIC_MOB_ALLY_IN_LANE_LAST, world.time)
 	if(in_the_way && !taking_the_shot(controller, basic_mob, in_the_way))
 		if(COOLDOWN_FINISHED(controller, movement_cooldown))
 			COOLDOWN_START(controller, movement_cooldown, controller.movement_delay)
-			adjust_position(basic_mob, target, targetting_datum)
-		push_past_shield(controller, target)
+			adjust_position(basic_mob, target, targetting_datum, ranged_attack, friendly_fire_tolerance)
+		if(ai_used_as_shield(in_the_way))
+			push_past_shield(controller, target) // only rush real shields, not allies just standing nearby
 		return AI_BEHAVIOR_DELAY
 	if(!in_the_way)
 		controller.clear_blackboard_key(BB_BASIC_MOB_SHIELDED_SINCE)
 		controller.clear_blackboard_key(BB_BASIC_MOB_SHIELDED_FIRST_SINCE)
 		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_THE_SHOT)
+		controller.clear_blackboard_key(BB_BASIC_MOB_ALLY_IN_LANE_SINCE)
 
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
-	// the mob's own burst and fire rate, if it has them, like from the gun it's meant to be holding
-	var/datum/component/ranged_attacks/ranged_attack = basic_mob.GetComponent(/datum/component/ranged_attacks)
 	if(ranged_attack?.effective_range && get_dist(basic_mob, final_target) > ranged_attack.effective_range)
 		return AI_BEHAVIOR_DELAY // too far for it to reach
 	if(!ranged_attack)
@@ -154,13 +162,21 @@
 		return AI_BEHAVIOR_DELAY // dont burn allies
 	if(!ranged_attack.try_start_volley())
 		return AI_BEHAVIOR_DELAY
-	ranged_attack.fire_volley(final_target, shots, burst_interval)
+	ranged_attack.fire_volley(final_target, shots, burst_interval, ally_risk_tolerance = in_the_way ? null : friendly_fire_tolerance)
 	return AI_BEHAVIOR_DELAY //only start the cooldown when the shot is shot
 
 /datum/ai_behavior/basic_ranged_attack/finish_action(datum/ai_controller/controller, succeeded, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()
 	if(!succeeded)
 		forget_invalid_target(controller, target_key, targetting_datum_key)
+
+/datum/ai_behavior/basic_ranged_attack/proc/get_friendly_in_the_way(mob/living/basic/basic_mob, atom/target, datum/targetting_datum/targetting_datum, datum/component/ranged_attacks/ranged_attack, friendly_fire_tolerance, turf/from)
+	if(!isnull(friendly_fire_tolerance))
+		var/list/risk = ranged_attack ? ranged_attack.friendly_fire_risk(target, from = from) : ai_friendly_fire_risk(basic_mob, target, 0, 0, get_ai_shot_pass_flags(basic_mob), from)
+		return risk[1] > friendly_fire_tolerance ? risk[2] : null
+	if(avoid_friendly_fire && targetting_datum)
+		return check_friendly_in_path(basic_mob, target, targetting_datum, from)
+	return null
 
 // from is where we'd be shooting from, if not where we are
 /datum/ai_behavior/basic_ranged_attack/proc/check_friendly_in_path(mob/living/source, atom/target, datum/targetting_datum/targetting_datum, turf/from)
@@ -203,7 +219,7 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_SHIELDED_SINCE, world.time) // and again after another while, if it's still going on
 
 // a step to somewhere we'd have a shot past whoever of ours is in the way. If there's nowhere, we stay put rather than shuffling back and forth, like at someone using one of ours as a shield
-/datum/ai_behavior/basic_ranged_attack/proc/adjust_position(mob/living/living_pawn, atom/target, datum/targetting_datum/targetting_datum)
+/datum/ai_behavior/basic_ranged_attack/proc/adjust_position(mob/living/living_pawn, atom/target, datum/targetting_datum/targetting_datum, datum/component/ranged_attacks/ranged_attack, friendly_fire_tolerance)
 	if(LAZYLEN(living_pawn.do_afters))
 		return // mid-climb, or anything else that moving would cancel
 	var/turf/our_turf = get_turf(living_pawn)
@@ -215,7 +231,7 @@
 			continue
 		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf, living_pawn) || ai_diagonal_crosses_hazard(our_turf, target_turf, living_pawn) || get_dist(target_turf, target) > get_dist(living_pawn, target))
 			continue
-		if(targetting_datum && check_friendly_in_path(living_pawn, target, targetting_datum, target_turf))
+		if(get_friendly_in_the_way(living_pawn, target, targetting_datum, ranged_attack, friendly_fire_tolerance, target_turf))
 			continue // no better from there
 		possible_turfs += target_turf
 
@@ -282,7 +298,8 @@
 			aim = spot
 	if(!ranged_attack.try_start_volley())
 		return AI_BEHAVIOR_DELAY
-	ranged_attack.fire_volley(aim, shots, burst_interval)
+	// follow-ups check for allies past the aim too, since blind shots carry on
+	ranged_attack.fire_volley(aim, shots, burst_interval, ally_risk_tolerance = ai_friendly_fire_tolerance(controller, blind = TRUE), ally_watch_range = max_range)
 	return AI_BEHAVIOR_DELAY
 
 // whether firing at spot would get anywhere near it, for whether firing back is any use at all
@@ -296,11 +313,15 @@
 	var/atom/blocker = get_shot_blocker(get_turf(basic_mob), spot, pass_flags = pass_flags) || get_tile_shot_blocker(spot, pass_flags)
 	if(blocker && shot_wasted_on(basic_mob, blocker, ranged_attack))
 		return FALSE // something's in the way we'd only be shooting
-	// not just up to where we're aiming, as the shot carries on past it
-	var/turf/shot_end = get_ranged_target_turf_direct(basic_mob, spot, max_range) || spot
 	var/datum/component/ranged_attacks/flamethrower/flamer = ranged_attack
 	if(istype(flamer) && flamer.get_ally_in_spray(basic_mob, spot))
 		return FALSE
+	// not just up to where we're aiming, as the shot carries on past it
+	var/friendly_fire_tolerance = ai_friendly_fire_tolerance(basic_mob.ai_controller, blind = TRUE)
+	if(!isnull(friendly_fire_tolerance))
+		var/list/risk = ranged_attack.friendly_fire_risk(spot, max_range)
+		return risk[1] <= friendly_fire_tolerance
+	var/turf/shot_end = get_ranged_target_turf_direct(basic_mob, spot, max_range) || spot
 	return !ally_in_line_of_fire(basic_mob, get_turf(basic_mob), shot_end)
 
 /datum/ai_behavior/fire_at_position/proc/shot_wasted_on(mob/living/basic/basic_mob, atom/blocker, datum/component/ranged_attacks/ranged_attack)

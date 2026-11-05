@@ -209,10 +209,10 @@
 /// Whether a diagonal step from start to finish cuts through a hazard on a corner, as a diagonal move is really two steps
 /datum/pathfind/proc/diagonal_hazard_at(turf/start, turf/finish)
 	// look at cache first, avoid adjacency checks
-	var/turf/first_corner = locate(finish.x, start.y, start.z)
+	var/turf/first_corner = DIAGONAL_CORNER_X(start, finish)
 	if(first_corner && (isnull(hazard_cache[first_corner]) ? hazard_at(first_corner) : hazard_cache[first_corner]))
 		return TRUE
-	var/turf/second_corner = locate(start.x, finish.y, start.z)
+	var/turf/second_corner = DIAGONAL_CORNER_Y(start, finish)
 	return second_corner && (isnull(hazard_cache[second_corner]) ? hazard_at(second_corner) : hazard_cache[second_corner])
 
 /// Whether spot's a hazard like a chasm or electrified water, remembered for the rest of the search

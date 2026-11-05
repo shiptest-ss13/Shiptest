@@ -10,3 +10,8 @@
 /mob/living/basic/human/frontier/ranged/trooper/flame/neuter : /mob/living/basic/human/frontier/ranged/trooper/flame/neutered{@OLD}
 /mob/living/basic/human/frontier/ranged/officer/neutured : /mob/living/basic/human/frontier/ranged/officer/neutered{@OLD}
 /mob/living/basic/human/frontier/ranged/trooper/skm/neutured : /mob/living/basic/human/frontier/ranged/trooper/skm/neutered{@OLD}
+# check_friendly_fire, yes or no, became friendly_fire_tolerance, the most chance of hitting an ally a shot may carry. Mobs set to look out for allies keep to the careful end, the rest get the default
+/mob/living/basic/human/@SUBTYPES{check_friendly_fire=1} : /mob/living/basic/human/@SUBTYPES{@OLD;check_friendly_fire=@SKIP;friendly_fire_tolerance=0.15}
+/mob/living/basic/human/@SUBTYPES{check_friendly_fire=TRUE} : /mob/living/basic/human/@SUBTYPES{@OLD;check_friendly_fire=@SKIP;friendly_fire_tolerance=0.15}
+/mob/living/basic/human/@SUBTYPES{check_friendly_fire=0} : /mob/living/basic/human/@SUBTYPES{@OLD;check_friendly_fire=@SKIP}
+/mob/living/basic/human/@SUBTYPES{check_friendly_fire=FALSE} : /mob/living/basic/human/@SUBTYPES{@OLD;check_friendly_fire=@SKIP}

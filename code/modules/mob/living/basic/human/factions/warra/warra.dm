@@ -8,6 +8,7 @@
 	melee_damage_upper = 15
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	faction = list(ROLE_DEATHSQUAD)
+	friendly_fire_tolerance = 0.15
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_private
 	armor_base = /obj/item/clothing/suit/armor/warra
 	dodging = TRUE

@@ -17,8 +17,8 @@
 			continue
 		if(sample.x != previous.x && sample.y != previous.y)
 			// cutting diagonally between tiles, so it's only blocked if both sides of the gap are
-			var/atom/first_side = get_tile_shot_blocker(locate(sample.x, previous.y, start.z), pass_flags)
-			var/atom/second_side = get_tile_shot_blocker(locate(previous.x, sample.y, start.z), pass_flags)
+			var/atom/first_side = get_tile_shot_blocker(DIAGONAL_CORNER_X(previous, sample), pass_flags)
+			var/atom/second_side = get_tile_shot_blocker(DIAGONAL_CORNER_Y(previous, sample), pass_flags)
 			if(first_side && second_side)
 				return first_side
 			var/atom/corner_edge = get_edge_shot_blocker(previous, sample, pass_flags)
@@ -166,8 +166,8 @@
 				if(!passable[next])
 					continue
 				if(ISDIAGONALDIR(direction))
-					var/turf/side_one = get_step(current, direction & (NORTH|SOUTH))
-					var/turf/side_two = get_step(current, direction & (EAST|WEST))
+					var/turf/side_one = DIAGONAL_CORNER_Y(current, next)
+					var/turf/side_two = DIAGONAL_CORNER_X(current, next)
 					if(!side_one || !side_two || side_one.density || side_two.density)
 						continue // no cutting round wall corners
 				var/step_cost = 1
@@ -221,11 +221,11 @@
 			best_score = score
 	return best_turf
 
-// whether shooter would have an open shot at finish stood on spot
-/proc/ai_shot_open_from(mob/living/shooter, turf/spot, turf/finish, pass_flags)
+// whether shooter would have an open shot at target from spot, with nothing and no ally in the way
+/proc/ai_shot_open_from(mob/living/shooter, turf/spot, atom/target, pass_flags)
 	if(isnull(pass_flags))
 		pass_flags = get_ai_shot_pass_flags(shooter)
-	return !get_shot_blocker(spot, finish, pass_flags = pass_flags) && !ally_in_line_of_fire(shooter, spot, finish)
+	return !get_shot_blocker(spot, get_turf(target), pass_flags = pass_flags) && !ai_ally_in_lane(shooter, target, spot)
 
 /proc/ally_in_line_of_fire(mob/living/shooter, turf/start, turf/finish)
 	for(var/turf/line_turf as anything in get_line(start, finish))
@@ -233,6 +233,92 @@
 			if(maybe_ally != shooter && !ai_shot_passes_over(maybe_ally) && shooter.faction_check_mob(maybe_ally))
 				return TRUE
 	return FALSE
+
+// chance (0-1) a shot at aim hits an ally, as list(chance, ally most in the way), from how much of the spread cone each ally covers
+/proc/ai_friendly_fire_risk(mob/living/shooter, atom/aim, spread, reach, pass_flags, turf/from)
+	var/turf/shooter_turf = get_turf(shooter)
+	var/turf/start = from || shooter_turf
+	var/turf/aim_turf = get_turf(aim)
+	if(!start || !shooter_turf || !aim_turf || start == aim_turf)
+		return list(0, null)
+	reach = max(reach, sqrt((aim_turf.x - start.x) ** 2 + (aim_turf.y - start.y) ** 2))
+	var/aim_angle = Get_Angle(start, aim_turf)
+	var/chance_clear = 1
+	var/mob/living/most_in_way
+	var/most_in_way_chance = 0
+	// same lookup targetting already caches each tick, so it's usually free. Includes player allies, unlike get_ai_allies_in_range()
+	var/look_range = shooter.ai_controller?.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE
+	var/needed_range = CEILING(reach, 1) + get_dist(shooter_turf, start)
+	if(needed_range > look_range)
+		look_range = max(needed_range, AI_FRIENDLY_FIRE_LONG_LOOK_RANGE)
+	for(var/mob/living/ally in ai_cached_hearers(shooter, look_range))
+		if(ally == shooter || ai_shot_passes_over(ally) || !shooter.faction_check_mob(ally))
+			continue
+		var/turf/ally_turf = get_turf(ally)
+		if(!ally_turf || ally_turf == start)
+			continue
+		var/distance = sqrt((ally_turf.x - start.x) ** 2 + (ally_turf.y - start.y) ** 2)
+		if(distance > reach + 0.5)
+			continue // past the shot's reach
+		var/ally_angle = Get_Angle(start, ally_turf)
+		var/offset = ally_angle - aim_angle
+		while(offset > 180)
+			offset -= 360
+		while(offset < -180)
+			offset += 360
+		// projectiles hit by tile, so the ally is as wide as their tile looks from here, wider on the diagonal
+		var/half_extent = 0.5 * (abs(sin(ally_angle)) + abs(cos(ally_angle)))
+		var/half_width = arctan(half_extent / distance)
+		var/chance
+		if(spread <= 0)
+			chance = abs(offset) <= half_width ? 1 : 0 // dead straight every time
+		else
+			chance = clamp((min(offset + half_width, spread) - max(offset - half_width, -spread)) / (spread * 2), 0, 1)
+		if(!chance)
+			continue // well off to the side
+		if(get_shot_blocker(start, ally_turf, pass_flags = pass_flags))
+			continue
+		chance_clear *= 1 - chance
+		if(chance > most_in_way_chance)
+			most_in_way_chance = chance
+			most_in_way = ally
+	return list(1 - chance_clear, most_in_way)
+
+// highest chance of hitting an ally the mob will shoot at, or null if it doesn't care. Higher when broken, lower firing blind
+/proc/ai_friendly_fire_tolerance(datum/ai_controller/controller, blind = FALSE)
+	var/tolerance = controller?.blackboard[BB_BASIC_MOB_FRIENDLY_FIRE_TOLERANCE]
+	if(isnull(tolerance))
+		return null
+	if(AI_MORALE_IS(controller, AI_MORALE_BROKEN))
+		tolerance *= AI_BROKEN_FRIENDLY_FIRE_TOLERANCE_MULT
+	if(blind)
+		tolerance *= AI_BLIND_FRIENDLY_FIRE_TOLERANCE_MULT
+	return tolerance
+
+// an ally has been in the way of firing for at least this long
+/proc/ai_held_by_ally_for(datum/ai_controller/controller, time)
+	var/since = controller.blackboard[BB_BASIC_MOB_ALLY_IN_LANE_SINCE]
+	var/last = controller.blackboard[BB_BASIC_MOB_ALLY_IN_LANE_LAST]
+	if(isnull(since) || isnull(last))
+		return FALSE
+	return world.time - last <= 1 SECONDS && last - since >= time
+
+// whether an ally in the way is being used as a shield, rather than just standing there
+/proc/ai_used_as_shield(mob/living/in_the_way)
+	return in_the_way.incapacitated() || in_the_way.buckled || in_the_way.pulledby
+
+// whether shooting at target from from risks an ally more than the mob tolerates. Pass the target, not its turf, so aim settling counts
+/proc/ai_ally_in_lane(mob/living/shooter, atom/target, turf/from)
+	var/turf/start = from || get_turf(shooter)
+	var/turf/their_turf = get_turf(target)
+	if(!start || !their_turf)
+		return FALSE
+	var/tolerance = ai_friendly_fire_tolerance(shooter.ai_controller)
+	if(isnull(tolerance))
+		return ally_in_line_of_fire(shooter, start, their_turf)
+	var/datum/component/ranged_attacks/ranged_attack = shooter.GetComponent(/datum/component/ranged_attacks)
+	var/list/risk = ranged_attack ? ranged_attack.friendly_fire_risk(target, from = start) : ai_friendly_fire_risk(shooter, target, 0, 0, get_ai_shot_pass_flags(shooter), start)
+	return risk[1] > tolerance
 
 // whether a shot not aimed at someone flies over them
 /proc/ai_shot_passes_over(mob/living/someone)
@@ -440,7 +526,7 @@
 			break
 		if(candidate == exclude || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
 			continue
-		if(!ai_shot_open_from(fighter, candidate, their_turf, pass_flags))
+		if(!ai_shot_open_from(fighter, candidate, threat, pass_flags))
 			continue // and none of ours in the way, like someone not under our control
 		var/shooting_through_ally = FALSE
 		for(var/turf/line_turf as anything in get_line(candidate, their_turf))

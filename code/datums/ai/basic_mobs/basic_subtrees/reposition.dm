@@ -42,7 +42,7 @@
 	var/search_failed_recently = world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]
 	var/urgent = !has_shot
 	if(!urgent && !(waiting && search_failed_recently)) // the costly part, so only when it'd change what we do
-		urgent = ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
+		urgent = ai_ally_in_lane(living_pawn, target)
 	var/under_fire = AI_RECENTLY_SHOT_AT(controller, under_fire_time)
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it
@@ -96,7 +96,7 @@
 		var/candidate_distance = get_dist(candidate, their_turf)
 		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2] || claimed_turfs[candidate] || !ai_can_take_spot(living_pawn, candidate))
 			continue
-		if(!can_walk_straight_to(living_pawn, candidate) || !ai_shot_open_from(living_pawn, candidate, their_turf, pass_flags))
+		if(!can_walk_straight_to(living_pawn, candidate) || !ai_shot_open_from(living_pawn, candidate, target, pass_flags))
 			continue
 		spots += candidate
 		var/step_x = candidate.x - our_turf.x
@@ -122,7 +122,7 @@
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || claimed_turfs[candidate] || !ai_can_take_spot(living_pawn, candidate))
 			continue
-		if(!ai_shot_open_from(living_pawn, candidate, their_turf, pass_flags))
+		if(!ai_shot_open_from(living_pawn, candidate, target, pass_flags))
 			continue
 		if(candidate_distance < nearest_distance)
 			nearest_distance = candidate_distance

@@ -127,8 +127,8 @@
 	var/fires_flames = FALSE
 	/// If TRUE, we don't stop to roll while burning as long as we can see who we're after, only once they're out of sight.
 	var/fights_while_burning = FALSE
-	/// If TRUE, the mob holds their fire when one of theirs is in the way
-	var/check_friendly_fire = FALSE
+	/// Chance (0-1) shooting if it thinks it can hit an ally.
+	var/friendly_fire_tolerance = 0.35
 
 	/// How many times the mob hits in each melee attack, spread over the time between them
 	var/rapid_melee = 1
@@ -349,7 +349,7 @@
 	set_ai_var_key(BB_BASIC_MOB_EXECUTES_DOWNED, executes_downed || null)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_THROW_BACK_CHANCE, noncombatant ? 0 : throw_back_chance)
 	set_ai_var_key(BB_BASIC_MOB_POST_RADIUS, holds_post ? max(0, post_radius) : null)
-	set_ai_var_key(BB_BASIC_MOB_AVOID_FRIENDLY_FIRE, check_friendly_fire || null)
+	set_ai_var_key(BB_BASIC_MOB_FRIENDLY_FIRE_TOLERANCE, friendly_fire_tolerance)
 	set_ai_var_key(BB_BASIC_MOB_MELEE_RECKLESS, melee_reckless || null)
 	set_ai_var_key(BB_BASIC_MOB_COMMANDER, is_commander || null)
 	set_ai_var_key(BB_BASIC_MOB_MELEE_HITS, rapid_melee > 1 ? rapid_melee : null)
@@ -420,7 +420,7 @@
 			NAMEOF(src, executes_downed),
 			NAMEOF(src, post_radius),
 			NAMEOF(src, throw_back_chance),
-			NAMEOF(src, check_friendly_fire),
+			NAMEOF(src, friendly_fire_tolerance),
 			NAMEOF(src, melee_reckless),
 			NAMEOF(src, is_commander),
 			NAMEOF(src, rapid_melee),

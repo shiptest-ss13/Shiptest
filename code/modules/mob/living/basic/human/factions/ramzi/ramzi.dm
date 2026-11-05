@@ -10,7 +10,7 @@
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	maximum_survivable_temperature = 400
 	faction = list(FACTION_RAMZI)
-	check_friendly_fire = TRUE
+	friendly_fire_tolerance = 0.15
 	dodging = TRUE
 	rapid_melee = 2
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi
@@ -40,13 +40,13 @@
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 
 /mob/living/basic/human/ramzi/space/stormtrooper
-	morale_breaks = FALSE // hardened killers, who'd sooner die than run
 	name = "Ramzi Clique Battlemaster"
 	desc = "A silhouette of obsidian glass stalks into view, empty hands clutching into armored fists. They are unarmed, and this is nearly a fair fight."
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+	morale_breaks = FALSE // hardened killers, who'd sooner die than run
 
 ///////////////Melee////////////
 

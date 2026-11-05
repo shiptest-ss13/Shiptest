@@ -24,6 +24,8 @@
 	COOLDOWN_DECLARE(fire_cooldown)
 	/// With a player at the controls, how many more shots of their current burst are still to come, which the cooldown lets through
 	var/player_follow_ups_owed = 0
+	/// When our current volley's last follow-up shot fires
+	var/volley_ends_at = 0
 	/// Extra spread on the AI's first volley at someone, before it's settled its aim
 	var/first_contact_spread = 0
 	/// Until when our shots get first_contact_spread, for the rest of that first volley. Nor do they go for settled_aim_zone_weights till then
@@ -195,7 +197,7 @@
 	return !cooldown_time || COOLDOWN_FINISHED(src, fire_cooldown)
 
 // start fire a volley or burst of shots
-/datum/component/ranged_attacks/proc/fire_volley(atom/target, shots = 1, interval = 0.2 SECONDS)
+/datum/component/ranged_attacks/proc/fire_volley(atom/target, shots = 1, interval = 0.2 SECONDS, ally_risk_tolerance, ally_watch_range = 0)
 	var/mob/living/basic/firer = parent
 	var/volley_shots = get_burst_shots() || shots
 	var/volley_interval = burst_shots ? burst_intervals : interval
@@ -203,7 +205,19 @@
 	if(controller && !aim_settled_on(controller, target))
 		unsettled_until = world.time + (volley_shots - 1) * volley_interval // for the duration of this volley minus the first
 	firer.RangedAttack(target)
-	schedule_follow_ups(target, volley_shots - 1, volley_interval)
+	schedule_follow_ups(target, volley_shots - 1, volley_interval, ally_risk_tolerance, ally_watch_range)
+
+// how many degrees either side of target our next shot could go
+/datum/component/ranged_attacks/proc/expected_spread(atom/target)
+	var/mob/living/basic/firer = parent
+	var/datum/ai_controller/controller = firer.ai_controller
+	if(!firer.client && controller && (world.time <= unsettled_until || !aim_settled_on(controller, target)))
+		return spread + first_contact_spread // aim not settled yet
+	return spread
+
+// chance our next shot at aim hits an ally
+/datum/component/ranged_attacks/proc/friendly_fire_risk(atom/aim, reach = 0, turf/from)
+	return ai_friendly_fire_risk(parent, aim, expected_spread(aim), reach, get_pass_flags(), from)
 
 // the body zone a shot is aimed at
 /datum/component/ranged_attacks/proc/pick_aim_zone(aim_settled)
@@ -241,13 +255,19 @@
 	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_AIMED_AT, target, world.time)
 
 // the rest of a volley after its first shot, one every interval, at where target was now if they're gone by then
-/datum/component/ranged_attacks/proc/schedule_follow_ups(atom/target, count, interval)
+/datum/component/ranged_attacks/proc/schedule_follow_ups(atom/target, count, interval, ally_risk_tolerance, ally_watch_range = 0)
 	var/turf/fallback_turf = get_turf(target)
 	for(var/shot in 1 to count)
-		addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf), shot * interval)
+		addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf, ally_risk_tolerance, ally_watch_range), shot * interval)
+	if(count > 0)
+		volley_ends_at = max(volley_ends_at, world.time + count * interval)
+
+// whether we still have follow-up shots to fire
+/datum/component/ranged_attacks/proc/mid_volley()
+	return world.time < volley_ends_at
 
 // one of the follow-up shots of a volley after its started
-/datum/component/ranged_attacks/proc/fire_follow_up_shot(datum/weakref/target_ref, turf/fallback_turf)
+/datum/component/ranged_attacks/proc/fire_follow_up_shot(datum/weakref/target_ref, turf/fallback_turf, ally_risk_tolerance, ally_watch_range = 0)
 	var/mob/living/basic/firer = parent
 	if(QDELETED(firer) || firer.stat == DEAD || firer.incapacitated())
 		if(player_follow_ups_owed > 0)
@@ -258,7 +278,12 @@
 	var/atom/target = target_ref?.resolve()
 	if(!firer.client && target && !has_clear_shot(firer, target))
 		return // no more clear shot so stop shooting
-	firer.RangedAttack(target || fallback_turf)
+	var/atom/aim = target || fallback_turf
+	if(!firer.client && !isnull(ally_risk_tolerance))
+		var/list/risk = friendly_fire_risk(aim, ally_watch_range)
+		if(risk[1] > ally_risk_tolerance)
+			return // an ally's walked into the way since the volley started
+	firer.RangedAttack(aim)
 
 // aimed or blind, every volley waits out the same cooldown, so firing blind on top of aimed fire doesn't double how fast we shoot
 /datum/component/ranged_attacks/proc/try_start_volley()

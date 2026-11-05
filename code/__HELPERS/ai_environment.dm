@@ -74,7 +74,7 @@
 /proc/ai_diagonal_crosses_hazard(turf/start, turf/finish, atom/movable/mover)
 	if(!start || !finish || start.x == finish.x || start.y == finish.y)
 		return FALSE
-	return is_ai_hazard_turf(locate(finish.x, start.y, start.z), mover) || is_ai_hazard_turf(locate(start.x, finish.y, start.z), mover)
+	return is_ai_hazard_turf(DIAGONAL_CORNER_X(start, finish), mover) || is_ai_hazard_turf(DIAGONAL_CORNER_Y(start, finish), mover)
 
 // whether mover could take one step from start onto finish
 /proc/ai_can_step_to(atom/movable/mover, turf/start, turf/finish)

@@ -476,9 +476,9 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "hz" = (
 /mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
 	retreat_distance = 3;
-	engage_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
@@ -1671,8 +1671,8 @@
 	},
 /mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1;
-	engage_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -1875,9 +1875,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
 	retreat_distance = 3;
-	engage_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken5"
@@ -2370,8 +2370,8 @@
 "Kn" = (
 /mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1;
-	engage_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -2660,8 +2660,8 @@
 "Or" = (
 /mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1;
-	engage_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2736,9 +2736,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
 	retreat_distance = 3;
-	engage_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -2809,8 +2809,8 @@
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Rf" = (
 /mob/living/basic/human/frontier/ranged/mosin/internals/neutered{
-	check_friendly_fire = 1;
-	engage_distance = 3
+	engage_distance = 3;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)

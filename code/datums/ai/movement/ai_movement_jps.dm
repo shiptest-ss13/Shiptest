@@ -207,8 +207,8 @@
 		if(previous.LinkBlockedWithAccess(line_turf, movable_pawn, access))
 			return FALSE
 		if(line_turf.x != previous.x && line_turf.y != previous.y)
-			var/turf/first_side = locate(line_turf.x, previous.y, line_turf.z)
-			var/turf/second_side = locate(previous.x, line_turf.y, line_turf.z)
+			var/turf/first_side = DIAGONAL_CORNER_X(previous, line_turf)
+			var/turf/second_side = DIAGONAL_CORNER_Y(previous, line_turf)
 			if(first_side?.is_blocked_turf(TRUE, movable_pawn) && second_side?.is_blocked_turf(TRUE, movable_pawn))
 				return FALSE
 			if(is_ai_hazard_turf(first_side, movable_pawn) || is_ai_hazard_turf(second_side, movable_pawn))
@@ -385,9 +385,7 @@
 		return // we've moved on to something else while we worked it out
 	if(!length(new_path) && avoid && length(controller.movement_path) && controller.movement_path[1] == avoid)
 		// no way round whoever's in our way, so we keep to our way through them
-		controller.set_blackboard_key(BB_BASIC_MOB_NO_WAY_ROUND, avoid)
 		return
-	controller.clear_blackboard_key(BB_BASIC_MOB_NO_WAY_ROUND)
 	controller.movement_path = new_path
 	if(!length(new_path) && !avoid)
 		// no way there at all, not just someone in the way we might wait out, so searching again every couple of seconds would only fail the same way

@@ -89,6 +89,14 @@
 #define AI_SHIELDED_PUSH_TIME (4 SECONDS)
 ///How long a helpless one of its own can be kept in the way of its shots, like stunned over and over and dragged about as a shield, before AI shoots anyway
 #define AI_SHIELDED_FIRE_TIME (10 SECONDS)
+///Multiplier for how much more risk it'll take shooting any of their allies when broken, like panicked
+#define AI_BROKEN_FRIENDLY_FIRE_TOLERANCE_MULT 2
+///Multiplier for how much more risk it'll take friendly firing when blind firing
+#define AI_BLIND_FRIENDLY_FIRE_TOLERANCE_MULT 0.5
+///How long an ally can keep AI from firing before it looks for fighting cover or a way round with a clear shot
+#define AI_ALLY_IN_LANE_MOVE_TIME (2 SECONDS)
+///How far AI looks for an ally in the way of a shot that carries on past what it can see, like firing blind
+#define AI_FRIENDLY_FIRE_LONG_LOOK_RANGE 15
 // How long AI shoved away is off balance and can't swing, and how long after that before another shove can put it off balance again
 #define AI_SHOVE_OFF_BALANCE_TIME (1.5 SECONDS)
 #define AI_SHOVE_OFF_BALANCE_IMMUNITY (2 SECONDS)
