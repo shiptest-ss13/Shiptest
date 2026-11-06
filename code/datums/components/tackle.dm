@@ -14,11 +14,11 @@
 /datum/component/tackler
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 
-	///If we're currently tackling or are on cooldown. Actually, shit, if I use this to handle cooldowns, then getting thrown by something while on cooldown will count as a tackle..... whatever, i'll fix that next commit
-	var/tackling = TRUE
+	///If we're currently tackling.
+	var/tackling = FALSE
 	///How much stamina it takes to launch a tackle
 	var/stamina_cost
-	///Launching a tackle calls Knockdown on you for this long, so this is your cooldown. Once you stand back up, you can tackle again.
+	///Launching a tackle floors you for this long after the tackle, so this is the cooldown.
 	var/base_knockdown
 	///Your max range for how far you can tackle.
 	var/range
@@ -44,8 +44,6 @@
 
 	var/mob/P = parent
 	to_chat(P, span_notice("You are now able to launch tackles! You can do so by activating throw intent, and clicking on your target with an empty hand."))
-
-	addtimer(CALLBACK(src, PROC_REF(resetTackle)), base_knockdown, TIMER_STOPPABLE)
 
 /datum/component/tackler/Destroy()
 	var/mob/P = parent
@@ -97,6 +95,10 @@
 		to_chat(user, span_warning("You're too off balance to tackle!"))
 		return
 
+	if(!user.has_gravity() && !user.Process_Spacemove(get_dir(user, A)))
+		to_chat(user, span_warning("You need something to push off of to tackle!"))
+		return
+
 	user.face_atom(A)
 
 	var/list/modifiers = params2list(params)
@@ -116,10 +118,9 @@
 	if(get_dist(user, A) < min_distance)
 		A = get_ranged_target_turf(user, get_dir(user, A), min_distance) //TODO: this only works in cardinals/diagonals, make it work with in-betweens too!
 
-	user.Knockdown(base_knockdown, ignore_canstun = TRUE)
+	ADD_TRAIT(user, TRAIT_FLOORED, "tackle")
 	user.adjustStaminaLoss(stamina_cost)
-	user.throw_at(A, range, speed, user, FALSE)
-	addtimer(CALLBACK(src, PROC_REF(resetTackle)), base_knockdown, TIMER_STOPPABLE)
+	user.throw_at(A, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user))
 	return(COMSIG_MOB_CANCEL_CLICKON)
 
 /**
@@ -450,10 +451,13 @@
 	playsound(user, 'sound/weapons/smash.ogg', 70, TRUE)
 
 
-/datum/component/tackler/proc/resetTackle()
+/datum/component/tackler/proc/resetTackle(mob/living/carbon/user)
 	tackling = FALSE
-	QDEL_NULL(tackle_ref)
+	addtimer(CALLBACK(src, PROC_REF(unFloor), user), base_knockdown, TIMER_STOPPABLE)
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
+
+/datum/component/tackler/proc/unFloor(mob/living/carbon/user)
+	REMOVE_TRAIT(user, TRAIT_FLOORED, "tackle")
 
 ///A special case for splatting for handling windows
 /datum/component/tackler/proc/splatWindow(mob/living/carbon/user, obj/structure/window/W)
@@ -543,6 +547,5 @@
 	playsound(owner, 'sound/weapons/smash.ogg', 70, TRUE)
 	if(tackle)
 		tackle.finalize(hit=TRUE)
-	resetTackle()
 
 #undef MAX_TABLE_MESSES
