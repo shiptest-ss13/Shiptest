@@ -57,12 +57,6 @@
 	/// Associative list of current players, in order: living players, living antagonists, dead players and observers.
 	var/list/list/current_players = list(CURRENT_LIVING_PLAYERS = list(), CURRENT_LIVING_ANTAGS = list(), CURRENT_DEAD_PLAYERS = list(), CURRENT_OBSERVERS = list())
 
-
-/datum/game_mode/proc/announce() //Shows the gamemode's name and a fast description.
-	to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")
-	to_chat(world, "<b>[announce_text]</b>")
-
-
 ///Checks to see if the game can be setup and ran with the current number of players or whatnot.
 /datum/game_mode/proc/can_start()
 	var/playerC = 0

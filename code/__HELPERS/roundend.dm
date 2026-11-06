@@ -284,9 +284,6 @@
 
 	CHECK_TICK
 
-	//Station Goals
-	parts += goal_report()
-
 	listclearnulls(parts)
 
 	return parts.Join()
@@ -298,8 +295,7 @@
 		var/statspage = CONFIG_GET(string/roundstatsurl)
 		var/info = statspage ? "<a href='byond://?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
 		parts += "[FOURSPACES]Round ID: <b>[info]</b>"
-	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(REALTIMEOFDAY - SSticker.round_start_timeofday)]</B>"
-	parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? span_redtext("Destroyed") : "[popcount["station_integrity"]]%"]</B>"
+	parts += "[FOURSPACES]Day Duration: <B>[DisplayTimeText(REALTIMEOFDAY - SSticker.round_start_timeofday)]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)
 		parts+= "[FOURSPACES]Total Population: <B>[total_players]</B>"
@@ -310,7 +306,7 @@
 				parts += "[FOURSPACES]First Death: <b>[ded["name"]], [ded["role"]], at [ded["area"]]. Damage taken: [ded["damage"]].[ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""]</b>"
 			//ignore this comment, it fixes the broken sytax parsing caused by the " above
 			else
-				parts += "[FOURSPACES]<i>Nobody died this shift!</i>"
+				parts += "[FOURSPACES]<i>Nobody died today!</i>"
 	if(istype(SSticker.mode, /datum/game_mode/dynamic))
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		parts += "[FOURSPACES]Threat level: [mode.threat_level]"
@@ -376,14 +372,29 @@
 	var/mob/M = C.mob
 	if(M.mind && !isnewplayer(M))
 		var/datum/overmap/ship/controlled/original_ship = M.mind.original_ship?.resolve()
-		var/location = original_ship ? "aboard [original_ship]" : "in [station_name()]"
+		var/location = original_ship ? "[original_ship]" : "in the Frontier"
 		if(M.stat != DEAD && !isbrain(M))
 			parts += "<div class='panel greenborder'>"
-			parts += span_greentext("You managed to survive the events [location] as [M.real_name].")
-
+			var/job_title
+			if(istype(M, /mob/living/carbon))
+				var/mob/living/carbon/report_human = M
+				if(report_human.wear_id)
+					if(istype(report_human.wear_id, /obj/item/card/id))
+						var/obj/item/card/id/dummy_id = report_human.wear_id
+						job_title = dummy_id.assignment
+					else if(istype(report_human.wear_id, /obj/item/storage/wallet/))
+						var/obj/item/storage/wallet/dummy_wallet = report_human.wear_id
+						job_title = dummy_wallet.front_id.assignment
+					else if(istype(report_human.wear_id, /obj/item/pda))
+						var/obj/item/pda/dummy_pda = report_human.wear_id
+						job_title = dummy_pda.id.assignment
+			if(job_title)
+				parts += span_greentext("You ended the day aboard [location] as [M.real_name], a [job_title].")
+			else
+				parts += span_greentext("You ended the day aboard [location] as [M.real_name].")
 		else
 			parts += "<div class='panel redborder'>"
-			parts += span_redtext("You did not survive the events [location]...")
+			parts += span_redtext("You did not survive aboard [location]...")
 
 	else
 		parts += "<div class='panel stationborder'>"
@@ -438,14 +449,6 @@
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 	else
 		return ""
-
-/datum/controller/subsystem/ticker/proc/goal_report()
-	var/list/parts = list()
-	if(mode.station_goals.len)
-		for(var/V in mode.station_goals)
-			var/datum/station_goal/G = V
-			parts += G.get_result()
-		return "<div class='panel stationborder'><ul>[parts.Join()]</ul></div>"
 
 /datum/controller/subsystem/ticker/proc/medal_report()
 	if(GLOB.commendations.len)
