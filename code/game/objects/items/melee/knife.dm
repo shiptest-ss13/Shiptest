@@ -14,7 +14,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 6
-	custom_materials = list(/datum/material/iron=12000)
+	custom_materials = list(/datum/material/iron=250)
 	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
@@ -74,7 +74,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 1
 	throw_range = 6
-	custom_materials = list(/datum/material/iron=4000)
+	custom_materials = list(/datum/material/iron=250)
 	attack_verb = list("prodded", "whiffed","rolled", "poked")
 	sharpness = SHARP_EDGED
 
@@ -86,7 +86,7 @@
 	flags_1 = CONDUCT_1
 	force = 15
 	throwforce = 10
-	custom_materials = list(/datum/material/iron=18000)
+	custom_materials = list(/datum/material/iron=350)
 	attack_cooldown = CLICK_CD_MELEE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL

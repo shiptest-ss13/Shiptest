@@ -85,7 +85,7 @@
 	throwforce = 20
 	throw_speed = 3
 	throw_range = 4
-	custom_materials = list(/datum/material/iron = 15000)
+	custom_materials = list(/datum/material/iron = 750)
 	attack_verb = list("chopped", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED

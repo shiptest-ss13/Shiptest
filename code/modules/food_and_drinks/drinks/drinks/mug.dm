@@ -7,7 +7,7 @@
 	item_state = "coffee"
 	spillable = TRUE
 	volume = 30
-	custom_materials = list(/datum/material/glass = 400)
+	custom_materials = list(/datum/material/glass = 120)
 
 ///obj/item/reagent_containers/food/drinks/rilenacup -> /obj/item/reagent_containers/food/drinks/mug/rilena, great subtype
 /obj/item/reagent_containers/food/drinks/rilenacup
@@ -55,7 +55,7 @@
 	item_state = "teacup"
 	spillable = TRUE
 	volume = 30
-	custom_materials = list(/datum/material/glass = 300)
+	custom_materials = list(/datum/material/glass = 120)
 
 	unique_reskin = list(
 		"gold teacup" = "teacup_gold",

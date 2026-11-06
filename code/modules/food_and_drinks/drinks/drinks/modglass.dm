@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	fill_icon_thresholds = list(1,50,90)
 	amount_per_transfer_from_this = 10
 	volume = 50
-	custom_materials = list(/datum/material/glass=500, /datum/material/silver=100)
+	custom_materials = list(/datum/material/glass=100, /datum/material/silver=100)
 	max_integrity = 30
 	spillable = TRUE
 	resistance_flags = ACID_PROOF
@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 /obj/item/reagent_containers/food/drinks/modglass/small
 	name = "small malleable glass"
 	icon_state = "sglass-1-"
-	custom_materials = list(/datum/material/glass=100, /datum/material/silver=100)
+	custom_materials = list(/datum/material/glass=75, /datum/material/silver=25)
 	volume = 25
 	rim = RIM_SMALL
 	variants = SMALL_VARIANTS
