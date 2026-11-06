@@ -169,7 +169,7 @@
 		var/brutedamage = round(limb.brute_dam/limb_max_damage*100)
 		var/burndamage = round(limb.burn_dam/limb_max_damage*100)
 		switch(brutedamage)
-			if(20 to 35)
+			if(10 to 35)
 				status = limb.light_brute_msg
 			if(36 to 65)
 				status = limb.medium_brute_msg
@@ -179,7 +179,7 @@
 		if(burndamage >= 20 && status)
 			status += "and "
 		switch(burndamage)
-			if(20 to 35)
+			if(10 to 35)
 				status += limb.light_burn_msg
 			if(36 to 65)
 				status += limb.medium_burn_msg
