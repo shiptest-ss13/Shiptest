@@ -54,6 +54,10 @@
 		controller.clear_blackboard_key(BB_BASIC_MOB_NO_PATH_TO)
 		controller.clear_blackboard_key(BB_BASIC_MOB_NO_PATH_SINCE)
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
+	if(breaking_would_vent(basic_mob, target))
+		AI_LOG_DECISION(controller, "smash_obstacle: breaking [target] would vent on us or ours now, leaving off")
+		controller.clear_blackboard_key(BB_BASIC_MOB_BREACH_PLAN) // so we don't pick it straight back up
+		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
 	basic_mob.melee_attack(target)
 	return AI_BEHAVIOR_DELAY
 

@@ -191,23 +191,44 @@
 		return floor_hazard.contact_damage > 1
 	return FALSE
 
-// whether breaking blocker would make our environment unsafe
-/proc/breaking_would_vent(mob/living/basic/basic_mob, atom/blocker)
-	var/turf/blocker_turf = get_turf(blocker)
-	if(!blocker_turf || !is_environment_safe_for(basic_mob, get_turf(basic_mob)))
-		return FALSE
+// the open turfs either side of blocker that it keeps the air apart
+/proc/ai_sides_held_apart(atom/blocker)
 	var/list/sides = list()
+	var/turf/blocker_turf = get_turf(blocker)
+	if(!blocker_turf)
+		return sides
 	if(blocker.flags_1 & ON_BORDER_1)
 		var/turf/across = get_step(blocker_turf, blocker.dir)
 		if(!across || blocker.CanAtmosPass(across))
-			return FALSE // it's not holding back any air
-		sides += blocker_turf
-		sides += across
+			return sides // it's not holding back any air
+		if(isopenturf(blocker_turf))
+			sides += blocker_turf
+		if(isopenturf(across))
+			sides += across
 	else
 		for(var/direction in GLOB.cardinals)
 			var/turf/beside = get_step(blocker_turf, direction)
 			if(isopenturf(beside) && !blocker.CanAtmosPass(beside))
 				sides += beside
+	return sides
+
+// whether breaking blocker would make our environment unsafe
+/proc/breaking_would_vent(mob/living/basic/basic_mob, atom/blocker)
+	var/list/sides = ai_sides_held_apart(blocker)
+	if(!length(sides))
+		return FALSE
+	// air on one side, vacuum on the other. ok if we can handle it
+	var/has_air = FALSE
+	var/has_vacuum = FALSE
+	for(var/turf/open/side as anything in sides)
+		if((side.air ? side.air.return_pressure() : 0) < HAZARD_LOW_PRESSURE)
+			has_vacuum = TRUE
+		else
+			has_air = TRUE
+	if(has_air && has_vacuum)
+		return !ai_safe_to_vent(basic_mob, blocker)
+	if(!is_environment_safe_for(basic_mob, get_turf(basic_mob)))
+		return FALSE
 	for(var/turf/side as anything in sides)
 		if(isopenturf(side) && !is_environment_safe_for(basic_mob, side))
 			return TRUE
@@ -233,7 +254,14 @@
 	if(!istype(living_mover))
 		return TRUE
 	// only those who'd be caught in it, in sight of where the air gets out, not anyone of ours behind another wall or door
-	for(var/mob/living/ally in hearers(range, vent_point || mover))
+	// looks from both sides, as the vent point itself can block sight
+	var/list/look_from = vent_point ? ai_sides_held_apart(vent_point) : list()
+	if(!length(look_from))
+		look_from += vent_point || mover
+	var/list/caught = list()
+	for(var/atom/spot as anything in look_from)
+		caught |= hearers(range, spot)
+	for(var/mob/living/ally in caught)
 		if(ally != mover && ally.stat == CONSCIOUS && !ally.client && istype(ally.ai_controller, /datum/ai_controller) && living_mover.faction_check_mob(ally) && !ai_unbothered_by_vacuum(ally))
 			return FALSE
 	return TRUE
