@@ -47,6 +47,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tgui_lock = FALSE
 	var/windowflashing = TRUE
 	var/toggles = TOGGLES_DEFAULT
+	var/instrument_volume = 100
 	var/db_flags
 	var/chat_toggles = TOGGLES_DEFAULT_CHAT
 	var/ghost_form = "ghost"

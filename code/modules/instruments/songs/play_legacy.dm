@@ -6,9 +6,13 @@
 		return
 	var/list/lines = src.lines		//cache for hyepr speed!
 	compiled_chords = list()
+	compiled_chord_lines = list()
+	var/line_number = 0
 	var/list/octaves = list(3, 3, 3, 3, 3, 3, 3)
 	var/list/accents = list("n", "n", "n", "n", "n", "n", "n")
+	var/note_volume = 100
 	for(var/line in lines)
+		line_number++
 		var/list/chords = splittext(lowertext(line), ",")
 		for(var/chord in chords)
 			var/list/compiled_chord = list()
@@ -22,6 +26,12 @@
 				for(var/note in notes)
 					if(length(note) == 0)
 						continue
+					// legacy playback has no sustain, so ignore ~x holds
+					// !x sets the volume percentage for this and following notes
+					var/new_volume = get_note_suffix(note, "!")
+					if(!isnull(new_volume))
+						note_volume = clamp(new_volume, 1, 100)
+					note = strip_note_suffixes(note)
 					// 1-7, A-G
 					var/key = text2ascii(note) - 96
 					if((key < 1) || (key > 7))
@@ -33,10 +43,12 @@
 							accents[key] = oct_acc		//if they misspelled it/fucked up that's on them lmao, no safety checks.
 						else	//octave
 							octaves[key] = clamp(num, octave_min, octave_max)
-					compiled_chord[++compiled_chord.len] = list(key, accents[key], octaves[key])
+					compiled_chord[++compiled_chord.len] = list(key, accents[key], octaves[key], note_volume)
 			compiled_chord += tempodiv		//this goes last
 			if(length(compiled_chord))
 				compiled_chords[++compiled_chords.len] = compiled_chord
+				compiled_chord_lines += line_number
+			CHECK_TICK
 
 /**
  * Proc to play a legacy note. Just plays the sound to hearing mobs (and does hearcheck if necessary), no fancy channel/sustain/management.
@@ -45,8 +57,9 @@
  * * note is a number from 1-7 for A-G
  * * acc is either "b", "n", or "#"
  * * oct is 1-8 (or 9 for C)
+ * * note_volume is the volume percentage of this note, on top of our volume
  */
-/datum/song/proc/playkey_legacy(note, acc as text, oct, mob/user)
+/datum/song/proc/playkey_legacy(note, acc as text, oct, mob/user, note_volume = 100)
 	// handle accidental -> B<>C of E<>F
 	if(acc == "b" && (note == 3 || note == 6)) // C or F
 		if(note == 3)
@@ -85,7 +98,9 @@
 		if(user && HAS_TRAIT(user, TRAIT_MUSICIAN) && isliving(M))
 			var/mob/living/L = M
 			L.apply_status_effect(STATUS_EFFECT_GOOD_MUSIC)
-		if(!(M?.client?.prefs?.toggles & SOUND_INSTRUMENTS))
+		var/listener_volume = M?.get_instrument_volume()
+		if(!listener_volume)
 			continue
-		M.playsound_local(source, null, volume * using_instrument.volume_multiplier, S = music_played)
+		music_played.environment = SOUND_ENVIRONMENT_NONE
+		M.playsound_local(source, null, volume * using_instrument.volume_multiplier * note_volume * 0.01 * listener_volume * 0.01, S = music_played)
 		// Could do environment and echo later but not for now
