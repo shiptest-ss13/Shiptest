@@ -252,6 +252,7 @@
 	loot = list(
 		/obj/machinery/syndicatebomb/live_fucking_bomb = 10,
 		/obj/effect/anomaly/tvstatic/planetary = 10,
+		/obj/item/nuke_core/waste = 10,
 		/obj/effect/anomaly/grav/planetary = 5,
 		/obj/effect/anomaly/grav/high/planetary = 5)
 
