@@ -12,14 +12,15 @@ Ask ninjanomnom if they're around
 #define RAD_MOB_SKIN_PROTECTION ((1/RAD_MOB_COEFFICIENT)+RAD_BACKGROUND_RADIATION)
 
 #define RAD_LOSS_PER_SECOND 0.25
-#define RAD_TOX_COEFFICIENT 0.01 // Toxin damage per second coefficient
+#define RAD_TOX_COEFFICIENT 0.04 // Toxin damage per second coefficient
 #define RAD_OVERDOSE_REDUCTION 0.000001 // Coefficient to the reduction in applied rads once the thing, usualy mob, has too much radiation
 // WARNING: This number is highly sensitive to change, graph is first for best results
 #define RAD_BURN_THRESHOLD 10 // Applied radiation must be over this to burn
+
 //Holy shit test after you tweak anything it's said like 6 times in here
 //You probably want to plot any tweaks you make so you can see the curves visually
 #define RAD_BURN_LOG_BASE 1.1
-#define RAD_BURN_LOG_GRADIENT 1000
+#define RAD_BURN_LOG_GRADIENT 3000 //3000 might be the sweet spot. 10000 is too weak and 1000 is too strong
 #define RAD_BURN_CURVE(X) log(1+((X-RAD_BURN_THRESHOLD)/RAD_BURN_LOG_GRADIENT))/log(RAD_BURN_LOG_BASE)
 
 // How much stored radiation in a mob with no ill effects

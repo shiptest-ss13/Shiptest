@@ -387,7 +387,6 @@
 	examine_text = "Printed on a side of the shell casing, you see a bold, yellow trefoil:<span style='color:yellow;font-size:30px'>☢️</span>."
 	var/effectrange = 1
 	var/death_effectrange = 3
-	var/irradiation_tries = 30
 //Explosion characteristics nullified (This isn't meant to explode)
 	explodes = FALSE
 
@@ -410,6 +409,7 @@
 		radiation_pulse(irradiate, 750, log=FALSE, can_contaminate=TRUE)
 
 	REMOVE_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
+	. = ..()
 
 /mob/living/simple_animal/hostile/automated/walkmine/incendiary
 	name = "G-82 Incendiary Walkmine"
