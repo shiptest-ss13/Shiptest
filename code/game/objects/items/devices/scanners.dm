@@ -317,7 +317,7 @@ GENE SCANNER
 				message += "\n<span class='alert ml-2'>Subject is blind.</span>"
 			if(HAS_TRAIT(C, TRAIT_SCARRED_EYE))
 				if(eyes.scarring & ~eyes.permanent_scarring)
-					message += "\n<span class='alert ml-2'>Subject's vision is impaired by ocular scarring, treatable with eye scar repair surgery.</span>"
+					message += "\n<span class='alert ml-2'>Subject's vision is impaired by ocular scarring, treatable with eye scar repair surgery, which requires injected synthflesh.</span>"
 				else
 					message += "\n<span class='alert ml-2'>Subject's vision is impaired by permanent ocular scarring.</span>"
 			if(HAS_TRAIT(C, TRAIT_NEARSIGHT))
