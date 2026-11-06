@@ -291,6 +291,22 @@
 	cost_max = 750
 	stock_max = 3
 	availability_prob = 40
+	availability_prob = 60
+
+/datum/blackmarket_item/weapon/guncase/e20
+	name = "E-20 Mining Emitter"
+	desc = "Hey, listen. My buddies and I came across an abandoned mining site. All the miners were dead. Tragic. Anyway. Had a big box of those old Eoehoma mining guns. Great for mining and even better for shooting fuckers. If ya want one we'll send it to ya for a reasonable price."
+	item = /obj/item/gun/energy/laser/e20
+	pair_item = list( // these only have a chance to spawn, each
+		/datum/blackmarket_item/tech/e20_scatter,
+		/datum/blackmarket_item/tech/e20_heavy,
+		/datum/blackmarket_item/tech/e20_efficiency,
+		/datum/blackmarket_item/tech/e20_pierce)
+
+	cost_min = 800
+	cost_max = 2200
+	stock_max = 5
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/stingingnettle
 	name = "xPL-7 Stinging Nettle"

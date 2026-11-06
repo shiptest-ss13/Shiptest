@@ -2777,12 +2777,12 @@
 	dir = 1
 	},
 /obj/structure/guncloset,
-/obj/item/gun/energy/sharplite/rush/empty_cell,
 /obj/item/gun/energy/laser/e10/empty_cell,
 /obj/item/gun/energy/laser/e10/empty_cell,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = 32
 	},
+/obj/item/gun/energy/laser/e20/empty_cell,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "yA" = (
@@ -5461,15 +5461,10 @@
 	name = "ammunition locker";
 	req_access = null
 	},
-/obj/item/storage/box/ammo/a44roum,
-/obj/item/storage/box/ammo/a44roum,
-/obj/item/stock_parts/cell/gun/sharplite{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_x = -8
 	},
-/obj/item/stock_parts/cell/gun/sharplite{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/sharplite{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_x = -8
 	},
 /obj/item/stock_parts/cell/gun{
@@ -5491,6 +5486,15 @@
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Vy" = (

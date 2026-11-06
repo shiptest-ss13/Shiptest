@@ -26,6 +26,25 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+// e20 default shot
+/obj/item/ammo_casing/energy/laser/eoehoma/mining
+	projectile_type = /obj/projectile/beam/laser/eoehoma/mining
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
+// e20 heavy shot
+/obj/item/ammo_casing/energy/laser/eoehoma/e20_heavy
+	projectile_type = /obj/projectile/beam/emitter/hitscan/e20_heavy
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 10000
+	delay = 1 SECONDS
+
+// e20 pierce shot
+/obj/item/ammo_casing/energy/laser/eoehoma/e20_pierce
+	projectile_type = /obj/projectile/beam/hitscan/e20_pierce
+	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	e_cost = 1000
+	delay = 1 SECONDS
+
 /obj/projectile/beam/laser/eoehoma/hermit // Used for the Hermits with E-11 because apparently you can only set it on projectile for simple mobs? That's fun!
 	spread = 30
 
