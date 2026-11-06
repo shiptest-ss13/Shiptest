@@ -93,7 +93,7 @@
 	consume(user)
 	return 1
 
-/obj/singularity/Process_Spacemove() //The singularity stops drifting for no man!
+/obj/singularity/Process_Spacemove(movement_dir, continuous_move = FALSE) //The singularity stops drifting for no man!
 	return 0
 
 /obj/singularity/attack_tk(mob/user)

@@ -116,19 +116,26 @@
 		playsound(loc, 'sound/effects/gib_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 20 : 50, TRUE)
 	. = ..()
 
-/obj/effect/decal/cleanable/blood/gibs/proc/streak(list/directions)
-	set waitfor = FALSE
-	var/list/diseases = list()
-	SEND_SIGNAL(src, COMSIG_GIBS_STREAK, directions, diseases)
+/obj/effect/decal/cleanable/blood/gibs/proc/streak(list/directions, mapload=FALSE)
+	SEND_SIGNAL(src, COMSIG_GIBS_STREAK, directions)
 	var/direction = pick(directions)
-	for(var/i in 0 to pick(0, 1, 2))
-		sleep(2)
-		if(i > 0)
-			var/obj/effect/decal/cleanable/blood/splatter/splat = new /obj/effect/decal/cleanable/blood/splatter(loc, diseases)
-			if(!QDELETED(splat) && HAS_BLOOD_DNA(src))
-				splat.add_blood_DNA(src.return_blood_DNA())
-		if(!step_to(src, get_step(src, direction), 0))
-			break
+	var/delay = 2
+	var/range = pick(0, 200; 1, 150; 2, 50; 3, 17; 50) //the 3% chance of 50 steps is intentional and played for laughs.
+	if(!step_to(src, get_step(src, direction), 0))
+		return
+	if(mapload)
+		for (var/i = 1, i < range, i++)
+			new /obj/effect/decal/cleanable/blood/splatter(loc)
+			if (!step_to(src, get_step(src, direction), 0))
+				break
+		return
+
+	var/datum/move_loop/loop = GLOB.move_manager.move_to(src, get_step(src, direction), delay = delay, timeout = range * delay, priority = MOVEMENT_ABOVE_SPACE_PRIORITY)
+	RegisterSignal(loop, COMSIG_MOVELOOP_POSTPROCESS, PROC_REF(spread_movement_effects))
+
+/obj/effect/decal/cleanable/blood/gibs/proc/spread_movement_effects(datum/move_loop/has_target/source)
+	SIGNAL_HANDLER
+	new /obj/effect/decal/cleanable/blood/splatter(loc)
 
 /obj/effect/decal/cleanable/blood/gibs/up
 	icon_state = "gibup1"
@@ -318,45 +325,45 @@
 			loc.add_blood_DNA(blood_dna_info)
 	return ..()
 
-/// Set the splatter up to fly through the air until it rounds out of steam or hits something. Contains sleep() pending imminent moveloop rework, don't call without async'ing it
+/// Set the splatter up to fly through the air until it rounds out of steam or hits something
 /obj/effect/decal/cleanable/blood/hitsplatter/proc/fly_towards(turf/target_turf, range)
-	splatter_strength = range
-	for(var/i in 1 to range)
-		step_towards(src,target_turf)
-		sleep(2) // Will be resolved pending Potato's moveloop rework
-		for(var/atom/iter_atom in get_turf(src))
-			if(hit_endpoint)
-				return
-			if(splatter_strength <= 0)
-				break
+	var/delay = 2
+	var/datum/move_loop/loop = GLOB.move_manager.move_towards(src, target_turf, delay, timeout = delay * range, priority = MOVEMENT_ABOVE_SPACE_PRIORITY, flags = MOVEMENT_LOOP_START_FAST)
+	RegisterSignal(loop, COMSIG_MOVELOOP_PREPROCESS_CHECK, PROC_REF(pre_move))
+	RegisterSignal(loop, COMSIG_MOVELOOP_POSTPROCESS, PROC_REF(post_move))
+	RegisterSignal(loop, COMSIG_QDELETING, PROC_REF(loop_done))
 
-			if(isitem(iter_atom))
-				iter_atom.add_blood_DNA(blood_dna_info)
-				splatter_strength--
-			else if(ishuman(iter_atom))
-				var/mob/living/carbon/human/splashed_human = iter_atom
-				if(splashed_human.wear_suit)
-					splashed_human.wear_suit.add_blood_DNA(blood_dna_info)
-					splashed_human.update_inv_wear_suit()    //updates mob overlays to show the new blood (no refresh)
-				if(splashed_human.w_uniform)
-					splashed_human.w_uniform.add_blood_DNA(blood_dna_info)
-					splashed_human.update_inv_w_uniform()    //updates mob overlays to show the new blood (no refresh)
-				splatter_strength--
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/pre_move(datum/move_loop/source)
+	SIGNAL_HANDLER
+	prev_loc = loc
 
-		if(splatter_strength <= 0) // we used all the puff so we delete it.
-			qdel(src)
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/post_move(datum/move_loop/source)
+	SIGNAL_HANDLER
+	for(var/atom/iter_atom in get_turf(src))
+		if(hit_endpoint)
 			return
+		if(splatter_strength <= 0)
+			break
 
-		var/obj/effect/decal/cleanable/blood/newsplatter
-		if(splatter_strength <= 3.5)
-			newsplatter = new /obj/effect/decal/cleanable/blood/squirt(get_turf(src), get_dir(prev_loc, loc), blood_dna_info)
-		else
-			newsplatter = new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
-		newsplatter.add_blood_DNA(blood_dna_info)
-		prev_loc = loc
+		if(isitem(iter_atom))
+			iter_atom.add_blood_DNA(blood_dna_info)
+			splatter_strength--
+		else if(ishuman(iter_atom))
+			var/mob/living/carbon/human/splashed_human = iter_atom
+			if(splashed_human.wear_suit)
+				splashed_human.wear_suit.add_blood_DNA(blood_dna_info)
+				splashed_human.update_inv_wear_suit()    //updates mob overlays to show the new blood (no refresh)
+			if(splashed_human.w_uniform)
+				splashed_human.w_uniform.add_blood_DNA(blood_dna_info)
+				splashed_human.update_inv_w_uniform()    //updates mob overlays to show the new blood (no refresh)
+			splatter_strength--
+	if(splatter_strength <= 0) // we used all the puff so we delete it.
+		qdel(src)
 
-	qdel(src)
-	return
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/loop_done(datum/source)
+	SIGNAL_HANDLER
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/effect/decal/cleanable/blood/hitsplatter/Bump(atom/bumped_atom)
 	if(!iswallturf(bumped_atom) && !istype(bumped_atom, /obj/structure/window))

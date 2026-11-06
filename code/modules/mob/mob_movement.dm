@@ -272,7 +272,7 @@
  *
  * You can move in space if you have a spacewalk ability
  */
-/mob/Process_Spacemove(movement_dir = 0)
+/mob/Process_Spacemove(movement_dir = 0, continuous_move = FALSE)
 	if(HAS_TRAIT(src, TRAIT_SPACEWALK) || ..())
 		return TRUE
 	var/atom/movable/backup = get_spacemove_backup()

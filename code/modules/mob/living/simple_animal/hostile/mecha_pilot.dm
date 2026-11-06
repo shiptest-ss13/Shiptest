@@ -113,7 +113,7 @@ Featuring:
 	ranged = 0
 	minimum_distance = 1
 
-	walk(M,0)//end any lingering movement loops, to prevent the haunted mecha bug
+	GLOB.move_manager.stop_looping(src)//end any lingering movement loops, to prevent the haunted mecha bug
 
 //Checks if a mecha is valid for theft
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/proc/is_valid_mecha(obj/mecha/M)
@@ -289,6 +289,6 @@ Featuring:
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/Goto(target, delay, minimum_distance)
 	if(mecha)
-		walk_to(mecha, target, minimum_distance, mecha.step_in)
+		GLOB.move_manager.move_to(mecha, target, minimum_distance, mecha.step_in)
 	else
 		..()

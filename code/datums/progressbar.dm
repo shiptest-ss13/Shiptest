@@ -178,7 +178,7 @@
 
 /datum/progressbar/proc/on_moved(atom/movable/mover, atom/old_loc, movement_dir, forced, list/old_locs)
 	SIGNAL_HANDLER
-	if(!mover.Process_Spacemove() && mover.inertia_dir)
+	if(GLOB.move_manager.processing_on(mover, SSspacedrift))
 		return
 	INVOKE_ASYNC(src, PROC_REF(end_progress))
 

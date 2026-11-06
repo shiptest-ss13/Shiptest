@@ -13,7 +13,7 @@
 
 		// Check if this controller can actually run, so we don't chase people with corpses
 		if(!controller.able_to_run())
-			walk(controller.pawn, 0) //stop moving
+			GLOB.move_manager.stop_looping(controller.pawn) //stop moving
 			controller.CancelActions()
 			continue
 
