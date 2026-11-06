@@ -211,7 +211,7 @@ the shield is disabled by means other than the action button (like running out o
 		chassis.log_message("User has toggled defense mode -- now [chassis.defense_mode?"enabled":"disabled"].", LOG_MECHA)
 	else
 		chassis.log_message("defense mode state changed -- now [chassis.defense_mode?"enabled":"disabled"].", LOG_MECHA)
-	chassis.defense_action.UpdateButtonIcon()
+	chassis.defense_action.UpdateButtons()
 
 	set_light_on(chassis.defense_mode)
 

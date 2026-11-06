@@ -986,7 +986,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	var/mob/living/simple_animal/borer/B = owner
 	B.hide()
 	button_icon_state = "borer_hiding_[B.hiding ? "true" : "false"]"
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/innate/borer/toggle_leap
 	name = "Prepare Leap"

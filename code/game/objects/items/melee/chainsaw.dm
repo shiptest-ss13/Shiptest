@@ -48,7 +48,7 @@
 		user.update_inv_hands()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/chainsaw/doomslayer
 	name = "THE GREAT COMMUNICATOR"
