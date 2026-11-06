@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Dalian-class Patrol Yacht",
+	"faction": "/datum/faction/independent",
+	"prefix": "ISV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": [
+		"SPACE",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Dalian-class",
+	"description": "The Dalian is an unusual entry from Kasagi-Fischer Partnership. While traditionally a manufacturer of standard luxury yachts, the Dalian was conceived to serve in a perfunctory combat role (defined in marketing material as a 'Patrol Yacht'), intermixing both combat facilities, luxury amenities, and impressive equipment. The Dalian garnered a poor reputation at first due to a series of inexplicable accidents and tragedies, including several full-crew casualty events - a legacy of 'malaise' Kasagi-Fischer attempts to fight to this day. In spite of this (in part owing to its affordability, as far as a yacht goes), though, the Dalian has seen use as an armored yacht for frontier tours, an armed mercenary ship providing security, a bounty hunter corvette tracking down pirates, and even a system defense boat for some smaller polities.",
+	"tags": [
+		"Combat",
+		"RP Focus"
+	],
+	"map_path": "_maps/shuttles/independent/independent_dalian.dmm",
+	"limit": 1,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/merc/naked",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/independent/hos/merc",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Mercenary": {
+			"outfit": "/datum/outfit/job/independent/security/merc",
+			"slots": 2
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

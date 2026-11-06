@@ -289,5 +289,25 @@
 	if(turf_fire)
 		qdel(turf_fire)
 
+/turf/open/proc/check_for_wallmounts()
+	RETURN_TYPE(/list)
+
+	var/list/found_wallmounts = list()
+	for(var/obj/wallmount_maybe in contents)
+		if(HAS_TRAIT(wallmount_maybe, TRAIT_WALLMOUNTED))
+			found_wallmounts += wallmount_maybe
+	return found_wallmounts
+
+/turf/open/proc/check_projectile_intercept(obj/projectile/intercepted)
+	var/list/interceptors = check_for_wallmounts()
+	if(interceptors.len)
+		for(var/obj/intercepting in interceptors)
+			if(prob(40))
+				intercepting.bullet_act(intercepted)
+				break
+		return TRUE
+	return FALSE
+
+
 #undef IGNITE_TURF_LOW_POWER
 #undef IGNITE_TURF_HIGH_POWER
