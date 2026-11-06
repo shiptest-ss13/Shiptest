@@ -158,7 +158,7 @@
 	if(!muzzle_light.light_on)
 		muzzle_light.set_light_on(TRUE)
 		addtimer(CALLBACK(muzzle_light, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
-	muzzle_flash.aim(Get_Angle(get_turf(firer), target))
+	muzzle_flash.aim(get_angle(get_turf(firer), target))
 	firer.vis_contents += muzzle_flash
 	muzzle_flash.applied = TRUE
 	addtimer(CALLBACK(src, PROC_REF(remove_muzzle_flash)), 0.2 SECONDS)

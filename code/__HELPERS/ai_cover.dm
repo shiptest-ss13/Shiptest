@@ -254,7 +254,7 @@
 	if(!start || !shooter_turf || !aim_turf || start == aim_turf)
 		return list(0, null)
 	reach = max(reach, sqrt((aim_turf.x - start.x) ** 2 + (aim_turf.y - start.y) ** 2))
-	var/aim_angle = Get_Angle(start, aim_turf)
+	var/aim_angle = get_angle(start, aim_turf)
 	var/chance_clear = 1
 	var/mob/living/most_in_way
 	var/most_in_way_chance = 0
@@ -272,7 +272,7 @@
 		var/distance = sqrt((ally_turf.x - start.x) ** 2 + (ally_turf.y - start.y) ** 2)
 		if(distance > reach + 0.5)
 			continue // past the shot's reach
-		var/ally_angle = Get_Angle(start, ally_turf)
+		var/ally_angle = get_angle(start, ally_turf)
 		var/offset = ally_angle - aim_angle
 		while(offset > 180)
 			offset -= 360
