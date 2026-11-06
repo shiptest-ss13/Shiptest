@@ -595,31 +595,6 @@
 	r_pocket = null
 	backpack_contents = null
 
-// Cargo Tech
-/datum/outfit/job/warra/cargo_tech
-	name = "Makosso-Warra - Cargo Tech"
-	jobtype = /datum/job/cargo_tech
-	job_icon = "cargotechnician"
-
-	belt = /obj/item/pda/cargo
-	ears = /obj/item/radio/headset/headset_cargo
-	head = /obj/item/clothing/head/warra/cap/supply
-	uniform = /obj/item/clothing/under/warra/supply
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
-
-/datum/outfit/job/warra/cargo_tech/empty
-	name = "Makosso-Warra - Cargo Tech (Naked)"
-	jobtype = /datum/job/cargo_tech
-	job_icon = "cargotechnician"
-
-	belt = null
-	ears = /obj/item/radio/headset/headset_cargo
-	head = null
-	uniform = /obj/item/clothing/under/warra/supply
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
-	backpack_contents = null
-
 // Medical //
 
 // Medical Director
@@ -737,7 +712,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
-	uniform = /obj/item/clothing/under/warra
+	uniform = /obj/item/clothing/under/warra/assistant
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = /obj/item/pda
 
@@ -746,18 +721,45 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
-	uniform = /obj/item/clothing/under/warra
+	uniform = /obj/item/clothing/under/warra/assistant
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = null
 
-// Janitor
-/datum/outfit/job/warra/janitor
-	name = "Makosso-Warra - Janitor"
+/datum/outfit/job/warra/assistant/janitor
+	name = "Makosso-Warra - Assistant (Janitor)"
 	jobtype = /datum/job/janitor
 	job_icon = "janitor"
 
-	uniform = /obj/item/clothing/under/warra/janitor
+	uniform = /obj/item/clothing/under/warra/assistant/janitor
 	head = /obj/item/clothing/head/warra/cap/janitor
+
+/datum/outfit/job/warra/assistant/security
+	name = "Makosso-Warra - Assistant (Vigilitas)"
+
+	uniform = /obj/item/clothing/under/warra/assistant/security
+	head = /obj/item/clothing/head/warra/cap/security
+
+/datum/outfit/job/warra/assistant/security/empty
+	name = "Makosso-Warra - Assistant (Vigilitas, Naked)"
+	head = null
+	belt = null
+
+/datum/outfit/job/warra/assistant/cargo
+	name = "Makosso-Warra - Assistant (N+S)"
+	jobtype = /datum/job/cargo_tech
+	job_icon = "cargotechnician"
+
+	belt = /obj/item/pda/cargo
+	ears = /obj/item/radio/headset/headset_cargo
+	head = /obj/item/clothing/head/warra/cap/supply
+	uniform = /obj/item/clothing/under/warra/assistant/supply
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+/datum/outfit/job/warra/assistant/cargo/empty
+	name = "Makosso-Warra - Assistant (N+S, Naked)"
+	belt = null
+	head = null
+	backpack_contents = null
 
 // Lawyer
 /datum/outfit/job/warra/lawyer
