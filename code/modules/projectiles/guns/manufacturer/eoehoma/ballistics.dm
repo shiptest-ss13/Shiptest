@@ -202,32 +202,3 @@
 		. += "\The [name] has [round(secondary.cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")
-
-/obj/item/ammo_box/magazine/e40
-	name = "E-40 magazine (.299 Eoehoma caseless)"
-	icon_state = "e40_mag-1"
-	base_icon_state = "e40_mag"
-	ammo_type = /obj/item/ammo_casing/caseless/c299
-	caliber = ".299 caseless"
-	max_ammo = 30
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
-/obj/item/ammo_box/magazine/e40/empty
-	start_empty = TRUE
-
-//laser
-
-/obj/item/gun/energy/laser/e40_laser_secondary
-	name = "secondary e40 laser gun"
-	autowiki_hidden = TRUE //part of the E-40, not a weapon itself
-	desc = "The laser component of a E-40 Hybrid Rifle. You probably shouldn't see this. If you can though, you should probably know lorewise, this is primary, the ballistic compontent in universe is secondary. Unfortunately, we cannot simulate this, So codewise this is secondary."
-	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
-	w_class = WEIGHT_CLASS_NORMAL
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault)
-	fire_delay = 0.2 SECONDS
-	gun_firemodes = list(FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_FULLAUTO
-	latch_toggle_delay = 0.6 SECONDS
-	valid_attachments = list()
-
-	spread_unwielded = 20

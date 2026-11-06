@@ -61,6 +61,22 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/underbarrel, /obj/item/ammo_casing/energy/laser/underbarrel)
 	spawn_no_ammo = TRUE
 
+// not a proper attachhment yet, but.
+/obj/item/gun/energy/laser/e40_laser_secondary
+	name = "secondary e40 laser gun"
+	autowiki_hidden = TRUE //part of the E-40, not a weapon itself
+	desc = "The laser component of a E-40 Hybrid Rifle. You probably shouldn't see this. If you can though, you should probably know lorewise, this is primary, the ballistic compontent in universe is secondary. Unfortunately, we cannot simulate this, So codewise this is secondary."
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault)
+	fire_delay = 0.2 SECONDS
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+	latch_toggle_delay = 0.6 SECONDS
+	valid_attachments = list()
+
+	spread_unwielded = 20
+
 /obj/item/attachment/gun/energy/e50
 	name = "underbarrel energy cannon"
 	desc = "An aftermarket conversion of Eoehoma Firearms' E-50 emitter cannon stripped down in order to fit on the rail mounts on other weapons. This less than orthodox conversion strips out most of the E-50's safety mechanisms to cut down on weight and size, making it dangerously prone to overheating even at its reduced power. Heat insulated gloves are reccomended."
