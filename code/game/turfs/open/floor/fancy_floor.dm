@@ -14,9 +14,6 @@
 	floor_tile = /obj/item/stack/tile/wood
 	broken_states = list("wood-broken", "wood-broken2", "wood-broken3", "wood-broken4", "wood-broken5", "wood-broken6", "wood-broken7")
 	footstep = FOOTSTEP_WOOD
-	barefootstep = FOOTSTEP_WOOD_BAREFOOT
-	clawfootstep = FOOTSTEP_WOOD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	color = WOOD_COLOR_GENERIC
 	flammability = 3
@@ -122,9 +119,6 @@
 	flags_1 = NONE
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
@@ -176,9 +170,6 @@
 	slowdown = 2
 	bullet_sizzle = TRUE
 	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	flammability = -5 // absolutely not
 
 /turf/open/floor/grass/snow/spawniconchange()
@@ -205,9 +196,6 @@
 	turfverb = "dig up"
 	slowdown = 0
 	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/carpet
 	name = "carpet"
@@ -223,9 +211,6 @@
 	flags_1 = NONE
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_CARPET
-	barefootstep = FOOTSTEP_CARPET_BAREFOOT
-	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	flammability = 5
 

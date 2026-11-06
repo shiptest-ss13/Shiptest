@@ -12,8 +12,6 @@
 	planetary_atmos = TRUE
 	initial_gas_mix = SHROUDED_DEFAULT_ATMOS
 	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
 
 	has_footsteps = TRUE
 	footstep_icon_state = "shrouded"

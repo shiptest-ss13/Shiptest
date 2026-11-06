@@ -12,9 +12,6 @@
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
 	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	layer = SAND_TURF_LAYER
 	//smooth_icon = 'icons/turf/floors/wateryrock.dmi'

@@ -13,9 +13,6 @@
 	bullet_bounce_sound = 'sound/items/welder2.ogg'
 
 	footstep = FOOTSTEP_LAVA
-	barefootstep = FOOTSTEP_LAVA
-	clawfootstep = FOOTSTEP_LAVA
-	heavyfootstep = FOOTSTEP_LAVA
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
 	var/particle_prob = 15

@@ -13,9 +13,6 @@
 
 	planetary_atmos = FALSE
 	footstep = FOOTSTEP_LAVA
-	barefootstep = FOOTSTEP_LAVA
-	clawfootstep = FOOTSTEP_LAVA
-	heavyfootstep = FOOTSTEP_LAVA
 
 	reagent_to_extract = /datum/reagent/toxin/acid
 	extracted_reagent_visible_name = "acid"
