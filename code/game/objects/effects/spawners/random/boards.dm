@@ -30,12 +30,7 @@
 		/obj/item/circuitboard/machine/circuit_imprinter/department,
 		/obj/item/circuitboard/computer/teleporter,
 		/obj/item/circuitboard/machine/destructive_analyzer,
-		/obj/item/circuitboard/computer/rdconsole,
-		/obj/item/circuitboard/computer/nanite_chamber_control,
-		/obj/item/circuitboard/computer/nanite_cloud_controller,
-		/obj/item/circuitboard/machine/nanite_chamber,
-		/obj/item/circuitboard/machine/nanite_programmer,
-		/obj/item/circuitboard/machine/nanite_program_hub
+		/obj/item/circuitboard/computer/rdconsole
 	)
 
 /obj/effect/spawner/random/techstorage/security
