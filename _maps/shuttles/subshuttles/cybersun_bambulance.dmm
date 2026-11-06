@@ -25,6 +25,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bams"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "e" = (
@@ -99,7 +102,6 @@
 /area/ship/bridge)
 "k" = (
 /obj/machinery/stasis,
-/obj/structure/curtain,
 /obj/structure/sign/warning/docking{
 	pixel_x = 23;
 	pixel_y = 16
@@ -182,6 +184,9 @@
 	id = "gengp";
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "q" = (
@@ -251,6 +256,9 @@
 /area/ship/bridge)
 "z" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "A" = (
@@ -299,7 +307,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "I" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -308,6 +315,10 @@
 /obj/structure/sign/warning/fire{
 	pixel_y = 30;
 	pixel_x = -8
+	},
+/obj/machinery/power/smes/engineering{
+	input_level = 5000;
+	output_level = 15000
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -341,7 +352,6 @@
 /area/ship/bridge)
 "P" = (
 /obj/machinery/stasis,
-/obj/structure/curtain,
 /obj/structure/sign/warning/docking{
 	pixel_x = 23;
 	pixel_y = -1
