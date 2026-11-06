@@ -560,16 +560,24 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/obj/item/storage/medpack/epipens{
-	pixel_x = -8;
-	pixel_y = -1
-	},
 /obj/item/storage/box/hypospray/mkiii{
-	pixel_x = 10;
+	pixel_x = 3;
 	pixel_y = 5
 	},
 /obj/structure/closet/wall/white/med/directional/south{
 	name = "medical supply cabinet"
+	},
+/obj/item/storage/firstaid/radiation{
+	pixel_x = 4;
+	pixel_y = -5
+	},
+/obj/item/storage/firstaid/o2{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/storage/firstaid/o2{
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
@@ -899,6 +907,7 @@
 	color = "#730622";
 	alpha = 255
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/cryo)
 "eZ" = (
@@ -1340,28 +1349,6 @@
 /obj/effect/turf_decal/siding/black,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"if" = (
-/obj/structure/closet/crate/medical{
-	name = "medkit crate"
-	},
-/obj/item/storage/firstaid/o2{
-	pixel_x = -7
-	},
-/obj/item/storage/firstaid/o2{
-	pixel_x = -7;
-	pixel_y = -5
-	},
-/obj/item/storage/firstaid/radiation{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/obj/item/storage/firstaid/radiation{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/effect/mapping_helpers/crate_shelve,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ship/cargo)
 "ig" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1581,14 +1568,14 @@
 	name = "engine shutters";
 	id = "cpen";
 	dir = 4;
-	pixel_x = -23;
-	pixel_y = -9
+	pixel_x = -22
 	},
 /obj/machinery/button/door{
 	name = "window shutters";
 	id = "cpenwin";
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -22;
+	pixel_y = 8
 	},
 /obj/structure/table,
 /obj/item/screwdriver,
@@ -2982,6 +2969,10 @@
 	},
 /obj/structure/closet/wall/white/med/directional/south{
 	name = "medical supply cabinet"
+	},
+/obj/item/storage/medpack/epipens{
+	pixel_x = -8;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
@@ -5416,10 +5407,10 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Pj" = (
-/obj/machinery/airalarm/directional/south,
 /obj/structure/cable/cyan{
 	icon_state = "1-8"
 	},
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Pr" = (
@@ -8226,7 +8217,7 @@ fR
 fR
 sq
 CQ
-if
+lf
 bP
 UO
 Hx
