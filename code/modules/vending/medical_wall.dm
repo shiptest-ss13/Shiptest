@@ -14,6 +14,7 @@
 	restock_hourly = TRUE
 	light_mask = "wallmed-light-mask"
 
+	//holy fucking shit we gotta split these up into different machines. DM me if you want like 20 dollars for a few sprites and We can make it happen.
 	products = list(
 		/obj/item/stack/medical/gauze = 8,
 		/obj/item/stack/medical/splint = 8,
@@ -38,6 +39,12 @@
 		/obj/item/storage/pill_bottle/charcoal/less = 2,
 		/obj/item/reagent_containers/syringe/stasis = 4,
 		/obj/item/reagent_containers/syringe/antibiotic = 4,
+		/obj/item/shock_blanket/emergency = 2,
+		/obj/item/temperature_pack/cold = 1,
+		/obj/item/temperature_pack/heat = 1,
+		/obj/item/shock_blanket = 3,
+		/obj/item/temperature_pack/cold = 2,
+		/obj/item/temperature_pack/heat = 2,
 		/obj/item/storage/pill_bottle/placebatol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/placebatol = 10,
 		/obj/item/reagent_containers/inhaler_canister/placebatol = 10,

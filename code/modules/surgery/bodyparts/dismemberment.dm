@@ -30,7 +30,7 @@
 	if(wounding_type)
 		LAZYSET(limb_owner.body_zone_dismembered_by, body_zone, wounding_type)
 
-	drop_limb()
+	drop_limb(FALSE, TRUE)
 
 	limb_owner.update_equipment_speed_mods() // Update in case speed affecting item unequipped by dismemberment
 	var/turf/location = limb_owner.loc
@@ -92,7 +92,7 @@
 		CRASH("drop_limb called on a bodypart with no owner!")
 	var/atom/Tsec = owner.drop_location()
 
-	SEND_SIGNAL(owner, COMSIG_CARBON_REMOVE_LIMB, src, dismembered)
+	SEND_SIGNAL(owner, COMSIG_CARBON_REMOVE_LIMB, src, special, dismembered)
 	SEND_SIGNAL(src, COMSIG_LIVING_DROP_LIMB)
 	update_limb(TRUE)
 	owner.remove_bodypart(src)
@@ -314,17 +314,17 @@
 	..()
 
 //Attach a limb to a human and drop any existing limb of that type.
-/obj/item/bodypart/proc/replace_limb(mob/living/carbon/C, special, is_creating = FALSE)
-	if(!istype(C))
+/obj/item/bodypart/proc/replace_limb(mob/living/carbon/target_carbon, special, is_creating = FALSE)
+	if(!istype(target_carbon))
 		return
-	var/obj/item/bodypart/O = C.get_bodypart(body_zone)
-	if(O)
-		O.drop_limb(TRUE)
-	. = attach_limb(C, special, is_creating)
+	var/obj/item/bodypart/limb = target_carbon.get_bodypart(body_zone)
+	if(limb)
+		limb.drop_limb(special, FALSE)
+	. = attach_limb(target_carbon, special, is_creating)
 	if(!.) //If it failed to replace, just ignore.
-		O.attach_limb(C, TRUE)
+		limb.attach_limb(target_carbon, special, is_creating)
 
-/obj/item/bodypart/head/replace_limb(mob/living/carbon/C, special, is_creating = FALSE)
+/obj/item/bodypart/head/replace_limb(mob/living/carbon/target_carbon, special, is_creating = FALSE)
 	if(!special)
 		return
 
@@ -334,7 +334,7 @@
 	var/obj/item/bodypart/chest/mob_chest = C.get_bodypart(BODY_ZONE_CHEST)
 	if(mob_chest && !(mob_chest.acceptable_bodytype & bodytype))
 		return FALSE
-	if(SEND_SIGNAL(C, COMSIG_CARBON_ATTACH_LIMB, src) & COMPONENT_NO_ATTACH)
+	if(SEND_SIGNAL(C, COMSIG_CARBON_ATTACH_LIMB, src, special) & COMPONENT_NO_ATTACH)
 		return FALSE
 	moveToNullspace()
 	set_owner(C)

@@ -87,6 +87,7 @@
 	set_nutrition(rand(NUTRITION_LEVEL_START_MIN, NUTRITION_LEVEL_START_MAX))
 	. = ..()
 	update_config_movespeed()
+	initialize_actionspeed()
 	update_movespeed(TRUE)
 	become_hearing_sensitive(ORGAN_TRAIT)
 
@@ -1499,9 +1500,6 @@
 			. =  TRUE
 		if(NAMEOF(src, eye_blind))
 			set_blindness(var_value)
-			. =  TRUE
-		if(NAMEOF(src, eye_blurry))
-			set_blurriness(var_value)
 			. =  TRUE
 
 	if(!isnull(.))

@@ -143,7 +143,7 @@
 		M.adjustToxLoss(-1.5 * REM * seconds_per_tick, 0)
 		M.adjustCloneLoss(-0.5 * REM * seconds_per_tick, 0)
 		M.adjustStaminaLoss(-1.5 * REM * seconds_per_tick, 0)
-		M.adjust_timed_status_effect(3 SECONDS, /datum/status_effect/jitter, 30 SECONDS)
+		M.adjust_timed_status_effect(3 SECONDS, STATUS_EFFECT_JITTER, 30 SECONDS)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick, 150)
 	M.druggy = min(max(0, M.druggy + 10), 15) //See above
 	..()
@@ -200,3 +200,11 @@
 	if(prob(30))
 		M.vomit()
 	..()
+
+/datum/reagent/medicine/syndric_sap
+	name = "Sydric Sap"
+	description = "The sap of the Kalixcian Synd tree is a natural painkiller, and frequently processed into the compound syndrin."
+
+/datum/reagent/medicine/syndric_sap/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	. = ..()
+	M.cause_pain(BODY_ZONES_ALL, -0.02 * REM * seconds_per_tick)

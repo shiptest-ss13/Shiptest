@@ -631,25 +631,6 @@
 	research_icon_state = "surgery_any"
 	var/surgery
 
-/datum/design/surgery/experimental_dissection
-	name = "Advanced Dissection"
-	desc = "A surgical procedure which analyzes the biology of a corpse, and automatically adds new findings to the research database."
-	id = "surgery_adv_dissection"
-	surgery = /datum/surgery/advanced/experimental_dissection/adv
-	research_icon_state = "surgery_chest"
-
-/datum/design/surgery/experimental_dissection/exp
-	name = "Experimental Dissection"
-	id = "surgery_exp_dissection"
-	surgery = /datum/surgery/advanced/experimental_dissection/exp
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/surgery/experimental_dissection/ext
-	name = "Extraterrestrial Dissection"
-	id = "surgery_ext_dissection"
-	surgery = /datum/surgery/advanced/experimental_dissection/alien
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/surgery/lobotomy
 	name = "Lobotomy"
 	desc = "An invasive surgical procedure which guarantees removal of almost all brain traumas, but might cause another permanent trauma in return."
@@ -664,14 +645,6 @@
 	id = "surgery_pacify"
 	surgery = /datum/surgery/advanced/pacify
 	research_icon_state = "surgery_head"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/surgery/viral_bonding
-	name = "Viral Bonding"
-	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with broad-spectrum antibiotics, virus food, and formaldehyde."
-	id = "surgery_viral_bond"
-	surgery = /datum/surgery/advanced/viral_bonding
-	research_icon_state = "surgery_chest"
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing //PLEASE ACCOUNT FOR UNIQUE HEALING BRANCHES IN THE hptech HREF (currently 2 for Brute/Burn; Combo is bonus)

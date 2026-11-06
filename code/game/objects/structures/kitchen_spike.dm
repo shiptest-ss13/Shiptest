@@ -74,7 +74,6 @@
 			playsound(src.loc, 'sound/effects/splat.ogg', 25, TRUE)
 			L.visible_message(span_danger("[user] slams [L] onto the meat spike!"), span_userdanger("[user] slams you onto the meat spike!"), span_hear("You hear a squishy wet noise."))
 			L.forceMove(drop_location())
-			L.force_scream()
 			L.add_splatter_floor()
 			L.adjustBruteLoss(30)
 			L.setDir(2)
@@ -128,7 +127,7 @@
 	M.adjustBruteLoss(30)
 	src.visible_message(text("[span_danger("[M] falls free of [src]!")]"))
 	unbuckle_mob(M,force=1)
-	M.force_scream()
+	M.emote("scream")
 	M.AdjustParalyzed(20)
 
 /obj/structure/kitchenspike/Destroy()

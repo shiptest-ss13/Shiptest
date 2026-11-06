@@ -145,7 +145,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/electrolyzer_console, 17)
 		playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 
 	if(iscarbon(L) && L.stat == CONSCIOUS)
-		L.force_scream()
+		L.manual_emote("screams")
 
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)

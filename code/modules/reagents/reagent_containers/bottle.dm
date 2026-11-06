@@ -20,10 +20,10 @@
 	custom_materials = list(/datum/material/glass = 200)
 	var/label = null
 
-	/obj/item/reagent_containers/glass/bottle/examine(mob/user)
-		. = ..()
-		if(!isnull(label))
-			. += custom_boxed_message("red_box center", span_red((span_bold(label))))
+/obj/item/reagent_containers/glass/bottle/examine(mob/user)
+	. = ..()
+	if(!isnull(label))
+		. += custom_boxed_message("red_box center", span_red((span_bold(label))))
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
@@ -57,19 +57,19 @@
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
 	desc = "A small bottle of morphine."
-	list_reagents = list(/datum/reagent/medicine/morphine = 30)
+	list_reagents = list(/datum/reagent/medicine/painkiller/morphine = 30)
 	label = "A label states: Analgesic Opioid - Dosage must remain under 30 units."
 
 /obj/item/reagent_containers/glass/bottle/dimorlin
 	name = "dimorlin bottle"
 	desc = "A small bottle of dimorlin."
-	list_reagents = list(/datum/reagent/medicine/dimorlin = 30)
+	list_reagents = list(/datum/reagent/medicine/painkiller/dimorlin = 30)
 	label = "A label states: Analgesic Opioid - Dosage must remain under 15 units."
 
 /obj/item/reagent_containers/glass/bottle/tramal
 	name = "tramal bottle"
 	desc = "A small bottle of tramal."
-	list_reagents = list(/datum/reagent/medicine/tramal = 30)
+	list_reagents = list(/datum/reagent/medicine/painkiller/tramal = 30)
 	label = "A label states: Analgesic Opioid - Dosage must remain under 35 units."
 
 /obj/item/reagent_containers/glass/bottle/chitosan
@@ -156,11 +156,6 @@
 	name = "polonium bottle"
 	desc = "A small bottle. Contains Polonium."
 	list_reagents = list(/datum/reagent/toxin/polonium = 30)
-
-/obj/item/reagent_containers/glass/bottle/magillitis
-	name = "magillitis bottle"
-	desc = "A small bottle. Contains a serum known only as 'magillitis'."
-	list_reagents = list(/datum/reagent/magillitis = 5)
 
 /obj/item/reagent_containers/glass/bottle/venom
 	name = "venom bottle"
