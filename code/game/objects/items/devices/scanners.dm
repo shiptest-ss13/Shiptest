@@ -316,7 +316,10 @@ GENE SCANNER
 			if(C.is_blind())
 				message += "\n<span class='alert ml-2'>Subject is blind.</span>"
 			if(HAS_TRAIT(C, TRAIT_SCARRED_EYE))
-				message += "\n<span class='alert ml-2'>Subject's vision is impaired by severe ocular scarring."
+				if(eyes.scarring & ~eyes.permanent_scarring)
+					message += "\n<span class='alert ml-2'>Subject's vision is impaired by ocular scarring, treatable with eye scar repair surgery, which requires injected synthflesh.</span>"
+				else
+					message += "\n<span class='alert ml-2'>Subject's vision is impaired by permanent ocular scarring.</span>"
 			if(HAS_TRAIT(C, TRAIT_NEARSIGHT))
 				message += "\n<span class='alert ml-2'>Subject is nearsighted.</span>"
 			if(eyes.damage > 30)
@@ -478,10 +481,13 @@ GENE SCANNER
 				else
 					alternative_step = "Finish operation"
 				render_list += "[alternative_step] </span>"
-				render_list += alt_chems_needed
+				if(alt_chems_needed)
+					render_list += " (requires [alt_chems_needed])"
 				break
-			render_list += "[surgery_step.name] "
-			render_list += "[chems_needed]</span><br>"
+			render_list += "[surgery_step.name]"
+			if(chems_needed)
+				render_list += " (requires [chems_needed])"
+			render_list += "</span><br>"
 
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 

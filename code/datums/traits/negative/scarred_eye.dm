@@ -87,14 +87,14 @@
 	scarred_side ||= SCAR_RANDOM
 	switch(scarred_side)
 		if(SCAR_RANDOM)
-			scarred_eye.apply_scar(pick(RIGHT_EYE_SCAR, LEFT_EYE_SCAR))
+			scarred_eye.apply_scar(pick(RIGHT_EYE_SCAR, LEFT_EYE_SCAR), permanent = TRUE)
 		if(SCAR_RIGHT)
-			scarred_eye.apply_scar(RIGHT_EYE_SCAR)
+			scarred_eye.apply_scar(RIGHT_EYE_SCAR, permanent = TRUE)
 		if(SCAR_LEFT)
-			scarred_eye.apply_scar(LEFT_EYE_SCAR)
+			scarred_eye.apply_scar(LEFT_EYE_SCAR, permanent = TRUE)
 		if(SCAR_DOUBLE)
-			scarred_eye.apply_scar(RIGHT_EYE_SCAR)
-			scarred_eye.apply_scar(LEFT_EYE_SCAR)
+			scarred_eye.apply_scar(RIGHT_EYE_SCAR, permanent = TRUE)
+			scarred_eye.apply_scar(LEFT_EYE_SCAR, permanent = TRUE)
 
 /datum/quirk/scarred_eye/remove()
 	var/mob/living/carbon/human/human_owner = quirk_holder
