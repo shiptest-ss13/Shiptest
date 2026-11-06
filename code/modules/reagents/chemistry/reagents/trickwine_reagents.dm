@@ -31,6 +31,7 @@
 	var/alert_desc
 	// Applied and removes with reagent
 	var/trait
+	duration = 18 SECONDS
 
 /datum/status_effect/trickwine/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
 	flask_icon_state = trickwine_reagent.breakaway_flask_icon_state
@@ -460,6 +461,7 @@
 	//alert_desc = ""
 	var/reflect_count = 0
 	var/recent_movement = FALSE
+	duration = 30 SECONDS
 
 /datum/status_effect/trickwine/buff/prism/on_apply()
 	RegisterSignal(owner, COMSIG_CHECK_REFLECT, PROC_REF(on_check_reflect))
@@ -468,6 +470,10 @@
 
 /datum/status_effect/trickwine/buff/prism/on_remove()
 	UnregisterSignal(owner, list(COMSIG_CHECK_REFLECT, COMSIG_MOVABLE_MOVED))
+
+	reflect_count = 0
+	owner.remove_filter(id)
+	to_chat(owner, span_notice("The resin layers dissipate."))
 	..()
 
 /datum/status_effect/trickwine/buff/prism/tick()
@@ -478,6 +484,9 @@
 			to_chat(owner, span_notice("Your resin sweat builds up another layer!"))
 		else
 			to_chat(owner, span_warning("You need to keep moving to build up resin sweat!"))
+	if(prob(1) && reflect_count > 0)
+		adjust_charge(-1) //so you don't get an infinite aura circle around you like the second coming of the ashen huntsman
+		to_chat(owner, span_notice("A resin layer dissipates."))
 	recent_movement = FALSE
 
 /datum/status_effect/trickwine/buff/prism/proc/adjust_charge(change)
