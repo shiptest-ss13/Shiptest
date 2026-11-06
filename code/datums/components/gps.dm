@@ -19,10 +19,9 @@ GLOBAL_LIST_EMPTY(GPS_list)
 ///GPS component subtype. Only gps/item's can be used to open the UI.
 /datum/component/gps/item
 	var/updating = TRUE //Automatic updating of GPS list. Can be set to manual by user.
-	var/global_mode = TRUE //If disabled, only GPS signals of the same Z level are shown
 	var/deep_interact = FALSE // if this item can have it's GPS accessed inside other items.
 
-/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE, has_deep_interact = FALSE)
+/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE, has_deep_interact = FALSE, tracking = FALSE)
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE || !isitem(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -107,7 +106,6 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	data["power"] = tracking
 	data["tag"] = gpstag
 	data["updating"] = updating
-	data["globalmode"] = global_mode
 	if(!tracking || emped) //Do not bother scanning if the GPS is off or EMPed
 		return data
 
@@ -127,7 +125,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		if(G.emped || !G.tracking || G == src)
 			continue
 		var/turf/pos = get_turf(G.parent)
-		if(!pos || !global_mode && pos.virtual_z != curr.virtual_z)
+		if(!pos || pos.virtual_z != curr.virtual_z)
 			continue
 		var/list/signal = list()
 		var/datum/virtual_level/other_vlevel = pos.get_virtual_level()
@@ -166,7 +164,4 @@ GLOBAL_LIST_EMPTY(GPS_list)
 			. = TRUE
 		if("updating")
 			updating = !updating
-			. = TRUE
-		if("globalmode")
-			global_mode = !global_mode
 			. = TRUE
