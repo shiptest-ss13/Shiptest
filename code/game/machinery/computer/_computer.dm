@@ -131,3 +131,9 @@
 	. = ..()
 	ui_interact(user)
 	return
+
+// uselesss remnant that only remains to not change the one ruin that uses this
+/obj/machinery/computer/sat_control
+	name = "satellite control"
+	desc = "Used to control the satellite network."
+	circuit = /obj/item/circuitboard/computer/sat_control
