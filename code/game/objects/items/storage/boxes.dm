@@ -617,17 +617,6 @@
 		/obj/item/implantpad = 1)
 	generate_items_inside(items_inside,src)
 
-/obj/item/storage/box/exileimp
-	name = "boxed exile implant kit"
-	desc = "Box of exile implants. It has a picture of a clown being booted through the Gateway."
-	illustration = "implant"
-
-/obj/item/storage/box/exileimp/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/implantcase/exile = 5,
-		/obj/item/implanter = 1)
-	generate_items_inside(items_inside,src)
-
 /obj/item/storage/box/bodybags
 	name = "body bags"
 	desc = "The label indicates that it contains body bags."

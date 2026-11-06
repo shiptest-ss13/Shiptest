@@ -44,8 +44,6 @@
 		if(singubeacon.active)
 			target = singubeacon
 			break
-	AddElement(/datum/element/bsa_blocker)
-	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, PROC_REF(bluespace_reaction))
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered)
 	)
@@ -467,10 +465,6 @@
 	qdel(src)
 	return(gain)
 
-/obj/singularity/proc/bluespace_reaction()
-	investigate_log("has been shot by bluespace artillery and destroyed.", INVESTIGATE_SINGULO)
-	qdel(src)
-
 /obj/singularity/deadchat_controlled
 	move_self = FALSE
 
@@ -481,3 +475,16 @@
 		"down" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, SOUTH),
 		"left" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, WEST),
 		"right" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, EAST)))
+
+/obj/singularity/academy
+	dissipate = 0
+	move_self = 0
+	grav_pull = 1
+
+/obj/singularity/academy/admin_investigate_setup()
+	return
+
+/obj/singularity/academy/process(seconds_per_tick)
+	eat()
+	if(prob(1))
+		mezzer()
