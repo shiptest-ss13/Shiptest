@@ -135,7 +135,7 @@
 
 /obj/item/ammo_casing/energy/laser/shotgun
 	projectile_type = /obj/projectile/beam/weak/shotgun
-	pellets = 3
+	pellets = 4
 	variance = 25
 	e_cost = 625 //16 per standard, 24 per upgraded
 	select_name = "kill"
