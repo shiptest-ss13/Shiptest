@@ -29,7 +29,6 @@
 	name = "shock brain"
 	implements = list(
 		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
-		/obj/item/melee/baton = 40,		//i hate this a lot
 		/obj/item/gun/energy = 30,		//should be tasers only
 		/obj/item/inducer = 30)			//why not
 	time = 3 SECONDS
