@@ -41,8 +41,7 @@
 #define DYNAMIC_WORLD_DUSTBALL "dustball"
 #define DYNAMIC_WORLD_SUPERFLAT "superflat"
 
-#define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
-#define DYNAMIC_WORLD_ASTEROID "asteroid"
+#define DYNAMIC_WORLD_ASTEROID "asteroid" //celestial bodies
 #define DYNAMIC_WORLD_MINOR_PLANET "minor"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 #define DYNAMIC_WORLD_SPACE_NO_RUIN "empty space"
