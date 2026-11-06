@@ -654,7 +654,7 @@
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#D0EFEE" // space cleaner but lighter
 	taste_description = "bitterness"
-	var/surgery_speed_modifier = 0.2
+	var/surgery_speed_modifier = 0.2 // -16%
 
 /datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
@@ -668,7 +668,7 @@
 	description = "Completely sterilizes a wound for surgery. If there is no access to a sterile operating room, this is the next best thing to use in the field."
 	color = "#D0EFEE" // space cleaner but lighter
 	taste_description = "bitterness"
-	surgery_speed_modifier = 0.1
+	surgery_speed_modifier = 0.6 // -37.5%
 
 /datum/reagent/iron
 	name = "Iron"

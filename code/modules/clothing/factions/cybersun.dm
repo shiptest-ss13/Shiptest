@@ -525,3 +525,10 @@
 	new /obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/stasis
 	new /obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/panacea(src)
 	update_appearance()
+
+/obj/item/storage/belt/military/cybersun/security/PopulateContents()
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	for(var/i in 1 to 3)
+		new /obj/item/stock_parts/cell/gun/cybersun(src)

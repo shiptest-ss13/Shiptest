@@ -10,7 +10,7 @@
 	filename = "plexagonidwriter"
 	filedesc = "Plexagon Access Management"
 	program_icon_state = "id"
-	extended_desc = "Program for programming standarized ID cards to access doors across the sector."
+	extended_desc = "ID card reader and granular access modification software package. Requires a card reader module."
 	transfer_access = ACCESS_HEADS
 	requires_ntnet = 0
 	size = 8
