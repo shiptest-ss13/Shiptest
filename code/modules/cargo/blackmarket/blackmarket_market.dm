@@ -11,6 +11,7 @@
 	var/list/available_items = list()
 	/// Item categories available from this market, only items which are in these categories can be gotten from this market.
 	var/list/categories	= list()
+	var/local_good_id = 1 // each local good gets a number assigned to it to prevent purchase of wrong items
 
 /datum/blackmarket_market/New()
 	. = ..()
@@ -60,13 +61,16 @@
 	return TRUE
 
 /// Handles buying the item, this is mainly for future use and moving the code away from the uplink.
-/datum/blackmarket_market/proc/purchase(item_to_buy, category, method, obj/item/blackmarket_uplink/uplink, user)
+/datum/blackmarket_market/proc/purchase(item_to_buy, category, method, item_key, obj/item/blackmarket_uplink/uplink, user)
 	if(!istype(uplink) || !(method in shipping))
 		return FALSE
 
 	for(var/datum/blackmarket_item/I in available_items[category])
 		if(I.type != item_to_buy) //needs an identifier, keeps trying to buy the first local good
 			continue
+		if(!isnull(item_key))
+			if(I.key != item_key)
+				continue
 
 		var/cost = I.cost + shipping[method]
 		// I can't get the cost of the item and shipping in a clean way to the UI, so I have to do this.

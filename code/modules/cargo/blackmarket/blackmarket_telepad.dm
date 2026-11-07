@@ -294,10 +294,10 @@
 	if(!isAdminGhostAI(user))
 		if(!isliving(user))
 			return
-		// if(length(our_market.available_items[/datum/market_item/local_good::category]) >= LTSRBT_MAX_MARKET_ITEMS)
-		// 	say("Local market saturated, buy some goods first!")
-		// 	playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
-		// 	return
+		if(length(our_market.available_items[/datum/blackmarket_item/local_good]) >= LTSRBT_MAX_MARKET_ITEMS)
+			say("Local market saturated, buy some goods first!")
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
+			return
 		var/mob/living/living_user = user
 		var/obj/item/card/bank/card = living_user.get_bankcard()
 		if(!(card?.registered_account))
@@ -321,13 +321,14 @@
 	if(QDELETED(item) || item.loc != null)
 		say("Runtime at market_placement.dm, line 153: item gone!") //metajoke
 		return
-	var/datum/blackmarket_item/local_good/new_item = new(item, account)
+
+	var/datum/blackmarket_item/local_good/new_item = new(item, account, our_market.local_good_id ) // move ID to here
 	new_item.name = name_to_use
 	new_item.desc = desc_to_use
 	new_item.cost = price_to_use
 
 	our_market.add_item(new_item)
-
+	our_market.local_good_id++
 	say("Item placed on the market!")
 	playsound(src, 'sound/effects/cashregister.ogg', 40, FALSE)
 

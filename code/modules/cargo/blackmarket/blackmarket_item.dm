@@ -35,6 +35,7 @@
 	/// Should another item spawn alongside this one in the catalogue?
 	var/list/pair_item = null
 
+	var/key
 
 /datum/blackmarket_item/New()
 	if(isnull(cost))
