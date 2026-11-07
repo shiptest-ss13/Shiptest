@@ -2282,6 +2282,9 @@
 	name = "Mr. Blend";
 	desc = "A cybersun blanded blender. Supposedly rated to blend.. just about anything you can think of. Cybersun accepts no liability if limbs are inserted into the mechanism while operating."
 	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 6
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "nO" = (
@@ -3455,6 +3458,10 @@
 	pixel_y = -11;
 	pixel_x = 20
 	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = -7;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "Ad" = (
@@ -3968,7 +3975,6 @@
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/cyan,
 /obj/item/gun/energy/cybersun/troubleshooter/bridge_safe,
 /obj/item/stock_parts/cell/gun/cybersun/mini{
@@ -4271,6 +4277,10 @@
 /obj/structure/sink/chem{
 	pixel_y = -5;
 	pixel_x = 5
+	},
+/obj/item/hand_labeler{
+	pixel_x = -7;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/office)
@@ -4802,6 +4812,53 @@
 	pixel_x = -20;
 	pixel_y = -11
 	},
+/obj/structure/closet/crate/medical{
+	name = "replacement prosthetics"
+	},
+/obj/item/organ/eyes/robotic,
+/obj/item/organ/heart/cybernetic/tier2,
+/obj/item/organ/liver/cybernetic/tier2,
+/obj/item/organ/lungs/cybernetic/tier2,
+/obj/item/organ/stomach/cybernetic/tier2,
+/obj/item/organ/ears/cybernetic,
+/obj/item/bodypart/r_arm/ipc/ghost{
+	pixel_x = -6;
+	pixel_y = -11
+	},
+/obj/item/bodypart/r_arm/ipc/ghost{
+	pixel_x = -6;
+	pixel_y = -11
+	},
+/obj/item/bodypart/l_arm/ipc/ghost{
+	pixel_x = -15;
+	pixel_y = -11
+	},
+/obj/item/bodypart/l_arm/ipc/ghost{
+	pixel_x = -15;
+	pixel_y = -11
+	},
+/obj/item/bodypart/head/ipc/ghost{
+	pixel_x = -11
+	},
+/obj/item/bodypart/head/ipc/ghost{
+	pixel_x = -11
+	},
+/obj/item/bodypart/leg/left/ipc/ghost{
+	pixel_x = -10;
+	pixel_y = 11
+	},
+/obj/item/bodypart/leg/left/ipc/ghost{
+	pixel_x = -10;
+	pixel_y = 11
+	},
+/obj/item/bodypart/leg/right/ipc/ghost{
+	pixel_y = 11;
+	pixel_x = -11
+	},
+/obj/item/bodypart/leg/right/ipc/ghost{
+	pixel_y = 11;
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "LN" = (
@@ -5080,6 +5137,12 @@
 	},
 /obj/item/taperecorder{
 	pixel_x = -5
+	},
+/obj/item/radio/command{
+	pixel_x = 14
+	},
+/obj/item/radio/command{
+	pixel_x = 14
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
@@ -6182,12 +6245,24 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Te" = (
-/obj/structure/chair/bench/blue/directional/east,
 /obj/machinery/button/door/bolts{
 	id = "csur";
 	dir = 4;
 	pixel_y = -11;
 	pixel_x = -23
+	},
+/obj/structure/table/chem,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/bottle/rezadone{
+	pixel_y = 11;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_y = 12;
+	pixel_x = -7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
