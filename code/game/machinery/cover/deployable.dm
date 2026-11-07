@@ -226,6 +226,11 @@
 		return TRUE
 	return border_dir != dir
 
+/obj/structure/barricade/directional/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!(to_dir & dir))
+		return TRUE
+	return ..()
+
 /obj/structure/barricade/directional/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER
 	if(exiter == src)

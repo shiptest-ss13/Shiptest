@@ -235,7 +235,7 @@
  */
 /obj/projectile/proc/on_hit(atom/target, blocked = FALSE, pierce_hit, hit_zone)
 	if(fired_from)
-		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle)
+		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle, hit_zone, blocked)
 	// i know that this is probably more with wands and gun mods in mind, but it's a bit silly that the projectile on_hit signal doesn't ping the projectile itself.
 	// maybe we care what the projectile thinks! See about combining these via args some time when it's not 5AM
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_zone)
@@ -285,6 +285,10 @@
 				if(iscarbon(L))
 					var/mob/living/carbon/carbon_target = L
 					splatter_color = carbon_target.dna.blood_type.color
+				else // simplemobs can bleed other colours too, like human mobs of other species
+					var/list/blood_dna = L.get_blood_dna_list()
+					if(length(blood_dna))
+						splatter_color = get_blood_dna_color(blood_dna)
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_loca, splatter_dir, splatter_color)
 			if(prob(33))
 				L.add_splatter_floor(target_loca)
@@ -574,6 +578,7 @@
 				continue
 			misser.playsound_local(get_turf(src), near_miss_sound, 100, FALSE)
 			misser.shake_animation(damage)
+			SEND_SIGNAL(misser, COMSIG_LIVING_NEAR_MISS, src)
 
 
 /**
