@@ -167,7 +167,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/hlheavy
 	name = "Poltergeist heavy combat hardsuit"
-	desc = "A hardsuit design consisting of recycled parts from heavier, advanced designs. Many hard to maintain components have been stripped out, resulting in an encumbering suit with suitably heavy armor."
+	desc = "A hardsuit design consisting of recycled parts from heavier, advanced designs. Many complicated components have been stripped out, resulting in an easy to maintain suit with suitably heavy armor."
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hardsuit-hlheavy"
