@@ -2,112 +2,7 @@
 "a" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
-"e" = (
-/obj/structure/cable/cyan{
-	icon_state = "6-9"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"h" = (
-/obj/machinery/button/door{
-	id = "bam";
-	pixel_y = 23;
-	pixel_x = 9;
-	name = "blast shutter control"
-	},
-/obj/machinery/button/shieldwallgen{
-	pixel_y = 22;
-	id = "bams"
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"i" = (
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"o" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/platform/ship_two{
-	dir = 5
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bam2"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/bridge)
-"q" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "grav couch";
-	pixel_y = 0;
-	pixel_x = -3
-	},
-/obj/structure/railing/thin/corner{
-	dir = 8
-	},
-/obj/structure/railing/thin/corner{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/eastleft,
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/machinery/holopad/secure,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/bridge)
-"r" = (
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_ccw{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "6-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/obj/machinery/light_switch{
-	dir = 2;
-	pixel_x = -12;
-	pixel_y = 20
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"u" = (
+"c" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "bam";
 	dir = 4
@@ -118,163 +13,44 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "bams"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
-"v" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/structure/cable/cyan{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/bridge)
-"y" = (
-/obj/machinery/stasis{
-	dir = 1
-	},
-/obj/structure/platform/ship_two{
-	dir = 8
-	},
-/obj/structure/curtain/cloth{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/end{
-	dir = 8
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"A" = (
-/turf/template_noop,
-/area/template_noop)
-"C" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
 	},
 /obj/docking_port/mobile{
 	dir = 8;
 	name = "Trauma Team Bambulance";
 	preferred_direction = 4
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "bam";
-	dir = 4
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4;
-	color = "#FFFFFF"
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bams"
 	},
-/obj/structure/cable/cyan,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"E" = (
-/obj/effect/turf_decal/industrial/warning/fulltile{
-	color = "#FFFFFF"
-	},
-/obj/machinery/computer/helm{
-	dir = 4
-	},
-/obj/structure/railing/thin,
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"G" = (
-/obj/structure/railing/thin{
-	dir = 8
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
+"e" = (
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable/cyan,
-/obj/item/radio/intercom/directional/south,
-/obj/machinery/telecomms/relay/preset/cybersun,
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/effect/turf_decal/industrial/warning/fulltile{
+	color = "#FFFFFF"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -10;
+	name = "engine shutters";
+	id = "gengp"
+	},
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"I" = (
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_ccw{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"L" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 2
-	},
-/obj/structure/platform/ship_two{
-	dir = 6
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bam2"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/bridge)
-"P" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"R" = (
-/obj/machinery/stasis{
-	dir = 1
-	},
-/obj/structure/platform/ship_two{
-	dir = 8
-	},
-/obj/structure/curtain/cloth{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/end{
-	dir = 8
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"S" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-9"
-	},
-/obj/structure/cable/cyan,
+"f" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "bam";
 	dir = 4
@@ -290,57 +66,373 @@
 	id = "bams";
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
-"U" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/stairs{
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"X" = (
-/obj/structure/railing/thin{
+"h" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/obj/structure/window/plasma/reinforced{
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"i" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_ccw{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"j" = (
+/obj/machinery/telecomms/relay/preset/cybersun,
+/obj/effect/turf_decal/box/white,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"k" = (
+/obj/machinery/stasis,
+/obj/structure/sign/warning/docking{
+	pixel_x = 23;
+	pixel_y = 16
+	},
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"l" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = 29
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_y = 20;
+	pixel_x = -9
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"m" = (
+/obj/machinery/porta_turret/ship/cybersun/seeker{
+	dir = 4;
+	id = "bam_gun"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
+"n" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "grav couch"
+	},
+/obj/machinery/holopad/secret,
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = 8;
+	name = "exterior hatch";
+	id = "bam"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 21;
+	name = "hatch holofield";
+	id = "bams"
+	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -8;
+	name = "amidship shutters";
+	id = "gmid"
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner,
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -16;
+	name = "window shutters";
+	id = "gpilo"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"o" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/door/poddoor/shutters{
+	id = "gengp";
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"q" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "gmid"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"r" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "gmid"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/door/poddoor/shutters{
+	id = "gengp";
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"t" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"u" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"v" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "gpilo";
+	dir = 4
+	},
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"x" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"y" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/cyan,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -9
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 5
+	},
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"z" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"A" = (
+/turf/template_noop,
+/area/template_noop)
+"C" = (
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Port Engine";
+	close_speed = 100
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"G" = (
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable/cyan{
+/obj/effect/turf_decal/industrial/warning/fulltile{
+	color = "#FFFFFF"
+	},
+/obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/item/radio/intercom/wideband/directional/north,
-/obj/item/paper_bin{
-	pixel_x = 5
-	},
-/obj/item/clipboard{
-	pixel_y = 6;
-	pixel_x = -5
-	},
-/obj/item/pen/sleepy{
-	pixel_y = 6;
-	pixel_x = -5
+/obj/structure/cable/yellow{
+	icon_state = "4-5"
 	},
 /obj/machinery/button/door{
-	id = "bam2";
-	pixel_y = 23;
-	pixel_x = -15;
-	name = "engine shutter control"
+	pixel_y = -22;
+	pixel_x = -11;
+	name = "engine shutters";
+	id = "gengp";
+	dir = 1
 	},
-/obj/item/megaphone/command{
-	pixel_x = -8;
-	pixel_y = -5
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"I" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/box/white,
+/obj/machinery/light/small/directional/east,
+/obj/structure/sign/warning/fire{
+	pixel_y = 30;
+	pixel_x = -8
+	},
+/obj/machinery/power/smes/engineering{
+	input_level = 5000;
+	output_level = 15000
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"L" = (
+/obj/structure/table/reinforced,
+/obj/machinery/turretid/ship{
+	pixel_y = -23;
+	id = "bam_gun";
+	req_ship_access = 0
+	},
+/obj/item/radio/intercom/table{
+	dir = 8;
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/gps/science{
+	pixel_y = 3;
+	pixel_x = 13;
+	gpstag = "TTG"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"M" = (
+/obj/machinery/computer/helm{
+	dir = 4
+	},
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"P" = (
+/obj/machinery/stasis,
+/obj/structure/sign/warning/docking{
+	pixel_x = 23;
+	pixel_y = -1
+	},
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"R" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"S" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/obj/machinery/light_switch{
+	pixel_y = 20;
+	pixel_x = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"U" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Starboard Engine";
+	close_speed = 100
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-5"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "9-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"W" = (
+/obj/machinery/light/directional/west,
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/effect/turf_decal/corner/transparent/syndiered/mono,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"X" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "4-6"
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Y" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -348,27 +440,39 @@
 
 (1,1,1) = {"
 A
-v
+t
 Y
 v
+v
+Y
+z
 A
 "}
 (2,1,1) = {"
 Y
+s
+Y
+M
 L
-E
+Y
 o
 Y
 "}
 (3,1,1) = {"
 Y
+e
+Y
+n
 X
-q
+Y
 G
 Y
 "}
 (4,1,1) = {"
 Y
+S
+E
+x
 R
 U
 y
@@ -376,22 +480,51 @@ Y
 "}
 (5,1,1) = {"
 Y
+j
+Y
+q
 r
-P
+Y
 I
 Y
 "}
 (6,1,1) = {"
+m
 Y
+Y
+l
 h
-e
-i
 Y
+Y
+m
 "}
 (7,1,1) = {"
-a
+A
+Y
+W
+i
 u
 C
-S
+Y
+A
+"}
+(8,1,1) = {"
+A
+Y
+P
+i
+u
+k
+Y
+A
+"}
+(9,1,1) = {"
+A
 a
+Y
+c
+f
+Y
+a
+A
 "}

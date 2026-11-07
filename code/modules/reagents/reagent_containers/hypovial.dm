@@ -222,6 +222,12 @@
 	amount_per_transfer_from_this = 10
 	comes_with = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/silfrine = 20, /datum/reagent/medicine/ysiltane = 20)
 
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/stasis
+	name = "hypovial (stasis)"
+	icon_state = "hypovial-b"
+	amount_per_transfer_from_this = 5
+	comes_with = list(/datum/reagent/medicine/stasis = 30)
+
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis
 	name = "hypovial (stasis)"
 	icon_state = "hypovial-b"
@@ -248,6 +254,14 @@
 		/datum/reagent/medicine/salglu_solution = 10,
 	)
 
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/panacea
+	name = "hypovial (Panacea)"
+	icon_state = "hypovial-p"
+	amount_per_transfer_from_this = 5
+	comes_with = list(
+		/datum/reagent/medicine/panacea = 30
+	)
+
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea
 	name = "hypovial (Panacea)"
 	icon_state = "hypovial-p"
@@ -255,7 +269,6 @@
 	comes_with = list(
 		/datum/reagent/medicine/panacea = 60
 	)
-
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	name = "deluxe hypovial"
