@@ -992,7 +992,6 @@
 /area/ship/engineering)
 "fc" = (
 /obj/structure/table/wood/reinforced,
-/obj/machinery/fax/warra,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/button/door{
 	dir = 1;
@@ -1000,6 +999,7 @@
 	name = "window shutter";
 	pixel_y = -22
 	},
+/obj/machinery/fax/tricorp,
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
 "fd" = (
@@ -1488,8 +1488,11 @@
 /obj/structure/sign/poster/contraband/syndiemoth{
 	pixel_y = 32
 	},
-/obj/item/toy/plush/moth/firewatch,
-/obj/item/toy/sword,
+/mob/living/simple_animal/hostile/retaliate/poison/snake{
+	name = "viper";
+	desc = "You can't. I'm just a contractor"
+	},
+/obj/item/clothing/accessory/holster,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "hH" = (
@@ -5741,10 +5744,10 @@
 "Fx" = (
 /obj/structure/railing/corner,
 /obj/structure/table/reinforced,
-/obj/machinery/fax/warra,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/fax/tricorp,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Fy" = (
