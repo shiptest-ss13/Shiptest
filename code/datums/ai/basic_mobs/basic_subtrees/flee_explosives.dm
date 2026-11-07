@@ -238,22 +238,54 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 	if(!istype(thrown) || thrown.anchored || !isturf(thrown.loc))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
 	var/turf/our_turf = get_turf(basic_mob)
+	var/clear_distance = min(ai_grenade_danger_radius(grenade) + 1, throw_range)
 	var/turf/throw_at_turf
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target) && get_turf(target) != our_turf)
 		throw_at_turf = get_ranged_target_turf_direct(basic_mob, target, throw_range)
-	if(!throw_at_turf || ally_in_line_of_fire(basic_mob, our_turf, throw_at_turf))
-		// nobody to throw it at, or one of ours is in the way, so just away from where it landed
+		if(!good_throw_back(basic_mob, our_turf, throw_at_turf, clear_distance))
+			throw_at_turf = null
+	if(!throw_at_turf)
+		// nobody to throw it at, or something's in the way, so just away from where it landed
 		var/away_dir = get_turf(thrown) == our_turf ? pick(GLOB.alldirs) : get_dir(thrown, basic_mob)
-		throw_at_turf = get_ranged_target_turf(basic_mob, away_dir, throw_range)
-		if(ally_in_line_of_fire(basic_mob, our_turf, throw_at_turf))
-			return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED // nowhere safe to throw it, so we run instead
+		for(var/turn_angle in list(0, 45, -45, 90, -90, 135, -135, 180))
+			var/turf/candidate = get_ranged_target_turf(basic_mob, turn(away_dir, turn_angle), throw_range)
+			if(good_throw_back(basic_mob, our_turf, candidate, clear_distance))
+				throw_at_turf = candidate
+				break
+		if(!throw_at_turf)
+			return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED // nowhere clear to throw it, so we run instead
 	grenade.set_ai_thrower(basic_mob) // ours now, so those we threw it at call it, and we don't
 	basic_mob.visible_message(span_danger("[basic_mob] grabs [thrown] and throws it back!"))
 	thrown.forceMove(our_turf)
 	thrown.throw_at(throw_at_turf, throw_range, 2, basic_mob)
 	controller.set_blackboard_key(BB_BASIC_MOB_THROWING_BACK, FALSE)
 	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
+
+// check whether a throw would manage to get past clear_distance
+/datum/ai_behavior/throw_back_explosive/proc/good_throw_back(mob/living/thrower, turf/start, turf/finish, clear_distance)
+	if(!finish || finish == start || ally_in_line_of_fire(thrower, start, finish))
+		return FALSE
+	var/turf/previous_turf
+	for(var/turf/line_turf as anything in get_line(start, finish))
+		if(line_turf == start)
+			previous_turf = line_turf
+			continue
+		if(get_dist(start, line_turf) > clear_distance)
+			return TRUE
+		if(line_turf.density)
+			return FALSE
+		var/step_dir = get_dir(previous_turf, line_turf)
+		for(var/atom/movable/thing as anything in previous_turf)
+			if(thing.density && (thing.flags_1 & ON_BORDER_1) && (thing.dir & step_dir) && !(thing.pass_flags_self & LETPASSTHROW))
+				return FALSE // i love edge blockers
+		for(var/atom/movable/thing as anything in line_turf)
+			if(thing == thrower || !thing.density || (thing.pass_flags_self & LETPASSTHROW))
+				continue
+			if(!(thing.flags_1 & ON_BORDER_1) || (thing.dir & turn(step_dir, 180)))
+				return FALSE
+		previous_turf = line_turf
+	return TRUE
 
 /datum/ai_behavior/throw_back_explosive/finish_action(datum/ai_controller/controller, succeeded, explosive_key)
 	. = ..()

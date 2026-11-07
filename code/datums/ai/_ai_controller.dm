@@ -899,7 +899,7 @@ multiple modular subtrees with behaviors
 	while(index <= length(remove_queue))
 		var/list/next_to_clear = remove_queue[index]
 		for(var/inner_value in next_to_clear)
-			var/associated_value = next_to_clear[inner_value]
+			var/associated_value = isnum(inner_value) ? null : next_to_clear[inner_value]
 			// We are a lists of lists, add the next value to the queue so we can handle references in there
 			// (But we only need to bother checking the list if it's not empty.)
 			if(islist(inner_value) && length(inner_value))
