@@ -185,7 +185,7 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	icon_state = "0-2"
+	icon_state = "0-8"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
@@ -208,6 +208,26 @@
 	icon_state = "4-10"
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/door/poddoor/shutters{
+	id = "gengp";
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"t" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "u" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
@@ -419,7 +439,7 @@
 
 (1,1,1) = {"
 A
-z
+t
 Y
 v
 v
@@ -429,7 +449,7 @@ A
 "}
 (2,1,1) = {"
 Y
-o
+s
 Y
 M
 L
