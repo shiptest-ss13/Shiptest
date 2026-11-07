@@ -162,7 +162,7 @@ export const AutodocVendor = (props, context) => {
                   act('toggle-procedure', {
                     'toggle': toggle_revive,
                     'flag': do_revive,
-                    'adjustcost': cost_complex,
+                    'adjustcost': cost_basic,
                   })
                 }
               />
