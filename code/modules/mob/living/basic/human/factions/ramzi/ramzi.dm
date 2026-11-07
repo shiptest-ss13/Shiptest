@@ -310,12 +310,10 @@
 /mob/living/basic/human/ramzi/ranged/cottonmouth
 	name = "Ramzi Clique Operative"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They warily glance around, a modified machinepistol held at the ready."
-	burst_shots = 2
 	projectile_sound = 'sound/weapons/gun/pistol/asp.ogg'
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 
 /mob/living/basic/human/ramzi/ranged/cottonmouth/scout
-	burst_shots = 1
 	vision_range = 10
 	engage_distance = 10
 	wander = FALSE
@@ -325,7 +323,6 @@
 /mob/living/basic/human/ramzi/ranged/smg
 	name = "Ramzi Clique Commando"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their submachinegun held at eye level, sweeping every corner."
-	burst_shots = 3
 	icon_state = "syndicate_smg"
 	icon_living = "syndicate_smg"
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
@@ -340,7 +337,6 @@
 /mob/living/basic/human/ramzi/ranged/smg/sidewinder
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their PDW held at eye level, sweeping every corner."
 	l_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
-	burst_interval = 0.15 SECONDS
 	casing_type = /obj/item/ammo_casing/c57x39mm
 	projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
@@ -352,7 +348,6 @@
 /mob/living/basic/human/ramzi/ranged/hydra
 	name = "Ramzi Clique Trooper"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held at eye level, sweeping every corner."
-	burst_shots = 3
 	icon_state = "syndicate_hydra"
 	casing_type = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
@@ -365,7 +360,6 @@
 /mob/living/basic/human/ramzi/ranged/hydra/dmr
 	name = "Ramzi Clique Tracker"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held at eye level, sweeping every corner."
-	burst_shots = 2
 	icon_state = "syndicate_hydra"
 	casing_type = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -412,7 +406,6 @@
 /mob/living/basic/human/ramzi/ranged/officer/smg
 	name = "Ramzi Clique Commander"
 	desc = "A deserter from the Gorlex Marauders turned pirate, clad in well-maintained officer garbs. They cradle a lightweight submachinegun in their hands, sweeping it side-to-side."
-	burst_shots = 3
 	casing_type = /obj/item/ammo_casing/c10mm
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
@@ -449,8 +442,6 @@
 	desc = "A commanding deserter from the Gorlex Marauders turned pirate. They hold themselves high, clad in an imposing, well-maintained greatcoat; calmly wielding a pitch-black revolver."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
 	armor_base = /obj/item/clothing/suit/armor/ramzi/captain
-	burst_shots = 2 //they are well-trained and can thus fire a viper quicker
-	burst_interval = 0.4 SECONDS
 
 /mob/living/basic/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
@@ -543,7 +534,6 @@
 /mob/living/basic/human/ramzi/ranged/smg/indiegun
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan their surroundings with a dirty beige submachinegun - finger on the trigger."
 	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra/indie
-	burst_shots = 4 //true to the gun
 
 /mob/living/basic/human/ramzi/ranged/engineer
 	name = "Ramzi Clique Combat Engineer"
@@ -562,7 +552,6 @@
 	icon_living = "syndicate_space_pistol"
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
-	burst_shots = 2
 	projectile_sound = 'sound/weapons/gun/pistol/asp.ogg'
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
@@ -571,7 +560,6 @@
 /mob/living/basic/human/ramzi/ranged/space/hydra
 	name = "Ramzi Clique Trooper"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held with rusty gauntlets, sweeping every corner."
-	burst_shots = 3
 	icon_state = "syndicate_hydra"
 	casing_type = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
@@ -582,7 +570,6 @@
 /mob/living/basic/human/ramzi/ranged/space/hydra/dmr
 	name = "Ramzi Clique Tracker"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held at eye level, sweeping every corner."
-	burst_shots = 2
 	icon_state = "syndicate_hydra"
 	casing_type = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -601,7 +588,6 @@
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
 	projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	burst_shots = 1
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
@@ -613,7 +599,6 @@
 	icon_living = "syndicate_space_smg"
 	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	burst_shots = 3
 	casing_type = /obj/item/ammo_casing/c10mm
 
 /mob/living/basic/human/ramzi/ranged/space/smg
@@ -623,14 +608,11 @@
 	icon_living = "syndicate_space_smg"
 	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	burst_shots = 3
 	casing_type = /obj/item/ammo_casing/c10mm
 
 /mob/living/basic/human/ramzi/ranged/space/smg/sidewinder
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their PDW across the room, scanning for threats."
 	l_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
-	burst_shots = 3
-	burst_interval = 0.15 SECONDS
 	casing_type = /obj/item/ammo_casing/c57x39mm
 	projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
@@ -643,7 +625,6 @@
 	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	projectile_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	burst_shots = 2
-	burst_interval = 0.6 SECONDS
 	retreat_distance = 2
 	engage_distance = 2
 
@@ -672,7 +653,6 @@
 /mob/living/basic/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
 	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bulldog shotgun, elegance in its movements."
-	burst_shots = 1
 	casing_type = /obj/item/ammo_casing/shotgun/incendiary
 
 /* ranged stormtroopers */
@@ -687,12 +667,10 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 	projectile_sound = 'sound/weapons/gun/pistol/asp.ogg'
-	burst_shots = 2
 
 /mob/living/basic/human/ramzi/ranged/space/stormtrooper/hydra
 	name = "Ramzi Clique Sweeper"
 	desc = "An imposing deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held with rusty, blackened gauntlets, sweeping every corner." //i dont got anything flowery to put srry
-	burst_shots = 4
 	icon_state = "syndicate_stormtrooper_smg"
 	casing_type = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
@@ -703,7 +681,6 @@
 /mob/living/basic/human/ramzi/ranged/space/stormtrooper/hydra/dmr
 	name = "Ramzi Clique Stalker"
 	desc = "An imposing deserter from the Gorlex Marauders turned pirate. They scan the room with their DMR held with rusty, blackened gauntlets, sweeping every corner." //ditto
-	burst_shots = 2
 	icon_state = "syndicate_stormtrooper_shotgun"
 	casing_type = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -729,8 +706,6 @@
 	icon_living = "syndicate_stormtrooper_smg"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	l_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
-	burst_shots = 4
-	burst_interval = 0.15 SECONDS
 	casing_type = /obj/item/ammo_casing/c57x39mm
 	projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
@@ -744,8 +719,7 @@
 	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	casing_type = /obj/item/ammo_casing/shotgun/buckshot
 	projectile_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-	burst_shots = 3
-	burst_interval = 0.5 SECONDS
+	burst_shots = 2
 	retreat_distance = 2
 	engage_distance = 2
 
@@ -755,7 +729,6 @@
 	casing_type = /obj/item/ammo_casing/shotgun/dragonsbreath
 	fights_while_burning = TRUE
 	burst_shots = 2
-	burst_interval = 0.7 SECONDS
 
 /mob/living/basic/human/ramzi/ranged/space/stormtrooper/sniper
 	name = "Ramzi Clique Cleaner"

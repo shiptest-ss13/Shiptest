@@ -25,7 +25,6 @@
 	retreat_distance = 3
 	engage_distance = 5
 	casing_type = /obj/item/ammo_casing/c9mm
-	burst_shots = 2
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/challenger
 	projectile_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 
@@ -34,7 +33,6 @@
 	desc = "A member of Vigilitas Interstellar, their eyes scan the horizon for motion, tracking flutters of the world with a Resolution PDW."
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
-	burst_shots = 3
 	casing_type = /obj/item/ammo_casing/c46x30mm
 	r_hand = /obj/item/gun/ballistic/automatic/smg/resolution
 	projectile_sound = 'sound/weapons/gun/smg/resolution.ogg'
@@ -130,8 +128,6 @@
 /mob/living/basic/human/warra/ranged/trooper/rifle
 	name = "\improper Vigilitas Rifleman"
 	desc = "A well-armed member of Vigilitas Interstellar. They stand at the ready with a Hades energy rifle, smirking underneath their gas mask."
-	burst_shots = 4
-	burst_interval = 0.4 SECONDS
 	casing_type = null
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/hades
@@ -153,7 +149,6 @@
 /mob/living/basic/human/warra/elite
 	name = "Vigilitas Response Team"
 	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, their rifle raises, and they start to move with practiced precision."
-	burst_shots = 3
 	burst_interval = 0.4 SECONDS
 	rapid_melee = 3
 	retreat_distance = 0

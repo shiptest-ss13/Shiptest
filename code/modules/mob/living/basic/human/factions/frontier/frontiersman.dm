@@ -145,10 +145,8 @@
 	retreat_distance = 2
 	engage_distance = 1
 	projectile_sound = 'sound/weapons/laser4.ogg'
-	burst_shots = 2
 	casing_type = null
 	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
-	burst_interval = 0.18 SECONDS
 	r_hand = /obj/item/gun/energy/laser/wasp
 	spread = 12
 
@@ -170,7 +168,6 @@
 	retreat_distance = 3
 	engage_distance = 2
 	burst_shots = 10
-	burst_interval = 0.1 SECONDS
 	projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	casing_type = /obj/item/ammo_casing/c22lr
 	r_hand = /obj/item/gun/ballistic/automatic/smg/pounder
@@ -290,7 +287,6 @@
 	name = "Frontiersman Runner"
 	desc = "A quick-footed member of the brutal Frontiersman terrorist fleet! This one wields a boxy submachine gun in one hand."
 	burst_shots = 8
-	burst_interval = 0.1 SECONDS
 	retreat_distance = 4
 	engage_distance = 4
 	projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
@@ -322,7 +318,6 @@
 	name = "Frontiersman Runner"
 	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun, a ragged cloak trailing from the shoulders of their light hardsuit."
 	burst_shots = 8
-	burst_interval = 0.1 SECONDS
 	retreat_distance = 4
 	engage_distance = 4
 	projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
@@ -387,11 +382,9 @@
 	retreat_distance = 2
 	engage_distance = 1
 	projectile_sound = 'sound/weapons/laser4.ogg'
-	burst_shots = 3
 	spread = 12
 	casing_type = null
 	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
-	burst_interval = 0.1 SECONDS
 	r_hand = /obj/item/gun/energy/laser/wasp
 
 /mob/living/basic/human/frontier/ranged/trooper/wasp/neutered
@@ -446,8 +439,6 @@
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one could almost be mistaken for a real soldier by their assault rifle and armor, if it weren't for their swaggering demeanor."
 	icon_state = "frontiersmanrangedak47"
 	projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
-	burst_shots = 4
-	burst_interval = 0.3 SECONDS
 	casing_type = /obj/item/ammo_casing/a762_40
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 
@@ -504,7 +495,6 @@
 	icon_state = "frontiersmanrangedminigun"
 	projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
 	burst_shots = 5
-	burst_interval = 0.2 SECONDS
 	casing_type = /obj/item/ammo_casing/shotgun
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
@@ -552,7 +542,6 @@
 	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. They leer at their underlings, one hand resting consciously over the machine pistol at their hip."
 	icon_state = "frontiersmanofficer"
 	burst_shots = 6
-	burst_interval = 0.1 SECONDS
 	projectile_sound = 'sound/weapons/gun/pistol/mauler.ogg'
 	casing_type = /obj/item/ammo_casing/c9mm
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
@@ -566,7 +555,6 @@
 	name = "Frontiersman Boss"
 	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. They leer at their underlings, a chrome combat shotgun within their hands."
 	burst_shots = 2
-	burst_interval = 0.7 SECONDS
 	retreat_distance = 4
 	engage_distance = 3
 	casing_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -595,8 +583,7 @@
 	casing_type = /obj/item/ammo_casing/a8_50r/match
 	projectile_sound = 'sound/weapons/gun/rifle/mosin.ogg'
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
-	burst_shots = 2
-	burst_interval = 1 SECONDS
+	burst_shots = 1
 
 /mob/living/basic/human/frontier/ranged/officer/rifle/neutered
 	weapon_drop_chance = 0
@@ -629,7 +616,6 @@
 	spread = 16
 	casing_type = null
 	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
-	burst_interval = 0.1 SECONDS
 	r_hand = /obj/item/gun/energy/laser/wasp
 
 /mob/living/basic/human/frontier/ranged/officer/wasp/neutered

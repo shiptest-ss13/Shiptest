@@ -113,8 +113,6 @@
 	icon_state = "survivor_gunslinger"
 	icon_living = "survivor_gunslinger"
 	projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
-	burst_shots = 3
-	burst_interval = 0.3 SECONDS
 	casing_type = /obj/item/ammo_casing/c46x30mm/recycled
 	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
@@ -130,8 +128,6 @@
 	icon_state = "survivor_gunslinger"
 	icon_living = "survivor_gunslinger"
 	projectile_sound = 'sound/weapons/zapbang.ogg'
-	burst_shots = 2
-	burst_interval = 0.2 SECONDS
 	casing_type = /obj/item/ammo_casing/c46x30mm/tesla
 	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
@@ -162,7 +158,6 @@
 	desc = "This hermit hefts a shiny, well-maintained Sharplite submachine gun. The confidence in their motion both a warning and a boast, they know how to use it!"
 	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	burst_shots = 5
-	burst_interval = 0.2 SECONDS
 	projectile_type = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/rush
 
@@ -183,7 +178,6 @@
 	desc = "A giant of a man clad in a reinforced survival suit, he seems ready to blast any tresspasser to bits at a moment's notice."
 	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	burst_shots = 5
-	burst_interval = 0.4 SECONDS
 	retreat_distance = 4
 	engage_distance = 7
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite
@@ -203,8 +197,6 @@
 	name = "The Mayor"
 	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained and alert, unlike many of the wanderers nearby."
 	icon_state = "syndicate_hydra"
-	burst_shots = 4
-	burst_interval = 0.3 SECONDS
 	retreat_distance = 4
 	engage_distance = 7
 	casing_type = /obj/item/ammo_casing/a308
@@ -227,7 +219,7 @@
 	name = "Hermit Warlord"
 	desc = "A figure covered in dirty Roumainist plate, slinging around a pristine HP Pyre. They carry the weapon with finesse, though they are still clearly high off their mind."
 	burst_shots = 3
-	burst_interval = 0.5 SECONDS
+	burst_interval = 0.8 SECONDS
 	retreat_distance = 3
 	engage_distance = 5
 	casing_type = /obj/item/ammo_casing/a4570
