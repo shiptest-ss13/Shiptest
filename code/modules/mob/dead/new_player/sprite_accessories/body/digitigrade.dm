@@ -21,3 +21,11 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/hooves,
 	)
 	allowed_species = list(/datum/species/human)
+
+/datum/sprite_accessory/body/digitigrade/claws
+	name = "Digitigrade clawed Legs"
+	replacement_bodyparts = list(
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/clawed,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/clawed,
+	)
+	allowed_species = list(/datum/species/human)

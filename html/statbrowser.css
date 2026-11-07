@@ -1,3 +1,13 @@
+.light:root {
+	--scrollbar-base: #f2f2f2;
+	--scrollbar-thumb: #a7a7a7;
+}
+
+html,
+body {
+	scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-base);
+}
+
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 12px !important;
@@ -7,27 +17,11 @@ body {
 	overflow-y: scroll;
 }
 
-body.dark {
-	background-color: #131313;
-	color: #b2c4dd;
-	scrollbar-base-color: #1c1c1c;
-	scrollbar-face-color: #3b3b3b;
-	scrollbar-3dlight-color: #252525;
-	scrollbar-highlight-color: #252525;
-	scrollbar-track-color: #1c1c1c;
-	scrollbar-arrow-color: #929292;
-	scrollbar-shadow-color: #3b3b3b;
-}
-
 #menu {
 	background-color: #F0F0F0;
 	position: fixed;
 	width: 100%;
 	z-index: 100;
-}
-
-.dark #menu {
-	background-color: #202020;
 }
 
 #statcontent {
@@ -37,15 +31,6 @@ body.dark {
 a {
 	color: black;
 	text-decoration: none
-}
-
-.dark a {
-	color: #b2c4dd;
-}
-
-a:hover,
-.dark a:hover {
-	text-decoration: underline;
 }
 
 ul {
@@ -97,19 +82,9 @@ li a:hover:not(.active) {
 	min-width: 40px;
 }
 
-.dark button {
-	background-color: #222222;
-	border-color: #343434;
-	color: rgba(255, 255, 255, 0.5);
-}
-
 .button:hover {
 	background-color: #ececec;
 	transition-duration: 0;
-}
-
-.dark button:hover {
-	background-color: #2e2e2e;
 }
 
 .button:active,
@@ -119,16 +94,6 @@ li a:hover:not(.active) {
 	border-top-color: #cecece;
 	border-left-color: #cecece;
 	border-right-color: #cecece;
-	border-bottom-color: #ffffff;
-}
-
-.dark .button:active,
-.dark .button.active {
-	background-color: #444444;
-	color: white;
-	border-top-color: #343434;
-	border-left-color: #343434;
-	border-right-color: #343434;
 	border-bottom-color: #ffffff;
 }
 
@@ -180,22 +145,6 @@ li a:hover:not(.active) {
 	text-decoration: underline;
 }
 
-.grid-item-text {
-	display: inline-block;
-	width: 100%;
-	background-color: #ffffff;
-	margin: 0 -6px;
-	padding: 0 6px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	pointer-events: none;
-}
-
-.dark .grid-item-text {
-	background-color: #131313;
-}
-
 .link {
 	display: inline;
 	background: none;
@@ -206,10 +155,6 @@ li a:hover:not(.active) {
 	cursor: pointer;
 	font-size: 13px;
 	margin: 2px 2px;
-}
-
-.dark .link {
-	color: #abc6ec;
 }
 
 .link:hover {
@@ -224,4 +169,67 @@ img {
 .interview_panel_controls,
 .interview_panel_stats {
 	margin-bottom: 10px;
+}
+
+/**
+ * MARK: Dark theme colors
+ */
+.dark:root {
+	--scrollbar-base: #151515;
+	--scrollbar-thumb: #363636;
+}
+
+body.dark {
+	background-color: #151515;
+	color: #b2c4dd;
+	scrollbar-base-color: #1c1c1c;
+	scrollbar-face-color: #3b3b3b;
+	scrollbar-3dlight-color: #252525;
+	scrollbar-highlight-color: #252525;
+	scrollbar-track-color: #1c1c1c;
+	scrollbar-arrow-color: #929292;
+	scrollbar-shadow-color: #3b3b3b;
+}
+
+.dark button {
+	background-color: #222222;
+	border-color: #343434;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.dark button:hover {
+	background-color: #2e2e2e;
+}
+
+.dark .button:active,
+.dark .button.active {
+	background-color: #444444;
+	color: white;
+	border-top-color: #343434;
+	border-left-color: #343434;
+	border-right-color: #343434;
+	border-bottom-color: #ffffff;
+}
+
+a:hover,
+.dark a:hover {
+	text-decoration: underline;
+}
+
+.dark a {
+	color: #b2c4dd;
+}
+
+.dark a:hover,
+.dark .grid-item:hover,
+.dark .grid-item:active {
+	color: #80bfff;
+}
+
+.dark #menu {
+	background-color: #202020;
+}
+
+.dark .link {
+	color: #abc6ec;
 }

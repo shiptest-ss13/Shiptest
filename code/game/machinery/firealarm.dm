@@ -112,6 +112,15 @@
 		alarm()
 	..()
 
+/obj/machinery/firealarm/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(80))
+		var/area/our_area = get_area(src)
+		if(our_area.fire)
+			reset()
+		else
+			alarm()
+
 /obj/machinery/firealarm/proc/alarm(mob/user)
 	if(!is_operational || (last_alarm+FIREALARM_COOLDOWN > world.time))
 		return

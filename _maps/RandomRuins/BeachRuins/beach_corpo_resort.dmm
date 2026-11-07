@@ -430,7 +430,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "bE" = (
-/obj/item/storage/toolbox/ammo/c45,
+/obj/item/storage/toolbox/ammo/c10mm,
 /obj/item/storage/toolbox/ammo/c57,
 /obj/item/storage/toolbox/ammo/c10mm,
 /obj/structure/closet/crate/secure/weapon,
@@ -657,9 +657,6 @@
 	dir = 4;
 	id = "resort_disposals"
 	},
-/obj/machinery/recycler/deathtrap{
-	desc = "A large crushing machine used to recycle small items inefficiently. There are lights on the side. A warning stamped on the side reads 'NOT ONLY WILL THIS KILL YOU, IT WILL HURT THE ENTIRE TIME YOU'RE DYING.'"
-	},
 /obj/structure/sign/warning{
 	pixel_y = -24
 	},
@@ -667,6 +664,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/recycler,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/electrical)
 "cw" = (
@@ -7918,7 +7916,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "Hl" = (
-/obj/item/storage/toolbox/ammo/c45{
+/obj/item/storage/toolbox/ammo/c10mm{
 	pixel_x = 15;
 	pixel_y = 7
 	},

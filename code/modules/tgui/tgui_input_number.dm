@@ -133,10 +133,10 @@
 
 /datum/tgui_input_number/ui_data(mob/user)
 	. = list(
+		"init_value" = default, /// You cannot use default as a const
 		"max_value" = max_value,
-		"message" = message,
 		"min_value"	= min_value,
-		"placeholder" = default, /// You cannot use default as a const
+		"message" = message,
 		"title" = title,
 	)
 	if(timeout)
@@ -148,9 +148,9 @@
 		return
 	switch(action)
 		if("submit")
-			if(max_value && (length(params["entry"]) > max_value))
+			if(max_value && (params["entry"] > max_value))
 				return FALSE
-			if(min_value && (length(params["entry"]) < min_value))
+			if(min_value && (params["entry"] < min_value))
 				return FALSE
 			set_entry(params["entry"])
 			SStgui.close_uis(src)

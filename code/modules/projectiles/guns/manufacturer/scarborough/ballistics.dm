@@ -190,6 +190,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/revolver/viper/no_mag
 	spawn_no_ammo = TRUE
@@ -204,6 +205,17 @@ EMPTY_GUN_HELPER(revolver/viper)
 	item_state = "viper23"
 	spread = 5
 	spread_unwielded = 10
+	obj_flags = UNIQUE_RENAME
+
+	unique_reskin = list(\
+		"Pickle" = "viper23_pickle",
+		"Magnate's Daily" = "viper23_classy",
+		"Intranet Defender" = "viper23_rilena",
+		"Cheap Deal" = "viper23_trash",
+		"Merc's Best Friend" = "viper23_larp",
+		"Rancher" = "viper23_cowboy"
+		)
+	unique_reskin_changes_inhand = TRUE
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -281,6 +293,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
@@ -417,7 +430,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
+	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -427,9 +440,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 	spread = 3
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m45_cobra
+	default_ammo_type = /obj/item/ammo_box/magazine/m10_cobra
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45_cobra,
+		/obj/item/ammo_box/magazine/m10_cobra,
 	)
 
 	fire_sound = 'sound/weapons/gun/smg/cobra.ogg'
@@ -466,7 +479,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 
 /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	name = "Cobra-20"
-	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
+	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in 10mm."
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
@@ -485,22 +498,22 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
 
-/obj/item/ammo_box/magazine/m45_cobra
+/obj/item/ammo_box/magazine/m10_cobra
 
-/obj/item/ammo_box/magazine/m45_cobra
-	name = "Cobra magazine (.45)"
+/obj/item/ammo_box/magazine/m10_cobra
+	name = "Cobra magazine (10mm)"
 	desc = "A 24-round magazine for the Cobra submachine gun. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cobra_mag-24"
 	base_icon_state = "cobra_mag"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
 	max_ammo = 24
 
-/obj/item/ammo_box/magazine/m45_cobra/update_icon_state()
+/obj/item/ammo_box/magazine/m10_cobra/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/m45_cobra/empty
+/obj/item/ammo_box/magazine/m10_cobra/empty
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder
@@ -833,53 +846,96 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 			. += "hydra_mag_[magazine.base_icon_state]_[capacity_number]"
 
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg
-	name = "SAW-80 \"Hydra\""
-	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a support weapon, with heavier components for sustained firing and a large muzzle brake. Chambered in 5.56mm CLIP."
+/obj/item/gun/ballistic/automatic/hmg/python
+	name = "\improper SAW-90 Python"
+	desc = "Scarborough Arms' premier Squad-Automatic Weapon. A unique bullpup LMG with best-in-class weight and capacity. The reloading process has been described with every colorful name in the Tecetian language. Chambered in 5.56mm CLIP."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
-	icon_state = "hydra_lmg"
-	item_state = "hydra_lmg"
+	icon_state = "python"
+	item_state = "python"
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_FULLAUTO
+	fire_sound = 'sound/weapons/gun/rifle/hydra.ogg'
+	rack_sound = 'sound/weapons/gun/hmg/cm40_cocked.ogg'
 
-	burst_delay = 0.08 SECONDS
-	fire_delay = 0.08 SECONDS
-	spread = 7
-	spread_unwielded = 25
-	recoil = 2
-	recoil_unwielded = 4
-	wield_slowdown = SAW_SLOWDOWN
-	wield_delay = 0.9 SECONDS //ditto
+	rack_sound_vary = FALSE
 
-	valid_attachments = SCARBOROUGH_ATTACHMENTS
-	refused_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight
-		)
-	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	load_sound_vary = FALSE
+	eject_sound_vary = FALSE
+
+	load_sound = 'sound/weapons/gun/hmg/cm40_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/hmg/cm40_reload.ogg'
+	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
+
+	fire_delay = 0.1 SECONDS
+
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	manufacturer = MANUFACTURER_SCARBOROUGH
+	default_ammo_type = /obj/item/ammo_box/magazine/python_box
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/python_box,
+	)
+
+	spread = 8
+	spread_unwielded = 35
+
+	recoil = 1.5 //identical to other LMGS
+	recoil_unwielded = 7 //same as skm
+
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+
+	has_bipod = TRUE
+
+	//you get the rail slot back when the bipod is an attachment
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 48,
-			"y" = 19,
+			"x" = 42,
+			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 21,
-			"y" = 24,
-		),
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 30,
-			"y" = 15,
+			"x" = 19,
+			"y" = 22,
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
-	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+	deploy_recoil_bonus = -1
+	deploy_spread_bonus = -6
 
+/obj/item/gun/ballistic/automatic/hmg/python/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	AddElement(/datum/element/update_icon_updates_onmob)
+NO_MAG_GUN_HELPER(automatic/hmg/python)
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
-	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
-	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
+/obj/item/ammo_box/magazine/python_box
+	name = "Python drum magazine (5.56x42mm CLIP)"
+	desc = "A 90 round drum magazine for SAW-90 Python. These rounds do good damage with good armor penetration."
+	base_icon_state = "python_mag"
+	icon_state = "python_mag-1"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	caliber = "5.56x42mm"
+	max_ammo = 90
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/python_box/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/python_box/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	name = "SBR-80 \"Hydra\""

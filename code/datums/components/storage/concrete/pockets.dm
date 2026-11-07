@@ -140,7 +140,7 @@
 	original_parent = parent
 	. = ..()
 	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/revolver/detective,
+		/obj/item/gun/ballistic/revolver/flint,
 		/obj/item/ammo_box/c38))
 
 /datum/component/storage/concrete/pockets/holster/nukie

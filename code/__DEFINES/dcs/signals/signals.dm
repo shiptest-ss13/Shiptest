@@ -69,6 +69,7 @@
 	//Positions for overrides list
 	#define EXAMINE_POSITION_ARTICLE 1
 	#define EXAMINE_POSITION_BEFORE 2
+	#define EXAMINE_POSITION_NAME 3
 	//End positions
 	#define COMPONENT_EXNAME_CHANGED (1<<0)
 ///from base of [/atom/proc/update_appearance]: (updates)
@@ -418,7 +419,7 @@
 #define COMSIG_MOB_GO_INACTIVE "mob_go_afk"
 ///from base of mob/death(): (gibbed)
 #define COMSIG_MOB_DEATH "mob_death"
-///from base of mob/set_stat(): (new_stat)
+///from base of mob/set_stat(): (new_stat, old_stat)
 #define COMSIG_MOB_STATCHANGE "mob_statchange"
 ///from base of mob/clickon(): (atom/A, params)
 #define COMSIG_MOB_CLICKON "mob_clickon"

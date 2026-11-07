@@ -234,6 +234,9 @@
 /obj/item/organ/eyes/robotic/kepori
 	eye_icon_state = "eyes_kepori_synth"
 
+/obj/item/organ/eyes/robotic/vox
+	eye_icon_state = "eyes_vox_synth"
+
 /obj/item/organ/eyes/robotic/mono
 	name = "monoeye"
 	eye_icon_state = "eyes_mono"

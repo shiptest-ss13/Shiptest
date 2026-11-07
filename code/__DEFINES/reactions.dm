@@ -1,13 +1,14 @@
 //Defines used in atmos gas reactions. Used to be located in ..\modules\atmospherics\gasmixtures\reactions.dm, but were moved here because fusion added so fucking many.
 
 //Plasma fire properties
-#define PLASMA_BURN_RATE_BASE 1.4
-#define PLASMA_BURN_RATE_DELTA 9
+/// Amount of oxygen it takes to combust one mole of plasma. Be very careful adjusting this, or risk exponential heat increase.
+#define PLASMA_OXY_RATIO 1
+#define PLASMA_BURN_RATE 0.1
 #define PLASMA_MINIMUM_OXYGEN_NEEDED 2
 #define PLASMA_MINIMUM_OXYGEN_PLASMA_RATIO 30
 #define FIRE_CARBON_ENERGY_RELEASED 100000 //Amount of heat released per mole of burnt carbon into the tile
 #define FIRE_HYDROGEN_ENERGY_RELEASED 286000 //Amount of heat released per mole of burnt hydrogen and/or tritium(hydrogen isotope)
-#define FIRE_PLASMA_ENERGY_RELEASED 3000000 //Amount of heat released per mole of burnt plasma into the tile
+#define FIRE_PLASMA_ENERGY_RELEASED 1500000 //Amount of heat released per mole of burnt plasma into the tile
 //General assmos defines.
 #define WATER_VAPOR_FREEZE 200
 //freon reaction
@@ -45,7 +46,7 @@
 #define FUSION_TRITIUM_MOLES_USED 1
 #define PLASMA_BINDING_ENERGY 20000000
 #define TOROID_CALCULATED_THRESHOLD 5.96 //! changing it by 0.1 generally doubles or halves fusion temps
-#define FUSION_TEMPERATURE_THRESHOLD 10000
+#define FUSION_TEMPERATURE_THRESHOLD 4000
 #define PARTICLE_CHANCE_CONSTANT (-20000000)
 #define FUSION_INSTABILITY_ENDOTHERMALITY 2
 #define FUSION_SCALE_DIVISOR 10 //! Used to be Pi

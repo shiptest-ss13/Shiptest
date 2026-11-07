@@ -45,7 +45,6 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/toggleoocdead,	/*toggles ooc on/off for everyone who is dead*/
 	/datum/admins/proc/toggleenter,		/*toggles whether people can join the current game*/
 	/client/proc/toggle_ship_spawn, /* toggles players spawning ships via the join menu / shuttle creators */
-	/client/proc/toggle_ship_auto_locking,
 	/datum/admins/proc/announce,		/*priority announce something to all clients.*/
 	/datum/admins/proc/set_admin_notice, /*announcement all clients see when joining the server.*/
 	/client/proc/admin_ghost,			/*allows us to ghost/reenter body at will*/
@@ -218,6 +217,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/client/proc/cmd_admin_toggle_fov,
+	/client/proc/allow_browser_inspect,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)

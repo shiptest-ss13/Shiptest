@@ -1002,7 +1002,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/structure/railing/corner{
 	layer = 4.1
 	},
@@ -3344,7 +3344,7 @@
 /area/outpost/maintenance/starboard)
 "rm" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/rack,
+/obj/machinery/vending/lottery,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "ro" = (
@@ -5743,9 +5743,7 @@
 "Dt" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/south,
-/obj/machinery/fax/admin/outpost{
-	pixel_y = 5
-	},
+/obj/machinery/fax/admin/outpost/yebiri,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "Du" = (
@@ -5990,13 +5988,11 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "EJ" = (
-/obj/structure/displaycase/forsale{
-	density = 1
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
+/obj/machinery/vending/disposable_guns,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "EO" = (

@@ -7,6 +7,7 @@
 	item_state = "ribbonblack"
 	alternate_worn_layer = BODY_FRONT_LAYER
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	w_class = WEIGHT_CLASS_SMALL
 	unique_reskin = list(
 		"white ribbon" = "ribbonwhite",
 		"grey ribbon" = "ribbongrey",

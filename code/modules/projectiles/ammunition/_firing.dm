@@ -81,12 +81,12 @@
 
 /obj/item/ammo_casing/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
-	if(!prob(BULLET_POP_CHANCE) || !BB)
+	if(!prob(BULLET_POP_CHANCE) || !BB || !can_cookoff)
 		return
 	ready_proj()
 	var/fire_dir = pick(GLOB.alldirs)
 	var/turf/target = get_ranged_target_turf(get_turf(src),fire_dir,6)
-	fire_casing(target,null, null, null, FALSE, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+	fire_casing(target,null, null, null, FALSE, null, 0, src,TRUE)
 	playsound(src, 'sound/weapons/gun/pistol/shot.ogg', 100, TRUE)
 	update_appearance()
 	return TRUE

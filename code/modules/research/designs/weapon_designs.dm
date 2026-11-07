@@ -249,12 +249,12 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/candorammo
-	name = "Candor magazine (.45)"
-	desc = "A single stack Candor magazine, faithfully designed to chamber .45 and fit into the popular Candor sidearms."
+	name = "Candor magazine (.44)"
+	desc = "A single stack Candor magazine, faithfully designed to chamber .44 and fit into the popular Candor sidearms."
 	id = "candorammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/magazine/m45
+	build_path = /obj/item/ammo_box/magazine/m44
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -304,15 +304,6 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/c45
-	name = "Ammo Box (.45)"
-	id = "c45"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 17000)
-	build_path = /obj/item/storage/box/ammo/c45
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
 /datum/design/c556mmHITP
 	name = "Ammo Box (5.56mm HITP caseless)"
 	id = "c556mmHITP"
@@ -341,16 +332,6 @@
 	build_path = /obj/item/storage/box/ammo/c10mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/rubbershot45
-	name = "Rubbershot .45 ammo box"
-	desc = "A box full of less-than-lethal .45 ammunition."
-	id = "rubbershot45"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/storage/box/ammo/c45_rubber
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/rubbershot556mmHITP
 	name = "Rubbershot 5.56mm HITP caseless ammo box"
@@ -382,16 +363,6 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/ap45
-	name = "AP .45 ammo box"
-	desc = "A box full of armor piercing .45 ammunition."
-	id = "ap45"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
-	build_path = /obj/item/storage/box/ammo/c45_ap
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
-
 /datum/design/ap556mmHITP
 	name = "AP 5.56mm HITP caseless ammo box"
 	desc = "A box full of armor piercing 5.56mm HITP caseless ammunition."
@@ -421,16 +392,6 @@
 	build_path = /obj/item/storage/box/ammo/c10mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/hp45
-	name = "HP .45 ammo box"
-	desc = "A box full of hollow point .45 ammunition."
-	id = "hp45"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
-	build_path = /obj/item/storage/box/ammo/c45_hp
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/hp556mmHITP
 	name = "HP 5.56mm HITP caseless ammo box"
@@ -576,7 +537,7 @@
 	id = "ammo_1911"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_box/magazine/m45
+	build_path = /obj/item/ammo_box/magazine/m44
 	category = list("Imported")
 
 /datum/design/disposable_gun

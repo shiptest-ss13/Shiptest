@@ -803,14 +803,14 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	"}, "window=check_timer_sources;size=700x700")
 
 /client/proc/allow_browser_inspect()
-	set category = "Debug.Debug"
+	set category = "Debug"
 	set name = "Allow Browser Inspect"
 	set desc = "Allows browser debugging via inspect"
 
 	if(!check_rights(R_DEBUG))
 		return
 
-	var/client/user = usr
+	var/client/user = usr?.client
 
 	if(user.byond_version < 516)
 		to_chat(user, span_warning("You can only use this on 516!"))

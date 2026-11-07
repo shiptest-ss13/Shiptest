@@ -6,10 +6,10 @@
 	species_age_max = 175
 	species_traits = list(MUTCOLORS, LIPS, EMOTE_OVERLAY, MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
-	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings")
+	mutant_bodyparts = list("face_markings", "frills", "horns", "spines", "body_markings")
 	coldmod = 1.5
 	heatmod = 0.67
-	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None")
+	default_features = list("mcolor" = "0F0", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -33,7 +33,6 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_TAIL = /obj/item/organ/tail/lizard,
 	)
 
 	species_limbs = list(
@@ -43,6 +42,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/lizard,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/lizard/digitigrade,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard/digitigrade,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard,
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/sarathi

@@ -104,6 +104,9 @@
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index), 1)
 			owner.hand_bodyparts[held_index] = null
 
+	for(var/datum/action/old_action as anything in bodypart_actions)
+		old_action.Remove(owner)
+
 	for(var/thing in wounds)
 		var/datum/wound/W = thing
 		W.remove_wound(TRUE)
@@ -331,6 +334,8 @@
 	var/obj/item/bodypart/chest/mob_chest = C.get_bodypart(BODY_ZONE_CHEST)
 	if(mob_chest && !(mob_chest.acceptable_bodytype & bodytype))
 		return FALSE
+	if(SEND_SIGNAL(C, COMSIG_CARBON_ATTACH_LIMB, src) & COMPONENT_NO_ATTACH)
+		return FALSE
 	moveToNullspace()
 	set_owner(C)
 	C.add_bodypart(src)
@@ -368,6 +373,9 @@
 		// otherwise the wound thinks it's trying to replace an existing wound of the same type (itself) and fails/deletes itself
 		LAZYREMOVE(wounds, W)
 		W.apply_wound(src, TRUE)
+
+	for(var/datum/action/new_action as anything in bodypart_actions)
+		new_action.Grant(C)
 
 	update_bodypart_damage_state()
 
@@ -460,9 +468,10 @@
 	return
 
 /mob/living/carbon/regenerate_limb(limb_zone, noheal, robotic = FALSE)
-	var/obj/item/bodypart/limb
 	if(get_bodypart(limb_zone))
 		return FALSE
-	limb = new_body_part(limb_zone, robotic, FALSE)
-	limb.replace_limb(src, TRUE, TRUE)
+	var/obj/item/bodypart/new_part = new_body_part(limb_zone, robotic, FALSE)
+	if(!new_part)
+		return FALSE
+	new_part.replace_limb(src, TRUE, TRUE)
 	return TRUE
