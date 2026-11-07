@@ -173,9 +173,11 @@
 	icon_state = "hardsuit-hlheavy"
 	hardsuit_type = "hlheavy"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/hlheavy
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 50)
 	slowdown = 1.25
 	supports_variations = DIGITIGRADE_VARIATION
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/hardsuit/hlheavy
 	name = "Poltergeist heavy hardsuit helmet"
@@ -183,7 +185,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 	icon_state = "hardsuit0-hlheavy"
 	hardsuit_type = "hlheavy"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 50)
 	desc = "A thick, open-dome hardsuit helmet. It has excellent visibility and breathability."
 	supports_variations = SNOUTED_VARIATION
 
