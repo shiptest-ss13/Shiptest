@@ -64,22 +64,6 @@
 /// Wounds using this competition mode will remove any wounds of a lower severity than itself in a random wound roll. Used for ensuring the worse case scenario of a given injury_roll.
 #define WOUND_COMPETITION_OVERPOWER_LESSERS "wound_dominate"
 
-// ~burn wound infection defines
-// Thresholds for infection for burn wounds, once infestation hits each threshold, things get steadily worse
-/// below this has no ill effects from infection
-#define WOUND_INFECTION_MODERATE 4
-/// then below here, you ooze some pus and suffer minor tox damage, but nothing serious
-#define WOUND_INFECTION_SEVERE 8
-/// then below here, your limb occasionally locks up from damage and infection and briefly becomes disabled. Things are getting really bad
-#define WOUND_INFECTION_CRITICAL 12
-/// below here, your skin is almost entirely falling off and your limb locks up more frequently. You are within a stone's throw of septic paralysis and losing the limb
-#define WOUND_INFECTION_SEPTIC 20
-// above WOUND_INFECTION_SEPTIC, your limb is completely putrid and you start rolling to lose the entire limb by way of paralyzation. After 3 failed rolls (~4-5% each probably), the limb is paralyzed
-
-
-// ~random wound balance defines
-/// how quickly sanitization removes infestation and decays per second
-#define WOUND_BURN_SANITIZATION_RATE 0.15
 /// how much blood you can lose per second per slash max.
 #define WOUND_SLASH_MAX_BLOODFLOW 3
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per second on dead people, so even critical cuts will slowly clot in dead people
@@ -182,8 +166,6 @@
 
 /// When a wound is staining the gauze with blood
 #define GAUZE_STAIN_BLOOD 1
-/// When a wound is staining the gauze with pus
-#define GAUZE_STAIN_PUS 2
 
 /// Limb integrity is reduced to this before being used to calculate how much integrity loss it should have.
 #define WOUND_MAX_INTEGRITY_CONSIDERED 50
