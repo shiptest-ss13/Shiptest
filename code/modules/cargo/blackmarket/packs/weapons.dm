@@ -380,6 +380,7 @@
 	name = "VG-A5 Beam Gun"
 	desc = "So you've seen those quad burst Etherbor Volleyguns? Well, this thing has a quintuple burst! That means five!"
 	item = /obj/item/gun/energy/kalix/pgf/nock
+	pair_item = list(/datum/blackmarket_item/ammo/military_etherbor_cell)
 
 	cost_min = 3500
 	cost_max = 5000
@@ -390,6 +391,7 @@
 	name = "BG-16 Beam Gun"
 	desc = "Not satisfied by Etherbor's civilian offerings? Try this military-grade one we found!"
 	item = /obj/item/gun/energy/kalix/pgf
+	pair_item = list(/datum/blackmarket_item/ammo/military_etherbor_cell)
 
 	cost_min = 2500
 	cost_max = 5000
@@ -453,8 +455,8 @@
 	availability_prob = 30
 
 /datum/blackmarket_item/weapon/guncase/cycler
-	name = "Cycler Shotgun"
-	desc = "Perpetuate the cycle of violence with this dual-feed shotgun! Has two built-in 4-shell magazine tubes that can be swapped at the press of a button!"
+	name = "Negotiator Shotgun"
+	desc = "Ever wanted to be fluent in the universal language of violence? Consider yourself bilingual with the Negotiator shotgun! Has a 5 round dual-tube system that can swap out ammo with an easy click of a button. "
 	item = /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	gun_unloaded = FALSE
 	mag_number = 0
@@ -654,28 +656,4 @@
 	cost_max = 6000
 	stock = 1
 	availability_prob = 15
-
-/// mecha equipment
-
-/datum/blackmarket_item/weapon/mecha_syringe_gun
-	name = "Mounted Syringe Gun"
-	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
-	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
-
-	cost_min = 5000
-	cost_max = 7000
-	stock = 1
-	availability_prob = 10
-	spawn_weighting = FALSE
-
-/datum/blackmarket_item/weapon/mecha_hades
-	name = "Mounted FNX-99 Carbine"
-	desc = "This so called \"Phoenix\" carbine is sure to burn brightly above the competition! Exosuit not included."
-	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
-	pair_item = list(/datum/blackmarket_item/ammo/mecha_hades_ammo)
-
-	cost_min = 2000
-	cost_max = 3000
-	stock_max = 2
-	availability_prob = 25
 

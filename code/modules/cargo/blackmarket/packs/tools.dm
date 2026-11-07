@@ -31,28 +31,6 @@
 	stock = 2
 	availability_prob = 25
 
-/datum/blackmarket_item/tool/jaws
-	name = "Jaws of Life"
-	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."
-	item = /obj/item/crowbar/power
-
-	cost_min = 750
-	cost_max = 1000
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/power_drill
-	name = "Hand Drill"
-	desc = "Treat your tools right, and they'll outlive you. It was certainly the case for the last guy."
-	item = /obj/item/screwdriver/power
-
-	cost_min = 750
-	cost_max = 1000
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 40
-
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
 	desc = "Twice as effective as a monocular for seeing across long distances."
