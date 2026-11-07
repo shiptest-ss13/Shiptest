@@ -20,6 +20,7 @@
 	. = ..()
 	if(. && seller)
 		seller.adjust_money(round(cost * (1 - MARKET_WITHHOLDING_TAX)), "Market: [name] sold for [cost].")
+		seller.bank_card_talk("Market: [name] sold for [cost].")
 	QDEL_IN(src, 10 MINUTES) //This category cannot hold more than 40 items at a time, so we need to clear sold items.
 
 /datum/blackmarket_item/local_good/proc/delete_reference(datum/source)

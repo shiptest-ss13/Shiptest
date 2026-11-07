@@ -43,7 +43,7 @@ export const LTSRBT = (props, context) => {
               minValue={min_price}
               maxValue={max_price}
               unit="cr"
-              onChange={(value) =>
+              onChange={(e, value) =>
                 act('change_price', {
                   value: value,
                 })

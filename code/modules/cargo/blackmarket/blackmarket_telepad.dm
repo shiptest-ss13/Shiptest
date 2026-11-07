@@ -268,9 +268,9 @@
 			current_desc = trim(value, MAX_MESSAGE_LEN)
 			return TRUE
 		if("change_price")
-			var/new_cost = params["value"]
-			if(text2num(new_cost != null))
-				current_price = clamp(text2num(new_cost), LTSRBT_MIN_PRICE, LTSRBT_MAX_PRICE)
+			var/new_cost = text2num(params["value"])
+			if(!isnull(new_cost))
+				current_price = clamp(new_cost, LTSRBT_MIN_PRICE, LTSRBT_MAX_PRICE)
 			else
 				current_price = LTSRBT_MIN_PRICE
 			return TRUE
