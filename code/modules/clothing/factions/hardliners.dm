@@ -165,6 +165,28 @@
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/space/hardsuit/hlheavy
+	name = "Poltergeist heavy combat hardsuit"
+	desc = "A hardsuit design consisting of recycled parts from heavier, advanced designs. Many hard to maintain components have been stripped out, resulting in an encumbering suit with suitably heavy armor."
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	icon_state = "hardsuit-hlheavy"
+	hardsuit_type = "hlheavy"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/hlheavy
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	slowdown = 1.25
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/hlheavy
+	name = "Poltergeist heavy hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+	icon_state = "hardsuit0-hlheavy"
+	hardsuit_type = "hlheavy"
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	desc = "A thick, open-dome hardsuit helmet. It has excellent visibility and breathability."
+	supports_variations = SNOUTED_VARIATION
+
 /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/hl
 	name = "Hardliner mining hardsuit helmet"
 	desc = "A heavy-duty helmet with spacious interior, good for absorbing impacts."
