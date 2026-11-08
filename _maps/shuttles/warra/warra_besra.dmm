@@ -1614,15 +1614,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "oN" = (
-/obj/structure/bed/roller,
-/obj/machinery/iv_drip{
-	pixel_x = -11
-	},
-/obj/effect/turf_decal/corner/transparent/blue/mono,
-/obj/effect/turf_decal/corner/transparent/white/mono,
-/obj/effect/turf_decal/industrial/hatch/blue,
-/turf/open/floor/plasteel/mono,
-/area/ship/medical)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "oT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/white{
@@ -5378,8 +5371,15 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "TD" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
+/obj/structure/bed/roller,
+/obj/machinery/iv_drip{
+	pixel_x = -11
+	},
+/obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/effect/turf_decal/corner/transparent/white/mono,
+/obj/effect/turf_decal/industrial/hatch/blue,
+/turf/open/floor/plasteel/mono,
+/area/ship/medical)
 "TH" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -6132,9 +6132,9 @@ SM
 hx
 ab
 fZ
-oN
+TD
 XV
-oN
+TD
 fZ
 ab
 ZG
@@ -6251,11 +6251,11 @@ hx
 hx
 aY
 Sw
-TD
+oN
 KX
 PT
 xe
-TD
+oN
 Sw
 FO
 qd
@@ -6419,11 +6419,11 @@ lK
 lK
 lK
 Sw
-TD
+oN
 HI
 PT
 tl
-TD
+oN
 Sw
 pF
 pF
