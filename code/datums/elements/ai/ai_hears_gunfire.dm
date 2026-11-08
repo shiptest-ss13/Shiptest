@@ -63,10 +63,12 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 // an explosion has gone off, so we go and look around where it sounded like it was, as nobody's recorded as setting it off
 /datum/element/ai_hears_gunfire/proc/on_explosion(datum/source, atom/epicenter, devastation_range, heavy_impact_range, light_impact_range)
 	SIGNAL_HANDLER
-	var/turf/origin = get_turf(epicenter)
-	if(!origin)
+	alert_ai_to_noise(get_turf(epicenter), AI_EXPLOSION_HEARING_RANGE + max(devastation_range, heavy_impact_range, light_impact_range) * 2)
+
+// a loud noise at origin
+/proc/alert_ai_to_noise(turf/origin, hearing_range)
+	if(!origin || hearing_range < 1)
 		return
-	var/hearing_range = AI_EXPLOSION_HEARING_RANGE + max(devastation_range, heavy_impact_range, light_impact_range) * 2
 	for(var/mob/living/listener as anything in GLOB.ai_gunfire_listeners)
 		if(QDELETED(listener) || listener.z != origin.z || get_dist(listener, origin) > hearing_range)
 			continue
