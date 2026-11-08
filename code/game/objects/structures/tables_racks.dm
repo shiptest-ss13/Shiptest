@@ -881,7 +881,7 @@
 
 /obj/structure/table/endtable/Initialize()
 	. = ..()
-	AddElement(/datum/element/nudge)
+	AddElement(/datum/element/nudge, -8, 8, 0, 16)
 
 /obj/structure/table/endtable/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()
