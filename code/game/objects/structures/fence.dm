@@ -10,6 +10,11 @@
 #define LARGE_HOLE 2 //large hole in the section - can walk through
 #define MAX_HOLE_SIZE LARGE_HOLE
 
+
+/*
+ needs to be refactored (resprited too?)
+ having barbed wire fences would be cool too i guess
+*/
 /obj/structure/fence
 	name = "fence"
 	desc = "A chain link fence. Not as effective as a wall, but generally it keeps people out."
@@ -19,13 +24,18 @@
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
 
+	pass_flags_self = PASSGRILLE | PASSSTRUCTURE | PASSWEAKSTRUCTURE
+
+	climbable = TRUE
+	climb_time = 6 SECONDS
+	climb_stun = 2 SECONDS
+
+
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
-	var/invulnerable = FALSE
 
 /obj/structure/fence/Initialize()
 	. = ..()
-
 	update_cut_status()
 
 /obj/structure/fence/examine(mob/user)
@@ -33,9 +43,9 @@
 
 	switch(hole_size)
 		if(MEDIUM_HOLE)
-			. += "There is a large hole in \the [src]."
+			. += span_notice("There is a large hole in \the [src].")
 		if(LARGE_HOLE)
-			. += "\The [src] has been completely cut through."
+			. += span_notice("\The [src] has been completely cut through.")
 
 /obj/structure/fence/end
 	icon_state = "end"
@@ -57,36 +67,32 @@
 	icon_state = "straight_cut3"
 	hole_size = LARGE_HOLE
 
-/obj/structure/fence/attackby(obj/item/W, mob/user)
-	if(W.tool_behaviour == TOOL_WIRECUTTER)
-		if(!cuttable)
-			to_chat(user, span_warning("This section of the fence can't be cut!"))
-			return
-		if(invulnerable)
-			to_chat(user, span_warning("This fence is too strong to cut through!"))
-			return
-		var/current_stage = hole_size
-		if(current_stage >= MAX_HOLE_SIZE)
-			to_chat(user, span_warning("This fence has too much cut out of it already!"))
-			return
+/obj/structure/fence/wirecutter_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
+	if(!cuttable)
+		to_chat(user, span_warning("This section of the fence can't be cut!"))
+		return FALSE
+	if(flags_1 & NODECONSTRUCT_1)
+		to_chat(user, span_warning("This fence is too strong to cut through!"))
+		return FALSE
+	var/current_stage = hole_size
+	if(current_stage >= MAX_HOLE_SIZE)
+		to_chat(user, span_warning("This fence has too much cut out of it already!"))
+		return FALSE
 
-		user.visible_message(span_danger("\The [user] starts cutting through \the [src] with \the [W]."),\
-		span_danger("You start cutting through \the [src] with \the [W]."))
+	user.visible_message(span_danger("\The [user] starts cutting through \the [src] with \the [I]."),\
+	span_danger("You start cutting through \the [src] with \the [I]."))
 
-		if(do_after(user, CUT_TIME*W.toolspeed, target = src))
-			if(current_stage == hole_size)
-				switch(++hole_size)
-					if(MEDIUM_HOLE)
-						visible_message(span_notice("\The [user] cuts into \the [src] some more."))
-						to_chat(user, span_info("You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger."))
-						climbable = TRUE
-					if(LARGE_HOLE)
-						visible_message(span_notice("\The [user] completely cuts through \the [src]."))
-						to_chat(user, span_info("The hole in \the [src] is now big enough to walk through."))
-						climbable = FALSE
-
-				update_cut_status()
-
+	if(I.use_tool(src, user, CUT_TIME))
+		if(current_stage == hole_size)
+			switch(++hole_size)
+				if(MEDIUM_HOLE)
+					visible_message(span_notice("\The [user] cuts into \the [src] some more."))
+					to_chat(user, span_info("You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger."))
+				if(LARGE_HOLE)
+					visible_message(span_notice("\The [user] completely cuts through \the [src]."))
+					to_chat(user, span_info("The hole in \the [src] is now big enough to walk through."))
+			update_cut_status()
 	return TRUE
 
 /obj/structure/fence/proc/update_cut_status()
@@ -114,7 +120,7 @@
 /obj/structure/fence/door/opened
 	icon_state = "door_opened"
 	open = TRUE
-	density = TRUE
+	density = FALSE
 
 /obj/structure/fence/door/attack_hand(mob/user)
 	if(can_open(user))

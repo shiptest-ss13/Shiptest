@@ -308,7 +308,6 @@
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION
 
-
 // pilot softsuit
 /obj/item/clothing/suit/space/inteq/pilot
 	name = "inteq pilot space suit"
@@ -377,9 +376,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.head_update(src, forced = 1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	update_item_action_buttons()
 
 // Headgear
 

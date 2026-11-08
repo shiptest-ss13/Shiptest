@@ -934,10 +934,18 @@
 
 /obj/item/storage/box/flares
 	name = "box of flares"
-	illustration = "firecracker"
+	desc = "A box made to hold flares - and nothing else."
+	illustration = "flare"
+
+/obj/item/storage/box/flares/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
+	STR.max_volume = STORAGE_VOLUME_CONTAINER_M
+	STR.set_holdable(list(/obj/item/flashlight/flare))
 
 /obj/item/storage/box/flares/PopulateContents()
-	for(var/i in 1 to 7)
+	for(var/i in 1 to 8)
 		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/glowsticks
@@ -996,73 +1004,6 @@
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/medipen(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/rubbershot
-	name = "box of rubber shots"
-	desc = "A box full of rubber shots, designed for riot shotguns."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "rubbershot_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/rubbershot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/rubbershot(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/lethalshot
-	name = "box of lethal shotgun shots"
-	desc = "A box full of lethal shots, designed for riot shotguns."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "lethalshot_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/lethalshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/buckshot(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/techshot
-	name = "box of unloaded shotgun tech shells"
-	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "techshot_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/techshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/techshell(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/beanbag
-	name = "box of beanbags"
-	desc = "A box full of beanbag shells."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "beanbag_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/beanbag/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/ammo_casing/shotgun/beanbag(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/slugshot
-	name = "box of 12-gauge slug shotgun shells"
-	desc = "a box full of slug shots, designed for riot shotguns"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "slugshot_box"
-
-	illustration = null
-	possible_illustrations = null
-
-
-/obj/item/storage/box/slugshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"

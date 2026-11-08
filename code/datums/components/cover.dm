@@ -48,6 +48,7 @@
 			return TRUE
 		if(directional_cover && blocker.dir != border_dir)
 			return TRUE
-		if(prob(proj_pass_rate))
+		var/adjusted_pass_rate = max(100, proj_pass_rate * proj.accuracy_mod)
+		if(prob(adjusted_pass_rate))
 			return TRUE
 		return FALSE

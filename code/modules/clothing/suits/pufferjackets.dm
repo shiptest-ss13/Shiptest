@@ -35,24 +35,6 @@
 	. = ..()
 	base_icon_state = icon_state
 
-/obj/item/clothing/suit/toggle/pufferjacket/suit_toggle()
-	set src in usr
-
-	if(!can_use(usr))
-		return 0
-
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[base_icon_state]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[base_icon_state]_t"
-		src.suittoggled = TRUE
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-
 /obj/item/clothing/suit/toggle/pufferjacket/white
 	current_skin = "white pufferjacket"
 
@@ -102,24 +84,6 @@
 /obj/item/clothing/suit/toggle/puffervest/Initialize()
 	. = ..()
 	base_icon_state = icon_state
-
-/obj/item/clothing/suit/toggle/puffervest/suit_toggle()
-	set src in usr
-
-	if(!can_use(usr))
-		return 0
-
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[base_icon_state]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[base_icon_state]_t"
-		src.suittoggled = TRUE
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
 
 /obj/item/clothing/suit/toggle/puffervest/white
 	current_skin = "white puffervest"

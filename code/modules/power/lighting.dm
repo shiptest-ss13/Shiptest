@@ -207,8 +207,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
-	icon = 'icons/obj/lighting.dmi'
-	var/base_state = "tube"		// base description and icon_state
+	icon = 'icons/obj/wallmounts/lights.dmi'
+	// base description and icon_state
+	var/base_state = "tube"
 	icon_state = "tube-on"
 	desc = "A lighting fixture."
 	layer = BELOW_OBJ_LAYER
