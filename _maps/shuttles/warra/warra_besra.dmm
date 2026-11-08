@@ -592,6 +592,7 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "ff" = (
@@ -1620,7 +1621,6 @@
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "oT" = (
@@ -2088,9 +2088,12 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 7
+	pixel_x = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "tp" = (
@@ -2980,7 +2983,6 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "An" = (
@@ -4273,6 +4275,9 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Lf" = (
@@ -5033,6 +5038,9 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "RO" = (
@@ -5370,16 +5378,8 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "TD" = (
-/obj/structure/bed/roller,
-/obj/machinery/iv_drip{
-	pixel_x = -11
-	},
-/obj/effect/turf_decal/corner/transparent/blue/mono,
-/obj/effect/turf_decal/corner/transparent/white/mono,
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/plasteel/mono,
-/area/ship/medical)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "TH" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -6134,7 +6134,7 @@ ab
 fZ
 oN
 XV
-TD
+oN
 fZ
 ab
 ZG
@@ -6251,11 +6251,11 @@ hx
 hx
 aY
 Sw
-Sw
+TD
 KX
 PT
 xe
-Sw
+TD
 Sw
 FO
 qd
@@ -6419,11 +6419,11 @@ lK
 lK
 lK
 Sw
-Sw
+TD
 HI
 PT
 tl
-Sw
+TD
 Sw
 pF
 pF
