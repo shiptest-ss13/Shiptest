@@ -143,7 +143,24 @@
 	staggered_until = 0
 	remove_movespeed_modifier(/datum/movespeed_modifier/ai_staggered)
 
+
+/mob/living/basic/human/updatehealth()
+	. = ..()
+	update_damage_slowdown()
+
+// slowed down mobs with damage taken, scaled to max health so tougher mobs aren't slowed sooner
+/mob/living/basic/human/proc/update_damage_slowdown()
+	if(!damage_slows || stat == DEAD)
+		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown)
+		return
+	var/health_deficiency = (maxHealth - health + staminaloss) * 100 / maxHealth
+	if(health_deficiency >= 40)
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = health_deficiency / 75)
+	else
+		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown)
+
 /mob/living/basic/human/update_stamina()
+	update_damage_slowdown()
 	var/stamina_damage = getStaminaLoss()
 	if(stamina_damage > DAMAGE_PRECISION && health - stamina_damage <= 0 && stat == CONSCIOUS)
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))

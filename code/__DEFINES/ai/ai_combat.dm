@@ -91,7 +91,7 @@
 ///Always on the move, darting about and jinking out of the way
 #define AI_MOBILITY_HIGH 3
 // How fast melee mobs move, whatever they're wearing, a touch slower than a running player, see RUN_DELAY
-#define AI_MELEE_MOVE_DELAY 1.8
+#define AI_MELEE_MOVE_DELAY 1.9
 
 // Up close: pressing in, shoves, staggers and getting back up
 ///How long AI rushes in when one of its side's stingbangs or flashbangs put down everyone it was fighting, or one of its own is being used as a shield

@@ -22,7 +22,7 @@
 	rotate_on_lying = TRUE // so you can see we're down
 	stamina_regen_delay = STAMINA_REGEN_BLOCK_TIME // as long as a player waits before getting their breath back
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 1, OXY = 1) // stamina too, so stingballs, batons and disablers wear us down as they would a player
-	speed = 1.8 // a touch slower than a running player, see RUN_DELAY, so they can be outrun, slightly slower than the simplemobs used to be I think
+	speed = 1.9 // a touch slower than a running player, see RUN_DELAY, so they can be outrun, slightly slower than the simplemobs used to be I think
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -77,6 +77,8 @@
 	var/pressure_sealed = FALSE
 	/// If TRUE, what would knock us down or out only staggers us, slowing us for as long instead, capped, so we stay on our feet. For the likes of juiced-up brutes
 	var/knockdowns_slow_instead = FALSE
+	/// If TRUE, we slow down as we're hurt
+	var/damage_slows = TRUE
 	/// TRUE just while we're rolling to put out a fire
 	var/rolling_out_fire = FALSE
 	/// Until when we're staggered, with knockdowns_slow_instead

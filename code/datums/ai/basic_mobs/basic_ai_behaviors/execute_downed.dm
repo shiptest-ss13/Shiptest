@@ -74,7 +74,7 @@
 	if(magazine.shots_left <= 0)
 		magazine.start_reload()
 		return FALSE
-	return !magazine.reloading || magazine.single_loads
+	return !magazine.reloading || magazine.can_break_off_reload()
 
 /datum/ai_behavior/execute_downed/proc/start_execution(datum/ai_controller/controller, mob/living/basic/human/executioner, mob/living/carbon/human/victim, style)
 	AI_LOG_DECISION(controller, "execute_downed: finishing off [victim] with a [style]")

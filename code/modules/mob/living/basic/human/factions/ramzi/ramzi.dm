@@ -244,8 +244,8 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	maxHealth = 200
-	health = 200
+	maxHealth = 180
+	health = 180
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	morale_breaks = FALSE // sooner die than run

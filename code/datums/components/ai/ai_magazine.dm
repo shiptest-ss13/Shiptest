@@ -2,7 +2,7 @@
 /datum/component/ai_magazine
 	var/magazine_size = 0
 	var/shots_left = 0
-	var/reload_time = 3 SECONDS
+	var/reload_time = 4 SECONDS
 	var/reload_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg'
 	var/eject_empty_sound = 'sound/weapons/gun/general/magazine_remove_empty.ogg'
@@ -10,6 +10,9 @@
 	var/cycle_sound
 	var/single_loads = FALSE
 	var/single_load_time = 0.5 SECONDS
+	//for single loaders, how long we keep loading from empty before we'll break off to fire, so calling a reload means something
+	var/single_load_commit = 2 SECONDS
+	var/committed_until = 0
 	var/last_fired_time = 0
 	var/reloading = FALSE //so we dont try to shoot during a reload
 	//bumped whenever a reload starts or is broken off, so the timers of one we broke off know they're stale
@@ -45,7 +48,7 @@
 /datum/component/ai_magazine/proc/on_pre_fire(mob/living/basic/source, atom/target)
 	SIGNAL_HANDLER
 	if(reloading)
-		if(!single_loads || shots_left <= 0)
+		if(!can_break_off_reload())
 			return COMPONENT_CANCEL_RANGED_ATTACK
 		// loading a round at a time, so we break off to fire what's in, as a player would
 		reload_id++
@@ -62,6 +65,10 @@
 	if(shots_left <= 0)
 		addtimer(CALLBACK(src, PROC_REF(start_reload)), 0.1 SECONDS) // once the shot's gone off
 	return NONE
+
+// mid-reload, we've rounds in and have loaded long enough to stop and fire them
+/datum/component/ai_magazine/proc/can_break_off_reload()
+	return single_loads && shots_left > 0 && world.time >= committed_until
 
 /datum/component/ai_magazine/proc/needs_reload()
 	return !reloading && shots_left < magazine_size
@@ -104,6 +111,8 @@
 	else
 		playsound(basic_mob, tactical ? eject_sound : eject_empty_sound, 50, TRUE)
 	if(!tactical)
+		if(single_loads)
+			committed_until = world.time + single_load_commit
 		basic_mob.visible_message(span_notice("[basic_mob] starts reloading."))
 		ai_callout(basic_mob, AI_CALLOUT_RELOADING)
 	else if(single_loads)
