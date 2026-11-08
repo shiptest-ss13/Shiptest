@@ -52,7 +52,7 @@
 	name = "rezadone bottle"
 	desc = "A small bottle of rezadone."
 	list_reagents = list(/datum/reagent/medicine/rezadone = 30)
-	label = "A label states: Dermal-Restoring Antibiotic - Dose of 10 units at once for extreme infection. Dose of 5u at once for dermal husking. Keep under 30 units."
+	label = "A label states: Dermal-Restoring Regenerative Compound - Dose of 5u at once for dermal husking. Keep under 30 units."
 
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
