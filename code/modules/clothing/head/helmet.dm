@@ -33,6 +33,12 @@
 	// should we overlay the items inside our helmet
 	var/content_overlays = FALSE
 
+	var/datum/action/item_action/toggle_helmet_eyewear/action_eyewear
+	/// What the wearer has on their eyes
+	var/obj/item/clothing/glasses/watched_eyewear
+	/// Holds the button steady mid-swap, when eyewear is briefly nowhere
+	var/toggling_eyewear = FALSE
+
 /obj/item/clothing/head/helmet/Initialize()
 	. = ..()
 	if(attached_light)
@@ -43,7 +49,17 @@
 	var/obj/item/flashlight/seclite/old_light = set_attached_light(null)
 	if(old_light)
 		qdel(old_light)
+	action_eyewear = null
+	watch_eyewear(null)
 	return ..()
+
+/obj/item/clothing/head/helmet/proc/get_stowed_eyewear()
+	return pocket && (locate(/obj/item/clothing/glasses) in pocket)
+
+/obj/item/clothing/head/helmet/on_pocket_changed(atom/movable/thing)
+	. = ..()
+	if(istype(thing, /obj/item/clothing/glasses))
+		update_eyewear_action()
 
 
 /obj/item/clothing/head/helmet/examine(mob/user)
@@ -51,9 +67,12 @@
 	if(attached_light)
 		. += "It has \a [attached_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight)
-			. += span_info("[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detatch it.")
+			. += span_info("[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detach it.")
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
+	var/obj/item/clothing/glasses/stowed_eyewear = get_stowed_eyewear()
+	if(stowed_eyewear)
+		. += span_info("[stowed_eyewear] can be flipped down from [src] with its action button while worn.")
 
 
 /obj/item/clothing/head/helmet/handle_atom_del(atom/A)
@@ -107,40 +126,174 @@
 /obj/item/clothing/head/helmet/ui_action_click(mob/user, action)
 	if(istype(action, action_light))
 		toggle_helmlight()
+	else if(action == action_eyewear)
+		toggle_eyewear(user)
 	else
 		..()
 
+/obj/item/clothing/head/helmet/item_action_slot_check(slot, mob/user, datum/action/action)
+	if(action && action == action_eyewear)
+		return slot == ITEM_SLOT_HEAD
+	return ..()
+
+/obj/item/clothing/head/helmet/Exited(atom/movable/gone, direction)
+	. = ..()
+	if(gone == attached_light)
+		on_light_removed()
+
+// for seclite removal
+/obj/item/clothing/head/helmet/proc/on_light_removed()
+	var/obj/item/flashlight/removed_light = set_attached_light(null)
+	removed_light.update_brightness()
+	update_helmlight()
+	update_appearance()
+	if(ismob(loc))
+		var/mob/wearer = loc
+		wearer.update_inv_head()
+	QDEL_NULL(action_light)
+
+/obj/item/clothing/head/helmet/equipped(mob/user, slot)
+	. = ..()
+	if(slot != ITEM_SLOT_HEAD)
+		return
+	RegisterSignal(user, COMSIG_MOB_EQUIPPED_ITEM, PROC_REF(on_wearer_equipped), override = TRUE)
+	watch_eyewear(user.get_item_by_slot(ITEM_SLOT_EYES))
+	update_eyewear_action()
+
+/obj/item/clothing/head/helmet/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOB_EQUIPPED_ITEM)
+	watch_eyewear(null)
+	// our head slot isn't cleared yet
+	update_eyewear_action(src)
+
+/obj/item/clothing/head/helmet/proc/on_wearer_equipped(mob/source, obj/item/equipped_item, slot)
+	SIGNAL_HANDLER
+	if(slot != ITEM_SLOT_EYES)
+		return
+	watch_eyewear(equipped_item)
+	update_eyewear_action()
+
+// monitor whats being worn in case it gets taken off
+/obj/item/clothing/head/helmet/proc/watch_eyewear(obj/item/clothing/glasses/new_eyewear)
+	if(new_eyewear == watched_eyewear)
+		return
+	if(watched_eyewear)
+		UnregisterSignal(watched_eyewear, list(COMSIG_ITEM_DROPPED, COMSIG_QDELETING))
+	watched_eyewear = istype(new_eyewear) ? new_eyewear : null
+	if(watched_eyewear)
+		RegisterSignals(watched_eyewear, list(COMSIG_ITEM_DROPPED, COMSIG_QDELETING), PROC_REF(on_eyewear_removed))
+
+/obj/item/clothing/head/helmet/proc/on_eyewear_removed(obj/item/source)
+	SIGNAL_HANDLER
+	watch_eyewear(null)
+	// the eye slot isn't cleared yet
+	update_eyewear_action(source)
+
+/obj/item/clothing/head/helmet/proc/can_stow_eyewear(obj/item/clothing/glasses/eyewear)
+	var/datum/component/storage/pocket = GetComponent(/datum/component/storage)
+	if(!pocket)
+		return FALSE
+	if(HAS_TRAIT(eyewear, TRAIT_NODROP) || HAS_TRAIT(eyewear, TRAIT_NO_STORAGE_INSERT) || is_type_in_typecache(eyewear, pocket.cant_hold))
+		return FALSE
+	return !length(pocket.can_hold) || is_type_in_typecache(eyewear, pocket.can_hold)
+
+// only show the button while there's eyewear to flip down or up.
+/obj/item/clothing/head/helmet/proc/update_eyewear_action(obj/item/leaving)
+	if(QDELETED(src) || toggling_eyewear)
+		return
+	var/wants_action = get_stowed_eyewear()
+	var/mob/living/carbon/human/wearer = loc
+	if(!wants_action && leaving != src && istype(wearer) && wearer.head == src)
+		var/obj/item/clothing/glasses/worn = wearer.glasses
+		wants_action = worn && worn != leaving && can_stow_eyewear(worn)
+	if(wants_action && !action_eyewear)
+		action_eyewear = add_item_action(/datum/action/item_action/toggle_helmet_eyewear)
+	else if(!wants_action && action_eyewear)
+		remove_item_action(action_eyewear)
+		action_eyewear = null
+
+/obj/item/clothing/head/helmet/proc/toggle_eyewear(mob/living/carbon/human/user)
+	if(!istype(user) || user.head != src || user.incapacitated())
+		return
+	toggling_eyewear = TRUE
+	if(get_stowed_eyewear())
+		swap_eyewear(user)
+	else if(user.glasses)
+		stow_eyewear(user)
+	toggling_eyewear = FALSE
+	update_eyewear_action()
+
+/obj/item/clothing/head/helmet/proc/stow_eyewear(mob/living/carbon/human/user)
+	var/obj/item/clothing/glasses/worn = user.glasses
+	if(!can_stow_eyewear(worn))
+		to_chat(user, span_warning("[worn] won't fit in [src]!"))
+		return
+	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, worn, user, TRUE))
+		to_chat(user, span_warning("There's no room in [src] for [worn]!"))
+		return
+	to_chat(user, span_notice("You flip [worn] up into [src]."))
+
+/obj/item/clothing/head/helmet/proc/swap_eyewear(mob/living/carbon/human/user)
+	var/obj/item/clothing/glasses/stowed = get_stowed_eyewear()
+	var/obj/item/clothing/glasses/worn = user.glasses
+	if(worn && !can_stow_eyewear(worn))
+		to_chat(user, span_warning("[worn] won't fit in [src]!"))
+		return
+
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, stowed, user.drop_location())
+
+	// the pocket can still be full once ours are out
+	if(worn && !SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, worn, user, TRUE))
+		to_chat(user, span_warning("There's no room in [src] for [worn]!"))
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, stowed, null, TRUE, TRUE)
+		return
+
+	if(!user.equip_to_slot_if_possible(stowed, ITEM_SLOT_EYES, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		to_chat(user, span_warning("You can't flip [stowed] down!"))
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, stowed, null, TRUE, TRUE)
+		if(worn)
+			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, worn, user.drop_location())
+			user.equip_to_slot_if_possible(worn, ITEM_SLOT_EYES, disable_warning = TRUE, bypass_equip_delay_self = TRUE)
+		return
+
+	to_chat(user, span_notice("You flip [stowed] down from [src][worn ? ", stowing [worn]" : ""]."))
+
 /obj/item/clothing/head/helmet/attackby(obj/item/tool, mob/user, params)
 	if(istype(tool, /obj/item/flashlight/seclite))
-		var/obj/item/flashlight/seclite/attaching_seclite = tool
-		if(can_flashlight && !attached_light)
-			if(!user.transferItemToLoc(attaching_seclite, src))
-				return
-			to_chat(user, span_notice("You click [attaching_seclite] into place on [src]."))
-			set_attached_light(attaching_seclite)
-			update_appearance()
-			update_helmlight()
-			action_light = new(src)
-			if(loc == user)
-				action_light.Grant(user)
+		try_attach_light(tool, user)
 		return
 	return ..()
 
-/obj/item/clothing/head/helmet/AltClick(mob/living/user)
-	. = ..()
-	if(can_flashlight && attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
-		to_chat(user, span_notice("You unclip [attached_light] from [src]."))
-		attached_light.forceMove(drop_location())
-		if(Adjacent(user) && !issilicon(user))
-			user.put_in_hands(attached_light)
+/obj/item/clothing/head/helmet/proc/try_attach_light(obj/item/flashlight/seclite/attaching_seclite, mob/user)
+	if(!can_flashlight)
+		to_chat(user, span_warning("[src] has nowhere to mount [attaching_seclite]!"))
+		return
+	if(attached_light)
+		to_chat(user, span_warning("[src] already has [attached_light] mounted!"))
+		return
+	if(!user.transferItemToLoc(attaching_seclite, src))
+		return
+	to_chat(user, span_notice("You click [attaching_seclite] into place on [src]."))
+	set_attached_light(attaching_seclite)
+	update_appearance()
+	update_helmlight()
+	action_light = new(src)
+	if(loc == user)
+		action_light.Grant(user)
 
-		var/obj/item/flashlight/removed_light = set_attached_light(null)
-		update_helmlight()
-		removed_light.update_brightness(user)
-		update_appearance()
-		user.update_inv_head()
-		QDEL_NULL(action_light)
+/obj/item/clothing/head/helmet/AltClick(mob/living/user)
+	// unclip the light before reskinning, so one alt-click doesn't do both
+	if(!can_flashlight || !attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
+		return ..()
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return TRUE
+	var/obj/item/flashlight/seclite/removed_light = attached_light
+	to_chat(user, span_notice("You unclip [removed_light] from [src]."))
+	removed_light.forceMove(drop_location())
+	if(!issilicon(user))
+		user.put_in_hands(removed_light)
+	return TRUE
 
 /obj/item/clothing/head/helmet/proc/toggle_helmlight()
 	set name = "Toggle Helmet light"
@@ -189,9 +342,9 @@
 		else
 			flashlightlight_overlay = mutable_appearance(mob_overlay_icon, flashlight_state)
 		. += flashlightlight_overlay
-	if(content_overlays)
-		for(var/obj/item/I in contents)
-			. += I.get_helmet_overlay()
+	if(content_overlays && pocket)
+		for(var/obj/item/stowed_item in pocket)
+			. += stowed_item.get_helmet_overlay()
 	else
 		return
 
