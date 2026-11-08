@@ -12,8 +12,8 @@
 
 
 /*
- needs to be refactored (resprited too?)
- having barbed wire fences would be cool too i guess
+* needs to be refactored (resprited too?)
+* having barbed wire fences would be cool too i guess
 */
 /obj/structure/fence
 	name = "fence"

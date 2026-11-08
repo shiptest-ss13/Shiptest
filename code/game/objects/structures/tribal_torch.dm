@@ -4,8 +4,8 @@
 	desc = "A free-standing torch lighting the area up."
 	density = FALSE
 	anchored = TRUE
-	icon = 'icons/obj/candle.dmi'
-	icon_state = "torch_unlit"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "tribal"
 	light_color = LIGHT_COLOR_FIRE
 	light_power = 1
 	light_range = 0
@@ -46,14 +46,14 @@
 
 /obj/structure/standing_torch/proc/snuff_flame()
 	burning = FALSE
-	icon_state = "torch_unlit"
+	icon_state = "tribal"
 	set_light(0)
 	update_appearance()
 	return
 
 /obj/structure/standing_torch/proc/StartBurning()
 	burning = TRUE
-	icon_state = "torch_lit"
+	icon_state = "tribal-on"
 	set_light(7)
 	update_appearance()
 	return
