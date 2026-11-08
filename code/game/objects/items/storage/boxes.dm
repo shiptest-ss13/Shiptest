@@ -941,7 +941,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
-	STR.max_volume = STORAGE_VOLUME_CONTAINER_M
+	STR.max_combined_w_class = 24
+	STR.max_items = 8
 	STR.set_holdable(list(/obj/item/flashlight/flare))
 
 /obj/item/storage/box/flares/PopulateContents()
