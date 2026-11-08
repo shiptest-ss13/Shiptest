@@ -131,6 +131,8 @@
 
 			ui.close()
 
+			var/ship_name = tgui_input_text(lobby_mob, "Give your ship a name?", "Name your vessel", , 32, FALSE, timeout = 30 SECONDS)
+
 			var/ship_loc
 			var/datum/overmap_star_system/selected_system //the star system we want to spawn in
 
@@ -156,7 +158,7 @@
 			usr = spawnee
 
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template, ship_loc, selected_system)
+			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template, ship_loc, selected_system, ship_name)
 
 			if(!target?.shuttle_port)
 				to_chat(spawnee, span_danger("There was an error loading the ship. Please contact admins!"))
