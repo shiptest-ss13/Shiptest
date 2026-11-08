@@ -70,12 +70,6 @@
 	icon_state = "bandana"
 	item_state = "bandana"
 
-/obj/item/clothing/head/bearpelt
-	name = "bear pelt hat"
-	desc = "Fuzzy."
-	icon_state = "bearpelt"
-	item_state = "bearpelt"
-
 /obj/item/clothing/head/fedora
 	name = "fedora"
 	icon_state = "fedora"

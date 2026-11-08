@@ -33,6 +33,7 @@
 	light_color = COLOR_VERY_SOFT_YELLOW
 	light_on = FALSE
 	var/muzzleflash_iconstate // icon state to use
+	var/flashy = TRUE // If we have a muzzle flash or not
 
 	// FIRING //
 	var/actually_shoots = TRUE // is this gun real and not a dud
@@ -527,12 +528,12 @@
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
-	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
+	var/muzzle_angle = get_angle(get_turf(src), pbtarget)
 
 	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
 
 	// do muzzle flash
-	if(muzzle_flash && !muzzle_flash.applied)
+	if(muzzle_flash && !muzzle_flash.applied && flashy)
 		handle_muzzle_flash(user, muzzle_angle)
 
 	// do recoil
