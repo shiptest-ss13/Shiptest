@@ -764,11 +764,40 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "ms" = (
 /obj/structure/rack,
-/obj/item/storage/box/techshot{
-	pixel_y = 5
-	},
 /obj/item/gun/ballistic/shotgun/brimstone{
 	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
