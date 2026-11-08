@@ -502,6 +502,10 @@
 	for(var/i in 1 to 7)
 		new /obj/item/grenade/c4(src)
 
+/obj/item/storage/backpack/duffelbag/sec/c4/less/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/grenade/c4(src)
+
 /obj/item/storage/backpack/duffelbag/sec/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
 	new /obj/item/hemostat(src)
