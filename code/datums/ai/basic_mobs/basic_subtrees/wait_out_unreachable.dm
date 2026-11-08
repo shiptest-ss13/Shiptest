@@ -160,6 +160,8 @@
 			return FALSE
 		if(breach[2] > AI_CHEAP_BREACH_HITS && !no_hiding && !will_breach(controller, target))
 			return FALSE
+		if(breach[2] > AI_CHEAP_BREACH_HITS && shot_by_lately(controller, target))
+			return FALSE // no smashing a way through while they're shooting us, get out of their line first
 		smash_target = breach[1]
 		controller.set_blackboard_key(BB_BASIC_MOB_SMASH_TARGET, smash_target)
 		controller.set_blackboard_key(BB_BASIC_MOB_SMASHING_FOR, target)

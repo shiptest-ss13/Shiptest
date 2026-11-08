@@ -246,8 +246,20 @@
 				return TRUE
 	return FALSE
 
+// get_splash_radius() for a type of projectile, before there's one to ask, worked out once for each type
+/proc/ai_projectile_splash_radius(projectile_type)
+	var/static/list/radius_by_type = list()
+	if(!ispath(projectile_type, /obj/projectile))
+		return 0
+	if(isnull(radius_by_type[projectile_type]))
+		var/obj/projectile/projectile = new projectile_type
+		radius_by_type[projectile_type] = projectile.get_splash_radius()
+		qdel(projectile)
+	return radius_by_type[projectile_type]
+
 // chance (0-1) a shot at aim hits an ally, as list(chance, ally most in the way), from how much of the spread cone each ally covers
-/proc/ai_friendly_fire_risk(mob/living/shooter, atom/aim, spread, reach, pass_flags, turf/from)
+// splash is how far round where it lands it hurts people, anyone of ours that close to aim counting as a sure hit
+/proc/ai_friendly_fire_risk(mob/living/shooter, atom/aim, spread, reach, pass_flags, turf/from, splash = 0)
 	var/turf/shooter_turf = get_turf(shooter)
 	var/turf/start = from || shooter_turf
 	var/turf/aim_turf = get_turf(aim)
@@ -260,7 +272,7 @@
 	var/most_in_way_chance = 0
 	// same lookup targetting already caches each tick, so it's usually free. Includes player allies, unlike get_ai_allies_in_range()
 	var/look_range = shooter.ai_controller?.blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE
-	var/needed_range = CEILING(reach, 1) + get_dist(shooter_turf, start)
+	var/needed_range = CEILING(reach, 1) + get_dist(shooter_turf, start) + splash
 	if(needed_range > look_range)
 		look_range = max(needed_range, AI_FRIENDLY_FIRE_LONG_LOOK_RANGE)
 	for(var/mob/living/ally in ai_cached_hearers(shooter, look_range))
@@ -269,6 +281,8 @@
 		var/turf/ally_turf = get_turf(ally)
 		if(!ally_turf || ally_turf == start)
 			continue
+		if(splash && get_dist(ally_turf, aim_turf) <= splash && ai_blast_reaches(aim_turf, ally_turf))
+			return list(1, ally) // caught in it where it lands
 		var/distance = sqrt((ally_turf.x - start.x) ** 2 + (ally_turf.y - start.y) ** 2)
 		if(distance > reach + 0.5)
 			continue // past the shot's reach
@@ -428,6 +442,9 @@
 		return null // walls and the like, or we're not firing anything that'd break it
 	if(breaking_would_vent(shooter, blocker))
 		return null // dont vent if we cant survive it!!!
+	var/splash = ai_projectile_splash_radius(projectile_type)
+	if(splash && get_dist(shooter, blocker) <= splash)
+		return null // it'd go off on us
 	var/shots_needed = shots_to_break(blocker, projectile_type, shooter)
 	if(isnull(shots_needed))
 		return null

@@ -217,7 +217,17 @@
 
 // chance our next shot at aim hits an ally
 /datum/component/ranged_attacks/proc/friendly_fire_risk(atom/aim, reach = 0, turf/from)
-	return ai_friendly_fire_risk(parent, aim, expected_spread(aim), reach, get_pass_flags(), from)
+	return ai_friendly_fire_risk(parent, aim, expected_spread(aim), reach, get_pass_flags(), from, get_splash_radius())
+
+// if round has splash, how big
+/datum/component/ranged_attacks/proc/get_splash_radius()
+	return ai_projectile_splash_radius(get_projectile_type())
+
+// whether a shot at aim would land close enough to splash us too
+/datum/component/ranged_attacks/proc/splash_hits_us(atom/aim)
+	var/splash = get_splash_radius()
+	var/turf/aim_turf = get_turf(aim)
+	return splash && aim_turf && get_dist(parent, aim_turf) <= splash
 
 // the body zone a shot is aimed at
 /datum/component/ranged_attacks/proc/pick_aim_zone(aim_settled)
@@ -279,6 +289,8 @@
 	if(!firer.client && target && !has_clear_shot(firer, target))
 		return // no more clear shot so stop shooting
 	var/atom/aim = target || fallback_turf
+	if(!firer.client && splash_hits_us(aim))
+		return // they've come too close to fire it at
 	if(!firer.client && !isnull(ally_risk_tolerance))
 		var/list/risk = friendly_fire_risk(aim, ally_watch_range)
 		if(risk[1] > ally_risk_tolerance)

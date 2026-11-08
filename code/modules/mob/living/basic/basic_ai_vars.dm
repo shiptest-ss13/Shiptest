@@ -51,9 +51,14 @@
 
 /// How close someone can get before we back off, for the blackboard, from retreat_distance. Null leaves it to our AI
 /mob/living/basic/proc/get_ai_retreat_distance()
-	if(isnull(retreat_distance) && !isnull(engage_distance))
-		return 0
-	return retreat_distance
+	var/retreat = retreat_distance
+	if(isnull(retreat) && !isnull(engage_distance))
+		retreat = 0
+	var/datum/component/ranged_attacks/ranged_attack = GetComponent(/datum/component/ranged_attacks)
+	var/splash = ranged_attack?.get_splash_radius()
+	if(splash)
+		retreat = max(retreat || 0, splash + 1)
+	return retreat
 
 // Sets a blackboard key from one of our vars. Null restores the original archetype value, if it had one.
 /mob/living/basic/proc/set_ai_var_key(key, value)

@@ -160,6 +160,8 @@
 	var/datum/component/ranged_attacks/flamethrower/flamer = ranged_attack
 	if(istype(flamer) && flamer.get_ally_in_spray(basic_mob, final_target))
 		return AI_BEHAVIOR_DELAY // dont burn allies
+	if(ranged_attack.splash_hits_us(final_target))
+		return AI_BEHAVIOR_DELAY // too close, it'd catch us too
 	if(!ranged_attack.try_start_volley())
 		return AI_BEHAVIOR_DELAY
 	ranged_attack.fire_volley(final_target, shots, burst_interval, ally_risk_tolerance = in_the_way ? null : friendly_fire_tolerance)
@@ -315,6 +317,8 @@
 		return FALSE // something's in the way we'd only be shooting
 	var/datum/component/ranged_attacks/flamethrower/flamer = ranged_attack
 	if(istype(flamer) && flamer.get_ally_in_spray(basic_mob, spot))
+		return FALSE
+	if(ranged_attack.splash_hits_us(spot))
 		return FALSE
 	// not just up to where we're aiming, as the shot carries on past it
 	var/friendly_fire_tolerance = ai_friendly_fire_tolerance(basic_mob.ai_controller, blind = TRUE)

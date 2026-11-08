@@ -219,6 +219,10 @@
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
 
+/// Get splash radius of the projectile, if available
+/obj/projectile/proc/get_splash_radius()
+	return 0
+
 /// Returns the chance to hit the limb it's aiming for
 /obj/projectile/proc/get_accuracy(atom/target)
 	if(firer && HAS_TRAIT(firer, TRAIT_PERFECT_ATTACKER))
