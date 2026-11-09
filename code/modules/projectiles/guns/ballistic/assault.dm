@@ -156,9 +156,9 @@
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/examine(mob/examiner)
 	. = ..()
-	. += span_notice("You could use an iron rod on it to sharpen it for use in the DMA.")
+	. += span_notice("You could <b>right click</b> a metal rod on it to sharpen it for use in the DMA.")
 
-/obj/item/gun/ballistic/automatic/assault/attackby(obj/item/thingy, mob/user, params)
+/obj/item/gun/ballistic/automatic/assault/attackby_secondary(obj/item/thingy, mob/user, params)
 	if(istype(thingy, /obj/item/stack/rods))
 		to_chat(user, span_notice("You begin sharpening a rod on [src]..."))
 		var/obj/item/stack/rods/its_a_cylinder = thingy
