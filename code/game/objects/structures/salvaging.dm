@@ -573,7 +573,7 @@
 
 // common drop pool
 /obj/structure/rusted_gun_safe/proc/drop_common()
-	var/roll = rand(1,135)
+	var/roll = rand(1,140)
 	switch(roll)
 		if(1 to 5)
 			// e10
@@ -688,6 +688,17 @@
 			// clip nettle
 			new /obj/item/gun/energy/clover/pistol(loc)
 			new /obj/item/stock_parts/cell/gun/mini(loc)
+		if(136 to 140)
+			// e20 and a conversion kit
+			new /obj/item/gun/energy/laser/e20(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			var/kit = pick(
+				/obj/item/attachment/e20mod/scatter,
+				/obj/item/attachment/e20mod/heavy,
+				/obj/item/attachment/e20mod/efficiency,
+				/obj/item/attachment/e20mod/pierce)
+			new kit(loc)
 
 // uncommon drop pool
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
