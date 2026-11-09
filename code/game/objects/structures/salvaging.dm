@@ -781,7 +781,7 @@
 
 // rare drop pool
 /obj/structure/rusted_gun_safe/proc/drop_rare()
-	var/roll = rand(1,50)
+	var/roll = rand(1,55)
 	switch(roll)
 		if(1 to 5)
 			// invictus
@@ -824,7 +824,11 @@
 			// opportunist
 			new /obj/item/gun/energy/cybersun/lorentz/opportunist(loc)
 			new /obj/item/stock_parts/cell/gun/cybersun(loc)
-
+		if(51 to 55)
+			// swiss cheese
+			new /obj/item/gun/ballistic/automatic/assault/swiss_cheese(loc)
+			new /obj/item/ammo_box/magazine/swiss
+			new /obj/item/ammo_box/magazine/swiss
 
 // weird drop pool
 /obj/structure/rusted_gun_safe/proc/drop_weird()
