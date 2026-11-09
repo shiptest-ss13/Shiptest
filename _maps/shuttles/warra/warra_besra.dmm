@@ -5533,8 +5533,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Vx" = (
-/obj/structure/closet/wall/directional/south{
-	name = "Engineer's locker"
+/obj/structure/closet/secure_closet/wall/directional/south{
+	icon_state = "generic_wall";
+	name = "Engineer's locker";
+	req_access_txt = "10"
 	},
 /obj/item/storage/backpack/duffelbag/engineering,
 /obj/item/storage/backpack/industrial,
