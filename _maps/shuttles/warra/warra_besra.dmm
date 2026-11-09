@@ -1712,6 +1712,7 @@
 /obj/item/stack/sheet/mineral/titanium/five,
 /obj/item/stack/sheet/mineral/titanium/five,
 /obj/structure/railing,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "pV" = (
@@ -2521,17 +2522,13 @@
 	dir = 6;
 	layer = 2.041
 	},
-/obj/item/reagent_containers/glass/mortar/metal{
-	pixel_y = 8;
-	pixel_x = 4
-	},
-/obj/item/pestle{
-	pixel_y = 4;
-	pixel_x = -5
-	},
 /obj/item/kitchen/rollingpin{
 	pixel_y = 5;
 	pixel_x = -11
+	},
+/obj/machinery/reagentgrinder{
+	pixel_x = 6;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen)
@@ -3257,9 +3254,8 @@
 "Cv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/table/glass,
-/obj/item/book/random{
-	pixel_y = 3;
-	pixel_x = -5
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_y = 12
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
@@ -3991,6 +3987,10 @@
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 5
 	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = -3;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "IG" = (
@@ -4429,7 +4429,11 @@
 	pixel_y = 7
 	},
 /obj/item/shield/tele{
-	pixel_y = 2;
+	pixel_y = 6;
+	pixel_x = 7
+	},
+/obj/item/shield/tele{
+	pixel_y = -2;
 	pixel_x = 7
 	},
 /turf/open/floor/plasteel/dark,
@@ -5056,11 +5060,6 @@
 	},
 /obj/effect/turf_decal/siding/black,
 /obj/item/storage/box/smokebombs{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/storage/box/stingbangs{
-	pixel_x = 5;
 	pixel_y = 7
 	},
 /obj/structure/sign/warning/explosives{
