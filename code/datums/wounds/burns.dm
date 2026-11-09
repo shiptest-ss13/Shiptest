@@ -38,10 +38,8 @@
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/antibiotic))
 			flesh_healing += 0.5
 		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
-			to_chat(world, "sterilizine")
 			flesh_healing += 0.5
 		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine/purifadine))
-			to_chat(world, "purifadine")
 			flesh_healing += 0.9
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
 			flesh_healing += 0.5
