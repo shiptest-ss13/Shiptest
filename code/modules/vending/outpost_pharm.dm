@@ -1,11 +1,12 @@
 /obj/machinery/vending/outpost_pharmacy
 	name = "\improper Matahari Pharmaceuticals Quick Care Center"
 	desc = "A vending machine loaded with a variety of over-the-counter medications for dealing with everyday injuries."
-	// icon_state = "pharm"
+	icon_state = "mining"
+	icon_deny = "mining_deny"
 	refill_canister = /obj/item/vending_refill/pharm
 	default_price = 50
 	restock_hourly = TRUE
-	// light_mask = "pharm-light-mask"
+	light_mask = "mining-light-mask"
 
 	products = list(
 		// generalist healing
