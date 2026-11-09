@@ -213,7 +213,7 @@ GLOBAL_LIST_EMPTY(ai_live_explosives)
 		var/reach = info[1] + (explosive == fled_explosive ? safety_margin : 1)
 		if(distance > reach || distance >= nearest_distance)
 			continue
-		if(distance > AI_EXPLOSIVE_NOTICE_RANGE && !ai_can_see(controller.pawn, outermost, AI_VISION_RANGE(controller)))
+		if(distance > AI_EXPLOSIVE_NOTICE_RANGE && explosive != fled_explosive && !ai_can_see(controller.pawn, outermost, AI_VISION_RANGE(controller))) // one we're already running from we remember, rather than forgetting it in the dark
 			continue
 		nearest = list(explosive, info[1])
 		nearest_distance = distance
