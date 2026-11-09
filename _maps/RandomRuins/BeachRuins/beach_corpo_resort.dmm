@@ -657,9 +657,6 @@
 	dir = 4;
 	id = "resort_disposals"
 	},
-/obj/machinery/recycler/deathtrap{
-	desc = "A large crushing machine used to recycle small items inefficiently. There are lights on the side. A warning stamped on the side reads 'NOT ONLY WILL THIS KILL YOU, IT WILL HURT THE ENTIRE TIME YOU'RE DYING.'"
-	},
 /obj/structure/sign/warning{
 	pixel_y = -24
 	},
@@ -667,6 +664,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/recycler,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/electrical)
 "cw" = (

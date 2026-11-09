@@ -42,7 +42,6 @@
 #define AMBIENCE_AWAY "away"
 #define AMBIENCE_CREEPY "creepy" //not to be confused with spooky
 
-#define AMBIENCE_REEBE "reebe" //unused
 #define AMBIENCE_BEACH "beach"
 #define AMBIENCE_DESERT "desert"
 #define AMBIENCE_TUNDRA "tundra"
