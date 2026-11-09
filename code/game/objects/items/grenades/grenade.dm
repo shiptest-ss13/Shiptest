@@ -44,6 +44,10 @@
 	var/shrapnel_radius
 	var/shrapnel_initialized
 
+/obj/item/grenade/Destroy()
+	GLOB.ai_live_explosives -= src
+	return ..()
+
 /obj/item/grenade/deconstruct(disassembled = TRUE)
 	if(!disassembled)
 		prime()
