@@ -258,6 +258,7 @@
 	slowdown = 1
 	drag_slowdown = 1
 	back_slowdown = 0.5
+	var/folded_slowdown = 0
 	repair_material = /obj/item/stack/sheet/rglass
 	w_class = WEIGHT_CLASS_NORMAL
 	var/active = 0
@@ -268,8 +269,15 @@
 	return 0
 
 /obj/item/shield/tele/get_slowdown()
-	if(!active)
-		return 0
+	if(!active && !broken)
+		return folded_slowdown
+	return ..()
+
+/obj/item/shield/tele/update_slowdown()
+	if(broken)
+		drag_slowdown = 0
+	else
+		drag_slowdown = active ? initial(drag_slowdown) : folded_slowdown
 	return ..()
 
 /obj/item/shield/tele/attack_self(mob/living/user)
@@ -288,9 +296,6 @@
 		force = 3
 		throwforce = 3
 		throw_speed = 3
-		slowdown = 0.5
-		drag_slowdown = 0.5
-		back_slowdown = 0.25
 		w_class = WEIGHT_CLASS_NORMAL
 		slot_flags = null
 		to_chat(user, span_notice("[src] can now be concealed."))
