@@ -124,8 +124,8 @@
 	desc = "Need to make a blacksite in a jiffy? Skip the fuss with this 150u jug of hexacrete!"
 	item = /obj/item/reagent_containers/glass/chem_jug/hexacrete
 
-	cost_min = 250
-	cost_max = 500
+	cost_min = 100
+	cost_max = 200
 	stock_min = 3
 	stock_max = 10
 	availability_prob = 30
@@ -139,5 +139,4 @@
 	cost_max = 750
 	stock_max = 3
 	availability_prob = 30
-
 

@@ -141,8 +141,8 @@
 	desc = "A modular jetpack compatible with most hardsuits. If the screws feel a bit loose, it's because the last suit it was attached to was beyond recovery."
 	item = /obj/item/tank/jetpack/suit
 
-	cost_min = 1250
-	cost_max = 3000
+	cost_min = 750
+	cost_max = 1500
 	stock_min = 1
 	stock_max = 3
 	availability_prob = 25
