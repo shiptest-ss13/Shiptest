@@ -33,6 +33,9 @@
 	SIGNAL_HANDLER
 	if(!pusher.canUseTopic(thing_to_nudge, BE_CLOSE))
 		return
+	INVOKE_ASYNC(src, PROC_REF(pick_coords), thing_to_nudge, pusher)
+
+/datum/element/nudge/proc/pick_coords(obj/structure/thing_to_nudge, mob/living/pusher)
 	var/x = clamp(input(pusher, "Choose your X coordinate: Valid Range ([min_x], [max_x])", "Pick a location", 0) as num, min_x, max_x)
 	var/y = clamp(input(pusher, "Choose your Y coordinate: Valid Range ([min_y], [max_y])", "Pick a location", 0) as num, min_y, max_y)
 	// we have to check again in case the user moved away during range selection
