@@ -172,13 +172,17 @@
 	item_state = "stimpen"
 	base_icon_state = "stimpen"
 	custom_price = 100
-	volume = 20
-	amount_per_transfer_from_this = 20
-	list_reagents = list(/datum/reagent/drug/cinesia = 5, /datum/reagent/medicine/tramal = 5, /datum/reagent/medicine/indomide = 10)
+	volume = 30
+	amount_per_transfer_from_this = 30
+	list_reagents = list(/datum/reagent/drug/cinesia = 5, /datum/reagent/medicine/tramal = 5, /datum/reagent/medicine/indomide = 10, /datum/reagent/medicine/alvitane = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
 	name = "crisis stimpack"
 	desc = "An autoinjector containing a cocktail of potent stimulants and long-release healing chemicals. Designed for stabilizing and mobilizing patients in emergency situations where medical help may be hours or days away."
+	icon_state = "morphen"
+	item_state = "morphen"
+	base_icon_state = "morphen"
+	custom_price = 200
 	volume = 25
 	amount_per_transfer_from_this = 25
 	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/drug/cinesia = 5, /datum/reagent/medicine/panacea = 15)
@@ -278,7 +282,7 @@
 	desc = "A crudely made injection device claiming to be full of \"ADRENALINE BOOSTER\". Better than nothing?"
 	volume = 15
 	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/drug/ephedrine = 15)
+	list_reagents = list(/datum/reagent/medicine/ephedrine = 15)
 	icon_state = "maintenance"
 	base_icon_state = "maintenance"
 
