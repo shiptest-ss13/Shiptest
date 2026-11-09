@@ -137,7 +137,6 @@
 	burst_size = 3
 	burst_delay = 0.04 SECONDS
 	fire_delay = 0.25 SECONDS
-	spread = 8
 	weapon_weight = WEAPON_MEDIUM
 	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
@@ -152,7 +151,7 @@
 	default_attachments = list(/obj/item/attachment/gun/ballistic/swiss_cheese_dma)
 	unique_attachments = list(/obj/item/attachment/gun/ballistic/swiss_cheese_dma)
 	manufacturer = MANUFACTURER_SOLARARMORIES
-	spread = 8
+	spread = 2
 	spread_unwielded = 15
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/examine(mob/examiner)
