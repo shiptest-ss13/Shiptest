@@ -13,9 +13,6 @@
 	/// changes yield of sliced cake, default for cake is 5
 	var/yield = 5
 
-/obj/item/food/cake/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/food_storage)
 
 /obj/item/food/cake/make_processable()
 	if (slice_type)
