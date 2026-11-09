@@ -15,7 +15,6 @@
 /obj/item/food/bread/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/dunkable, 10)
-	AddComponent(/datum/component/food_storage)
 
 /obj/item/food/bread/make_processable()
 	if(slice_type)
