@@ -120,7 +120,7 @@
 
 	ADD_TRAIT(user, TRAIT_FLOORED, "tackle")
 	user.adjustStaminaLoss(stamina_cost)
-	user.throw_at(A, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user))
+	user.throw_at(A, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user), gentle = TRUE) //gentle because we'll handle our own impact damage
 	return(COMSIG_MOB_CANCEL_CLICKON)
 
 /**
@@ -164,7 +164,6 @@
 	var/roll = rollTackle(target)
 
 	tackling = FALSE
-	tackle.gentle = TRUE
 
 	switch(roll)
 		if(-INFINITY to -5)
@@ -294,8 +293,6 @@
 			var/obj/item/bodypart/tail/lizard_tail = T.get_bodypart(BODY_ZONE_TAIL)
 			if(!lizard_tail) // lizards without tails are off-balance
 				defense_mod -= 1
-			else if(lizard_tail.wagging) // lizard tail wagging is robust and can swat away assailants!
-				defense_mod += 1
 
 	// OF-FENSE
 	var/mob/living/carbon/sacker = parent
@@ -384,21 +381,15 @@
 
 	switch(oopsie)
 		if(99 to INFINITY)
-			// can you imagine standing around minding your own business when all of the sudden some guy fucking launches himself into a wall at full speed and irreparably paralyzes himself?
+			// can you imagine standing around minding your own business when all of the sudden some guy fucking launches himself into a wall at full speed and paralyzes himself?
 			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack! Holy shit!"))
 
-			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
-			if(hed)
-				hed.receive_damage(brute = 40, updating_health = FALSE, wound_bonus = 40)
-			else
-				user.adjustBruteLoss(40, updating_health = FALSE)
-
-			user.adjustStaminaLoss(30)
+			takeTackleDamage(user, stamina = 30, damage = 40, wound = 40, guarantee_head_hit = TRUE)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
 			playsound(user, 'sound/effects/wounds/crack2.ogg', 70, TRUE)
 			user.force_pain_noise(400)
-			user.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic) // oopsie indeed!
+			user.gain_trauma(/datum/brain_trauma/severe/paralysis) // oopsie indeed!
 			shake_camera(user, 7, 7)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 4.5)
@@ -406,12 +397,8 @@
 		if(97 to 98)
 			user.visible_message(span_danger("[user] slams face-first into [hit] with a concerning squish, immediately going limp!"), span_userdanger("You slam face-first into [hit], and immediately lose consciousness!"))
 
-			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
-			if(hed)
-				hed.receive_damage(brute=30, updating_health=FALSE, wound_bonus = 25)
-			else
-				user.adjustBruteLoss(40, updating_health=FALSE)
-			user.adjustStaminaLoss(30)
+			takeTackleDamage(user, stamina = 30, damage = 30, wound = 25, guarantee_head_hit = TRUE)
+
 			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
@@ -422,34 +409,38 @@
 
 		if(93 to 96)
 			user.visible_message(span_danger("[user] slams head-first into [hit], suffering major cranial trauma!"), span_userdanger("You slam head-first into [hit], and the world explodes around you!"))
-			user.adjustStaminaLoss(30)
-			user.apply_damage(30, BRUTE, BODY_ZONE_HEAD)
-			user.confused += 15
+			takeTackleDamage(user, stamina = 30, damage = 30, guarantee_head_hit = TRUE, confused = 15, knockdown = 40)
 			if(prob(80))
 				user.gain_trauma(/datum/brain_trauma/mild/concussion)
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8)
-			user.Knockdown(40)
 			shake_camera(user, 5, 5)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 2.5)
 
 		if(68 to 85)
 			user.visible_message(span_danger("[user] slams hard into [hit], knocking [user.p_them()] senseless!"), span_userdanger("You slam hard into [hit], knocking yourself senseless!"))
-			user.adjustStaminaLoss(30)
-			user.apply_damage(10, BRUTE, user.run_zone(BODY_ZONE_HEAD))
-			user.confused += 10
-			user.Knockdown(30)
+			takeTackleDamage(user, stamina = 30, damage = 10, knockdown = 30, confused = 10)
 			shake_camera(user, 3, 4)
 
 		if(1 to 67)
 			user.visible_message(span_danger("[user] slams into [hit]!"), span_userdanger("You slam into [hit]!"))
-			user.adjustStaminaLoss(20)
-			user.apply_damage(10, BRUTE, user.run_zone(BODY_ZONE_HEAD))
-			user.Knockdown(30)
+			takeTackleDamage(user, stamina = 20, damage = 10, knockdown = 30)
 			shake_camera(user, 2, 2)
 
 	playsound(user, 'sound/weapons/smash.ogg', 70, TRUE)
 
+/datum/component/tackler/proc/takeTackleDamage(mob/living/carbon/user, stamina = 0, damage = 0, wound = 0, guarantee_head_hit = FALSE, knockdown = 0, confused = 0)
+	if(!user)
+		return
+
+	var/zone_to_hit = BODY_ZONE_HEAD
+	if(!guarantee_head_hit)
+		zone_to_hit = user.run_zone(BODY_ZONE_HEAD)
+
+	user.adjustStaminaLoss(stamina)
+	user.apply_damage(damage, BRUTE, zone_to_hit, user.run_armor_check(zone_to_hit, "melee"), wound_bonus = wound)
+	user.Knockdown(knockdown)
+	user.confused += confused
 
 /datum/component/tackler/proc/resetTackle(mob/living/carbon/user)
 	tackling = FALSE
