@@ -105,6 +105,13 @@
 	contains = list(/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
 
+/datum/supply_pack/medical/compact_defib
+	name = "Compact Defibrillator Crate"
+	desc = "Contains a compact defibrillator for bringing the recently deceased back to life. Fits around your belt."
+	cost = 1250
+	contains = list(/obj/item/defibrillator/compact/loaded)
+	crate_name = "defibrillator crate"
+
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical case, Sterilizine spray and collapsible roller bed."
