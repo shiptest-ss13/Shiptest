@@ -62,7 +62,7 @@
 	icon_state = "blueshield"
 
 /obj/structure/closet/secure_closet/clip/minutemen/lead/PopulateContents()
-	new /obj/item/clothing/under/clip/minutemen(src)
+	new /obj/item/clothing/under/cmm(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/head/soft/utility_navy(src)
 	new /obj/item/storage/belt/military/clip(src)
@@ -78,9 +78,9 @@
 	icon_state = "med_secure"
 
 /obj/structure/closet/secure_closet/clip/minutemen/combat_medic/PopulateContents()
-	new /obj/item/clothing/head/clip/corpsman(src)
+	new /obj/item/clothing/head/clip/medic(src)
 	new /obj/item/clothing/accessory/armband/medblue(src)
-	new /obj/item/clothing/under/clip/minutemen(src)
+	new /obj/item/clothing/under/cmm(src)
 	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/storage/belt/medical/webbing/clip(src)
 	new /obj/item/storage/pouch/medical(src)

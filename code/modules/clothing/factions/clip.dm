@@ -1,77 +1,118 @@
-//under
-
+//under CLIP
 /obj/item/clothing/under/clip
-	name = "\improper CLIP deck worker jumpsuit"
-	desc = "A jumpsuit worn by non-Minutemen workers in CLIP vessels."
+	name = "\improper CLIP utility jumpsuit"
+	desc = "A sturdy jumpsuit worn by CLIP government workers in field positions."
 
-	icon = 'icons/obj/clothing/faction/clip/uniforms.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/clip/uniforms.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
-
+	icon = 'icons/obj/clothing/faction/clip/civilian_uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/civilian_uniforms.dmi'
 	icon_state = "clip_deck"
-	item_state = "b_suit"
-
 	sensor_mode = SENSOR_COORDS
-	random_sensor = FALSE
-	dying_key = DYE_REGISTRY_UNDER //??? // it's for washing machines don't worry about it
-
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION // a new record! UPDATE 2 MONTHS LATER: :'(
-
-/obj/item/clothing/under/clip/minutemen
-	name = "\improper Minutemen combat fatigues"
-	desc = "The distinctive blue uniform of the Confederated League Minutemen, worn during field work and battle. Smells faintly of blueberries."
-
-	icon_state = "clip_minuteman"
-
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-	strip_delay = 50
-
 	roll_sleeves = TRUE
-	roll_down = TRUE
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	roll_down = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+
+
+/obj/item/clothing/under/clip/medic
+	name = "\improper CLIP doctor's uniform"
+	desc = "A Confederated League uniform in stark white with large blue ring patches on either shoulder, denoting the wearer as medical personnel."
+	icon_state = "clip_doc"
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/clip/engi
+	name = "\improper CLIP engineer's uniform"
+	desc = "A sturdy jumpsuit worn by CLIP government workers in field positions. This one has large orange ring patches on either shoulder, denoting the wearer as an engineer."
+	icon_state = "clip_engi"
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/clip/formal
-	name = "\improper CLIP service uniform"
-	desc = "A formal outfit consisting of CLIP-issued navy slacks and white dress shirt. Commonly seen on white-collar CLIP bureaucrats, but also worn by minutemen outside of combat."
+	name = "\improper CLIP dress uniform"
+	desc = "A more formal outfit consisting of CLIP-issued navy slacks and a white dress shirt. Commonly seen on white-collar CLIP bureaucrats and off-duty government workers."
 
 	icon_state = "clip_formal"
 
-	armor = null
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/clip/formal/alt
-	desc = "A formal outfit consisting of a CLIP-issued navy skirt and white dress shirt. Commonly seen on white-collar CLIP bureaucrats, but also worn by minutemen outside of combat."
+	desc = "A more formal outfit consisting of a CLIP-issued navy skirt and white dress shirt. Commonly seen on white-collar CLIP bureaucrats and off-duty government workers."
 
-	icon_state = "clip_formal_skirt"
-
-/obj/item/clothing/under/clip/formal/with_shirt/Initialize()
-	. = ..()
-	var/obj/item/clothing/accessory/clip_formal_overshirt/accessory = new (src)
-	attach_accessory(accessory)
-
-/obj/item/clothing/under/clip/formal/with_shirt/alt //because of how fucking skirt code works...
-	desc = "A formal outfit consisting of a CLIP-issued navy skirt and white dress shirt. Commonly seen on white-collar CLIP bureaucrats, but also worn by minutemen outside of combat."
-
-	icon_state = "clip_formal_skirt"
-
-/obj/item/clothing/under/clip/medic
-	name = "\improper CLIP medic uniform"
-	desc = "A Confederated League uniform with navy slacks and a blue button-down shirt, embroidered with white shoulder patches. The patches feature a medical cross, denoting the wearer as medical personnel. "
-	icon_state = "clip_medic"
-
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	icon_state = "clip_formalskirt"
 
 /obj/item/clothing/under/clip/officer
-	name = "\improper Minutemen officer service uniform"
-	desc = "The brown service uniform used by officers of the CLIP Minutemen."
-	icon_state = "clip_officer"
+	name = "\improper CLIP officer's uniform"
+	desc = "The green pants and khaki shirt of a CLIP sanctioned captain."
+	icon_state = "clip_captain"
 	item_state = "g_suit"
 
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/clip/officer/alt
-	desc = "The brown service uniform used by officers of the CLIP Minutemen. This variant has a pencil skirt!"
-	icon_state = "clip_officer_skirt"
+	desc = "The green skirt and khaki shirt of a CLIP sanctioned captain"
+	icon_state = "clip_captainskirt"
+
+//under CMM
+
+/obj/item/clothing/under/cmm
+	name = "\improper Minutemen combat fatigues"
+	desc = "The drab olive uniform of the Colonial Minutemen, simple yet identifiable, just how the Minutemen like it."
+
+	icon = 'icons/obj/clothing/faction/clip/minutemen_uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/minutemen_uniforms.dmi'
+	icon_state = "cmm_fatigue"
+	sensor_mode = SENSOR_COORDS
+	roll_sleeves = TRUE
+	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+
+/obj/item/clothing/under/cmm/medic
+	name = "\improper CMM combat medic uniform"
+	desc = "A Colonial Minutemen uniform in drab olive with large blue ring patches on either shoulder, denoting the wearer as medical personnel."
+	icon_state = "cmm_doc"
+	roll_down = FALSE
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/cmm/engi
+	name = "\improper CMM engineer's uniform"
+	desc = "A jumpsuit worn by the Colonial Minutemen's engineering personell denoted by the large orange ring patches on either shoulder."
+	icon_state = "cmm_engi"
+	roll_down = FALSE
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/cmm/formal
+	name = "\improper CMM dress uniform"
+	desc = "A more formal outfit consisting of olive slacks and a white dress shirt. Commonly worn by Minutemen on leave or parade."
+	icon_state = "cmm_formal"
+	roll_down = FALSE
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/cmm/formal/alt
+	desc = "A more formal outfit consisting of and olive skirt and a white dress shirt. Commonly worn by Minutemen on leave or parade."
+	icon_state = "cmm_formalskirt"
+	roll_down = FALSE
+
+/obj/item/clothing/under/cmm/officer
+	name = "\improper CMM officer's uniform"
+	desc = "The khaki pants and olive shirt of an officer of the Colonial Minutemen."
+	icon_state = "cmm_captain"
+	item_state = "g_suit"
+	roll_down = FALSE
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/cmm/officer/alt
+	desc = "The khaki skirt and olive shirt of an officer of the Colonial Minutemen."
+	icon_state = "cmm_captainskirt"
+	roll_down = FALSE
+
 
 //suit
 /obj/item/clothing/suit/toggle/lawyer/clip
@@ -95,6 +136,23 @@
 
 	icon_state = "suitjacket_clip_command"
 	item_state = "suitjacket_clip_command"
+
+/obj/item/clothing/suit/toggle/cmm
+	name = "CMM range fleece"
+	desc = "Made from a deceptively warm faux-wool blend and covered in zipper-pockets, the Colonial Minutemen's range fleece is hard to beat in terms of convenience."
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	icon_state = "cmm_fleece"
+	blood_overlay_type = "coat"
+	togglename = "zipper"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 
 //armor
 
@@ -237,6 +295,7 @@
 	desc = "A space helmet manufactured by the colonial league, rated for hazardous, low pressure environments and minor impacts. Often worn by various workers and civilians hired by the league."
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
 	resistance_flags = FIRE_PROOF
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/clip/armored
 	name = "CLIP armored space suit"
@@ -254,6 +313,7 @@
 	desc = "An armored variant of the leagues civilian space helmet, swapping plating types. Often issued out to miners in hazardous locations, police forces, or reservists."
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
 	resistance_flags = null
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/clip
 	name = "CLIP industrial hardsuit helmet"
@@ -361,28 +421,33 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	icon_state = "hardsuit0-clipeod"
 	hardsuit_type = "clipeod"
+	supports_variations = SNOUTED_VARIATION
 
 //hats
 /obj/item/clothing/head/clip
-	name = "\improper Minutemen service cap"
-	desc = "A service cap commonly seen on Minutemen of all ranks while off-duty, but more daring soldiers may choose to wear it during combat. The design dates back to the uniform used by the deserting forces of the Zohil Republic, who were the first citizens of CLIP."
+	name = "\improper CLIP range cap"
+	desc = "A general service cap commonly worn by both the military and civilian servants of the Confederated League. The design features a neck-covering flap and chin strap which can be used to tie the hat up or down, depending on the weather."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
-//	lefthand_file = 'icons/mob/inhands/faction/clip/gezena_lefthand.dmi'
-//	righthand_file = 'icons/mob/inhands/faction/clip/gezena_righthand.dmi'
 	icon_state = "clip_cap"
-	item_state = "bluecloth"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Folded Up" = "clip_cap",
+		"Folded Down" = "clip_cap_down"
+		)
 
-	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/head/clip/corpsman
-	name = "\improper Minutemen medic cap"
-	desc = "A service cap seen on Minutemen who choose medicine as their profession. The design dates back to the uniform used by the deserting forces of the Zohil Republic, who were the first citizens of CLIP."
+/obj/item/clothing/head/clip/medic
+	name = "\improper Medical range cap"
+	desc = "A medical service cap commonly worn by both the military and civilian servants of the Confederated League. The design features a neck-covering flap and chin strap which can be used to tie the hat up or down, depending on the weather."
 	icon_state = "clip_mediccap"
-	item_state = "whitecloth"
-
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Folded Up" = "clip_mediccap",
+		"Folded Down" = "clip_mediccap_down"
+		)
 
 /obj/item/clothing/head/clip/slouch
 	name = "\improper Minutemen officer's slouch hat"
@@ -425,13 +490,14 @@
 
 	icon_state = "clip_x11"
 	item_state = "clip_x11"
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"Standard Issue" = "clip_x11",
 		"Blank" = "clip_x11_blank",
-		"White Stripe" = "clip_x11_stripe"
+		"White Stripe" = "clip_x11_stripe",
+		"Olive" = "clip_x11_olive"
 		)
 	can_flashlight = TRUE
-
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/m10/clip
@@ -442,12 +508,14 @@
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 	icon_state = "clip_m10"
 	can_flashlight = TRUE
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"Standard Issue" = "clip_m10",
 		"Blank" = "clip_m10_blank",
-		"Triple Column" = "clip_m10_triple"
+		"Triple Column" = "clip_m10_triple",
+		"Olive" = "clip_m10_olive"
 		)
-
+	can_flashlight = TRUE
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/m10/clip_vc
@@ -457,12 +525,15 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 
 	icon_state = "clip_m10_vc"
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"Standard Issue" = "clip_m10_vc",
 		"Arctic" = "clip_m10_vc_arctic",
-		"Spearhead" = "clip_m10_vc_spearhead"
+		"Spearhead" = "clip_m10_vc_spearhead",
+		"Olive" = "clip_m10_vc_olive"
 		)
 	can_flashlight = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/m10/clip_vc/ComponentInitialize()
 	. = ..()
@@ -478,8 +549,9 @@
 	icon_state = "clip_m10_correspondant"
 	item_state = "clip_m10_correspondant"
 	can_flashlight = TRUE
-
 	unique_reskin = null
+	can_flashlight = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen CM-13 Riot Helmet"
@@ -490,22 +562,15 @@
 	icon_state = "riot_clip"
 	base_icon_state = "riot_clip"
 	supports_variations = SNOUTED_VARIATION | VOX_VARIATION
-	unique_reskin = null
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard Issue" = "riot_clip",
+		"Olive" = "riot_clip_olive"
+		)
+	can_flashlight = TRUE
+	supports_variations = VOX_VARIATION
 
 // CLIP-GOLD
-
-/obj/item/clothing/head/fedora/det_hat/clip
-	name = "\improper CLIP-GOLD fedora"
-	desc = "A rare sight in the frontier, issued to members of the CLIP-GOLD division. Designed to look more casual, but still as fashionable as the average CLIP attire."
-
-	icon = 'icons/obj/clothing/faction/clip/head.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
-
-	icon_state = "clip_fedora"
-	item_state = "detective"
-
-	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/flatcap/clip
 	name = "\improper CLIP-GOLD flatcap"
@@ -549,7 +614,7 @@
 
 //belt
 /obj/item/storage/belt/military/clip
-	name = "\improper Minutemen chest rig"
+	name = "\improper Minutemen drop rig"
 	desc = "This rig features many large pouches colored in Confederated League blue. The bulk of the pouches makes it only slightly uncomfortable to wear."
 
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
@@ -558,10 +623,11 @@
 
 	icon_state = "clipwebbing"
 	item_state = "clipwebbing"
-
-	unique_reskin = list("Suspenders Up" = "clipwebbing",
-						"Suspenders Down" = "clipwebbing-alt"
-						)
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+	"Suspenders Up" = "clipwebbing",
+	"Suspenders Down" = "clipwebbing-belt"
+	)
 
 	supports_variations = VOX_VARIATION
 
@@ -621,8 +687,15 @@
 	name = "\improper Minutemen belt rig"
 	desc = "This belt features many large pouches colored in Confederated League blue. The bulk of the pouches makes it only slightly uncomfortable to wear."
 
-	icon_state = "clipwebbing-alt"
-	item_state = "clipwebbing-alt"
+	icon_state = "clipwebbing-belt"
+	item_state = "clipwebbing-belt"
+
+/obj/item/storage/belt/military/clip/chest
+	name = "\improper Minutemen chest rig"
+	desc = "An ultralight chest rig in Confederated League blue. The bulk of the pouches makes it only slightly uncomfortable to wear."
+
+	icon_state = "clipwebbing-chest"
+	item_state = "clipwebbing-chest"
 
 /obj/item/storage/belt/medical/webbing/clip
 	name = "CLIP medical webbing"
@@ -664,10 +737,16 @@
 
 //accessories
 
-/obj/item/clothing/accessory/clip_formal_overshirt
-	name = "\improper CLIP overshirt"
-	desc = "A fancy blue shirt intended to be worn over the CLIP service uniform's undershirt."
-	icon_state = "clip_formal_overshirt"
+/obj/item/clothing/accessory/clip_sweater
+	name = "\improper CLIP commando sweater"
+	desc = "A handknitted sweater delivered to the frontier as a part of the 'wool for warriors' program. Quality varies."
+	icon_state = "clip_sweater_khaki"
 	icon = 'icons/obj/clothing/faction/clip/accessory.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/accessory.dmi'
 	minimize_when_attached = FALSE
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+	"Khaki" = "clip_sweater_khaki",
+	"Green" = "clip_sweater_green",
+	"Blue" = "clip_sweater_blue",
+	)

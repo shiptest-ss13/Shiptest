@@ -57,8 +57,7 @@
 	job_icon = "captain"
 	jobtype = /datum/job/captain
 
-	uniform = /obj/item/clothing/under/clip/formal
-	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/armor/clip_trenchcoat
@@ -91,7 +90,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat/white
 	ears = /obj/item/radio/headset/clip
-	uniform = /obj/item/clothing/under/clip
+	uniform = /obj/item/clothing/under/clip/formal
 	gloves = /obj/item/clothing/gloves/insulated
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
@@ -146,6 +145,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/nitrile
 	suit_store = /obj/item/flashlight/pen/paramedic
+	uniform = /obj/item/clothing/under/clip/medic
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
@@ -218,7 +218,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/clip
+	uniform = /obj/item/clothing/under/clip/engi
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/dblue
 	suit =  /obj/item/clothing/suit/hazardvest
@@ -230,7 +230,7 @@
 	jobtype = /datum/job/detective
 	job_icon = "detective"
 
-	head = /obj/item/clothing/head/fedora/det_hat/clip
+	head = /obj/item/clothing/head/clip/boonie
 	belt = /obj/item/clipboard
 	uniform = /obj/item/clothing/under/clip/formal
 	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
@@ -265,7 +265,7 @@
 	jobtype = /datum/job/lawyer
 
 	head = /obj/item/clothing/head/flatcap/clip
-	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	uniform = /obj/item/clothing/under/clip/formal
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -278,7 +278,7 @@
 	job_icon = "curator"
 	jobtype = /datum/job/curator
 
-	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	uniform = /obj/item/clothing/under/clip/formal
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack
@@ -302,7 +302,7 @@
 
 	jobtype = /datum/job/assistant
 
-	uniform = /obj/item/clothing/under/clip/minutemen
+	uniform = /obj/item/clothing/under/cmm
 	shoes = /obj/item/clothing/shoes/combat
 
 	backpack = /obj/item/storage/backpack/security/clip
@@ -331,7 +331,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain
 //	accessory = /obj/item/clothing/accessory/medal/gold/captain
 	ears = /obj/item/radio/headset/clip/alt/captain
-	uniform = /obj/item/clothing/under/clip/officer
+	uniform = /obj/item/clothing/under/cmm/officer
 	alt_uniform = null
 	alt_suit = null
 	suit = /obj/item/clothing/suit/armor/clip_capcoat
@@ -351,7 +351,7 @@
 
 	head = /obj/item/clothing/head/clip/slouch/officer
 	ears = /obj/item/radio/headset/clip/alt/captain
-	uniform = /obj/item/clothing/under/clip/officer
+	uniform = /obj/item/clothing/under/cmm/officer
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip
 	shoes = /obj/item/clothing/shoes/jackboots
 
@@ -377,7 +377,7 @@
 	id = /obj/item/card/id/silver
 	head = /obj/item/clothing/head/clip/slouch
 	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip/formal
+	uniform = /obj/item/clothing/under/cmm/formal
 	alt_uniform = null
 	alt_suit = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
@@ -393,9 +393,9 @@
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/doctor
 
-	uniform = /obj/item/clothing/under/clip/medic
+	uniform = /obj/item/clothing/under/cmm/medic
 	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/clip/corpsman
+	head = /obj/item/clothing/head/clip/medic
 	suit = null
 	suit_store = null
 
@@ -414,7 +414,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/clip
+	uniform = /obj/item/clothing/under/cmm
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/clip
 	suit = null
@@ -425,7 +425,7 @@
 	job_icon = "clip_mech2"
 	jobtype = /datum/job/mining
 
-	uniform = /obj/item/clothing/under/clip/minutemen
+	uniform = /obj/item/clothing/under/cmm
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/clip
 
@@ -443,7 +443,7 @@
 	id_assignment = "Vehicle Commander"
 	job_icon = "clip_mech3"
 
-	suit = /obj/item/clothing/suit/jacket/miljacket
+	suit = /obj/item/clothing/suit/toggle/cmm
 	head = /obj/item/clothing/head/helmet/m10/clip_vc
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
@@ -461,7 +461,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	head = /obj/item/clothing/head/clip/slouch
-	uniform = /obj/item/clothing/under/clip/minutemen
+	uniform = /obj/item/clothing/under/cmm/engi
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/hazardvest
 
@@ -480,7 +480,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/clip
+	uniform = /obj/item/clothing/under/cmm/engi
 	head = /obj/item/clothing/head/soft/utility_navy
 	suit =  /obj/item/clothing/suit/hazardvest
 
@@ -519,7 +519,7 @@
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	alt_suit = null
-	uniform = /obj/item/clothing/under/clip/minutemen
+	uniform = /obj/item/clothing/under/cmm
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
@@ -575,6 +575,7 @@
 	id_assignment = "Combat Engineer"
 	jobtype = /datum/job/engineer
 
+	uniform = /obj/item/clothing/under/cmm/engi
 	accessory = /obj/item/clothing/accessory/armband/engine
 
 /datum/outfit/job/clip/minutemen/grunt/engineer/dressed
@@ -596,6 +597,8 @@
 	name = "CLIP Minutemen - EOD Specialist"
 	id_assignment = "Explosive Ordnance Disposal Technician"
 
+	uniform = /obj/item/clothing/under/cmm/engi
+
 /datum/outfit/job/clip/minutemen/grunt/eod/bombsuit
 	name = "CLIP Minutemen - EOD Specialist (Bombsuit)"
 	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
@@ -607,6 +610,7 @@
 	id_assignment = "Combat Medic"
 	jobtype = /datum/job/doctor
 
+	uniform = /obj/item/clothing/under/cmm/medic
 	accessory = /obj/item/clothing/accessory/armband/medblue
 
 /datum/outfit/job/clip/minutemen/grunt/medic/secaccess
@@ -674,7 +678,7 @@
 	jobtype = /datum/job/warden
 
 	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip/minutemen
+	uniform = /obj/item/clothing/under/cmm
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/soft/utility_navy
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -704,7 +708,7 @@
 	jobtype = /datum/job/hos
 
 	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip/officer
+	uniform = /obj/item/clothing/under/cmm/officer
 
 	head = /obj/item/clothing/head/clip/slouch/officer
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
@@ -719,7 +723,7 @@
 	jobtype = /datum/job/captain
 
 	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip/officer
+	uniform = /obj/item/clothing/under/cmm/officer
 
 	head = /obj/item/clothing/head/clip/slouch/officer
 	suit = /obj/item/clothing/suit/armor/clip_trenchcoat

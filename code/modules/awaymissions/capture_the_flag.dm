@@ -600,7 +600,7 @@
 
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	uniform = /obj/item/clothing/under/clip/minutemen
+	uniform = /obj/item/clothing/under/cmm
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
 	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82/ctf

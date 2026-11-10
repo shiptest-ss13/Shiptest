@@ -6,7 +6,7 @@
 
 	wallet = null
 
-	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	uniform = /obj/item/clothing/under/clip/formal
 	ears = /obj/item/radio/headset/clip
 	suit = /obj/item/clothing/suit/bio_suit/bard
 	suit_store = /obj/item/tank/internals/oxygen
@@ -37,7 +37,7 @@
 	id_assignment = "Biohazard Assessment Xenofauna Specialist"
 	job_icon = "clip_navy2"
 
-	uniform = /obj/item/clothing/under/color/darkblue
+	uniform = /obj/item/clothing/under/clip
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/alt
 	suit = /obj/item/clothing/suit/bio_suit/bard/medium
@@ -65,6 +65,7 @@
 	id_assignment = "Biohazard Assessment Medical Specialist"
 	jobtype = /datum/job/ert/med
 
+	uniform = /obj/item/clothing/under/clip/medic
 	head = /obj/item/clothing/head/bio_hood/bard/armored
 	glasses = /obj/item/clothing/glasses/hud/health
 	mask = /obj/item/clothing/mask/gas/clip
@@ -140,6 +141,7 @@
 	job_icon = "clip_cmm3"
 	jobtype = /datum/job/ert/sec
 
+	uniform = /obj/item/clothing/under/cmm
 	ears = /obj/item/radio/headset/clip/alt
 	neck = /obj/item/clothing/mask/whistle
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
