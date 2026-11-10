@@ -159,7 +159,6 @@
 
 	var/mob/living/carbon/target = hit
 	var/mob/living/carbon/human/T = target
-	var/mob/living/carbon/human/S = user
 
 	var/roll = rollTackle(target)
 
