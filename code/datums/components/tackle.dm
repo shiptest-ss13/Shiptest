@@ -118,7 +118,7 @@
 	if(get_dist(user, A) < min_distance)
 		A = get_ranged_target_turf(user, get_dir(user, A), min_distance) //TODO: this only works in cardinals/diagonals, make it work with in-betweens too!
 
-	ADD_TRAIT(user, TRAIT_FLOORED, "tackle")
+	ADD_TRAIT(user, TRAIT_FLOORED, "tackling")
 	user.adjustStaminaLoss(stamina_cost)
 	user.throw_at(A, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user), gentle = TRUE) //gentle because we'll handle our own impact damage
 	return(COMSIG_MOB_CANCEL_CLICKON)
@@ -200,29 +200,28 @@
 			user.visible_message(span_warning("[user] lands an expert tackle on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet with a passive grip!"), span_userdanger("You land an expert tackle on [target], knocking [target.p_them()] down hard while landing on your feet with a passive grip!"), target)
 			to_chat(target, span_userdanger("[user] lands an expert tackle on you, knocking you down hard and maintaining a passive grab!"))
 
+			removeFlooredTackle(user)
 			user.SetKnockdown(0)
 			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 
 			takeTackleDamage(target, stamina = 40, knockdown = 30, paralyze = 5)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				if(S.pulling == T)
-					S.setGrabState(GRAB_PASSIVE)
+				target.grabbedby(user)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message(span_warning("[user] lands a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), span_userdanger("You land a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), target)
 			to_chat(target, span_userdanger("[user] lands a monster tackle on you, knocking you senseless and aggressively pinning you!"))
 
+			removeFlooredTackle(user)
 			user.SetKnockdown(0)
 			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 
 			takeTackleDamage(target, stamina = 40, knockdown = 30, paralyze = 5)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				if(S.pulling == T)
-					S.setGrabState(GRAB_AGGRESSIVE)
+				target.grabbedby(user)
+				target.grippedby(user)
 
 
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
@@ -435,11 +434,14 @@
 
 /datum/component/tackler/proc/resetTackle(mob/living/carbon/user)
 	tackling = FALSE
-	addtimer(CALLBACK(src, PROC_REF(unFloor), user), base_knockdown, TIMER_STOPPABLE)
+
+	if(HAS_TRAIT_FROM(user, TRAIT_FLOORED, "tackling"))
+		addtimer(CALLBACK(src, PROC_REF(removeFlooredTackle), user), base_knockdown, TIMER_STOPPABLE)
+
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
 
-/datum/component/tackler/proc/unFloor(mob/living/carbon/user)
-	REMOVE_TRAIT(user, TRAIT_FLOORED, "tackle")
+/datum/component/tackler/proc/removeFlooredTackle(mob/living/carbon/user)
+	REMOVE_TRAIT(user, TRAIT_FLOORED, "tackling")
 
 ///A special case for splatting for handling windows
 /datum/component/tackler/proc/splatWindow(mob/living/carbon/user, obj/structure/window/W)
