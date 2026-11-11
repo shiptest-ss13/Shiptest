@@ -501,7 +501,7 @@
 	name = "Frontiersman Gunner"
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one could almost be mistaken for a real soldier by their assault rifle and armor, if it weren't for their swaggering demeanor."
 	icon_state = "frontiersmanrangedak47"
-	projectilesound = 'sound/weapons/gun/rifle/fa2.ogg'
+	projectilesound = 'sound/weapons/gun/rifle/skm.ogg'
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_40
