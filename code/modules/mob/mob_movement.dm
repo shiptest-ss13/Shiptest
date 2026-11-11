@@ -151,8 +151,8 @@
 		if(mob.throwing)
 			mob.throwing.finalize(FALSE)
 
-	var/atom/movable/P = mob.pulling
-	if(P && !ismob(P) && P.density)
+	var/atom/movable/pulled_atom = mob.pulling
+	if(pulled_atom && !ismob(pulled_atom) && pulled_atom.density && !iscarbon(mob))
 		mob.setDir(turn(mob.dir, 180))
 
 /**

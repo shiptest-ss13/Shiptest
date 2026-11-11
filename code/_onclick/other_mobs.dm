@@ -11,7 +11,7 @@
 		var/obj/item/bodypart/check_arm = get_active_hand()
 		if(check_arm?.bodypart_disabled)
 			to_chat(src, span_warning("Your [check_arm.name] is in no condition to be used."))
-			return
+		return
 
 	// Special glove functions:
 	// If the gloves do anything, have them return 1 to stop
@@ -31,7 +31,13 @@
 		else if(secondary_result != SECONDARY_ATTACK_CALL_NORMAL)
 			CRASH("attack_hand_secondary did not return a SECONDARY_ATTACK_* define.")
 
+	if(pulling && A.pull_hand_act(src, pulling))
+		return
 	A.attack_hand(src, modifiers)
+
+/// Act with pulling hand while pulling. Return TRUE to skip attack_hand().
+/atom/proc/pull_hand_act(mob/living/user, atom/movable/pulled)
+	return FALSE
 
 /// Return TRUE to cancel other attack hand effects that respect it.
 /atom/proc/attack_hand(mob/user, list/modifiers)
@@ -145,6 +151,8 @@
 			var/datum/disease/bite_infection = d
 			victim.ForceContractDisease(bite_infection)
 		return
+	if(pulling && A.pull_hand_act(src, pulling))
+		return
 	A.attack_paw(src)
 
 
@@ -160,6 +168,8 @@
 */
 /mob/living/carbon/alien/UnarmedAttack(atom/A)
 	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		return
+	if(pulling && A.pull_hand_act(src, pulling))
 		return
 	A.attack_alien(src)
 

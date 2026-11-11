@@ -60,32 +60,36 @@
 		deconstruct(TRUE)
 	return TRUE
 
+/obj/structure/kitchenspike/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(!VIABLE_MOB_CHECK(pulled) || user.a_intent != INTENT_GRAB || has_buckled_mobs())
+		return FALSE
+	var/mob/living/spiked_mob = pulled
+	if(do_after(user, 12 SECONDS, src))
+		if(has_buckled_mobs()) //to prevent spam/queing up attacks
+			return TRUE
+		if(spiked_mob.buckled)
+			return TRUE
+		if(user.pulling != spiked_mob)
+			return TRUE
+		playsound(src.loc, 'sound/effects/splat.ogg', 25, TRUE)
+		spiked_mob.visible_message(span_danger("[user] slams [spiked_mob] onto the meat spike!"), span_userdanger("[user] slams you onto the meat spike!"), span_hear("You hear a squishy wet noise."))
+		spiked_mob.forceMove(drop_location())
+		spiked_mob.force_scream()
+		spiked_mob.add_splatter_floor()
+		spiked_mob.adjustBruteLoss(30)
+		spiked_mob.setDir(2)
+		buckle_mob(spiked_mob, force=1)
+		var/matrix/upside_down = matrix(spiked_mob.transform)
+		upside_down.Turn(180)
+		animate(spiked_mob, transform = upside_down, time = 3)
+		spiked_mob.add_offsets(type, y_add = -6, animate = FALSE)
+	return TRUE
+
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/structure/kitchenspike/attack_hand(mob/user)
-	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
-		var/mob/living/L = user.pulling
-		if(do_after(user, 12 SECONDS, src))
-			if(has_buckled_mobs()) //to prevent spam/queing up attacks
-				return
-			if(L.buckled)
-				return
-			if(user.pulling != L)
-				return
-			playsound(src.loc, 'sound/effects/splat.ogg', 25, TRUE)
-			L.visible_message(span_danger("[user] slams [L] onto the meat spike!"), span_userdanger("[user] slams you onto the meat spike!"), span_hear("You hear a squishy wet noise."))
-			L.forceMove(drop_location())
-			L.force_scream()
-			L.add_splatter_floor()
-			L.adjustBruteLoss(30)
-			L.setDir(2)
-			buckle_mob(L, force=1)
-			var/matrix/m180 = matrix(L.transform)
-			m180.Turn(180)
-			animate(L, transform = m180, time = 3)
-			L.add_offsets(type, y_add = -6, animate = FALSE)
-	else if (has_buckled_mobs())
-		for(var/mob/living/L in buckled_mobs)
-			user_unbuckle_mob(L, user)
+	if (has_buckled_mobs())
+		for(var/mob/living/buckled_mob in buckled_mobs)
+			user_unbuckle_mob(buckled_mob, user)
 	else
 		..()
 

@@ -297,21 +297,27 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	else
 		return ..()
 
+/obj/machinery/washing_machine/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(!isliving(pulled))
+		return FALSE
+	if(busy)
+		to_chat(user, span_warning("[src] is busy!"))
+		return TRUE
+	var/mob/living/pulled_mob = pulled
+	if(pulled_mob.buckled || pulled_mob.has_buckled_mobs())
+		return TRUE
+	if(state_open)
+		if(istype(pulled_mob, /mob/living/simple_animal/pet))
+			pulled_mob.forceMove(src)
+			update_appearance()
+	return TRUE
+
 /obj/machinery/washing_machine/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
 	if(busy)
 		to_chat(user, span_warning("[src] is busy!"))
-		return
-	if(user.pulling && isliving(user.pulling))
-		var/mob/living/L = user.pulling
-		if(L.buckled || L.has_buckled_mobs())
-			return
-		if(state_open)
-			if(istype(L, /mob/living/simple_animal/pet))
-				L.forceMove(src)
-				update_appearance()
 		return
 	if(!state_open)
 		open_machine()
