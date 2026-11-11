@@ -99,7 +99,7 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42/ap = 4)
 	generate_items_inside(items_inside,src)
 
-// 7.62x40mm CLIP (SKM Rifles)
+// 7.62x40mm CLIP (fa2 Rifles)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40
 	ammo_type = /obj/item/ammo_casing/a762_40

@@ -497,18 +497,18 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter
 	weapon_drop_chance = 0
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/fa2
 	name = "Frontiersman Gunner"
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one could almost be mistaken for a real soldier by their assault rifle and armor, if it weren't for their swaggering demeanor."
 	icon_state = "frontiersmanrangedak47"
-	projectilesound = 'sound/weapons/gun/rifle/skm.ogg'
+	projectilesound = 'sound/weapons/gun/rifle/fa2.ogg'
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_40
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
-	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
+	r_hand = /obj/item/gun/ballistic/automatic/assault/fa2
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/fa2/space
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
@@ -518,22 +518,22 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space/Initialize()
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/fa2/space/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/fa2/internals
 	icon_state = "frontiersmanrangedak47_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
-	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
+	r_hand = /obj/item/gun/ballistic/automatic/assault/fa2
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/fa2/internals/neutered
 	weapon_drop_chance = 0
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/fa2/neutured
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle

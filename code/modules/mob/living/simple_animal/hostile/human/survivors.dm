@@ -121,7 +121,7 @@
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	r_hand = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/energy
 	name = "Hermit Trooper"
@@ -191,7 +191,7 @@
 	rapid = 2
 	rapid_fire_delay = 2
 	casingtype = /obj/item/ammo_casing/c46x30mm/tesla
-	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	r_hand = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 
 //survivor corpses

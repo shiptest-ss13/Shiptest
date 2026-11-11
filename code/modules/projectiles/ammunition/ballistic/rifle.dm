@@ -70,7 +70,7 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a556_42/rubber
 
-// 7.62x40mm CLIP (SKM Rifles)
+// 7.62x40mm CLIP (fa2 Rifles)
 
 /obj/item/ammo_casing/a762_40
 	name = "7.62x40mm CLIP bullet casing"

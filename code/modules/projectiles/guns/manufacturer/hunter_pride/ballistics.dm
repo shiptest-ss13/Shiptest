@@ -856,7 +856,7 @@ EMPTY_GUN_HELPER(rifle/illestren/factory)
 		/obj/item/ammo_box/magazine/internal/shot/winchester,
 	)
 	fire_sound = 'sound/weapons/gun/rifle/flamingarrow.ogg'
-	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/fa2_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
 	can_be_sawn_off = TRUE

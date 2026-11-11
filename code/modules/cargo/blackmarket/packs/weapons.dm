@@ -599,10 +599,10 @@
 	stock_max = 4
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/guncase/skm_carbine
-	name = "SKM-24v Carbine"
-	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+/datum/blackmarket_item/weapon/guncase/fa2_carbine
+	name = "FA2-v Carbine"
+	desc = "Technically this isn't even an FA2, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
+	item = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 	pair_item = list(/datum/blackmarket_item/ammo/carbine_mag)
 
 	cost_min = 2000
@@ -610,10 +610,10 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/guncase/skm_lmg
-	name = "SKM-24u Light Machinegun"
-	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machine gun, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
-	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
+/datum/blackmarket_item/weapon/guncase/ml3
+	name = "ML3 Light Machinegun"
+	desc = "Your regular rifles not have enough oomph for you? This ML3 was reconstructed with help from a 'liberated' CM-40 parts shipment, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	item = /obj/item/gun/ballistic/automatic/hmg/ml3
 
 	cost_min = 5000
 	cost_max = 7000

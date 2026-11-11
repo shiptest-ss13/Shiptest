@@ -652,8 +652,8 @@
 
 
 /datum/supply_pack/gun/mongrel
-	name = "SKM-44v Mongrel SMG Crate"
-	desc = "Contains a shortened variant of the SKM rechambered to 10mm and painted in the brown-and-gold of Inteq."
+	name = "PM-25 Mongrel SMG Crate"
+	desc = "Contains a shortened variant of the FA2 rechambered to 10mm and painted in the brown-and-gold of Inteq."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/mongrel)
 	crate_name = "SMG crate"
@@ -841,18 +841,18 @@
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 
-/datum/supply_pack/gun/skm
-	name = "SKM-24 Rifle Crate"
+/datum/supply_pack/gun/fa2
+	name = "FA2 Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 7.62x40mm CLIP."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/skm)
+	contains = list(/obj/item/storage/guncase/fa2)
 	crate_name = "auto rifle crate"
 
-/datum/supply_pack/gun/inteq_skm
-	name = "SKM-44 Rifle Crate"
-	desc = "Contains a SKM painted in the brown-and-gold of Inteq, chambered in 7.62x40mm CLIP. "
+/datum/supply_pack/gun/inteq_fa2
+	name = "FA2 Rifle Crate"
+	desc = "Contains an FA2 painted in the brown-and-gold of Inteq, chambered in 7.62x40mm CLIP. "
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/skm_inteq)
+	contains = list(/obj/item/storage/guncase/fa2_inteq)
 	crate_name = "auto rifle crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
@@ -918,11 +918,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/cm24
-	name = "CM-24 Surplus Stockpile Rifle"
-	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the SKM-24 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
+/datum/supply_pack/gun/fa2m
+	name = "FA2m Surplus Stockpile Rifle"
+	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the FA@ platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/cm24)
+	contains = list(/obj/item/storage/guncase/fa2m)
 	crate_name = "rifle crate"
 	faction = /datum/faction/clip
 	faction_discount = 0

@@ -729,9 +729,9 @@
 			new /obj/item/ammo_box/vickland_a8_50r(loc)
 			new /obj/item/ammo_box/vickland_a8_50r(loc)
 		if(16 to 20)
-			// skm-24
-			new /obj/item/gun/ballistic/automatic/assault/skm(loc)
-			new /obj/item/ammo_box/magazine/skm_762_40(loc)
+			// fa2
+			new /obj/item/gun/ballistic/automatic/assault/fa2(loc)
+			new /obj/item/ammo_box/magazine/fa2_762_40(loc)
 		if(21 to 25)
 			// normal hydra
 			new /obj/item/gun/ballistic/automatic/assault/hydra(loc)
