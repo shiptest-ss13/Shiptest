@@ -132,4 +132,18 @@
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 11,
+			"y" = 17,
+		)
+	)
 NO_MAG_GUN_HELPER(automatic/smg/fa2_carbine/inteq)
