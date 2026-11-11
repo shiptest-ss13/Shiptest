@@ -486,9 +486,7 @@
 /area/ruin/moon/cybergrind/lab)
 "bD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/viscerator{
-	faction = list("hostile")
-	},
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "bE" = (
@@ -616,12 +614,17 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/storage/toolbox/ammo/c556,
-/obj/item/storage/toolbox/ammo/c57,
-/obj/item/storage/toolbox/ammo/frag,
+/obj/item/storage/box/ammo/c320,
+/obj/item/storage/box/ammo/c320,
+/obj/item/stock_parts/cell/gun/cybersun,
+/obj/item/stock_parts/cell/gun/cybersun,
+/obj/item/stock_parts/cell/gun/cybersun,
+/obj/item/grenade/lorentz,
+/obj/item/grenade/lorentz,
+/obj/item/grenade/lorentz,
+/obj/item/grenade/lorentz,
+/obj/item/storage/box/ammo/c215,
+/obj/item/storage/box/ammo/c215,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/secdorm)
 "cs" = (
@@ -1110,10 +1113,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
 /obj/machinery/light/directional/west{
 	light_on = 0
 	},
+/obj/item/gun/energy/cybersun/lorentz/opportunist,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/secdorm)
 "dT" = (
@@ -1237,7 +1240,6 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 8
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/hangar)
 "eu" = (
@@ -1350,6 +1352,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/hangar)
 "eW" = (
@@ -1920,6 +1923,7 @@
 /mob/living/simple_animal/hostile/viscerator{
 	faction = list("hostile")
 	},
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/northhallway)
 "gy" = (
@@ -2077,9 +2081,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "gW" = (
-/obj/machinery/porta_turret/ruin/hardliners{
-	faction = list("hostile");
-	dir = 8
+/obj/machinery/porta_turret/ruin/cybersun{
+	dir = 4;
+	faction = list("hostile")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/cybergrind/decontam)
@@ -2486,6 +2490,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "in" = (
+/obj/item/ammo_box/magazine/cs_gauss/pistol/empty,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/simdomeengi)
 "io" = (
@@ -2828,7 +2833,6 @@
 	color = "#FFFFFF"
 	},
 /obj/machinery/door/firedoor/heavy,
-/mob/living/simple_animal/hostile/automated/hopper/coalition,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "jo" = (
@@ -3585,7 +3589,7 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "ma" = (
-/obj/item/ammo_box/magazine/m10mm_ringneck/empty,
+/obj/item/ammo_box/magazine/cs_gauss/pistol/empty,
 /turf/open/floor/plating/asteroid/desert,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "md" = (
@@ -3639,8 +3643,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/ammo_box/magazine/m22lr_himehabu/empty,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stock_parts/cell/gun/cybersun/mini/empty,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "mm" = (
@@ -3902,6 +3906,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/cs_gauss/pistol/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "no" = (
@@ -4156,7 +4161,7 @@
 	color = "#FFFFFF"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/ruin/hardliners/heavy{
+/obj/machinery/porta_turret/ruin/cybersun/heavy{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -4502,7 +4507,7 @@
 "pi" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
-/obj/item/gun/ballistic/automatic/assault/hydra/dmr/no_mag,
+/obj/item/gun/ballistic/cs_gauss/vector/no_mag,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "pl" = (
@@ -4645,6 +4650,13 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/secdorm)
+"pH" = (
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 9
+	},
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/simdomeengi)
 "pJ" = (
 /obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 8
@@ -5893,7 +5905,7 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "uC" = (
@@ -6001,9 +6013,9 @@
 	color = "#FFFFFF"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/porta_turret/ruin/hardliners{
-	faction = list("hostile");
-	dir = 4
+/obj/machinery/porta_turret/ruin/cybersun{
+	dir = 4;
+	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
@@ -6278,7 +6290,6 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/automated/agrav/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "vF" = (
@@ -7400,7 +7411,6 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7465,6 +7475,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/observatory)
 "Ak" = (
@@ -7669,7 +7680,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/machinery/porta_turret/ruin/hardliners{
+/obj/machinery/porta_turret/ruin/cybersun/seeker{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -8915,6 +8926,7 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 9
 	},
+/obj/item/ammo_box/magazine/cs_gauss/rifle,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "FZ" = (
@@ -9128,6 +9140,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "GO" = (
@@ -10531,12 +10544,12 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "xttrails_1";
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/decontam)
 "Mn" = (
@@ -10717,6 +10730,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "Nc" = (
@@ -10858,7 +10872,7 @@
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 6
 	},
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag,
+/obj/item/gun/energy/cybersun/troubleshooter/empty_cell,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "NC" = (
@@ -12350,6 +12364,7 @@
 	icon_state = "xtracks"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "SF" = (
@@ -12598,6 +12613,7 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 4
 	},
+/obj/item/ammo_box/magazine/cs_gauss/pistol/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "TE" = (
@@ -13332,6 +13348,12 @@
 "Wr" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/moon/cybergrind/reception)
+"Wu" = (
+/obj/effect/turf_decal/corner/transparent/lightgrey/mono,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/moon/cybergrind/lab)
 "Wv" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13557,6 +13579,7 @@
 	dir = 6
 	},
 /obj/machinery/airalarm/directional/east,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "Xq" = (
@@ -14090,8 +14113,8 @@
 /area/ruin/moon/cybergrind/directors)
 "Zj" = (
 /obj/effect/turf_decal/siding/wood/bamboo,
-/obj/item/ammo_box/magazine/m22lr_himehabu/empty,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stock_parts/cell/gun/cybersun/mini/empty,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "Zk" = (
@@ -14148,7 +14171,7 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "Zv" = (
-/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/gun/ballistic/cs_gauss/rectifier/no_mag,
 /turf/open/floor/plating/asteroid/desert,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "Zz" = (
@@ -15074,7 +15097,7 @@ LK
 XE
 xf
 xf
-iq
+pH
 iq
 in
 ep
@@ -17118,7 +17141,7 @@ Yx
 Yx
 Yx
 jk
-eq
+Qu
 eq
 jk
 Yx
@@ -18279,7 +18302,7 @@ kR
 wg
 EY
 aR
-pn
+Wu
 Cl
 Cl
 tg

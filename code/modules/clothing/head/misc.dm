@@ -70,12 +70,6 @@
 	icon_state = "bandana"
 	item_state = "bandana"
 
-/obj/item/clothing/head/bearpelt
-	name = "bear pelt hat"
-	desc = "Fuzzy."
-	icon_state = "bearpelt"
-	item_state = "bearpelt"
-
 /obj/item/clothing/head/fedora
 	name = "fedora"
 	icon_state = "fedora"
@@ -338,3 +332,125 @@
 /obj/item/clothing/head/boonie/navy
 	name = "navy boonie"
 	current_skin = "navy boonie"
+
+/obj/item/clothing/head/ushanka
+	name = "bomber hat"
+	desc = "A winter hat, with flaps covered in faux fur to protect your ears from frigid winds."
+	icon_state = "ushanka"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	unique_reskin = list(
+		"black bomber hat" = "ushanka",
+		"maroon bomber hat" = "ushankamaroon",
+		"olive bomber hat" = "ushankaolive",
+		"navy bomber hat" = "ushankanavy",
+		"grey bomber hat" = "ushankagrey",
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/ushanka/maroon
+	name = "maroon bomber hat"
+	current_skin = "maroon bomber hat"
+
+/obj/item/clothing/head/ushanka/olive
+	name = "olive bomber hat"
+	current_skin = "olive bomber hat"
+
+/obj/item/clothing/head/ushanka/navy
+	name = "navy bomber hat"
+	current_skin = "navy bomber hat"
+
+/obj/item/clothing/head/ushanka/grey
+	name = "grey bomber hat"
+	current_skin = "grey bomber hat"
+
+/obj/item/clothing/head/smallbow
+	name = "small hairbow"
+	desc = "A petite version of a standard hairbow, for a more elegant look."
+	icon_state = "smallbow"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	unique_reskin = list(
+		"small black hairbow" = "smallbow",
+		"small white hairbow" = "smallbow_white",
+		"small grey hairbow" = "smallbow_grey",
+		"small maroon hairbow" = "smallbow_maroon",
+		"small red hairbow" = "smallbow_red",
+		"small orange hairbow" = "smallbow_orange",
+		"small yellow hairbow" = "smallbow_yellow",
+		"small green hairbow" = "smallbow_green",
+		"small dark green hairbow" = "smallbow_darkgreen",
+		"small teal hairbow" = "smallbow_teal",
+		"small blue hairbow" = "smallbow_blue",
+		"small dark blue hairbow" = "smallbow_darkblue",
+		"small purple hairbow" = "smallbow_purple",
+		"small pink hairbow" = "smallbow_pink",
+		"small brown hairbow" = "smallbow_brown",
+		"small light brown hairbow" = "smallbow_lightbrown",
+
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/smallbow/black
+	name = "small black hairbow"
+	current_skin = "small black hairbow"
+
+/obj/item/clothing/head/smallbow/white
+	name = "small white hairbow"
+	current_skin = "small white hairbow"
+
+/obj/item/clothing/head/smallbow/grey
+	name = "small grey hairbow"
+	current_skin = "small grey hairbow"
+
+/obj/item/clothing/head/smallbow/maroon
+	name = "small maroon hairbow"
+	current_skin = "small maroon hairbow"
+
+/obj/item/clothing/head/smallbow/red
+	name = "small red hairbow"
+	current_skin = "small red hairbow"
+
+/obj/item/clothing/head/smallbow/orange
+	name = "small orange hairbow"
+	current_skin = "small orange hairbow"
+
+/obj/item/clothing/head/smallbow/yellow
+	name = "small yellow hairbow"
+	current_skin = "small yellow hairbow"
+
+/obj/item/clothing/head/smallbow/green
+	name = "small green hairbow"
+	current_skin = "small green hairbow"
+
+/obj/item/clothing/head/smallbow/darkgreen
+	name = "small dark green hairbow"
+	current_skin = "small dark green hairbow"
+
+/obj/item/clothing/head/smallbow/teal
+	name = "small teal hairbow"
+	current_skin = "small teal hairbow"
+
+/obj/item/clothing/head/smallbow/blue
+	name = "small blue hairbow"
+	current_skin = "small blue hairbow"
+
+/obj/item/clothing/head/smallbow/darkblue
+	name = "small dark blue hairbow"
+	current_skin = "small dark blue hairbow"
+
+/obj/item/clothing/head/smallbow/purple
+	name = "small purple hairbow"
+	current_skin = "small purple hairbow"
+
+/obj/item/clothing/head/smallbow/pink
+	name = "small pink hairbow"
+	current_skin = "small pink hairbow"
+
+/obj/item/clothing/head/smallbow/brown
+	name = "small brown hairbow"
+	current_skin = "small brown hairbow"
+
+/obj/item/clothing/head/smallbow/lightbrown
+	name = "small light brown hairbow"
+	current_skin = "small light brown hairbow"

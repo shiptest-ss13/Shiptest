@@ -313,7 +313,7 @@
 						/obj/item/lava_staff,
 						/obj/item/melee/sword/energy_katana,
 						/obj/item/gun/energy/minigun,
-						/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended,
+						/obj/item/gun/ballistic/automatic/hmg/python,
 						/obj/item/stack/telecrystal/twenty,
 						/obj/item/nuke_core,
 						/obj/item/phylactery)

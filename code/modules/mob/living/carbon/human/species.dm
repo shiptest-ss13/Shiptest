@@ -1468,18 +1468,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(attacker_style && attacker_style.grab_act(user,target))
 		return TRUE
 	else
-		//Steal them shoes
-		if(target.body_position == LYING_DOWN && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) && user.a_intent == INTENT_GRAB && target.shoes)
-			var/obj/item/I = target.shoes
-			user.visible_message(span_warning("[user] starts stealing [target]'s [I.name]!"),
-							span_danger("You start stealing [target]'s [I.name]..."), null, null, target)
-			to_chat(target, span_userdanger("[user] starts stealing your [I.name]!"))
-			if(do_after(user, I.strip_delay, target))
-				target.dropItemToGround(I, TRUE)
-				user.put_in_hands(I)
-				user.visible_message(span_warning("[user] stole [target]'s [I.name]!"),
-								span_notice("You stole [target]'s [I.name]!"), null, null, target)
-				to_chat(target, span_userdanger("[user] stole your [I.name]!"))
 		target.grabbedby(user)
 		return TRUE
 
@@ -1959,7 +1947,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else
 			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
 
-	// We are not to hot or cold, remove status and moods
+	// We are not too hot or cold, remove status and moods
 	else
 		target_human.clear_alert("tempfeel")
 		target_human.clear_alert("tempdamage")

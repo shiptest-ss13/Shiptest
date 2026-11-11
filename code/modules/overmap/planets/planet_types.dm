@@ -61,7 +61,7 @@
 	icon_state = "ice"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
-	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
+	default_baseturf = /turf/open/floor/plating/asteroid/snow
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
@@ -145,19 +145,6 @@
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		)
-
-/datum/planet_type/reebe
-	name = "???"
-	desc = "Some sort of strange portal. There's no identification of what this is."
-	planet = DYNAMIC_WORLD_REEBE
-	icon_state = "wormhole"
-	color = COLOR_YELLOW
-	mapgen = /datum/map_generator/single_biome/reebe
-	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/chasm/reebe_void
-	weather_controller_type = null
-	ruin_type = RUINTYPE_YELLOW
-	interference_power = 20
 
 //legacy asteroid field, avoid using this outside of punchcards
 /datum/planet_type/asteroid

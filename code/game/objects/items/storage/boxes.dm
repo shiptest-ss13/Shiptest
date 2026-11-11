@@ -1758,4 +1758,31 @@
 		)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/disposable_gun_gacha
+	name = "disposable gun variety pack"
+	desc = "A box containing an assortment of disposable guns. A label reads: COLLECT THEM ALL! Bizarrely, there are no markings identifying the manufacturer."
+	icon_state = "gachabox"
+	custom_price = 300 // 4 for the price of 3!
 
+/obj/item/storage/box/disposable_gun_gacha/PopulateContents()
+	for(var/i in 1 to 4)
+		if(prob(0.25)) // ultra rare chocolate gun
+			new /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate(src)
+		else if(prob(2.5)) // rare pool
+			var/rare_goun = pick(list(
+				/obj/item/gun/ballistic/automatic/pistol/disposable/gold,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/pink,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/phenex,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/sharplite,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/inteq))
+			new rare_goun(src)
+		else
+			var/goun = pick(list(
+				/obj/item/gun/ballistic/automatic/pistol/disposable/red,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/purple,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/green,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/blue,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/beige,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/silver,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/black))
+			new goun(src)

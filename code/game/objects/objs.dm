@@ -358,6 +358,9 @@
 /obj/proc/dump_contents()
 	CRASH("Unimplemented.")
 
+/obj/proc/get_demolition_damage()
+	return demolition_mod * force
+
 /obj/handle_ricochet(obj/projectile/P)
 	. = ..()
 	if(. && receive_ricochet_damage_coeff)

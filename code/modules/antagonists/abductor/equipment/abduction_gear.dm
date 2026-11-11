@@ -377,6 +377,8 @@
 	item_state = "alienpistol"
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/shrink_ray
 	autowiki_hidden = TRUE //not obtainable afaik
 	name = "shrink ray blaster"
