@@ -447,6 +447,7 @@
 	item_state = "duffel"
 	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
 	w_class = WEIGHT_CLASS_HUGE
+	drag_slowdown = 1
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
