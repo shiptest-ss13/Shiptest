@@ -1172,14 +1172,6 @@
 	pixel_x = -9;
 	pixel_y = -8
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = -7;
-	pixel_y = -5
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 9;
-	pixel_y = -5
-	},
 /obj/item/clothing/shoes/jackboots{
 	pixel_x = 0;
 	pixel_y = -8
@@ -1188,9 +1180,18 @@
 	pixel_x = 8;
 	pixel_y = -8
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 0;
-	pixel_y = -5
+/obj/item/clothing/under/cmm{
+	pixel_x = -6;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/cmm,
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 10;
+	pixel_y = 0
 	},
 /turf/open/floor/plating/asteroid/purple,
 /area/ruin/unpowered/dynamitehole)
