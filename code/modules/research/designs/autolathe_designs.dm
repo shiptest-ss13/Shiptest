@@ -1440,3 +1440,175 @@
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/wallframe/defib_mount
 	category = list("initial","Construction","Medical")
+
+/datum/design/board/space_heater
+	name = "Machine Design (Space Heater Board)"
+	desc = "The circuit board for a space heater."
+	id = "space_heater"
+	build_path = /obj/item/circuitboard/machine/space_heater
+	build_type = AUTOLATHE
+	category = list ("initial", "Machinery")
+	departmental_flags = ALL
+
+/datum/design/board/ship_gravity
+	name = "Machine Design (Ship Gravity Generator Board)"
+	desc = "The circuit board for a ship-sized gravity generator."
+	id = "ship_gravity"
+	build_type = AUTOLATHE
+	build_path = /obj/item/circuitboard/machine/ship_gravity
+	category = list("initial", "Machinery")
+
+/datum/design/chem_pack
+	name = "Intravenous Medicine Bag"
+	desc = "A plastic pressure bag for IV administration of drugs."
+	id = "chem_pack"
+	build_type = AUTOLATHE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	materials = list(/datum/material/plastic = 2000)
+	build_path = /obj/item/reagent_containers/chem_pack
+	category = list("initial", "Medical")
+
+/datum/design/blood_pack
+	name = "Blood Pack"
+	desc = "Is used to contain blood used for transfusion. Must be attached to an IV drip."
+	id = "blood_pack"
+	build_type = AUTOLATHE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	materials = list(/datum/material/plastic = 1000)
+	build_path = /obj/item/reagent_containers/blood
+	category = list("initial", "Medical")
+
+/datum/design/basic_cell
+	name = "Basic Power Cell"
+	desc = "A basic power cell that holds 1 MJ of energy."
+	id = "basic_cell"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/empty
+	category = list("Machinery","initial")
+
+/datum/design/disposable_gun
+	name = "Disposable Gun"
+	id = "disposable"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 4000)
+	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
+	category = list("Imported")
+
+// TELECOMMS PARTS (only used for the disc on the Tegu atp)
+/datum/design/subspace_ansible
+	name = "Subspace Ansible"
+	desc = "A compact module capable of sensing extradimensional activity."
+	id = "s-ansible"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
+	build_path = /obj/item/stock_parts/subspace/ansible
+	category = list("Stock Parts")
+
+/datum/design/hyperwave_filter
+	name = "Hyperwave Filter"
+	desc = "A tiny device capable of filtering and converting super-intense radiowaves."
+	id = "s-filter"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
+	build_path = /obj/item/stock_parts/subspace/filter
+	category = list("Stock Parts")
+
+/datum/design/subspace_amplifier
+	name = "Subspace Amplifier"
+	desc = "A compact micro-machine capable of amplifying weak subspace transmissions."
+	id = "s-amplifier"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/gold = 100, /datum/material/uranium = 100)
+	build_path = /obj/item/stock_parts/subspace/amplifier
+	category = list("Stock Parts")
+
+/datum/design/subspace_treatment
+	name = "Subspace Treatment Disk"
+	desc = "A compact micro-machine capable of stretching out hyper-compressed radio waves."
+	id = "s-treatment"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/silver = 200)
+	build_path = /obj/item/stock_parts/subspace/treatment
+	category = list("Stock Parts")
+
+/datum/design/subspace_analyzer
+	name = "Subspace Analyzer"
+	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
+	id = "s-analyzer"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/gold = 100)
+	build_path = /obj/item/stock_parts/subspace/analyzer
+	category = list("Stock Parts")
+
+/datum/design/subspace_crystal
+	name = "Ansible Crystal"
+	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
+	id = "s-crystal"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 800, /datum/material/silver = 100, /datum/material/gold = 100)
+	build_path = /obj/item/stock_parts/subspace/crystal
+	category = list("Stock Parts")
+
+/datum/design/subspace_transmitter
+	name = "Subspace Transmitter"
+	desc = "A large piece of equipment used to open a window into the subspace dimension."
+	id = "s-transmitter"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 100, /datum/material/silver = 100, /datum/material/uranium = 100)
+	build_path = /obj/item/stock_parts/subspace/transmitter
+	category = list("Stock Parts")
+
+// T1 Stock Parts
+
+/datum/design/basic_matter_bin
+	name = "Basic Matter Bin"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_matter_bin"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100)
+	build_path = /obj/item/stock_parts/matter_bin
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/basic_micro_laser
+	name = "Basic Micro-Laser"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_micro_laser"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/stock_parts/micro_laser
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/micro_mani
+	name = "Micro Manipulator"
+	desc = "A stock part used in the construction of various devices."
+	id = "micro_mani"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100)
+	build_path = /obj/item/stock_parts/manipulator
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/basic_scanning
+	name = "Basic Scanning Module"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_scanning"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/stock_parts/scanning_module
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/basic_capacitor
+	name = "Basic Capacitor"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_capacitor"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
+	build_path = /obj/item/stock_parts/capacitor
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+	departmental_flags = ALL

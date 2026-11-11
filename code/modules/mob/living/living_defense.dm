@@ -89,29 +89,30 @@
 		else
 				return 0
 
-/mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
-	if(istype(AM, /obj/item))
-		var/obj/item/I = AM
+/mob/living/hitby(atom/movable/thrown_atom, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
+	if(istype(thrown_atom, /obj/item))
+		var/obj/item/thrown_item = thrown_atom
 		var/zone = run_zone(BODY_ZONE_CHEST, 65) //Hits a random part of the body, geared towards the chest
 		var/dtype = BRUTE
-		var/nosell_hit = SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, zone, throwingdatum) // TODO: find a better way to handle hitpush and skipcatch for humans
+		var/nosell_hit = SEND_SIGNAL(thrown_item, COMSIG_MOVABLE_IMPACT_ZONE, src, zone, throwingdatum) // TODO: find a better way to handle hitpush and skipcatch for humans
 		if(nosell_hit)
 			skipcatch = TRUE
 			hitpush = FALSE
 
-		dtype = I.damtype
+		dtype = thrown_item.damtype
 		if(!blocked)
-			if(I.thrownby)
-				log_combat(I.thrownby, src, "threw and hit", I)
+			var/mob/thrown_by = thrown_item.thrownby?.resolve()
+			if(thrown_by)
+				log_combat(thrown_by, src, "threw and hit", thrown_item)
 			if(!nosell_hit)
 				visible_message(
-					span_danger("[src] is hit by [I]!"),
-					span_userdanger("You're hit by [I]!"),
+					span_danger("[src] is hit by [thrown_item]!"),
+					span_userdanger("You're hit by [thrown_item]!"),
 				)
-				if(!I.throwforce)
+				if(!thrown_item.throwforce)
 					return
-				var/armor = run_armor_check(zone, "melee", I.armour_penetration, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].")
-				apply_damage(I.throwforce, dtype, zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND))
+				var/armor = run_armor_check(zone, "melee", thrown_item.armour_penetration, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].")
+				apply_damage(thrown_item.throwforce, dtype, zone, armor, sharpness=thrown_item.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND))
 		else
 			return TRUE
 	else
