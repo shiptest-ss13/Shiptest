@@ -161,6 +161,22 @@
 	new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim_turf, get_dir(executioner, victim), victim.dna.blood_type.color)
 	victim.add_splatter_floor(victim_turf)
 
+// i love gore
+/datum/ai_behavior/execute_downed/proc/spray_gibs(mob/living/basic/human/executioner, mob/living/carbon/human/victim)
+	if(!victim.blood_volume)
+		return
+	var/turf/victim_turf = get_turf(victim)
+	var/turf/exit_turf = get_step(victim_turf, get_dir(executioner, victim))
+	if(!exit_turf || exit_turf.is_blocked_turf(TRUE))
+		exit_turf = victim_turf
+	var/obj/item/bodypart/head = victim.get_bodypart(BODY_ZONE_HEAD)
+	if(head && !IS_ORGANIC_LIMB(head))
+		new /obj/effect/decal/cleanable/robot_debris(exit_turf)
+		return
+	var/obj/effect/decal/cleanable/blood/gibs/gib = new(exit_turf)
+	if(!QDELETED(gib))
+		gib.add_blood_DNA(victim.get_blood_dna_list())
+
 // only as much damage as it takes to kill them
 /datum/ai_behavior/execute_downed/proc/finish_off(mob/living/basic/human/executioner, mob/living/carbon/human/victim, style)
 	if(style == AI_EXECUTION_GUN)
@@ -189,6 +205,8 @@
 		playsound(victim, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 		executioner.do_attack_animation(victim, used_item = get_ai_item_template(executioner.get_execution_blade()))
 	spray_blood(executioner, victim)
+	if(style == AI_EXECUTION_GUN)
+		spray_gibs(executioner, victim)
 	var/damage_type = BRUTE
 	var/sharpness
 	var/wound_bonus = 0
