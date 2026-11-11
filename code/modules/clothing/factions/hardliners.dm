@@ -246,6 +246,7 @@
 	hardsuit_type = "hlelite"
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/hl
 	name = "elite white-red hardsuit"

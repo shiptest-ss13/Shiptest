@@ -602,6 +602,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	full_retraction = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
 
