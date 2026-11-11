@@ -218,31 +218,40 @@
 /obj/item/clothing/head/helmet/proc/toggle_eyewear(mob/living/carbon/human/user)
 	if(!istype(user) || user.head != src || user.incapacitated())
 		return
+	var/obj/item/clothing/glasses/stowed = get_stowed_eyewear()
+	var/obj/item/clothing/glasses/worn = user.glasses
+	if(!stowed && !worn)
+		return
+	if(worn && !can_stow_eyewear(worn))
+		to_chat(user, span_warning("[worn] won't fit in [src]!"))
+		return
+	if(!stowed && !SEND_SIGNAL(src, COMSIG_TRY_STORAGE_CAN_INSERT, worn, user, TRUE))
+		to_chat(user, span_warning("There's no room in [src] for [worn]!"))
+		return
+
+	var/obj/item/clothing/glasses/slowest = stowed
+	if(!slowest || (worn && worn.equip_delay_self > slowest.equip_delay_self))
+		slowest = worn
+	if(slowest.equip_delay_self && !slowest.do_equip_wait(user, slowest.equipping_sound))
+		return
+	if(user.head != src || user.incapacitated() || get_stowed_eyewear() != stowed || user.glasses != worn)
+		return
+
 	toggling_eyewear = TRUE
-	if(get_stowed_eyewear())
-		swap_eyewear(user)
-	else if(user.glasses)
-		stow_eyewear(user)
+	if(stowed)
+		swap_eyewear(user, stowed, worn)
+	else
+		stow_eyewear(user, worn)
 	toggling_eyewear = FALSE
 	update_eyewear_action()
 
-/obj/item/clothing/head/helmet/proc/stow_eyewear(mob/living/carbon/human/user)
-	var/obj/item/clothing/glasses/worn = user.glasses
-	if(!can_stow_eyewear(worn))
-		to_chat(user, span_warning("[worn] won't fit in [src]!"))
-		return
+/obj/item/clothing/head/helmet/proc/stow_eyewear(mob/living/carbon/human/user, obj/item/clothing/glasses/worn)
 	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, worn, user, TRUE))
 		to_chat(user, span_warning("There's no room in [src] for [worn]!"))
 		return
 	to_chat(user, span_notice("You flip [worn] up into [src]."))
 
-/obj/item/clothing/head/helmet/proc/swap_eyewear(mob/living/carbon/human/user)
-	var/obj/item/clothing/glasses/stowed = get_stowed_eyewear()
-	var/obj/item/clothing/glasses/worn = user.glasses
-	if(worn && !can_stow_eyewear(worn))
-		to_chat(user, span_warning("[worn] won't fit in [src]!"))
-		return
-
+/obj/item/clothing/head/helmet/proc/swap_eyewear(mob/living/carbon/human/user, obj/item/clothing/glasses/stowed, obj/item/clothing/glasses/worn)
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, stowed, user.drop_location())
 
 	// the pocket can still be full once ours are out
@@ -322,28 +331,28 @@
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
 
+// check species (or override) first, then helmet own, then fallback to armor.dmi
+/obj/item/clothing/head/helmet/proc/get_flashlight_overlay(list/icon_files)
+	var/state = attached_light.on ? "[flashlight_state]_on" : flashlight_state
+	var/chosen_file = icon_files[length(icon_files)]
+	for(var/icon_file in icon_files)
+		if(icon_file && icon_exists(icon_file, state))
+			chosen_file = icon_file
+			break
+	return mutable_appearance(chosen_file, state)
+
 /obj/item/clothing/head/helmet/update_overlays()
 	. = ..()
-	var/mutable_appearance/flashlightlight_overlay
-	if(!attached_light)
-		return
-	if(attached_light.on)
-		flashlightlight_overlay = mutable_appearance(icon, "[flashlight_state]_on")
-	else
-		flashlightlight_overlay = mutable_appearance(icon, flashlight_state)
-	. += flashlightlight_overlay
+	if(attached_light)
+		. += get_flashlight_overlay(list(icon, 'icons/obj/clothing/head/armor.dmi'))
 
-/obj/item/clothing/head/helmet/worn_overlays(isinhands)
+/obj/item/clothing/head/helmet/worn_overlays(isinhands, icon_file)
 	. = ..()
-	var/mutable_appearance/flashlightlight_overlay
 	if(isinhands)
 		return
 	if(attached_light)
-		if(attached_light.on)
-			flashlightlight_overlay = mutable_appearance(mob_overlay_icon, "[flashlight_state]_on")
-		else
-			flashlightlight_overlay = mutable_appearance(mob_overlay_icon, flashlight_state)
-		. += flashlightlight_overlay
+		// species file first, so vox and kepori seclite sprites get used once they exist
+		. += get_flashlight_overlay(list(icon_file, mob_overlay_icon, 'icons/mob/clothing/head/armor.dmi'))
 	if(content_overlays && pocket)
 		for(var/obj/item/stowed_item in pocket)
 			. += stowed_item.get_helmet_overlay()
