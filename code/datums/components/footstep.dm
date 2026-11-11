@@ -72,10 +72,19 @@
 	if(!current_turf)
 		return
 	play_fov_effect(source, 5, "footstep", direction, ignore_self = TRUE)
+
 	if(isfile(footstep_sounds) || istext(footstep_sounds))
 		playsound(current_turf, footstep_sounds, volume, falloff_distance = 1)
-		return
-	playsound(current_turf, pick(footstep_sounds[current_turf.turf_footstep_type][1]), footstep_sounds[current_turf.turf_footstep_type][2] * volume, TRUE, footstep_sounds[current_turf.turf_footstep_type][3] + e_range, falloff_distance = 1)
+	else
+		var/current_footstep_sound = footstep_sounds[current_turf.turf_footstep_type]
+		playsound(
+			source = current_turf,
+			soundin = pick(current_footstep_sound[1]),
+			vol = current_footstep_sound[2] * volume,
+			vary = TRUE,
+			extrarange = current_footstep_sound[3] + e_range,
+			falloff_distance = 1
+		)
 
 /datum/component/footstep/proc/play_humanstep(mob/living/carbon/human/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
@@ -101,16 +110,18 @@
 	if(leg == null) //no leg?
 		return
 
-	var/human_footstep_sound
+	var/current_footstep_sound
 
 	if(stepper.shoes || feetCover) //are we wearing shoes
-		human_footstep_sound = GLOB.footstep[FOOTSTEP_MOB_SHOE][current_turf.turf_footstep_type]
+		current_footstep_sound = GLOB.footstep[FOOTSTEP_MOB_SHOE][current_turf.turf_footstep_type]
 	else //barefoot
-		human_footstep_sound = GLOB.footstep[leg.footstep_type][current_turf.turf_footstep_type]
+		current_footstep_sound = GLOB.footstep[leg.footstep_type][current_turf.turf_footstep_type]
 
-	playsound(current_turf, pick(human_footstep_sound[1]),
-		human_footstep_sound[2] * volume,
-		TRUE,
-		human_footstep_sound[3] + e_range, falloff_distance = 1)
-
-#undef SHOULD_DISABLE_FOOTSTEPS
+	playsound(
+		source = current_turf,
+		soundin = pick(current_footstep_sound[1]),
+		vol = current_footstep_sound[2] * volume,
+		vary = TRUE,
+		extrarange = current_footstep_sound[3] + e_range,
+		falloff_distance = 1
+	)

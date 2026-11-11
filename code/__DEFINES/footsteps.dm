@@ -23,6 +23,7 @@
 #define FOOTSTEP_MOB_CLAW "claw"
 #define FOOTSTEP_MOB_HEAVY "heavy"
 
+//add new mob footstep types to this or it won't be added to GLOB.footstep
 GLOBAL_LIST_INIT(footstep_mob_types, list(FOOTSTEP_MOB_SHOE, FOOTSTEP_MOB_BAREFOOT, FOOTSTEP_MOB_CLAW, FOOTSTEP_MOB_HEAVY))
 
 //Nonstandard behavior
