@@ -2,7 +2,7 @@
 	filename = "siliconnect"
 	filedesc = "SiliConnect"
 	ui_header = "borg_mon.gif"
-	program_icon_state = "generic"
+	program_icon_state = "robot"
 	extended_desc = "This program allows for remote monitoring of cyborgs."
 	requires_ntnet = TRUE
 	transfer_access = ACCESS_ROBOTICS
@@ -89,7 +89,7 @@
 	filename = "roboverlord"
 	filedesc = "Roboverlord"
 	ui_header = "borg_mon.gif"
-	program_icon_state = "generic"
+	program_icon_state = "robot"
 	extended_desc = "This program allows for remote monitoring of mission-assigned cyborgs."
 	requires_ntnet = FALSE
 	available_on_ntnet = FALSE

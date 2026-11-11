@@ -105,6 +105,13 @@
 	contains = list(/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
 
+/datum/supply_pack/medical/compact_defib
+	name = "Compact Defibrillator Crate"
+	desc = "Contains a compact defibrillator for bringing the recently deceased back to life. Fits around your belt."
+	cost = 1250
+	contains = list(/obj/item/defibrillator/compact/loaded)
+	crate_name = "defibrillator crate"
+
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical case, Sterilizine spray and collapsible roller bed."
@@ -241,7 +248,7 @@
 /datum/supply_pack/medical/bruise
 	name = "Bruise Pack Pack"
 	desc = "Contains a pack of bruise packs, for refilling medical kits, or simply building up a stock."
-	cost = 200
+	cost = 300
 	contains = list(/obj/item/storage/medpack/bruisepacks)
 
 /datum/supply_pack/medical/mesh
@@ -468,3 +475,17 @@
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan)
 	crate_name = "chitosan vial crate"
+
+/datum/supply_pack/medical/stapler
+	name = "Medical Stapler Crate"
+	desc = "Contains a medical stapler for rapidly sealing bleeding wounds."
+	cost = 200
+	contains = list(/obj/item/med_stapler/full)
+	crate_name = "medical stapler crate"
+
+/datum/supply_pack/medical/stapler_refill
+	name = "Medical Staple Cartridge"
+	desc = "Contains a cartridge for refilling a medical stapler."
+	cost = 100
+	contains = list(/obj/item/med_staple_cart)
+	crate_name = "medical staples crate"

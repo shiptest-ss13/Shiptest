@@ -60,6 +60,8 @@
 			sanitization += 0.9
 		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
 			sanitization += 0.9
+		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine/purifadine))
+			sanitization += 1.5
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
 			sanitization += 0.3
 			flesh_healing += 0.5
