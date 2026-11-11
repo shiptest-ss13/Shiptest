@@ -114,6 +114,7 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/formal
+	accessory = /obj/item/clothing/accessory/clip_sweater
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
@@ -140,7 +141,6 @@
 
 	box = /obj/item/storage/box/survival/medical
 	chameleon_extras = /obj/item/gun/syringe
-	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/nitrile
@@ -158,7 +158,7 @@
 	jobtype = /datum/job/paramedic
 
 	uniform = /obj/item/clothing/under/clip/medic
-	head = /obj/item/clothing/head/soft/paramedic
+	head = /obj/item/clothing/head/clip/medic
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	gloves = /obj/item/clothing/gloves/nitrile
 	belt = /obj/item/storage/belt/medical
@@ -219,7 +219,6 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	uniform = /obj/item/clothing/under/clip/engi
-	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/dblue
 	suit =  /obj/item/clothing/suit/hazardvest
 
@@ -266,6 +265,7 @@
 
 	head = /obj/item/clothing/head/flatcap/clip
 	uniform = /obj/item/clothing/under/clip/formal
+	accessory = /obj/item/clothing/accessory/clip_sweater
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -279,6 +279,7 @@
 	jobtype = /datum/job/curator
 
 	uniform = /obj/item/clothing/under/clip/formal
+	accessory = /obj/item/clothing/accessory/clip_sweater
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack
@@ -481,7 +482,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	uniform = /obj/item/clothing/under/cmm/engi
-	head = /obj/item/clothing/head/soft/utility_navy
+	head = /obj/item/clothing/head/clip
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -576,7 +577,6 @@
 	jobtype = /datum/job/engineer
 
 	uniform = /obj/item/clothing/under/cmm/engi
-	accessory = /obj/item/clothing/accessory/armband/engine
 
 /datum/outfit/job/clip/minutemen/grunt/engineer/dressed
 	name = "CLIP Minutemen - Combat Engineer (Dressed)"
@@ -611,7 +611,6 @@
 	jobtype = /datum/job/doctor
 
 	uniform = /obj/item/clothing/under/cmm/medic
-	accessory = /obj/item/clothing/accessory/armband/medblue
 
 /datum/outfit/job/clip/minutemen/grunt/medic/secaccess
 	name = "CLIP Minutemen - Combat Medic (Security Access)"
@@ -680,7 +679,7 @@
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/cmm
 	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/soft/utility_navy
+	head = /obj/item/clothing/head/clip
 	shoes = /obj/item/clothing/shoes/jackboots
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)

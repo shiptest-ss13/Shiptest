@@ -3562,16 +3562,12 @@
 /obj/structure/closet/secure_closet/clip/minutemen/combat_medic{
 	populate = 0
 	},
-/obj/item/clothing/under/clip/medic,
+/obj/item/clothing/under/cmm/medic,
 /obj/item/pinpointer/crew,
 /obj/item/sensor_device,
 /obj/item/clothing/gloves/nitrile{
 	pixel_x = -11;
 	pixel_y = 5
-	},
-/obj/item/clothing/head/clip/corpsman{
-	pixel_x = 6;
-	pixel_y = -4
 	},
 /obj/item/storage/belt/medical/webbing/clip{
 	pixel_y = -7
@@ -3584,6 +3580,10 @@
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
 	pixel_x = -5
+	},
+/obj/item/clothing/head/clip/medic{
+	pixel_x = 7;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3725,17 +3725,25 @@
 	pixel_x = 8;
 	pixel_y = -9
 	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 0;
+	pixel_y = -6
+	},
 /obj/item/clothing/gloves/combat{
-	pixel_x = -13;
-	pixel_y = -2
+	pixel_x = 6;
+	pixel_y = -6
 	},
 /obj/item/clothing/gloves/combat{
 	pixel_x = -3;
 	pixel_y = -4
 	},
 /obj/item/clothing/gloves/combat{
-	pixel_x = 6;
-	pixel_y = -6
+	pixel_x = -13;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -4430,29 +4438,10 @@
 /obj/item/storage/backpack/satchel/sec/clip,
 /obj/item/storage/backpack/satchel/sec/clip,
 /obj/item/clothing/head/clip{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/clip{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/clip{
-	pixel_x = 8;
-	pixel_y = 8
+	pixel_x = 0;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/wood/walnut,
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 7;
-	pixel_y = -5
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_y = -5
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = -8;
-	pixel_y = -5
-	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -9;
 	pixel_x = -10
@@ -4464,6 +4453,21 @@
 /obj/item/clothing/shoes/combat{
 	pixel_y = -11;
 	pixel_x = 8
+	},
+/obj/item/clothing/under/cmm,
+/obj/item/clothing/under/cmm,
+/obj/item/clothing/under/cmm,
+/obj/item/clothing/head/clip{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 0;
+	pixel_y = 5
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)

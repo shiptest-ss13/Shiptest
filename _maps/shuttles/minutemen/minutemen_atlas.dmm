@@ -379,6 +379,10 @@
 	pixel_x = 8
 	},
 /obj/item/storage/guncase/ecm9,
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = 9;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/commad)
 "cX" = (
@@ -842,12 +846,36 @@
 /obj/effect/turf_decal/corner/opaque/white/bordercorner{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /obj/structure/closet/wardrobe/clip/minutemen/wall{
 	dir = 4;
 	pixel_x = 28
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 5;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -2443,6 +2471,30 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 4
 	},
+/obj/item/storage/belt/military/clip{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/military/clip{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/military/clip{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 9;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "ry" = (
@@ -2487,9 +2539,6 @@
 	opacity = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/curtain/cloth/grey{
-	dir = 4
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "sh" = (
@@ -2812,6 +2861,10 @@
 	pixel_x = 8
 	},
 /obj/item/storage/guncase/pistol/cm23,
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = 9;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/commad)
 "uO" = (
@@ -3696,15 +3749,27 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner,
-/obj/structure/closet/wardrobe/clip/formal/wall{
-	dir = 4;
-	pixel_x = 28
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = 9;
+	pixel_y = 3
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = 9;
+	pixel_y = -1
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = 9;
+	pixel_y = -5
+	},
+/obj/structure/closet/wardrobe/clip/minutemen/formal/wall{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "AO" = (
@@ -4316,14 +4381,14 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	pixel_x = 7;
 	pixel_y = 20;
 	id = "atlas_interview";
 	name = "privacy shutters button"
+	},
+/obj/structure/window{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -5575,6 +5640,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/half,
 /obj/structure/closet/secure_closet/clip/minutemen/correspondent,
+/obj/item/clothing/accessory/clip_sweater,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "Qb" = (

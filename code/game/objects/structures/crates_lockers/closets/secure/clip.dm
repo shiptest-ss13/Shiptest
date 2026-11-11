@@ -25,8 +25,8 @@
 
 /obj/structure/closet/secure_closet/clip/minutemen/captain/PopulateContents()
 	new /obj/item/clothing/head/clip/slouch/officer(src)
-	new /obj/item/clothing/under/clip/officer(src)
-	new /obj/item/clothing/under/clip/officer/alt(src)
+	new /obj/item/clothing/under/cmm/officer(src)
+	new /obj/item/clothing/under/cmm/officer/alt(src)
 	new /obj/item/clothing/suit/armor/clip_capcoat(src)
 	new /obj/item/storage/belt/military/clip(src) // you know, just in case
 	new /obj/item/clothing/shoes/jackboots(src)
@@ -46,9 +46,9 @@
 
 /obj/structure/closet/secure_closet/clip/minutemen/bridge_officer/PopulateContents()
 	new /obj/item/clothing/head/clip/slouch(src)
-	new /obj/item/clothing/under/clip/officer(src)
-	new /obj/item/clothing/under/clip/officer/alt(src)
-	new /obj/item/clothing/suit/toggle/lawyer/clip(src)
+	new /obj/item/clothing/under/cmm/officer(src)
+	new /obj/item/clothing/under/cmm/officer/alt(src)
+	new /obj/item/clothing/suit/toggle/cmm(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/storage/belt/military/clip(src) // you know, just in case
 	new /obj/item/binoculars(src)
@@ -64,7 +64,9 @@
 /obj/structure/closet/secure_closet/clip/minutemen/lead/PopulateContents()
 	new /obj/item/clothing/under/cmm(src)
 	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/suit/toggle/cmm(src)
 	new /obj/item/clothing/head/soft/utility_navy(src)
+	new /obj/item/clothing/head/clip(src)
 	new /obj/item/storage/belt/military/clip(src)
 	new /obj/item/storage/pouch/squad(src)
 	new /obj/item/megaphone(src)
@@ -79,9 +81,9 @@
 
 /obj/structure/closet/secure_closet/clip/minutemen/combat_medic/PopulateContents()
 	new /obj/item/clothing/head/clip/medic(src)
-	new /obj/item/clothing/accessory/armband/medblue(src)
-	new /obj/item/clothing/under/cmm(src)
+	new /obj/item/clothing/under/cmm/medic(src)
 	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/suit/toggle/cmm(src)
 	new /obj/item/storage/belt/medical/webbing/clip(src)
 	new /obj/item/storage/pouch/medical(src)
 
@@ -93,14 +95,14 @@
 	icon_state = "eng_secure"
 
 /obj/structure/closet/secure_closet/clip/minutemen/engineer/PopulateContents()
-	new /obj/item/clothing/under/clip(src)
+	new /obj/item/clothing/under/cmm/engi(src)
 	new /obj/item/clothing/shoes/workboots(src)
 	new /obj/item/storage/belt/utility/full/engi(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/suit/hazardvest(src)
 	new /obj/item/storage/backpack/satchel/eng(src)
-	new /obj/item/clothing/head/soft/utility_navy(src)
+	new /obj/item/clothing/head/clip(src)
 	new /obj/item/clothing/head/hardhat/dblue(src)
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/storage/box/emptysandbags(src)

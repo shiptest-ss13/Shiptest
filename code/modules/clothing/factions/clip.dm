@@ -10,7 +10,7 @@
 	roll_sleeves = TRUE
 	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
-	vox_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 
 
@@ -66,7 +66,7 @@
 	roll_sleeves = TRUE
 	roll_down = TRUE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
-	vox_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
@@ -80,7 +80,7 @@
 
 /obj/item/clothing/under/cmm/engi
 	name = "\improper CMM engineer's uniform"
-	desc = "A jumpsuit worn by the Colonial Minutemen's engineering personell denoted by the large orange ring patches on either shoulder."
+	desc = "A jumpsuit worn by the Colonial Minutemen's engineering personell, denoted by the large orange ring patches on either shoulder."
 	icon_state = "cmm_engi"
 	roll_down = FALSE
 
@@ -430,6 +430,7 @@
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 	icon_state = "clip_cap"
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	obj_flags = INFINITE_RESKIN
@@ -523,6 +524,7 @@
 	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_vc"
 	obj_flags = INFINITE_RESKIN
@@ -545,6 +547,7 @@
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_correspondant"
 	item_state = "clip_m10_correspondant"
@@ -620,6 +623,7 @@
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 
 	icon_state = "clipwebbing"
 	item_state = "clipwebbing"
@@ -629,7 +633,7 @@
 	"Suspenders Down" = "clipwebbing-belt"
 	)
 
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/storage/belt/military/clip/cm82/PopulateContents()
 	for(var/i in 1 to 4)
@@ -704,10 +708,11 @@
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 
 	icon_state = "clip-medwebbing"
 
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/storage/belt/medical/webbing/clip/prefilled/PopulateContents()
 	new /obj/item/reagent_containers/medigel/hadrakine(src)

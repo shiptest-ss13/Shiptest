@@ -209,13 +209,16 @@
 	},
 /obj/item/clothing/under/clip/formal/alt,
 /obj/item/clothing/under/clip/formal,
-/obj/item/clothing/suit/toggle/lawyer/clip,
 /obj/item/storage/backpack/security/clip,
 /obj/item/radio/headset/clip/captain,
 /obj/item/clothing/head/clip/slouch,
 /obj/item/clothing/shoes/laceup,
 /obj/item/storage/backpack/satchel/cap,
-/obj/item/clothing/accessory/clip_formal_overshirt,
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/armor/clip_trenchcoat,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hu" = (
@@ -267,7 +270,7 @@
 /obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack/duffelbag,
 /obj/item/clothing/under/clip/medic,
-/obj/item/clothing/under/clip,
+/obj/item/clothing/under/clip/engi,
 /obj/item/clothing/under/clip,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
@@ -276,7 +279,47 @@
 /obj/item/clothing/head/soft/utility_navy,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/head/soft/utility_navy,
+/obj/item/clothing/head/clip{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip/medic{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = 8;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "jr" = (
@@ -1197,7 +1240,7 @@
 	},
 /obj/item/clothing/head/clip{
 	pixel_x = 9;
-	pixel_y = 17
+	pixel_y = 11
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -1516,11 +1559,13 @@
 	},
 /obj/item/storage/guncase/ecm7{
 	pixel_x = -1;
-	pixel_y = 3
+	pixel_y = 3;
+	mag_count = 3
 	},
 /obj/item/storage/guncase/ecm12{
 	pixel_x = -1;
-	pixel_y = 5
+	pixel_y = 5;
+	mag_count = 3
 	},
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
@@ -1832,7 +1877,6 @@
 	},
 /obj/item/storage/box/bodybags,
 /obj/structure/closet/crate/medical,
-/obj/item/clothing/accessory/armband/medblue,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "Vy" = (

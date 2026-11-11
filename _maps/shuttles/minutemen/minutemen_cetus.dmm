@@ -390,10 +390,6 @@
 	pixel_x = -5;
 	pixel_y = 0
 	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -5;
-	pixel_y = 0
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "cm" = (
@@ -2539,10 +2535,6 @@
 	req_access = list(1);
 	anchored = 1
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 1;
-	pixel_y = -1
-	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
 	pixel_x = -5
@@ -2574,6 +2566,18 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 0;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "pv" = (
@@ -3530,10 +3534,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "vd" = (
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 1;
-	pixel_y = -1
-	},
 /obj/item/clothing/head/clip{
 	pixel_x = 1;
 	pixel_y = 7
@@ -3612,6 +3612,14 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vi" = (
@@ -3648,10 +3656,6 @@
 	req_access = list(1);
 	anchored = 1
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 1;
-	pixel_y = -1
-	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
 	pixel_x = -5
@@ -3683,6 +3687,18 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 0;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "vy" = (
@@ -3736,21 +3752,11 @@
 	pixel_x = 0;
 	pixel_y = -28
 	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -6;
-	pixel_y = -10
-	},
+/obj/item/clothing/under/cmm/formal/alt,
+/obj/item/clothing/under/cmm/formal,
 /obj/item/clothing/shoes/laceup{
 	pixel_x = 3;
 	pixel_y = -14
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -6;
-	pixel_y = -7
 	},
 /obj/item/clothing/head/clip/slouch{
 	pixel_x = 6;
@@ -3777,6 +3783,10 @@
 	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = -15
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
@@ -4446,20 +4456,18 @@
 	pixel_y = -10;
 	pixel_x = -4
 	},
-/obj/item/clothing/under/clip/medic{
-	pixel_x = -2
-	},
+/obj/item/clothing/under/cmm/medic,
 /obj/item/storage/belt/medical/webbing/clip{
 	pixel_y = -1;
 	pixel_x = -3
 	},
-/obj/item/clothing/head/clip/corpsman{
-	pixel_x = -2;
-	pixel_y = 7
-	},
 /obj/item/clothing/gloves/nitrile{
 	pixel_x = 2;
 	pixel_y = -7
+	},
+/obj/item/clothing/head/clip/medic{
+	pixel_x = 7;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -5498,21 +5506,11 @@
 	pixel_x = 0;
 	pixel_y = -28
 	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -6;
-	pixel_y = -10
-	},
+/obj/item/clothing/under/cmm/formal/alt,
+/obj/item/clothing/under/cmm/formal,
 /obj/item/clothing/shoes/laceup{
 	pixel_x = 3;
 	pixel_y = -14
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -6;
-	pixel_y = -7
 	},
 /obj/item/clothing/head/clip/slouch{
 	pixel_x = 6;
@@ -5541,6 +5539,10 @@
 	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = -15
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
@@ -6025,62 +6027,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -10
-	},
 /obj/item/clothing/shoes/laceup{
 	pixel_x = 3;
 	pixel_y = -12
@@ -6104,6 +6050,54 @@
 /obj/item/clothing/shoes/laceup{
 	pixel_x = 3;
 	pixel_y = -12
+	},
+/obj/item/clothing/under/cmm/formal/alt{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal/alt{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal/alt{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal/alt{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/cmm/formal{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -6458,12 +6452,6 @@
 /obj/item/clothing/suit/armor/clip_capcoat{
 	pixel_x = -14
 	},
-/obj/item/clothing/under/clip/officer{
-	pixel_x = 13
-	},
-/obj/item/clothing/under/clip/officer/alt{
-	pixel_x = 13
-	},
 /obj/item/clothing/head/clip/slouch/officer{
 	pixel_y = 13
 	},
@@ -6524,6 +6512,18 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/siding/wood/walnut,
+/obj/item/clothing/accessory/clip_sweater{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/clothing/under/cmm/officer{
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/item/clothing/under/cmm/officer/alt{
+	pixel_x = -5;
+	pixel_y = 11
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "Lh" = (
@@ -8593,10 +8593,6 @@
 	req_access = list(48);
 	anchored = 1
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 1;
-	pixel_y = -1
-	},
 /obj/item/clothing/head/clip{
 	pixel_x = 1;
 	pixel_y = 7
@@ -8631,6 +8627,14 @@
 	pixel_y = -10
 	},
 /obj/item/binoculars,
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "WH" = (
@@ -9218,9 +9222,6 @@
 	pixel_x = 6;
 	pixel_y = -6
 	},
-/obj/item/storage/backpack/satchel/sec/clip,
-/obj/item/storage/backpack/satchel/sec/clip,
-/obj/item/storage/backpack/satchel/sec/clip,
 /obj/item/storage/backpack/security/clip{
 	pixel_x = -7;
 	pixel_y = -7
@@ -9233,17 +9234,56 @@
 	pixel_x = -7;
 	pixel_y = -7
 	},
-/obj/item/clothing/under/clip{
-	pixel_x = -10;
-	pixel_y = -4
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
 	},
-/obj/item/clothing/under/clip{
-	pixel_x = -10;
-	pixel_y = -4
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
 	},
-/obj/item/clothing/under/clip{
-	pixel_x = -10;
-	pixel_y = -4
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/clothing/under/cmm{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -11;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -11;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -11;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -11;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = 4;
+	pixel_y = 14
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = 4;
+	pixel_y = 14
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = 4;
+	pixel_y = 14
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = 4;
+	pixel_y = 14
 	},
 /obj/item/clothing/shoes/workboots{
 	pixel_x = -9;
@@ -9257,17 +9297,9 @@
 	pixel_x = -9;
 	pixel_y = -9
 	},
-/obj/item/clothing/head/soft/utility_navy{
-	pixel_x = -10;
-	pixel_y = 7
-	},
-/obj/item/clothing/head/soft/utility_navy{
-	pixel_x = -10;
-	pixel_y = 7
-	},
-/obj/item/clothing/head/soft/utility_navy{
-	pixel_x = -10;
-	pixel_y = 7
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -9;
+	pixel_y = -9
 	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -9;
@@ -9281,29 +9313,25 @@
 	pixel_y = -9;
 	pixel_x = 9
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 10;
-	pixel_y = -5
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 10;
-	pixel_y = -5
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -4
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 10;
-	pixel_y = -5
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -4
 	},
-/obj/item/clothing/head/clip{
-	pixel_x = 10;
-	pixel_y = 7
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -4
 	},
-/obj/item/clothing/head/clip{
-	pixel_x = 10;
-	pixel_y = 7
-	},
-/obj/item/clothing/head/clip{
-	pixel_x = 10;
-	pixel_y = 7
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = -11;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)

@@ -278,3 +278,28 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/formal/wall, 27)
 	can_be_unanchored = FALSE
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/minutemen/wall, 27)
+
+/obj/structure/closet/wardrobe/clip/minutemen/formal
+	name = "formal C-MM spare uniforms locker"
+	desc = "This locker stores spare formal C-MM uniforms."
+	icon_door = "white"
+
+/obj/structure/closet/wardrobe/clip/minutemen/formal/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/clothing/under/cmm/formal(src)
+	for(var/i in 1 to 3)
+		new /obj/item/clothing/under/cmm/formal/alt(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/shoes/laceup(src)
+	return
+
+/obj/structure/closet/wardrobe/clip/minutemen/formal/wall
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
+	icon_state = "generic_wall"
+	icon_door = null
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/formal/wall, 27)

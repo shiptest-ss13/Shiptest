@@ -1498,7 +1498,6 @@
 /obj/effect/turf_decal/corner/opaque/beige/border{
 	dir = 1
 	},
-/obj/item/clothing/accessory/clip_formal_overshirt,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	req_access_txt = "19";
 	icon_state = "solgov_wall";
@@ -2969,7 +2968,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/item/clothing/under/clip,
+/obj/item/clothing/under/clip/engi,
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/gloves/insulated,
 /obj/item/storage/toolbox/mechanical{
@@ -3632,7 +3631,6 @@
 "Bz" = (
 /obj/item/clothing/suit/armor/clip_trenchcoat,
 /obj/item/clothing/head/clip/slouch,
-/obj/item/clothing/accessory/clip_formal_overshirt,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	req_access_txt = "20";
 	icon_state = "solgov_wall";
@@ -3653,22 +3651,24 @@
 	pixel_x = 6;
 	pixel_y = -8
 	},
-/obj/item/clothing/under/clip/formal{
-	pixel_x = -9;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/clip/formal/alt{
-	pixel_x = -9;
-	pixel_y = -1
+/obj/item/clothing/under/clip/officer/alt{
+	pixel_x = -7;
+	pixel_y = 5
 	},
 /obj/item/clothing/suit/toggle/lawyer/clip/command{
-	pixel_x = 7;
-	pixel_y = -3
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/item/clothing/under/clip/officer{
+	pixel_x = -8;
+	pixel_y = -2
 	},
 /obj/item/clothing/head/clip/slouch/officer{
 	pixel_y = -7
 	},
-/obj/item/storage/guncase/ecm9,
+/obj/item/storage/guncase/ecm9{
+	mag_count = 3
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/captain)
 "BC" = (
@@ -4179,21 +4179,6 @@
 	dir = 9
 	},
 /obj/structure/closet/wall/directional/east,
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = -8;
-	pixel_y = -5
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_y = -5
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 7;
-	pixel_y = -5
-	},
-/obj/item/clothing/head/clip{
-	pixel_x = 8;
-	pixel_y = 8
-	},
 /obj/item/storage/backpack/satchel/sec/clip,
 /obj/item/storage/backpack/security/clip{
 	pixel_x = 9;
@@ -4214,6 +4199,42 @@
 /obj/item/clothing/shoes/combat{
 	pixel_x = 8;
 	pixel_y = -7
+	},
+/obj/item/clothing/under/cmm{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/clothing/under/cmm{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/clothing/under/cmm{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/toggle/cmm{
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/dormfour)
@@ -4770,14 +4791,6 @@
 	pixel_x = -5;
 	pixel_y = -9
 	},
-/obj/item/storage/belt/military/clip/alt{
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/obj/item/storage/belt/military/clip/alt{
-	pixel_x = 6;
-	pixel_y = -2
-	},
 /obj/item/storage/belt/military/clip{
 	pixel_x = 1;
 	pixel_y = -8
@@ -4785,20 +4798,28 @@
 /obj/item/storage/belt/military/clip{
 	pixel_y = -4
 	},
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_x = -5;
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_x = -4;
-	pixel_y = -11
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/armorycage{
 	name = "armor locker";
 	req_access = list(1)
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/storage/belt/military/clip/chest{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = -4;
+	pixel_y = -11
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = -5;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -4925,6 +4946,27 @@
 	pixel_x = -8;
 	pixel_y = -10
 	},
+/obj/item/clothing/head/clip/medic{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/clip/medic{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/clothing/gloves/nitrile{
+	pixel_x = -11;
+	pixel_y = 5
+	},
+/obj/item/clothing/under/clip/medic{
+	pixel_x = 9;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/toggle/labcoat,
+/obj/item/storage/belt/medical{
+	pixel_x = -8;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "KT" = (
@@ -5045,15 +5087,13 @@
 /obj/item/ammo_box/magazine/cm15_12g,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /obj/item/ammo_box/magazine/cm15_12g,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/ammo_box/magazine/cm5_9mm,
+/obj/item/ammo_box/magazine/cm5_9mm,
+/obj/item/ammo_box/magazine/cm5_9mm,
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/cm5_9mm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "Mr" = (
@@ -5622,7 +5662,7 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -6
 	},
-/obj/item/clothing/under/clip,
+/obj/item/clothing/under/clip/engi,
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/gloves/insulated,
 /obj/item/storage/toolbox/mechanical{
@@ -6354,17 +6394,13 @@
 	pixel_x = 10;
 	pixel_y = -17
 	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -8;
-	pixel_y = -9
+/obj/item/clothing/head/clip{
+	pixel_x = 8;
+	pixel_y = 5
 	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = -2;
-	pixel_y = -7
-	},
-/obj/item/clothing/accessory/clip_formal_overshirt{
-	pixel_x = 3;
-	pixel_y = -9
+/obj/item/clothing/head/clip{
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/dormtwo)
@@ -6489,16 +6525,12 @@
 	populate = 0;
 	req_access = list(1)
 	},
-/obj/item/clothing/under/clip/medic,
+/obj/item/clothing/under/cmm/medic,
 /obj/item/pinpointer/crew,
 /obj/item/sensor_device,
 /obj/item/clothing/gloves/nitrile{
 	pixel_x = -11;
 	pixel_y = 5
-	},
-/obj/item/clothing/head/clip/corpsman{
-	pixel_x = 6;
-	pixel_y = -4
 	},
 /obj/item/storage/belt/medical/webbing/clip{
 	pixel_y = -7
@@ -6524,6 +6556,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
+	},
+/obj/item/clothing/head/clip/medic{
+	pixel_x = 7;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
