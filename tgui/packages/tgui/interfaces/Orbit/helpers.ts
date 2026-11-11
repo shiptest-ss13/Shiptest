@@ -90,6 +90,21 @@ export const isJobOrNameMatch = (
   );
 };
 
+export const isNameOrFullNameMatch = (
+  observable: Observable,
+  searchQuery: string
+): boolean => {
+  if (!searchQuery) return true;
+
+  const { name, full_name } = observable;
+
+  return (
+    name?.toLowerCase().includes(searchQuery?.toLowerCase()) ||
+    full_name?.toLowerCase().includes(searchQuery?.toLowerCase()) ||
+    false
+  );
+};
+
 export const searchFor = (searchText) =>
   createSearch(searchText, (thing: Observable) => thing.full_name);
 

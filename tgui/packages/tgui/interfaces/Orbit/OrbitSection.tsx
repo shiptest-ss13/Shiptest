@@ -1,5 +1,5 @@
 import { Collapsible, Flex, Tooltip } from '../../components';
-import { isJobOrNameMatch } from './helpers';
+import { isNameOrFullNameMatch } from './helpers';
 import { OrbitItem } from './OrbitItem';
 import { OrbitTooltip } from './OrbitTooltip';
 import { Observable } from './types';
@@ -20,7 +20,7 @@ export const OrbitSection = (props: Props) => {
   const { color, section = [], title, searchQuery, autoObserve } = props;
 
   const filteredSection = section.filter((observable) =>
-    isJobOrNameMatch(observable, searchQuery)
+    isNameOrFullNameMatch(observable, searchQuery)
   );
 
   if (!filteredSection.length) {
