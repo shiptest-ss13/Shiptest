@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		update_icons()
 		return
 
-	if(W.tool_behaviour == TOOL_WRENCH && opened && !cell) //Deconstruction. The flashes break from the fall, to prevent this from being a ghetto reset module.
+	if(W.tool_behaviour == TOOL_WRENCH && opened && !cell) //Deconstruction. The flashes break from the fall, to prevent this from being a free reset module.
 		if(!lockcharge)
 			to_chat(user, span_warning("[src]'s bolts spark! Maybe you should lock them down first!"))
 			spark_system.start()

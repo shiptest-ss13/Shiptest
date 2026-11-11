@@ -272,8 +272,8 @@
 		crushed_can.icon_state = pick(soda_icons)
 	return crushed_can
 
-/obj/effect/spawner/random/trash/ghetto_containers
-	name = "ghetto container spawner"
+/obj/effect/spawner/random/trash/misc_containers
+	name = "misc container spawner"
 	loot = list(
 		/obj/item/reagent_containers/glass/bucket = 5,
 		/obj/item/reagent_containers/glass/bottle = 5,
