@@ -34,11 +34,6 @@
 	clothing_flags = NOSLIP
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 90, "acid" = 50)
 
-/obj/item/clothing/shoes/combat/coldres
-	name = "insulated combat boots"
-	desc = "High speed, low drag combat boots, now with an added layer of insulation."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain wooden sandals."
 	name = "sandals"

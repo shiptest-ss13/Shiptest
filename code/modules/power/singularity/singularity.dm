@@ -475,16 +475,3 @@
 		"down" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, SOUTH),
 		"left" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, WEST),
 		"right" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, EAST)))
-
-/obj/singularity/academy
-	dissipate = 0
-	move_self = 0
-	grav_pull = 1
-
-/obj/singularity/academy/admin_investigate_setup()
-	return
-
-/obj/singularity/academy/process(seconds_per_tick)
-	eat()
-	if(prob(1))
-		mezzer()
