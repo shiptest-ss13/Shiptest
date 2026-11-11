@@ -103,8 +103,8 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
-	icon_state = "fa2_inteqsmg"
-	item_state = "fa2_inteqsmg"
+	icon_state = "mongrel"
+	item_state = "mongrel"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/smgm10mm
 	allowed_ammo_types = list(
