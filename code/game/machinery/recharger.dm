@@ -27,6 +27,10 @@
 		/obj/item/melee/energy/flyssa
 		))
 
+/obj/machinery/recharger/Initialize()
+	. = ..()
+	AddElement(/datum/element/nudge, -12, 12, -10, 10)
+
 /obj/machinery/recharger/RefreshParts()
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		recharge_coeff = C.rating
