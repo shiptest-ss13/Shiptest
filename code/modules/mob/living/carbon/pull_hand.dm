@@ -7,7 +7,8 @@
 	desc = "Your grip on whatever you're pulling."
 	icon_state = "pullitem"
 	w_class = WEIGHT_CLASS_HUGE
-	item_flags = ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
+	item_flags = ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM | SLOWS_WHILE_IN_HAND
+	slowdown = 0.25
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/pull_hand/attack_self(mob/user)
