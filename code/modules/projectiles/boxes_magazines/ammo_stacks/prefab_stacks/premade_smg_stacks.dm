@@ -1,4 +1,4 @@
-// 4.6x30mm (WT-550 Automatic Rifle & fa2-24v)
+// 4.6x30mm (WT-550 Automatic Rifle & FA2-v)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	max_ammo = 20

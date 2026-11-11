@@ -404,7 +404,7 @@
 		qdel(src)
 
 /obj/item/ammo_box/magazine/fa2_762_40/ctf
-	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the fa2 assault rifle family. These magazines will disintegrate if dropped."
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These magazines will disintegrate if dropped."
 
 /obj/item/ammo_box/magazine/fa2_762_40/ctf/dropped()
 	. = ..()

@@ -156,7 +156,7 @@
 
 /datum/blackmarket_item/ammo/carbine_mag
 	name = "FA2-v Magazine"
-	desc = "A 30 round magazine of 4.6x30mm for the fa2-v. A hermit classic."
+	desc = "A 30 round magazine of 4.6x30mm for the FA2-v. A hermit classic."
 	item = /obj/item/ammo_box/magazine/fa2_46_30
 
 	cost_min = 200

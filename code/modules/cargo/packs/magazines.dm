@@ -272,7 +272,7 @@
 
 /datum/supply_pack/magazine/fa2_ammo_extended
 	name = "FA2 Extended Magazine Crate"
-	desc = "Contains a 7.62x40mm magazine for the fa2 rifles, with a capacity of fourty rounds."
+	desc = "Contains a 7.62x40mm magazine for the FA2 rifles, with a capacity of fourty rounds."
 	contains = list(/obj/item/ammo_box/magazine/fa2_762_40/extended/empty)
 	cost = 750
 	faction = /datum/faction/inteq
@@ -357,7 +357,7 @@
 
 /datum/supply_pack/magazine/mongrel_mag
 	name = "Mongrel Magazine Crate"
-	desc = "Contains a 10mm magazine for the fa2-44v 'Mongrel' SMG, with a capacity of twenty-four rounds."
+	desc = "Contains a 10mm magazine for the PM-25 'Mongrel' SMG, with a capacity of twenty-four rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm10mm/empty)
 	cost = 200
 	faction = /datum/faction/inteq
