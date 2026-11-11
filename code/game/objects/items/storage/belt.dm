@@ -231,7 +231,9 @@
 		/obj/item/shears,
 		/obj/item/bodycamera,
 		/obj/item/bonesetter,
-		/obj/item/stack/sticky_tape/surgical
+		/obj/item/stack/sticky_tape/surgical,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart,
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()

@@ -35,7 +35,6 @@
 	name = "gambling valuables spawner"
 	icon_state = "dice"
 	loot = list(
-		/obj/item/clothing/head/trapper = 3,
 		/obj/effect/spawner/random/entertainment/coin = 3,
 		/obj/effect/spawner/random/entertainment/money = 3,
 		/obj/item/dice/d6 = 3,
