@@ -367,12 +367,12 @@
 	title = "You and Helm Consoles: The Bold Helmsman's Manual"
 	page_link = "Guide_to_the_Overmap"
 
-/obj/item/book/manual/wiki/ghetto_chemistry
-	name = "Ghetto Chemistry Textbook"
+/obj/item/book/manual/wiki/sourcing_reagents
+	name = "Chemicals and You - Sourcing Reagents"
 	icon_state = "chemistrybook"
 	author = "GREMLIN"
-	title = "Less Legal Chemistry Textbook"
-	page_link = "Guide_to_Ghetto_Chemistry"
+	title = "Field Chemistry Textbook"
+	page_link = "Guide_to_Sourcing_Reagents"
 
 /obj/item/book/manual/wiki/cooking
 	name = "Cookbook"

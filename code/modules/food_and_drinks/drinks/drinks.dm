@@ -599,7 +599,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
 //////////////////////////soda_cans//
-//These are in their own group to be used as IED's in /obj/item/grenade/ghettobomb.dm
+//These are in their own group to be used as IED's in /obj/item/grenade/ied.dm
 
 /obj/item/reagent_containers/food/drinks/soda_cans
 	name = "soda can"
