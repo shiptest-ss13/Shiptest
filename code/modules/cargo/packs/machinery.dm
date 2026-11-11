@@ -383,7 +383,7 @@
 
 /datum/supply_pack/machinery/holopad
 	name = "Holopad Instalation Kit"
-	desc = "Contains one circuit board for a statandard holopad. Tools purchased seperately."
+	desc = "Contains one circuit board for a standard holopad. Tools purchased separately."
 	cost = 400
 	contains = list(/obj/item/circuitboard/machine/holopad)
 	crate_name = "holopad"
