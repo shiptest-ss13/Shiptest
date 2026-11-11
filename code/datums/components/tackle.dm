@@ -425,11 +425,17 @@
 	if(!guarantee_head_hit)
 		zone_to_hit = C.run_zone(BODY_ZONE_HEAD)
 
-	C.adjustStaminaLoss(stamina)
-	C.apply_damage(damage, BRUTE, zone_to_hit, C.run_armor_check(zone_to_hit, "melee"), wound_bonus = wound)
-	C.Knockdown(knockdown)
-	C.confused += confused
-	C.Paralyze(paralyze)
+	// lots of these send signals and call other procs, probably better to not call them unless necessary
+	if(stamina)
+		C.adjustStaminaLoss(stamina)
+	if(damage)
+		C.apply_damage(damage, BRUTE, zone_to_hit, C.run_armor_check(zone_to_hit, "melee"), wound_bonus = wound)
+	if(knockdown)
+		C.Knockdown(knockdown)
+	if(confused)
+		C.confused += confused
+	if(paralyze)
+		C.Paralyze(paralyze)
 
 /datum/component/tackler/proc/resetTackle(mob/living/carbon/user)
 	tackling = FALSE
