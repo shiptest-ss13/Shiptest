@@ -61,7 +61,7 @@
 	armour_penetration = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a8_50r
 
-//7.62x40mm CLIP (fa2 Rifles)
+//7.62x40mm CLIP (FA2 Rifles)
 
 /obj/projectile/bullet/a762_40
 	name = "7.62x40mm CLIP bullet"

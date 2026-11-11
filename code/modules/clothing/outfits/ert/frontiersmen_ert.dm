@@ -159,7 +159,7 @@
 	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen)
 
 /datum/outfit/job/frontiersmen/ert/fa2
-	name = "ERT - Frontiersman Grunt (fa2-24 AR)"
+	name = "ERT - Frontiersman Grunt (FA2)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/fa2
 	belt = /obj/item/storage/belt/security/military/frontiersmen/fa2_ammo
@@ -279,7 +279,7 @@
 
 
 /datum/outfit/job/frontiersmen/ert/sentry
-	name = "ERT - Frontiersman Sentry (fa2-24v LMG)"
+	name = "ERT - Frontiersman Sentry (ML3)"
 
 	head = /obj/item/clothing/head/helmet/frontier
 	mask = /obj/item/clothing/mask/balaclava

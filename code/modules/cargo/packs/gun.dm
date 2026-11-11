@@ -920,7 +920,7 @@
 
 /datum/supply_pack/gun/fa2m
 	name = "FA2m Surplus Stockpile Rifle"
-	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the FA@ platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
+	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the FA2 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/fa2m)
 	crate_name = "rifle crate"

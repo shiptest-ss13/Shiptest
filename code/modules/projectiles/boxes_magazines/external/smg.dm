@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/smgm10mm
 	name = "Mongrel magazine (10mm)"
-	desc = "A 24-round magazine for the fa2-44v. These rounds do moderate damage, but struggle against armor."
+	desc = "A 24-round magazine for the PM-25 Mongrel. These rounds do moderate damage, but struggle against armor."
 	icon_state = "mongrel_mag-24"
 	base_icon_state = "mongrel_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -16,7 +16,7 @@
 
 /obj/item/ammo_box/magazine/smgm10mm/rubber
 	name = "SMG magazine (10mm rubber)"
-	desc = "A 24-round magazine for the fa2-44(k). These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	desc = "A 24-round magazine for the PM-25 Mongrel. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/ammo_box/magazine/m10_cobra

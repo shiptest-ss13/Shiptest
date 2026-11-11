@@ -26,7 +26,7 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c57x39mm/rubber
 
-// 4.6x30mm (WT-550 Automatic Rifle & fa2-24v)
+// 4.6x30mm (WT-550 Automatic Rifle & FA2-v)
 
 /obj/item/ammo_casing/c46x30mm
 	name = "4.6x30mm bullet casing"
