@@ -394,7 +394,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
-	name = "\improper SsG-04"
+	name = "\improper KW-4 Vizsla"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'

@@ -973,7 +973,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/ssg04
-	name = "SsG-04 Designated Marksman Rifle"
+	name = "KW-4 Vizsla Designated Marksman Rifle"
 	desc = "Contains a high-powered marksman rifle chambered in .308. Painted in the brown-and-gold of Inteq."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/ssg04)

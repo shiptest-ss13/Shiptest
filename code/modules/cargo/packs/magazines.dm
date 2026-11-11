@@ -281,7 +281,7 @@
 
 /datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
-	desc = "Contains a .308 magazine for SsG-04 and CM-F4 platform rifles, with a capacity of ten rounds."
+	desc = "Contains a .308 magazine for CM-F4 platform rifles, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/f4_308/empty)
 	cost = 300
 	faction = /datum/faction/clip
