@@ -7,7 +7,7 @@
 	base_icon_state = "floor"
 	baseturfs = /turf/open/floor/plating
 
-	footstep = FOOTSTEP_FLOOR
+	turf_footstep_type = FOOTSTEP_FLOOR
 	flags_1 = CAN_BE_DIRTY_1 | NO_SCREENTIPS_1
 
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR)

@@ -7,7 +7,7 @@
 	broken_states = list("concdam_1", "concdam_2", "concdam_3", "concdam_4")
 	floor_tile = null
 	tiled_dirt = FALSE
-	footstep = FOOTSTEP_CONCRETE
+	turf_footstep_type = FOOTSTEP_CONCRETE
 
 	var/smash_time = 3 SECONDS
 	var/time_to_harden = 20 SECONDS

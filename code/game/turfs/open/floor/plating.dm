@@ -12,7 +12,7 @@
 	icon_state = "plating"
 	intact = FALSE
 	baseturfs = /turf/baseturf_bottom
-	footstep = FOOTSTEP_PLATING
+	turf_footstep_type = FOOTSTEP_PLATING
 
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
 	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)

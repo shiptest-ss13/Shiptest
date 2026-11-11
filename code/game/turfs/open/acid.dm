@@ -12,7 +12,7 @@
 	bullet_bounce_sound = 'sound/items/welder2.ogg'
 
 	planetary_atmos = FALSE
-	footstep = FOOTSTEP_LAVA
+	turf_footstep_type = FOOTSTEP_LAVA
 
 	reagent_to_extract = /datum/reagent/toxin/acid
 	extracted_reagent_visible_name = "acid"

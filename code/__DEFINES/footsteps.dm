@@ -1,3 +1,5 @@
+//footstep sound lists in code\_globalvars\lists\footsteps.dm
+
 //footstep turf defines
 #define FOOTSTEP_WOOD "wood"
 #define FOOTSTEP_FLOOR "floor"

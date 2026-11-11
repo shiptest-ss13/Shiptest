@@ -12,7 +12,7 @@
 
 	var/wet
 
-	var/footstep = null
+	var/turf_footstep_type = null
 	/// Reference to the turf fire on the turf
 	var/obj/effect/abstract/turf_fire/turf_fire
 
@@ -51,7 +51,7 @@
 	name = "floor"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "floor"
-	footstep = FOOTSTEP_FLOOR
+	turf_footstep_type = FOOTSTEP_FLOOR
 	tiled_dirt = TRUE
 
 /turf/open/indestructible/Melt()
@@ -66,7 +66,7 @@
 
 /turf/open/indestructible/sound
 	name = "squeaky floor"
-	footstep = null
+	turf_footstep_type = null
 	var/sound
 
 /turf/open/indestructible/sound/Entered(atom/movable/AM)
@@ -81,7 +81,7 @@
 	icon_state = "necro1"
 	baseturfs = /turf/open/indestructible/necropolis
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	footstep = FOOTSTEP_LAVA
+	turf_footstep_type = FOOTSTEP_LAVA
 	tiled_dirt = FALSE
 
 /turf/open/indestructible/necropolis/Initialize(mapload, inherited_virtual_z)
@@ -118,7 +118,7 @@
 	name = "notebook floor"
 	desc = "A floor made of invulnerable notebook paper."
 	icon_state = "paperfloor"
-	footstep = null
+	turf_footstep_type = null
 	tiled_dirt = FALSE
 
 /turf/open/indestructible/binary
@@ -126,7 +126,7 @@
 	CanAtmosPass = ATMOS_PASS_NO
 	baseturfs = /turf/open/indestructible/binary
 	icon_state = "binary"
-	footstep = null
+	turf_footstep_type = null
 
 /turf/open/indestructible/airblock
 	icon_state = "bluespace"

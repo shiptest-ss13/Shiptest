@@ -12,7 +12,7 @@
 	desc = "Flooring that shows its contents underneath. Engineers love it!"
 	layer = CATWALK_LAYER
 	baseturfs = /turf/open/floor/plating
-	footstep = FOOTSTEP_CATWALK
+	turf_footstep_type = FOOTSTEP_CATWALK
 	var/covered = TRUE
 
 /turf/open/floor/plating/catwalk_floor/Initialize(mapload, inherited_virtual_z)

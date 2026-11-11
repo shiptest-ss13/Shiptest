@@ -10,7 +10,7 @@
 	bullet_bounce_sound = null //needs a splashing sound one day.
 	layer = WATER_TURF_LAYER
 
-	footstep = FOOTSTEP_WATER
+	turf_footstep_type = FOOTSTEP_WATER
 
 	///The transparency of the immerse element's overlay
 	var/immerse_overlay_alpha = 180

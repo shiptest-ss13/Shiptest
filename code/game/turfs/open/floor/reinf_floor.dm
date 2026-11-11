@@ -6,7 +6,7 @@
 	thermal_conductivity = 0.025
 	heat_capacity = INFINITY
 	floor_tile = /obj/item/stack/sheet/metal
-	footstep = FOOTSTEP_PLATING
+	turf_footstep_type = FOOTSTEP_PLATING
 	tiled_dirt = FALSE
 	flammability = 0 // fireproof!
 

@@ -11,7 +11,7 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
-	footstep = FOOTSTEP_FLOOR
+	turf_footstep_type = FOOTSTEP_FLOOR
 
 	layer = SAND_TURF_LAYER
 	//smooth_icon = 'icons/turf/floors/wateryrock.dmi'

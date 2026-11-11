@@ -7,7 +7,7 @@
 	icon_state = "sand-255"
 	base_icon_state = "sand"
 	layer = SAND_TURF_LAYER
-	footstep = FOOTSTEP_SAND
+	turf_footstep_type = FOOTSTEP_SAND
 	planetary_atmos = TRUE
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
 	slowdown = 0
@@ -43,7 +43,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor
 	icon_state = "drydesert"
 	base_icon_state = "drydesert"
-	footstep = FOOTSTEP_ASTEROID
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	layer = STONE_TURF_LAYER
 	floor_variance = 0
 	max_icon_states = 0

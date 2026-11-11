@@ -6,7 +6,7 @@
 	base_icon_state = "wasteland"
 	floor_variance = 88
 	max_icon_states = 22
-	footstep = FOOTSTEP_ASTEROID
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	layer = STONE_TURF_LAYER
 	planetary_atmos = TRUE
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS

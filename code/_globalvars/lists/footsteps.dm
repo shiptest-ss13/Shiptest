@@ -1,11 +1,12 @@
 /*
 
-id = list(
-list(sounds),
-base volume,
-extra range addition
+footstep_type = list(
+	turf_footstep_type = list(
+		list(sounds),
+		base_volume,
+		extra_range_addition
+	)
 )
-
 
 */
 

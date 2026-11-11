@@ -8,7 +8,7 @@
 	planetary_atmos = TRUE
 	base_icon_state = WHITESANDS_SAND_ENV
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
-	footstep = FOOTSTEP_SAND
+	turf_footstep_type = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
 	digResult = /obj/item/stack/ore/glass/whitesands
 	floor_variance = 83
@@ -53,7 +53,7 @@
 	icon_plating = null
 	base_icon_state = WHITESANDS_DRIED_ENV
 	layer = STONE_TURF_LAYER
-	footstep = FOOTSTEP_ASTEROID
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	digResult = /obj/item/stack/ore/glass/whitesands
 	slowdown = 0
 	smooth_icon = 'icons/turf/floors/whitesands_rock.dmi'
@@ -99,7 +99,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	footstep = FOOTSTEP_GRASS
+	turf_footstep_type = FOOTSTEP_GRASS
 	layer = GRASS_TURF_LAYER
 	slowdown = 0
 	light_color = COLOR_SANDPLANET_LIGHT
