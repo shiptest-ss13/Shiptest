@@ -29,7 +29,7 @@
 		user.visible_message(span_notice("[user] starts to pull [src] free from the ground...."), span_notice("You start to pull [src] free from the ground..."))
 		if(do_after(user, 20, show_progress = TRUE, target = src))
 			to_chat(user, span_notice("You pull [src] free from the ground."))
-			var/torch = new /obj/item/flashlight/flare/torch/tribal
+			var/torch = new /obj/item/flashlight/flare/torch/standing
 			user.put_in_hands(torch)
 			qdel(src)
 			return

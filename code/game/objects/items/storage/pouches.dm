@@ -203,7 +203,7 @@
 	desc = "A row of small pouches intended for holding flares."
 	icon_state = "pouch_flare"
 
-/obj/item/storage/pouch/grenade/ComponentInitialize()
+/obj/item/storage/pouch/flare/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL

@@ -478,12 +478,12 @@
 	light_range = 7
 	heat = 2000
 
-/obj/item/flashlight/flare/torch/tribal/examine(mob/user)
+/obj/item/flashlight/flare/torch/standing/examine(mob/user)
 	. = ..()
 	. += span_notice("You could plant this in the ground by clicking on a nearby tile.")
 
 //one day: genericize 'plant this object in ground' behavior. would be cool with flags.
-/obj/item/flashlight/flare/torch/tribal/afterattack(atom/target, mob/user, proximity_flag)
+/obj/item/flashlight/flare/torch/standing/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
 	if(proximity_flag)
 		if(!isopenturf(target))
