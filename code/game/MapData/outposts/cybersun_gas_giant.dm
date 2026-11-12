@@ -11,7 +11,7 @@
 
 /turf/open/cybersun_outpost_exterior
 	name = "gas giant"
-	desc = "The gravitic bubble that protects 1000 Eyes Perch from the winds of Orucati's Rest has the side-effect of compressing down the gas giant's atmosphere into something <i>almost</i> walkable. If you're a moron with a death-wish."
+	desc = "The gravitic bubble that protects 1000 Eyes Perch from the winds of Artena has the side-effect of compressing down the gas giant's atmosphere into something <i>almost</i> walkable. If you're a moron with a death-wish."
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	icon = 'icons/turf/floors.dmi'
@@ -177,3 +177,4 @@ CYBERSUN_OUTPOST_TURF_HELPER(engine/hull/reinforced)
 	baseturfs = /turf/open/water/csoutpost
 	planetary_atmos = FALSE
 	color = "#8ac7e6"
+	fishing_datum = null

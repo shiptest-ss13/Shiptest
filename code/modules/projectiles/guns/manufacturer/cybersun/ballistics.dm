@@ -190,6 +190,9 @@
 	ammo_counter = TRUE
 	smart_lock = FALSE
 
+/obj/item/gun/ballistic/cs_gauss/rectifier/shock
+	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss/pistol/shock
+
 NO_MAG_GUN_HELPER(cs_gauss/rectifier)
 NO_MAG_GUN_HELPER(cs_gauss/rectifier/export)
 
