@@ -286,7 +286,9 @@
 	loading = TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
+	start_level_generation_grace() // so mobs don't take damage in case they need to wait for atmos to settle
 	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
+	end_level_generation_grace()
 	if(!length(dynamic_encounter_values))
 		return FALSE
 

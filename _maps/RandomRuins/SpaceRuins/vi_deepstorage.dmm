@@ -776,7 +776,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space,
+/mob/living/basic/human/frontier/ranged/trooper/skm/space,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway)
 "fl" = (
@@ -1243,7 +1243,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space,
+/mob/living/basic/human/frontier/ranged/trooper/skm/space,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1415,7 +1415,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "ix" = (
-/mob/living/simple_animal/hostile/human/warra/elite{
+/mob/living/basic/human/warra/elite{
 	retreat_distance = 3
 	},
 /obj/effect/turf_decal/siding/white{
@@ -1766,7 +1766,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/shotgun/space,
+/mob/living/basic/human/warra/ranged/trooper/shotgun/space,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/security)
 "kj" = (
@@ -2540,7 +2540,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/rifle/space,
+/mob/living/basic/human/warra/ranged/trooper/rifle/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "pR" = (
@@ -2956,7 +2956,7 @@
 /obj/effect/turf_decal/corner/transparent/warrablue/border{
 	layer = 2.040
 	},
-/mob/living/simple_animal/hostile/human/warra/ranged/laser/space,
+/mob/living/basic/human/warra/ranged/laser/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "ty" = (
@@ -4380,11 +4380,11 @@
 	dir = 4;
 	layer = 2.040
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/heavy/space/neutered{
 	desc = "A horrifically jittery mass of plasteel and flesh. Its motions are jumpy, and faint giggling can be heard through it's faceless visor.";
 	retreat_distance = 0;
-	minimum_distance = 0;
-	health = 120
+	health = 120;
+	engage_distance = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -5038,7 +5038,7 @@
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security)
 "Gz" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/space,
+/mob/living/basic/human/frontier/ranged/pounder/space,
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/space/shuttle1)
 "GA" = (
@@ -5541,11 +5541,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/security)
 "JJ" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space,
+/mob/living/basic/human/frontier/ranged/trooper/space,
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/space/has_grav/deepstorage/cargo)
 "JK" = (
-/mob/living/simple_animal/hostile/human/warra/elite/shotgun,
+/mob/living/basic/human/warra/elite/shotgun,
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 1
 	},
@@ -6208,7 +6208,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
 "Nk" = (
-/mob/living/simple_animal/hostile/human/warra/elite{
+/mob/living/basic/human/warra/elite{
 	retreat_distance = 3
 	},
 /obj/effect/turf_decal/siding/white{
@@ -6360,7 +6360,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/space,
+/mob/living/basic/human/frontier/ranged/pounder/space,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
 	},
@@ -6849,7 +6849,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/rifle/space,
+/mob/living/basic/human/warra/ranged/trooper/rifle/space,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "QQ" = (
@@ -6956,7 +6956,7 @@
 /area/ruin/space/has_grav/deepstorage/hallway/upper)
 "RM" = (
 /obj/structure/railing/thin,
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space,
+/mob/living/basic/human/frontier/ranged/mosin/space,
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/deepstorage)
 "RP" = (
@@ -7325,7 +7325,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/warra/ranged/laser/space,
+/mob/living/basic/human/warra/ranged/laser/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "Ur" = (
@@ -7742,7 +7742,7 @@
 "Xv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/mob/living/simple_animal/hostile/human/warra/ranged/trooper/smg/space,
+/mob/living/basic/human/warra/ranged/trooper/smg/space,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/security)
 "Xz" = (

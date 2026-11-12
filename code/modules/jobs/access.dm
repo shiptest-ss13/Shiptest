@@ -30,6 +30,8 @@
 		var/mob/living/simple_animal/A = M
 		if(check_access(A.get_active_held_item()) || check_access(A.access_card))
 			return TRUE
+	if(istype(M) && M.ai_controller && check_access(M.ai_controller.get_access())) // AI that's been given door access
+		return TRUE
 	return FALSE
 
 /obj/item/proc/GetAccess()

@@ -37,8 +37,8 @@
 
 /obj/projectile/energy/plasmabolt/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/cooked = target
+	if(isliving(target))
+		var/mob/living/cooked = target
 		cooked.adjust_bodytemperature(heatpwr)
 		if(prob(35))
 			cooked.adjust_fire_stacks(15)
