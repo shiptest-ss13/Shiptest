@@ -58,8 +58,8 @@
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
+	if(isliving(target))
+		var/mob/living/M = target
 		M.adjust_fire_stacks(3)
 		M.ignite_mob()
 

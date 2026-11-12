@@ -45,7 +45,7 @@
 	cost = 500
 	contains = list(/obj/item/clothing/suit/space/syndicate/surplus,
 					/obj/item/clothing/head/helmet/space/syndicate/surplus)
-	faction = /datum/faction/syndicate
+	faction = /datum/faction/scarborough
 	faction_discount = 30
 
 /datum/supply_pack/spacesuits/armored_engi_spacesuit
@@ -54,7 +54,7 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/syndicate/engie,
 					/obj/item/clothing/head/helmet/space/syndicate/engie)
-	faction = /datum/faction/syndicate
+	faction = /datum/faction/scarborough
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -64,7 +64,7 @@
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/syndicate/white_red,
 					/obj/item/clothing/head/helmet/space/syndicate/white_red)
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -74,7 +74,7 @@
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/syndicate/ngr,
 					/obj/item/clothing/head/helmet/space/syndicate/ngr)
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -310,7 +310,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/cybersun)
 	crate_name = "neutron star hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -321,7 +321,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar)
 	crate_name = "Collapsar hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -331,7 +331,7 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar/paramed)
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	crate_name = "Collapsar hardsuit crate"
 	faction_discount = 0
 	faction_locked = TRUE
@@ -344,7 +344,7 @@
 	crate_name = "Magnetar recon hardsuit crate"
 
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -355,7 +355,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed)
 	crate_name = "neutron star hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -497,18 +497,29 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/hl)
 	crate_name = "white-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/hardliner_heavy
+	name = "Poltergeist Heavy Hardsuit Crate"
+	desc = "The Hardliners own heavy hardsuit plate, the Poltergeist consists of mostly recycled parts from much more advanced designs. Far easier to maintain, slow as a brick however."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/hlheavy)
+	crate_name = "Poltergeist hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/hardliners
 	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/hardstealth
 	name = "Asura Shock Hardsuit Crate"
 	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
-	cost = 4500
+	cost = 3500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/hardliners)
 	crate_name = "Asura Shock Hardsuit Crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -521,7 +532,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/ngr)
 	crate_name = "beige-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -532,7 +543,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/ngrheavy)
 	crate_name = "heavy EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -543,7 +554,18 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr)
 	crate_name = "NGR mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/ngr_outrider
+	name = "NGR Outrider Hardsuit Crate"
+	desc = "A light hardsuit with an integrated night vision, and modest protection against most threats. Designed for reconissance and shock operations."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/ngroutrider)
+	crate_name = "NGR outrider hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 

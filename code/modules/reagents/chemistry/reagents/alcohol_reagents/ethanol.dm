@@ -11,6 +11,7 @@
 	metabolization_rate = ETHANOL_METABOLISM
 	var/boozepwr = 150 //Higher numbers equal higher hardness, higher hardness equals more intense alcohol poisoning
 	accelerant_quality = 5
+	must_ingest = FALSE
 
 //Alcohol reduces pain based on boozepwr
 /datum/reagent/consumable/ethanol/New()

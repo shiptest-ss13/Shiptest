@@ -18,3 +18,9 @@
 	replacement_bodyparts = list(
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard/small
 	)
+
+/datum/sprite_accessory/body/sarathi_tail/synth/large
+	name = "Synthetic Large Sarathi Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard/synth/large
+	)

@@ -85,7 +85,7 @@
 	contains = list(/obj/item/circuitboard/machine/cloak)
 	crate_name = "cloaking system crate"
 	crate_type = /obj/structure/closet/crate/engineering
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = 30
 
 /datum/supply_pack/ship_hardware/advanced_cloaking_device

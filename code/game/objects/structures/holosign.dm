@@ -85,6 +85,12 @@
 	max_integrity = 20
 	var/allow_walk = TRUE //can we pass through it on walk intent
 
+/obj/structure/holosign/barrier/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(..())
+		return TRUE
+	var/mob/living/basic/basic_mob = requester
+	return istype(basic_mob) && basic_mob.ai_controller && basic_mob.obj_damage > 0
+
 /obj/structure/holosign/barrier/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)

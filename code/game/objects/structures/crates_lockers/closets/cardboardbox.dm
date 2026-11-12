@@ -41,6 +41,7 @@
 		animate(pixel_z = 0, transform = prev_trans, time = 0)
 		playsound(loc, 'sound/machines/snake_move.ogg', 25, FALSE)
 		addtimer(CALLBACK(src, PROC_REF(ResetMoveDelay)), CONFIG_GET(number/movedelay/walk_delay) * move_speed_multiplier)
+		ai_note_moving_box(src)
 	else
 		move_delay = FALSE
 
