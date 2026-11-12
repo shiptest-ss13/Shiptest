@@ -28,7 +28,7 @@
 		stoplag(3)
 		pathfinder_slot = SSpathfinder.mobs.getfree(requester)
 
-	if(QDELETED(requester) || !get_turf(requester) || !get_turf(end))
+	if(!get_turf(requester) || !get_turf(end))
 		SSpathfinder.mobs.found(pathfinder_slot)
 		return
 
