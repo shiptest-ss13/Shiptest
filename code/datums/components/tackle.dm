@@ -66,13 +66,13 @@
 	tackle.thrower = user
 
 ///See if we can tackle or not. If we can, leap!
-/datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/A, params)
+/datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/atom_target, params)
 	SIGNAL_HANDLER
 
 	if(!user.throw_mode || user.get_active_held_item() || user.pulling || user.buckled || user.incapacitated() || !isturf(user.loc))
 		return
 
-	if(!A || !(isturf(A) || isturf(A.loc)))
+	if(!atom_target || !(isturf(atom_target) || isturf(atom_target.loc)))
 		return
 
 	if(HAS_TRAIT(user, TRAIT_HULK))
@@ -95,11 +95,11 @@
 		to_chat(user, span_warning("You're too off balance to tackle!"))
 		return
 
-	if(!user.has_gravity() && !user.Process_Spacemove(get_dir(user, A)))
+	if(!user.has_gravity() && !user.Process_Spacemove(get_dir(user, atom_target)))
 		to_chat(user, span_warning("You need something to push off of to tackle!"))
 		return
 
-	user.face_atom(A)
+	user.face_atom(atom_target)
 
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, ALT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, MIDDLE_CLICK))
@@ -110,17 +110,17 @@
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(checkObstacle))
 	playsound(user, 'sound/weapons/thudswoosh.ogg', 40, TRUE, -1)
 
-	if(can_see(user, A, 7))
-		user.visible_message(span_warning("[user] leaps at [A]!"), span_danger("You leap at [A]!"))
+	if(can_see(user, atom_target, 7))
+		user.visible_message(span_warning("[user] leaps at [atom_target]!"), span_danger("You leap at [atom_target]!"))
 	else
 		user.visible_message(span_warning("[user] leaps!"), span_danger("You leap!"))
 
-	if(get_dist(user, A) < min_distance)
-		A = get_ranged_target_turf(user, get_dir(user, A), min_distance) //TODO: this only works in cardinals/diagonals, make it work with in-betweens too!
+	if(get_dist(user, atom_target) < min_distance)
+		atom_target = get_ranged_target_turf(user, get_dir(user, atom_target), min_distance) //TODO: this only works in cardinals/diagonals, make it work with in-betweens too!
 
 	ADD_TRAIT(user, TRAIT_FLOORED, "tackling")
 	user.adjustStaminaLoss(stamina_cost)
-	user.throw_at(A, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user), gentle = TRUE) //gentle because we'll handle our own impact damage
+	user.throw_at(atom_target, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user), gentle = TRUE) //gentle because we'll handle our own impact damage
 	return(COMSIG_MOB_CANCEL_CLICKON)
 
 /**
@@ -180,7 +180,7 @@
 			takeTackleDamage(user, knockdown = 30)
 			if(ishuman(target) && !human_target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
 				human_target.add_movespeed_modifier(/datum/movespeed_modifier/shove) // maybe define a slightly more severe/longer slowdown for this
-				addtimer(CALLBACK(T, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH * 2)
+				addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH * 2)
 
 		if(-1 to 0) // decent hit, both parties are about equally inconvenienced
 			user.visible_message(span_warning("[user] lands a passable tackle on [target], sending them both tumbling!"), span_userdanger("You land a passable tackle on [target], sending you both tumbling!"), target)
@@ -353,9 +353,9 @@
 		darth_vendor.tilt(user, TRUE)
 		return
 	else if(istype(hit, /obj/structure/window))
-		var/obj/structure/window/W = hit
-		splatWindow(user, W)
-		if(QDELETED(W))
+		var/obj/structure/window/window_hit = hit
+		splatWindow(user, window_hit)
+		if(QDELETED(window_hit))
 			return COMPONENT_MOVABLE_IMPACT_NEVERMIND
 		return
 
@@ -429,25 +429,25 @@
 
 	playsound(user, 'sound/weapons/smash.ogg', 70, TRUE)
 
-/datum/component/tackler/proc/takeTackleDamage(mob/living/carbon/C, stamina = 0, damage = 0, wound = 0, guarantee_head_hit = FALSE, knockdown = 0, confused = 0, paralyze = 0)
-	if(!C)
+/datum/component/tackler/proc/takeTackleDamage(mob/living/carbon/victim, stamina = 0, damage = 0, wound = 0, guarantee_head_hit = FALSE, knockdown = 0, confused = 0, paralyze = 0)
+	if(!victim)
 		return
 
 	var/zone_to_hit = BODY_ZONE_HEAD
 	if(!guarantee_head_hit)
-		zone_to_hit = C.run_zone(BODY_ZONE_HEAD)
+		zone_to_hit = victim.run_zone(BODY_ZONE_HEAD)
 
 	// lots of these send signals and call other procs, probably better to not call them unless necessary
 	if(stamina)
-		C.adjustStaminaLoss(stamina)
+		victim.adjustStaminaLoss(stamina)
 	if(damage)
-		C.apply_damage(damage, BRUTE, zone_to_hit, C.run_armor_check(zone_to_hit, "melee"), wound_bonus = wound)
+		victim.apply_damage(damage, BRUTE, zone_to_hit, victim.run_armor_check(zone_to_hit, "melee"), wound_bonus = wound)
 	if(knockdown)
-		C.Knockdown(knockdown)
+		victim.Knockdown(knockdown)
 	if(confused)
-		C.confused += confused
+		victim.confused += confused
 	if(paralyze)
-		C.Paralyze(paralyze)
+		victim.Paralyze(paralyze)
 
 /datum/component/tackler/proc/resetTackle(mob/living/carbon/user)
 	tackling = FALSE
@@ -461,10 +461,10 @@
 	REMOVE_TRAIT(user, TRAIT_FLOORED, "tackling")
 
 ///A special case for splatting for handling windows
-/datum/component/tackler/proc/splatWindow(mob/living/carbon/user, obj/structure/window/W)
+/datum/component/tackler/proc/splatWindow(mob/living/carbon/user, obj/structure/window/window_hit)
 	playsound(user, 'sound/effects/Glasshit.ogg', 140, TRUE)
 
-	if(W.type in list(/obj/structure/window, /obj/structure/window/fulltile, /obj/structure/window/unanchored, /obj/structure/window/fulltile/unanchored)) // boring unreinforced windows
+	if(window_hit.type in list(/obj/structure/window, /obj/structure/window/fulltile, /obj/structure/window/unanchored, /obj/structure/window/fulltile/unanchored)) // boring unreinforced windows
 		for(var/i = 0, i < speed, i++)
 			var/obj/item/shard/shard = new /obj/item/shard(get_turf(user))
 			shard.embedding = list(embed_chance = 100, ignore_throwspeed_threshold = TRUE, impact_pain_mult=3, pain_chance=5)
@@ -472,19 +472,19 @@
 			user.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
 			shard.embedding = list()
 			shard.updateEmbedding()
-		W.atom_destruction()
+		window_hit.atom_destruction()
 		takeTackleDamage(user, stamina = 10 * speed, paralyze = 30)
-		user.visible_message(span_danger("[user] slams into [W] and shatters it, shredding [user.p_them()]self with glass!"), span_userdanger("You slam into [W] and shatter it, shredding yourself with glass!"))
+		user.visible_message(span_danger("[user] slams into [window_hit] and shatters it, shredding [user.p_them()]self with glass!"), span_userdanger("You slam into [window_hit] and shatter it, shredding yourself with glass!"))
 
 	else
-		user.visible_message(span_danger("[user] slams into [W] like a bug, then slowly slides off it!"), span_userdanger("You slam into [W] like a bug, then slowly slide off it!"))
+		user.visible_message(span_danger("[user] slams into [window_hit] like a bug, then slowly slides off it!"), span_userdanger("You slam into [window_hit] like a bug, then slowly slide off it!"))
 		takeTackleDamage(user, stamina = 10 * speed, damage = 5 * speed, knockdown = 30, paralyze = 10)
-		W.take_damage(30 * speed)
+		window_hit.take_damage(30 * speed)
 
-/datum/component/tackler/proc/delayedSmash(obj/structure/window/W)
-	if(W)
-		W.atom_destruction()
-		playsound(W, "shatter", 70, TRUE)
+/datum/component/tackler/proc/delayedSmash(obj/structure/window/window_hit)
+	if(window_hit)
+		window_hit.atom_destruction()
+		playsound(window_hit, "shatter", 70, TRUE)
 
 ///Check to see if we hit a table, and if so, make a big mess!
 /datum/component/tackler/proc/checkObstacle(mob/living/carbon/owner)
@@ -493,8 +493,8 @@
 	if(!tackling)
 		return
 
-	var/turf/T = get_turf(owner)
-	var/obj/structure/table/kevved = locate(/obj/structure/table) in T.contents
+	var/turf/current_turf = get_turf(owner)
+	var/obj/structure/table/kevved = locate(/obj/structure/table) in current_turf.contents
 	if(!kevved)
 		return
 
@@ -502,9 +502,9 @@
 
 	// we split the mess-making into two parts (check what we're gonna send flying, intermission for dealing with the tackler, then actually send stuff flying) for the benefit of making sure the face-slam text
 	// comes before the list of stuff that goes flying, but can still adjust text + damage to how much of a mess it made
-	for(var/obj/item/I in T.contents)
-		if(!I.anchored)
-			messes += I
+	for(var/obj/item/thing in current_turf.contents)
+		if(!thing.anchored)
+			messes += thing
 			if(length(messes) >= MAX_TABLE_MESSES)
 				break
 
@@ -533,13 +533,13 @@
 		paralyze = 5 * length(messes) // half a second of paralyze for each thing you knock around
 	)
 
-	for(var/obj/item/I in messes)
+	for(var/obj/item/thing in messes)
 		var/dist = rand(1, 3)
 		var/sp = 2
 		if(prob(25 * (src.speed - 1))) // if our tackle speed is higher than 1, with chance (speed - 1 * 25%), throw the thing at our tackle speed + 1
 			sp = speed + 1
-		I.throw_at(get_ranged_target_turf(I, pick(GLOB.alldirs), range = dist), range = dist, speed = sp)
-		I.visible_message(span_danger("[I] goes flying[sp > 3 ? " dangerously fast" : ""]!")) // standard embed speed
+		thing.throw_at(get_ranged_target_turf(thing, pick(GLOB.alldirs), range = dist), range = dist, speed = sp)
+		thing.visible_message(span_danger("[thing] goes flying[sp > 3 ? " dangerously fast" : ""]!")) // standard embed speed
 
 	var/datum/thrownthing/tackle = tackle_ref?.resolve()
 
