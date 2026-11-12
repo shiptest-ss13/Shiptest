@@ -384,6 +384,13 @@
 			"My hands are going numb!",
 			"We'll freeze out here, move!"
 		),
+		AI_CALLOUT_WEATHER = list(
+			"Get under cover!",
+			"We need a roof over us, move!",
+			"Inside, now!",
+			"Can't stay out in this, move!",
+			"Find some shelter!"
+		),
 		AI_CALLOUT_BROKEN = list(
 			"Fall back! Fall back!",
 			"We can't hold them!",

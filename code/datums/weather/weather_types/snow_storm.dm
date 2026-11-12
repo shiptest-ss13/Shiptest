@@ -19,6 +19,7 @@
 	protect_indoors = TRUE
 
 	immunity_type = "snow"
+	harmful = TRUE
 
 	barometer_predictable = TRUE
 	affects_underground = FALSE
@@ -27,6 +28,9 @@
 	sound_active_inside = /datum/looping_sound/active_inside_ashstorm
 	sound_weak_outside = /datum/looping_sound/weak_outside_ashstorm
 	sound_weak_inside = /datum/looping_sound/weak_inside_ashstorm
+
+/datum/weather/snow_storm/affects(mob/living/victim)
+	return victim.hurt_by_chill(0)
 
 /datum/weather/snow_storm/weather_act(mob/living/living_mob)
 	living_mob.adjust_bodytemperature(-rand(2,4))
