@@ -760,7 +760,6 @@
 	set_nutrition(NUTRITION_LEVEL_FED + 50)
 	bodytemperature = get_body_temp_normal(apply_change=FALSE)
 	set_blindness(0)
-	set_blurriness(0)
 	cure_nearsighted()
 	cure_blind()
 	cure_husk()
@@ -1530,8 +1529,6 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	switch(var_name)
 		if(NAMEOF(src, eye_blind))
 			set_blindness(var_value)
-		if(NAMEOF(src, eye_blurry))
-			set_blurriness(var_value)
 		if(NAMEOF(src, maxHealth))
 			updatehealth()
 		if(NAMEOF(src, current_size))
@@ -2046,7 +2043,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
+		set_timed_status_effect(300 SECONDS, STATUS_EFFECT_JITTER)
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().

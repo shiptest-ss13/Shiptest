@@ -29,6 +29,7 @@
 	display_results(user, target, span_notice("You wedge [tool] into [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] wedges \the [tool] into [target]'s [parse_zone(target_zone)]!"),
 			span_notice("[user] wedges something into [target]'s [parse_zone(target_zone)]!"))
+	give_surgery_pain(target, "Something's being jammed into your [parse_zone(target_zone)]!", target_zone = target_zone)
 	return ..()
 
 /datum/action/item_action/hands_free/activate_pill

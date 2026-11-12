@@ -403,15 +403,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /mob/living/carbon/handle_status_effects(seconds_per_tick, times_fired)
 	..()
 
-	var/restingpwr = 0.5 + 2 * resting * seconds_per_tick
-
-	if(drowsyness)
-		drowsyness = max(drowsyness - restingpwr, 0)
-		blur_eyes(2)
-		if(drowsyness > 20)
-			if(SPT_PROB(round(drowsyness/20), seconds_per_tick))
-				AdjustSleeping(drowsyness)
-
 	if(stuttering)
 		stuttering = max(stuttering-(0.5 * seconds_per_tick), 0)
 

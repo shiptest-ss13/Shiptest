@@ -44,11 +44,13 @@
 	display_results(user, target, span_notice("You begin to perform a lobotomy on [target]'s brain..."),
 		span_notice("[user] begins to perform a lobotomy on [target]'s brain."),
 		span_notice("[user] begins to perform surgery on [target]'s brain."))
+	give_surgery_pain(target, "Your head pounds with unimaginable pain!", target_zone = target_zone)
 
 /datum/surgery_step/lobotomize/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(user, target, span_notice("You succeed in lobotomizing [target]."),
 			span_notice("[user] successfully lobotomizes [target]!"),
 			span_notice("[user] completes the surgery on [target]'s brain."))
+	give_surgery_pain(target, "Your head goes totally numb for a moment, the pain is overwhelming!", target_zone = target_zone)
 	target.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 		target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
@@ -68,12 +70,13 @@
 	return ..()
 
 /datum/surgery_step/lobotomize/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
-	if(B)
+	var/obj/item/organ/brain/target_brain = target.getorganslot(ORGAN_SLOT_BRAIN)
+	if(target_brain)
 		display_results(user, target, span_warning("You remove the wrong part, causing more damage!"),
 			span_notice("[user] successfully lobotomizes [target]!"),
 			span_notice("[user] completes the surgery on [target]'s brain."))
-		B.applyOrganDamage(80)
+		give_surgery_pain(target, "The pain in your head only seems to get worse!", target_zone = target_zone)
+		target_brain.applyOrganDamage(80)
 		switch(rand(1,3))
 			if(1)
 				target.gain_trauma_type(BRAIN_TRAUMA_MILD, TRAUMA_RESILIENCE_MAGIC)

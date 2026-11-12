@@ -290,7 +290,7 @@
 		damage += rand(3,7)
 
 	if(damage >= 5)
-		target.force_scream()
+		target.pain_emote("scream", 5 SECONDS)
 
 	target.apply_damage(damage, BRUTE, BODY_ZONE_HEAD)
 	user.adjustStaminaLoss(iteration + 5)

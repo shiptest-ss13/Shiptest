@@ -35,6 +35,7 @@
 		span_notice("[user] uses [tool] to filter [target]'s blood."),
 		span_notice("[user] uses [tool] on [target]'s chest."),
 	)
+	give_surgery_pain(target, "You feel a throbbing pain in your chest!", target_zone = target_zone)
 	if(!..())
 		return
 	while(has_filterable_chems(target, tool))

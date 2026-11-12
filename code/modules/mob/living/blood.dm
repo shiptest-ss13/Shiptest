@@ -56,7 +56,7 @@
 
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 			if(eye_blurry < 50)
-				adjust_blurriness(5)
+				adjust_eye_blur_up_to(5 SECONDS, 30 SECONDS)
 			if(oxyloss < 40)
 				adjustOxyLoss(round(0.01 * (BLOOD_VOLUME_NORMAL - blood_volume) * seconds_per_tick, 1))
 			else

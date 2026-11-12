@@ -116,7 +116,7 @@
 
 	for(var/missing_zone in missing_bodyparts_zones)
 		var/obj/item/bodypart/BP = O.get_bodypart(missing_zone)
-		BP.drop_limb(1)
+		BP.drop_limb(TRUE)
 		if(!(tr_flags & TR_KEEPORGANS)) //we didn't already get rid of the organs of the newly spawned mob
 			for(var/X in O.internal_organs)
 				var/obj/item/organ/G = X
@@ -290,7 +290,7 @@
 
 	for(var/missing_zone in missing_bodyparts_zones)
 		var/obj/item/bodypart/BP = O.get_bodypart(missing_zone)
-		BP.drop_limb(1)
+		BP.drop_limb(TRUE)
 		if(!(tr_flags & TR_KEEPORGANS)) //we didn't already get rid of the organs of the newly spawned mob
 			for(var/X in O.internal_organs)
 				var/obj/item/organ/G = X

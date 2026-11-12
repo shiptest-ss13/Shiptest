@@ -325,7 +325,7 @@
 		duration *= 2
 	if(HAS_TRAIT(climber, TRAIT_FREERUNNING))
 		duration *= 0.8
-	return duration * climber.do_after_coefficent() + structure.climb_stun
+	return duration * climber.cached_multiplicative_actions_slowdown() + structure.climb_stun
 
 // unbuckle a body if it's in the way
 /datum/ai_movement/jps/proc/unbuckle_body_in_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)

@@ -55,7 +55,7 @@
 	glass_desc = "Mildly sweet, but it won't actually improve your eyesight all that much beyond the baseline..."
 
 /datum/reagent/consumable/carrotjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_blurriness(-1)
+	metabolizer.adjust_eye_blur(-1)
 	metabolizer.adjust_blindness(-1)
 	switch(current_cycle)
 		if(1 to 20)
@@ -229,11 +229,11 @@
 	glass_desc = "Black coffee, served straight. It'll be pretty bitter without anything else in it!"
 
 /datum/reagent/consumable/coffee/overdose_process(mob/living/overdoser, seconds_per_tick, times_fired)
-	overdoser.set_timed_status_effect(5 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(5 SECONDS * REM * seconds_per_tick, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/coffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.AdjustSleeping(-40)
 	//310.15 is the normal bodytemp.
@@ -260,9 +260,9 @@
 	glass_desc = "There's a latent desire to drink this out of a teacup, but there's no time for teatime out here."
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-4 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-1)
-	metabolizer.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
+	metabolizer.adjust_timed_status_effect(-6 SECONDS * REM, STATUS_EFFECT_JITTER)
 	metabolizer.AdjustSleeping(-20)
 	if(metabolizer.getToxLoss() && SPT_PROB(10, seconds_per_tick))
 		metabolizer.adjustToxLoss(-0.5 * seconds_per_tick, 0)
@@ -317,11 +317,11 @@
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on its own, though!"
 
 /datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/icecoffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.AdjustSleeping(-40)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
@@ -340,11 +340,11 @@
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
 /datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/overdoser)
-	overdoser.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.AdjustSleeping(-60)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
@@ -362,7 +362,7 @@
 	glass_desc = "A much more appealing way to have tea while dealing with the heat."
 
 /datum/reagent/consumable/icetea/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-4 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-1)
 	metabolizer.AdjustSleeping(-40)
 	if(metabolizer.getToxLoss() && prob(20))
@@ -402,8 +402,8 @@
 	..()
 
 /datum/reagent/consumable/crosstalk/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	metabolizer.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/dizziness, 2 SECONDS)
+	metabolizer.set_timed_status_effect(4 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+	metabolizer.adjust_timed_status_effect(1 SECONDS, STATUS_EFFECT_DIZZY, 2 SECONDS)
 	metabolizer.drowsyness = 0
 	metabolizer.AdjustSleeping(-40)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal())
@@ -421,7 +421,7 @@
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-7)
 	metabolizer.AdjustSleeping(-20)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
-	metabolizer.set_timed_status_effect(1 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	metabolizer.set_timed_status_effect(1 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -539,7 +539,7 @@
 	glass_desc = "Soda water. You feel like you should add something to this..."
 
 /datum/reagent/consumable/sodawater/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
@@ -553,7 +553,7 @@
 	glass_desc = "Quinine and carbonated water. You really should add something to this..."
 
 /datum/reagent/consumable/tonic/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.AdjustSleeping(-40)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
@@ -570,8 +570,8 @@
 	glass_desc = "A glass of Xeno Energy. It seems to swirl and roil outside of the can..."
 
 /datum/reagent/consumable/xeno_energy/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	metabolizer.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, 20 SECONDS)
+	metabolizer.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+	metabolizer.adjust_timed_status_effect(2 SECONDS, STATUS_EFFECT_DIZZY, 20 SECONDS)
 	metabolizer.drowsyness = 0
 	metabolizer.AdjustSleeping(-40)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
@@ -610,11 +610,11 @@
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/soy_latte/overdose_process(mob/living/overdoser)
-	overdoser.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.set_sleeping(0)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
@@ -634,11 +634,11 @@
 	glass_desc = "A nice, strong, refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/cafe_latte/overdose_process(mob/living/overdoser)
-	overdoser.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(4 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
 	metabolizer.set_sleeping(0)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)

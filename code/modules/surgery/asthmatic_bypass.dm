@@ -57,7 +57,7 @@
 		span_notice("[user] begins to stretch [target]'s windpipe."),
 	)
 
-	display_pain(target, "You feel an agonizing stretching sensation in your neck!")
+	give_surgery_pain(target, "You feel an agonizing stretching sensation in your neck!")
 
 /datum/surgery_step/expand_windpipe/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = TRUE)
 	if (!reduce_inflammation(user, target, tool, surgery))

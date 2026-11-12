@@ -23,11 +23,9 @@
 	owner.add_filter("chronoblur", 1, motion_blur_filter(0, 0))
 	owner.overlay_fullscreen("anomaly", /atom/movable/screen/fullscreen/chronograph)
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/chronograph, FALSE, 0)
+	owner.add_actionspeed_modifier(/datum/actionspeed_modifier/chronograph)
 	owner.visible_message(span_notice("[owner] is moving outside of local space/time!"), span_warning("The pondering nature of reality becomes obvious as you desynchronize from time!"))
 	//once i get actionspeed modifiers in this'll need to be converted. It works for now
-	if(ishuman(owner))
-		var/mob/living/carbon/human/distortion = owner
-		distortion.physiology.do_after_speed -= 0.6
 
 
 /datum/status_effect/accelerando/tick(seconds_between_ticks)
@@ -79,10 +77,9 @@
 		return
 	addtimer(CALLBACK(owner, PROC_REF(remove_filter), "chronoblur"), 20)
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/chronograph)
+	owner.remove_actionspeed_modifier(/datum/actionspeed_modifier/chronograph)
 	owner.clear_fullscreen("anomaly")
-	if(ishuman(owner))
-		var/mob/living/carbon/human/distortion = owner
-		distortion.physiology.do_after_speed += 0.6
+
 
 	owner.visible_message(span_notice("[owner] has re-integrated with local time!"), span_warning("You feel a lurching as your body suddenly re-integrates with local time!"))
 	if(fatal)

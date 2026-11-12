@@ -59,12 +59,14 @@
 		woundtype = "bruises"
 	else //why are you trying to 0,0...?
 		woundtype = "burns"
+		pain_type = BURN
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
 			display_results(user, target, span_notice("You attempt to patch some of [target]'s [woundtype]."),
-		span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
-		span_notice("[user] attempts to patch some of [target]'s [woundtype]."))
+				span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
+				span_notice("[user] attempts to patch some of [target]'s [woundtype]."))
+			give_surgery_pain(target, "Your [woundtype] sting like hell!", target_zone = target_zone)
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(!..())

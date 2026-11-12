@@ -444,6 +444,9 @@ GENE SCANNER
 			render_list += "<span class='notice ml-1'>Detected cybernetic modifications:</span>\n"
 			render_list += "<span class='notice ml-2'>[cyberimp_detect]</span>\n"
 
+	//send a signal to add additional lines to the scanner
+	SEND_SIGNAL(M, COMSIG_MOB_HEALTHSCANNED, render_list)
+
 	// we handled the last <br> so we don't need handholding
 	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 

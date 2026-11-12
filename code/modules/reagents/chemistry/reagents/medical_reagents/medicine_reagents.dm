@@ -101,7 +101,7 @@
 	var/overdose_bleed_modifier = 0.3
 	var/brute_damage_modifier = 1.5
 
-/datum/reagent/medicine/hadrakine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/hadrakine/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjustToxLoss(0.5*reac_volume)
@@ -110,7 +110,7 @@
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
 			var/pain_points = M.adjustStaminaLoss(reac_volume*4)
-			M.force_pain_noise(pain_points)
+			M.sharp_pain(M.zone_selected, pain_points, BRUTE, reac_volume*2 SECONDS)
 			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_danger("You feel your bruises healing! It stings like hell!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -168,13 +168,13 @@
 	color = "#725cfd"
 	overdose_threshold = 20
 
-/datum/reagent/medicine/silfrine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/silfrine/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/paper_cut_victim = M
 		if(method in list(INGEST, INJECT, PATCH))
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_boldwarning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
-				M.force_pain_noise(reac_volume*6)
+				M.sharp_pain(BODY_ZONES_ALL, reac_volume, BRUTE, reac_volume*6 SECONDS)
 				M.adjustStaminaLoss(reac_volume*4)
 			for(var/owie in paper_cut_victim.all_wounds)
 				var/datum/wound/paper_cut = owie
@@ -201,18 +201,19 @@
 /datum/reagent/medicine/silfrine/overdose_start(mob/living/M)
 	. = ..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine_od)
-	M.force_pain_noise(200)
+	if(iscarbon(M))
+		var/mob/living/carbon/idiot = M
+		idiot.sharp_pain(BODY_ZONES_ALL, 100, BRUTE, 60 SECONDS)
 
-
-/datum/reagent/medicine/silfrine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/silfrine/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(5, seconds_per_tick))
 		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 			to_chat(M, span_danger("You feel your flesh twisting as it tries to grow around non-existent wounds!"))
 		else
 			to_chat(M, span_danger("You feel points of pressure all across your body starting to throb uncomfortably."))
-		M.force_pain_noise(40)
-		M.adjustStaminaLoss(20 * REM * seconds_per_tick, 0)
-		M.adjustBruteLoss(2.5 * REM * seconds_per_tick, 0)
+		M.sharp_pain(pick(BODY_ZONES_ALL), 40, BRUTE)
+		M.adjustStaminaLoss(20 * REM, 0)
+		M.adjustBruteLoss(2.5 * REM, 0)
 	if(SPT_PROB(12.5, seconds_per_tick))
 		M.losebreath++
 	..()
@@ -253,17 +254,15 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/alvitane/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	M.adjustFireLoss(-reac_volume/2)
-	M.force_pain_noise(reac_volume/2)
-	M.adjustStaminaLoss(reac_volume/2)
+	M.cause_typed_pain(BODY_ZONE_CHEST, reac_volume/2, BURN)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/owie in burn_ward_attendee.all_wounds)
 			var/datum/wound/burn = owie
 			burn.on_tane(reac_volume/4)
 	if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
-		to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	else
 		to_chat(M, span_notice("You feel your burns twisting."))
@@ -289,7 +288,7 @@
 
 /datum/reagent/medicine/alvitane/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.adjustToxLoss(0.25 * REM * seconds_per_tick, 0)
-	M.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(5 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 
@@ -437,8 +436,8 @@
 /datum/reagent/medicine/pancrazine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	. = ..()
 	if(SPT_PROB(30, seconds_per_tick))
-		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(5 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	if(SPT_PROB(10, seconds_per_tick))
 		M.adjust_disgust(33)
 
@@ -466,11 +465,11 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 		M.adjustToxLoss(-reac_volume*4)
 		M.set_disgust(30)
-		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(5 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 
 /datum/reagent/medicine/gjalrazine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	. = ..()
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.set_timed_status_effect(30 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 	M.adjust_disgust(15 * seconds_per_tick * REM)
 	M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 
@@ -560,7 +559,7 @@
 
 	var/mob/living/carbon/carbon_mob = affected_mob
 	if (SPT_PROB(25, seconds_per_tick))
-		carbon_mob.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, 20 SECONDS)
+		carbon_mob.adjust_timed_status_effect(2 SECONDS, STATUS_EFFECT_JITTER, 20 SECONDS)
 	if (SPT_PROB(35, seconds_per_tick))
 		if (prob(60))
 			carbon_mob.losebreath += 1
@@ -571,7 +570,7 @@
 
 	if (current_cycle > secondary_overdose_effect_cycle_threshold)
 		if (SPT_PROB(30, seconds_per_tick))
-			carbon_mob.set_blurriness(max(carbon_mob.eye_blurry, min(carbon_mob.eye_blurry + 3, 15)))
+			carbon_mob.adjust_eye_blur_up_to(3, 15)
 		if (carbon_mob.getStaminaLoss() < maximum_od_stamina_damage)
 			carbon_mob.adjustStaminaLoss(seconds_per_tick)
 
@@ -717,8 +716,21 @@
 	color = "#0000C8"
 	taste_description = "sludge"
 
+// Cryoxadone slowly heals pain, like wounds.
+// It also helps against shock, sort of.
+/datum/reagent/medicine/cryoxadone/on_mob_metabolize(mob/living/carbon/user)
+	ADD_TRAIT(user, TRAIT_ABATES_SHOCK, type) // To negate the fact that being cold is bad for shock
+
+/datum/reagent/medicine/cryoxadone/on_mob_end_metabolize(mob/living/carbon/user)
+	. = ..()
+	user.unset_pain_mod(type)
+	REMOVE_TRAIT(user, TRAIT_ABATES_SHOCK, type)
+
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	var/power = -0.000015 * (M.bodytemperature ** 2) + 3 * seconds_per_tick
+
+	M.set_pain_mod(type, 0.5) // Heal pain faster
+	M.cause_pain(BODY_ZONES_ALL, -0.25 * power * REM * seconds_per_tick)
 	if(M.bodytemperature < T0C)
 		M.adjustOxyLoss(-3 * power, 0)
 		M.adjustBruteLoss(-power, 0)
@@ -812,6 +824,7 @@
 	color = "#78008C"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
+	pain_modifier = 0.5
 
 /datum/reagent/medicine/stimulants/on_mob_metabolize(mob/living/L)
 	..()
@@ -874,13 +887,16 @@
 	color = "#D2FFFA"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
+	pain_modifier = 0.9
 
 /datum/reagent/medicine/epinephrine/on_mob_metabolize(mob/living/carbon/M)
 	..()
 	ADD_TRAIT(M, TRAIT_NOCRITDAMAGE, type)
+	ADD_TRAIT(M, TRAIT_ABATES_SHOCK, type)
 
 /datum/reagent/medicine/epinephrine/on_mob_end_metabolize(mob/living/carbon/M)
 	REMOVE_TRAIT(M, TRAIT_NOCRITDAMAGE, type)
+	REMOVE_TRAIT(M, TRAIT_ABATES_SHOCK, type)
 	..()
 
 /datum/reagent/medicine/epinephrine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
@@ -914,6 +930,19 @@
 	color = "#1D3535" //slightly more blue, like epinephrine
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 35
+	pain_modifier = 0.8
+
+// Atropine fills a simliar niche to epinephrine
+/datum/reagent/medicine/atropine
+	pain_modifier = 0.8
+
+/datum/reagent/medicine/atropine/on_mob_metabolize(mob/living/carbon/M)
+	..()
+	ADD_TRAIT(M, TRAIT_ABATES_SHOCK, type)
+
+/datum/reagent/medicine/atropine/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(M, TRAIT_ABATES_SHOCK, type)
+	..()
 
 /datum/reagent/medicine/atropine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(M.health <= M.crit_threshold)
@@ -924,13 +953,13 @@
 		. = 1
 	M.losebreath = 0
 	if(SPT_PROB(10, seconds_per_tick))
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.adjustToxLoss(0.25 * REM * seconds_per_tick, 0)
 	. = 1
-	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, max_duration = 20 SECONDS)
+	M.set_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_DIZZY, max_duration = 20 SECONDS)
 	..()

@@ -21,15 +21,15 @@
 			to_chat(M, span_warning("Your vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
-			M.blur_eyes(35)
+			M.set_eye_blur_if_lower(70 SECONDS)
 
 	else if(HAS_TRAIT_FROM(M, TRAIT_NEARSIGHT, EYE_DAMAGE))
 		to_chat(M, span_warning("The blackness in your peripheral vision fades."))
 		M.cure_nearsighted(EYE_DAMAGE)
-		M.blur_eyes(10)
+		M.set_eye_blur_if_lower(20 SECONDS)
 	else if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
-		M.set_blurriness(0)
+		M.remove_status_effect(/datum/status_effect/eye_blur)
 	..()
 
 /datum/reagent/medicine/inacusiate
@@ -72,15 +72,14 @@
 	description = "A medication used to treat pain, fever, and inflammation, along with heart attacks. Can also be used to stabilize livers."
 	color = "#F49797"
 	self_consuming = TRUE
+	pain_modifier = 0.9
 
 /datum/reagent/medicine/corazone/on_mob_metabolize(mob/living/M)
 	..()
-	ADD_TRAIT(M, TRAIT_PAIN_RESIST, type)
 	ADD_TRAIT(M, TRAIT_STABLEHEART, type)
 	ADD_TRAIT(M, TRAIT_STABLELIVER, type)
 
 /datum/reagent/medicine/corazone/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_PAIN_RESIST, type)
 	REMOVE_TRAIT(M, TRAIT_STABLEHEART, type)
 	REMOVE_TRAIT(M, TRAIT_STABLELIVER, type)
 
@@ -146,8 +145,8 @@
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 
 
 		if(SPT_PROB(17, seconds_per_tick))
@@ -156,7 +155,7 @@
 	if(H.health <= H.crit_threshold) //certain death above this threshold
 		REMOVE_TRAIT(H, TRAIT_STABLEHEART, type) //we have to remove the stable heart before we give him heart attack
 		to_chat(H,span_danger("You feel something rupturing inside your chest!"))
-		H.force_scream()
+		H.pain_emote("scream", 5 SECONDS)
 		H.set_heartattack(TRUE)
 		volume = 0
 	. = ..()
