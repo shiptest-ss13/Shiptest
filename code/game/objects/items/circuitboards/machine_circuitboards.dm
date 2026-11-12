@@ -1,38 +1,3 @@
-//Command
-
-/obj/item/circuitboard/machine/bsa/back
-	name = "Bluespace Artillery Generator (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/bsa/back //No freebies!
-	req_components = list(
-		/obj/item/stock_parts/capacitor/quadratic = 5,
-		/obj/item/stack/cable_coil = 2)
-
-/obj/item/circuitboard/machine/bsa/front
-	name = "Bluespace Artillery Bore (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/bsa/front
-	req_components = list(
-		/obj/item/stock_parts/manipulator/femto = 5,
-		/obj/item/stack/cable_coil = 2)
-
-/obj/item/circuitboard/machine/bsa/middle
-	name = "Bluespace Artillery Fusor (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/bsa/middle
-	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 20,
-		/obj/item/stack/cable_coil = 2)
-
-/obj/item/circuitboard/machine/dna_vault
-	name = "DNA Vault (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/dna_vault //No freebies!
-	req_components = list(
-		/obj/item/stock_parts/capacitor/super = 5,
-		/obj/item/stock_parts/manipulator/pico = 5,
-		/obj/item/stack/cable_coil = 2)
-
 //Engineering
 
 /obj/item/circuitboard/machine/announcement_system
