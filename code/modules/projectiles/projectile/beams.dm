@@ -193,8 +193,8 @@
 
 /obj/projectile/beam/laser/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
+	if(isliving(target))
+		var/mob/living/M = target
 		M.ignite_mob()
 	else if(isturf(target))
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
