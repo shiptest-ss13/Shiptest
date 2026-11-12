@@ -3,7 +3,7 @@
 	name = "global positioning system"
 	desc = "Helping lost spacemen find their way through the planets since 2016."
 	icon = 'icons/obj/item/gps.dmi'
-	world_file = 'icons/obj/item/gps_world.dmi'
+	world_file = 'icons/obj/world/items/gps.dmi'
 	icon_state = "gps-c"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
@@ -16,6 +16,12 @@
 /obj/item/gps/Initialize()
 	. = ..()
 	AddComponent(/datum/component/gps/item, gpstag, tracking = gps_active)
+
+/obj/item/gps/dropped(mob/user, silent)
+	. = ..()
+	//needs to pull overlay from gps component
+	cut_overlays()
+	update_overlays()
 
 /obj/item/gps/science
 	icon_state = "gps-s"
