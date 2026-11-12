@@ -35,7 +35,7 @@
 /obj/item/ammo_casing/energy/laser/eoehoma/e20_heavy
 	projectile_type = /obj/projectile/beam/emitter/hitscan/e20_heavy
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 10000
+	e_cost = 2500
 	delay = 1 SECONDS
 
 // e20 pierce shot
@@ -148,8 +148,7 @@
 /obj/item/ammo_casing/energy/laser/scatter
 	projectile_type = /obj/projectile/beam/scatter
 	pellets = 10
-	variance = 40
-	e_cost = 1598 //12 shots upgraded cell, 6 with normal cell
+	variance = 25
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/shotgun
@@ -165,8 +164,6 @@
 	firing_effect_type = null
 	heavy_metal = FALSE
 	caseless = TRUE
-
-// so it doesnt drop cases, also apparently every fucking caseless gun runtimes and thats way past my ability
 
 /obj/item/ammo_casing/energy/laser/shotgun/drone/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
 	. = ..()

@@ -120,7 +120,7 @@
 // e20 heavy beam
 /obj/projectile/beam/emitter/hitscan/e20_heavy
 	icon_state = "eoehoma_laser_heavy"
-	damage = 35
+	damage = 55
 	fire_color = "red"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = COLOR_SOFT_RED
@@ -329,8 +329,7 @@
 /obj/projectile/beam/scatter
 	name = "laser pellet"
 	icon_state = "eoehoma_laser_light"
-	damage = 5
-	range = 7
+	damage = 10
 
 /obj/projectile/beam/xray
 	name = "\improper X-ray beam"

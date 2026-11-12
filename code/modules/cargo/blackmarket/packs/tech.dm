@@ -197,7 +197,7 @@
 	item = /obj/item/attachment/e20mod/scatter
 
 	cost_min = 300
-	cost_max = 1000
+	cost_max = 1500
 	stock = 2
 	availability_prob = 0
 	as_pair_prob = 40
@@ -207,8 +207,8 @@
 	desc = "So get this. Turns out all you need to turn the E-20 into an E-50 is some big capacitors and a new control board. Had one of our techs make some conversion kits if you'd like to get more kick out of those old things."
 	item = /obj/item/attachment/e20mod/heavy
 
-	cost_min = 800
-	cost_max = 3000
+	cost_min = 300
+	cost_max = 1500
 	stock = 2
 	availability_prob = 0
 	as_pair_prob = 40
@@ -219,7 +219,7 @@
 	item = /obj/item/attachment/e20mod/efficiency
 
 	cost_min = 300
-	cost_max = 2000
+	cost_max = 1500
 	stock = 2
 	availability_prob = 0
 	as_pair_prob = 40
@@ -229,8 +229,8 @@
 	desc = "A nice little kit we've cooked up, slap this bad boy in an E-20 and it'll start shooting proper lasers. Shit'll punch straight through multiple targets and mines like a motherfucker. Doesn't go too far because of beam scatter but that's what you get with this sort of power."
 	item = /obj/item/attachment/e20mod/pierce
 
-	cost_min = 800
-	cost_max = 3000
+	cost_min = 300
+	cost_max = 1500
 	stock = 2
 	availability_prob = 0
 	as_pair_prob = 40

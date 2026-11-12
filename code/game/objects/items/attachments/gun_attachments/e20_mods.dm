@@ -31,7 +31,7 @@
 
 /obj/item/attachment/e20mod/scatter
 	name = "E-20 scattershot mod"
-	desc = "An aftermarket modification kit for the E-20 mining emitter. Contains a custom lens assembly that makes the device fire a large scatter of small lasers."
+	desc = "An aftermarket modification kit for the E-20 mining emitter. Contains a custom lens assembly that makes the device fire a large scatter of small lasers. No going back once this is applied!"
 
 	icon_state = "e20_scatter"
 	gun_icon_state = "e20_scatter"
@@ -64,7 +64,7 @@
 
 /obj/item/attachment/e20mod/heavy
 	name = "E-20 overclock mod"
-	desc = "An aftermarket modification kit for the E-20 mining emitter. Contains a high-powered replacement for the charging electronics, which makes the device fire devastating beams at poor efficiency."
+	desc = "An aftermarket modification kit for the E-20 mining emitter. Contains a high-powered replacement for the charging electronics, which makes the device fire devastating beams at poor efficiency. No going back once this is applied!"
 
 	icon_state = "e20_heavy"
 	gun_icon_state = "e20_heavy"
@@ -97,7 +97,7 @@
 
 /obj/item/attachment/e20mod/efficiency
 	name = "E-20 yellowjacket mod"
-	desc = "An aftermarket modification kit for the E-20 mining emitter. Contains an assortment of parts from a Wasp hooked up to an adapter, allowing the device to fire off many more shots at the cost of its mining abilities."
+	desc = "An aftermarket modification kit for the E-20 mining emitter. Contains an assortment of parts from a Wasp hooked up to an adapter, allowing the device to fire off many more shots at the cost of its mining abilities. No going back once this is applied!"
 
 	icon_state = "e20_efficency"
 	gun_icon_state = "e20_efficency"
@@ -112,6 +112,10 @@
 /obj/item/attachment/e20mod/efficiency/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	var/obj/item/gun/energy/laser/e20/our_gun = gun
+	our_gun.gun_firemodes = list(FIREMODE_FULLAUTO)
+	our_gun.default_firemode = FIREMODE_FULLAUTO
+	our_gun.firemode_index = FIREMODE_FULLAUTO
+	our_gun.AddComponent(/datum/component/automatic_fire, our_gun.fire_delay / 2)
 	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma/wasp)
 	our_gun.update_ammo_types()
 	gun.chambered = null
@@ -121,6 +125,11 @@
 /obj/item/attachment/e20mod/efficiency/remove_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	var/obj/item/gun/energy/laser/e20/our_gun = gun
+	our_gun.gun_firemodes = list(FIREMODE_SEMIAUTO)
+	our_gun.default_firemode = FIREMODE_SEMIAUTO
+	our_gun.firemode_index = FIREMODE_SEMIAUTO
+	var/old_comp = our_gun.GetComponent(/datum/component/automatic_fire)
+	qdel(old_comp)
 	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/mining)
 	our_gun.update_ammo_types()
 	gun.chambered = null
@@ -129,7 +138,7 @@
 
 /obj/item/attachment/e20mod/pierce
 	name = "E-20 piercer mod"
-	desc = "An aftermarket conversion kit for the E-20 mining emitter. Replaces the firing assembly with an Etherbor-style laser emitter, making the device shoot a piercing beam capable of punching through multiple targets."
+	desc = "An aftermarket conversion kit for the E-20 mining emitter. Replaces the firing assembly with an Etherbor-style laser emitter, making the device shoot a piercing beam capable of punching through multiple targets. No going back once this is applied!"
 
 	icon_state = "e20_pierce"
 	gun_icon_state = "e20_pierce"
