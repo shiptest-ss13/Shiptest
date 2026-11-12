@@ -163,7 +163,7 @@
 
 /obj/item/storage/pill_bottle/painkillers/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/aspirin(src)
+		new /obj/item/reagent_containers/pill/sydrin(src)
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/paracetamol(src)
 	for(var/i in 1 to 3)
