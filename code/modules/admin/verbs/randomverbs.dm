@@ -813,22 +813,6 @@
 	log_admin("[key_name(usr)] sent \"[input]\" as the Tip of the Round.")
 	BLACKBOX_LOG_ADMIN_VERB("Show Tip")
 
-/client/proc/modify_goals()
-	set category = "Debug"
-	set name = "Modify goals"
-
-	if(!check_rights(R_ADMIN))
-		return
-
-	holder.modify_goals()
-
-/datum/admins/proc/modify_goals()
-	var/dat = ""
-	for(var/datum/station_goal/S in SSticker.mode.station_goals)
-		dat += "[S.name] - <a href='byond://?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='byond://?src=[REF(S)];[HrefToken()];remove=1'>Remove</a><br>"
-	dat += "<br><a href='byond://?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
-	usr << browse(dat, "window=goals;size=400x400")
-
 /proc/immerse_player(mob/living/carbon/target, toggle=TRUE, remove=FALSE)
 	var/list/immersion_components = list(/datum/component/manual_breathing, /datum/component/manual_blinking)
 
