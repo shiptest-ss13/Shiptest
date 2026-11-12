@@ -27,8 +27,8 @@ GLOBAL_VAR_INIT(ship_spawn_enabled, TRUE)
 
 //This was a define, but I changed it to a variable so it can be changed in-game.(kept the all-caps definition because... code...) -Errorage
 //Protecting these because the proper way to edit them is with the config/secrets
-GLOBAL_VAR_INIT(MAX_EX_DEVESTATION_RANGE, 3)
-GLOBAL_PROTECT(MAX_EX_DEVESTATION_RANGE)
+GLOBAL_VAR_INIT(MAX_EX_DEVASTATION_RANGE, 3)
+GLOBAL_PROTECT(MAX_EX_DEVASTATION_RANGE)
 GLOBAL_VAR_INIT(MAX_EX_HEAVY_RANGE, 7)
 GLOBAL_PROTECT(MAX_EX_HEAVY_RANGE)
 GLOBAL_VAR_INIT(MAX_EX_LIGHT_RANGE, 14)

@@ -32,7 +32,7 @@
 	if(can_have_cap)
 		if(!cap_icon_state)
 			cap_icon_state = "[src::icon_state]_cap"
-		cap_overlay = mutable_appearance(icon, cap_icon_state)
+		cap_overlay = mutable_appearance(icon, cap_icon_state, 50 + 0.1) //hardcoded cap layer, because it seems like using the layer variable of the reagent container isn't working
 	if(isnum(vol) && vol > 0)
 		volume = vol
 	create_reagents(volume, reagent_flags)
@@ -48,6 +48,7 @@
 		set_cap_status(cap_on)
 	else
 		cap_on = FALSE
+	update_appearance()
 
 /obj/item/reagent_containers/proc/add_initial_reagents()
 	if(list_reagents)
@@ -146,6 +147,7 @@
 
 /obj/item/reagent_containers/attack_hand_secondary(mob/user)
 	attack_self_secondary(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/reagent_containers/attack_self_secondary(mob/user)
 	if(!can_interact(user))

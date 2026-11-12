@@ -272,7 +272,7 @@
 /datum/keybinding/mob/target_body_groin
 	hotkey_keys = list("Numpad2")
 	name = "target_body_groin"
-	full_name = "Target: Groin"
+	full_name = "Target: Cycle groin/tail"
 	description = ""
 	keybind_signal = COMSIG_KB_MOB_TARGETBODYGROIN_DOWN
 

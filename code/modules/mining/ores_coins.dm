@@ -164,7 +164,7 @@
 	icon_state = "volcanic_sand"
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5)
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/ash = 10)
 
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
@@ -375,24 +375,17 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	var/string_attached
 	var/list/sideslist = list("heads","tails")
 	var/cooldown = 0
-	var/value
 	var/coinflip
 	item_flags = NO_MAT_REDEMPTION //You know, it's kind of a problem that money is worth more extrinsicly than intrinsically in this universe.
 	drop_sound = 'sound/items/handling/coin_drop.ogg'
 	pickup_sound =  'sound/items/handling/coin_pickup.ogg'
+
 /obj/item/coin/Initialize()
 	. = ..()
 	coinflip = pick(sideslist)
 	icon_state = "coin_[coinflip]"
 	pixel_x = base_pixel_x + rand(0,16) - 8
 	pixel_y = base_pixel_y + rand(0,8) - 8
-
-/obj/item/coin/set_custom_materials(list/materials, multiplier = 1)
-	. = ..()
-	value = 0
-	for(var/i in custom_materials)
-		var/datum/material/M = i
-		value += M.value_per_unit * custom_materials[M]
 
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))

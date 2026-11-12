@@ -377,7 +377,10 @@
 	item_state = "alienpistol"
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/shrink_ray
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "shrink ray blaster"
 	desc = "This is a piece of frightening alien tech that enhances the magnetic pull of atoms in a localized space to temporarily make an object shrink. \
 			That or it's just space magic. Either way, it shrinks stuff."

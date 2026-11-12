@@ -148,7 +148,7 @@
 	name = "Independent - Captain (Mercenary)"
 
 	uniform = /obj/item/clothing/under/syndicate
-	head = /obj/item/clothing/head/beret
+	head = /obj/item/clothing/head/beret/color/red
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
@@ -159,6 +159,22 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+
+/datum/outfit/job/independent/captain/merc/naked
+	name = "Independent - Captain (Naked Mercenary)"
+
+	suit = null
+	dcoat = null
+	suit = null
+
+	accessory = null
+	backpack_contents = null
+
+/datum/outfit/job/independent/captain/merc/naked/gown
+	name = "Independent - Captain (Naked Mercenary in Gown)"
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
 
 /datum/outfit/job/independent/captain/western
 	name = "Independent - Captain (Western)"
@@ -353,9 +369,25 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/beret
+	head = /obj/item/clothing/head/beret/color/red
 	glasses = null
 	l_pocket = null
+
+/datum/outfit/job/independent/hos/merc/naked
+	name = "Independent - Mercenary XO (Naked)"
+	id_assignment = "Lieutenant"
+
+	ears = null
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	suit = null
+
+/datum/outfit/job/independent/hos/merc/naked/gown
+	name = "Independent - Mercenary XO (Gowned)"
+	id_assignment = "Lieutenant"
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
 
 // Roboticist
 
@@ -424,7 +456,7 @@
 	head = null
 	suit = null
 	dcoat = null
-
+	l_pocket = null
 
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
@@ -1084,7 +1116,7 @@
 	uniform = /obj/item/clothing/under/rank/security/detective
 	neck = /obj/item/clothing/neck/tie/detective
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	suit = /obj/item/clothing/suit/det_suit
+	suit = /obj/item/clothing/suit/toggle/trenchcoat
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/fedora/det_hat
 	l_pocket = /obj/item/toy/crayon/white
@@ -1095,7 +1127,7 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses)
+	chameleon_extras = list(/obj/item/gun/ballistic/revolver/flint, /obj/item/clothing/glasses/sunglasses)
 
 /datum/outfit/job/independent/detective/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

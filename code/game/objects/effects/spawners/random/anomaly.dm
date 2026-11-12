@@ -177,7 +177,7 @@
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
-		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/chronograph/planetary
 	)
 
 /obj/effect/spawner/random/anomaly/ice/cave
@@ -185,7 +185,7 @@
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
-		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/chronograph/planetary
 	)
 
 /obj/effect/spawner/random/anomaly/waste

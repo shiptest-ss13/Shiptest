@@ -7,6 +7,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_LOW
+	power_flags = POWER_ALLOW_WIRE | POWER_ALLOW_AREA
 	circuit = /obj/item/circuitboard/machine/recharger
 	pass_flags = PASSTABLE
 	var/obj/item/charging = null
@@ -25,6 +26,10 @@
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/melee/energy/flyssa
 		))
+
+/obj/machinery/recharger/Initialize()
+	. = ..()
+	AddElement(/datum/element/nudge, -12, 12, -10, 10)
 
 /obj/machinery/recharger/RefreshParts()
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)

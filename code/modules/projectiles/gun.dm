@@ -25,6 +25,7 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 
 	var/manufacturer = MANUFACTURER_NONE // manufacturer shown in examine text
+	var/autowiki_hidden = FALSE
 
 	// MUZZLE FLASH //
 	var/obj/effect/muzzle_flash/muzzle_flash // effect to use
@@ -32,6 +33,7 @@
 	light_color = COLOR_VERY_SOFT_YELLOW
 	light_on = FALSE
 	var/muzzleflash_iconstate // icon state to use
+	var/flashy = TRUE // If we have a muzzle flash or not
 
 	// FIRING //
 	var/actually_shoots = TRUE // is this gun real and not a dud
@@ -39,6 +41,10 @@
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
+	///How far AI hears this gun, in tiles
+	var/gunfire_hearing_range = AI_GUNFIRE_HEARING_RANGE
+	///How far AI hears it when suppressed. Null to go by AI_SUPPRESSED_HEARING_REDUCTION
+	var/suppressed_gunfire_hearing_range
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
 
@@ -277,7 +283,7 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
+	if(user.a_intent == INTENT_DISARM || !actually_shoots) //lets you beat up someone without shooting them
 		return ..()
 	return
 
@@ -289,7 +295,7 @@
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
-	if(safety)
+	if(safety && has_safety)
 		return FALSE
 	return TRUE
 
@@ -324,7 +330,7 @@
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
-		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
+		if(!ismob(target) || user.a_intent == INTENT_DISARM) //melee attack
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
@@ -518,20 +524,26 @@
 	current_cooldown = FALSE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	if(!safety)
+	if(!safety && has_safety)
 		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
+		if(isliving(user) && is_out_of_ammo())
+			ai_note_enemy_reloading(user, AI_DRY_FIRE_HEARING_RANGE)
 		return
 	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 
+// whether a dry fire means we're actually empty, not just needing the action cycled
+/obj/item/gun/proc/is_out_of_ammo()
+	return TRUE
+
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
-	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
+	var/muzzle_angle = get_angle(get_turf(src), pbtarget)
 
 	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
 
 	// do muzzle flash
-	if(muzzle_flash && !muzzle_flash.applied)
+	if(muzzle_flash && !muzzle_flash.applied && flashy)
 		handle_muzzle_flash(user, muzzle_angle)
 
 	// do recoil
@@ -670,6 +682,7 @@
 #define BRAINS_BLOWN_THROW_SPEED 1
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
+	var/killspeople = TRUE
 	if(!ishuman(user) || !ishuman(target))
 		return
 
@@ -700,6 +713,9 @@
 
 	current_cooldown = FALSE
 
+	if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+		killspeople = FALSE
+
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
 	if(chambered && chambered.BB && can_trigger_gun(user))
@@ -712,11 +728,11 @@
 		if(brain_to_blast)
 
 			//Check if the projectile is actually damaging and not of type STAMINA
-			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+				//Remove brain of the mob shot
+			if(killspeople)
+				brain_to_blast.Remove(target)
+			else
 				return
-
-			//Remove brain of the mob shot
-			brain_to_blast.Remove(target)
 
 			var/turf/splat_turf = get_turf(target)
 			//Move the brain of the person shot to selected turf
@@ -787,75 +803,7 @@
 		set_light_on(TRUE)
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
 
-	//Offset the pixels.
-	switch(firing_angle)
-		if(0, 360)
-			muzzle_flash.pixel_x = 0
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(1 to 44)
-			muzzle_flash.pixel_x = round(4 * ((firing_angle) / 45))
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(45)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(46 to 89)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = round(4 * ((90 - firing_angle) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(90)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = 0
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(91 to 134)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = round(-3 * ((firing_angle - 90) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(135)
-			muzzle_flash.pixel_x = 8
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(136 to 179)
-			muzzle_flash.pixel_x = round(4 * ((180 - firing_angle) / 45))
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = ABOVE_MOB_LAYER
-		if(180)
-			muzzle_flash.pixel_x = 0
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = ABOVE_MOB_LAYER
-		if(181 to 224)
-			muzzle_flash.pixel_x = round(-6 * ((firing_angle - 180) / 45))
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = ABOVE_MOB_LAYER
-		if(225)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = -6
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(226 to 269)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = round(-6 * ((270 - firing_angle) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(270)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = 0
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(271 to 314)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = round(8 * ((firing_angle - 270) / 45))
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(315)
-			muzzle_flash.pixel_x = -6
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-		if(316 to 359)
-			muzzle_flash.pixel_x = round(-6 * ((360 - firing_angle) / 45))
-			muzzle_flash.pixel_y = 8
-			muzzle_flash.layer = initial(muzzle_flash.layer)
-
-	muzzle_flash.transform = null
-	muzzle_flash.transform = turn(muzzle_flash.transform, firing_angle)
+	muzzle_flash.aim(firing_angle)
 	flash_loc.vis_contents += muzzle_flash
 	muzzle_flash.applied = TRUE
 
@@ -869,7 +817,7 @@
 // for guns firing on their own without a user
 /obj/item/gun/proc/discharge(cause, seek_chance = 10)
 	var/target
-	if(!safety && has_safety)
+	if(!safety || !has_safety)
 		// someone is very unlucky and about to be shot
 		if(prob(seek_chance))
 			for(var/mob/living/target_mob in range(6, get_turf(src)))
@@ -889,7 +837,7 @@
 
 /obj/item/gun/proc/unsafe_shot(target)
 	if(chambered)
-		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		chambered.fire_casing(target,null, null, null, suppressed, null, 0, src,TRUE)
 		playsound(src, fire_sound, 100, TRUE)
 
 /mob/living/proc/trip_with_gun(cause)
@@ -904,7 +852,7 @@
 			if(at_risk == human_holder.s_store)
 				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
 				bodyzone = pick_weight(list(BODY_ZONE_CHEST = 10, BODY_ZONE_L_LEG = 45, BODY_ZONE_R_LEG = 45))
-		if(at_risk.safety == FALSE && prob(chance_to_fire))
+		if(at_risk.safety == FALSE && at_risk.has_safety && prob(chance_to_fire))
 			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
 				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))

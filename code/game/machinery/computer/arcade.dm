@@ -288,7 +288,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			playsound(loc, 'sound/arcade/win.ogg', 50, TRUE)
 
 			if(obj_flags & EMAGGED)
-				new /obj/effect/spawner/newbomb/timer/syndicate(loc)
+				new /obj/item/grenade/c4/satchel_charge(loc)
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has outbombed Cuban Pete and been awarded a bomb.")
 				log_game("[key_name(usr)] has outbombed Cuban Pete and been awarded a bomb.")
 				Reset()
@@ -758,15 +758,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			if(prob(75-gamerSkill))
 				event = ORION_TRAIL_BLACKHOLE
 				event()
-				if(obj_flags & EMAGGED)
-					playsound(loc, 'sound/effects/supermatter.ogg', 100, TRUE)
-					say("A miniature black hole suddenly appears in front of [src], devouring [usr] alive!")
-					if(isliving(usr))
-						var/mob/living/L = usr
-						L.Stun(200, ignore_canstun = TRUE) //you can't run :^)
-					var/S = new /obj/singularity/academy(usr.loc)
-					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, say), "[S] winks out, just as suddenly as it appeared."), 50)
-					QDEL_IN(S, 50)
 			else
 				event = null
 				turns += 1

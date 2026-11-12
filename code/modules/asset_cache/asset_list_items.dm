@@ -478,6 +478,7 @@
 		if(sprites[id]) //no dupes
 			continue
 		Insert(id, fish_icon, fish_icon_state)
+	return ..()
 
 
 /datum/asset/simple/fishing_minigame

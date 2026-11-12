@@ -112,7 +112,7 @@
 		to_chat(living_mob,related_policy)
 	if(ishuman(living_mob))
 		var/mob/living/carbon/human/wageslave = living_mob
-		living_mob.add_memory("Your account ID is [wageslave.account_id].")
+		living_mob.add_memory("My account ID is [wageslave.account_id].")
 	if(living_mob)
 		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
 
@@ -241,12 +241,14 @@
 		if(SBAG)
 			back = /obj/item/storage/backpack/messenger/sport //sports bag
 		if(TAILBAG)
-			if(!HAS_TRAIT(H, TRAIT_TAILED))
+			var/obj/item/bodypart/tail/mob_tail = H.get_bodypart(BODY_ZONE_TAIL)
+			if(!mob_tail?.sturdy)
 				back = /obj/item/storage/backpack/satchel/kitbag //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
 		if(KITBAG)
-			if(HAS_TRAIT(H, TRAIT_TAILED))
+			var/obj/item/bodypart/tail/mob_tail = H.get_bodypart(BODY_ZONE_TAIL)
+			if(mob_tail?.sturdy)
 				back = /obj/item/storage/backpack/satchel/tailbag //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/kitbag //kitbag

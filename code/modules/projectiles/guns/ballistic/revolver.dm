@@ -439,6 +439,8 @@
 	if(!safety)
 		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
 		playsound(src, dry_fire_sound, 30, TRUE)
+		if(isliving(user) && is_out_of_ammo())
+			ai_note_enemy_reloading(user, AI_DRY_FIRE_HEARING_RANGE)
 		if(!semi_auto)
 			toggle_safety(silent = TRUE, rack_gun = FALSE)
 		return
@@ -459,6 +461,7 @@
 
 // golden revolver. it is here. woe
 /obj/item/gun/ballistic/revolver/golden
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "\improper Golden revolver"
 	desc = "This ain't no game, ain't never been no show, And I'll gladly gun down the oldest lady you know. Uses .357 ammo."
 	icon_state = "goldrevolver"

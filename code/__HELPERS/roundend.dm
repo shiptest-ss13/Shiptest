@@ -282,8 +282,6 @@
 	//Medals
 	parts += medal_report()
 
-	CHECK_TICK
-
 	listclearnulls(parts)
 
 	return parts.Join()

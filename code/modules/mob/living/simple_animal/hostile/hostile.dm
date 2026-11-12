@@ -64,7 +64,9 @@
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
-///When a target is found, will the mob attempt to charge at it's target?
+	///If true, mob will attempt to pathfind to burglar alarms in their area when triggered.
+	var/search_alarms = FALSE
+	///When a target is found, will the mob attempt to charge at it's target?
 	var/charger = FALSE
 	///Tracks if the target is actively charging.
 	var/charge_state = FALSE
@@ -139,6 +141,11 @@
 		face_atom(target) //Looks better if they keep looking at you when dodging
 
 /mob/living/simple_animal/hostile/attacked_by(obj/item/I, mob/living/user)
+	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && user)
+		FindTarget(list(user), 1)
+	return ..()
+
+/mob/living/simple_animal/hostile/attack_basic_mob(mob/living/basic/user, list/modifiers)
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && user)
 		FindTarget(list(user), 1)
 	return ..()
@@ -449,7 +456,7 @@
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
-		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
+		casing.fire_casing(targeted_atom, src, null, null, null, null, rand(-spread, spread),  src)
 		casing.on_eject(src)
 	else if(projectiletype)
 		var/obj/projectile/P = new projectiletype(startloc)
@@ -718,25 +725,4 @@
 	src.faction += tag
 
 /mob/living/simple_animal/hostile/proc/fire_line(source, list/turfs, fire_source = "fire breath", ignite_turfs = FALSE, power = 4, flame_color = "red")
-	var/list/hit_list = list()
-	for(var/turf/T in turfs)
-		if(istype(T, /turf/closed))
-			break
-		new /obj/effect/hotspot(T)
-		T.hotspot_expose(700,50,1)
-		if(ignite_turfs)
-			T.ignite_turf(power,flame_color)
-		for(var/mob/living/L in T.contents)
-			if((L in hit_list) || L == source)
-				continue
-			hit_list += L
-			L.adjustFireLoss(20)
-			to_chat(L, span_userdanger("You're hit by [source]'s [fire_source]!"))
-
-		// deals damage to mechs
-		for(var/obj/mecha/M in T.contents)
-			if(M in hit_list)
-				continue
-			hit_list += M
-			M.take_damage(45, BRUTE, "melee", 1)
-		sleep(1.5)
+	spray_fire_line(source, turfs, fire_source, ignite_turfs, power, flame_color)

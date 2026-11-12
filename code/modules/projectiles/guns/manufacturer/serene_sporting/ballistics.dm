@@ -132,6 +132,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
 	item_state = "m20_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -419,6 +420,12 @@ NO_MAG_GUN_HELPER(automatic/m15)
 
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
+
+	unique_reskin = list(\
+		"Wood" = "buckmaster",
+		"Polymer" = "buckmasterclip"
+		)
+	unique_reskin_changes_inhand = TRUE
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

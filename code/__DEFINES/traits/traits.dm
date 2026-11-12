@@ -198,6 +198,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CHASM_STOPPED "chasm_stopped"
 ///The effects of the immerse element will be halted while this trait is present.
 #define TRAIT_IMMERSE_STOPPED "immerse_stopped"
+///Basic mob AI won't path through or step onto a turf with this, as if it were lava
+#define TRAIT_AI_AVOID "ai_avoid"
 ///The effects of acid turfs will be stopped while the trait is present
 #define TRAIT_ACID_STOPPED "immerse_stopped"
 ///Turf slowdown will be ignored when this trait is added to a turf.
@@ -226,6 +228,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANTIMAGIC "anti_magic"
 #define TRAIT_HOLY "holy"
 #define TRAIT_JOLLY "jolly"
+#define TRAIT_LOTTO_CURSE "lotto_curse"
 #define TRAIT_NOCRITDAMAGE "no_crit"
 #define TRAIT_NOSLIPWATER "noslip_water"
 #define TRAIT_NOSLIPALL "noslip_all"
@@ -241,6 +244,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PARALYSIS_R_ARM "para-r-arm"
 #define TRAIT_PARALYSIS_L_LEG "para-l-leg"
 #define TRAIT_PARALYSIS_R_LEG "para-r-leg"
+#define TRAIT_PARALYSIS_TAIL "para-tail"
 #define TRAIT_EASILY_WOUNDED "easy_limb_wound"
 #define TRAIT_HARDLY_WOUNDED "hard_limb_wound"
 #define TRAIT_VERY_HARDLY_WOUNDED "extreme_limb_wound"
@@ -324,8 +328,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
-/// You've got a tail.
-#define TRAIT_TAILED "tailed"
+/// You flip over when you lie down.
+#define TRAIT_FLIP_ON_LYING "flip_on_lying"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
@@ -560,6 +564,13 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// If this movable is currently treading in a turf with the immerse element.
 #define TRAIT_IMMERSED "immersed"
+
+/// lets AI open and path through doors, even if they can't open doors normally
+#define TRAIT_AI_OPENS_DOORS "ai_opens_doors"
+/// AI that comes looking when it hears enemy gunfire
+#define TRAIT_AI_HEARS_GUNFIRE "ai_hears_gunfire"
+/// One of an AI's side is on its way to finish off this downed mob up close, so the rest leave it to them. Sourced from the executioner's REF
+#define TRAIT_AI_EXECUTION_CLAIMED "ai_execution_claimed"
 
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"

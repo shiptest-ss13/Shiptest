@@ -14,7 +14,7 @@
 
 //Loot tables
 
-GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto chemistry items
+GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or chemistry items
 	list(//trash
 		/obj/item/trash/can = 1,
 		/obj/item/trash/raisins = 1,
@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/melee/baton/cattleprod = 1,
 		/obj/item/throwing_star = 1,
-		/obj/item/gun/ballistic/derringer = 1,
+		/obj/item/gun/ballistic/automatic/pistol/derringer = 1,
 		) = 8,
 
 	list(//equipment

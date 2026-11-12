@@ -1213,9 +1213,6 @@
 /turf/open/floor/plastic,
 /area/ship/crew/canteen/kitchen)
 "we" = (
-/mob/living/simple_animal/bot/firebot/rockplanet{
-	icon_state = "firebot1"
-	},
 /obj/structure/sign/warning/chemdiamond{
 	pixel_y = 32
 	},
@@ -1236,6 +1233,7 @@
 	},
 /obj/item/card/id/captains_spare,
 /obj/item/circuitboard/machine/autolathe/reployer,
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/electrical)
 "wi" = (
@@ -1310,7 +1308,7 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -2580,7 +2578,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},

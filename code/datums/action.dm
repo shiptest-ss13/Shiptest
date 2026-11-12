@@ -290,6 +290,9 @@
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"
 
+/datum/action/item_action/toggle_helmet_nightvision
+	name = "Toggle Helmet Nightvision"
+
 /datum/action/item_action/toggle_welding_screen
 	name = "Toggle Welding Screen"
 

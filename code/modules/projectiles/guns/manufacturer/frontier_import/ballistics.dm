@@ -5,6 +5,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	manufacturer = MANUFACTURER_IMPORT
 
 	icon_state = "mauler_mp"
 	item_state = "hp_generic"
@@ -134,7 +135,7 @@
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 
-	spread = 20
+	spread = 15
 	spread_unwielded = 20
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN
@@ -198,6 +199,79 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
+/obj/item/gun/ballistic/automatic/smg/heater
+	name = "\improper Heater"
+	desc = "A popular Personal Defense Weapon originating from the Shoal. Essentially a more expensive, compact Spitter with a closed bolt design. It is notably more accurate while suffering from increased recoil due to its lack of stock. "
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "heater"
+	item_state = "heater"
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 4
+	wield_delay = 0.2 SECONDS
+	fire_delay = 0.12 SECONDS
+	recoil = 0.5
+	recoil_unwielded = 2.5
+	spread_unwielded = 8
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	default_ammo_type = /obj/item/ammo_box/magazine/heater
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/heater,
+	)
+	wear_rate = 1.25
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+
+	unique_mag_sprites_for_variants = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+	slot_available = list(ATTACHMENT_SLOT_RAIL = 1)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 14,
+		),
+	)
+
+NO_MAG_GUN_HELPER(automatic/smg/heater)
+
+/obj/item/gun/ballistic/automatic/smg/heater/scorcher
+	name = "\improper Scorcher"
+	desc = "A Frontiersmen-modified heater, with a flamethrower and fuel tank bolted onto it. A stock has been fitted on to help control recoil, at the cost of increasing its size."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "scorcher"
+	item_state = "scorcher"
+	w_class = WEIGHT_CLASS_BULKY
+	recoil = 0.1
+
+
+	default_attachments = list(/obj/item/attachment/gun/flamethrower/scorcher)
+	unique_attachments = list(/obj/item/attachment/gun/flamethrower/scorcher)
+
+/obj/item/ammo_box/magazine/heater
+	name = "Heater magazine (5.7mm)"
+	desc = "A 30-round magazine designed for the Heater PDW."
+	icon_state = "heater_mag-1"
+	base_icon_state = "heater_mag"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	caliber = "5.7x39mm"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/heater/extended
+	name = "Heater casket magazine (5.7mm)"
+	desc = "A 50-round casket magazine designed for the Heater PDW."
+	icon_state = "heater_extended_mag-1"
+	base_icon_state = "heater_extended_mag"
+	max_ammo = 50
 
 /obj/item/gun/ballistic/automatic/smg/pounder
 	name = "Pounder"
@@ -469,6 +543,7 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
@@ -516,6 +591,7 @@
 	return
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "\improper Hammer-DP"
 	desc = "A disposable rocket-propelled grenade launcher loaded with an HEDP shell for Direct Penetration of your target."
 
@@ -606,3 +682,57 @@
 
 /obj/item/ammo_box/magazine/m12g_slammer/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/assault/ripper
+	name = "Ripper"
+	desc = "A cut-down variant of the venerable CLIP F4. This one seems to have been cobbled together with various parts of various guns. Its bolt seems different than the conventional F4."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "ripper"
+	item_state = "ripper"
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	bolt_type = BOLT_TYPE_OPEN
+	default_ammo_type = /obj/item/ammo_box/magazine/f4_308
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/f4_308,
+	)
+	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	fire_delay = 3.5
+	actions_types = list()
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	manufacturer = MANUFACTURER_IMPORT
+
+	valid_attachments = list(
+		/obj/item/attachment/foldable_stock/ripper
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+	unique_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+	spread = 10
+	recoil = 2
+

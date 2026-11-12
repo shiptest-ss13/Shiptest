@@ -16,8 +16,6 @@ GLOBAL_VAR_INIT(hydrogen_stored, 0) // can be -/+, + meaning surplus
 
 GLOBAL_LIST_EMPTY(powernets)
 
-GLOBAL_VAR_INIT(bsa_unlock, FALSE)	//BSA unlocked by head ID swipes
-
 GLOBAL_LIST_EMPTY(player_details)	// ckey -> /datum/player_details
 
 ///All currently running polls held as datums
@@ -31,3 +29,18 @@ GLOBAL_PROTECT(poll_options)
 GLOBAL_VAR_INIT(internal_tick_usage, 0.2 * world.tick_lag) //This var is updated every tick by a DLL if present, used to reduce lag
 
 GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
+
+GLOBAL_LIST_INIT(major_planets, list(
+	"Lunatown",
+	"Lanchester",
+	"Star City",
+	"Serene",
+	"Ryuunosuke",
+	"Clover",
+	"Kalixcis",
+	"New Gorlex",
+	"Gorlex",
+	"Teceti",
+	"Terra",
+	"Axilai"
+))

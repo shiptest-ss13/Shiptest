@@ -62,7 +62,7 @@
 			if(!mend)
 				A.locked = TRUE
 		if(WIRE_AI)
-			A.aidisabled = mend // Enable/disable AI control.
+			A.aidisabled = !mend // Enable/disable AI control.
 		if(WIRE_PANIC) // Force panic syphon on.
 			if(!mend && !A.shorted)
 				A.mode = 3 // AALARM_MODE_PANIC

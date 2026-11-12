@@ -3,9 +3,10 @@
 //Therefore there needs to be a gap between the flags for the automute flags
 #define MUTE_IC (1<<0)
 #define MUTE_OOC (1<<1)
-#define MUTE_PRAY (1<<2)
-#define MUTE_ADMINHELP (1<<3)
-#define MUTE_DEADCHAT (1<<4)
+#define MUTE_LOOC (1<<2)
+#define MUTE_PRAY (1<<3)
+#define MUTE_ADMINHELP (1<<4)
+#define MUTE_DEADCHAT (1<<5)
 #define MUTE_ALL (~0)
 
 //Some constants for DB_Ban
@@ -86,6 +87,7 @@
 #define ADMIN_PUNISHMENT_BLEED ":B:loodless"
 #define ADMIN_PUNISHMENT_PERFORATE ":B:erforate"
 #define ADMIN_PUNISHMENT_SHOES "Knot Shoes"
+#define ADMIN_PUNISHMENT_LOTTO_CURSE "Never Win Scratch Tickets Again"
 
 #define AHELP_ACTIVE 1
 #define AHELP_CLOSED 2

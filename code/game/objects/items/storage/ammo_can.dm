@@ -16,7 +16,6 @@
 		"12ga Buckshot" = "ammobox_12ga",
 		"9mm" = "ammobox_9mm",
 		"10mm" = "ammobox_10mm",
-		".45" = "ammobox_45",
 		".38" = "ammobox_38",
 		".22lr" = "ammobox_22",
 		"5.7x39mm" = "ammobox_57",
@@ -83,13 +82,6 @@
 	current_skin = ".308"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a308(src)
-
-/obj/item/storage/toolbox/ammo/c45/PopulateContents()
-	name = "ammo can (.45)"
-	icon_state = "ammobox_45"
-	current_skin = ".45"
-	for (var/i in 1 to 4)
-		new /obj/item/storage/box/ammo/c45(src)
 
 /obj/item/storage/toolbox/ammo/c9mm/PopulateContents()
 	name = "ammo can (9mm)"

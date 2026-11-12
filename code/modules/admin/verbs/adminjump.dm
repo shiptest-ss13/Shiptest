@@ -110,6 +110,7 @@
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	M.forceMove(loc)
+	M.ai_controller?.forget_home()
 	BLACKBOX_LOG_ADMIN_VERB("Get Mob")
 
 /client/proc/Getkey()
@@ -150,6 +151,7 @@
 	if(A && istype(A))
 		var/list/turfs = get_area_turfs(A)
 		if(length(turfs) && M.forceMove(pick(turfs)))
+			M.ai_controller?.forget_home()
 
 			log_admin("[key_name(usr)] teleported [key_name(M)] to [AREACOORD(A)]")
 			var/msg = "[key_name_admin(usr)] teleported [ADMIN_LOOKUPFLW(M)] to [AREACOORD(A)]"

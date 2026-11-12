@@ -6,6 +6,7 @@
 	icon_state = "headbandwhite"
 	item_state = "headbandwhite"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	w_class = WEIGHT_CLASS_SMALL
 	unique_reskin = list(
 		"white headband" = "headbandwhite",
 		"grey headband" = "headbandgrey",

@@ -31,11 +31,11 @@
 	id = "rockplanet_rustbase"
 	suffix = "rockplanet_rustbase.dmm"
 
-/datum/map_template/ruin/rockplanet/river_valley_stash
-	name = "River Valley Stash"
+/datum/map_template/ruin/rockplanet/oasis_stash
+	name = "Oasis Stash"
 	description = "A frontiersman drug stash in the midst of being buried."
-	id = "rockplanet_river_valley_stash"
-	suffix = "rockplanet_river_valley_stash.dmm"
+	id = "rockplanet_oasis_stash"
+	suffix = "rockplanet_oasis_stash.dmm"
 
 /datum/map_template/ruin/rockplanet/somme
 	name = "Frontiersman Trench Complex"

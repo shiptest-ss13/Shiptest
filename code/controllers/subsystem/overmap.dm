@@ -202,31 +202,9 @@ SUBSYSTEM_DEF(overmap)
 		return "No outpost exists in [target_system.name]."
 	return "[target_system.outposts[1]?:x]-[target_system.outposts[1]?:y]"
 
-/datum/controller/subsystem/overmap/proc/ship_crew_percentage()
-	var/ship_percentages = 0
-	var/counted_ships = 0
-	for(var/datum/overmap/ship/controlled/ship_datum in controlled_ships)
-		var/slot_count = 0
-		if(!ship_datum.source_template || ship_datum.source_template.category == "subshuttles")
-			continue
-		for(var/job_slot in ship_datum.source_template.job_slots)
-			slot_count += ship_datum.source_template.job_slots[job_slot]
-		if(!slot_count)
-			continue
-		ship_percentages += ((length(ship_datum.manifest) / slot_count) * 100)
-		counted_ships++
-	if(ship_percentages && counted_ships)
-		return round(ship_percentages / counted_ships)
-	return 0
-
-/datum/controller/subsystem/overmap/proc/ship_locking_percentage()
-	return round(clamp(clamp(((world.time - (CONFIG_GET(number/ship_locking_starts) MINUTES)) / (1 MINUTES)), 0, 25) + TRANSFER_FACTOR * 100, 0, 50))
-
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
 	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
-		return FALSE
-	if((length(controlled_ships) > 2 && CONFIG_GET(flag/auto_ship_spawn_locking)) && ship_crew_percentage() < ship_locking_percentage())
 		return FALSE
 	return TRUE
 
@@ -325,7 +303,7 @@ SUBSYSTEM_DEF(overmap)
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
  * Inteded for ship purchases, etc.
  */
-/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template, position, datum/overmap_star_system/system_to_spawn_in)
+/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template, position, datum/overmap_star_system/system_to_spawn_in, ship_name)
 	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
 	UNTIL(!ship_spawning)
 
@@ -345,7 +323,7 @@ SUBSYSTEM_DEF(overmap)
 		ship_loc = SSovermap.outposts[1]
 
 	ship_spawning = TRUE
-	. = new /datum/overmap/ship/controlled(ship_loc, system_to_spawn_in, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
+	. = new /datum/overmap/ship/controlled(ship_loc, system_to_spawn_in, template, TRUE, FALSE, ship_name) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
 	ship_spawning = FALSE
 
 /**
