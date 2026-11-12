@@ -4890,15 +4890,19 @@
 	name = "equipment locker";
 	icon_state = "sec_wall"
 	},
-/obj/item/storage/box/zipties{
-	pixel_y = 7;
-	pixel_x = 4
-	},
-/obj/item/storage/box/flashes{
-	pixel_y = -1;
-	pixel_x = -7
-	},
 /obj/effect/turf_decal/trimline/opaque/white/end,
+/obj/item/storage/guncase/g12{
+	pixel_x = 0;
+	pixel_y = -12
+	},
+/obj/item/storage/box/ammo/a12g_buckshot{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/storage/box/zipties{
+	pixel_y = -4;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "zI" = (
@@ -10523,35 +10527,19 @@
 	req_access_txt = "3";
 	icon_state = "sec_wall"
 	},
-/obj/item/storage/backpack/duffelbag/syndie/c4{
-	pixel_y = -7;
-	pixel_x = -6
+/obj/effect/turf_decal/trimline/opaque/white/end,
+/obj/item/storage/box/smokebombs{
+	pixel_x = 8;
+	pixel_y = -4
 	},
 /obj/item/storage/box/flashbangs{
-	pixel_y = 6;
-	pixel_x = 1
+	pixel_y = -4;
+	pixel_x = -7
 	},
-/obj/item/grenade/smokebomb{
-	pixel_y = 2;
-	pixel_x = 9
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	pixel_y = 7;
+	pixel_x = -1
 	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 5;
-	pixel_y = -2
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 13;
-	pixel_y = -2
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 9;
-	pixel_y = -5
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 9;
-	pixel_y = -5
-	},
-/obj/effect/turf_decal/trimline/opaque/white/end,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Ye" = (
