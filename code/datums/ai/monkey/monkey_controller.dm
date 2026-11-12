@@ -95,7 +95,7 @@ have ways of interacting with a specific mob and control it.
 		return FALSE
 
 	set_blackboard_key(BB_MONKEY_PICKUPTARGET, weapon)
-	current_movement_target = weapon
+	set_movement_target(pickpocket ? /datum/ai_behavior/monkey_equip/pickpocket : /datum/ai_behavior/monkey_equip/ground, weapon)
 	if(pickpocket)
 		LAZYADD(current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/monkey_equip/pickpocket))
 	else

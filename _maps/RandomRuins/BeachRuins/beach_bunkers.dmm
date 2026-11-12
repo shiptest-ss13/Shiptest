@@ -108,11 +108,9 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
 "bf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
 	vision_range = 14
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -1816,7 +1814,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0
 	},
@@ -2004,8 +2002,8 @@
 /area/ruin/beach/bunker)
 "zI" = (
 /obj/effect/turf_decal/road,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
-	aggro_vision_range = 14
+/mob/living/basic/human/frontier/ranged/officer/rifle{
+	vision_range = 14
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -2467,7 +2465,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "Et" = (
-/mob/living/simple_animal/hostile/human/frontier/axe,
+/mob/living/basic/human/frontier/axe,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ew" = (
@@ -2530,7 +2528,7 @@
 	icon_state = "4-5"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/mob/living/basic/human/frontier/ranged,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_one)
 "ES" = (
@@ -3044,7 +3042,7 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor3"
 	},
-/mob/living/simple_animal/hostile/human/frontier/axe,
+/mob/living/basic/human/frontier/axe,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Nw" = (
@@ -3201,7 +3199,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "OZ" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/mob/living/basic/human/frontier/ranged,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Pb" = (
@@ -3328,7 +3326,7 @@
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "Qx" = (
-/mob/living/simple_animal/hostile/human/frontier{
+/mob/living/basic/human/frontier{
 	name = "Frontiersman Adjunct"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3464,11 +3462,9 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RO" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
 	vision_range = 14;
 	retreat_distance = 0
 	},
@@ -3740,7 +3736,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "Wd" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0
 	},
@@ -3869,7 +3865,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XH" = (
@@ -3915,7 +3911,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/axe,
+/mob/living/basic/human/frontier/axe,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XZ" = (
@@ -3976,7 +3972,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Zq" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder{
+/mob/living/basic/human/frontier/ranged/pounder{
 	weapon_drop_chance = 20
 	},
 /turf/open/floor/concrete/slab_2,
