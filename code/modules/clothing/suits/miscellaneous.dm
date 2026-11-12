@@ -235,7 +235,7 @@
 	item_state = "hostrench"
 	resistance_flags = NONE
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/radio)
 
 /obj/item/clothing/suit/jacket/leather/coat
 	name = "leather coat"
@@ -302,29 +302,49 @@
 	icon_state = "baggy"
 	item_state = "baggy"
 
-/obj/item/clothing/suit/jacket/letterman
+/obj/item/clothing/suit/jacket/twotone
+	name = "two-tone coat"
+	desc = "An expensive looking two-tone coat. Has no buttons, but is still comfortably warm."
+	icon_state = "twotone"
+	item_state = "twotone"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	unique_reskin = list(
+		"olive two-tone coat" = "twotone",
+		"khaki two-tone coat" = "twotonekhaki",
+		"leather two-tone coat" = "twotoneleather",
+		"black two-tone coat" = "twotoneblack",
+		"white two-tone coat" = "twotonewhite",
+		"red two-tone coat" = "twotonered",
+	)
+	unique_reskin_changes_inhand = TRUE
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/letterman
 	name = "letterman jacket"
 	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
 	icon_state = "letterman"
 	item_state = "letterman"
 
-/obj/item/clothing/suit/jacket/letterman_red
+/obj/item/clothing/suit/toggle/letterman_red
 	name = "red letterman jacket"
-	desc = "A letterman jacket in a sick red color. Radical."
-	icon_state = "letterman_red"
-	item_state = "letterman_red"
+	desc = "A red letterman jacket, did you ever outgrow it?"
+	icon_state = "letterred"
+	item_state = "letterred"
 
-/obj/item/clothing/suit/jacket/letterman_syndie
-	name = "blood-red letterman jacket"
-	desc = "Oddly, this jacket seems to have a large S on the back..."
-	icon_state = "letterman_s"
-	item_state = "letterman_s"
+/obj/item/clothing/suit/toggle/letterman_black
+	name = "black letterman jacket"
+	desc = "A black letterman jacket, with thick leather and tough cloth."
+	icon_state = "letterblack"
+	item_state = "letterblack"
 
-/obj/item/clothing/suit/jacket/letterman_warra
+/obj/item/clothing/suit/toggle/letterman_blue
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Makosso-Warra M on the back. It seems cheaply made."
-	icon_state = "letterman_n"
-	item_state = "letterman_n"
+	desc = "A blue letterman jacket, did you ever outgrow it?"
+	icon_state = "letterblue"
+	item_state = "letterblue"
 
 /obj/item/clothing/suit/gothcoat
 	name = "gothic coat"
@@ -510,3 +530,61 @@
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/capsule
+	name = "capsule jacket"
+	desc = "A poorly made jacket with a pill capsule resting on the backside. Good for your health, but not good for your education. Take only as prescribed."
+	icon_state = "capsule"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+
+/obj/item/clothing/suit/toggle/biker
+	name = "Biker Jacket"
+	desc = "A well made leather jacket for the high-speed biker. Feels comfortably stiff."
+	icon_state = "biker"
+	unique_reskin = list(
+		"Brown Biker Jacket" = "biker",
+		"White Biker Jacket" = "bikerwhite",
+		"Black Biker Jacket" = "bikerblack",
+		"Navy Biker Jacket" = "bikernavy",
+	)
+	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/biker/Initialize()
+	. = ..()
+	base_icon_state = icon_state
+
+/obj/item/clothing/suit/toggle/biker/suit_toggle()
+	set src in usr
+
+	if(!can_use(usr))
+		return 0
+
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
+	if(src.suittoggled)
+		src.icon_state = "[base_icon_state]"
+		src.suittoggled = FALSE
+	else if(!src.suittoggled)
+		src.icon_state = "[base_icon_state]_t"
+		src.suittoggled = TRUE
+	usr.update_inv_wear_suit()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/clothing/suit/toggle/biker/white
+	name = "White Biker Jacket"
+	icon_state = "bikerwhite"
+
+/obj/item/clothing/suit/toggle/biker/black
+	name = "Black Biker Jacket"
+	icon_state = "bikerblack"
+
+/obj/item/clothing/suit/toggle/biker/navy
+	name = "Navy Biker Jacket"
+	icon_state = "bikernavy"

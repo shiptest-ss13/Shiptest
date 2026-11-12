@@ -1,7 +1,7 @@
 
 /obj/item/gps
 	name = "global positioning system"
-	desc = "Helping lost spacemen find their way through the planets since 2016."
+	desc = "A positioning system that uses standard navigational beacons in system to triangulate positions. Useful for locating crewmembers or places of interest."
 	icon = 'icons/obj/item/gps.dmi'
 	//world_file = 'icons/obj/item/gps_world.dmi'
 	icon_state = "gps-c"

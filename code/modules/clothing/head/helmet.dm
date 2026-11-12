@@ -107,6 +107,7 @@
 /obj/item/clothing/head/helmet/ui_action_click(mob/user, action)
 	if(istype(action, action_light))
 		toggle_helmlight()
+		return
 	else
 		..()
 

@@ -420,7 +420,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "L6 Squad Automatic Weapon"
 	desc = "A fully-loaded Aussec Armoury belt-fed machine gun. \
 			This deadly weapon has a massive 50-round magazine of devastating 7.12x82mm ammunition."
-	item = /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
+	item = /obj/item/gun/ballistic/automatic/hmg/python
 	cost = 18
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear)

@@ -16,9 +16,6 @@
 	)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/food/cheese/wheel/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/food_storage)
 
 /obj/item/food/cheese/wheel/make_processable()
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/cheese/wedge, 5, 3 SECONDS, table_required = TRUE)

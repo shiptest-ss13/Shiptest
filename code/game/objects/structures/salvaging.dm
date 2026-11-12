@@ -305,7 +305,7 @@
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
 	projectile_being_shot.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	projectile_being_shot.firer = src
-	projectile_being_shot.fire(Get_Angle(src,target))
+	projectile_being_shot.fire(get_angle(src,target))
 
 /obj/structure/salvageable/server
 	name = "broken server"
@@ -542,6 +542,28 @@
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5
 
+/obj/item/stack/ore/salvage/scrapplasteel
+	name = "plasteel shreds"
+	desc = "Shattered plasteel still contains a fair amount of the plasma and iron composing it"
+	icon_state = "splasteel"
+	points = 16
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplasteel/five
+	amount = 5
+
+/obj/item/stack/ore/salvage/scrapplastitanium
+	name = "ruined plastitanium hexacrystal"
+	desc = "The structure surrounding the lattice of this durable material has shattered, leaving nothing but scrap."
+	icon_state = "splastitanium"
+	points = 65
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplastitanium/five
+	amount = 5
+
 // gpu item. does nothing except sell for money
 /obj/item/gpu
 	name = "high power GPU"
@@ -741,7 +763,7 @@
 		if(61 to 65)
 			// sarissa
 			new /obj/item/gun/energy/sharplite/sarissa(loc)
-			new /obj/item/stock_parts/cell/gun/sharplite(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite/heavy(loc)
 		if(66 to 70)
 			// cobra
 			new /obj/item/gun/ballistic/automatic/smg/cobra(loc)
@@ -761,7 +783,7 @@
 		if(86 to 90)
 			// clip faveleira
 			new /obj/item/gun/energy/clover/faveleira/clip(loc)
-			new /obj/item/stock_parts/cell/gun/upgraded(loc)
+			new /obj/item/stock_parts/cell/gun/heavy(loc)
 		if(91 to 95)
 			// shillelagh
 			new /obj/item/gun/energy/clover(loc)
@@ -801,8 +823,8 @@
 			new /obj/item/ammo_box/magazine/cm40_762_40_box(loc)
 		if(21 to 25)
 			// hydra SAW
-			new /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended(loc)
-			new /obj/item/ammo_box/magazine/m556_42_hydra/extended(loc)
+			new /obj/item/gun/ballistic/automatic/hmg/python(loc)
+			new /obj/item/ammo_box/magazine/python_box(loc)
 		if(26 to 30)
 			// VG-A5
 			new /obj/item/gun/energy/kalix/pgf/nock(loc)

@@ -417,7 +417,7 @@
 	name = "high-capacity eoehoma power cell"
 	desc = "A high capacity weapon cell. Intended for use in heavy weapons and the odd piece of personal gear."
 	icon_state = "e-class2-cell"
-	maxcharge = 20000
+	maxcharge = 15000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 2000
 
@@ -432,6 +432,24 @@
 	chargerate = 1000
 
 /obj/item/stock_parts/cell/gun/mini/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/heavy
+	name = "heavy clover photonics power cell"
+	icon_state = "e-cell-heavy"
+	desc = "A rechargeable weapon cell, derived from the eoehoma models, designed for Clover Photonics heavy weapons."
+	maxcharge = 20000
+
+/obj/item/stock_parts/cell/gun/heavy/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/heavy/upgraded
+	name = "heavy high-capacity clover photonics power cell"
+	icon_state = "e-class2-heavy"
+	desc = "An extremely high-charge weapon cell, designed to provide exceptional magazine depth to Clover Photonics heavy weapons."
+	maxcharge = 30000
+
+/obj/item/stock_parts/cell/gun/heavy/upgraded/empty
 	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/solgov
@@ -501,6 +519,28 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stock_parts/cell/gun/sharplite/mini/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy
+	name = "Sharplite heavy power cell"
+	desc = "A large power cell primarily used by Sharplite weaponry. It holds significant charge and is designed for use in Sharplite's heavier weapons."
+	icon_state = "warra-heavy-cell"
+	maxcharge = 20000
+	chargerate = 2000
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy/plus
+	name = "Sharplite Super heavy power cell"
+	desc = "An exceptionally high-energy weapon cell used exclusively by Sharplite weaponry. These hold exceptional amounts of charge for use in Sharplite's heaviest weapons, and should not be handled without proper protective clothing."
+	icon_state = "warra_super-heavy-cell"
+
+	maxcharge = 30000
+	custom_materials = list(/datum/material/glass=300)
+	chargerate = 3000
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy/plus/empty
 	start_empty = TRUE
 
 /* Cybersun cells */

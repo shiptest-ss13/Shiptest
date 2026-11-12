@@ -14,7 +14,7 @@
 
 //Loot tables
 
-GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto chemistry items
+GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or chemistry items
 	list(//trash
 		/obj/item/trash/can = 1,
 		/obj/item/trash/raisins = 1,

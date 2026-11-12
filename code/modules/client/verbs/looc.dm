@@ -17,7 +17,7 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 		if(!GLOB.looc_allowed)
 			to_chat(src, span_danger("LOOC is globally muted."))
 			return
-		if(prefs.muted & MUTE_OOC)
+		if(prefs.muted & MUTE_LOOC || prefs.muted & MUTE_OOC)
 			to_chat(src, span_danger("You cannot use LOOC (muted)."))
 			return
 	if(is_banned_from(ckey, "OOC"))

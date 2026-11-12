@@ -139,7 +139,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		signal["coords"] = "[other_coords[1]], [other_coords[2]], [other_mapzone.id], [other_vlevel.relative_id]"
 		if(other_vlevel == vlevel) //Distance/Direction calculations for same sub-zone only
 			signal["dist"] = max(get_dist(curr, pos), 0) //Distance between the src and remote GPS turfs
-			signal["degrees"] = round(Get_Angle(curr, pos)) //0-360 degree directional bearing, for more precision.
+			signal["degrees"] = round(get_angle(curr, pos)) //0-360 degree directional bearing, for more precision.
 		signals += list(signal) //Add this signal to the list of signals
 	data["signals"] = signals
 	return data

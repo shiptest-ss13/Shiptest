@@ -48,7 +48,8 @@
 		if(W.get_sharpness() && W.force > 0)
 			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
 			user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
-			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
+			var/chopping_force = is_type_in_list(W, list(/obj/item/hatchet, /obj/item/melee/axe)) ? W.force * 2 : W.force //axes now become the deforestator 9000
+			if(do_after(user, 1000/chopping_force, target = src)) //5 seconds with 20 force, 10 seconds with a kitchen knife, 20 seconds with a shard.
 				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
 				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
@@ -1124,7 +1125,7 @@
 	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
-	icon = 'icons/effects/32x64.dmi'
+	icon = 'icons/obj/flora/crystals.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
@@ -1157,3 +1158,25 @@
 			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
 		return
 	return ..()
+
+/obj/structure/flora/rock/crystal/puce
+	name = "colossal puce crystal"
+	desc = "A towering monolith of pucestral growth. There are so many places to cut a chunk off."
+	icon_state = "puce_crystal"
+	base_icon_state = "puce_crystal"
+	icon = 'icons/obj/flora/crystals.dmi'
+	resistance_flags = FIRE_PROOF
+	density = TRUE
+	max_integrity = 300
+	mineResult = /obj/structure/flora/ash/puce
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
+
+	///shaving the rock with a knife gives you this item
+	shaving_type = /obj/item/food/grown/ash_flora/puce
+	///how much can we shave the rock?
+	max_shavings = 18
+	///shaving count on the rock
+	shaving_count = 0
+
+
