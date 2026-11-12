@@ -42,17 +42,11 @@
 	/// The price of the market item that we've set on the UI
 	var/current_price = 100
 
-/obj/machinery/ltsrbt/Initialize()
-	. = ..()
-
 /obj/machinery/ltsrbt/Destroy()
 	// Bye bye orders.
 	if(SSblackmarket.telepads.len)
 		for(var/datum/blackmarket_purchase/P in queue)
 			SSblackmarket.queue_item(P)
-	// . = ..()
-	// for(var/datum/market_purchase/purchase in queue)
-	// 		SSmarket.queue_item(purchase)
 	if(recieving)
 		SSblackmarket.queue_item(recieving)
 	queue = null
@@ -82,7 +76,32 @@
 		to_chat(user, span_notice("[src] linked to [O]."))
 		return TRUE
 
+	if(state_open)
+		if(locate(/mob/living) in O.get_all_contents())
+			say("Living being detected, cannot sell!")
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
+			return TRUE
+		if(!user.transferItemToLoc(O, src))
+			balloon_alert(user, "stuck to your hands!")
+			return TRUE
+		balloon_alert(user, "item loaded")
+		close_machine(O)
+		return TRUE
+	else if(user.a_intent != INTENT_HARM)
+		balloon_alert(user, "open the machine!")
+		return TRUE
+
+	if(machine_stat & NOPOWER)
+		return
+
 	return ..()
+
+/obj/machinery/ltsrbt/proc/load_crate(obj/structure/closet/crate/our_crate, mob/user)
+	if(!state_open)
+		to_chat(user, span_warning("The [name]'s trunk is closed! Open it up first!"))
+		return
+	else
+		close_machine(our_crate)
 
 /// Adds /datum/blackmarket_purchase to queue unless the machine is free, then it sets the purchase to be instantly recieved
 /obj/machinery/ltsrbt/proc/add_to_queue(datum/blackmarket_purchase/purchase)
@@ -102,11 +121,6 @@
 	var/turf/T = get_turf(src)
 	if(recieving)
 		var/datum/blackmarket_purchase/P = recieving
-
-		// if(!P.item || ispath(P.item))
-		// 	P.item = P.entry.spawn_item(T)
-		// else
-		// 	var/atom/movable/M = P.item
 		var/atom/movable/M = P.get_item()
 		M.forceMove(T)
 
@@ -165,11 +179,6 @@
 	. = ..()
 	playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
 
-/obj/machinery/ltsrbt/proc/set_occupant(obj/item/new_occupant)
-	if(new_occupant)
-		current_name = new_occupant.name
-		current_desc = new_occupant.desc
-
 /obj/machinery/ltsrbt/can_be_occupant(atom/movable/atom)
 	return isitem(atom) && !atom.anchored
 
@@ -200,30 +209,30 @@
 	ui_interact(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-/obj/machinery/ltsrbt/attacked_by(obj/item/attacking_item, mob/living/user)
-	. = ..()
+// /obj/machinery/ltsrbt/attacked_by(obj/item/attacking_item, mob/living/user)
+// 	. = ..()
 
-	var/creds_value = attacking_item.get_item_credit_value()
+// 	var/creds_value = attacking_item.get_item_credit_value()
 
-	if(state_open)
-		if(locate(/mob/living) in attacking_item.get_all_contents())
-			say("Living being detected, cannot sell!")
-			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
-			return TRUE
-		if(!user.transferItemToLoc(attacking_item, src))
-			balloon_alert(user, "stuck to your hands!")
-			return TRUE
-		balloon_alert(user, "item loaded")
-		close_machine(attacking_item)
-		return TRUE
-	else if(!creds_value)
-		balloon_alert(user, "open the machine!")
-		return TRUE
+// 	if(state_open)
+// 		if(locate(/mob/living) in attacking_item.get_all_contents())
+// 			say("Living being detected, cannot sell!")
+// 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
+// 			return TRUE
+// 		if(!user.transferItemToLoc(attacking_item, src))
+// 			balloon_alert(user, "stuck to your hands!")
+// 			return TRUE
+// 		balloon_alert(user, "item loaded")
+// 		close_machine(attacking_item)
+// 		return TRUE
+// 	else if(!creds_value)
+// 		balloon_alert(user, "open the machine!")
+// 		return TRUE
 
-	if(machine_stat & NOPOWER)
-		return
+// 	if(machine_stat & NOPOWER)
+// 		return
 
-	return FALSE
+// 	return FALSE
 
 /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
