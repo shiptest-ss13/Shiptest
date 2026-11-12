@@ -23,6 +23,8 @@
 	var/obj/item/gun/ballistic/foulmouth = fired_from
 	if(istype(foulmouth))
 		foulmouth.adjust_wear(wear_modifier)
+	if(user)
+		alert_ai_to_gunfire(user, quiet, istype(src, /obj/item/ammo_casing/energy), fired_from)
 	update_appearance()
 	return TRUE
 
@@ -69,10 +71,11 @@
 		if(target) //if the target is right on our location we'll skip the travelling code in the proj's fire()
 			direct_target = target
 	if(!direct_target)
-		if(user)
-			BB.preparePixelProjectile(target, user, modifiers, spread)
-		else
-			BB.preparePixelProjectile(target, curloc, modifiers, spread)
+		// an earlier pellet can kill and delete the target, so aim at its last turf
+		var/atom/aim_target = get_turf(target) ? target : targloc
+		if(!BB.preparePixelProjectile(aim_target, user ? user : curloc, modifiers, spread))
+			BB = null
+			return FALSE
 	BB.fire(null, direct_target)
 	BB = null
 	return TRUE

@@ -74,7 +74,7 @@
 			/obj/item/clothing/head/flatcap = 3,
 			/obj/item/clothing/head/beanie = 3,
 			/obj/item/clothing/head/cowboy = 3,
-			/obj/item/clothing/head/trapper = 2,
+			/obj/item/clothing/head/ushanka = 2,
 			/obj/item/clothing/head/hardhat = 2,
 			/obj/item/clothing/head/hardhat/orange = 2,
 			/obj/item/clothing/head/hardhat/dblue = 2,

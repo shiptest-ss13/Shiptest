@@ -25,13 +25,10 @@
 	pic.color = _color
 	return TRUE
 
-/datum/element/decal/blood/proc/get_examine_name(datum/source, mob/user, list/override)
+/datum/element/decal/blood/proc/get_examine_name(atom/source, mob/user, list/override)
 	SIGNAL_HANDLER
 
-	var/atom/A = source
-	override[EXAMINE_POSITION_ARTICLE] = A.gender == PLURAL? "some" : "a"
-	override[EXAMINE_POSITION_BEFORE] = " blood-stained "
-	return COMPONENT_EXNAME_CHANGED
+	override[EXAMINE_POSITION_BEFORE] = span_boldwarning("blood-stained")
 
 ///this is probably quite bad, let me know if you have a better solution for this -S
 /datum/element/decal/blood/proc/redraw(datum/source, mob/user)

@@ -135,6 +135,13 @@
 /obj/structure/fence/door/proc/can_open(mob/user)
 	return TRUE
 
+/obj/structure/fence/door/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	. = ..()
+	if(.)
+		return
+	// AI that opens doors can get through
+	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && can_open(requester)
+
 #undef CUT_TIME
 #undef CLIMB_TIME
 
