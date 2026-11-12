@@ -142,7 +142,7 @@
 // abandoned crate common pool
 // junk, misc low-grade contraband
 /obj/structure/closet/crate/secure/loot/proc/spawn_common()
-	var/roll = rand(1, 140)
+	var/roll = rand(1, 150)
 	switch(roll)
 		if(1 to 10)
 			// plushies
@@ -220,6 +220,11 @@
 			// practice laser guns
 			for(var/i in 1 to 4)
 				new /obj/item/gun/energy/laser/practice(src)
+		if(141 to 150)
+			// starlight patch bottle
+			var/count = rand(1, 3)
+			for(var/i in 1 to count)
+				new /obj/item/storage/pill_bottle/starlight(src)
 
 // abandoned crate uncommon pool
 // mostly drugs but has some other stuff too
@@ -274,7 +279,7 @@
 // abandoned crate rare pool
 // either awesome or evil
 /obj/structure/closet/crate/secure/loot/proc/spawn_rare()
-	var/roll = rand(1, 100)
+	var/roll = rand(1, 110)
 	switch(roll)
 		if(1 to 10)
 			// hoverboard
@@ -314,3 +319,8 @@
 		if(91 to 100)
 			// corpse stuffed in box
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(src)
+		if(101 to 110)
+			// chrono pens
+			var/count = rand(2, 4)
+			for(var/i in 1 to count)
+				new /obj/item/reagent_containers/hypospray/medipen/chrono(src)
