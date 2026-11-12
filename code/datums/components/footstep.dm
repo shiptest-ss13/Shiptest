@@ -125,3 +125,5 @@
 		extrarange = current_footstep_sound[3] + e_range,
 		falloff_distance = 1
 	)
+
+#undef SHOULD_DISABLE_FOOTSTEPS
