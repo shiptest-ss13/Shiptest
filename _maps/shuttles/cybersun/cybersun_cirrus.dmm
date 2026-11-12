@@ -4757,7 +4757,9 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/hallway/aft)
 "LB" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = list(5)
+	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
