@@ -169,11 +169,11 @@
 		var/distance = get_dist(watcher, box_turf)
 		if(ai_too_dark_to_see(watcher, box, box_turf, distance, AI_DEFAULT_VISION_RANGE))
 			continue
-		var/atom/current_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-		if(!QDELETED(current_target))
-			// notice a box in a fight if they get close
-			if(distance <= AI_BOX_NOTICE_CLOSE_RANGE && current_target != hider)
+		if(distance <= AI_BOX_NOTICE_CLOSE_RANGE)
+			if(controller.blackboard[BB_BASIC_MOB_TARGET_HIDING_IN] != box)
 				ai_turn_on_hider(controller, box, hider)
+			continue
+		if(!QDELETED(controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]))
 			continue
 		var/obj/structure/closet/cardboard/watched_box = controller.blackboard[BB_BASIC_MOB_SUSPICIOUS_BOX]
 		if(watched_box == box || LAZYACCESS(controller.blackboard[BB_BASIC_MOB_BOX_GROUP], box))
@@ -188,15 +188,13 @@
 			continue
 		if(investigator || controller.blackboard[BB_BASIC_MOB_SUSPICIOUS_BOX])
 			continue // someone's on it already, or we've another box to watch
-		// one we looked at and decided was nothing, we pay no mind, unless it's moving right by us, which is suspicious all over again
-		var/looked_at_already = world.time < LAZYACCESS(controller.blackboard[BB_BASIC_MOB_IGNORED_BOXES], box)
-		if(looked_at_already && distance > AI_BOX_NOTICE_CLOSE_RANGE)
-			continue
-		if(distance > AI_BOX_NOTICE_CLOSE_RANGE && !prob(distance <= AI_BOX_NOTICE_NEAR_RANGE ? AI_BOX_NOTICE_NEAR_CHANCE : AI_BOX_NOTICE_CHANCE))
+		if(world.time < LAZYACCESS(controller.blackboard[BB_BASIC_MOB_IGNORED_BOXES], box))
+			continue // one we looked at and decided was nothing
+		if(!prob(distance <= AI_BOX_NOTICE_NEAR_RANGE ? AI_BOX_NOTICE_NEAR_CHANCE : AI_BOX_NOTICE_CHANCE))
 			continue // the nearer it is, the harder to miss
-		AI_LOG_DECISION(controller, "investigate_box: [box] just moved[looked_at_already ? ", again, right by us" : ""]")
+		AI_LOG_DECISION(controller, "investigate_box: [box] just moved")
 		controller.set_blackboard_key(BB_BASIC_MOB_SUSPICIOUS_BOX, box)
-		controller.set_blackboard_key(BB_BASIC_MOB_BOX_STAGE, looked_at_already ? AI_BOX_LOOKING : AI_BOX_STARING) // straight over to it, if we've looked once already
+		controller.set_blackboard_key(BB_BASIC_MOB_BOX_STAGE, AI_BOX_STARING)
 		controller.set_blackboard_key(BB_BASIC_MOB_BOX_STAGE_SINCE, world.time)
 		ai_callout(watcher, AI_CALLOUT_SUSPICIOUS)
 		investigator = watcher

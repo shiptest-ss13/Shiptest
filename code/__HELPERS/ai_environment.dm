@@ -292,6 +292,8 @@
 		return "pushing on a diagonal" // no pushing on a diagonal
 	if(thing.anchored)
 		return "it's anchored"
+	if(ai_knows_someone_inside(pusher.ai_controller, thing))
+		return "we know someone's inside it"
 	if(!thing.density || (thing.flags_1 & ON_BORDER_1))
 		return "it's not in the way, or it's an edge piece"
 	if(pusher.move_force < thing.move_resist * MOVE_FORCE_PUSH_RATIO)
@@ -307,6 +309,17 @@
 	if((one_side && !one_side.is_blocked_turf(TRUE)) || (other_side && !other_side.is_blocked_turf(TRUE)))
 		return null
 	return "no room to get round it after"
+
+// whether we know or suspect someone's hiding in thing
+/proc/ai_knows_someone_inside(datum/ai_controller/controller, obj/thing)
+	var/list/blackboard = controller.blackboard
+	if(LAZYACCESS(blackboard[BB_BASIC_MOB_BOX_GROUP], thing))
+		return TRUE
+	var/static/list/hiding_spot_keys = list(BB_BASIC_MOB_TARGET_HIDING_IN, BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION, BB_BASIC_MOB_SUSPICIOUS_BOX)
+	for(var/key in hiding_spot_keys)
+		if(blackboard[key] == thing)
+			return TRUE
+	return FALSE
 
 /proc/ai_can_open_closet(atom/movable/mover, obj/structure/closet/closet)
 	var/mob/living/basic/human/opener = mover

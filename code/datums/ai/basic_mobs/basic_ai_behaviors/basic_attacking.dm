@@ -11,11 +11,18 @@
 		CRASH("No target datum was supplied in the blackboard for [controller.pawn]")
 
 	//Hiding location is priority
-	var/atom/target = controller.blackboard[hiding_location_key] || controller.blackboard[target_key]
+	var/atom/target = ai_attack_hiding_location(controller, target_key, targetting_datum, hiding_location_key) || controller.blackboard[target_key]
 	if(QDELETED(target))
 		return FALSE
 
 	set_movement_target(controller, target)
+
+// what they're hiding in
+/proc/ai_attack_hiding_location(datum/ai_controller/controller, target_key, datum/targetting_datum/targetting_datum, hiding_location_key)
+	var/atom/target = controller.blackboard[target_key]
+	var/atom/hiding_in = (QDELETED(target) || !targetting_datum) ? null : targetting_datum.find_hidden_mobs(controller.pawn, target)
+	controller.set_blackboard_key(hiding_location_key, hiding_in)
+	return hiding_in
 
 /datum/ai_behavior/basic_melee_attack/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	if(world.time < controller.blackboard[BB_BASIC_MOB_HOLD_FIRE_UNTIL])
@@ -95,7 +102,7 @@
 
 /datum/ai_behavior/basic_ranged_attack/setup(datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()
-	var/atom/target = controller.blackboard[hiding_location_key] || controller.blackboard[target_key]
+	var/atom/target = ai_attack_hiding_location(controller, target_key, controller.blackboard[targetting_datum_key], hiding_location_key) || controller.blackboard[target_key]
 	if(QDELETED(target))
 		return FALSE
 	if(moves_into_range)
