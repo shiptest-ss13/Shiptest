@@ -8,8 +8,8 @@
 	resistance_flags = ACID_PROOF
 
 
-/obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
-	if(!istype(M))
+/obj/item/reagent_containers/glass/attack(mob/target_mob, mob/user, obj/target)
+	if(!istype(target_mob))
 		return
 
 	if(!spillable)
@@ -20,48 +20,49 @@
 		return
 
 	if(user.a_intent == INTENT_HARM)
-		var/R
-		M.visible_message(
-			span_danger("[user] splashes the contents of [src] onto [M]!"),
+		var/splashed_reagents
+		target_mob.visible_message(
+			span_danger("[user] splashes the contents of [src] onto [target_mob]!"),
 			span_userdanger("[user] splashes the contents of [src] onto you!"),
 		)
 		if(reagents)
-			for(var/datum/reagent/A in reagents.reagent_list)
-				R += "[A] ([num2text(A.volume)]),"
+			for(var/datum/reagent/reagent in reagents.reagent_list)
+				splashed_reagents += "[reagent] ([num2text(reagent.volume)]),"
 
-		if(isturf(target) && reagents.reagent_list.len && thrownby)
-			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
-			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
+		var/mob/thrown_by = thrownby?.resolve()
+		if(isturf(target) && reagents.reagent_list.len && thrown_by)
+			log_combat(thrown_by, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
+			message_admins("[ADMIN_LOOKUPFLW(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
 			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 
-		reagents.expose(M, TOUCH)
-		log_combat(user, M, "splashed", R)
+		reagents.expose(target_mob, TOUCH)
+		log_combat(user, target_mob, "splashed", splashed_reagents)
 		reagents.clear_reagents()
 	else
-		if(!canconsume(M, user))
+		if(!canconsume(target_mob, user))
 			return
 
-		if(M != user)
-			M.visible_message(
-				span_danger("[user] attempts to feed [M] something from [src]."),
+		if(target_mob != user)
+			target_mob.visible_message(
+				span_danger("[user] attempts to feed [target_mob] something from [src]."),
 				span_userdanger("[user] attempts to feed you something from [src]."),
 			)
-			if(!do_after(user, target = M))
+			if(!do_after(user, target = target_mob))
 				return
 
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
 
-			M.visible_message(
-				span_danger("[user] feeds [M] something from [src]."),
+			target_mob.visible_message(
+				span_danger("[user] feeds [target_mob] something from [src]."),
 				span_userdanger("[user] feeds you something from [src]."),
 			)
-			log_combat(user, M, "fed", reagents.log_list())
+			log_combat(user, target_mob, "fed", reagents.log_list())
 		else
 			to_chat(user, span_notice("You swallow a gulp of [src]."))
 
-		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
-		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
+		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), target_mob, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
+		playsound(target_mob.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	. = ..()

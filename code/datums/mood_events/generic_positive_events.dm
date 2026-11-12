@@ -175,13 +175,6 @@
 	description = span_nicegreen("What a peculiar emblem.  It makes me feel hopeful for my future.")
 	mood_change = 5
 
-/datum/mood_event/nanite_happiness
-	description = span_nicegreen_robot("+++++++HAPPINESS ENHANCEMENT+++++++")
-	mood_change = 7
-
-/datum/mood_event/nanite_happiness/add_effects(message)
-	description = span_nicegreen_robot("+++++++[message]+++++++")
-
 /datum/mood_event/area
 	description = "" //Fill this out in the area
 	mood_change = 0

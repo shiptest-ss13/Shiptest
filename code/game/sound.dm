@@ -222,6 +222,8 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 	return rand(32000, 55000) //Frequency stuff only works with 45kbps oggs.
 
 /proc/get_sfx(soundin)
+	if(islist(soundin))
+		soundin = pick(soundin) // like a weapon with a few hit sounds
 	if(istext(soundin))
 		switch(soundin)
 

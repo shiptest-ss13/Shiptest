@@ -33,7 +33,7 @@
 	desc = "A rusted minebot fitted with antiquated mining and salvage tools. It appears to have been haphazardly rewired and rebranded, with a logo you don't recognise printed on its outer plating."
 	faction = list(FACTION_ANTAG_HERMITS)
 
-/mob/living/simple_animal/hostile/viscerator/reprogrammed
+/mob/living/basic/viscerator/reprogrammed
 	name = "reprogrammed viscerator"
 	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. It appears to have been haphazardly rewired and rebranded, with a logo you don't recognise printed on its outer plating."
 	faction = list(FACTION_ANTAG_HERMITS)
