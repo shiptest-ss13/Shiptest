@@ -47,7 +47,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole)
 "aI" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee{
+/mob/living/basic/human/ramzi/melee{
 	wander = 0;
 	name = "Ramzi Clique Coach";
 	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a clean and razor-sharp knife, and hold a small red flag."
@@ -399,7 +399,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/dynamitehole/medbay)
 "fd" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra{
+/mob/living/basic/human/ramzi/ranged/hydra{
 	wander = 0
 	},
 /turf/open/floor/plating/asteroid/purple,
@@ -487,12 +487,12 @@
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole)
 "gb" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry{
+/mob/living/basic/human/ramzi/ranged/space/sniper/sentry{
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/f90;
 	weapon_drop_chance = 100;
-	rapid = 2;
 	name = "Ramzi Clique Foreman";
-	rapid_fire_delay = 6
+	burst_shots = 2;
+	burst_interval = 6
 	},
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -859,7 +859,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "jr" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
+/mob/living/basic/human/ramzi/melee/space/sledge,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "js" = (
@@ -934,7 +934,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/basic/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/security)
 "kC" = (
@@ -1829,7 +1829,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/basic/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "tl" = (
@@ -1883,7 +1883,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
 "tM" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
+/mob/living/basic/human/ramzi/melee/sledge,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "tR" = (
@@ -2072,7 +2072,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander{
+/mob/living/basic/human/ramzi/melee/space/stormtrooper/commander{
 	name = "Ramzi Clique Houndmaster"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -2170,7 +2170,7 @@
 	dir = 1
 	},
 /obj/structure/curtain/cloth/grey,
-/mob/living/simple_animal/hostile/human/ramzi/melee{
+/mob/living/basic/human/ramzi/melee{
 	wander = 0
 	},
 /turf/open/floor/plasteel/tech,
@@ -2691,7 +2691,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg/sidewinder,
+/mob/living/basic/human/ramzi/ranged/space/smg/sidewinder,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -3074,7 +3074,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/medbay)
 "Hf" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "Hq" = (
@@ -3132,7 +3132,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/officer,
+/mob/living/basic/human/ramzi/ranged/officer,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/security)
 "HW" = (
@@ -3455,7 +3455,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
 "Lz" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/mob/living/basic/human/ramzi/ranged/cottonmouth,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/dynamitehole/living_quarters)
@@ -3846,7 +3846,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qn" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/mob/living/basic/human/ramzi/ranged/shotgun,
 /turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qy" = (
@@ -3945,7 +3945,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/medbay)
 "RF" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/mob/living/basic/human/ramzi/ranged/cottonmouth,
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/dynamitehole)
 "RK" = (
@@ -4017,7 +4017,7 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/end{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi{
+/mob/living/basic/human/ramzi{
 	wander = 0;
 	name = "Ramzi Clique Ballmaster"
 	},
@@ -4060,7 +4060,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/civilian/towel,
+/mob/living/basic/human/ramzi/civilian/towel,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "SY" = (
@@ -4224,7 +4224,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "Uh" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
+/mob/living/basic/human/ramzi/melee/sledge,
 /turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
 "Um" = (
@@ -4239,7 +4239,7 @@
 /turf/open/floor/plasteel/dark/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
 "Un" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry,
+/mob/living/basic/human/ramzi/ranged/space/sniper/sentry,
 /turf/open/floor/concrete/lava,
 /area/ruin/unpowered/dynamitehole)
 "Uq" = (
@@ -4330,7 +4330,7 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi{
+/mob/living/basic/human/ramzi{
 	wander = 0;
 	name = "Ramzi Clique Ballmaster"
 	},
@@ -4497,7 +4497,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/civilian/towel,
+/mob/living/basic/human/ramzi/civilian/towel,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "WM" = (
@@ -4768,7 +4768,7 @@
 /turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
 "Zs" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/sawbones,
+/mob/living/basic/human/ramzi/melee/sawbones,
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 13;
