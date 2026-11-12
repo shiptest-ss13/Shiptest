@@ -16,20 +16,23 @@
 /// Inverse direction, taking into account UP|DOWN if necessary.
 #define REVERSE_DIR(dir) (((dir & 85) << 1) | ((dir & 170) >> 1))
 
-///True if the dir is north or south, false therwise
-#define NSCOMPONENT(d)   (d&(NORTH|SOUTH))
-///True if the dir is east/west, false otherwise
-#define EWCOMPONENT(d)   (d&(EAST|WEST))
+//dir macros
 ///Returns true if the dir is diagonal, false otherwise
 #define ISDIAGONALDIR(d) (d&(d-1))
 ///True if the dir is north or south, false therwise
+#define NSCOMPONENT(d) (d&(NORTH|SOUTH))
+///True if the dir is east/west, false otherwise
+#define EWCOMPONENT(d) (d&(EAST|WEST))
+///The corner a diagonal step from start to finish passes through going east/west first
+#define DIAGONAL_CORNER_X(start, finish) locate((finish).x, (start).y, (start).z)
+///The corner a diagonal step from start to finish passes through if it goes north/south first
+#define DIAGONAL_CORNER_Y(start, finish) locate((start).x, (finish).y, (start).z)
 ///Flips the dir for north/south directions
 #define NSDIRFLIP(d) (d^(NORTH|SOUTH))
 ///Flips the dir for east/west directions
 #define EWDIRFLIP(d) (d^(EAST|WEST))
 ///Turns the dir by 180 degrees
 #define DIRFLIP(d) turn(d, 180)
-
 
 /// Create directional subtypes for a path to simplify mapping.
 
