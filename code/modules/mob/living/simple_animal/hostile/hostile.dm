@@ -145,6 +145,11 @@
 		FindTarget(list(user), 1)
 	return ..()
 
+/mob/living/simple_animal/hostile/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && user)
+		FindTarget(list(user), 1)
+	return ..()
+
 /mob/living/simple_animal/hostile/bullet_act(obj/projectile/P)
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && P.suppressed != SUPPRESSED_EXTREME)
 		if(P.firer && (get_dist(src, P.firer) <= aggro_vision_range))
@@ -720,25 +725,4 @@
 	src.faction += tag
 
 /mob/living/simple_animal/hostile/proc/fire_line(source, list/turfs, fire_source = "fire breath", ignite_turfs = FALSE, power = 4, flame_color = "red")
-	var/list/hit_list = list()
-	for(var/turf/T in turfs)
-		if(istype(T, /turf/closed))
-			break
-		new /obj/effect/hotspot(T)
-		T.hotspot_expose(700,50,1)
-		if(ignite_turfs)
-			T.ignite_turf(power,flame_color)
-		for(var/mob/living/L in T.contents)
-			if((L in hit_list) || L == source)
-				continue
-			hit_list += L
-			L.adjustFireLoss(20)
-			to_chat(L, span_userdanger("You're hit by [source]'s [fire_source]!"))
-
-		// deals damage to mechs
-		for(var/obj/mecha/M in T.contents)
-			if(M in hit_list)
-				continue
-			hit_list += M
-			M.take_damage(45, BRUTE, "melee", 1)
-		sleep(1.5)
+	spray_fire_line(source, turfs, fire_source, ignite_turfs, power, flame_color)

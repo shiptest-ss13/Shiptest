@@ -385,8 +385,10 @@
 			land_on_window(bumped_atom)
 		else
 			var/obj/effect/decal/cleanable/blood/splatter/over_window/final_splatter = new(prev_loc)
+			final_splatter.add_blood_DNA(blood_dna_info) // so it's the colour of whoever bled it, not plain red
 			final_splatter.pixel_x = (dir == EAST ? 32 : (dir == WEST ? -32 : 0))
 			final_splatter.pixel_y = (dir == NORTH ? 32 : (dir == SOUTH ? -32 : 0))
+			qdel(src) // the splatter on the wall's all that's left of us, or we'd hang there in the air
 	else // This will only happen if prev_loc is not even a turf, which is highly unlikely.
 		abstract_move(bumped_atom)
 		qdel(src)
@@ -396,6 +398,7 @@
 	if(!the_window.fulltile)
 		return
 	var/obj/effect/decal/cleanable/blood/splatter/over_window/final_splatter = new
+	final_splatter.add_blood_DNA(blood_dna_info) // so it's the colour of whoever bled it, not plain red
 	final_splatter.forceMove(the_window)
 	the_window.vis_contents += final_splatter
 	the_window.bloodied = TRUE

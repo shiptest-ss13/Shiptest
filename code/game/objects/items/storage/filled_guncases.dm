@@ -233,6 +233,10 @@
 	gun_type = /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
+/obj/item/storage/guncase/g12
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/g12
+	mag_type = /obj/item/ammo_box/magazine/g12/empty
+
 /* Serene Outdoors Guns */
 
 /obj/item/storage/guncase/pistol/m17
@@ -466,11 +470,11 @@
 
 /obj/item/storage/guncase/ecm20
 	gun_type = /obj/item/gun/energy/clover/maguey/clip
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /obj/item/storage/guncase/pl20
 	gun_type = /obj/item/gun/energy/clover/maguey
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /* Inteq */
 

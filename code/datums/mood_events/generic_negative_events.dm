@@ -234,13 +234,6 @@
 	description = span_boldwarning("HE'S CUTTING ME OPEN!!")
 	mood_change = -8
 
-/datum/mood_event/nanite_sadness
-	description = span_warning_robot("+++++++HAPPINESS SUPPRESSION+++++++")
-	mood_change = -7
-
-/datum/mood_event/nanite_sadness/add_effects(message)
-	description = span_warning_robot("+++++++[message]+++++++")
-
 /datum/mood_event/bald
 	description = span_warning("I need something to cover my head...")
 	mood_change = -3

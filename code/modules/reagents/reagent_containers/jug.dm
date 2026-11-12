@@ -49,16 +49,17 @@
 	if(ismob(target) && target.reagents)
 		if(thrown)
 			reagents.total_volume *= rand(1,3) * 0.1 //little makes contact with the target
-		var/mob/M = target
-		var/R
+		var/mob/splashed_mob = target
+		var/splashed_reagents
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message(span_danger("[M] is splashed with something!"), \
-						span_userdanger("[M] is splashed with something!"))
-		for(var/datum/reagent/A in reagents.reagent_list)
-			R += "[A.type]  ([num2text(A.volume)]),"
+		target.visible_message(span_danger("[splashed_mob] is splashed with something!"), \
+						span_userdanger("[splashed_mob] is splashed with something!"))
+		for(var/datum/reagent/reagent in reagents.reagent_list)
+			splashed_reagents += "[reagent.type]  ([num2text(reagent.volume)]),"
 
-		if(thrownby)
-			log_combat(thrownby, M, "splashed", R)
+		var/mob/thrown_by = thrownby?.resolve()
+		if(thrown_by)
+			log_combat(thrown_by, splashed_mob, "splashed", splashed_reagents)
 		reagents.expose(target, TOUCH, 0.3)
 
 	else if(bartender_check(target) && thrown)
@@ -66,10 +67,11 @@
 		return
 
 	else
-		if(isturf(target) && reagents.reagent_list.len && thrownby)
-			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
-			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
-			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
+		var/mob/thrown_by = thrownby?.resolve()
+		if(isturf(target) && reagents.reagent_list.len && thrown_by)
+			log_combat(thrown_by, target, "splashed (thrown) [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
+			log_game("[key_name(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
+			message_admins("[ADMIN_LOOKUPFLW(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		visible_message(span_notice("[src] spills its contents all over [target]."))
 		reagents.expose(target, TOUCH, 0.3)
