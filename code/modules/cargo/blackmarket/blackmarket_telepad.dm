@@ -209,31 +209,6 @@
 	ui_interact(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// /obj/machinery/ltsrbt/attacked_by(obj/item/attacking_item, mob/living/user)
-// 	. = ..()
-
-// 	var/creds_value = attacking_item.get_item_credit_value()
-
-// 	if(state_open)
-// 		if(locate(/mob/living) in attacking_item.get_all_contents())
-// 			say("Living being detected, cannot sell!")
-// 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
-// 			return TRUE
-// 		if(!user.transferItemToLoc(attacking_item, src))
-// 			balloon_alert(user, "stuck to your hands!")
-// 			return TRUE
-// 		balloon_alert(user, "item loaded")
-// 		close_machine(attacking_item)
-// 		return TRUE
-// 	else if(!creds_value)
-// 		balloon_alert(user, "open the machine!")
-// 		return TRUE
-
-// 	if(machine_stat & NOPOWER)
-// 		return
-
-// 	return FALSE
-
 /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
