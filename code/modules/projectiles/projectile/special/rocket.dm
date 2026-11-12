@@ -17,6 +17,9 @@
 	var/flame_range = 4
 
 
+/obj/projectile/bullet/a84mm/get_splash_radius()
+	return max(devastation, range_heavy, range_light, flame_range)
+
 /obj/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
 	..()
 	explosion(target, devastation, range_heavy, range_light, 1, 0, flame_range = flame_range,\
