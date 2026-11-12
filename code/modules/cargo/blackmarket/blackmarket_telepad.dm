@@ -216,9 +216,6 @@
 		ui.open()
 
 /obj/machinery/ltsrbt/ui_state()
-	// if(!occupant || !COOLDOWN_FINISHED(src, recharge_cooldown))
-	// 	return GLOB.never_state //close it.
-	// else
 	return GLOB.default_state
 
 #define LTSRBT_MIN_PRICE 1
