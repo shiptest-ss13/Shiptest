@@ -20,13 +20,17 @@
  * * through_fire: If TRUE, an AI requester goes through fire rather than round it, for getting out of one
  */
 /proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE, list/search_notes, through_fire = FALSE)
-	if(!requester || !get_turf(end))
+	if(!get_turf(requester) || !get_turf(end))
 		return
 
-	var/l = SSpathfinder.mobs.getfree(requester)
-	while(!l)
+	var/pathfinder_slot = SSpathfinder.mobs.getfree(requester)
+	while(!pathfinder_slot)
 		stoplag(3)
-		l = SSpathfinder.mobs.getfree(requester)
+		pathfinder_slot = SSpathfinder.mobs.getfree(requester)
+
+	if(!get_turf(requester) || !get_turf(end))
+		SSpathfinder.mobs.found(pathfinder_slot)
+		return
 
 	var/list/path
 	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude, climbing, through_fire)
@@ -35,7 +39,7 @@
 		search_notes["found_climbable"] = pathfind_datum.found_climbable
 	qdel(pathfind_datum)
 
-	SSpathfinder.mobs.found(l)
+	SSpathfinder.mobs.found(pathfinder_slot)
 	return path
 
 /**
