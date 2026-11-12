@@ -9,7 +9,7 @@
 	icon_gib = "bear_gib"
 	status_flags = NONE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 5)
 
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
@@ -87,7 +87,7 @@
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
-	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	armour_penetration = 20

@@ -563,6 +563,8 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ATOM_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
+	if(new_virtual_z && ai_controller)
+		ai_controller.check_should_sleep() // wake up if there's someone where we've ended up, or sleep if there isn't
 
 	for(var/atom/movable/thing as anything in contents)
 		thing.on_virtual_z_change(new_virtual_z, previous_virtual_z)

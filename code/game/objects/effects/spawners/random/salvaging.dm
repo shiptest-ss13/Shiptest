@@ -141,7 +141,7 @@
 // rare environmental storytelling elements
 /obj/effect/spawner/random/salvage/autolathe_weird
 	loot = list(
-		// /obj/item/organ/tail/lizard = 16, // waaa (TODO uncomment post tail refactor)
+		/obj/item/bodypart/tail/lizard = 16, // waaa
 		/obj/item/bodypart/l_arm = 1,
 		/obj/item/bodypart/r_arm = 1,
 		/obj/item/bodypart/l_arm/lizard = 1,
@@ -252,6 +252,7 @@
 	loot = list(
 		/obj/machinery/syndicatebomb/live_fucking_bomb = 10,
 		/obj/effect/anomaly/tvstatic/planetary = 10,
+		/obj/item/nuke_core/waste = 10,
 		/obj/effect/anomaly/grav/planetary = 5,
 		/obj/effect/anomaly/grav/high/planetary = 5)
 
