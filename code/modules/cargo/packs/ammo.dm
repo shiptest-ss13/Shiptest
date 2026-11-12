@@ -465,25 +465,45 @@
 	contains = list(/obj/item/storage/box/ammo/ferrorods)
 	cost = 500
 
-/* ferro lances */
+/* cybersun gauss darts */
 
 /datum/supply_pack/ammo/c215
-	name = "Rectifier Magazine Box Crate"
-	desc = "Contains a 4 30-round box magazines for the SG27 Rectifier."
+	name = "2x15mm Short Magazine Box Crate"
+	desc = "Contains a 4 30-round box magazines for the SG27 Rectifier and SG11 Amend."
 	contains = list(/obj/item/storage/box/ammo/c215)
 	cost = 200
 
 /datum/supply_pack/ammo/c215_big
-	name = "Convergence Magazine Box Crate"
-	desc = "Contains a 4 60 round box magazines for the SG49 Convergence."
+	name = "2x15mm Magazine Box Crate"
+	desc = "Contains a 4 60 round box magazines for the SG49 Convergence and SG48 Divergence."
 	contains = list(/obj/item/storage/box/ammo/c215/long)
 	cost = 400
 
 /datum/supply_pack/ammo/c320
-	name = "Vector Magazine Box Crate"
-	desc = "Contains 4 40 round box magazines for the SG95 Vector"
+	name = "3x20mm Magazine Box Crate"
+	desc = "Contains 4 40 round box magazines for the SG95 Vector and SG90 Director"
 	contains = list(/obj/item/storage/box/ammo/c320)
 	cost = 600
+
+/datum/supply_pack/ammo/c215/shock
+	name = "2x15mm Short Shock Magazine Box Crate"
+	desc = "Contains a 4 30-round box shock magazines for the SG27 and SG11. Ideal for nonlethal takedowns."
+	contains = list(/obj/item/storage/box/ammo/c215/shock)
+	cost = 200
+
+/datum/supply_pack/ammo/c215_big/shock
+	name = "2x15mm Shock Magazine Box Crate"
+	desc = "Contains a 4 60 round box shock magazines for the SG49 and SG48. Ideal for nonlethal takedowns."
+	contains = list(/obj/item/storage/box/ammo/c215/long/shock)
+	cost = 400
+
+/datum/supply_pack/ammo/c320/shock
+	name = "3x20mm Shock Magazine Box Crate"
+	desc = "Contains 4 40 round box shock magazines for the SG95 and SG90. Ideal for nonlethal takedowns."
+	contains = list(/obj/item/storage/box/ammo/c320/shock)
+	cost = 600
+
+/* Arrows I guess */
 
 /datum/supply_pack/ammo/arrow
 	name = "Arrow Crate"

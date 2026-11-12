@@ -81,6 +81,10 @@
 	energy_cost = 0
 	can_cookoff = TRUE
 
+/obj/item/ammo_casing/caseless/gauss/tavsha/shock
+	name = "2x15mm Tav'Sha shock gauss dart"
+	projectile_type = /obj/projectile/bullet/gauss/tavsha/shock
+
 /obj/item/ammo_casing/caseless/gauss/deusha
 	name = "3x20mm Deu'Sha gauss dart"
 	desc = "A small magnetic dart."
@@ -91,3 +95,8 @@
 	stack_size = 30
 	energy_cost = 0
 	can_cookoff = TRUE
+
+/obj/item/ammo_casing/caseless/gauss/deusha/shock
+	name = "3x20mm Deu'Sha shock gauss dart"
+	desc = "A small magnetic dart."
+	projectile_type = /obj/projectile/bullet/gauss/deusha/shock

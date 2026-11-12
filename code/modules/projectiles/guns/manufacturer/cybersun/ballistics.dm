@@ -216,6 +216,11 @@ NO_MAG_GUN_HELPER(cs_gauss/rectifier/export)
 		/obj/item/ammo_box/magazine/cs_gauss,
 	)
 
+	//no you can't fire the bigger darts in the smg
+	blacklisted_ammo_types = list(
+		/obj/item/ammo_box/magazine/cs_gauss/rifle
+	)
+
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'

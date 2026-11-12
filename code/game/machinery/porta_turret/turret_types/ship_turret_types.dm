@@ -486,7 +486,7 @@
 	integrity_failure = 0.4
 	max_integrity = 200
 
-	stun_projectile = /obj/projectile/bullet/gauss/deusha
+	stun_projectile = /obj/projectile/bullet/gauss/deusha/shock
 	stun_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
 	lethal_projectile = /obj/projectile/bullet/gauss/deusha
 	lethal_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
