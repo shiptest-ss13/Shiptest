@@ -197,7 +197,7 @@
 			takeTackleDamage(user, knockdown = 10)
 
 		if(3 to 4) // really good hit, the target is definitely worse off here. Without positive modifiers, this is as good a tackle as you can land
-			user.visible_message(span_warning("[user] lands an expert tackle on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet [ishuman(target) ? "with a passive grip" : ""]!"), span_userdanger("You land an expert tackle on [target], knocking [target.p_them()] down hard [ishuman(target) ? "while landing on your feet with a passive grip" : ""]!"), target)
+			user.visible_message(span_warning("[user] lands an expert tackle on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet[ishuman(target) ? " with a passive grip" : ""]!"), span_userdanger("You land an expert tackle on [target], knocking [target.p_them()] down hard[ishuman(target) ? " while landing on your feet with a passive grip" : ""]!"), target)
 			to_chat(target, span_userdanger("[user] lands an expert tackle on you, knocking you down hard[ishuman(target) ? " and maintaining a passive grab" : ""]!")) //shouldn't matter for nonhumans but you can't be too careful
 
 			removeFlooredTackle(user)
@@ -210,8 +210,8 @@
 				human_target.grabbedby(human_user)
 
 		if(5 to INFINITY) // absolutely BODIED
-			user.visible_message(span_warning("[user] lands a monster tackle on [target], knocking [target.p_them()] senseless and [ishuman(target) ? "applying an aggressive pin" : ""]!"), span_userdanger("You land a monster tackle on [target], knocking [target.p_them()] senseless [ishuman(target) ? "applying an aggressive pin" : ""]!"), target)
-			to_chat(target, span_userdanger("[user] lands a monster tackle on you, knocking you senseless[ishuman(target) ? " and aggressively pinning you" : ""]!")) //shouldn't matter for nonhumans but you can't be too careful
+			user.visible_message(span_warning("[user] lands a monster tackle on [target], knocking [target.p_them()] senseless[ishuman(target) ? " and applying an aggressive grab" : ""]!"), span_userdanger("You land a monster tackle on [target], knocking [target.p_them()] senseless[ishuman(target) ? " and applying an aggressive grab" : ""]!"), target)
+			to_chat(target, span_userdanger("[user] lands a monster tackle on you, knocking you senseless[ishuman(target) ? " and aggressively grabbing you" : ""]!")) //shouldn't matter for nonhumans but you can't be too careful
 
 			removeFlooredTackle(user)
 			user.SetKnockdown(0)
