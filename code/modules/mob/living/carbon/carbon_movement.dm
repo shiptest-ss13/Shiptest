@@ -23,7 +23,7 @@
 
 /mob/living/carbon/Move(NewLoc, direct)
 	. = ..()
-	if(. && faces_pulled())
+	if(faces_pulled())
 		var/pulled_dir = get_dir(src, pulling)
 		if(pulled_dir)
 			setDir(pulled_dir)
