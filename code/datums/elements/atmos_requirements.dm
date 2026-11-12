@@ -29,6 +29,9 @@
 ///signal called by the living mob's life() while non stasis
 /datum/element/atmos_requirements/proc/on_non_stasis_life(mob/living/target, seconds_per_tick = SSMOBS_DT)
 	SIGNAL_HANDLER
+	var/mob/living/basic/basic_target = target
+	if(istype(basic_target) && world.time < basic_target.environment_grace_until)
+		return
 	if(is_breathable_atmos(target))
 		target.clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 		return

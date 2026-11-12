@@ -547,10 +547,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	var/weapon_drop_chance = 0
 
 /obj/effect/mapping_helpers/neuter/LateInitialize()
+	var/mob/living/basic/human/human = locate(/mob/living/basic/human) in loc
+	if(human)
+		human.weapon_drop_chance = weapon_drop_chance
+		qdel(src)
+		return
 	var/mob/living/simple_animal/hostile/human/dog = locate(/mob/living/simple_animal/hostile/human) in loc
 	if(dog)
 		dog.weapon_drop_chance = weapon_drop_chance
 		qdel(src)
+		return
 	log_mapping("[src] at [x],[y] could not find a hostile human to neuter.")
 	qdel(src)
 
