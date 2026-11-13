@@ -85,9 +85,11 @@
 	if(!ranged_attacker)
 		return
 	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound, spread = firing_spread)
+	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 
 /mob/living/basic/hivebot/death(gibbed)
 	do_sparks(n = 3, c = TRUE, source = src)
+	REMOVE_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 	return ..()
 
 /mob/living/basic/hivebot/ranged

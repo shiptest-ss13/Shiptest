@@ -1219,11 +1219,32 @@
 	amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
 
 	var/blocked = getarmor(null, "rad")
+	var/incoming_damage = 0
 
+	//if(blocked != 100) //If the radiation isn't fully blocked
 	if(amount > RAD_BURN_THRESHOLD)
-		apply_damage(RAD_BURN_CURVE(amount), BURN, null, blocked)
+		incoming_damage = (RAD_BURN_CURVE(amount) * (100-blocked)/100)
+	apply_damage((incoming_damage / ((100-blocked)/100)), BURN, null, blocked) //incoming damage is divided by the armor to avoid stacking the armor negation twice
 
-	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
+	if(COOLDOWN_FINISHED(src, rad_burn_msg_cooldown))
+		//minor radiation burn warning
+		if(incoming_damage >= 0.5 && incoming_damage < 1.5)
+			if(src.mob_biotypes & MOB_ROBOTIC)	//for IPCs
+				to_chat(src, span_warning("Minor memory and processing related error codes flash in your mind."))
+			else
+				to_chat(src, span_warning("You feel a tingling sensation across your skin."))
+
+		//moderate to severe radiation burn warning
+		if(incoming_damage >= 1.5)
+			if(src.mob_biotypes & MOB_ROBOTIC)	//for IPCs
+				to_chat(src, span_warning("Internal error codes flash across your mind, indicating a potential component-level electrical fault."))
+			else
+				to_chat(src, span_warning("You feel a wave of heat pass over you as fresh welts form across your skin."))
+
+		COOLDOWN_START(src, rad_burn_msg_cooldown, 10 SECONDS)
+
+	if(src.mob_biotypes & MOB_ROBOTIC)
+		apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 
 /mob/living/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)
 	. = ..()
@@ -1550,6 +1571,9 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	var/ssd_indicator = FALSE
 	var/ignore_SSD = FALSE
 	var/lastclienttime = 0
+
+///Rad burn message cooldown
+	COOLDOWN_DECLARE(rad_burn_msg_cooldown)
 
 /mob/living/proc/set_ssd_indicator(state)
 	if(state == ssd_indicator)
