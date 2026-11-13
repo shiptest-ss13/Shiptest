@@ -5,13 +5,12 @@
 	/// Available shipping methods and prices, just leave the shipping method out that you don't want to have.
 	var/list/shipping
 
-
 	// Automatic vars, do not touch these.
 	/// Items available from this market, populated by SSblackmarket on initialization.
 	var/list/available_items = list()
 	/// Item categories available from this market, only items which are in these categories can be gotten from this market.
 	var/list/categories	= list()
-	var/local_good_id = 1 // each local good gets a number assigned to it to prevent purchase of wrong items
+	var/local_good_id = 1 // each local good gets a number automatically assigned to it to prevent purchase of wrong items
 
 /datum/blackmarket_market/New()
 	. = ..()
