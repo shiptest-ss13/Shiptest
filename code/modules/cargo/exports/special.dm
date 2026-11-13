@@ -15,6 +15,9 @@
 	export_types = list(
 		/obj/item/documents
 	)
+	exclude_types = list(
+		/obj/item/documents/photocopy
+	)
 
 /datum/export/scratch_ticket
 	unit_name = "Lottery ticket redemption"

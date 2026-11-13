@@ -4,6 +4,13 @@
 	cost = 750
 	elasticity_coeff = 0.1
 	export_types = list(/obj/item/mine/pressure/explosive)
+	exclude_types = list(/obj/item/mine/pressure/explosive/rusty)
+
+/datum/export/landmine/rusted
+	unit_name = "rusted defused landmines"
+	cost = 250
+	export_types = list(/obj/item/mine/pressure/explosive/rusty)
+	exclude_types = list()
 
 /datum/export/claymore
 	unit_name = "defused claymores"
