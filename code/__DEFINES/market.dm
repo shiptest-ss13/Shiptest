@@ -12,3 +12,5 @@
 #define SHIPPING_METHOD_DEAD_DROP "Dead drop"
 /// The percentage on gains that's removed when selling an item through the blackmarket with the LTSRBT
 #define MARKET_WITHHOLDING_TAX 0.15
+/// The fee for placing an item on the black market
+#define MARKET_PLACEMENT_FEE 5

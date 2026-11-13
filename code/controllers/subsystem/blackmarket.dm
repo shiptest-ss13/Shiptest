@@ -81,7 +81,6 @@ SUBSYSTEM_DEF(blackmarket)
 						pickedloc = vlevel.get_side_turf(startSide)
 
 
-				//var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
 				var/atom/movable/item = purchase.get_item()
 				item.forceMove(pickedloc)
 				item.Move(get_step(pickedloc,get_dir(pickedloc,T)))

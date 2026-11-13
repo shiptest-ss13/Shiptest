@@ -65,7 +65,7 @@
 		return FALSE
 
 	for(var/datum/blackmarket_item/I in available_items[category])
-		if(I.type != item_to_buy) //needs an identifier, keeps trying to buy the first local good
+		if(I.type != item_to_buy)
 			continue
 		if(!isnull(item_key))
 			if(I.key != item_key)

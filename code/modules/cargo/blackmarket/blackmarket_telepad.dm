@@ -284,7 +284,7 @@
 			say("No bank account to charge market fees detected!")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 			return
-		if(!card.registered_account.adjust_money(-5, "Market: Placement Fee"))
+		if(!card.registered_account.adjust_money(MARKET_PLACEMENT_FEE, "Market: Placement Fee"))
 			say("Insufficient credits!")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 			return
