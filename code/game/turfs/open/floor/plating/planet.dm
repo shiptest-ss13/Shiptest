@@ -7,10 +7,7 @@
 	base_icon_state = "dirt"
 	icon_state = "dirt"
 	planetary_atmos = FALSE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_SAND
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 	dug = TRUE
@@ -64,10 +61,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS, SMOOTH_GROUP_FLOOR_PLASTEEL)
-	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_GRASS
 	layer = GRASS_TURF_LAYER
 	icon = 'icons/turf/floors/grass.dmi'
 	smooth_icon = 'icons/turf/floors/grass.dmi'

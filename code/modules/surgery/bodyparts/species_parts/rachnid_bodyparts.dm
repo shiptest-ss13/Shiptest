@@ -33,6 +33,7 @@
 	should_draw_greyscale = FALSE
 	overlay_icon_state = TRUE
 	biological_state = (BIO_FLESH|BIO_BLOODED|BIO_JOINTED)
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/rachnid
 	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
@@ -40,3 +41,4 @@
 	should_draw_greyscale = FALSE
 	overlay_icon_state = TRUE
 	biological_state = (BIO_FLESH|BIO_BLOODED|BIO_JOINTED)
+	footstep_type = FOOTSTEP_MOB_CLAW

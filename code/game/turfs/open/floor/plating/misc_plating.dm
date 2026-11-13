@@ -54,10 +54,7 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	tiled_dirt = FALSE
 	var/smooth_icon = 'icons/turf/floors/ash.dmi'
 
@@ -95,10 +92,7 @@
 	layer = MID_TURF_LAYER
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_CLOSED_TURFS)
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_FLOOR
 
 /turf/open/floor/plating/ashplanet/wateryrock
 	gender = PLURAL
@@ -106,10 +100,7 @@
 	smoothing_flags = NONE
 	icon_state = "wateryrock"
 	slowdown = 0
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_FLOOR
 
 /turf/open/floor/plating/ashplanet/wateryrock/Initialize(mapload, inherited_virtual_z)
 	icon_state = "[icon_state][rand(1, 9)]"
@@ -119,10 +110,7 @@
 	gender = PLURAL
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 
 /turf/open/floor/plating/ironsand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -145,10 +133,7 @@
 	slowdown = 1
 	attachment_holes = FALSE
 	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_ICE
-	barefootstep = FOOTSTEP_ICE
-	clawfootstep = FOOTSTEP_ICE
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ICE
 	flammability = -5
 
 /turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
@@ -191,10 +176,7 @@
 	initial_gas_mix = FROZEN_ATMOS
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 
 /turf/open/floor/plating/snowed/cavern
 	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
@@ -217,10 +199,7 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon_state = "sand"
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	tiled_dirt = FALSE
 
 /turf/open/floor/plating/sandy_dirt/ship
