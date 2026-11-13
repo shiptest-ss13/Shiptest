@@ -44,6 +44,7 @@
 	icon_state = "glassbottlesmall"
 	volume = 50
 	custom_price = 1
+	custom_materials = list(/datum/material/glass = 200)
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
 	if(!target)

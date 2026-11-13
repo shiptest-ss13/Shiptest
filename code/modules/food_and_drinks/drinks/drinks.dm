@@ -571,7 +571,7 @@
 	desc = "A metal shaker to mix drinks in."
 	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "shaker"
-	custom_materials = list(/datum/material/iron=1500)
+	custom_materials = list(/datum/material/iron=50)
 	amount_per_transfer_from_this = 10
 	volume = 100
 	isGlass = FALSE
