@@ -2,6 +2,7 @@
 	name = "laser"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	projectile_piercing = PASSWEAKSTRUCTURE
 	damage = 25
 	armour_penetration = -5
 	damage_type = BURN
@@ -28,7 +29,7 @@
 	light_range = 1.5
 	light_power = 1
 	light_color = COLOR_SOFT_RED
-	ricochets_max = 50	//Honk!
+	ricochets_max = 50
 	ricochet_chance = 90
 	ricochet_incidence_leeway = 75
 	reflectable = REFLECT_NORMAL

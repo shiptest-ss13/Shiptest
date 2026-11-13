@@ -106,17 +106,33 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 	the atom/checkpass() proc uses them (tables will call movable atom checkpass(PASSTABLE) for example)
 */
 //flags for pass_flags
+/// Allows you to pass over tables.
 #define PASSTABLE (1<<0)
+/// Allows you to pass over glass(this generally includes anything see-through that's glass-adjacent, ie. windows, windoors, airlocks with glass, etc.)
 #define PASSGLASS (1<<1)
+/// Allows you to pass over grilles.
 #define PASSGRILLE (1<<2)
+
+/// Allows you to pass over mobs.
 #define PASSMOB (1<<4)
+/// Allows you to pass over closed turfs, ie. walls.
 #define PASSCLOSEDTURF (1<<5)
 /// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**
 #define LETPASSTHROW (1<<6)
+/// Allows you to pass through the bottom hatches on airlocks
 #define PASSDOORHATCH (1<<7)
+/// Allows you to pass platforms if you couldn't.
 #define PASSPLATFORM (1<<8)
+/// Allows you to pass over airlocks and mineral doors.
+#define PASSDOOR (1<<9)
+/// Allows you to pass over structures, ie. racks, tables(if you don't already have PASSTABLE), etc.
+#define PASSSTRUCTURE (1<<10)
+/// Allows you to pass through weak structures (crates, hedges, other objects that should be able to be shot through...)
+#define PASSWEAKSTRUCTURE (1<<11)
+/// Allows you to pass through machinery
+#define PASSMACHINE (1<<12)
 /// Do not intercept click attempts during Adjacent() checks. See [turf/proc/ClickCross]. **ONLY MEANINGFUL ON pass_flags_self!**
-#define LETPASSCLICKS (1<<9)
+#define LETPASSCLICKS (1<<13)
 
 //Movement Types
 #define GROUND (1<<0)

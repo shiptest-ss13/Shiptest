@@ -293,8 +293,6 @@
 /obj/structure/closet/secure_closet/armory2/PopulateContents()
 	..()
 	for(var/i in 1 to 3)
-		new /obj/item/storage/box/rubbershot(src)
-	for(var/i in 1 to 3)
 		new /obj/item/gun/ballistic/shotgun/hellfire(src)
 
 /obj/structure/closet/secure_closet/armory3
@@ -330,7 +328,6 @@
 /obj/structure/closet/secure_closet/lethalshots/PopulateContents()
 	..()
 	for(var/i in 1 to 3)
-		new /obj/item/storage/box/lethalshot(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)

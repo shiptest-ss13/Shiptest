@@ -132,12 +132,11 @@
 	range = 20
 	projectile_piercing = PASSGLASS
 
-
 /obj/projectile/beam/flare
 	name = "plasma flare"
 	icon_state = ""
 	pass_flags = PASSTABLE | PASSGRILLE
-	projectile_piercing = PASSGLASS
+	projectile_piercing = PASSGLASS | PASSSTRUCTURE
 
 	hitsound = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
 	hitsound_non_living = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
@@ -188,7 +187,7 @@
 
 /obj/projectile/beam/flare/heavy
 	pass_flags = PASSTABLE | PASSGRILLE
-	projectile_piercing = PASSGLASS | PASSCLOSEDTURF | PASSMOB
+	projectile_piercing = PASSGLASS | PASSCLOSEDTURF | PASSMOB | PASSDOOR | PASSSTRUCTURE
 	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS | PROJECTILE_BONUS_DAMAGE_MINERALS
 	wall_damage_override = 1000
 	range = 12

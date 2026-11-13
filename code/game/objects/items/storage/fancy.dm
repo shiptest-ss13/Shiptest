@@ -169,7 +169,7 @@
 	item_state = "candlebox5"
 	throwforce = 2
 	slot_flags = ITEM_SLOT_BELT
-	spawn_type = /obj/item/candle
+	spawn_type = /obj/item/flashlight/flare/candle
 	is_open = TRUE
 	contents_tag = "candle"
 

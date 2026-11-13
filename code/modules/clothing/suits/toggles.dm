@@ -64,9 +64,7 @@
 			H.regenerate_icons()
 		else
 			hood.forceMove(src)
-		for(var/X in actions)
-			var/datum/action/A = X
-			A.UpdateButtonIcon()
+		update_item_action_buttons()
 
 /obj/item/clothing/suit/hooded/update_appearance(updates)
 	if(suittoggled)
@@ -94,9 +92,7 @@
 				H.update_inv_wear_suit()
 				update_appearance()
 				H.regenerate_icons()
-				for(var/X in actions)
-					var/datum/action/A = X
-					A.UpdateButtonIcon()
+				update_item_action_buttons()
 	else
 		remove_hood()
 
@@ -134,6 +130,8 @@
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
 
+	togglename = "buttons"
+
 /obj/item/clothing/suit/toggle/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
@@ -152,27 +150,29 @@
 	suit_toggle(user)
 	return TRUE
 
-/obj/item/clothing/suit/toggle/ui_action_click()
-	suit_toggle()
+/obj/item/clothing/suit/toggle/ui_action_click(mob/user, actiontype)
+	suit_toggle(user)
 
-/obj/item/clothing/suit/toggle/proc/suit_toggle()
+/obj/item/clothing/suit/toggle/verb/toggle_suit()
+	set name = "Toggle Suit"
+	set category = "Object"
 	set src in usr
+	suit_toggle(usr)
 
-	if(!can_use(usr))
-		return 0
+/obj/item/clothing/suit/toggle/proc/suit_toggle(mob/user)
+	if(!can_use(user))
+		return FALSE
 
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[initial(icon_state)]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[initial(icon_state)]_t"
-		src.suittoggled = TRUE
+	to_chat(user, span_notice("You toggle [src]'s [togglename]."))
+	if(suittoggled)
+		icon_state = "[base_icon_state]"
+		suittoggled = FALSE
+	else if(!suittoggled)
+		icon_state = "[base_icon_state]_t"
+		suittoggled = TRUE
 	update_appearance()
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	user.update_inv_wear_suit()
+	update_item_action_buttons()
 
 /obj/item/clothing/suit/toggle/examine(mob/user)
 	. = ..()

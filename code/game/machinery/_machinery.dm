@@ -99,6 +99,8 @@ Class Procs:
 
 	initial_language_holder = /datum/language_holder/gal_com
 
+	pass_flags_self = PASSMACHINE
+
 	var/machine_stat = NONE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
