@@ -83,12 +83,13 @@
 /obj/machinery/computer/helm/Destroy()
 	. = ..()
 	SStgui.close_uis(src)
-	ASSERT(length(concurrent_users) == 0)
 	QDEL_NULL(ntnet_relay)
 	SSpoints_of_interest.remove_point_of_interest(src)
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
+	if(length(concurrent_users))
+		stack_trace("Helm destroyed with [length(concurrent_users)] concurrent users still registered.")
 
 /obj/machinery/computer/helm/proc/cancel_jump()
 	if(!calibrating)
@@ -186,6 +187,10 @@
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		// Open UI
+		ui = new(user, src, "HelmConsole", name)
+		if(!ui.open())
+			return
 		var/user_ref = REF(user)
 		var/is_living = isliving(user)
 		// Ghosts shouldn't count towards concurrent users, which produces
@@ -196,10 +201,6 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-
-		// Open UI
-		ui = new(user, src, "HelmConsole", name)
-		ui.open()
 
 		// Register map objects
 		if(current_ship)
