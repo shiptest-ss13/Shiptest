@@ -303,7 +303,7 @@ SUBSYSTEM_DEF(overmap)
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
  * Inteded for ship purchases, etc.
  */
-/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template, position, datum/overmap_star_system/system_to_spawn_in)
+/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template, position, datum/overmap_star_system/system_to_spawn_in, ship_name)
 	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
 	UNTIL(!ship_spawning)
 
@@ -323,7 +323,7 @@ SUBSYSTEM_DEF(overmap)
 		ship_loc = SSovermap.outposts[1]
 
 	ship_spawning = TRUE
-	. = new /datum/overmap/ship/controlled(ship_loc, system_to_spawn_in, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
+	. = new /datum/overmap/ship/controlled(ship_loc, system_to_spawn_in, template, TRUE, FALSE, ship_name) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
 	ship_spawning = FALSE
 
 /**

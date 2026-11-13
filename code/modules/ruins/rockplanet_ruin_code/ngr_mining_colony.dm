@@ -9,13 +9,13 @@
 
 //ruin-exclusive frontie mob that doesnt fit with the rest
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/ngr_colony_ramzifriend
+/mob/living/basic/human/frontier/ranged/internals/ngr_colony_ramzifriend
 	name = "Frontiersman Smuggler"
 	desc = "Once a member of the vicious Frontiersmen fleet, this ex-smuggler seems to have befriended the far more vicious Ramzi Clique. They stroll around with less discipline than their new peers, a jet-black pistol at their hip."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ramzifriend_smuggler
-	casingtype = /obj/item/ammo_casing/c57x39mm
+	casing_type = /obj/item/ammo_casing/c57x39mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/asp
-	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	projectile_sound = 'sound/weapons/gun/pistol/asp.ogg'
 	faction = list(FACTION_RAMZI, FACTION_ANTAG_FRONTIERSMEN) //theyre loyal to their new friends but still loyal to their old comrades
 	armor_base = /obj/item/clothing/suit/armor/ramzi
 
@@ -32,7 +32,6 @@
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
 
 //papers please
-
 
 /obj/item/paper/crumpled/bloody/fluff/ruins/ngr_rock_colony/mine_report
 	desc = "A thin layer of dried blood is caked over part of the note."

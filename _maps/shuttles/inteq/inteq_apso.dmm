@@ -94,7 +94,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "cb" = (
@@ -1376,7 +1376,8 @@
 /obj/item/gps{
 	pixel_y = 3;
 	pixel_x = 7;
-	gpstag = "!IRMG-SIGNALER"
+	gpstag = "!IRMG-SIGNALER";
+	gps_active = 1
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";

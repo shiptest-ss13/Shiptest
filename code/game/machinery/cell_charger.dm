@@ -13,6 +13,10 @@
 	var/obj/item/stock_parts/cell/charging = null
 	var/charge_rate = 250
 
+/obj/machinery/cell_charger/Initialize()
+	. = ..()
+	AddElement(/datum/element/nudge, -8, 8, -8, 8)
+
 /obj/machinery/cell_charger/update_overlays()
 	. = ..()
 

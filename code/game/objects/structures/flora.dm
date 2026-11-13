@@ -48,7 +48,8 @@
 		if(W.get_sharpness() && W.force > 0)
 			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
 			user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
-			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
+			var/chopping_force = is_type_in_list(W, list(/obj/item/hatchet, /obj/item/melee/axe)) ? W.force * 2 : W.force //axes now become the deforestator 9000
+			if(do_after(user, 1000/chopping_force, target = src)) //5 seconds with 20 force, 10 seconds with a kitchen knife, 20 seconds with a shard.
 				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
 				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
@@ -485,6 +486,26 @@
 	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
 	density = FALSE
+
+/obj/structure/flora/rock/icy
+	name = "icy rock"
+	icon_state = "snowrock_1"
+	density = FALSE
+
+/obj/structure/flora/rock/icy/Initialize()
+	. = ..()
+	icon_state = "snowrock_[rand(1,4)]"
+
+	if(icon_state == "snowrock_1")
+		density = TRUE
+
+/obj/structure/flora/rock/pile/icy
+	name = "icy rocks"
+	icon_state = "snowrock_4"
+
+/obj/structure/flora/rock/pile/icy/Initialize()
+	. = ..()
+	icon_state = "snowrock_4"
 
 //Jungle grass
 

@@ -226,7 +226,7 @@
 	icon_state = "hardsuit-ngreod"
 	hardsuit_type = "ngreod"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ngrheavy
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	slowdown = 1.25
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -236,7 +236,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	icon_state = "hardsuit0-ngreod"
 	hardsuit_type = "ngreod"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 45, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	desc = "A heavily modified EOD hardsuit helmet produced by the NGR. There are reinforcements made all across the helm, along with a wider visor."
 	supports_variations = SNOUTED_VARIATION
 
@@ -291,12 +291,13 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 	supports_variations = SNOUTED_VARIATION
-	actions_types = list(/datum/action/item_action/toggle_helmet_nightvision)
+	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_helmet_nightvision)
 	var/nightvision = FALSE
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_helmet_nightvision))
 		toggle_nightvision(user)
+		return
 	. = ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/proc/toggle_nightvision(mob/user)

@@ -813,7 +813,7 @@
 /area/ship/medical)
 "ns" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "nv" = (
@@ -2159,13 +2159,13 @@
 /area/ship/security/armory)
 "Em" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/syndi/hl,
 /obj/item/clothing/mask/gas/syndicate/voicechanger,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 10
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/suit/space/hardsuit/stealth/hardliners,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "ED" = (
@@ -2408,7 +2408,7 @@
 	pixel_x = -6;
 	pixel_y = -31
 	},
-/obj/machinery/fax/syndicate{
+/obj/machinery/fax/hardliners{
 	pixel_x = 0;
 	pixel_y = 6
 	},
