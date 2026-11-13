@@ -19,6 +19,7 @@
 	protect_indoors = TRUE
 
 	immunity_type = "ash"
+	harmful = TRUE
 
 	barometer_predictable = TRUE
 	affects_underground = FALSE
@@ -31,10 +32,11 @@
 
 	multiply_blend_on_main_stage = TRUE
 
-/datum/weather/shroud_storm/weather_act(mob/living/living_mob)
+/datum/weather/shroud_storm/affects(mob/living/victim)
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
-	if(isanimal(living_mob))
-		return
+	return !isanimal(victim)
+
+/datum/weather/shroud_storm/weather_act(mob/living/living_mob)
 	if(prob(10))
 		living_mob.electrocute_act(rand(5, 20), "weather", TRUE)
 	if(prob(10))

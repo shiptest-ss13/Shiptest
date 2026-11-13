@@ -40,7 +40,11 @@
 
 	immunity_type = "snow"
 	aesthetic = FALSE
+	harmful = TRUE
 	thunder_chance = 2
+
+/datum/weather/snowfall/heavy/affects(mob/living/victim)
+	return victim.hurt_by_chill(243)
 
 /datum/weather/snowfall/heavy/weather_act(mob/living/living_mob)
 	living_mob.adjust_bodytemperature(-rand(2,4), 243)

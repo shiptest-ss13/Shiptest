@@ -37,7 +37,27 @@
 		return AI_ENVIRONMENT_TOO_COLD
 	if(basic_mob.unsuitable_heat_damage && temperature > basic_mob.maximum_survivable_temperature && !(istype(human_mob) && human_mob.insulated_from_heat(temperature)))
 		return AI_ENVIRONMENT_TOO_HOT
+	if(ai_weather_threatens(basic_mob, spot))
+		return AI_ENVIRONMENT_WEATHER
 	return null
+
+// whether weather at current spot threatens mob
+/proc/ai_weather_threatens(mob/living/mover, turf/spot)
+	var/area/spot_area = spot.loc
+	var/datum/weather/weather = spot_area.active_weather
+	if(!weather || !weather.my_controller?.mapzone?.is_in_bounds(spot))
+		return FALSE
+	return weather.threatens(mover)
+
+// the weather about a mob (and they're not necessarily in), and if it threatens them
+/proc/ai_weather_about(mob/living/mover)
+	var/datum/map_zone/mapzone = mover.get_map_zone()
+	var/datum/weather_controller/weather_controller = mapzone?.weather_controller
+	for(var/weather_type in weather_controller?.current_weathers)
+		var/datum/weather/weather = weather_controller.current_weathers[weather_type]
+		if(weather.threatens(mover))
+			return TRUE
+	return FALSE
 
 // whether basic_mob needs some gas or other in the air, so no air at all hurts it
 /proc/ai_needs_to_breathe(mob/living/basic/basic_mob)

@@ -148,6 +148,9 @@
 		return
 	AddElement(/datum/element/basic_body_temp_sensetive, minimum_survivable_temperature, maximum_survivable_temperature, unsuitable_cold_damage, unsuitable_heat_damage, mapload)
 
+/mob/living/basic/hurt_by_chill(floor_temperature)
+	return unsuitable_cold_damage && minimum_survivable_temperature > floor_temperature
+
 /mob/living/basic/Destroy()
 	GLOB.basic_mobs_awaiting_level -= src
 	return ..()

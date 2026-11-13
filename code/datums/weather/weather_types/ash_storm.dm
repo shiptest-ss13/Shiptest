@@ -20,6 +20,7 @@
 	protect_indoors = TRUE
 
 	immunity_type = "ash"
+	harmful = TRUE
 
 	barometer_predictable = TRUE
 
@@ -29,26 +30,30 @@
 	sound_weak_inside = /datum/looping_sound/weak_inside_ashstorm
 	multiply_blend_on_main_stage = TRUE
 
-/datum/weather/ash_storm/proc/is_ash_immune(atom/L)
-	while (L && !isturf(L))
-		if(ismecha(L)) //Mechs are immune
+/datum/weather/ash_storm/proc/is_ash_immune(atom/victim)
+	while (victim && !isturf(victim))
+		if(ismecha(victim)) //Mechs are immune
 			return TRUE
-		if(ishuman(L)) //Are you immune?
-			var/mob/living/carbon/human/H = L
-			var/thermal_protection = H.get_thermal_protection()
+		if(ishuman(victim)) //Are you immune?
+			var/mob/living/carbon/human/carbon_victim = victim
+			var/thermal_protection = carbon_victim.get_thermal_protection()
 			if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
 				return TRUE
-		if(isliving(L))// if we're a non immune mob inside an immune mob we have to reconsider if that mob is immune to protect ourselves
-			var/mob/living/the_mob = L
+		var/mob/living/basic/human/basic_human = victim
+		if(istype(basic_human) && basic_human.get_outfit_thermal_protection() >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
+			return TRUE
+		if(isliving(victim))// if we're a non immune mob inside an immune mob we have to reconsider if that mob is immune to protect ourselves
+			var/mob/living/the_mob = victim
 			if("ash" in the_mob.weather_immunities)
 				return TRUE
-		L = L.loc //Check parent items immunities (recurses up to the turf)
+		victim = victim.loc //Check parent items immunities (recurses up to the turf)
 	return FALSE //RIP you
 
-/datum/weather/ash_storm/weather_act(mob/living/L)
-	if(is_ash_immune(L))
-		return
-	L.adjustFireLoss(4)
+/datum/weather/ash_storm/affects(mob/living/victim)
+	return !is_ash_immune(victim)
+
+/datum/weather/ash_storm/weather_act(mob/living/victim)
+	victim.adjustFireLoss(4)
 
 
 //Emberfalls are the result of an ash storm passing by close to the playable area of lavaland. They have a 10% chance to trigger in place of an ash storm.

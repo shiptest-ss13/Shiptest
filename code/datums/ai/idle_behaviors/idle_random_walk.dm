@@ -13,6 +13,8 @@
 			return // don't wander off into a chasm or lava
 		if(destination && is_ai_swimming_water(destination) && !is_ai_swimming_water(get_turf(living_pawn)))
 			return // or off for a swim, like into a moat we'd struggle to climb back out of
+		if(destination && isbasicmob(living_pawn) && is_environment_safe_for(living_pawn, get_turf(living_pawn)) && !is_environment_safe_for(living_pawn, destination))
+			return // or out of shelter and into bad weather
 		if(destination && !can_wander_to(controller, destination))
 			return
 		living_pawn.Move(destination, move_dir)

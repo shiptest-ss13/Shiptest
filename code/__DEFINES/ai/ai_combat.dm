@@ -167,6 +167,8 @@
 #define AI_EXPLOSIVE_NOTICE_RANGE 3
 // How much further than an explosive's blast AI gets clear by, and keeps clear of until it goes off
 #define AI_EXPLOSIVE_SAFETY_MARGIN 2
+// How long before harmful weather starts that AI heads for shelter
+#define AI_WEATHER_SHELTER_LEAD (10 SECONDS)
 
 // How a mob's feeling about a fight, for morale
 ///An ally just died nearby, so it digs in rather than pushing into whatever got them
@@ -253,6 +255,8 @@
 #define AI_ENVIRONMENT_TOO_HOT "too hot"
 ///Cold enough to hurt us
 #define AI_ENVIRONMENT_TOO_COLD "too cold"
+///Out in weather that's hurting us, or about to
+#define AI_ENVIRONMENT_WEATHER "weather"
 
 // Things a mob can call out in a fight
 ///Spotted someone for itself, rather than being told about them
@@ -301,6 +305,8 @@
 #define AI_CALLOUT_TOO_HOT "too hot"
 ///Getting out of somewhere too cold for us
 #define AI_CALLOUT_TOO_COLD "too cold"
+///Getting out of the weather
+#define AI_CALLOUT_WEATHER "weather"
 ///Now and then while fighting someone it can see
 #define AI_CALLOUT_TAUNT "taunt"
 ///Now and then as it lands a blow on someone, who's still standing
