@@ -200,3 +200,5 @@
 	/// Used by SSserver_maint to detect if a client is newly AFK.
 	var/last_seen_afk = 0
 
+	/// If this client has been fully initialized or not
+	var/fully_created = FALSE
