@@ -463,6 +463,17 @@
 		"Trauma Alt" = "cybersun_med_webalt"
 	)
 
+/obj/item/storage/belt/military/cybersun/trauma_team
+	name = "\improper Trauma Team webbing"
+	icon_state = "cybersun_med_webbing"
+
+	unique_reskin = list(
+		"Troubleshooter" = "cybersun_webbing",
+		"Trauma Team" = "cybersun_med_webbing",
+		"Troubleshooter Alt" = "cybersun_webalt",
+		"Trauma Alt" = "cybersun_med_webalt"
+	)
+
 /obj/item/storage/belt/military/cybersun/sidewinder/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
@@ -495,6 +506,25 @@
 	new /obj/item/gun/energy/cybersun/lorentz/opportunist(src)
 	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/cell/gun/cybersun(src)
+
+/obj/item/storage/belt/military/cybersun/trauma_team/loaded/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src) //replace w/ stapler when its merged
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
+/obj/item/storage/belt/military/cybersun/trauma_team/loaded/less/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/stasis
+	new /obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/panacea(src)
+	update_appearance()
 
 /obj/item/storage/belt/military/cybersun/security/PopulateContents()
 	new /obj/item/melee/classic_baton/telescopic(src)

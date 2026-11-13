@@ -139,7 +139,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	gloves = /obj/item/clothing/gloves/nitrile/evil
 
-	belt = /obj/item/storage/belt/medical/webbing/traumateam
+	belt = /obj/item/storage/belt/military/cybersun/trauma_team/loaded
 	back = /obj/item/storage/backpack/satchel/med
 
 	l_pocket = /obj/item/storage/pouch/ammo/sidewinder
