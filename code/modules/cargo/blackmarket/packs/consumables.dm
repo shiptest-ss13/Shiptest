@@ -94,6 +94,17 @@
 	cost_max = 500
 	availability_prob = 50
 
+/datum/blackmarket_item/consumable/synthflesh
+	name = "Jug of Synthflesh"
+	desc = "A 150u jug of synthflesh. That's like half a person in liquid form!"
+	item = /datum/reagent/medicine/synthflesh
+
+	cost_min = 400
+	cost_max = 600
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 50
+
 /datum/blackmarket_item/consumable/dimorlin
 	name = "Dimorlin Bottle"
 	desc = "Medicinal? Recreational? You can decide with this 30u bottle of dimorlin!"
@@ -199,7 +210,7 @@
 /datum/blackmarket_item/consumable/chemshine
 	name = "Jug of Chemshine"
 	desc = "So, apparently engine fuel goes bad after a while. On the bright side, it's the perfect excuse to make it into Chemshine. Avoid open flames. Or impacts. Or breathing on it."
-	item = /obj/item/reagent_containers/food/drinks/bottle/chems
+	item = /obj/item/reagent_containers/food/drinks/bottle/chemshine
 
 	cost_min = 50
 	cost_max = 100
@@ -282,6 +293,16 @@
 	cost_max = 2000
 	stock = 1
 	availability_prob = 5
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/cryo_pen
+	name = "'E-ZEE FREEZY' Injector"
+	desc = "Cryo tubes are super inconvienent right? So we just got some empty autoinjectors and stuffed it full of cryoxadone and engine coolant. It's basically a portable cryo tube in your pocket!"
+	item = /obj/item/reagent_containers/hypospray/medipen/cryo_pen
+	cost_min = 100
+	cost_max = 500
+	stock_max = 8
+	availability_prob = 25
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/shoalmix

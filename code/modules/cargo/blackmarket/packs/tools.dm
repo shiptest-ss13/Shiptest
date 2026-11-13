@@ -98,11 +98,32 @@
 	name = "Rapid Construction Device"
 	desc = "Borrowed from a GEC construction site, this handy device will make building a cinch."
 	item = /obj/item/construction/rcd
+	pair_item = list(/datum/blackmarket_item/tool/rcd_frame_upgrade, /datum/blackmarket_item/tool/rcd_circuit_upgrade)
 
 	cost_min = 1000
 	cost_max = 3000
 	stock = 1
 	availability_prob = 30
+
+/datum/blackmarket_item/tool/rcd_frame_upgrade
+	name = "RCD Frame Upgrade"
+	desc = "Want to make your life even easier? This upgrade will let your RCD fabricate machine and computer frames in a jiffy."
+	item = /obj/item/rcd_upgrade/frames
+
+	cost_min = 100
+	cost_max = 500
+	stock = 1
+	availability_prob = 0
+
+/datum/blackmarket_item/tool/rcd_circuit_upgrade
+	name = "RCD Circuits Upgrade"
+	desc = "An upgrade for the RCD that allows it to fab simple electronics and circuits. Not rated for IPC frames."
+	item = /obj/item/rcd_upgrade/simple_circuits
+
+	cost_min = 100
+	cost_max = 500
+	stock = 1
+	availability_prob = 0
 
 /datum/blackmarket_item/tool/suppressor
 	name = "Suppressor"
