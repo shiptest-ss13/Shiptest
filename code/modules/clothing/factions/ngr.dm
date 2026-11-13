@@ -196,6 +196,7 @@
 	hardsuit_type = "ngrelite"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/ngr
 	name = "elite beige-red hardsuit"

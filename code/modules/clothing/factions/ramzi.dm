@@ -176,6 +176,7 @@
 	item_state = "hardsuit1-ramzielite"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	name = "elite rust-red hardsuit"
