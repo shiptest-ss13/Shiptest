@@ -38,8 +38,6 @@
 /obj/item/instrument/ui_interact(mob/living/user)
 	if(!isliving(user) || user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED))
 		return
-
-	user.set_machine(src)
 	song.ui_interact(user)
 
 /obj/item/instrument/violin

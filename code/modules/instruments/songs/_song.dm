@@ -27,11 +27,6 @@
 	/// Are we currently playing?
 	var/playing = FALSE
 
-	/// Are we currently editing?
-	var/editing = TRUE
-	/// Is the help screen open?
-	var/help = FALSE
-
 	/// Repeats left
 	var/repeat = 0
 	/// Maximum times we can repeat
@@ -68,16 +63,32 @@
 	* Format: list of chord lists, with chordlists having (key1, key2, key3, tempodiv)
 	*/
 	var/list/compiled_chords
+	/// Which of our lines each of compiled_chords came from, to show the line being played.
+	var/list/compiled_chord_lines
+	/// Line of the chord we last played, 0 if not playing.
+	var/playing_line = 0
 	/// Current section of a long chord we're on, so we don't need to make a billion chords, one for every unit ticklag.
 	var/elapsed_delay
-	/// Amount of delay to wait before playing the next chord
+	/// Amount of delay to wait before playing the next chord. In ticks, may be fractional; the remainder carries over to the next chord.
 	var/delay_by
+	/// Have we played our last chord, and are waiting for it and any ringing notes to end?
+	var/finishing = FALSE
+	/// world.time to stop at even if notes are still ringing, once finishing.
+	var/finish_by = 0
+	/// If we are still compiling so we don't do it twice.
+	var/compiling = FALSE
+	/// world.time we last processed, to catch up after a short lag.
+	var/last_process = 0
 	/// Current chord we're on.
 	var/current_chord
 	/// Channel as text = current volume percentage but it's 0 to 100 instead of 0 to 1.
 	var/list/channels_playing = list()
 	/// List of channels that aren't being used, as text. This is to prevent unnecessary freeing and reallocations from SSsounds/SSinstruments.
 	var/list/channels_idle = list()
+	/// Channel as text = world.time to hold it at full volume until, for notes played with a ~x hold.
+	var/list/channels_held = list()
+	/// Channel as text = volume percentage of the note playing on it, from !x. Scales the decaying volume in channels_playing.
+	var/list/channels_note_volume = list()
 	/// Person playing us
 	var/mob/user_playing
 	//////////////////////////////////////////////////////
@@ -104,6 +115,8 @@
 	var/key_max = INSTRUMENT_MAX_KEY
 	var/static/list/note_offset_lookup = list(9, 11, 0, 2, 4, 5, 7)
 	var/static/list/accent_lookup = list("b" = -1, "s" = 1, "#" = 1, "n" = 0)
+	/// Markers for the numbers that can follow a note, in any order. ~x for hold, !x for volume.
+	var/static/list/note_suffix_markers = list("~", "!")
 	//////////////////////////////////////////////////////////////
 
 	///////////// !!FUN!! - Only works in synthesized mode! /////////////////
@@ -115,7 +128,7 @@
 	/// The kind of sustain we're using
 	var/sustain_mode = SUSTAIN_LINEAR
 	/// When a note is considered dead if it is below this in volume
-	var/sustain_dropoff_volume = 0
+	var/sustain_dropoff_volume = 5
 	/// Total duration of linear sustain for 100 volume note to get to SUSTAIN_DROPOFF
 	var/sustain_linear_duration = 5
 	/// Exponential sustain dropoff rate per decisecond
@@ -202,23 +215,29 @@
  * Attempts to start playing our song.
  */
 /datum/song/proc/start_playing(mob/user)
-	if(playing)
+	if(playing || compiling)
 		return
 	if(!using_instrument?.ready())
 		to_chat(user, span_warning("An error has occured with [src]. Please reset the instrument."))
 		return
+	compiling = TRUE
 	compile_chords()
+	compiling = FALSE
+	if(QDELETED(src) || playing)
+		return
 	if(!length(compiled_chords))
 		to_chat(user, span_warning("Song is empty."))
 		return
 	playing = TRUE
-	updateDialog(user_playing)
+	updateDialog()
 	//we can not afford to runtime, since we are going to be doing sound channel reservations and if we runtime it means we have a channel allocation leak.
 	//wrap the rest of the stuff to ensure stop_playing() is called.
 	do_hearcheck()
 	SEND_SIGNAL(parent, COMSIG_SONG_START)
 	elapsed_delay = 0
-	delay_by = 0
+	delay_by = 1
+	finishing = FALSE
+	last_process = world.time
 	current_chord = 1
 	user_playing = user
 	START_PROCESSING(SSinstruments, src)
@@ -230,25 +249,44 @@
 	if(!playing)
 		return
 	playing = FALSE
+	finishing = FALSE
 	if(!debug_mode)
 		compiled_chords = null
+		compiled_chord_lines = null
+	playing_line = 0
 	STOP_PROCESSING(SSinstruments, src)
 	SEND_SIGNAL(parent, COMSIG_SONG_END)
 	terminate_all_sounds(TRUE)
 	hearing_mobs.len = 0
 	user_playing = null
+	updateDialog()
 
 /**
  * Processes our song.
  */
-/datum/song/proc/process_song(wait)
+/datum/song/proc/process_song(ticks_passed = 1)
 	if(!length(compiled_chords) || should_stop_playing(user_playing))
 		stop_playing()
 		return
+	if(finishing)
+		// stop abruptly stopping the song at the end
+		elapsed_delay += ticks_passed
+		if(elapsed_delay < delay_by - INSTRUMENT_DELAY_EPSILON)
+			return
+		last_channel_played = null
+		if(!length(channels_playing) || world.time >= finish_by)
+			stop_playing()
+		return
 	var/list/chord = compiled_chords[current_chord]
-	if(++elapsed_delay >= delay_by)
+	elapsed_delay += ticks_passed
+	if(elapsed_delay >= delay_by - INSTRUMENT_DELAY_EPSILON)
 		play_chord(chord)
-		elapsed_delay = 0
+		var/chord_line = compiled_chord_lines[current_chord]
+		if(chord_line != playing_line)
+			playing_line = chord_line
+			updateDialog()
+		// carry the leftover fraction of a tick so rounding doesn't drift the rhythm
+		elapsed_delay -= delay_by
 		delay_by = tempodiv_to_delay(chord[length(chord)])
 		current_chord++
 		if(current_chord > length(compiled_chords))
@@ -257,7 +295,8 @@
 				current_chord = 1
 				return
 			else
-				stop_playing()
+				finishing = TRUE
+				finish_by = world.time + (delay_by * world.tick_lag) + INSTRUMENT_MAX_TOTAL_SUSTAIN
 				return
 
 /**
@@ -266,7 +305,13 @@
 /datum/song/proc/tempodiv_to_delay(tempodiv)
 	if(!tempodiv)
 		tempodiv = 1		// no division by 0. some song converters tend to use 0 for when it wants to have no div, for whatever reason.
-	return max(1, round((tempo/tempodiv) / world.tick_lag, 1))
+	var/delay = max(1, (tempo/tempodiv) / world.tick_lag)
+	// /x is written rounded, so a chord meant to last a whole number of ticks can come out a hair over or under,
+	// which would make it wait a whole tick too long or too short, so we snap those back.
+	var/whole_ticks = round(delay, 1)
+	if(abs(delay - whole_ticks) <= max(INSTRUMENT_DELAY_SNAP_TICKS, delay * INSTRUMENT_DELAY_SNAP_FRACTION))
+		return whole_ticks
+	return delay
 
 /**
  * Compiles chords.
@@ -275,12 +320,44 @@
 	legacy? compile_legacy() : compile_synthesized()
 
 /**
+ * Gets the number after a suffix marker in a note, such as the 2 for ~ in c4~2!50, or null if it doesn't have one.
+ */
+/datum/song/proc/get_note_suffix(note, marker)
+	var/start = findtext(note, marker)
+	if(!start)
+		return
+	var/end = 0
+	for(var/other_marker in note_suffix_markers)
+		var/other_start = findtext(note, other_marker, start + 1)
+		if(other_start && (!end || other_start < end))
+			end = other_start
+	return text2num(copytext(note, start + 1, end))
+
+/**
+ * Returns a note without its suffixes, such as c4 for c4~2!50.
+ */
+/datum/song/proc/strip_note_suffixes(note)
+	var/end = 0
+	for(var/marker in note_suffix_markers)
+		var/start = findtext(note, marker)
+		if(start && (!end || start < end))
+			end = start
+	return end ? copytext(note, 1, end) : note
+
+/**
  * Plays a chord.
  */
 /datum/song/proc/play_chord(list/chord)
 	// last value is timing information
 	for(var/i in 1 to (length(chord) - 1))
-		legacy? playkey_legacy(chord[i][1], chord[i][2], chord[i][3], user_playing) : playkey_synth(chord[i], user_playing)
+		if(legacy)
+			playkey_legacy(chord[i][1], chord[i][2], chord[i][3], user_playing, chord[i][4])
+			continue
+		var/note = chord[i]
+		if(islist(note))
+			playkey_synth(note[1], user_playing, note[2], note[3])
+		else
+			playkey_synth(note, user_playing)
 
 /**
  * Checks if we should halt playback.
@@ -308,17 +385,26 @@
 	tempo = sanitize_tempo(600 / bpm)
 
 /**
- * Updates the window for our users. Override down the line.
+ * Updates the window for everyone who has it open.
  */
-/datum/song/proc/updateDialog(mob/user)
-	ui_interact(user)
+/datum/song/proc/updateDialog()
+	SStgui.update_uis(src)
 
 /datum/song/process(wait)
 	if(!playing)
 		return PROCESS_KILL
-	// it's expected this ticks at every world.tick_lag. if it lags, do not attempt to catch up.
-	process_song(world.tick_lag)
-	process_decay(world.tick_lag)
+	// it's expected this ticks at every world.tick_lag. after a short lag, catch up over the next few chords.
+	// for a long one, carry on from where we were instead.
+	var/time_passed = world.time - last_process
+	last_process = world.time
+	var/ticks_passed = round(time_passed / world.tick_lag)
+	if(ticks_passed < 1 || ticks_passed > INSTRUMENT_MAX_CATCHUP_TICKS)
+		ticks_passed = 1
+	process_song(ticks_passed)
+	if(!playing)
+		return
+	// every tick, bigger volume steps crackle on sustained notes
+	process_decay(time_passed)
 
 /**
  * Updates our cached linear/exponential falloff stuff, saving calculations down the line.
@@ -380,9 +466,6 @@
 // subtype for handheld instruments, like violin
 /datum/song/handheld
 
-/datum/song/handheld/updateDialog(mob/user)
-	parent.ui_interact(user || usr)
-
 /datum/song/handheld/should_stop_playing(mob/user)
 	. = ..()
 	if(.)
@@ -392,9 +475,6 @@
 
 // subtype for stationary structures, like pianos
 /datum/song/stationary
-
-/datum/song/stationary/updateDialog(mob/user)
-	parent.ui_interact(user || usr)
 
 /datum/song/stationary/should_stop_playing(mob/user)
 	. = ..()
