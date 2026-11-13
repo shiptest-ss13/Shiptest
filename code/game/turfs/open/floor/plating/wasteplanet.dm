@@ -32,16 +32,6 @@
 	desc = "Corrupted steel."
 	icon_state = "plating_rust"
 
-/turf/open/indestructible/hierophant/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/indestructible/hierophant/two/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
 /turf/open/floor/wood/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
@@ -117,16 +107,6 @@
 	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/wood/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/indestructible/hierophant/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/indestructible/hierophant/two/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT

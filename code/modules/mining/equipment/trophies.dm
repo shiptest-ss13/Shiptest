@@ -124,11 +124,11 @@
 	icon_state = "blaster_tubes"
 	gender = PLURAL
 
-//hierophant
-/obj/item/mob_trophy/vortex_talisman
-	name = "vortex talisman"
-	desc = "A glowing trinket that was originally the Hierophant's beacon."
-	icon_state = "vortex_talisman"
+//shoalbot
+/obj/item/mob_trophy/obol
+	name = "damaged obol"
+	desc = "A lightly damaged sphere of ancient Vox origin. You can see small particles of dust orbit around it in awkward paths."
+	icon_state = "obol"
 
 //megabot
 /obj/item/mob_trophy/megabot_reactor

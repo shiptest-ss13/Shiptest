@@ -199,7 +199,6 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	if(activity != TUMOR_ACTIVE || QDELETED(src))
 		return
 	INVOKE_ASYNC(src, PROC_REF(fighters_check))  //Checks to see if our fighters died.
-	INVOKE_ASYNC(src, PROC_REF(arena_trap))  //Gets another arena trap queued up for when this one runs out.
 	INVOKE_ASYNC(src, PROC_REF(border_check))  //Checks to see if our fighters got out of the arena somehow.
 	if(!QDELETED(src))
 		addtimer(CALLBACK(src, PROC_REF(arena_checks)), 50)
@@ -209,17 +208,6 @@ While using this makes the system rely on OnFire, it still gives options for tim
 		onEliteWon()
 	if(mychild != null && mychild.stat == DEAD || activity == TUMOR_ACTIVE && QDELETED(mychild))
 		onEliteLoss()
-
-/obj/structure/elite_tumor/proc/arena_trap()
-	var/turf/T = get_turf(src)
-	if(loc == null)
-		return
-	for(var/t in RANGE_TURFS(12, T))
-		if(get_dist(t, T) == 12)
-			var/obj/effect/temp_visual/elite_tumor_wall/newwall
-			newwall = new /obj/effect/temp_visual/elite_tumor_wall(t, src)
-			newwall.activator = src.activator
-			newwall.ourelite = src.mychild
 
 /obj/structure/elite_tumor/proc/border_check()
 	if(activator != null && get_dist(src, activator) >= 12)
@@ -296,37 +284,3 @@ While using this makes the system rely on OnFire, it still gives options for tim
 		qdel(src)
 	else
 		to_chat(user, span_info("[src] only works on the corpse of a sentient lavaland elite."))
-
-/obj/effect/temp_visual/elite_tumor_wall
-	name = "magic wall"
-	icon = 'icons/turf/walls/hierophant_wall_temp.dmi'
-	icon_state = "hierophant_wall_temp-0"
-	base_icon_state = "hierophant_wall_temp"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_HIERO_WALL)
-	canSmoothWith = list(SMOOTH_GROUP_HIERO_WALL)
-	duration = 50
-	layer = BELOW_MOB_LAYER
-	color = rgb(255,0,0)
-	light_range = MINIMUM_USEFUL_LIGHT_RANGE
-	light_color = COLOR_SOFT_RED
-	var/mob/living/carbon/human/activator = null
-	var/mob/living/simple_animal/hostile/asteroid/elite/ourelite = null
-
-/obj/effect/temp_visual/elite_tumor_wall/Initialize(mapload, new_caster)
-	. = ..()
-	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH_NEIGHBORS(src)
-		QUEUE_SMOOTH(src)
-
-/obj/effect/temp_visual/elite_tumor_wall/Destroy()
-	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH_NEIGHBORS(src)
-	activator = null
-	ourelite = null
-	return ..()
-
-/obj/effect/temp_visual/elite_tumor_wall/CanAllowThrough(atom/movable/mover, border_dir)
-	. = ..()
-	if(mover == ourelite || mover == activator)
-		return FALSE

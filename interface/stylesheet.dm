@@ -94,8 +94,6 @@ h1.alert, h2.alert		{color: #000000;}
 .narsie					{color: #960000;	font-weight: bold;	font-size: 15;}
 .narsiesmall			{color: #960000;	font-weight: bold;	font-size: 6;}
 .colossus				{color: #7F282A;	font-size: 5;}
-.hierophant				{color: #660099;	font-weight: bold;	font-style: italic;}
-.hierophant_warning		{color: #660099;	font-style: italic;}
 .purple					{color: #5e2d79;}
 .holoparasite			{color: #35333a;}
 
