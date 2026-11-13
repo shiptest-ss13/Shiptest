@@ -59,6 +59,10 @@
 	transmitting = null
 	return ..()
 
+/obj/machinery/ltsrbt/examine(mob/user)
+	. = ..()
+	. += span_notice("You can load a crate into \the [name] by dragging it onto the machine while the trunk is open.")
+
 /obj/machinery/ltsrbt/RefreshParts()
 	recharge_time = base_recharge_time
 	// On tier 4 recharge_time should be 2 and by default it is 8 as scanning modules should be tier 1.
