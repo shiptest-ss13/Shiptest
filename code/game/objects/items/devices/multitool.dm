@@ -154,7 +154,7 @@
 	name = "Toggle AI detector HUD"
 	check_flags = NONE
 
-/datum/action/item_action/toggle_multitool/Trigger()
+/datum/action/item_action/toggle_multitool/Trigger(trigger_flags)
 	if(!..())
 		return 0
 	if(target)
