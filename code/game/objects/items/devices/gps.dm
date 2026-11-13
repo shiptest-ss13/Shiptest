@@ -15,13 +15,7 @@
 
 /obj/item/gps/Initialize()
 	. = ..()
-	AddComponent(/datum/component/gps/item, gpstag, tracking = gps_active)
-
-/obj/item/gps/dropped(mob/user, silent)
-	. = ..()
-	//needs to pull overlay from gps component
-	cut_overlays()
-	update_overlays()
+	AddComponent(/datum/component/gps/item, gpstag, _tracking = gps_active)
 
 /obj/item/gps/science
 	icon_state = "gps-s"

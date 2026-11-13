@@ -1,3 +1,7 @@
+#define GPS_WORKING "working"
+#define GPS_BROKEN "broken"
+#define GPS_EMP "emp"
+
 ///Global GPS_list. All  GPS components get saved in here for easy reference.
 GLOBAL_LIST_EMPTY(GPS_list)
 ///GPS component. Atoms that have this show up on gps. Pretty simple stuff.
@@ -20,20 +24,25 @@ GLOBAL_LIST_EMPTY(GPS_list)
 /datum/component/gps/item
 	var/updating = TRUE //Automatic updating of GPS list. Can be set to manual by user.
 	var/deep_interact = FALSE // if this item can have it's GPS accessed inside other items.
+	var/current_overlay = null
 
-/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE, has_deep_interact = FALSE, tracking = FALSE)
+/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE, has_deep_interact = FALSE, _tracking = FALSE)
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE || !isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 	var/atom/A = parent
-	A.add_overlay("working")
 	A.name = "[initial(A.name)] ([gpstag])"
+	tracking = _tracking
+	if(tracking)
+		alter_parent_overlay(GPS_WORKING)
+	deep_interact = has_deep_interact
+
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(interact))
 	if(!emp_proof)
 		RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, PROC_REF(on_emp_act))
-	deep_interact = has_deep_interact
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(on_AltClick))
+	RegisterSignals(parent, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), PROC_REF(reapply_overlay))
 
 ///Called on COMSIG_ITEM_ATTACK_SELF
 /datum/component/gps/item/proc/interact(datum/source, mob/user)
@@ -53,18 +62,17 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	SIGNAL_HANDLER
 
 	emped = TRUE
-	var/atom/A = parent
-	A.cut_overlay("working")
-	A.add_overlay("emp")
+	alter_parent_overlay(GPS_EMP)
 	addtimer(CALLBACK(src, PROC_REF(reboot)), 300, TIMER_UNIQUE|TIMER_OVERRIDE) //if a new EMP happens, remove the old timer so it doesn't reactivate early
 	SStgui.close_uis(src) //Close the UI control if it is open.
 
 ///Restarts the GPS after getting turned off by an EMP.
 /datum/component/gps/item/proc/reboot()
 	emped = FALSE
-	var/atom/A = parent
-	A.cut_overlay("emp")
-	A.add_overlay("working")
+	if(tracking)
+		alter_parent_overlay(GPS_WORKING)
+	else
+		alter_parent_overlay()
 
 ///Calls toggletracking
 /datum/component/gps/item/proc/on_AltClick(datum/source, mob/user)
@@ -79,15 +87,30 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	if(emped)
 		to_chat(user, span_warning("It's busted!"))
 		return
-	var/atom/A = parent
 	if(tracking)
-		A.cut_overlay("working")
+		alter_parent_overlay()
 		to_chat(user, span_notice("[parent] is no longer tracking, or visible to other GPS devices."))
 		tracking = FALSE
 	else
-		A.add_overlay("working")
+		alter_parent_overlay(GPS_WORKING)
 		to_chat(user, span_notice("[parent] is now tracking, and visible to other GPS devices."))
 		tracking = TRUE
+
+/datum/component/gps/item/proc/alter_parent_overlay(new_overlay)
+	var/atom/parent_atom = parent
+	if(current_overlay)
+		parent_atom.cut_overlay(current_overlay)
+	if(new_overlay)
+		parent_atom.add_overlay(new_overlay)
+		current_overlay = new_overlay
+	else
+		current_overlay = null
+
+//called when we transit between inventory / the world
+/datum/component/gps/item/proc/reapply_overlay()
+	var/atom/parent_atom = parent
+	parent_atom.cut_overlays()
+	parent_atom.add_overlay(current_overlay)
 
 /datum/component/gps/item/ui_interact(mob/user, datum/tgui/ui)
 	if(emped)
