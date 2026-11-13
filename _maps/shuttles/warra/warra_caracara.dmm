@@ -73,7 +73,6 @@
 	pixel_x = 8;
 	name = "Bathroom Bolt Override";
 	id = "carabath_bolt";
-	dir = 2;
 	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
@@ -176,8 +175,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -12;
-	pixel_y = -32
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
@@ -399,7 +397,6 @@
 /obj/machinery/newscaster/directional/south,
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/melee/knife/kitchen,
@@ -591,7 +588,6 @@
 	dir = 1;
 	id = "carcara_laundry_win";
 	name = "Window Control";
-	pixel_x = 0;
 	pixel_y = -23
 	},
 /obj/structure/table,
@@ -623,12 +619,10 @@
 /obj/machinery/light/directional/east,
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/stock_parts/cell/high{
-	pixel_x = -17;
-	pixel_y = 0
+	pixel_x = -17
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -637,13 +631,9 @@
 	name = "Outerwear Closet"
 	},
 /obj/item/clothing/shoes/workboots{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
-/obj/item/clothing/shoes/workboots{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/clothing/shoes/workboots,
 /obj/item/clothing/suit/warra/vest/blue{
 	pixel_x = 1;
 	pixel_y = 5
@@ -653,12 +643,10 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/suit/warra/vest{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /obj/item/clothing/suit/warra/vest{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/mask/breath/facemask{
 	pixel_x = 1;
@@ -711,10 +699,7 @@
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/east{
-	pixel_y = 0;
-	pixel_x = 31
-	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
 "hA" = (
@@ -777,23 +762,18 @@
 /obj/item/plate,
 /obj/item/plate,
 /obj/item/plate/small{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /obj/item/plate/small{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
@@ -888,7 +868,6 @@
 	pixel_y = -8
 	},
 /obj/item/bodycamera{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/binoculars{
@@ -950,8 +929,7 @@
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/turretid/ship{
 	id = "caracara_grid";
-	pixel_y = -28;
-	pixel_x = 0
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -996,8 +974,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -10;
-	pixel_y = -32
+	pixel_x = -10
 	},
 /obj/structure/chair/office{
 	dir = 4
@@ -1035,8 +1012,7 @@
 "kM" = (
 /obj/structure/crate_shelf,
 /obj/structure/sign/poster/official/safety_eye_protection{
-	pixel_y = 32;
-	pixel_x = 0
+	pixel_y = 32
 	},
 /obj/structure/closet/crate/secure/exo{
 	name = "disembarkation equipment crate"
@@ -1147,7 +1123,6 @@
 	pixel_y = 23
 	},
 /obj/machinery/photocopier{
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1428,7 +1403,6 @@
 	},
 /obj/structure/bed/dogbed,
 /obj/structure/sign/poster/contraband/engis_unite{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /obj/item/radio/intercom/directional/east,
@@ -1438,7 +1412,6 @@
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/newscaster/directional/west,
 /obj/structure/sign/poster/official/no_erp{
-	pixel_x = 0;
 	pixel_y = -32
 	},
 /obj/structure/dresser/wall/directional/east,
@@ -1543,12 +1516,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/structure/sink/kitchen/counter{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/storage/fancy/donut_box{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1598,8 +1569,7 @@
 	pixel_y = 6
 	},
 /obj/item/storage/belt/utility/full{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/item/storage/bag/construction{
 	pixel_x = -5;
@@ -1623,8 +1593,7 @@
 /area/ship/storage/equip)
 "st" = (
 /obj/machinery/holosign/makossowarra{
-	pixel_y = 32;
-	pixel_x = 0
+	pixel_y = 32
 	},
 /obj/machinery/portable_atmospherics/pump,
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
@@ -1804,8 +1773,7 @@
 "tR" = (
 /obj/structure/toilet{
 	dir = 1;
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/machinery/firealarm/directional/east,
 /obj/item/radio/intercom/directional/south,
@@ -1817,11 +1785,9 @@
 	},
 /obj/structure/table,
 /obj/item/plate/large{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/food/pizza/pineapple{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/melee/knife/pizza_cutter{
@@ -1869,11 +1835,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/item/clothing/under/warra{
+/obj/item/clothing/under/warra/assistant/engineering{
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/clothing/under/warra{
+/obj/item/clothing/under/warra/assistant/engineering{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -1894,12 +1860,10 @@
 	pixel_y = -1
 	},
 /obj/item/clothing/under/pants/sweat/blue{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/pants/sweat/blue{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/clothing/under/warra/science/robotics{
 	pixel_x = 6;
@@ -2096,8 +2060,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch,
 /obj/item/gun/ballistic/automatic/smg/resolution/no_mag{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -2107,8 +2070,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/clothing/suit/space/fragile{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/clothing/suit/space/fragile{
 	pixel_x = -10
@@ -2259,8 +2221,7 @@
 /area/ship/hallway/fore)
 "Bm" = (
 /obj/item/kirbyplants/fullysynthetic{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
@@ -2270,7 +2231,6 @@
 	},
 /obj/structure/chair/handrail{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -2
 	},
 /turf/open/floor/plasteel,
@@ -2325,7 +2285,6 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = -23;
 	name = "Engine Blast Doors";
 	id = "caracara_starboard_engine";
@@ -2343,11 +2302,9 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/machinery/light/small/directional/west,
 /obj/item/gun/energy/sharplite/ohm/empty_cell{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/item/gun/energy/sharplite/ohm/empty_cell{
-	pixel_x = 0;
 	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2559,8 +2516,7 @@
 	pixel_y = -1
 	},
 /obj/item/clothing/under/rank/command/warra/skirt{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/clothing/head/warra/officer,
 /obj/item/clothing/gloves/color/captain/warra{
@@ -2703,10 +2659,7 @@
 "GM" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/closet/crate/medical,
-/obj/effect/mapping_helpers/crate_shelve{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/storage/firstaid/regular{
 	pixel_x = 6;
 	pixel_y = -3
@@ -2868,7 +2821,6 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east{
-	pixel_x = 28;
 	pixel_y = 3
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2906,8 +2858,7 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/radio/mwra{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -3145,7 +3096,6 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 24;
 	name = "Engine Blast Doors";
 	id = "caracara_port_engine"
@@ -3296,12 +3246,10 @@
 	},
 /obj/structure/table,
 /obj/machinery/coffeemaker{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/item/coffee_cartridge/decaf{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/coffee_cartridge/fancy/blue{
 	pixel_x = -6;
@@ -3536,7 +3484,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/button/door{
-	dir = 2;
 	id = "caracara_airlock";
 	name = "Airlock Lockdown";
 	pixel_x = -10;
@@ -3669,7 +3616,6 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/machinery/light/small/directional/south,
@@ -3684,24 +3630,18 @@
 	pixel_y = 6
 	},
 /obj/item/clothing/head/hardhat/warra/blue{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/item/clothing/head/hardhat/warra/white{
-	pixel_x = 0;
 	pixel_y = 6
 	},
-/obj/item/clothing/head/hardhat/warra/white{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/clothing/head/hardhat/warra/white,
 /obj/item/clothing/head/hardhat/warra{
 	pixel_x = 9;
 	pixel_y = 6
 	},
 /obj/item/clothing/head/hardhat/warra{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
@@ -3776,12 +3716,10 @@
 "TZ" = (
 /obj/structure/table/reinforced,
 /obj/item/geiger_counter{
-	pixel_y = 9;
-	pixel_x = 0
+	pixel_y = 9
 	},
 /obj/item/geiger_counter{
-	pixel_y = 3;
-	pixel_x = 0
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -3887,12 +3825,10 @@
 /area/ship/engineering/atmospherics)
 "Vm" = (
 /obj/machinery/airalarm/directional/south{
-	pixel_x = -8;
-	pixel_y = -28
+	pixel_x = -8
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 8;
-	pixel_y = -23
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
@@ -4022,7 +3958,6 @@
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters,
 /obj/machinery/light/small/directional/east,
 /obj/structure/sign/poster/radio/random{
-	pixel_x = 0;
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4164,12 +4099,10 @@
 	},
 /obj/structure/rack,
 /obj/item/melee/knife/survival{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/item/clothing/suit/armor/warra{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/clothing/head/helmet/m10/warra{
 	pixel_x = -6;
