@@ -44,11 +44,6 @@
 		if((S.req_defib && !S.defib.powered) || !HAS_TRAIT(S, TRAIT_WIELDED) || S.cooldown || S.busy)
 			to_chat(user, span_warning("You need to wield both paddles, and [S.defib] must be powered!"))
 			return FALSE
-	if(istype(tool, /obj/item/melee/baton))
-		var/obj/item/melee/baton/B = tool
-		if(!B.turned_on)
-			to_chat(user, span_warning("[B] needs to be active!"))
-			return FALSE
 	if(istype(tool, /obj/item/gun/energy))
 		var/obj/item/gun/energy/E = tool
 		if(E.chambered && istype(E.chambered, /obj/item/ammo_casing/energy/electrode))

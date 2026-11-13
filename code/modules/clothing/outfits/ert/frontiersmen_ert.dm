@@ -76,7 +76,6 @@
 		/obj/item/storage/backpack = 20,
 		/obj/item/storage/backpack/satchel = 20,
 		/obj/item/storage/backpack/messenger = 20,
-		/obj/item/melee/baton/cattleprod/loaded = 5,
 		/obj/item/deployable_turret_folded = 4,
 		/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended = 3,
 		))
