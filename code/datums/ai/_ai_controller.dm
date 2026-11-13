@@ -286,7 +286,7 @@ multiple modular subtrees with behaviors
 		next_low_priority_action = world.time + AI_LOW_PRIORITY_INTERVAL
 		seconds_per_tick = max(seconds_per_tick, AI_LOW_PRIORITY_INTERVAL * 0.1)
 	if(!able_to_run())
-		walk(pawn, 0) //stop moving
+		GLOB.move_manager.stop_looping(pawn) //stop moving
 		ai_movement.stop_moving_towards(src) // and our ai_movement too, or it keeps moving us
 		return //this should remove them from processing in the future through event-based stuff.
 	if(!LAZYLEN(current_behaviors))

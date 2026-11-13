@@ -572,7 +572,7 @@
 		occupant_message(span_warning("Air port connection has been severed!"))
 		log_message("Lost connection to gas port.", LOG_MECHA)
 
-/obj/mecha/Process_Spacemove(movement_dir = 0)
+/obj/mecha/Process_Spacemove(movement_dir = 0, continuous_move = FALSE)
 	. = ..()
 	if(.)
 		return TRUE
@@ -1320,12 +1320,12 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		charging = FALSE
 		return
 	cell.use(charge_power_consume)
-	walk_towards(src, charge_target, 0.7)
+	GLOB.move_manager.home_onto(src, charge_target, 0.7)
 	sleep(get_dist(src, charge_target) * 0.7)
 	charge_end()
 
 /obj/mecha/proc/charge_end()
-	walk(src,0)
+	GLOB.move_manager.stop_looping(src)
 	charging = FALSE
 
 /// Sets the direction of the mecha and all of its occcupents, required for FOV. Alternatively one could make a recursive contents registration and register topmost direction changes in the fov component

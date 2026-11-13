@@ -206,23 +206,5 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 	else if(!HAS_TRAIT(x, TRAIT_KEEP_TOGETHER)) \
 		x.appearance_flags &= ~KEEP_TOGETHER
 
-//dir macros
-///Returns true if the dir is diagonal, false otherwise
-#define ISDIAGONALDIR(d) (d&(d-1))
-///True if the dir is north or south, false therwise
-#define NSCOMPONENT(d) (d&(NORTH|SOUTH))
-///True if the dir is east/west, false otherwise
-#define EWCOMPONENT(d) (d&(EAST|WEST))
-///The corner a diagonal step from start to finish passes through going east/west first
-#define DIAGONAL_CORNER_X(start, finish) locate((finish).x, (start).y, (start).z)
-///The corner a diagonal step from start to finish passes through if it goes north/south first
-#define DIAGONAL_CORNER_Y(start, finish) locate((start).x, (finish).y, (start).z)
-///Flips the dir for north/south directions
-#define NSDIRFLIP(d) (d^(NORTH|SOUTH))
-///Flips the dir for east/west directions
-#define EWDIRFLIP(d) (d^(EAST|WEST))
-///Turns the dir by 180 degrees
-#define DIRFLIP(d) turn(d, 180)
-
 /// 33554431 (2^24 - 1) is the maximum value our bitflags can reach.
 #define MAX_BITFLAG_DIGITS 8
