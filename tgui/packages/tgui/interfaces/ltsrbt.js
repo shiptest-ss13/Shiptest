@@ -1,5 +1,6 @@
 import { useBackend } from '../backend';
 import {
+  Box,
   Button,
   Input,
   NumberInput,
@@ -19,13 +20,36 @@ import { Window } from '../layouts';
 
 export const LTSRBT = (props, context) => {
   const { act, data } = useBackend(context);
-  const { name, price, min_price, max_price, loaded_icon, desc } = data;
+  const { name, price, min_price, max_price, desc, seller_id, id_locked } = data;
 
   return (
-    <Window width={300} height={380} theme="hackerman">
+    <Window width={600} height={380} theme="hackerman">
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item>
+            {!id_locked && <Input
+              width="80%"
+              value={seller_id}
+              placeholder="Set a permanent seller ID. Don't use your real name, dumbass."
+              onChange={(e, value) =>
+                act('change_id', {
+                  value: value,
+                })
+              }
+            />
+            }
+            {!id_locked && <Button.Confirm
+              fluid
+              disabled={id_locked}
+              width="80%"
+              icon="truck-arrow-right"
+              content="Set Seller ID"
+              onClick={() => act('set_id')}
+            />}
+           {!! id_locked && <Box inline bold> Seller ID: {seller_id} </Box>}
+          </Stack.Item>
+            <Stack.Divider />
+            <Stack.Item>
             <Input
               width="80%"
               value={name}
@@ -49,20 +73,7 @@ export const LTSRBT = (props, context) => {
                 })
               }
             />
-          </Stack.Item>
-          <Stack.Divider />
-          {/* {!!loaded_icon && (
-            <Stack.Item>
-              <Section align="center">
-                <Image
-                  m={1}
-                  src={`data:image/jpeg;base64,${loaded_icon}`}
-                  height="96px"
-                  width="96px"
-                />
-              </Section>
             </Stack.Item>
-          )} */}
           <Stack.Divider />
           <Stack.Item grow>
             <TextArea

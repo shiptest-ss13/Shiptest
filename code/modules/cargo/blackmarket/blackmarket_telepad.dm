@@ -42,6 +42,11 @@
 	/// The price of the market item that we've set on the UI
 	var/current_price = 100
 
+	/// The name of this LTSRBT on the black market
+	var/seller_id = ""
+	/// You can't change the ID once it's set. If you sell too many fraudulent goods, people won't trust your ID.
+	var/id_locked = FALSE
+
 /obj/machinery/ltsrbt/Destroy()
 	// Bye bye orders.
 	if(SSblackmarket.telepads.len)
@@ -190,25 +195,6 @@
 		update_appearance(UPDATE_ICON_STATE)
 	return ..()
 
-/obj/machinery/ltsrbt/attack_hand_secondary(mob/user, list/modifiers)
-	. = ..()
-	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
-		return
-	if(state_open)
-		balloon_alert(user, "close it first!")
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	if(!occupant)
-		balloon_alert(user, "nothing loaded!")
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	if(machine_stat & NOPOWER)
-		balloon_alert(user, "machine unpowered!")
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	if(!COOLDOWN_FINISHED(src, recharge_cooldown))
-		balloon_alert(user, "on cooldown!")
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	ui_interact(user)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-
 /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -233,6 +219,8 @@
 	data["name"] = current_name
 	data["price"] = current_price
 	data["desc"] = current_desc
+	data["seller_id"] = seller_id
+	data["id_locked"] = id_locked
 	return data
 
 /obj/machinery/ltsrbt/ui_act(action, list/params)
@@ -240,6 +228,15 @@
 	if(.)
 		return
 	switch(action)
+		if("change_id")
+			if(id_locked)
+				return
+			var/value = params["value"]
+			seller_id = trim(value, MAX_NAME_LEN)
+			return TRUE
+		if("set_id")
+			id_locked = TRUE
+			return TRUE
 		if("change_name")
 			var/value = params["value"]
 			current_name = trim(value, MAX_NAME_LEN)
@@ -266,6 +263,8 @@
 /obj/machinery/ltsrbt/proc/place_on_market(mob/user)
 	if(QDELETED(occupant))
 		return
+	if(!seller_id || !id_locked)
+		say("You need a confirmed seller ID first bucko. What kinda rodeo you think we're running here?")
 	if(locate(/mob/living) in occupant.get_all_contents())
 		say("Living being detected, cannot sell!")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
@@ -285,7 +284,7 @@
 			say("No bank account to charge market fees detected!")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 			return
-		if(!card.registered_account.adjust_money(-30, "Market: Placement Fee"))
+		if(!card.registered_account.adjust_money(-5, "Market: Placement Fee"))
 			say("Insufficient credits!")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 			return
@@ -295,7 +294,7 @@
 	var/name_to_use = current_name || item.name
 	var/desc_to_use = current_desc
 	if(account)
-		desc_to_use += "[current_desc ? " - " : ""]Seller: [account.account_holder]"
+		desc_to_use += "[current_desc ? " - " : ""]Seller: [seller_id]"
 	var/price_to_use = current_price
 	item.moveToNullspace()
 	//Something happened and the item was deleted or relocated as soon as it was moved to nullspace.
