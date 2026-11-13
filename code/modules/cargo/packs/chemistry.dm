@@ -9,7 +9,7 @@
 /datum/supply_pack/chemistry/starter
 	name = "Chemical Starter Kit Crate"
 	desc = "Contains thirteen different chemicals, for all the fun experiments you can make."
-	cost = 1250 // This is intentionally underpriced; the hope is that people will start using ghettochem, upon which time the price can be raised.
+	cost = 1250
 	contains = list(/obj/item/reagent_containers/glass/bottle/aluminium,
 					/obj/item/reagent_containers/glass/bottle/bromine,
 					/obj/item/reagent_containers/glass/bottle/carbon,

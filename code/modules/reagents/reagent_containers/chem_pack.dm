@@ -20,7 +20,7 @@
 			return
 
 		reagents.flags = NONE
-		reagent_flags = DRAWABLE | INJECTABLE //To allow for sabotage or ghetto use.
+		reagent_flags = DRAWABLE | INJECTABLE //To allow for sabotage or usage without an IV stand.
 		reagents.flags = reagent_flags
 		spillable = FALSE
 		sealed = TRUE

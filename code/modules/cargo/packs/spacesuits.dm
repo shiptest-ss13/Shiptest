@@ -501,6 +501,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/hardliner_heavy
+	name = "Poltergeist Heavy Hardsuit Crate"
+	desc = "The Hardliners own heavy hardsuit plate, the Poltergeist consists of mostly recycled parts from much more advanced designs. Far easier to maintain, slow as a brick however."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/hlheavy)
+	crate_name = "Poltergeist hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/hardstealth
 	name = "Asura Shock Hardsuit Crate"
 	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
