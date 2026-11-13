@@ -20,10 +20,14 @@
 	var/cost_min	= 0
 	/// Maximum cost for the item if generated randomly.
 	var/cost_max	= 0
+	/// Whether the cost should randomized on cycle.
+	var/static_cost = FALSE
 	/// Minimum amount that there should be of this item in the market if generated randomly. This defaults to 1 as most items will have it as 1.
 	var/stock_min	= 1
 	/// Maximum amount that there should be of this item in the market if generated randomly.
 	var/stock_max	= 0
+	/// Whether the stock on this should be randomized on cycle
+	var/static_stock = FALSE
 	/// Whether the item is visible and purchasable on the market
 	var/available = TRUE
 	/// Probability for this item to be available. Used by SSblackmarket on init.

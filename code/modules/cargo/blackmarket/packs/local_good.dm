@@ -1,9 +1,10 @@
-///A special category for goods placed on the market by station by someone with the LTSRBT.
+///A special category for goods placed on the market by someone with the LTSRBT.
 /datum/blackmarket_item/local_good
 	category = "Local Goods"
 	stock = 1
 	availability_prob = 100
-	//restockable = FALSE
+	static_stock = TRUE
+	static_cost = TRUE
 	var/datum/bank_account/seller
 
 /datum/blackmarket_item/local_good/New(atom/movable/thing, datum/bank_account/seller, id_num)
