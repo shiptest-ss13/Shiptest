@@ -261,4 +261,6 @@
 #define SSFLUIDS_DT (SSfluids.wait/10)
 #define SSMACHINES_DT (SSmachines.wait/10)
 #define SSMOBS_DT (SSmobs.wait/10)
+/// How often a dead carbon with no client or mind gets a Life()
+#define CORPSE_LIFE_INTERVAL (10 SECONDS)
 #define SSOBJ_DT (SSobj.wait/10)
