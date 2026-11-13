@@ -221,14 +221,10 @@
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line{
 	dir = 6
 	},
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
 /obj/structure/sign/poster/contraband/mothpill{
 	pixel_y = -30
 	},
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/autodoc_vendor,
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "aaR" = (
@@ -5051,12 +5047,11 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/corner,
-/obj/item/kirbyplants{
-	icon_state = "plant-14"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "aoW" = (
@@ -5855,9 +5850,6 @@
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -6623,13 +6615,9 @@
 /obj/machinery/vending/wallmed{
 	pixel_y = -26
 	},
-/obj/structure/table/glass,
-/obj/item/reagent_containers/glass/rag{
-	pixel_y = 4;
-	pixel_x = -3
-	},
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line,
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "atM" = (
@@ -7278,13 +7266,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "avN" = (
@@ -11293,6 +11281,7 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/bed/roller,
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "aHa" = (
@@ -11862,11 +11851,11 @@
 /area/outpost/crew/bar)
 "aIB" = (
 /obj/effect/turf_decal/corner/transparent/white/border,
-/obj/structure/bed/roller,
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line,
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/light/dim/directional/west,
+/obj/machinery/autodoc,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "aIC" = (
@@ -12210,13 +12199,13 @@
 /area/outpost/medical)
 "aJr" = (
 /obj/effect/turf_decal/corner/transparent/white/border,
-/obj/structure/bed/roller,
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line,
 /obj/machinery/camera/autoname/directional/east,
+/obj/machinery/autodoc,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "aJv" = (
@@ -17924,6 +17913,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/fore)
+"eAJ" = (
+/obj/effect/turf_decal/trimline/transparent/solgovblue/filled/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/lightgrey/mono,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/outpost/medical)
 "eCH" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -18140,6 +18139,26 @@
 /obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
+"nwa" = (
+/obj/effect/turf_decal/corner/transparent/lightgrey/full,
+/obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/outpost/medical)
 "nTs" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/line{
 	dir = 4
@@ -25171,8 +25190,8 @@ aQz
 agq
 afv
 aVR
-ayF
-aPV
+nwa
+eAJ
 atL
 aif
 aYJ
