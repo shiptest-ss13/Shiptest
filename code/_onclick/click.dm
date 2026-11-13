@@ -111,6 +111,10 @@
 
 	face_atom(A)
 
+	var/obj/item/gun/held_gun = get_active_held_item()
+	if(istype(held_gun) && held_gun.try_buffer_click(src, A, params, modifiers))
+		return
+
 	if(next_move > world.time) // in the year 2000...
 		return
 
