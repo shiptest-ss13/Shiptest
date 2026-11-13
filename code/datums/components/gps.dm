@@ -188,3 +188,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		if("updating")
 			updating = !updating
 			. = TRUE
+
+#undef GPS_WORKING
+#undef GPS_EMP
+#undef GPS_BROKEN
