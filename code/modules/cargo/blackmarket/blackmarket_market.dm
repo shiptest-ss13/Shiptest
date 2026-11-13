@@ -23,7 +23,7 @@
 		for(var/item in available_items[category])
 			if(istype(item, /datum/blackmarket_item))
 				var/datum/blackmarket_item/b_item = item
-				b_item.cycle(item.static_cost, TRUE, item.static_stock)
+				b_item.cycle(b_item.cycle_cost, TRUE, b_item.cycle_stock)
 				if(b_item.available == TRUE)
 					for(var/paired_item in b_item.pair_item)
 						var/datum/blackmarket_item/item_to_set = get_item_in_market(paired_item)

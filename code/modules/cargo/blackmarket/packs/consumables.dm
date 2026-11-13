@@ -295,16 +295,6 @@
 	availability_prob = 5
 	spawn_weighting = FALSE
 
-/datum/blackmarket_item/consumable/cryo_pen
-	name = "'E-ZEE FREEZY' Injector"
-	desc = "Cryo tubes are super inconvienent right? So we just got some empty autoinjectors and stuffed it full of cryoxadone and engine coolant. It's basically a portable cryo tube in your pocket!"
-	item = /obj/item/reagent_containers/hypospray/medipen/cryo_pen
-	cost_min = 100
-	cost_max = 500
-	stock_max = 8
-	availability_prob = 25
-	spawn_weighting = FALSE
-
 /datum/blackmarket_item/consumable/shoalmix
 	name = "Combat Cocktail"
 	desc = "Last freighter we hit was a whole medical freighter. Had a bunch of crates with a beak spraypainted on. We knacked it and found these cocktail injectors inside."
