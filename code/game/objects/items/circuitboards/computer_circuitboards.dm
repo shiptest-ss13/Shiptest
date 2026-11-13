@@ -10,10 +10,6 @@
 	icon_state = "command"
 	build_path = /obj/machinery/computer/upload/borg
 
-/obj/item/circuitboard/computer/bsa_control
-	name = "Bluespace Artillery Controls (Computer Board)"
-	build_path = /obj/machinery/computer/bsa_control
-
 /obj/item/circuitboard/computer/card
 	name = "ID Console (Computer Board)"
 	icon_state = "command"
