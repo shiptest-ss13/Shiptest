@@ -28,7 +28,7 @@
 
 	cost_min = 200
 	cost_max = 500
-	stock_max = 3
+	stock = INFINITY
 	availability_prob = 50
 
 /datum/blackmarket_item/tech/mrs_pacman

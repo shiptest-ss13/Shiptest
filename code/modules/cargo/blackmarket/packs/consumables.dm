@@ -196,6 +196,17 @@
 	stock_max = 20
 	availability_prob = 50
 
+/datum/blackmarket_item/consumable/chemshine
+	name = "Jug of Chemshine"
+	desc = "So, apparently engine fuel goes bad after a while. On the bright side, it's the perfect excuse to make it into Chemshine. Avoid open flames. Or impacts. Or breathing on it."
+	item = /obj/item/reagent_containers/food/drinks/bottle/chems
+
+	cost_min = 50
+	cost_max = 100
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 25
+
 /datum/blackmarket_item/consumable/sutures
 	name = "Sutures"
 	desc = "A bundle of sutures for stitching up your latest bullet wound."

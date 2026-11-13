@@ -125,6 +125,16 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/tool/diamond_pick
+	name = "Diamond Pickaxe"
+	desc = "Diamonds are a miner's best friend, and that's never been more true with this beaut. Rock, ore, your annoying coworker's skull, this thing breaks it all."
+	item = /obj/item/pickaxe/diamond
+
+	cost_min = 1000
+	cost_max = 1750
+	stock = 1
+	availability_prob = 25
+
 /datum/blackmarket_item/tool/impro_jetpack
 	name = "Improvised Jetpack"
 	desc = "A lovingly handcrafted jetpack built by our salvage techs. For the frugal space explorer."
@@ -146,3 +156,5 @@
 	stock_min = 1
 	stock_max = 3
 	availability_prob = 25
+
+
