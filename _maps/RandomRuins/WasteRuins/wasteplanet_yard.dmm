@@ -128,7 +128,8 @@
 	dir = 8
 	},
 /obj/item/gps{
-	gpstag = "Distress Signal"
+	gpstag = "Distress Signal";
+	gps_active = 1
 	},
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/effect/decal/cleanable/blood/old,
