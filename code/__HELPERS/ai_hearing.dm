@@ -8,7 +8,11 @@
 		distance *= max(get_sound_pressure_factor(get_turf(source), get_turf(listener)), AI_MINIMUM_SOUND_FACTOR)
 	if(heard_distance > distance)
 		return null
+	var/turf/source_turf = get_turf(source)
+	var/turf/listener_turf = get_turf(listener)
 	for(var/turf/line_turf as anything in get_line(source, listener))
+		if(line_turf != source_turf && line_turf != listener_turf && HAS_TRAIT(line_turf, TRAIT_AI_BLOCKS_SOUND))
+			return null
 		if(line_turf.density)
 			heard_distance += wall_penalty
 			if(heard_distance > distance)
