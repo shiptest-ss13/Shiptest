@@ -3,8 +3,8 @@
 	category = "Local Goods"
 	stock = 1
 	availability_prob = 100
-	static_stock = TRUE
-	static_cost = TRUE
+	cycle_stock = FALSE
+	cycle_cost = FALSE
 	var/datum/bank_account/seller
 
 /datum/blackmarket_item/local_good/New(atom/movable/thing, datum/bank_account/seller, id_num)
