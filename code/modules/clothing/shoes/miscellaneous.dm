@@ -25,7 +25,7 @@
 
 /obj/item/clothing/shoes/combat/knife/Initialize()
 	. = ..()
-	new /obj/item/melee/knife/combat(src)
+	new /obj/item/melee/knife/combat(pocket || src)
 
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
 	name = "\improper SWAT boots"
@@ -112,7 +112,7 @@
 
 /obj/item/clothing/shoes/jackboots/knife/Initialize()
 	. = ..()
-	new /obj/item/melee/knife/combat(src)
+	new /obj/item/melee/knife/combat(pocket || src)
 
 /obj/item/clothing/shoes/winterboots
 	name = "winter boots"
