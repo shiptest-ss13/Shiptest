@@ -2,6 +2,9 @@
 	name = "CLIP storage"
 	desc = "dont use this type stinky"
 
+/obj/structure/closet/secure_closet/clip/minutemen
+	req_access = list(ACCESS_ARMORY)
+
 /obj/structure/closet/secure_closet/clip/minutemen/armor
 	name = "minuteman personal equipment locker"
 	desc = "A locker to safeguard your armor and vests."
