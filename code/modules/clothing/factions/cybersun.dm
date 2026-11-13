@@ -501,4 +501,5 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/assembly/flash/handheld(src)
 	for(var/i in 1 to 3)
-		new /obj/item/stock_parts/cell/gun/cybersun(src)
+		new /obj/item/ammo_box/magazine/cs_gauss/pistol/shock(src)
+
