@@ -306,11 +306,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small, 28)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/broken, 28)
 
-/obj/machinery/light/Move()
-	if(status != LIGHT_BROKEN)
-		break_light_tube(1)
-	return ..()
-
 /obj/machinery/light/built
 	icon_state = "tube-empty"
 	start_with_cell = FALSE
