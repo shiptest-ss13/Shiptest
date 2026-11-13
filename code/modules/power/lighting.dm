@@ -271,6 +271,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	if(is_wallmounted)
 		ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
+/obj/machinery/light/Move()
+	if(status != LIGHT_BROKEN)
+		break_light_tube(1)
+	return ..()
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light, 32)
 
 /obj/machinery/light/broken

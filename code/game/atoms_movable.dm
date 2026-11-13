@@ -874,12 +874,14 @@
 	return FALSE
 
 
-/// Only moves the object if it's under no gravity
+/// Only moves the object if it's under no gravity & has a direction to move it in
 /atom/movable/proc/newtonian_move(direction, instant = FALSE, start_delay = 0)
 	if(!isturf(loc) || Process_Spacemove(direction, continuous_move = TRUE))
 		return FALSE
 
 	if(SEND_SIGNAL(src, COMSIG_MOVABLE_NEWTONIAN_MOVE, direction) & COMPONENT_MOVABLE_NEWTONIAN_BLOCK)
+		return TRUE
+	if(!direction)
 		return TRUE
 	set_glide_size(MOVEMENT_ADJUSTED_GLIDE_SIZE(inertia_move_delay, SSspacedrift.visual_delay))
 	AddComponent(/datum/component/drift, direction)
