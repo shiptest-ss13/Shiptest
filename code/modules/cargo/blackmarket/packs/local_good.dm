@@ -20,8 +20,9 @@
 /datum/blackmarket_item/local_good/buy(obj/item/blackmarket_uplink, mob/buyer, shipping_method, legal_status)
 	. = ..()
 	if(. && seller)
-		seller.adjust_money(round(cost * (1 - MARKET_WITHHOLDING_TAX)), "Market: [name] sold for [cost].")
-		seller.bank_card_talk("Market: [name] sold for [cost].")
+		var/tax = round(cost * MARKET_WITHHOLDING_TAX)
+		seller.adjust_money(cost - tax, "Market: [name] sold for [cost].")
+		seller.bank_card_talk("[name] sold on the Black Market for [cost] cr. A [MARKET_WITHHOLDING_TAX]% broker fee has been deducted for a total of [tax] cr.")
 	QDEL_IN(src, 10 MINUTES) //This category cannot hold more than 40 items at a time, so we need to clear sold items.
 
 /datum/blackmarket_item/local_good/proc/delete_reference(datum/source)
