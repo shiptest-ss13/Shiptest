@@ -18,7 +18,7 @@
 	open_sound_volume = 25
 	close_sound_volume = 50
 
-/obj/structure/closet/secure_closet/miningcloset
+/obj/structure/closet/secure_closet/miner
 	name = "mining equipment locker"
 	icon_state = "mining"
 

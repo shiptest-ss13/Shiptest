@@ -59,10 +59,6 @@
 			if(F.id == id)
 				targets += F
 
-		for(var/obj/structure/closet/secure_closet/brig/C in urange(20, src))
-			if(C.id == id)
-				targets += C
-
 	if(!targets.len)
 		atom_break()
 	update_appearance()
