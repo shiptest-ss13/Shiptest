@@ -408,6 +408,13 @@
 	contains = list(/obj/item/storage/box/ammo/a858)
 	cost = 200 //4 ammo efficiency at 40 damage //TTD 225
 
+/* 4.73x33mm caseless */
+/datum/supply_pack/ammo/a858
+	name = "4.73x33mm Caseless Ammo Box Crate"
+	desc = "Contains a 60-round 4.73x33mm caseless ammo box for those lucky enough to have antique Solarian weapons that fire such a round."
+	contains = list(/obj/item/storage/box/ammo/c47x33mm)
+	cost = 350
+
 /* .50 BMG */
 
 /datum/supply_pack/ammo/a50

@@ -224,6 +224,17 @@
 	stock = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/guncase/swiss_cheese
+	name = "\"Swiss Cheese\" Assault Rifle"
+	desc = "Here's somethin nice for ya. Old Solarian rifle, genuine antique, mint condition, like it just came out of a museum or something. Has the launcher thing and the weird-ass ammo and all that stuff. All working. No lowballs, I know what I've got."
+	item = /obj/item/gun/ballistic/automatic/assault/swiss_cheese
+	pair_item = list(/datum/blackmarket_item/ammo/swiss_cheese)
+	cost_min = 8000
+	cost_max = 12000
+	stock_max = 2
+	availability_prob = 10
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/weapon/guncase/e10
 	name = "E-10 Laser Pistol"
 	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."

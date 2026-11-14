@@ -77,7 +77,7 @@
 	icon_state = "caseless"
 	caliber = "4.73x33mm caseless"
 	projectile_type = /obj/projectile/bullet/c47x33mm
-	stack_size = 12
+	stack_size = 15
 
 // 5.56mm HITP caseless (Pistole C)
 
