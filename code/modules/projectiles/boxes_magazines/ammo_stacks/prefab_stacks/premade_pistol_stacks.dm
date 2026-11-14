@@ -1,11 +1,12 @@
-// 10x22mm (Stechkin)
+// 10mm (Stechkin)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm
 	ammo_type = /obj/item/ammo_casing/c10mm
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c10mm
-	name = "box of 10x22mm ammo"
-	desc = "A box of standard 10x22mm ammo."
+	name = "box of 10mm ammo"
+	desc = "A box of standard 10mm ammo."
 	icon_state = "10mmbox"
 
 /obj/item/storage/box/ammo/c10mm/PopulateContents()
@@ -19,8 +20,8 @@
 	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c10mm_surplus
-	name = "box of surplus 10x22mm ammo"
-	desc = "A box of low-quality 10x22mm ammo."
+	name = "box of surplus 10mm ammo"
+	desc = "A box of low-quality 10mm ammo."
 	icon_state = "10mmbox-surplus"
 
 /obj/item/storage/box/ammo/c10mm_surplus/PopulateContents()
@@ -33,8 +34,8 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 
 /obj/item/storage/box/ammo/c10mm_ap
-	name = "box of AP 10x22mm ammo"
-	desc = "A box of 10x22mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "box of armor-piercing 10mm ammo"
+	desc = "A box of 10mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "10mmbox-ap"
 
 /obj/item/storage/box/ammo/c10mm_ap/PopulateContents()
@@ -47,8 +48,8 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/hp
 
 /obj/item/storage/box/ammo/c10mm_hp
-	name = "box of HP 10x22mm ammo"
-	desc = "A box of 10x22mm hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point 10mm ammo"
+	desc = "A box of 10mm hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "10mmbox-hp"
 
 /obj/item/storage/box/ammo/c10mm_hp/PopulateContents()
@@ -61,8 +62,8 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/storage/box/ammo/c10mm_rubber
-	name = "box of rubber 10x22mm ammo"
-	desc = "A box of 10x22mm rubbershot ammo, designed to disable targets without causing serious damage."
+	name = "box of rubber 10mm ammo"
+	desc = "A box of 10mm rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "10mmbox-rubbershot"
 
 /obj/item/storage/box/ammo/c10mm_rubber/PopulateContents()
@@ -71,15 +72,15 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm/rubber = 4)
 	generate_items_inside(items_inside,src)
 
-// 9x18mm (Commander + SABR)
+// 9mm (Commander + SABR)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/c9mm
-	name = "box of 9x18mm ammo"
-	desc = "A box of standard 9x18mm ammo."
+	name = "box of 9mm ammo"
+	desc = "A box of standard 9mm ammo."
 	icon_state = "9mmbox"
 
 /obj/item/storage/box/ammo/c9mm/PopulateContents()
@@ -93,8 +94,8 @@
 	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c9mm_surplus
-	name = "box of surplus 9x18mm ammo"
-	desc = "A box of low-quality 9x18mm ammo."
+	name = "box of surplus 9mm ammo"
+	desc = "A box of low-quality 9mm ammo."
 	icon_state = "9mmbox-surplus"
 
 /obj/item/storage/box/ammo/c9mm_surplus/PopulateContents()
@@ -106,8 +107,8 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/storage/box/ammo/c9mm_ap
-	name = "box of AP 9x18mm ammo"
-	desc = "A box of 9x18mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "box of armor-piercing 9mm ammo"
+	desc = "A box of 9mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "9mmbox-ap"
 
 /obj/item/storage/box/ammo/c9mm_ap/PopulateContents()
@@ -120,8 +121,8 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
 
 /obj/item/storage/box/ammo/c9mm_hp
-	name = "box of HP 9x18mm ammo"
-	desc = "A box of 9x18mm hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point 9mm ammo"
+	desc = "A box of 9mm hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "9mmbox-hp"
 
 /obj/item/storage/box/ammo/c9mm_hp/PopulateContents()
@@ -134,85 +135,14 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/storage/box/ammo/c9mm_rubber
-	name = "box of rubber 9x18mm ammo"
-	desc = "A box of 9x18mm rubbershot ammo, designed to disable targets without causing serious damage."
+	name = "box of rubber 9mm ammo"
+	desc = "A box of 9mm rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "9mmbox-rubbershot"
 
 /obj/item/storage/box/ammo/c9mm_rubber/PopulateContents()
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/rubber = 4)
-	generate_items_inside(items_inside,src)
-
-// .45 (Candor + C20R)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45
-	ammo_type = /obj/item/ammo_casing/c45
-
-/obj/item/storage/box/ammo/c45
-	name = "box of .45 ammo"
-	desc = "A box of standard .45 ammo."
-	icon_state = "45box"
-
-/obj/item/storage/box/ammo/c45/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45 = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/surplus
-	ammo_type = /obj/item/ammo_casing/c45/surplus
-	custom_materials = list(/datum/material/iron = 4000)
-
-/obj/item/storage/box/ammo/c45_surplus
-	name = "box of surplus .45 ammo"
-	desc = "A box of low-quality .45 ammo."
-	icon_state = "45box-surplus"
-
-/obj/item/storage/box/ammo/c45_surplus/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/surplus = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/ap
-	ammo_type = /obj/item/ammo_casing/c45/ap
-
-/obj/item/storage/box/ammo/c45_ap
-	name = "box of AP .45 ammo"
-	desc = "A box of .45 armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
-	icon_state = "45box-ap"
-
-/obj/item/storage/box/ammo/c45_ap/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/ap = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/hp
-	ammo_type = /obj/item/ammo_casing/c45/hp
-
-/obj/item/storage/box/ammo/c45_hp
-	name = "box of HP .45 ammo"
-	desc = "A box of .45 hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
-	icon_state = "45box-hp"
-
-/obj/item/storage/box/ammo/c45_hp/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/hp = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/rubber
-	ammo_type = /obj/item/ammo_casing/c45/rubber
-
-/obj/item/storage/box/ammo/c45_rubber
-	name = "box of rubbershot .45 ammo"
-	desc = "A box of .45 rubbershot ammo, designed to disable targets without causing serious damage."
-	icon_state = "45box-rubbershot"
-
-/obj/item/storage/box/ammo/c45_rubber/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/rubber = 4)
 	generate_items_inside(items_inside,src)
 
 // .22 LR (Himehabu, Pounder)
@@ -231,13 +161,28 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr = 4)
 	generate_items_inside(items_inside,src)
 
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/surplus
+	ammo_type = /obj/item/ammo_casing/c22lr/surplus
+	max_ammo = 25
+	custom_materials = list(/datum/material/iron = 4000)
+
+/obj/item/storage/box/ammo/c22lr/surplus
+	name = "box of surplus .22 LR ammo"
+	desc = "A box of low-quality .22 LR ammo."
+	icon_state = "22lrbox-surplus"
+
+/obj/item/storage/box/ammo/c22lr/surplus/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/surplus = 4)
+	generate_items_inside(items_inside,src)
+
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/ap
 	ammo_type = /obj/item/ammo_casing/c22lr/ap
 	max_ammo = 25
 
 /obj/item/storage/box/ammo/c22lr/ap
-	name = "box of .22 LR AP ammo"
-	desc = "A box of standard .22 LR AP ammo, designed to penetrate through armor at the cost of total damage."
+	name = "box of armor-piercing .22 LR  ammo"
+	desc = "A box of .22 LR armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "22lrbox-ap"
 
 /obj/item/storage/box/ammo/c22lr/ap/PopulateContents()
@@ -250,8 +195,8 @@
 	max_ammo = 25
 
 /obj/item/storage/box/ammo/c22lr/hp
-	name = "box of .22 LR HP ammo"
-	desc = "A box of standard .22 LR HP ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point .22 LR ammo"
+	desc = "A box of .22 LR hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "22lrbox-hp"
 
 /obj/item/storage/box/ammo/c22lr/hp/PopulateContents()
@@ -265,7 +210,7 @@
 
 /obj/item/storage/box/ammo/c22lr/rubber
 	name = "box of .22 LR rubber ammo"
-	desc = "A box of standard .22 LR rubber ammo."
+	desc = "A box of .22 LR rubber ammo."
 	icon_state = "22lrbox-rubbershot"
 
 /obj/item/storage/box/ammo/c22lr/rubber/PopulateContents()
@@ -293,7 +238,7 @@
 
 /obj/item/storage/box/ammo/a357_match
 	name = "box of match .357 ammo"
-	desc = "A box of match .357 ammo."
+	desc = "A box of match-grade .357 ammo."
 	icon_state = "357box-match"
 
 /obj/item/storage/box/ammo/a357_match/PopulateContents()
@@ -305,8 +250,8 @@
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/storage/box/ammo/a357_hp
-	name = "box of HP .357 ammo"
-	desc = "A box of hollow point .357 ammo."
+	name = "box of hollow-point .357 ammo"
+	desc = "A box of .357 hollow-point ammo."
 	icon_state = "357box-hp"
 
 /obj/item/storage/box/ammo/a357_hp/PopulateContents()
@@ -334,7 +279,7 @@
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
 /obj/item/storage/box/ammo/a4570_match
-	name = "box of HP match .45-70 ammo"
+	name = "box of match .45-70 ammo"
 	desc = "A 12-round ammo box for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 
@@ -347,7 +292,7 @@
 	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/storage/box/ammo/a4570_hp
-	name = "box of HP .45-70 ammo"
+	name = "box of hollow-point .45-70 ammo"
 	desc = "A 12-round ammo box for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
 
@@ -441,6 +386,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum
 	ammo_type = /obj/item/ammo_casing/a44roum
+	max_ammo = 12
 
 /obj/item/storage/box/ammo/a44roum
 	name = "box of .44 roumain ammo"
@@ -469,8 +415,8 @@
 	ammo_type = /obj/item/ammo_casing/a44roum/hp
 
 /obj/item/storage/box/ammo/a44roum_hp
-	name = "box of HP .44 roumain ammo"
-	desc = "A box of .44 roumain hollowpoint ammo, designed to disable targets without causing serious damage."
+	name = "box of hollow-point .44 roumain ammo"
+	desc = "A box of .44 roumain hollow-point ammo, designed to disable targets without causing serious damage."
 	icon_state = "a44roum-hp"
 
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()

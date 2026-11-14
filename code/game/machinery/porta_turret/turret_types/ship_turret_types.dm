@@ -32,41 +32,41 @@
 	desc = "A ballistic machine gun auto-turret."
 
 //high rof, range, faster projectile speed
-/* 'Nanotrasen' turrets */
+/* 'Makosso-Warra' turrets */
 
-/obj/machinery/porta_turret/ship/nt
+/obj/machinery/porta_turret/ship/warra
 	name = "Sharplite Defense Turret"
-	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
-	faction = list(FACTION_PLAYER_NANOTRASEN, FACTION_TURRET)
+	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Makosso-Warra Vessels."
+	faction = list(FACTION_PLAYER_WARRA, FACTION_TURRET)
 	max_integrity = 160
 	integrity_failure = 0.6
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
 	stun_projectile = /obj/projectile/beam/disabler/sharplite
 	lethal_projectile = /obj/projectile/beam/laser/sharplite
-	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 	shot_delay = 10
 	scan_range = 10
 
-/obj/machinery/porta_turret/ship/nt/light
+/obj/machinery/porta_turret/ship/warra/light
 	name = "Sharplite LDS"
-	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Nanotrasen vessels."
+	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Makosso-Warra vessels."
 	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
 	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
-	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 
-/obj/machinery/porta_turret/ship/nt/heavy
+/obj/machinery/porta_turret/ship/warra/heavy
 	name = "Sharplite Defense Cannon"
-	desc = "A heavy laser mounting designed by Sharplite for usage on Nanotrasen vessels."
+	desc = "A heavy laser mounting designed by Sharplite for usage on Makosso-Warra vessels."
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	max_integrity = 250
 
-/obj/machinery/porta_turret/ship/nt/pulse
+/obj/machinery/porta_turret/ship/warra/pulse
 	name = "Sharplite Pulse Cannon"
-	desc = "A pulse cannon mounting designed by Sharplite. Not sold to any purchasers and exclusively used on Nanotrasen Vessels."
+	desc = "A pulse cannon mounting designed by Sharplite. Not sold to any purchasers and exclusively used on Makosso-Warra Vessels."
 	lethal_projectile = /obj/projectile/beam/pulse/sharplite_turret
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	max_integrity = 250
@@ -89,9 +89,9 @@
 /obj/machinery/porta_turret/ship/ngr/light
 	name = "Sonoran Turret"
 	desc = "A light turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the Nation, using locally produced munitions!"
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 7
 	shot_delay = 12
@@ -127,9 +127,9 @@
 /obj/machinery/porta_turret/ship/hardliners/light
 	name = "Discharge Turret" //prime candidate to be a weird cybersun electro-gun toy.
 	desc = "A light turret typically found mounted on mercenary and independent vessels as a cheap, aftermarket modification." //do not put these on indie vessels
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 7
 	shot_delay = 12
@@ -168,9 +168,9 @@
 /obj/machinery/porta_turret/ship/ramzi/light
 	name = "Strike Turret"
 	desc = "A light turret manufactured by the Gorlex Marauders during the ICW. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 8
 	shot_delay = 16
@@ -422,3 +422,81 @@
 	scan_range = 8
 	burst_size = 6
 	burst_delay = 2
+
+/* Cybersun Turrets */
+/* Consistent and high grade */
+
+/obj/machinery/porta_turret/ship/cybersun
+	name = "MT98 Axion Turret"
+	desc = "A decidedly Cybersun production - a luxury turret manufactured under contract to Tadeusz Armory incorporating their lorentz force weaponry to an automated targetting system. Typically mounted on Cybersun craft."
+	faction = list(FACTION_CYBERSUN, FACTION_TURRET)
+	subsystem_type = /datum/controller/subsystem/processing/fastprocess
+	integrity_failure = 0.4
+	max_integrity = 200
+
+	stun_projectile = /obj/projectile/beam/lorentz
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+	lethal_projectile = /obj/projectile/beam/lorentz
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+
+	scan_range = 7
+	shot_delay = 6
+
+	turret_flags = TURRET_FLAG_HOSTILE
+
+/obj/machinery/porta_turret/ship/cybersun/light
+	name = "MT44 Photino Turret"
+	desc = "The lightest turret produced by Tadeusz Armory, an ionization beamer is melded with an advanced targetting system to swat everything from asteroids to overly spirited anarchists."
+
+	integrity_failure = 0.4
+	max_integrity = 150
+
+	stun_projectile = /obj/projectile/beam/ionization
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/ionization.ogg'
+	lethal_projectile = /obj/projectile/beam/ionization
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/ionization.ogg'
+	scan_range = 7
+	shot_delay = 10
+	burst_size = 4
+	burst_delay = 3
+	spread = 5
+
+	turret_flags = TURRET_FLAG_HOSTILE
+
+/obj/machinery/porta_turret/ship/cybersun/heavy
+	name = "MT157 Meson Turret"
+	desc = "A heavy turret typically mounted on Cybersun combat craft for the express purpose of clearing a landing zone. The lorentz beams descending in night has been found to be psychologically effective."
+	stun_projectile = /obj/projectile/beam/lorentz/mg
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+	lethal_projectile = /obj/projectile/beam/lorentz/mg
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+
+	integrity_failure = 0.4
+	max_integrity = 300
+
+	shot_delay = 20
+	scan_range = 10
+	burst_size = 2
+	burst_delay = 0.25 SECONDS
+	spread = 5
+
+/obj/machinery/porta_turret/ship/cybersun/seeker
+	name = "MT205 Pion Turret"
+	desc = "A target-locking gauss seeker cannon mounted on rapid magnetized swivels. Capable of high-grade lethality."
+	integrity_failure = 0.4
+	max_integrity = 200
+
+	stun_projectile = /obj/projectile/bullet/gauss/deusha
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/deusha
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
+
+	scan_range = 10
+	burst_size = 4
+	burst_delay = 1
+	spread = 5
+
+/obj/machinery/porta_turret/ship/cybersun/seeker/turret_fire(our_turf, target_turf)
+	var/obj/projectile/shot = ..()
+	shot.homing_target = current_target
+	shot.homing = TRUE

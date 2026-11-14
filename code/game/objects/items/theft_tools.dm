@@ -14,6 +14,7 @@
 	var/pulse = 0
 	var/cooldown = 0
 	var/pulseicon = "plutonium_core_pulse"
+	var/rad_power = 400
 
 /obj/item/nuke_core/Initialize()
 	. = ..()
@@ -33,7 +34,7 @@
 	if(cooldown < world.time - 60)
 		cooldown = world.time
 		flick(pulseicon, src)
-		radiation_pulse(src, 400, 2)
+		radiation_pulse(src, rad_power, 2)
 
 //nuke core box, for carrying the core
 /obj/item/nuke_core_container
@@ -85,7 +86,7 @@
 	random_color = FALSE
 
 /obj/item/paper/guides/antag/nuke_instructions
-	default_raw_text = "How to break into a Nanotrasen self-destruct terminal and remove its plutonium core:<br>\
+	default_raw_text = "How to break into a Makosso-Warra self-destruct terminal and remove its plutonium core:<br>\
 	<ul>\
 	<li>Use a screwdriver with a very thin tip (provided) to unscrew the terminal's front panel</li>\
 	<li>Dislodge and remove the front panel with a crowbar</li>\
@@ -256,3 +257,8 @@
 	playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
 	QDEL_NULL(sliver)
 	update_appearance()
+
+/obj/item/nuke_core/waste
+	name = "rtg pellet"
+	desc = "A small pellet of plutonium oxide, commonly used as a power and heat source on space probes. An engraving on the pellet reads:\n" + span_userdanger("EXTREMELY RADIOACTIVE - DROP AND RUN")
+	rad_power = 800

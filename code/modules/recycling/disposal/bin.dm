@@ -368,15 +368,17 @@
 	if(machine_stat & NOPOWER || panel_open)
 		return
 
-	//check for items in disposal - occupied light
-	if(contents.len > 0)
-		. += "dispover-full"
-		SSvis_overlays.add_vis_overlay(src, icon, "dispover-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
 
 	//charging and ready light
 	if(pressure_charging)
 		. += "dispover-charge"
 		SSvis_overlays.add_vis_overlay(src, icon, "dispover-charge-glow", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+
+	//check for items in disposal - occupied light
+	else if(contents.len > 0)
+		. += "dispover-full"
+		SSvis_overlays.add_vis_overlay(src, icon, "dispover-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+
 	else if(full_pressure)
 		. += "dispover-ready"
 		SSvis_overlays.add_vis_overlay(src, icon, "dispover-ready-glow", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
@@ -453,6 +455,20 @@
 	trunk = locate() in loc
 	if(trunk)
 		trunk.linked = src	// link the pipe trunk to self
+	if(isturf(loc))
+		ADD_TRAIT(loc, TRAIT_AI_AVOID, REF(src)) // so NPCs don't blunder in by themselves, though they can still be shoved in
+
+/obj/machinery/disposal/deliveryChute/Moved(atom/old_loc, movement_dir, Forced = FALSE, list/old_locs)
+	. = ..()
+	if(isturf(old_loc))
+		REMOVE_TRAIT(old_loc, TRAIT_AI_AVOID, REF(src))
+	if(isturf(loc))
+		ADD_TRAIT(loc, TRAIT_AI_AVOID, REF(src))
+
+/obj/machinery/disposal/deliveryChute/Destroy()
+	if(isturf(loc))
+		REMOVE_TRAIT(loc, TRAIT_AI_AVOID, REF(src))
+	return ..()
 
 /obj/machinery/disposal/deliveryChute/place_item_in_disposal(obj/item/I, mob/user)
 	if(I.CanEnterDisposals())

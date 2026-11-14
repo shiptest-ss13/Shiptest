@@ -48,7 +48,8 @@
 		if(W.get_sharpness() && W.force > 0)
 			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
 			user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
-			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
+			var/chopping_force = is_type_in_list(W, list(/obj/item/hatchet, /obj/item/melee/axe)) ? W.force * 2 : W.force //axes now become the deforestator 9000
+			if(do_after(user, 1000/chopping_force, target = src)) //5 seconds with 20 force, 10 seconds with a kitchen knife, 20 seconds with a shard.
 				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
 				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
@@ -445,8 +446,11 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
+	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+	pass_chance = 50
+	pass_through = TRUE
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
@@ -476,10 +480,32 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
+
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE
+
+/obj/structure/flora/rock/icy
+	name = "icy rock"
+	icon_state = "snowrock_1"
+	density = FALSE
+
+/obj/structure/flora/rock/icy/Initialize()
+	. = ..()
+	icon_state = "snowrock_[rand(1,4)]"
+
+	if(icon_state == "snowrock_1")
+		density = TRUE
+
+/obj/structure/flora/rock/pile/icy
+	name = "icy rocks"
+	icon_state = "snowrock_4"
+
+/obj/structure/flora/rock/pile/icy/Initialize()
+	. = ..()
+	icon_state = "snowrock_4"
 
 //Jungle grass
 
@@ -665,6 +691,7 @@
 	icon = 'icons/obj/flora/lavarocks.dmi'
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
+	density = FALSE
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -784,6 +811,7 @@
 	icon_state = "redrocks1"
 	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
+	density = FALSE
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"
@@ -862,11 +890,6 @@
 /obj/structure/flora/tree/chapel/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/container = I
-		if(istype(container, /obj/item/reagent_containers/syringe))
-			var/obj/item/reagent_containers/syringe/syr = container
-			if(syr.mode != 1)
-				to_chat(user, span_warning("You can't get any extract out of this plant."))
-				return
 		if(!container.reagents.total_volume)
 			to_chat(user, span_warning("[container] is empty!"))
 			return 1
@@ -922,6 +945,12 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/bad_tree, name)
 			M.adjustToxLoss(abs(karma)*0.25, 0)
 	adjustKarma(gainedkarma)
+
+/obj/structure/flora/tree/chapel/attackby_secondary(obj/item/weapon, mob/user, list/modifiers, list/attack_modifiers)
+	if (istype(weapon, /obj/item/reagent_containers/syringe))
+		to_chat(user, span_warning("You can't get any extract out of this plant."))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/structure/flora/tree/chapel/proc/update_tree()
 	if(100 > karma > -100)
@@ -1035,6 +1064,12 @@
 		/datum/reagent/medicine/soulus = -0.2
 	)
 
+/obj/structure/flora/tree/srm/pine
+	name = "Montagne's Conifer"
+	icon = 'icons/obj/flora/tall_trees.dmi'
+	icon_state = "pine_1"
+	desc = "A hardy, imported conifer tree acting as the centerpiece of the garden. A branch from an Illestren apple tree has been grafted onto it, producing fruits containing bactera native to the planet; often used in recipes withheld by the Saint-Roumain Militia. You could try watering it."
+
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)
 	create_reagents(300, OPENCONTAINER)
@@ -1106,17 +1141,62 @@
 	. = ..()
 
 /obj/structure/flora/rock/crystal
+	name = "crystal growth"
+	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
-	desc = "A towering, obaque crystal. You could probably shave something off this."
-	icon = 'icons/effects/32x64.dmi'
+	icon = 'icons/obj/flora/crystals.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
-	mineResult = /obj/item/crystal_shard
+	mineResult = /obj/effect/decal/cleanable/glass/strange
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
+	///shaving the rock with a knife gives you this item
+	var/obj/shaving_type = /obj/item/crystal_shard
+	///how much can we shave the rock?
+	var/max_shavings = 3
+	///shaving count on the rock
+	var/shaving_count = 0
+
 /obj/structure/flora/rock/crystal/Initialize()
 	. = ..()
+	max_shavings = rand(src::max_shavings-2, src::max_shavings+2)
 	icon_state = "[base_icon_state]"
+
+/obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
+	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING && user.a_intent != INTENT_HARM)
+		if(shaving_count >= max_shavings)
+			to_chat(user, span_warning("There are no good places to cut [src]."))
+			return
+		playsound(src, 'sound/effects/fuse.ogg')
+		to_chat(user, span_notice("You start shaving a crystal off [src]..."))
+		if(tool.use_tool(src, user, 6 SECONDS, volume=50))
+			new shaving_type(loc)
+			shaving_count++
+			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
+		return
+	return ..()
+
+/obj/structure/flora/rock/crystal/puce
+	name = "colossal puce crystal"
+	desc = "A towering monolith of pucestral growth. There are so many places to cut a chunk off."
+	icon_state = "puce_crystal"
+	base_icon_state = "puce_crystal"
+	icon = 'icons/obj/flora/crystals.dmi'
+	resistance_flags = FIRE_PROOF
+	density = TRUE
+	max_integrity = 300
+	mineResult = /obj/structure/flora/ash/puce
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
+
+	///shaving the rock with a knife gives you this item
+	shaving_type = /obj/item/food/grown/ash_flora/puce
+	///how much can we shave the rock?
+	max_shavings = 18
+	///shaving count on the rock
+	shaving_count = 0
+
+

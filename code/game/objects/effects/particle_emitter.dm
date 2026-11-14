@@ -12,6 +12,8 @@
 	/// See \code\__DEFINES\particles.dm
 	var/particle_flags = NONE
 
+	var/particle_override
+
 	var/atom/parent
 
 /obj/effect/abstract/particle_holder/Initialize(mapload, particle_path = /particles/smoke, particle_flags = NONE)
@@ -26,11 +28,14 @@
 	// Mouse opacity can get set to opaque by some objects when placed into the object's contents (storage containers).
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	src.particle_flags = particle_flags
-	particles = new particle_path()
+	if(particle_override)
+		particles = new particle_override()
+	else
+		particles = new particle_path()
 	// /atom doesn't have vis_contents, /turf and /atom/movable do
 	var/atom/movable/lie_about_areas = parent
 	lie_about_areas.vis_contents += src
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(parent_deleted))
+	RegisterSignal(parent, COMSIG_QDELETING, PROC_REF(parent_deleted))
 
 	if(particle_flags & PARTICLE_ATTACH_MOB)
 		RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
@@ -68,3 +73,7 @@
 /// See [https://www.byond.com/docs/ref/#/{notes}/particles] for position documentation
 /obj/effect/abstract/particle_holder/proc/set_particle_position(list/pos)
 	particles.position = pos
+
+//generic steam particle holder
+/obj/effect/abstract/particle_holder/steam
+	particle_override = /particles/smoke/steam

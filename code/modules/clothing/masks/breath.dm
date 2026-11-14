@@ -54,3 +54,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
 	alternate_worn_layer = BELT_LAYER
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_cover = MASKCOVERSMOUTH
+	flags_inv = HIDEFACE | HIDEFACIALHAIR
+	visor_flags_inv = HIDEFACE | HIDEFACIALHAIR

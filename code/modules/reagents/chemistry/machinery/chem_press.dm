@@ -12,7 +12,7 @@
 	var/image/beaker_overlay
 	var/image/bottle_overlay
 	var/current_volume = 10
-	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but ghetto should be worse.
+	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but without a chem master this should be worse.
 	var/press_time = 15
 	var/pill_style = 9 // White pills
 	var/list/possible_styles = list(7,8,9,10,11,12) // These values only encompass the 'tablet' shaped pills.
@@ -31,8 +31,8 @@
 
 /obj/machinery/chem_press/examine(mob/user)
 	. = ..()
-	. += span_notice("There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.")
-	. += span_notice("There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.")
+	. += span_notice("Left click with a <b>screwdriver</b> to adjust the pill size.")
+	. += span_notice("Right click with a <b>screwdriver</b> to adjust the pill color.")
 	if(!bottle)
 		. += span_notice("The <b>pill bottle</b> slot is empty.")
 	if(!beaker)
@@ -80,18 +80,7 @@
 		balloon_alert(user, "added [item] to output")
 		return TRUE
 	else if(item.tool_behaviour == TOOL_SCREWDRIVER)
-		if(user.a_intent == INTENT_HELP)
-			var/i=0
-			for(var/A in possible_volumes)
-				i++
-				if(A == current_volume)
-					if(i<possible_volumes.len)
-						current_volume = possible_volumes[i+1]
-					else
-						current_volume = possible_volumes[1]
-					balloon_alert(user, "making [current_volume]u pills")
-					return
-		if(user.a_intent == INTENT_DISARM)
+		if(LAZYACCESS(params2list(params), RIGHT_CLICK))
 			var/i=0
 			for(var/A in possible_styles)
 				i++
@@ -102,16 +91,24 @@
 						pill_style = possible_styles[1]
 					balloon_alert(user, "making [style_colors["[pill_style]"]] pills")
 					return
+		else
+			var/i=0
+			for(var/A in possible_volumes)
+				i++
+				if(A == current_volume)
+					if(i<possible_volumes.len)
+						current_volume = possible_volumes[i+1]
+					else
+						current_volume = possible_volumes[1]
+					balloon_alert(user, "making [current_volume]u pills")
+					return
 	return ..()
 
-/obj/machinery/chem_press/AltClick(mob/living/user)
-	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
+/obj/machinery/chem_press/attack_hand_secondary(mob/user, list/modifiers)
 	if(beaker || bottle) // If there's a container in the machine, eject it.
 		handle_container(user)
-		return
-	else
-		return ..() // Having ..() run only if all else fails prevents AltClick from showing the turf's contents when not wanted.
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
 /*
 This proc attempts to swap a container in the machine

@@ -110,23 +110,25 @@
 
 /**
  * ### Combustion/Fire engines
- * Engines that use oxidizer and fuel to output thrust. Theoretically works with any mix of fuels and oxiders. Wish me luck.
+ * Engines that can use any propellant gas mixture to produce thrust.
+ * Thrust is based on the pressure multiplied by the exhaust velocity.
+ * Lighter gases (low molar mass) have a greater exhaust velocity.
 */
 
 /obj/machinery/power/shuttle/engine/fire
 	name = "combustion thruster"
-	desc = "A thruster that burns fuel with oxider that is stored in an adjacent heater."
+	desc = "A thruster that intakes propellant from an attached injector and burns it to generate thrust."
 	icon_state = "burst_plasma"
 	icon_state_off = "burst_plasma_off"
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/fire
 
 	idle_power_usage = 0
-	///what portion of the mols in the attached heater to "burn"
+	/// The portion of the gas injected into the combustion chamber
 	var/fuel_consumption = 0.0125
 	//multiplier for thrust
 	thrust = 8
-	//used by stockparts, efficiency_multiplier
-	var/consumption_multiplier = 1
+	/// Affects how completely the fuel will burn by increasing the number of reaction ticks. Equal to 2 + laser rating.
+	var/combustion_efficiency = 3
 	//If this engine should create heat when burned.
 	var/heat_creation = FALSE
 	//A weakref of the connected engine heater with fuel.
@@ -140,18 +142,20 @@
 		return
 	if(heat_creation)
 		heat_engine()
-	var/actual_consumption = fuel_consumption * (percentage / 100) * seconds_per_tick * consumption_multiplier
-	return resolved_heater.consume_fuel(actual_consumption) * thrust //this proc returns the min of the fuel/oxy possible burns, multiply by our thrust value
+	return resolved_heater.consume_fuel(fuel_consumption * seconds_per_tick * percentage / 100, combustion_efficiency, src) * thrust
 
 /obj/machinery/power/shuttle/engine/fire/return_fuel()
 	. = ..()
 	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
-	return resolved_heater?.return_gas()
+	if(!resolved_heater)
+		return 0
+	var/datum/gas_mixture/fuel_mix = resolved_heater.airs[1]
+	if(!fuel_mix)
+		return 0
+	return fuel_mix.return_pressure()
 
 /obj/machinery/power/shuttle/engine/fire/return_fuel_cap()
-	. = ..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
-	return resolved_heater?.return_gas_capacity()
+	return ONE_ATMOSPHERE * 10
 
 /obj/machinery/power/shuttle/engine/fire/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -190,7 +194,7 @@
 	var/laz = 0
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		laz += L.rating
-	consumption_multiplier = laz
+	combustion_efficiency = 2 + laz
 
 /**
  * ### Ion Engines
@@ -218,11 +222,9 @@
 	thrust = 2
 	power_per_burn = 70000
 
+// This thruster is the same as a standard thruster, but it starts with T3 parts
 /obj/machinery/power/shuttle/engine/electric/premium
-	name = "high performance ion thruster"
-	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
-	thrust = 30
-	power_per_burn = 65000
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/premium
 
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"

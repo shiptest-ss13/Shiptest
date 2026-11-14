@@ -6,6 +6,7 @@
 	caliber = ".357"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
+	stack_size = 12
 
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
@@ -14,8 +15,8 @@
 	projectile_type = /obj/projectile/bullet/a357/match
 
 /obj/item/ammo_casing/a357/hp
-	name = ".357 hollow point bullet casing"
-	desc = "A .357 hollow point bullet casing."
+	name = ".357 hollow-point bullet casing"
+	desc = "A .357 hollow-point bullet casing."
 	icon_state = "magnum-brass"
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a357/hp
@@ -37,8 +38,8 @@
 	projectile_type = /obj/projectile/bullet/a4570/match
 
 /obj/item/ammo_casing/a4570/hp
-	name = ".45-70 hollow point bullet casing"
-	desc = "A .45-70 hollow point bullet casing."
+	name = ".45-70 hollow-point bullet casing"
+	desc = "A .45-70 hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a4570/hp
 
@@ -123,6 +124,7 @@
 	caliber = ".44 Roumain"
 	icon_state = "pistol-steel"
 	projectile_type = /obj/projectile/bullet/a44roum
+	stack_size = 12
 
 /obj/item/ammo_casing/a44roum/rubber
 	name = ".44 roumain rubber bullet casing"
@@ -131,7 +133,7 @@
 	projectile_type = /obj/projectile/bullet/a44roum/rubber
 
 /obj/item/ammo_casing/a44roum/hp
-	name = ".44 roumain hollow point bullet casing"
-	desc = "A .44 roumain holow point bullet casing."
+	name = ".44 roumain hollow-point bullet casing"
+	desc = "A .44 roumain holow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a44roum/hp

@@ -55,7 +55,7 @@ export const NtosNetDownloader = (props, context) => {
         {!!hackedavailable && (
           <Section title="UNKNOWN Software Repository">
             <NoticeBox mb={1}>
-              Please note that Nanotrasen does not recommend download of
+              Please note that Makosso-Warra does not recommend download of
               software from non-official servers.
             </NoticeBox>
             {hacked_programs.map((program) => (

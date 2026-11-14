@@ -34,11 +34,6 @@
 /// Amount of air to take a from a tile
 #define BREATH_PERCENTAGE (BREATH_VOLUME/CELL_VOLUME)
 
-/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
-#define BODYTEMP_AUTORECOVERY_DIVISOR 28
-/// The natural temperature for a body
-#define BODYTEMP_NORMAL 310.15
-
 //EXCITED GROUPS
 /// number of FULL air controller ticks before an excited group breaks down (averages gas contents across turfs)
 #define EXCITED_GROUP_BREAKDOWN_CYCLES 4
@@ -79,6 +74,8 @@
 #define PLASMA_MINIMUM_BURN_TEMPERATURE (100+T0C)
 #define PLASMA_UPPER_TEMPERATURE (1370+T0C)
 #define PLASMA_OXYGEN_FULLBURN 10
+#define MONOXIDE_MIN_BURN_CONCENTRATION 0.12 // 12% fuel concentration required
+#define MONOXIDE_BURN_RATE 0.2
 
 //COLD FIRE (this is used only for the freon-o2 reaction, there is no fire still)
 #define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_SPREAD 263 //fire will spread if the temperature is -10 °C
@@ -209,8 +206,6 @@
 #define FROZEN_ATMOS "o2=22;n2=82;TEMP=180"
 /// -80°C kitchen coldroom; higher amount of mol to reach about 101.3 kpA
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
-/// used in the holodeck burn test program
-#define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"
@@ -222,6 +217,7 @@
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 #define ATMOS_TANK_PLASMAHALF "plasma=6000;TEMP=293.15"
+#define COMBAT_CHLORINE "o2=22;n2=82;cl2=200;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -348,8 +344,12 @@
 #define GAS_METHANE "methane"
 #define GAS_AMMONIA "ammonia"
 
+/// Used to determine whether a canister should alert admins if opened
 #define GAS_FLAG_DANGEROUS (1<<0)
+/// Do not use this unless you absolutely have to
 #define GAS_FLAG_BREATH_PROC (1<<1)
+/// Can cause lung irritation
+#define GAS_FLAG_IRRITANT (1<<2)
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\
@@ -399,18 +399,18 @@
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
 
 GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
-	"amethyst" = rgb(130,43,255), //supplymain
-	"blue" = rgb(0,0,255),
-	"brown" = rgb(178,100,56),
-	"cyan" = rgb(0,255,249),
-	"dark" = rgb(69,69,69),
-	"green" = rgb(30,255,0),
-	"grey" = rgb(255,255,255),
-	"orange" = rgb(255,129,25),
-	"purple" = rgb(128,0,182),
-	"red" = rgb(255,0,0),
-	"violet" = rgb(64,0,128),
-	"yellow" = rgb(255,198,0)
+	"amethyst" = "#9565fc", //supplymain
+	"blue" = "#5c7fff",
+	"brown" = "#a65326",
+	"cyan" = "#60d5fc",
+	"dark" = "#898aad",
+	"green" = "#8cff75",
+	"grey" = "#ffffff",
+	"orange" = "#ff904f",
+	"purple" = "#ed69ff",
+	"red" = "#ff3030",
+	"violet" = "#6640ff",
+	"yellow" = "#fff957"
 )))
 
 #define IMMUNE_ATMOS_REQS list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)

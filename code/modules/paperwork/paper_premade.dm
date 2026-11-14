@@ -37,7 +37,7 @@
 
 /obj/item/paper/guides/jobs/security/labor_camp
 	name = "Labor Camp Operating Guide"
-	default_raw_text = "<b>Labor Camp Facility Operation Guide</b><br><br>Hello there, proud operator of an NT-Sec Prisoner Rehabilitation Center.  A solution to rising crime rates and falling productivity, these facilities are specifically designed for the safe, productive imprisonment of your most dangerous criminals.  <br><br>To press a long-term prisoner into the service of the station, replace his equipment with prisoners' garb at one of the prison lockers, as per normal operating procedure.  Before assigning a prisoner his ID, insert the ID into a prisoner management console and assign the prisoner a quota, based on the severity of his crime.  <br>A single sheet of most materials produces five points for the prisoner, and points can be expected to be produced at a rate of about 100 per minute, though punishments as severe as forced labor should be reserved for serious crimes of sentences not less than five minutes long.<br>Once you have prepared the prisoner, place him in the secure northern half of the labor shuttle, and send him to the station.  Once he meets his quota by feeding sheets to the stacker, he will be allowed to return to the station, and will be able to open the secure door to the prisoner release area.<br><br>In the case of dangerous prisoners, surveillance may be needed. To that end, there is a prisoner monitoring room on the mining station, equipped with a remote flasher and a lockdown button.  The mine itself is patrolled by a securibot, so the nearby security records console can also be used to secure hostile prisoners on the mine."
+	default_raw_text = "<b>Labor Camp Facility Operation Guide</b><br><br>Hello there, proud operator of a Vigilitas Prisoner Rehabilitation Center.  A solution to rising crime rates and falling productivity, these facilities are specifically designed for the safe, productive imprisonment of your most dangerous criminals.  <br><br>To press a long-term prisoner into the service of the station, replace his equipment with prisoners' garb at one of the prison lockers, as per normal operating procedure.  Before assigning a prisoner his ID, insert the ID into a prisoner management console and assign the prisoner a quota, based on the severity of his crime.  <br>A single sheet of most materials produces five points for the prisoner, and points can be expected to be produced at a rate of about 100 per minute, though punishments as severe as forced labor should be reserved for serious crimes of sentences not less than five minutes long.<br>Once you have prepared the prisoner, place him in the secure northern half of the labor shuttle, and send him to the station.  Once he meets his quota by feeding sheets to the stacker, he will be allowed to return to the station, and will be able to open the secure door to the prisoner release area.<br><br>In the case of dangerous prisoners, surveillance may be needed. To that end, there is a prisoner monitoring room on the mining station, equipped with a remote flasher and a lockdown button.  The mine itself is patrolled by a securibot, so the nearby security records console can also be used to secure hostile prisoners on the mine."
 
 /obj/item/paper/fluff/jobs/jobs
 	name = "paper- 'Job Information'"
@@ -103,7 +103,7 @@
 
 /obj/item/paper/fluff/stations/centcom/bulletin
 	name = "paper- 'Official Bulletin'"
-	default_raw_text = "<BR>CentCom Security<BR>Port Division<BR>Official Bulletin<BR><BR>Inspector,<BR>There is an emergency shuttle arriving today.<BR><BR>Approval is restricted to Nanotrasen employees only. Deny all other entrants.<BR><BR>CentCom Port Commissioner"
+	default_raw_text = "<BR>CentCom Security<BR>Port Division<BR>Official Bulletin<BR><BR>Inspector,<BR>There is an emergency shuttle arriving today.<BR><BR>Approval is restricted to Makosso-Warra employees only. Deny all other entrants.<BR><BR>CentCom Port Commissioner"
 
 
 ///////////	Lavaland
@@ -141,3 +141,27 @@
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders
 	name = "\improper Written Log"
 	default_raw_text = "You know the drill, people. Shoot anyone on sight approaching the station. This includes our own colors, conducts the same as usual. Give fair warning to our boys, unless shots have already been fired. Cargo's more valuable this time, and we've gotta get our shit together to get that sweet, sweet raise."
+
+/obj/item/paper/fluff/ruins/wasteplanet/vault
+	name = "\improper Vault Button"
+	default_raw_text = "The vault's button is bugged out, if you need to get in, head up to security and yell at em to use their remote access, just pray they ain't in the middle of a game."
+
+/obj/item/paper/fluff/ruins/wasteplanet/reminder
+	name = "\improper LAST REMINDER"
+	default_raw_text = "If one of you dumbasses forgets to pick up your spent ammo casings again, I will personally send you out to escort the salvage team with nothing but a knife, and if you let one of em die ill put your head on the next crate out of here, got it?"
+
+/obj/item/paper/crumpled/fluff/ruins/wasteplanet/doors
+	name = "\improper Shitty doors!"
+	default_raw_text = "the blastdoors on the inner engineering airlock bugged out again! whoever chose this spot for construction deserves to be shot, everything keeps falling apart! Drill won't work, whoever is reading this, grab the salvage saw from the vault and cut it open, or blow it to bits, just don't break anything or the Boss will make you hive target practice."
+
+/obj/item/paper/fluff/ruins/wasteplanet/derringer
+	name = "\improper DO NOT READ."
+	default_raw_text = "Keep forgetting where I put my derringer everytime I leave it somewhere, so im keeping it in the safe. REMINDER: The safe is besides the only plant that seems to survive in this dumb habitat."
+
+/obj/item/paper/fluff/ships/silverfish
+	name ="\improper Reminder!"
+	default_raw_text = "Hey! whoever was assigned to this hunk of junk, we had to reset the built in security systems to get everything running so the security cameras wont be connected to the command console, download the camera app and connect to 'silversecurity' to see the ship camera system, and don't break any! they're expensive!"
+
+/obj/item/paper/crumpled/fluff/ships/silverfish/enginebay
+	name = "\improper Turbine fuel reserves"
+	default_raw_text = "if you're reading this, you got a bad end of the stick, this ship wasn't built for our little engine refit, so the turbine runs on canisters, that means only use it in emergencies! if ya run out of fuel its useless, and ya need the speed."

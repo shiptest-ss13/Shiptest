@@ -67,6 +67,7 @@
 	ears = /obj/item/radio/headset/clip/alt/captain
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
+	box = /obj/item/storage/box/survival/clip/command
 //	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	backpack = /obj/item/storage/backpack/captain
@@ -85,13 +86,13 @@
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	belt = /obj/item/storage/belt/utility/full
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat/white
 	ears = /obj/item/radio/headset/clip
 	uniform = /obj/item/clothing/under/clip
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
@@ -131,7 +132,7 @@
 		/obj/item/melee/classic_baton/telescopic=1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/officer)
 
 /datum/outfit/job/clip/doctor
 	name = "CLIP - Doctor"
@@ -143,7 +144,7 @@
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
+	gloves = /obj/item/clothing/gloves/nitrile
 	suit_store = /obj/item/flashlight/pen/paramedic
 
 	backpack = /obj/item/storage/backpack/medic
@@ -159,7 +160,7 @@
 	uniform = /obj/item/clothing/under/clip/medic
 	head = /obj/item/clothing/head/soft/paramedic
 	shoes = /obj/item/clothing/shoes/sneakers/blue
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
+	gloves = /obj/item/clothing/gloves/nitrile
 	belt = /obj/item/storage/belt/medical
 	l_pocket = /obj/item/flashlight/pen
 
@@ -207,7 +208,7 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	belt = /obj/item/storage/belt/utility/full/engi
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/t_scanner
@@ -337,6 +338,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/clip/slouch/officer
+	box = /obj/item/storage/box/survival/clip/minutemen/command
 
 	backpack_contents = list(/obj/item/storage/box/ids=1,
 		/obj/item/melee/classic_baton/telescopic=1,
@@ -478,8 +480,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/clip/minutemen
-	head = /obj/item/clothing/head/clip
+	uniform = /obj/item/clothing/under/clip
+	head = /obj/item/clothing/head/soft/utility_navy
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -537,11 +539,6 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 	suit_store = /obj/item/tank/internals/oxygen
 
-/datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit
-	name = "CLIP Minutmemen - Minuteman (Bombsuit)"
-	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
-	head = /obj/item/clothing/head/helmet/space/hardsuit/bomb/clip
-
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-82)"
 
@@ -595,6 +592,14 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
+/datum/outfit/job/clip/minutemen/grunt/eod
+	name = "CLIP Minutemen - EOD Specialist"
+	id_assignment = "Explosive Ordnance Disposal Technician"
+
+/datum/outfit/job/clip/minutemen/grunt/eod/bombsuit
+	name = "CLIP Minutemen - EOD Specialist (Bombsuit)"
+	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
+
 // combat medic
 
 /datum/outfit/job/clip/minutemen/grunt/medic
@@ -603,6 +608,10 @@
 	jobtype = /datum/job/doctor
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
+
+/datum/outfit/job/clip/minutemen/grunt/medic/secaccess
+	name = "CLIP Minutemen - Combat Medic (Security Access)"
+	jobtype = /datum/job/officer
 
 /datum/outfit/job/clip/minutemen/grunt/medic/dressed
 	name = "CLIP Minutemen - Combat Medic (Dressed)"

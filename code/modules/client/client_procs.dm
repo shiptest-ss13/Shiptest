@@ -81,15 +81,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Log all hrefs
 	log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
 
-	// Mentor Msg
-	if(href_list["mentor_msg"])
-		if(CONFIG_GET(flag/mentors_mobname_only))
-			var/mob/M = locate(href_list["mentor_msg"])
-			cmd_mentor_pm(M,null)
-		else
-			cmd_mentor_pm(href_list["mentor_msg"],null)
-		return
-
 	//byond bug ID:2256651
 	if (asset_cache_job && (asset_cache_job in completed_asset_jobs))
 		to_chat(src, span_danger("An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)"))
@@ -219,8 +210,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
-	if(byond_version >= 516)
-		winset(src, null, list("browser-options" = "find,refresh,byondstorage"))
+	winset(src, null, list("browser-options" = "find,refresh"))
 
 	// Instantiate stat panel
 	stat_panel = new(src, "statbrowser")
@@ -258,11 +248,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(isnull(address) || (address in localhost_addresses))
 			var/datum/admin_rank/localhost_rank = new("!localhost!", R_EVERYTHING, R_DBRANKS, R_EVERYTHING) //+EVERYTHING -DBRANKS *EVERYTHING
 			new /datum/admins(localhost_rank, ckey, 1, 1)
-
-	//Mentor Authorisation
-	var/datum/mentors/mentor = GLOB.mentor_datums[ckey]
-	if(mentor)
-		mentor.associate(src)
 
 	//preferences datum - also holds some persistent data for the client (because we may as well keep these datums to a minimum)
 	prefs = GLOB.preferences_datums[ckey]
@@ -415,9 +400,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			to_chat(src, memo_message)
 		adminGreet()
 
-	if(mentor && !holder) //WS Edit - Mentors
-		mentor_memo_output("Show") //WS End
-
 	if (mob && reconnecting)
 		var/stealth_admin = mob.client?.holder?.fakekey
 		var/announce_leave = mob.client?.prefs?.broadcast_login_logout
@@ -483,9 +465,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	view_size = new(src, getScreenSize(prefs.widescreenpref))
 	view_size.resetFormat()
 	view_size.setZoomMode()
-	fit_viewport()
 	Master.UpdateTickRate()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CLIENT_CONNECT, src)
+	fully_created = TRUE
 
 //////////////
 //DISCONNECT//
@@ -1048,8 +1030,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if (isliving(mob))
 		var/mob/living/M = mob
 		M.update_damage_hud()
-	if (prefs.auto_fit_viewport)
-		addtimer(CALLBACK(src, VERB_REF(fit_viewport), 1 SECONDS)) //Delayed to avoid wingets from Login calls.
+	attempt_auto_fit_viewport()
 
 /client/proc/generate_clickcatcher()
 	if(!void)

@@ -19,7 +19,7 @@
 
 /obj/item/clothing/head/that
 	name = "top-hat"
-	desc = "It's an amish looking hat."
+	desc = "A formal, old-fashioned piece of Solarian headwear."
 	icon_state = "tophat"
 	item_state = "that"
 	dog_fashion = /datum/dog_fashion/head
@@ -69,12 +69,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "bandana"
 	item_state = "bandana"
-
-/obj/item/clothing/head/bearpelt
-	name = "bear pelt hat"
-	desc = "Fuzzy."
-	icon_state = "bearpelt"
-	item_state = "bearpelt"
 
 /obj/item/clothing/head/fedora
 	name = "fedora"
@@ -180,3 +174,283 @@
 	desc = "A fashionable straw hat designed for providing shade to your head. An essential of tropical touristry and backbreaking labor alike!"
 	icon_state = "sunhat"
 	item_state = "sunhat"
+
+/obj/item/clothing/head/motorcycle
+	name = "motorcycle helmet"
+	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. Also quite fashionable."
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "motohelm"
+	item_state = "motohelm"
+	unique_reskin = list("black motorcycle helmet" = "motohelm",
+						"white motorcycle helmet" = "motohelmwhite",
+						"blue motorcycle helmet" = "motohelmblue",
+						"red motorcycle helmet" = "motohelmred",
+						"purple motorcycle helmet" = "motohelmpurple",
+						"pink motorcycle helmet" = "motohelmpink",
+						"green motorcycle helmet" = "motohelmgreen",
+						"brown motorcycle helmet" = "motohelmbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50, "wound" = 20)
+	clothing_flags = SNUG_FIT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_inv = HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDEEYES | HIDEMASK | HIDEEARS
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+	supports_variations = SNOUTED_VARIATION
+
+/obj/item/clothing/head/motorcycle/black
+	name = "black motorcycle helmet"
+	icon_state = "motohelm"
+	current_skin = "black motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/white
+	name = "white motorcycle helmet"
+	icon_state = "motohelmwhite"
+	current_skin = "white motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/blue
+	name = "blue motorcycle helmet"
+	icon_state = "motohelmblue"
+	current_skin = "blue motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/red
+	name = "red motorcycle helmet"
+	icon_state = "motohelmred"
+	current_skin = "red motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/purple
+	name = "purple motorcycle helmet"
+	icon_state = "motohelmpurple"
+	current_skin = "purple motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/pink
+	name = "pink motorcycle helmet"
+	icon_state = "motohelmpink"
+	current_skin = "pink motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/green
+	name = "green motorcycle helmet"
+	icon_state = "motohelmgreen"
+	current_skin = "green motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/brown
+	name = "brown motorcycle helmet"
+	icon_state = "motohelmbrown"
+	current_skin = "brown motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat
+	name = "cat motorcycle helmet"
+	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. This one has cute cat ears."
+	icon_state = "motocat"
+	item_state = "motocat"
+	unique_reskin = list("black cat motorcycle helmet" = "motocat",
+						"white cat motorcycle helmet" = "motocatwhite",
+						"blue cat motorcycle helmet" = "motocatblue",
+						"red cat motorcycle helmet" = "motocatred",
+						"purple cat motorcycle helmet" = "motocatpurple",
+						"pink cat motorcycle helmet" = "motocatpink",
+						"green cat motorcycle helmet" = "motocatgreen",
+						"brown cat motorcycle helmet" = "motocatbrown"
+						)
+
+/obj/item/clothing/head/motorcycle/cat/black
+	name = "black cat motorcycle helmet"
+	icon_state = "motocat"
+	current_skin = "black cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/white
+	name = "white cat motorcycle helmet"
+	icon_state = "motocatwhite"
+	current_skin = "white cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/blue
+	name = "blue cat motorcycle helmet"
+	icon_state = "motocatblue"
+	current_skin = "blue cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/red
+	name = "red cat motorcycle helmet"
+	icon_state = "motocatred"
+	current_skin = "red cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/purple
+	name = "purple cat motorcycle helmet"
+	icon_state = "motocatpurple"
+	current_skin = "purple cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/pink
+	name = "pink cat motorcycle helmet"
+	icon_state = "motocatpink"
+	current_skin = "pink cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/green
+	name = "green cat motorcycle helmet"
+	icon_state = "motocatgreen"
+	current_skin = "green cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/brown
+	name = "brown cat motorcycle helmet"
+	icon_state = "motocatbrown"
+	current_skin = "brown cat motorcycle helmet"
+
+/obj/item/clothing/head/boonie
+	name = "Boonie hat"
+	desc = "A popular hat in hot tropical climates, offering good protection from sun and rain."
+	icon_state = "boonie"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	cuttable = TRUE
+	clothamnt = 2
+	unique_reskin = list(
+		"black boonie" = "boonie",
+		"brown boonie" = "booniebrown",
+		"beige boonie" = "booniebeige",
+		"olive boonie" = "boonieolive",
+		"navy boonie" = "boonienavy"
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/boonie/brown
+	name = "brown boonie"
+	current_skin = "brown boonie"
+
+/obj/item/clothing/head/boonie/beige
+	name = "beige boonie"
+	current_skin = "beige boonie"
+
+/obj/item/clothing/head/boonie/olive
+	name = "olive boonie"
+	current_skin = "olive boonie"
+
+/obj/item/clothing/head/boonie/navy
+	name = "navy boonie"
+	current_skin = "navy boonie"
+
+/obj/item/clothing/head/ushanka
+	name = "bomber hat"
+	desc = "A winter hat, with flaps covered in faux fur to protect your ears from frigid winds."
+	icon_state = "ushanka"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	unique_reskin = list(
+		"black bomber hat" = "ushanka",
+		"maroon bomber hat" = "ushankamaroon",
+		"olive bomber hat" = "ushankaolive",
+		"navy bomber hat" = "ushankanavy",
+		"grey bomber hat" = "ushankagrey",
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/ushanka/maroon
+	name = "maroon bomber hat"
+	current_skin = "maroon bomber hat"
+
+/obj/item/clothing/head/ushanka/olive
+	name = "olive bomber hat"
+	current_skin = "olive bomber hat"
+
+/obj/item/clothing/head/ushanka/navy
+	name = "navy bomber hat"
+	current_skin = "navy bomber hat"
+
+/obj/item/clothing/head/ushanka/grey
+	name = "grey bomber hat"
+	current_skin = "grey bomber hat"
+
+/obj/item/clothing/head/smallbow
+	name = "small hairbow"
+	desc = "A petite version of a standard hairbow, for a more elegant look."
+	icon_state = "smallbow"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	unique_reskin = list(
+		"small black hairbow" = "smallbow",
+		"small white hairbow" = "smallbow_white",
+		"small grey hairbow" = "smallbow_grey",
+		"small maroon hairbow" = "smallbow_maroon",
+		"small red hairbow" = "smallbow_red",
+		"small orange hairbow" = "smallbow_orange",
+		"small yellow hairbow" = "smallbow_yellow",
+		"small green hairbow" = "smallbow_green",
+		"small dark green hairbow" = "smallbow_darkgreen",
+		"small teal hairbow" = "smallbow_teal",
+		"small blue hairbow" = "smallbow_blue",
+		"small dark blue hairbow" = "smallbow_darkblue",
+		"small purple hairbow" = "smallbow_purple",
+		"small pink hairbow" = "smallbow_pink",
+		"small brown hairbow" = "smallbow_brown",
+		"small light brown hairbow" = "smallbow_lightbrown",
+
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/smallbow/black
+	name = "small black hairbow"
+	current_skin = "small black hairbow"
+
+/obj/item/clothing/head/smallbow/white
+	name = "small white hairbow"
+	current_skin = "small white hairbow"
+
+/obj/item/clothing/head/smallbow/grey
+	name = "small grey hairbow"
+	current_skin = "small grey hairbow"
+
+/obj/item/clothing/head/smallbow/maroon
+	name = "small maroon hairbow"
+	current_skin = "small maroon hairbow"
+
+/obj/item/clothing/head/smallbow/red
+	name = "small red hairbow"
+	current_skin = "small red hairbow"
+
+/obj/item/clothing/head/smallbow/orange
+	name = "small orange hairbow"
+	current_skin = "small orange hairbow"
+
+/obj/item/clothing/head/smallbow/yellow
+	name = "small yellow hairbow"
+	current_skin = "small yellow hairbow"
+
+/obj/item/clothing/head/smallbow/green
+	name = "small green hairbow"
+	current_skin = "small green hairbow"
+
+/obj/item/clothing/head/smallbow/darkgreen
+	name = "small dark green hairbow"
+	current_skin = "small dark green hairbow"
+
+/obj/item/clothing/head/smallbow/teal
+	name = "small teal hairbow"
+	current_skin = "small teal hairbow"
+
+/obj/item/clothing/head/smallbow/blue
+	name = "small blue hairbow"
+	current_skin = "small blue hairbow"
+
+/obj/item/clothing/head/smallbow/darkblue
+	name = "small dark blue hairbow"
+	current_skin = "small dark blue hairbow"
+
+/obj/item/clothing/head/smallbow/purple
+	name = "small purple hairbow"
+	current_skin = "small purple hairbow"
+
+/obj/item/clothing/head/smallbow/pink
+	name = "small pink hairbow"
+	current_skin = "small pink hairbow"
+
+/obj/item/clothing/head/smallbow/brown
+	name = "small brown hairbow"
+	current_skin = "small brown hairbow"
+
+/obj/item/clothing/head/smallbow/lightbrown
+	name = "small light brown hairbow"
+	current_skin = "small light brown hairbow"

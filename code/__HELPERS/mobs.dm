@@ -40,10 +40,6 @@
 	return pick(GLOB.backpacklist)
 
 /proc/random_features()
-	if(!GLOB.tails_list_human.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
-	if(!GLOB.tails_list_lizard.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard)
 	if(!GLOB.face_markings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/face_markings, GLOB.face_markings_list)
 	if(!GLOB.horns_list.len)
@@ -64,16 +60,16 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_fluff, GLOB.moth_fluff_list)
 	if(!GLOB.moth_markings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_markings, GLOB.moth_markings_list)
-	if(!GLOB.squid_face_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/squid_face, GLOB.squid_face_list)
+	if(!GLOB.moth_antennae_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_antennae, GLOB.moth_antennae_list)
+	if(!GLOB.moth_head_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_head, GLOB.moth_head_list)
 	if(!GLOB.ipc_screens_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_screens, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_antennas_list)
-	if(!GLOB.ipc_tail_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_tail_list)
 	if(!GLOB.ipc_chassis_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_chassis, GLOB.ipc_chassis_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/body/ipc_chassis, GLOB.ipc_chassis_list)
 	if(!GLOB.spider_legs_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
 	if(!GLOB.spider_spinneret_list.len)
@@ -88,9 +84,7 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
 	if(!GLOB.elzu_horns_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
-	if(!GLOB.tails_list_elzu.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
-	//For now we will always return none for tail_human and ears.
+	//For now we will always return none for ears.
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
@@ -119,10 +113,6 @@
 		"spider_legs" = pick(GLOB.spider_legs_list),
 		"spider_spinneret" = pick(GLOB.spider_spinneret_list),
 		"spines" = pick(GLOB.spines_list),
-		"squid_face" = pick(GLOB.squid_face_list),
-		"tail_human" = "None",
-		"tail_lizard" = pick(GLOB.tails_list_lizard),
-		"tail_elzu" = pick(GLOB.tails_list_elzu),
 		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
 		"wings" = "None",
@@ -202,18 +192,28 @@
 	return pick(GLOB.skin_tones)
 
 GLOBAL_LIST_INIT(skin_tones, sortList(list(
-	"albino",
-	"caucasian1",
-	"caucasian2",
-	"caucasian3",
-	"latino",
-	"mediterranean",
-	"asian1",
-	"asian2",
-	"arab",
-	"indian",
-	"african1",
-	"african2"
+	"ivory",
+	"porcelain",
+	"peach",
+	"coral",
+	"cotton",
+	"bisque",
+	"rosewood",
+	"sepia",
+	"taupe",
+	"russet",
+	"beige",
+	"walnut",
+	"bronze",
+	"burnet",
+	"amber",
+	"hazel",
+	"champagne",
+	"olive",
+	"tawny",
+	"ochre",
+	"cedar",
+	"sable"
 	)))
 
 /proc/pick_species_adjective(mob/living/carbon/human/H)
@@ -272,7 +272,8 @@ GLOBAL_LIST_EMPTY(species_list)
  */
 /proc/get_temp_change_amount(temp_diff, change_rate = 0.06)
 	if(temp_diff < 0)
-		return -(BODYTEMP_AUTORECOVERY_DIVISOR / 2) * log(1 - (temp_diff * change_rate))
+		return -(HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR / 2) * log(1 - (temp_diff * change_rate))
+	return (HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR / 2) * log(1 + (temp_diff * change_rate))
 
 /* Timed action involving one mob user. A target can also be specified, but it is optional.
  *
@@ -546,3 +547,4 @@ GLOBAL_LIST_EMPTY(species_list)
 /// Gets the client of the mob, allowing for mocking of the client.
 /// You only need to use this if you know you're going to be mocking clients somewhere else.
 #define GET_CLIENT(mob) (##mob.client || ##mob.mock_client)
+

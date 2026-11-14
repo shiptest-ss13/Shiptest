@@ -1,4 +1,4 @@
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null)
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null, no_animation=FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -10,7 +10,7 @@
 			BP = def_zone
 		else
 			if(!def_zone)
-				def_zone = ran_zone(def_zone)
+				def_zone = run_zone(def_zone)
 			BP = get_bodypart(check_zone(def_zone))
 			if(!BP)
 				BP = get_first_available_bodypart()
@@ -88,11 +88,11 @@
 		heal_overall_damage(abs(amount), 0, 0, required_status, updating_health)
 	return amount
 
-/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, required_status)
+/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, required_status, ignore_reduction = 0)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
 	if(amount > 0)
-		take_overall_damage(0, amount, 0, updating_health, required_status)
+		take_overall_damage(0, amount, 0, updating_health, required_status, ignore_reduction)
 	else
 		if(!required_status)
 			required_status = forced ? null : BODYTYPE_ORGANIC
@@ -272,31 +272,47 @@
 	if(update)
 		update_damage_overlays()
 
-/// damage MANY bodyparts, in random order
-/mob/living/carbon/take_overall_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)
+/// Damages several bodyparts in a random order. Larger bodyparts receive a greater share of the damage.
+/mob/living/carbon/take_overall_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, ignore_reduction = 0)
 	if(status_flags & GODMODE)
 		return	//godmode
 
-	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
+	var/list/obj/item/bodypart/parts = list()
+	var/total_weight = 0
+	var/obj/item/bodypart/part
+	for(var/zone in bodyparts)
+		part = bodyparts[zone]
+		if(!part)
+			continue
+		if(required_status && (part.bodytype & required_status))
+			continue
+		if(part.brute_dam + part.burn_dam < part.max_damage)
+			parts += part
+			total_weight += part.body_weight
+
 	var/update = 0
+	var/part_weight_ratio
 	while(length(parts) && (brute > 0 || burn > 0 || stamina > 0))
 		var/obj/item/bodypart/picked = pick(parts)
-		var/brute_per_part = round(brute/parts.len, DAMAGE_PRECISION)
-		var/burn_per_part = round(burn/parts.len, DAMAGE_PRECISION)
-		var/stamina_per_part = round(stamina/parts.len, DAMAGE_PRECISION)
+		part_weight_ratio = picked.body_weight / total_weight
+
+		var/brute_per_part = round(brute * part_weight_ratio, DAMAGE_PRECISION)
+		var/burn_per_part = round(burn * part_weight_ratio, DAMAGE_PRECISION)
+		var/stamina_per_part = round(stamina * part_weight_ratio, DAMAGE_PRECISION)
 
 		var/brute_was = picked.brute_dam
 		var/burn_was = picked.burn_dam
 		var/stamina_was = picked.stamina_dam
 
-
-		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status, wound_bonus = CANT_WOUND)
+		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status, wound_bonus = CANT_WOUND, ignore_reduction = ignore_reduction)
 
 		brute	= round(brute - (picked.brute_dam - brute_was), DAMAGE_PRECISION)
 		burn	= round(burn - (picked.burn_dam - burn_was), DAMAGE_PRECISION)
 		stamina = round(stamina - (picked.stamina_dam - stamina_was), DAMAGE_PRECISION)
 
 		parts -= picked
+		total_weight -= picked.body_weight
+
 	if(updating_health)
 		updatehealth()
 

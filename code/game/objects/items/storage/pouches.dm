@@ -52,7 +52,9 @@
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/hypospray/medipen,
-		/obj/item/reagent_containers/glass/bottle/vial
+		/obj/item/reagent_containers/glass/bottle/vial,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart
 		))
 
 /obj/item/storage/pouch/medical/PopulateContents()
@@ -60,7 +62,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze/five = 1,
-		/obj/item/stack/medical/suture/five = 1,
+		/obj/item/stack/medical/bruise_pack/six = 1,
 		/obj/item/stack/medical/mesh/five = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
@@ -73,7 +75,7 @@
 /obj/item/storage/pouch/ammo/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.max_items = 3
 	STR.max_combined_w_class = 24
 	STR.set_holdable(list(
@@ -85,10 +87,27 @@
 		/obj/item/ammo_box/a858,
 		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
+		/obj/item/ammo_box/a4570,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris,
 		/obj/item/stock_parts/cell/gun
 		))
+
+/obj/item/storage/pouch/ammo/sidewinder/PopulateContents()
+	var/static/items_inside = list(/obj/item/ammo_box/magazine/m57_39_sidewinder = 3)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/pouch/ammo/cobra/PopulateContents()
+	var/static/items_inside = list(/obj/item/ammo_box/magazine/m10_cobra = 3)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/pouch/ammo/ewc6m/PopulateContents()
+	var/static/items_inside = list(/obj/item/stock_parts/cell/gun/pgf = 3)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/pouch/ammo/police/PopulateContents()
+	var/static/items_inside = list(/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/beanbag = 1, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber = 1, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot = 1)
+	generate_items_inside(items_inside,src)
 
 /obj/item/storage/pouch/engi
 	name = "technician pouch"

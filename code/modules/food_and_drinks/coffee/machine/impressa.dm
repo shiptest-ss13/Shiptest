@@ -12,7 +12,6 @@
 	circuit = /obj/item/circuitboard/machine/coffeemaker/premium
 	initial_cartridge = null		//no cartridge, just coffee beans
 	brew_time = 15 SECONDS			//industrial grade, its faster than the regular one
-	density = TRUE
 	pass_flags = PASSTABLE
 	coffeemaker_particle = /particles/smoke/steam/mild/coffeemaker_premium
 
@@ -111,6 +110,10 @@
 		return
 
 	if(panel_open) //Can't insert objects when its screwed open
+		return TRUE
+
+	if(istype(attack_item, /obj/item/coffee_cartridge) && !(attack_item.item_flags & ABSTRACT))
+		balloon_alert(user, "this doesn't take cartridges!")
 		return TRUE
 
 	if(istype(attack_item, /obj/item/reagent_containers/glass/coffeepot) && !(attack_item.item_flags & ABSTRACT) && attack_item.is_open_container())

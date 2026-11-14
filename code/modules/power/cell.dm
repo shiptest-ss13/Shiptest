@@ -5,7 +5,7 @@
 /obj/item/stock_parts/cell
 	name = "power cell"
 	desc = "A rechargeable electrochemical power cell."
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/item/cells.dmi'
 	icon_state = "cell"
 	item_state = "cell"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -66,7 +66,7 @@
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()
 	if(grown_battery)
-		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
+		. += mutable_appearance('icons/obj/item/cells.dmi', "grown_wires")
 	if(blinky_light)
 		if(charge < 0.01)
 			return
@@ -119,19 +119,25 @@
 		return
 	var/devastation_range = -1 //round(charge/11000)
 	var/heavy_impact_range = round(sqrt(charge)/60)
+	var/heavy_damage = min(50, round(sqrt(charge)/2))
+	var/heavy_item_damage = max(20, heavy_damage - 10)
 	var/light_impact_range = round(sqrt(charge)/30)
+	var/light_damage = min(25, round(sqrt(charge)/4))
+	var/light_item_damage = max(10, light_damage - 20)
 	var/flash_range = light_impact_range
 	if (light_impact_range==0)
 		rigged = FALSE
 		corrupt()
 		return
-	//explosion(T, 0, 1, 2, 2)
-	explosion(T, devastation_range, heavy_impact_range, light_impact_range, flash_range)
+	explosion(T, devastation_range, heavy_impact_range, light_impact_range, flash_range,\
+	light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 	qdel(src)
 
 /obj/item/stock_parts/cell/proc/corrupt()
 	charge /= 2
 	maxcharge = max(maxcharge/2, chargerate)
+	desc = initial(desc)
+	desc += " This one is damaged and has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	if (prob(10))
 		rigged = TRUE //broken batterys are dangerous
 
@@ -196,7 +202,7 @@
 	charge = 0
 
 /obj/item/stock_parts/cell/crap
-	name = "\improper Nanotrasen brand rechargeable AA battery"
+	name = "\improper Makosso-Warra Electronics rechargeable AA battery"
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
@@ -227,16 +233,6 @@
 	. = ..()
 	charge = 0
 	update_appearance()
-
-/obj/item/stock_parts/cell/mini_egun
-	name = "miniature energy gun power cell"
-	maxcharge = 600
-	rating = 0 //gun batteries now incompatible with RPED WS edit
-
-/obj/item/stock_parts/cell/hos_gun
-	name = "X-01 multiphase energy gun power cell"
-	maxcharge = 1200
-	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"
@@ -365,21 +361,6 @@
 /obj/item/stock_parts/cell/emproof/corrupt()
 	return
 
-/obj/item/stock_parts/cell/beam_rifle
-	name = "beam rifle capacitor"
-	desc = "A high powered capacitor that can provide huge amounts of energy in an instant."
-	maxcharge = 50000
-	chargerate = 5000	//Extremely energy intensive
-
-/obj/item/stock_parts/cell/beam_rifle/corrupt()
-	return
-
-/obj/item/stock_parts/cell/beam_rifle/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	charge = clamp((charge-(10000/severity)),0,maxcharge)
-
 /obj/item/stock_parts/cell/emergency_light
 	name = "miniature power cell"
 	desc = "A tiny power cell with a very low power capacity. Used in light fixtures to power them in the event of an outage."
@@ -397,20 +378,21 @@
 /obj/item/stock_parts/cell/gun
 	name = "eoehoma power cell"
 	desc = "A rechargeable weapon cell. While intended for Eoehoma laser weapons, these are compatable with various other manufactorer's designs, intentionally or not."
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/item/cells.dmi'
 	icon_state = "e-cell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
 	blinky_light = FALSE
+	auto_scatter = FALSE
 	var/start_empty = FALSE //this really wasn't a var before?
 
 /obj/item/stock_parts/cell/gun/Initialize()
 	. = ..()
-	if(!start_empty)
-		return
-	charge = 0
+
+	if(start_empty)
+		charge = 0
 	update_appearance()
 
 /obj/item/stock_parts/cell/gun/empty
@@ -435,7 +417,7 @@
 	name = "high-capacity eoehoma power cell"
 	desc = "A high capacity weapon cell. Intended for use in heavy weapons and the odd piece of personal gear."
 	icon_state = "e-class2-cell"
-	maxcharge = 20000
+	maxcharge = 15000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 2000
 
@@ -450,6 +432,24 @@
 	chargerate = 1000
 
 /obj/item/stock_parts/cell/gun/mini/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/heavy
+	name = "heavy clover photonics power cell"
+	icon_state = "e-cell-heavy"
+	desc = "A rechargeable weapon cell, derived from the eoehoma models, designed for Clover Photonics heavy weapons."
+	maxcharge = 20000
+
+/obj/item/stock_parts/cell/gun/heavy/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/heavy/upgraded
+	name = "heavy high-capacity clover photonics power cell"
+	icon_state = "e-class2-heavy"
+	desc = "An extremely high-charge weapon cell, designed to provide exceptional magazine depth to Clover Photonics heavy weapons."
+	maxcharge = 30000
+
+/obj/item/stock_parts/cell/gun/heavy/upgraded/empty
 	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/solgov
@@ -490,9 +490,9 @@
 
 /obj/item/stock_parts/cell/gun/sharplite
 	name = "Sharplite power cell"
-	desc = "A proprietary power cell primarily used by Sharplite weaponry. Nanotrasen's large market share has forced some weapon developers to include adapters for these cells"
-	icon = 'icons/obj/power.dmi'
-	icon_state = "nt-cell"
+	desc = "A proprietary power cell primarily used by Sharplite weaponry. Makosso-Warra's large market share has forced some weapon developers to include adapters for these cells"
+	icon = 'icons/obj/item/cells.dmi'
+	icon_state = "warra-cell"
 
 /obj/item/stock_parts/cell/gun/sharplite/empty
 	start_empty = TRUE
@@ -500,7 +500,7 @@
 /obj/item/stock_parts/cell/gun/sharplite/plus
 	name = "Sharplite Plus power cell"
 	desc = "An high-capacity weapon cell used exclusively by Sharplite weaponry. They are a great improvement over the stock cell, and are frequently sought after by collectors, soldiers, and operators of heavy lasers alike."
-	icon_state = "nt_plus-cell"
+	icon_state = "warra_plus-cell"
 
 	maxcharge = 20000
 	custom_materials = list(/datum/material/glass=300)
@@ -512,13 +512,74 @@
 /obj/item/stock_parts/cell/gun/sharplite/mini
 	name = "Sharplite Compact power cell"
 	desc = "A compact weapon cell used exclusively by Sharplite weaponry. It holds less charge and is intended for usage in energy handguns."
-	icon_state = "nt_mini-cell"
+	icon_state = "warra_mini-cell"
 	maxcharge = 7000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stock_parts/cell/gun/sharplite/mini/empty
 	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy
+	name = "Sharplite heavy power cell"
+	desc = "A large power cell primarily used by Sharplite weaponry. It holds significant charge and is designed for use in Sharplite's heavier weapons."
+	icon_state = "warra-heavy-cell"
+	maxcharge = 20000
+	chargerate = 2000
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy/plus
+	name = "Sharplite Super heavy power cell"
+	desc = "An exceptionally high-energy weapon cell used exclusively by Sharplite weaponry. These hold exceptional amounts of charge for use in Sharplite's heaviest weapons, and should not be handled without proper protective clothing."
+	icon_state = "warra_super-heavy-cell"
+
+	maxcharge = 30000
+	custom_materials = list(/datum/material/glass=300)
+	chargerate = 3000
+
+/obj/item/stock_parts/cell/gun/sharplite/heavy/plus/empty
+	start_empty = TRUE
+
+/* Cybersun cells */
+
+/obj/item/stock_parts/cell/gun/cybersun
+	name = "\improper Cybersun plasma cell"
+	desc = "A proprietary power cell primarily used by Tadeusz Armory weaponry. Contains stabiliized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably volatile."
+	icon = 'icons/obj/item/cells.dmi'
+	icon_state = "cybersun-cell"
+	rating = 2
+	maxcharge = 15000
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/stock_parts/cell/gun/cybersun/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/cybersun/heavy
+	name = "\improper heavy Cybersun plasma cell"
+	desc = "A large proprietary power cell primarily used by Tadeusz Armory weaponry. Contains stabiliized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably very volatile."
+	icon_state = "cybersun-heavy"
+
+	maxcharge = 30000
+	rating = 3
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/stock_parts/cell/gun/cybersun/heavy/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/cybersun/mini
+	name = "\improper micro Cybersun plasma cell"
+	desc = "A small plasma power cell sealed within a casing for safe-keeping. Contains a magnetic catalyst for plasma rejuvenation during charging."
+	icon_state = "cybersun-mini"
+	maxcharge = 7000
+	chargerate = 1000
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stock_parts/cell/gun/cybersun/mini/empty
+	start_empty = TRUE
+
 
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN

@@ -168,6 +168,7 @@
 	anchored = TRUE
 	density = TRUE
 	pixel_y = -32
+	gps_active = TRUE
 
 /obj/item/gps/computer/wrench_act(mob/living/user, obj/item/I)
 	..()
@@ -215,7 +216,7 @@
 	if(empty)
 		return
 	for(var/i in 1 to 5)
-		var/obj/item/food/donkpocket/warm/W = new(src)
+		var/obj/item/food/shoalpocket/warm/W = new(src)
 		load(W)
 	if(prob(50))
 		var/obj/item/storage/pill_bottle/dice/D = new(src)
@@ -283,14 +284,14 @@
 /obj/structure/sign/mining
 	name = "\improper N+S mining corps sign"
 	desc = "A sign of relief for weary miners, and a warning for would-be competitors to N+S's mining claims."
-	icon = 'icons/obj/nanotrasen_logos.dmi'
+	icon = 'icons/obj/structures/signs/warra_logos.dmi'
 	icon_state = "ns"
 
 /obj/structure/sign/mining/survival
 	name = "shelter sign"
 	desc = "A high visibility sign designating a safe shelter."
 	icon = 'icons/obj/structures/signs/sign.dmi'
-	icon_state = "secureareaold"
+	icon_state = "securearea"
 
 //Fluff
 /obj/structure/tubes
@@ -314,7 +315,7 @@
 						/obj/item/melee/sword/energy_katana,
 						/obj/item/hierophant_club,
 						/obj/item/gun/energy/minigun,
-						/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended,
+						/obj/item/gun/ballistic/automatic/hmg/python,
 						/obj/item/stack/telecrystal/twenty,
 						/obj/item/nuke_core,
 						/obj/item/phylactery)

@@ -127,10 +127,10 @@
 	status_flags |= GODMODE
 	timer = rand(1,15)
 
-/mob/living/simple_animal/shade/howling_ghost/Life()
+/mob/living/simple_animal/shade/howling_ghost/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	..()
 	timer--
-	if(prob(20))
+	if(SPT_PROB(10, seconds_per_tick))
 		roam()
 	if(timer == 0)
 		spooky_ghosty()
@@ -148,10 +148,6 @@
 /mob/living/simple_animal/shade/howling_ghost/proc/spooky_ghosty()
 	if(prob(20)) //haunt
 		playsound(loc, pick('sound/spookoween/ghosty_wind.ogg','sound/spookoween/ghost_whisper.ogg','sound/spookoween/chain_rattling.ogg'), 300, TRUE)
-	if(prob(10)) //flickers
-		var/obj/machinery/light/L = locate(/obj/machinery/light) in view(5, src)
-		if(L)
-			L.flicker()
 	if(prob(5)) //poltergeist
 		var/obj/item/I = locate(/obj/item) in view(3, src)
 		if(I)

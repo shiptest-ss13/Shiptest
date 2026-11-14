@@ -17,8 +17,6 @@ GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by
 GLOBAL_LIST_INIT(height_filters, list("Shorter" = HUMAN_HEIGHT_SHORTEST, "Short" = HUMAN_HEIGHT_SHORT, "Normal" = HUMAN_HEIGHT_MEDIUM, "Tall" = HUMAN_HEIGHT_TALL, "Taller" = HUMAN_HEIGHT_TALLER))
 	//lizard Bits (all datum lists indexed by name)
 GLOBAL_LIST_EMPTY(body_markings_list)
-GLOBAL_LIST_EMPTY(tails_list_lizard)
-GLOBAL_LIST_EMPTY(animated_tails_list_lizard)
 GLOBAL_LIST_EMPTY(face_markings_list)
 GLOBAL_LIST_EMPTY(horns_list)
 GLOBAL_LIST_EMPTY(frills_list)
@@ -26,19 +24,18 @@ GLOBAL_LIST_EMPTY(spines_list)
 GLOBAL_LIST_EMPTY(animated_spines_list)
 
 	//Mutant Human bits
-GLOBAL_LIST_EMPTY(tails_list_human)
-GLOBAL_LIST_EMPTY(animated_tails_list_human)
 GLOBAL_LIST_EMPTY(ears_list)
 GLOBAL_LIST_EMPTY(wings_list)
 GLOBAL_LIST_EMPTY(wings_open_list)
 GLOBAL_LIST_EMPTY(r_wings_list)
 GLOBAL_LIST_EMPTY(moth_wings_list)
 GLOBAL_LIST_EMPTY(moth_fluff_list)
+GLOBAL_LIST_EMPTY(moth_antennae_list)
 GLOBAL_LIST_EMPTY(moth_markings_list)
-GLOBAL_LIST_EMPTY(squid_face_list)
+GLOBAL_LIST_EMPTY(moth_head_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)
-GLOBAL_LIST_EMPTY(ipc_tail_list)
+GLOBAL_LIST_EMPTY(alternative_body_list)
 GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 GLOBAL_LIST_EMPTY(spider_legs_list)
@@ -50,8 +47,6 @@ GLOBAL_LIST_EMPTY(kepori_tail_feathers_list)
 GLOBAL_LIST_EMPTY(vox_head_quills_list)
 GLOBAL_LIST_EMPTY(vox_neck_quills_list)
 GLOBAL_LIST_EMPTY(elzu_horns_list)
-GLOBAL_LIST_EMPTY(tails_list_elzu)
-GLOBAL_LIST_EMPTY(animated_tails_list_elzu)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",
@@ -132,7 +127,7 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 	"Matrix",
 	"Monochrome",
 	"Murica",
-	"Nanotrasen",
+	"Makosso-Warra",
 	"Not Malf",
 	"President",
 	"Random",
@@ -165,7 +160,10 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 #define DSATCHEL "Department Satchel"
 #define DDUFFELBAG "Department Duffel Bag"
 #define DCOURIERBAG "Department Messenger Bag"
-GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL))
+#define SBAG "Running Bag"
+#define TAILBAG "Tailbag"
+#define KITBAG "Kitbag"
+GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL, SBAG, TAILBAG, KITBAG))
 
 	//Uniform
 #define PREF_SUIT "Standard Jumpsuit"

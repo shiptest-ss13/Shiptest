@@ -77,10 +77,14 @@
 
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
-/obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/AM)
+/obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
-	if(iscarbon(AM) && blood_state && bloodiness > 40)
-		SEND_SIGNAL(AM, COMSIG_STEP_ON_BLOOD, src)
+
+	if(arrived.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
+		return
+
+	if(iscarbon(arrived) && blood_state && bloodiness > 40)
+		SEND_SIGNAL(arrived, COMSIG_STEP_ON_BLOOD, src)
 		update_appearance()
 
 /obj/effect/decal/cleanable/wash(clean_types)

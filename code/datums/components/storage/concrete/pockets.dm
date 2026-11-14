@@ -2,13 +2,14 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
+	alt_click_open = FALSE // alt-click has special interactions on a lot of clothing items and shouldn't be canceled by opening storage instead
 	use_sound = null
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Alt-click [parent] to remove it."))
+			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Right-click [parent] to remove it."))
 		else
 			to_chat(user, span_notice("You discreetly slip [I] into [parent]."))
 
@@ -29,13 +30,19 @@
 	quickdraw = FALSE
 	silent = FALSE
 
+/datum/component/storage/concrete/pockets/exo/Initialize()
+	. = ..()
+	var/static/list/exception_cache = typecacheof(list(
+		/obj/item/storage/pouch
+		))
+	exception_hold = exception_cache
+
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
 
 /datum/component/storage/concrete/pockets/small/fedora/Initialize()
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/toy/katana, /obj/item/melee/sword/katana,
 		/obj/item/melee/sword/energy_katana, /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 		))
 	exception_hold = exception_cache
@@ -113,9 +120,14 @@
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
+		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/gun/energy/clover/pistol,
 		/obj/item/stock_parts/cell/gun,
+		/obj/item/gun/ballistic/cs_gauss/rectifier,
+		/obj/item/gun/energy/cybersun/troubleshooter,
+		/obj/item/gun/energy/cybersun/lorentz/opportunist,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
 	can_hold_max_of_items = typecacheof(list(
 		/obj/item/gun = 1,
@@ -129,7 +141,7 @@
 	original_parent = parent
 	. = ..()
 	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/revolver/detective,
+		/obj/item/gun/ballistic/revolver/flint,
 		/obj/item/ammo_box/c38))
 
 /datum/component/storage/concrete/pockets/holster/nukie
@@ -142,7 +154,7 @@
 	can_hold = typecacheof(list(
 		/obj/item/gun/ballistic/automatic,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/pulse/carbine,
 		/obj/item/gun/energy/dueling,

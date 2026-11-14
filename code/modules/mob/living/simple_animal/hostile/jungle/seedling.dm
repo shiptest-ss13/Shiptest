@@ -19,8 +19,7 @@
 	melee_damage_upper = 30
 	pixel_x = -16
 	base_pixel_x = -16
-	pixel_y = -14
-	base_pixel_y = -14
+	pixel_z = -14
 	minimum_distance = 3
 	move_to_delay = 20
 	vision_range = 9
@@ -70,7 +69,7 @@
 	duration = 30
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
-	tick_interval = 1
+	tick_interval = 2
 	var/atom/movable/screen/seedling/seedling_screen_object
 	var/atom/target
 
@@ -95,7 +94,7 @@
 	return ..()
 
 /datum/status_effect/seedling_beam_indicator/tick()
-	var/target_angle = Get_Angle(owner, target)
+	var/target_angle = get_angle(owner, target)
 	var/matrix/final = matrix()
 	final.Turn(target_angle)
 	seedling_screen_object.transform = final
@@ -125,15 +124,6 @@
 		combatant_state = SEEDLING_STATE_WARMUP
 		walk(src,0)
 		update_icons()
-		var/target_dist = get_dist(src,target)
-		var/living_target_check = isliving(target)
-		if(living_target_check)
-			if(target_dist > 7)//Offscreen check
-				SolarBeamStartup(target)
-				return
-			if(get_dist(src,target) >= 4 && prob(40))
-				SolarBeamStartup(target)
-				return
 		addtimer(CALLBACK(src, PROC_REF(Volley)), 5)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark

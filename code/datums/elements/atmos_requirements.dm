@@ -11,7 +11,7 @@
  */
 /datum/element/atmos_requirements
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	var/list/atmos_requirements
 	var/unsuitable_atmos_damage
 
@@ -29,11 +29,14 @@
 ///signal called by the living mob's life() while non stasis
 /datum/element/atmos_requirements/proc/on_non_stasis_life(mob/living/target, seconds_per_tick = SSMOBS_DT)
 	SIGNAL_HANDLER
+	var/mob/living/basic/basic_target = target
+	if(istype(basic_target) && world.time < basic_target.environment_grace_until)
+		return
 	if(is_breathable_atmos(target))
-		target.clear_alert("not_enough_oxy")
+		target.clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 		return
 	target.adjustBruteLoss(unsuitable_atmos_damage * seconds_per_tick)
-	target.throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+	target.throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 
 /datum/element/atmos_requirements/proc/is_breathable_atmos(mob/living/target)
 	if(target.pulledby && target.pulledby.grab_state >= GRAB_KILL && atmos_requirements["min_oxy"])
@@ -43,8 +46,10 @@
 		return TRUE
 
 	var/turf/open/open_turf = target.loc
-	if(!open_turf.air && (atmos_requirements["min_oxy"] || atmos_requirements["min_tox"] || atmos_requirements["min_n2"] || atmos_requirements["min_co2"]))
-		return FALSE
+	if(isnull(open_turf.air))
+		if(atmos_requirements["min_oxy"] || atmos_requirements["min_tox"] || atmos_requirements["min_n2"] || atmos_requirements["min_co2"])
+			return FALSE
+		return TRUE
 
 	var/plas = open_turf.air.get_moles(GAS_PLASMA)
 	var/oxy = open_turf.air.get_moles(GAS_O2)

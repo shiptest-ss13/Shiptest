@@ -173,7 +173,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 
 /datum/objective/assassinate/check_completion()
-	return completed || (!considered_alive(target) || considered_afk(target) || considered_exiled(target))
+	return completed || (!considered_alive(target) || considered_afk(target))
 
 /datum/objective/assassinate/update_explanation_text()
 	..()
@@ -204,7 +204,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 
 /datum/objective/mutiny/check_completion()
-	if(!target || !considered_alive(target) || considered_afk(target) || considered_exiled(target))
+	if(!target || !considered_alive(target) || considered_afk(target))
 		return TRUE
 	return isspaceturf(get_turf(target.current))
 
@@ -332,7 +332,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Ensure that [target.name], the [!target_role_type ? target.assigned_role : target.special_role] is delivered to nanotrasen alive and in custody."
+		explanation_text = "Ensure that [target.name], the [!target_role_type ? target.assigned_role : target.special_role] is delivered to Makosso-Warra alive and in custody."
 	else
 		explanation_text = "Free Objective"
 

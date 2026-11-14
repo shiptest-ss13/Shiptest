@@ -10,7 +10,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -43,6 +43,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -51,6 +52,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
 	ammo_x_offset = 1
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/decloner/update_overlays()
 	. = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
@@ -58,6 +61,7 @@
 		. += "decloner_spin"
 
 /obj/item/gun/energy/floragun
+	autowiki_hidden = TRUE //botany tool, not a weapon
 	name = "floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
 	icon_state = "flora"
@@ -69,6 +73,7 @@
 	shaded_charge = TRUE
 
 /obj/item/gun/energy/meteorgun
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "meteor gun"
 	desc = "For the love of god, make sure you're aiming this the right way!"
 	icon_state = "meteor_gun"
@@ -92,6 +97,7 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/gun/energy/mindflayer
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "\improper Mind Flayer"
 	desc = "A prototype weapon recovered from the ruins of Research-Station Epsilon."
 	icon_state = "xray"
@@ -126,113 +132,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	manufacturer = MANUFACTURER_NONE
 
-
-/obj/item/gun/energy/plasmacutter
-	name = "plasma cutter"
-	desc = "An engineering tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off xenos! Or, you know, cut through walls."
-	icon_state = "plasmacutter"
-	item_state = "plasmacutter"
-	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
-	flags_1 = CONDUCT_1
-	attack_verb = list("attacked", "slashed", "cut", "sliced")
-	force = 12
-	sharpness = SHARP_EDGED
-	can_charge = FALSE
-
-	heat = 3800
-	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
-	tool_behaviour = TOOL_DECONSTRUCT
-	wall_decon_damage = 200
-	toolspeed = 1 //plasmacutters can be used like angle grinders
-	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
-	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
-	var/adv = FALSE
-
-/obj/item/gun/energy/plasmacutter/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 25, 105, 0, 'sound/weapons/plasma_cutter.ogg')
-	AddElement(/datum/element/update_icon_blocker)
-	AddElement(/datum/element/tool_flash, 1)
-
-/obj/item/gun/energy/plasmacutter/examine(mob/user)
-	. = ..()
-	if(cell)
-		. += span_notice("[src] is [round(cell.percent())]% charged.")
-
-/obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
-	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
-	if(istype(I, /obj/item/stack/sheet/mineral/plasma))
-		charge_multiplier = 2
-	if(istype(I, /obj/item/stack/ore/plasma))
-		charge_multiplier = 1
-	if(charge_multiplier)
-		if(cell.charge == cell.maxcharge)
-			to_chat(user, span_notice("You try to insert [I] into [src], but it's fully charged.")) //my cell is round and full
-			return
-		I.use(1)
-		cell.give(500*charge_multiplier)
-		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
-	else
-		..()
-
-// Can we cut? Plasma cutter does not use charge continuously.
-// Amount cannot be defaulted to 1: most of the code specifies 0 in the call.
-/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, atom/target, amount)
-	if(QDELETED(cell))
-		to_chat(user, span_warning("[src] does not have a cell, and cannot be used!"))
-		return FALSE
-	// Amount cannot be used if drain is made continuous, e.g. amount = 5, charge_cut = 25
-	// Then it'll drain 125 at first and 25 periodically, but fail if charge dips below 125 even though it still can finish action
-	// Alternately it'll need to drain amount*charge_cut every period, which is either obscene or makes it free for other uses
-	if(amount ? cell.charge < charge_cut * amount : cell.charge < charge_cut)
-		to_chat(user, span_warning("You need more charge to complete this task!"))
-		return FALSE
-
-	return TRUE
-
-/obj/item/gun/energy/plasmacutter/attack(mob/living/carbon/human/target, mob/user)
-	if(!istype(target))
-		return ..()
-	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
-	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
-		return ..()
-	if(!target.is_exposed(user, TRUE, user.zone_selected))
-		return TRUE
-	if(!tool_start_check(user, amount = 1))
-		return TRUE
-	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),
-			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
-	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
-		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
-	return TRUE
-
-/obj/item/gun/energy/plasmacutter/use(amount)
-	return (!QDELETED(cell) && cell.use(amount ? amount * charge_cut : charge_cut))
-
-/obj/item/gun/energy/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
-	if(amount)
-		if(adv)
-			target.add_overlay(GLOB.advanced_cutting_effect)
-		else
-			target.add_overlay(GLOB.cutting_effect)
-		. = ..()
-		if(adv)
-			target.cut_overlay(GLOB.advanced_cutting_effect)
-		else
-			target.cut_overlay(GLOB.cutting_effect)
-	else
-		. = ..(amount=1)
-
-/obj/item/gun/energy/plasmacutter/adv
-	name = "advanced plasma cutter"
-	icon_state = "adv_plasmacutter"
-	item_state = "adv_plasmacutter"
-	force = 15
-	wall_decon_damage = 300
-	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
-
 /obj/item/gun/energy/wormhole_projector
+	autowiki_hidden = TRUE //not a weapon
 	name = "bluespace wormhole projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams." //WS Edit - Any anomaly core for phazons
 	ammo_type = list(/obj/item/ammo_casing/energy/wormhole, /obj/item/ammo_casing/energy/wormhole/orange)
@@ -291,7 +192,7 @@
 
 /obj/item/gun/energy/wormhole_projector/proc/create_portal(obj/projectile/beam/wormhole/W, turf/target)
 	var/obj/effect/portal/P = new /obj/effect/portal(target, 300, null, FALSE, null, atmos_link)
-	RegisterSignal(P, COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
+	RegisterSignal(P, COMSIG_QDELETING, PROC_REF(on_portal_destroy))
 	if(istype(W, /obj/projectile/beam/wormhole/orange))
 		qdel(p_orange)
 		p_orange = P
@@ -304,21 +205,23 @@
 /* 3d printer 'pseudo guns' for borgs */
 
 /obj/item/gun/energy/printer
-	name = "integrated LMG"
-	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
-	icon_state = "l6_cyborg"
-	icon = 'icons/obj/guns/projectile.dmi'
+	autowiki_hidden = TRUE //not a handheld weapon i dont want this i think
+	name = "integrated SAW-90 LMG"
+	desc = "A modified Python SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
+	icon_state = "python"
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	default_ammo_type = /obj/item/stock_parts/cell/secborg
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/secborg,
 	)
-	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
+	ammo_type = list(/obj/item/ammo_casing/energy/integrated_lmg)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
 
-	fire_delay = 0.3 SECONDS
+	burst_delay = 0.08 SECONDS
+	fire_delay = 0.08 SECONDS
 
-	gun_firemodes = list(FIREMODE_FULLAUTO)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
 /obj/item/gun/energy/printer/ComponentInitialize()
@@ -372,11 +275,14 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/temperature/security
 	name = "security temperature gun"
 	desc = "A weapon that can only be used to its full potential by the truly robust."
 
 /obj/item/gun/energy/laser/instakill
+	autowiki_hidden = TRUE //admin item
 	name = "instakill rifle"
 	icon_state = "instagib"
 	item_state = "instagib"
@@ -403,6 +309,7 @@
 	return
 
 /obj/item/gun/energy/gravity_gun
+	autowiki_hidden = TRUE //not a weapon
 	name = "one-point gravitational manipulator"
 	desc = "An experimental, multi-mode device that fires bolts of Zero-Point Energy, causing local distortions in gravity. Requires an anomaly core to function." //WS Edit - Any anomaly core for phazons
 	ammo_type = list(/obj/item/ammo_casing/energy/gravity/repulse, /obj/item/ammo_casing/energy/gravity/attract, /obj/item/ammo_casing/energy/gravity/chaos)
@@ -437,6 +344,8 @@
 	fire_delay = 0.1 SECONDS
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/buster
 	name = "replica buster cannon"

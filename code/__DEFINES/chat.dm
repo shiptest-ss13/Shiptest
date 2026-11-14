@@ -14,7 +14,6 @@
 #define MESSAGE_TYPE_ADMINPM "adminpm"
 #define MESSAGE_TYPE_COMBAT "combat"
 #define MESSAGE_TYPE_ADMINCHAT "adminchat"
-#define MESSAGE_TYPE_MENTORCHAT "mentorchat"
 #define MESSAGE_TYPE_EVENTCHAT "eventchat"
 #define MESSAGE_TYPE_ADMINLOG "adminlog"
 #define MESSAGE_TYPE_ATTACKLOG "attacklog"
@@ -41,3 +40,5 @@
 #define custom_boxed_message(classes, str) ("<div class='boxed_message " + classes + "'>" + str + "</div>")
 /// Makes a fieldset with a neaty styled name. Can apply additional classes.
 #define fieldset_block(title, content, classes) ("<fieldset class='fieldset " + classes + "'><legend class='fieldset_legend'>" + title + "</legend>" + content + "</fieldset>")
+/// Helper which creates a chat message which may have a tooltip in some contexts, but not others.
+#define conditional_tooltip(normal_text, tooltip_text, condition) ((condition) ? (span_tooltip(tooltip_text, normal_text)) : (normal_text))

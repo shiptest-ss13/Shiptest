@@ -6,6 +6,8 @@
 	projectile_type = /obj/projectile/bullet/gauss
 	auto_rotate = FALSE
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
+	stack_size = 22
+	can_cookoff = FALSE
 	var/energy_cost = 100
 
 /obj/item/ammo_casing/caseless/gauss/hc
@@ -26,6 +28,7 @@
 	projectile_type = /obj/projectile/bullet/gauss/lance
 	auto_rotate = TRUE
 	energy_cost = 155
+	stack_size = 16
 
 /obj/item/ammo_casing/caseless/gauss/lance/hc
 	name = "high conductivity lance"
@@ -45,6 +48,7 @@
 	projectile_type = /obj/projectile/bullet/gauss/slug
 	auto_rotate = TRUE
 	energy_cost = 700
+	stack_size = 10
 
 /obj/item/ammo_casing/caseless/gauss/slug/hc
 	name = "high conductivity slug"
@@ -55,3 +59,35 @@
 	auto_rotate = FALSE
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
 	energy_cost = 1400
+
+/obj/item/ammo_casing/caseless/gauss/rod
+	name = "ferromagnetic rod"
+	desc = "A heavy and incredibly dense alloy rod."
+	caliber = "rod"
+	icon_state = "gauss-rod"
+	projectile_type = /obj/projectile/bullet/gauss/rod
+	auto_rotate = TRUE
+	energy_cost = 1500
+	stack_size = 5
+
+/obj/item/ammo_casing/caseless/gauss/tavsha
+	name = "2x15mm Tav'Sha gauss dart"
+	desc = "A small magnetic dart."
+	caliber = "dart"
+	icon_state = "gauss-lance"
+	projectile_type = /obj/projectile/bullet/gauss/tavsha
+	auto_rotate = FALSE
+	stack_size = 30
+	energy_cost = 0
+	can_cookoff = TRUE
+
+/obj/item/ammo_casing/caseless/gauss/deusha
+	name = "3x20mm Deu'Sha gauss dart"
+	desc = "A small magnetic dart."
+	caliber = "dart"
+	icon_state = "gauss-lance"
+	projectile_type = /obj/projectile/bullet/gauss/deusha
+	auto_rotate = FALSE
+	stack_size = 30
+	energy_cost = 0
+	can_cookoff = TRUE

@@ -1,15 +1,24 @@
 /datum/species/fly
 	name = "\improper Flyperson"
 	id = SPECIES_FLYPERSON
-	species_traits = list(TRAIT_ANTENNAE, HAS_FLESH, HAS_BONE)
+	inherent_traits = list(TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutanttongue = /obj/item/organ/tongue/fly
-	mutantliver = /obj/item/organ/liver/fly
-	mutantstomach = /obj/item/organ/stomach/fly
 	disliked_food = null
 	liked_food = GORE | RAW
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/fly
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/fly,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/fly,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/fly,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/fly,
@@ -20,10 +29,10 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/fly,
 	)
 
-/datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+/datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	if(chem.type == /datum/reagent/toxin/pestkiller)
-		H.adjustToxLoss(3)
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
+		H.adjustToxLoss(3 * REAGENTS_EFFECT_MULTIPLIER * seconds_per_tick)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * seconds_per_tick)
 		return TRUE
 
 	if(chem.type == /datum/reagent/consumable)

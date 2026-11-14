@@ -26,7 +26,7 @@
 		return 0
 
 
-	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
+	var/obj/item/bodypart/affecting = D.get_bodypart(D.run_zone(A.zone_selected))
 	var/armor_block = D.run_armor_check(affecting, "melee")
 
 	playsound(D.loc, A.dna.species.attack_sound, 25, TRUE, -1)

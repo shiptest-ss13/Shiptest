@@ -47,7 +47,7 @@
 	if(mapload && prob(33))
 		MakeDirty()
 
-/turf/open/floor/ex_act(severity, target)
+/turf/open/floor/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	var/shielded = is_shielded()
 	..()
 	if(severity != 1 && shielded && target != src)

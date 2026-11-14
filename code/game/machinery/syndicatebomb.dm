@@ -14,7 +14,7 @@
 	processing_flags = START_PROCESSING_MANUALLY
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 
-	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_OFFLINE
+	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_UNPOWERED
 
 	var/minimum_timer = 90
 	var/timer_set = 90
@@ -244,6 +244,14 @@
 	payload = /obj/item/bombcore/large
 	can_unanchor = FALSE
 
+/obj/machinery/syndicatebomb/live_fucking_bomb
+	name = "self destruct device"
+	desc = "Now you've done it you freak shit."
+
+/obj/machinery/syndicatebomb/live_fucking_bomb/Initialize()
+	. = ..()
+	activate() // :D
+
 ///Bomb Cores///
 
 /obj/item/bombcore
@@ -286,7 +294,7 @@
 
 /obj/item/bombcore/training
 	name = "dummy payload"
-	desc = "A Nanotrasen replica of a syndicate payload. It's not intended to explode but to announce that it WOULD have exploded, then rewire itself to allow for more training."
+	desc = "A Makosso-Warra replica of a syndicate payload. It's not intended to explode but to announce that it WOULD have exploded, then rewire itself to allow for more training."
 	var/defusals = 0
 	var/attempts = 0
 

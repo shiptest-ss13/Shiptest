@@ -14,6 +14,7 @@
 		return
 	do_sparks(rand(5, 9), FALSE, src)
 	playsound(flashbang_turf, 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
+	alert_ai_to_noise(flashbang_turf, AI_GUNFIRE_HEARING_RANGE)
 	new /obj/effect/dummy/lighting_obj (flashbang_turf, flashbang_range + 2, 4, COLOR_WHITE, 2)
 	for(var/mob/living/M in get_hearers_in_view(flashbang_range, flashbang_turf))
 		bang(get_turf(M), M)
@@ -26,7 +27,7 @@
 	var/distance = max(0,get_dist(get_turf(src),T))
 
 //Flash
-	if(M.flash_act(affect_silicon = 1))
+	if(M.flash_act(affect_silicon = 1) & FLASH_EFFECT)
 		M.Paralyze(max(20/max(1,distance), 5))
 		M.Knockdown(max(200/max(1,distance), 60))
 
@@ -72,6 +73,7 @@
 		return
 	do_sparks(rand(5, 9), FALSE, src)
 	playsound(flashbang_turf, 'sound/weapons/flashbang.ogg', 50, TRUE, 8, 0.9)
+	alert_ai_to_noise(flashbang_turf, AI_LASER_HEARING_RANGE)
 	new /obj/effect/dummy/lighting_obj (flashbang_turf, flashbang_range + 2, 2, COLOR_WHITE, 1)
 	for(var/mob/living/M in get_hearers_in_view(flashbang_range, flashbang_turf))
 		pop(get_turf(M), M)
@@ -83,7 +85,7 @@
 	M.show_message(span_warning("POP"), MSG_AUDIBLE)
 	var/distance = max(0,get_dist(get_turf(src),T))
 //Flash
-	if(M.flash_act(affect_silicon = 1))
+	if(M.flash_act(affect_silicon = 1) & FLASH_EFFECT)
 		M.Paralyze(max(10/max(1,distance), 5))
 		M.Knockdown(max(100/max(1,distance), 60))
 

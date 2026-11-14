@@ -43,7 +43,7 @@
 
 /// In which we print the message that we're starting to heal someone, then we try healing them. Does the do_after whether or not it can actually succeed on a targeted mob
 /obj/item/stack/medical/proc/try_heal(mob/living/patient, mob/user, silent = FALSE)
-	if(!patient.can_inject(user, TRUE))
+	if(!patient.can_inject(user))
 		return
 
 	if(patient == user)
@@ -53,7 +53,7 @@
 				span_notice("[user] starts to apply [src] on [user.p_them()]self..."),
 				span_notice("You begin applying [src] on yourself..."),
 			)
-		if(!do_after(user, self_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 
 	else if(other_delay)
@@ -63,7 +63,7 @@
 				span_notice("[user] starts to apply [src] on [patient]."),
 				span_notice("You begin applying [src] on [patient]..."),
 			)
-		if(!do_after(user, other_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 
 	if(heal(patient, user))
@@ -132,14 +132,20 @@
 	singular_name = "bruise pack"
 	desc = "A therapeutic gel pack and bandages designed to treat blunt-force trauma."
 	icon_state = "brutepack"
+	amount = 12
+	max_amount = 12
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 2 SECONDS
 	other_delay = 1.5 SECONDS
-	heal_brute = 10
-	grind_results = list(/datum/reagent/medicine/indomide = 10)
+	repeating = TRUE
+	heal_brute = 15
+	grind_results = list(/datum/reagent/medicine/indomide = 5)
 	merge_type = /obj/item/stack/medical/bruise_pack
+
+/obj/item/stack/medical/bruise_pack/six
+	amount = 6
 
 /obj/item/stack/medical/gauze
 	name = "medical gauze"
@@ -247,7 +253,7 @@
 	repeating = TRUE
 	heal_brute = 10
 	stop_bleeding = 0.8
-	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
+	grind_results = list(/datum/reagent/medicine/antibiotic = 2)
 	merge_type = /obj/item/stack/medical/suture
 
 /obj/item/stack/medical/suture/five
@@ -288,7 +294,7 @@
 	flesh_regeneration = 3
 
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
-	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
+	grind_results = list(/datum/reagent/medicine/antibiotic = 2)
 	merge_type = /obj/item/stack/medical/mesh
 
 /obj/item/stack/medical/mesh/Initialize(mapload, new_amount, merge = TRUE, list/mat_override=null, mat_amt=1)

@@ -59,7 +59,7 @@
 		STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/oxygen_candle/on_grind()
-	grind_results = list(/datum/reagent/oxygen/ = (fuel / 5), /datum/reagent/consumable/sodiumchloride = (10 / max(fuel, 1)))
+/obj/item/oxygen_candle/on_grind(simulated=FALSE)
+	. = list(/datum/reagent/oxygen/ = (fuel / 5), /datum/reagent/consumable/sodiumchloride = (10 / max(fuel, 1)))
 
 #undef OXY_CANDLE_RELEASE_TEMP

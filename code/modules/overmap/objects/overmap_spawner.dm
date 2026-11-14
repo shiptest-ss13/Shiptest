@@ -43,6 +43,9 @@
 	//if no or an invalid overmap is passed onto the proc, nope the hell out
 	if(!istype(current_overmap))
 		CRASH("Invalid Overmap passed to punchcard generation! Aborting!")
+	//if planets shouldn't refresh/spawn naturally in this sector, reject the card
+	if(!current_overmap.encounters_refresh)
+		return FALSE
 	// if position is none we get a random square
 	if(!position)
 		position = current_overmap.get_unused_overmap_square()
@@ -62,8 +65,8 @@
 	encounter_name = "scrungled planetoid"
 	///What should the planet be called when it's landed on?
 	var/planet_name = "Mappeious Goofius Upper"
-	/// What planet type do we spawn? By default its reebe just so it's obvious when something's gone wrong
-	var/planet_type = /datum/planet_type/reebe
+	/// What planet type do we spawn? By default its a dustball just so it's obvious when something's gone wrong
+	var/planet_type = /datum/planet_type/dustball
 	/// Do we want ruins? If true and ruin_force is not set, we spawn a random ruin. NOTE: If FALSE up to four ships can dock to the encounter
 	var/spawn_ruins = FALSE
 	/// What ruin do we want to spawn? If none, we randomize unless above was set to random

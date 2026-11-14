@@ -55,16 +55,15 @@
 			var/datum/wound/W = i
 			msg += "[W.get_examine_description(user)]\n"
 
-	for(var/zone in bodyparts)
-		limb = bodyparts[zone]
-		if(!limb)
-			continue
+	for(var/obj/item/bodypart/body_part in disabled)
 		var/damage_text
-		if(!(limb.get_damage(include_stamina = FALSE) >= limb.max_damage)) //Stamina is disabling the limb
+		if(HAS_TRAIT(body_part, TRAIT_DISABLED_BY_WOUND))
+			continue // skip if it's disabled by a wound (cuz we'll be able to see the bone sticking out!)
+		if(!(body_part.get_damage(include_stamina = FALSE) >= body_part.max_damage)) //we don't care if it's stamcritted
 			damage_text = "limp and lifeless"
 		else
-			damage_text = (limb.brute_dam >= limb.burn_dam) ? limb.heavy_brute_msg : limb.heavy_burn_msg
-		msg += "<B>[capitalize(t_his)] [limb.name] is [damage_text]!</B>\n"
+			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
+		msg += "<B>[capitalize(t_his)] [body_part.plaintext_zone] is [damage_text]!</B>\n"
 
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
@@ -148,7 +147,7 @@
 
 	. += "</span>"
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /mob/living/carbon/examine_more(mob/user)
 	. = ..()
@@ -170,7 +169,7 @@
 		var/brutedamage = round(limb.brute_dam/limb_max_damage*100)
 		var/burndamage = round(limb.burn_dam/limb_max_damage*100)
 		switch(brutedamage)
-			if(20 to 35)
+			if(10 to 35)
 				status = limb.light_brute_msg
 			if(36 to 65)
 				status = limb.medium_brute_msg
@@ -180,7 +179,7 @@
 		if(burndamage >= 20 && status)
 			status += "and "
 		switch(burndamage)
-			if(20 to 35)
+			if(10 to 35)
 				status += limb.light_burn_msg
 			if(36 to 65)
 				status += limb.medium_burn_msg
@@ -205,10 +204,10 @@
 					msg += "\t<span class='warning'><b>[t_His] [limb.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!!</b></span>"
 		if(limb.current_gauze)
 			var/datum/bodypart_aid/current_gauze = limb.current_gauze
-			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
+			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_gauze.desc_prefix] with <a href='byond://?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
 		if(limb.current_splint)
 			var/datum/bodypart_aid/current_splint = limb.current_splint
-			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
+			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_splint.desc_prefix] with <a href='byond://?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
 
 	if(!any_bodypart_damage)
 		msg += "\t<span class='smallnotice'><i>[t_He] [t_Has] no significantly damaged bodyparts.</i></span>"

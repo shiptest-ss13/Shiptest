@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(shuttle)
 	/// Current state of the jump
 	var/jump_mode = BS_JUMP_IDLE
 	/// Time taken for bluespace jump to begin after it is requested (in deciseconds)
-	var/jump_request_time = 6000
+	var/jump_request_time = 9000
 	/// Time taken for a bluespace jump to complete after it initiates (in deciseconds)
 	var/jump_completion_time = 1200
 
@@ -60,7 +60,8 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
-	priority_announce("Mobile ships preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
+	priority_announce("Bluespace disturbances intensifying. ETA: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
+	new /datum/eor_outpost_picker()
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
 /datum/controller/subsystem/shuttle/proc/cancel_jump()
@@ -116,17 +117,21 @@ SUBSYSTEM_DEF(shuttle)
 	///attempt at making transit levels bigger to allow for better ship to ship docking
 	if(transit_width <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
 		transit_width *= 3
-	else if(transit_width <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+	else if(transit_width <= 63) // 63 x 2 = 127 -  127 is the default size of planets, ideally we dont go higher than this
 		transit_width *= 2
+	else if(transit_width <= 127) // fuckhuge ships should prbobaly max out here,
+		transit_width = 127 // ditto
 	else
-		transit_width = 127 // fuckhuge ships should prbobaly max out here
+		transit_width = 255 //...however, for the sake of edgecase handling, if a mapper decides to break all mapping conventions (map size larger than 127), we assume this is intentional,
 
 	if(transit_height <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
 		transit_height *= 3
-	else if(transit_height <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+	else if(transit_height <= 63) // 63 x 2 = 127 -  127 is the default size of planets, ideally we dont go higher than this
 		transit_height *= 2
+	else if(transit_height <= 127) // fuckhuge ships should prbobaly max out here,
+		transit_height = 127 // ditto
 	else
-		transit_height = 127 // fuckhuge ships should prbobaly max out here
+		transit_height = 255 //...however, for the sake of edgecase handling, if a mapper decides to break all mapping conventions (map size larger than 127), we assume this is intentional,
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)

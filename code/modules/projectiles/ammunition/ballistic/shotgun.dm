@@ -88,10 +88,10 @@
 
 /obj/item/ammo_casing/shotgun/dart
 	name = "shotgun dart"
-	desc = "A dart for use in shotguns. Can be injected with up to thirty units of any chemical."
+	desc = "A dart for use in shotguns. Can be injected with up to ten units of any chemical."
 	icon_state = "dart"
 	projectile_type = /obj/projectile/bullet/dart
-	var/reagent_amount = 30
+	var/reagent_amount = 10
 
 /obj/item/ammo_casing/shotgun/dart/Initialize()
 	. = ..()
@@ -129,7 +129,7 @@
 	pellets = 8
 	variance = 45
 
-	wear_modifier = 1
+	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/meteorslug
 	name = "meteorslug shell"
@@ -137,7 +137,7 @@
 	icon_state = "meteor"
 	projectile_type = /obj/projectile/bullet/slug/meteor
 
-	wear_modifier = 1
+	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/frag12
 	name = "FRAG-12 slug"
@@ -145,7 +145,7 @@
 	icon_state = "frag12"
 	projectile_type = /obj/projectile/bullet/slug/frag12
 
-	wear_modifier = 1
+	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
@@ -156,17 +156,7 @@
 	pellets = 8
 	variance = 25
 
-	wear_modifier = 1
-
-/obj/item/ammo_casing/shotgun/laserscatter
-	name = "scatter laser shell"
-	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of a scatter laser weapon in a ballistic package."
-	icon_state = "laser"
-	projectile_type = /obj/projectile/beam/weak
-	pellets = 8
-	variance = 25
-
-	wear_modifier = 1
+	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/pulseslug
 	name = "pulse slug"
@@ -176,7 +166,10 @@
 	icon_state = "pulse"
 	projectile_type = /obj/projectile/beam/pulse/shotgun
 
+	wear_modifier = 2
+
 /obj/item/ammo_casing/shotgun/buckshot/twobore
+	autowiki_hidden = TRUE //twobore only, admeme i think?
 	name = "two-bore shell"
 	desc = "A massive fucking two-bore shell."
 	caliber = "twobore"
@@ -184,5 +177,71 @@
 	pellets = 6
 	variance = 20
 	transform = matrix(2, 0, 0, 0, 2, 0)
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/buckshot/fourbore
+	autowiki_hidden = TRUE
+	name = "four-bore shell"
+	desc = "A massive four-bore shell."
+	icon_state = "fourbore"
+	caliber = "fourbore"
+	projectile_type = /obj/projectile/bullet/pellet/fourbore
+	pellets = 8
+	variance = 20
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/fourbore
+	autowiki_hidden = TRUE
+	name = "four-bore shotgun slug"
+	desc = "A hefty four-bore lead-steel alloyed slug capable of wrecking a ship's engine with one round."
+	icon_state = "fourboreslug"
+	caliber = "fourbore"
+	custom_materials = list(/datum/material/iron=4000)
+	projectile_type = /obj/projectile/bullet/slug/fourbore
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/buckshot/fourbore/shrapnel
+	autowiki_hidden = TRUE
+	name = "four-bore shrapnel shell"
+	desc = "A four-bore shrapnel shell. Rated for extreme close quarters environments. Use on soft-body targets only."
+	icon_state = "fourboreshrapnel"
+	caliber = "fourbore"
+	projectile_type = /obj/projectile/bullet/pellet/fourbore/shrapnel
+	pellets = 16
+	variance = 30
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/fourbore/flashbang
+	autowiki_hidden = TRUE
+	name = "four-bore flashbang shell"
+	desc = "A four-bore flashbang shell. Often utilized by SWAT breaching teams to quickly clear a room."
+	icon_state = "fourboreflashbang"
+	caliber = "fourbore"
+	custom_materials = list(/datum/material/iron=4000)
+	projectile_type = /obj/projectile/bullet/slug/fourbore/flashbang
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/fourbore/teargas
+	autowiki_hidden = TRUE
+	name = "four-bore teargas shell"
+	desc = "A four-bore teargas shell. Commonly seen in riot suppression and control. However, it is not uncommon to see them used by policing forces to dissipate a rowdy croud."
+	icon_state = "fourboreteargas"
+	caliber = "fourbore"
+	custom_materials = list(/datum/material/iron=4000)
+	projectile_type = /obj/projectile/bullet/slug/fourbore/teargas
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
 
 	wear_modifier = 1

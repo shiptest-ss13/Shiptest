@@ -44,7 +44,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space/sentry,
+/mob/living/basic/human/frontier/ranged/mosin/space/sentry,
 /turf/open/floor/plating/airless,
 /area/overmap_encounter/planetoid/moon/explored)
 "av" = (
@@ -55,7 +55,7 @@
 /area/ruin/moon/moonbase/engineering)
 "aw" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space/sentry,
+/mob/living/basic/human/frontier/ranged/mosin/space/sentry,
 /turf/open/floor/plating/airless,
 /area/overmap_encounter/planetoid/moon/explored)
 "ax" = (
@@ -97,7 +97,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/cm15,
+/mob/living/basic/human/frontier/ranged/officer/cm15,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/armory)
 "aZ" = (
@@ -144,7 +144,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "bp" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered/sentry,
+/mob/living/basic/human/frontier/ranged/mosin/internals/neutered/sentry,
 /obj/structure/chair/plastic,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 4;
@@ -172,7 +172,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/cargo)
 "bw" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /turf/open/floor/carpet/blue,
@@ -218,12 +218,11 @@
 /area/ruin/moon/moonbase/dorms)
 "bJ" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "bL" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/space,
+/mob/living/basic/human/frontier/ranged/pounder/space,
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
 /area/overmap_encounter/planetoid/moon/explored)
 "bM" = (
@@ -352,7 +351,7 @@
 /area/ruin/moon/moonbase/refinery)
 "cM" = (
 /obj/structure/closet/toolcloset/empty,
-/obj/item/gun/energy/plasmacutter,
+/obj/item/plasmacutter,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/glasses/welding,
@@ -387,7 +386,7 @@
 /area/ruin/moon/moonbase/refinery)
 "dd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals,
+/mob/living/basic/human/frontier/ranged/wasp/internals,
 /turf/open/floor/carpet/blue,
 /area/ruin/moon/moonbase/dorms)
 "de" = (
@@ -524,6 +523,23 @@
 "dY" = (
 /obj/structure/table,
 /obj/item/radio/intercom/directional/north,
+/obj/item/plate,
+/obj/item/food/sausage{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/food/friedegg{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/food/friedegg{
+	pixel_x = 0;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 10;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "ec" = (
@@ -717,7 +733,7 @@
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
 /area/overmap_encounter/planetoid/moon/explored)
 "fC" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -809,7 +825,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/armory)
 "gq" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -869,10 +885,10 @@
 /area/ruin/moon/moonbase/refinery)
 "gH" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "gJ" = (
@@ -880,9 +896,6 @@
 /obj/item/clothing/mask/gas/clip{
 	pixel_x = -10;
 	pixel_y = 6
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
@@ -928,9 +941,6 @@
 "gY" = (
 /obj/structure/railing/thin/corner{
 	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -1104,7 +1114,7 @@
 /area/ruin/moon/moonbase/armory)
 "iI" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/structure/cable{
@@ -1341,7 +1351,7 @@
 	dir = 4;
 	layer = 2.5
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -1382,7 +1392,6 @@
 /area/ruin/moon/moonbase/cargo)
 "kN" = (
 /obj/structure/railing/thin/corner,
-/obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -1390,7 +1399,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/dorms)
 "kU" = (
-/obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -1454,7 +1462,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/cargo)
 "lC" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
@@ -1492,10 +1500,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/cargo)
 "lS" = (
-/obj/machinery/computer/electrolyzer_console{
-	pixel_x = 0;
-	pixel_y = 25
-	},
+/obj/machinery/computer/electrolyzer_console/directional/north,
 /obj/machinery/conveyor_switch/oneway{
 	id = "conveyors"
 	},
@@ -1706,7 +1711,7 @@
 /turf/closed/mineral/random/moon/lit,
 /area/ruin/moon/moonbase/refinery)
 "of" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
@@ -1794,9 +1799,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
 "oO" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
 	},
@@ -1887,22 +1889,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/cargo)
 "pS" = (
-/obj/machinery/drill/mission/ruin,
 /obj/structure/vein/moon/classfour,
-/obj/effect/landmark/mission_poi/main/drill{
-	already_spawned = 1
-	},
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/overmap_encounter/planetoid/moon/explored)
 "qa" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/beaglemug{
-	pixel_x = -6;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "qi" = (
@@ -2185,7 +2179,7 @@
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/overmap_encounter/planetoid/moon/explored)
 "tp" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/glass,
@@ -2198,6 +2192,10 @@
 /obj/machinery/coffeemaker,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/item/reagent_containers/food/drinks/beaglemug{
+	pixel_x = -7;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
@@ -2395,7 +2393,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter,
+/mob/living/basic/human/frontier/ranged/surgeon/internals/neutered,
 /turf/open/floor/plasteel/white,
 /area/ruin/moon/moonbase/cargo)
 "vl" = (
@@ -2456,7 +2454,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark/airless,
@@ -2469,7 +2467,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
@@ -2523,7 +2521,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/closet/crate/bin,
 /obj/machinery/button/door{
 	pixel_x = 20;
 	pixel_y = 0;
@@ -2531,11 +2528,13 @@
 	id = "dorms-shutters";
 	name = "Dorms Shutters"
 	},
+/obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "wv" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "wx" = (
@@ -2825,15 +2824,49 @@
 /area/ruin/moon/moonbase/cargo)
 "zR" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table/reinforced,
-/obj/item/cutting_board,
+/obj/structure/closet/secure_closet/wall/directional/west,
+/obj/item/plate{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/plate{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = -9
+	},
+/obj/item/plate/large{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -1
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -7
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "zT" = (
 /obj/structure/railing/thin/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2958,10 +2991,22 @@
 /area/ruin/moon/moonbase/refinery)
 "Bb" = (
 /obj/structure/table,
+/obj/item/plate/small{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/food/breadslice/meat{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "Bc" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter,
+/mob/living/basic/human/frontier/ranged/trooper/space/spitter,
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
 /area/overmap_encounter/planetoid/moon/explored)
 "Be" = (
@@ -2991,9 +3036,6 @@
 /obj/structure/railing/thin/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
 	},
@@ -3001,6 +3043,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/moonbase/dorms)
+"Bn" = (
+/obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder{
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "Bx" = (
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
@@ -3018,9 +3069,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/engineering)
 "Bz" = (
-/obj/effect/turf_decal/siding/thinplating/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
 	dir = 4
 	},
@@ -3433,7 +3481,7 @@
 /turf/open/floor/plating/asteroid/moon_coarse,
 /area/overmap_encounter/planetoid/moon/explored)
 "Ez" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
+/mob/living/basic/human/frontier/ranged/trooper/spitter,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/engineering)
 "EF" = (
@@ -3511,7 +3559,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/mob/living/basic/human/frontier/ranged/officer/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/dorms)
 "FF" = (
@@ -3548,7 +3596,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals,
+/mob/living/basic/human/frontier/ranged/internals,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -3627,7 +3675,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/dorms)
 "GU" = (
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy,
+/obj/effect/mob_spawn/human/corpse/clip/minuteman/eod/bombsuit,
 /obj/item/mine/pressure/explosive{
 	pixel_x = -9;
 	pixel_y = 6
@@ -3792,7 +3840,7 @@
 /turf/open/floor/plating/asteroid/moon_coarse,
 /area/overmap_encounter/planetoid/moon/explored)
 "Ij" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/internals,
+/mob/living/basic/human/frontier/ranged/pounder/internals,
 /turf/open/floor/carpet/blue,
 /area/ruin/moon/moonbase/armory)
 "Is" = (
@@ -3823,6 +3871,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/table/reinforced,
+/obj/item/cutting_board,
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "IG" = (
@@ -4190,6 +4241,35 @@
 	},
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/overmap_encounter/planetoid/moon/explored)
+"Lr" = (
+/obj/structure/table,
+/obj/item/radio/intercom/directional/north,
+/obj/item/plate/small{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/plate/small{
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/food/muffin{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/drinks/mug/coco{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 11;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel,
+/area/ruin/moon/moonbase/dorms)
 "Lt" = (
 /obj/effect/turf_decal/industrial,
 /obj/structure/cable/yellow{
@@ -4346,7 +4426,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/dorms)
 "ME" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/item/stack/tile/carpet/blue,
@@ -4391,9 +4471,6 @@
 /area/ruin/moon/moonbase/refinery)
 "MZ" = (
 /obj/structure/railing/thin/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
@@ -4461,7 +4538,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/engineering)
 "Nn" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/item/stack/tile/carpet/blue,
@@ -4496,7 +4573,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
+/mob/living/basic/human/frontier/ranged/trooper/spitter,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/refinery)
 "Nw" = (
@@ -4567,7 +4644,6 @@
 /obj/structure/railing/thin/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
@@ -4800,7 +4876,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/space,
+/mob/living/basic/human/frontier/ranged/space,
 /turf/open/floor/plasteel/dark/airless,
 /area/overmap_encounter/planetoid/moon/explored)
 "PW" = (
@@ -5073,6 +5149,14 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/overmap_encounter/planetoid/moon/explored)
+"Sf" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/item/plate_shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel,
+/area/ruin/moon/moonbase/dorms)
 "Sj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/westleft,
@@ -5122,7 +5206,7 @@
 "SJ" = (
 /obj/structure/grille/broken,
 /obj/structure/barricade/sandbags,
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -5398,7 +5482,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/mob/living/basic/human/frontier/ranged/officer/internals,
 /obj/effect/turf_decal/trimline/transparent/orange/warning{
 	dir = 6
 	},
@@ -5443,7 +5527,7 @@
 /area/ruin/moon/moonbase/engineering)
 "VP" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/mob/living/simple_animal/hostile/human/frontier/ranged/space,
+/mob/living/basic/human/frontier/ranged/space,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/overmap_encounter/planetoid/moon/explored)
@@ -5562,7 +5646,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5605,6 +5689,17 @@
 	},
 /turf/open/floor/pod/rockplanet,
 /area/overmap_encounter/planetoid/moon/explored)
+"WH" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/plate_shard{
+	pixel_x = 19;
+	pixel_y = -13
+	},
+/turf/open/floor/plasteel,
+/area/ruin/moon/moonbase/dorms)
 "WK" = (
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 1
@@ -5826,7 +5921,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals,
+/mob/living/basic/human/frontier/ranged/internals,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/cargo)
@@ -7697,7 +7792,7 @@ bC
 ba
 IE
 wn
-wn
+Bn
 aa
 fi
 fi
@@ -7757,7 +7852,7 @@ tp
 wk
 qq
 Fi
-RI
+Sf
 RI
 JM
 Ay
@@ -8083,7 +8178,7 @@ ry
 qC
 Tx
 Fi
-dY
+Lr
 aZ
 KH
 Fi
@@ -8148,7 +8243,7 @@ ZM
 HT
 xD
 Fi
-UG
+WH
 aZ
 Vk
 ka

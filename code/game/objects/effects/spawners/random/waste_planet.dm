@@ -5,7 +5,7 @@
 		/obj/structure/grille/broken = 5,
 		/obj/structure/grille = 5,
 		/obj/item/cigbutt = 1,
-		/obj/item/trash/cheesie = 1,
+		/obj/item/trash/gummycarps = 1,
 		/obj/item/trash/candy = 1,
 		/obj/item/trash/chips = 1,
 		/obj/item/food/deadmouse = 1,
@@ -72,7 +72,8 @@
 		/obj/structure/salvageable/protolathe = 10,
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
-		/obj/structure/salvageable/server = 8
+		/obj/structure/salvageable/server = 8,
+		/obj/structure/rusted_gun_safe = 3
 	)
 
 /obj/effect/spawner/random/waste/girder

@@ -28,6 +28,8 @@
 	var/available = TRUE
 	/// Probability for this item to be available. Used by SSblackmarket on init.
 	var/availability_prob = 0
+	/// If this item is spawned as a pair item, how likely should it spawn?
+	var/as_pair_prob = 100
 	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
 	var/weight = 0
 	/// If this item is affected by avalibility weight. For items that shouldnt appear on their own (paired items), should always appear, or items paticularly rare or powerful that we dont want showing up too often
@@ -55,7 +57,10 @@
 	cost = rand(cost_min, cost_max)
 
 /datum/blackmarket_item/proc/randomize_stock()
-	stock = rand(stock_min, stock_max)
+	if (initial(stock))
+		stock = initial(stock)
+	else
+		stock = rand(stock_min, stock_max)
 
 /datum/blackmarket_item/proc/cycle(cost = TRUE, availibility = TRUE, stock = TRUE, force_appear = FALSE)
 	if(cost)

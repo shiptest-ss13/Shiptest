@@ -19,12 +19,13 @@
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
-	layer = ABOVE_ALL_MOB_LAYER
+	layer = LYING_MOB_LAYER
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	component_parts = list()
 
 	var/malfunction
 	var/active = FALSE
+	///the vein that we are currently drilling
 	var/obj/structure/vein/our_vein
 	var/datum/looping_sound/drill/soundloop
 	var/obj/item/stock_parts/cell/cell
@@ -33,6 +34,7 @@
 	var/metal_attached = METAL_ABSENT
 	var/missing_part //I hate this but it's better than most the ideas I've had
 	var/current_timerid
+	interaction_flags_machine = INTERACT_MACHINE_UNPOWERED | INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 
 /obj/machinery/drill/examine(mob/user)
 	. = ..()
@@ -289,6 +291,7 @@
 	if(destructive)
 		our_vein.Destroy()
 		our_vein = null
+		anchored = FALSE
 	playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 	update_icon_state()
 	update_overlays()
@@ -350,7 +353,7 @@
 /obj/machinery/drill/proc/mine_success()
 	var/sensor_rating
 	for(var/obj/item/stock_parts/scanning_module/sensor in component_parts)
-		sensor_rating = round(sqrt(sensor.rating))
+		sensor_rating = sqrt(sensor.rating)
 	our_vein.drop_ore(sensor_rating, src)
 
 //Overly long proc to handle the unique properties for each malfunction type
@@ -383,4 +386,4 @@
 
 /obj/item/paper/guides/drill
 	name = "Laser Mining Drill Operation Manual"
-	default_raw_text = "<center><b>Laser Mining Drill Operation Manual</b></center><br><br><center>Thank you for opting in to the paid testing of Nanotrasen's new, experimental laser drilling device (trademark pending). We are legally obligated to mention that despite this new and wonderful drilling device being less dangerous than past iterations (note the 75% decrease in plasma ignition incidents), the seismic activity created by the drill has been noted to anger most forms of xenofauna. As such our legal team advises only armed mining expeditions make use of this drill.<br><br><c><b>How to set up your Laser Mining Drill</b></center><br><br>1. Find a suitable ore vein with the included scanner.<br>2. Wrench the drill's anchors in place over the vein.<br>3. Protect the drill from any enraged xenofauna until it has finished drilling.<br><br><center>With all this done, your ore should be well on its way out of the ground and into your pockets! Be warned though, the Laser Mining Drill is prone to numerous malfunctions when exposed to most forms of physical trauma. As such, we advise any teams utilizing this drill to bring with them a set of replacement Nanotrasen brand stock parts and a set of tools to handle repairs. If the drill suffers a total structural failure, then plasteel alloy may be needed to repair said structure.</center>"
+	default_raw_text = "<center><b>Laser Mining Drill Operation Manual</b></center><br><br><center>Thank you for opting in to the paid testing of Makoso-Warra's new, experimental laser drilling device (trademark pending). We are legally obligated to mention that despite this new and wonderful drilling device being less dangerous than past iterations (note the 75% decrease in plasma ignition incidents), the seismic activity created by the drill has been noted to anger most forms of xenofauna. As such our legal team advises only armed mining expeditions make use of this drill.<br><br><c><b>How to set up your Laser Mining Drill</b></center><br><br>1. Find a suitable ore vein with the included scanner.<br>2. Wrench the drill's anchors in place over the vein.<br>3. Protect the drill from any enraged xenofauna until it has finished drilling.<br><br><center>With all this done, your ore should be well on its way out of the ground and into your pockets! Be warned though, the Laser Mining Drill is prone to numerous malfunctions when exposed to most forms of physical trauma. As such, we advise any teams utilizing this drill to bring with them a set of replacement Makosso-Warra brand stock parts and a set of tools to handle repairs. If the drill suffers a total structural failure, then plasteel alloy may be needed to repair said structure.</center>"

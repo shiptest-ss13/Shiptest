@@ -4,13 +4,16 @@
 	And the base of the send_speech() proc, which is the core of saycode.
 */
 GLOBAL_LIST_INIT(freqtospan, list(
-	"[FREQ_NANOTRASEN]" = "ntradio",
+	"[FREQ_WARRA]" = "warraradio",
 	"[FREQ_MINUTEMEN]" = "clipradio",
 	"[FREQ_INTEQ]" = "irmgradio",
 	"[FREQ_PGF]" = "pgfradio",
 	"[FREQ_PIRATE]" = "pirradio",
 	"[FREQ_EMERGENCY]" = "emrgradio",
 	"[FREQ_SYNDICATE]" = "syndradio",
+	"[FREQ_CYBERSUN]" = "cyradio",
+	"[FREQ_NGR]" = "ngrradio",
+	"[FREQ_SUNS]" = "sunsradio",
 	"[FREQ_CENTCOM]" = "centcomradio",
 	"[FREQ_SOLGOV]" = "solgovradio",
 	"[FREQ_WIDEBAND]" = "widebandradio",
@@ -260,7 +263,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		return "2"
 	return "0"
 
-/atom/movable/proc/GetVoice(if_no_voice = "Unknown")
+/atom/proc/GetVoice(if_no_voice = "Unknown")
 	return "[src]"//Returns the atom's name, prepended with 'The' if it's not a proper noun
 
 /atom/movable/proc/IsVocal()

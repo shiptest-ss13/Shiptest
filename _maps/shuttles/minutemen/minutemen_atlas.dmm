@@ -116,6 +116,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/cryo)
 "bh" = (
@@ -377,7 +378,7 @@
 /obj/structure/closet/secure_closet/clip/minutemen/captain{
 	pixel_x = 8
 	},
-/obj/item/storage/guncase/pistol/cm23,
+/obj/item/storage/guncase/ecm9,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/commad)
 "cX" = (
@@ -537,8 +538,7 @@
 /area/ship/bridge)
 "en" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -685,7 +685,7 @@
 	pixel_x = 7;
 	pixel_y = 10
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -697,6 +697,7 @@
 	pixel_x = -8;
 	pixel_y = 10
 	},
+/obj/item/storage/toolbox/ammo/a308,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "fw" = (
@@ -742,13 +743,18 @@
 	pixel_y = 28
 	},
 /obj/machinery/recharger{
-	pixel_y = 3
+	pixel_y = 3;
+	pixel_x = -6
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 1
+	},
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -776,8 +782,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "fX" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /obj/effect/turf_decal/corner/opaque/black/half{
@@ -939,8 +944,7 @@
 	icon_state = "lattice-21"
 	},
 /obj/structure/lattice/catwalk,
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /turf/open/floor/plating,
@@ -1169,8 +1173,7 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "iD" = (
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -1299,14 +1302,11 @@
 /area/ship/bridge)
 "js" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 28;
-	network = list("IntraNet, clip")
-	},
 /obj/machinery/light/directional/west,
 /obj/machinery/computer/transponder{
 	icon_state = "transponder-middle"
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "jw" = (
@@ -1660,8 +1660,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /obj/machinery/airalarm/directional/west,
@@ -2077,12 +2076,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/trimline/opaque/blue/warning,
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/opaque/mauve/border{
 	dir = 1
-	},
-/obj/machinery/camera/autoname{
-	network = list("atlas")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2396,8 +2391,7 @@
 /area/ship/bridge)
 "rb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /obj/structure/chair/office{
@@ -2511,6 +2505,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/emergency_panel/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "si" = (
@@ -2608,52 +2603,39 @@
 	name = "ammunition storage"
 	},
 /obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -8
+	pixel_x = -13;
+	pixel_y = -8
 	},
 /obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -9;
-	pixel_y = -3
+	pixel_x = -13;
+	pixel_y = -8
 	},
 /obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -10;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -6;
-	pixel_y = -12
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -3;
-	pixel_y = -15
+	pixel_x = -13;
+	pixel_y = -8
 	},
 /obj/item/ammo_box/magazine/cm23{
-	pixel_x = 16;
-	pixel_y = -14
+	pixel_x = 10;
+	pixel_y = -11
 	},
 /obj/item/ammo_box/magazine/cm23{
-	pixel_x = 12;
-	pixel_y = -12
+	pixel_x = 10;
+	pixel_y = -11
 	},
 /obj/item/ammo_box/magazine/cm23{
-	pixel_x = 9;
-	pixel_y = -15
+	pixel_x = 10;
+	pixel_y = -11
 	},
-/obj/item/ammo_box/magazine/cm15_12g{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/ammo_box/magazine/cm15_12g{
+/obj/item/ammo_box/magazine/f4_308{
 	pixel_x = 7;
-	pixel_y = 7
+	pixel_y = 2
 	},
-/obj/item/ammo_box/magazine/cm15_12g{
-	pixel_x = 12;
-	pixel_y = 7
+/obj/item/ammo_box/magazine/f4_308{
+	pixel_x = 7;
+	pixel_y = 2
 	},
+/obj/item/stock_parts/cell/gun/heavy,
+/obj/item/stock_parts/cell/gun/heavy,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "tg" = (
@@ -2677,8 +2659,7 @@
 	icon_state = "lattice-6"
 	},
 /obj/structure/lattice/catwalk,
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /turf/open/floor/plating,
@@ -3604,21 +3585,25 @@
 	pixel_y = 15;
 	pixel_x = -3
 	},
-/obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
-	pixel_x = -8;
-	pixel_y = 28
+/obj/item/gun/ballistic/automatic/marksman/f4{
+	pixel_x = -11;
+	pixel_y = 23
 	},
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
 	pixel_x = -10;
 	pixel_y = 23
 	},
+/obj/item/gun/ballistic/shotgun/automatic/cm15/no_mag{
+	pixel_x = -11;
+	pixel_y = 16
+	},
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag{
 	pixel_x = -6;
-	pixel_y = 5
+	pixel_y = 12
 	},
-/obj/item/gun/ballistic/shotgun/cm15/no_mag{
+/obj/item/gun/energy/clover/faveleira/clip{
 	pixel_x = -11;
-	pixel_y = 15
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3697,12 +3682,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -28
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "AH" = (
@@ -4032,9 +4015,7 @@
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = 5
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
 	},
@@ -4123,6 +4104,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "DM" = (
@@ -4840,9 +4822,7 @@
 	pixel_x = -10
 	},
 /obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -28
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "JK" = (
@@ -6011,7 +5991,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/warning,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light/directional/north,
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "TK" = (
@@ -6121,8 +6101,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "UV" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -6211,8 +6190,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Wq" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /obj/effect/turf_decal/box/white/corners{
@@ -6431,8 +6409,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /obj/machinery/airalarm/directional/west,
@@ -6685,9 +6662,7 @@
 /area/ship/security/armory)
 "ZF" = (
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -6728,8 +6703,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "ZZ" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /obj/structure/sign/warning/nosmoking{

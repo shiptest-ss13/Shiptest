@@ -21,7 +21,7 @@
 	ranged = TRUE
 	speed = 4
 	move_to_delay = 4
-	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
+	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/warra)
 	wander = FALSE
 	blood_volume = BLOOD_VOLUME_NORMAL
 	gps_name = "NTAF-V"
@@ -177,7 +177,7 @@
 			swift_dash(target, dash_num_short, 5)
 
 /////PROJECTILE SHOOTING
-/mob/living/simple_animal/hostile/megafauna/claw/proc/shoot_projectile(angle)
+/mob/living/simple_animal/hostile/megafauna/claw/shoot_projectile(angle)
 	var/obj/projectile/shot_proj = new projectiletype(get_turf(src))
 	playsound(src, projectilesound, 100, TRUE)
 	shot_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
@@ -247,11 +247,11 @@
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
 	visible_message(span_danger("[src] shoots all the spikes!"))
 	icon_state = "claw-phase2"
-	shoot_projectile(Get_Angle(src,target) + 10)
-	shoot_projectile(Get_Angle(src,target) + 5)
-	shoot_projectile(Get_Angle(src,target))
-	shoot_projectile(Get_Angle(src,target) - 5)
-	shoot_projectile(Get_Angle(src,target) - 10)
+	shoot_projectile(get_angle(src,target) + 10)
+	shoot_projectile(get_angle(src,target) + 5)
+	shoot_projectile(get_angle(src,target))
+	shoot_projectile(get_angle(src,target) - 5)
+	shoot_projectile(get_angle(src,target) - 10)
 	shouldnt_move = FALSE
 
 /obj/projectile/claw_projectille

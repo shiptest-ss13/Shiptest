@@ -24,7 +24,7 @@ handles linking back and forth.
 	src.allow_standalone = allow_standalone
 
 	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, PROC_REF(OnDeconstruct))
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(OnAttackBy))
 	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, PROC_REF(OnMultitool))
 
 	if (allow_standalone)

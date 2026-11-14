@@ -69,13 +69,21 @@
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = override_dock
+		//if true, we say that we do in fact have free docks, just you cant fit in any of them for whatever reason. hopefully this is less vauge than "X Cannot be docked to."
+		var/alt_message = FALSE
 		if(!override_dock)
 			for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+				//meant for quick dock, as such we check if we can actually dock here before checking all other docking ports.
+				//This means you can name a docking port with a leading ! like '!Ship Starboard Stern Docking Port' to have priority over other docking ports
 				if(!dock.docked)
+					alt_message = TRUE
+				if(!dock.docked && dock_requester.shuttle_port.check_dock(dock, TRUE, FALSE))
 					dock_to_use = dock
 					break
 
 		if(!dock_to_use)
+			if(alt_message)
+				return new /datum/docking_ticket(_docking_error = "[src] has free docks, however vessel is unable to fit in any. Attempt manual docking for more information. Aborting docking.")
 			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -92,6 +100,7 @@
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
 				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
 				playsound(Mob, landing_sound, 50)
+				Mob.add_memory("Landed at [planet_name] at [station_time_timestamp("hh:mm")].")
 
 
 /datum/overmap/static_object/post_undocked(datum/overmap/dock_requester)

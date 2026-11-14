@@ -16,10 +16,11 @@
 
 /obj/item/grenade/syndieminibomb/concussion
 	name = "HE Grenade"
-	desc = "A compact shrapnel grenade meant to devastate nearby organisms and cause some damage in the process. Pull pin and throw opposite direction."
+	desc = "A compact high explosive grenade meant to devastate nearby organisms and cause some damage in the process. Pull pin and throw opposite direction."
 	icon_state = "concussion"
 	ex_dev = 0
 	ex_heavy = 2
+	heavy_damage = 50
 	ex_light = 3
 	ex_flame = 3
 
@@ -29,9 +30,21 @@
 	icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
 	shrapnel_radius = 4
-	ex_heavy = 0
+	ex_heavy = 1
+	heavy_damage = 35
+	heavy_item_damage = 35
 	ex_light = 3
+	light_damage = 20
+	light_item_damage = 15
 	ex_flame = 1
+
+/obj/item/grenade/frag/zippy_nuke
+	name = "catastrophic disposable gun vending machine malfunction"
+	desc = "You should not see this. Step away and contact a coder immediately."
+	shrapnel_type = /obj/projectile/bullet/c22lr
+	ex_heavy = 0
+	ex_light = 0
+	ex_flame = 0
 
 /obj/item/grenade/frag/mega
 	name = "FRAG grenade"
@@ -67,3 +80,49 @@
 				L.adjustStaminaLoss(stamina_damage)
 				L.adjust_bodytemperature(-230)
 	resolve()
+
+/obj/item/grenade/lorentz
+	name = "lorentz grenade"
+	desc = "A specially constructed plasma catalyst and capacitor designed to rapidly lens and fire off lorentz beams in an explosive burst of energy. Despite being annoying to manufacture, Tadeusz Armory has found several purchasers."
+	icon_state = "lorentz_frag"
+	shrapnel_type = /obj/projectile/beam/lorentz/shotgun
+	shrapnel_radius = 4
+	ex_heavy = 1
+	heavy_damage = 35
+	heavy_item_damage = 35
+	ex_light = 3
+	light_damage = 20
+	light_item_damage = 15
+	ex_flame = 1
+
+/obj/item/grenade/lorentz/Destroy()
+	. = ..()
+	QDEL_NULL(particles)
+
+
+/obj/item/grenade/lorentz/preprime(mob/user, delayoverride, msg, volume)
+	. = ..()
+	particles = new /particles/lorentz_charge()
+
+/obj/item/grenade/lorentz/prime()
+	. = ..()
+	update_mob()
+	resolve()
+
+/particles/lorentz_charge
+	icon = 'icons/effects/particles/generic.dmi'
+	color = "#D06477"
+	gradient = list("#FEEAE6", "#D06477", "#F29B88")
+	icon_state = list("circle_1" = 1, "circle_2" = 1, "cross" = 2)
+	width = 48
+	height = 48
+	count = 30
+	spawning = 2
+	color_change = 0.05
+	lifespan = 1 SECONDS
+	fade = 1 SECONDS
+	friction = 0
+	velocity = generator(GEN_VECTOR, list(-0.8, -0.8, 0), list(0.8, 0.8, 0), NORMAL_RAND)
+	position = generator(GEN_BOX, list(-8, -8), list(8, 8), NORMAL_RAND)
+	drift = generator(GEN_VECTOR, list(-2, -2), list(2, 2), NORMAL_RAND)
+	spin = generator(GEN_NUM, list(-180,180), UNIFORM_RAND)

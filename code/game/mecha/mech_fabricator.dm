@@ -82,7 +82,7 @@
 	sleep(15)
 	say("User DB corrupted \[Code 0x00FA\]. Truncating data structure...")
 	sleep(30)
-	say("User DB truncated. Please contact your Nanotrasen system operator for future assistance.")
+	say("User DB truncated. Please contact your system operator for future assistance.")
 
 /obj/machinery/mecha_part_fabricator/proc/output_parts_list(set_name)
 	var/output = ""
@@ -122,7 +122,7 @@
 	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=direction'>Outputting: [uppertext(dir2text(output_direction))]</a>"
 	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=main'>Main Screen</a>"
 	output += "</div>"
-	output += "<form name='search' action='?src=[REF(src)]'>\
+	output += "<form name='search' action='byond://?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
 	<input type='hidden' name='command' value='search'>\
 	<input type='text' name='to_search'>\

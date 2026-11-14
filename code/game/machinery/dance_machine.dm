@@ -1,7 +1,7 @@
 /obj/machinery/jukebox
 	name = "jukebox"
 	desc = "A classic music player."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/jukebox.dmi'
 	icon_state = "jukebox-"
 	verb_say = "states"
 	density = TRUE
@@ -164,6 +164,16 @@
 	..()
 	dance_setup()
 	lights_spin()
+
+/obj/machinery/jukebox/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(50))
+		if(!active && SSjukeboxes.songs.len)
+			selection = pick(SSjukeboxes.songs)
+			activate_music()
+		else
+			stop = 0
+		volume = rand(30, 80)
 
 /obj/machinery/jukebox/disco/proc/dance_setup()
 	var/turf/cen = get_turf(src)

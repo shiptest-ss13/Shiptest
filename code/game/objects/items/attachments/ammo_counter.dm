@@ -17,7 +17,7 @@
 		var/obj/item/gun/ballistic/ammo_gun = gun
 		if(!ammo_gun.ammo_counter)
 			ammo_gun.ammo_counter = TRUE
-			gun.empty_alarm_sound = alarm_sound_path
+			ammo_gun.empty_alarm_sound = alarm_sound_path
 			var/datum/component/ammo_hud/counter/our_counter = gun.AddComponent(/datum/component/ammo_hud/counter)
 			our_counter.wake_up(user = user)
 			return TRUE
@@ -30,7 +30,7 @@
 		var/obj/item/gun/ballistic/ammo_gun = gun
 		if(ammo_gun.ammo_counter)
 			ammo_gun.ammo_counter = FALSE
-			gun.empty_alarm_sound = gun::empty_alarm_sound
+			ammo_gun.empty_alarm_sound = ammo_gun::empty_alarm_sound
 			var/datum/component/ammo_hud/counter/our_counter = gun.GetComponent(/datum/component/ammo_hud/counter)
 			our_counter.turn_off()
 			qdel(our_counter)
@@ -43,13 +43,15 @@
 		slot = ATTACHMENT_SLOT_RAIL
 	else
 		slot = src::slot
+	SEND_SIGNAL(src, COMSIG_ATTACHMENT_CHANGE_SLOT, slot)
 	to_chat(user, span_notice("You adjust [src] to fit on a gun's [slot]."))
 
 /obj/item/attachment/ammo_counter/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
-	if(gun::empty_alarm)
-		return
-	gun.empty_alarm = !gun.empty_alarm
-	gun.empty_alarm_vary = !gun.empty_alarm_vary
-
-
+	if(istype(gun, /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/ammo_gun = gun
+		// if the gun comes with an alarm don't touch it
+		if(ammo_gun::empty_alarm)
+			return
+		ammo_gun.empty_alarm = !ammo_gun.empty_alarm
+		to_chat(user, span_notice("You turn [src]'s alarm [ammo_gun.empty_alarm ? "on" : "off"]."))

@@ -168,14 +168,6 @@
 	amount_per_transfer_from_this = 2
 	stream_amount = 5
 
-//spray tan
-/obj/item/reagent_containers/spray/spraytan
-	name = "spray tan"
-	volume = 50
-	desc = "Gyaro brand spray tan. Do not spray near eyes or other orifices."
-	list_reagents = list(/datum/reagent/spraytan = 50)
-
-
 //pepperspray
 /obj/item/reagent_containers/spray/pepper
 	name = "pepperspray"

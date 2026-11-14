@@ -71,6 +71,7 @@
 		active = TRUE
 		icon_state = "[item_state]2"
 		balloon_alert_to_viewers("[src] begins ticking!")
+		ai_note_live_explosive(src, max(boom_sizes), det_time*10) // notify nearby mobs/AI
 		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
 	return
 
@@ -85,7 +86,7 @@
 		det_time = newtime
 		to_chat(user, "Timer set for [det_time] seconds.")
 
-/obj/item/grenade/c4/afterattack(atom/movable/AM, mob/user, flag)
+/obj/item/grenade/c4/afterattack_secondary(atom/movable/AM, mob/user, flag)
 	. = ..()
 	aim_dir = get_dir(user,AM)
 	if(!flag)
@@ -117,6 +118,7 @@
 
 		target.add_overlay(plastic_overlay)
 		to_chat(user, span_notice("You plant the bomb. Timer counting down from [det_time]."))
+		ai_note_live_explosive(src, max(boom_sizes), det_time*10) // so AI nearby knows to get clear
 		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
 
 // X4 is an upgraded directional variant of c4 which is relatively safe to be standing next to. And much less safe to be standing on the other side of.

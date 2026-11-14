@@ -4,7 +4,6 @@
 	icon_state = "theater"
 	icon_deny = "theater-deny"
 	req_access = list(ACCESS_THEATRE)
-	product_slogans = "Dress for success!;Suited and booted!;It's show time!;Why leave style up to fate? Use AutoDrobe!"
 	vend_reply = "Thank you for using AutoDrobe!"
 	products = list(
 		/obj/item/clothing/under/costume/gladiator = 1,
@@ -45,7 +44,7 @@
 		/obj/item/clothing/head/pirate = 1,
 		/obj/item/clothing/head/bandana = 1,
 		/obj/item/clothing/head/bandana = 1,
-		/obj/item/clothing/head/trapper = 1,
+		/obj/item/clothing/head/ushanka = 4,
 		/obj/item/clothing/mask/gas/cyborg = 1,
 		/obj/item/clothing/under/dress/sundress = 1,
 		/obj/item/staff/broom = 1,
@@ -87,7 +86,6 @@
 		/obj/item/clothing/head/helmet/roman/fake = 1,
 		/obj/item/clothing/head/helmet/roman/legionnaire/fake = 1,
 		/obj/item/clothing/under/costume/roman = 1,
-		/obj/item/shield/riot/roman/fake = 1,
 		/obj/item/skub = 1)
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 90

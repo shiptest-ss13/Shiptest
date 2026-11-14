@@ -209,6 +209,17 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"zD" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "zU" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 1
@@ -219,6 +230,10 @@
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"BL" = (
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "DO" = (
 /obj/structure/railing{
@@ -244,6 +259,10 @@
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"Mf" = (
+/obj/effect/landmark/outpost/shaft_number,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "MN" = (
 /obj/machinery/door/airlock,
@@ -1971,7 +1990,7 @@ ck
 ck
 ck
 MN
-aA
+Mf
 aP
 aM
 aM
@@ -2026,7 +2045,7 @@ ck
 ck
 ck
 MN
-RV
+BL
 aP
 aE
 aM
@@ -2081,7 +2100,7 @@ ck
 ck
 ck
 MN
-aA
+RV
 aP
 aM
 aM
@@ -2300,7 +2319,7 @@ aV
 aV
 aV
 aH
-VK
+zD
 aA
 aP
 aE

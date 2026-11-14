@@ -4,7 +4,7 @@
 	initialize_directions = SOUTH|NORTH
 	use_power = IDLE_POWER_USE
 	device_type = BINARY
-	layer = GAS_PUMP_LAYER
+	layer = UNDER_CATWALK
 	var/uid
 	var/static/gl_uid = 1
 

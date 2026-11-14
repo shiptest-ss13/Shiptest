@@ -162,7 +162,7 @@
 	/// How much more can we absorb
 	var/absorption_capacity = 5
 	/// How fast do we absorb
-	var/absorption_rate = 0.12
+	var/absorption_rate = 0.06
 	/// How effective the gauze is at stopping current blood flow - see [get_part_bleed_rate()]
 	var/bleed_suppress = 0.4
 	/// How much does the gauze help with keeping infections clean, lower = better
@@ -244,6 +244,6 @@
 /datum/bodypart_aid/gauze/improvised
 	name = "improvised gauze"
 	stack_to_drop = /obj/item/stack/medical/gauze/improvised
-	absorption_rate = 0.1
+	absorption_rate = 0.05
 	absorption_capacity = 4
 	bleed_suppress = 0.6

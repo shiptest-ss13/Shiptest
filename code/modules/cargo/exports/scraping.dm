@@ -2,26 +2,13 @@
 	unit_name = "defused landmines"
 	desc = "The Confederated League maintains an active bounty program for the disposal of UXO. Make the frontier a safer place today!"
 	cost = 750
-	elasticity_coeff = 0.1
 	export_types = list(/obj/item/mine/pressure/explosive)
 
 /datum/export/claymore
 	unit_name = "defused claymores"
 	desc = "The Confederated League maintains an active bounty program for the disposal of UXO. Make the frontier a safer place today!"
 	cost = 1250
-	elasticity_coeff = 0.1
 	export_types = list(/obj/item/mine/directional/claymore)
-
-/datum/export/anomaly
-	unit_name = "stabilized anomaly core"
-	cost = 3000
-	elasticity_coeff = 0.1
-	export_types = list(/obj/item/assembly/signaler/anomaly)
-
-/datum/export/anomaly/New(...)
-	. = ..()
-	desc = "[SSmissions.get_researcher_name()] has requested that we [pick(list("procure", "grab", "acquire", "find", "locate"))] \
-	anomaly cores for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]."
 
 // Circuit boards, spare parts, etc.
 
@@ -49,12 +36,42 @@
 	unit_name = "ion thruster board"
 	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/electric)
 
+/datum/export/thruster_plasma
+	cost = 500
+	desc = "One set of circuits and controllers for a plasma thruster."
+	unit_name = "plasma thruster board"
+	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/plasma)
+
+/datum/export/thruster_combustion
+	cost = 500
+	desc = "One set of circuits and controllers for a combustion thruster."
+	unit_name = "combustion thruster board"
+	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/fire)
+
+/datum/export/pacman
+	cost = 500
+	desc = "A control board for a PACMAN portable generator."
+	unit_name = "PACMAN board"
+	export_types = list(/obj/item/circuitboard/machine/pacman)
+
+/datum/export/smes
+	cost = 500
+	desc = "A control board for a SMES power storage unit."
+	unit_name = "SMES board"
+	export_types = list(/obj/item/circuitboard/machine/smes)
+
 //Computer Tablets and Parts
 /datum/export/modular_part
 	cost = 15
 	desc = "You find it? We want it."
 	unit_name = "miscellaneous computer part"
 	export_types = list(/obj/item/computer_hardware)
+
+/datum/export/gpu
+	cost = 500
+	desc = "High performance graphics cards are a rarity out here. We'll pay a premium for any you can get your hands on."
+	unit_name = "GPU"
+	export_types = list(/obj/item/gpu)
 
 /* if only
 /datum/export/stack/cable

@@ -13,13 +13,13 @@
 	infectable_biotypes = MOB_ORGANIC|MOB_ROBOTIC
 	process_dead = TRUE
 
-/datum/disease/magnitis/stage_act()
+/datum/disease/magnitis/stage_act(seconds_per_tick, times_fired)
 	..()
 	switch(stage)
 		if(2)
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You feel a slight shock course through your body."))
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				for(var/obj/M in orange(2,affected_mob))
 					if(!M.anchored && (M.flags_1 & CONDUCT_1))
 						step_towards(M,affected_mob)
@@ -28,11 +28,11 @@
 						continue
 					step_towards(S,affected_mob)
 		if(3)
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You feel a strong shock course through your body."))
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You feel like clowning around."))
-			if(prob(4))
+			if(SPT_PROB(2, seconds_per_tick))
 				for(var/obj/M in orange(4,affected_mob))
 					if(!M.anchored && (M.flags_1 & CONDUCT_1))
 						var/i
@@ -47,11 +47,11 @@
 					for(i=0,i<iter,i++)
 						step_towards(S,affected_mob)
 		if(4)
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You feel a powerful shock course through your body."))
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You query upon the nature of miracles."))
-			if(prob(8))
+			if(SPT_PROB(4, seconds_per_tick))
 				for(var/obj/M in orange(6,affected_mob))
 					if(!M.anchored && (M.flags_1 & CONDUCT_1))
 						var/i

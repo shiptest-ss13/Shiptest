@@ -57,7 +57,7 @@
 	icon_state = "chips"
 	loot = list(
 		/obj/item/trash/raisins = 2,
-		/obj/item/trash/cheesie = 2,
+		/obj/item/trash/gummycarps = 2,
 		/obj/item/trash/candy = 2,
 		/obj/item/trash/chips = 2,
 		/obj/item/trash/sosjerky = 2,
@@ -102,7 +102,6 @@
 		/obj/effect/decal/cleanable/molten_object = 30,
 		/obj/effect/decal/cleanable/molten_object/large = 30,
 		/obj/effect/decal/cleanable/oil = 30,
-		/obj/effect/decal/cleanable/oil/slippery = 1, // :)
 		/obj/effect/decal/cleanable/plastic = 30,
 		/obj/effect/decal/cleanable/ash = 30,
 		/obj/effect/decal/cleanable/ash/large = 30,
@@ -222,7 +221,7 @@
 		/obj/item/bikehorn/rubberducky = 20,
 		/obj/item/soap/homemade = 20,
 		/obj/item/soap/deluxe = 15,
-		/obj/item/soap/nanotrasen = 10,
+		/obj/item/soap/warra = 10,
 	)
 
 /obj/effect/spawner/random/trash/box
@@ -273,8 +272,8 @@
 		crushed_can.icon_state = pick(soda_icons)
 	return crushed_can
 
-/obj/effect/spawner/random/trash/ghetto_containers
-	name = "ghetto container spawner"
+/obj/effect/spawner/random/trash/misc_containers
+	name = "misc container spawner"
 	loot = list(
 		/obj/item/reagent_containers/glass/bucket = 5,
 		/obj/item/reagent_containers/glass/bottle = 5,

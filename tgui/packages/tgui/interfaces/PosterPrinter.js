@@ -84,8 +84,8 @@ const Options = (props, context) => {
 
   const posterTypes = [
     'Syndicate',
-    'Nanotrasen',
-    'Nanotrasen (Retro)',
+    'Makosso-Warra',
+    'Makosso-Warra (Retro)',
     'RILENA',
     'SolGov',
   ];

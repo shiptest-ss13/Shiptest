@@ -14,7 +14,7 @@
 		/obj/item/reagent_containers/pill/patch/indomide = 5,
 		/obj/item/reagent_containers/pill/patch/alvitane = 5,
 		/obj/item/reagent_containers/hypospray/medipen = 3,
-		/obj/item/reagent_containers/syringe/antiviral = 1,
+		/obj/item/reagent_containers/syringe/antibiotic = 1,
 		/obj/item/reagent_containers/glass/bottle/charcoal = 3,
 		/obj/item/reagent_containers/glass/bottle/epinephrine = 3,
 		/obj/item/reagent_containers/glass/bottle/morphine = 1,
@@ -31,7 +31,8 @@
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/clothing/glasses/hud/health/prescription = 1,
 		/obj/item/shears = 1,
-		/obj/item/storage/box/hug/medical = 1)
+		/obj/item/storage/box/hug/medical = 1,
+		/obj/item/inhaler/salbutamol = 2)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical

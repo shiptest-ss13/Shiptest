@@ -34,7 +34,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_min = 15
 	var/drop_rate_amount_max = 20
 	///variables for the mob spawners we generate
+	///how many mobs can each spawner have active at once?
 	var/max_mobs = 3
+	///time between mob spawner mob spawns.
 	var/spawn_time = 10 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -184,7 +186,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		drop_location = pick(adjacent_turfs)
 	for(var/vein_content_count in 1 to vein_class)
 		var/picked = pick(vein_contents)
-		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
+		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier, 1))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
@@ -257,6 +259,21 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 8,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
+/obj/structure/vein/lavaland/classfour
+	mining_charges = 30
+	vein_class = 4
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
+		)
+	max_mobs = 6
+	spawn_time = 8 SECONDS
+	ore_list = list(
+		/obj/item/stack/ore/bluespace_crystal = 10,
+	)
 
 // TODO: populate all planet veins with class 4s ; this exact path should not be used, used as a templa
 /obj/structure/vein/classfour
@@ -424,6 +441,22 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 10,
 		)
 
+/obj/structure/vein/jungle/classfour
+	vein_class = 4
+	mining_charges = 10
+	ore_list = list(
+		/obj/item/stack/ore/bluespace_crystal = 10,
+	)
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/wolf/random = 20,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1,
+		/mob/living/simple_animal/hostile/jungle/seedling = 5,
+		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 20,
+		/mob/living/simple_animal/hostile/jungle/mook = 30,
+	)
+	max_mobs = 4
+	spawn_time = 10 SECONDS
+
 //Sand planets - more or less the same as lavaland but with the sand planet variants
 
 /obj/structure/vein/sand
@@ -447,7 +480,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat = 10,
 		)
 
 	ore_list = list(
@@ -502,9 +534,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/iron = 80,
+		/obj/item/stack/ore/iron = 60,
 		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 4,
+		/obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/silver = 10,
 		)
 
 /obj/structure/vein/rockplanet/classtwo
@@ -518,9 +551,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/iron = 60,
-		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 4,
+		/obj/item/stack/ore/iron = 50,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/silver = 15,
 		)
 
 	max_mobs = 3
@@ -540,12 +574,19 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/iron = 30,
-		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 6,
+		/obj/item/stack/ore/uranium = 15,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/bluespace_crystal = 10,
 		)
 
 	max_mobs = 3
 	spawn_time = 8 SECONDS
+
+/obj/structure/vein/rockplanet/classthree/rare
+	ore_list = list(
+		/obj/item/stack/ore/uranium = 10,
+		)
 
 /obj/structure/vein/rockplanet/classfour
 	mining_charges = 30
@@ -560,9 +601,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/iron = 20,
-		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 3,
+		/obj/item/stack/ore/iron = 25,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/gold = 15,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/bluespace_crystal = 15,
 		)
 
 //moons, have a dupe of asteroid but less of an emphasis on  goliaths

@@ -13,6 +13,8 @@
 	var/name
 	///A quick description of the event. Should fit into a quick tgui hoverover tip.
 	var/desc
+	///The class of this object, used in place of its name when cloaked or obscured.
+	var/ship_class = "Object"
 	///Extra info that would fit into a sidebar or an extra pane such as. Should fit into a quick tgui hoverover tip.
 	var/extra_info
 	///the color of the event if it isn't overridden by the overmap
@@ -21,6 +23,9 @@
 	var/token_icon_state = "signal_none"
 	/// The character that represents this overmap datum on the overmap in the admin ASCII mode.
 	var/char_rep
+
+	/// the layer override of the token
+	var/layer = 3
 
 	/// The x position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
 	VAR_FINAL/x
@@ -55,6 +60,9 @@
 	///How much % of a radio message we scramble of radios nearby/on top of us before sending. Will only scramble 1/5th this value if the radio is an adjacent tile, not 100%. Meant for hazards
 	var/interference_power
 
+	/// The amount of tiles we can see on the overmap. Useless on non-ships
+	var/sensor_range = 4
+
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
 
@@ -65,6 +73,7 @@
 
 /datum/overmap/New(position, datum/overmap_star_system/system_spawned_in, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
+	RegisterSignal(SSdcs, COMSIG_OVERMAP_FINISHED_CREATION, PROC_REF(on_overmaps_loaded))
 	current_overmap = system_spawned_in
 	if(!position)
 		position = current_overmap.get_unused_overmap_square(force = TRUE)
@@ -78,7 +87,8 @@
 		current_overmap = docked_object.current_overmap
 
 	if(!current_overmap)
-		current_overmap = SSovermap.default_system
+		//select the first outpost sector.
+		current_overmap = SSovermap.tracked_star_systems[1]
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
 	SSovermap.overmap_objects |= src
@@ -94,6 +104,8 @@
 	if(!char_rep && name)
 		char_rep = name[1]
 
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_CLOAKED), PROC_REF(activate_cloak))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_CLOAKED), PROC_REF(deactivate_cloak))
 	Initialize(arglist(args))
 
 /datum/overmap/Destroy(force)
@@ -125,6 +137,12 @@
  */
 /datum/overmap/proc/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	PROTECTED_PROC(TRUE)
+	return
+
+/**
+ * This proc is called when SSovermaps has completed all overmap system set-up, to allow for finer manipulation of things.
+ */
+/datum/overmap/proc/on_overmaps_loaded()
 	return
 
 /**
@@ -177,14 +195,13 @@
 	if(new_x == x && new_y == y)
 		return
 	if(!current_overmap)
-		current_overmap = SSovermap.default_system
+		current_overmap = SSovermap.tracked_star_systems[1]
 		CRASH("Overmap datum [src] tried to move() with no valid overmap! What?? Moving to the default sector of SSovermap as a failsafe!")
-	new_x %= current_overmap.size
-	new_y %= current_overmap.size
-	if(new_x == 0) // I don't know how to do this better atm
-		new_x = current_overmap.size
-	if(new_y == 0)
-		new_y = current_overmap.size
+	//no overmap looping hack
+	if(new_x > current_overmap.size || new_x == 0) // I don't know how to do this better atm
+		return
+	if(new_y > current_overmap.size || new_y == 0)
+		return
 	try
 		current_overmap.overmap_container[x][y] -= src
 	catch(var/exception/error)
@@ -320,7 +337,7 @@
 			return
 		if(INTERACTION_OVERMAP_DOCK)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 
 			var/list/dockables = interact_target.get_dockable_locations(src)
 			if(!dockables.len)
@@ -331,15 +348,15 @@
 			return Dock(interact_target, choice)
 		if(INTERACTION_OVERMAP_QUICKDOCK)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Undock first!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 			return Dock(interact_target)
 		if(INTERACTION_OVERMAP_HAIL)
 			return do_hail(user, interact_target)
 		if(INTERACTION_OVERMAP_INTERDICTION)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 			if(interact_target.docked_to || interact_target.docking)
-				return "ERROR: Unable to do this currently! Target is docked or docking!"
+				return "ERROR: Unable to do this while target is docked or docking!"
 
 			var/list/dockables = get_dockable_locations(src)
 			if(!dockables.len)
@@ -378,8 +395,9 @@
 	var/input = stripped_input(user, "Please choose a message to hail the target with.", "Hailing Vessel")
 	if(!input)
 		return
-	priority_announce("[html_decode(input)]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
-	interact_target.relay_message(user,interact_target, input)
+	if(docked_to != interact_target.docked_to) // if we're docked on the same thing, dont repeat
+		priority_announce("[html_decode(input)]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
+	interact_target.relay_message(user,interact_target, input, src)
 	deadchat_broadcast(" hailed the <span class='name'>[interact_target.name]</span>: [input]", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
 	return
 
@@ -388,8 +406,10 @@
  *
  * * user - The user requesting the options.
  * * requesting_interactor - The overmap datum requesting the options.
+ * * message - the message to be sent to the requesting interactor
+ * * sender - the overmap datum that initiated the message
  */
-/datum/overmap/proc/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
+/datum/overmap/proc/relay_message(mob/living/user, datum/overmap/requesting_interactor, message, datum/overmap/sender)
 	return FALSE
 
 /**
@@ -397,9 +417,11 @@
  *
  * * user - The user requesting the options.
  * * requesting_interactor - The overmap datum requesting the options.
+ * * message - the message to be sent to the requesting interactor
+ * * sender - the overmap datum that initiated the message
  */
-/datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
-	priority_announce("[html_decode(message)]", "Incoming Hail", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
+/datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message, datum/overmap/sender)
+	priority_announce("[html_decode(message)]", "Incoming Hail from [sender ? sender : "Unknown Source"]", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
 	return
 
 /**
@@ -639,6 +661,9 @@
 	if(!new_system)
 		CRASH("move_overmaps() called with no valid overmap!")
 
+	//very shitty 'fix' to the runtime that happens when you jump to a sector thats larger than the previous one
+	//if you aren't me and want to fix this in a better, the moving between star systems code should be on overmap_move() insteads
+	overmap_move(1, 1)
 	try
 		current_overmap.overmap_container[x][y] -= src
 	catch(var/exception/error)
@@ -652,6 +677,10 @@
 	else
 		var/list/results = current_overmap.get_unused_overmap_square()
 		overmap_move(results["x"], results["y"])
+	for(var/datum/overmap/towed_datum as anything in contents)
+		towed_datum.current_overmap = current_overmap
+		towed_datum.x = x
+		towed_datum.y = y
 	alter_token_appearance()
 
 
@@ -673,6 +702,14 @@
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
 
+	token.layer = layer
+
+/datum/overmap/proc/activate_cloak()
+	alter_token_appearance()
+
+/datum/overmap/proc/deactivate_cloak()
+	alter_token_appearance()
+
 /*
  * For use when this datum is just completely fucked with no real solutions.
  *
@@ -681,10 +718,10 @@
  */
 /datum/overmap/proc/fsck()
 	//set the current overmap to the default one. If theres no default overmap shit is truly fucked
-	if(!SSovermap.default_system)
+	if(!SSovermap.tracked_star_systems[1])
 		message_admins(span_userdanger("There is no default overmap set. Consider restarting the round."))
 		CRASH("There is no default overmap set. Consider restarting the round.")
-	current_overmap = SSovermap.default_system
+	current_overmap = SSovermap.tracked_star_systems[1]
 
 	//reset all docking timers
 	dock_time = null

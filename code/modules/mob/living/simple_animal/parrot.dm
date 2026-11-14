@@ -257,8 +257,8 @@
 					available_channels.Cut()
 					for(var/ch in headset_to_add.channels)
 						switch(ch)
-							if(RADIO_CHANNEL_NANOTRASEN)
-								available_channels.Add(RADIO_TOKEN_NANOTRASEN)
+							if(RADIO_CHANNEL_WARRA)
+								available_channels.Add(RADIO_TOKEN_WARRA)
 							if(RADIO_CHANNEL_EMERGENCY)
 								available_channels.Add(RADIO_TOKEN_EMERGENCY)
 							if(RADIO_CHANNEL_MINUTEMEN)
@@ -269,6 +269,12 @@
 								available_channels.Add(RADIO_TOKEN_SOLGOV)
 							if(RADIO_CHANNEL_SYNDICATE)
 								available_channels.Add(RADIO_TOKEN_SYNDICATE)
+							if(RADIO_CHANNEL_CYBERSUN)
+								available_channels.Add(RADIO_TOKEN_CYBERSUN)
+							if(RADIO_CHANNEL_NGR)
+								available_channels.Add(RADIO_TOKEN_NGR)
+							if(RADIO_CHANNEL_SUNS)
+								available_channels.Add(RADIO_TOKEN_SUNS)
 							if(RADIO_CHANNEL_PIRATE)
 								available_channels.Add(RADIO_TOKEN_PIRATE)
 
@@ -369,7 +375,7 @@
 /*
  * AI - Not really intelligent, but I'm calling it AI anyway.
  */
-/mob/living/simple_animal/parrot/Life()
+/mob/living/simple_animal/parrot/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	..()
 
 	//Sprite update for when a parrot gets pulled
@@ -882,19 +888,19 @@
 
 /mob/living/simple_animal/parrot/proc/set_interest(atom/movable/new_interest)
 	if(parrot_interest)
-		UnregisterSignal(parrot_interest, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(parrot_interest, COMSIG_QDELETING)
 		parrot_interest = null
 	if(new_interest)
 		parrot_interest = new_interest
-		RegisterSignal(parrot_interest, COMSIG_PARENT_QDELETING, PROC_REF(set_interest))
+		RegisterSignal(parrot_interest, COMSIG_QDELETING, PROC_REF(set_interest))
 
 /mob/living/simple_animal/parrot/proc/set_perch(obj/new_perch)
 	if(parrot_perch)
-		UnregisterSignal(parrot_perch, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(parrot_perch, COMSIG_QDELETING)
 		parrot_perch = null
 	if(new_perch)
 		parrot_perch = new_perch
-		RegisterSignal(parrot_perch, COMSIG_PARENT_QDELETING, PROC_REF(set_perch))
+		RegisterSignal(parrot_perch, COMSIG_QDELETING, PROC_REF(set_perch))
 
 /*
  * Sub-types
@@ -930,7 +936,7 @@
 
 	. = ..()
 
-/mob/living/simple_animal/parrot/Polly/Life()
+/mob/living/simple_animal/parrot/Polly/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	if(!stat && SSticker.current_state == GAME_STATE_FINISHED && !memory_saved)
 		Write_Memory(FALSE)
 		memory_saved = TRUE
@@ -1013,15 +1019,4 @@
 			parrot_interest = null
 		else if(parrot_state == (PARROT_SWOOP | PARROT_ATTACK) && Adjacent(parrot_interest))
 			walk_to(src, parrot_interest, 0, parrot_speed)
-			Possess(parrot_interest)
 	..()
-
-/mob/living/simple_animal/parrot/Polly/ghost/proc/Possess(mob/living/carbon/human/H)
-	if(!ishuman(H))
-		return
-	var/datum/disease/parrot_possession/P = new
-	P.parrot = src
-	forceMove(H)
-	H.ForceContractDisease(P)
-	parrot_interest = null
-	H.visible_message(span_danger("[src] dive bombs into [H]'s chest and vanishes!"), span_userdanger("[src] dive bombs into your chest, vanishing! This can't be good!"))

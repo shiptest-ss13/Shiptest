@@ -50,7 +50,7 @@
 
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
-/mob/living/simple_animal/hostile/asteroid/goliath/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	handle_preattack()
 
@@ -80,6 +80,9 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
+		return
+	//no tentacles if the target is space or the goliath is.
+	if(isspaceturf(tturf) || isspaceturf(loc))
 		return
 	if(get_dist(src, target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
 		visible_message(span_warning("[src] digs its tentacles under [target]!"))
@@ -112,7 +115,7 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/Aggro()
 	vision_range = aggro_vision_range
 	handle_preattack()
-	if(icon_state != icon_aggro)
+	if(icon_state != icon_aggro && stat != DEAD)
 		icon_state = icon_aggro
 
 /mob/living/simple_animal/hostile/asteroid/goliath/pup
@@ -260,7 +263,7 @@
 	var/turf/last_location
 	var/tentacle_recheck_cooldown = 70
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) // dead
 		return
@@ -275,7 +278,7 @@
 				LAZYADD(cached_tentacle_turfs, T)
 		for(var/t in cached_tentacle_turfs)
 			if(isopenturf(t))
-				if(prob(10))
+				if(SPT_PROB(5, seconds_per_tick))
 					new tentacle_type(t, src)
 			else
 				cached_tentacle_turfs -= t
@@ -296,6 +299,8 @@
 	var/difficulty = 3
 
 /obj/effect/temp_visual/goliath_tentacle/Initialize(mapload, mob/living/new_spawner,recursive = FALSE)
+	if(isspaceturf(loc))
+		return INITIALIZE_HINT_QDEL
 	. = ..()
 	flick(wiggle,src)
 	for(var/obj/effect/temp_visual/goliath_tentacle/T in loc)
@@ -339,17 +344,27 @@
 		timerid = addtimer(CALLBACK(src, PROC_REF(retract)), 10, TIMER_STOPPABLE)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
-	target.apply_damage(rand(10,20), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), wound_bonus = CANT_WOUND) //already dangerous, don't break legs too
-
+	var/obj/item/bodypart/affecting
+	if(ishuman(target))
+		if(prob(50))
+			affecting = target.get_bodypart(BODY_ZONE_R_LEG)
+		else
+			affecting = target.get_bodypart(BODY_ZONE_L_LEG)
+		if(!affecting) //(!target.get_bodypart(BODY_ZONE_R_LEG) && !target.get_bodypart(BODY_ZONE_L_LEG))
+			affecting = target.get_bodypart(BODY_ZONE_CHEST)
+		var/armor_block
+		armor_block = target.run_armor_check(affecting, MELEE)
+		target.apply_damage(rand(20,25), BRUTE, affecting, armor_block, FALSE, wound_bonus = CANT_WOUND)
+	else
+		target.apply_damage(rand(20,25), BRUTE, wound_bonus = CANT_WOUND)
 	if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
 		B.on_entered(src, target)
-
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"
 	flick(retract,src)
 	deltimer(timerid)
-	timerid = QDEL_IN(src, 7)
+	timerid = QDEL_IN_STOPPABLE(src, 7)
 
 /obj/item/saddle
 	name = "saddle"
@@ -405,9 +420,9 @@
 	else
 		visible_message(span_warning("[src] expels it's matter, releasing a spray of crystalline shards!"))
 		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)
-		shoot_projectile(Get_Angle(src,target) + 10)
-		shoot_projectile(Get_Angle(src,target))
-		shoot_projectile(Get_Angle(src,target) - 10)
+		shoot_projectile(get_angle(src,target) + 10)
+		shoot_projectile(get_angle(src,target))
+		shoot_projectile(get_angle(src,target) - 10)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/spray_of_crystals()
 	spiral_attack_inprogress = TRUE
@@ -428,6 +443,7 @@
 	damage = 25
 	damage_type = BRUTE
 	speed = 3
+	range = 14
 
 /obj/projectile/goliath/on_hit(atom/target, blocked)
 	. = ..()
@@ -505,7 +521,7 @@
 	armor = list("melee" = 30, "bullet" = 65, "laser" = 55, "energy" = 30, "bomb" = 60, "bio" = 30, "rad" = 50, "fire" = 30, "acid" = 50)
 	move_to_delay = 3 SECONDS
 	speed = 3
-	//mob_trophy = /obj/item/mob_trophy/elder_tentacle
+	mob_trophy = /obj/item/mob_trophy/elder_tentacle
 	pre_attack_icon = "ws_ancient_goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()

@@ -22,7 +22,7 @@
 
 	a_intent = "harm"
 
-	var/baton_type = /obj/item/melee/baton
+	var/baton_type = /obj/item/melee/classic_baton
 	var/obj/item/weapon
 	var/mob/living/carbon/target
 	var/oldtarget_name
@@ -55,8 +55,7 @@
 
 /mob/living/simple_animal/bot/secbot/beepsky/jr/Initialize()
 	. = ..()
-	resize = 0.8
-	update_transform()
+	update_transform(0.8)
 
 
 /mob/living/simple_animal/bot/secbot/beepsky/explode()

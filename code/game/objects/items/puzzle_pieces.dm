@@ -50,11 +50,6 @@
 /obj/item/keycard/gatedrop
 	icon_state = "golden_key"
 
-/obj/item/keycard/gatedrop/lavacanyon
-	name = "Vault Key"
-	desc = "A dusty key, smudged with dried blood."
-	puzzle_id = "lavacanyonkey"
-
 //***************
 //*****Doors*****
 //***************

@@ -117,6 +117,24 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	hands_use_check = TRUE
 
+/datum/emote/living/carbon/thumbup
+	key = "thumbup"
+	key_third_person = "raises a thumbs up"
+	message = "raises a thumbs up."
+	hands_use_check = TRUE
+
+/datum/emote/living/carbon/thumbdown
+	key = "thumbdown"
+	key_third_person = "shows a thumbs down"
+	message = "shows a thumbs down."
+	hands_use_check = TRUE
+
+/datum/emote/living/carbon/beckon
+	key = "beckon"
+	key_third_person = "motions to follow them"
+	message = "motions to follow them."
+	hands_use_check = TRUE
+
 /datum/emote/living/carbon/tail
 	key = "tail"
 	message = "waves their tail."
@@ -304,10 +322,9 @@
 	var/table_smacks_left = 3
 
 /obj/item/slapper/attack(mob/living/M, mob/living/carbon/human/user)
-	if(ishuman(M))
-		var/mob/living/carbon/human/L = M
-		if(L && L.dna && L.dna.species)
-			L.dna.species.stop_wagging_tail(M)
+	var/obj/item/bodypart/tail/target_tail = M.get_bodypart(BODY_ZONE_TAIL)
+	if(target_tail)
+		target_tail.set_wag(FALSE)
 	user.do_attack_animation(M)
 
 	var/slap_volume = 50
@@ -547,13 +564,13 @@
 	var/mob/living/owner = loc
 	if(!istype(owner))
 		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(ownerExamined))
+	RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(ownerExamined))
 
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc
 	if(!istype(owner))
 		return ..()
-	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
 	. = ..()
 
 /// Stage 1: The mistake is made

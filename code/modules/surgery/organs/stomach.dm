@@ -1,3 +1,6 @@
+//The contant in the rate of reagent transfer on life ticks
+#define STOMACH_METABOLISM_CONSTANT 0.25
+
 /obj/item/organ/stomach
 	name = "stomach"
 	icon_state = "stomach"
@@ -15,42 +18,86 @@
 	high_threshold_cleared = span_info("The pain in your stomach dies down for now, but food still seems unappealing.")
 	low_threshold_cleared = span_info("The last bouts of pain in your stomach have died out.")
 
+	//This is a reagent user and needs more then the 10u from edible component
+	reagent_vol = 1000
+
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue/stomach_lining = 5)
+
+	///The rate that disgust decays
 	var/disgust_metabolism = 1
+
+	///The rate that the stomach will transfer reagents to the body
+	var/metabolism_efficiency = 0.05 // the lowest we should go is 0.05
 
 /obj/item/organ/stomach/Initialize()
 	. = ..()
-	create_reagents(1000)
+	//None edible organs do not get a reagent holder by default
+	if(!reagents)
+		create_reagents(reagent_vol)
 
-/obj/item/organ/stomach/on_life()
+/obj/item/organ/stomach/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	//Manage species digestion
 	if(istype(owner, /mob/living/carbon/human))
-		var/mob/living/carbon/human/humi = owner
+		var/mob/living/carbon/human/target_human = owner
 		if(!(organ_flags & ORGAN_FAILING))
-			humi.dna.species.handle_digestion(humi)
+			target_human.dna.species.handle_digestion(target_human, seconds_per_tick, times_fired)
 
-	//digest food
 	var/mob/living/carbon/body = owner
-	var/obj/item/organ/liver/liver = body.getorganslot(ORGAN_SLOT_LIVER)
-	var/liverless = (!liver || (liver.organ_flags & ORGAN_FAILING))
-	reagents.metabolize(body, can_overdose=TRUE, liverless=liverless)
 
+	// digest food, sent all reagents that can metabolize to the body
+	for(var/chunk in reagents.reagent_list)
+		var/datum/reagent/bit = chunk
+
+		// If the reagent does not metabolize then it will sit in the stomach
+		// This has an effect on items like plastic causing them to take up space in the stomach
+		if(bit.metabolization_rate <= 0)
+			continue
+
+		//Ensure that the the minimum is equal to the metabolization_rate of the reagent if it is higher then the STOMACH_METABOLISM_CONSTANT
+		var/rate_min = max(bit.metabolization_rate, STOMACH_METABOLISM_CONSTANT)
+		//Do not transfer over more then we have
+		var/amount_max = bit.volume
+
+		//If the reagent is part of the food reagents for the organ
+		//prevent all the reagents form being used leaving the food reagents
+		var/amount_food = food_reagents[bit.type]
+		if(amount_food)
+			amount_max = max(amount_max - amount_food, 0)
+
+		// Transfer the amount of reagents based on volume with a min amount of 1u
+		var/amount = min((round(metabolism_efficiency * amount_max, 0.05) + rate_min) * seconds_per_tick, amount_max)
+
+		if(amount <= 0)
+			continue
+
+		// transfer the reagents over to the body at the rate of the stomach metabolim
+		// this way the body is where all reagents that are processed and react
+		// the stomach manages how fast they are feed in a drip style
+		reagents.trans_id_to(body, bit.type, amount=amount)
+
+	//Handle disgust
 	if(body)
-		handle_disgust(body)
+		handle_disgust(body, seconds_per_tick, times_fired)
 
+	//If the stomach is not damaged exit out
 	if(damage < low_threshold)
 		return
 
+	//We are checking if we have nutriment in a damaged stomach.
 	var/datum/reagent/nutri = locate(/datum/reagent/consumable/nutriment) in reagents.reagent_list
+	//No nutriment found lets exit out
 	if(!nutri)
 		return
 
-	if(prob(damage * 0.025 * nutri.volume * nutri.volume))
+	//The stomach is damaged has nutriment but low on theshhold, low prob of vomit
+	if(SPT_PROB(damage * 0.0125 * nutri.volume * nutri.volume, seconds_per_tick))
 		body.vomit(damage)
 		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 		return
 
-	if(damage > high_threshold && prob(damage * 0.1 * nutri.volume * nutri.volume))
+	// the chance of vomitng is now high
+	if(damage > high_threshold && SPT_PROB(damage * 0.05 * nutri.volume * nutri.volume, seconds_per_tick))
 		body.vomit(damage)
 		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
@@ -104,11 +151,12 @@
 		H.adjust_disgust(-0.5 * disgust_metabolism)
 
 /obj/item/organ/stomach/Remove(mob/living/carbon/M, special = 0)
-	var/mob/living/carbon/human/H = owner
-	if(istype(H))
+	if(istype(owner, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = owner
 		H.clear_alert("disgust")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
-	..()
+
+	return ..()
 
 /obj/item/organ/stomach/fly
 	name = "insectoid stomach"
@@ -126,7 +174,7 @@
 	desc = "A crystal-like organ that stores the electric charge of elzuosa."
 	var/crystal_charge = ELZUOSE_CHARGE_FULL
 
-/obj/item/organ/stomach/ethereal/on_life()
+/obj/item/organ/stomach/ethereal/on_life(seconds_per_tick, times_fired)
 	..()
 	adjust_charge(-ELZUOSE_CHARGE_FACTOR)
 
@@ -164,6 +212,7 @@
 	desc = "A basic device designed to mimic the functions of a human stomach"
 	organ_flags = ORGAN_SYNTHETIC
 	maxHealth = STANDARD_ORGAN_THRESHOLD * 0.5
+	metabolism_efficiency = 0.035 // not as good at digestion
 	var/emp_vulnerability = 80 //Chance of permanent effects if emp-ed.
 
 /obj/item/organ/stomach/cybernetic/tier2
@@ -173,6 +222,7 @@
 	maxHealth = 1.5 * STANDARD_ORGAN_THRESHOLD
 	disgust_metabolism = 2
 	emp_vulnerability = 40
+	metabolism_efficiency = 0.07
 
 /obj/item/organ/stomach/cybernetic/tier3
 	name = "upgraded cybernetic stomach"
@@ -181,6 +231,7 @@
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
 	disgust_metabolism = 3
 	emp_vulnerability = 20
+	metabolism_efficiency = 0.1
 
 /obj/item/organ/stomach/cybernetic/emp_act(severity)
 	. = ..()
@@ -213,4 +264,4 @@
 			owner.nutrition = 250
 			to_chat(owner, span_warning("Alert: EMP Detected. Cycling battery."))
 
-//WS End
+#undef STOMACH_METABOLISM_CONSTANT

@@ -416,7 +416,7 @@
 	if(.)
 		var/found_hypo = FALSE
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = TRUE
+			H.inject_flags = INJECT_CHECK_PENETRATE_THICK
 			found_hypo = TRUE
 
 		if(!found_hypo)
@@ -426,7 +426,7 @@
 	. = ..()
 	if (.)
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = initial(H.bypass_protection)
+			H.inject_flags = initial(H.inject_flags)
 
 /obj/item/borg/upgrade/defib
 	name = "medical cyborg defibrillator"
@@ -447,6 +447,10 @@
 		if(BP)
 			BP.deactivate(R, user)
 			to_chat(user, span_notice("You remove the defibrillator unit to make room for the compact upgrade."))
+		var/obj/item/shockpaddles/cyborg/LS = locate() in R.module
+		if(LS)
+			to_chat(user, span_warning("This unit is already equipped with a defibrillator module!"))
+			return FALSE
 		var/obj/item/shockpaddles/cyborg/S = new(R.module)
 		R.module.basic_modules += S
 		R.module.add_module(S, FALSE, TRUE)
@@ -473,6 +477,10 @@
 /obj/item/borg/upgrade/processor/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if(.)
+		var/obj/item/surgical_processor/LP = locate() in R.module
+		if(LP)
+			to_chat(user, span_warning("This unit is already equipped with a surgical processor module!"))
+			return FALSE
 		var/obj/item/surgical_processor/SP = new(R.module)
 		R.module.basic_modules += SP
 		R.module.add_module(SP, FALSE, TRUE)
@@ -535,17 +543,15 @@
 			R.SetLockdown(0)
 		R.set_anchored(FALSE)
 		R.notransform = FALSE
-		R.resize = 2
 		R.hasExpanded = TRUE
-		R.update_transform()
+		R.update_transform(2)
 
 /obj/item/borg/upgrade/expand/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (.)
 		if (R.hasExpanded)
 			R.hasExpanded = FALSE
-			R.resize = 0.5
-			R.update_transform()
+			R.update_transform(0.5)
 
 /obj/item/borg/upgrade/rped
 	name = "engineering cyborg RPED"
@@ -559,7 +565,7 @@
 	. = ..()
 	if(.)
 
-		var/obj/item/storage/part_replacer/cyborg/RPED = locate() in R
+		var/obj/item/borg/upgrade/rped/RPED = locate() in R
 		if(RPED)
 			to_chat(user, span_warning("This unit is already equipped with a RPED module!"))
 			return FALSE
@@ -571,7 +577,7 @@
 /obj/item/borg/upgrade/rped/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (.)
-		var/obj/item/storage/part_replacer/cyborg/RPED = locate() in R.module
+		var/obj/item/borg/upgrade/rped/RPED = locate() in R.module
 		if (RPED)
 			R.module.remove_module(RPED, TRUE)
 

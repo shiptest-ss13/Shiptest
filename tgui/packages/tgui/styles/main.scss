@@ -58,6 +58,7 @@
 @include meta.load-css('./interfaces/Fishing.scss');
 @include meta.load-css('./interfaces/FlavorText.scss');
 @include meta.load-css('./interfaces/HellishRunes.scss');
+@include meta.load-css('./interfaces/HelmConsole.scss');
 @include meta.load-css('./interfaces/HotKeysHelp.scss');
 @include meta.load-css('./interfaces/Hypertorus.scss');
 @include meta.load-css('./interfaces/LibraryAdmin.scss');
@@ -90,7 +91,7 @@
 // NT Theme
 .Layout__content {
   background-image: url('../assets/bg-shiptest.svg');
-  background-size: 70%;
+  background-size: 70% 70%;
   background-position: center;
   background-repeat: no-repeat;
 }

@@ -107,6 +107,7 @@
 	playsound(src, 'sound/effects/fuse.ogg', volume, TRUE)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
+	ai_note_live_explosive(src, ai_grenade_danger_radius(src), isnull(delayoverride)? det_time : delayoverride)
 	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/firecracker/prime()
@@ -115,3 +116,21 @@
 	var/explosion_loc = get_turf(src)
 	resolve()
 	explosion(explosion_loc,-1,-1,2)
+
+/obj/item/grenade/firecracker/dynamite
+	name = "dynamite"
+	desc = "the traditional cave-obliterator. A large stick of mean explosive power."
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "dynamite"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	item_state = "flare"
+	throw_speed = 3
+	throw_range = 7
+	det_time = 30
+	ex_dev = 0
+	ex_heavy = 2
+	heavy_damage = 50
+	ex_light = 3
+	ex_flame = 3

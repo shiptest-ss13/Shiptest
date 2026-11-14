@@ -20,13 +20,13 @@
 	var/slab_color = "#FF0000"
 
 /obj/item/food/meat/slab/make_dryable()
-	AddElement(/datum/element/dryable, /obj/item/food/sosjerky/healthy)
+	AddElement(/datum/element/dryable, /obj/item/food/homemade_jerky)
 
 /obj/item/food/meat/slab/make_grillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/plain, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
 
 /obj/item/food/meat/slab/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/plain, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/plain, 4, 30)
 
 ////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
 
@@ -205,7 +205,7 @@
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/tiris, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
 
 /obj/item/food/meat/slab/tiris/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/tiris, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/tiris, 4, 30)
 
 /obj/item/food/meat/slab/remes
 	name = "remes meat"
@@ -214,6 +214,9 @@
 	microwaved_type = null
 	tastes = list("mellow flesh" = 6, "earthiness" = 2)
 	foodtypes = MEAT
+
+/obj/item/food/meat/slab/remes/make_grillable()
+	return
 
 /obj/item/food/meat/slab/dofitis
 	name = "dofitis meat"
@@ -274,7 +277,7 @@
 
 /obj/item/food/meat/slab/penguin/make_processable()
 	. = ..()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/penguin, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/penguin, 4, 30)
 
 /obj/item/food/meat/rawcrab
 	name = "raw crab meat"
@@ -288,7 +291,7 @@
 	tastes = list("raw crab" = 1)
 	foodtypes = RAW | MEAT
 
-/obj/item/food/meat/slab/rawcrab/make_grillable()
+/obj/item/food/meat/rawcrab/make_grillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/crab, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
 
 /obj/item/food/meat/crab
@@ -317,7 +320,7 @@
 
 /obj/item/food/meat/slab/chicken/make_processable()
 	. = ..()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/chicken, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/chicken, 4, 30)
 
 /obj/item/food/meat/slab/mothroach
 	name = "mothroach meat"

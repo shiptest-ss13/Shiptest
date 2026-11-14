@@ -4,7 +4,7 @@
 	icon_state = "syndicate-helm"
 	item_state = "syndicate-helm"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/syndicate
@@ -13,7 +13,8 @@
 	item_state = "syndicate"
 	desc = "A space suit made of high-grade ballistic fabric with integrated armor plates. More compact than a normal space suit while almost matching powered hardsuits for protection. Almost."
 	w_class = WEIGHT_CLASS_NORMAL
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/syndicate/Initialize()
 	. = ..()
@@ -24,21 +25,25 @@
 	name = "armored space helmet"
 	icon_state = "syndicate-helm-generic"
 	item_state = "syndicate-helm-generic"
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/space/syndicate/generic
 	name = "armored olive space suit"
 	icon_state = "syndicate-generic"
 	item_state = "syndicate-generic"
 	unique_reskin = list("armored olive space suit" = "syndicate-generic",
-						"armored grey space suit" = "syndicate-grey"
+						"armored grey space suit" = "syndicate-generic-grey"
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/space/syndicate/generic/grey
 	name = "armored grey space suit"
-	icon_state = "syndicate-grey"
-	item_state = "syndicate-grey"
+	icon_state = "syndicate-generic-grey"
+	item_state = "syndicate-generic-grey"
 
 //Hardliner + Cybersun
 /obj/item/clothing/head/helmet/space/syndicate/white_red
@@ -57,12 +62,18 @@
 	name = "biege-red space helmet"
 	icon_state = "syndicate-helm-ngr"
 	item_state = "syndicate-helm-ngr"
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | SNOUTED_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
 
 /obj/item/clothing/suit/space/syndicate/ngr
 
 	name = "beige-red space suit"
 	icon_state = "syndicate-ngr"
 	item_state = "syndicate-ngr"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
 
 //Ramzi
 /obj/item/clothing/head/helmet/space/syndicate/ramzi
@@ -100,6 +111,9 @@
 	name = "GEC-grade space helmet"
 	icon_state = "syndicate-helm-engie"
 	item_state = "syndicate-helm-engie"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
 	desc = "An advanced, lightweight space helmet made of fire and radiation-resistant materials, graded for use by the GEC."
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
 	resistance_flags = FIRE_PROOF
@@ -108,10 +122,13 @@
 	name = "GEC-grade space suit"
 	icon_state = "syndicate-engie"
 	item_state = "syndicate-engie"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
 	desc = "A space suit made of high-grade ballistic fabric with thermal and radiation shielding. More compact than a normal space suit, graded for use by the GEC."
 	siemens_coefficient = 0
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 15)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	resistance_flags = FIRE_PROOF
 
 //Same armour values as a normal space suit

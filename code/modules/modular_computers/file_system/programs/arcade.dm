@@ -1,6 +1,6 @@
 /datum/computer_file/program/arcade
 	filename = "dsarcade"
-	filedesc = "Donksoft Micro Arcade"
+	filedesc = "mwOS Micro Arcade"
 	program_icon_state = "arcade"
 	extended_desc = "This port of the classic game 'Outbomb Cuban Pete', redesigned to run on tablets, with thrilling graphics and chilling storytelling."
 	requires_ntnet = FALSE
@@ -18,7 +18,7 @@
 	var/player_mp = 10
 	var/ticket_count = 0
 	///Shows what text is shown on the app, usually showing the log of combat actions taken by the player.
-	var/heads_up = "Nanotrasen says, winners make us money."
+	var/heads_up = "Makosso-Warra says, winners make us money."
 	var/boss_name = "Cuban Pete's Minion"
 	///Determines which boss image to use on the UI.
 	var/boss_id = 1

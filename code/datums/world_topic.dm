@@ -167,9 +167,6 @@
 	var/list/afkmins = adm["afk"]
 	.["admins"] = presentmins.len + afkmins.len //equivalent to the info gotten from adminwho
 
-	var/list/mnt = get_mentor_counts()
-	.["mentors"] = mnt["total"] // we don't have stealth mentors, so we can just use the total.
-
 	.["gamestate"] = SSticker.current_state
 
 	if(key_valid)
@@ -264,7 +261,6 @@
 
 /datum/world_topic/manifest //Inspired by SunsetStation
 	keyword = "manifest"
-	require_comms_key = TRUE //not really needed, but I don't think any bot besides ours would need it
 
 /datum/world_topic/manifest/Run(list/input)
 	. = list()

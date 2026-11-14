@@ -131,11 +131,11 @@
 	. = ..()
 	if((organ_flags & ORGAN_FAILING) || . & EMP_PROTECT_SELF)
 		return
-	organ_flags |= ORGAN_FAILING
+	ADD_TRAIT(src, TRAIT_ORGAN_FAILING, EMP_TRAIT)
 	addtimer(CALLBACK(src, PROC_REF(reboot)), 90 / severity)
 
 /obj/item/organ/cyberimp/brain/anti_stun/proc/reboot()
-	organ_flags &= ~ORGAN_FAILING
+	REMOVE_TRAIT(src, TRAIT_ORGAN_FAILING, EMP_TRAIT)
 
 /obj/item/organ/cyberimp/brain/joywire
 	name = "\improper Midi-Sed pleasure vivifier"
@@ -143,7 +143,7 @@
 	implant_color = "#FFABE0"
 	slot = ORGAN_SLOT_BRAIN_JOYWIRE
 
-/obj/item/organ/cyberimp/brain/joywire/on_life()
+/obj/item/organ/cyberimp/brain/joywire/on_life(seconds_per_tick, times_fired)
 	if(owner || !(organ_flags & ORGAN_FAILING))
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire", /datum/mood_event/joywire)
 		ADD_TRAIT(owner, TRAIT_AGEUSIA, TRAIT_GENERIC)
@@ -152,7 +152,7 @@
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
-	organ_flags |= ORGAN_FAILING
+	ADD_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "joywire")
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire_emp", /datum/mood_event/joywire_emp)
 	to_chat(owner, span_boldwarning("That feeling of dream-like, distilled joy is suddenly diluted. Misery sets in..."))
@@ -163,17 +163,17 @@
 	implant_color = "#5E1108"
 	slot = ORGAN_SLOT_BRAIN_JOYWIRE
 
-/obj/item/organ/cyberimp/brain/mindscrew/on_life()
+/obj/item/organ/cyberimp/brain/mindscrew/on_life(seconds_per_tick, times_fired)
 	if(owner || !(organ_flags & ORGAN_FAILING))
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "mindscrew", /datum/mood_event/mindscrew)
 
 /obj/item/organ/cyberimp/brain/datachip
-	name = "Nanotrasen brain datachip"
+	name = "Makosso-Warra brain datachip"
 	desc = "Covered in serial codes and warnings. That data must be important."
 
 /obj/item/organ/cyberimp/brain/datachip/Insert()
 	. = ..()
-	to_chat(owner, span_notice("you feel well versed in the sales of donkpockets and other Donk Co. products"))
+	to_chat(owner, span_notice("you feel well versed in the sales of shoalpockets and other Donk Co. products"))
 
 //[[[[MOUTH]]]]
 /obj/item/organ/cyberimp/mouth
@@ -199,6 +199,7 @@
 /obj/item/storage/box/cyber_implants
 	name = "boxed cybernetic implants"
 	desc = "A sleek, sturdy box."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "cyber_implants"
 	var/list/boxed = list(
 		/obj/item/autosurgeon/syndicate/thermal_eyes,

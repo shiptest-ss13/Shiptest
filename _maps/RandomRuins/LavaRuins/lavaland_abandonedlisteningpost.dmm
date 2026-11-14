@@ -62,7 +62,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/thinplating/dark,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "bT" = (
@@ -151,9 +151,6 @@
 /obj/machinery/blackbox_recorder,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
-	},
-/obj/effect/landmark/mission_poi/main/blackbox{
-	mission_index = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -524,9 +521,6 @@
 /obj/item/folder/documents/syndicate/red,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
-	},
-/obj/effect/landmark/mission_poi/main{
-	type_to_spawn = /obj/item/documents/syndicate
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1489,7 +1483,7 @@
 	pixel_x = -20;
 	pixel_y = 11
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Bg" = (
@@ -1497,7 +1491,7 @@
 	dir = 8
 	},
 /obj/structure/table/chem,
-/obj/item/clothing/gloves/color/latex,
+/obj/item/clothing/gloves/nitrile,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "BB" = (
@@ -1588,10 +1582,7 @@
 	pixel_y = 17;
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_y = 16;
-	pixel_x = -9
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/unpowered/listening_post/canteen)
@@ -1613,15 +1604,8 @@
 /area/ruin/unpowered/listening_post)
 "DI" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 8;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 6;
-	pixel_x = -7;
-	list_reagents = null
-	},
+/obj/item/reagent_containers/food/drinks/mead,
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
 "DS" = (
@@ -1865,10 +1849,7 @@
 	pixel_y = -27;
 	pixel_x = 1
 	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_y = 10;
-	pixel_x = 8
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -1980,7 +1961,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/unpowered/listening_post/canteen)
 "Mr" = (
@@ -1993,7 +1974,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/mob/living/basic/human/ramzi/ranged/shotgun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "MF" = (
@@ -2120,7 +2101,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
 	},
-/obj/structure/closet/wall/med/directional/north,
+/obj/structure/closet/wall/white/med/directional/north,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/box/masks,
 /turf/open/floor/hangar/plasteel/white,
@@ -2143,7 +2124,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "OI" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/commons)
 "OP" = (
@@ -2337,7 +2318,7 @@
 	dir = 6
 	},
 /obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/suit/cybersun_suit,
+/obj/item/clothing/suit/cybersun,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "Ut" = (
@@ -2384,7 +2365,7 @@
 	pixel_x = -7;
 	pixel_y = 4
 	},
-/obj/item/trash/cheesie{
+/obj/item/trash/gummycarps{
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2422,7 +2403,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "WL" = (

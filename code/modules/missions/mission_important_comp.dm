@@ -8,7 +8,7 @@
 	if(isdatum(_mission))
 		mission_ref = WEAKREF(_mission)
 	if(isatom(parent))
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_atom_examine))
+		RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_atom_examine))
 
 	if(importance_level == MISSION_IMPORTANCE_CRITICAL)
 		SSpoints_of_interest.remove_point_of_interest(parent)

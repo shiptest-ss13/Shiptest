@@ -7,9 +7,6 @@
 /mob/proc/update_icons()
 	return
 
-/mob/proc/update_transform()
-	return
-
 /mob/proc/update_inv_handcuffed()
 	return
 

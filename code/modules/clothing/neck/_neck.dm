@@ -7,6 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 1
+	blood_overlay_type = "mask"
 	greyscale_colors = list(list(15, 20), list(16, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
@@ -17,7 +18,7 @@
 			if(damaged_clothes)
 				. += mutable_appearance('icons/effects/item_damage.dmi', "damagedmask")
 			if(HAS_BLOOD_DNA(src))
-				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
+				. += setup_blood_overlay()
 
 /obj/item/clothing/neck/tie
 	name = "tie"
@@ -531,6 +532,53 @@
 	icon_state = "shemagh"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/neck/shemagh/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		if((C.get_item_by_slot(ITEM_SLOT_NECK) == src))
+			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
+			return
+		if(user.is_holding(src))
+			var/obj/item/clothing/mask/shemagh/nk = new(src)
+			nk.name = "[name] mask"
+			nk.icon_state = "[icon_state]_over"
+			nk.source_shemagh_type = src.type
+			var/current_hand_index = user.get_held_index_of_item(src)
+			user.transferItemToLoc(src, null)
+			user.put_in_hand(nk, current_hand_index)
+			to_chat(user, span_notice("You tie [src] up like a facemask."))
+			qdel(src)
+		else
+			to_chat(user, span_warning("You must be holding [src] in order to tie it!"))
+
+/obj/item/clothing/mask/shemagh
+	icon = 'icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	clothing_flags = ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH
+	alternate_worn_layer = FACEWRAP_LAYER
+	w_class = WEIGHT_CLASS_TINY
+	var/source_shemagh_type
+
+/obj/item/clothing/mask/shemagh/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		if(C.get_item_by_slot(ITEM_SLOT_MASK) == src)
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
+			return
+		if(user.is_holding(src))
+			var/obj/item/clothing/neck/shemagh/new_shemagh = new source_shemagh_type(user)
+			var/current_hand_index = user.get_held_index_of_item(src)
+			var/old_name = src.name
+			qdel(src)
+			user.put_in_hand(new_shemagh, current_hand_index)
+			to_chat(user, span_notice("You untie [old_name] back into a [new_shemagh.name]."))
+		else
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
+
 /obj/item/clothing/neck/shemagh/khaki
 	icon_state = "shemagh_khaki"
 
@@ -542,6 +590,140 @@
 
 /obj/item/clothing/neck/shemagh/black
 	icon_state = "shemagh_black"
+
+// mantles
+
+/obj/item/clothing/neck/mantle
+	name = "mantle"
+	desc = "A big mantle for big shoulders."
+	icon_state = "mantle"
+	item_state = "mantle"
+	unique_reskin = list("black mantle" = "mantle",
+						"olive mantle" = "mantle_forest",
+						"red mantle" = "mantle_red",
+						"snow mantle" = "mantle_snow",
+						"desert mantle" = "mantle_sand",
+						"navy mantle" = "mantle_navy",
+						"leather mantle" = "mantle_leather"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/mantle/black
+	name = "black mantle"
+	icon_state = "mantle"
+	current_skin = "black mantle"
+
+/obj/item/clothing/neck/mantle/olive
+	name = "olive mantle"
+	icon_state = "mantle_forest"
+	current_skin = "olive mantle"
+
+/obj/item/clothing/neck/mantle/red
+	name = "red mantle"
+	icon_state = "mantle_red"
+	current_skin = "red mantle"
+
+/obj/item/clothing/neck/mantle/snow
+	name = "snow mantle"
+	icon_state = "mantle_snow"
+	current_skin = "snow mantle"
+
+/obj/item/clothing/neck/mantle/sand
+	name = "desert mantle"
+	icon_state = "mantle_sand"
+	current_skin = "desert mantle"
+
+/obj/item/clothing/neck/mantle/navy
+	name = "navy mantle"
+	icon_state = "mantle_navy"
+	current_skin = "navy mantle"
+
+/obj/item/clothing/neck/mantle/leather
+	name = "leather mantle"
+	icon_state = "mantle_leather"
+	current_skin = "leather mantle"
+
+// neck wraps
+
+/obj/item/clothing/neck/neckwraps
+	name = "neckwraps"
+	desc = "A fashionable piece of cloth cover your neck."
+	icon_state = "neckwraps"
+	item_state = "neckwraps"
+	unique_reskin = list("grey neckwraps" = "neckwraps",
+						"black neckwraps" = "neckwraps_black",
+						"brown neckwraps" = "neckwraps_brown",
+						"tan neckwraps" = "neckwraps_tan",
+						"olive neckwraps" = "neckwraps_olive",
+						"red neckwraps" = "neckwraps_red",
+						"blue neckwraps" = "neckwraps_blue"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/neckwraps/grey
+	name = "grey neckwraps"
+	icon_state = "neckwraps"
+	current_skin = "grey neckwraps"
+
+/obj/item/clothing/neck/neckwraps/black
+	name = "black neckwraps"
+	icon_state = "neckwraps_black"
+	current_skin = "black neckwraps"
+
+/obj/item/clothing/neck/neckwraps/brown
+	name = "brown neckwraps"
+	icon_state = "neckwraps_brown"
+	current_skin = "brown neckwraps"
+
+/obj/item/clothing/neck/neckwraps/tan
+	name = "tan neckwraps"
+	icon_state = "neckwraps_tan"
+	current_skin = "tan neckwraps"
+
+/obj/item/clothing/neck/neckwraps/olive
+	name = "olive neckwraps"
+	icon_state = "neckwraps_olive"
+	current_skin = "olive neckwraps"
+
+/obj/item/clothing/neck/neckwraps/red
+	name = "red neckwraps"
+	icon_state = "neckwraps_red"
+	current_skin = "red neckwraps"
+
+/obj/item/clothing/neck/neckwraps/blue
+	name = "blue neckwraps"
+	icon_state = "neckwraps_blue"
+	current_skin = "blue neckwraps"
+
+/obj/item/clothing/neck/shawl
+	name = "shawl"
+	desc = "An aging shawl, still serving as good protection from the elements."
+	icon_state = "shawl"
+	item_state = "shawl"
+	unique_reskin = list("brown shawl" = "shawl",
+						"grey shawl" = "shawl_grey",
+						"green shawl" = "shawl_green",
+						"yellow shawl" = "shawl_yellow"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/shawl/grey
+	name = "grey shawl"
+	icon_state = "shawl_grey"
+	current_skin = "grey shawl"
+
+/obj/item/clothing/neck/shawl/green
+	name = "green shawl"
+	icon_state = "shawl_green"
+	current_skin = "green shawl"
+
+/obj/item/clothing/neck/shawl/yellow
+	name = "yellow shawl"
+	icon_state = "shawl_yellow"
+	current_skin = "yellow shawl"
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
@@ -586,6 +768,79 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 	strip_delay = 10
+	pickup_sound = "dogtag"
+	var/list/tag_fluff = list()
+
+/obj/item/clothing/neck/dogtag/examine(mob/user)
+	. = ..()
+	if(length(tag_fluff))
+		. += span_notice("Some characters have been imprinted on the tag. You can look closer to see them.")
+
+/obj/item/clothing/neck/dogtag/examine_more(mob/user)
+	. = ..()
+	var/temp_string = null
+	for(var/line in tag_fluff)
+		temp_string += line
+		temp_string += "\n"
+	if(temp_string)
+		. += custom_boxed_message("grey_box center", temp_string)
+
+/obj/item/clothing/neck/dogtag/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_NECK)
+		RegisterSignal(user, COMSIG_MOUSEDROP_ONTO, PROC_REF(on_wearer_dragged), override = TRUE)
+		RegisterSignal(user, COMSIG_ATOM_EXAMINE, PROC_REF(on_wearer_examine), override = TRUE)
+	else
+		UnregisterSignal(user, list(COMSIG_MOUSEDROP_ONTO, COMSIG_ATOM_EXAMINE))
+
+/obj/item/clothing/neck/dogtag/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, list(COMSIG_MOUSEDROP_ONTO, COMSIG_ATOM_EXAMINE))
+
+/obj/item/clothing/neck/dogtag/proc/on_wearer_examine(mob/living/carbon/human/wearer, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+	if(wearer.stat == DEAD)
+		examine_list += span_notice("You could take [src] by dragging [wearer.p_them()] onto yourself while aiming for the head.")
+
+/obj/item/clothing/neck/dogtag/proc/on_wearer_dragged(mob/living/carbon/human/wearer, atom/over, mob/living/carbon/human/user)
+	SIGNAL_HANDLER
+	if(over != user || !ishuman(user) || user == wearer || wearer.stat != DEAD || user.zone_selected != BODY_ZONE_HEAD)
+		return
+	if(user.pulling == wearer && user.a_intent == INTENT_GRAB)
+		return
+	if(!canStrip(wearer) || !user.Adjacent(wearer) || user.incapacitated())
+		return
+	INVOKE_ASYNC(src, PROC_REF(pull_from_wearer), wearer, user)
+	return COMPONENT_NO_MOUSEDROP
+
+/obj/item/clothing/neck/dogtag/proc/pull_from_wearer(mob/living/carbon/human/wearer, mob/living/carbon/human/user)
+	user.visible_message(span_notice("[user] starts pulling the dogtag from [wearer]'s neck."), \
+					span_notice("You start pulling [src] from [wearer]'s neck..."))
+	add_fingerprint(user)
+	if(!do_after(user, strip_delay, wearer, interaction_key = src))
+		return
+	if(QDELETED(src) || wearer.wear_neck != src || !user.Adjacent(wearer))
+		return
+	if(!doStrip(user, wearer))
+		return
+	log_combat(user, wearer, "stripped [src] off")
+	if(!user.put_in_hands(src))
+		playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
+
+/obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/pen))
+		if(length(tag_fluff) >= 5)
+			to_chat(user, span_warning("[src] has no more space!"))
+			return
+		var/tagfluff = stripped_input(user, "Add to this dogtag.", "Plaque Customization", max_length=60)
+		if(!tagfluff)
+			return
+		tag_fluff = tagfluff
+		to_chat(user, span_notice("You add to the information on [src]!"))
+		return
+
+/obj/item/clothing/neck/dogtag/loadout
+	desc = "A dogtag, often worn by current and former soldiers."
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"

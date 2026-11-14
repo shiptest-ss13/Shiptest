@@ -131,7 +131,7 @@
 	value_mode = VALUE_MODE_FLAG
 
 /datum/config_entry/number/max_loadout_items	//maximum number of items that can be in a player's loadout
-	config_entry_value = 10
+	config_entry_value = 20
 	min_val = 0
 
 /datum/config_entry/flag/no_summon_guns	//No
@@ -318,7 +318,7 @@
 /datum/config_entry/number/bombcap/ValidateAndSet(str_val)
 	. = ..()
 	if(.)
-		GLOB.MAX_EX_DEVESTATION_RANGE = round(config_entry_value / 4)
+		GLOB.MAX_EX_DEVASTATION_RANGE = round(config_entry_value / 4)
 		GLOB.MAX_EX_HEAVY_RANGE = round(config_entry_value / 2)
 		GLOB.MAX_EX_LIGHT_RANGE = config_entry_value
 		GLOB.MAX_EX_FLASH_RANGE = config_entry_value
@@ -373,19 +373,19 @@
 	min_val = 0
 
 /datum/config_entry/number/max_overmap_event_clusters
-	config_entry_value = 10
+	config_entry_value = 4
 
 /datum/config_entry/number/max_overmap_events
 	config_entry_value = 150
 
 /datum/config_entry/number/max_overmap_dynamic_events
-	config_entry_value = 10
+	config_entry_value = 7
 
 /datum/config_entry/string/overmap_generator_type
 	config_entry_value = "solar_system"
 
 /datum/config_entry/number/overmap_size
-	config_entry_value = 30
+	config_entry_value = 20
 	min_val = 1
 
 /datum/config_entry/number/overmap_encounter_size
@@ -393,18 +393,7 @@
 	config_entry_value = 127
 	min_val = 127
 
-/datum/config_entry/number/max_dynamic_missions
-	config_entry_value = 0.66
-	min_val = 0
-
 /datum/config_entry/number/commendation_percent_poll
 	integer = FALSE
-
-/datum/config_entry/flag/auto_ship_spawn_locking
-	config_entry_value = TRUE
-
-//When the auto ship locking will start counting up, in minutes
-/datum/config_entry/number/ship_locking_starts
-	config_entry_value = 30
 
 /datum/config_entry/flag/native_fov

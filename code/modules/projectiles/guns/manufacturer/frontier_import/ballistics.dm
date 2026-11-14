@@ -1,10 +1,11 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with high recoil, lackluster armor penetration, and limited magazine size render it difficult to use outside of close quarters. Chambered in 9x18mm."
+	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with high recoil, lackluster armor penetration, and limited magazine size render it difficult to use outside of close quarters. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	manufacturer = MANUFACTURER_IMPORT
 
 	icon_state = "mauler_mp"
 	item_state = "hp_generic"
@@ -21,7 +22,7 @@
 	show_magazine_on_sprite = FALSE //hard coded
 
 	spread = 15
-	spread_unwielded = 30
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -94,22 +95,22 @@
 
 
 /obj/item/ammo_box/magazine/m9mm_mauler
-	name = "mauler pistol magazine (9x18mm)"
-	desc = "A 8-round magazine designed for the Mauler pistol."
+	name = "mauler pistol magazine (9mm)"
+	desc = "A 10-round magazine designed for the Mauler pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
-	max_ammo = 8
+	caliber = "9mm"
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/m9mm_mauler/extended
-	name = "mauler machine pistol extended magazine (9x18mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	name = "mauler machine pistol extended magazine (9mm)"
+	desc = "A 18-round magazine designed for the Mauler machine pistol."
 	icon_state = "mauler_extended_mag-1"
 	base_icon_state = "mauler_extended_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
-	max_ammo = 12
+	caliber = "9mm"
+	max_ammo = 18
 
 /obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
 	. = ..()
@@ -117,7 +118,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
-	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9x18mm."
+	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -134,8 +135,8 @@
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 
-	spread = 20
-	spread_unwielded = 35
+	spread = 15
+	spread_unwielded = 20
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.2 SECONDS
@@ -186,18 +187,91 @@
 
 
 /obj/item/ammo_box/magazine/spitter_9mm
-	name = "spitter pistol magazine (9x18mm)"
+	name = "spitter pistol magazine (9mm)"
 	desc = "A thin 30-round magazine for the Spitter submachine gun."
 	icon_state = "spitter_mag-1"
 	base_icon_state = "spitter_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/spitter_9mm/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
+/obj/item/gun/ballistic/automatic/smg/heater
+	name = "\improper Heater"
+	desc = "A popular Personal Defense Weapon originating from the Shoal. Essentially a more expensive, compact Spitter with a closed bolt design. It is notably more accurate while suffering from increased recoil due to its lack of stock. "
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "heater"
+	item_state = "heater"
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 4
+	wield_delay = 0.2 SECONDS
+	fire_delay = 0.12 SECONDS
+	recoil = 0.5
+	recoil_unwielded = 2.5
+	spread_unwielded = 8
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	default_ammo_type = /obj/item/ammo_box/magazine/heater
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/heater,
+	)
+	wear_rate = 1.25
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+
+	unique_mag_sprites_for_variants = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+	slot_available = list(ATTACHMENT_SLOT_RAIL = 1)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 14,
+		),
+	)
+
+NO_MAG_GUN_HELPER(automatic/smg/heater)
+
+/obj/item/gun/ballistic/automatic/smg/heater/scorcher
+	name = "\improper Scorcher"
+	desc = "A Frontiersmen-modified heater, with a flamethrower and fuel tank bolted onto it. A stock has been fitted on to help control recoil, at the cost of increasing its size."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "scorcher"
+	item_state = "scorcher"
+	w_class = WEIGHT_CLASS_BULKY
+	recoil = 0.1
+
+
+	default_attachments = list(/obj/item/attachment/gun/flamethrower/scorcher)
+	unique_attachments = list(/obj/item/attachment/gun/flamethrower/scorcher)
+
+/obj/item/ammo_box/magazine/heater
+	name = "Heater magazine (5.7mm)"
+	desc = "A 30-round magazine designed for the Heater PDW."
+	icon_state = "heater_mag-1"
+	base_icon_state = "heater_mag"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	caliber = "5.7x39mm"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/heater/extended
+	name = "Heater casket magazine (5.7mm)"
+	desc = "A 50-round casket magazine designed for the Heater PDW."
+	icon_state = "heater_extended_mag-1"
+	base_icon_state = "heater_extended_mag"
+	max_ammo = 50
 
 /obj/item/gun/ballistic/automatic/smg/pounder
 	name = "Pounder"
@@ -215,7 +289,7 @@
 		/obj/item/ammo_box/magazine/c22lr_pounder_pan,
 	)
 	burst_size = 1
-	fire_delay = 0.05 SECONDS
+	fire_delay = 0.04 SECONDS
 	spread = 25
 	spread_unwielded = 50
 
@@ -239,7 +313,7 @@
 	wield_slowdown = SMG_SLOWDOWN
 	safety_multiplier = 2
 
-	refused_attachments = list(/obj/item/attachment/gun)
+	//refused_attachments = list(/obj/item/attachment/gun)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -338,17 +412,17 @@
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg
-	name = "\improper SKM-24u"
-	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
+/obj/item/gun/ballistic/automatic/hmg/ml3
+	name = "\improper ML3"
+	desc = "What appears to be a standard FA2 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
-	icon_state = "skm_lmg"
-	item_state = "skm_lmg"
+	icon_state = "ml3"
+	item_state = "ml3"
 
 	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
@@ -366,9 +440,9 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_762_40,
+		/obj/item/ammo_box/magazine/fa2_762_40,
 	)
 
 	fire_delay = 0.13 SECONDS
@@ -377,10 +451,10 @@
 	spread_unwielded = 25
 
 	recoil = 1 //identical to other LMGS
-	recoil_unwielded = 4 //same as skm
+	recoil_unwielded = 4 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 
@@ -461,15 +535,16 @@
 		chambered.BB.set_light_color(COLOR_SOFT_RED)
 		chambered.BB.set_light_range(2)
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/hmg/ml3/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
+/obj/item/gun/ballistic/automatic/hmg/ml3/extended //spawns with the proper extended magazine, for erts
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40/extended
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+/obj/item/gun/ballistic/automatic/hmg/ml3/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40/drum
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"
@@ -494,7 +569,6 @@
 
 	cartridge_wording = "rocket"
 	empty_indicator = FALSE
-	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	has_safety = FALSE
@@ -502,7 +576,22 @@
 
 	safety_multiplier = 0
 
+/obj/item/gun/ballistic/rocketlauncher/oneshot/eject_magazine(mob/user, display_message = TRUE)
+	if (!chambered)
+		to_chat(user, span_warning("It's spent!"))
+	else
+		to_chat(user, span_warning("You can't remove the rocket!"))
+	return
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/insert_magazine(mob/user, display_message = TRUE)
+	if (!chambered)
+		to_chat(user, span_warning("It's spent!"))
+	else
+		to_chat(user, span_warning("You can't load this!"))
+	return
+
 /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "\improper Hammer-DP"
 	desc = "A disposable rocket-propelled grenade launcher loaded with an HEDP shell for Direct Penetration of your target."
 
@@ -593,3 +682,57 @@
 
 /obj/item/ammo_box/magazine/m12g_slammer/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/assault/ripper
+	name = "Ripper"
+	desc = "A cut-down variant of the venerable CLIP F4. This one seems to have been cobbled together with various parts of various guns. Its bolt seems different than the conventional F4."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "ripper"
+	item_state = "ripper"
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	bolt_type = BOLT_TYPE_OPEN
+	default_ammo_type = /obj/item/ammo_box/magazine/f4_308
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/f4_308,
+	)
+	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	fire_delay = 3.5
+	actions_types = list()
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	manufacturer = MANUFACTURER_IMPORT
+
+	valid_attachments = list(
+		/obj/item/attachment/foldable_stock/ripper
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+	unique_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+	spread = 10
+	recoil = 2
+

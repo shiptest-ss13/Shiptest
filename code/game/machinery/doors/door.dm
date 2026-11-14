@@ -18,7 +18,8 @@
 
 	interaction_flags_atom = INTERACT_ATOM_UI_INTERACT
 
-	var/air_tight = FALSE	//TRUE means density will be set as soon as the door begins to close
+	///TRUE means density will be set as soon as the door begins to close
+	var/air_tight = FALSE
 	var/secondsElectrified = MACHINE_NOT_ELECTRIFIED
 	var/shockedby
 	var/visible = TRUE
@@ -29,21 +30,35 @@
 	var/fast_close = 0
 	///how long this door takes to close, if it is autoclosing
 	var/close_speed = 6 SECONDS
-	var/heat_proof = FALSE // For rglass-windowed airlocks and firedoors
-	var/emergency = FALSE // Emergency access override
-	var/sub_door = FALSE // true if it's meant to go under another door.
+	///For rglass-windowed airlocks and firedoors
+	var/heat_proof = FALSE
+	///Emergency access override
+	var/emergency = FALSE
+	///true if it's meant to go under another door.
+	var/sub_door = FALSE
 	var/closingLayer = CLOSED_DOOR_LAYER
-	var/autoclose = FALSE //does it automatically close after some time
-	var/safe = TRUE //whether the door detects things and mobs in its way and reopen or crushes them.
-	var/locked = FALSE //whether the door is bolted or not.
-	var/assemblytype //the type of door frame to drop during deconstruction
+	///does it automatically close after some time
+	var/autoclose = FALSE
+	///whether the door detects things and mobs in its way and reopen or crushes them.
+	var/safe = TRUE
+	///whether the door is bolted or not.
+	var/locked = FALSE
+	///the type of door frame to drop during deconstruction
+	var/assemblytype
 	var/datum/effect_system/spark_spread/spark_system
-	var/real_explosion_block	//ignore this, just use explosion_block
-	var/red_alert_access = FALSE //if TRUE, this door will always open on red alert
+	///ignore this, just use explosion_block
+	var/real_explosion_block
+	///if TRUE, this door will always open on red alert
+	var/red_alert_access = FALSE
 	var/poddoor = FALSE
-	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
-	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
-	var/can_crush = TRUE /// Whether or not the door can crush mobs.
+	///Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
+	var/unres_sides = 0
+	///Whether or not the airlock can be opened with bare hands while unpowered
+	var/safety_mode = FALSE
+	///Whether or not the door can crush mobs.
+	var/can_crush = TRUE
+	///Will the door be triggered by open/close_and_lock()?
+	var/close_exception = FALSE
 
 
 /obj/machinery/door/examine(mob/user)
@@ -224,7 +239,7 @@
 /obj/machinery/door/proc/unrestricted_side(mob/M) //Allows for specific side of airlocks to be unrestrected (IE, can exit maint freely, but need access to enter)
 	return get_dir(src, M) & unres_sides
 
-/obj/machinery/door/proc/try_to_weld(obj/item/weldingtool/W, mob/user)
+/obj/machinery/door/proc/try_to_weld(obj/item/weldingtool/W, mob/user, list/modifiers)
 	return
 
 /obj/machinery/door/proc/try_to_crowbar(obj/item/I, mob/user)
@@ -264,7 +279,7 @@
 		try_to_crowbar(I, user, forced_open)
 		return TRUE
 	else if(I.tool_behaviour == TOOL_WELDER)
-		try_to_weld(I, user)
+		try_to_weld(I, user, params2list(params))
 		return TRUE
 	else if(!(I.item_flags & NOBLUDGEON) && user.a_intent != INTENT_HARM)
 		try_to_activate_door(user)
@@ -384,6 +399,22 @@
 	else if(!(flags_1 & ON_BORDER_1))
 		crush()
 	return TRUE
+
+/obj/machinery/door/proc/close_and_lock()
+	if(close_exception)
+		return
+	unlock()
+	close()
+	if(density)
+		lock()
+
+/obj/machinery/door/proc/open_and_lock()
+	if(close_exception)
+		return
+	unlock()
+	open()
+	if(!density)
+		lock()
 
 /obj/machinery/door/proc/CheckForMobs()
 	if(locate(/mob/living) in get_turf(src))

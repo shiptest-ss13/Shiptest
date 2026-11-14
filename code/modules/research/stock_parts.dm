@@ -112,11 +112,13 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	w_class = WEIGHT_CLASS_SMALL
 	var/rating = 1
 	var/part_behaviour
+	var/auto_scatter = TRUE
 
 /obj/item/stock_parts/Initialize()
 	. = ..()
-	pixel_x = base_pixel_x + rand(-5, 5)
-	pixel_y = base_pixel_y + rand(-5, 5)
+	if(auto_scatter)
+		pixel_x = base_pixel_x + rand(-5, 5)
+		pixel_y = base_pixel_y + rand(-5, 5)
 
 /obj/item/stock_parts/get_part_rating()
 	return rating

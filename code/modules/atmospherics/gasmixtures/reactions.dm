@@ -5,7 +5,7 @@
 
 	for(var/r in subtypesof(/datum/gas_reaction))
 		var/datum/gas_reaction/reaction = r
-		if(initial(reaction.exclude))
+		if(reaction::exclude)
 			continue
 		reaction = new r
 		. += reaction
@@ -192,8 +192,7 @@
 /datum/gas_reaction/plasmafire
 	priority = -2 //fire should ALWAYS be last, but plasma fires happen after tritium fires
 	name = "Plasma Combustion"
-	id = "plasmafire"
-	exclude = TRUE
+	id = "plasma_fire"
 
 /datum/gas_reaction/plasmafire/init_reqs()
 	min_requirements = list(
@@ -208,41 +207,23 @@
 	var/temperature = air.return_temperature()
 	var/list/cached_results = air.reaction_results
 	cached_results["fire"] = 0
-	var/turf/open/location = isturf(holder) ? holder : null
 
 	//Handle plasma burning
-	var/plasma_burn_rate = 0
-	var/oxygen_burn_rate = 0
-	//more plasma released at higher temperatures
-	var/temperature_scale = 0
-	//to make tritium
-	var/super_saturation = FALSE
+	var/initial_pl = air.get_moles(GAS_PLASMA)
+	var/initial_ox = air.get_moles(GAS_O2)
 
-	if(temperature > PLASMA_UPPER_TEMPERATURE)
-		temperature_scale = 1
-	else
-		temperature_scale = (temperature-PLASMA_MINIMUM_BURN_TEMPERATURE)/(PLASMA_UPPER_TEMPERATURE-PLASMA_MINIMUM_BURN_TEMPERATURE)
-	if(temperature_scale > 0)
-		oxygen_burn_rate = PLASMA_BURN_RATE_BASE - temperature_scale
-		if(air.get_moles(GAS_O2) / air.get_moles(GAS_PLASMA) > SUPER_SATURATION_THRESHOLD) //supersaturation. Form Tritium.
-			super_saturation = TRUE
-		if(air.get_moles(GAS_O2) > air.get_moles(GAS_PLASMA)*PLASMA_OXYGEN_FULLBURN)
-			plasma_burn_rate = (air.get_moles(GAS_PLASMA)*temperature_scale)/PLASMA_BURN_RATE_DELTA
+	var/fuel_to_burn = min(initial_pl, initial_ox / PLASMA_OXY_RATIO) * PLASMA_BURN_RATE
+
+	if(fuel_to_burn > MINIMUM_MOLE_COUNT)
+		air.adjust_moles(GAS_PLASMA, -fuel_to_burn)
+		air.adjust_moles(GAS_O2, -fuel_to_burn * PLASMA_OXY_RATIO)
+		air.adjust_moles(GAS_ARGON, fuel_to_burn * 4)
+		if(initial_ox / initial_pl >= SUPER_SATURATION_THRESHOLD)
+			air.adjust_moles(GAS_TRITIUM, fuel_to_burn * 2)
 		else
-			plasma_burn_rate = (temperature_scale*(air.get_moles(GAS_O2)/PLASMA_OXYGEN_FULLBURN))/PLASMA_BURN_RATE_DELTA
-
-		if(plasma_burn_rate > MINIMUM_HEAT_CAPACITY)
-			plasma_burn_rate = min(plasma_burn_rate,air.get_moles(GAS_PLASMA),air.get_moles(GAS_O2)/oxygen_burn_rate) //Ensures matter is conserved properly
-			air.set_moles(GAS_PLASMA, QUANTIZE(air.get_moles(GAS_PLASMA) - plasma_burn_rate))
-			air.set_moles(GAS_O2, QUANTIZE(air.get_moles(GAS_O2) - (plasma_burn_rate * oxygen_burn_rate)))
-			if (super_saturation)
-				air.adjust_moles(GAS_TRITIUM, plasma_burn_rate)
-			else
-				air.adjust_moles(GAS_CO2, plasma_burn_rate)
-
-			energy_released += FIRE_PLASMA_ENERGY_RELEASED * (plasma_burn_rate)
-
-			cached_results["fire"] += (plasma_burn_rate)*(1+oxygen_burn_rate)
+			air.adjust_moles(GAS_CO2, fuel_to_burn * 2)
+		energy_released = fuel_to_burn * FIRE_PLASMA_ENERGY_RELEASED
+		cached_results["fire"] += fuel_to_burn
 
 	if(energy_released > 0)
 		var/new_heat_capacity = air.heat_capacity()
@@ -250,7 +231,8 @@
 			air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
 
 	//let the floor know a fire is happening
-	if(istype(location))
+	if(isopenturf(holder))
+		var/turf/open/location = holder
 		temperature = air.return_temperature()
 		if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
 			location.hotspot_expose(temperature, CELL_VOLUME)
@@ -283,6 +265,70 @@
 		return list("success" = FALSE, "message" = "Plasma fires aren't making trit!")
 	return ..()
 
+//This needs to be a special gas reaction or atmospheres will spontaneously combust
+/datum/gas_reaction/monoxidefire
+	name = "Carbon Monoxide Combustion"
+	id = "monoxidefire"
+	priority = -4
+
+/datum/gas_reaction/monoxidefire/init_reqs()
+	min_requirements = list(
+		"TEMP" = FIRE_MINIMUM_TEMPERATURE_TO_EXIST,
+		GAS_CO = MINIMUM_MOLE_COUNT,
+	)
+
+/datum/gas_reaction/monoxidefire/react(datum/gas_mixture/air, atom/location)
+	var/total_moles = air.total_moles()
+	var/initial_co = air.get_moles(GAS_CO)
+	var/list/cached_results = air.reaction_results
+	cached_results["fire"] = FALSE
+	if(initial_co / total_moles < MONOXIDE_MIN_BURN_CONCENTRATION)
+		return NO_REACTION
+
+	var/initial_ox = 0
+	var/total_ox_moles = 0
+	var/list/oxidizers = list()
+	var/list/oxidation_temps = GLOB.gas_data.oxidation_temperatures
+	var/list/oxidation_rates = GLOB.gas_data.oxidation_rates
+
+	var/temperature = air.return_temperature()
+	for(var/gas in air.get_gases())
+		var/oxidation_temp = oxidation_temps[gas]
+		if(oxidation_temp && oxidation_temp <= temperature)
+			var/amt = air.get_moles(gas)
+			oxidizers[gas] = amt
+			total_ox_moles += amt
+			initial_ox += amt * oxidation_rates[gas]
+
+	if(initial_ox < MINIMUM_MOLE_COUNT)
+		return NO_REACTION
+
+	var/reaction_rate = min(initial_ox * 0.5, initial_co) * (1 - 1 / (1 + ((initial_ox * 0.5) / initial_co))) * MONOXIDE_BURN_RATE
+	if(reaction_rate > MINIMUM_MOLE_COUNT)
+		var/old_heat_capacity = air.heat_capacity()
+		var/enthalpy_of_combustion = reaction_rate * (GLOB.gas_data.enthalpies[GAS_CO] - GLOB.gas_data.enthalpies[GAS_CO2])
+		air.adjust_moles(GAS_CO, -reaction_rate)
+		air.adjust_moles(GAS_CO2, reaction_rate)
+		for(var/oxidizer in oxidizers)
+			var/delta_moles = reaction_rate * 0.5 * oxidizers[oxidizer] / total_ox_moles
+			enthalpy_of_combustion += delta_moles * GLOB.gas_data.enthalpies[oxidizer]
+			air.adjust_moles(oxidizer, -delta_moles)
+		air.set_temperature((air.thermal_energy() + enthalpy_of_combustion) / old_heat_capacity)
+
+		if(isturf(location))
+			var/turf/turf_location = location
+			temperature = air.return_temperature()
+			if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
+				turf_location.hotspot_expose(temperature, CELL_VOLUME)
+				for(var/I in location)
+					var/atom/movable/item = I
+					item.temperature_expose(air, temperature, CELL_VOLUME)
+				turf_location.temperature_expose(air, temperature, CELL_VOLUME)
+
+		cached_results["fire"] -= enthalpy_of_combustion
+
+	return cached_results["fire"] ? REACTING : NO_REACTION
+
 //freon reaction (is not a fire yet)
 /datum/gas_reaction/freonfire
 	priority = -3
@@ -314,7 +360,7 @@
 	else
 		temperature_scale = (FREON_MAXIMUM_BURN_TEMPERATURE - temperature)/(FREON_MAXIMUM_BURN_TEMPERATURE - FREON_LOWER_TEMPERATURE) //calculate the scale based on the temperature
 	if(temperature_scale >= 0)
-		oxygen_burn_rate = PLASMA_BURN_RATE_BASE - temperature_scale
+		oxygen_burn_rate = PLASMA_OXY_RATIO - temperature_scale
 		if(air.get_moles(GAS_O2) > air.get_moles(GAS_FREON)*FREON_OXYGEN_FULLBURN)
 			freon_burn_rate = (air.get_moles(GAS_FREON)*temperature_scale)/FREON_BURN_RATE_DELTA
 		else
@@ -337,7 +383,7 @@
 			air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
 
 /datum/gas_reaction/genericfire
-	priority = -4 // very last reaction
+	priority = -5 // very last reaction
 	name = "Combustion"
 	id = "genericfire"
 

@@ -109,6 +109,10 @@
 	ui_interact(user)
 	return
 
+/obj/item/clipboard/examine_more(mob/user)
+	. = ..()
+	ui_interact(user)
+
 /obj/item/clipboard/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -158,7 +162,8 @@
 		if("edit_paper")
 			var/obj/item/paper/paper = locate(params["ref"]) in src
 			if(istype(paper))
-				paper.ui_interact(usr)
+				var/datum/component/writing/our_paper = paper.GetComponent(/datum/component/writing)
+				our_paper.ui_interact(usr)
 				update_icon()
 				. = TRUE
 		// Move paper to the top

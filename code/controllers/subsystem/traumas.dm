@@ -61,15 +61,15 @@ SUBSYSTEM_DEF(traumas)
 		"security"  = typecacheof(list(
 			/obj/item/clothing/under/rank/security/officer, /obj/item/clothing/under/rank/security/warden,
 			/obj/item/clothing/under/rank/security/head_of_security, /obj/item/clothing/under/rank/security/detective,
-			/obj/item/melee/baton, /obj/item/gun/energy/taser, /obj/item/restraints/handcuffs,
+			/obj/item/gun/energy/taser, /obj/item/restraints/handcuffs,
 			/obj/machinery/door/airlock/security, /obj/effect/hallucination/simple/securitron)),
 
 		"greytide"  = typecacheof(list(
-			/obj/item/clothing/under/color/grey, /obj/item/melee/baton/cattleprod,
+			/obj/item/clothing/under/color/grey,
 			/obj/item/melee/spear, /obj/item/clothing/mask/gas)),
 
 		"lizards"   = typecacheof(list(
-			/obj/item/toy/plush/lizardplushie, /obj/item/organ/tail/lizard,
+			/obj/item/toy/plush/lizardplushie, /obj/item/bodypart/tail/lizard,
 			/obj/item/reagent_containers/food/drinks/bottle/lizardwine)),
 
 		"skeletons" = typecacheof(list(
@@ -84,7 +84,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/under/rank/rnd/research_director/alt, /obj/item/clothing/under/rank/rnd/research_director/turtleneck,
 			/obj/item/clothing/under/rank/security/head_of_security/parade,
 			/obj/item/clothing/under/rank/security/head_of_security/parade/female,
-			/obj/item/clothing/head/helmet/abductor, /obj/item/clothing/suit/armor/abductor/vest, /obj/item/melee/baton/abductor,
+			/obj/item/clothing/head/helmet/abductor, /obj/item/clothing/suit/armor/abductor/vest,
 			/obj/item/storage/belt/military/abductor, /obj/item/gun/energy/alien, /obj/item/abductor/silencer,
 			/obj/item/abductor/gizmo, /obj/item/clothing/under/rank/centcom/official,
 			/obj/item/clothing/suit/space/hardsuit/ert, /obj/item/clothing/suit/space/hardsuit/ert/sec,
@@ -121,7 +121,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/mask/facehugger_item, /obj/item/organ/body_egg/alien_embryo,
 			/obj/structure/alien, /obj/item/toy/toy_xeno,
 			/obj/item/clothing/suit/armor/abductor, /obj/item/abductor, /obj/item/gun/energy/alien,
-			/obj/item/melee/baton/abductor, /obj/item/radio/headset/abductor, /obj/item/scalpel/alien, /obj/item/hemostat/alien,
+			/obj/item/radio/headset/abductor, /obj/item/scalpel/alien, /obj/item/hemostat/alien,
 			/obj/item/retractor/alien, /obj/item/circular_saw/alien, /obj/item/surgicaldrill/alien, /obj/item/cautery/alien,
 			/obj/item/clothing/head/helmet/abductor, /obj/structure/bed/abductor, /obj/structure/table_frame/abductor,
 			/obj/structure/table/abductor, /obj/structure/closet/abductor, /obj/item/organ/heart/gland,
@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/suit/space/space_ninja,
 			/obj/item/clothing/mask/gas/space_ninja, /obj/item/clothing/shoes/space_ninja, /obj/item/clothing/gloves/space_ninja,
 			/obj/item/melee/sword/vibro, /obj/item/melee/sword/energy_katana, /obj/item/toy/katana,
-			/obj/item/melee/sword/katana, /obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe))
+			/obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe))
 	)
 
 	phobia_turfs = list(
@@ -158,7 +158,7 @@ SUBSYSTEM_DEF(traumas)
 		"conspiracies" = typecacheof(list(/datum/species/abductor, /datum/species/lizard)),
 		"robots" = typecacheof(list(/datum/species/android, /datum/species/ipc)),
 		"aliens" = typecacheof(list(
-			/datum/species/abductor, /datum/species/jelly, /datum/species/pod)),
+			/datum/species/abductor)),
 		"spiders" = typecacheof(list(/datum/species/spider))
 	)
 

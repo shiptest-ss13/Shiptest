@@ -255,6 +255,22 @@
 	build_path = /obj/item/clothing/ears/earmuffs
 	category = list("initial", "Misc")
 
+/datum/design/glassvase
+	name = "Glass Vase"
+	id = "glassvase"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 200)
+	build_path = /obj/item/glassvase
+	category = list("initial", "Misc")
+
+/datum/design/ashtray
+	name = "Ashtray"
+	id = "ashtray"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 200)
+	build_path = /obj/item/ashtray
+	category = list("initial", "Misc")
+
 /datum/design/pipe_painter
 	name = "Pipe Painter"
 	id = "pipe_painter"
@@ -417,6 +433,22 @@
 	build_path = /obj/item/plate
 	category = list("initial","Dinnerware")
 
+/datum/design/smallplate
+	name = "Plate (Small)"
+	id = "smallplate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/plate/small
+	category = list("initial", "Dinnerware")
+
+/datum/design/bigplate
+	name = "Plate (Buffet)"
+	id = "bigplate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/plate/large
+	category = list("initial", "Dinnerware")
+
 /datum/design/cafeteria_tray
 	name = "Cafeteria Tray"
 	id = "foodtray"
@@ -471,6 +503,22 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass=500, /datum/material/silver=100)
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
+	category = list("initial", "Dinnerware")
+
+/datum/design/mug
+	name = "Mug"
+	id = "mug"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=400)
+	build_path = /obj/item/reagent_containers/food/drinks/mug
+	category = list("initial", "Dinnerware")
+
+/datum/design/teacup
+	name = "Teacup"
+	id = "teacup"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=300)
+	build_path = /obj/item/reagent_containers/food/drinks/teacup
 	category = list("initial", "Dinnerware")
 
 /datum/design/glassbottle
@@ -635,6 +683,14 @@
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/hypospray_vial_tiny
+	name = "Tiny Hypospray Vial"
+	id = "vial_tiny"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 250)
+	build_path = /obj/item/reagent_containers/glass/bottle/vial/tiny
+	category = list("initial", "Medical", "Medical Designs")
+
 /datum/design/hypospray_vial
 	name = "Hypospray Vial"
 	id = "vial"
@@ -643,8 +699,25 @@
 	build_path = /obj/item/reagent_containers/glass/bottle/vial/small
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/hypospray_vial_large
+	name = "Large Hypospray Vial"
+	id = "vial_large"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/silver = 200, /datum/material/glass = 1000)
+	build_path = /obj/item/reagent_containers/glass/bottle/vial/large
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/inhaler_caniser
+	name = "Inhaler Canister"
+	id = "inhaler_canister"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 200)
+	build_path = /obj/item/reagent_containers/inhaler_canister
+	category = list("initial", "Medical", "Medical Designs")
+
+
 /datum/design/chemical_bottle
-	name = "Glass Bottle"
+	name = "Bottle"
 	id = "bottle"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 300)
@@ -700,7 +773,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/bounced_radio
-	name = "Subspace Bounced Radio"
+	name = "Shortwave Radio"
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
@@ -740,7 +813,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/voice_analyser
-	name = "Voice Analyser"
+	name = "Voice Analyzer"
 	id = "voice_analyser"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
@@ -777,14 +850,6 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
 	build_path = /obj/item/wallframe/newscaster
-	category = list("initial", "Construction")
-
-/datum/design/mission_board_frame
-	name = "Bounty Board Frame"
-	id = "bountyboard_frame"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	build_path = /obj/item/wallframe/mission_viewer
 	category = list("initial", "Construction")
 
 /datum/design/syringe
@@ -829,6 +894,14 @@
 	build_path = /obj/item/restraints/handcuffs
 	category = list("initial", "Security")
 
+/datum/design/doorseal
+	name = "Pneumatic Seal"
+	id = "doorseal"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 5000)
+	build_path = /obj/item/door_seal
+	category = list("initial", "Security")
+
 /datum/design/evidencebag
 	name = "Evidence Bag"
 	id = "evidencebag"
@@ -845,12 +918,28 @@
 	build_path = /obj/item/weaponcrafting/receiver
 	category = list("initial", "Security")
 
+/datum/design/ammo_box
+	name = "Ammo Box (Empty)"
+	id = "ammo-box"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 500)
+	build_path = /obj/item/storage/box/ammo/empty
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/c38_surplus
 	name = "Ammo Box (.38 surplus)"
 	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c38_surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/c22lr_surplus
+	name = "Ammo Box (.22 LR surplus)"
+	id = "c22lr-surplus"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 16000)
+	build_path = /obj/item/storage/box/ammo/c22lr/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -886,23 +975,15 @@
 	category = list("initial", "Security")
 
 /datum/design/c10mm_surplus
-	name = "Ammo Box (10x22mm surplus)"
+	name = "Ammo Box (10mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/c45_surplus
-	name = "Ammo Box (.45 surplus)"
-	id = "c45-surplus"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 16000)
-	build_path = /obj/item/storage/box/ammo/c45_surplus
-	category = list("initial", "Security", "Ammo")
-
 /datum/design/c9mm_surplus
-	name = "Ammo Box (9x18mm surplus)"
+	name = "Ammo Box (9mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
@@ -918,7 +999,7 @@
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/buckshot_surplus
-	name = "surplus buckshot"
+	name = "Surplus Buckshot"
 	id = "buckshot-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 5000)
@@ -1199,7 +1280,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/zip_ammo_9mm
-	name = "Budget Pistol 9x18mm Magazine"
+	name = "Budget Pistol 9mm Magazine"
 	id = "ZipAmmo9mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20000)
@@ -1215,11 +1296,19 @@
 	category = list("initial", "Machinery")
 
 /datum/design/illestren_a850rclip
-	name = "8x50 Stripper Clip"
+	name = "8x50mmR En Bloc Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/a4570clip
+	name = ".45-70 Stripper Clip"
+	id = "PyreStripClip"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/ammo_box/a4570/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a300clip
@@ -1329,7 +1418,7 @@
 	category = list("initial", "Tools", "Misc")
 
 /datum/design/paper_biscuit_confidental
-	name = "Confidental Paper Biscuit"
+	name = "Confidential Paper Biscuit"
 	id = "confidental_biscuit"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/plastic = 30)
@@ -1344,3 +1433,182 @@
 	build_path = /obj/item/stack/marker_beacon
 	category = list("initial","Misc")
 
+/datum/design/defib_mount
+	name = "Defibrillator Mount"
+	id = "defib_mount"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
+	build_path = /obj/item/wallframe/defib_mount
+	category = list("initial","Construction","Medical")
+
+/datum/design/board/space_heater
+	name = "Machine Design (Space Heater Board)"
+	desc = "The circuit board for a space heater."
+	id = "space_heater"
+	build_path = /obj/item/circuitboard/machine/space_heater
+	build_type = AUTOLATHE
+	category = list ("initial", "Machinery")
+	departmental_flags = ALL
+
+/datum/design/board/ship_gravity
+	name = "Machine Design (Ship Gravity Generator Board)"
+	desc = "The circuit board for a ship-sized gravity generator."
+	id = "ship_gravity"
+	build_type = AUTOLATHE
+	build_path = /obj/item/circuitboard/machine/ship_gravity
+	category = list("initial", "Machinery")
+
+/datum/design/chem_pack
+	name = "Intravenous Medicine Bag"
+	desc = "A plastic pressure bag for IV administration of drugs."
+	id = "chem_pack"
+	build_type = AUTOLATHE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	materials = list(/datum/material/plastic = 2000)
+	build_path = /obj/item/reagent_containers/chem_pack
+	category = list("initial", "Medical")
+
+/datum/design/blood_pack
+	name = "Blood Pack"
+	desc = "Is used to contain blood used for transfusion. Must be attached to an IV drip."
+	id = "blood_pack"
+	build_type = AUTOLATHE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	materials = list(/datum/material/plastic = 1000)
+	build_path = /obj/item/reagent_containers/blood
+	category = list("initial", "Medical")
+
+/datum/design/basic_cell
+	name = "Basic Power Cell"
+	desc = "A basic power cell that holds 1 MJ of energy."
+	id = "basic_cell"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/empty
+	category = list("Machinery","initial")
+
+/datum/design/disposable_gun
+	name = "Disposable Gun"
+	id = "disposable"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 4000)
+	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
+	category = list("Imported")
+
+// TELECOMMS PARTS (only used for the disc on the Tegu atp)
+/datum/design/subspace_ansible
+	name = "Subspace Ansible"
+	desc = "A compact module capable of sensing extradimensional activity."
+	id = "s-ansible"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
+	build_path = /obj/item/stock_parts/subspace/ansible
+	category = list("Stock Parts")
+
+/datum/design/hyperwave_filter
+	name = "Hyperwave Filter"
+	desc = "A tiny device capable of filtering and converting super-intense radiowaves."
+	id = "s-filter"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
+	build_path = /obj/item/stock_parts/subspace/filter
+	category = list("Stock Parts")
+
+/datum/design/subspace_amplifier
+	name = "Subspace Amplifier"
+	desc = "A compact micro-machine capable of amplifying weak subspace transmissions."
+	id = "s-amplifier"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/gold = 100, /datum/material/uranium = 100)
+	build_path = /obj/item/stock_parts/subspace/amplifier
+	category = list("Stock Parts")
+
+/datum/design/subspace_treatment
+	name = "Subspace Treatment Disk"
+	desc = "A compact micro-machine capable of stretching out hyper-compressed radio waves."
+	id = "s-treatment"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/silver = 200)
+	build_path = /obj/item/stock_parts/subspace/treatment
+	category = list("Stock Parts")
+
+/datum/design/subspace_analyzer
+	name = "Subspace Analyzer"
+	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
+	id = "s-analyzer"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/gold = 100)
+	build_path = /obj/item/stock_parts/subspace/analyzer
+	category = list("Stock Parts")
+
+/datum/design/subspace_crystal
+	name = "Ansible Crystal"
+	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
+	id = "s-crystal"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 800, /datum/material/silver = 100, /datum/material/gold = 100)
+	build_path = /obj/item/stock_parts/subspace/crystal
+	category = list("Stock Parts")
+
+/datum/design/subspace_transmitter
+	name = "Subspace Transmitter"
+	desc = "A large piece of equipment used to open a window into the subspace dimension."
+	id = "s-transmitter"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 100, /datum/material/silver = 100, /datum/material/uranium = 100)
+	build_path = /obj/item/stock_parts/subspace/transmitter
+	category = list("Stock Parts")
+
+// T1 Stock Parts
+
+/datum/design/basic_matter_bin
+	name = "Basic Matter Bin"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_matter_bin"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100)
+	build_path = /obj/item/stock_parts/matter_bin
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/basic_micro_laser
+	name = "Basic Micro-Laser"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_micro_laser"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/stock_parts/micro_laser
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/micro_mani
+	name = "Micro Manipulator"
+	desc = "A stock part used in the construction of various devices."
+	id = "micro_mani"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100)
+	build_path = /obj/item/stock_parts/manipulator
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/basic_scanning
+	name = "Basic Scanning Module"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_scanning"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/stock_parts/scanning_module
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+
+/datum/design/basic_capacitor
+	name = "Basic Capacitor"
+	desc = "A stock part used in the construction of various devices."
+	id = "basic_capacitor"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
+	build_path = /obj/item/stock_parts/capacitor
+	category = list("Stock Parts","Machinery","initial")
+	lathe_time_factor = 0.2
+	departmental_flags = ALL

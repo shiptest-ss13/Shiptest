@@ -44,7 +44,7 @@
 				return
 			Remove(owner)
 		owner = M
-		RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
+		RegisterSignal(owner, COMSIG_QDELETING, PROC_REF(owner_deleted))
 
 		//button id generation
 		var/counter = 0
@@ -81,7 +81,7 @@
 		M.actions -= src
 		M.update_action_buttons()
 	if(owner)
-		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(owner, COMSIG_QDELETING)
 		owner = null
 	if(button)
 		button.moved = FALSE //so the button appears in its normal position when given to another owner.
@@ -277,8 +277,21 @@
 /datum/action/item_action/activate_injector
 	name = "Activate Injector"
 
+/datum/action/item_action/activate_suit_injector
+	name = "Activate Injector System"
+	icon_icon = 'icons/obj/syringe.dmi'
+	button_icon_state = "syringe_15"
+
+/datum/action/item_action/activate_suit_injector/Trigger()
+	if(istype(target, /obj/item/clothing/suit/space/hardsuit/esh))
+		var/obj/item/clothing/suit/space/hardsuit/esh/esh_hardsuit = target
+		esh_hardsuit.check_inject(owner)
+
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"
+
+/datum/action/item_action/toggle_helmet_nightvision
+	name = "Toggle Helmet Nightvision"
 
 /datum/action/item_action/toggle_welding_screen
 	name = "Toggle Welding Screen"
@@ -717,6 +730,10 @@
 
 /datum/action/small_sprite/megafauna/legion
 	small_icon_state = "mega_legion"
+
+/datum/action/small_sprite/megafauna/megabot
+	small_icon = 'icons/mob/aibots.dmi'
+	small_icon_state = "makosso_bipedal"
 
 /datum/action/small_sprite/megafauna/spacedragon
 	small_icon = 'icons/mob/carp.dmi'

@@ -17,10 +17,14 @@
 	var/number_of_rods = 2
 	var/hatch_open = FALSE
 	var/obj/item/stack/tile/plated_tile
+	var/list/give_turf_traits = list(TRAIT_IMMERSE_STOPPED, TRAIT_CHASM_STOPPED, TRAIT_LAVA_STOPPED, TRAIT_TURF_IGNORE_SLOWDOWN, TRAIT_ACID_STOPPED)
 
 /obj/structure/catwalk/Initialize()
 	. = ..()
 	update_appearance()
+	if(length(give_turf_traits))
+		give_turf_traits = string_list(give_turf_traits)
+		AddElement(/datum/element/give_turf_traits, give_turf_traits)
 
 /obj/structure/catwalk/over
 	layer = CATWALK_LAYER //over pipes, duh
@@ -37,6 +41,19 @@
 /obj/structure/catwalk/over/plated_catwalk/white
 	plated_tile = /obj/item/stack/tile/plasteel/white
 	icon_state = "catwalk_platedwhite"
+
+
+/obj/structure/catwalk/over/plated_catwalk/open
+	hatch_open = TRUE
+	icon_state = "catwalk_plated_open"
+
+/obj/structure/catwalk/over/plated_catwalk/dark/open
+	hatch_open = TRUE
+	icon_state = "catwalk_plateddark_open"
+
+/obj/structure/catwalk/over/plated_catwalk/white/open
+	hatch_open = TRUE
+	icon_state = "catwalk_platedwhite_open"
 
 /obj/structure/catwalk/update_appearance()
 	..()

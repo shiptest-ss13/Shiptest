@@ -11,21 +11,39 @@
 
 /datum/status_effect/determined/on_apply()
 	. = ..()
-	owner.visible_message(
-		span_danger("[owner]'s body tenses up noticeably, gritting against [owner.p_their()] pain!"),
-		span_notice("<b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b>"),
-		vision_distance = COMBAT_MESSAGE_RANGE,
-	)
+	if(owner.mob_biotypes & MOB_ROBOTIC)
+		owner.visible_message(
+			span_danger("[owner]'s cooling fans spin up far louder than usual."),
+			span_notice("<b>Acceptable damage threshold exceeded. Emergency self-preservation protocol initiated.</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
+	else
+		owner.visible_message(
+			span_danger("[owner]'s body tenses up noticeably, gritting against [owner.p_their()] pain!"),
+			span_notice("<b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		human_owner.physiology.bleed_mod *= WOUND_DETERMINATION_BLEED_MOD
 
 /datum/status_effect/determined/on_remove()
-	owner.visible_message(
-		span_danger("[owner]'s body slackens noticeably!"),
-		span_warning("<b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b>"),
-		vision_distance = COMBAT_MESSAGE_RANGE,
-	)
+	if(owner.mob_biotypes & MOB_ROBOTIC)
+		var/mob/living/carbon/carbon_owner = owner
+		if(!iscarbon(owner))
+			stack_trace("Determination status effect applied to non-carbon [owner] of type [owner.type]")
+			carbon_owner = null
+		owner.visible_message(
+			span_danger("[owner]'s cooling fans suddenly quiet down."),
+			span_notice("<b>Emergency self-preservation protocol concluded. [rand(2, 100 * LAZYLEN(carbon_owner?.all_wounds))] new errors to report.</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
+	else
+		owner.visible_message(
+			span_danger("[owner]'s body slackens noticeably!"),
+			span_warning("<b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		human_owner.physiology.bleed_mod /= WOUND_DETERMINATION_BLEED_MOD
@@ -34,7 +52,7 @@
 /datum/status_effect/limp
 	id = "limp"
 	status_type = STATUS_EFFECT_REPLACE
-	tick_interval = 0
+	tick_interval = -1
 	alert_type = /atom/movable/screen/alert/status_effect/limp
 	var/msg_stage = 0//so you dont get the most intense messages immediately
 	/// The left leg of the limping person
@@ -144,9 +162,9 @@
 	alert_type = NONE
 
 /datum/status_effect/wound/on_creation(mob/living/new_owner, incoming_wound)
-	. = ..()
 	linked_wound = incoming_wound
 	linked_limb = linked_wound.limb
+	return ..()
 
 /datum/status_effect/wound/on_remove()
 	linked_wound = null
@@ -166,67 +184,68 @@
 	if(W == linked_wound)
 		qdel(src)
 
+/datum/status_effect/wound/nextmove_modifier()
+	var/mob/living/carbon/status_owner = owner
+
+	if(status_owner.get_active_hand() == linked_limb)
+		return linked_wound.get_action_delay_mult()
+
+	return ..()
+
 // bones
-/datum/status_effect/wound/blunt
-
-/datum/status_effect/wound/blunt/on_apply()
+/datum/status_effect/wound/blunt/bone
+/*
+/datum/status_effect/wound/blunt/bone/on_apply()
 	. = ..()
-	RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
-	on_swap_hands()
+	if(.)
+		RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
+		on_swap_hands()
 
-/datum/status_effect/wound/blunt/on_remove()
+/datum/status_effect/wound/blunt/bone/on_remove()
 	. = ..()
 	UnregisterSignal(owner, COMSIG_MOB_SWAP_HANDS)
 	var/mob/living/carbon/wound_owner = owner
-	wound_owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/blunt_wound)
+	wound_owner.remove_actionspeed_modifier(/datum/actionspeed_modifier/status_effect/blunt_wound)
 
-/datum/status_effect/wound/blunt/proc/on_swap_hands()
+/datum/status_effect/wound/blunt/bone/proc/on_swap_hands()
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/wound_owner = owner
 	if(wound_owner.get_active_hand() == linked_limb)
-		wound_owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/blunt_wound, (linked_wound.interaction_efficiency_penalty - 1))
+		wound_owner.add_actionspeed_modifier(/datum/actionspeed_modifier/status_effect/blunt_wound, (linked_wound.interaction_efficiency_penalty - 1))
 	else
-		wound_owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/blunt_wound)
-
-/datum/status_effect/wound/blunt/nextmove_modifier()
-	var/mob/living/carbon/C = owner
-
-	if(C.get_active_hand() == linked_limb)
-		return linked_wound.interaction_efficiency_penalty
-
-	return 1
-
+		wound_owner.remove_actionspeed_modifier(/datum/actionspeed_modifier/status_effect/blunt_wound)
+*/
 // blunt
-/datum/status_effect/wound/blunt/moderate
+/datum/status_effect/wound/blunt/bone/moderate
 	id = "disjoint"
-/datum/status_effect/wound/blunt/severe
+/datum/status_effect/wound/blunt/bone/severe
 	id = "hairline"
-/datum/status_effect/wound/blunt/critical
+/datum/status_effect/wound/blunt/bone/critical
 	id = "compound"
 
 // slash
-/datum/status_effect/wound/slash/moderate
+/datum/status_effect/wound/slash/flesh/moderate
 	id = "abrasion"
-/datum/status_effect/wound/slash/severe
+/datum/status_effect/wound/slash/flesh/severe
 	id = "laceration"
-/datum/status_effect/wound/slash/critical
+/datum/status_effect/wound/slash/flesh/critical
 	id = "avulsion"
 
 // pierce
-/datum/status_effect/wound/pierce/moderate
+/datum/status_effect/wound/pierce/bleed/moderate
 	id = "breakage"
-/datum/status_effect/wound/pierce/severe
+/datum/status_effect/wound/pierce/bleed/severe
 	id = "puncture"
-/datum/status_effect/wound/pierce/critical
+/datum/status_effect/wound/pierce/bleed/critical
 	id = "rupture"
 
 // burns
-/datum/status_effect/wound/burn/moderate
+/datum/status_effect/wound/burn/flesh/moderate
 	id = "seconddeg"
-/datum/status_effect/wound/burn/severe
+/datum/status_effect/wound/burn/flesh/severe
 	id = "thirddeg"
-/datum/status_effect/wound/burn/critical
+/datum/status_effect/wound/burn/flesh/critical
 	id = "fourthdeg"
 
 // muscle

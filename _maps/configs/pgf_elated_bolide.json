@@ -7,16 +7,16 @@
 	"namelists": [
 		"PGF"
 	],
-	"map_short_name": "Elated Bolide-class",
-	"description": "A somewhat stout design manufactured by the Etherbor PGFN Lihmona Navy Shipyard for service as an orbital assault ship, the Elated Bolide class has served with distinction in many minor conflicts and been sent on deployment to even more locales. Despite not carrying ship-to-ship weaponry (with the traditional mounting spot being taken up by a high-gain antenna), the Elated Bolide's Pioneers are well armed and well trained for orbital insertion, construction, and demolition.",
+	"map_short_name": "E. Bolide-class",
+	"description": "Often referred to by its crews as a “flying FOB”, the Elated Bolide-class Assault Lander is a stout ground insertion vessel manufactured by the Etherbor PGFN Lihmona Navy Shipyard. Capable of transporting both infantry and their armored support over long distances, the Elated Bolide-class supports its landing force with a large galley, a generously sized infirmary, on-board telecommunications equipment and a plentiful reserve of combat engineering supplies. Propelled by no less than ten thrusters, not including its turbine powerplant, the Elated Bolide-class is deceptively swift for its size, a trait which has served it well through conflict and peacetime alike.",
 	"tags": [
 		"Combat",
 		"Engineering",
 		"RP Focus"
 	],
-	"starting_funds": 1000,
+	"starting_funds": 3000,
 	"map_path": "_maps/shuttles/pgf/pgf_elated_bolide.dmm",
-	"token_icon_state": "ship_mid_generic",
+	"token_icon_state": "ship_big_generic",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
@@ -24,33 +24,38 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Marine Lieutenant": {
-			"outfit": "/datum/outfit/job/gezena/hos",
-			"officer":true,
+		"Flight Officer": {
+			"outfit": "/datum/outfit/job/gezena/assistant/flight",
+			"officer": true,
 			"slots": 1
 		},
-		"Helmsman": {
-			"outfit": "/datum/outfit/job/gezena/assistant/bridge",
+		"Medical Officer": {
+			"outfit": "/datum/outfit/job/gezena/doctor",
 			"slots": 1
 		},
 		"Navy Engineer": {
 			"outfit": "/datum/outfit/job/gezena/engineer",
 			"slots": 2
 		},
-		"Hospital Corpsman": {
-			"outfit": "/datum/outfit/job/gezena/doctor",
+		"Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 2
+		},
+		"Marine Squad Leader": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"officer":true,
 			"slots": 1
 		},
 		"Marine": {
 			"outfit": "/datum/outfit/job/gezena/security",
-			"slots": 2
+			"slots": 4
 		},
-		"Assault Pioneer":{
+		"Marine Pioneer":{
 			"outfit": "/datum/outfit/job/gezena/security/sapper",
-			"slots":4
+			"slots":2
 		},
-		"Crewman": {
-			"outfit": "/datum/outfit/job/gezena/assistant",
+		"Hospital Corpsman": {
+			"outfit": "/datum/outfit/job/gezena/security/paramedic",
 			"slots": 1
 		}
 	},

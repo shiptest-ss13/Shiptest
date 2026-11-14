@@ -22,6 +22,10 @@
 	display_name = "cargo pants, recolorable"
 	path = /obj/item/clothing/under/pants/cargo
 
+/datum/gear/uniform/cargoshorts
+	display_name = "cargo shorts, recolorable"
+	path = /obj/item/clothing/under/shorts/cargo
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
@@ -31,6 +35,14 @@
 /datum/gear/uniform/color_skirt
 	display_name = "jumpskirt, recolorable"
 	path = /obj/item/clothing/under/color/jumpskirt
+
+/datum/gear/uniform/fatigues
+	display_name = "fatigues, recolorable"
+	path = /obj/item/clothing/under/rank/security/officer/camo
+
+/datum/gear/uniform/shortjumpsuit
+	display_name = "short jumpsuit, recolorable"
+	path = /obj/item/clothing/under/shortjumpsuit
 
 //Shorts
 
@@ -42,6 +54,10 @@
 	display_name = "dolphin shorts"
 	path = /obj/item/clothing/under/shorts/dolphin
 
+/datum/gear/uniform/compressionshorts
+	display_name = "compression shorts, colorable"
+	path = /obj/item/clothing/under/shorts/compression
+
 /datum/gear/uniform/jorts
 	display_name = "jorts"
 	path = /obj/item/clothing/under/shorts/jorts
@@ -49,6 +65,10 @@
 /datum/gear/uniform/explorershorts
 	display_name = "explorer shorts"
 	path = /obj/item/clothing/under/shorts/explorer
+
+/datum/gear/uniform/brownjorts
+	display_name = "brown jorts"
+	path = /obj/item/clothing/under/shorts/brownjorts
 
 //Pants
 /datum/gear/uniform/pants
@@ -74,9 +94,9 @@
 	display_name = "green pajama pants"
 	path = /obj/item/clothing/under/pants/pajamagreen
 
-/datum/gear/uniform/pants/tan
-	display_name = "tan pants"
-	path = /obj/item/clothing/under/pants/tan
+/datum/gear/uniform/pants/brown
+	display_name = "brown pants"
+	path = /obj/item/clothing/under/pants/brown
 
 /datum/gear/uniform/pants/white
 	display_name = "white pants"
@@ -102,13 +122,17 @@
 	display_name = "camo pants"
 	path = /obj/item/clothing/under/pants/camo
 
+/datum/gear/uniform/pants/sweat
+	display_name = "sweatpants"
+	path = /obj/item/clothing/under/pants/sweat
+
 //JUMPSUIT "SUITS"
 
 /datum/gear/uniform/suit
 	subtype_path = /datum/gear/uniform/suit
 
-/datum/gear/uniform/suit/amish
-	display_name = "suit, amish"
+/datum/gear/uniform/suit/formal
+	display_name = "suit, formal"
 	path = /obj/item/clothing/under/suit/sl
 
 /datum/gear/uniform/suit/white
@@ -131,13 +155,25 @@
 	display_name = "suit, navy"
 	path = /obj/item/clothing/under/suit/navy
 
+/datum/gear/uniform/suit/navyskirt
+	display_name = "skirt, navy"
+	path = /obj/item/clothing/under/suit/navy/skirt
+
 /datum/gear/uniform/suit/burgundy
 	display_name = "suit, burgundy"
 	path = /obj/item/clothing/under/suit/burgundy
 
+/datum/gear/uniform/suit/burgundyskirt
+	display_name = "skirt, burgundy"
+	path = /obj/item/clothing/under/suit/burgundy/skirt
+
 /datum/gear/uniform/suit/charcoal
 	display_name = "suit, charcoal"
 	path = /obj/item/clothing/under/suit/charcoal
+
+/datum/gear/uniform/suit/charcoalskirt
+	display_name = "skirt, charcoal"
+	path = /obj/item/clothing/under/suit/charcoal/skirt
 
 /datum/gear/uniform/suit/white_skirt
 	display_name = "suitskirt, white shirt"
@@ -294,3 +330,20 @@
 /datum/gear/uniform/overalls_brown
 	display_name = "overalls, brown"
 	path = /obj/item/clothing/under/overalls/brown
+
+/datum/gear/uniform/overall_dress
+	display_name = "overall dress (colorable)"
+	path = /obj/item/clothing/under/dress/overall_dress
+
+// skirts
+/datum/gear/uniform/shortskirt
+	display_name = "short skirt (colorable)"
+	path = /obj/item/clothing/under/shorts/skirt
+
+/datum/gear/uniform/miniskirt
+	display_name = "mini skirt (colorable)"
+	path = /obj/item/clothing/under/shorts/miniskirt
+
+/datum/gear/uniform/pencilskirt
+	display_name = "pencil skirt (colorable)"
+	path = /obj/item/clothing/under/shorts/pencilskirt

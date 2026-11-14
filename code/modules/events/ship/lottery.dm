@@ -4,7 +4,7 @@
 	weight = 2
 	earliest_start = 20 MINUTES
 	min_players = 10
-	max_occurrences = 1
+	max_occurrences = 0
 
 /datum/round_event/ship/lottery
 	var/creds_won = 0
@@ -27,10 +27,10 @@
 /datum/round_event/ship/lottery/announce(fake)
 	if(fake)
 		creds_won = 1000000000
-	priority_announce("congracts to [target_ship.name] who has won a sweep stakes for [creds_won] creds!",
+	priority_announce("Congratulations to the [target_ship.name]! They've won a prize of [creds_won] credits!",
 		null,
 		null,
-		"Sweep stakes!",
+		"Sweepstakes lottery!",
 		sender_override = "[target_outpost] Communications",
 	)
 

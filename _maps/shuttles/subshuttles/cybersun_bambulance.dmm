@@ -208,16 +208,12 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/structure/cable/cyan,
 /obj/item/radio/intercom/directional/south,
-/obj/item/megaphone/command{
-	pixel_x = -5;
-	pixel_y = 5
-	},
+/obj/machinery/telecomms/relay/preset/cybersun,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "I" = (
@@ -339,6 +335,10 @@
 	pixel_y = 23;
 	pixel_x = -15;
 	name = "engine shutter control"
+	},
+/obj/item/megaphone/command{
+	pixel_x = -8;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)

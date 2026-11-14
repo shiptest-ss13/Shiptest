@@ -1,10 +1,10 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
-	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10x22mm."
+	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -53,14 +53,14 @@
 
 
 	spread = 6 //becuase its compact, spread is slightly worse
-	spread_unwielded = 9
+	spread_unwielded = 6
 	recoil_unwielded = 2
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	name = "Ringneck-76"
-	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10x22mm."
+	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10mm."
 
 	icon_state = "ringneck76"
 	item_state = "sa_indie"
@@ -68,20 +68,20 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 	w_class = WEIGHT_CLASS_NORMAL
 
 	spread = 5 //this one is normal sized, thus in theory its better, in theory at least
-	spread_unwielded = 7
+	spread_unwielded = 5
 	recoil_unwielded = 3
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
-	name = "Ringneck pistol magazine (10x22mm)"
-	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
+	name = "Ringneck pistol magazine (10mm)"
+	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10x22mm"
-	max_ammo = 8
+	caliber = "10mm"
+	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
@@ -184,15 +184,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
-	spread_unwielded = 8
+	spread_unwielded = 3
 	recoil = 1
 	recoil_unwielded = 2
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/revolver/viper/no_mag
 	spawn_no_ammo = TRUE
+
+EMPTY_GUN_HELPER(revolver/viper)
 
 /obj/item/gun/ballistic/revolver/viper/indie
 	name = "Viper-23"
@@ -202,6 +205,17 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	item_state = "viper23"
 	spread = 5
 	spread_unwielded = 10
+	obj_flags = UNIQUE_RENAME
+
+	unique_reskin = list(\
+		"Pickle" = "viper23_pickle",
+		"Magnate's Daily" = "viper23_classy",
+		"Intranet Defender" = "viper23_rilena",
+		"Cheap Deal" = "viper23_trash",
+		"Merc's Best Friend" = "viper23_larp",
+		"Rancher" = "viper23_cowboy"
+		)
+	unique_reskin_changes_inhand = TRUE
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -212,7 +226,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
-	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9x18mm."
+	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9mm."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -221,6 +235,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	icon_state = "rattlesnake"
 	item_state = "rattlesnake"
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	allowed_ammo_types = list(
@@ -262,27 +278,28 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.07 SECONDS
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
 	wear_maximum = 1200
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 	name = "MP-84m Kingsnake"
-	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9x18mm."
+	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9mm."
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 	name = "MP-84m Cottonmouth"
-	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10x22mm."
+	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10mm."
 
 	icon_state = "cottonmouth"
 	item_state = "cottonmouth"
@@ -297,18 +314,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	wear_rate = 1.5
 
 	recoil = 0.5
-	recoil_unwielded = 3
 	burst_size = 2
-	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	burst_delay = 0.07 SECONDS
+	fire_delay = 0.1 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
-	name = "Rattlesnake magazine (9x18mm)"
+	name = "Rattlesnake magazine (9mm)"
 	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 18
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -320,12 +337,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m10mm_cottonmouth
-	name = "Cottonmouth magazine (10x22mm)"
+	name = "Cottonmouth magazine (10mm)"
 	desc = "A long, 14-round double-stack magazine designed for the Cottonmouth modified machine pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10x22mm"
+	caliber = "10mm"
 	max_ammo = 14
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -342,6 +359,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 	icon_state = "himehabu"
 	item_state = "sa_generic"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -349,7 +367,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -385,9 +403,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 		)
 	)
 
+	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
-	spread_unwielded = 0
+	spread_unwielded = -2
 	wield_slowdown = 0
 
 NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
@@ -400,7 +419,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = "22lr"
 	max_ammo = 10
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/empty
@@ -411,7 +430,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
+	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -419,9 +438,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	icon_state = "cobra"
 	item_state = "cobra"
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m45_cobra
+	spread = 3
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m10_cobra
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45_cobra,
+		/obj/item/ammo_box/magazine/m10_cobra,
 	)
 
 	fire_sound = 'sound/weapons/gun/smg/cobra.ogg'
@@ -458,15 +479,17 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 
 /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	name = "Cobra-20"
-	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
+	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in 10mm."
 	icon_state = "cobra20"
 	item_state = "cobra20"
-	burst_size = 3
-	burst_delay = 1.75
+
+	burst_size = 4
+	burst_delay = 0.8
+	fire_delay = 3
+	spread = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
-	default_firemode = FIREMODE_BURST
 	default_attachments = null
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	unique_attachments = null
@@ -475,22 +498,22 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
 
-/obj/item/ammo_box/magazine/m45_cobra
+/obj/item/ammo_box/magazine/m10_cobra
 
-/obj/item/ammo_box/magazine/m45_cobra
-	name = "Cobra magazine (.45)"
+/obj/item/ammo_box/magazine/m10_cobra
+	name = "Cobra magazine (10mm)"
 	desc = "A 24-round magazine for the Cobra submachine gun. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cobra_mag-24"
 	base_icon_state = "cobra_mag"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
 	max_ammo = 24
 
-/obj/item/ammo_box/magazine/m45_cobra/update_icon_state()
+/obj/item/ammo_box/magazine/m10_cobra/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/m45_cobra/empty
+/obj/item/ammo_box/magazine/m10_cobra/empty
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder
@@ -709,6 +732,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	recoil_unwielded = 50
 
 	wield_delay = 1.3 SECONDS
+	fire_delay = 1.5 SECONDS
 
 	valid_attachments = list()
 	slot_available = list()
@@ -776,6 +800,31 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 
 NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
+/obj/item/gun/ballistic/automatic/assault/hydra/indie
+	name = "Hydra-80"
+	desc = "A dated variant of Scarborough Arms' premier assault rifle platform. Only accepts small magazines and is locked to semi-auto. Chambered in 5.56mm CLIP."
+
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	icon_state = "hydra_80"
+	item_state = "hydra_80"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
+	blacklisted_ammo_types = list(
+		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
+		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
+	)
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	gun_firenames = list(FIREMODE_SEMIAUTO)
+
+	spread = 3
+	spread_unwielded = 10
+
+NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
+
 //we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
 /obj/item/gun/ballistic/automatic/assault/hydra/update_overlays()
 	. = ..()
@@ -797,48 +846,96 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 			. += "hydra_mag_[magazine.base_icon_state]_[capacity_number]"
 
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg
-	name = "SAW-80 \"Hydra\""
-	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a support weapon, with heavier components for sustained firing and a large muzzle brake. Chambered in 5.56mm CLIP."
+/obj/item/gun/ballistic/automatic/hmg/python
+	name = "\improper SAW-90 Python"
+	desc = "Scarborough Arms' premier Squad-Automatic Weapon. A unique bullpup LMG with best-in-class weight and capacity. The reloading process has been described with every colorful name in the Tecetian language. Chambered in 5.56mm CLIP."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
-	icon_state = "hydra_lmg"
-	item_state = "hydra_lmg"
+	icon_state = "python"
+	item_state = "python"
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_FULLAUTO
+	fire_sound = 'sound/weapons/gun/rifle/hydra.ogg'
+	rack_sound = 'sound/weapons/gun/hmg/cm40_cocked.ogg'
 
-	burst_delay = 0.08 SECONDS
-	fire_delay = 0.08 SECONDS
-	spread = 7
-	spread_unwielded = 25
-	recoil = 2
-	recoil_unwielded = 4
-	wield_slowdown = SAW_SLOWDOWN
-	wield_delay = 0.9 SECONDS //ditto
+	rack_sound_vary = FALSE
 
-	valid_attachments = SCARBOROUGH_ATTACHMENTS
-	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	load_sound_vary = FALSE
+	eject_sound_vary = FALSE
+
+	load_sound = 'sound/weapons/gun/hmg/cm40_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/hmg/cm40_reload.ogg'
+	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
+
+	fire_delay = 0.1 SECONDS
+
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	manufacturer = MANUFACTURER_SCARBOROUGH
+	default_ammo_type = /obj/item/ammo_box/magazine/python_box
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/python_box,
+	)
+
+	spread = 8
+	spread_unwielded = 35
+
+	recoil = 1.5 //identical to other LMGS
+	recoil_unwielded = 7 //same as fa2
+
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock fa2
+
+	has_bipod = TRUE
+
+	//you get the rail slot back when the bipod is an attachment
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 48,
-			"y" = 19,
+			"x" = 42,
+			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 21,
-			"y" = 24,
-		),
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 30,
-			"y" = 15,
+			"x" = 19,
+			"y" = 22,
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
-	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+	deploy_recoil_bonus = -1
+	deploy_spread_bonus = -6
 
+/obj/item/gun/ballistic/automatic/hmg/python/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	AddElement(/datum/element/update_icon_updates_onmob)
+NO_MAG_GUN_HELPER(automatic/hmg/python)
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
-	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
+/obj/item/ammo_box/magazine/python_box
+	name = "Python drum magazine (5.56x42mm CLIP)"
+	desc = "A 90 round drum magazine for SAW-90 Python. These rounds do good damage with good armor penetration."
+	base_icon_state = "python_mag"
+	icon_state = "python_mag-1"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	caliber = "5.56x42mm"
+	max_ammo = 90
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/python_box/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/python_box/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	name = "SBR-80 \"Hydra\""
@@ -937,7 +1034,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
 	)
-	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
+	fire_delay = 0.3 SECONDS
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	show_magazine_on_sprite = TRUE
 //	empty_indicator = TRUE
@@ -982,7 +1079,42 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		)
 	)
 
+// Bockadam Burst Bulldog Variant
+
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
+	name = "SG-60db \"Bockadam\""
+	desc = "A bullpup combat shotgun from Marauder reserves that's been heavily modified by the Ramzi Clique, sporting a sawn-down barrel and a two-shot receiver. Reliability has been traded for deadly lethality in tight quarters."
+
+	icon_state = "bockadam"
+	item_state = "bockadam"
+
+	weapon_weight = WEAPON_MEDIUM
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12g_bulldog,
+	)
+	show_magazine_on_sprite = TRUE
+	burst_size = 2
+	burst_delay = 0.25 SECONDS
+	fire_delay = 0.4 SECONDS
+	wear_rate = 1.2
+	spread = 5
+	gun_firemodes = list(FIREMODE_BURST)
+	default_firemode = FIREMODE_BURST
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 16,
+		)
+	)
+
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
@@ -1038,6 +1170,68 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
 
+/obj/item/gun/ballistic/shotgun/gaboon
+	name = "CSG-12 \"Gaboon\""
+	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bulldog, its larger, modern sister. Chambered in 12g."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	icon_state = "gaboon"
+	item_state = "gaboon"
+
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/rack.ogg'
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(
+	/obj/item/attachment/foldable_stock/gaboon
+	)
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/gaboon
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/gaboon,
+	)
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+
+	fire_delay = 0.1 SECONDS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 34,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 8,
+			"y" = 18,
+		)
+	)
+
+
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/gaboon)
+	wield_slowdown = SMG_SLOWDOWN
+	spread = 8
+	spread_unwielded = 12
+
+	recoil = 3
+	recoil_unwielded = 6
+
+	wield_delay = 0.4 SECONDS
+
+EMPTY_GUN_HELPER(shotgun/gaboon)
+
 /obj/item/gun/ballistic/rocketlauncher/mako
 	name = "RR-86 \"Mako\""
 	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement. Capable of causing significant damage to exosuits on impact, as well."
@@ -1069,20 +1263,31 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-
 /obj/item/ammo_box/magazine/internal/mako
 	name = "mako internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm
 	caliber = "70mm"
 	max_ammo = 4
 
+/obj/item/gun/ballistic/rocketlauncher/mako/light
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/mako/light
+
+/obj/item/ammo_box/magazine/internal/mako/light
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm/light
+
 /obj/item/ammo_casing/caseless/rocket/a70mm
 	name = "\improper M-KO-9HE"
 	desc = "A 70mm High Explosive rocket. Fire at mech and pray."
 	icon_state = "srm-8"
 	caliber = "70mm"
-	projectile_type = /obj/projectile/bullet/a84mm_he
+	projectile_type = /obj/projectile/bullet/a84mm/he
 	auto_rotate = FALSE
+
+/obj/item/ammo_casing/caseless/rocket/a70mm/light
+	name = "\improper M-KO-9LE"
+	icon_state = "srm-8-light"
+	desc = "A 70mm Light Explosive rocket. For when you don't want to cause *too* much collateral damage."
+	projectile_type = /obj/projectile/bullet/a84mm/he/weak
 
 /obj/item/ammo_casing/caseless/rocket/a70mm/hedp
 	name = "\improper M-KO-9HEDP"

@@ -127,6 +127,24 @@
 /obj/item/ammo_box/a300/empty
 	start_empty = TRUE
 
+// .45-70 Stripper Clip
+
+/obj/item/ammo_box/a4570
+	name = "stripper clip (.45-70)"
+	desc = "A 5-round stripper clip for the Pyre Rifle. These rounds do devastating damage with average armor penetration."
+	icon_state = "850-5"
+	base_icon_state = "850"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = ".45-70"
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
+	custom_materials = list(/datum/material/iron = 500)
+
+/obj/item/ammo_box/a4570/empty
+	start_empty = TRUE
+
 // .300 Blackout Stripper Clip
 
 /obj/item/ammo_box/a762_stripper

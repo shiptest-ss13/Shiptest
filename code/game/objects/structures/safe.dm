@@ -96,13 +96,13 @@ FLOOR SAFES
 		return TRUE
 	user.visible_message(
 		span_warning("[user] begin to cut through the lock of \the [src]."),
-		span_notice("You start cutting trough the lock of [src]."),
+		span_notice("You start cutting through the lock of [src]."),
 	)
 	if(tool.use_tool(src, user, 45 SECONDS))
 		broken = TRUE
 		user.visible_message(
-			span_warning("[user] successfully cuts trough the lock of \the [src]."),
-			span_notice("You successfully cut trough the lock of [src]."),
+			span_warning("[user] successfully cuts through the lock of \the [src]."),
+			span_notice("You successfully cut through the lock of [src]."),
 		)
 	return TRUE
 

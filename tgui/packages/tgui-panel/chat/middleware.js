@@ -44,6 +44,8 @@ const saveChatToStorage = async (store) => {
     .map((message) => serializeMessage(message));
   storage.set('chat-state', state);
   storage.set('chat-messages', messages);
+
+  surfaceStorageDiagnostics(storage.diagnostics);
 };
 
 const loadChatFromStorage = async (store) => {
@@ -75,6 +77,24 @@ const loadChatFromStorage = async (store) => {
     });
   }
   store.dispatch(loadChat(state));
+};
+
+const surfaceStorageDiagnostics = async (diagnostics) => {
+  const hasIssues = diagnostics.some((d) => d.level !== 'info');
+  if (!hasIssues) return;
+
+  const batch = diagnostics
+    .filter((d) => d.level !== 'info')
+    .map((d) =>
+      createMessage({
+        type: 'internal/storage',
+        text: `[Storage] ${d.message}`,
+      })
+    );
+
+  if (batch.length) {
+    chatRenderer.processBatch(batch, { prepend: true });
+  }
 };
 
 export const chatMiddleware = (store) => {

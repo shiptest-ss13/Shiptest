@@ -28,6 +28,19 @@
 	icon_state = "syn_cypherkey"
 	channels = list(RADIO_CHANNEL_SYNDICATE = 1)
 
+/obj/item/encryptionkey/syndicate/cybersun
+	name = "cybersun encryption key"
+	channels = list(RADIO_CHANNEL_CYBERSUN = 1)
+
+/obj/item/encryptionkey/syndicate/ngr
+	name = "new gorlex encryption key"
+	channels = list(RADIO_CHANNEL_NGR = 1)
+
+/obj/item/encryptionkey/syndicate/suns
+	name = "SUNS encryption key"
+	icon_state = "suns_cypherkey"
+	channels = list(RADIO_CHANNEL_SUNS = 1)
+
 /obj/item/encryptionkey/binary
 	name = "binary translator key"
 	icon_state = "bin_cypherkey"
@@ -35,10 +48,10 @@
 
 //Shiptest edits start
 
-/obj/item/encryptionkey/nanotrasen
-	name = "nanotrasen encryption key"
+/obj/item/encryptionkey/warra
+	name = "Makosso-Warra encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list(RADIO_CHANNEL_NANOTRASEN = 1)
+	channels = list(RADIO_CHANNEL_WARRA = 1)
 
 /obj/item/encryptionkey/minutemen
 	name = "minutemen encryption key"

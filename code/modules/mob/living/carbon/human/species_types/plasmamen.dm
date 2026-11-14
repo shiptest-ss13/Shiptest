@@ -2,14 +2,10 @@
 	name = "\improper Phorid"
 	id = SPECIES_PLASMAMAN
 	meat = /obj/item/stack/sheet/mineral/plasma
-	species_traits = list(NOBLOOD, NOTRANSSTING, HAS_BONE)
+	species_traits = list(NOBLOOD, NOTRANSSTING)
 	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_NOHUNGER,TRAIT_ALWAYS_CLEAN, TRAIT_HARDLY_WOUNDED)
-	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
-	mutantlungs = /obj/item/organ/lungs/plasmaman
-	mutanttongue = /obj/item/organ/tongue/bone/plasmaman
-	mutantliver = /obj/item/organ/liver/plasmaman
-	mutantstomach = /obj/item/organ/stomach/plasmaman
+	inherent_biotypes = MOB_HUMANOID | MOB_MINERAL
 	heatmod = 1.5
 	breathid = "tox"
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
@@ -20,6 +16,18 @@
 	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
 	loreblurb = "Technically a disability rather than a species, Phorids (known far more commonly as plasmamen) are a loose grouping of people fallen victim to anomalous plasma-related effects that convert tough biological matter into inorganic, biology-mimicking plasma structures. Phorids often live their lives dependent on larger organizations due to their oxygen-incompatible physiology."
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/plasmaman,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/bone/plasmaman,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/plasmaman,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/plasmaman,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/plasmaman,
@@ -40,7 +48,7 @@
 	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
 	ass_image = 'icons/ass/assplasma.png'
 
-/datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
+/datum/species/plasmaman/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	var/datum/gas_mixture/environment = H.loc.return_air()
 	var/atmos_sealed = FALSE
 	if(HAS_TRAIT(H, TRAIT_NOFIRE))
@@ -194,13 +202,13 @@
 
 	return randname
 
-/datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+/datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	. = ..()
 	if(istype(chem, /datum/reagent/toxin/plasma))
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		for(var/i in H.all_wounds)
 			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(4) // plasmamen use plasma to reform their bones or whatever
+			iter_wound.on_xadone(4  * REAGENTS_EFFECT_MULTIPLIER * seconds_per_tick) // plasmamen use plasma to reform their bones or whatever
 		return TRUE
 
 	return ..()

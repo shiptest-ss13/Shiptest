@@ -61,7 +61,7 @@
 	desc = "A tactical sneaksuit developed for usage in the IRMG's covert elements. Maximizes stealth by minimizing friction."
 	icon_state = "inteq_sneak"
 	item_state = "inteq_sneak"
-	roll_sleeves = FALSE
+	roll_sleeves = TRUE
 	roll_down = TRUE
 
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
@@ -123,7 +123,6 @@
 		/obj/item/ammo_box,
 		/obj/item/gun/ballistic,
 		/obj/item/gun/energy,
-		/obj/item/melee/baton,
 	)
 
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq
@@ -156,6 +155,14 @@
 	desc = "A comfortable looking brown hood."
 	icon_state = "hood_inteq_alt"
 	item_state = "hood_inteq_alt"
+
+/obj/item/clothing/suit/toggle/flight/inteq
+	name = "inteq pilot jacket"
+	desc = "A standard-issue flight jacket for subshuttle pilots. Lined with fur for any cold occasion."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "flightinteq"
+	unique_reskin = null
 
 /obj/item/clothing/suit/space/inteq
 	name = "inteq space suit"
@@ -216,6 +223,23 @@
 	icon_state = "hardsuit0-inteqeod"
 	hardsuit_type = "inteqeod"
 
+/obj/item/clothing/suit/space/hardsuit/stealth/inteq
+	name = "Inteq Ranger hardsuit"
+	desc = "A lightweight infiltration suit dating from the late ICW, reacquired and refitted by the IRMG. Many systems seem the same as its predecessor, but due to the rarity of original models and difficult production, these hardsuits are in limited quantity."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "hardsuit-ranger"
+	hardsuit_type = "ranger"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/inteq
+
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/inteq
+	name = "Inteq Ranger hardsuit helmet"
+	desc = "A lightweight hardsuit helm with integrated night vision in its vertical camera setup."
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	icon_state = "hardsuit0-ranger"
+	hardsuit_type = "ranger"
+
 //Boulder Hardsuit
 /obj/item/clothing/suit/space/hardsuit/security/inteq/boulder
 	name = "Boulder hardsuit"
@@ -259,7 +283,30 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION | SNOUTED_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
+	name = "elite rampart hardsuit helmet"
+	desc = "A unique edition of the infamous Gorlex elite hardsuit, customized from seized ICW-era caches. It is in EVA mode. Property of the IRMG."
+	alt_desc = "A unique edition of the infamous Gorlex elite hardsuit, customized from seized ICW-era caches. It is in combat mode. Property of the IRMG."
+	icon_state = "hardsuit0-rampart"
+	hardsuit_type = "rampart"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
+	name = "elite rampart hardsuit"
+	desc = "A unique edition of the infamous Gorlex elite hardsuit, customized from seized ICW-era caches. It is in travel mode."
+	alt_desc = "A unique edition of the infamous Gorlex elite hardsuit, customized from seized ICW-era caches. It is in combat mode."
+	icon_state = "hardsuit0-rampart"
+	item_state = "hardsuit0-rampart"
+	hardsuit_type = "rampart"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
+
 
 // pilot softsuit
 /obj/item/clothing/suit/space/inteq/pilot
@@ -275,6 +322,8 @@
 	resistance_flags = FIRE_PROOF
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	slowdown = 0.2
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/inteq/pilot
 	name = "inteq pilot helmet"
@@ -290,6 +339,8 @@
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS | FLASH_PROTECTION_WELDER
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 	up = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet)
@@ -420,9 +471,9 @@
 
 // Gloves
 
-/obj/item/clothing/gloves/color/latex/nitrile/inteq
+/obj/item/clothing/gloves/nitrile/inteq
 	name = "green nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
+	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. The material makes it easier to pick up patients."
 	icon = 'icons/obj/clothing/faction/inteq/gloves.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/gloves.dmi'
 	icon_state = "nitrile_inteq"
@@ -457,7 +508,7 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
 /obj/item/clothing/mask/balaclava/inteq
-	name = "Inteq combat balaclava"
+	name = "inteq combat balaclava"
 	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
 	icon = 'icons/obj/clothing/faction/inteq/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/mask.dmi'
@@ -494,12 +545,12 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
-/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/fa2/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40(src)
 
-/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/fa2_carabine/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/smgm10mm(src)

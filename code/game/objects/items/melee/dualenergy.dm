@@ -23,6 +23,7 @@
 	var/list/possible_colors = list("red", "blue", "green", "purple", "yellow")
 	var/impale_flavor_text = "twirl"
 	var/hack_flavor_text = ""
+	var/hit_reflect_chance = 10
 
 /obj/item/melee/duelenergy/Initialize()
 	. = ..()
@@ -91,13 +92,15 @@
 		impale(user)
 		return
 
-/obj/item/melee/duelenergy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/melee/duelenergy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 35, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return ..()
 	return FALSE
 
 /obj/item/melee/duelenergy/IsReflect()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if((HAS_TRAIT(src, TRAIT_WIELDED))&&(prob(hit_reflect_chance)))
 		return TRUE
 
 /obj/item/melee/duelenergy/process(seconds_per_tick)
@@ -164,7 +167,7 @@
  */
 /obj/item/melee/duelenergy/halberd
 	name = "energy halberd"
-	desc = "For when a normal halberd just isnt enough."
+	desc = "A Solarian hardlight weapon harkening back to the polearms of Terran antiquity. Most popularly seen as a ceremonial weapon, this space-age modernization of the halberd is still more than capable of ending a disagreement quickly."
 	icon_state = "halberd"
 	base_icon_state = "halberd"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
@@ -174,6 +177,10 @@
 	light_range = 4
 	impale_flavor_text = "swing"
 	hack_flavor_text = "HLBRDRNBW_ENGAGE"
+	block_chance = 35
+	force = 15
+	throwforce = 15
+	demolition_mod = 1.5
 
 /obj/item/melee/duelenergy/halberd/green
 	possible_colors = list("green")

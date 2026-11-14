@@ -167,23 +167,6 @@
 	. = ..()
 	alpha = set_alpha
 
-/obj/effect/temp_visual/bsa_splash
-	name = "\improper Bluespace energy wave"
-	desc = "A massive, rippling wave of bluepace energy, all rapidly exhausting itself the moment it leaves the concentrated beam of light."
-	icon = 'icons/effects/beam_splash.dmi'
-	icon_state = "beam_splash_e"
-	layer = ABOVE_ALL_MOB_LAYER
-	pixel_y = -16
-	duration = 50
-
-/obj/effect/temp_visual/bsa_splash/Initialize(mapload, dir)
-	. = ..()
-	switch(dir)
-		if(WEST)
-			icon_state = "beam_splash_w"
-		if(EAST)
-			icon_state = "beam_splash_e"
-
 /obj/effect/temp_visual/wizard
 	name = "water"
 	icon = 'icons/mob/mob.dmi'
@@ -542,3 +525,74 @@
 	. = ..()
 	if(new_icon_state)
 		icon_state = new_icon_state
+
+/obj/effect/muzzle_flash/proc/aim(firing_angle)
+	//Offset the pixels.
+	switch(firing_angle)
+		if(0, 360)
+			pixel_x = 0
+			pixel_y = 8
+			layer = initial(layer)
+		if(1 to 44)
+			pixel_x = round(4 * ((firing_angle) / 45))
+			pixel_y = 8
+			layer = initial(layer)
+		if(45)
+			pixel_x = 8
+			pixel_y = 8
+			layer = initial(layer)
+		if(46 to 89)
+			pixel_x = 8
+			pixel_y = round(4 * ((90 - firing_angle) / 45))
+			layer = initial(layer)
+		if(90)
+			pixel_x = 8
+			pixel_y = 0
+			layer = initial(layer)
+		if(91 to 134)
+			pixel_x = 8
+			pixel_y = round(-3 * ((firing_angle - 90) / 45))
+			layer = initial(layer)
+		if(135)
+			pixel_x = 8
+			pixel_y = -6
+			layer = initial(layer)
+		if(136 to 179)
+			pixel_x = round(4 * ((180 - firing_angle) / 45))
+			pixel_y = -6
+			layer = ABOVE_MOB_LAYER
+		if(180)
+			pixel_x = 0
+			pixel_y = -6
+			layer = ABOVE_MOB_LAYER
+		if(181 to 224)
+			pixel_x = round(-6 * ((firing_angle - 180) / 45))
+			pixel_y = -6
+			layer = ABOVE_MOB_LAYER
+		if(225)
+			pixel_x = -6
+			pixel_y = -6
+			layer = initial(layer)
+		if(226 to 269)
+			pixel_x = -6
+			pixel_y = round(-6 * ((270 - firing_angle) / 45))
+			layer = initial(layer)
+		if(270)
+			pixel_x = -6
+			pixel_y = 0
+			layer = initial(layer)
+		if(271 to 314)
+			pixel_x = -6
+			pixel_y = round(8 * ((firing_angle - 270) / 45))
+			layer = initial(layer)
+		if(315)
+			pixel_x = -6
+			pixel_y = 8
+			layer = initial(layer)
+		if(316 to 359)
+			pixel_x = round(-6 * ((360 - firing_angle) / 45))
+			pixel_y = 8
+			layer = initial(layer)
+
+	transform = null
+	transform = turn(transform, firing_angle)

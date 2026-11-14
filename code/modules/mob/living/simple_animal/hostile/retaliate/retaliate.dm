@@ -46,20 +46,20 @@
 		Retaliate()
 
 /mob/living/simple_animal/hostile/retaliate/proc/add_enemy(new_enemy)
-	RegisterSignal(new_enemy, COMSIG_PARENT_QDELETING, PROC_REF(remove_enemy), override = TRUE)
+	RegisterSignal(new_enemy, COMSIG_QDELETING, PROC_REF(remove_enemy), override = TRUE)
 	enemies |= new_enemy
 
 /mob/living/simple_animal/hostile/retaliate/proc/add_enemies(new_enemies)
 	for(var/new_enemy in new_enemies)
-		RegisterSignal(new_enemy, COMSIG_PARENT_QDELETING, PROC_REF(remove_enemy), override = TRUE)
+		RegisterSignal(new_enemy, COMSIG_QDELETING, PROC_REF(remove_enemy), override = TRUE)
 		enemies |= new_enemy
 
 /mob/living/simple_animal/hostile/retaliate/proc/clear_enemies()
 	for(var/enemy in enemies)
-		UnregisterSignal(enemy, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(enemy, COMSIG_QDELETING)
 	enemies.Cut()
 
 /mob/living/simple_animal/hostile/retaliate/proc/remove_enemy(datum/enemy_to_remove)
 	SIGNAL_HANDLER
-	UnregisterSignal(enemy_to_remove, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(enemy_to_remove, COMSIG_QDELETING)
 	enemies -= enemy_to_remove

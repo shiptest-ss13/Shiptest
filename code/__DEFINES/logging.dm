@@ -14,8 +14,8 @@
 #define INVESTIGATE_HALLUCINATIONS "hallucinations"
 #define INVESTIGATE_RADIATION "radiation"
 #define INVESTIGATE_EXONET "exonet"
-#define INVESTIGATE_NANITES "nanites"
 #define INVESTIGATE_PRESENTS "presents"
+#define INVESTIGATE_DEATHS "death"
 
 // Logging types for log_message()
 #define LOG_ATTACK (1 << 0)

@@ -55,14 +55,13 @@
 	var/mob/dead/observer/G = usr
 	G.register_pai()
 
-/atom/movable/screen/ghost/spawner_menu
-	name = "Spawner Menu"
-	icon = 'icons/hud/screen_ghost.dmi'
-	icon_state = "spawner_menu"
+/atom/movable/screen/ghost/ship_select
+	name = "Ship List"
+	icon_state = "ship_list"
 
-/atom/movable/screen/ghost/spawner_menu/Click()
-	var/mob/dead/observer/G = usr
-	G.open_spawners_menu()
+/atom/movable/screen/ghost/ship_select/Click()
+	var/mob/dead/observer/ghost = usr
+	ghost.open_ship_select()
 
 /datum/hud/ghost/New(mob/owner)
 	..()
@@ -93,13 +92,13 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/language_menu
-	using.icon = ui_style
+	using = new /atom/movable/screen/ghost/ship_select()
+	using.screen_loc = ui_ghost_ship_select
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/ghost/spawner_menu()
-	using.screen_loc = ui_ghost_spawner_menu
+	using = new /atom/movable/screen/language_menu
+	using.icon = ui_style
 	using.hud = src
 	static_inventory += using
 

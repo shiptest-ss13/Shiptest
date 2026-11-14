@@ -21,11 +21,14 @@ type PaperContext = {
   user_name: string;
   raw_text_input?: PaperInput[];
   raw_field_input?: FieldInput[];
-  raw_stamp_input?: StampInput[];
+  raw_graphic_input?: StampInput[];
   max_length: number;
   max_input_field_length: number;
   paper_color: string;
   paper_name: string;
+  paper_width: number;
+  paper_height: number;
+  paper_resizable: boolean;
   default_pen_font: string;
   default_pen_color: string;
   signature_font: string;
@@ -984,13 +987,13 @@ export class PreviewView extends Component<PreviewViewProps> {
 export const StampView = (props, context) => {
   const { data } = useBackend<PaperContext>(context);
 
-  const { raw_stamp_input = [] } = data;
+  const { raw_graphic_input = [] } = data;
 
   const { stampYOffset } = props;
 
   return (
     <>
-      {raw_stamp_input.map((stamp, index) => {
+      {raw_graphic_input.map((stamp, index) => {
         return (
           <Stamp
             key={index}
@@ -1008,7 +1011,14 @@ export const StampView = (props, context) => {
 
 export const PaperSheet = (props, context) => {
   const { data } = useBackend<PaperContext>(context);
-  const { paper_color, paper_name, held_item_details } = data;
+  const {
+    paper_color,
+    paper_name,
+    held_item_details,
+    paper_width,
+    paper_height,
+    paper_resizable,
+  } = data;
 
   const writeMode = canEdit(held_item_details);
 
@@ -1027,8 +1037,9 @@ export const PaperSheet = (props, context) => {
     <Window
       title={paper_name}
       theme="paper"
-      width={420}
-      height={500 + (writeMode ? TEXTAREA_INPUT_HEIGHT : 0)}
+      width={paper_width}
+      height={paper_height + (writeMode ? TEXTAREA_INPUT_HEIGHT : 0)}
+      resizable={paper_resizable}
     >
       <Window.Content backgroundColor={paper_color}>
         <PrimaryView />

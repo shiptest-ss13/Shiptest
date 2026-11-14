@@ -1,0 +1,57 @@
+{
+	"faction": "/datum/faction/hardliners",
+	"prefix": "ISV",
+	"manufacturer": "ISF Spacecraft",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Y600-H Leyak-class Covert Frigate",
+	"map_short_name": "Leyak-class",
+	"description": "The Leyak-class found its origin as a personal commission by the earliest Hardliner groups associated with cybersun, with the requirements of being a vessel able to catch any target quickly by suprise, and to flee just as fast as it strikes. While the vessel did reach this goal with its robust thruster setup and cloaking technology, the power drain caused by these devices leaves the upkeep costs of the vessel quite high. While most know of the Leyak's existence, ISF and Cybersun often deny being involved in its production, claiming the design was stolen by a third party. Despite the theoretically fearsome design, a Leyak's presence can be found often disregarded by most who would be weary of it, simply due to the disorganized nature of the Hardliners, along with Cybersun limiting any outbursts it could cause.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/hardliner/hardliners_leyak.dmm",
+	"map_id": "hardliners_leyak",
+	"limit": 1,
+	"tranist_y_offset": -11,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Supervisor": {
+			"outfit": "/datum/outfit/job/cybersun/officer/intelligence_officer",
+			"officer": true,
+			"slots": 1
+		},
+		"Field Medic": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/gorlex",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Trooper": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
+			"slots": 2
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

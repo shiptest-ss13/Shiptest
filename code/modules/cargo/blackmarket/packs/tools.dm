@@ -21,6 +21,16 @@
 	stock = 1
 	availability_prob = 25
 
+/datum/blackmarket_item/tool/mk3_hypo
+	name = "Mk3 Hypospray Kit"
+	desc = "Pretty sure the guy we got this from was about to do surgery. Well. Don't think they'll be doing anything now. Keh."
+	item = /obj/item/storage/box/hypospray/mkiii
+
+	cost_min = 3000
+	cost_max = 5000
+	stock = 2
+	availability_prob = 25
+
 /datum/blackmarket_item/tool/jaws
 	name = "Jaws of Life"
 	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."
@@ -75,16 +85,6 @@
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 80
-
-/datum/blackmarket_item/tool/riot_shield
-	name = "Riot Shield"
-	desc = "Protect yourself from an unexpected Riot at your local Police department!"
-	item = /obj/item/shield/riot
-
-	cost_min = 300
-	cost_max = 800
-	stock_max = 3
-	availability_prob = 50
 
 /datum/blackmarket_item/tool/thermite_bottle
 	name = "Thermite Bottle"
@@ -144,16 +144,6 @@
 
 	cost_min = 750
 	cost_max = 1750
-	stock_max = 3
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/adv_cutter
-	name = "Advanced Plasmacutter"
-	desc = "These technically aren't meant to be released to the public yet, but let's just say we managed to get our hands on an advance sample."
-	item = /obj/item/gun/energy/plasmacutter/adv
-
-	cost_min = 2750
-	cost_max = 3750
 	stock_max = 3
 	availability_prob = 40
 

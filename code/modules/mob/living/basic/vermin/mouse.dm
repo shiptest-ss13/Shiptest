@@ -187,6 +187,15 @@
 	icon_state = "mouse_brown"
 	held_state = "mouse_brown"
 
+/mob/living/basic/mouse/gray/pet
+	name = "pet mouse"
+	desc = "This little guy isn't just cute, but is trained to not nibble on your ship's cables!"
+	ai_controller = /datum/ai_controller/basic_controller/mouse/nocable
+
+/mob/living/basic/mouse/gray/pet/remy
+	name = "Remy"
+	desc = "The Manager's loyal little assistant. Likes to sleep inside of chef hats."
+
 //TOM IS ALIVE! SQUEEEEEEEE~K :)
 /mob/living/basic/mouse/brown/tom
 	name = "Tom"
@@ -230,7 +239,8 @@
 	icon_state = "mouse_gray_dead"
 	bite_consumption = 3
 	eatverbs = list("devour")
-	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("subtle game" = 4, "metallic tang" = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 1, /datum/reagent/consumable/nutriment/organ_tissue = 1)
 	foodtypes = GORE | MEAT | RAW
 	grind_results = list(/datum/reagent/blood = 20, /datum/reagent/liquidgibs = 5)
 
@@ -274,9 +284,10 @@
 	name = "moldy dead mouse"
 	desc = "A dead rodent, consumed by mold and rot. There is a slim chance that a lizard might still eat it."
 	icon_state = "mouse_gray_dead"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/mold = 10)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 2, /datum/reagent/consumable/mold = 10)
 	foodtypes = GORE | MEAT | RAW | GROSS
 	grind_results = list(/datum/reagent/blood = 20, /datum/reagent/liquidgibs = 5, /datum/reagent/consumable/mold = 10)
+	tastes = list("Mold" = 4, "metallic tang" = 1)
 
 /// The mouse AI controller
 /datum/ai_controller/basic_controller/mouse
@@ -296,6 +307,12 @@
 		// Otherwise, look for and execute hunts for cabling
 		/datum/ai_planning_subtree/find_and_hunt_target/look_for_cables,
 	)
+
+/datum/ai_controller/basic_controller/mouse/nocable ///mause that does everything except kill itself on cables, for ship pets
+	planning_subtrees = list(
+		/datum/ai_planning_subtree/find_and_hunt_target/look_for_cheese,
+		/datum/ai_planning_subtree/random_speech/mouse,
+)
 
 /// AI controller for rats, slightly more complex than mice becuase they attack people
 /datum/ai_controller/basic_controller/mouse/rat

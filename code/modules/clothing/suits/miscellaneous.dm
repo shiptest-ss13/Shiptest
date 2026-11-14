@@ -172,20 +172,6 @@
  * Misc
  */
 
-/obj/item/clothing/suit/cybersun_suit
-	name = "cybersun suit"
-	desc = "A plain white suit commonly used by Cybersun's officers."
-	icon_state = "cybersun_suit"
-	item_state = "cybersun_suit"
-
-	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
-	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
-
-	equip_sound = 'sound/items/equip/cloth_equip.ogg'
-	equip_delay_self = EQUIP_DELAY_COAT
-	equip_delay_other = EQUIP_DELAY_COAT * 1.5
-	strip_delay = EQUIP_DELAY_COAT * 1.5
-
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun
@@ -249,7 +235,36 @@
 	item_state = "hostrench"
 	resistance_flags = NONE
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/radio)
+
+/obj/item/clothing/suit/jacket/leather/coat
+	name = "leather coat"
+	desc = "A shorter, clean leather coat. Far less sturdy than others, and easier to move around in."
+	icon_state = "leatherblack"
+	item_state = "leatherblack"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	heat_protection = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+	unique_reskin = list(
+		"black leather coat" = "leatherblack",
+		"white leather coat" = "leatherwhite",
+		"brown leather coat" = "leatherbrown",
+		"navy leather coat" = "leathernavy",
+	)
+	unique_reskin_changes_inhand = TRUE
+
+/obj/item/clothing/suit/jacket/leather/coat/black
+	current_skin = "black leather coat"
+
+/obj/item/clothing/suit/jacket/leather/coat/white
+	current_skin = "white leather coat"
+
+/obj/item/clothing/suit/jacket/leather/coat/brown
+	current_skin = "brown leather coat"
+
+/obj/item/clothing/suit/jacket/leather/coat/navy
+	current_skin = "navy leather coat"
 
 /obj/item/clothing/suit/jacket/leather/duster
 	name = "leather duster"
@@ -259,6 +274,13 @@
 	heat_protection = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/jacket/leather/duster/black
+	name = "black leather duster"
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster_black"
+	item_state = "duster_black"
+
 
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
@@ -274,30 +296,55 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/radio)
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/jacket/baggy
+	name = "baggy shirt"
+	desc = "An oversized baggy shirt. Why?"
+	icon_state = "baggy"
+	item_state = "baggy"
 
-/obj/item/clothing/suit/jacket/letterman
+/obj/item/clothing/suit/jacket/twotone
+	name = "two-tone coat"
+	desc = "An expensive looking two-tone coat. Has no buttons, but is still comfortably warm."
+	icon_state = "twotone"
+	item_state = "twotone"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	unique_reskin = list(
+		"olive two-tone coat" = "twotone",
+		"khaki two-tone coat" = "twotonekhaki",
+		"leather two-tone coat" = "twotoneleather",
+		"black two-tone coat" = "twotoneblack",
+		"white two-tone coat" = "twotonewhite",
+		"red two-tone coat" = "twotonered",
+	)
+	unique_reskin_changes_inhand = TRUE
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/letterman
 	name = "letterman jacket"
 	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
 	icon_state = "letterman"
 	item_state = "letterman"
 
-/obj/item/clothing/suit/jacket/letterman_red
+/obj/item/clothing/suit/toggle/letterman_red
 	name = "red letterman jacket"
-	desc = "A letterman jacket in a sick red color. Radical."
-	icon_state = "letterman_red"
-	item_state = "letterman_red"
+	desc = "A red letterman jacket, did you ever outgrow it?"
+	icon_state = "letterred"
+	item_state = "letterred"
 
-/obj/item/clothing/suit/jacket/letterman_syndie
-	name = "blood-red letterman jacket"
-	desc = "Oddly, this jacket seems to have a large S on the back..."
-	icon_state = "letterman_s"
-	item_state = "letterman_s"
+/obj/item/clothing/suit/toggle/letterman_black
+	name = "black letterman jacket"
+	desc = "A black letterman jacket, with thick leather and tough cloth."
+	icon_state = "letterblack"
+	item_state = "letterblack"
 
-/obj/item/clothing/suit/jacket/letterman_nanotrasen
+/obj/item/clothing/suit/toggle/letterman_blue
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Nanotrasen N on the back. The tag says that it was made in Space China."
-	icon_state = "letterman_n"
-	item_state = "letterman_n"
+	desc = "A blue letterman jacket, did you ever outgrow it?"
+	icon_state = "letterblue"
+	item_state = "letterblue"
 
 /obj/item/clothing/suit/gothcoat
 	name = "gothic coat"
@@ -428,3 +475,116 @@
 	name = "floral shirt"
 	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_red"
+
+/obj/item/clothing/suit/toggle/flight
+	name = "Flight Jacket"
+	desc = "A large, comfy furred coat. Typically worn by showoff pilots."
+	icon_state = "flightbrown"
+	unique_reskin = list(
+		"Brown Flight Jacket" = "flightbrown",
+		"White Flight Jacket" = "flightwhite",
+		"Black Flight Jacket" = "flightblack",
+	)
+	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/flight/Initialize()
+	. = ..()
+	base_icon_state = icon_state
+
+/obj/item/clothing/suit/toggle/flight/suit_toggle()
+	set src in usr
+
+	if(!can_use(usr))
+		return 0
+
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
+	if(src.suittoggled)
+		src.icon_state = "[base_icon_state]"
+		src.suittoggled = FALSE
+	else if(!src.suittoggled)
+		src.icon_state = "[base_icon_state]_t"
+		src.suittoggled = TRUE
+	usr.update_inv_wear_suit()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/clothing/suit/toggle/flight/white
+	name = "White Flight Jacket"
+	desc = "A large, comfy furred coat. Typically worn by showoff drivers."
+	icon_state = "flightwhite"
+
+/obj/item/clothing/suit/toggle/flight/black
+	name = "Black Flight Jacket"
+	icon_state = "flightblack"
+
+/obj/item/clothing/suit/toggle/aclf
+	name = "ACLF leather jacket"
+	desc = "A hand-stitched dark leather jacket with Anti-Corporation Liberation Front iconography sewn on. It's relatively stiff."
+	icon_state = "aclfcoat"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/capsule
+	name = "capsule jacket"
+	desc = "A poorly made jacket with a pill capsule resting on the backside. Good for your health, but not good for your education. Take only as prescribed."
+	icon_state = "capsule"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+
+/obj/item/clothing/suit/toggle/biker
+	name = "Biker Jacket"
+	desc = "A well made leather jacket for the high-speed biker. Feels comfortably stiff."
+	icon_state = "biker"
+	unique_reskin = list(
+		"Brown Biker Jacket" = "biker",
+		"White Biker Jacket" = "bikerwhite",
+		"Black Biker Jacket" = "bikerblack",
+		"Navy Biker Jacket" = "bikernavy",
+	)
+	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/biker/Initialize()
+	. = ..()
+	base_icon_state = icon_state
+
+/obj/item/clothing/suit/toggle/biker/suit_toggle()
+	set src in usr
+
+	if(!can_use(usr))
+		return 0
+
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
+	if(src.suittoggled)
+		src.icon_state = "[base_icon_state]"
+		src.suittoggled = FALSE
+	else if(!src.suittoggled)
+		src.icon_state = "[base_icon_state]_t"
+		src.suittoggled = TRUE
+	usr.update_inv_wear_suit()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/clothing/suit/toggle/biker/white
+	name = "White Biker Jacket"
+	icon_state = "bikerwhite"
+
+/obj/item/clothing/suit/toggle/biker/black
+	name = "Black Biker Jacket"
+	icon_state = "bikerblack"
+
+/obj/item/clothing/suit/toggle/biker/navy
+	name = "Navy Biker Jacket"
+	icon_state = "bikernavy"

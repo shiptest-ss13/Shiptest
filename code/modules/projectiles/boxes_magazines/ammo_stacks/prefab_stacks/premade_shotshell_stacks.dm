@@ -67,16 +67,13 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/blank = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary
-	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
-
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/improvised
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 
 /obj/item/storage/box/ammo/pulseslug
 	name = "box of 12ga pulse slugs"
 	desc = "A box of 12-gauge pulse shells, designed for increased accuracy and destruction."
-	icon_state = "12gbox-rubbershot"
+	icon_state = "12gbox-pulse"
 
 /obj/item/storage/box/ammo/pulseslug/PopulateContents()
 	var/static/items_inside = list(
@@ -85,6 +82,45 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug
 	ammo_type = /obj/item/ammo_casing/shotgun/pulseslug
+
+/obj/item/storage/box/ammo/a12g_ion
+	name = "box of ion shells"
+	desc = "A box of 12-gauge ion shells, designed for delivering an electromagnetic payload."
+	icon_state = "12gbox-ion"
+
+/obj/item/storage/box/ammo/a12g_ion/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/ion = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/ion
+	ammo_type = /obj/item/ammo_casing/shotgun/ion
+
+/obj/item/storage/box/ammo/a12g_incen
+	name = "box of incendiary shells"
+	desc = "A box of 12-gauge incendiary shells, designed for catching targets on fire at the expense of damage."
+	icon_state = "12gbox-incen"
+
+/obj/item/storage/box/ammo/a12g_incen/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary
+	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+
+/obj/item/storage/box/ammo/a12g_dragonsbreath
+	name = "box of dragonsbreath shells"
+	desc = "A box of 12-gauge incendiary shells, designed for shooting streams of incendiary pellets. Very hazardous."
+	icon_state = "12gbox-dragon"
+
+/obj/item/storage/box/ammo/a12g_dragonsbreath/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dragonsbreath = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dragonsbreath
+	ammo_type = /obj/item/ammo_casing/shotgun/dragonsbreath
 
 /obj/item/storage/box/ammo/a12g_dart
 	name = "box of 12ga dart"
@@ -98,3 +134,68 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dart
 	ammo_type = /obj/item/ammo_casing/shotgun/dart
+
+/obj/item/storage/box/ammo/a4g_buckshot
+	name = "box of 4ga buckshot"
+	desc = "A box of 4 gauge brass shells. Devastating at close ranges."
+	icon_state = "4gbox-buckshot"
+
+/obj/item/storage/box/ammo/a4g_buckshot/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot/fourbore = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot/fourbore
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/fourbore
+
+/obj/item/storage/box/ammo/a4g_slug
+	name = "box of 4ga slugs"
+	desc = "A box of 4 gauge brass shells. Designed for extreme internal damage, and destroying equipment."
+	icon_state = "4gbox-slug"
+
+/obj/item/storage/box/ammo/a4g_slug/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/fourbore = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/fourbore
+	ammo_type = /obj/item/ammo_casing/shotgun/fourbore
+
+/obj/item/storage/box/ammo/a4g_shrapnel
+	name = "box of 4ga shrapnel shells"
+	desc = "A box of 4 gauge brass shells. Packed tight with conventional buckshot, lethal at close range."
+	icon_state = "4gbox-shrapnel"
+
+/obj/item/storage/box/ammo/a4g_shrapnel/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot/shrapnel/fourbore = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot/shrapnel/fourbore
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/fourbore/shrapnel
+
+/obj/item/storage/box/ammo/a4g_flashbang
+	name = "box of 4ga flashbang shells"
+	desc = "A box of 4 gauge brass shells. Designed for crowd dispersal and tactical hostage recovery missions by many police departments."
+	icon_state = "4gbox-flashbang"
+
+/obj/item/storage/box/ammo/a4g_flashbang/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang
+	ammo_type = /obj/item/ammo_casing/shotgun/fourbore/flashbang
+
+/obj/item/storage/box/ammo/a4g_gas
+	name = "box of 4ga teargas shells"
+	desc = "A box of 4 gauge brass shells. Designed for riot control in prisons and in protests. Used by many police departments."
+	icon_state = "4gbox-gas"
+
+/obj/item/storage/box/ammo/a4g_gas/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas
+	ammo_type = /obj/item/ammo_casing/shotgun/fourbore/teargas

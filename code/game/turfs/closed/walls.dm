@@ -18,11 +18,16 @@
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 	breakdown_duration = 25
+	//the sheet we make for a clean deconstruction
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
+	//the scrap we make for an aggressive destruction
+	var/scrap_type = /obj/item/stack/ore/salvage/scrapmetal
+	var/scrap_amount = 2
+	//kind of girder used by this
 	var/obj/girder_type = /obj/structure/girder
 
-	min_dam = 8
+	minimum_damage = 15
 	max_integrity = 400
 	brute_mod = 1
 	burn_mod = 1
@@ -60,8 +65,8 @@
 /turf/closed/wall/attack_tk()
 	return
 
-/turf/closed/wall/dismantle_wall(devastated = FALSE)
-	create_sheets()
+/turf/closed/wall/dismantle_wall(devastated = FALSE, mob/user, safe_decon = TRUE)
+	create_sheets(safe_decon)
 	var/obj/newgirder = create_girder()
 	if(devastated)
 		if(newgirder)
@@ -74,7 +79,9 @@
 
 	..()
 
-/turf/closed/wall/proc/create_sheets()
+/turf/closed/wall/proc/create_sheets(safe_decon = TRUE)
+	if(!safe_decon && scrap_type)
+		return new scrap_type(src, scrap_amount)
 	if(sheet_type)
 		return new sheet_type(src, sheet_amount)
 	return null
@@ -84,19 +91,23 @@
 		return new girder_type(src)
 	return null
 
-/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc)
+/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc, list/modifiers)
 	if(!iswallturf(src))
 		return
-	if(try_clean(W, user, loc) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
-		return
+	if(try_clean(W, user, loc, modifiers) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
+		return TRUE
 
-/turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
-	if((user.a_intent != INTENT_HELP))
+/turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T, list/modifiers)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		return FALSE
 
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, src, amount=0) || (atom_integrity >= max_integrity))
+		if(!W.tool_start_check(user, src, amount=0))
 			return FALSE
+
+		if(atom_integrity >= max_integrity)
+			to_chat(user, span_notice("[src] doesn't have any visible damage!"))
+			return TRUE
 
 		to_chat(user, span_notice("You begin fixing dents on the wall..."))
 		if(W.use_tool(src, user, breakdown_duration, volume=100))
@@ -105,7 +116,7 @@
 				dent_decals = null
 				update_appearance()
 			alter_integrity(repair_amount)
-			return TRUE
+		return TRUE
 
 	return FALSE
 

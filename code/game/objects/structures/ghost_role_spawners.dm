@@ -32,7 +32,7 @@
 		return ..()
 	var/mob/living/carbon/human/yolk = new /mob/living/carbon/human/(get_turf(src))
 	yolk.fully_replace_character_name(null,random_unique_lizard_name(gender))
-	yolk.set_species(/datum/species/lizard/ashwalker/kobold) //WS Edit - Kobold
+	yolk.set_species(/datum/species/lizard)
 	yolk.underwear = "Nude"
 	yolk.equipOutfit(/datum/outfit/ashwalker)//this is an authentic mess we're making
 	yolk.update_body()
@@ -47,7 +47,7 @@
 	mob_name = "an ash walker"
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "large_egg"
-	mob_species = /datum/species/lizard/ashwalker/kobold //WS Edit - Kobold
+	mob_species = /datum/species/lizard
 	outfit = /datum/outfit/ashwalker
 	roundstart = FALSE
 	death = FALSE

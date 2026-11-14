@@ -7,6 +7,7 @@
 	ammo_x_offset = 3
 	spread = 2
 	spread_unwielded = 4
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/e_gun/advtaser
 	name = "hybrid taser"
@@ -17,8 +18,10 @@
 
 	spread = 2
 	spread_unwielded = 4
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/e_gun/advtaser/cyborg
+	autowiki_hidden = TRUE //cyborg module, not a carryable weapon
 	name = "cyborg taser"
 	desc = "An integrated hybrid taser that draws directly from a cyborg's power cell. The weapon contains a limiter to prevent the cyborg's power cell from overheating."
 	can_charge = FALSE
@@ -27,19 +30,20 @@
 /obj/item/gun/energy/disabler
 	name = "disabler"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	icon_state = "disabler"
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_NONE
 	spread = 2
 	spread_unwielded = 4
 
 /obj/item/gun/energy/disabler/cyborg
+	autowiki_hidden = TRUE //cyborg module, not a carryable weapon
 	name = "cyborg disabler"
 	desc = "An integrated disabler that draws from a cyborg's power cell. This weapon contains a limiter to prevent the cyborg's power cell from overheating."
 	can_charge = FALSE

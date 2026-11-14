@@ -11,7 +11,6 @@
 	color = "#34eeee"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 35
-	addiction_threshold = 30
 
 /datum/reagent/medicine/tramal/on_mob_metabolize(mob/living/L)
 	..()
@@ -22,53 +21,25 @@
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	..()
 
-/datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
 	switch(current_cycle)
-		if(60)
+		if(375) // more than 30 units makes you sleepy
 			to_chat(M, span_warning("You feel drowsy..."))
-		if(61 to INFINITY)
-			M.drowsyness += 1
+		if(376 to INFINITY)
+			M.drowsyness += 0.5 * seconds_per_tick
 	..()
 
 /datum/reagent/medicine/tramal/overdose_start(mob/living/M)
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/tramal/overdose_process(mob/living/M)
-	if(prob(33))
+/datum/reagent/medicine/tramal/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(17, seconds_per_tick))
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
-
-/datum/reagent/medicine/tramal/addiction_act_stage1(mob/living/M)
-	if(prob(33))
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/tramal/addiction_act_stage2(mob/living/M)
-	if(prob(33))
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/tramal/addiction_act_stage3(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/tramal/addiction_act_stage4(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(2*REM, 0)
-		. = 1
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
 
 /datum/reagent/medicine/morphine
 	name = "Morphine"
@@ -77,7 +48,6 @@
 	color = "#A9FBFB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	addiction_threshold = 25
 
 /datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
 	..()
@@ -98,16 +68,16 @@
 		drugged.impact_effect *= 2
 	..()
 
-/datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)
-		if(29)
+		if(50) // more than 10 units makes you sleepy
 			to_chat(M, span_warning("You start to feel tired..."))
-		if(30 to 59)
-			M.drowsyness += 1
-		if(60 to INFINITY)
-			M.Sleeping(40)
+		if(51 to 74)
+			M.drowsyness += 0.5 * seconds_per_tick
+		if(75 to INFINITY)
+			M.Sleeping(20 * seconds_per_tick) // honk mimimi
 			. = 1
 	..()
 
@@ -115,44 +85,11 @@
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/morphine/overdose_process(mob/living/M)
-	if(prob(33))
+/datum/reagent/medicine/morphine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(17, seconds_per_tick))
 		M.drop_all_held_items()
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/morphine/addiction_act_stage1(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/morphine/addiction_act_stage2(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(1*REM, 0)
-		. = 1
-		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/morphine/addiction_act_stage3(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(2*REM, 0)
-		. = 1
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/morphine/addiction_act_stage4(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(3*REM, 0)
-		. = 1
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/dimorlin
@@ -162,7 +99,6 @@
 	color = "#71adad"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 15
-	addiction_threshold = 11
 
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
@@ -189,7 +125,7 @@
 		drugged.impact_effect *= 4
 	..()
 
-/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C)
+/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	if(current_cycle >= 3)
 		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
@@ -199,47 +135,14 @@
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/dimorlin/overdose_process(mob/living/M)
-	if(prob(33))
+/datum/reagent/medicine/dimorlin/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(17, seconds_per_tick))
 		M.losebreath++
 		M.adjustOxyLoss(4, 0)
-	if(prob(20))
+	if(SPT_PROB(10, seconds_per_tick))
 		M.AdjustUnconscious(20)
-	if(prob(5))
+	if(SPT_PROB(2.5, seconds_per_tick))
 		M.adjustOrganLoss(ORGAN_SLOT_EYES, 5)
-	..()
-
-/datum/reagent/medicine/dimorlin/addiction_act_stage1(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/dimorlin/addiction_act_stage2(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(1*REM, 0)
-		. = 1
-		M.set_timed_status_effect(3 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/dimorlin/addiction_act_stage3(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(2*REM, 0)
-		. = 1
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/medicine/dimorlin/addiction_act_stage4(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(3*REM, 0)
-		. = 1
-		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/mine_salve
@@ -249,10 +152,10 @@
 	color = "#6D6374"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
+/datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
-	C.adjustBruteLoss(-0.25*REM, 0)
-	C.adjustFireLoss(-0.25*REM, 0)
+	C.adjustBruteLoss(-0.125 * REM * seconds_per_tick, 0)
+	C.adjustFireLoss(-0.125 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -292,7 +195,6 @@
 	description = "A highly potent synthetic painkiller held in a suspension of stimulating agents. Allows people to keep moving long beyond when they should stop."
 	color = "#859480"
 	overdose_threshold = 8
-	addiction_threshold = 7
 	metabolization_rate = 0.1
 
 /datum/reagent/medicine/carfencadrizine/on_mob_metabolize(mob/living/L)
@@ -309,68 +211,24 @@
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
-/datum/reagent/medicine/carfencadrizine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/carfencadrizine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(current_cycle >= 3)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 
 	if(M.health <= M.crit_threshold)
-		if(prob(20))
-			M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
-		if(prob(40))
+		if(SPT_PROB(10, seconds_per_tick))
+			M.adjustOrganLoss(ORGAN_SLOT_HEART, 2 * seconds_per_tick)
+		if(SPT_PROB(20, seconds_per_tick))
 			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	..()
 
-/datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M)
-	if(prob(66))
+/datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(33, seconds_per_tick))
 		M.losebreath++
 		M.adjustOxyLoss(4, 0)
-	if(prob(40))
+	if(SPT_PROB(20, seconds_per_tick))
 		M.AdjustUnconscious(20)
-	if(prob(10))
-		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
-		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 7)
+	if(SPT_PROB(10, seconds_per_tick))
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, 1.5 * seconds_per_tick)
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 3.5 * seconds_per_tick)
 	..()
-
-/datum/reagent/medicine/carfencadrizine/addiction_act_stage1(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
-	..()
-
-/datum/reagent/medicine/carfencadrizine/addiction_act_stage2(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(1*REM, 0)
-		. = 1
-		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	if(prob(15))
-		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
-		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
-	..()
-
-/datum/reagent/medicine/carfencadrizine/addiction_act_stage3(mob/living/M)
-	if(prob(50))
-		M.drop_all_held_items()
-		M.adjustToxLoss(1*REM, 0)
-		. = 1
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	if(prob(30))
-		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
-		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
-	..()
-
-/datum/reagent/medicine/carfencadrizine/addiction_act_stage4(mob/living/M)
-	if(prob(60))
-		M.drop_all_held_items()
-		M.adjustToxLoss(1*REM, 0)
-		. = 1
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	if(prob(40))
-		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
-		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
-	..()
-

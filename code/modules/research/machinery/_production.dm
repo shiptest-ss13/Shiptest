@@ -136,10 +136,10 @@
 	if(!istype(D))
 		return FALSE
 	if(!(isnull(allowed_department_flags) || (D.departmental_flags & allowed_department_flags)))
-		say("Warning: Printing failed: This fabricator does not have the necessary keys to decrypt design schematics. Please update the research data with the on-screen button and contact Nanotrasen Support!")
+		say("Warning: Printing failed: This fabricator does not have the necessary keys to decrypt design schematics. Please update the research data with the on-screen button and contact technical support!")
 		return FALSE
 	if(D.build_type && !(D.build_type & allowed_buildtypes))
-		say("This machine does not have the necessary manipulation systems for this design. Please contact Nanotrasen Support!")
+		say("This machine does not have the necessary manipulation systems for this design. Please contact technical support!")
 		return FALSE
 	if(!materials.mat_container)
 		say("No connection to material storage, please contact the quartermaster.")
@@ -251,7 +251,7 @@
 	var/list/l = list()
 	var/coeff = efficiency_coeff
 	l += "<h2>Search Results:</h2>"
-	l += "<form name='search' action='?src=[REF(src)]'>\
+	l += "<form name='search' action='byond://?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
 	<input type='hidden' name='search' value='to_search'>\
 	<input type='text' name='to_search'>\
@@ -340,7 +340,7 @@
 
 /obj/machinery/rnd/production/proc/ui_screen_main()
 	var/list/l = list()
-	l += "<form name='search' action='?src=[REF(src)]'>\
+	l += "<form name='search' action='byond://?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
 	<input type='hidden' name='search' value='to_search'>\
 	<input type='hidden' name='type' value='proto'>\

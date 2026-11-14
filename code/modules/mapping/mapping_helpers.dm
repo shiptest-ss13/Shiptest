@@ -84,6 +84,8 @@
 	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = ""
 	invisibility = INVISIBILITY_OBSERVER
+	// Unless otherwise specified, layer above everything
+	layer = ABOVE_ALL_MOB_LAYER
 	var/late = FALSE
 
 /obj/effect/mapping_helpers/Initialize()
@@ -515,12 +517,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/chair/tim_buckley
 	name = "chair buckler 12000"
 	desc = "buckles a guy into the chair if theres a guy and a chair."
+	late = TRUE
 
 /obj/effect/mapping_helpers/chair/tim_buckley/LateInitialize()
-	var/turf/turf = get_turf(src)
-	if(locate(/obj/structure/chair) in turf && locate(/mob/living/carbon) in turf)
-		var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in turf
-		var/mob/living/carbon/idiot = locate(/mob/living/carbon)
+	var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in loc
+	var/mob/living/idiot = locate(/mob/living) in loc
+	if(idiot_throne && idiot)
 		idiot_throne.buckle_mob(idiot, TRUE)
 		qdel(src)
 	log_mapping("[src] at [x],[y] could not find a chair and guy on current turf.")
@@ -532,8 +534,103 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/turf/burnt
 	name = "turf_burner"
 	desc = "burns the everliving shit out of the turf its on."
+	late = TRUE
 
 /obj/effect/mapping_helpers/turf/burnt/LateInitialize()
 	var/turf/our_turf = loc
 	our_turf.burn_tile()
 	qdel(src)
+
+/obj/effect/mapping_helpers/neuter
+	icon_state = "cut"
+	late = TRUE
+	var/weapon_drop_chance = 0
+
+/obj/effect/mapping_helpers/neuter/LateInitialize()
+	var/mob/living/basic/human/human = locate(/mob/living/basic/human) in loc
+	if(human)
+		human.weapon_drop_chance = weapon_drop_chance
+		qdel(src)
+		return
+	var/mob/living/simple_animal/hostile/human/dog = locate(/mob/living/simple_animal/hostile/human) in loc
+	if(dog)
+		dog.weapon_drop_chance = weapon_drop_chance
+		qdel(src)
+		return
+	log_mapping("[src] at [x],[y] could not find a hostile human to neuter.")
+	qdel(src)
+
+/obj/effect/mapping_helpers/lights
+	name = "area light helper"
+	desc = "set: flicker chance, amount of toggle delay, random delay (stagger), light switch status. flicker_chance is set as a percentage, delay is set in deciseconds. if lightswitch = 0, lights are turned off."
+	late = TRUE
+	var/flicker_chance = 0
+	var/stagger = 0
+	var/delay = 0
+	var/lightswitch = 1
+
+/obj/effect/mapping_helpers/lights/LateInitialize()
+	var/area/area = get_area(src)
+	for(var/thing in area)
+		if(istype(thing, /obj/machinery/light))
+			var/obj/machinery/light/light = thing
+			if(prob(flicker_chance))
+				light.start_flickering()
+			light.stagger = stagger
+			light.delay = delay
+			area.lightswitch = lightswitch
+	qdel(src)
+
+/obj/effect/oneway
+	name = "one way effect"
+	desc = "Only lets things in from it's dir."
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
+	icon_state = "field_dir"
+	invisibility = INVISIBILITY_MAXIMUM
+	anchored = TRUE
+
+/obj/effect/oneway/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	return . && border_dir == dir
+
+
+/obj/effect/wind
+	name = "wind effect"
+	desc = "Creates pressure effect in it's direction. Use sparingly."
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
+	icon_state = "field_dir"
+	invisibility = INVISIBILITY_MAXIMUM
+	var/strength = 30
+
+/obj/effect/wind/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj,src)
+
+/obj/effect/wind/process(seconds_per_tick)
+	var/turf/open/T = get_turf(src)
+	if(istype(T))
+		T.consider_pressure_difference(get_step(T,dir),strength)
+
+//Keep these rare due to cost of doing these checks
+/obj/effect/path_blocker
+	name = "magic barrier"
+	desc = "You shall not pass."
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
+	icon_state = "blocker" //todo make this actually look fine when visible
+	anchored = TRUE
+	var/list/blocked_types = list()
+	var/reverse = FALSE //Block if path not present
+
+/obj/effect/path_blocker/Initialize()
+	. = ..()
+	if(blocked_types.len)
+		blocked_types = typecacheof(blocked_types)
+
+/obj/effect/path_blocker/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(blocked_types.len)
+		var/list/mover_contents = mover.GetAllContents()
+		for(var/atom/movable/thing in mover_contents)
+			if(blocked_types[thing.type])
+				return reverse
+	return !reverse

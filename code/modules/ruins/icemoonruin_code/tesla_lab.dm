@@ -80,35 +80,19 @@
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner)
 			continue
 		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, braim_bamage, 200)
+		looking.flash_act(intensity = 3, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
+		SEND_SOUND(looking, 'sound/effects/anomaly/static.ogg')
 
 /obj/effect/temp_visual/phase_in
 	name = "anomalous field"
-	icon_state = "phasein"
+	icon = 'icons/effects/anomalies.dmi'
+	icon_state = "static"
 	layer = 4
 	duration = 5
 
 /obj/effect/temp_visual/phase_out
 	name = "anomalous field"
-	icon_state = "phaseout"
+	icon = 'icons/effects/anomalies.dmi'
+	icon_state = "static"
 	layer = 4
 	duration = 5
-
-/obj/effect/mob_spawn/human/corpse/clip
-	name = "CLIP corpse spawner"
-
-/obj/effect/mob_spawn/human/corpse/clip/researcher
-	name = "CLIP Researcher Spawner"
-	outfit = /datum/outfit/job/clip/scientist
-
-/obj/effect/mob_spawn/human/corpse/clip/vc
-	name = "CLIP VC Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/vehicle_pilot
-
-/obj/effect/mob_spawn/human/corpse/clip/minuteman
-	name = "CLIP Minuteman Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
-
-/obj/effect/mob_spawn/human/corpse/clip/minuteman/forcefem
-	name = "CLIP Minuteman Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
-	mob_gender = FEMALE

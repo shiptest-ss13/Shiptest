@@ -163,3 +163,9 @@
 	possible_weathers = list(
 		/datum/weather/rain/heavy/storm_intense = 100,
 	)
+
+/datum/weather_controller/thousand_eyes
+		possible_weathers = list(
+			/datum/weather/thousand_eyes_fog = 25,
+			/datum/weather/thousand_eyes = 75
+			)

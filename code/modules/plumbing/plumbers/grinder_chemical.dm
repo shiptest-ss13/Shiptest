@@ -54,8 +54,7 @@
 				I.reagents.trans_to(src, I.reagents.total_volume, transfered_by = src)
 			qdel(I)
 			return
-		I.on_grind()
-		reagents.add_reagent_list(I.grind_results)
+		reagents.add_reagent_list(I.on_grind())
 		if(I.reagents)
 			I.reagents.trans_to(src, I.reagents.total_volume, transfered_by = src)
 		qdel(I)

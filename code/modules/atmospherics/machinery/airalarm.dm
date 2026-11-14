@@ -40,8 +40,7 @@
 
 /obj/item/wallframe/airalarm
 	name = "air alarm frame"
-	desc = "Used for building Air Alarms."
-	icon = 'icons/obj/monitors.dmi'
+	desc = "Used for building air alarms."
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
 	pixel_shift = 28
@@ -62,7 +61,7 @@
 /obj/machinery/airalarm
 	name = "air alarm"
 	desc = "A machine that monitors atmosphere levels. Goes off if the area is dangerous."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'icons/obj/wallmounts/airalarm.dmi'
 	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
@@ -135,7 +134,7 @@
 	)
 
 /obj/machinery/airalarm/freezer // Won't go off for low temps; Won't heat the room
-	desc = "A machine that monitors atmosphere levels. This one is set to go off in room temperature, as to not let freezer contents spoil."
+	desc = "A machine that monitors atmosphere levels. This one is set to go off at room temperature, so as to not let freezer contents spoil."
 	heating_manage = FALSE
 
 	TLV = list( // Breathable air.
@@ -239,7 +238,7 @@
 /obj/machinery/airalarm/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 
 //all air alarms in area are connected via magic
 /area
@@ -280,6 +279,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 /obj/machinery/airalarm/Initialize(mapload)
 	. = ..()
 	set_frequency(frequency)
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/machinery/airalarm/examine(mob/user)
 	. = ..()
@@ -493,7 +493,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 					tlv.vars[name] = -1
 				else
 					tlv.vars[name] = round(value, 0.01)
-				investigate_log(" treshold value for [env]:[name] was set to [value] by [key_name(usr)]",INVESTIGATE_ATMOS)
+				investigate_log(" threshold value for [env]:[name] was set to [value] by [key_name(usr)]",INVESTIGATE_ATMOS)
 				. = TRUE
 		if("mode")
 			mode = text2num(params["mode"])
@@ -720,10 +720,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		. += mutable_appearance(icon, emissive_state)
 		. += mutable_appearance(icon, "light_emissive", layer, EMISSIVE_PLANE)
 
-	if(perc_danger_level) //When there's any danger level, light up the "AIR" sign too
-		. += mutable_appearance(icon, "alarm_sign")
-		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
-
 /obj/machinery/airalarm/process(seconds_per_tick)
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
 		return
@@ -765,7 +761,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 /obj/machinery/airalarm/proc/airalarm_toggleheat()
 	if(heating_manage)
 		if(heating_current_mode == "Heat")
-			visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area"))
+			visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area."))
 			heating_current_mode = "Idle"
 			heating_manage = FALSE
 			return
@@ -790,14 +786,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		wanted_mode = "Idle"
 
 	if(wanted_mode == "Idle" & heating_current_mode == "Heat")
-		visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area"))
+		visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area."))
 		playsound(src, 'sound/machines/terminal_off.ogg', 40)
 		heating_current_mode = "Idle"
 		set_idle_power()
 		return
 
 	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
-		visible_message(span_notice("The air alarm makes a quiet click as it starts heating the area"))
+		visible_message(span_notice("The air alarm makes a quiet click as it starts heating the area."))
 		playsound(src, 'sound/machines/terminal_on.ogg', 40)
 		heating_current_mode = "Heat"
 		set_active_power()
@@ -927,6 +923,24 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 	return ..()
 
+/obj/machinery/airalarm/bullet_act(obj/projectile/hitting_projectile)
+	if(prob(50))
+		switch(rand(1,3))
+			if(1 to 2)
+				visible_message(span_warning("[src] lets out a plume of smoke as it's shot!"), vision_distance = 3)
+				playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+				var/datum/effect_system/smoke_spread/transparent/bad/smoke = new
+				smoke.set_up(3, src)
+				smoke.start()
+				qdel(smoke)
+			if(3)
+				visible_message(span_warning("[src]'s internal heater shorts and shoots flames!"), vision_distance = 3)
+				if(isturf(loc))
+					var/turf/open/fire = loc
+					fire.ignite_turf(10)
+	. = ..()
+
+
 /obj/machinery/airalarm/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if((buildstage == 0) && (the_rcd.upgrade & RCD_UPGRADE_SIMPLE_CIRCUITS))
 		return list("mode" = RCD_UPGRADE_SIMPLE_CIRCUITS, "delay" = 20, "cost" = 1)
@@ -942,12 +956,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			return TRUE
 	return FALSE
 
-/obj/machinery/airalarm/AltClick(mob/user)
-	..()
-	if(!user.canUseTopic(src, !issilicon(user)) || !isturf(loc))
-		return
-	else
-		togglelock(user)
+/obj/machinery/airalarm/attack_hand_secondary(mob/user, list/modifiers)
+	togglelock(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/airalarm/proc/togglelock(mob/living/user)
 	if(machine_stat & (NOPOWER|BROKEN))

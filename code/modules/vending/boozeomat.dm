@@ -36,6 +36,7 @@
 		/obj/item/reagent_containers/food/drinks/coffee = 8,
 		/obj/item/reagent_containers/food/drinks/ale = 6,
 		/obj/item/reagent_containers/food/drinks/beer = 8,
+		/obj/item/reagent_containers/food/drinks/mead = 8,
 		/obj/item/reagent_containers/food/drinks/bottle/gin = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/tequila = 5,
@@ -61,10 +62,11 @@
 		/obj/item/reagent_containers/food/drinks/bottle/sososeta = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
 		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
-		/obj/item/garnish/olives = 10,
-		/obj/item/garnish/umbrellared = 10,
-		/obj/item/garnish/umbrellablue = 10,
-		/obj/item/garnish/umbrellagreen = 10
+		/obj/item/storage/box/straw = 2,
+		/obj/item/storage/box/garnish = 5,
+		/obj/item/garnish/olives = 5,
+		/obj/item/garnish/cherry = 5,
+		/obj/item/garnish/pineapples = 5,
 	)
 	contraband = list()
 	premium = list(
@@ -74,7 +76,6 @@
 		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 5)
 
-	product_slogans = "I hope nobody asks me for a cup of tea...;Alcohol is everyone's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty 'round this sector?"
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is everyone's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 53 FSC!;Award-winning wine!;Maximum alcohol!;Everyone loves beer.;A toast for progress!"
 	req_access = list(ACCESS_BAR)
 	refill_canister = /obj/item/vending_refill/boozeomat

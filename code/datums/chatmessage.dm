@@ -103,18 +103,12 @@
 /datum/chatmessage/proc/generate_image(text, atom/target, mob/owner, list/extra_classes, lifespan, datum/language/message_language)
 	// Register client who owns this message
 	owned_by = owner.client
-	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_qdel))
+	RegisterSignal(owned_by, COMSIG_QDELETING, PROC_REF(on_parent_qdel))
 
 	// Clip message
 	var/maxlen = owned_by.prefs.max_chat_length
 	if (length_char(text) > maxlen)
 		text = copytext_char(text, 1, maxlen + 1) + "..." // BYOND index moment
-
-	// Calculate target color if not already present
-	if (!target.chat_color || target.chat_color_name != target.name)
-		target.chat_color = colorize_string(target.name)
-		target.chat_color_darkened = colorize_string(target.name, 0.85, 0.85)
-		target.chat_color_name = target.name
 
 	// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
 	var/static/regex/url_scheme = new(@"[A-Za-z][A-Za-z0-9+-\.]*:\/\/", "g")
@@ -130,22 +124,38 @@
 	if (!ismob(target))
 		extra_classes |= "small"
 
+	var/chat_color_name_to_use
+
 	// Append radio icon if from a virtual speaker
 	if ("virtual-speaker" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "radio")
 		text =  "\icon[r_icon]&nbsp;[text]"
-	else if ("emote" in extra_classes)
-		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "emote")
-		text =  "\icon[r_icon]&nbsp;[text]"
 	else if("looc" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "looc")
 		text =  "\icon[r_icon]&nbsp;[text]"
+	else if ("emote" in extra_classes)
+		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "emote")
+		text =  "\icon[r_icon]&nbsp;[text]"
+		chat_color_name_to_use = target.get_visible_name() // use face name for nonverbal messages
 
 	var/datum/language/language = GLOB.language_datum_instances[message_language]
 	if(language?.display_icon(owner))
 		var/icon/l_icon = icon(language.icon, icon_state = language.icon_state)
 		l_icon.Scale(CHAT_LANGUAGE_ICON_SIZE, CHAT_LANGUAGE_ICON_SIZE)
 		text = "\icon[l_icon]&nbsp;[text]"
+
+	if(isnull(chat_color_name_to_use))
+		if(initial(language?.flags) & SIGNED_LANGUAGE)
+			chat_color_name_to_use = target.get_visible_name() // use face name for signers too
+		else
+			chat_color_name_to_use = target.GetVoice() // for everything else, use the target's voice name
+
+	// Calculate target color if not already present
+	if (!target.chat_color || target.chat_color_name != chat_color_name_to_use)
+		target.chat_color = colorize_string(chat_color_name_to_use)
+		target.chat_color_darkened = colorize_string(chat_color_name_to_use, 0.85, 0.85)
+		target.chat_color_name = chat_color_name_to_use
+
 
 	var/tgt_color = target.chat_color
 	if("looc" in extra_classes)
@@ -156,7 +166,7 @@
 
 	// Approximate text height
 	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[target.say_emphasis(text)]</span>"
-	var/mheight = WXH_TO_HEIGHT(owned_by.MeasureText(complete_text, null, CHAT_MESSAGE_WIDTH))
+	var/mheight = WXH_TO_HEIGHT(owned_by?.MeasureText(complete_text, null, CHAT_MESSAGE_WIDTH))
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers

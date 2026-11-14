@@ -53,7 +53,7 @@
 			M.hallucination += 50
 
 	//Flash
-	if(M.flash_act(affect_silicon = 1))
+	if(M.flash_act(affect_silicon = 1) & FLASH_EFFECT)
 		M.Paralyze(max(10/max(1,distance), 5))
 		M.Knockdown(max(100/max(1,distance), 40))
 		if(iscarbon(M))

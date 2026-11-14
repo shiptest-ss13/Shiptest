@@ -6,10 +6,10 @@
 	core = /obj/item/assembly/signaler/anomaly/sparkler
 	effectrange = 4
 	pulse_delay = 1 SECONDS
+	secondary_pulse_delay = 5 SECONDS
 
 /obj/effect/anomaly/sparkler/anomalyEffect()
 	..()
-
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return
 
@@ -18,8 +18,13 @@
 	new /obj/effect/particle_effect/sparks(spot)
 	return
 
-
 /obj/effect/anomaly/sparkler/Bumped(atom/movable/AM)
+	if(isliving(AM))
+		var/mob/living/victim = AM
+		victim.electrocute_act(20, name, flags = SHOCK_NOGLOVES)
+	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
+		return
+	COOLDOWN_START(src, pulse_secondary_cooldown, secondary_pulse_delay)
 	tesla_zap(src, 2, 5000, ZAP_FUSION_FLAGS)
 
 /obj/effect/anomaly/sparkler/detonate()

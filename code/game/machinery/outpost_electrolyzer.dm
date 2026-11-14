@@ -33,10 +33,19 @@
 /obj/machinery/computer/electrolyzer_console
 	name = "electrolyzer console"
 	desc = "Deposits hydrogen merits, with 20% going to outpost upkeep."
-	icon = 'icons/obj/machines/mining_machines.dmi'
-	icon_state = "console"
+
+	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon_state = "wallconsole"
+	icon_screen = "wallconsole_electrolyzer"
+	icon_keyboard = null
+	layer = SIGN_LAYER
+	unique_icon = TRUE
+
+	density = FALSE
 
 	var/obj/machinery/mineral/electrolyzer/linked_electrolyzer
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/electrolyzer_console, 17)
 
 /obj/machinery/computer/electrolyzer_console/proc/electrolyze_item(obj/item/I)
 	var/obj/item/stack/ore/ice/S = I
@@ -147,7 +156,7 @@
 /obj/machinery/atmospherics/components/unary/hydrogen_pump
 	name = "hydrogen pump"
 	desc = "Lets you use merits to buy hydrogen."
-	icon = 'icons/obj/atmos.dmi'
+	icon = 'icons/obj/atmospherics/port_atmos.dmi'
 	icon_state = "hydrogen_pump"
 
 	use_power = IDLE_POWER_USE
@@ -235,7 +244,6 @@
 	icon_screen = "exchange"
 	icon_keyboard = "power_key"
 
-	//GLOB.total_merits_exchanged starts at 0
 	var/merits = NONE
 	var/credits = NONE
 
@@ -278,17 +286,11 @@
 	if(makenoise)
 		playsound(src, 'sound/machines/coindrop.ogg', 20, FALSE)
 
-/obj/machinery/computer/hydrogen_exchange/proc/resetmerits() //debug proc
-	GLOB.total_merits_exchanged = 0
 
 /obj/machinery/computer/hydrogen_exchange/proc/convert_to_credits()
 	if(merits)
 		playsound(src, 'sound/machines/pda_button1.ogg', 20, FALSE)
-		var/oldtotal = GLOB.total_merits_exchanged ** MERIT_EXPONENT
-		var/newtotal = (GLOB.total_merits_exchanged + merits) ** MERIT_EXPONENT
-		var/reducedmerits = newtotal - oldtotal
-		GLOB.total_merits_exchanged += merits
-		credits += round(reducedmerits * CREDITS_TO_MERITS, 1)
+		credits += round(merits * CREDITS_TO_MERITS, 1)
 		merits = 0
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20, FALSE)
@@ -312,15 +314,9 @@
 		ui.open()
 
 /obj/machinery/computer/hydrogen_exchange/ui_data(mob/user)
-	var/next_merit_rate
-	if(GLOB.total_merits_exchanged)
-		next_merit_rate = round((GLOB.total_merits_exchanged ** MERIT_EXPONENT) / GLOB.total_merits_exchanged * CREDITS_TO_MERITS, 0.01)
-	else
-		next_merit_rate = CREDITS_TO_MERITS
 	var/list/data = list()
 	data["credits"] = credits
 	data["merits"] = merits
-	data["next_merit_rate"] = next_merit_rate
 	data["credits_to_merits"] = CREDITS_TO_MERITS
 	data["credit_tax"] = (1 - meritmultiplier()) * 100
 	return data

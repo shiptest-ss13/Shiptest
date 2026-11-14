@@ -9,6 +9,11 @@
 	desc = "A black beret."
 	icon_state = "beret_black"
 
+/obj/item/clothing/head/beret/aclf
+	name = "ACLF beret"
+	desc = "A hand-stitched beret bearing Anti-Corporation Liberation Front iconography."
+	icon_state = "aclfberet"
+
 /obj/item/clothing/head/beret/highlander
 	desc = "That was white fabric. <i>Was.</i>"
 	dog_fashion = null //THIS IS FOR SLAUGHTER, NOT PUPPIES
@@ -145,7 +150,7 @@
 
 /obj/item/clothing/head/beret/service
 	name = "service beret"
-	desc =  "A standard Nanotrasen service beret. Held by those with the sanity to serve others in the far frontier."
+	desc =  "A standard Makosso-Warra service beret. Held by those with the sanity to serve others in the far frontier."
 	icon_state = "beret_serv"
 
 /obj/item/clothing/head/beret/qm
@@ -250,10 +255,7 @@
 	icon_state = "beret_cmo"
 	armor = list("bio" = 30, "acid" = 20)
 
-/obj/item/clothing/head/beret/cmo/cybersun
-	name = "medical director beret"
-	desc = "A burgundy-red beret with a silver cross. It smells very sterile."
-	icon_state = "meddirectorberet"
+
 
 //Command
 /obj/item/clothing/head/beret/captain
@@ -276,7 +278,7 @@
 
 /obj/item/clothing/head/beret/centcom_formal
 	name = "\improper CentCom Formal Beret"
-	desc = "Sometimes, a compromise between fashion and defense needs to be made. Thanks to Nanotrasen's most recent nano-fabric durability enhancements, this time, it's not the case."
+	desc = "Sometimes, a compromise between fashion and defense needs to be made. Thanks to Makosso-Warra's most recent nano-fabric durability enhancements, this time, it's not the case."
 	icon = 'icons/obj/clothing/head/spacesuits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "beret_badge"

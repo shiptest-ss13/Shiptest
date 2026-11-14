@@ -1,52 +1,14 @@
 SUBSYSTEM_DEF(missions)
 	name = "Missions"
-	flags = SS_NO_INIT
+	flags = SS_NO_INIT|SS_NO_FIRE
 	priority = FIRE_PRIORITY_MISSIONS
 	wait = 10 SECONDS
-	var/default_mission_count = 3
-	var/list/obj/effect/landmark/mission_poi/unallocated_pois = list()
-	var/list/datum/mission/ruin/inactive_ruin_missions = list()
-	var/list/datum/mission/ruin/active_ruin_missions = list()
-
-/datum/controller/subsystem/missions/stat_entry(msg)
-	var/unallocated = unallocated_pois.len
-	var/inactive_count = inactive_ruin_missions.len
-	var/active_count = active_ruin_missions.len
-	msg = "missions:A[active_count]|I:[inactive_count]|pois:[unallocated]"
-	return ..()
-
-/datum/controller/subsystem/missions/fire(resumed)
-	for(var/datum/mission/ruin/mission_to_start in inactive_ruin_missions)
-		if(MC_TICK_CHECK)
-			return
-
-		//Make sure we dont ONLY take the one of the top.
-		if(prob(50))
-			continue
-
-		if(!(active_ruin_missions.len < default_mission_count + round((SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions)))))
-			break
-
-		if(mission_to_start.mission_limit)
-			var/existing_count = 0
-			for(var/datum/mission/ruin/mission_to_count in active_ruin_missions)
-				if(mission_to_start.type == mission_to_count.type)
-					existing_count++
-			if(existing_count >= mission_to_start.mission_limit)
-				//testing("skipping [mission_to_start][ADMIN_VV(mission_to_start)] because too many matching types exist already.")
-				continue
-
-		mission_to_start.start_mission()
-
-//In case of emergency, pull lever
-/datum/controller/subsystem/missions/proc/kill_active_missions()
-	message_admins("All active missions have been deleted.")
-	QDEL_LIST(active_ruin_missions)
-	return TRUE
 
 // should probably come up with a better solution for this
 // hierarchical weighting? would need to distinguish between "real" and "fake" missions
-/datum/controller/subsystem/missions/proc/get_weighted_mission_type()
+/datum/controller/subsystem/missions/proc/get_weighted_mission_type(datum/overmap_star_system/system_to_check)
+	if(!system_to_check)
+		CRASH("get_weighted_mission_type called without target star system!")
 	var/static/list/weighted_missions
 	if(!weighted_missions)
 		weighted_missions = list()
@@ -56,19 +18,71 @@ SUBSYSTEM_DEF(missions)
 				continue
 			if(mis_type::weight > 0)
 				weighted_missions[mis_type] = mis_type::weight
-	return pickweight_float(weighted_missions)
+
+	return get_valid_mission(system_to_check, weighted_missions)
+
+/datum/controller/subsystem/missions/proc/get_valid_mission(datum/overmap_star_system/system_to_check, list/valid_missions)
+	var/datum/mission/target_mission = pick_weight(valid_missions)
+	//if the mission has no location requirements, return it early
+	if(!length(target_mission.required_locations))
+		return target_mission
+	//otherwise check the target overmap for an encounter that fulfills the mission's need
+	for(var/datum/overmap/dynamic/encounter as anything in system_to_check.dynamic_encounters)
+		for(var/location in target_mission.required_locations)
+			if(encounter.planet.planet == location)
+				return target_mission
+	//if we don't find one for this current mission, remove it from the list and try again with a new one.
+	valid_missions -= target_mission
+	if(!length(valid_missions))
+		return null
+	return get_valid_mission(system_to_check, valid_missions)
 
 /datum/controller/subsystem/missions/proc/get_researcher_name()
 	var/group = pick(list(
 		"Cybersun Biodynamics",
+		"Cybersun Virtual Solutions",
 		"CLIP-GOLD Frontier Investigations Office",
-		"Nanotrasen Frontier Studies Division",
+		"CLIP-LAND Frontier Development Office",
+		"Makosso-Warra Frontier Studies Division",
+		"The N+S Survey Corps",
 		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
 		"The Central Solarian Frontier Research Agency",
 		"NGR Bureau of Expansion",
+		"NGR Bureau of Industry",
 		"A Gezenan newscaster",
+		"PGFN representatives",
 		"Tecetian researchers",
 		"The representative of a Rachnid guild",
 		"A strange sarathi on the outpost"
+	))
+	return group
+
+/datum/controller/subsystem/missions/proc/get_industrial_name()
+	var/group = pick(list(
+		"Clover Photonics",
+		"Etherbor Industries",
+		"Hunter's Pride",
+		"Lanchester City Firearms Plant",
+		"Lanchester Import Co.",
+		"Makosso-Warra Advantage",
+		"Makosso-Warra Sharplite",
+		"Serene Outdoors",
+		"The Solarbundswaffenkammer",
+		"Tadeusz Armory",
+		"Lanchester Shipyards",
+		"Hardline Salvage and Mining",
+		"Makosso-Warra Spaceworks",
+		"Etherbor Lihmona Shipyards",
+		"Ihejirika Civilian Manufacturing",
+		"ISF Spacecraft",
+		"Kasagi-Fischer Partnership",
+		"Miskilamo Spacefaring",
+		"The NGR Bureau of Industry",
+		"The CLIP-MELD Frontier Prospecting Office",
+		"Cybersun Biodynamics",
+		"The Pan-Gezena Federation Federal Development Administration",
+		"The United Teceti Federation Department of Infrastructure",
+		"The Strixiyos Guild of Stellar Shipwrights",
+		"A strange sarathi on the outpost",
 	))
 	return group

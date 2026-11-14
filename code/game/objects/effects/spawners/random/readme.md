@@ -206,29 +206,29 @@ This is just to keep things organized.
 Good:
 
 ```dm
-/obj/effect/spawner/random/food_or_drink/donkpockets
+/obj/effect/spawner/random/food_or_drink/shoalpockets
 	name = "donk pocket box spawner"
 	spawn_loot_double = FALSE
 	loot = list(
-		/obj/item/storage/box/donkpockets/donkpocketspicy,
-		/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-		/obj/item/storage/box/donkpockets/donkpocketpizza,
-		/obj/item/storage/box/donkpockets/donkpocketberry,
-		/obj/item/storage/box/donkpockets/donkpockethonk,
+		/obj/item/storage/box/shoalpockets/shoalpocketspicy,
+		/obj/item/storage/box/shoalpockets/shoalpocketteriyaki,
+		/obj/item/storage/box/shoalpockets/shoalpocketpizza,
+		/obj/item/storage/box/shoalpockets/shoalpocketberry,
+		/obj/item/storage/box/shoalpockets/shoalpockethonk,
 	)
 ```
 
 Bad:
 
 ```dm
-/obj/effect/spawner/random/food_or_drink/donkpockets
+/obj/effect/spawner/random/food_or_drink/shoalpockets
 	name = "donk pocket box spawner"
 	loot = list(
-		/obj/item/storage/box/donkpockets/donkpocketspicy,
-		/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-		/obj/item/storage/box/donkpockets/donkpocketpizza,
-		/obj/item/storage/box/donkpockets/donkpocketberry,
-		/obj/item/storage/box/donkpockets/donkpockethonk,
+		/obj/item/storage/box/shoalpockets/shoalpocketspicy,
+		/obj/item/storage/box/shoalpockets/shoalpocketteriyaki,
+		/obj/item/storage/box/shoalpockets/shoalpocketpizza,
+		/obj/item/storage/box/shoalpockets/shoalpocketberry,
+		/obj/item/storage/box/shoalpockets/shoalpockethonk,
 	)
 	spawn_loot_double = FALSE
 ```

@@ -1,3 +1,13 @@
+/proc/create_ladder_pair(turf/source, turf/destination)
+	if(!istype(source) || !istype(destination))
+		return
+	var/obj/structure/ladder/top = new(source)
+	var/obj/structure/ladder/bottom = new(destination)
+	if(!istype(top)||!istype(bottom))
+		return
+	bottom.connect(top)
+	return list(top, bottom)
+
 // Basic ladder. By default links to the z-level above/below.
 /obj/structure/ladder
 	name = "ladder"
@@ -12,14 +22,7 @@
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
-	if (up)
-		src.up = up
-		up.down = src
-		up.update_appearance()
-	if (down)
-		src.down = down
-		down.up = src
-		down.update_appearance()
+	connect(up, down)
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/ladder/Destroy(force)
@@ -48,6 +51,17 @@
 				L.down = src  // Don't waste effort looping the other way
 				L.update_appearance()
 
+	update_appearance()
+
+/obj/structure/ladder/proc/connect(obj/structure/ladder/up, obj/structure/ladder/down)
+	if (up)
+		src.up = up
+		up.down = src
+		up.update_appearance()
+	if (down)
+		src.down = down
+		down.up = src
+		down.update_appearance()
 	update_appearance()
 
 /obj/structure/ladder/proc/disconnect()

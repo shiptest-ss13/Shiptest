@@ -192,28 +192,6 @@
 	empulse(location, round(created_volume / 12), round(created_volume / 7), 1)
 	holder.clear_reagents()
 
-
-/datum/chemical_reaction/beesplosion
-	required_reagents = list(/datum/reagent/consumable/honey = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/uranium/radium = 1)
-
-/datum/chemical_reaction/beesplosion/on_reaction(datum/reagents/holder, created_volume)
-	var/location = holder.my_atom.drop_location()
-	if(created_volume < 5)
-		playsound(location,'sound/effects/sparks1.ogg', 100, TRUE)
-	else
-		playsound(location,'sound/creatures/bee.ogg', 100, TRUE)
-		var/list/beeagents = list()
-		for(var/R in holder.reagent_list)
-			if(required_reagents[R])
-				continue
-			beeagents += R
-		var/bee_amount = round(created_volume * 0.2)
-		for(var/i in 1 to bee_amount)
-			var/mob/living/simple_animal/hostile/poison/bees/short/new_bee = new(location)
-			if(LAZYLEN(beeagents))
-				new_bee.assign_reagent(pick(beeagents))
-
-
 /datum/chemical_reaction/stabilizing_agent
 	results = list(/datum/reagent/stabilizing_agent = 3)
 	required_reagents = list(/datum/reagent/iron = 1, /datum/reagent/oxygen = 1, /datum/reagent/hydrogen = 1)
@@ -229,23 +207,19 @@
 		new /obj/effect/hotspot(turf)
 	holder.chem_temp = 1000 // hot as shit
 
-/datum/chemical_reaction/reagent_explosion/methsplosion
-	required_temp = 380 //slightly above the meth mix time.
-	required_reagents = list(/datum/reagent/drug/methamphetamine = 1)
+/datum/chemical_reaction/reagent_explosion/rahkrahene
+	required_temp = 497 //slightly above the meth mix time.
+	required_reagents = list(/datum/reagent/drug/rahkrahene = 1)
 	strengthdiv = 6
 	modifier = 1
 	mob_react = FALSE
 
-/datum/chemical_reaction/reagent_explosion/methsplosion/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/reagent_explosion/rahkrahene/on_reaction(datum/reagents/holder, created_volume)
 	var/turf/T = get_turf(holder.my_atom)
 	for(var/turf/turf in range(1,T))
 		new /obj/effect/hotspot(turf)
 	holder.chem_temp = 1000 // hot as shit
 	..()
-
-/datum/chemical_reaction/reagent_explosion/methsplosion/methboom2
-	required_reagents = list(/datum/reagent/diethylamine = 1, /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/hydrogen = 1) //diethylamine is often left over from mixing the ephedrine.
-	required_temp = 300 //room temperature, chilling it even a little will prevent the explosion
 
 /datum/chemical_reaction/sorium
 	results = list(/datum/reagent/sorium = 4)
@@ -303,7 +277,7 @@
 		var/atom/A = holder.my_atom
 		A.flash_lighting_fx(_range = (range + 2))
 	for(var/mob/living/C in get_hearers_in_view(range, location))
-		if(C.flash_act(affect_silicon = TRUE))
+		if(C.flash_act(affect_silicon = TRUE) & FLASH_EFFECT)
 			if(get_dist(C, location) < 4)
 				C.Paralyze(60)
 			else
@@ -322,7 +296,7 @@
 		var/atom/A = holder.my_atom
 		A.flash_lighting_fx(_range = (range + 2))
 	for(var/mob/living/C in get_hearers_in_view(range, location))
-		if(C.flash_act(affect_silicon = TRUE))
+		if(C.flash_act(affect_silicon = TRUE) & FLASH_EFFECT)
 			if(get_dist(C, location) < 4)
 				C.Paralyze(60)
 			else

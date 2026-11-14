@@ -157,6 +157,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
+/area/ship/bridge/cool
+	name = "Bridge"
+	icon_state = "bridge"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
+	lighting_brightness_tube = 6
+
 /// Crew Quarters ///
 /area/ship/crew
 	name = "Crew Quarters"
@@ -176,6 +184,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/crewfive
 	name = "Crew Quarters 5"
+
+/area/ship/crew/command
+	name = "Command Quarters"
+
+/area/ship/crew/breakroom
+	name = "Break Room"
+
+/area/ship/crew/breakroom/command
+	name = "Command Break Room"
 
 /area/ship/crew/specialized
 	name = "???"
@@ -220,6 +237,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm/commad
 	name = "Command Quarters"
 
+/area/ship/crew/dorm/commad/affairs
+	name = "Internal Affairs Agent's Quarters"
+
+/area/ship/crew/dorm/commad/cmo
+	name = "Chief Medical Officer's Quarters"
+
+/area/ship/crew/dorm/commad/cmo/director
+	name = "Medical Director's Quarters"
+
+/area/ship/crew/dorm/commad/hos
+	name = "Head of Security's Quarters"
+
+/area/ship/crew/dorm/commad/hos/director
+	name = "Security Director's Quarters"
+
 /area/ship/crew/toilet
 	name = "Restroom"
 	icon_state = "toilet"
@@ -229,6 +261,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/toilet/three
 	name = "Restroom 3"
+
+/area/ship/crew/toilet/showers
+	name = "Showers"
 
 /area/ship/crew/canteen
 	name = "Canteen"
@@ -266,6 +301,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "law"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
+/area/ship/crew/law_office/affairs
+	name = "Internal Affairs Office"
+	icon_state = "law"
+
 /area/ship/crew/solgov
 	name = "SolGov Consulate"
 	icon_state = "solgov"
@@ -274,6 +313,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/office
 	name = "Office"
 	icon_state = "vacant_office"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ship/crew/office/cic
+	name = "Control Center"
+	icon_state = "vacant_office"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
 	sound_environment = SOUND_AREA_WOODFLOOR
 
 /area/ship/crew/office/lobby
@@ -287,6 +334,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Custodial Closet"
 	icon_state = "janitor"
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ship/crew/smoking
+	name = "Smoking Room"
 
 /// Medical Bay ///
 /area/ship/medical
@@ -309,6 +359,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/medical/psych
 	name = "Psych's Office"
+
+/area/ship/medical/recovery
+	name = "Recovery Room"
+
+/area/ship/medical/recovery/recoveryone
+	name = "Recovery Room 1"
+
+/area/ship/medical/recovery/recoverytwo
+	name = "Recovery Room 2"
+
+/area/ship/medical/storage
+	name = "Medical Storage"
+
+/area/ship/medical/cmo
+	name = "Chief Medical Officer's Office"
+
+/area/ship/medical/cmo/director
+	name = "Medical Director's Office"
 
 /// Science Lab ///
 /area/ship/science
@@ -385,6 +453,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Incinerator"
 	icon_state = "disposal"
 
+/area/ship/engineering/storage
+	name = "Engineering Storage Room"
+
+/area/ship/engineering/hallway
+	name = "Engineering Hallway"
+
+/area/ship/engineering/hallway/port
+	name = "Engineering Port Hallway"
+
+/area/ship/engineering/hallway/starboard
+	name = "Engineering Starboard Hallway"
+
+/area/ship/engineering/hallway/aft
+	name = "Engineering Aft Hallway"
+
 /// Security ///
 /area/ship/security
 	name = "Brig"
@@ -411,6 +494,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/security/dock
 	name = "Shuttle Dock"
+	icon_state = "security"
+
+/area/ship/security/hos
+	name = "Head of Security's Office"
+	icon_state = "security"
+
+/area/ship/security/hos/director
+	name = "Security Director's Office"
 	icon_state = "security"
 
 /// Cargo Bay ///
@@ -460,6 +551,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/hallway/fore
 	name = "Fore Hallway"
+	icon_state = "hallF"
+
+/area/ship/hallway/fore/port
+	name = "Port Fore Hallway"
+	icon_state = "hallF"
+
+/area/ship/hallway/fore/starboard
+	name = "Starboard Fore Hallway"
 	icon_state = "hallF"
 
 /area/ship/hallway/starboard
@@ -538,3 +637,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	lightswitch = TRUE
+
+/area/ship/external/dark
+	name = "Dark External"
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	icon_state = "space_near"

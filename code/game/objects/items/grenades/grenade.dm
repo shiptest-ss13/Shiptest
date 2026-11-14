@@ -18,13 +18,22 @@
 	var/display_timer = 1
 	var/clumsy_check = GRENADE_CLUMSY_FUMBLE
 	var/sticky = FALSE
+	///The AI mob that threw us, if one did, and its factions, kept even if it's gone, so its side doesn't call us out or throw us back at itself
+	var/datum/weakref/ai_thrower
+	var/list/ai_thrower_factions
 	// I moved the explosion vars and behavior to base grenades because we want all grenades to call [/obj/item/grenade/proc/prime] so we can send COMSIG_GRENADE_PRIME
 	///how big of a devastation explosion radius on prime
 	var/ex_dev = 0
 	///how big of a heavy explosion radius on prime
 	var/ex_heavy = 0
+	// how much damage the heavy explosion deals.
+	var/heavy_damage = EX_HEAVY_BASE_DAM
+	var/heavy_item_damage = EX_HEAVY_BASE_ITEM_DAM
 	///how big of a light explosion radius on prime
 	var/ex_light = 0
+	// how much damage the light explosion deals.
+	var/light_damage = EX_LIGHT_BASE_DAM
+	var/light_item_damage = EX_LIGHT_BASE_ITEM_DAM
 	///how big of a flame explosion radius on prime
 	var/ex_flame = 0
 
@@ -34,6 +43,10 @@
 	/// the higher this number, the more projectiles are created as shrapnel
 	var/shrapnel_radius
 	var/shrapnel_initialized
+
+/obj/item/grenade/Destroy()
+	GLOB.ai_live_explosives -= src
+	return ..()
 
 /obj/item/grenade/deconstruct(disassembled = TRUE)
 	if(!disassembled)
@@ -68,6 +81,19 @@
 		if(!botch_check(user)) // if they botch the prime, it'll be handled in botch_check
 			preprime(user)
 
+/obj/item/grenade/pickup(mob/user)
+	. = ..()
+	clear_ai_thrower()
+
+// clear the owner so AI can react to it coming back
+/obj/item/grenade/proc/clear_ai_thrower()
+	ai_thrower = null
+	ai_thrower_factions = null
+
+/obj/item/grenade/proc/set_ai_thrower(mob/living/thrower)
+	ai_thrower = WEAKREF(thrower)
+	ai_thrower_factions = thrower.faction.Copy()
+
 /obj/item/grenade/proc/log_grenade(mob/user, turf/T)
 	log_bomber(user, "has primed a", src, "for detonation")
 
@@ -85,6 +111,7 @@
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	SEND_SIGNAL(src, COMSIG_GRENADE_ARMED, det_time, delayoverride)
+	ai_note_live_explosive(src, ai_grenade_danger_radius(src), isnull(delayoverride)? det_time : delayoverride) // notify nearby mobs/AI
 	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/proc/prime()
@@ -93,8 +120,9 @@
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
 
 	SEND_SIGNAL(src, COMSIG_GRENADE_PRIME)
+	ai_note_grenade_went_off(src)
 	if(ex_dev || ex_heavy || ex_light || ex_flame)
-		explosion(loc, ex_dev, ex_heavy, ex_light, flame_range = ex_flame)
+		explosion(loc, ex_dev, ex_heavy, ex_light, flame_range = ex_flame, light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 
 /obj/item/grenade/proc/update_mob()
 	if(ismob(loc))

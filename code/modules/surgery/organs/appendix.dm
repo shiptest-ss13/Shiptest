@@ -11,6 +11,8 @@
 	now_failing = span_warning("An explosion of pain erupts in your lower right abdomen!")
 	now_fixed = span_info("The pain in your abdomen has subsided.")
 
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5, /datum/reagent/toxin/bad_food = 5)
+
 	var/inflamed
 
 /obj/item/organ/appendix/update_name()
@@ -21,13 +23,13 @@
 	icon_state = "[base_icon_state][inflamed ? "inflamed" : ""]"
 	return ..()
 
-/obj/item/organ/appendix/on_life()
+/obj/item/organ/appendix/on_life(seconds_per_tick, times_fired)
 	..()
 	if(!(organ_flags & ORGAN_FAILING))
 		return
 	var/mob/living/carbon/M = owner
 	if(M)
-		M.adjustToxLoss(4, TRUE, TRUE)	//forced to ensure people don't use it to gain tox as slime person
+		M.adjustToxLoss(2 * seconds_per_tick, TRUE, TRUE)	//forced to ensure people don't use it to gain tox as slime person
 
 /obj/item/organ/appendix/get_availability(datum/species/S)
 	return !(TRAIT_NOHUNGER in S.species_traits)

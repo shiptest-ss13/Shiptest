@@ -56,10 +56,6 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/overrides_metab = 0
 	/// above this overdoses happen
 	var/overdose_threshold = 0
-	/// above this amount addictions start
-	var/addiction_threshold = 0
-	/// increases as addiction gets worse
-	var/addiction_stage = 0
 	/// You fucked up and this is now triggering its overdose effects, purge that shit quick.
 	var/overdosed = 0
 	///if false stops metab in liverless mobs
@@ -76,6 +72,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/process_flags = ORGANIC
 	///How good of an accelerant is this reagent
 	var/accelerant_quality = 0
+	///If we don't show this on the autowiki reagents list, for things like Adminordrazine
+	var/autowiki_hidden = FALSE
+	///Path of the abstract parent type, to avoid doing stuff for things like /datum/reagent/drug
+	var/bad_type = /datum/reagent
 
 	///The section of the autowiki chem table this reagent will be under
 	var/category = "Misc"
@@ -99,11 +99,11 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return 0
-	if(method == VAPOR) //smoke, foam, spray
+	if(method & (VAPOR|INHALE)) //smoke, foam, spray, inhalers
 		if(M.reagents)
 			var/modifier = clamp((1 - touch_protection), 0, 1)
-			var/amount = round(reac_volume*modifier, 0.1)
-			if(amount >= 0.5)
+			var/amount = round(reac_volume*modifier, 0.01) - M.reagents.get_reagent_amount(type)
+			if(amount >= metabolization_rate || (method & INHALE))
 				M.reagents.add_reagent(type, amount)
 	SSblackbox.record_feedback("nested tally", "reagent_expose_mob", 1, list("[name]", "[M]", "[method]", "[reac_volume]"))
 	return 1
@@ -117,9 +117,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return
 
 /// Called from [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/on_mob_life(mob/living/carbon/M)
+/datum/reagent/proc/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	current_cycle++
-	holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency) //By default it slowly disappears.
+	holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency * seconds_per_tick) //By default it slowly disappears.
 	return
 
 ///Called after a reagent is transfered
@@ -171,34 +171,13 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return FALSE
 
 /// Called if the reagent has passed the overdose threshold and is set to be triggering overdose effects
-/datum/reagent/proc/overdose_process(mob/living/M)
+/datum/reagent/proc/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	return
 
 /// Called when an overdose starts
 /datum/reagent/proc/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("You feel like you took too much of [name]!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
-	return
-
-/// Called when addiction hits stage1, see [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/addiction_act_stage1(mob/living/M)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_light, name)
-	if(prob(30))
-		to_chat(M, span_notice("You feel like having some [name] right about now."))
-	return
-
-/// Called when addiction hits stage2, see [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/addiction_act_stage2(mob/living/M)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_medium, name)
-	if(prob(30))
-		to_chat(M, span_notice("You feel like you need [name]. You just can't get enough."))
-	return
-
-/// Called when addiction hits stage3, see [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/addiction_act_stage3(mob/living/M)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_severe, name)
-	if(prob(30))
-		to_chat(M, span_danger("You have an intense craving for [name]."))
 	return
 
 /**
@@ -210,17 +189,6 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(!mytray)
 		return
 
-/// Called when addiction hits stage4, see [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/addiction_act_stage4(mob/living/M)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_critical, name)
-	if(prob(30))
-		to_chat(M, span_boldannounce("You're not feeling good at all! You really need some [name]."))
-	return
-
-///Called when the addiction is removed, see [/datum/reagents/proc/remove_addiction]
-/datum/reagent/proc/on_addiction_removal(mob/living/M)
-	return
-
 /proc/pretty_string_from_reagent_list(list/reagent_list)
 	//Convert reagent list to a printable string for logging etc
 	var/list/rs = list()
@@ -228,3 +196,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 		rs += "[R.name], [R.volume]"
 
 	return rs.Join(" | ")
+
+/// Should return a associative list where keys are taste descriptions and values are strength ratios
+/datum/reagent/proc/get_taste_description(mob/living/taster)
+	if(isnull(taster) || !HAS_TRAIT(taster, TRAIT_SENSITIVE_TONGUE))
+		return list("[taste_description]" = 1)
+	return list("[lowertext(name)]" = 1)

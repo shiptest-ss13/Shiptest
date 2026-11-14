@@ -74,14 +74,14 @@
 	icon_state = "navycoat"
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|GROIN
+	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	armor = list("melee" = 35, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	allowed = null
 
 /obj/item/clothing/suit/armor/gezena/medic
@@ -102,13 +102,46 @@
 	icon_state = "captaincoat"
 	item_state = "bluecloth"
 
+/obj/item/clothing/suit/armor/gezena/navy
+	name = "\improper navy flak vest"
+	desc = "A Gezenan flak vest in a relaxing sky blue. Identification reflectors on the back help sailors navigate and find one another during emergencies"
+	icon_state = "navyvest"
+	item_state = "navyvest"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
 /obj/item/clothing/suit/armor/gezena/marine
-	name = "\improper composite marine vest"
-	desc = "Heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
+	name = "\improper marine combat vest"
+	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green. This set is in the most basic configuration. Has an internal lining mesh for enhanced thermoregulation."
 	icon_state = "marinevest"
 	item_state = "marinevest"
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
+/obj/item/clothing/suit/armor/gezena/marine/interceptor
+	name = "\improper marine interceptor vest"
+	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green. This set inculdes the full suite of extremity protectors. Has an internal lining mesh for enhanced thermoregulation."
+	icon_state = "marineinterceptor"
+	item_state = "marinevest"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
+	slowdown = 0.4
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
@@ -116,7 +149,7 @@
 
 /obj/item/clothing/suit/space/gezena
 	name = "navy utility suit"
-	desc = "With bright hardened plating covering the body and tail, the 'Rakalla' utility suit stands firmly between you and the void of space."
+	desc = "Constructed of hardened thermoplastic plating, the 'Rakalla' utility suit stands firmly between you and the void of space."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -133,9 +166,20 @@
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
+/obj/item/clothing/suit/space/gezena/dreadnaut
+	name = "navy dreadnaut suit"
+	desc = "Designed to withstand all matter of spaceborne threat, the 'Tikaro' response suit offers a versatile blend of heavy protection against both enviromental and tactical hazards."
+	icon_state = "navyjuggernautsuit"
+	item_state = "navyjuggernaut"
+	slowdown = 1.25
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 80, "wound" = 50)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
 /obj/item/clothing/suit/space/gezena/marine
-	name = "composite combat suit"
-	desc = "With striking bright green composite plating, the 'Lataka' combat suit threatens any danger with the promise of protection."
+	name = "marine vacuum suit"
+	desc = "Economical and mass produced for military service, the 'Lataka' combat suit is a trusted, if aging design, outshined by its more modern peers."
 	icon_state = "marinespacesuit"
 	item_state = "marinespace"
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
@@ -143,30 +187,113 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
+/obj/item/clothing/suit/space/gezena/marine/raider
+	name = "marine raider suit"
+	desc = "Designed with mobility and full body protection in mind, the EVA capable 'Arawna' skirmisher suit has become the preferred armor configuration of the PGF Marine Raiders."
+	icon_state = "marineraidersuit"
+	item_state = "marineraider"
+	slowdown = 0
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
+/obj/item/clothing/suit/space/gezena/marine/juggernaut
+	name = "marine juggernaut suit"
+	desc = "An angular mass of hardened plates and ballistic padding, the 'Sokhana' breacher suit provides its wearer with nothing short of the best protection that the PGFMC can offer on two legs."
+	icon_state = "marinejuggernautsuit"
+	item_state = "marinejuggernaut"
+	slowdown = 1.25
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 40, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
 /obj/item/clothing/head/helmet/space/gezena
 	name = "navy utility helmet"
-	desc = "Features rubberized grommets for safely accomodating any length of horn, all the while boasting second to none panoramic visibilty though it's domed visor."
+	desc = "Equipped with rubberized grommets for safely accomodating any length of horn, the 'Rakalla' utility helmet boasts second to none panoramic visibilty though it's domed visor."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navyspacehelmet"
 	item_state = "navyspacehelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
+/obj/item/clothing/head/helmet/space/gezena/dreadnaut
+	name = "navy dreadnaut helmet"
+	desc = "With a slim visor and generous face shield, the 'Tikaro' response helmet balances the high visibility PGFN helmets are reknowned for with well measured protection."
+	icon_state = "navyjuggernauthelmet"
+	item_state = "navyjuggernauthelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 80, "wound" = 50)
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(,
+		"Standard" = "navyjuggernauthelmet",
+		"Medic" = "navyjuggernauthelmet_medic",
+	)
+
 /obj/item/clothing/head/helmet/space/gezena/marine
-	name = "composite combat helmet"
-	desc = "Features rubberized grommets for safely accomodating any length of horn and thicker plating on the forehead, sacrificing visibility for much needed protection."
+	name = "marine vacuum helmet"
+	desc = "Aging but reliable, the 'Lataka' combat helmet sacrifices some of the visibility of its navy counterpart for much needed protection."
 	icon_state = "marinespacehelmet"
 	item_state = "marinespacehelm"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
+/obj/item/clothing/head/helmet/space/gezena/marine/raider
+	name = "marine raider helmet"
+	desc = "Designed off of the AR-98 combat helmet, the 'Arawna' skirmisher helmet offers its user greater protection and range of movement than is offered by similar EVA capable helmets."
+	icon_state = "marineraiderhelmet"
+	item_state = "marineraiderhelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "marineraiderhelmet",
+		"Follow Me" = "marineraiderhelmet_follow",
+		"Single Stripe" = "marineraiderhelmet_singlestripe",
+		"Double Stripe" = "marineraiderhelmet_doublestripe",
+		"Medic" = "marineraiderhelmet_medic",
+	)
+
+/obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
+	name = "marine juggernaut helmet"
+	desc = "Forgoing a visor alltogether, the 'Sokhana' breacher helmet utilizes a suite of onboard sensors to display the user's enviroment onto the inside of its dense strike-face."
+	icon_state = "marinejuggernauthelmet"
+	item_state = "marinejuggernauthelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 40, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "marinejuggernauthelmet",
+		"Follow Me" = "marinejuggernauthelmet_follow",
+		"Single Stripe" = "marinejuggernauthelmet_singlestripe",
+		"Double Stripe" = "marinejuggernauthelmet_doublestripe",
+		"Medic" = "marinejuggernauthelmet_medic",
+	)
 
 //Hats
 
@@ -185,7 +312,7 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/head/gezena/flap
-	name = "navy flap cap"
+	name = "\improper navy flap cap"
 	desc = "The standard cap of the PGF military, in Navy colors. Features a neck-covering flap for harsher environments."
 	icon_state = "navyflap"
 	item_state = "bluecloth"
@@ -193,7 +320,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	cold_protection = HEAD
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/marine
@@ -215,7 +342,7 @@
 	item_state = "greencloth"
 
 /obj/item/clothing/head/gezena/engi
-	name = "navy engineer cap"
+	name = "navy engineering cap"
 	desc = "The standard cap of the PGF military. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -224,7 +351,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/flap/engi
-	name = "\improper navy engineering flap cap"
+	name = "navy engineering flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -233,7 +360,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/medic
-	name = "navy medical cap"
+	name = "medical cap"
 	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -242,7 +369,7 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/gezena/flap/medic
-	name = "medic flap cap"
+	name = "medical flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -260,7 +387,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/flap/captain
-	name = "command flap cap"
+	name = "navy command flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The decoration indicates the wearer as a ship's Captain."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -268,9 +395,33 @@
 	icon_state = "captainflap"
 	item_state = "bluecloth"
 
+/obj/item/clothing/head/helmet/gezena/navy
+	name = "navy flak helmet"
+	desc = "A Gezenan flak helmet helmet employed by the PGFN. Equipped with an identification reflector and a wide brim for accommodating communications devices"
+	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	flags_inv = 0
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	icon_state = "navyhelmet"
+	item_state = "navyhelm"
+	can_flashlight = TRUE
+	content_overlays = TRUE
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "navyhelmet",
+		"Medic" = "navyhelmet_medic",
+	)
+
 /obj/item/clothing/head/helmet/gezena
-	name = "composite combat helmet"
-	desc = "An armored composite military helmet employed by the PGF. Fitted to connect seamlessly with the L-98 respirator"
+	name = "marine combat helmet"
+	desc = "An AR-98 series composite combat helmet employed by the PGFMC. Fitted to connect seamlessly with the L-98 respirator. Has an internal lining mesh for enhanced thermoregulation."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -279,11 +430,21 @@
 	flags_inv = HIDEHAIR
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
 	can_flashlight = TRUE
 	content_overlays = TRUE
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "marinehelmet",
+		"Follow Me" = "marinehelmet_follow",
+		"Single Stripe" = "marinehelmet_singlestripe",
+		"Double Stripe" = "marinehelmet_doublestripe",
+		"Medic" = "marinehelmet_medic",
+	)
 
 //Gloves
 
@@ -341,6 +502,61 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
+//Back
+/obj/item/storage/backpack/security/gezena
+	name = "PGFMC backpack"
+	desc = "An aqua-green backpack designed for use with PGFMC combat rigging, although it can still be worn on its own."
+	icon_state = "pgfpack"
+	item_state = "pgfpack"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/satchel/sec/gezena
+	name = "PGFMC satchel"
+	desc = "An aqua-green satchel designed for use with PGFMC combat rigging, although it can still be worn on its own."
+	icon_state = "satchel-pgf"
+	item_state = "satchel-pgf"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/messenger/sec/gezena
+	name = "PGFMC assault pack"
+	desc = "An aqua-green assault pack designed for use with PGFMC combat rigging, although it can still be worn on its own."
+	icon_state = "pgfassault"
+	item_state = "pgfassault"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/medic/gezena
+	name = "PGFAF trauma backpack"
+	desc = "A sterile white backpack designed for use with PGFAF medical rigging, although it can still be worn on its own."
+	icon_state = "pgfmedpack"
+	item_state = "pgfmedpack"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/satchel/med/gezena
+	name = "PGFAF trauma satchel"
+	desc = "A sterile white satchel designed for use with PGFAF medical rigging, although it can still be worn on its own."
+	icon_state = "satchel-pgf-med"
+	item_state = "satchel-pgf-med"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/messenger/med/gezena
+	name = "PGFAF trauma pack"
+	desc = "A sterile white trauma pack designed for use with PGFAF medical rigging, although it can still be worn on its own."
+	icon_state = "pgftrauma"
+	item_state = "pgftrauma"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
 //Belt
 
 /obj/item/storage/belt/military/gezena
@@ -363,12 +579,13 @@
 		new /obj/item/stock_parts/cell/gun/pgf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/attachment/bayonet(src)
 
 /obj/item/storage/belt/military/gezena/engineer/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/cell/gun/pgf(src)
-	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
 
@@ -398,17 +615,35 @@
 //Masks
 /obj/item/clothing/mask/breath/pgfmask
 	name = "gezenan composite respirator"
-	desc = "An armored composite L-98 mask designed to protect both face and snout, and allowing easy attachment of external air sources. It's surprisingly comfortable."
+	desc = "An armored composite L-98 repirator designed to protect the face, all while allowing the easy attachment of external air sources. It's surprisingly comfortable."
 	icon_state = "pgfmask"
 	item_state = "pgfmask"
 	icon = 'icons/obj/clothing/faction/gezena/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/mask.dmi'
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	gas_transfer_coefficient = 0.01
-	permeability_coefficient = 0.01
+	permeability_coefficient = 0.00
+
+/obj/item/clothing/mask/breath/pgfmask/navy
+	name = "gezenan navy respirator"
+	desc = "A rubberized, hard plastic mask made to the specifications of the L-98 respirator, allowing the easy attachment of external air sources. It's surprisingly comfortable."
+	icon_state = "navymask"
+	item_state = "navymask"
+	icon = 'icons/obj/clothing/faction/gezena/mask.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/mask.dmi'
+	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.00
 
 //Eyes
 /obj/item/clothing/glasses/sunglasses/pgf
@@ -419,6 +654,7 @@
 	icon_state = "pgfgoggles"
 	item_state = "pgfgoggles"
 	clothing_flags = SEALS_EYES | FLASH_PROTECTION_FLASH
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'

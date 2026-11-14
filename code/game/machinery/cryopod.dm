@@ -13,6 +13,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/computer/cryopod
 	name = "cryogenic oversight console"
 	desc = "An interface between crew and the cryogenic storage oversight systems."
+	icon = 'icons/obj/machines/wallconsole.dmi'
 	icon_state = "wallconsole"
 	icon_screen = "wallconsole_cryo"
 	icon_keyboard = null
@@ -33,10 +34,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
 
 /obj/machinery/computer/cryopod/retro
 	desc = "An interface between crew and the cryogenic storage oversight systems. Currently strugggling to catch up with the modern cryogenic storage system."
-	icon_state = "wallconsole_old"
-	icon_screen = "wallconsole_old_cryo"
+	icon = 'icons/obj/machines/television.dmi'
+	icon_state = "crt_beige_wall"
+	icon_screen = "crt_wall_cryo"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -150,7 +152,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		/obj/item/defibrillator/compact,
 		/obj/item/reagent_containers/hypospray/CMO,
 		/obj/item/clothing/accessory/medal/gold/captain,
-		/obj/item/clothing/gloves/krav_maga,
 		/obj/item/tank/jetpack,
 		/obj/item/documents,
 		/obj/item/nuke_core_container
@@ -227,6 +228,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	var/character_name = "[sleepyhead.real_name]"
 
 	sleepyhead.play_screen_text("[ship_name]<br>[sector_name]<br>[time]<br>[character_name]")
+
+	sleepyhead.add_memory("I signed on to work aboard the [ship_name], a [linked_ship.current_ship.source_template.name] class vessel.")
+	sleepyhead.add_memory("We are operating out of [sector_name] today!")
 
 /obj/machinery/cryopod/open_machine()
 	..()
@@ -439,7 +443,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	to_chat(target, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round."))
 	name = "[name] ([occupant.name])"
 	log_admin(span_notice("[key_name(target)] entered a stasis pod."))
-	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
+	message_admins("[key_name_admin(target)] entered a stasis pod. (<a href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 	add_fingerprint(target)
 
 /obj/machinery/cryopod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)

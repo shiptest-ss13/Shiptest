@@ -126,7 +126,7 @@
 		if(alarm_types_show["Camera"])
 			msg += "CAMERA: [alarm_types_show["Camera"]] alarms detected. - "
 
-		msg += "<A href=?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
+		msg += "<A href='byond://?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
 		to_chat(src, msg)
 
 	if(alarms_to_clear.len < 3)
@@ -151,7 +151,7 @@
 		if(alarm_types_show["Camera"])
 			msg += "CAMERA: [alarm_types_clear["Camera"]] alarms cleared. - "
 
-		msg += "<A href=?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
+		msg += "<A href='byond://?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
 		to_chat(src, msg)
 
 
@@ -162,10 +162,13 @@
 	for(var/key in alarm_types_clear)
 		alarm_types_clear[key] = 0
 
-/mob/living/silicon/can_inject(mob/user, error_msg)
-	if(error_msg)
-		to_chat(user, span_alert("[p_their(TRUE)] outer shell is too tough."))
+/mob/living/silicon/can_inject(mob/user, target_zone, injection_flags)
 	return FALSE
+
+/mob/living/silicon/try_inject(mob/user, target_zone, injection_flags)
+	. = ..()
+	if(!. && (injection_flags & INJECT_TRY_SHOW_ERROR_MESSAGE))
+		to_chat(user, span_alert("[p_their()] outer shell is too tough."))
 
 /mob/living/silicon/IsAdvancedToolUser()
 	return TRUE
@@ -386,7 +389,7 @@
 /mob/living/silicon/get_inactive_held_item()
 	return FALSE
 
-/mob/living/silicon/handle_high_gravity(gravity)
+/mob/living/silicon/handle_high_gravity(gravity, seconds_per_tick, times_fired)
 	return
 
 /mob/living/silicon/on_floored_start()

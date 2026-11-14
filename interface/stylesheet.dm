@@ -42,13 +42,16 @@ em						{font-style: normal;	font-weight: bold;}
 .binarysay a			{color: #00ff00;}
 .binarysay a:active, .binarysay a:visited {color: #88ff88;}
 .radio					{color: #008000;}
-.ntradio				{color: #4e3399;}
+.warraradio				{color: #4e3399;}
 .emrgradio				{color: #a30000;}
 .pirradio				{color: #948f02;}
 .clipradio				{color: #337296;}
 .irmgradio				{color: #885231;}
 .pgfradio				{color: #127a35;}
-.syndradio				{color: ##612425;}
+.syndradio				{color: #612425;}
+.cyradio				{color: #4C9C9C;}
+.ngrradio				{color: #c59973;}
+.sunsradio				{color: #8f67a1;}
 .centcomradio			{color: #686868;}
 .redteamradio			{color: #ff0000;}
 .blueteamradio			{color: #0000ff;}
@@ -82,9 +85,6 @@ h1.alert, h2.alert		{color: #000000;}
 .hear					{color: #000099;	font-style: italic;}
 .adminnotice			{color: #0000ff;}
 .adminhelp              {color: #ff0000;    font-weight: bold;}
-.mentor					{color: #8A2BE2;}
-.mentoradmin			{color: #8A2BE2;	font-weight: bold;}
-.mentornotice			{color: #E236D8;}
 .unconscious			{color: #0000ff;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}
 .green					{color: #03ff39;}
@@ -133,21 +133,9 @@ h1.alert, h2.alert		{color: #000000;}
 .greentext				{color: #00FF00;	font-size: 3;}
 .redtext				{color: #FF0000;	font-size: 3;}
 .singing				{font-family: "Trebuchet MS", cursive, sans-serif; font-style: italic;}
-.hypnophrase			{color: #3bb5d3;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
-	@keyframes hypnocolor {
-		0%		{color: #0d0d0d;}
-		25%		{color: #410194;}
-		50%		{color: #7f17d8;}
-		75%		{color: #410194;}
-		100%	{color: #3bb5d3;}
-}
+.hypnophrase {color: #3bb5d3; font-weight: bold;}
 
-.phobia			{color: #dd0000;	font-weight: bold;	animation: phobia 750ms infinite;}
-	@keyframes phobia {
-		0%		{color: #0d0d0d;}
-		50%		{color: #dd0000;}
-		100%	{color: #0d0d0d;}
-}
+.phobia {color: #dd0000; font-weight: bold;}
 
 .icon					{height: 1em;	width: auto;}
 

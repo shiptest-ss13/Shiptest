@@ -129,8 +129,7 @@
 /area/ruin/powered/hunts/hotel)
 "bc" = (
 /obj/machinery/light/broken/directional/east,
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
+/obj/structure/barricade/directional/flippedtable/wood{
 	dir = 4
 	},
 /turf/open/floor/carpet/jungleplanet,
@@ -178,7 +177,7 @@
 /area/ruin/powered/hunts/canteen)
 "bz" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/glass/coffee_cup,
+/obj/item/reagent_containers/food/drinks/coffee,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/gun_shop)
@@ -1224,7 +1223,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/hunts/canteen)
@@ -1524,7 +1523,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "nQ" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
 "nR" = (
@@ -2036,9 +2035,6 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rQ" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -31
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 10
 	},
@@ -2063,6 +2059,7 @@
 	pixel_x = -2;
 	pixel_y = 7
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "rS" = (
@@ -2122,10 +2119,10 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "sq" = (
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/mob_trophy/legion_skull{
 	pixel_y = 27
@@ -2551,8 +2548,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "vj" = (
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
+/obj/structure/barricade/directional/flippedtable/wood{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2907,7 +2903,7 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "yo" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light/broken/directional/east,
 /obj/structure/spacevine/dense,
 /turf/open/floor/engine,
@@ -3003,7 +2999,7 @@
 /turf/open/floor/plasteel/stairs/wood,
 /area/ruin/powered/hunts/toilet)
 "zq" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/fake_eggcluster,
 /turf/open/floor/engine,
@@ -3069,7 +3065,7 @@
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/gun_shop)
 "zG" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/item/trash/can/food,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
@@ -3156,10 +3152,7 @@
 /area/ruin/powered/hunts/canteen)
 "AG" = (
 /obj/structure/table/wood/reinforced,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -27
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/powered/hunts/hotel)
 "AK" = (
@@ -3178,7 +3171,9 @@
 /obj/structure/closet/mob_capture{
 	opened = 1;
 	name = "\improper Damaged Lifeform Containment Unit";
-	desc = "A large closet-like container, used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside. The lock on this one seems a little loose however."
+	desc = "A container used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside. The lock on this one seems a little loose however.";
+	secure = 0;
+	locked = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hunts/shuttle)
@@ -4301,7 +4296,6 @@
 /area/ruin/powered/hunts/barn)
 "JH" = (
 /obj/structure/rack,
-/obj/item/melee/baton/cattleprod/loaded,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/powered/hunts/barn)
 "JI" = (
@@ -4453,7 +4447,7 @@
 /turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "Li" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
@@ -4467,10 +4461,10 @@
 	pixel_y = 5;
 	pixel_x = -5
 	},
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/clothing/mask/rat/fox{
 	pixel_y = 29;
@@ -4554,10 +4548,10 @@
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "LL" = (
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/clothing/mask/rat/bear{
 	pixel_y = 26;
@@ -4599,11 +4593,6 @@
 "Mh" = (
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"Mi" = (
-/obj/structure/spacevine,
-/obj/vehicle/ridden/lawnmower,
-/turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Mj" = (
 /obj/structure/flora/rock/jungle,
@@ -4981,15 +4970,15 @@
 /obj/structure/sign/painting/library{
 	pixel_y = 29
 	},
-/obj/item/clothing/head/HoS/cybersun,
+/obj/item/clothing/head/cybersun,
 /turf/open/floor/carpet/red/jungleplanet,
 /area/ruin/powered/hunts/hotel)
 "PP" = (
 /obj/machinery/vending/snack,
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/stack/sheet/animalhide/xeno{
 	pixel_y = 28;
@@ -5069,7 +5058,7 @@
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
 "Qe" = (
-/obj/structure/closet/wall/med/directional/north{
+/obj/structure/closet/wall/white/med/directional/north{
 	icon_door = "med_wall";
 	name = "First Aid Closet"
 	},
@@ -5402,6 +5391,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/hotel)
+"SK" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
 "SN" = (
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot,
 /obj/item/stack/sheet/cardboard{
@@ -5700,9 +5697,6 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vy" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -31
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
@@ -5724,6 +5718,7 @@
 	pixel_x = -9
 	},
 /obj/item/clothing/suit/toggle/windbreaker,
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "VB" = (
@@ -5847,11 +5842,11 @@
 	dir = 10
 	},
 /obj/item/clothing/under/misc/pj/blue,
-/obj/item/clothing/suit/cybersun_suit{
+/obj/item/clothing/suit/cybersun{
 	pixel_x = 7;
 	pixel_y = -3
 	},
-/obj/item/clothing/under/syndicate/cybersun/officer{
+/obj/item/clothing/under/cybersun/officer{
 	pixel_y = -7;
 	pixel_x = -5
 	},
@@ -5957,6 +5952,13 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/powered/hunts/shuttle)
+"Xo" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
 "Xp" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/structure/cable{
@@ -6218,8 +6220,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "ZD" = (
 /obj/structure/railing/wood,
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
+/obj/structure/barricade/directional/flippedtable/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/ebony/jungleplanet/lit,
@@ -6980,7 +6981,7 @@ HI
 TN
 Ey
 Vy
-Tk
+SK
 bb
 Ey
 mr
@@ -6996,7 +6997,7 @@ Cy
 Nz
 Ey
 ZZ
-LI
+Xo
 rQ
 Ey
 rO
@@ -8319,7 +8320,7 @@ hM
 ye
 hM
 ZS
-Mi
+hM
 lL
 TN
 Va

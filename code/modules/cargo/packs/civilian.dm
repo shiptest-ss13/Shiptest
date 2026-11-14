@@ -59,7 +59,7 @@
 
 /datum/supply_pack/civilian/book_crate
 	name = "Book Crate"
-	desc = "Surplus from the Nanotrasen Archives, these six books are sure to be good reads."
+	desc = "Surplus from the archives, these six books are sure to be good reads."
 	cost = 500
 	contains = list(/obj/item/book/manual/random,
 					/obj/item/book/manual/random,
@@ -115,7 +115,7 @@
 
 /datum/supply_pack/civilian/forensics
 	name = "Forensics Crate"
-	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora."
+	desc = "Stay hot on the criminal's heels with Makosso-Warra's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora."
 	cost = 500
 	contains = list(/obj/item/detective_scanner,
 					/obj/item/storage/box/evidence,
@@ -127,7 +127,7 @@
 
 /datum/supply_pack/civilian/party
 	name = "Party Equipment"
-	desc = "Celebrate both life and death on the frontier with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, six beers, six sodas, two ales, and a bottle of patron, goldschlager, and shaker!"
+	desc = "Celebrate both life and death on the frontier with Makosso-Warra's Party Essentials(tm)! Contains seven colored glowsticks, six beers, six sodas, two ales, and a bottle of patron, goldschlager, and shaker!"
 	cost = 500
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,
@@ -211,7 +211,7 @@
 	crate_name = "premium coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/organic/syrup
+/datum/supply_pack/civilian/syrup
 	name = "Coffee Syrups Box"
 	desc = "A packaged box of various syrups, perfect to make your delicious coffee even more diabetic."
 	cost = 100
@@ -247,7 +247,7 @@
 
 /datum/supply_pack/civilian/potted_plants
 	name = "Potted Plants Crate"
-	desc = "Spruce up the ship with these lovely plants! Contains a random assortment of five potted plants from Nanotrasen's potted plant research division. Warranty void if thrown."
+	desc = "Spruce up the ship with these lovely plants! Contains a random assortment of five potted plants from Makosso-Warra's potted plant research division. Warranty void if thrown."
 	cost = 350
 	contains = list(/obj/item/kirbyplants/random,
 					/obj/item/kirbyplants/random,
@@ -303,6 +303,14 @@
 	contains = list(/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
+/datum/supply_pack/civilian/pianocrate
+	name = "Piano crate"
+	desc = "Contains a single piano for the somberly tempered."
+	cost = 500
+	contains = list(/obj/structure/musician/piano/unanchored)
+	crate_name = "piano crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
 /datum/supply_pack/civilian/jukebox
 	name = "Jukebox"
 	desc = "Things a bit dull in the workplace? How about jamming out to some tunes!"
@@ -313,9 +321,16 @@
 /datum/supply_pack/civilian/roulette
 	name = "Roulette Table"
 	desc = "Go all in with this premium, computerized roulette table! Requires a valid cash card to play."
-	cost = 5000
+	cost = 1000
 	contains = list(/obj/machinery/roulette)
 	crate_name = "roulette table crate"
+
+/datum/supply_pack/civilian/icecreamsupplies
+	name = "Ice Cream Supplies"
+	desc = "Contains a portable ice cream dispenser, fit with waffle cones and a rainbow of flavors to choose from."
+	cost = 1500
+	contains = list(/obj/machinery/icecream_vat)
+	crate_name = "ice cream vat crate"
 
 /datum/supply_pack/civilian/id_crate
 	name = "Box of Spare IDs"

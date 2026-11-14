@@ -52,6 +52,9 @@
 	/// If the computer has a flashlight/LED light/what-have-you installed
 	var/has_light = FALSE
 
+	///If the computer has an emissive screen
+	var/emissive_screen = TRUE
+
 
 /obj/item/modular_computer/Initialize()
 	. = ..()
@@ -113,6 +116,18 @@
 		return FALSE
 	return card_slot.try_insert(inserting_id)
 
+/obj/item/modular_computer/attack_hand_secondary(mob/user, list/modifiers)
+	attack_self(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/modular_computer/attackby_secondary(obj/item/weapon, mob/user, params)
+	attack_self(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/modular_computer/attack_self_secondary(mob/user, modifiers)
+	attack_self(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/modular_computer/MouseDrop(obj/over_object, src_location, over_location)
 	var/mob/M = usr
 	if((!istype(over_object, /atom/movable/screen)) && usr.canUseTopic(src, BE_CLOSE))
@@ -169,7 +184,12 @@
 	if(!display_overlays)
 		return
 	if(enabled)
-		. += active_program?.program_icon_state || icon_state_menu
+		if(emissive_screen)
+			var/current_program_icon = active_program?.program_icon_state || icon_state_menu
+			SSvis_overlays.add_vis_overlay(src, icon, current_program_icon, layer, plane, dir)
+			SSvis_overlays.add_vis_overlay(src, icon, current_program_icon, layer, EMISSIVE_PLANE, dir)
+		else
+			. += active_program?.program_icon_state || icon_state_menu
 
 	if(atom_integrity <= integrity_failure * max_integrity)
 		. += "bsod"

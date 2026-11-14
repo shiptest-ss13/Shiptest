@@ -28,6 +28,9 @@
 #define BLOOD_VOLUME_BAD 224
 #define BLOOD_VOLUME_SURVIVE 122
 
+/// How efficiently humans regenerate blood.
+#define BLOOD_REGEN_FACTOR 0.25
+
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -90,23 +93,14 @@
 #define SPECIES_ABDUCTOR "abductor"
 #define SPECIES_ANDROID "android"
 #define SPECIES_CORPORATE "corporate"
-#define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ELZUOSE "elzuose"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
-#define SPECIES_JELLYPERSON "jelly"
-#define SPECIES_SLIMEPERSON "slime_person"
-#define SPECIES_LUMINESCENT "luminescent"
-#define SPECIES_STARGAZER "stargazer"
 #define SPECIES_SARATHI "sarathi"
-#define SPECIES_ASHWALKER "ashwalker"
-#define SPECIES_KOBOLD "kobold"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
 #define SPECIES_PLASMAMAN "plasmaman"
-#define SPECIES_POD "pod"
-#define SPECIES_SHADOW "shadow"
 #define SPECIES_SKELETON "skeleton"
 #define SPECIES_SNAIL "snail"
 #define SPECIES_RACHNID "rachnid"
@@ -148,22 +142,23 @@
 #define BODYTYPE_DIGITIGRADE (1<<6) //Lizard legs
 #define BODYTYPE_KEPORI (1<<7) //Just Kepori
 #define BODYTYPE_VOX (1<<8) //Big Vox
+#define BODYTYPE_HAIR (1<<9) //Uses hair color
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
 
 #define HUMAN_MAX_OXYLOSS 3
-#define HUMAN_CRIT_MAX_OXYLOSS (SSmobs.wait/30)
+#define HUMAN_CRIT_MAX_OXYLOSS (SSMOBS_DT/3)
 
 #define STAMINA_REGEN_BLOCK_TIME (10 SECONDS)
 
-#define HEAT_DAMAGE_LEVEL_1 2 //Amount of damage applied when your body temperature just passes the 360.15k safety point
-#define HEAT_DAMAGE_LEVEL_2 3 //Amount of damage applied when your body temperature passes the 400K point
-#define HEAT_DAMAGE_LEVEL_3 8 //Amount of damage applied when your body temperature passes the 460K point and you are on fire
+#define HEAT_DAMAGE_LEVEL_1 1 //Amount of damage applied when your body temperature just passes the 360.15k safety point
+#define HEAT_DAMAGE_LEVEL_2 2 //Amount of damage applied when your body temperature passes the 400K point
+#define HEAT_DAMAGE_LEVEL_3 4 //Amount of damage applied when your body temperature passes the 460K point and you are on fire
 
-#define COLD_DAMAGE_LEVEL_1 0.5 //Amount of damage applied when your body temperature just passes the 260.15k safety point
-#define COLD_DAMAGE_LEVEL_2 1.5 //Amount of damage applied when your body temperature passes the 200K point
-#define COLD_DAMAGE_LEVEL_3 3 //Amount of damage applied when your body temperature passes the 120K point
+#define COLD_DAMAGE_LEVEL_1 0.25 //Amount of damage applied when your body temperature just passes the 260.15k safety point
+#define COLD_DAMAGE_LEVEL_2 0.75 //Amount of damage applied when your body temperature passes the 200K point
+#define COLD_DAMAGE_LEVEL_3 1.5 //Amount of damage applied when your body temperature passes the 120K point
 
 //Note that gas heat damage is only applied once every FOUR ticks.
 #define HEAT_GAS_DAMAGE_LEVEL_1 2 //Amount of damage applied when the current breath's temperature just passes the 360.15k safety point
@@ -187,7 +182,7 @@
 #define TRAUMA_RESILIENCE_BASIC 1 //Curable with chems
 #define TRAUMA_RESILIENCE_SURGERY 2 //Curable with brain surgery
 #define TRAUMA_RESILIENCE_LOBOTOMY 3 //Curable with lobotomy
-#define TRAUMA_RESILIENCE_WOUND 4 //Curable by healing the head wound
+#define TRAUMA_RESILIENCE_WOUND 4 //Curable by healing the relevant wound
 #define TRAUMA_RESILIENCE_MAGIC 5 //Curable only with magic
 #define TRAUMA_RESILIENCE_ABSOLUTE 6 //This is here to stay
 
@@ -253,9 +248,9 @@
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 200
-#define DISGUST_LEVEL_DISGUSTED 100
-#define DISGUST_LEVEL_VERYGROSS 50
-#define DISGUST_LEVEL_GROSS 25
+#define DISGUST_LEVEL_DISGUSTED 150
+#define DISGUST_LEVEL_VERYGROSS 100
+#define DISGUST_LEVEL_GROSS 75
 
 //Used as an upper limit for species that continuously gain nutriment
 #define NUTRITION_LEVEL_ALMOST_FULL 535
@@ -322,6 +317,8 @@
 #define GALOSHES_DONT_HELP (1<<2)
 #define SLIDE_ICE (1<<3)
 #define SLIP_WHEN_CRAWLING (1<<4)
+/// the mob won't slip if the turf has the TRAIT_TURF_IGNORE_SLIPPERY trait.
+#define SLIPPERY_TURF (1<<5)
 
 #define MAX_CHICKENS 50
 
@@ -357,16 +354,16 @@
 //MINOR TWEAKS/MISC
 #define AGE_MIN 18 //youngest a character can be
 #define AGE_MAX 85 //oldest a character can be
-#define AGE_MINOR 20 //legal age of space drinking and smoking
+#define AGE_DRINKING 20 //legal age of space drinking and smoking
 #define WIZARD_AGE_MIN 30 //youngest a wizard can be
 #define APPRENTICE_AGE_MIN 29 //youngest an apprentice can be
 #define SHOES_SLOWDOWN 0 //How much shoes slow you down by default. Negative values speed you up
 #define POCKET_STRIP_DELAY 40 //time taken (in deciseconds) to search somebody's pockets
 #define DOOR_CRUSH_DAMAGE 15 //the amount of damage that airlocks deal when they crush you
 
-#define HUNGER_FACTOR 0.1 //factor at which mob nutrition decreases
-#define ELZUOSE_CHARGE_FACTOR (0.05 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
-#define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
+#define HUNGER_FACTOR 0.05 //factor at which mob nutrition decreases
+#define ELZUOSE_CHARGE_FACTOR (0.025 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
+#define REAGENTS_METABOLISM 0.2 //How many units of reagent are consumed per second, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 ///Greater numbers mean that less alcohol has greater intoxication potential
 #define ALCOHOL_THRESHOLD_MODIFIER 1
@@ -380,7 +377,7 @@
 #define FLASH_PROTECTION_SENSITIVE -1
 #define FLASH_PROTECTION_NONE 0
 #define FLASH_PROTECTION_FLASH 1
-#define FLASH_PROTECTION_WELDER 2
+#define FLASH_PROTECTION_WELDER 3
 
 // Roundstart trait system
 
@@ -480,26 +477,28 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 	"[HUMAN_HEIGHT_TALLEST]" = list(3, 3),
 ))
 
-#define MUTATIONS_LAYER 32 //mutations. Tk headglows, cold resistance glow, etc
-#define HANDS_UNDER_BODY_LAYER 31 //Held items that render underneath the user due to perspective
-#define BODY_BEHIND_LAYER 30 //certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LOW_LAYER 29 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
-#define BODYPARTS_LAYER 28 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 27 //certain mutantrace features (face markings, body markings) that must appear above the body parts
-#define BODY_LAYER 26 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER 25 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER 24 //damage indicators (cuts and burns)
-#define UNIFORM_LAYER 23
-#define BANDAGE_LAYER 22 //For bandages and splints
-#define ID_LAYER 21 //lmao at the idiot who put both ids and hands on the same layer
-#define BODYPARTS_HIGH_LAYER 20
-#define GLOVES_LAYER 19
-#define SHOES_LAYER 18
-#define EARS_LAYER 17
-#define SPLINT_LAYER 16
-#define SUIT_LAYER 15
-#define GLASSES_LAYER 14
-#define BELT_LAYER 13 //Possible make this an overlay of somethign required to wear a belt?
+#define MUTATIONS_LAYER 33 //mutations. Tk headglows, cold resistance glow, etc
+#define HANDS_UNDER_BODY_LAYER 32 //Held items that render underneath the user due to perspective
+#define BODY_BEHIND_LAYER 31 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LOW_LAYER 30 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
+#define BODYPARTS_LAYER 29 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define BODY_ADJ_LAYER 28 //certain mutantrace features (face markings, body markings) that must appear above the body parts
+#define BODY_LAYER 27 //underwear, undershirts, socks, eyes, lips(makeup)
+#define FRONT_MUTATIONS_LAYER 26 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER 25 //damage indicators (cuts and burns)
+#define UNIFORM_LAYER 24
+#define BANDAGE_LAYER 23 //For bandages and splints
+#define ID_LAYER 22 //lmao at the idiot who put both ids and hands on the same layer
+#define BODYPARTS_HIGH_LAYER 21
+#define GLOVES_LAYER 20
+#define SHOES_LAYER 19
+#define EARS_LAYER 18
+#define SPLINT_LAYER 17
+#define SUIT_LAYER 16
+#define BELT_LAYER 15
+#define BODY_ADJ_HIGH_LAYER 14.5
+#define FACEWRAP_LAYER 14
+#define GLASSES_LAYER 13
 #define SUIT_STORE_LAYER 12
 #define NECK_LAYER 11
 #define BACK_LAYER 10
@@ -514,7 +513,7 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define WOUND_LAYER 2
 /// The highest most layer for mob overlays. Unused
 #define HIGHEST_LAYER 1
-#define TOTAL_LAYERS 32 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define TOTAL_LAYERS 33 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"
@@ -582,3 +581,4 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 
 /// In dynamic human icon gen we don't replace the held item.
 #define NO_REPLACE 0
+

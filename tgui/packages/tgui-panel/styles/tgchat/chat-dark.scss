@@ -19,6 +19,7 @@ img {
 img.icon {
   height: 1em;
   min-height: 16px;
+  min-width: 16px;
   width: auto;
   vertical-align: bottom;
 }
@@ -338,12 +339,24 @@ em {
   color: #1ecc43;
 }
 
-.ntradio {
+.warraradio {
   color: #7f6cd4;
 }
 
 .emrgradio {
   color: #dd3535;
+}
+
+.cyradio {
+  color: #4c9c9c;
+}
+
+.ngrradio {
+  color: #c59973;
+}
+
+.sunsradio {
+  color: #8f67a1;
 }
 
 .pirradio {
@@ -693,6 +706,11 @@ em {
   font-family: 'Courier New', cursive, sans-serif;
 }
 
+.noticerobot {
+  font-family: 'Courier New', cursive, sans-serif;
+  color: #6685f5;
+}
+
 .tape_recorder {
   color: #ff0000;
   font-family: 'Courier New', cursive, sans-serif;
@@ -961,6 +979,11 @@ em {
   &.purple_box {
     background: hsl(260, 25%, 12.5%);
     border-color: hsla(260, 100%, 75%, 0.5);
+  }
+
+  &.grey_box {
+    background: hsl(0, 0%, 67.8%);
+    border-color: hsla(0, 20%, 10%, 0.5);
   }
 
   hr {

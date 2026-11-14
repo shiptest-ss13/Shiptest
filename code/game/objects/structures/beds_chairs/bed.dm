@@ -89,6 +89,7 @@
  */
 /obj/structure/bed/roller
 	name = "roller bed"
+	desc = "A foldable, wheeled bed used to transport people with injuries safely. Bed guards and straps prevent the occupant from falling out. Push handles at both ends of the frame allow it to be relocated from either side. Its compact design makes it easy to maneuver and store in the confines of a spacecraft, but rather uncomfortable for rest and recovery."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "down"
 	anchored = FALSE
@@ -238,14 +239,14 @@
 
 /obj/structure/bed/dogbed/proc/update_owner(mob/living/M)
 	if(owner)
-		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(owner, COMSIG_QDELETING)
 	owner = M
-	RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
+	RegisterSignal(owner, COMSIG_QDELETING, PROC_REF(owner_deleted))
 	name = "[M]'s bed"
 	desc = "[M]'s bed! Looks comfy."
 
 /obj/structure/bed/dogbed/proc/owner_deleted()
-	UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(owner, COMSIG_QDELETING)
 	owner = null
 	name = initial(name)
 	desc = initial(desc)
@@ -270,12 +271,12 @@
 	if(buckled_mobs.len > 1 && !goldilocks) //Push the second buckled mob a bit higher from the normal lying position, also, if someone can figure out the same thing for plushes, i'll be really glad to know how to
 		M.pixel_y = initial(M.pixel_y) + 6
 		goldilocks = M
-		RegisterSignal(goldilocks, COMSIG_PARENT_QDELETING, PROC_REF(goldilocks_deleted))
+		RegisterSignal(goldilocks, COMSIG_QDELETING, PROC_REF(goldilocks_deleted))
 
 //Called when the signal is raised, removes the reference
 //preventing the hard delete.
 /obj/structure/bed/double/proc/goldilocks_deleted(datum/source, force)
-	UnregisterSignal(goldilocks, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(goldilocks, COMSIG_QDELETING)
 	goldilocks = null
 
 /obj/structure/bed/double/maint

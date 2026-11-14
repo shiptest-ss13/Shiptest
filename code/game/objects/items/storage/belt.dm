@@ -82,9 +82,10 @@
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
-		/obj/item/gun/energy/plasmacutter,
+		/obj/item/plasmacutter,
 		/obj/item/bodycamera,
-		/obj/item/stack/tape/industrial
+		/obj/item/stack/tape/industrial,
+		/obj/item/trench_tool,
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -230,7 +231,9 @@
 		/obj/item/shears,
 		/obj/item/bodycamera,
 		/obj/item/bonesetter,
-		/obj/item/stack/sticky_tape/surgical
+		/obj/item/stack/sticky_tape/surgical,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart,
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -250,6 +253,27 @@
 	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
 	update_appearance()
+
+/obj/item/storage/belt/medical/traumateam/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
+/obj/item/storage/belt/medical/webbing/traumateam/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
 
 /obj/item/storage/belt/medical/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
@@ -294,7 +318,6 @@
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
 		/obj/item/melee/knife,
 		/obj/item/grenade,
@@ -311,6 +334,7 @@
 		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
+		/obj/item/ammo_box/a4570,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/food/donut,
 		/obj/item/melee/knife/combat,
@@ -328,7 +352,7 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		))
@@ -341,7 +365,14 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/melee/baton/loaded(src)
+	update_appearance()
+
+/obj/item/storage/belt/security/full/classic/PopulateContents()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/melee/classic_baton(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/webbing
@@ -423,6 +454,7 @@
 		/obj/item/bodycamera,
 		/obj/item/binoculars,
 		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/trench_tool,
 		))
 
 
@@ -476,6 +508,18 @@
 		"Urban" = "militarywebbing_urban",
 		)
 
+//this might seem obtuse instead of allowing infinte reskins, but then the reskin menu would open every alt click, which is not good for a storage item such as this
+/obj/item/storage/belt/military/examine(mob/user)
+	. = ..()
+	if(unique_reskin && current_skin)
+		. += "You can [span_bold("Ctrl-Click")] [src] to reskin it again after skinning it."
+
+/obj/item/storage/belt/military/CtrlClick(mob/user)
+	. = ..()
+	if(isliving(user) && in_range(src, user))
+		current_skin = null
+		to_chat(user, "You can now reskin [src] again wtih [span_bold("Alt-Click")].")
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -483,9 +527,13 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
+		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/gun/energy/cybersun/lorentz/opportunist,
+		/obj/item/gun/energy/clover/pistol,
+		/obj/item/bodycamera,
 		))
 	STR.exception_hold = exception_cache
 	STR.max_w_class = WEIGHT_CLASS_SMALL
@@ -496,7 +544,7 @@
 /obj/item/storage/belt/military/cobra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m45_cobra(src)
+		new /obj/item/ammo_box/magazine/m10_cobra(src)
 
 /obj/item/storage/belt/military/hydra/PopulateContents()
 	. = ..()
@@ -517,12 +565,22 @@
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 
+/obj/item/storage/belt/military/warra/resolution/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/wt550m9(src)
+
+/obj/item/storage/belt/military/warra/sharplite/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/sharplite/plus(src)
+
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
-	var/sponsor = pick("Donk! Co.", "CyberSun")
+	var/sponsor = pick("Makosso-Warra", "CyberSun")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
 /obj/item/storage/belt/military/snack/ComponentInitialize()
@@ -542,17 +600,17 @@
 		/obj/item/food/candy,
 		/obj/item/reagent_containers/food/drinks/dry_ramen,
 		/obj/item/food/chips,
-		/obj/item/food/sosjerky,
+		/obj/item/food/channeler_meats,
 		/obj/item/food/syndicake,
 		/obj/item/food/spacetwinkie,
-		/obj/item/food/cheesiehonkers,
+		/obj/item/food/gummycarps,
 		/obj/item/food/nachos,
 		/obj/item/food/cheesynachos,
 		/obj/item/food/cubannachos,
 		/obj/item/food/nugget,
 		/obj/item/food/spaghetti/pastatomato,
 		/obj/item/food/rofflewaffles,
-		/obj/item/food/donkpocket,
+		/obj/item/food/shoalpocket,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
 		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail,
 		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx,
@@ -686,7 +744,7 @@
 /obj/item/storage/belt/janitor/full/PopulateContents()
 	new /obj/item/lightreplacer(src)
 	new /obj/item/reagent_containers/spray/cleaner(src)
-	new /obj/item/soap/nanotrasen(src)
+	new /obj/item/soap/warra(src)
 	new /obj/item/holosign_creator(src)
 	new /obj/item/melee/flyswatter(src)
 
@@ -829,6 +887,7 @@
 	STR.max_items = 1
 	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.quickdraw = TRUE
 	STR.set_holdable(list(
 		sabre_type
 		))
@@ -836,11 +895,9 @@
 /obj/item/storage/belt/sabre/examine(mob/user)
 	. = ..()
 	if(length(contents))
-		. += span_notice("Alt-click it to quickly draw the blade.")
+		. += span_notice("Right-click it to quickly draw the blade.")
 
-/obj/item/storage/belt/sabre/AltClick(mob/user)
-	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
+/obj/item/storage/belt/sabre/attack_hand_secondary(mob/user, list/modifiers)
 	if(length(contents))
 		var/obj/item/I = contents[1]
 		user.visible_message(span_notice("[user] takes [I] out of [src]."), span_notice("You take [I] out of [src]."))
@@ -848,6 +905,7 @@
 		update_appearance()
 	else
 		to_chat(user, span_warning("[src] is empty!"))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/storage/belt/sabre/update_icon_state()
 	icon_state = "[base_icon_state]"

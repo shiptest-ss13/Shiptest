@@ -27,6 +27,10 @@
 #define MODE_KEY_INTERCOM "i"
 #define MODE_TOKEN_INTERCOM ":i"
 
+#define MODE_WIDEBAND "wideband"
+#define MODE_KEY_WIDEBAND "w"
+#define MODE_TOKEN_WIDEBAND ":w"
+
 #define MODE_BINARY "binary"
 #define MODE_KEY_BINARY "b"
 #define MODE_TOKEN_BINARY ":b"
@@ -91,9 +95,9 @@
 #define MODE_RANGE_INTERCOM 1
 
 // A link given to ghost alice to follow bob
-#define FOLLOW_LINK(alice, bob) "<a href=?src=[REF(alice)];follow=[REF(bob)]>(F)</a>"
-#define TURF_LINK(alice, turfy) "<a href=?src=[REF(alice)];x=[turfy.x];y=[turfy.y];z=[turfy.z]>(T)</a>"
-#define FOLLOW_OR_TURF_LINK(alice, bob, turfy) "<a href=?src=[REF(alice)];follow=[REF(bob)];x=[turfy.x];y=[turfy.y];z=[turfy.z]>(F)</a>"
+#define FOLLOW_LINK(alice, bob) "<a href='byond://?src=[REF(alice)];follow=[REF(bob)]'>(F)</a>"
+#define TURF_LINK(alice, turfy) "<a href='byond://?src=[REF(alice)];x=[turfy.x];y=[turfy.y];z=[turfy.z]'>(T)</a>"
+#define FOLLOW_OR_TURF_LINK(alice, bob, turfy) "<a href='byond://?src=[REF(alice)];follow=[REF(bob)];x=[turfy.x];y=[turfy.y];z=[turfy.z]'>(F)</a>"
 
 #define LINGHIVE_NONE 0
 #define LINGHIVE_OUTSIDER 1

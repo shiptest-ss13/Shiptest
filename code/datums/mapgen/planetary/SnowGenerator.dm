@@ -79,9 +79,9 @@
 		BIOME_HOT_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/snow/thawed,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/snow/thawed,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/volcanic/lava/plasma,
-			BIOME_HIGH_HUMIDITY = /datum/biome/cave/volcanic/lava,
-			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/volcanic/lava/total
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/volcanic/plasma/less,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/volcanic/plasma,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/volcanic/plasma/total
 		)
 	)
 
@@ -110,11 +110,11 @@
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/anomaly/ice = 12,
-		/obj/effect/spawner/random/anomaly/big = 1,
-		/obj/structure/spawner/burrow/ice_planet = 80,
+		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 20,
+		/obj/effect/spawner/random/greeble/iceplanet = 60,
+		/obj/structure/spawner/burrow/ice_planet = 40,
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classtwo/rare = 10,
@@ -165,13 +165,14 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/snow/lit = 1
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/structure/spawner/burrow/ice_planet = 4,
+		/obj/effect/spawner/random/greeble/iceplanet = 3,
+		/obj/structure/spawner/burrow/ice_planet = 2,
 		/obj/structure/statue/snow/snowman = 3,
 		/obj/structure/statue/snow/snowlegion = 1,
-		/obj/structure/vein/ice = 3,
-		/obj/structure/vein/ice/classtwo = 4,
+		/obj/structure/vein/ice = 2,
+		/obj/structure/vein/ice/classtwo = 3,
 		/obj/structure/vein/ice/classthree = 1,
 	)
 	mob_spawn_list = list(
@@ -210,8 +211,7 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/anomaly/ice = 100,
-		/obj/effect/spawner/random/anomaly/big = 1,
+		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 100,
 		/obj/structure/spawner/burrow/ice_planet/hard = 600,
 		/obj/structure/vein/ice = 300,
 		/obj/structure/vein/ice/classtwo = 500,
@@ -221,7 +221,7 @@
 
 /datum/biome/iceberg/lake
 	open_turf_types = list(
-		/turf/open/floor/plating/ice/lit = 1
+		/turf/open/floor/plating/ice/icemoon = 1
 	)
 
 /datum/biome/plasma
@@ -281,7 +281,7 @@
 /datum/biome/cave/snow/ice
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/icerock = 20,
-		/turf/open/floor/plating/ice = 3
+		/turf/open/floor/plating/ice/icemoon = 3
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -289,7 +289,7 @@
 
 /datum/biome/cave/volcanic
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/basalt = 1
+		/turf/open/floor/plating/asteroid/basalt/iceplanet = 1
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -312,19 +312,19 @@
 	)
 	feature_spawn_chance = 0.2
 
-/datum/biome/cave/volcanic/lava
+/datum/biome/cave/volcanic/plasma
 	open_turf_types = list(
-		/turf/open/lava/smooth = 10,
+		/turf/open/lava/plasma/ice_moon = 10,
 		/turf/open/floor/plating/asteroid/icerock/smooth = 1
 	)
 
-/datum/biome/cave/volcanic/lava/total
+/datum/biome/cave/volcanic/plasma/less
 	open_turf_types = list(
-		/turf/open/lava/smooth = 1
+		/turf/open/lava/plasma/ice_moon = 7,
+		/turf/open/floor/plating/asteroid/icerock/smooth = 1
 	)
 
-/datum/biome/cave/volcanic/lava/plasma
+/datum/biome/cave/volcanic/plasma/total
 	open_turf_types = list(
-		/turf/open/lava/plasma = 7,
-		/turf/open/floor/plating/asteroid/icerock/smooth = 1
+		/turf/open/lava/plasma/ice_moon = 1
 	)

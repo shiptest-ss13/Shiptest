@@ -1,38 +1,3 @@
-//Command
-
-/obj/item/circuitboard/machine/bsa/back
-	name = "Bluespace Artillery Generator (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/bsa/back //No freebies!
-	req_components = list(
-		/obj/item/stock_parts/capacitor/quadratic = 5,
-		/obj/item/stack/cable_coil = 2)
-
-/obj/item/circuitboard/machine/bsa/front
-	name = "Bluespace Artillery Bore (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/bsa/front
-	req_components = list(
-		/obj/item/stock_parts/manipulator/femto = 5,
-		/obj/item/stack/cable_coil = 2)
-
-/obj/item/circuitboard/machine/bsa/middle
-	name = "Bluespace Artillery Fusor (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/bsa/middle
-	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 20,
-		/obj/item/stack/cable_coil = 2)
-
-/obj/item/circuitboard/machine/dna_vault
-	name = "DNA Vault (Machine Board)"
-	icon_state = "command"
-	build_path = /obj/machinery/dna_vault //No freebies!
-	req_components = list(
-		/obj/item/stock_parts/capacitor/super = 5,
-		/obj/item/stock_parts/manipulator/pico = 5,
-		/obj/item/stack/cable_coil = 2)
-
 //Engineering
 
 /obj/item/circuitboard/machine/announcement_system
@@ -337,6 +302,28 @@
 		/obj/item/stock_parts/cell = 5,
 		/obj/item/stock_parts/capacitor = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
+
+/obj/item/circuitboard/machine/cloak
+	name = "Ship Cloaking Device (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/cloak
+	req_components = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/stock_parts/capacitor = 1)
+	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
+
+/obj/item/circuitboard/machine/advanced_cloak
+	name = "Advanced Ship Cloaking Device (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/cloak/advanced
+	req_components = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stack/ore/bluespace_crystal = 1)
+	def_components = list(
+		/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty,
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/adv,
+	)
 
 /obj/item/circuitboard/machine/techfab/department/engineering
 	name = "\improper Departmental Techfab (Machine Board) - Engineering"
@@ -668,6 +655,8 @@
 		/obj/machinery/vending/sovietsoda = "BODA",
 		/obj/machinery/vending/security = "SecTech",
 		/obj/machinery/vending/modularpc = "Deluxe Silicate Selections",
+		/obj/machinery/vending/disposable_guns = "Guns-4-U",
+		/obj/machinery/vending/lottery = "Kiyatirawkitchi Lottery",
 		/obj/machinery/vending/custom = "Custom Vendor")
 
 /obj/item/circuitboard/machine/vendor/attackby(obj/item/I, mob/user, params)
@@ -695,14 +684,14 @@
 	return ..()
 
 /obj/item/circuitboard/machine/vending/donksofttoyvendor
-	name = "Donksoft Toy Vendor (Machine Board)"
+	name = "Toy Gun Vendor (Machine Board)"
 	build_path = /obj/machinery/vending/donksofttoyvendor
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
 
 /obj/item/circuitboard/machine/vending/syndicatedonksofttoyvendor
-	name = "Syndicate Donksoft Toy Vendor (Machine Board)"
+	name = "Syndicate Toy Gun Vendor (Machine Board)"
 	build_path = /obj/machinery/vending/toyliberationstation
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
@@ -985,57 +974,10 @@
 		/obj/item/airlock_painter = 1,
 		/obj/item/stack/sheet/glass = 1)
 
-/obj/item/circuitboard/machine/nanite_chamber
-	name = "Nanite Chamber (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/nanite_chamber
-	req_components = list(
-		/obj/item/stock_parts/scanning_module = 2,
-		/obj/item/stock_parts/micro_laser = 2,
-		/obj/item/stock_parts/manipulator = 1)
-
-/obj/item/circuitboard/machine/nanite_program_hub
-	name = "Nanite Program Hub (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/nanite_program_hub
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/stock_parts/manipulator = 1)
-
-/obj/item/circuitboard/machine/nanite_programmer
-	name = "Nanite Programmer (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/nanite_programmer
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/micro_laser = 2,
-		/obj/item/stock_parts/scanning_module = 1)
-
 /obj/item/circuitboard/machine/protolathe/department/science
 	name = "Protolathe (Machine Board) - Science"
 	icon_state = "science"
 	build_path = /obj/machinery/rnd/production/protolathe/department/science
-
-/obj/item/circuitboard/machine/public_nanite_chamber
-	name = "Public Nanite Chamber (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/public_nanite_chamber
-	var/cloud_id = 1
-	req_components = list(
-		/obj/item/stock_parts/micro_laser = 2,
-		/obj/item/stock_parts/manipulator = 1)
-
-/obj/item/circuitboard/machine/public_nanite_chamber/multitool_act(mob/living/user)
-	. = ..()
-	var/new_cloud = input("Set the public nanite chamber's Cloud ID (1-100).", "Cloud ID", cloud_id) as num|null
-	if(!new_cloud || (loc != user))
-		to_chat(user, span_warning("You must hold the circuitboard to change its Cloud ID!"))
-		return
-	cloud_id = clamp(round(new_cloud, 1), 1, 100)
-
-/obj/item/circuitboard/machine/public_nanite_chamber/examine(mob/user)
-	. = ..()
-	. += "Cloud ID is currently set to [cloud_id]."
 
 /obj/item/circuitboard/machine/quantumpad
 	name = "Quantum Pad (Machine Board)"
@@ -1216,7 +1158,6 @@
 	icon_state = "service"
 	build_path = /obj/machinery/griddle
 	req_components = list(
-		/obj/item/stack/sheet/mineral/titanium = 1,
 		/obj/item/assembly/igniter = 1,
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/micro_laser = 1,
@@ -1227,7 +1168,6 @@
 	icon_state = "service"
 	build_path = /obj/machinery/oven
 	req_components = list(
-		/obj/item/stack/sheet/mineral/titanium = 1,
 		/obj/item/assembly/igniter = 1,
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/micro_laser = 1,
@@ -1449,6 +1389,14 @@
 	build_path = /obj/machinery/power/shuttle/engine/electric/bad
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stock_parts/micro_laser = 2)
+
+// Maploaded engines of this type function identically to standard ion engines, but they start with T3 parts
+/obj/item/circuitboard/machine/shuttle/engine/electric/premium
+	build_path = /obj/machinery/power/shuttle/engine/electric/premium
+	def_components = list(
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/super,
+		/obj/item/stock_parts/micro_laser = /obj/item/stock_parts/micro_laser/ultra
+		)
 
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"

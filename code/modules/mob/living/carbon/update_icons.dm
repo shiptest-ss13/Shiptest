@@ -1,29 +1,3 @@
-//IMPORTANT: Multiple animate() calls do not stack well, so try to do them all at once if you can.
-/mob/living/carbon/perform_update_transform()
-	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
-	var/final_pixel_y = pixel_y
-	var/final_dir = dir
-	var/changed = 0
-	if(lying_angle != lying_prev && rotate_on_lying)
-		changed++
-		ntransform.TurnTo(lying_prev , lying_angle)
-		if(!lying_angle) //Lying to standing
-			final_pixel_y = get_standard_pixel_y_offset()
-		else //if(lying != 0)
-			if(lying_prev == 0) //Standing to lying
-				pixel_y = base_pixel_y + get_standard_pixel_y_offset()
-				final_pixel_y = base_pixel_y + get_standard_pixel_y_offset(lying_angle)
-				if(dir & (EAST|WEST)) //Facing east or west
-					final_dir = pick(NORTH, SOUTH) //So you fall on your side rather than your face or ass
-	if(resize != RESIZE_DEFAULT_SIZE)
-		changed++
-		ntransform.Scale(resize)
-		resize = RESIZE_DEFAULT_SIZE
-
-	if(changed)
-		SEND_SIGNAL(src, COMSIG_PAUSE_FLOATING_ANIM, 0.3 SECONDS)
-		animate(src, transform = ntransform, time = (lying_prev == 0 || lying_angle == 0) ? 2 : 0, pixel_y = final_pixel_y, dir = final_dir, easing = (EASE_IN|EASE_OUT))
-
 /mob/living/carbon
 	var/list/overlays_standing[TOTAL_LAYERS]
 
@@ -101,7 +75,7 @@
 				brute_overlay.color = limb.damage_color
 			damage_overlay.add_overlay(brute_overlay)
 		if(limb.burnstate)
-			var/image/burn_overlay = image(limb.dmg_overlay_icon, "[limb.dmg_overlay_type]_[limb.body_zone]_[limb.burnstate]0")
+			var/image/burn_overlay = image(limb.dmg_overlay_icon, "[limb.dmg_overlay_type]_[limb.body_zone]_0[limb.burnstate]")
 			damage_overlay.add_overlay(burn_overlay)
 
 	apply_overlay(DAMAGE_LAYER)
@@ -319,7 +293,44 @@
 	. += "-[body_zone]"
 	return .
 
-GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
+GLOBAL_LIST_EMPTY(masked_limb_icons_cache)
+
+/obj/item/bodypart/proc/generate_masked_limb(mutable_appearance/limb_overlay, image_dir = NONE)
+	RETURN_TYPE(/list)
+	if(!limb_overlay)
+		return
+	. = list()
+	var/icon_cache_key = "[limb_overlay.icon]-[limb_overlay.icon_state]-[body_zone]"
+	var/icon/new_limb_icon
+	var/icon/new_limb_icon_lower
+
+	//in case we do not have a cached version of the two cropped icons for this key, we have to create it
+	if(!GLOB.masked_limb_icons_cache[icon_cache_key])
+		var/icon/limb_crop_mask = icon(mask_icon, body_zone)
+		var/icon/limb_crop_mask_lower = icon(mask_icon, "[body_zone]_lower")
+
+		new_limb_icon = icon(limb_overlay.icon, limb_overlay.icon_state)
+		new_limb_icon.Blend(limb_crop_mask, ICON_MULTIPLY)
+
+		new_limb_icon_lower = icon(limb_overlay.icon, limb_overlay.icon_state)
+		new_limb_icon_lower.Blend(limb_crop_mask_lower, ICON_MULTIPLY)
+
+		GLOB.masked_limb_icons_cache[icon_cache_key] = list(new_limb_icon, new_limb_icon_lower)
+	new_limb_icon = GLOB.masked_limb_icons_cache[icon_cache_key][1]
+	new_limb_icon_lower = GLOB.masked_limb_icons_cache[icon_cache_key][2]
+
+	//this could break layering in oddjob cases, but i'm sure it will work fine most of the time... right?
+	var/mutable_appearance/new_limb_appearance = new(limb_overlay)
+	new_limb_appearance.icon = new_limb_icon
+	new_limb_appearance.layer = -bodypart_layer
+	new_limb_appearance.dir = image_dir //for some reason, things do not work properly otherwise
+	. += new_limb_appearance
+	var/mutable_appearance/new_limb_appearance_lower = new(limb_overlay)
+	new_limb_appearance_lower.icon = new_limb_icon_lower
+	new_limb_appearance_lower.layer = -BODYPARTS_LOW_LAYER
+	new_limb_appearance_lower.dir = image_dir
+	. += new_limb_appearance_lower
+	return .
 
 /obj/item/bodypart/leg/proc/generate_masked_leg(mutable_appearance/limb_overlay, image_dir = NONE)
 	RETURN_TYPE(/list)
@@ -332,7 +343,7 @@ GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
 	var/icon/new_leg_icon_lower
 
 	//in case we do not have a cached version of the two cropped icons for this key, we have to create it
-	if(!GLOB.masked_leg_icons_cache[icon_cache_key])
+	if(!GLOB.masked_limb_icons_cache[icon_cache_key])
 		var/icon/leg_crop_mask = (body_zone == BODY_ZONE_R_LEG ? icon('icons/mob/leg_masks.dmi', "right_leg") : icon('icons/mob/leg_masks.dmi', "left_leg"))
 		var/icon/leg_crop_mask_lower = (body_zone == BODY_ZONE_R_LEG ? icon('icons/mob/leg_masks.dmi', "right_leg_lower") : icon('icons/mob/leg_masks.dmi', "left_leg_lower"))
 
@@ -342,9 +353,9 @@ GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
 		new_leg_icon_lower = icon(limb_overlay.icon, limb_overlay.icon_state)
 		new_leg_icon_lower.Blend(leg_crop_mask_lower, ICON_MULTIPLY)
 
-		GLOB.masked_leg_icons_cache[icon_cache_key] = list(new_leg_icon, new_leg_icon_lower)
-	new_leg_icon = GLOB.masked_leg_icons_cache[icon_cache_key][1]
-	new_leg_icon_lower = GLOB.masked_leg_icons_cache[icon_cache_key][2]
+		GLOB.masked_limb_icons_cache[icon_cache_key] = list(new_leg_icon, new_leg_icon_lower)
+	new_leg_icon = GLOB.masked_limb_icons_cache[icon_cache_key][1]
+	new_leg_icon_lower = GLOB.masked_limb_icons_cache[icon_cache_key][2]
 
 	//this could break layering in oddjob cases, but i'm sure it will work fine most of the time... right?
 	var/mutable_appearance/new_leg_appearance = new(limb_overlay)

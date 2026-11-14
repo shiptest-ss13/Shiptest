@@ -4,6 +4,7 @@
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "plate"
 	w_class = WEIGHT_CLASS_BULKY //No backpack.
+	custom_materials = list(/datum/material/iron=2000)
 	///How many things fit on this plate?
 	var/max_items = 8
 	///The offset from side to side the food items can have on the plate
@@ -55,7 +56,7 @@
 	vis_contents += item_to_plate
 	item_to_plate.flags_1 |= IS_ONTOP_1
 	RegisterSignal(item_to_plate, COMSIG_MOVABLE_MOVED, PROC_REF(ItemMoved))
-	RegisterSignal(item_to_plate, COMSIG_PARENT_QDELETING, PROC_REF(ItemMoved))
+	RegisterSignal(item_to_plate, COMSIG_QDELETING, PROC_REF(ItemMoved))
 	///ovens update
 	update_appearance()
 
@@ -63,7 +64,7 @@
 /obj/item/plate/proc/ItemRemovedFromPlate(obj/item/removed_item)
 	removed_item.flags_1 &= ~IS_ONTOP_1
 	vis_contents -= removed_item
-	UnregisterSignal(removed_item, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
+	UnregisterSignal(removed_item, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING))
 
 ///This proc is called by signals that remove the food from the plate.
 /obj/item/plate/proc/ItemMoved(obj/item/moved_item, atom/OldLoc, Dir, Forced)
@@ -74,6 +75,7 @@
 	name = "buffet plate"
 	desc = "A large plate made for the professional catering industry but also apppreciated by mukbangers and other persons of considerable size and heft."
 	icon_state = "plate_large"
+	custom_materials = list(/datum/material/iron=4000)
 	max_items = 12
 	max_x_offset = 8
 	max_height_offset = 12
@@ -82,6 +84,7 @@
 	name = "appetizer plate"
 	desc = "A small plate, perfect for appetizers, desserts or trendy modern cusine."
 	icon_state = "plate_small"
+	custom_materials = list(/datum/material/iron=1000)
 	max_items = 4
 	max_x_offset = 4
 	max_height_offset = 5
@@ -94,6 +97,7 @@
 	force = 5
 	throwforce = 5
 	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_TINY
 	/// How many variants of shard there are
 	var/variants = 5
 

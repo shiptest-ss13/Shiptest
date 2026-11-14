@@ -2,6 +2,7 @@
 	name = "chemical patch"
 	desc = "A chemical patch for touch based applications."
 	icon = 'icons/obj/chemical/medicine.dmi'
+	world_file = null
 	icon_state = "bandaid"
 	item_state = "bandaid"
 	possible_transfer_amounts = list()

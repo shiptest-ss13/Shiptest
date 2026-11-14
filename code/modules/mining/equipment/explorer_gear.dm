@@ -1,7 +1,7 @@
 /****************Explorer's Suit and Mask****************/
 /obj/item/clothing/suit/hooded/explorer
 	name = "explorer suit"
-	desc = "A light, armor-plated softsuit, designed for exploration of dangerous planetary enviroments. An NT design by origin, later reappropriated by EXOCOM for mass retail production."
+	desc = "A light, armor-plated softsuit, designed for exploration of dangerous planetary enviroments. A Makosso-Warra design by origin, later reappropriated by EXOCOM for mass retail production."
 	icon_state = "explorer"
 	item_state = "explorer"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -102,7 +102,7 @@
 		M.appearance_flags = RESET_COLOR
 		. += M
 
-//the legacy NT exploration gear, flavoured to be old but reliable.
+//the legacy MW exploration gear, flavoured to be old but reliable.
 /obj/item/clothing/gloves/explorer
 	name = "explorer gloves"
 	desc = "Thick, fire-resistant gloves with a small bracer, sold by EXOCOM to protect your precious fingers from the rigours of planetary exploration."

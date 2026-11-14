@@ -22,6 +22,9 @@
 #define IDLE_POWER_USE 1
 #define ACTIVE_POWER_USE 2
 
+#define POWER_ALLOW_AREA (1<<0)
+#define POWER_ALLOW_WIRE (1<<1)
+
 /// Bitflags for a machine's preferences on when it should start processing. For use with machinery's `processing_flags` var.
 #define START_PROCESSING_ON_INIT (1<<0) /// Indicates the machine will automatically start processing right after it's `Initialize()` is ran.
 #define START_PROCESSING_MANUALLY (1<<1) /// Machines with this flag will not start processing when it's spawned. Use this if you want to manually control when a machine starts processing.
@@ -42,7 +45,6 @@
 #define BIOGENERATOR (1<<5) //Uses biomass
 #define LIMBGROWER (1<<6) //Uses synthetic flesh
 #define SMELTER (1<<7) //uses various minerals
-#define NANITE_COMPILER (1<<8) //Prints nanite disks
 //Note: More than one of these can be added to a design but imprinter and lathe designs are incompatable.
 
 //Modular computer/NTNet defines

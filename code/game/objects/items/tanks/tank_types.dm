@@ -110,15 +110,15 @@
  * Emergency Oxygen
  */
 /obj/item/tank/internals/emergency_oxygen
-	name = "emergency oxygen tank"
+	name = "extended-capacity emergency oxygen tank"
 	desc = "Used for emergencies. Contains very little oxygen, so try to conserve it until you actually need it."
-	icon_state = "emergency"
+	icon_state = "emergency_engi"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	force = 4
 	distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
-	volume = 1 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
+	volume = 2 // should last for about 30 minutes or so if full
 	supports_variations = VOX_VARIATION
 
 
@@ -130,8 +130,7 @@
 
 /obj/item/tank/internals/emergency_oxygen/engi
 	name = "extended-capacity emergency oxygen tank"
-	icon_state = "emergency_engi"
-	volume = 2 // should last a bit over 30 minutes if full
+	icon_state = "emergency_tst"
 
 /obj/item/tank/internals/emergency_oxygen/engi/empty/populate_gas()
 	return
@@ -143,6 +142,16 @@
 
 /obj/item/tank/internals/emergency_oxygen/double/empty/populate_gas()
 	return
+
+//old-style one
+
+/obj/item/tank/internals/emergency_oxygen/low_capacity
+	name = "emergency oxygen tank"
+	desc = "An outdated pattern of oxygen tank, used for emergencies. Contains very little oxygen, so try to conserve it until you actually need it."
+	w_class = WEIGHT_CLASS_TINY
+	icon_state = "emergency"
+	force = 3 //really small cheapo one
+	volume = 0.5 // old old thing
 
 // *
 // * GENERIC

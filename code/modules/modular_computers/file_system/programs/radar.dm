@@ -17,9 +17,9 @@
 	var/next_scan = 0
 	///Used to keep track of the last value program_icon_state was set to, to prevent constant unnecessary update_appearance() calls
 	var/last_icon_state = ""
-	///Used by the tgui interface, themed NT or Syndicate.
+	///Used by the tgui interface, themed Makosso-Warra or Syndicate.
 	var/arrowstyle = "ntosradarpointer.png"
-	///Used by the tgui interface, themed for NT or Syndicate colors.
+	///Used by the tgui interface, themed for Makosso-Warra or Syndicate colors.
 	var/pointercolor = "green"
 
 /datum/computer_file/program/radar/run_program(mob/living/user)
@@ -77,7 +77,7 @@
  *Updates tracking information of the selected target.
  *
  *The track() proc updates the entire set of information about the location
- *of the target, including whether the Ntos window should use a pinpointer
+ *of the target, including whether the NTOS window should use a pinpointer
  *crosshair over the up/down arrows, or none in favor of a rotating arrow
  *for far away targets. This information is returned in the form of a list.
  *
@@ -97,7 +97,7 @@
 
 	if(get_dist_euclidian(here_turf, target_turf) > 24)
 		userot = TRUE
-		rot = round(Get_Angle(here_turf, target_turf))
+		rot = round(get_angle(here_turf, target_turf))
 	else
 		if(target_turf.z > here_turf.z)
 			pointer="caret-up"

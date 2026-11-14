@@ -177,17 +177,6 @@ Difficulty: Very Hard
 		playsound(get_turf(src), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
 		SLEEP_CHECK_DEATH(1)
 
-/mob/living/simple_animal/hostile/megafauna/colossus/proc/shoot_projectile(turf/marker, set_angle)
-	if(!isnum(set_angle) && (!marker || marker == loc))
-		return
-	var/turf/startloc = get_turf(src)
-	var/obj/projectile/P = new /obj/projectile/colossus(startloc)
-	P.preparePixelProjectile(marker, startloc)
-	P.firer = src
-	if(target)
-		P.original = target
-	P.fire(set_angle)
-
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/random_shots()
 	ranged_cooldown = world.time + 30
 	var/turf/U = get_turf(src)
@@ -201,7 +190,7 @@ Difficulty: Very Hard
 	var/turf/target_turf = get_turf(target)
 	playsound(src, 'sound/magic/clockwork/invoke_general.ogg', 200, TRUE, 2)
 	newtonian_move(get_dir(target_turf, src))
-	var/angle_to_target = Get_Angle(src, target_turf)
+	var/angle_to_target = get_angle(src, target_turf)
 	if(isnum(set_angle))
 		angle_to_target = set_angle
 	var/static/list/colossus_shotgun_shot_angles = list(12.5, 7.5, 2.5, -2.5, -7.5, -12.5)
@@ -569,27 +558,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 				P.xo = 0
 		P.fire()
 
-/obj/machinery/anomalous_crystal/dark_reprise //Revives anyone nearby, but turns them into shadowpeople and renders them uncloneable, so the crystal is your only hope of getting up again if you go down.
-	observer_desc = "When activated, this crystal revives anyone nearby, but turns them into Shadowpeople and makes them unclonable, making the crystal their only hope of getting up again."
-	activation_method = ACTIVATE_TOUCH
-	activation_sound = 'sound/hallucinations/growl1.ogg'
-
-/obj/machinery/anomalous_crystal/dark_reprise/ActivationReaction(mob/user, method)
-	if(..())
-		for(var/i in range(1, src))
-			if(isturf(i))
-				new /obj/effect/temp_visual/cult/sparks(i)
-				continue
-			if(ishuman(i))
-				var/mob/living/carbon/human/H = i
-				if(H.stat == DEAD)
-					H.set_species(/datum/species/shadow, 1)
-					H.regenerate_limbs()
-					H.regenerate_organs()
-					H.revive(full_heal = TRUE, admin_revive = FALSE)
-					ADD_TRAIT(H, TRAIT_BADDNA, MAGIC_TRAIT) //Free revives, but significantly limits your options for reviving except via the crystal
-					H.grab_ghost(force = TRUE)
-
 /obj/machinery/anomalous_crystal/helpers //Lets ghost spawn as helpful creatures that can only heal people slightly. Incredibly fragile and they can't converse with humans
 	observer_desc = "This crystal allows ghosts to turn into a fragile creature that can heal people."
 	activation_method = ACTIVATE_TOUCH
@@ -604,7 +572,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	if(..() && !ready_to_deploy)
 		SSpoints_of_interest.make_point_of_interest(src)
 		ready_to_deploy = TRUE
-		notify_ghosts("An anomalous crystal has been activated in [get_area(src)]! This crystal can always be used by ghosts hereafter.", enter_link = "<a href=?src=[REF(src)];ghostjoin=1>(Click to enter)</a>", ghost_sound = 'sound/effects/ghost2.ogg', source = src, action = NOTIFY_ATTACK, header = "Anomalous crystal activated")
+		notify_ghosts("An anomalous crystal has been activated in [get_area(src)]! This crystal can always be used by ghosts hereafter.", enter_link = "<a href='byond://?src=[REF(src)];ghostjoin=1'>(Click to enter)</a>", ghost_sound = 'sound/effects/ghost2.ogg', source = src, action = NOTIFY_ATTACK, header = "Anomalous crystal activated")
 
 /obj/machinery/anomalous_crystal/helpers/attack_ghost(mob/dead/observer/user)
 	. = ..()

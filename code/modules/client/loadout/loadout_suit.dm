@@ -11,6 +11,14 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
+/datum/gear/suit/parkaclip
+	display_name = "parka, serene sporting"
+	path = /obj/item/clothing/suit/hooded/parka/serene
+
+/datum/gear/suit/parka
+	display_name = "parka, colorable"
+	path = /obj/item/clothing/suit/hooded/parka
+
 //JACKETS
 /datum/gear/suit/jacket
 	subtype_path = /datum/gear/suit/jacket
@@ -19,13 +27,25 @@
 	display_name = "bomber jacket"
 	path = /obj/item/clothing/suit/jacket
 
+/datum/gear/suit/jacket/baggy
+	display_name = "baggy shirt"
+	path = /obj/item/clothing/suit/jacket/baggy
+
 /datum/gear/suit/jacket/leather
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
+/datum/gear/suit/jacket/leather/coat
+	display_name = "leather coat"
+	path = /obj/item/clothing/suit/jacket/leather/coat
+
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
+
+/datum/gear/suit/jacket/leather/blackduster
+	display_name = "black leather duster"
+	path = /obj/item/clothing/suit/jacket/leather/duster/black
 
 /datum/gear/suit/jacket/military
 	display_name = "military jacket"
@@ -42,6 +62,43 @@
 /datum/gear/suit/jacket/navy
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
+
+/datum/gear/suit/jacket/two_tone
+	display_name = "two tone coat, colorable"
+	path = /obj/item/clothing/suit/jacket/twotone
+
+/datum/gear/suit/toggle/aclf
+	display_name = "ACLF leather jacket"
+	path = /obj/item/clothing/suit/toggle/aclf
+
+/datum/gear/suit/toggle/bikerjacket
+	display_name = "biker jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/biker
+
+/datum/gear/suit/toggle/letterman
+	display_name = "letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman
+
+/datum/gear/suit/toggle/letterman_blue
+	display_name = "blue letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman_blue
+
+/datum/gear/suit/toggle/letterman_red
+	display_name = "red letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman_red
+
+/datum/gear/suit/toggle/letterman_black
+	display_name = "black letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman_black
+
+/datum/gear/suit/toggle/capsule
+	display_name = "capsule jacket"
+	path = /obj/item/clothing/suit/toggle/capsule
+	description = "Good for health, bad for education."
+
+/datum/gear/suit/toggle/flight
+	display_name = "flight jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/flight
 
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
@@ -63,6 +120,14 @@
 	display_name = "hoodie, black w grey hood"
 	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
 
+/datum/gear/suit/jacket/cropped_hoodie
+	display_name = "cropped hoodie, recolorable"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie
+
+/datum/gear/suit/jacket/croppedhoodiealt
+	display_name = "cropped black and white hoodie"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie/blackwa
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
@@ -71,9 +136,37 @@
 	display_name = "hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard
 
+/datum/gear/suit/orangehazard
+	display_name = "orange hazard jacket"
+	path = /obj/item/clothing/suit/toggle/hazard/orange
+
+/datum/gear/suit/limehazard
+	display_name = " lime hazard jacket"
+	path = /obj/item/clothing/suit/toggle/hazard/lime
+
+/datum/gear/suit/chorejacketteceti
+	display_name = "chore jacket, riso-teceian"
+	path = /obj/item/clothing/suit/toggle/chorejacket/teceti
+
+/datum/gear/suit/chorejacketmiski
+	display_name = "chore jacket, miskilamao"
+	path = /obj/item/clothing/suit/toggle/chorejacket/miski
+
+/datum/gear/suit/chorejacket
+	display_name = "chore jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/chorejacket
+
+/datum/gear/suit/overcoat
+	display_name = "overcoat, colorable"
+	path = /obj/item/clothing/suit/toggle/overcoat
+
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"
 	path = /obj/item/clothing/suit/toggle/windbreaker
+
+/datum/gear/suit/jacket/cropped_windbreaker
+	display_name = "cropped windbreaker, colorable"
+	path = /obj/item/clothing/suit/toggle/windbreaker/cropped
 
 /datum/gear/suit/jacket/pufferjacket
 	display_name = "pufferjacket, colorable"
@@ -82,6 +175,38 @@
 /datum/gear/suit/jacket/puffervest
 	display_name = "puffervest, colorable"
 	path = /obj/item/clothing/suit/toggle/puffervest
+
+/datum/gear/suit/jacket/track
+	display_name = "track jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/track
+
+//trenchcoats
+
+/datum/gear/suit/jacket/trenchcoat
+	display_name = "trenchcoat"
+	path = /obj/item/clothing/suit/toggle/trenchcoat
+	description = "A heavy trenchcoat with plenty of pocket space."
+
+/datum/gear/suit/jacket/trenchcoat_noir
+	display_name = "trenchcoat, noir"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/noir
+	description = "A sleek grey trenchcoat perfect for rainy nights with androids."
+
+/datum/gear/suit/jacket/trenchcoat_navy
+	display_name = "trenchcoat, navy"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/navy
+	description = "A sleek grey trenchcoat perfect for rainy nights with androids."
+
+/datum/gear/suit/jacket/trenchcoat_aclf
+	display_name = "trenchcoat, ACLF"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/aclf
+	description = "Wanna look like a tryhard? Believe in the ACLF that much? Try this trenchcoat with their iconography on it."
+
+/datum/gear/suit/jacket/trenchcoat_dm
+	display_name = "trenchcoat, deaf-mute"
+	path = /obj/item/clothing/suit/toggle/trenchcoat/dm
+	description = "Golden buttons, inky fabric, and a roundel. I thought what I'd do was wear this."
+
 //Suspenders
 /datum/gear/suit/suspenders
 	subtype_path = /datum/gear/suit/suspenders
@@ -99,6 +224,10 @@
 	path = /obj/item/clothing/suit/toggle/suspenders/gray
 
 //Misc
+
+/datum/gear/suit/apron
+	display_name = "apron"
+	path = /obj/item/clothing/suit/apron
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"

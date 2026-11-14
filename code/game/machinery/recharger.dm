@@ -1,12 +1,13 @@
 /obj/machinery/recharger
 	name = "recharger"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/recharger.dmi'
 	icon_state = "recharger"
 	base_icon_state = "recharger"
 	desc = "A charging dock for energy based weaponry. However someones modified it to work with most things with cells."
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_LOW
+	power_flags = POWER_ALLOW_WIRE | POWER_ALLOW_AREA
 	circuit = /obj/item/circuitboard/machine/recharger
 	pass_flags = PASSTABLE
 	var/obj/item/charging = null
@@ -17,15 +18,17 @@
 
 	var/static/list/allowed_devices = typecacheof(list(
 		/obj/item/gun/energy,
-		/obj/item/melee/baton,
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
 		/obj/item/gun/ballistic/automatic/assault/e40,
-		/obj/item/attachment/gun/energy,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/melee/energy/flyssa
 		))
+
+/obj/machinery/recharger/Initialize()
+	. = ..()
+	AddElement(/datum/element/nudge, -12, 12, -10, 10)
 
 /obj/machinery/recharger/RefreshParts()
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
@@ -169,12 +172,6 @@
 			var/obj/item/gun/energy/E = charging
 			if(E.cell)
 				E.cell.emp_act(severity)
-
-		else if(istype(charging, /obj/item/melee/baton))
-			var/obj/item/melee/baton/B = charging
-			if(B.cell)
-				B.cell.charge = 0
-
 
 /obj/machinery/recharger/update_appearance(updates)
 	. = ..()

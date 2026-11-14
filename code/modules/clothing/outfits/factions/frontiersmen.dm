@@ -91,7 +91,7 @@
 	uniform = /obj/item/clothing/under/frontiersmen/officer
 	head = /obj/item/clothing/head/hardhat/frontier
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	belt = /obj/item/storage/belt/utility/full
 
 // Engineer
@@ -147,7 +147,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/combat
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/melee/classic_baton/telescopic=1)
 	suit_store = null
 
 // Security Officer

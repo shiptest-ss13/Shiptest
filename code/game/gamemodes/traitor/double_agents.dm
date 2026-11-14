@@ -11,14 +11,14 @@
 	required_enemies = 5
 	recommended_enemies = 8
 	reroll_friendly = 0
-	traitor_name = "Nanotrasen Internal Affairs Agent"
+	traitor_name = "Makosso-Warra Internal Affairs Agent"
 	antag_flag = ROLE_INTERNAL_AFFAIRS
 
 	traitors_possible = 10 //hard limit on traitors if scaling is turned off
 	num_modifier = 4 // Four additional traitors
 	antag_datum = /datum/antagonist/traitor/internal_affairs
 
-	announce_text = "There are Nanotrasen Internal Affairs Agents trying to kill each other!\n\
+	announce_text = "There are Makosso-Warra Internal Affairs Agents trying to kill each other!\n\
 	<span class='danger'>IAA</span>: Eliminate your targets and protect yourself!\n\
 	<span class='notice'>Crew</span>: Stop the IAA agents before they can cause too much mayhem."
 
@@ -77,5 +77,5 @@
 
 
 /datum/game_mode/traitor/internal_affairs/generate_report()
-	return "Nanotrasen denies any accusations of placing internal affairs agents onboard your station to eliminate inconvenient employees.  Any further accusations against CentCom for such \
+	return "Makosso-Warra denies any accusations of placing internal affairs agents onboard your station to eliminate inconvenient employees.  Any further accusations against CentCom for such \
 			actions will be met with a conversation with an official internal affairs agent."

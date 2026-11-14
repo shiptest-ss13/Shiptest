@@ -31,7 +31,7 @@
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/color/captain(src)
 	new /obj/item/storage/belt/sabre(src)
-	new /obj/item/gun/energy/sharplite/x12(src)
+	new /obj/item/gun/energy/sharplite/volt(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/storage/photo_album/Captain(src)
@@ -57,7 +57,7 @@
 	new /obj/item/clothing/suit/armor/vest/hop(src) //WS edit - Command Resprite 3
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/gun/energy/sharplite/x26(src) //WS Edit - Gives HoP a mini egun
+	new /obj/item/gun/energy/sharplite/ohm(src) //WS Edit - Gives HoP a mini egun
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civilian(src)
@@ -95,9 +95,9 @@
 	new /obj/item/storage/lockbox/loyalty(src)
 	new /obj/item/clothing/mask/gas/sechailer/swat(src)
 	new /obj/item/storage/box/flashbangs(src)
-	new /obj/item/shield/riot/tele(src)
+	new /obj/item/shield/tele(src)
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/gun/energy/sharplite/x01(src)
+	new /obj/item/gun/energy/sharplite/yari(src)
 	new /obj/item/gun/ballistic/automatic/pistol/commissar(src) //WS edit - free lethals
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
@@ -131,7 +131,6 @@
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/megaphone/sec(src)
-	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/m11(src)
 	new /obj/item/gun/ballistic/automatic/pistol/challenger(src)
@@ -284,7 +283,7 @@
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/head/helmet/riot(src)
 	for(var/i in 1 to 3)
-		new /obj/item/shield/riot(src)
+		new /obj/item/shield/tele(src)
 
 /obj/structure/closet/secure_closet/armory2
 	name = "armory ballistics locker"
@@ -307,7 +306,7 @@
 	..()
 	new /obj/item/gun/energy/ionrifle(src)
 	for(var/i in 1 to 3)
-		new /obj/item/gun/energy/sharplite/x12(src)
+		new /obj/item/gun/energy/sharplite/volt(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/laser(src)
 
@@ -354,7 +353,8 @@
 /obj/structure/closet/secure_closet/brig_phys
 	name = "\proper brig physician's locker"
 	req_access = list(ACCESS_BRIG)
-	icon_state = "brig_phys"
+	icon_state = "sec"
+	icon_door = "brig_phys_door"
 
 /obj/structure/closet/secure_closet/brig_phys/PopulateContents()
 	..()
@@ -369,7 +369,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/restraints/handcuffs(src)
-	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+	new /obj/item/clothing/gloves/nitrile/blue(src)
 	new /obj/item/clothing/suit/toggle/labcoat/brig_phys(src)
 	new /obj/item/clothing/suit/armor/vest/security/brig_phys(src)
 	new /obj/item/clothing/head/beret/sec/brig_phys(src)

@@ -120,7 +120,7 @@
 		log_message("Armor saved, changing severity to [severity]", LOG_MECHA)
 	. = ..()
 
-/obj/mecha/contents_explosion(severity, target)
+/obj/mecha/contents_explosion(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	severity++
 	for(var/X in equipment)
 		var/obj/item/mecha_parts/mecha_equipment/ME = X
@@ -141,7 +141,7 @@
 			if(EXPLODE_LIGHT)
 				SSexplosions.lowobj += MT
 	if(occupant)
-		occupant.ex_act(severity,target)
+		occupant.ex_act(severity,target, light_dam, light_item_dam, heavy_dam,heavy_item_dam)
 
 /obj/mecha/handle_atom_del(atom/A)
 	if(A == occupant)

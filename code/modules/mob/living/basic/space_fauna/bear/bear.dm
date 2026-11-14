@@ -9,7 +9,7 @@
 	icon_gib = "bear_gib"
 	status_flags = NONE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 5)
 
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
@@ -18,7 +18,7 @@
 
 	maxHealth = 60
 	health = 60
-	speed = 0
+	speed = 12
 
 	obj_damage = 60
 	melee_damage_lower = 15 // i know it's like half what it used to be, but bears cause bleeding like crazy now so it works out
@@ -87,7 +87,7 @@
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
-	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	armour_penetration = 20
@@ -116,7 +116,6 @@
 	friendly_verb_continuous = "growls at"
 	friendly_verb_simple = "growl at"
 	speak_emote = list("growls")
-	speed = 12
 	maxHealth = 100
 	health = 100
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)

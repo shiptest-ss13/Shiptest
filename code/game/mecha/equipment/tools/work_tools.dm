@@ -544,7 +544,7 @@
 		log_combat(user, target, "gibbed", name)
 		target.gib()
 	else
-		var/obj/item/bodypart/target_part = target.get_bodypart(ran_zone(BODY_ZONE_CHEST))
+		var/obj/item/bodypart/target_part = target.get_bodypart(target.run_zone(BODY_ZONE_CHEST))
 		target.apply_damage(15, BRUTE, BODY_ZONE_CHEST, target.run_armor_check(target_part, "melee"))
 
 		//blood splatters
@@ -654,8 +654,8 @@
 	result_mech = /obj/mecha/combat/gygax/charger/inteq
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/mp_gygax
-	name = "NT-501p-MP Conversion Kit"
-	desc = "A NT made conversion kit for a 501p combat exosuit, to convert it to the lightweight NT-501p-MP skirmishing exosuit."
+	name = "MW-501p-MP Conversion Kit"
+	desc = "A Makosso-Warra made conversion kit for a 501p combat exosuit, to convert it to the lightweight MW-501p-MP skirmishing exosuit."
 	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
 	result_mech = /obj/mecha/combat/gygax/charger/mp
 

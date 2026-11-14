@@ -234,13 +234,6 @@
 	description = span_boldwarning("HE'S CUTTING ME OPEN!!")
 	mood_change = -8
 
-/datum/mood_event/nanite_sadness
-	description = span_warning_robot("+++++++HAPPINESS SUPPRESSION+++++++")
-	mood_change = -7
-
-/datum/mood_event/nanite_sadness/add_effects(message)
-	description = span_warning_robot("+++++++[message]+++++++")
-
 /datum/mood_event/bald
 	description = span_warning("I need something to cover my head...")
 	mood_change = -3
@@ -284,6 +277,11 @@
 	mood_change = -18
 	timeout = 3 MINUTES
 
+/datum/mood_event/headache
+	description = span_warning("My head hurts....")
+	mood_change = -3
+	timeout = 5 MINUTES
+
 /datum/mood_event/bad_touch_bear_hug
 	description = span_warning("I just got squeezed way too hard.")
 	mood_change = -3
@@ -293,3 +291,13 @@
 	description = span_warning("Someone booped my nose... ACK!")
 	mood_change = -3
 	timeout = 4 MINUTES
+
+/datum/mood_event/synthfleshOD
+	mood_change = -20
+	description = span_boldwarning("I JUST THREW UP MY OWN BLOOD AND FLESH!!")
+	timeout = 5 MINUTES
+
+/datum/mood_event/synthfleshminor
+	mood_change = -3
+	description = span_warning("...I don't think I should be coughing up blood")
+	timeout = 5 MINUTES

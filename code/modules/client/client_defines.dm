@@ -145,7 +145,7 @@
 	var/list/seen_messages
 
 	/// datum wrapper for client view
-	var/datum/viewData/view_size
+	var/datum/view_data/view_size
 
 	/// our current tab
 	var/stat_tab
@@ -170,7 +170,7 @@
 	///ds between parallax updates
 	var/parallax_throttle = 0
 	var/parallax_movedir = 0
-	var/parallax_layers_max = 4
+	var/parallax_layers_max = 8
 	var/parallax_animate_timer
 
 	/// rate limiting for the crew manifest
@@ -195,3 +195,5 @@
 	/// Used by SSserver_maint to detect if a client is newly AFK.
 	var/last_seen_afk = 0
 
+	/// If this client has been fully initialized or not
+	var/fully_created = FALSE

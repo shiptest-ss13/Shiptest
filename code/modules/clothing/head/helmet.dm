@@ -107,6 +107,7 @@
 /obj/item/clothing/head/helmet/ui_action_click(mob/user, action)
 	if(istype(action, action_light))
 		toggle_helmlight()
+		return
 	else
 		..()
 
@@ -204,6 +205,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = KEPORI_VARIATION
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "helmetalt",
 		"Desert" = "helmetalt_desert",
@@ -236,6 +238,7 @@
 	alt_toggle_message = "You push the visor up on"
 	can_toggle = TRUE
 	armor = list("melee" = 40, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	can_flashlight = TRUE
 	slowdown = 0.1
 	flags_inv = HIDEEARS|HIDEFACE
 	strip_delay = 80
@@ -245,6 +248,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "riot",
 		"Desert" = "riot_desert",
@@ -463,22 +467,16 @@
 	content_overlays = TRUE
 	can_flashlight = TRUE
 
-/obj/item/clothing/head/helmet/medical
-	name = "\improper trauma team helmet"
-	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
-	icon_state = "traumahelm"
-	item_state = "traumahelm"
-	can_flashlight = TRUE
-	supports_variations = VOX_VARIATION
-
 /obj/item/clothing/head/helmet/m10
-	name = "\improper M-10 pattern Helmet"
+	name = "\improper M-10 Pattern Helmet"
 	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = null
 	content_overlays = TRUE
+
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
@@ -494,6 +492,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = null
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "x11helm",
 		"Desert" = "x11helm_desert",

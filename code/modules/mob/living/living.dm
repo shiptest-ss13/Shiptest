@@ -350,39 +350,11 @@
 			update_pull_movespeed()
 
 		set_pull_offsets(M, state)
-
-/mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
-	if(M.buckled)
-		return //don't make them change direction or offset them if they're buckled into something.
-	var/offset = 0
-	switch(grab_state)
-		if(GRAB_PASSIVE)
-			offset = GRAB_PIXEL_SHIFT_PASSIVE
-		if(GRAB_AGGRESSIVE)
-			offset = GRAB_PIXEL_SHIFT_AGGRESSIVE
-		if(GRAB_NECK)
-			offset = GRAB_PIXEL_SHIFT_NECK
-		if(GRAB_KILL)
-			offset = GRAB_PIXEL_SHIFT_NECK
-	M.setDir(get_dir(M, src))
-	switch(M.dir)
-		if(NORTH)
-			animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y + offset, 3)
-		if(SOUTH)
-			animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y - offset, 3)
-		if(EAST)
-			if(M.lying_angle == 270) //update the dragged dude's direction if we've turned
-				M.set_lying_angle(90)
-			animate(M, pixel_x = M.base_pixel_x + offset, pixel_y = M.base_pixel_y, 3)
-		if(WEST)
-			if(M.lying_angle == 90)
-				M.set_lying_angle(270)
-			animate(M, pixel_x = M.base_pixel_x - offset, pixel_y = M.base_pixel_y, 3)
-
-/mob/living/proc/reset_pull_offsets(mob/living/M, override)
-	if(!override && M.buckled)
-		return
-	animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y, 1)
+	else
+		// We already know it's an object since it's not a mob so no need to typecheck
+		var/obj/O = AM
+		if (O.density || O.drag_slowdown)
+			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
@@ -401,6 +373,8 @@
 	..()
 	update_pull_movespeed()
 	update_pull_hud_icon()
+	if(a_intent == INTENT_HARM)
+		face_mouse = TRUE
 
 /mob/living/verb/stop_pulling1()
 	set name = "Stop Pulling"
@@ -544,12 +518,16 @@
 
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
-	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
-	ADD_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
+	if(layer == initial(layer)) //to avoid things like hiding larvas.
+		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
+	if(HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+		set_flipped(TRUE)
 	if(HAS_TRAIT(src, TRAIT_FLOORED) && !(dir & (NORTH|SOUTH)))
 		setDir(pick(NORTH, SOUTH)) // We are and look helpless.
+	if(rotate_on_lying)
+		add_offsets(LYING_DOWN_TRAIT, y_add = PIXEL_Y_OFFSET_LYING)
 
 
 /// Proc to append behavior related to lying down.
@@ -557,9 +535,10 @@
 	if(layer == LYING_MOB_LAYER)
 		layer = initial(layer)
 	density = initial(density) // We were prone before, so we become dense and things can bump into us again.
-	REMOVE_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	REMOVE_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
-
+	if(HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+		set_flipped(FALSE)
+	remove_offsets(LYING_DOWN_TRAIT)
 
 
 //Recursive function to find everything a mob is holding. Really shitty proc tbh.
@@ -581,15 +560,83 @@
 			return TRUE
 	return FALSE
 
-// Living mobs use can_inject() to make sure that the mob is not syringe-proof in general.
-/mob/living/proc/can_inject()
+/**
+ * Returns whether or not the mob can be injected. Should not perform any side effects.
+ *
+ * Arguments:
+ * * user - The user trying to inject the mob.
+ * * target_zone - The zone being targeted.
+ * * injection_flags - A bitflag for extra properties to check.
+ *   Check __DEFINES/injection.dm for more details, specifically the ones prefixed INJECT_CHECK_*.
+ */
+/mob/living/proc/can_inject(mob/user, target_zone, injection_flags)
 	return TRUE
+
+/mob/living/proc/is_exposed(mob/user, target_zone, error_msg)
+	return TRUE
+
+/**
+ * Like can_inject, but it can perform side effects.
+ *
+ * Arguments:
+ * * user - The user trying to inject the mob.
+ * * target_zone - The zone being targeted.
+ * * injection_flags - A bitflag for extra properties to check. Check __DEFINES/injection.dm for more details.
+ *   Check __DEFINES/injection.dm for more details. Unlike can_inject, the INJECT_TRY_* defines will behave differently.
+ */
+/mob/living/proc/try_inject(mob/user, target_zone, injection_flags)
+	return can_inject(user, target_zone, injection_flags)
 
 /mob/living/is_injectable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
 
 /mob/living/is_drawable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
+
+/mob/living/is_injectable(mob/user, allowmobs = TRUE)
+	return (allowmobs && reagents && can_inject(user))
+
+/mob/living/reagent_scan()
+	if(!reagents)
+		return ""
+
+	var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, quirks, etc.
+	var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
+
+	// Blood reagents
+	if(reagents.reagent_list.len)
+		for(var/r in reagents.reagent_list)
+			var/datum/reagent/reagent = r
+			render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+	if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
+		render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
+	else
+		render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
+		render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
+		render_block.Cut()
+
+	// Stomach reagents
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(belly)
+		if(belly.reagents.reagent_list.len)
+			for(var/bile in belly.reagents.reagent_list)
+				var/datum/reagent/bit = bile
+				if(!belly.food_reagents[bit.type])
+					render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+				else
+					var/bit_vol = bit.volume - belly.food_reagents[bit.type]
+					if(bit_vol > 0)
+						render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+
+		if(!length(render_block))
+			render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
+		else
+			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+			render_list += render_block
+			render_block.Cut()
+
+	return jointext(render_list, "")
 
 
 ///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
@@ -668,7 +715,7 @@
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
-		clear_alert("not_enough_oxy")
+		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 		reload_fullscreen()
 		. = TRUE
 		if(mind)
@@ -769,7 +816,8 @@
 
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 	if(lying_angle != 0)
-		lying_angle_on_movement(direct)
+		if(!HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+			lying_angle_on_movement(direct)
 	if (buckled && buckled.loc != newloc) //not updating position
 		if (!buckled.anchored)
 			return buckled.Move(newloc, direct, glide_size)
@@ -967,8 +1015,7 @@
 /mob/living/proc/resist_restraints()
 	return
 
-/mob/living/proc/get_visible_name()
-	return name
+
 
 /mob/living/update_gravity(has_gravity)
 	. = ..()
@@ -979,7 +1026,7 @@
 		if(has_gravity == 1)
 			clear_alert("gravity")
 		else
-			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
+			if(has_gravity >= GRAVITY_DAMAGE_THRESHOLD)
 				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
 				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
@@ -1113,6 +1160,11 @@
 //used in datum/reagents/reaction() proc
 /mob/living/proc/get_permeability_protection(list/target_zones)
 	return 0
+
+/mob/living/proc/has_smoke_protection()
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return TRUE
+	return FALSE
 
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
 	return
@@ -1324,12 +1376,12 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 * Handles effects happening when mob is on normal fire
 *
 * Vars:
-* * delta_time
+* * seconds_per_tick
 * * times_fired
 * * fire_handler: Current fire status effect that called the proc
 */
 
-/mob/living/proc/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/proc/on_fire_stack(seconds_per_tick, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	return
 
 //Mobs on Fire end
@@ -1481,8 +1533,8 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 			set_blurriness(var_value)
 		if(NAMEOF(src, maxHealth))
 			updatehealth()
-		if(NAMEOF(src, resize))
-			update_transform()
+		if(NAMEOF(src, current_size))
+			update_transform(current_size)
 		if(NAMEOF(src, lighting_alpha))
 			sync_lighting_plane_alpha()
 
@@ -1563,6 +1615,18 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		update_transform()
 		lying_prev = lying_angle
 
+/**
+* Flips a mob over by mirroring their sprite upside-down, for species that look funny if you rotate them 90 degrees for lying down.
+*
+* arguments:
+* * new_flipped (bool) The new flipped state for the mob, either true or false
+ */
+/mob/living/proc/set_flipped(new_flipped)
+	if(new_flipped == flipped)
+		return
+	. = new_flipped
+	flipped = new_flipped
+	update_transform(do_flip = TRUE)
 
 /**
  * add_body_temperature_change Adds modifications to the body temperature
@@ -1786,7 +1850,8 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 			else // Forcing to a lying position.
 				ADD_TRAIT(src, TRAIT_FLOORED, BUCKLED_TRAIT)
 				set_body_position(LYING_DOWN)
-				set_lying_angle(buckled.buckle_lying)
+				if(!HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+					set_lying_angle(buckled.buckle_lying)
 	else
 		//REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, BUCKLED_TRAIT)      // WS Edit - Can use buttons in chairs again
 		REMOVE_TRAIT(src, TRAIT_FLOORED, BUCKLED_TRAIT)
@@ -1914,7 +1979,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /// Proc to append behavior to the condition of being floored. Called when the condition starts.
 /mob/living/proc/on_floored_start()
 	if(body_position == STANDING_UP) //force them on the ground
-		set_lying_angle(pick(90, 270))
+		set_lying_angle()
 		set_body_position(LYING_DOWN)
 		on_fall()
 
@@ -1953,15 +2018,19 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.
 /mob/living/set_typing_indicator(state)
 	typing_indicator = state
+	// cut_overlay matches by appearance so if someone changes to sign language which uses different icons things break
+	// so we have to store the overlay and cut it exactly
+	if(bubble_overlay)
+		cut_overlay(bubble_overlay)
+		bubble_overlay = null
+	if(!typing_indicator)
+		return
 	var/datum/language/used_language = get_selected_language()
 	var/state_of_bubble = "[initial(used_language?.bubble_override) || bubble_icon || "default"]0"
-	var/mutable_appearance/bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
+	bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
 	bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
-	if(typing_indicator)
-		add_overlay(bubble_overlay)
-		play_fov_effect(src, 6, "talk", ignore_self = TRUE)
-	else
-		cut_overlay(bubble_overlay)
+	add_overlay(bubble_overlay)
+	play_fov_effect(src, 6, "talk", ignore_self = TRUE)
 
 /mob/living/remove_air(amount) //To prevent those in contents suffocating
 	return loc ? loc.remove_air(amount) : null
@@ -2071,27 +2140,3 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
  */
 /mob/living/proc/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
 	return reagents.has_reagent(reagent, amount, needs_metabolizing)
-
-/**
- * Removes reagents from the mob
- *
- * This will locate the reagent in the mob and remove it from reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- * * custom_amount (int)(optional) checks for having a specific amount of that chemical.
- * * safety (bool) check for the trans_id_to
- */
-/mob/living/proc/remove_reagent(reagent, custom_amount, safety)
-	if(!custom_amount)
-		custom_amount = get_reagent_amount(reagent)
-	return reagents.remove_reagent(reagent, custom_amount, safety)
-
-/**
- * Returns the amount of a reagent from the mob
- *
- * This will locate the reagent in the mob and return the total amount from all reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- */
-/mob/living/proc/get_reagent_amount(reagent)
-	return reagents.get_reagent_amount(reagent)

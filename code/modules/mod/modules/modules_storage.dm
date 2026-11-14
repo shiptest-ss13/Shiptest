@@ -49,7 +49,7 @@
 
 /obj/item/mod/module/storage/bluespace
 	name = "MOD bluespace storage module"
-	desc = "A storage system developed by Nanotrasen, these compartments employ \
+	desc = "A storage system developed by Makosso-Warra, these compartments employ \
 		miniaturized bluespace pockets for the ultimate in storage technology; regardless of the weight of objects put inside."
 	icon_state = "storage_large"
 	max_w_class = WEIGHT_CLASS_GIGANTIC

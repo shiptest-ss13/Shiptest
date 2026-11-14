@@ -1,4 +1,4 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun)
 #define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
@@ -28,7 +28,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	spread = 15
-	spread_unwielded = 35
+	spread_unwielded = 15
 	recoil = -2
 	recoil_unwielded = -2
 
@@ -93,7 +93,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 3
+	recoil_unwielded = 0.5
 	recoil = 0.5
 
 	slot_offsets = list(
@@ -111,12 +111,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 /obj/item/ammo_box/magazine/m20_auto_elite
 	name = "Model 20 magazine (.44 Roumain)"
-	desc = "A nine-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
+	desc = "A ten-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/a44roum
 	caliber = ".44 Roumain"
-	max_ammo = 9
+	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m20_auto_elite/empty
@@ -132,6 +132,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
 	item_state = "m20_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -309,7 +310,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
 /obj/item/gun/ballistic/automatic/m15
 	name = "Model 15 Super Sporter"
-	desc = "A popular semi-automatic hunting rifle produced by Serene Outdoors. Solid all-round performance, high accuracy, and ease of access compared to military rifles makes the Super Sporter a popular choice for hunting medium game and occasionally self-defense. Chambered in 5.56mm."
+	desc = "A popular semi-automatic hunting rifle produced by Serene Outdoors. Solid all-round performance, high accuracy, and ease of access compared to military rifles makes the Super Sporter a popular choice for hunting medium game and occasionally self-defense. Chambered in 7.62x40mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/serene_outdoors/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
@@ -342,6 +343,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
+	fire_delay = 3
+
+	wear_minor_threshold = 200
+	wear_major_threshold = 600
+	wear_maximum = 1200
+
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
@@ -351,7 +358,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 			"y" = 21,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 13,
+			"x" = 15,
 			"y" = 23,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -364,12 +371,12 @@ EMPTY_GUN_HELPER(automatic/m15)
 NO_MAG_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
-	name = "Model 15 magazine (5.56x42mm CLIP)"
-	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
+	name = "Model 15 magazine (7.62x40mm CLIP)"
+	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do good damage with good armor penetration."
 	icon_state = "p16_mag-1"
 	base_icon_state = "p16_mag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = "5.56x42mm"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -389,7 +396,7 @@ NO_MAG_GUN_HELPER(automatic/m15)
 	icon_state = "buckmaster"
 	item_state = "buckmaster"
 
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.3 SECONDS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/buckmaster
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/buckmaster,
@@ -413,6 +420,12 @@ NO_MAG_GUN_HELPER(automatic/m15)
 
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
+
+	unique_reskin = list(\
+		"Wood" = "buckmaster",
+		"Polymer" = "buckmasterclip"
+		)
+	unique_reskin_changes_inhand = TRUE
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

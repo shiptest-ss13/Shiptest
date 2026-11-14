@@ -11,8 +11,8 @@
 	color = "#bb2424"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	/// The bloodiest wound that the patient has will have its blood_flow reduced by this much each tick
-	var/clot_rate = 0.3
+	/// The bloodiest wound that the patient has will have its blood_flow reduced by this much each second
+	var/clot_rate = 0.15
 	/// While this reagent is in our bloodstream, we reduce all bleeding by this factor
 	var/passive_bleed_modifier = 0.7
 	/// For tracking when we tell the person we're no longer bleeding
@@ -41,7 +41,7 @@
 
 	return ..()
 
-/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	. = ..()
 	if(!M.blood_volume || !M.all_wounds)
 		return
@@ -58,33 +58,33 @@
 		if(!was_working)
 			to_chat(M, span_green("You can feel your flowing blood start thickening!"))
 			was_working = TRUE
-		bloodiest_wound.blood_flow = max(0, bloodiest_wound.blood_flow - clot_rate)
+		bloodiest_wound.blood_flow = max(0, bloodiest_wound.blood_flow - (clot_rate * seconds_per_tick))
 	else if(was_working)
 		was_working = FALSE
 
-/datum/reagent/medicine/chitosan/overdose_process(mob/living/carbon/M)
+/datum/reagent/medicine/chitosan/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
 	. = ..()
 	if(!M.blood_volume)
 		return
 
-	if(prob(15))
-		M.losebreath += rand(2,4)
-		M.adjustOxyLoss(rand(1,3))
-		if(prob(30))
+	if(SPT_PROB(7.5, seconds_per_tick))
+		M.losebreath += rand(1 * seconds_per_tick, 2 * seconds_per_tick)
+		M.adjustOxyLoss(rand(0.5 * seconds_per_tick, 1.5 * seconds_per_tick))
+		if(SPT_PROB(15, seconds_per_tick))
 			to_chat(M, span_danger("You can feel your blood clotting up in your veins!"))
-		else if(prob(10))
+		else if(SPT_PROB(5, seconds_per_tick))
 			to_chat(M, span_userdanger("You feel like your blood has stopped moving!"))
-			M.adjustOxyLoss(rand(3,4))
+			M.adjustOxyLoss(rand(1 * seconds_per_tick, 2 * seconds_per_tick))
 
-		if(prob(50))
+		if(SPT_PROB(30, seconds_per_tick))
 			var/obj/item/organ/lungs/our_lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
-			our_lungs.applyOrganDamage(1)
-		else if(prob(25))
+			our_lungs.applyOrganDamage(0.5 * seconds_per_tick)
+		else if(SPT_PROB(13, seconds_per_tick))
 			var/obj/item/organ/lungs/our_brain = M.getorganslot(ORGAN_SLOT_BRAIN)
-			our_brain.applyOrganDamage(1)
+			our_brain.applyOrganDamage(0.5 * seconds_per_tick)
 		else
 			var/obj/item/organ/heart/our_heart = M.getorganslot(ORGAN_SLOT_HEART)
-			our_heart.applyOrganDamage(1)
+			our_heart.applyOrganDamage(0.5 * seconds_per_tick)
 
 /datum/reagent/medicine/salglu_solution
 	name = "Saline-Glucose Solution"
@@ -96,34 +96,34 @@
 	taste_description = "sweetness and salt"
 	var/last_added = 0
 	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
-	var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
+	var/extra_regen = 0.125 // in addition to acting as temporary blood, also add this much to their actual blood per second
 
-/datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
 	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
-		var/amount_to_add = min(M.blood_volume, volume*5)
+		var/amount_to_add = min(M.blood_volume, volume*2.5*seconds_per_tick)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level + extra_regen
-	if(prob(33))
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
+		M.blood_volume = new_blood_level + (extra_regen * seconds_per_tick)
+	if(SPT_PROB(18, seconds_per_tick))
+		M.adjustBruteLoss(-0.25 * REM * seconds_per_tick, 0)
+		M.adjustFireLoss(-0.25 * REM * seconds_per_tick, 0)
 		. = TRUE
 	..()
 
-/datum/reagent/medicine/salglu_solution/overdose_process(mob/living/M)
-	if(prob(3))
+/datum/reagent/medicine/salglu_solution/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(1.5, seconds_per_tick))
 		to_chat(M, span_warning("You feel salty."))
 		holder.add_reagent(/datum/reagent/consumable/sodiumchloride, 1)
 		holder.remove_reagent(/datum/reagent/medicine/salglu_solution, 0.5)
-	else if(prob(3))
+	else if(SPT_PROB(1.5, seconds_per_tick))
 		to_chat(M, span_warning("You feel sweet."))
 		holder.add_reagent(/datum/reagent/consumable/sugar, 1)
 		holder.remove_reagent(/datum/reagent/medicine/salglu_solution, 0.5)
-	if(prob(33))
-		M.adjustBruteLoss(0.5*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-		M.adjustFireLoss(0.5*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
+	if(SPT_PROB(17, seconds_per_tick))
+		M.adjustBruteLoss(0.25 * REM * seconds_per_tick, FALSE, FALSE, BODYTYPE_ORGANIC)
+		M.adjustFireLoss(0.5 * REM * seconds_per_tick, FALSE, FALSE, BODYTYPE_ORGANIC)
 		. = TRUE
 	..()

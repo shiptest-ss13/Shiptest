@@ -8,11 +8,11 @@
 	return ..()
 
 /datum/status_effect/dizziness/on_apply()
-	RegisterSignals(owner, list(COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_MOB_DEATH), PROC_REF(clear_dizziness))
+	RegisterSignal(owner, COMSIG_MOB_DEATH, PROC_REF(clear_dizziness))
 	return TRUE
 
 /datum/status_effect/dizziness/on_remove()
-	UnregisterSignal(owner, list(COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_MOB_DEATH))
+	UnregisterSignal(owner, COMSIG_MOB_DEATH)
 	// In case our client's offset is somewhere wacky from the dizziness effect
 	owner.client?.pixel_x = initial(owner.client?.pixel_x)
 	owner.client?.pixel_y = initial(owner.client?.pixel_y)

@@ -109,7 +109,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	GLOB.meteor_list += src
 	SSaugury.register_doom(src, threat)
 	SpinAnimation()
-	timerid = QDEL_IN(src, lifetime)
+	timerid = QDEL_IN_STOPPABLE(src, lifetime)
 	chase_target(target)
 
 /obj/effect/meteor/Bump(atom/A)

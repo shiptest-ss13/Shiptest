@@ -12,6 +12,7 @@ import {
   Table,
   Tabs,
   Collapsible,
+  Tooltip,
 } from '../../components';
 import { formatMoney } from '../../format';
 
@@ -20,12 +21,13 @@ export const CargoCatalog = (props, context) => {
 
   const { self_paid, app_cost, blockade } = data;
 
-  const supplies = Object.values(data.supplies);
+  const categories = Object.values(data.categories);
+  const all_packs = data.all_packs;
 
-  const [activeSupplyName, setActiveSupplyName] = useSharedState(
+  const [activeCategoryName, setActiveCategoryName] = useSharedState(
     context,
-    'supply',
-    supplies[0]?.name
+    'category',
+    categories[0]?.name
   );
 
   const [searchText, setSearchText] = useSharedState(
@@ -34,35 +36,61 @@ export const CargoCatalog = (props, context) => {
     ''
   );
 
-  const [cart, setCart] = useSharedState(context, 'cart', []);
+  const [cart, setCart] = useSharedState(context, 'cart', {});
 
-  const cartTotal = cart.reduce(
-    (cartTotal, entry) =>
-      cartTotal + (entry.discountedcost ? entry.discountedcost : entry.cost),
+  const addPack = (pack_ref, count = 1) => {
+    setPack(pack_ref, (cart[pack_ref] ? cart[pack_ref] : 0) + count);
+  };
+
+  const setPack = (pack_ref, count) => {
+    let tmpcart = { ...cart };
+    if (count > 0) {
+      tmpcart[pack_ref] = count;
+    } else {
+      delete tmpcart[pack_ref];
+    }
+    setCart(tmpcart);
+  };
+
+  const itemCount = Object.values(cart).reduce(
+    (itemCount, current_count) => itemCount + current_count,
     0
   );
 
-  const activeSupply =
-    activeSupplyName === 'search_results'
-      ? { packs: searchForSupplies(supplies, searchText) }
-      : supplies.find((supply) => supply.name === activeSupplyName);
+  const cartTotal = (() => {
+    let total = 0;
+    let item;
+    for (const item_ref in cart) {
+      item = all_packs[item_ref];
+      total +=
+        (item.discountedcost ? item.discountedcost : item.cost) *
+        cart[item_ref];
+    }
+    return total;
+  })();
+
+  const activeCategory =
+    activeCategoryName === 'search_results'
+      ? { packs: searchForPacks(all_packs, searchText) }
+      : categories.find((category) => category.name === activeCategoryName);
 
   return (
     <>
-      <Section title="Cart">
-        <>
-          <Box inline my={1} mx={1}>
-            {cart.length === 0 && 'Cart is empty'}
-            {cart.length === 1 && '1 item'}
-            {cart.length >= 2 && cart.length + ' items'}{' '}
-            {cartTotal > 0 && `(${formatMoney(cartTotal)} cr)`}
-          </Box>
+      <Section
+        title="Cart"
+        buttons={
           <>
+            <Box inline my={1} mx={1}>
+              {itemCount === 0 && 'Cart is empty'}
+              {itemCount === 1 && '1 item'}
+              {itemCount >= 2 && itemCount + ' items'}{' '}
+              {cartTotal > 0 && `(${formatMoney(cartTotal)} cr)`}
+            </Box>
             <Button
-              icon="times"
+              icon="trash"
               color="transparent"
               content="Clear"
-              onClick={() => setCart([])}
+              onClick={() => setCart({})}
             />
             {blockade ? (
               <Button
@@ -73,30 +101,66 @@ export const CargoCatalog = (props, context) => {
             ) : (
               <Button
                 color="green"
+                icon="shopping-cart"
+                disabled={!itemCount}
                 content="Purchase"
                 onClick={() => {
                   act('purchase', {
                     cart: cart,
                     total: cartTotal,
                   });
-                  setCart([]);
+                  setCart({});
                 }}
               />
             )}
           </>
-        </>
-        {cart.length !== 0 ? (
+        }
+      >
+        {itemCount !== 0 ? (
           <Collapsible title="Cart Contents">
             <Table>
-              {cart.map((pack) => {
+              {Object.entries(cart).map(([pack_ref, count]) => {
+                const pack = all_packs[pack_ref];
+                const actualcost = pack.discountedcost
+                  ? pack.discountedcost
+                  : pack.cost;
                 return (
-                  <Table.Row key={pack} className="candystripe">
+                  <Table.Row key={pack_ref} className="candystripe">
                     <Table.Cell>
-                      {(pack.discountedcost ? pack.discountedcost : pack.cost) +
-                        ' cr'}
+                      <Button
+                        icon="times"
+                        color="transparent"
+                        onClick={() => setPack(pack_ref, 0)}
+                      />
+                      <Input
+                        width="40px"
+                        value={count}
+                        textAlign="right"
+                        onChange={(e, value) => {
+                          if (!isNaN(value) && value !== '') {
+                            setPack(pack_ref, Number(value));
+                          }
+                        }}
+                      />
                     </Table.Cell>
-                    <Table.Cell collapsing color="label" textAlign="right">
-                      {pack.name}
+                    <Table.Cell textAlign="right">
+                      <Tooltip
+                        content={formatMoney(actualcost) + ' cr per unit.'}
+                        position="right"
+                      >
+                        <Box>{formatMoney(actualcost * count) + ' cr'}</Box>
+                      </Tooltip>
+                    </Table.Cell>
+                    <Table.Cell width="3%" />
+                    <Table.Cell
+                      collapsing
+                      color="label"
+                      textAlign="left"
+                      width="70%"
+                    >
+                      <Tooltip content={pack.desc} position="bottom">
+                        <Box> {pack.name} </Box>
+                      </Tooltip>
                     </Table.Cell>
                   </Table.Row>
                 );
@@ -104,7 +168,15 @@ export const CargoCatalog = (props, context) => {
             </Table>
           </Collapsible>
         ) : (
-          ''
+          <Box mb={1}>
+            <Button
+              icon="times"
+              fluid
+              ellipsis
+              disabled={1}
+              content="Cart is empty"
+            />
+          </Box>
         )}
       </Section>
       <Section title="Catalog">
@@ -113,7 +185,7 @@ export const CargoCatalog = (props, context) => {
             <Tabs vertical>
               <Tabs.Tab
                 key="search_results"
-                selected={activeSupplyName === 'search_results'}
+                selected={activeCategoryName === 'search_results'}
               >
                 <Stack align="baseline">
                   <Stack.Item>
@@ -131,10 +203,10 @@ export const CargoCatalog = (props, context) => {
 
                         if (value.length) {
                           // Start showing results
-                          setActiveSupplyName('search_results');
-                        } else if (activeSupplyName === 'search_results') {
+                          setActiveCategoryName('search_results');
+                        } else if (activeCategoryName === 'search_results') {
                           // return to normal category
-                          setActiveSupplyName(supplies[0]?.name);
+                          setActiveCategoryName(categories[0]?.name);
                         }
                         setSearchText(value);
                       }}
@@ -149,64 +221,68 @@ export const CargoCatalog = (props, context) => {
                   </Stack.Item>
                 </Stack>
               </Tabs.Tab>
-              {supplies.map((supply) => (
+              {categories.map((category) => (
                 <Tabs.Tab
-                  key={supply.name}
-                  selected={supply.name === activeSupplyName}
+                  key={category.name}
+                  selected={category.name === activeCategoryName}
                   onClick={() => {
-                    setActiveSupplyName(supply.name);
+                    setActiveCategoryName(category.name);
                     setSearchText('');
                   }}
                 >
-                  {supply.name} ({supply.packs.length})
+                  {category.name} ({category.packs.length})
                 </Tabs.Tab>
               ))}
             </Tabs>
           </Flex.Item>
           <Flex.Item grow={1} basis={0}>
             <Table>
-              {activeSupply?.packs.map((pack) => {
-                const tags = [];
-                // if (pack.no_bundle) {
-                //   tags.push('No Grouping');
-                // }
-                if (pack.access) {
-                  tags.push('Restricted');
-                }
-                return (
-                  <Table.Row key={pack.name} className="candystripe">
-                    <Table.Cell>{pack.name}</Table.Cell>
-                    <Table.Cell collapsing color="label" textAlign="right">
-                      {tags.join(', ')}
-                    </Table.Cell>
-                    <Table.Cell collapsing textAlign="right">
-                      <Button
-                        fluid
-                        tooltip={pack.desc}
-                        color={
-                          pack.discountedcost || pack.faction_locked
-                            ? 'green'
-                            : 'default'
-                        }
-                        tooltipPosition="left"
-                        onClick={() => setCart(cart.concat(pack))}
-                      >
-                        {pack.discountedcost
-                          ? ' (-' +
-                            pack.discountpercent +
-                            '%) ' +
-                            pack.discountedcost
-                          : formatMoney(
-                              (self_paid && !pack.goody) || app_cost
-                                ? Math.round(pack.cost * 1.1)
-                                : pack.cost
-                            )}
-                        {' cr'}
-                      </Button>
-                    </Table.Cell>
-                  </Table.Row>
-                );
-              })}
+              {activeCategory?.packs
+                .map((pack_ref) => all_packs[pack_ref])
+                .map((pack) => {
+                  const tags = [];
+                  // if (pack.no_bundle) {
+                  //   tags.push('No Grouping');
+                  // }
+                  if (pack.access) {
+                    tags.push('Restricted');
+                  }
+                  return (
+                    <Table.Row key={pack.name} className="candystripe">
+                      <Table.Cell>{pack.name}</Table.Cell>
+                      <Table.Cell collapsing color="label" textAlign="right">
+                        {tags.join(', ')}
+                      </Table.Cell>
+                      <Table.Cell collapsing textAlign="right">
+                        <Button
+                          fluid
+                          tooltip={pack.desc}
+                          color={
+                            pack.discountedcost || pack.faction_locked
+                              ? 'green'
+                              : 'default'
+                          }
+                          tooltipPosition="left"
+                          onClick={() => addPack(pack.ref)}
+                        >
+                          {pack.discountedcost
+                            ? ' (' +
+                              (pack.discountpercent > 0
+                                ? '-' + pack.discountpercent
+                                : '+' + -pack.discountpercent) +
+                              '%) ' +
+                              formatMoney(pack.discountedcost)
+                            : formatMoney(
+                                (self_paid && !pack.goody) || app_cost
+                                  ? Math.round(pack.cost * 1.1)
+                                  : pack.cost
+                              )}
+                          {' cr'}
+                        </Button>
+                      </Table.Cell>
+                    </Table.Row>
+                  );
+                })}
             </Table>
           </Flex.Item>
         </Flex>
@@ -223,11 +299,10 @@ export const CargoCatalog = (props, context) => {
  * @param {string} search The search term
  * @returns {any[]} The flat list of supply packs.
  */
-const searchForSupplies = (supplies, search) => {
+const searchForPacks = (all_packs, search) => {
   search = search.toLowerCase();
 
   return flow([
-    (categories) => categories.flatMap((category) => category.packs),
     filter(
       (pack) =>
         pack.name?.toLowerCase().includes(search.toLowerCase()) ||
@@ -235,5 +310,5 @@ const searchForSupplies = (supplies, search) => {
     ),
     sortBy((pack) => pack.name),
     (packs) => packs.slice(0, 25),
-  ])(supplies);
+  ])(Object.values(all_packs)).map((pack) => pack.ref);
 };

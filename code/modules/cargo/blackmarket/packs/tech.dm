@@ -41,49 +41,6 @@
 	stock = 1
 	availability_prob = 30
 
-/datum/blackmarket_item/tech/ai_core
-	name = "AI Core Board"
-	desc = "The future is now! Become one with your ship with this AI core board! (Some assembly required.)"
-	item = /obj/item/circuitboard/aicore
-	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
-
-	cost_min = 5000
-	cost_max = 7000
-	stock = 1
-	availability_prob = 10
-	spawn_weighting = FALSE
-
-/datum/blackmarket_item/tech/boris
-	name = "B.O.R.I.S Module"
-	desc = "A Bluespace Optimi-blah blah blah, I'm bored already. This module will convert a cyborg frame into an AI compatible shell."
-	item = /obj/item/borg/upgrade/ai
-
-	cost_min = 100
-	cost_max = 250
-	stock = 3
-	availability_prob = 0
-
-/datum/blackmarket_item/tech/mmi
-	name = "Man Machine Interface"
-	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, Cyborgs and Mechs!"
-	item = /obj/item/mmi
-
-	cost_min = 250
-	cost_max = 750
-	stock = 3
-	availability_prob = 0
-
-/datum/blackmarket_item/tech/borg
-	name = "Cyborg Construction Kit"
-	desc = "This durable and verastile cyborg frame is capable of fufilling a number of roles and survive situations that would kill the average person. Brain sold seperately."
-	item = /obj/structure/closet/crate/cyborg
-	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi)
-
-	cost_min = 1000
-	cost_max = 2000
-	stock = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/tech/t4_capacitor
 	name = "Quadratic Capacitor"
 	desc = "A top grade quadractic capacitor. These highly effiecent capacitors are capable of storing massive amounts of electricity. Keep away from open plugs."
@@ -108,7 +65,7 @@
 
 /datum/blackmarket_item/tech/t4_manip
 	name = "Femto Manipulator"
-	desc = "A top grade femto manipulator. These insanely precise manipuators are capable of manipulating particles up to a quadtillionth of a meter. Still not precise enough to find a single braincell in an NT exec's head though."
+	desc = "A top grade femto manipulator. These insanely precise manipuators are capable of manipulating particles up to a quadtillionth of a meter. Still not precise enough to find a single braincell in an MW exec's head though."
 	item = /obj/item/stock_parts/manipulator/femto
 
 	cost_min = 400
@@ -233,3 +190,48 @@
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tech/e20_scatter
+	name = "E-20 Scattershot Conversion Kit"
+	desc = "Got a few extra of these conversion kits for the E-20 lying around. Turns em into a nice punchy shotgun. Spread is shit but get close and you'll melt fuckers."
+	item = /obj/item/attachment/e20mod/scatter
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+
+/datum/blackmarket_item/tech/e20_heavy
+	name = "E-20 Overclock Conversion Kit"
+	desc = "So get this. Turns out all you need to turn the E-20 into an E-50 is some big capacitors and a new control board. Had one of our techs make some conversion kits if you'd like to get more kick out of those old things."
+	item = /obj/item/attachment/e20mod/heavy
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+
+/datum/blackmarket_item/tech/e20_efficiency
+	name = "E-20 Yellowjacket Conversion Kit"
+	desc = "Look, I'm gonna be straight with you. We got some leftover parts from building Wasps. Made em into little kits for turning an E-20 into a cute PDW sort of deal. Ruins the mining power but I bet you're not using it for that."
+	item = /obj/item/attachment/e20mod/efficiency
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+
+/datum/blackmarket_item/tech/e20_pierce
+	name = "E-20 Pierce Conversion Kit"
+	desc = "A nice little kit we've cooked up, slap this bad boy in an E-20 and it'll start shooting proper lasers. Shit'll punch straight through multiple targets and mines like a motherfucker. Doesn't go too far because of beam scatter but that's what you get with this sort of power."
+	item = /obj/item/attachment/e20mod/pierce
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+

@@ -76,7 +76,7 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	flags_1 = CONDUCT_1
-	item_flags = SURGICAL_TOOL | EYE_STAB
+	item_flags = SURGICAL_TOOL
 	force = 10		//WS Edit - Makes drill weaker than circular saw
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
@@ -87,6 +87,7 @@
 
 /obj/item/surgicaldrill/Initialize()		//WS Edit Start - Trying to butcher with a drill is a bad idea
 	. = ..()
+	AddElement(/datum/element/eyestab)
 	AddComponent(/datum/component/butchering, 300 * toolspeed, 30, 0, 'sound/weapons/circsawhit.ogg')		// Only technically works - WS Edit End
 
 /obj/item/surgicaldrill/augment
@@ -107,7 +108,7 @@
 	drop_sound = 'sound/items/handling/knife2_drop.ogg'
 	item_state = "scalpel-1"
 	flags_1 = CONDUCT_1
-	item_flags = SURGICAL_TOOL | EYE_STAB
+	item_flags = SURGICAL_TOOL
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 5
@@ -123,6 +124,7 @@
 
 /obj/item/scalpel/Initialize()
 	. = ..()
+	AddElement(/datum/element/eyestab)
 	AddComponent(/datum/component/butchering, 80 * toolspeed, 100, 0)
 
 /obj/item/scalpel/augment
@@ -383,41 +385,28 @@
 		return
 
 	var/candidate_name
-	var/obj/item/organ/tail_snip_candidate
 	var/obj/item/bodypart/limb_snip_candidate
 
-	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
-		tail_snip_candidate = patient.getorganslot(ORGAN_SLOT_TAIL)
-		if(!tail_snip_candidate)
-			to_chat(user, span_warning("[patient] does not have a tail."))
-			return
-		candidate_name = tail_snip_candidate.name
-
-	else
-		limb_snip_candidate = patient.get_bodypart(check_zone(user.zone_selected))
-		if(!limb_snip_candidate)
-			to_chat(user, span_warning("[patient] is already missing that limb, what more do you want?"))
-			return
-		candidate_name = limb_snip_candidate.name
+	limb_snip_candidate = patient.get_bodypart(user.zone_selected)
+	if(!limb_snip_candidate)
+		to_chat(user, span_warning("[patient] is already missing that limb, what more do you want?"))
+		return
+	candidate_name = limb_snip_candidate.plaintext_zone
 
 	var/amputation_speed_mod
 
 	patient.visible_message(span_danger("[user] begins to secure [src] around [patient]'s [candidate_name]."), span_userdanger("[user] begins to secure [src] around your [candidate_name]!"))
 	playsound(get_turf(patient), 'sound/items/ratchet.ogg', 20, TRUE)
-	if(patient.stat >= UNCONSCIOUS || patient.IsStun()) //Stun is used by paralytics like curare it should not be confused with the more common paralyze.
+	if(patient.stat >= UNCONSCIOUS || HAS_TRAIT(patient, TRAIT_INCAPACITATED))
 		amputation_speed_mod = 0.5
 	else if(patient.has_status_effect(/datum/status_effect/jitter))
 		amputation_speed_mod = 1.5
 	else
 		amputation_speed_mod = 1
 
-	if(do_after(user,  toolspeed * 150 * amputation_speed_mod, target = patient))
+	if(use_tool(patient, user, amputation_speed_mod * 15 SECONDS))
 		playsound(get_turf(patient), 'sound/weapons/bladeslice.ogg', 250, TRUE)
-		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN) //OwO
-			tail_snip_candidate.Remove(patient)
-			tail_snip_candidate.forceMove(get_turf(patient))
-		else
-			limb_snip_candidate.dismember()
+		limb_snip_candidate.dismember()
 		user.visible_message(span_danger("[src] violently slams shut, amputating [patient]'s [candidate_name]."), span_notice("You amputate [patient]'s [candidate_name] with [src]."))
 
 /obj/item/bonesetter

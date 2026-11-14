@@ -276,11 +276,11 @@
 				if (C && istype(C, /list))
 					var/dat2 = ""
 					for (var/obj/machinery/camera/I in C)
-						dat2 += text("[]<A HREF=?src=[REF(src)];switchcamera=[REF(I)]>[]</A>", (dat2=="") ? "" : " | ", I.c_tag)
+						dat2 += text("[]<A HREF='byond://?src=[REF(src)];switchcamera=[REF(I)]'>[]</A>", (dat2=="") ? "" : " | ", I.c_tag)
 					dat += text("-- [] ([])", A.name, (dat2!="") ? dat2 : "No Camera")
 				else if (C && istype(C, /obj/machinery/camera))
 					var/obj/machinery/camera/Ctmp = C
-					dat += text("-- [] (<A HREF=?src=[REF(src)];switchcamera=[REF(C)]>[]</A>)", A.name, Ctmp.c_tag)
+					dat += text("-- [] (<A HREF='byond://?src=[REF(src)];switchcamera=[REF(C)]'>[]</A>)", A.name, Ctmp.c_tag)
 				else
 					dat += text("-- [] (No Camera)", A.name)
 				if (sources.len > 1)
@@ -494,12 +494,12 @@
 
 	if (cameras)
 		if (cam?.can_use())
-			queueAlarm("--- [class] alarm detected in [home.name]! (<A HREF=?src=[REF(src)];switchcamera=[REF(cam)]>[cam.c_tag]</A>)", class)
+			queueAlarm("--- [class] alarm detected in [home.name]! (<A HREF='byond://?src=[REF(src)];switchcamera=[REF(cam)]'>[cam.c_tag]</A>)", class)
 		else if (our_cams?.len)
 			var/foo = 0
 			var/dat2 = ""
 			for (var/obj/machinery/camera/I in our_cams)
-				dat2 += text("[]<A HREF=?src=[REF(src)];switchcamera=[REF(I)]>[]</A>", (!foo) ? "" : " | ", I.c_tag) //I'm not fixing this shit...
+				dat2 += text("[]<A HREF='byond://?src=[REF(src)];switchcamera=[REF(I)]'>[]</A>", (!foo) ? "" : " | ", I.c_tag) //I'm not fixing this shit...
 				foo = 1
 			queueAlarm(text ("--- [] alarm detected in []! ([])", class, home.name, dat2), class)
 		else
@@ -730,11 +730,11 @@
 	for (var/obj/machinery/camera/C in remove)
 		lit_cameras -= C //Removed from list before turning off the light so that it doesn't check the AI looking away.
 		C.Togglelight(0)
-		UnregisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
+		UnregisterSignal(C, COMSIG_QDELETING, PROC_REF(camera_deleted))
 	for (var/obj/machinery/camera/C in add)
 		C.Togglelight(1)
 		lit_cameras |= C
-		RegisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
+		RegisterSignal(C, COMSIG_QDELETING, PROC_REF(camera_deleted))
 
 /mob/living/silicon/ai/proc/camera_deleted(obj/machinery/camera/camera)
 	SIGNAL_HANDLER

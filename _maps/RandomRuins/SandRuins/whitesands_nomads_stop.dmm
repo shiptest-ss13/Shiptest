@@ -73,7 +73,7 @@
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "ba" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
+/mob/living/basic/human/hermit/ranged/gunslinger,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "bc" = (
@@ -106,7 +106,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
+/mob/living/basic/human/hermit/ranged/tesla_rifle{
 	wander = 0
 	},
 /turf/open/floor/concrete/whitesands/lit,
@@ -353,10 +353,7 @@
 "ek" = (
 /obj/structure/table,
 /obj/machinery/newscaster/directional/north,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 6;
-	pixel_x = 11
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/item/food/kebab/miras{
 	pixel_x = -5;
 	pixel_y = -3
@@ -655,7 +652,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/basic/human/hermit/ranged/hunter,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "hb" = (
@@ -779,7 +776,7 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/basic/human/hermit/survivor,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/nomad_stop/food)
 "ib" = (
@@ -922,7 +919,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "jk" = (
-/obj/item/stack/sheet/mineral/sandbags{
+/obj/item/stack/sandbags{
 	amount = 10
 	},
 /obj/structure/closet/crate/secure/gear,
@@ -1230,10 +1227,7 @@
 	pixel_y = 4;
 	pixel_x = -5
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 7;
-	pixel_x = 8
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/nomad_stop/food)
 "mc" = (
@@ -1880,7 +1874,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "rS" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/basic/human/hermit/survivor,
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "si" = (
@@ -2487,7 +2481,7 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "xL" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/basic/human/hermit/ranged/hunter,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "xO" = (
@@ -3060,7 +3054,7 @@
 /turf/open/floor/concrete/slab_4/whitesands,
 /area/ruin/whitesands/nomad_stop)
 "EV" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
+/mob/living/basic/human/hermit/ranged/gunslinger,
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/ruin/whitesands/nomad_stop)
 "Fj" = (
@@ -3361,8 +3355,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 1
 	},
-/obj/item/clothing/under/pants/tan,
-/obj/item/clothing/under/pants/tan,
+/obj/item/clothing/under/pants/khaki,
+/obj/item/clothing/under/pants/khaki,
 /obj/item/clothing/under/rank/cargo/miner/lavaland,
 /obj/item/clothing/under/rank/cargo/miner/lavaland,
 /obj/item/clothing/under/rank/cargo/miner/lavaland,
@@ -3769,12 +3763,12 @@
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate/secure/gear,
-/obj/item/clothing/neck/cloak/nanotrasen,
-/obj/item/clothing/neck/cloak/nanotrasen,
-/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
-/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
-/obj/item/clothing/under/nanotrasen/officer,
-/obj/item/clothing/under/nanotrasen/officer,
+/obj/item/clothing/neck/cloak/warra,
+/obj/item/clothing/neck/cloak/warra,
+/obj/item/clothing/suit/armor/warra/captain/parade,
+/obj/item/clothing/suit/armor/warra/captain/parade,
+/obj/item/clothing/under/warra/officer,
+/obj/item/clothing/under/warra/officer,
 /obj/item/storage/belt/sabre,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/whitesands/lit,
@@ -3820,7 +3814,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "LZ" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
+/mob/living/basic/human/hermit/ranged/tesla_rifle{
 	wander = 0
 	},
 /turf/open/floor/concrete/slab_1/whitesands/lit,
@@ -3949,7 +3943,7 @@
 /area/ruin/whitesands/nomad_stop/engineering)
 "Ng" = (
 /obj/effect/decal/cleanable/food/flour,
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/basic/human/hermit/survivor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/whitesands/nomad_stop/food)
@@ -3983,11 +3977,11 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/nomad_stop/engineering)
 "Nv" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle,
+/mob/living/basic/human/hermit/ranged/tesla_rifle,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "NJ" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
+/mob/living/basic/human/hermit/ranged/tesla_rifle{
 	wander = 0
 	},
 /turf/open/floor/concrete/whitesands/lit,
@@ -4528,13 +4522,13 @@
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
 	dir = 5
 	},
-/obj/item/clothing/under/syndicate/medic,
-/obj/item/clothing/under/syndicate/medic{
+/obj/item/clothing/under/cybersun/medic,
+/obj/item/clothing/under/cybersun/medic{
 	pixel_x = -5;
 	pixel_y = -2
 	},
 /obj/structure/closet/crate/secure/gear,
-/obj/item/clothing/suit/armor/vest/trauma{
+/obj/item/clothing/suit/armor/vest/cybersun/trauma{
 	pixel_y = -7;
 	pixel_x = 4
 	},
@@ -4775,7 +4769,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/basic/human/hermit/ranged/hunter,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4875,7 +4869,7 @@
 /turf/open/floor/engine/n2,
 /area/ruin/whitesands/nomad_stop/engineering)
 "Xl" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/basic/human/hermit/ranged/hunter,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4963,10 +4957,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = 10;
-	pixel_y = -3
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Yp" = (

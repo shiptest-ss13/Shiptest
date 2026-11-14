@@ -2,7 +2,7 @@
 	see_invisible = SEE_INVISIBLE_LIVING
 	sight = 0
 	see_in_dark = 2
-	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
+	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD)
 	pressure_resistance = 10
 	plane = GAME_PLANE_FOV_HIDDEN
 	flags_1 = SHOW_BEHIND_LARGE_ICONS_1
@@ -11,7 +11,8 @@
 
 	bad_type = /mob/living
 
-	var/resize = 1 ///Badminnery resize
+	///Tracks the current size of the mob in relation to its original size. Use update_transform(resize) to change it.
+	var/current_size = RESIZE_DEFAULT_SIZE
 	var/lastattacker = null
 	var/lastattackerckey = null
 
@@ -47,6 +48,8 @@
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
 	var/resting = FALSE
+	/// Variable to track whether or not the mobs sprite is flipped vertically.
+	var/flipped = FALSE
 
 	/// Variable to track the body position of a mob, regardgless of the actual angle of rotation (usually matching it, but not necessarily).
 	var/body_position = STANDING_UP
@@ -185,6 +188,9 @@
 	///Default Y offset
 	var/body_pixel_y_offset = 0
 
+	///The height offset of a mob's maptext due to their current size.
+	var/body_maptext_height_offset = 0
+
 	/// FOV view that is applied from either nativeness or traits
 	var/fov_view
 	/// Native FOV that will be applied if a config is enabled
@@ -192,10 +198,20 @@
 	/// Lazy list of FOV traits that will apply a FOV view when handled.
 	var/list/fov_traits
 
+	var/rotate_on_lying = FALSE
+
+	///what multiplicative slowdown we get from turfs currently.
+	var/current_turf_slowdown = 0
+
 	///how much recoil do we experience when shooting. Ideally some.
 	var/recoil_effect = 1 //i hate guncode
 	///how much recoil do we experience from being shot. Ideally some.
 	var/impact_effect = 1
+
+	/// Lazylists of pixel offsets this mob is currently using
+	/// Modify this via add_offsets and remove_offsets,
+	/// NOT directly (and definitely avoid modifying offsets directly)
+	VAR_PRIVATE/list/offsets
 
 	/// World time of the last time this mob heard a radio crackle, to reduce spamminess.
 	COOLDOWN_DECLARE(radio_crackle_cooldown)

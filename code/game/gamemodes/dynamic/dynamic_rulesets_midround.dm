@@ -383,53 +383,6 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           NIGHTMARE (GHOST)              //
-//                                          //
-//////////////////////////////////////////////
-
-/datum/dynamic_ruleset/midround/from_ghosts/nightmare
-	name = "Nightmare"
-	antag_datum = /datum/antagonist/nightmare
-	antag_flag = "Nightmare"
-	antag_flag_override = ROLE_ALIEN
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
-	required_candidates = 1
-	weight = 3
-	cost = 10
-	requirements = list(101,101,101,70,50,40,20,15,10,10)
-	high_population_requirement = 50
-	repeatable = TRUE
-	var/list/spawn_locs = list()
-
-/datum/dynamic_ruleset/midround/from_ghosts/nightmare/execute()
-	for(var/X in GLOB.xeno_spawn)
-		var/turf/T = X
-		var/light_amount = T.get_lumcount()
-		if(light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD)
-			spawn_locs += T
-	if(!spawn_locs.len)
-		return FALSE
-	. = ..()
-
-/datum/dynamic_ruleset/midround/from_ghosts/nightmare/generate_ruleset_body(mob/applicant)
-	var/datum/mind/player_mind = new /datum/mind(applicant.key)
-	player_mind.active = TRUE
-
-	var/mob/living/carbon/human/S = new (pick(spawn_locs))
-	player_mind.transfer_to(S)
-	player_mind.assigned_role = "Nightmare"
-	player_mind.special_role = "Nightmare"
-	player_mind.add_antag_datum(/datum/antagonist/nightmare)
-	S.set_species(/datum/species/shadow/nightmare)
-
-	playsound(S, 'sound/magic/ethereal_exit.ogg', 50, TRUE, -1)
-	message_admins("[ADMIN_LOOKUPFLW(S)] has been made into a Nightmare by the midround ruleset.")
-	log_game("DYNAMIC: [key_name(S)] was spawned as a Nightmare by the midround ruleset.")
-	return S
-
-//////////////////////////////////////////////
-//                                          //
 //           SPACE DRAGON (GHOST)           //
 //                                          //
 //////////////////////////////////////////////

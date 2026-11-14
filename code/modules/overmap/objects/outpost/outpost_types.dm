@@ -8,7 +8,7 @@
 	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
 	// of the new tile, meaning that placing plating on top of a wall doesn't result in a wall underneath the plating.)
 	should_place_on_top = FALSE
-	var/outpost_name
+
 
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
@@ -31,12 +31,16 @@
 
 /datum/map_template/outpost/elevator_clip
 	name = "elevator_clip"
+
+/datum/map_template/outpost/elevator_cybersun
+	name = "elevator_cybersun"
+
 /*
 	Independent Space Outpost //creative name!
 */
 /datum/map_template/outpost/indie_space
 	name = "indie_space"
-	outpost_name = "Installation Trifuge"
+
 
 /datum/map_template/outpost/hangar/indie_space_20x20
 	name = "hangar/indie_space_20x20"
@@ -64,34 +68,33 @@
 	dock_height = 40
 
 /*
-	Nanotrasen Ice Planet
+	Makosso-Warra Ice Planet
 */
-/datum/map_template/outpost/nanotrasen_ice
-	name = "nanotrasen_ice"
-	outpost_name = "Yebiri Sipili"
+/datum/map_template/outpost/warra_ice
+	name = "warra_ice"
 
-/datum/map_template/outpost/hangar/nt_ice_20x20
-	name = "hangar/nt_ice_20x20"
+/datum/map_template/outpost/hangar/warra_ice_20x20
+	name = "hangar/warra_ice_20x20"
 	dock_width = 20
 	dock_height = 20
 
-/datum/map_template/outpost/hangar/nt_ice_40x20
-	name = "hangar/nt_ice_40x20"
+/datum/map_template/outpost/hangar/warra_ice_40x20
+	name = "hangar/warra_ice_40x20"
 	dock_width = 40
 	dock_height = 20
 
-/datum/map_template/outpost/hangar/nt_ice_40x40
-	name = "hangar/nt_ice_40x40"
+/datum/map_template/outpost/hangar/warra_ice_40x40
+	name = "hangar/warra_ice_40x40"
 	dock_width = 40
 	dock_height = 40
 
-/datum/map_template/outpost/hangar/nt_ice_56x20
-	name = "hangar/nt_ice_56x20"
+/datum/map_template/outpost/hangar/warra_ice_56x20
+	name = "hangar/warra_ice_56x20"
 	dock_width = 56
 	dock_height = 20
 
-/datum/map_template/outpost/hangar/nt_ice_56x40
-	name = "hangar/nt_ice_56x40"
+/datum/map_template/outpost/hangar/warra_ice_56x40
+	name = "hangar/warra_ice_56x40"
 	dock_width = 56
 	dock_height = 40
 
@@ -100,7 +103,7 @@
 */
 /datum/map_template/outpost/ngr_rock
 	name = "ngr_rock"
-	outpost_name = "Agni Trading Post"
+
 
 /datum/map_template/outpost/hangar/ngr_rock_20x20
 	name = "hangar/ngr_rock_20x20"
@@ -132,7 +135,7 @@
 */
 /datum/map_template/outpost/clip_ocean
 	name = "clip_ocean"
-	outpost_name = "Arrowsong Refueling Platform"
+
 
 /datum/map_template/outpost/hangar/clip_ocean_20x20
 	name = "hangar/clip_ocean_20x20"
@@ -159,6 +162,36 @@
 	dock_width = 56
 	dock_height = 40
 
+//Cybersun Gas Giant
+/datum/map_template/outpost/cybersun_gas_giant
+	name = "cybersun_gas_giant"
+
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_20x20
+	name = "hangar/cybersun_gas_giant_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_40x20
+	name = "hangar/cybersun_gas_giant_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_40x40
+	name = "hangar/cybersun_gas_giant_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_56x20
+	name = "hangar/cybersun_gas_giant_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_56x40
+	name = "hangar/cybersun_gas_giant_56x40"
+	dock_width = 56
+	dock_height = 40
+
 /*
 	/datum/overmap/outpost subtypes
 */
@@ -168,25 +201,43 @@
 	main_template = /datum/map_template/outpost/indie_space
 	elevator_template = /datum/map_template/outpost/elevator_indie
 	faction = FACTION_INDEPENDENT
+
+	outpost_name = "Installation Trifuge"
+	outpost_administrator = "Caldwell"
 	// Uses "default" hangars (indie_space).
 
-/datum/overmap/outpost/nanotrasen_ice
-	token_icon_state = "station_asteroid"
-	main_template = /datum/map_template/outpost/nanotrasen_ice
+/datum/overmap/outpost/warra_ice
+	token_icon_state = "station_planet"
+	main_template = /datum/map_template/outpost/warra_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
-	faction = FACTION_NT
+	faction = FACTION_WARRA
 	weather_controller_type = /datum/weather_controller/chill
 	hangar_templates = list(
-		/datum/map_template/outpost/hangar/nt_ice_20x20,
-		/datum/map_template/outpost/hangar/nt_ice_40x20,
-		/datum/map_template/outpost/hangar/nt_ice_40x40,
-		/datum/map_template/outpost/hangar/nt_ice_56x20,
-		/datum/map_template/outpost/hangar/nt_ice_56x40
+		/datum/map_template/outpost/hangar/warra_ice_20x20,
+		/datum/map_template/outpost/hangar/warra_ice_40x20,
+		/datum/map_template/outpost/hangar/warra_ice_40x40,
+		/datum/map_template/outpost/hangar/warra_ice_56x20,
+		/datum/map_template/outpost/hangar/warra_ice_56x40
 	)
-	faction = /datum/faction/nt
+
+	outpost_name = "Yebiri Sipili"
+	outpost_administrator = "Makosso-Warra Authorities"
+	faction = /datum/faction/warra
+
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
+	)
 
 /datum/overmap/outpost/ngr_rock
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/ngr_rock
 	elevator_template = /datum/map_template/outpost/elevator_rock
 	weather_controller_type = /datum/weather_controller/rockplanet_safe
@@ -196,6 +247,21 @@
 		/datum/map_template/outpost/hangar/ngr_rock_40x40,
 		/datum/map_template/outpost/hangar/ngr_rock_56x20,
 		/datum/map_template/outpost/hangar/ngr_rock_56x40
+	)
+
+	outpost_name = "Agni Trading Post"
+	outpost_administrator = "The NGR Bureau Of Development"
+
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 	)
 
 /datum/overmap/outpost/clip_ocean
@@ -211,7 +277,95 @@
 		/datum/map_template/outpost/hangar/clip_ocean_56x40
 	)
 
+	outpost_name = "Arrowsong Refueling Platform"
+	outpost_administrator = "The Arrowsong Executive Council"
+
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
+	)
+
+/datum/overmap/outpost/cybersun_gas_giant
+	token_icon_state = "station_floating_gas_giant"
+	//icon = 'icons/misc/overmap_larger.dmi'
+	main_template = /datum/map_template/outpost/cybersun_gas_giant
+	elevator_template = /datum/map_template/outpost/elevator_cybersun
+	weather_controller_type = /datum/weather_controller/thousand_eyes
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_20x20,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_40x20,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_40x40,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_56x20,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_56x40
+	)
+	main_level_ztraits = list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
+	)
+
+	outpost_name = "Thousand Eyed Perch"
+	outpost_administrator = "Cybersun Frontier Developments"
+
+
+/datum/overmap/outpost/cybersun_gas_giant/alter_token_appearance()
+	. = ..()
+	token.color = current_overmap.secondary_structure_color
+	if(flag_overlay)
+		token.cut_overlays()
+		token.add_overlay("colonized")
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.primary_color
+	current_overmap.post_edit_token_state(src)
+
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null
 	elevator_template = /datum/map_template/outpost/elevator_test
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/test_20x20,
+		/datum/map_template/outpost/hangar/test_40x20,
+		/datum/map_template/outpost/hangar/test_40x40,
+		/datum/map_template/outpost/hangar/test_56x20,
+		/datum/map_template/outpost/hangar/test_56x40
+	)
 	// Uses "test" hangars.
+
+/datum/map_template/outpost/hangar/test_20x20
+	name = "hangar/test_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/test_40x20
+	name = "hangar/test_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/test_40x40
+	name = "hangar/test_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/test_56x20
+	name = "hangar/test_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/test_56x40
+	name = "hangar/test_56x40"
+	dock_width = 56
+	dock_height = 40

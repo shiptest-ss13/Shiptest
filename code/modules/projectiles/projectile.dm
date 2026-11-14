@@ -27,7 +27,7 @@
 	var/bullet_identifier = null
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	var/def_zone = ""	//Aiming at
+	var/def_zone = null //Aiming at
 	var/atom/movable/firer = null//Who shot it
 	// if the projectile was the result of a misfire. For logging.
 	var/misfire = FALSE
@@ -103,7 +103,7 @@
 	var/ricochet_auto_aim_angle = 30
 	/// the angle of impact must be within this many degrees of the struck surface, set to 0 to allow any angle
 	var/ricochet_incidence_leeway = 40
-	/// accuracy modifier. Used as a multiplier
+	/// accuracy modifier. Used as a multiplier when calculating which body part is hit on a living target
 	var/accuracy_mod = 1
 
 	///If the object being hit can pass ths damage on to something else, it should not do it for this bullet
@@ -145,7 +145,7 @@
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
 	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
 	var/projectile_type = /obj/projectile
-	var/range = 50 //This will de-increment every step. When 0, it will deletze the projectile.
+	var/range = 50 //This will de-increment every step. When 0, it will delete the projectile.
 	var/decayedRange			//stores original range
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/reflectable = NONE // Can it be reflected or not?
@@ -219,16 +219,15 @@
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
 
-//to get the correct limb (if any) for the projectile hit message
-/mob/living/proc/check_limb_hit(hit_zone)
-	if(has_limbs)
-		return hit_zone
+/// Get splash radius of the projectile, if available
+/obj/projectile/proc/get_splash_radius()
+	return 0
 
-/mob/living/carbon/check_limb_hit(hit_zone)
-	if(get_bodypart(hit_zone))
-		return hit_zone
-	else //when a limb is missing the damage is actually passed to the chest
-		return BODY_ZONE_CHEST
+/// Returns the chance to hit the limb it's aiming for
+/obj/projectile/proc/get_accuracy(atom/target)
+	if(firer && HAS_TRAIT(firer, TRAIT_PERFECT_ATTACKER))
+		return 100
+	return max(80-(7*get_dist(get_turf(target), starting)*accuracy_mod), 5)
 
 /**
  * Called when the projectile hits something
@@ -238,16 +237,12 @@
  * blocked - percentage of hit blocked
  * pierce_hit - are we piercing through or regular hitting
  */
-/obj/projectile/proc/on_hit(atom/target, blocked = FALSE, pierce_hit)
+/obj/projectile/proc/on_hit(atom/target, blocked = FALSE, pierce_hit, hit_zone)
 	if(fired_from)
-		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle)
+		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle, hit_zone, blocked)
 	// i know that this is probably more with wands and gun mods in mind, but it's a bit silly that the projectile on_hit signal doesn't ping the projectile itself.
 	// maybe we care what the projectile thinks! See about combining these via args some time when it's not 5AM
-	var/obj/item/bodypart/hit_limb
-	if(isliving(target))
-		var/mob/living/L = target
-		hit_limb = L.check_limb_hit(def_zone)
-	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_limb)
+	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_zone)
 
 	if(QDELETED(src)) // in case one of the above signals deleted the projectile for whatever reason
 		return
@@ -286,7 +281,7 @@
 				splatter_dir = get_dir(starting, target_loca)
 			if(isalien(L))
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target_loca, splatter_dir)
-			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
+			var/obj/item/bodypart/B = L.get_bodypart(hit_zone)
 			if(B && !IS_ORGANIC_LIMB(B)) // So if you hit a robotic, it sparks instead of bloodspatters
 				do_sparks(2, FALSE, target.loc)
 			else
@@ -294,6 +289,10 @@
 				if(iscarbon(L))
 					var/mob/living/carbon/carbon_target = L
 					splatter_color = carbon_target.dna.blood_type.color
+				else // simplemobs can bleed other colours too, like human mobs of other species
+					var/list/blood_dna = L.get_blood_dna_list()
+					if(length(blood_dna))
+						splatter_color = get_blood_dna_color(blood_dna)
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_loca, splatter_dir, splatter_color)
 			if(prob(33))
 				L.add_splatter_floor(target_loca)
@@ -301,10 +300,9 @@
 			new impact_effect_type(target_loca, hitx, hity)
 
 		var/organ_hit_text = ""
-		var/limb_hit = hit_limb
-		if(limb_hit)
-			organ_hit_text = " in \the [parse_zone(limb_hit)]"
-		if(suppressed==SUPPRESSED_VERY)
+		if(hit_zone)
+			organ_hit_text = " in \the [parse_zone(hit_zone)]"
+		if(suppressed >= SUPPRESSED_VERY)
 			playsound(loc, hitsound, 5, TRUE, -1)
 		else if(suppressed)
 			playsound(loc, hitsound, 5, TRUE, -1)
@@ -348,13 +346,13 @@
 	for(var/mob/living/L in range(ricochet_auto_aim_range, src.loc))
 		if(L.stat == DEAD || !isInSight(src, L) || L == firer)
 			continue
-		var/our_angle = abs(closer_angle_difference(Angle, Get_Angle(src.loc, L.loc)))
+		var/our_angle = abs(closer_angle_difference(Angle, get_angle(src.loc, L.loc)))
 		if(our_angle < best_angle)
 			best_angle = our_angle
 			unlucky_sob = L
 
 	if(unlucky_sob)
-		setAngle(Get_Angle(src, unlucky_sob.loc))
+		setAngle(get_angle(src, unlucky_sob.loc))
 
 /obj/projectile/proc/store_hitscan_collision(datum/point/pcache)
 	beam_segments[beam_index] = pcache
@@ -401,9 +399,6 @@
 			if(ricochet_sound)
 				playsound(get_turf(src), ricochet_sound, 120, TRUE, 2) //make it loud, we want to make it known when a ricochet happens. for aesthetic reasons mostly
 			return TRUE
-
-	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
-	def_zone = ran_zone(def_zone, max(80-(7*distance*accuracy_mod), 5)) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
 
 	return process_hit(T, select_target(T, A))		// SELECT TARGET FIRST!
 
@@ -470,19 +465,24 @@
  * 0. Anything that is already in impacted is ignored no matter what. Furthermore, in any bracket, if the target atom parameter is in it, that's hit first.
  * 	Furthermore, can_hit_target is always checked. This (entire proc) is PERFORMANCE OVERHEAD!! But, it shouldn't be ""too"" bad and I frankly don't have a better *generic non snowflakey* way that I can think of right now at 3 AM.
  *		FURTHERMORE, mobs/objs have a density check from can_hit_target - to hit non dense objects over a turf, you must click on them, same for mobs that usually wouldn't get hit.
- * 1. The thing originally aimed at/clicked on
- * 2. Mobs - picks lowest buckled mob to prevent scarp piggybacking memes
- * 3. Objs
- * 4. Turf
- * 5. Nothing
+ * 1. The target if it has the ON_BORDER_1 flag since those has priority for impacts.
+ * 2. The thing originally aimed at/clicked on
+ * 3. Mobs - picks lowest buckled mob to prevent scarp piggybacking memes
+ * 4. Objs
+ * 5. Turf
+ * 6. Nothing
  */
 /obj/projectile/proc/select_target(turf/T, atom/target)
-	// 1. original
+	// 1. ON_BORDER_1 stuff
+	if(target.flags_1 & ON_BORDER_1)
+		if(can_hit_target(target, target == original, TRUE))
+			return target
+	// 2. original
 	if(can_hit_target(original, TRUE, FALSE))
 		return original
 	var/list/atom/possible = list()		// let's define these ONCE
 	var/list/atom/considering = list()
-	// 2. mobs
+	// 3. mobs
 	possible = typecache_filter_list(T, GLOB.typecache_living)	// living only
 	for(var/i in possible)
 		if(!can_hit_target(i, i == original, TRUE))
@@ -492,7 +492,7 @@
 		var/mob/living/M = pick(considering)
 		return M.lowest_buckled_mob()
 	considering.len = 0
-	// 3. objs
+	// 4. objs
 	possible = typecache_filter_list(T, GLOB.typecache_machine_or_structure)	// because why are items ever dense?
 	for(var/i in possible)
 		if(!can_hit_target(i, i == original, TRUE))
@@ -500,10 +500,10 @@
 		considering += i
 	if(considering.len)
 		return pick(considering)
-	// 4. turf
+	// 5. turf
 	if(can_hit_target(T, T == original, TRUE))
 		return T
-	// 5. nothing
+	// 6. nothing
 		// (returns null)
 
 //Returns true if the target atom is on our current turf and above the right layer
@@ -524,7 +524,7 @@
 		return TRUE
 	if(!isliving(target))
 		if(isturf(target))		// non dense turfs
-			return FALSE
+			return can_hit_turfs && direct_target
 		if(target.layer < PROJECTILE_HIT_THRESHHOLD_LAYER)
 			return FALSE
 		else if(!direct_target)		// non dense objects do not get hit unless specifically clicked
@@ -582,6 +582,7 @@
 				continue
 			misser.playsound_local(get_turf(src), near_miss_sound, 100, FALSE)
 			misser.shake_animation(damage)
+			SEND_SIGNAL(misser, COMSIG_LIVING_NEAR_MISS, src)
 
 
 /**
@@ -715,7 +716,7 @@
 			qdel(src)
 			return
 		var/turf/target = locate(clamp(starting + xo, 1, world.maxx), clamp(starting + yo, 1, world.maxy), starting.z)
-		setAngle(Get_Angle(src, target))
+		setAngle(get_angle(src, target))
 	original_angle = Angle
 	if(!nondirectional_sprite)
 		var/matrix/M = new
@@ -1047,3 +1048,6 @@
 ///Checks if the projectile can embed into someone
 /obj/projectile/proc/can_embed_into(atom/hit)
 	return embedding && shrapnel_type && iscarbon(hit) && !HAS_TRAIT(hit, TRAIT_PIERCEIMMUNE)
+
+/obj/projectile/get_demolition_damage()
+	return demolition_mod * damage

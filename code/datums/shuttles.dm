@@ -26,6 +26,8 @@
 	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The class of this ship.
+	var/ship_class = "Ship"
 	/// The name of the ship's manufacturer.
 	var/manufacturer = "Unknown"
 	/// The faction this ship belongs to.
@@ -344,6 +346,7 @@
 	faction = /datum/faction/independent
 	starting_funds = 0
 	unique_ship_access = FALSE
+	token_icon_state = "ship_tiny_generic"
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
@@ -351,6 +354,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
@@ -358,6 +362,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
@@ -365,6 +370,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
@@ -378,7 +384,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-//your subshuttle here //why is my subshuttle here // its no longer there
+//your subshuttle here //why is my subshuttle here // its no longer there //oops i dropped my subshuttles everywhere
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
@@ -394,12 +400,19 @@
 	faction = /datum/faction/clip
 	prefix = "CLSV"
 
-/datum/map_template/shuttle/subshuttles/ancon
-	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-class Command Ship"
+/datum/map_template/shuttle/subshuttles/glaucus
+	file_name = "minutemen_mira"
+	name = "Mira-class Pursuit Shuttle"
 	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/nt
-	prefix = "NTSV"
+	faction = /datum/faction/clip
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "warra_ancon"
+	name = "Makosso-Warra Ancon-class Command Ship"
+	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/warra
+	prefix = "MWSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
@@ -419,7 +432,7 @@
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
 	name = "Runner-class Ambulance"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -429,7 +442,7 @@
 	name = "Nail-class Boarding Vessel"
 	faction = /datum/faction/pgf
 	token_icon_state = "ship_tiny_generic"
-	prefix = "PGF"
+	prefix = "PGFMC"
 
 /datum/map_template/shuttle/subshuttles/tanto
 	file_name = "independent_tanto"
@@ -447,17 +460,39 @@
 	name = "Haymaker-class Command Post"
 	prefix = "SV"
 
-/datum/map_template/shuttle/subshuttles/skink
-	file_name = "nanotrasen_skink"
-	name = "Skink-class Cargo Runner"
-	faction = /datum/faction/nt
+/datum/map_template/shuttle/subshuttles/whollop
+	file_name = "frontiersmen_whollop"
+	name = "Whollop-class Smuggling Pod"
 	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/whollop_populated
+	file_name = "frontiersmen_whollop_populated"
+	name = "Whollop-class Smuggling Pod (Populated)"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/skink
+	file_name = "warra_skink"
+	name = "Skink-class Cargo Runner"
+	faction = /datum/faction/warra
+	token_icon_state = "ship_tiny_generic"
+	prefix = "MWSV"
+
+//technically
+/datum/map_template/shuttle/subshuttles/nimbus
+	file_name = "cybersun_nimbus"
+	name = "Nimbus-class Executive Courier"
+	faction = /datum/faction/cybersun
+	prefix = "CSSV"
+	manufacturer = "ISF Spacecraft"
+	name_categories = list("NATURAL_AGGRESSIVE")
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 
 /datum/map_template/shuttle/subshuttles/thunder
@@ -490,6 +525,31 @@
 /datum/map_template/shuttle/subshuttles/karst
 	file_name = "ngr_karst"
 	name = "Karst-class Drop Pod"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
+
+/datum/map_template/shuttle/subshuttles/gryke
+	file_name = "ngr_gryke"
+	name = "Gryke-class Assault Lander"
+	faction = /datum/faction/ngr
+	token_icon_state = "ship_tiny_generic"
+	prefix = "NGRV"
+
+/datum/map_template/shuttle/subshuttles/june
+	file_name = "independent_june"
+	name = "June-class Dropship"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/starchaser
+	file_name = "independent_starchaser"
+	name = "Starchaser-class Delivery Shuttle"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/flail
+	file_name = "independent_flail"
+	name = "Flail-class Modified Boarder"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "ISV"

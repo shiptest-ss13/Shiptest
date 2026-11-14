@@ -5,9 +5,10 @@
 
 /obj/item/reagent_containers/glass/rag
 	name = "damp rag"
-	desc = "For cleaning up messes, you suppose."
+	desc = "A rag that can clean dirty surfaces and absorb fluids."
 	w_class = WEIGHT_CLASS_TINY
-	icon = 'icons/obj/toy.dmi'
+	icon = 'icons/obj/item/rag.dmi'
+	//world_file = 'icons/obj/item/rag_world.dmi'
 	icon_state = "rag"
 	item_flags = NOBLUDGEON
 	reagent_flags = OPENCONTAINER
@@ -25,7 +26,7 @@
 		var/reagentlist = pretty_string_from_reagent_list(reagents)
 		var/log_object = "containing [reagentlist]"
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
-			reagents.trans_to(C, reagents.total_volume, transfered_by = user, method = INGEST)
+			reagents.trans_to(C, reagents.total_volume, transfered_by = user, methods = INGEST)
 			C.visible_message(span_danger("[user] smothers \the [C] with \the [src]!"), span_userdanger("[user] smothers you with \the [src]!"), span_hear("You hear some struggling and muffled cries of surprise."))
 			log_combat(user, C, "smothered", src, log_object)
 		else

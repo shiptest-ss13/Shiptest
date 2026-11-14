@@ -7,6 +7,8 @@
 	effectrange = 3
 	pulse_delay = 5 SECONDS
 
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
+
 /obj/effect/anomaly/transfusion/anomalyEffect()
 	..()
 

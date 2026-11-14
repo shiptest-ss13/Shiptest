@@ -98,6 +98,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define SHIP_SMOOTHING (1<<8)
 /// If false, allows light bulbs and light tubes to randomly break upon late initialization
 #define NO_RANDOM_LIGHT_BREAKAGE (1<<9)
+/// Whether lights in this area have a randomised delay for turning on
+#define STAGGER_LIGHTS (1<<10)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
@@ -124,6 +126,9 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// When moving, will Cross()/Uncross() everything, but won't stop or Bump() anything.
 #define PHASING (1<<4)
 #define THROWN (1<<5)
+
+/// Combination flag for movetypes which, for all intents and purposes, mean the mob is not touching the ground
+#define MOVETYPES_NOT_TOUCHING_GROUND (FLYING|FLOATING)
 
 //Fire and Acid stuff, for resistance_flags
 #define LAVA_PROOF (1<<0)
@@ -208,6 +213,10 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define NSCOMPONENT(d) (d&(NORTH|SOUTH))
 ///True if the dir is east/west, false otherwise
 #define EWCOMPONENT(d) (d&(EAST|WEST))
+///The corner a diagonal step from start to finish passes through going east/west first
+#define DIAGONAL_CORNER_X(start, finish) locate((finish).x, (start).y, (start).z)
+///The corner a diagonal step from start to finish passes through if it goes north/south first
+#define DIAGONAL_CORNER_Y(start, finish) locate((start).x, (finish).y, (start).z)
 ///Flips the dir for north/south directions
 #define NSDIRFLIP(d) (d^(NORTH|SOUTH))
 ///Flips the dir for east/west directions

@@ -9,36 +9,43 @@ import {
   Knob,
   LabeledControls,
   NumberInput,
+  Divider,
+  Box,
 } from '../components';
 import { Window } from '../layouts';
 import { Table } from '../components/Table';
 import { decodeHtmlEntities } from 'common/string';
+import { toFixed } from '../../common/math';
 
 export const HelmConsole = (_props, context) => {
   const { data } = useBackend(context);
   const { mapRef, isViewer } = data;
   return (
-    <Window width={870} height={708} resizable>
-      <div className="CameraConsole__left">
+    <Window width={1100} height={708} resizable>
+      <div className="HelmConsole__left">
         <Window.Content>
           {!isViewer && <ShipControlContent />}
           <ShipContent />
-          <SharedContent />
         </Window.Content>
       </div>
-      <div className="CameraConsole__right">
-        <div className="CameraConsole__toolbar">
+      <div className="HelmConsole__center">
+        <div className="HelmConsole__toolbar">
           {!!data.docked && (
             <div className="NoticeBox">Ship docked to: {data.docked}</div>
           )}
         </div>
         <ByondUi
-          className="CameraConsole__map"
+          className="HelmConsole__map"
           params={{
             id: mapRef,
             type: 'map',
           }}
         />
+      </div>
+      <div className="HelmConsole__right">
+        <Window.Content>
+          <SharedContent />
+        </Window.Content>
       </div>
     </Window>
   );
@@ -46,10 +53,52 @@ export const HelmConsole = (_props, context) => {
 
 const SharedContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, canRename, shipInfo = [], otherInfo = [] } = data;
+  const {
+    isViewer,
+    canRename,
+    cloaked,
+    cloakChargePercent,
+    hasCloaking,
+    shipInfo = [],
+    otherInfo = [],
+    outposts,
+    jump_points,
+    sector,
+    jumpable,
+    facts,
+  } = data;
   return (
     <>
-      <Section title="Radar">
+      <Section
+        title="Radar"
+        buttons={
+          hasCloaking ? (
+            <>
+              <Button
+                tooltip="Cloak"
+                tooltipPosition="left"
+                icon="user-secret"
+                selected={cloaked}
+                disabled={isViewer}
+                onClick={() => act('toggle_cloak')}
+              />
+              <ProgressBar
+                value={cloakChargePercent}
+                minValue={0}
+                maxValue={100}
+                width="72px"
+                ranges={{
+                  good: [50, Infinity],
+                  average: [15, 50],
+                  bad: [-Infinity, 15],
+                }}
+              >
+                {toFixed(cloakChargePercent, 1)}%
+              </ProgressBar>
+            </>
+          ) : null
+        }
+      >
         <Table>
           <Table.Row bold>
             <Table.Cell>Name</Table.Cell>
@@ -58,7 +107,9 @@ const SharedContent = (_props, context) => {
           </Table.Row>
           {otherInfo.map((ship) => (
             <Table.Row key={ship.name}>
-              <Table.Cell>{ship.name}</Table.Cell>
+              <Table.Cell>
+                {ship.hidden ? 'Unidentified ' + ship.object_class : ship.name}
+              </Table.Cell>
               {!isViewer && (
                 <Table.Cell>
                   <Button
@@ -102,6 +153,58 @@ const SharedContent = (_props, context) => {
               )}
             </Table.Row>
           ))}
+        </Table>
+      </Section>
+      <Section title={'Sector Information'}>
+        <LabeledList>
+          <LabeledList.Item labelWrap textAlign="center" label="Sector">
+            {sector}
+          </LabeledList.Item>
+        </LabeledList>
+        {facts &&
+          facts.map((fact) => (
+            <Box key={fact} textAlign="center">
+              {fact}
+            </Box>
+          ))}
+        <Box textAlign="center">
+          {jumpable ? 'Sector can be long-jumped to' : ''}
+        </Box>
+        <Divider />
+        <Table>
+          <Table.Row header>
+            <Table.Cell fluid>Outpost</Table.Cell>
+            <Table.Cell collapsing>Location</Table.Cell>
+          </Table.Row>
+          {outposts &&
+            outposts.map((outpost) => (
+              <Table.Row key={outpost.name} className="candystripe">
+                <Table.Cell maxWidth="140px" fluid>
+                  {outpost.name}
+                </Table.Cell>
+                <Table.Cell fluid>
+                  X{outpost.x}/Y{outpost.y}
+                </Table.Cell>
+              </Table.Row>
+            ))}
+        </Table>
+        <Divider />
+        <Table>
+          <Table.Row header>
+            <Table.Cell fluid>Jump Point</Table.Cell>
+            <Table.Cell collapsing>Location</Table.Cell>
+          </Table.Row>
+          {jump_points &&
+            jump_points.map((point) => (
+              <Table.Row key={point.name} className="candystripe">
+                <Table.Cell maxWidth="100px" fluid>
+                  {point.name}
+                </Table.Cell>
+                <Table.Cell fluid>
+                  X{point.x}/Y{point.y}
+                </Table.Cell>
+              </Table.Row>
+            ))}
         </Table>
       </Section>
       <Section
@@ -193,9 +296,6 @@ const ShipContent = (_props, context) => {
             <AnimatedNumber value={x} />
             /Y
             <AnimatedNumber value={y} />
-          </LabeledList.Item>
-          <LabeledList.Item label="Sector">
-            <AnimatedNumber value={sector} />
           </LabeledList.Item>
           <LabeledList.Item label="ETA">
             <AnimatedNumber value={eta} />

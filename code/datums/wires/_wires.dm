@@ -22,7 +22,7 @@
 /datum/wires
 	var/atom/holder = null // The holder (atom that contains these wires).
 	var/holder_type = null // The holder's typepath (used to make wire colors common to all holders).
-	var/proper_name = "Unknown" // The display name for the wire set shown in station blueprints. Not used if randomize is true or it's an item NT wouldn't know about (Explosives/Nuke)
+	var/proper_name = "Unknown" // The display name for the wire set shown in station blueprints. Not used if randomize is true or it's an item Makosso-Warra wouldn't know about (Explosives/Nuke)
 
 	var/list/wires = list() // List of wires.
 	var/list/cut_wires = list() // List of wires that have been cut.
@@ -37,7 +37,7 @@
 		CRASH("Wire holder is not of the expected type!")
 
 	src.holder = holder
-	RegisterSignal(holder, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+	RegisterSignal(holder, COMSIG_QDELETING, PROC_REF(on_holder_qdel))
 	if(randomize)
 		randomize()
 	else

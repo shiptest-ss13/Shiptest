@@ -367,7 +367,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/dangerous/smg
 	name = "C-20r Submachine Gun"
-	desc = "A fully-loaded Scarborough Arms bullpup submachine gun. The C-20r fires .45 rounds with a \
+	desc = "A fully-loaded Scarborough Arms bullpup submachine gun. The C-20r fires 10mm rounds with a \
 			24-round magazine and is compatible with suppressors."
 	item = /obj/item/gun/ballistic/automatic/smg/cobra
 	cost = 10
@@ -403,7 +403,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/dangerous/flamethrower
 	name = "Flamethrower"
-	desc = "A flamethrower, fueled by a portion of highly flammable biotoxins stolen previously from Nanotrasen \
+	desc = "A flamethrower, fueled by a portion of highly flammable biotoxins stolen previously from Makosso-Warra \
 			stations. Make a statement by roasting the filth in their own greed. Use with caution."
 	item = /obj/item/flamethrower/full/tank
 	cost = 4
@@ -420,7 +420,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "L6 Squad Automatic Weapon"
 	desc = "A fully-loaded Aussec Armoury belt-fed machine gun. \
 			This deadly weapon has a massive 50-round magazine of devastating 7.12x82mm ammunition."
-	item = /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
+	item = /obj/item/gun/ballistic/automatic/hmg/python
 	cost = 18
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear)
@@ -453,7 +453,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/dangerous/pistol
 	name = "Ringneck Pistol"
-	desc = "A small, easily concealable handgun that uses 10x22mm rounds in 8-round magazines and is compatible \
+	desc = "A small, easily concealable handgun that uses 10mm rounds in 8-round magazines and is compatible \
 			with suppressors."
 	item = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	cost = 7
@@ -509,15 +509,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 // Stealthy Weapons
 /datum/uplink_item/stealthy_weapons
 	category = "Stealthy Weapons"
-
-/datum/uplink_item/stealthy_weapons/combatglovesplus
-	name = "Combat Gloves Plus"
-	desc = "A pair of gloves that are fireproof and acid-resistant, however unlike the regular Combat Gloves these use nanotechnology \
-			to teach the martial art of krav maga to the wearer."
-	item = /obj/item/clothing/gloves/krav_maga/combatglovesplus
-	cost = 5
-	include_modes = list(/datum/game_mode/nuclear)
-	surplus = 0
 
 /datum/uplink_item/stealthy_weapons/cqc
 	name = "CQC Manual"
@@ -649,31 +640,31 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 40
 
 /datum/uplink_item/ammo/pistol
-	name = "10x22mm Handgun Magazine"
-	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol."
+	name = "10mm Handgun Magazine"
+	desc = "An additional 8-round 10mm magazine; compatible with the Ringneck Pistol."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 1
 
 
 /datum/uplink_item/ammo/pistolap
-	name = "10x22mm Armour Piercing Magazine"
-	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
+	name = "10mm Armour Piercing Magazine"
+	desc = "An additional 8-round 10mm magazine; compatible with the Ringneck Pistol. \
 			These rounds are less effective at injuring the target but penetrate protective gear."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 2
 
 
 /datum/uplink_item/ammo/pistolhp
-	name = "10x22mm Hollow Point Magazine"
-	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
+	name = "10mm Hollow Point Magazine"
+	desc = "An additional 8-round 10mm magazine; compatible with the Ringneck Pistol. \
 			These rounds are more damaging but ineffective against armour."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 3
 
 
 /datum/uplink_item/ammo/pistolfire
-	name = "10x22mm Incendiary Magazine"
-	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
+	name = "10mm Incendiary Magazine"
+	desc = "An additional 8-round 10mm magazine; compatible with the Ringneck Pistol. \
 			Loaded with incendiary rounds which inflict little damage, but ignite the target."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 2
@@ -735,16 +726,16 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/ammo/smg/bag
-	name = ".45 Ammo Duffel Bag"
-	desc = "A duffel bag filled with enough .45 ammo to supply an entire team, at a discounted price."
+	name = "10mm Ammo Duffel Bag"
+	desc = "A duffel bag filled with enough 10mm ammo to supply an entire team, at a discounted price."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/smg
 	cost = 20 //instead of 27 TC
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/ammo/smg
-	name = ".45 SMG Magazine"
-	desc = "An additional 24-round .45 magazine suitable for use with the C-20r submachine gun."
-	item = /obj/item/ammo_box/magazine/m45_cobra
+	name = "10mm SMG Magazine"
+	desc = "An additional 24-round 10mm magazine suitable for use with the C-20r submachine gun."
+	item = /obj/item/ammo_box/magazine/m10_cobra
 	cost = 3
 	include_modes = list(/datum/game_mode/nuclear)
 
@@ -800,8 +791,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 6
 
 /datum/uplink_item/ammo/pistolaps
-	name = "9x18mm Handgun Magazine"
-	desc = "An additional 15-round 9x18mm magazine, compatible with the Stechkin APS pistol, found in the Spetsnaz Pyro bundle."
+	name = "9mm Handgun Magazine"
+	desc = "An additional 15-round 9mm magazine, compatible with the Stechkin APS pistol, found in the Spetsnaz Pyro bundle."
 	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 2
 	include_modes = list(/datum/game_mode/nuclear)
@@ -845,7 +836,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/ammo/tec9
 	name = "TEC9 Magazine"
-	desc = "An additional 20 round 9x18mm magazine for the TEC9."
+	desc = "An additional 20 round 9mm magazine for the TEC9."
 	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 3
 
@@ -1030,7 +1021,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Syndicate Saboteur Cyborg"
 	desc = "A streamlined engineering cyborg, equipped with covert modules. Also incapable of leaving the welder in the shuttle. \
 			Aside from regular Engineering equipment, it comes with a special destination tagger that lets it traverse disposals networks. \
-			Its chameleon projector lets it disguise itself as a Nanotrasen cyborg, on top it has thermal vision and a pinpointer."
+			Its chameleon projector lets it disguise itself as a Makosso-Warra cyborg, on top it has thermal vision and a pinpointer."
 	item = /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
 	refundable = TRUE
 	cost = 35
@@ -1156,8 +1147,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/suits/space_suit
 	name = "Syndicate Space Suit"
-	desc = "This red and black Syndicate space suit is less encumbering than Nanotrasen variants, \
-			fits inside bags, and has a weapon slot. Nanotrasen crew members are trained to report red space suit \
+	desc = "This red and black Syndicate space suit is less encumbering than Makosso-Warra variants, \
+			fits inside bags, and has a weapon slot. Makosso-Warra crew members are trained to report red space suit \
 			sightings, however."
 	item = /obj/item/storage/box/syndie_kit/space
 	cost = 4
@@ -1168,7 +1159,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			that runs off standard atmospheric tanks. Toggling the suit in and out of \
 			combat mode will allow you all the mobility of a loose fitting uniform without sacrificing armoring. \
 			Additionally the suit is collapsible, making it small enough to fit within a backpack. \
-			Nanotrasen crew who spot these suits are known to panic."
+			Makosso-Warra crew who spot these suits are known to panic."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi
 	cost = 8
 	exclude_modes = list(/datum/game_mode/nuclear) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
@@ -1216,7 +1207,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
 	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in zero-g conditions \
-			during gravitational generator failures. These reverse-engineered knockoffs of Nanotrasen's \
+			during gravitational generator failures. These reverse-engineered knockoffs of Makosso-Warra's \
 			'Advanced Magboots' slow you down in simulated-gravity environments much like the standard issue variety."
 	item = /obj/item/clothing/shoes/magboots/syndie
 	cost = 2
@@ -1343,7 +1334,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/rad_laser
 	name = "Radioactive Microlaser"
-	desc = "A radioactive microlaser disguised as a standard Nanotrasen health analyzer. When used, it emits a \
+	desc = "A radioactive microlaser disguised as a standard Makosso-Warra health analyzer. When used, it emits a \
 			powerful burst of radiation, which, after a short delay, can incapacitate all but the most protected \
 			of humanoids. It has two settings: intensity, which controls the power of the radiation, \
 			and wavelength, which controls the delay before the effect kicks in."
@@ -1545,13 +1536,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/flashlight/lantern/lanternbang
 	restricted_species = list("moth")
 
-/datum/uplink_item/race_restricted/ethereal_grenade
-	name = "Ethereal Dance Grenade"
-	desc = "Syndicate scientists have cunningly stuffed the bodies of multiple Ethereals into a special package! Activating it will cause anyone nearby to dance, excluding Ethereals, who might just get offended."
-	cost = 4
-	item = /obj/item/grenade/discogrenade
-	restricted_species = list("ethereal")
-
 // Role-specific items
 /datum/uplink_item/role_restricted
 	category = "Role-Restricted"
@@ -1619,7 +1603,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/role_restricted/ez_clean_bundle
 	name = "EZ Clean Grenade Bundle"
-	desc = "A box with three cleaner grenades using the trademark Waffle Co. formula. Serves as a cleaner and causes acid damage to anyone standing nearby. \
+	desc = "A box with three cleaner grenades using the trademark EZ-Clean formula. Serves as a cleaner and causes acid damage to anyone standing nearby. \
 			The acid only affects carbon-based creatures."
 	item = /obj/item/storage/box/syndie_kit/ez_clean
 	cost = 6

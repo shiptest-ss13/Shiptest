@@ -31,7 +31,7 @@
 	new /obj/item/storage/box/teargas(src)
 	new /obj/item/storage/box/flashes(src)
 	new /obj/item/storage/box/handcuffs(src)
-	new /obj/item/shield/riot/tele(src)
+	new /obj/item/shield/tele(src)
 
 /obj/structure/closet/secure_closet/ertMed
 	name = "emergency response team medical locker"
@@ -46,7 +46,7 @@
 	new /obj/item/storage/firstaid/fire(src)
 	new /obj/item/storage/firstaid/brute(src)
 	new /obj/item/storage/firstaid/regular(src)
-	new /obj/item/defibrillator/compact/combat/loaded/nanotrasen(src)
+	new /obj/item/defibrillator/compact/combat/loaded/warra(src)
 	new /mob/living/simple_animal/bot/medbot(src)
 
 /obj/structure/closet/secure_closet/ertEngi
@@ -60,7 +60,7 @@
 	new /obj/item/stack/sheet/plasteel(src, 50)
 	new /obj/item/stack/sheet/metal(src, 50)
 	new /obj/item/stack/sheet/glass(src, 50)
-	new /obj/item/stack/sheet/mineral/sandbags(src, 30)
+	new /obj/item/stack/sandbags(src, 30)
 	new /obj/item/clothing/shoes/magboots(src)
 	new /obj/item/storage/box/smart_metal_foam(src)
 	for(var/i in 1 to 3)

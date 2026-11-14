@@ -8,7 +8,6 @@
 /obj/item/wallframe/firealarm
 	name = "fire alarm frame"
 	desc = "Used for building fire alarms."
-	icon = 'icons/obj/monitors.dmi'
 	icon_state = "fire_bitem"
 	result_path = /obj/machinery/firealarm
 	pixel_shift = 32
@@ -17,7 +16,7 @@
 /obj/machinery/firealarm
 	name = "fire alarm"
 	desc = "<i>\"Pull this in case of emergency\"</i>. Thus, keep pulling it forever."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'icons/obj/wallmounts/firealarm.dmi'
 	icon_state = "fire0"
 	max_integrity = 250
 	integrity_failure = 0.4
@@ -74,10 +73,6 @@
 		return
 
 
-	. += "fire_[SEC_LEVEL_GREEN]"
-	SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, plane, dir)
-	SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, EMISSIVE_PLANE, dir)
-
 	var/area/A = get_area(src)
 
 	if(!detecting || !A.fire)
@@ -116,6 +111,15 @@
 	if((temperature > T0C + 200 || temperature < HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT) && (last_alarm+FIREALARM_COOLDOWN < world.time) && !(obj_flags & EMAGGED) && detecting && !machine_stat)
 		alarm()
 	..()
+
+/obj/machinery/firealarm/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(80))
+		var/area/our_area = get_area(src)
+		if(our_area.fire)
+			reset()
+		else
+			alarm()
 
 /obj/machinery/firealarm/proc/alarm(mob/user)
 	if(!is_operational || (last_alarm+FIREALARM_COOLDOWN > world.time))
@@ -294,6 +298,7 @@
 	if(buildstage == 0) //can't break the electronics if there isn't any inside.
 		return
 	. = ..()
+	update_fire_light()
 	if(.)
 		LAZYREMOVE(myarea.firealarms, src)
 
@@ -308,6 +313,10 @@
 	qdel(src)
 
 /obj/machinery/firealarm/proc/update_fire_light(fire)
+	if (machine_stat & (NOPOWER|BROKEN))
+		set_light(l_power = 0) //fixes bug where broken fire alarms never turned off their lights
+		return
+
 	if(fire == !!light_power)
 		return // do nothing if we're already active
 	if(fire)

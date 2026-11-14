@@ -40,7 +40,7 @@
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
 	/// The maximum number of currently active missions that a ship may take on.
-	var/max_missions = 2
+	var/max_missions = 4
 
 	/// Manifest list of people on the ship. Indexed by mob REAL NAME. value is JOB INSTANCE
 	var/list/manifest = list()
@@ -48,7 +48,8 @@
 	/// List of mob refs indexed by their job instance
 	var/list/datum/weakref/job_holder_refs = list()
 
-	var/list/datum/mind/owner_candidates
+	/// Dictionary of all candidate minds associated with a list containing their real name and whether they are eligible
+	var/list/list/owner_candidates
 
 	/// The mob of the current ship owner. Tracking mostly uses this; that lets us pick up on logouts, which let us
 	/// determine if a player is switching to control of a mob with a different mind, who thus shouldn't be the ship owner.
@@ -77,6 +78,9 @@
 
 	///The ship's real name, without the prefix
 	var/real_name
+
+	///Image shown to helm console viewers while cloaked, allows the pilot to see
+	var/image/cloaked_image
 
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
@@ -119,12 +123,13 @@
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms)
+/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms, _ship_name)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
+		ship_class = source_template.ship_class
 		stationary_icon_state = creation_template.token_icon_state
 		alter_token_appearance()
 		if(create_shuttle)
@@ -149,7 +154,10 @@
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
 #else
-	Rename(pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories)), TRUE)
+	if(_ship_name)
+		Rename(_ship_name, TRUE)
+	else
+		Rename(pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories)), TRUE)
 #endif
 	SSovermap.controlled_ships += src
 	current_overmap.controlled_ships += src
@@ -242,8 +250,10 @@
 		return new /datum/docking_ticket(override_dock, src, dock_requester)
 
 	for(var/obj/docking_port/stationary/docking_port in shuttle_port.docking_points)
-		if(dock_requester.shuttle_port.check_dock(docking_port))
+		if(dock_requester.shuttle_port.check_dock(docking_port, TRUE, FALSE))
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
+	if(shuttle_port.docking_points.len)
+		return new /datum/docking_ticket(_docking_error = "ERROR: [src] has docking ports, however vessel is unable to dock to any. Attempt manual docking for more information. Aborting docking.")
 	return ..()
 
 /datum/overmap/ship/controlled/get_dockable_locations(datum/overmap/requesting_interactor)
@@ -330,6 +340,10 @@
 /datum/overmap/ship/controlled/proc/is_join_option()
 	return (length(shuttle_port.spawn_points) >= 1) && (length(job_slots) >= 1) && join_mode != SHIP_JOIN_MODE_CLOSED
 
+// check if its still taking applications
+/datum/overmap/ship/controlled/proc/has_applications_open()
+	return is_join_option() && join_mode == SHIP_JOIN_MODE_APPLY
+
 /datum/overmap/ship/controlled/proc/get_application(mob/applicant)
 	var/index_key = applicant.client?.holder?.fakekey ? applicant.client.holder.fakekey : applicant.key
 	return LAZYACCESS(applications, ckey(index_key))
@@ -354,7 +368,7 @@
 	)
 	LAZYSET(owner_candidates, H.mind, mind_info)
 	H.mind.original_ship = WEAKREF(src)
-	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, PROC_REF(crew_mind_deleting))
+	RegisterSignal(H.mind, COMSIG_QDELETING, PROC_REF(crew_mind_deleting))
 	if(!owner_mob)
 		set_owner_mob(H)
 
@@ -437,7 +451,7 @@
 /datum/overmap/ship/controlled/proc/crew_mind_deleting(datum/mind/del_mind)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(del_mind, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(del_mind, COMSIG_QDELETING)
 	LAZYREMOVE(owner_candidates, del_mind)
 	if(owner_mind == del_mind)
 		set_owner_mob(get_best_owner_mob())
@@ -501,7 +515,6 @@
 		SStgui.close_uis(helm)
 		helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
 
-
 /datum/overmap/ship/controlled/alter_token_appearance()
 	if(!source_template)
 		return ..()
@@ -538,6 +551,39 @@
 	if(our_helm)
 		our_helm.cancel_jump()
 
+///Checks to see if the ship already has a high priority mission.
+/datum/overmap/ship/controlled/proc/check_for_high_priority_mission()
+	for(var/datum/mission/target_mission as anything in missions)
+		if(target_mission.high_priority == TRUE)
+			return TRUE
+	return FALSE
+
+/datum/overmap/ship/controlled/activate_cloak()
+	. = ..()
+	var/mutable_appearance/token_appearance = new(token)
+	cloaked_image = new(loc = token)
+	token_appearance.dir = token.dir
+	token_appearance.appearance_flags = RESET_COLOR|RESET_ALPHA
+	token_appearance.alpha = 64
+	cloaked_image.appearance = token_appearance
+	for(var/obj/machinery/computer/helm/helm_console as anything in helms)
+		for(var/user_ref in helm_console.concurrent_users)
+			var/mob/user = locate(user_ref)
+			if(!user)
+				continue
+			user.client.images += cloaked_image
+
+/datum/overmap/ship/controlled/deactivate_cloak()
+	. = ..()
+	if(!cloaked_image)
+		return
+	for(var/obj/machinery/computer/helm/helm_console as anything in helms)
+		for(var/user_ref in helm_console.concurrent_users)
+			var/mob/user = locate(user_ref)
+			if(!user)
+				continue
+			user.client.images -= cloaked_image
+	QDEL_NULL(cloaked_image)
 
 /obj/item/key/ship
 	name = "ship key"
@@ -588,4 +634,3 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
-

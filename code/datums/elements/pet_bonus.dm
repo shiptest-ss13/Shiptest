@@ -6,7 +6,7 @@
  */
 /datum/element/pet_bonus
 	element_flags = ELEMENT_BESPOKE
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 
 	///string key of the emote to do when pet.
 	var/emote_name

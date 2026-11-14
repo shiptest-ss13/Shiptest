@@ -58,7 +58,7 @@ GLOBAL_PROTECT(href_token)
 	target = ckey
 	name = "[ckey]'s admin datum ([R])"
 	rank = R
-	admin_signature = "Nanotrasen Officer #[rand(0,9)][rand(0,9)][rand(0,9)]"
+	admin_signature = "Makosso-Warra Officer #[rand(0,9)][rand(0,9)][rand(0,9)]"
 	href_token = GenerateToken()
 	if(R.rights & R_DEBUG) //grant profile access
 		world.SetConfig("APP/admin", ckey, "role=admin")
@@ -89,10 +89,6 @@ GLOBAL_PROTECT(href_token)
 	deadmined = FALSE
 	if (GLOB.directory[target])
 		associate(GLOB.directory[target])	//find the client for a ckey if they are connected and associate them with us
-	if(!GLOB.mentor_datums[target])
-		new /datum/mentors(target) // If we don't have a mentor datum, make a new one
-	var/datum/mentors/mentor = GLOB.mentor_datums[target]
-	mentor.associate(GLOB.directory[target]) // All admins get free mentor
 
 /datum/admins/proc/deactivate()
 	if(IsAdminAdvancedProcCall())

@@ -75,7 +75,7 @@
 		. += "[t_He] [t_has] [gloves.get_examine_string(user)] on [t_his] hands."
 	else if(FR && length(FR.blood_DNA))
 		if(num_hands)
-			. += span_warning("[t_He] [t_has] [num_hands > 1 ? "" : "a"] blood-stained hand[num_hands > 1 ? "s" : ""]!")
+			. += span_warning("[t_He] [t_has] [num_hands > 1 ? "" : "a "]blood-stained hand[num_hands > 1 ? "s" : ""]!")
 
 	//handcuffed?
 
@@ -208,7 +208,7 @@
 		body_part = bodyparts[zone]
 		if(!body_part)
 			continue
-		if(body_part.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
+		if((body_part.examine_id ? body_part.examine_id : body_part.limb_id) != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
 			msg += "[span_info("[t_He] [t_has] \an [body_part.name].")]\n"
 
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
@@ -241,7 +241,7 @@
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
 
-	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
+	if(nutrition < NUTRITION_LEVEL_STARVING - 50 && !isipc(src))
 		msg += "[t_He] [t_is] severely malnourished.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
@@ -256,9 +256,9 @@
 		apparent_blood_volume -= 150 // enough to knock you down one tier
 	switch(apparent_blood_volume)
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			msg += "[t_He] [t_has] looks a little pale.\n"
+			msg += "[t_He] looks a little pale.\n"
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += "<b>[t_He] look[p_s()] like [t_he] is going to faint.</b>\n"
+			msg += "<b>[t_He] look[p_s()] like [t_he] [t_is] going to faint.</b>\n"
 		if(-INFINITY to BLOOD_VOLUME_BAD)
 			msg += span_deadsay("<b>[t_He] looks drained of blood...</b>\n")
 
@@ -415,7 +415,7 @@
 
 	. += "</span>"
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /**
  * Shows any and all examine text related to any status effects the user has.

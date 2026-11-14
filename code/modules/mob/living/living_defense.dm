@@ -74,6 +74,7 @@
 		else
 			var/dist_modifier = max((4 - dist), 1)
 			if(prob((concealment.concealment_power/dist_modifier)))
+				playsound_local(get_turf(src), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 				return TRUE // we are concealed and the bullet misses
 	return FALSE
 
@@ -88,29 +89,30 @@
 		else
 				return 0
 
-/mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
-	if(istype(AM, /obj/item))
-		var/obj/item/I = AM
-		var/zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
+/mob/living/hitby(atom/movable/thrown_atom, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
+	if(istype(thrown_atom, /obj/item))
+		var/obj/item/thrown_item = thrown_atom
+		var/zone = run_zone(BODY_ZONE_CHEST, 65) //Hits a random part of the body, geared towards the chest
 		var/dtype = BRUTE
-		var/nosell_hit = SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, zone, throwingdatum) // TODO: find a better way to handle hitpush and skipcatch for humans
+		var/nosell_hit = SEND_SIGNAL(thrown_item, COMSIG_MOVABLE_IMPACT_ZONE, src, zone, throwingdatum) // TODO: find a better way to handle hitpush and skipcatch for humans
 		if(nosell_hit)
 			skipcatch = TRUE
 			hitpush = FALSE
 
-		dtype = I.damtype
+		dtype = thrown_item.damtype
 		if(!blocked)
-			if(I.thrownby)
-				log_combat(I.thrownby, src, "threw and hit", I)
+			var/mob/thrown_by = thrown_item.thrownby?.resolve()
+			if(thrown_by)
+				log_combat(thrown_by, src, "threw and hit", thrown_item)
 			if(!nosell_hit)
 				visible_message(
-					span_danger("[src] is hit by [I]!"),
-					span_userdanger("You're hit by [I]!"),
+					span_danger("[src] is hit by [thrown_item]!"),
+					span_userdanger("You're hit by [thrown_item]!"),
 				)
-				if(!I.throwforce)
+				if(!thrown_item.throwforce)
 					return
-				var/armor = run_armor_check(zone, "melee", I.armour_penetration, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].")
-				apply_damage(I.throwforce, dtype, zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND))
+				var/armor = run_armor_check(zone, "melee", thrown_item.armour_penetration, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].")
+				apply_damage(thrown_item.throwforce, dtype, zone, armor, sharpness=thrown_item.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND))
 		else
 			return TRUE
 	else
@@ -233,7 +235,7 @@
 				to_chat(user, span_danger("You're strangling [src]!"))
 				if(!buckled && !density)
 					Move(user.loc)
-		user.set_pull_offsets(src, grab_state)
+		user.set_pull_offsets(src, user.grab_state)
 		return 1
 
 
@@ -381,7 +383,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/ex_act(severity, target, origin)
+/mob/living/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
 		return
 	..()
@@ -430,12 +432,14 @@
 //called when the mob receives a bright flash
 /mob/living/proc/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/flash)
 	if(HAS_TRAIT(src, TRAIT_NOFLASH))
-		return FALSE
-	if(get_eye_protection() < intensity && (override_blindness_check || !is_blind()))
-		overlay_fullscreen("flash", type)
-		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
-		return TRUE
-	return FALSE
+		return NONE
+	if(get_eye_protection() >= intensity)
+		return NONE
+	if(is_blind() && !override_blindness_check)
+		return FLASH_DAMAGE
+	overlay_fullscreen("flash", type)
+	addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
+	return FLASH_EFFECT | FLASH_DAMAGE
 
 //called when the mob receives a loud bang
 /mob/living/proc/soundbang_act()
@@ -455,15 +459,20 @@
  *
  * If the method is INGEST the mob tastes the reagents.
  * If the method is VAPOR it incorporates permiability protection.
+ * If the method is INHALE it can be blocked by smoke/gas protection.
  */
 /mob/living/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
 	if((. = ..()) & COMPONENT_NO_EXPOSE_REAGENTS)
 		return
 
 	if(method == INGEST)
-		taste(source)
+		taste_list(reagents)
 
-	var/touch_protection = (method == VAPOR) ? get_permeability_protection() : 0
+	var/permeability = 1
+	if(method == VAPOR)
+		permeability *= 1 - get_permeability_protection()
+	if(method == INHALE)
+		permeability *= 1 - has_smoke_protection()
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
-		. |= R.expose_mob(src, method, reagents[R], show_message, touch_protection)
+		. |= R.expose_mob(src, method, reagents[R], show_message, 1 - permeability)

@@ -77,6 +77,9 @@ SUBSYSTEM_DEF(air)
 
 	var/lasttick = 0
 
+	/// Reference to the auxmos gas data datum for debugging purposes.
+	var/datum/auxgm/gas_data
+
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "HP:[round(cost_highpressure,1)]|"
@@ -112,6 +115,7 @@ SUBSYSTEM_DEF(air)
 	setup_pipenets()
 	gas_reactions = init_gas_reactions()
 	auxtools_update_reactions()
+	gas_data = GLOB.gas_data
 	return ..()
 
 /datum/controller/subsystem/air/proc/extools_update_ssair()

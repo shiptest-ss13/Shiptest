@@ -5,14 +5,25 @@
 	species_traits = list(HAIR,FACEHAIR,LIPS,DRINKSBLOOD)
 	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
-	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "ears" = "None", "wings" = "None")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN
 	exotic_bloodtype = "U"
 	use_skintones = TRUE
-	mutantheart = /obj/item/organ/heart/vampire
-	mutanttongue = /obj/item/organ/tongue/vampire
 	examine_limb_id = SPECIES_HUMAN
 	skinned_type = /obj/item/stack/sheet/animalhide/human
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/vampire,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/vampire,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
+
 	var/info_text = "You are a <span class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 
@@ -31,15 +42,15 @@
 		C.RemoveSpell(batform)
 		QDEL_NULL(batform)
 
-/datum/species/vampire/spec_life(mob/living/carbon/human/C)
+/datum/species/vampire/spec_life(mob/living/carbon/human/C, seconds_per_tick, times_fired)
 	. = ..()
 	if(istype(C.loc, /obj/structure/closet/crate/coffin))
-		C.heal_overall_damage(4,4,0, BODYTYPE_ORGANIC)
-		C.adjustToxLoss(-4)
-		C.adjustOxyLoss(-4)
-		C.adjustCloneLoss(-4)
+		C.heal_overall_damage(2 * seconds_per_tick, 2 * seconds_per_tick, 0, BODYPART_ORGANIC)
+		C.adjustToxLoss(-2 * seconds_per_tick)
+		C.adjustOxyLoss(-2 * seconds_per_tick)
+		C.adjustCloneLoss(-2 * seconds_per_tick)
 		return
-	C.blood_volume -= 0.25
+	C.blood_volume -= 0.125 * seconds_per_tick
 	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		to_chat(C, span_danger("You ran out of blood!"))
 		var/obj/shapeshift_holder/H = locate() in C
@@ -49,8 +60,8 @@
 	var/area/A = get_area(C)
 	if(istype(A, /area/ship/crew/chapel))
 		to_chat(C, span_warning("You don't belong here!"))
-		C.adjustFireLoss(20)
-		C.adjust_fire_stacks(6)
+		C.adjustFireLoss(10 * seconds_per_tick)
+		C.adjust_fire_stacks(3 * seconds_per_tick)
 		C.ignite_mob()
 
 /obj/item/organ/tongue/vampire

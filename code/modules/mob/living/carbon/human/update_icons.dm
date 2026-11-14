@@ -161,7 +161,7 @@ There are several things that need to be remembered:
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = use_autogen)
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_state = target_overlay, override_file = icon_file, mob_species = use_autogen)
 
 		if(!uniform_overlay)
 			return
@@ -1006,10 +1006,6 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	//eg: ammo counters, primed grenade flashes, etc.
 	var/list/worn_overlays = worn_overlays(isinhands, file2use)
 	if(length(worn_overlays))
-		if (width != 32 || height != 32)
-			for (var/image/overlay in worn_overlays)
-				overlay.pixel_x -= standing.pixel_x
-				overlay.pixel_y -= standing.pixel_y
 		standing.overlays += worn_overlays
 
 	//Handle held offsets
@@ -1181,7 +1177,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			mask_icon = 'icons/effects/cut_48x48.dmi'
 		else if(icon_height == 36 && icon_width <= 48)
 			mask_icon = 'icons/effects/cut_48x36.dmi'
-		else if(icon_height == 32 && icon_width <= 48)
+		else if(icon_height == 32 && icon_width <= 48 && icon_width != 32)
 			mask_icon = 'icons/effects/cut_48x32.dmi'
 		else if(icon_height != 32 || icon_width > 32)
 			stack_trace("Bad dimensions (w[icon_width],h[icon_height]) for icon '[appearance.icon]'")

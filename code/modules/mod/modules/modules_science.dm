@@ -3,7 +3,7 @@
 ///Reagent Scanner - Lets the user scan reagents.
 /obj/item/mod/module/reagent_scanner
 	name = "MOD reagent scanner module"
-	desc = "A module based off research-oriented Nanotrasen HUDs, this is capable of scanning the contents of \
+	desc = "A module based off research-oriented Makosso-Warra HUDs, this is capable of scanning the contents of \
 		containers and projecting the information in an easy-to-read format on the wearer's display. \
 		It cannot detect flavors, so that's up to you."
 	icon_state = "scanner"

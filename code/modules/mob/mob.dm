@@ -498,7 +498,7 @@
 		if(isnull(client.recent_examines[examinify]) || client.recent_examines[examinify] < world.time)
 			result = examinify.examine(src)
 			client.recent_examines[examinify] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			RegisterSignal(examinify, COMSIG_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
 			addtimer(CALLBACK(src, PROC_REF(clear_from_recent_examines), examinify), EXAMINE_MORE_TIME)
 			handle_eye_contact(examinify)
 		else
@@ -565,7 +565,7 @@
 
 	if(!client)
 		return
-	UnregisterSignal(A, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(A, COMSIG_QDELETING)
 	LAZYREMOVE(client.recent_examines, A)
 
 /**
@@ -784,6 +784,9 @@
 	set name = "Respawn"
 	set category = "OOC"
 
+	return_to_lobby()
+
+/mob/proc/return_to_lobby()
 	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
 		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
@@ -828,15 +831,15 @@
 		log_game("[key_name(usr)] AM failed due to disconnect.")
 		return
 
-	var/mob/dead/new_player/M = new /mob/dead/new_player()
+	var/mob/dead/new_player/lobby_mob = new /mob/dead/new_player()
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
-		qdel(M)
+		qdel(lobby_mob)
 		return
 
-	M.key = key
-//	M.Login()	//wat
-	return
+	lobby_mob.key = key
+//	lobby_mob.Login()	//wat
+	return lobby_mob
 
 
 /**
@@ -1126,25 +1129,6 @@
 			return FALSE
 	return ..()
 
-///Call back post buckle to a mob to offset your visual height
-/mob/post_buckle_mob(mob/living/M)
-	var/height = M.get_mob_buckling_height(src)
-	M.pixel_y = initial(M.pixel_y) + height
-	if(M.layer <= layer) //make sure they stay above our current layer
-		M.layer = layer + 0.1
-///Call back post unbuckle from a mob, (reset your visual height here)
-/mob/post_unbuckle_mob(mob/living/M)
-	M.layer = initial(M.layer)
-	M.pixel_y = initial(M.pixel_y)
-
-///returns the height in pixel the mob should have when buckled to another mob.
-/mob/proc/get_mob_buckling_height(mob/seat)
-	if(isliving(seat))
-		var/mob/living/L = seat
-		if(L.mob_size <= MOB_SIZE_SMALL) //being on top of a small mob doesn't put you very high.
-			return 0
-	return 9
-
 ///can the mob be buckled to something by default?
 /mob/proc/can_buckle()
 	return 1
@@ -1384,6 +1368,8 @@
 	VV_DROPDOWN_OPTION(VV_HK_DIRECT_CONTROL, "Assume Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_GIVE_DIRECT_CONTROL, "Give Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_OFFER_GHOSTS, "Offer Control to Ghosts")
+	if(ai_controller)
+		VV_DROPDOWN_OPTION(VV_HK_AI_SET_HOME, "Set AI Home")
 
 /mob/vv_do_topic(list/href_list)
 	. = ..()
@@ -1435,6 +1421,10 @@
 		if(!check_rights(NONE))
 			return
 		offer_control(src)
+	if(href_list[VV_HK_AI_SET_HOME])
+		if(!check_rights(R_DEBUG))
+			return
+		ai_controller?.admin_set_home(usr)
 
 /**
  * extra var handling for the logging var
@@ -1481,9 +1471,9 @@
 /mob/proc/set_stat(new_stat)
 	if(new_stat == stat)
 		return
-	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat)
 	. = stat
 	stat = new_stat
+	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat, .)
 
 /// Used for typing indicator, relevant on /living level
 /mob/proc/set_typing_indicator(state)
@@ -1531,10 +1521,10 @@
 
 /mob/proc/set_active_storage(new_active_storage)
 	if(active_storage)
-		UnregisterSignal(active_storage, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(active_storage, COMSIG_QDELETING)
 	active_storage = new_active_storage
 	if(active_storage)
-		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, PROC_REF(active_storage_deleted))
+		RegisterSignal(active_storage, COMSIG_QDELETING, PROC_REF(active_storage_deleted))
 
 /mob/proc/active_storage_deleted(datum/source)
 	SIGNAL_HANDLER

@@ -30,6 +30,7 @@
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 90
+	ricochet_incidence_leeway = 75
 	reflectable = REFLECT_NORMAL
 
 /obj/projectile/beam/throw_atom_into_space()
@@ -45,7 +46,7 @@
 	damage = 15
 
 /obj/projectile/beam/laser/sharplite
-	icon_state = "nt_laser"
+	icon_state = "sharplite_laser"
 	light_color = COLOR_BLUE_LIGHT
 	damage = 25
 	armour_penetration = -5
@@ -57,8 +58,8 @@
 	speed = 0.3
 
 /obj/projectile/beam/weak/sharplite
-	icon_state = "nt_laser_light"
-	damage = 15
+	icon_state = "sharplite_laser_light"
+	damage = 20
 	speed = 0.3
 	light_color = COLOR_BLUE_LIGHT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -66,12 +67,12 @@
 
 
 /obj/projectile/beam/laser/sharplite/dmr
-	icon_state = "nt_laser_stronger"
-	damage = 30
-	armour_penetration = 20
+	icon_state = "sharplite_laser_stronger"
+	damage = 35
+	armour_penetration = 30
 
 /obj/projectile/beam/laser/assault/sharplite
-	icon_state = "nt_laser_heavy"
+	icon_state = "sharplite_laser_heavy"
 	damage = 25
 	armour_penetration = 20
 	speed = 0.3
@@ -83,48 +84,156 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
 /obj/projectile/beam/laser/sharplite/sniper
-	icon_state = "nt_laser_sniper"
-	damage = 35
-	armour_penetration = 30
+	icon_state = "sharplite_laser_sniper"
+	damage = 40
+	armour_penetration = 40
 	speed = 0.2
 	wound_bonus = 0
 	bare_wound_bonus = 20
 
 /obj/projectile/beam/laser/light/sharplite
-	icon_state = "nt_laser_light"
+	icon_state = "sharplite_laser_light"
 	speed = 0.4
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/laser/eoehoma
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser"
 	damage = 35
 	armour_penetration = 0
 	speed = 0.8
 
 /obj/projectile/beam/laser/eoehoma/wasp
-	icon_state = "heavylaser"
 	damage = 30
 
+// e20 default projectile
+/obj/projectile/beam/laser/eoehoma/mining/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(!isclosedturf(target))
+		return BULLET_ACT_HIT
+	if(ismineralturf(target))
+		damage *= 4
+	else
+		damage *= 2
+
+	return BULLET_ACT_HIT
+
+// e20 heavy beam
+/obj/projectile/beam/emitter/hitscan/e20_heavy
+	icon_state = "eoehoma_laser_heavy"
+	damage = 55
+	fire_color = "red"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	light_color = COLOR_SOFT_RED
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+
+// e20 pierce beam
+/obj/projectile/beam/hitscan/e20_pierce
+	name = "concentrated mining beam"
+	tracer_type = /obj/effect/projectile/tracer/e20_pierce
+	muzzle_type = /obj/effect/projectile/muzzle/e20_pierce
+	impact_type = /obj/effect/projectile/impact/e20_pierce
+
+	projectile_piercing = PASSMOB
+
+	range = 8
+	damage_constant = 0.7
+	damage = 40
+	armour_penetration = 60
+
+/obj/projectile/beam/hitscan/e20_pierce/prehit_pierce(atom/target)
+	. = ..()
+	if(ismineralturf(target))
+		return PROJECTILE_PIERCE_HIT
+
+/obj/projectile/beam/hitscan/e20_pierce/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	damage = initial(damage) // prevents infinite damage stacking
+	if(!isclosedturf(target))
+		return BULLET_ACT_HIT
+	if(ismineralturf(target))
+		damage *= 3 // slightly lower to prevent slagging
+	else
+		damage *= 2
+
+	return BULLET_ACT_HIT
+
+// e10 overcharge projectile
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
-	damage = 60
-	knockdown = 50
-	armour_penetration = 20
+	damage = 40
 	speed = 1
 
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
 	return BULLET_ACT_HIT
 
+/obj/projectile/beam/laser/clover
+	icon_state = "clover_pulse_light"
+	damage = 20
+	armour_penetration = -10
+
+	light_color = COLOR_CYAN
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
+
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+
+/obj/projectile/beam/laser/clover/smg
+	damage = 25
+
+/obj/projectile/beam/laser/clover/magnum
+	icon_state = "clover_pulse"
+	damage = 35
+	armour_penetration = 10
+
+/obj/projectile/beam/laser/clover/highpower
+	icon_state = "clover_pulse"
+	damage = 25
+	armour_penetration = 10
+
+/obj/projectile/beam/laser/clover/overcharge
+	icon_state = "clover_pulse_heavy"
+	damage = 40
+	armour_penetration = 0
+	speed = 0.6
+
+/obj/projectile/beam/laser/clover/overcharge/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,3,flame_range = 2, light_dam = 20, light_item_dam = 0)
+	return BULLET_ACT_HIT
+
+
+/obj/projectile/beam/laser/clover/shotgun
+	damage = 15
+	armour_penetration = -15
+
+	wound_bonus = -30
+
+	var/tile_dropoff = 1
+	var/ap_dropoff = 5
+	var/ap_dropoff_cutoff = -20
+
+/obj/projectile/beam/laser/clover/shotgun/Range() //10% loss per tile = max range of 10, generally
+	..()
+	if(damage > 0)
+		damage -= tile_dropoff
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
+	if(damage < 0 && stamina < 0)
+		qdel(src)
+
 /obj/projectile/beam/laser/assault
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 25
 	armour_penetration = 20
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 40
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
@@ -138,8 +247,8 @@
 
 /obj/projectile/beam/laser/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
+	if(isliving(target))
+		var/mob/living/M = target
 		M.ignite_mob()
 	else if(isturf(target))
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
@@ -166,7 +275,7 @@
 		qdel(src)
 
 /obj/projectile/beam/weak/shotgun/sharplite
-	icon_state = "nt_laser_light"
+	icon_state = "sharplite_laser_light"
 	light_color = COLOR_BLUE_LIGHT
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -176,6 +285,14 @@
 
 /obj/projectile/beam/weaker
 	damage = 10
+
+/obj/projectile/beam/chaff
+	icon_state = "sharplite_laser_light"
+	damage = 5
+	speed = 0.3
+	light_color = COLOR_BLUE_LIGHT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/weak/low_range
 	damage = 10
@@ -205,15 +322,14 @@
 
 /obj/projectile/beam/laser/slug
 	name = "laser slug"
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 20
 	armour_penetration = 40
 
 /obj/projectile/beam/scatter
 	name = "laser pellet"
-	icon_state = "scatterlaser"
-	damage = 5
-	range = 7
+	icon_state = "eoehoma_laser_light"
+	damage = 10
 
 /obj/projectile/beam/xray
 	name = "\improper X-ray beam"
@@ -252,9 +368,18 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/projectile/beam/disabler/sharplite
-	icon_state = "nt_disabler"
+	icon_state = "sharplite_disabler"
 	light_color = COLOR_PALE_ORANGE
 	speed = 0.3
+
+/obj/projectile/beam/disabler/clover
+	icon_state = "clover_disabler"
+	light_color = COLOR_ORANGE
+
+/obj/projectile/beam/disabler/clover/weak
+	icon_state = "clover_disabler_light"
+	damage = 15
+	armour_penetration = -20
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
@@ -267,7 +392,7 @@
 	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/sharplite
-	icon_state = "nt_disabler_light"
+	icon_state = "sharplite_disabler_light"
 	light_color = COLOR_PALE_ORANGE
 	armour_penetration = -30
 	range = 9
@@ -281,16 +406,20 @@
 	icon_state = "u_laser"
 	damage = 40
 	bullet_identifier = "pulse"
-	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_WALLS
-	wall_damage_override = 200
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS
+	wall_damage_override = 250
+	demolition_mod = 5
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
+	var/starts_fires = TRUE
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
+	if(!starts_fires)
+		return
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
@@ -299,10 +428,12 @@
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
 	wall_damage_override = 0
+	demolition_mod = 0
 	speed = 0.4
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
+	starts_fires = FALSE
 
 /obj/projectile/beam/pulse/condor
 	range = 128
@@ -418,10 +549,11 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
+	var/fire_color = "green"
 
 /obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.ignite_turf(rand(8,22), "green")
+	targets_turf.ignite_turf(rand(8,22), fire_color)

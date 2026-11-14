@@ -1,7 +1,7 @@
 /obj/structure/extinguisher_cabinet
 	name = "extinguisher cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
-	icon = 'icons/obj/wallmounts.dmi'
+	icon = 'icons/obj/wallmounts/extinguisher_cabinet.dmi'
 	icon_state = "extinguisher"
 	anchored = TRUE
 	density = FALSE
@@ -18,7 +18,7 @@
 		dir_amount = 4\
 	)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 23)
 
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()
@@ -28,10 +28,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 	else
 		stored_extinguisher = new /obj/item/extinguisher(src)
 	update_appearance()
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/structure/extinguisher_cabinet/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to [opened ? "close":"open"] it.")
+	. += span_notice("Right-click to [opened ? "close":"open"] it.")
 
 /obj/structure/extinguisher_cabinet/Destroy()
 	if(stored_extinguisher)
@@ -99,6 +100,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 	else
 		toggle_cabinet(user)
 
+/obj/structure/extinguisher_cabinet/attack_hand_secondary(mob/user, list/modifiers)
+	toggle_cabinet(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/extinguisher_cabinet/attack_tk(mob/user)
 	if(stored_extinguisher)
@@ -160,6 +164,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 			stored_extinguisher.forceMove(loc)
 			stored_extinguisher = null
 	qdel(src)
+
+/obj/structure/extinguisher_cabinet/bullet_act(obj/projectile/hitting_projectile)
+	if(stored_extinguisher && prob(60))
+		stored_extinguisher.bullet_act(hitting_projectile)
+	. = ..()
 
 /obj/item/wallframe/extinguisher_cabinet
 	name = "extinguisher cabinet frame"

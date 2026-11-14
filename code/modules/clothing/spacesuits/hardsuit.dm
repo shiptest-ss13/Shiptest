@@ -10,6 +10,7 @@
 	light_range = 4
 	light_power = 1
 	light_on = FALSE
+	resistance_flags = FIRE_PROOF
 	var/basestate = "hardsuit"
 	var/on = FALSE
 	var/obj/item/clothing/suit/space/hardsuit/suit
@@ -112,10 +113,15 @@
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 50, "acid" = 75, "wound" = 20)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	siemens_coefficient = 0.5
+	resistance_flags = FIRE_PROOF
+	//helmet linked to the suit
 	var/obj/item/clothing/head/helmet/space/hardsuit/helmet
 	actions_types = list(/datum/action/item_action/toggle_helmet)
+	//type of helmet that comes with the suit
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
+	//integrated jetpack if it exists
 	var/obj/item/tank/jetpack/suit/jetpack = null
+	//string for icon operations
 	var/hardsuit_type
 	pocket_storage_component_path = FALSE
 	greyscale_colors = list(list(11, 19), list(22, 12), list(16, 9))
@@ -124,6 +130,7 @@
 /obj/item/clothing/suit/space/hardsuit/Initialize()
 	if(jetpack && ispath(jetpack))
 		jetpack = new jetpack(src)
+	allowed += GLOB.security_vest_allowed
 	. = ..()
 
 /obj/item/clothing/suit/space/hardsuit/attack_self(mob/user)
@@ -206,7 +213,6 @@
 	item_state = "eng_helm"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 20)
 	hardsuit_type = "engineering"
-	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/space/hardsuit/engine
 	name = "engineering hardsuit"
@@ -217,7 +223,6 @@
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine
-	resistance_flags = FIRE_PROOF
 
 	//Atmospherics
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
@@ -262,6 +267,31 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/elite
 	jetpack = /obj/item/tank/jetpack/suit
+
+	//Infiltrator hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/stealth
+	name = "INF-95 Tactical Hardsuit helmet"
+	desc = "A Prototype hardsuit's helmet created at the tail end of the ICW, Designed for infiltration and maneueverability over protection. Comes with superb field of view and integrated night vision."
+	icon_state = "hardsuit0-stealth"
+	item_state = "stealth_helm"
+	hardsuit_type = "stealth"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	heat_protection = HEAD
+	flash_protect = FLASH_PROTECTION_SENSITIVE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	darkness_view = 8
+
+/obj/item/clothing/suit/space/hardsuit/stealth
+	name = "INF-95 Tactical Hardsuit"
+	desc = "A prototype hardsuit created at the tail-end of the ICW, for the Gorlex Marauders. Designed for infiltration and maneuverability over protection. Despite it being well-received, production ended shortly after the war. A surpising amount are kept in good condition, often on collector's racks."
+	icon_state = "hardsuit-stealth"
+	item_state = "stealth_hardsuit"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	allowed = list(/obj/item/tank/internals)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = 0
+	supports_variations = DIGITIGRADE_VARIATION
 
 	//Mining hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/mining
@@ -313,6 +343,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100, "wound" = 30)
 	light_range = 10
+	supports_variations = SNOUTED_VARIATION
 
 	//NS hardsuit
 /obj/item/clothing/suit/space/hardsuit/mining/heavy/ns
@@ -337,6 +368,95 @@
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 	supports_variations = KEPORI_VARIATION
 
+	//ESH hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/esh
+	name = "ES-Hardsuit helmet"
+	desc = "An EXOCOM-brand helmet designed for work in extremely hazardous environments. Rated for high impacts, radiological threats, extreme temperatures, and strong acids."
+	icon_state = "hardsuit0-esh"
+	item_state = "esh_helm"
+	hardsuit_type = "esh"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = HEAD
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 20)
+	light_range = 7
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
+
+/obj/item/clothing/suit/space/hardsuit/esh
+	name = "\improper ES-Hardsuit"
+	desc = "A surprisingly light suit designed by EXOCOM; the 'Extreme Survival Hardsuit' is made up of materials rated for extremely hazardous environments. Alongside this it contains an injector module that can be loaded with MediPens of any variety, which will then be automatically used when the user suffers from any noticeable wound or the user manually activates the system."
+	icon_state = "hardsuit-esh"
+	item_state = "esh_hardsuit"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 20)
+	slowdown = 0.4
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
+	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/activate_suit_injector)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/esh
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	supports_variations = DIGITIGRADE_VARIATION
+	var/obj/item/reagent_containers/hypospray/medipen/injector = null
+	// To prevent spamming the user with messages if multiple wounds occur at once
+	var/declare_cooldown = 0
+
+/obj/item/clothing/suit/space/hardsuit/esh/examine(mob/user)
+	. = ..()
+	. += span_notice("You can slot a fresh medipen in by clicking on the suit with a medipen.")
+	. += span_notice("You can <b>Alt+Click</b> the ESH to eject any inserted medipens.")
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/declare_wound(mob/living/carbon/human/user)
+	if(declare_cooldown > world.time)
+		return
+	declare_cooldown = world.time + 200
+	to_chat(user, span_warning("Warning: significant bodily harm detected."))
+	check_inject(user)
+
+// injection + notification of injection need to be in sync. There should be a delay between the suit notifying you of a wound/critical status and then going through injecting
+// Need to add crit event, maybe other wounding events. Also need to add cooldown to declare_wound so you don't get spammed
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/inject_user(mob/user)
+	injector.inject(user, user)
+	playsound(src, 'sound/items/hypospray_long.ogg', 50, FALSE)
+	injector = null
+	injector.forceMove(drop_location())
+	to_chat(user, span_warning("Administering medical attention. Medipen administered and ejected."))
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/check_inject(mob/user)
+	if(!injector || injector.reagents.total_volume <= 0)
+		to_chat(user, span_warning("Warning: no medipen found or current one is empty."))
+		return
+	addtimer(CALLBACK(src, PROC_REF(inject_user), user), 20, TIMER_STOPPABLE)
+
+/obj/item/clothing/suit/space/hardsuit/esh/equipped(mob/user, slot)
+	. = ..()
+	RegisterSignal(user, COMSIG_CARBON_GAIN_WOUND, PROC_REF(declare_wound))
+
+/obj/item/clothing/suit/space/hardsuit/esh/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_CARBON_GAIN_WOUND)
+
+/obj/item/clothing/suit/space/hardsuit/esh/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/reagent_containers/hypospray/medipen))
+		if(injector)
+			to_chat(user, span_notice("[src]'s injector system already has a medipen slotted in."))
+			return
+		if(user.transferItemToLoc(I, src))
+			injector = I
+			to_chat(user, span_notice("You slot the medipen into [src]'s injector system."))
+			return
+
+/obj/item/clothing/suit/space/hardsuit/esh/AltClick(mob/user)
+	. = ..()
+	if(!injector)
+		to_chat(user, span_notice("There is no medipen to take out."))
+	injector.forceMove(drop_location())
+	user.put_in_active_hand(injector)
+	injector = null
+	playsound(src, 'sound/items/change_drill.ogg', 50, FALSE)
+	to_chat(user, span_notice("You pop the medipen out from [src]'s injector system."))
+
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	name = "blood-red hardsuit helmet"
@@ -345,7 +465,7 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 30)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 35, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 30)
 	on = FALSE
 	var/obj/item/clothing/suit/space/hardsuit/syndi/linkedsuit = null
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode,/datum/action/item_action/toggle_helmet_light)
@@ -355,7 +475,7 @@
 	var/eva_mode = TRUE
 
 	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[eva_mode]-[hardsuit_type]"
@@ -429,7 +549,6 @@
 		user.update_inv_w_uniform()
 		user.update_equipment_speed_mods()
 
-
 /obj/item/clothing/suit/space/hardsuit/syndi
 	name = "blood-red hardsuit"
 	desc = "A dual-mode advanced hardsuit designed for special combat operations. It is in EVA mode. Produced by the Gorlex Marauders."
@@ -437,8 +556,8 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 30)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 35, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 30)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
 	slowdown = 0.5
@@ -446,6 +565,30 @@
 
 	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+
+//Mayor's Suit
+
+/obj/item/clothing/suit/space/hardsuit/syndi/old
+	name = "worn blood-red hardsuit"
+	desc = "A dual-mode, once advanced hardsuit designed for special combat operations. So severely damaged, it is no longer spaceproof. It is in 'EVA' mode. Produced by the Gorlex Marauders."
+	alt_desc = "A dual-mode, once advanced hardsuit designed for special combat operations. So severely damaged, it is no longer spaceproof. It is in travel mode. Produced by the Gorlex Marauders."
+	icon_state = "hardsuit1-old"
+	item_state = "old_syndie_hardsuit"
+	hardsuit_type = "old"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/old
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	slowdown = 0.5
+	jetpack = null
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/old
+	name = "worn blood-red hardsuit helmet"
+	desc = "A dual-mode, once advanced hardsuit helmet designed for special combat operations. So severely damaged, it is no longer spaceproof. It is in 'EVA' mode. Produced by the Gorlex Marauders."
+	alt_desc = "A dual-mode, once advanced hardsuit helmet designed for special combat operations. So severely damaged, it is no longer spaceproof. It is in travel mode. Produced by the Gorlex Marauders."
+	icon_state = "hardsuit1-old"
+	item_state = "old_syndie_helm"
+	hardsuit_type = "old"
+	supports_variations = KEPORI_VARIATION
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -483,44 +626,6 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
 	slowdown = 0
-
-//Cybersun Hardsuit
-/obj/item/clothing/suit/space/hardsuit/syndi/cybersun
-	name = "neutron-star combat hardsuit"
-	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
-	icon_state = "hardsuit1-cybersun"
-	hardsuit_type = "cybersun"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
-
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
-	name = "neutron-star combat hardsuit helmet"
-	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
-	icon_state = "hardsuit1-cybersun"
-	hardsuit_type = "cybersun"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
-
-//Cybersun Medical Techinician Hardsuit
-/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
-	name = "cybersun medical technician hardsuit"
-	desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries."
-	icon_state = "hardsuit1-cyberparamed"
-	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
-	jetpack = null
-
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
-	name = "cybersun medical technician hardsuit helmet"
-	desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries"
-	icon_state = "hardsuit1-cyberparamed"
-	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
@@ -601,7 +706,7 @@
 	slowdown = 1
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/bomb/Initialize()
 	. = ..()
@@ -614,7 +719,7 @@
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security
@@ -622,7 +727,7 @@
 	name = "\improper Vigilitas Guardian hardsuit"
 	desc = "A hardsuit commonly employed in security operations by Vigilitas Interstellar, often used for basic patrol duty and light engagements."
 	item_state = "sec_hardsuit"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -637,17 +742,17 @@
 	desc = "An especially armored helmet with a narrow visor and armored facemask, commonly seen with high ranking Vigilitas Interstellar security contractors."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95, "wound" = 30)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95, "wound" = 30)
 	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
 	icon_state = "hardsuit-hos"
 	name = "\improper Vigilitas Sentinel hardsuit"
 	desc = "A modified heavy hardsuit commonly employed by higher ranking members of Vigilitas Interstellar during security operations."
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95, "wound" = 30)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95, "wound" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
-	slowdown = 0.7
+	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 	//SWAT MKII
@@ -689,7 +794,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/swat/captain
 	name = "captain's SWAT suit"
-	desc = "A MK.II SWAT suit with streamlined joints and armor made out of superior materials, insulated against intense heat with the complementary gas mask. The most advanced tactical armor available. Usually reserved for heavy hitter corporate security, this one has a regal finish in Nanotrasen company colors. Better not let the assistants get a hold of it."
+	desc = "A MK.II SWAT suit with streamlined joints and armor made out of superior materials, insulated against intense heat with the complementary gas mask. The most advanced tactical armor available. Usually reserved for heavy hitter corporate security, this one has a regal finish in Makosso-Warra company colors. Better not let the assistants get a hold of it."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat/captain
@@ -702,7 +807,6 @@
 	item_state = "anc_helm"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 15, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75, "wound" = 15)
 	hardsuit_type = "ancient"
-	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/space/hardsuit/ancient
 	name = "prototype RIG hardsuit"
@@ -712,7 +816,6 @@
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 15, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75, "wound" = 15)
 	slowdown = 3
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient
-	resistance_flags = FIRE_PROOF
 	var/footstep = 1
 	var/mob/listeningTo
 
@@ -879,7 +982,7 @@
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi
 	slowdown = 0.5
 	shield_state = "shield-red"
@@ -1003,6 +1106,25 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
+/obj/item/clothing/head/helmet/space/hardsuit/security/independent/heavy
+	name = "Bullshark marine hardsuit helmet"
+	desc = "A four-camera setup fashioned onto a thick plasteel helmet. Your breath echoes in it, leaving a lingering sense of claustrophobia."
+	icon_state = "hardsuit0-indieheavy"
+	item_state = "hardsuit0-indieheavy"
+	hardsuit_type = "indieheavy"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35,"energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 35)
+	supports_variations = VOX_VARIATION | SNOUTED_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/security/independent/heavy
+	name = "Bullshark marine hardsuit"
+	desc = "An outdated heavy hardsuit originating from Lanchester. Due to its thick plating for an open-market approved hardsuit, it finds itself in many mercenary groups and police teams focusing on EVA operations."
+	icon_state = "hardsuit-indieheavy"
+	item_state = "hardsuit-indieheavy"
+	hardsuit_type = "indieheavy"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/heavy
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 35)
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
+
 //Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	name = "mining hardsuit helmet"
@@ -1011,6 +1133,7 @@
 	item_state = "independent_mining_helm"
 	hardsuit_type = "independent-mining"
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/mining/independent
 	name = "mining hardsuit"
@@ -1020,3 +1143,4 @@
 	hardsuit_type = "independent-mining"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
+	supports_variations = DIGITIGRADE_VARIATION

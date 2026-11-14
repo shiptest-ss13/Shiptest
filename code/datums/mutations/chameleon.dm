@@ -16,7 +16,7 @@
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	RegisterSignal(owner, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(on_attack_hand))
 
-/datum/mutation/human/chameleon/on_life()
+/datum/mutation/human/chameleon/on_life(seconds_per_tick, times_fired)
 	owner.alpha = max(0, owner.alpha - 25)
 
 /datum/mutation/human/chameleon/proc/on_move()

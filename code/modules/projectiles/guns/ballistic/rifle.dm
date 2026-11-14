@@ -68,7 +68,7 @@
 
 /obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
-		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+		if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
 			return TRUE
 		to_chat(user, span_notice("The bolt is closed!"))
 		return
@@ -80,7 +80,7 @@
 
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"
-	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in 7.62x40mm."
+	desc = "A bolt-action rifle made of scrap, desperation, and luck. It's a wonder this thing even functions. Chambered in 7.62x40mm."
 	icon_state = "methrifle"
 	item_state = "methrifle"
 	icon = 'icons/obj/guns/manufacturer/hermits/48x32.dmi'
@@ -98,3 +98,21 @@
 	)
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_NONE
+	spread = 5 // it's made of pipes...
+	wear_rate = 2
+	recoil = 1
+
+// unique wear mechanic where we fail to rack the bolt
+/obj/item/gun/ballistic/rifle/polymer/rack(mob/living/user)
+	var/jam_prob = 0
+	if (gun_wear > wear_major_threshold)
+		jam_prob = 40
+	else if(gun_wear > wear_minor_threshold)
+		jam_prob = 25
+	if(prob(jam_prob))
+		balloon_alert(user, "stuck!")
+		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 50, TRUE, -15)
+		return
+	return ..()
+
+EMPTY_GUN_HELPER(rifle/polymer)

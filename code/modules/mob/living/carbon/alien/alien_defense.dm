@@ -74,7 +74,7 @@ In all, this is a lot like the monkey code. /N
 /mob/living/carbon/alien/attack_paw(mob/living/carbon/monkey/M)
 	if(..())
 		if (stat != DEAD)
-			var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
+			var/obj/item/bodypart/affecting = get_bodypart(run_zone(M.zone_selected))
 			apply_damage(rand(1, 3), BRUTE, affecting)
 
 
@@ -105,7 +105,7 @@ In all, this is a lot like the monkey code. /N
 		log_combat(M, src, "attacked")
 		updatehealth()
 
-/mob/living/carbon/alien/ex_act(severity, target, origin)
+/mob/living/carbon/alien/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
 		return
 	..()
@@ -117,14 +117,12 @@ In all, this is a lot like the monkey code. /N
 			return
 
 		if (EXPLODE_HEAVY)
-			take_overall_damage(60, 60)
-			adjustEarDamage(30,120)
+			take_overall_damage(heavy_dam/2, heavy_dam/2)
+			adjustEarDamage(heavy_dam/2,heavy_dam/3)
 
 		if(EXPLODE_LIGHT)
-			take_overall_damage(30,0)
-			if(prob(50))
-				Unconscious(20)
-			adjustEarDamage(15,60)
+			take_overall_damage(light_dam/2,light_dam/2)
+			adjustEarDamage(light_dam/2,light_dam/3)
 
 /mob/living/carbon/alien/soundbang_act(intensity = 1, stun_pwr = 20, damage_pwr = 5, deafen_pwr = 15)
 	return 0
@@ -133,5 +131,5 @@ In all, this is a lot like the monkey code. /N
 	return 0//aliens are immune to acid.
 
 
-/mob/living/carbon/alien/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
-	adjust_bodytemperature(((fire_handler.stacks * 12)) * 0.5 * delta_time)
+/mob/living/carbon/alien/on_fire_stack(seconds_per_tick, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+	adjust_bodytemperature(((fire_handler.stacks * 12)) * 0.5 * seconds_per_tick)

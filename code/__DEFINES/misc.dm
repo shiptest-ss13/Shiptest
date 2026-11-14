@@ -31,6 +31,10 @@
 
 #define RESIZE_DEFAULT_SIZE 1
 
+//Lying angles, which way your head points
+#define LYING_ANGLE_EAST 90
+#define LYING_ANGLE_WEST 270
+
 //transfer_ai() defines. Main proc in ai_core.dm
 #define AI_TRANS_TO_CARD 1 //Downloading AI to InteliCard.
 #define AI_TRANS_FROM_CARD 2 //Uploading AI from InteliCard
@@ -211,9 +215,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 /// Removes characters incompatible with file names.
 #define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
 
-//TODO Move to a pref
-#define STATION_GOAL_BUDGET 1
-
 //Luma coefficients suggested for HDTVs. If you change these, make sure they add up to 1.
 #define LUMA_R 0.213
 #define LUMA_G 0.715
@@ -288,9 +289,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 
 #define MAX_PROC_DEPTH 195 // 200 proc calls deep and shit breaks, this is a bit lower to give some safety room
 
-#define SYRINGE_DRAW 0
-#define SYRINGE_INJECT 1
-
 #define LUMINESCENT_DEFAULT_GLOW 2
 
 #define RIDING_OFFSET_ALL "ALL"
@@ -343,7 +341,12 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 
 #define STANDARD_GRAVITY 1 //Anything above this is high gravity, anything below no grav
 #define GAS_GIANT_GRAVITY 2
-#define GRAVITY_DAMAGE_TRESHOLD 3 //Starting with this value gravity will start to damage mobs
+//Starting with this value gravity will start to damage mobs
+#define GRAVITY_DAMAGE_THRESHOLD 3
+/// The scaling factor for high gravity damage.
+#define GRAVITY_DAMAGE_SCALING 0.5
+/// The maximum [BRUTE] damage a mob can take from high gravity per second.
+#define GRAVITY_DAMAGE_MAXIMUM 1.5
 
 #define CAMERA_NO_GHOSTS 0
 #define CAMERA_SEE_GHOSTS_BASIC 1

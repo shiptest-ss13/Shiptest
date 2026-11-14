@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun)
 #define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
@@ -52,12 +52,12 @@
 	default_ammo_type = FALSE
 
 /obj/item/ammo_box/magazine/cm23
-	name = "CM-23 pistol magazine (10x22mm)"
+	name = "CM-23 pistol magazine (10mm)"
 	desc = "An 10-round magazine magazine designed for the CM-23 pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10x22mm"
+	caliber = "10mm"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/cm23/update_icon_state()
@@ -69,7 +69,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
-	desc = "A compact machine pistol designed to rapidly fire 3-round bursts. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
+	desc = "A compact machine pistol designed to rapidly fire 9mm ammo. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -82,8 +82,8 @@
 	)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	fire_delay = 0.07 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	manufacturer = MANUFACTURER_MINUTEMAN
 
@@ -93,7 +93,7 @@
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
 
 	spread = 8
-	spread_unwielded = 20
+	spread_unwielded = 8
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
@@ -116,12 +116,12 @@
 	)
 
 /obj/item/ammo_box/magazine/m9mm_cm70
-	name = "CM-70 machine pistol magazine (9x18mm)"
+	name = "CM-70 machine pistol magazine (9mm)"
 	desc = "A 18-round magazine designed for the CM-70 machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm70_mag_18"
 	base_icon_state = "cm70_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 18
 
 
@@ -206,8 +206,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
-
-	spread = 3
+	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
+	spread = 4
 	spread_unwielded = 7
 
 	valid_attachments = CLIP_ATTACHMENTS
@@ -234,15 +234,16 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
-	name = "CM-5 magazine (9x18mm)"
+	name = "CM-5 magazine (9mm)"
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm5_mag-1"
 	base_icon_state = "cm5_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -251,7 +252,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/cm5_9mm/rubber
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	caliber = "9x18mm rubber"
+	caliber = "9mm rubber"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
@@ -393,7 +394,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
-	name = "\improper SsG-04"
+	name = "\improper KW-4 Vizsla"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -411,6 +412,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	manufacturer = MANUFACTURER_IMPORT
 
 	icon_state = "f4_indie"
 	item_state = "f4_indie"
@@ -441,8 +443,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
 	spread_unwielded = 35
-	recoil = 2
-	recoil_unwielded = 10
+	recoil = 1
+	recoil_unwielded = 5
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
@@ -462,12 +464,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5x57mm CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	desc = "A large 6-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
 	ammo_type = /obj/item/ammo_casing/a65clip
 	caliber = "6.5mm CLIP"
-	max_ammo = 5
+	max_ammo = 6
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()
 	. = ..()
@@ -501,10 +503,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	fire_sound = 'sound/weapons/gun/rifle/cm82.ogg'
 	icon_state = "cm82"
 	item_state = "cm82"
+	manufacturer = MANUFACTURER_MINUTEMAN
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
+	unique_mag_sprites_for_variants = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/p16,
@@ -540,23 +544,28 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/assault/skm/cm24
-	name = "\improper CM-24"
+/obj/item/gun/ballistic/automatic/assault/fa2/clip
+	name = "\improper FA2m"
 	desc = "An obsolete and very rugged assault rifle with a heavy projectile and slow action for its class. Once CLIP's standard assault rifle produced in phenomenal numbers for the First Frontiersman War, it now serves as an acceptable, if rare, battle rifle. Chambered in 7.62mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+	unique_reskin = null
 
-	icon_state = "cm24"
-	item_state = "cm24"
-	manufacturer = MANUFACTURER_NONE
+	icon_state = "fa2m"
+	item_state = "fa2m"
+	manufacturer = MANUFACTURER_MINUTEMAN //only until we init so that this goes to lanchester city firearms plant in autowiki
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
+NO_MAG_GUN_HELPER(automatic/assault/fa2/clip)
+
+/obj/item/gun/ballistic/automatic/assault/fa2/clip/Initialize(mapload, spawn_empty)
+	. = ..()
+	manufacturer = MANUFACTURER_NONE // back to the status quo
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
@@ -598,10 +607,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	spread_unwielded = 35
 
 	recoil = 2 //identical to other LMGS
-	recoil_unwielded = 7 //same as skm
+	recoil_unwielded = 7 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 
@@ -637,6 +646,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	base_icon_state = "cm40_mag"
 	icon_state = "cm40_mag-1"
 	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -739,7 +749,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 //########### MISC ###########//
 
-/obj/item/gun/ballistic/shotgun/cm15
+/obj/item/gun/ballistic/shotgun/automatic/cm15
 	name = "\improper CM-15"
 	desc = "A large automatic shotgun used by CLIP. Generally employed by law enforcement and breaching specialists, and rarely by CLIP-BARD (typically with incendiary ammunition). Chambered in 12 gauge."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -752,9 +762,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
-
+	fire_delay = 0.3 SECONDS
 	manufacturer = MANUFACTURER_MINUTEMAN
-
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_FULLAUTO = "auto")
 	weapon_weight = WEAPON_MEDIUM
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 	allowed_ammo_types = list(
@@ -800,10 +811,9 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 		)
 	)
 
-/obj/item/gun/ballistic/shotgun/cm15/no_mag
+/obj/item/gun/ballistic/shotgun/automatic/cm15/no_mag
 	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/shotgun/cm15/incendiary
+/obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
-
-

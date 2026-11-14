@@ -152,10 +152,14 @@
 	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
 	var/connector_overlay
 
-	///Default X pixel offset
-	var/base_pixel_x
-	///Default Y pixel offset
-	var/base_pixel_y
+	///Default pixel x shifting for the atom's icon.
+	var/base_pixel_x = 0
+	///Default pixel y shifting for the atom's icon.
+	var/base_pixel_y = 0
+	//Default pixel w shifting for the atom's icon.
+	var/base_pixel_w = 0
+	///Default pixel z shifting for the atom's icon.
+	var/base_pixel_z = 0
 
 	///Wanted sound when hit by a projectile
 	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
@@ -343,7 +347,7 @@
 	var/a_incidence_s = abs(incidence_s)
 	if(a_incidence_s > 90 && a_incidence_s < 270)
 		return FALSE
-	if((P.flag in list("bullet", "bomb")) && P.ricochet_incidence_leeway)
+	if((P.flag in list("bullet", "bomb", "energy", "laser")) && P.ricochet_incidence_leeway)
 		if((a_incidence_s < 90 && a_incidence_s < 90 - P.ricochet_incidence_leeway) || (a_incidence_s > 270 && a_incidence_s -270 > P.ricochet_incidence_leeway))
 			return FALSE
 	var/new_angle_s = SIMPLIFY_DEGREES(face_angle + incidence_s)
@@ -365,29 +369,15 @@
 /atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	//SHOULD_BE_PURE(TRUE)
+
+	//put some kinda signal here
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TRY_ALLOW_THROUGH, mover, border_dir))
+		return TRUE
 	if(mover.pass_flags & pass_flags_self)
 		return TRUE
 	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
 		return TRUE
 	return !density
-
-/**
- * Is the atom in an away mission
- *
- * Must be in the away mission z-level to return TRUE
- *
- * Also used in gamemode code for win conditions
- */
-/atom/proc/onAwayMission()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(is_away_level(T))
-		return TRUE
-
-	return FALSE
-
 
 
 ///This atom has been hit by a hulkified mob in hulk mode (user)
@@ -489,6 +479,22 @@
 /atom/proc/is_drainable()
 	return reagents && (reagents.flags & DRAINABLE)
 
+/// gives the informations to display on a reagent scanner when scanned, returns a string
+/atom/proc/reagent_scan()
+	var/list/render_list = list()
+
+	if(!isnull(reagents))
+		if(reagents.reagent_list.len > 0)
+			var/reagents_length = reagents.reagent_list.len
+			var/reagents_temp =	reagents.chem_temp
+			render_list += span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found inside [src] at [reagents_temp]°K.") + "<br>"
+			for (var/re in reagents.reagent_list)
+				var/datum/reagent/R = re
+				var/amount = R.volume
+				render_list += span_notice("\t [amount] units of [re].") + "<br>"
+
+	return jointext(render_list, "")
+
 /** Handles exposing this atom to a list of reagents.
  *
  * Sends COMSIG_ATOM_EXPOSE_REAGENTS
@@ -502,12 +508,14 @@
  * - show_message: Whether to display anything to mobs when they are exposed.
  */
 /atom/proc/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
-	if((. = SEND_SIGNAL(src, COMSIG_ATOM_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)) & COMPONENT_NO_EXPOSE_REAGENTS)
+	. = SEND_SIGNAL(src, COMSIG_ATOM_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)
+	if(. & COMPONENT_NO_EXPOSE_REAGENTS)
 		return
 
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
 		. |= R.expose_atom(src, reagents[R])
+	SEND_SIGNAL(src, COMSIG_ATOM_AFTER_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)
 
 /// Are you allowed to drop this atom
 /atom/proc/AllowDrop()
@@ -590,13 +598,16 @@
  * [COMSIG_ATOM_GET_EXAMINE_NAME] signal
  */
 /atom/proc/get_examine_name(mob/user)
-	. = "\a <b>[src]</b>"
-	var/list/override = list(gender == PLURAL ? "some" : "a", " ", "[name]")
-	if(article)
-		. = "[article] <b>[src]</b>"
-		override[EXAMINE_POSITION_ARTICLE] = article
-	if(SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override) & COMPONENT_EXNAME_CHANGED)
-		. = override.Join("")
+	var/list/override = list(article, null, "<b>[name]</b>")
+	SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override)
+
+	if(!isnull(override[EXAMINE_POSITION_ARTICLE]))
+		override -= null // IF there is no "before", don't try to join it
+		return jointext(override, " ")
+	if(!isnull(override[EXAMINE_POSITION_BEFORE]))
+		override -= null // There is no article, don't try to join it
+		return "\a [jointext(override, " ")]"
+	return "\a <b>[src]</b>"
 
 ///Generate the full examine string of this atom (including icon for goonchat)
 /atom/proc/get_examine_string(mob/user, thats = FALSE)
@@ -608,7 +619,7 @@
  * Default behaviour is to get the name and icon of the object and it's reagents where
  * the [TRANSPARENT] flag is set on the reagents holder
  *
- * Produces a signal [COMSIG_PARENT_EXAMINE]
+ * Produces a signal [COMSIG_ATOM_EXAMINE]
  */
 /atom/proc/examine(mob/user)
 	var/examine_string = get_examine_string(user, thats = TRUE)
@@ -646,7 +657,7 @@
 			else
 				. += span_danger("It's empty.")
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /**
  * Updates the appearence of the icon
@@ -733,7 +744,7 @@
 	return
 
 /// Handle what happens when your contents are exploded by a bomb
-/atom/proc/contents_explosion(severity, target)
+/atom/proc/contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	return //For handling the effects of explosions on contents that would not normally be effected
 
 /**
@@ -741,10 +752,10 @@
  *
  * Default behaviour is to call [contents_explosion][/atom/proc/contents_explosion] and send the [COMSIG_ATOM_EX_ACT] signal
  */
-/atom/proc/ex_act(severity, target)
+/atom/proc/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	set waitfor = FALSE
-	contents_explosion(severity, target)
-	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
+	contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
+	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 /atom/proc/fire_act(exposed_temperature, exposed_volume)
 	SEND_SIGNAL(src, COMSIG_ATOM_FIRE_ACT, exposed_temperature, exposed_volume)
@@ -1182,7 +1193,7 @@
 		C?.open_filter_editor(src)
 
 	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
-		export_item_and_contents(src, apply_elastic = FALSE)
+		export_item_and_contents(src)
 
 /atom/vv_get_header()
 	. = ..()
@@ -1244,32 +1255,35 @@
  *
  * Must return  parent proc ..() in the end if overridden
  */
-/atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+/atom/proc/tool_act(mob/living/user, obj/item/tool, tool_type, params)
 	var/signal_result
 
+	var/list/modifiers = params2list(params)
 	var/list/processing_recipes = list() //List of recipes that can be mutated by sending the signal
-	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, I, processing_recipes)
+	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, tool, modifiers, processing_recipes)
 	if(processing_recipes.len)
-		process_recipes(user, I, processing_recipes)
-	if(QDELETED(I))
+		process_recipes(user, tool, processing_recipes)
+	if(QDELETED(tool))
 		return TRUE
 	switch(tool_type)
 		if(TOOL_CROWBAR)
-			. = crowbar_act(user, I)
+			. = crowbar_act(user, tool, modifiers)
 		if(TOOL_MULTITOOL)
-			. = multitool_act(user, I)
+			. = multitool_act(user, tool, modifiers)
 		if(TOOL_SCREWDRIVER)
-			. = screwdriver_act(user, I)
+			. = screwdriver_act(user, tool, modifiers)
 		if(TOOL_WRENCH)
-			. = wrench_act(user, I)
+			. = wrench_act(user, tool, modifiers)
 		if(TOOL_WIRECUTTER)
-			. = wirecutter_act(user, I)
+			. = wirecutter_act(user, tool, modifiers)
 		if(TOOL_WELDER)
-			. = welder_act(user, I)
+			. = welder_act(user, tool, modifiers)
 		if(TOOL_ANALYZER)
-			. = analyzer_act(user, I)
+			. = analyzer_act(user, tool, modifiers)
+		if(TOOL_SHOVEL)
+			. = shovel_act(user, tool, modifiers)
 		if(TOOL_DECONSTRUCT)
-			. |= deconstruct_act(user, I)
+			. |= deconstruct_act(user, tool, modifiers)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1330,11 +1344,11 @@
 ///
 
 ///Crowbar act
-/atom/proc/crowbar_act(mob/living/user, obj/item/I)
+/atom/proc/crowbar_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_CROWBAR_ACT, user, I)
 
 ///Multitool act
-/atom/proc/multitool_act(mob/living/user, obj/item/I)
+/atom/proc/multitool_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_MULTITOOL_ACT, user, I)
 
 ///Check if the multitool has an item in it's data buffer
@@ -1346,27 +1360,31 @@
 	return TRUE
 
 ///Screwdriver act
-/atom/proc/screwdriver_act(mob/living/user, obj/item/I)
+/atom/proc/screwdriver_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_SCREWDRIVER_ACT, user, I)
 
 ///Wrench act
-/atom/proc/wrench_act(mob/living/user, obj/item/I)
+/atom/proc/wrench_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WRENCH_ACT, user, I)
 
 ///Wirecutter act
-/atom/proc/wirecutter_act(mob/living/user, obj/item/I)
+/atom/proc/wirecutter_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WIRECUTTER_ACT, user, I)
 
 ///Welder act
-/atom/proc/welder_act(mob/living/user, obj/item/I)
+/atom/proc/welder_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WELDER_ACT, user, I)
 
 ///Analyzer act
-/atom/proc/analyzer_act(mob/living/user, obj/item/I)
+/atom/proc/analyzer_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
 
+///Shovel act
+/atom/proc/shovel_act(mob/living/user, obj/item/I, list/modifiers)
+	return SEND_SIGNAL(src, COMSIG_ATOM_SHOVEL_ACT, user, I)
+
 ///Deconstruct act
-/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I, list/modifiers)
 	if(flags_1 & NODECONSTRUCT_1)
 		return TRUE
 	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
@@ -1426,8 +1444,6 @@
 			log_shuttle(log_text)
 		if(LOG_RADIO_EMOTE)
 			log_radio_emote(log_text)
-		if(LOG_MSAY)
-			log_mentor(log_text)
 		if(LOG_LOOC)
 			log_looc(log_text)
 		if(LOG_SUBTLER)
@@ -1591,12 +1607,12 @@
  * This is where you can put extra information on something that may be superfluous or not important in critical gameplay
  * moments, while allowing people to manually double-examine to take a closer look
  *
- * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
+ * Produces a signal [COMSIG_ATOM_EXAMINE_MORE]
  */
 /atom/proc/examine_more(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	. = list()
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE_MORE, user, .)
 
 ///Passes Stat Browser Panel clicks to the game and calls client click on an atom
 /atom/Topic(href, list/href_list)
@@ -1713,16 +1729,22 @@
  * * dealt_bare_wound_bonus- The bare_wound_bonus, if one was specified *and applied*, of the wounding attack. Not shown if armor was present
  * * base_roll- Base wounding ability of an attack is a random number from 1 to (dealt_damage ** WOUND_DAMAGE_EXPONENT). This is the number that was rolled in there, before mods
  */
-/proc/log_wound(atom/victim, datum/wound/suffered_wound, dealt_damage, dealt_wound_bonus, dealt_bare_wound_bonus, base_roll)
-	if(QDELETED(victim) || !suffered_wound)
+/proc/log_wound(atom/victim, obj/item/bodypart/limb, list/datum/wound/suffered_wounds, list/wounding_types, dealt_wound_bonus, dealt_bare_wound_bonus, list/base_rolls)
+	if(QDELETED(victim) || !LAZYLEN(suffered_wounds))
 		return
-	var/message = "has suffered: [suffered_wound][suffered_wound.limb ? " to [suffered_wound.limb.name]" : null]"// maybe indicate if it's a promote/demote?
+	var/message = "has suffered: [english_list(suffered_wounds)][limb ? " to [limb.name]" : null]"// maybe indicate if it's a promote/demote?
 
-	if(dealt_damage)
-		message += " | Damage: [dealt_damage]"
-		// The base roll is useful since it can show how lucky someone got with the given attack. For example, dealing a cut
-		if(base_roll)
-			message += " (rolled [base_roll]/[dealt_damage ** WOUND_DAMAGE_EXPONENT])"
+	if(wounding_types)
+		var/damage_text
+		for(var/wounding_type in wounding_types)
+			if(damage_text)
+				damage_text += ", "
+			var/damage_dealt = wounding_types[wounding_type]
+			damage_text = "[damage_dealt] [wounding_type]"
+			// The base roll is useful since it can show how lucky someone got with the given attack. For example, dealing a cut
+			if(base_rolls)
+				damage_text += "(rolled [base_rolls[wounding_type]]/[damage_dealt ** WOUND_DAMAGE_EXPONENT])"
+		message += " | Damage: [damage_text]"
 
 	if(dealt_wound_bonus)
 		message += " | WB: [dealt_wound_bonus]"
@@ -1731,3 +1753,24 @@
 		message += " | BWB: [dealt_bare_wound_bonus]"
 
 	victim.log_message(message, LOG_ATTACK, color="blue")
+
+
+/**
+ * Proc called when you want the atom to spin around the center of its icon (or where it would be if its transform var is translated)
+ * By default, it makes the atom spin forever and ever at a speed of 60 rpm.
+ *
+ * Arguments:
+ * * speed: how much it takes for the atom to complete one 360° rotation
+ * * loops: how many times do we want the atom to rotate
+ * * clockwise: whether the atom ought to spin clockwise or counter-clockwise
+ * * segments: in how many animate calls the rotation is split. Probably unnecessary, but you shouldn't set it lower than 3 anyway.
+ * * parallel: whether the animation calls have the ANIMATION_PARALLEL flag, necessary for it to run alongside concurrent animations.
+ */
+/atom/proc/SpinAnimation(speed = 1 SECONDS, loops = -1, clockwise = TRUE, segments = 3, parallel = TRUE)
+	if(!segments)
+		return
+	var/segment = 360/segments
+	if(!clockwise)
+		segment = -segment
+	SEND_SIGNAL(src, COMSIG_ATOM_SPIN_ANIMATION, speed, loops, segments, segment)
+	do_spin_animation(speed, loops, segments, segment, parallel)

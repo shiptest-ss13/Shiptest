@@ -1,5 +1,7 @@
 /obj/structure/closet/secure_closet/freezer
 	icon_state = "freezer"
+	drag_slowdown = 3
+	storage_capacity = 50
 	var/jones = FALSE
 
 /obj/structure/closet/secure_closet/freezer/Destroy()
@@ -73,7 +75,7 @@
 /obj/structure/closet/secure_closet/freezer/gulag_fridge/PopulateContents()
 	..()
 	for(var/i in 1 to 3)
-		new /obj/item/reagent_containers/food/drinks/beer/light(src)
+		new /obj/item/reagent_containers/food/drinks/beer(src)
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"

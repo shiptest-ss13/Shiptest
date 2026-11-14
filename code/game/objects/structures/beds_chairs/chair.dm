@@ -14,6 +14,7 @@
 	var/buildstackamount = 1
 	var/item_chair = /obj/item/chair // if null it can't be picked up
 	layer = OBJ_LAYER
+	var/buckle_dir = null // force a buckled mob to face in this direction
 
 /obj/structure/chair/examine(mob/user)
 	. = ..()
@@ -107,6 +108,11 @@
 	else
 		layer = OBJ_LAYER
 
+/obj/structure/chair/buckle_mob(mob/living/M, force, check_loc)
+	. = ..()
+	if(buckle_dir)
+		M.setDir(buckle_dir)
+
 /obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
@@ -138,12 +144,20 @@
 	buildstackamount = 3
 	item_chair = /obj/item/chair/wood
 
+/obj/structure/chair/wood/greyscale
+	icon_state = "wooden_chair_greyscale"
+	item_chair = /obj/item/chair/wood/greyscale
+
 /obj/structure/chair/wood/narsie_act()
 	return
 
 /obj/structure/chair/wood/wings
 	icon_state = "wooden_chair_wings"
 	item_chair = /obj/item/chair/wood/wings
+
+/obj/structure/chair/wood/wings/greyscale
+	icon_state = "wooden_chair_wings_greyscale"
+	item_chair = /obj/item/chair/wood/wings/greyscale
 
 /obj/structure/chair/office
 	anchored = FALSE
@@ -173,6 +187,11 @@
 	buildstackamount = 1
 	item_chair = /obj/item/chair/stool
 
+/obj/structure/chair/stool/greyscale
+	name = "stool"
+	icon_state = "stool_greyscale"
+	item_chair = /obj/item/chair/stool/greyscale
+
 /obj/structure/chair/stool/narsie_act()
 	return
 
@@ -195,6 +214,10 @@
 	desc = "It has some unsavory stains on it..."
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
+
+/obj/structure/chair/stool/bar/greyscale
+	icon_state = "bar_greyscale"
+	item_chair = /obj/item/chair/stool/bar/greyscale
 
 /obj/item/chair
 	name = "chair"
@@ -290,11 +313,23 @@
 	origin_type = /obj/structure/chair/stool
 	break_chance = 0 //It's too sturdy.
 
+/obj/item/chair/stool/greyscale
+	name = "stool"
+	icon_state = "stool_toppled_greyscale"
+	item_state = "stool_greyscale"
+	origin_type = /obj/structure/chair/stool/greyscale
+
 /obj/item/chair/stool/bar
 	name = "bar stool"
 	icon_state = "bar_toppled"
 	item_state = "stool_bar"
 	origin_type = /obj/structure/chair/stool/bar
+
+/obj/item/chair/stool/bar/greyscale
+	name = "bar stool"
+	icon_state = "bar_toppled_greyscale"
+	item_state = "stool_bar_greyscale"
+	origin_type = /obj/structure/chair/stool/bar/greyscale
 
 /obj/item/chair/stool/narsie_act()
 	return //sturdy enough to ignore a god
@@ -313,9 +348,17 @@
 /obj/item/chair/wood/narsie_act()
 	return
 
+/obj/item/chair/wood/greyscale
+	icon_state = "wooden_chair_toppled_greyscale"
+	origin_type = /obj/structure/chair/wood/greyscale
+
 /obj/item/chair/wood/wings
 	icon_state = "wooden_chair_wings_toppled"
 	origin_type = /obj/structure/chair/wood/wings
+
+/obj/item/chair/wood/wings/greyscale
+	icon_state = "wooden_chair_wings_toppled_greyscale"
+	origin_type = /obj/structure/chair/wood/wings/greyscale
 
 /obj/structure/chair/plastic
 	icon_state = "plastic_chair"
@@ -329,11 +372,11 @@
 	item_chair = /obj/item/chair/plastic
 
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
-	Mob.pixel_y += 2
-	.=..()
+	Mob.add_offsets(type, z_add = 2)
+	. = ..()
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
-	Mob.pixel_y -= 2
+	Mob.remove_offsets(type)
 
 /obj/item/chair/plastic
 	name = "folding plastic chair"
@@ -354,7 +397,7 @@
 	name = "handrail"
 	icon = 'icons/obj/structures/handrail.dmi'
 	icon_state = "handrail"
-	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	desc = "A safety railing with buckles to secure yourself to when the floor isn't stable enough."
 	item_chair = null
 	buildstackamount = 4
 	buildstacktype = /obj/item/stack/rods

@@ -16,6 +16,7 @@
 	throw_range = 7
 	amount_per_transfer_from_this = 10
 	volume = 60
+	custom_materials = list(/datum/material/plastic=200, /datum/material/iron=400)
 	var/can_fill_from_container = TRUE
 	var/apply_type = PATCH
 	var/apply_method = "spray" //the thick gel is sprayed and then dries into patch like film.
@@ -29,7 +30,8 @@
 		"Green" = "medigel_green",
 		"Red" = "medigel_red",
 		"Orange" = "medigel_orange",
-		"Purple" = "medigel_purple"
+		"Purple" = "medigel_purple",
+		"Cybersun" = "medigel_cybersun"
 	)
 
 /obj/item/reagent_containers/medigel/attack_self(mob/user)
@@ -71,7 +73,7 @@
 	else
 		log_combat(user, M, "applied", src, reagents.log_list())
 		playsound(src, 'sound/effects/spray.ogg', 30, TRUE, -6)
-		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = apply_type)
+		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = apply_type)
 	return
 
 /obj/item/reagent_containers/medigel/hadrakine
@@ -95,8 +97,16 @@
 
 /obj/item/reagent_containers/medigel/sterilizine
 	name = "sterilizer gel"
-	desc = "gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
+	desc = "Gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery. A label reads: <i>\"Apply directly to patient after initiating surgery.\"</i>"
 	icon_state = "medigel_blue"
 	current_skin = "Blue"
 	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
 	custom_price = 175
+
+/obj/item/reagent_containers/medigel/sterilizine/purifadine
+	name = "purifadine gel"
+	desc = "Gel bottle loaded with a potent non-toxic sterilizer synthesized by Cybersun Industries. Useful in preparation for surgery. A label reads: <i>\"Apply directly to patient after initiating surgery.\"</i>"
+	icon_state = "purifadine"
+	current_skin = "Cybersun"
+	list_reagents = list(/datum/reagent/space_cleaner/sterilizine/purifadine = 60)
+	custom_price = 200

@@ -9,6 +9,7 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
+	var/mode_token = MODE_TOKEN_INTERCOM
 	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
@@ -24,10 +25,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	if(!current_area)
 		return
 	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(AreaPowerCheck))
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
-	. += span_notice("Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.")
+	. += span_notice("Use [mode_token] when nearby to speak into it.")
 	if(!unscrewed)
 		. += span_notice("It's <b>screwed</b> and secured to the wall.")
 	else
@@ -100,6 +102,23 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 	return TRUE
 
+/obj/item/radio/intercom/bullet_act(obj/projectile/hitting_projectile)
+	if(hitting_projectile.damage_type == BRUTE && prob(30))
+		switch(rand(1,5)) // intensity
+			if(1 to 2)
+				manual_emote(random_string(rand(8, 16), list("#", "@", "!", "*",)))
+			if(3 to 4)
+				manual_emote(random_string(rand(8, 16), list("#", "@", "!", "*",)))
+				if(wires)
+					wires.cut_random()
+			if(5)
+				for(var/mob/living/M in get_hearers_in_view(rand(1,2), loc))
+					playsound(loc, 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
+					M.show_message(span_boldwarning("BANG"), MSG_AUDIBLE)
+					M.soundbang_act(1, 200, rand(0, 5))
+	. = ..()
+
+
 
 /obj/item/radio/intercom/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, list/spans, list/message_mods = list())
 	if(message_mods[RADIO_EXTENSION] == MODE_INTERCOM)
@@ -165,7 +184,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 //wideband radio
 /obj/item/radio/intercom/wideband
 	name = "wideband relay"
-	desc = "A low-gain reciever capable of sending and recieving wideband subspace messages."
+	desc = "A low-gain receiver capable of sending and receiving wideband subspace messages."
 	icon_state = "intercom-wideband"
 	canhear_range = 3
 	keyslot = new /obj/item/encryptionkey/wideband
@@ -174,6 +193,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	freqlock = TRUE
 	freerange = TRUE
 	log = TRUE
+	mode_token = MODE_TOKEN_WIDEBAND
 	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
@@ -215,7 +235,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 	name = "wideband relay table frame"
 	desc = "A detached wideband relay. Attach to a table and screw it in to use."
 	icon_state = "intercom-wideband"
-	icon = 'icons/obj/wallframe.dmi'
+	icon = 'icons/obj/wallmounts/wallframe_items.dmi'
 	result_path = /obj/item/radio/intercom/wideband/table
 	pixel_shift = 0
 

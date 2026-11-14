@@ -216,7 +216,7 @@ const SOUNDS = [
 const STYLES = [
   { title: 'Standard' },
   { title: 'Advanced' },
-  { title: 'Nanotrasen' },
+  { title: 'Makosso-Warra' },
   { title: 'Syndicate' },
   { title: 'Deathsquad' },
   { title: 'Cultist' },

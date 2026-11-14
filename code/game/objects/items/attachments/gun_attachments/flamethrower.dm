@@ -26,26 +26,26 @@
 	else
 		return ..()
 
-/obj/item/attachment/gun/flamethrower/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
+/obj/item/attachment/gun/flamethrower/on_fire_gun(obj/item/gun/gun, mob/living/user, atom/target, flag, params)
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		log_combat(user, target, "flamethrowered", src)
-		attached_flamethrower.flame_turf(get_turf(target))
-		return COMPONENT_NO_ATTACK
+		INVOKE_ASYNC(attached_flamethrower, TYPE_PROC_REF(/obj/item/flamethrower, flame_turf), get_turf(target))
+		return COMPONENT_CANCEL_GUN_FIRE
 
 /obj/item/attachment/gun/flamethrower/on_unique_action(obj/item/gun/gun, mob/user)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-		attached_flamethrower.unique_action(user)
-		return OVERRIDE_UNIQUE_ACTION
+	attached_flamethrower.unique_action(user)
+	return OVERRIDE_SECONDARY_ACTION
 
 /obj/item/attachment/gun/flamethrower/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/total_volume = 0
 	for(var/datum/reagent/R in attached_flamethrower.beaker.reagents.reagent_list)
 		total_volume += R.volume
 	examine_list += span_notice("-\The [src] has [total_volume] units of fuel left.")
-	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
 
-/obj/item/attachment/gun/flamethrower/on_ctrl_click(obj/item/gun/gun, mob/user)
+/obj/item/attachment/gun/flamethrower/on_safety(obj/item/gun/gun, mob/user)
 	. = ..()
 	attached_flamethrower.toggle_igniter(user)
 
@@ -90,4 +90,22 @@
 	icon_state = "hypovial"
 	volume = 20
 
+/obj/item/reagent_containers/glass/beaker/flamethrower_underbarrel/scorcher
 
+	volume = 40
+
+/obj/item/attachment/gun/flamethrower/scorcher
+	autowiki_hidden = TRUE //integral to scorcher
+	size_mod = 0
+	attach_features_flags = ATTACH_NO_SPRITE
+
+/obj/item/attachment/gun/flamethrower/scorcher/Initialize()
+	. = ..()
+	attached_flamethrower = new /obj/item/flamethrower/underbarrel/scorcher(src)
+
+/obj/item/flamethrower/underbarrel/scorcher
+	create_full = TRUE
+
+/obj/item/flamethrower/underbarrel/scorcher/Initialize(mapload)
+	. = ..()
+	beaker = new /obj/item/reagent_containers/glass/beaker/flamethrower_underbarrel/scorcher(src)

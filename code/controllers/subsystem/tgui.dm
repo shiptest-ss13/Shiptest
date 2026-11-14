@@ -32,7 +32,30 @@ SUBSYSTEM_DEF(tgui)
 	var/polyfill = file2text('tgui/public/tgui-polyfill.min.js')
 	polyfill = "<script>\n[polyfill]\n</script>"
 	basehtml = replacetextEx(basehtml, "<!-- tgui:inline-polyfill -->", polyfill)
-	basehtml = replacetextEx(basehtml, "<!-- tgui:nt-copyright -->", "Nanotrasen (c) [CURRENT_SECTOR_YEAR]")
+	basehtml = replacetextEx(basehtml, "<!-- tgui:nt-copyright -->", "Makosso-Warra Corporation (c) [CURRENT_SECTOR_YEAR]")
+
+/datum/controller/subsystem/tgui/OnConfigLoad()
+	var/storage_iframe = CONFIG_GET(string/storage_cdn_iframe)
+
+	if(storage_iframe && storage_iframe != /datum/config_entry/string/storage_cdn_iframe::default)
+		basehtml = replacetext(basehtml, "\[tgui:storagecdn\]", storage_iframe)
+		return
+
+	if(CONFIG_GET(string/asset_transport) == "webroot")
+		//So we can ensure that the webroot transport is actually initialized. Won't hurt if it already is.
+		SSassets.OnConfigLoad()
+
+		var/datum/asset_transport/webroot/webroot = SSassets.transport
+
+		var/datum/asset_cache_item/item = webroot.register_asset("iframe.html", file("tgui/public/iframe.html"))
+		basehtml = replacetext(basehtml, "\[tgui:storagecdn\]", webroot.get_asset_url("iframe.html", item))
+		return
+
+	if(!storage_iframe)
+		return
+
+	basehtml = replacetext(basehtml, "\[tgui:storagecdn\]", storage_iframe)
+
 
 /datum/controller/subsystem/tgui/Shutdown()
 	close_all_uis()

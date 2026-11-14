@@ -1,7 +1,8 @@
 /obj/item/reagent_containers/glass/chem_jug
 	name = "chemical jug"
-	desc = "A large jug used for storing bulk ammounts chemicals. Provided with a tamper seal which ensures that the contents are pure"
-	icon = 'icons/obj/chemical/chem_jug.dmi' // the coloring of labels for elemental chemicals is based on the chemical group block coloring at https://pubchem.ncbi.nlm.nih.gov/periodic-table/ . Everything else is whatever.
+	desc = "A large jug used for storing bulk quantities of chemicals. Provided with an anti-tamper seal which ensures that the contents are pure."
+	icon = 'icons/obj/chemical/chem_jug.dmi'
+	world_file = 'icons/obj/chemical/chem_jug_world.dmi'
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
 	w_class = WEIGHT_CLASS_BULKY
@@ -22,7 +23,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/sheets_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/sheets_righthand.dmi'
 
-/obj/item/reagent_containers/glass/chem_jug/AltClick(mob/user)
+/obj/item/reagent_containers/glass/chem_jug/attack_self_secondary(mob/user)
 	. = ..()
 	if(tamper && !cap_on)
 		tamper = FALSE
@@ -48,16 +49,17 @@
 	if(ismob(target) && target.reagents)
 		if(thrown)
 			reagents.total_volume *= rand(1,3) * 0.1 //little makes contact with the target
-		var/mob/M = target
-		var/R
+		var/mob/splashed_mob = target
+		var/splashed_reagents
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message(span_danger("[M] is splashed with something!"), \
-						span_userdanger("[M] is splashed with something!"))
-		for(var/datum/reagent/A in reagents.reagent_list)
-			R += "[A.type]  ([num2text(A.volume)]),"
+		target.visible_message(span_danger("[splashed_mob] is splashed with something!"), \
+						span_userdanger("[splashed_mob] is splashed with something!"))
+		for(var/datum/reagent/reagent in reagents.reagent_list)
+			splashed_reagents += "[reagent.type]  ([num2text(reagent.volume)]),"
 
-		if(thrownby)
-			log_combat(thrownby, M, "splashed", R)
+		var/mob/thrown_by = thrownby?.resolve()
+		if(thrown_by)
+			log_combat(thrown_by, splashed_mob, "splashed", splashed_reagents)
 		reagents.expose(target, TOUCH, 0.3)
 
 	else if(bartender_check(target) && thrown)
@@ -65,10 +67,11 @@
 		return
 
 	else
-		if(isturf(target) && reagents.reagent_list.len && thrownby)
-			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
-			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
-			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
+		var/mob/thrown_by = thrownby?.resolve()
+		if(isturf(target) && reagents.reagent_list.len && thrown_by)
+			log_combat(thrown_by, target, "splashed (thrown) [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
+			log_game("[key_name(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
+			message_admins("[ADMIN_LOOKUPFLW(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		visible_message(span_notice("[src] spills its contents all over [target]."))
 		reagents.expose(target, TOUCH, 0.3)
@@ -104,6 +107,11 @@
 	name = "chemical jug (copper)"
 	icon_state = "chem_jug_copper"
 	list_reagents = list(/datum/reagent/copper = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/ethanol
+	name = "chemical jug (ethanol)"
+	icon_state = "chem_jug_copper"
+	list_reagents = list(/datum/reagent/consumable/ethanol = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/fluorine
 	name = "chemical jug (fluorine)"

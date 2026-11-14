@@ -73,6 +73,7 @@
 	SSmapping.map_templates[map] = new_map
 	if(template_type == "Shuttle")
 		var/datum/map_template/shuttle/shuttle_template = new_map
+		shuttle_template.faction = SSfactions.factions[/datum/faction/independent] //as factions were moved to map templates from datum/overmap/ship, uploading shuttle templates was broken for a while
 		shuttle_template.file_name = "[map]"
 		shuttle_template.category = "uploaded"
 		SSmapping.shuttle_templates["[map]"] = shuttle_template

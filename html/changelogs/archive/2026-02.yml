@@ -1,0 +1,167 @@
+2026-02-02:
+  SapphicOverload:
+  - rscadd: Added several new wound types for robotic limbs.
+  - balance: Fire stacks now apply wounds normally instead of instantly applying the
+      highest one possible.
+  - code_imp: Multiple wound types can be rolled for and applied simultaneously.
+  - code_imp: Burn damage weapons can now apply slash/pierce wounds with the correct
+      sharpness.
+  - bugfix: Fixed IPCs taking far more damage in crit than intended.
+  firebudgy:
+  - balance: APC Control Console removed from all player-facing environments.
+  thearbiber:
+  - rscadd: resprites nightvision
+2026-02-03:
+  firebudgy:
+  - code_imp: Description change of the Plump Helmet Mushroom
+2026-02-04:
+  firebudgy:
+  - bugfix: Navy Patrol Cap now has side states for Vox.
+  thearbiber:
+  - bugfix: syndicate engi suit sprite
+  - rscadd: digi sprites for old bloodred
+2026-02-06:
+  Erikafox:
+  - bugfix: no minors
+2026-02-08:
+  thearbiber:
+  - rscadd: infiltrator hardsuit
+  - rscadd: ramzi officer coat resprite, mantles
+  - rscadd: heavy mining suit resprite
+  - rscadd: resprites unkept/pixie, adds rat tail/longhair half
+  thearbiber, generalthrax:
+  - rscadd: Added HP Pyre, a .45-70 Lever Action Rifle, for 3000 credits. Can be loaded
+      with stripper clips
+  - balance: Replaced one Illestren on the Elder with an HP Pyre Factory
+2026-02-10:
+  Erikafox:
+  - bugfix: If you are smoking with a helmet on, you will no longer make smoke clouds.
+      It is advised that anyone wishing to smoke indoors get an EVA helmet on in the
+      future.
+  - rscadd: You can now alt-click on some magazines to quickly empty the entire thing
+  - bugfix: Certain ammo types should no longer stack to odd amounts
+  - bugfix: Ammo boxes now rename themselves on reskin
+  zimon9:
+  - bugfix: decreased the layer that drills render at
+2026-02-11:
+  zimon9:
+  - balance: made shuttlegibbing nicer
+  - balance: chop chop chop off weapon stocks with a hatchet
+2026-02-12:
+  Addust:
+  - bugfix: After a several-hour fax exchange, Hardline have replaced the headsets
+      provided to Karst-class dropships and started installing light switches in the
+      canteen airlocks of Kali Andhi-class destroyers.
+  Cluckinawesome, thearbiber:
+  - rscadd: Added the Heavy Shield
+  - rscdel: Removed Goliath shield, Roman shield (real and fake), Riot shield, Spiked
+      riot shield, Flash riot shield
+  - balance: Lightly touched telescopic shield's stats to make it a little weaker
+  - imageadd: updated the sprites used for the telescopic shield and the new sprites
+      for the heavy shield
+  - imagedel: deleted the Goliath shield, Roman shield (real and fake), Riot shield,
+      Spiked riot shield, Flash riot shield,
+  - code_imp: Updated shields to not all use plasteel, each now has a respective material
+      that is used in repair
+  Ical92:
+  - bugfix: adds missing manufacturers for Lyra and Sojourner
+  generalthrax:
+  - bugfix: Fixed some bad decals on Moonbase
+  - bugfix: Elite DMR in command post now fires from their position instead of walking
+      into the wall
+  thearbiber:
+  - rscadd: remaps rustbase
+  thgvr:
+  - balance: You can no longer revive corpses without a ckey (npc bodies, DNR players)
+  zimon9:
+  - rscadd: Added the number of dogtags required for a particular dogtag case to be
+      filled
+2026-02-13:
+  DIB-DOG:
+  - rscadd: Added miscelaneous idie snouted and digi sprites
+  Erikafox:
+  - balance: Typhon disabled pending remap
+  - balance: The plasmacutter has been reworked!
+  - rscadd: Sting and Cytodron, two outpostmed exclusive chems with minor buffs.
+  - rscadd: shoalmix inhaler to black market.
+  - bugfix: burn kits will have patches in them again
+  - bugfix: Polypyrylium Oligomers causing more bloodloss than intended
+  zimon9:
+  - rscadd: Added the ability to change IPC eye colors in-round
+  - refactor: tank alert code modified to reduce pointless operations, updates more
+      rapidly
+2026-02-14:
+  Erikafox:
+  - bugfix: you can now revive people again
+  SapphicOverload:
+  - bugfix: Fixed a runtime error when clicking on paper with an item that has no
+      writing implement properties.
+2026-02-17:
+  Ical92:
+  - bugfix: glasses of vimukti no longer reference an icon that doesn't exist
+  KOCMODECAHTHUK:
+  - rscadd: Refresh animation for All-In-One Grinder
+  generalthrax:
+  - bugfix: You can now actually get mead
+2026-02-18:
+  PositiveEntropy:
+  - imageadd: Prettier bureaucratic supplies have been added to offices all over the
+      frontier!
+2026-02-19:
+  KOCMODECAHTHUK:
+  - bugfix: Fixes movement keys being stuck
+  SapphicOverload:
+  - rscadd: Added ship cloaking devices.
+  - rscadd: The Leyak-class Covert Frigate is now equipped with a cloaking system.
+  - rscadd: Hiding in a nebula obscures ships from long-range sensors.
+2026-02-20:
+  SapphicOverload:
+  - rscdel: Removed "Goebbles" from the list of random last names
+2026-02-21:
+  SapphicOverload:
+  - rscadd: Returns Zohilan as a selectable language
+  - spellcheck: Zohilan
+  meemofcourse:
+  - rscadd: League Zohilian
+  - rscdel: Zohilian is no longer a roundstart language
+2026-02-22:
+  SapphicOverload:
+  - bugfix: Fixed Gorlex Hardliners receiving a 0.3% discount on cloaking devices
+      instead of 30%
+2026-02-24:
+  OnlineGirlfriend:
+  - spellcheck: pavement
+2026-02-25:
+  SapphicOverload:
+  - bugfix: Fixed new languages added to the game not showing up in character preferences
+  generalthrax:
+  - rscadd: Added more ingredients to Cirrus / Nimbus
+  - rscadd: Oxygen closets in Cirrus
+  - bugfix: Cirrus command bathroom no longer locks crew bathroom, lock to crew bathroom
+  - bugfix: Removed duplicate recharger on Nimbus
+  rye-rice:
+  - rscadd: Quick dock now searches for docking ports your ship can land at, rather
+      than picking the first option and failing. Quicker!
+  - rscadd: Makes docking port messages less vauge.
+  - rscadd: Adjusts transit vlevel sizes for larger ships
+  - rscadd: In case you are unable to dock to something, you should be given more
+      feedback
+  - bugfix: Shuttle errors due to docking ports being stolen
+  - bugfix: Edgecase handling for docking ports, should fix very rare shuttle bugs
+  - bugfix: Kali, Corona, Dwayne, Firefly, Scarab, Venetia, Typhoon, June, and especially
+      the Quasar have either proper docking ports or fixed docking ports
+  - bugfix: Firefly is now not extremely dangerous to dock to
+  - bugfix: Shuttle code should be less prone to breaking in general
+2026-02-26:
+  OnlineGirlfriend:
+  - spellcheck: cthonian-class description
+  generalthrax:
+  - rscdel: Removed phobia trait
+  moffball19:
+  - bugfix: replaces a missing console on the kiwi
+2026-02-28:
+  OnlineGirlfriend:
+  - bugfix: add directionals for SUNS bedsheet
+  - spellcheck: drink_reagents.dm
+  rye-rice:
+  - bugfix: Outposts now have proper baseturfs

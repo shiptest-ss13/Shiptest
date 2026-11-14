@@ -1,10 +1,10 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
-	desc = "A top-of-the-line, heavy-duty, multifaceted energy rifle with three firing modes. The gold standard for Nanotrasen's heavier security specialists."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	desc = "A top-of-the-line, heavy-duty, multifaceted energy rifle with three firing modes. The gold standard for Makosso-Warra's heavier security specialists."
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
@@ -18,7 +18,7 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/pulse,
 	) //somone make this backpack mounted, or connected to the deathsquad suit at some point
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_NONE
 	ammo_x_offset = 2
 	charge_sections = 6
 
@@ -27,16 +27,18 @@
 	muzzleflash_iconstate = "muzzle_flash_pulse"
 	light_color = COLOR_BRIGHT_BLUE
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
 
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
-	desc = "A next-generation pulse weapon for Nanotrasen's security forces. High production costs and logistical issues have limited its deployment to specialist Loss Prevention and Emergency Response units."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	desc = "A next-generation pulse weapon for Makosso-Warra's security forces. High production costs and logistical issues have limited its deployment to specialist Loss Prevention and Emergency Response units."
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "pulse_carbine"
@@ -66,10 +68,10 @@
 /obj/item/gun/energy/pulse/pistol
 	name = "pulse pistol"
 	desc = "A pulse rifle in an easily concealed handgun package with low capacity."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	icon_state = "pulse_pistol"
@@ -82,6 +84,7 @@
 	charge_sections = 4
 
 /obj/item/gun/energy/pulse/destroyer
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "pulse destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
 	spawn_blacklisted = TRUE

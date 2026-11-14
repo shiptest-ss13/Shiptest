@@ -130,6 +130,13 @@
 	desc = "A glowing trinket that was originally the Hierophant's beacon."
 	icon_state = "vortex_talisman"
 
+//megabot
+/obj/item/mob_trophy/megabot_reactor
+	name = "damaged reactor"
+	desc = "A damaged reactor cell. It probably isn't radioactive."
+	icon_state = "reactor"
+	gender = PLURAL
+
 // Broodmother's loot: Broodmother Tongue
 /obj/item/mob_trophy/broodmother_tongue
 	name = "broodmother tongue"

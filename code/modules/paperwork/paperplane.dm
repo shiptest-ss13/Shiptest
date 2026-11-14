@@ -54,8 +54,11 @@
 
 /obj/item/paperplane/update_overlays()
 	. = ..()
-	for(var/stamp in internalPaper.stamp_cache)
-		. += "paperplane_[stamp]"
+	var/datum/component/writing/words = internalPaper.GetComponent(/datum/component/writing)
+	if(!words)
+		return
+	for(var/graphic in words.graphic_cache)
+		. += "paperplane_[graphic]"
 
 /obj/item/paperplane/attack_self(mob/user)
 	to_chat(user, span_notice("You unfold [src]."))

@@ -1,17 +1,18 @@
 /obj/item/attachment/gun/ballistic
+	bad_type = /obj/item/attachment/gun/ballistic
 	name = "ballistic underbarrel gun"
 	desc = "A ballistic underbarrel gun. It shoots bullets. Or something."
 	underbarrel_prefix = "bullet_"
 
 /obj/item/attachment/gun/ballistic/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box))
+	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box) || istype(I,/obj/item/gun_maint_kit))
 		attached_gun.attackby(I, user)
 	else
 		return ..()
 
 /obj/item/attachment/gun/ballistic/hand_attack_interaction(mob/user)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
-	if(ballistic_gun.magazine)
+	if(ballistic_gun.magazine && !ballistic_gun.internal_magazine)
 		ballistic_gun.eject_magazine(user)
 		return ..()
 
@@ -20,20 +21,22 @@
 	var/gun_bolt = ballistic_gun.bolt_type
 	var/count_chambered = !(gun_bolt == BOLT_TYPE_NO_BOLT || gun_bolt == BOLT_TYPE_OPEN)
 	examine_list += span_notice("-The [name] has [ballistic_gun.get_ammo(count_chambered)] round\s remaining.")
-	if (!attached_gun.chambered)
+	if (!ballistic_gun.chambered)
 		examine_list += span_notice("-The [name] does not seem to have a round chambered.")
-	if (attached_gun.bolt_locked)
+	if (ballistic_gun.bolt_locked)
 		examine_list += span_notice("-The [name]'s [ballistic_gun.bolt_wording] is locked back and needs to be released before firing.")
-	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	if (ballistic_gun.bolt_type != BOLT_TYPE_NO_BOLT)
+		examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
 
 /obj/item/gun/ballistic/shotgun/underbarrel
 	bad_type = /obj/item/gun/ballistic/shotgun/underbarrel
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
-	semi_auto = FALSE
+	semi_auto = TRUE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
+	//bolt_type = 1
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/underbarrel,
@@ -71,6 +74,7 @@
 	allow_hand_interaction = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+	autowiki_hidden = TRUE //underbarrel
 	name = "PC-22 \"Hognose\""
 	desc = "You shouldn't be seeing this."
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
@@ -86,5 +90,28 @@
 /obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty
 	start_empty = TRUE
 
+/obj/item/attachment/gun/ballistic/swiss_cheese_dma
+	name = "Swiss Cheese DMA Unit"
+	desc = "You shouldn't see this. If for some reason you do... This is the matter cannon thing on the Swiss Cheese. Except broken off somehow."
+	weapon_type = /obj/item/gun/ballistic/swiss_cheese_dma
+	attach_features_flags = ATTACH_NO_SPRITE
 
+/obj/item/gun/ballistic/swiss_cheese_dma
+	autowiki_hidden = TRUE //underbarrel
+	name = "Swiss Cheese DMA Unit"
+	desc = "Now you've done it you freak shit. You've fucked up. You're being tracked by the grid. The eye in the sky is watching. We're coming for you. Prepare to die. This is an internal item and you should not see this in game. Please report this on the github."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/dma
+	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/dma)
+	fire_sound = 'sound/weapons/gun/general/grenade_launch_old.ogg'
+	bolt_type = BOLT_TYPE_NO_BOLT
+	internal_magazine = TRUE
+	load_sound = null
+	wear_rate = 0
 
+/obj/item/ammo_box/magazine/internal/dma
+	name = "swiss cheese dma unit internal gun internal magazine holy shit"
+	desc = "report this on the github if you see it in game"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow
+	start_empty = TRUE
+	caliber = "dmarod"
+	max_ammo = 1

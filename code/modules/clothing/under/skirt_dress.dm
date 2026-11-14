@@ -19,12 +19,14 @@
 	desc = "A silky black satin dress, traditionally made for dancing. It's light and easy to move in."
 	icon_state = "black_tango"
 	item_state = "wcoat"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/dress/striped
 	name = "striped dress"
 	desc = "A simple blue striped dress."
 	icon_state = "striped_dress"
 	item_state = "striped_dress"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/sailor
 	name = "sailor dress"
@@ -37,23 +39,27 @@
 	desc = "Fancy dress for space bar singers."
 	icon_state = "red_evening_gown"
 	item_state = "red_evening_gown"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/one_shoulder
 	name = "one shoulder dress"
 	desc = "A modern black dress with only one shoulder strap. Comes with a matching pair of arm warmers."
 	icon_state = "one_shoulder_dress"
 	roll_sleeves = TRUE
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/iko_ikssoal
 	name = "iko ikssoal"
 	desc = "The “iko-ikssoal”, translating to “long-dress”, is a traditional Kalixcian garment for formal gatherings."
 	icon_state = "iko_ikssoal"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/skirt/color
 	name = "black skirt"
 	desc = "A black, casual skirt."
 	icon_state = "blackskirt"
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/dress/skirt/color/blue
 	name = "blue skirt"
@@ -83,6 +89,7 @@
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is black."
 	icon_state = "black_pinafore"
 	roll_sleeves = TRUE
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/skirt/pinafore/maroon
 	name = "maroon pinafore"
@@ -120,3 +127,47 @@
 	desc = "A breezy white dress."
 	icon_state = "white_dress"
 	item_state = "white_dress"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/dress/overall_dress
+	name = "overall dress"
+	desc = "A practical, yet stylish, pair of overalls with a loose skirt attached."
+	roll_sleeves = TRUE
+	icon_state = "overalldress_denim"
+	item_state = "overalldress_denim"
+	icon = 'icons/obj/clothing/under/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/dresses/dress.dmi'
+	unique_reskin = list("denim overall dress" = "overalldress_denim",
+						"green overall dress" = "overalldress_green",
+						"denim overall dress" = "overalldress_denim",
+						"navy overall dress" = "overalldress_navy",
+						"brown overall dress" = "overalldress_brown",
+						"black overall dress" = "overalldress_black",
+						"white overall dress" = "overalldress_white",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/under/dress/overall_dress/denim
+	name = "denim overall dress"
+	current_skin = "denim overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/navy
+	name = "navy overall dress"
+	current_skin = "navy overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/green
+	name = "green overall dress"
+	current_skin = "green overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/brown
+	name = "brown overall dress"
+	current_skin = "brown overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/black
+	name = "black overall dress"
+	current_skin = "black overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/white
+	name = "white overall dress"
+	current_skin = "white overall dress"

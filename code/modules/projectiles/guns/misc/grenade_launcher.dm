@@ -7,6 +7,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	throw_speed = 2
 	throw_range = 7
+	var/fire_range = 10
 	force = 5
 	var/list/grenades = new/list()
 	var/max_grenades = 3
@@ -51,10 +52,10 @@
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
 	grenades -= F
 	F.forceMove(user.loc)
-	F.throw_at(target, 30, 2, user)
+	F.throw_at(target, fire_range, 2, user)
 	message_admins("[ADMIN_LOOKUPFLW(user)] fired a grenade ([F.name]) from a grenade launcher ([src]) from [AREACOORD(user)] at [target] [AREACOORD(target)].")
 	log_game("[key_name(user)] fired a grenade ([F.name]) with a grenade launcher ([src]) from [AREACOORD(user)] at [target] [AREACOORD(target)].")
 	F.active = 1
 	F.icon_state = initial(F.icon_state) + "_active"
 	playsound(user.loc, 'sound/weapons/armbomb.ogg', 75, TRUE, -3)
-	addtimer(CALLBACK(F, TYPE_PROC_REF(/obj/item/grenade, prime)), 15)
+	addtimer(CALLBACK(F, TYPE_PROC_REF(/obj/item/grenade, prime)), 45)

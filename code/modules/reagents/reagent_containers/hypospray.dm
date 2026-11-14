@@ -16,6 +16,14 @@
 #define COMBAT_SELF_SPRAY 0
 #define COMBAT_SELF_INJECT 0
 
+#define SPENT_PEN_HELPER(pen_path) \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty { \
+		list_reagents = list(); \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty/Initialize(mapload, vol) \
+		. = ..(); \
+		name = "spent [name]"; \
+	}
+
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
@@ -54,7 +62,7 @@
 	var/contained = english_list(injected)
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
-	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
+	if(reagents.total_volume && (ignore_flags || M.can_inject(user, injection_flags = INJECT_CHECK_PENETRATE_THICK)))
 		to_chat(M, span_warning("You feel a tiny prick!"))
 		to_chat(user, span_notice("You inject [M] with [src]."))
 		playsound(loc, pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, TRUE)
@@ -64,7 +72,7 @@
 		if(M.reagents)
 			var/trans = 0
 			if(!infinite)
-				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
+				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 			else
 				reagents.expose(M, INJECT, fraction)
 				trans = reagents.copy_to(M, amount_per_transfer_from_this)
@@ -88,7 +96,7 @@
 	icon_state = "combat_hypo"
 	volume = 90
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/dimorlin = 15, /datum/reagent/medicine/atropine = 15)
 
 //MediPens
 
@@ -130,6 +138,30 @@
 		. += span_notice("It is currently loaded.")
 	else
 		. += span_notice("It is spent.")
+
+/obj/item/reagent_containers/hypospray/medipen/gambling
+	name = "unlabeled medipen" // floorpill... 2!
+	desc = "A degraded autoinjector, its faded label revealing absolutely no information regarding its contents."
+	icon_state = "atropen"
+	var/static/list/special_descs = list(
+		"Here's your chance. Do it. Do it now.",
+		"This is almost certainly a terrible idea.",
+		"Don't.")
+	reagent_flags = NO_REACT
+	volume = 0
+	amount_per_transfer_from_this = 0
+
+/obj/item/reagent_containers/hypospray/medipen/gambling/Initialize()
+	list_reagents = list()
+	var/fun_types = rand(2, 5)
+	for(var/i = 0, i < fun_types, i++)
+		var/fun_quantity = rand(5, 20)
+		list_reagents += list(get_random_reagent_id() = fun_quantity)
+		volume += fun_quantity
+		amount_per_transfer_from_this += fun_quantity
+	. = ..()
+	if(prob(10))
+		desc = pick(special_descs)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
 	name = "stimpack medipen"
@@ -217,6 +249,18 @@
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
 
+/obj/item/reagent_containers/hypospray/medipen/oculine
+	name = "oculine autoinjector"
+	desc = "An autoinjector designed to promote the repair of the cornea and the retina after damage."
+	list_reagents = list(/datum/reagent/medicine/oculine = 10)
+	custom_price = 100
+
+/obj/item/reagent_containers/hypospray/medipen/inacusiate
+	name = "inacusiate autoinjector"
+	desc = "An autoinjector designed to rapidly restore hearing after acute hearing loss."
+	list_reagents = list(/datum/reagent/medicine/inacusiate = 10)
+	custom_price = 100
+
 /obj/item/reagent_containers/hypospray/medipen/atropine
 	name = "atropine autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"
@@ -228,7 +272,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/pumpup
 	name = "maintenance pump-up"
-	desc = "A ghetto looking autoinjector filled with a cheap adrenaline shot... Great for shrugging off the effects of stunbatons."
+	desc = "A sketchy looking autoinjector filled with a cheap adrenaline shot... Great for shrugging off the effects of stunbatons."
 	volume = 15
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/drug/pumpup = 15)
@@ -301,9 +345,19 @@
 	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
 	volume = 15
 	amount_per_transfer_from_this = 15
-	icon_state = "morphen"
-	base_icon_state = "morphen"
-	item_state = "morphen"
+	icon_state = "brainpen"
+	base_icon_state = "brainpen"
+	item_state = "brainpen"
+
+/obj/item/reagent_containers/hypospray/medipen/neurine
+	name = "neurine injector"
+	desc = "An injector filled with neurine, a restorative compound that targets brain trauma."
+	list_reagents = list(/datum/reagent/medicine/neurine = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "brainpen"
+	base_icon_state = "brainpen"
+	item_state = "brainpen"
 
 /obj/item/reagent_containers/hypospray/medipen/badstop
 	name = "Stabilizer injector"
@@ -317,7 +371,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/badstop/update_icon_state()
 	. = ..()
-	if(reagents.total_volume > 30)
+	if(reagents.total_volume >= 30)
 		icon_state = base_icon_state
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
@@ -361,6 +415,36 @@
 	base_icon_state = "penacid"
 	item_state = "penacid"
 
+/obj/item/reagent_containers/hypospray/medipen/chrono
+	name = "chrono cocktail"
+	desc = "An injector filled with an anomalous time-altering substance. Are you sure this is a good idea?"
+	list_reagents = list(/datum/reagent/drug/chrono = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "chronopen"
+	base_icon_state = "chronopen"
+	item_state = "chronopen"
+
+/obj/item/reagent_containers/hypospray/medipen/chrono/fatal
+	name = "Perfect Kiss"
+	desc = "Romanticism surrounding the final death. The death that cannot be undone. The death that finally kills you. It doesn't look the same when you're staring at it, does it? One plunge of this injector and you'll live. You won't stop living. Then it all ends. Wouldn't that be beautiful?"
+	list_reagents = list(/datum/reagent/drug/chrono = 20)
+	volume = 20
+	amount_per_transfer_from_this = 20
+	icon_state = "chronopen"
+	base_icon_state = "chronopen"
+	item_state = "chronopen"
+
+/obj/item/reagent_containers/hypospray/medipen/assault_pack
+	name = "\improper Assault Pack"
+	desc = "A combat stimulant pack loaded with a dose of an anomalous substance. Keep moving forward. When you fall, everything'll be okay."
+	list_reagents = list(/datum/reagent/drug/chrono = 15, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/dimorlin = 10)
+	volume = 35
+	amount_per_transfer_from_this = 35
+	icon_state = "combat_hypo"
+	base_icon_state = "combat_hypo"
+	item_state = "combat_hypo"
+
 /obj/item/reagent_containers/hypospray/medipen/placebatol
 	name = "prescription medipen"
 	desc = "An injector filled with some prescribed substance."
@@ -373,7 +457,7 @@
 	desc = "An epinephrine medipen with extra coagulant and antibiotics to help stabilize bad cuts and burns."
 	volume = 15
 	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/spaceacillin = 0.5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/antibiotic = 0.5)
 
 /obj/item/reagent_containers/hypospray/medipen/blood_loss
 	name = "hypovolemic-response autoinjector"
@@ -387,7 +471,7 @@
 	name = "hypospray mk.II"
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "hypo2"
-	desc = "A medical product traditionally manufactured by Nanotrasen and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
+	desc = "A class of medical device traditionally manufactured by Matahari Pharmaceutical and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
 	w_class = WEIGHT_CLASS_TINY
 	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small)
 	var/mode = HYPO_INJECT
@@ -399,7 +483,7 @@
 	var/spray_self = SELF_SPRAY
 	var/inject_self = SELF_INJECT
 	var/quickload = FALSE
-	var/penetrates = TRUE
+	var/inject_flags = INJECT_CHECK_PENETRATE_THICK
 
 /obj/item/hypospray/mkii/brute
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
@@ -416,6 +500,14 @@
 /obj/item/hypospray/mkii/cureall
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/cureall
 
+//morphine administered
+/obj/item/hypospray/mkii/morphine
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/morphine
+
+/obj/item/hypospray/mkii/chimorph
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chimorph
+
+
 /obj/item/hypospray/mkii/mkiii
 	name = "hypospray mk.III"
 	allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small, /obj/item/reagent_containers/glass/bottle/vial/large)
@@ -427,6 +519,9 @@
 	spray_wait = DELUXE_WAIT_SPRAY
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
+
+/obj/item/hypospray/mkii/mkiii/empty
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large
 
 /obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
@@ -499,7 +594,8 @@
 		to_chat(user, span_notice("This doesn't fit in [src]."))
 		return FALSE
 
-/obj/item/hypospray/mkii/AltClick(mob/user)
+/obj/item/hypospray/mkii/attack_self_secondary(mob/user, modifiers)
+	. = ..()
 	if(vial)
 		vial.attack_self(user)
 
@@ -513,7 +609,6 @@
 	spray_wait = COMBAT_WAIT_SPRAY
 	spray_self = COMBAT_SELF_INJECT
 	inject_self = COMBAT_SELF_SPRAY
-	penetrates = TRUE
 	to_chat(user, "You overcharge [src]'s control circuit.")
 	obj_flags |= EMAGGED
 	return TRUE
@@ -537,7 +632,7 @@
 	var/mob/living/L
 	if(isliving(target))
 		L = target
-		if(!penetrates && !L.can_inject(user, 1)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
+		if(!L.can_inject(user, injection_flags = inject_flags)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
 			return
 
 	if(!L && !target.is_injectable()) //only checks on non-living mobs, due to how can_inject() handles
@@ -569,8 +664,6 @@
 										span_userdanger("[user] is trying to inject [L] with [src]!"))
 						if(!do_after(user, inject_wait, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -579,8 +672,6 @@
 										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, inject_self, L))
-							return
-						if(!penetrates && !L.can_inject(user, 1))
 							return
 						if(!vial.reagents.total_volume)
 							return
@@ -591,7 +682,7 @@
 
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, INJECT, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = INJECT)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = INJECT)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
@@ -605,8 +696,6 @@
 										span_userdanger("[user] is trying to spray [L] with [src]!"))
 						if(!do_after(user, spray_wait, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -616,8 +705,6 @@
 					else
 						if(!do_after(user, spray_self, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -626,7 +713,7 @@
 						L.log_message("<font color='orange'>applied [src] to  themselves ([contained]).</font>", INDIVIDUAL_ATTACK_LOG)
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, PATCH, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = PATCH)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = PATCH)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
@@ -681,7 +768,7 @@
 	custom_price = 500
 	volume = 35
 	amount_per_transfer_from_this = 36
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/rahkrahene = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
 
 #undef HYPO_SPRAY
 #undef HYPO_INJECT

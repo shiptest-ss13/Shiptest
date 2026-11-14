@@ -17,7 +17,7 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
-	slot_flags = ITEM_SLOT_NECK //Allows to be worn on neck so it's not eating pocket slots.
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE //Allows to be worn on neck so it's not eating pocket slots.
 	obj_flags = USES_TGUI
 
 	var/on = TRUE
@@ -94,7 +94,8 @@
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
 	QDEL_NULL(wires)
-	QDEL_NULL(keyslot)
+	if(istype(keyslot))
+		QDEL_NULL(keyslot)
 	return ..()
 
 /obj/item/radio/Initialize()
@@ -103,6 +104,8 @@
 		wires.cut(WIRE_TX) // OH GOD WHY
 	secure_radio_connections = new
 	. = ..()
+	if(ispath(keyslot))
+		keyslot = new keyslot()
 	frequency = sanitize_frequency(frequency, freerange)
 	set_frequency(frequency)
 
@@ -110,6 +113,9 @@
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
 
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
+
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/radio/ComponentInitialize()
 	. = ..()
@@ -132,6 +138,12 @@
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
 		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
+
+/obj/item/radio/attack_hand_secondary(mob/user, modifiers)
+	if((!headset && command) && user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
+		use_command = !use_command
+		to_chat(user, span_notice("You toggle high volume [use_command ? "on" : "off"]."))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -436,7 +448,7 @@
 	. = ..()
 
 /obj/item/radio/borg/syndicate
-	keyslot = new /obj/item/encryptionkey/syndicate
+	keyslot = /obj/item/encryptionkey/syndicate
 
 /obj/item/radio/borg/syndicate/Initialize()
 	. = ..()
@@ -479,3 +491,9 @@
 	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."
+
+/obj/item/radio/command
+	name = "command radio"
+	icon_state = "cmd_radio"
+	desc = "A handheld radio with a configurable volume knob. Useful for making your voice carry farther."
+	command = TRUE

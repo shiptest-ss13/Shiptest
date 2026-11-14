@@ -34,6 +34,11 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/indestructible
+	icon_state = "platform"
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/industrial
 	icon_state = "industrial_platform"
 
@@ -54,12 +59,6 @@
 	icon_state = "industrial2_platform"
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-
-/obj/structure/platform/industrial_alt/indestructible/CanPass(atom/movable/mover, border_dir)
-	. = ..()
-	if(border_dir & dir)
-		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
-	return FALSE
 
 /obj/structure/platform/industrial_alt/corner/indestructible
 	icon_state = "ind2_platform_corners"
@@ -99,6 +98,21 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/ship_three/indestructible
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/platform/ship_three/indestructible/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return FALSE
+
+/obj/structure/platform/ship_three/corner/indestructible
+	density = FALSE
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/ship_four
 	icon_state = "ship4_platform"
 
@@ -127,23 +141,6 @@
 	density = FALSE
 	climbable = FALSE
 
-/obj/structure/platform/attackby(obj/item/I, mob/living/user, params)
-	..()
-	add_fingerprint(user)
-
-	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
-		if(atom_integrity < max_integrity)
-			if(!I.tool_start_check(user, src, amount=0))
-				return
-
-			to_chat(user, span_notice("You begin repairing [src]..."))
-			if(I.use_tool(src, user, 40, volume=50))
-				atom_integrity = max_integrity
-				to_chat(user, span_notice("You repair [src]."))
-		else
-			to_chat(user, span_warning("[src] is already in good condition!"))
-		return
-
 /obj/structure/platform/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(.)
@@ -155,18 +152,44 @@
 		deconstruct()
 		return TRUE
 
-/obj/structure/platform/deconstruct(disassembled)
+/obj/structure/platform/welder_act(mob/living/user, obj/item/I, list/modifiers)
 	. = ..()
-	if(!loc) //quick check if it's qdeleted already.
+	if(user.a_intent == INTENT_HELP)
+		if(atom_integrity < max_integrity)
+			if(!I.tool_start_check(user, src, amount=0))
+				return COMPONENT_BLOCK_TOOL_ATTACK
+
+			to_chat(user, span_notice("You begin repairing [src]..."))
+			if(I.use_tool(src, user, 40, volume=50))
+				atom_integrity = max_integrity
+				to_chat(user, span_notice("You repair [src]."))
+		else
+			to_chat(user, span_warning("[src] is already in good condition!"))
+		return COMPONENT_BLOCK_TOOL_ATTACK
+
+/obj/structure/platform/wrench_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
+	if(flags_1 & NODECONSTRUCT_1)
 		return
-	if(!(flags_1 & NODECONSTRUCT_1))
-		qdel(src)
+	else
+		to_chat(user, span_notice("You start disassembling [src]..."))
+		I.play_tool_sound(src)
+		if(I.use_tool(src, user, 15 SECONDS))
+			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
+			deconstruct(TRUE)
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/platform/CanPass(atom/movable/mover, border_dir)
 	. = ..()
 	if(border_dir & dir)
 		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
+
+/obj/structure/platform/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if (!(to_dir & dir))
+		return TRUE
+	return ..()
+
 
 /obj/structure/platform/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER

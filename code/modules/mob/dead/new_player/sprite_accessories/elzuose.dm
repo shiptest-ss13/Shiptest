@@ -53,42 +53,10 @@
 	name = "Branch"
 	icon_state = "branch"
 
-//Start tails
+/datum/sprite_accessory/elzu_horns/twisted
+	name = "Twisted"
+	icon_state = "twisted"
 
-/datum/sprite_accessory/tails/elzu
-	icon = 'icons/mob/ethereal_parts.dmi'
-
-/datum/sprite_accessory/tails_animated/elzu
-	icon = 'icons/mob/ethereal_parts.dmi'
-
-/datum/sprite_accessory/tails/elzu/none
-	name = "None"
-	icon_state = "none"
-
-/datum/sprite_accessory/tails_animated/elzu/none
-	name = "None"
-	icon_state = "none"
-
-/datum/sprite_accessory/tails/elzu/long
-	name = "Long"
-	icon_state = "long"
-
-/datum/sprite_accessory/tails_animated/elzu/long
-	name = "Long"
-	icon_state = "long"
-
-/datum/sprite_accessory/tails/elzu/bifurcated
-	name = "Bifurcated"
-	icon_state = "bifurcated"
-
-/datum/sprite_accessory/tails_animated/elzu/bifurcated
-	name = "Bifurcated"
-	icon_state = "bifurcated"
-
-/datum/sprite_accessory/tails/elzu/stubby
-	name = "Stubby"
-	icon_state = "stubby"
-
-/datum/sprite_accessory/tails_animated/elzu/stubby
-	name = "Stubby"
-	icon_state = "stubby"
+/datum/sprite_accessory/elzu_horns/curled
+	name = "Curled"
+	icon_state = "curled"

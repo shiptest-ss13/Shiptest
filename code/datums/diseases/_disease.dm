@@ -15,14 +15,17 @@
 	//Stages
 	var/stage = 1
 	var/max_stages = 0
-	var/stage_prob = 4
+	/// The probability of this infection advancing a stage every second the cure is not present.
+	var/stage_prob = 2
 
 	//Other
 	var/list/viable_mobtypes = list() //typepaths of viable mobs
 	var/mob/living/carbon/affected_mob = null
 	var/list/cures = list() //list of cures if the disease has the CURABLE flag, these are reagent ids
-	var/infectivity = 65
-	var/cure_chance = 8
+	/// The probability of spreading through the air every second
+	var/infectivity = 41
+	/// The probability of this infection being cured every second the cure is present
+	var/cure_chance = 4
 	var/carrier = FALSE //If our host is only a carrier
 	var/bypasses_immunity = FALSE //Does it skip species virus immunity check? Some things may diseases and not viruses
 	var/permeability_mod = 1
@@ -62,27 +65,28 @@
 /datum/disease/proc/admin_details()
 	return "[src.name] : [src.type]"
 
-/datum/disease/proc/stage_act()
-	var/cure = has_cure()
 
-	if(carrier && !cure)
-		return
-
-	stage = min(stage, max_stages)
-
-	if(!cure)
-		if(prob(stage_prob))
-			update_stage(min(stage + 1,max_stages))
-	else
-		if(prob(cure_chance))
+///Proc to process the disease and decide on whether to advance, cure or make the sympthoms appear. Returns a boolean on whether to continue acting on the symptoms or not.
+/datum/disease/proc/stage_act(seconds_per_tick, times_fired)
+	if(has_cure())
+		if(SPT_PROB(cure_chance, seconds_per_tick))
 			update_stage(max(stage - 1, 1))
 
-	if(disease_flags & CURABLE)
-		if(cure && prob(cure_chance))
+		if(disease_flags & CURABLE && SPT_PROB(cure_chance, seconds_per_tick))
 			cure()
+			return FALSE
+
+	else if(SPT_PROB(stage_prob, seconds_per_tick))
+		update_stage(min(stage + 1, max_stages))
+
+	return !carrier
 
 /datum/disease/proc/update_stage(new_stage)
 	stage = new_stage
+	if(stage <= 0)
+		cure()
+		return FALSE
+	return TRUE
 
 /datum/disease/proc/has_cure()
 	if(!(disease_flags & CURABLE))
@@ -90,7 +94,7 @@
 
 	. = cures.len
 	for(var/C_id in cures)
-		if(!affected_mob.has_reagent(C_id))
+		if(!affected_mob.reagents.has_reagent(C_id))
 			.--
 	if(!. || (needs_all_cures && . < cures.len))
 		return FALSE
@@ -103,8 +107,7 @@
 	if(!(spread_flags & DISEASE_SPREAD_AIRBORNE) && !force_spread)
 		return
 
-	if(affected_mob.has_reagent(/datum/reagent/medicine/spaceacillin) || (affected_mob.satiety > 0 && prob(affected_mob.satiety/10)))
-		return
+	if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/antibiotic) || (affected_mob.satiety > 0 && prob(affected_mob.satiety/10)))		return
 
 	var/spread_range = 2
 

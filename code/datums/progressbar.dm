@@ -57,13 +57,13 @@
 	if(extra_checks)
 		src.extra_checks = extra_checks
 
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(on_user_delete))
+	RegisterSignal(user, COMSIG_QDELETING, PROC_REF(on_user_delete))
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, PROC_REF(clean_user_client))
 	RegisterSignal(user, COMSIG_MOB_LOGIN, PROC_REF(on_user_login))
 	if(!(timed_action_flags & IGNORE_USER_LOC_CHANGE))
 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 		var/obj/mecha/mech = user.loc
-		if(ismecha(user.loc) && user == mech.occupant)
+		if(ismecha(user.loc) && user == mech.occupant && mech != target)
 			RegisterSignal(mech, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 	if(!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE))
 		if(user != target)
@@ -227,7 +227,7 @@
 
 	animate(bar, alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-	RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_delete))
+	RegisterSignal(owner, COMSIG_QDELETING, PROC_REF(owner_delete))
 
 /datum/world_progressbar/Destroy()
 	owner = null

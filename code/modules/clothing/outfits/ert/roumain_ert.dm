@@ -40,15 +40,16 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/vickland
 
-	l_pocket = /obj/item/ammo_box/magazine/m45
+	l_pocket = /obj/item/ammo_box/magazine/m44
 
-	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m45 = 2)
+	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m44 = 2)
 
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special
 
-	belt = /obj/item/gun/ballistic/revolver/detective
+	belt = /obj/item/gun/ballistic/revolver/flint
 	suit_store = /obj/item/gun/ballistic/rifle/scout
+	l_pocket = /obj/item/ammo_box/c38
 
 	backpack_contents = list(/obj/item/ammo_box/a300 = 5)
 
@@ -81,7 +82,7 @@
 	head = /obj/item/clothing/head/cowboy/sec/roumain/machinist
 	glasses = /obj/item/clothing/glasses/welding
 	accessory = /obj/item/clothing/accessory/waistcoat/roumain
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 
 
 /datum/outfit/job/roumain/ert/leader

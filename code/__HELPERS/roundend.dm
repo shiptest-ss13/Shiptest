@@ -180,7 +180,7 @@
 
 	for(var/client/C in GLOB.clients)
 		if(COOLDOWN_FINISHED(GLOB, web_sound_cooldown))
-			C?.playtitlemusic(vol = 0.5)
+			C?.playtitlemusic(45)
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
@@ -281,11 +281,6 @@
 
 	//Medals
 	parts += medal_report()
-
-	CHECK_TICK
-
-	//Station Goals
-	parts += goal_report()
 
 	listclearnulls(parts)
 
@@ -438,14 +433,6 @@
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 	else
 		return ""
-
-/datum/controller/subsystem/ticker/proc/goal_report()
-	var/list/parts = list()
-	if(mode.station_goals.len)
-		for(var/V in mode.station_goals)
-			var/datum/station_goal/G = V
-			parts += G.get_result()
-		return "<div class='panel stationborder'><ul>[parts.Join()]</ul></div>"
 
 /datum/controller/subsystem/ticker/proc/medal_report()
 	if(GLOB.commendations.len)

@@ -236,9 +236,12 @@
 
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
-	if(M.has_reagent(/datum/reagent/oxygen))
-		M.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(M.reagents.has_reagent(/datum/reagent/oxygen))
+		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(-5)
+		if(ishuman(M))
+			var/mob/living/carbon/human/target_human = M
+			target_human.adjust_coretemperature(-15)
 	..()
 
 /datum/reagent/cryostylane/expose_turf(turf/T, reac_volume)
@@ -257,9 +260,12 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
-	if(M.has_reagent(/datum/reagent/oxygen))
-		M.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(5)
+		if(ishuman(M))
+			var/mob/living/carbon/human/target_human = M
+			target_human.adjust_coretemperature(15)
 	..()
 
 /datum/reagent/teslium //Teslium. Causes periodic shocks, and makes shocks against the target much more effective.
@@ -302,16 +308,9 @@
 	color = "#CAFF43"
 	taste_description = "jelly"
 
-/datum/reagent/teslium/energized_jelly/on_mob_life(mob/living/carbon/M)
-	if(isjellyperson(M))
-		shock_timer = 0 //immune to shocks
-		M.AdjustAllImmobility(-40)
-		M.adjustStaminaLoss(-2, 0)
-	..()
-
 /datum/reagent/firefighting_foam
 	name = "Firefighting Foam"
-	description = "A historical fire suppressant. Originally believed to simply displace oxygen to starve fires, it actually interferes with the combustion reaction itself. Vastly superior to the cheap water-based extinguishers found on NT vessels."
+	description = "A historical fire suppressant. Originally believed to simply displace oxygen to starve fires, it actually interferes with the combustion reaction itself. Vastly superior to the cheap water-based extinguishers found on Makosso-Warra vessels."
 	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#A6FAFF55"
@@ -334,7 +333,7 @@
 	O.extinguish()
 
 /datum/reagent/firefighting_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method in list(VAPOR, TOUCH, SMOKE))
+	if(method in list(VAPOR, TOUCH))
 		M.adjust_fire_stacks(-reac_volume)
 		M.extinguish_mob()
 	..()

@@ -43,11 +43,6 @@
 	item_state = "armoralt"
 	//supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/suit/armor/vest/trauma
-	name = "cybersun trauma team armor vest"
-	icon_state = "traumavest"
-	desc = "A set of stamped plasteel armor plates decorated with a medical cross and colors associated with the medical division of Cybersun."
-
 /obj/item/clothing/suit/armor/vest/marine
 	name = "tactical armor vest"
 	desc = "A heavy set of the finest mass-produced stamped plasteel armor plates money can buy."
@@ -61,6 +56,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 	slowdown = 0 //one day...
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "marine_light",
 		"Desert" = "marine_light_desert",
@@ -117,6 +113,7 @@
 	item_state = "duster_sec"
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
@@ -151,14 +148,14 @@
 	desc = "A white jacket with silver rank pips and body armor strapped on top."
 	icon_state = "armor_warden_jacket"
 
-/obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+/obj/item/clothing/suit/armor/vest/security/warden/alt/warra
 	name = "warden's red armored jacket"
 	desc = "A red jacket with silver rank pips and body armor strapped on top."
 	icon_state = "armor_rwarden_jacket"
 
 /obj/item/clothing/suit/armor/vest/leather
 	name = "security overcoat"
-	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."
+	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Vigilitas Security."
 	icon_state = "armor_leathercoat-sec"
 	item_state = "hostrench"
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -178,11 +175,6 @@
 	name = "Syndicate captain's vest"
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking Syndicate officer."
 	icon_state = "carapace_syndie"
-
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun
-	name = "Cybersun captain's haori"
-	desc = "An extraordinarily fashionable haori, utilized by Cybersun captains. Weaved with armored fabric to protect the user from gunshots."
-	icon_state = "carapace_cybersun"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/captunic
 	name = "captain's parade coat"
@@ -210,7 +202,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	icon = 'icons/obj/clothing/suits/armor.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"

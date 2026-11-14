@@ -15,7 +15,7 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/rations,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine,
+/obj/item/reagent_containers/food/drinks/bottle/chemshine,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
 "ao" = (
@@ -108,11 +108,9 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
 "bf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
 	vision_range = 14
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -182,7 +180,7 @@
 "cf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/rations,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine,
+/obj/item/reagent_containers/food/drinks/bottle/chemshine,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
 "cu" = (
@@ -218,10 +216,10 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "ammo crate"
 	},
-/obj/item/ammo_box/magazine/skm_762_40/empty{
+/obj/item/ammo_box/magazine/fa2_762_40/empty{
 	pixel_x = 4
 	},
-/obj/item/ammo_box/magazine/skm_762_40/empty{
+/obj/item/ammo_box/magazine/fa2_762_40/empty{
 	pixel_x = -7
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -474,7 +472,7 @@
 	pixel_y = 6;
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_y = -4
 	},
 /obj/item/paper/crumpled{
@@ -616,7 +614,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
 "iv" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "iC" = (
@@ -712,7 +710,6 @@
 	pixel_x = -32
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
 "jP" = (
@@ -1279,7 +1276,7 @@
 	pixel_y = -1;
 	pixel_x = 7
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_y = -4;
 	pixel_x = -10
 	},
@@ -1364,7 +1361,7 @@
 /area/ruin/beach/bunker/side_two)
 "re" = (
 /mob/living/basic/mouse/rat,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_y = 3;
 	pixel_x = -8
 	},
@@ -1425,7 +1422,7 @@
 /turf/closed/wall/concrete,
 /area/ruin/beach/bunker/side_one)
 "rw" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete/pavement/beachplanet,
 /area/ruin/beach/bunker/side_one)
 "rH" = (
@@ -1466,7 +1463,7 @@
 	dir = 1;
 	pixel_y = -21;
 	pixel_x = 10;
-	id = "bunk2";
+	id = "bunk_2";
 	name = "shutter control"
 	},
 /turf/open/floor/concrete/slab_1,
@@ -1759,7 +1756,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/south,
-/obj/item/storage/bottles/moonshine/sealed,
+/obj/item/storage/bottles/chemshine/sealed,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "wE" = (
@@ -1817,7 +1814,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0
 	},
@@ -1866,7 +1863,7 @@
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_y = 3;
 	pixel_x = -8
 	},
@@ -2005,13 +2002,8 @@
 /area/ruin/beach/bunker)
 "zI" = (
 /obj/effect/turf_decal/road,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
-	aggro_vision_range = 14
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle;
-	mission_index = 2
+/mob/living/basic/human/frontier/ranged/officer/rifle{
+	vision_range = 14
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -2068,7 +2060,7 @@
 	specialfunctions = 4;
 	name = "cargo shed lock"
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_x = -6;
 	pixel_y = -13
 	},
@@ -2473,7 +2465,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "Et" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier/axe,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ew" = (
@@ -2536,7 +2528,7 @@
 	icon_state = "4-5"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/mob/living/basic/human/frontier/ranged,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_one)
 "ES" = (
@@ -2576,7 +2568,7 @@
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
 "Ft" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Fu" = (
@@ -2630,7 +2622,7 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "FQ" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2744,7 +2736,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "HS" = (
-/obj/effect/decal/cleanable/oil/slippery{
+/obj/effect/decal/cleanable/oil{
 	icon_state = "floor6"
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -3050,7 +3042,7 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor3"
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier/axe,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Nw" = (
@@ -3207,7 +3199,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "OZ" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/mob/living/basic/human/frontier/ranged,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Pb" = (
@@ -3288,7 +3280,7 @@
 	dir = 4;
 	pixel_y = -10;
 	pixel_x = -23;
-	id = "bunk2";
+	id = "bunk_2";
 	name = "shutter control"
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -3296,14 +3288,14 @@
 "PJ" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/storage/bottles/moonshine/sealed,
+/obj/item/storage/bottles/chemshine/sealed,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "PV" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
-/obj/item/storage/bottles/moonshine/sealed,
+/obj/item/storage/bottles/chemshine/sealed,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "PW" = (
@@ -3334,7 +3326,7 @@
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "Qx" = (
-/mob/living/simple_animal/hostile/human/frontier{
+/mob/living/basic/human/frontier{
 	name = "Frontiersman Adjunct"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3470,11 +3462,9 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RO" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
 	vision_range = 14;
 	retreat_distance = 0
 	},
@@ -3746,7 +3736,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "Wd" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+/mob/living/basic/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0
 	},
@@ -3875,7 +3865,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XH" = (
@@ -3921,7 +3911,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/basic/human/frontier/axe,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XZ" = (
@@ -3982,7 +3972,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Zq" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder{
+/mob/living/basic/human/frontier/ranged/pounder{
 	weapon_drop_chance = 20
 	},
 /turf/open/floor/concrete/slab_2,
@@ -4040,7 +4030,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
-/obj/item/storage/bottles/moonshine,
+/obj/item/storage/bottles/chemshine,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "ZX" = (

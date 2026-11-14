@@ -1,11 +1,11 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Sola-class Hunting Vessel",
+	"map_name": "Sola-class Barque",
 	"map_short_name": "Sola-class",
 	"description": "The Sola-class is an Ihejirika design made for lengthy voyages across space. Due to that intent, the Sola is equipped with commodious living spaces as well as a set of solar panels that help its power management. In recent years, the vessel has made its way into the public market, becoming a popular choice for commercial hunters who make good use of the substantial amount of cold storage the vessel offers as well as its rather formidable armory.",
 	"tags": [
 		"Hunting",
-		"Generalist"
+		"Exploration"
 	],
 	"map_path": "_maps/shuttles/independent/independent_sola.dmm",
 	"namelists": ["GENERAL", "BEASTS", "NATURAL_AGGRESSIVE"],
@@ -15,31 +15,31 @@
 	"starting_funds": 1500,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"slots": 1,
 			"officer": true
 		},
 		"Lead Hunter": {
-			"outfit": "/datum/outfit/job/independent/hop/hunter",
+			"outfit": "/datum/outfit/job/independent/hop/hunter/gown",
 			"slots": 1,
 			"officer": true
 		},
 		"Hunter": {
-			"outfit": "/datum/outfit/job/independent/hunter",
-			"slots": 1
+			"outfit": "/datum/outfit/job/independent/hunter/gown",
+			"slots": 2
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/independent/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor/gown",
 			"slots": 1
 		},
 
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant",
-			"slots": 2
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
+			"slots": 1
 		}
 	},
 	"enabled": true

@@ -152,11 +152,6 @@ GLOBAL_LIST_INIT(creepy_ambience,list(
 
 //PLANETS
 
-GLOBAL_LIST_INIT(reebe_ambience,list(
-	'sound/ambience/ambireebe1.ogg',
-	'sound/ambience/ambireebe2.ogg',
-	'sound/ambience/ambireebe3.ogg',
-))
 GLOBAL_LIST_INIT(beach_ambience,list(
 	'sound/ambience/shore.ogg',
 	'sound/ambience/seag1.ogg',
@@ -181,6 +176,16 @@ GLOBAL_LIST_INIT(tundra_ambience,list(
 	'sound/ambience/wind/spooky1.ogg',
 ))
 
+GLOBAL_LIST_INIT(waste_ambience,list(
+	'sound/ambience/ambidecay.ogg',
+	'sound/ambience/ambiharmo1.ogg',
+	'sound/ambience/ambiharmo2.ogg',
+	'sound/ambience/ambiwaste1.ogg',
+	'sound/ambience/ambiwaste2.ogg',
+	'sound/ambience/ambiwaste3.ogg',
+	'sound/ambience/ambiwaste4.ogg',
+))
+
 GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_AWAY = GLOB.away_ambience,
 	AMBIENCE_DANGER = GLOB.danger_ambience,
@@ -194,8 +199,8 @@ GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_SPACE = GLOB.space_ambience,
 	AMBIENCE_SPOOKY = GLOB.spooky_ambience,
 	AMBIENCE_CREEPY = GLOB.creepy_ambience,
-	AMBIENCE_REEBE = GLOB.reebe_ambience,
 	AMBIENCE_BEACH = GLOB.beach_ambience,
 	AMBIENCE_DESERT = GLOB.desert_ambience,
 	AMBIENCE_TUNDRA = GLOB.tundra_ambience,
+	AMBIENCE_WASTE = GLOB.waste_ambience,
 ))

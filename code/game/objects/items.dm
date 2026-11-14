@@ -103,7 +103,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/w_volume
 
 	///This is used to determine on which slots an item can fit.
-	var/slot_flags = 0
+	var/slot_flags = NONE
+
 	pass_flags = PASSTABLE
 	pressure_resistance = 4
 	var/obj/item/master = null
@@ -300,7 +301,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		CRASH("item add_item_action got a type or instance of something that wasn't an action.")
 
 	LAZYADD(actions, action)
-	RegisterSignal(action, COMSIG_PARENT_QDELETING, PROC_REF(on_action_deleted))
+	RegisterSignal(action, COMSIG_QDELETING, PROC_REF(on_action_deleted))
 	grant_action_to_bearer(action)
 	return action
 
@@ -316,7 +317,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!action)
 		return
 
-	UnregisterSignal(action, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(action, COMSIG_QDELETING)
 	LAZYREMOVE(actions, action)
 	qdel(action)
 
@@ -368,7 +369,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user)
 	. = ..()
 
-	if(unique_reskin && !current_skin)
+	if((unique_reskin && !current_skin) || (unique_reskin && (obj_flags & INFINITE_RESKIN)))
 		. += span_notice("<b>Alt-click</b> it to reskin it.")
 
 	. += span_notice("[gender == PLURAL ? "They are" : "It is"] a <b>[weightclass2text(w_class)]</b> item.")
@@ -433,7 +434,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	add_fingerprint(usr)
 	return ..()
 
-/obj/item/attack_hand(mob/user)
+/obj/item/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -442,11 +443,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(anchored)
 		return
 
+	// Right-click is now the standard for opening storage items, and shouldn't try to pickup/unequip items without storage.
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		return
+
 	//check if the item is inside another item's storage
-	if(istype(loc, /obj/item/storage))
+	if(isitem(loc))
 		//if so, can we actually access it?
 		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
-		if(!ourstorage.access_check())
+		if(ourstorage && !ourstorage.access_check())
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
 			return
 
@@ -682,7 +687,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			return
 
 	if(usr.get_active_held_item() == null) // Let me know if this has any problems -Yota
-		usr.UnarmedAttack(src)
+		usr.UnarmedAttack(src, TRUE)
 
 /**
  *This proc is executed when someone clicks the on-screen UI button.
@@ -695,76 +700,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 ///This proc determines if and at what an object will reflect energy projectiles if it's in l_hand,r_hand or wear_suit
 /obj/item/proc/IsReflect(def_zone)
 	return FALSE
-
-/obj/item/proc/eyestab(mob/living/carbon/M, mob/living/carbon/user)
-
-	var/is_human_victim
-	var/obj/item/bodypart/affecting = M.get_bodypart(BODY_ZONE_HEAD)
-	if(ishuman(M))
-		if(!affecting) //no head!
-			return
-		is_human_victim = TRUE
-
-	if(M.is_eyes_covered())
-		// you can't stab someone in the eyes wearing a mask!
-		to_chat(user, span_warning("You're going to need to remove [M.p_their()] eye protection first!"))
-		return
-
-	if(isalien(M))//Aliens don't have eyes./N     slimes also don't have eyes!
-		to_chat(user, span_warning("You cannot locate any eyes on this creature!"))
-		return
-
-	if(isbrain(M))
-		to_chat(user, span_warning("You cannot locate any organic eyes on this brain!"))
-		return
-
-	src.add_fingerprint(user)
-
-	playsound(loc, src.hitsound, 30, TRUE, -1)
-
-	user.do_attack_animation(M)
-
-	if(M != user)
-		M.visible_message(span_danger("[user] stabs [M] in the eye with [src]!"), \
-							span_userdanger("[user] stabs you in the eye with [src]!"))
-	else
-		user.visible_message( \
-			span_danger("[user] stabs [user.p_them()]self in the eyes with [src]!"), \
-			span_userdanger("You stab yourself in the eyes with [src]!") \
-		)
-	if(is_human_victim)
-		var/mob/living/carbon/human/U = M
-		U.apply_damage(7, BRUTE, affecting)
-
-	else
-		M.take_bodypart_damage(7)
-
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "eye_stab", /datum/mood_event/eye_stab)
-
-	log_combat(user, M, "attacked", "[src.name]", "(INTENT: [uppertext(user.a_intent)])")
-
-	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
-	if (!eyes)
-		return
-	M.adjust_blurriness(3)
-	eyes.applyOrganDamage(rand(2,4))
-	if(eyes.damage >= 10)
-		M.adjust_blurriness(15)
-		if(M.stat != DEAD)
-			to_chat(M, span_danger("Your eyes start to bleed profusely!"))
-		if(!(M.is_blind() || HAS_TRAIT(M, TRAIT_NEARSIGHT)))
-			to_chat(M, span_danger("You become nearsighted!"))
-		M.become_nearsighted(EYE_DAMAGE)
-		if(prob(50))
-			if(M.stat != DEAD)
-				if(M.drop_all_held_items())
-					to_chat(M, span_danger("You drop what you're holding and clutch at your eyes!"))
-			M.adjust_blurriness(10)
-			M.Unconscious(20)
-			M.Paralyze(40)
-		if (prob(eyes.damage - 10 + 1))
-			M.become_blind(EYE_DAMAGE)
-			to_chat(M, span_danger("You go blind!"))
 
 /obj/item/singularity_pull(S, current_size)
 	..()
@@ -943,8 +878,26 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
 	return TRUE
 
-///Called BEFORE the object is ground up - use this to change grind results based on conditions. Use "return -1" to prevent the grinding from occurring
-/obj/item/proc/on_grind()
+/obj/item/reagent_scan()
+	var/list/composition = on_grind(simulated=TRUE)
+
+	var/render_list = list()
+	var/reagent_amount = 0
+	if (composition.len > 0)
+		for (var/reagent_id in composition)
+			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_id]
+			if (composition[reagent_id] > 0)
+				render_list += span_notice("\t [composition[reagent_id]] units of [reagent.name].") + "<br>"
+				reagent_amount += 1
+		if (reagent_amount > 0)
+			render_list = list(span_notice("[composition.len] chemical agent[composition.len > 1 ? "s" : ""] found in [src]'s composition:<br>")) + render_list
+
+	return ..() + jointext(render_list, "")
+
+
+/// returns a list (not null) of the result of grinding the item, edits nothing if simulated=TRUE
+/obj/item/proc/on_grind(simulated=FALSE)
+	return grind_results ? grind_results : list()
 
 /obj/item/proc/on_juice()
 
@@ -1292,99 +1245,3 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!isnull(loc))
 		SEND_SIGNAL(loc, COMSIG_ATOM_CONTENTS_WEIGHT_CLASS_CHANGED, src, old_w_class, new_w_class)
 	return TRUE
-
-/// How many different types of mats will be counted in a bite?
-#define MAX_MATS_PER_BITE 2
-
-/*
- * On accidental consumption: when you somehow end up eating an item accidentally (currently, this is used for when items are hidden in food like bread or cake)
- *
- * The base proc will check if the item is sharp and has a decent force.
- * Then, it checks the item's mat datums for the effects it applies afterwards.
- * Then, it checks tiny items.
- * After all that, it returns TRUE if the item is set to be discovered. Otherwise, it returns FALSE.
- *
- * This works similarily to /suicide_act: if you want an item to have a unique interaction, go to that item
- * and give it an /on_accidental_consumption proc override. For a simple example of this, check out the nuke disk.
- *
- * Arguments
- * * M - the mob accidentally consuming the item
- * * user - the mob feeding M the item - usually, it's the same as M
- * * source_item - the item that held the item being consumed - bread, cake, etc
- * * discover_after - if the item will be discovered after being chomped (FALSE will usually mean it was swallowed, TRUE will usually mean it was bitten into and discovered)
- */
-/obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
-	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
-		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
-		victim.visible_message(
-			span_warning("[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!"),
-			span_boldwarning("OH GOD! Was that a crunch? That didn't feel good at all!!"),
-		)
-
-		victim.apply_damage(max(15, force), BRUTE, BODY_ZONE_HEAD)
-		victim.losebreath += 2
-
-		if(tryEmbed(victim.get_bodypart(BODY_ZONE_CHEST), forced = TRUE)) //and if it embeds successfully in their chest, cause a lot of pain
-			victim.apply_damage(max(25, force * 1.5), BRUTE, BODY_ZONE_CHEST)
-			victim.losebreath += 6
-			discover_after = FALSE
-
-		if(QDELETED(src)) // in case trying to embed it caused its deletion (say, if it's DROPDEL)
-			return
-		source_item?.reagents?.add_reagent(/datum/reagent/blood, 2)
-
-	else if(custom_materials?.len) //if we've got materials, lets see whats in it
-		/// How many mats have we found? You can only be affected by two material datums by default
-		var/found_mats = 0
-		/// How much of each material is in it? Used to determine if the glass should break
-		var/total_material_amount = 0
-
-		for(var/mats in custom_materials)
-			total_material_amount += custom_materials[mats]
-			if(found_mats >= MAX_MATS_PER_BITE)
-				continue //continue instead of break so we can finish adding up all the mats to the total
-
-			var/datum/material/discovered_mat = mats
-			if(discovered_mat.on_accidental_mat_consumption(victim, source_item))
-				found_mats++
-
-		//if there's glass in it and the glass is more than 60% of the item, then we can shatter it
-		if(custom_materials[SSmaterials.GetMaterialRef(/datum/material/glass)] >= total_material_amount * 0.60)
-			if(prob(66)) //66% chance to break it
-				/// The glass shard that is spawned into the source item
-				var/obj/item/shard/broken_glass = new /obj/item/shard(loc)
-				broken_glass.name = "broken [name]"
-				broken_glass.desc = "This used to be \a [name], but it sure isn't anymore."
-				playsound(victim, "shatter", 25, TRUE)
-				qdel(src)
-				if(QDELETED(source_item))
-					broken_glass.on_accidental_consumption(victim, user)
-			else //33% chance to just "crack" it (play a sound) and leave it in the bread
-				playsound(victim, "shatter", 15, TRUE)
-			discover_after = FALSE
-
-		victim.adjust_disgust(33)
-		victim.visible_message(
-			span_warning("[victim] looks like [victim.p_theyve()] just bitten into something hard."), \
-			span_warning("Eugh! Did I just bite into something?"))
-
-	else if(w_class == WEIGHT_CLASS_TINY) //small items like soap or toys that don't have mat datums
-		/// victim's chest (for cavity implanting the item)
-		var/obj/item/bodypart/chest/victim_cavity = victim.get_bodypart(BODY_ZONE_CHEST)
-		if(victim_cavity.cavity_item)
-			victim.vomit(5, FALSE, FALSE, distance = 0)
-			forceMove(drop_location())
-			to_chat(victim, span_warning("You vomit up a [name]! [source_item? "Was that in \the [source_item]?" : ""]"))
-		else
-			victim.transferItemToLoc(src, victim, TRUE)
-			victim.losebreath += 2
-			victim_cavity.cavity_item = src
-			to_chat(victim, span_warning("You swallow hard. [source_item? "Something small was in \the [source_item]..." : ""]"))
-		discover_after = FALSE
-
-	else
-		to_chat(victim, span_warning("[source_item? "Something strange was in the \the [source_item]..." : "I just bit something strange..."] "))
-
-	return discover_after
-
-#undef MAX_MATS_PER_BITE
