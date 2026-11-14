@@ -160,7 +160,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/helmet/riot/clip
-	l_hand = /obj/item/melee/baton/loaded
+	l_hand = /obj/item/melee/classic_baton/telescopic
 	belt = /obj/item/gun/ballistic/automatic/smg/cm5/rubber
 
 	r_pocket = /obj/item/ammo_box/magazine/cm5_9mm/rubber
@@ -192,7 +192,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	head = /obj/item/clothing/head/helmet/riot/clip
-	suit_store = /obj/item/melee/baton/loaded
+	suit_store = /obj/item/melee/classic_baton/telescopic
 	l_hand = /obj/item/megaphone/command
 	belt = /obj/item/gun/ballistic/automatic/smg/cm5/rubber
 

@@ -45,6 +45,9 @@
 	///Modifier applied to the parent
 	var/size_mod = 0
 
+	///Sound to play when attached
+	var/attach_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+
 /obj/item/attachment/Initialize()
 	. = ..()
 	attachment_comp = AddComponent( \
@@ -96,7 +99,7 @@
 	if(istype(gun, /obj/item/gun/energy))
 		var/obj/item/gun/energy/egun = gun
 		gun_cell = egun.cell
-	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
+	playsound(src.loc, attach_sound, 75, 1)
 	return TRUE
 
 /obj/item/attachment/proc/remove_attachment(obj/item/gun/gun, mob/user)

@@ -116,6 +116,12 @@
 	icon_state = "woodenbarricade-snow-old"
 	max_integrity = 75
 
+/obj/structure/barricade/wooden/snowed
+	name = "crude plank barricade"
+	desc = "This space is blocked off by a wooden barricade. It seems to be covered in a layer of snow."
+	icon_state = "woodenbarricade-snow"
+	max_integrity = 125
+
 /obj/structure/barricade/wooden/make_debris()
 	new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
 
@@ -225,6 +231,11 @@
 	if(.)
 		return TRUE
 	return border_dir != dir
+
+/obj/structure/barricade/directional/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!(to_dir & dir))
+		return TRUE
+	return ..()
 
 /obj/structure/barricade/directional/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER

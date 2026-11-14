@@ -305,7 +305,7 @@
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
 	projectile_being_shot.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	projectile_being_shot.firer = src
-	projectile_being_shot.fire(Get_Angle(src,target))
+	projectile_being_shot.fire(get_angle(src,target))
 
 /obj/structure/salvageable/server
 	name = "broken server"
@@ -542,6 +542,28 @@
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5
 
+/obj/item/stack/ore/salvage/scrapplasteel
+	name = "plasteel shreds"
+	desc = "Shattered plasteel still contains a fair amount of the plasma and iron composing it"
+	icon_state = "splasteel"
+	points = 16
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplasteel/five
+	amount = 5
+
+/obj/item/stack/ore/salvage/scrapplastitanium
+	name = "ruined plastitanium hexacrystal"
+	desc = "The structure surrounding the lattice of this durable material has shattered, leaving nothing but scrap."
+	icon_state = "splastitanium"
+	points = 65
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/ore/salvage/scrapplastitanium/five
+	amount = 5
+
 // gpu item. does nothing except sell for money
 /obj/item/gpu
 	name = "high power GPU"
@@ -573,7 +595,7 @@
 
 // common drop pool
 /obj/structure/rusted_gun_safe/proc/drop_common()
-	var/roll = rand(1,135)
+	var/roll = rand(1,140)
 	switch(roll)
 		if(1 to 5)
 			// e10
@@ -688,6 +710,17 @@
 			// clip nettle
 			new /obj/item/gun/energy/clover/pistol(loc)
 			new /obj/item/stock_parts/cell/gun/mini(loc)
+		if(136 to 140)
+			// e20 and a conversion kit
+			new /obj/item/gun/energy/laser/e20(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			var/kit = pick(
+				/obj/item/attachment/e20mod/scatter,
+				/obj/item/attachment/e20mod/heavy,
+				/obj/item/attachment/e20mod/efficiency,
+				/obj/item/attachment/e20mod/pierce)
+			new kit(loc)
 
 // uncommon drop pool
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
@@ -781,7 +814,7 @@
 
 // rare drop pool
 /obj/structure/rusted_gun_safe/proc/drop_rare()
-	var/roll = rand(1,50)
+	var/roll = rand(1,55)
 	switch(roll)
 		if(1 to 5)
 			// invictus
@@ -824,7 +857,11 @@
 			// opportunist
 			new /obj/item/gun/energy/cybersun/lorentz/opportunist(loc)
 			new /obj/item/stock_parts/cell/gun/cybersun(loc)
-
+		if(51 to 55)
+			// swiss cheese
+			new /obj/item/gun/ballistic/automatic/assault/swiss_cheese(loc)
+			new /obj/item/ammo_box/magazine/swiss
+			new /obj/item/ammo_box/magazine/swiss
 
 // weird drop pool
 /obj/structure/rusted_gun_safe/proc/drop_weird()

@@ -902,7 +902,8 @@
 /obj/item/gps{
 	pixel_y = -7;
 	pixel_x = 9;
-	gpstag = "!MW-CARACARA-CLASS"
+	gpstag = "!MW-CARACARA-CLASS";
+	gps_active = 1
 	},
 /obj/machinery/light_switch{
 	dir = 4;
@@ -2005,7 +2006,7 @@
 /area/ship/crew/dorm)
 "wM" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/warra,
+/obj/machinery/fax/tricorp,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/white,
 /obj/machinery/firealarm/directional/west{

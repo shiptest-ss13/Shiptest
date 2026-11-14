@@ -21,6 +21,9 @@
 	///Does this computer have a unique icon_state? Prevents the changing of icons from alternative computer construction
 	var/unique_icon = FALSE
 
+	//override for certain objects (televisions) always breaking
+	var/always_break = FALSE
+
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
@@ -75,7 +78,7 @@
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
 /obj/machinery/computer/atom_break(damage_flag)
-	if(!circuit) //no circuit, no breaking
+	if(!circuit && !always_break) //no circuit, no breaking
 		return
 	. = ..()
 	if(.)
@@ -128,3 +131,9 @@
 	. = ..()
 	ui_interact(user)
 	return
+
+// uselesss remnant that only remains to not change the one ruin that uses this
+/obj/machinery/computer/sat_control
+	name = "satellite control"
+	desc = "Used to control the satellite network."
+	circuit = /obj/item/circuitboard/computer/sat_control

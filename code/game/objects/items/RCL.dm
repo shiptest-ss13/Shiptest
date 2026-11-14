@@ -17,7 +17,7 @@
 	actions_types = list(/datum/action/item_action/rcl_col,/datum/action/item_action/rcl_gui,)
 	var/list/colors = list("red", "yellow", "green", "blue", "pink", "orange", "cyan", "white")
 	var/current_color_index = 1
-	var/ghetto = FALSE
+	var/makeshift = FALSE
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	var/datum/radial_menu/persistent/wiring_gui_menu
@@ -69,7 +69,7 @@
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!loaded)
 			return
-		if(ghetto && prob(10)) //Is it a ghetto RCL? If so, give it a 10% chance to fall apart
+		if(makeshift && prob(10)) //Is it a makeshift RCL? If so, give it a 10% chance to fall apart
 			to_chat(user, span_warning("You attempt to loosen the securing screws on the side, but it falls apart!"))
 			while(loaded.amount > 30) //There are only two kinds of situations: "nodiff" (60,90), or "diff" (31-59, 61-89)
 				var/diff = loaded.amount % 30
@@ -191,7 +191,7 @@
 		to_chat(user, span_warning("\The [src] is empty!"))
 		return
 
-	if(prob(2) && ghetto) //Give ghetto RCLs a 2% chance to jam, requiring it to be reactviated manually.
+	if(prob(2) && makeshift) //Give makeshift RCLs a 2% chance to jam, requiring it to be reactviated manually.
 		to_chat(user, span_warning("[src]'s wires jam!"))
 		active = FALSE
 		return
@@ -326,13 +326,13 @@
 		else //open the menu
 			showWiringGui(user)
 
-/obj/item/rcl/ghetto
+/obj/item/rcl/makeshift
 	actions_types = list()
 	max_amount = 30
 	name = "makeshift rapid cable layer"
-	ghetto = TRUE
+	makeshift = TRUE
 
-/obj/item/rcl/ghetto/update_icon_state()
+/obj/item/rcl/makeshift/update_icon_state()
 	if(!loaded)
 		icon_state = "rclg-0"
 		item_state = "rclg-0"

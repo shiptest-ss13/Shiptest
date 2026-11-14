@@ -115,3 +115,12 @@
 	range = 30
 	light_system = 0
 	speed = BULLET_SPEED_SHOTGUN
+
+// swiss cheese dma rod
+/obj/projectile/bullet/dma_rod
+	name = "sharpened metal rod"
+	desc = "Now, about that beer I owed you."
+	icon_state = "magspear"
+	damage = 50
+	armour_penetration = 15
+	range = 15

@@ -5361,7 +5361,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/stairs/left{
 	dir = 4
 	},
@@ -7905,7 +7905,8 @@
 /obj/item/gps{
 	pixel_y = 6;
 	pixel_x = 2;
-	gpstag = "!IRMG-FRIGATE-A"
+	gpstag = "!IRMG-FRIGATE-A";
+	gps_active = 1
 	},
 /obj/item/radio/intercom/directional/north{
 	freerange = 1;

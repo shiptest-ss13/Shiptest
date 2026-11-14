@@ -339,7 +339,15 @@
 	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
 		return
 
-	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
+	var/greyscale_style = greyscale_icon_state
+	if(istype(src, /obj/item/clothing/under))
+		var/obj/item/clothing/under/under = src
+		if(under.adjusted == ALT_STYLE)
+			greyscale_style = "[greyscale_icon_state]_d"
+		if(under.adjusted == ROLLED_STYLE)
+			greyscale_style = "[greyscale_icon_state]_s"
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_style)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)

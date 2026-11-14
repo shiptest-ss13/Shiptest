@@ -549,7 +549,6 @@
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
-	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals)
@@ -599,7 +598,6 @@
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
 	)
 	skins = list(
 		"safeguard" = list(
@@ -646,7 +644,6 @@
 		/obj/item/gun/ballistic,
 		/obj/item/gun/energy,
 		/obj/item/gun/grenadelauncher,
-		/obj/item/melee/baton,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/restraints/handcuffs,
 		/obj/item/tank/internals
@@ -697,7 +694,6 @@
 		/obj/item/ammo_casing,
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
 		/obj/item/melee/energy/sword,
 		/obj/item/shield/energy,
 	)
@@ -748,7 +744,6 @@
 		/obj/item/ammo_casing,
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
 		/obj/item/melee/energy/sword,
 		/obj/item/shield/energy,
 	)
@@ -797,7 +792,6 @@
 		/obj/item/gun,
 		/obj/item/ammo_box,
 		/obj/item/ammo_casing,
-		/obj/item/melee/baton,
 		/obj/item/restraints/handcuffs,
 	)
 	skins = list(
@@ -892,7 +886,6 @@
 		/obj/item/ammo_casing,
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
 	)
 	skins = list(
 		"responsory" = list(
@@ -962,7 +955,6 @@
 		/obj/item/ammo_casing,
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
 		/obj/item/melee/energy/sword,
 		/obj/item/shield/energy,
 	)
@@ -1011,7 +1003,6 @@
 		/obj/item/ammo_casing,
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
 	)
 	skins = list(
 		"corporate" = list(

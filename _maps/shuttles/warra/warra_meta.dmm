@@ -3360,7 +3360,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "Ag" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4841,7 +4841,8 @@
 /obj/item/gps{
 	gpstag = "NSREC1";
 	pixel_x = -9;
-	pixel_y = -2
+	pixel_y = -2;
+	gps_active = 1
 	},
 /obj/machinery/recharger{
 	pixel_x = -8;
@@ -5585,7 +5586,7 @@
 /area/ship/storage)
 "ZZ" = (
 /obj/structure/table/wood,
-/obj/machinery/fax/warra{
+/obj/machinery/fax/tricorp{
 	pixel_y = 4
 	},
 /obj/machinery/firealarm/directional/east,

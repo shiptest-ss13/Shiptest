@@ -10,7 +10,7 @@ const coordsToVec = (coords) => map(parseFloat)(coords.split(', '));
 
 export const Gps = (props, context) => {
   const { act, data } = useBackend(context);
-  const { currentArea, currentCoords, globalmode, power, tag, updating } = data;
+  const { currentArea, currentCoords, power, tag, updating } = data;
   const signals = flow([
     map((signal, index) => {
       // Calculate distance to the target. BYOND distance is capped to 127,
@@ -64,14 +64,6 @@ export const Gps = (props, context) => {
                 content={updating ? 'AUTO' : 'MANUAL'}
                 color={!updating && 'bad'}
                 onClick={() => act('updating')}
-              />
-            </LabeledList.Item>
-            <LabeledList.Item label="Range">
-              <Button
-                icon="sync"
-                content={globalmode ? 'MAXIMUM' : 'LOCAL'}
-                selected={!globalmode}
-                onClick={() => act('globalmode')}
               />
             </LabeledList.Item>
           </LabeledList>
