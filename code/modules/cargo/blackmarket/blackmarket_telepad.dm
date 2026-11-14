@@ -306,7 +306,7 @@
 		say("Runtime at market_placement.dm, line 153: item gone!") //metajoke
 		return
 
-	var/datum/blackmarket_item/local_good/new_item = new(item, account, our_market.local_good_id ) // move ID to here
+	var/datum/blackmarket_item/local_good/new_item = new(item, account, our_market.local_good_id)
 	new_item.name = name_to_use
 	new_item.desc = desc_to_use
 	new_item.cost = price_to_use
