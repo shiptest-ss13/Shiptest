@@ -78,23 +78,23 @@
 		power_efficiency = 1
 
 /// Stores the LTSRBT Data in the uplink for linking
-/obj/machinery/ltsrbt/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/blackmarket_uplink))
-		var/obj/item/blackmarket_uplink/uplink = O
+/obj/machinery/ltsrbt/attackby(obj/item/attacking_item, mob/user, params)
+	if(istype(attacking_item, /obj/item/blackmarket_uplink))
+		var/obj/item/blackmarket_uplink/uplink = attacking_item
 		uplink.target = src
-		to_chat(user, span_notice("[src] linked to [O]."))
+		to_chat(user, span_notice("[src] linked to [attacking_item]."))
 		return TRUE
 
 	if(state_open)
-		if(locate(/mob/living) in O.get_all_contents())
+		if(locate(/mob/living) in attacking_item.get_all_contents())
 			say("Living being detected, cannot sell!")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 			return TRUE
-		if(!user.transferItemToLoc(O, src))
+		if(!user.transferItemToLoc(attacking_item, src))
 			balloon_alert(user, "stuck to your hands!")
 			return TRUE
 		balloon_alert(user, "item loaded")
-		close_machine(O)
+		close_machine(attacking_item)
 		return TRUE
 	else if(user.a_intent != INTENT_HARM)
 		balloon_alert(user, "open the machine!")
@@ -202,7 +202,7 @@
 /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "LTSRBT", name)
+		ui = new(user, src, "BlackMarketTelepad", name)
 		ui.open()
 
 /obj/machinery/ltsrbt/ui_state()
@@ -213,7 +213,6 @@
 
 /obj/machinery/ltsrbt/ui_static_data(mob/user)
 	var/list/data = list()
-	//data["loaded_icon"] = icon2base64(getFlatIcon(occupant, no_anim=TRUE))
 	data["min_price"] = LTSRBT_MIN_PRICE
 	data["max_price"] = LTSRBT_MAX_PRICE
 	return data
@@ -269,6 +268,7 @@
 		return
 	if(!seller_id || !id_locked)
 		say("You need a confirmed seller ID first bucko. What kinda rodeo you think we're running here?")
+		return
 	if(locate(/mob/living) in occupant.get_all_contents())
 		say("Living being detected, cannot sell!")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)

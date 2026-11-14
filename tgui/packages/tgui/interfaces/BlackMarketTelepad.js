@@ -9,18 +9,10 @@ import {
 } from '../components';
 import { Window } from '../layouts';
 
-// type Data = {
-//   name: string;
-//   price: number;
-//   min_price: number;
-//   max_price: number;
-//   loaded_icon: string;
-//   desc: string;
-// };
-
-export const LTSRBT = (props, context) => {
+export const BlackMarketTelepad = (props, context) => {
   const { act, data } = useBackend(context);
-  const { name, price, min_price, max_price, desc, seller_id, id_locked } = data;
+  const { name, price, min_price, max_price,
+  desc, seller_id, id_locked } = data;
 
   return (
     <Window width={600} height={380} theme="hackerman">
@@ -30,7 +22,7 @@ export const LTSRBT = (props, context) => {
             {!id_locked && <Input
               width="80%"
               value={seller_id}
-              placeholder="Set a permanent seller ID. Don't use your real name, dumbass."
+              placeholder="Set a seller ID. Don't use your real name, dumbass."
               onChange={(e, value) =>
                 act('change_id', {
                   value: value,
