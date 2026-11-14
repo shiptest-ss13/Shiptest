@@ -98,6 +98,9 @@
 		market = new()
 		market.name = "[name] market"
 
+	fluctuate_prices()
+	addtimer(CALLBACK(src, PROC_REF(fluctuate_prices)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+
 /datum/overmap/outpost/on_overmaps_loaded()
 	mission_system = current_overmap.next_overmap
 	fill_missions()
@@ -205,6 +208,14 @@
 			LAZYREMOVE(missions, target_mission)
 			qdel(target_mission)
 	fill_missions()
+
+/datum/overmap/outpost/proc/fluctuate_prices()
+	for(var/datum/export/exp in GLOB.outpost_exports)
+		if(exp.price_can_fluctuate)
+			exp.true_cost = round(exp.cost * (rand(75, 125) / 100), 1)
+			exp.desc = "[SSmissions.get_industrial_name()] has placed a bulk order for a large quantity of material. \
+			[outpost_administrator] has agreed to fill this order, and will provide payment for any goods delivered to fulfill it, \
+			proportional to the compensation provided by the client."
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
