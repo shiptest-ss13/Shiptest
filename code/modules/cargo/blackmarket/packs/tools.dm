@@ -31,28 +31,6 @@
 	stock = 2
 	availability_prob = 25
 
-/datum/blackmarket_item/tool/jaws
-	name = "Jaws of Life"
-	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."
-	item = /obj/item/crowbar/power
-
-	cost_min = 750
-	cost_max = 1000
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/power_drill
-	name = "Hand Drill"
-	desc = "Treat your tools right, and they'll outlive you. It was certainly the case for the last guy."
-	item = /obj/item/screwdriver/power
-
-	cost_min = 750
-	cost_max = 1000
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 40
-
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
 	desc = "Twice as effective as a monocular for seeing across long distances."
@@ -120,11 +98,32 @@
 	name = "Rapid Construction Device"
 	desc = "Borrowed from a GEC construction site, this handy device will make building a cinch."
 	item = /obj/item/construction/rcd
+	pair_item = list(/datum/blackmarket_item/tool/rcd_frame_upgrade, /datum/blackmarket_item/tool/rcd_circuit_upgrade)
 
 	cost_min = 1000
 	cost_max = 3000
 	stock = 1
 	availability_prob = 30
+
+/datum/blackmarket_item/tool/rcd_frame_upgrade
+	name = "RCD Frame Upgrade"
+	desc = "Want to make your life even easier? This upgrade will let your RCD fabricate machine and computer frames in a jiffy."
+	item = /obj/item/rcd_upgrade/frames
+
+	cost_min = 100
+	cost_max = 500
+	stock = 1
+	availability_prob = 0
+
+/datum/blackmarket_item/tool/rcd_circuit_upgrade
+	name = "RCD Circuits Upgrade"
+	desc = "An upgrade for the RCD that allows it to fab simple electronics and circuits. Not rated for IPC frames."
+	item = /obj/item/rcd_upgrade/simple_circuits
+
+	cost_min = 100
+	cost_max = 500
+	stock = 1
+	availability_prob = 0
 
 /datum/blackmarket_item/tool/suppressor
 	name = "Suppressor"
@@ -147,6 +146,16 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/tool/diamond_pick
+	name = "Diamond Pickaxe"
+	desc = "Diamonds are a miner's best friend, and that's never been more true with this beaut. Rock, ore, your annoying coworker's skull, this thing breaks it all."
+	item = /obj/item/pickaxe/diamond
+
+	cost_min = 1000
+	cost_max = 1750
+	stock = 1
+	availability_prob = 25
+
 /datum/blackmarket_item/tool/impro_jetpack
 	name = "Improvised Jetpack"
 	desc = "A lovingly handcrafted jetpack built by our salvage techs. For the frugal space explorer."
@@ -163,8 +172,10 @@
 	desc = "A modular jetpack compatible with most hardsuits. If the screws feel a bit loose, it's because the last suit it was attached to was beyond recovery."
 	item = /obj/item/tank/jetpack/suit
 
-	cost_min = 1250
-	cost_max = 3000
+	cost_min = 750
+	cost_max = 1500
 	stock_min = 1
 	stock_max = 3
 	availability_prob = 25
+
+

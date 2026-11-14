@@ -5,12 +5,12 @@
 	/// Available shipping methods and prices, just leave the shipping method out that you don't want to have.
 	var/list/shipping
 
-
 	// Automatic vars, do not touch these.
 	/// Items available from this market, populated by SSblackmarket on initialization.
 	var/list/available_items = list()
 	/// Item categories available from this market, only items which are in these categories can be gotten from this market.
 	var/list/categories	= list()
+	var/local_good_id = 1 // each local good gets a number automatically assigned to it to prevent purchase of wrong items
 
 /datum/blackmarket_market/New()
 	. = ..()
@@ -23,7 +23,7 @@
 		for(var/item in available_items[category])
 			if(istype(item, /datum/blackmarket_item))
 				var/datum/blackmarket_item/b_item = item
-				b_item.cycle()
+				b_item.cycle(b_item.cycle_cost, TRUE, b_item.cycle_stock)
 				if(b_item.available == TRUE)
 					for(var/paired_item in b_item.pair_item)
 						var/datum/blackmarket_item/item_to_set = get_item_in_market(paired_item)
@@ -62,13 +62,17 @@
 	return TRUE
 
 /// Handles buying the item, this is mainly for future use and moving the code away from the uplink.
-/datum/blackmarket_market/proc/purchase(item, category, method, obj/item/blackmarket_uplink/uplink, user)
+/datum/blackmarket_market/proc/purchase(item_to_buy, category, method, item_key, obj/item/blackmarket_uplink/uplink, user)
 	if(!istype(uplink) || !(method in shipping))
 		return FALSE
 
 	for(var/datum/blackmarket_item/I in available_items[category])
-		if(I.type != item)
+		if(I.type != item_to_buy)
 			continue
+		if(!isnull(item_key))
+			if(I.key != item_key)
+				continue
+
 		var/cost = I.cost + shipping[method]
 		// I can't get the cost of the item and shipping in a clean way to the UI, so I have to do this.
 		if(uplink.money < cost)
@@ -82,6 +86,6 @@
 
 /datum/blackmarket_market/blackmarket
 	name = "Black Market"
-	shipping = list(SHIPPING_METHOD_LTSRBT	=100,
+	shipping = list(SHIPPING_METHOD_LTSRBT	=50,
 					SHIPPING_METHOD_LAUNCH	=10,
 					SHIPPING_METHOD_DEAD_DROP = 20)

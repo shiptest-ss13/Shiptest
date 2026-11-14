@@ -94,6 +94,17 @@
 	cost_max = 500
 	availability_prob = 50
 
+/datum/blackmarket_item/consumable/synthflesh
+	name = "Jug of Synthflesh"
+	desc = "A 150u jug of synthflesh. That's like half a person in liquid form!"
+	item = /datum/reagent/medicine/synthflesh
+
+	cost_min = 400
+	cost_max = 600
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 50
+
 /datum/blackmarket_item/consumable/dimorlin
 	name = "Dimorlin Bottle"
 	desc = "Medicinal? Recreational? You can decide with this 30u bottle of dimorlin!"
@@ -195,6 +206,17 @@
 	stock_min = 10
 	stock_max = 20
 	availability_prob = 50
+
+/datum/blackmarket_item/consumable/chemshine
+	name = "Jug of Chemshine"
+	desc = "So, apparently engine fuel goes bad after a while. On the bright side, it's the perfect excuse to make it into Chemshine. Avoid open flames. Or impacts. Or breathing on it."
+	item = /obj/item/reagent_containers/food/drinks/bottle/chemshine
+
+	cost_min = 50
+	cost_max = 100
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 25
 
 /datum/blackmarket_item/consumable/sutures
 	name = "Sutures"
