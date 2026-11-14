@@ -280,7 +280,7 @@
 
 /datum/supply_pack/medical/crisis/cybersun
 	desc = "Contains a pack of four Cybersun-brand crisis stimpacks for use in medical emergencies."
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 // maybe these could be a unique medipen eventually?
 /datum/supply_pack/medical/crisis/pgf
