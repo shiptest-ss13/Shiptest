@@ -657,6 +657,7 @@
 		/obj/machinery/vending/modularpc = "Deluxe Silicate Selections",
 		/obj/machinery/vending/disposable_guns = "Guns-4-U",
 		/obj/machinery/vending/lottery = "Kiyatirawkitchi Lottery",
+		/obj/machinery/vending/outpost_pharmacy = "Matahari Quick Care Center",
 		/obj/machinery/vending/custom = "Custom Vendor")
 
 /obj/item/circuitboard/machine/vendor/attackby(obj/item/I, mob/user, params)

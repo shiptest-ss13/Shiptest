@@ -84,7 +84,7 @@
 	return new trickwine(loc)
 
 /datum/blackmarket_item/consumable/stimpack
-	name = "Stimpack"
+	name = "Crisis Stimpack"
 	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
 	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
 

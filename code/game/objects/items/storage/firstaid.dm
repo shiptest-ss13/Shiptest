@@ -710,7 +710,7 @@
 
 /obj/item/storage/medpack/bruisepacks
 	name = "pack of bruise packs"
-	desc = "a sealed, sterile-white plastic package full of bruise packs."
+	desc = "A sealed, sterile-white plastic package full of bruise packs."
 
 /obj/item/storage/medpack/bruisepacks/PopulateContents()
 	var/static/items_inside = list(/obj/item/stack/medical/bruise_pack = 4)
@@ -718,7 +718,7 @@
 
 /obj/item/storage/medpack/gauze
 	name = "pack of medical gauze"
-	desc = "a sealed, sterile-white plastic package full of medical gauze."
+	desc = "A sealed, sterile-white plastic package full of medical gauze."
 
 /obj/item/storage/medpack/gauze/PopulateContents()
 	var/static/items_inside = list(/obj/item/stack/medical/gauze = 4)
@@ -726,8 +726,16 @@
 
 /obj/item/storage/medpack/epipens
 	name = "pack of epinephrine autoinjectors"
-	desc = "a sealed, sterile-white plastic package full of epinephrine autoinjectors."
+	desc = "A sealed, sterile-white plastic package full of epinephrine autoinjectors."
 
 /obj/item/storage/medpack/epipens/PopulateContents()
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/crisis
+	name = "pack of crisis stimpacks"
+	desc = "A sealed, sterile-white plastic package full of crisis stimpacks."
+
+/obj/item/storage/medpack/crisis/PopulateContents()
+	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 4)
 	generate_items_inside(items_inside,src)

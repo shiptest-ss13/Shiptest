@@ -114,7 +114,7 @@
 	reagent_flags = DRAWABLE
 	flags_1 = null
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/medicine/chitosan = 2)
-	custom_price = 150
+	custom_price = 75
 	custom_premium_price = 300
 
 /obj/item/reagent_containers/hypospray/medipen/inject(mob/living/M, mob/user)
@@ -143,6 +143,8 @@
 	name = "unlabeled medipen" // floorpill... 2!
 	desc = "A degraded autoinjector, its faded label revealing absolutely no information regarding its contents."
 	icon_state = "atropen"
+	item_state = "atropen"
+	base_icon_state = "atropen"
 	var/static/list/special_descs = list(
 		"Here's your chance. Do it. Do it now.",
 		"This is almost certainly a terrible idea.",
@@ -163,22 +165,27 @@
 	if(prob(10))
 		desc = pick(special_descs)
 
-/obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
-	name = "stimpack medipen"
-	desc = "A rapid way to stimulate your body's adrenaline, allowing for freer movement in restrictive armor."
-	icon_state = "stimpen"
-	item_state = "stimpen"
-	volume = 20
-	amount_per_transfer_from_this = 20
-	list_reagents = list(/datum/reagent/medicine/ephedrine = 10, /datum/reagent/consumable/coffee = 10)
-
-/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
-	name = "crisis stimpack"
+/obj/item/reagent_containers/hypospray/medipen/stimpack // goliath kiting // among other uses
+	name = "stimpack"
+	desc = "A cheap, easy to produce cocktail of stimulants, painkillers, and healing agents. The lifeblood of the mining industry. While overuse has been linked to heart problems, they see frequent use recreationally."
 	icon_state = "stimpen"
 	item_state = "stimpen"
 	base_icon_state = "stimpen"
-	desc = "A modified stimulant autoinjector, containing a cocktail of potent nerve excitants and long-release healing chemicals. Designed for use in emergency situations where medical help may be hours or days away."
-	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 5, /datum/reagent/medicine/panacea = 15)
+	custom_price = 100
+	volume = 30
+	amount_per_transfer_from_this = 30
+	list_reagents = list(/datum/reagent/drug/cinesia = 5, /datum/reagent/medicine/tramal = 5, /datum/reagent/medicine/indomide = 10, /datum/reagent/medicine/alvitane = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
+	name = "crisis stimpack"
+	desc = "An autoinjector containing a cocktail of potent stimulants and long-release healing chemicals. Designed for stabilizing and mobilizing patients in emergency situations where medical help may be hours or days away."
+	icon_state = "morphen"
+	item_state = "morphen"
+	base_icon_state = "morphen"
+	custom_price = 200
+	volume = 25
+	amount_per_transfer_from_this = 25
+	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/drug/cinesia = 5, /datum/reagent/medicine/panacea = 15)
 
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
@@ -270,12 +277,12 @@
 	list_reagents = list(/datum/reagent/medicine/atropine = 10)
 	custom_price = 100
 
-/obj/item/reagent_containers/hypospray/medipen/pumpup
-	name = "maintenance pump-up"
-	desc = "A sketchy looking autoinjector filled with a cheap adrenaline shot... Great for shrugging off the effects of stunbatons."
+/obj/item/reagent_containers/hypospray/medipen/crapstims
+	name = "handmade autoinjector"
+	desc = "A crudely made injection device claiming to be full of \"ADRENALINE BOOSTER\". Better than nothing?"
 	volume = 15
 	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/drug/pumpup = 15)
+	list_reagents = list(/datum/reagent/medicine/ephedrine = 15)
 	icon_state = "maintenance"
 	base_icon_state = "maintenance"
 
@@ -298,14 +305,15 @@
 
 /obj/item/reagent_containers/hypospray/medipen/diphen
 	name = "diphenhydramine injector"
-	desc = "An effective way to stop an allergic reaction."
+	desc = "Contains a dose of antihistimine for suppressing allergic reactions. Drowsiness is a commonly reported side effect - do not use while operating heavy machinery."
 	list_reagents = list(/datum/reagent/medicine/diphenhydramine = 10)
 	volume = 10
 	amount_per_transfer_from_this = 10
+	custom_price = 50
 
 /obj/item/reagent_containers/hypospray/medipen/psicodine
 	name = "psicodine injector"
-	desc = "An injector filled with psicodine, which rapidly stabilizes the mind."
+	desc = "An injector filled with psicodine, a medication which rapidly stabilizes the mind."
 	list_reagents = list(/datum/reagent/medicine/psicodine = 10)
 	volume = 10
 	amount_per_transfer_from_this = 10
@@ -313,7 +321,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/synap
 	name = "synaptizine injector"
-	desc = "A stimulating injector with a shot of synaptizine inside."
+	desc = "An injector containing a dose of synaptizine, a medication that reduces drowsiness and suppresses hallucinations."
 	list_reagents = list(/datum/reagent/medicine/synaptizine = 5)
 	custom_price = 75
 	volume = 5
@@ -323,7 +331,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/antihol
 	name = "antihol injector"
-	desc = "An injector filled with antihol, essential for the binge drinker."
+	desc = "An injector filled with antihol, a medication that rapidly sobers up the patient. Essential for the binge drinker."
 	list_reagents = list(/datum/reagent/medicine/antihol = 10)
 	volume = 10
 	amount_per_transfer_from_this = 10
@@ -331,13 +339,14 @@
 
 /obj/item/reagent_containers/hypospray/medipen/cureall
 	name = "cureall injector"
-	desc = "An injector filled with cureall, a mildly effective healing agent."
+	desc = "An injector filled with cureall, a mild healing agent with little to no side effects."
 	list_reagents = list(/datum/reagent/medicine/cureall = 15)
 	volume = 15
 	amount_per_transfer_from_this = 15
 	icon_state = "morphen"
 	base_icon_state = "morphen"
 	item_state = "morphen"
+	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/mannitol
 	name = "mannitol injector"
@@ -360,7 +369,7 @@
 	item_state = "brainpen"
 
 /obj/item/reagent_containers/hypospray/medipen/badstop
-	name = "Stabilizer injector"
+	name = "stabilizer injector"
 	desc = "A 2-use injector filled with a mix of medical agents, designed to stabilize someone for immediate extraction."
 	list_reagents = list(/datum/reagent/medicine/chitosan = 5, /datum/reagent/medicine/morphine = 10, /datum/reagent/medicine/psicodine = 5, /datum/reagent/medicine/atropine = 10)
 	volume = 30
@@ -451,6 +460,7 @@
 	list_reagents = list(/datum/reagent/drug/placebatol = 15)
 	volume = 15
 	amount_per_transfer_from_this = 15
+	custom_price = 50
 
 /obj/item/reagent_containers/hypospray/medipen/ekit
 	name = "emergency first-aid autoinjector"
@@ -760,13 +770,13 @@
 			to_chat(M, "[src] is now set to spray contents on application.")
 
 /obj/item/reagent_containers/hypospray/medipen/survival
-	name = "survival stimpak"
-	desc = "A medical cocktail for surviving in the harshest of environments, quickly heals and inhibits pain to help overcome extreme conditions. WARNING: Frequent use has long-term side effects."
+	name = "LIFEPEN emergency stimpack"
+	desc = "A previously-widespread model of medical injector. Capable of restoring extreme wounding in a very short amount of time. Infamous for being both excruciatingly painful and addictive. A label reads: \"EMERGENCY USE ONLY! USE WITH CAUTION!\""
 	icon_state = "stimpen"
 	item_state = "stimpen"
 	base_icon_state = "stimpen"
 	custom_price = 500
-	volume = 35
+	volume = 36
 	amount_per_transfer_from_this = 36
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/rahkrahene = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
 
