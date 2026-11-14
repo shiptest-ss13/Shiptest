@@ -37,11 +37,11 @@
 
 
 /datum/component/flavor_text/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(handle_examine))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(handle_examine))
 
 /datum/component/flavor_text/UnregisterFromParent()
 	SStgui.close_uis(src)
-	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
 
 /datum/component/flavor_text/InheritComponent(datum/component/flavor_text/new_comp, original, _flavor_text, _portrait_url, _portrait_source)
 	if(new_comp)
