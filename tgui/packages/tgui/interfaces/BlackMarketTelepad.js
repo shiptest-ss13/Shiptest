@@ -38,7 +38,7 @@ export const BlackMarketTelepad = (props, context) => {
               content="Set Seller ID"
               onClick={() => act('set_id')}
             />}
-           {!! id_locked && <Box inline bold> Seller ID: {seller_id} </Box>}
+           {!!id_locked && <Box inline bold> Seller ID: {seller_id} </Box>}
           </Stack.Item>
             <Stack.Divider />
             <Stack.Item>

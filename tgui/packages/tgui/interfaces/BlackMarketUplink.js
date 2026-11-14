@@ -79,12 +79,12 @@ export const BlackMarketUplink = (props, context) => {
                     {item.name}
                   </Stack.Item>
                   <Stack.Item color="label">
-                    {item.amount ? item.amount + ' in stock': 'Out of stock'}
+                    {item.amount ? item.amount + ' in stock' : 'Out of stock'}
                   </Stack.Item>
                   <Stack.Item>{formatMoney(item.cost) + ' cr'}</Stack.Item>
                   <Stack.Item>
                     <Button
-                      content="buy"
+                      content="Buy"
                       disabled={!item.amount || item.cost > money}
                       onClick={() =>
                         act('select', {
