@@ -870,7 +870,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 
-	fire_delay = 0.1 SECONDS
+	fire_delay = 0.13 SECONDS
 
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
