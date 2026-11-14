@@ -223,7 +223,7 @@
 /datum/component/automatic_fire_mecha/proc/process_shot()
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
 		return FALSE
-	if(!COOLDOWN_FINISHED(src, next_shot_cd))
+	if(world.time < next_shot_cd)
 		return TRUE
 	if(QDELETED(target) || get_turf(target) != target_loc) //Target moved or got destroyed since we last aimed.
 		target = target_loc //So we keep firing on the emptied tile until we move our mouse and find a new target.
