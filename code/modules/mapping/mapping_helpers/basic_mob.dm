@@ -36,6 +36,31 @@
 		ADD_TRAIT(our_turf, TRAIT_AI_AVOID, MAPPING_HELPER_TRAIT)
 	return ..()
 
+///Basic mob AI can't see through this tile
+/obj/effect/mapping_helpers/ai_sight_blocker
+	name = "AI sight blocker"
+	desc = "Basic mob AI can't see through this tile."
+	icon_state = "ai_sight_blocker"
+
+/obj/effect/mapping_helpers/ai_sight_blocker/Initialize(mapload)
+	var/turf/our_turf = get_turf(src)
+	if(our_turf)
+		ADD_TRAIT(our_turf, TRAIT_AI_BLOCKS_SIGHT, MAPPING_HELPER_TRAIT)
+		GLOB.ai_sight_blocker_z_levels["[our_turf.z]"] = TRUE
+	return ..()
+
+///Basic mob AI can't hear through this tile. Sound "travels" in a line too so cover appropriately.
+/obj/effect/mapping_helpers/ai_sound_blocker
+	name = "AI sound blocker"
+	desc = "Basic mob AI can't hear through this tile."
+	icon_state = "ai_sound_blocker"
+
+/obj/effect/mapping_helpers/ai_sound_blocker/Initialize(mapload)
+	var/turf/our_turf = get_turf(src)
+	if(our_turf)
+		ADD_TRAIT(our_turf, TRAIT_AI_BLOCKS_SOUND, MAPPING_HELPER_TRAIT)
+	return ..()
+
 /obj/effect/mapping_helpers/basic_mob_flags/del_on_death
 	name = "Basic mob del on death flag helper"
 	icon_state = "basic_mob_del_on_death"
