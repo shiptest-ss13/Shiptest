@@ -70,36 +70,41 @@
 /obj/structure/table/attack_paw(mob/user)
 	return attack_hand(user)
 
-/obj/structure/table/attack_hand(mob/living/user)
-	if(Adjacent(user) && user.pulling)
-		if(isliving(user.pulling))
-			var/mob/living/pushed_mob = user.pulling
-			if(pushed_mob.buckled)
-				to_chat(user, span_warning("[pushed_mob] is buckled to [pushed_mob.buckled]!"))
-				return
-			if(user.a_intent == INTENT_GRAB)
-				if(user.grab_state < GRAB_AGGRESSIVE)
-					to_chat(user, span_warning("You need a better grip to do that!"))
-					return
-				if(user.grab_state >= GRAB_NECK)
-					tablelimbsmash(user, pushed_mob)
-				else
-					tablepush(user, pushed_mob)
-			if(user.a_intent == INTENT_HELP)
-				pushed_mob.visible_message(span_notice("[user] begins to place [pushed_mob] onto [src]..."), \
-									span_userdanger("[user] begins to place [pushed_mob] onto [src]..."))
-				if(do_after(user, 35, target = pushed_mob))
-					tableplace(user, pushed_mob)
-				else
-					return
+/obj/structure/table/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(!Adjacent(user))
+		return FALSE
+	if(isliving(pulled))
+		var/mob/living/pushed_mob = pulled
+		if(pushed_mob.buckled)
+			to_chat(user, span_warning("[pushed_mob] is buckled to [pushed_mob.buckled]!"))
+			return TRUE
+		if(user.a_intent == INTENT_GRAB)
+			if(user.grab_state < GRAB_AGGRESSIVE)
+				to_chat(user, span_warning("You need a better grip to do that!"))
+				return TRUE
+			if(user.grab_state >= GRAB_NECK)
+				tablelimbsmash(user, pushed_mob)
+			else
+				tablepush(user, pushed_mob)
+		else if(user.a_intent == INTENT_HELP)
+			pushed_mob.visible_message(span_notice("[user] begins to place [pushed_mob] onto [src]..."), \
+								span_userdanger("[user] begins to place [pushed_mob] onto [src]..."))
+			if(do_after(user, 35, target = pushed_mob))
+				tableplace(user, pushed_mob)
+			else
+				return TRUE
+		else
+			return FALSE
+		user.stop_pulling()
+		return TRUE
+	if(pulled.pass_flags & PASSTABLE)
+		user.Move_Pulled(src)
+		if (pulled.loc == loc)
+			user.visible_message(span_notice("[user] places [pulled] onto [src]."),
+				span_notice("You place [pulled] onto [src]."))
 			user.stop_pulling()
-		else if(user.pulling.pass_flags & PASSTABLE)
-			user.Move_Pulled(src)
-			if (user.pulling.loc == loc)
-				user.visible_message(span_notice("[user] places [user.pulling] onto [src]."),
-					span_notice("You place [user.pulling] onto [src]."))
-				user.stop_pulling()
-	return ..()
+		return TRUE
+	return FALSE
 
 /obj/structure/table/attack_tk()
 	return FALSE

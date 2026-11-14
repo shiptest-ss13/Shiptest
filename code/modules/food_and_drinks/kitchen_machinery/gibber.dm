@@ -74,34 +74,38 @@
 		to_chat(user, span_warning("[src] cannot be used unless bolted to the ground!"))
 		return
 
-	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
-		var/mob/living/L = user.pulling
-		if(!iscarbon(L))
-			to_chat(user, span_warning("This item is not suitable for the gibber!"))
-			return
-		var/mob/living/carbon/C = L
-		if(C.buckled ||C.has_buckled_mobs())
-			to_chat(user, span_warning("[C] is attached to something!"))
-			return
+	startgibbing(user)
 
-		if(!ignore_clothing)
-			for(var/obj/item/I in C.held_items + C.get_equipped_items())
-				if(!HAS_TRAIT(I, TRAIT_NODROP))
-					to_chat(user, span_warning("Subject may not have abiotic items on!"))
-					return
+/obj/machinery/gibber/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(user.a_intent != INTENT_GRAB || !isliving(pulled))
+		return FALSE
+	if(machine_stat & (NOPOWER|BROKEN) || operating || !anchored)
+		return FALSE // attack_hand() handles these
+	if(!iscarbon(pulled))
+		to_chat(user, span_warning("This item is not suitable for the gibber!"))
+		return TRUE
+	var/mob/living/carbon/victim = pulled
+	if(victim.buckled || victim.has_buckled_mobs())
+		to_chat(user, span_warning("[victim] is attached to something!"))
+		return TRUE
 
-		user.visible_message(span_danger("[user] starts to put [C] into the gibber!"))
+	if(!ignore_clothing)
+		for(var/obj/item/worn_item in victim.held_items + victim.get_equipped_items())
+			if(!HAS_TRAIT(worn_item, TRAIT_NODROP))
+				to_chat(user, span_warning("Subject may not have abiotic items on!"))
+				return TRUE
 
-		add_fingerprint(user)
+	user.visible_message(span_danger("[user] starts to put [victim] into the gibber!"))
 
-		if(do_after(user, gibtime, target = src))
-			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[user] stuffs [C] into the gibber!"))
-				C.forceMove(src)
-				occupant = C
-				update_appearance()
-	else
-		startgibbing(user)
+	add_fingerprint(user)
+
+	if(do_after(user, gibtime, target = src))
+		if(victim && user.pulling == victim && !victim.buckled && !victim.has_buckled_mobs() && !occupant)
+			user.visible_message(span_danger("[user] stuffs [victim] into the gibber!"))
+			victim.forceMove(src)
+			occupant = victim
+			update_appearance()
+	return TRUE
 
 /obj/machinery/gibber/attackby(obj/item/P, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "grinder_open", "grinder", P))

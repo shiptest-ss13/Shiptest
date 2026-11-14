@@ -50,21 +50,18 @@
 		if(user.transferItemToLoc(W, drop_location()))
 			visible_message(span_warning("[user] dunks [W] into \the [src]!"))
 
-/obj/structure/holohoop/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
-		var/mob/living/L = user.pulling
-		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!"))
-			return
-		L.forceMove(loc)
-		L.Paralyze(100)
-		visible_message(span_danger("[user] dunks [L] into \the [src]!"))
-		user.stop_pulling()
-	else
-		..()
+/obj/structure/holohoop/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(user.a_intent != INTENT_GRAB || !isliving(pulled))
+		return FALSE
+	var/mob/living/dunked_mob = pulled
+	if(user.grab_state < GRAB_AGGRESSIVE)
+		to_chat(user, span_warning("You need a better grip to do that!"))
+		return TRUE
+	dunked_mob.forceMove(loc)
+	dunked_mob.Paralyze(100)
+	visible_message(span_danger("[user] dunks [dunked_mob] into \the [src]!"))
+	user.stop_pulling()
+	return TRUE
 
 /obj/structure/holohoop/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if (isitem(AM) && !istype(AM,/obj/projectile))

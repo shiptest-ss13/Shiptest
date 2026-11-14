@@ -827,6 +827,8 @@
 		return
 	owner.update_health_hud() //update the healthdoll
 	owner.update_body()
+	if(bodypart_disabled && held_index && owner.pull_hand && owner.get_item_for_held_index(held_index) == owner.pull_hand)
+		owner.stop_pulling()
 
 ///Proc to change the value of the `owner` variable and react to the event of its change.
 /obj/item/bodypart/proc/set_owner(new_owner)

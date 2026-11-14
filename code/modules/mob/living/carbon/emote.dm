@@ -230,7 +230,7 @@
 	icon_state = "nothing"
 	force = 0
 	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 
 /obj/item/noogie/attack(mob/living/carbon/target, mob/living/carbon/human/user)
 	if(!istype(target))
@@ -315,7 +315,7 @@
 	item_state = "nothing"
 	force = 0
 	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	attack_verb = list("slapped")
 	hitsound = 'sound/effects/snap.ogg'
 	/// How many smaller table smacks we can do before we're out
@@ -406,7 +406,7 @@
 	item_state = "nothing"
 	force = 0
 	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	/// The kind of projectile this version of the kiss blower fires
 	var/kiss_type = /obj/projectile/kiss
 	/// TRUE if the user was aiming anywhere but the mouth when they offer the kiss, if it's offered
@@ -556,7 +556,7 @@
 	icon_state = "madeyoulook"
 	force = 0
 	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	attack_verb = list("bopped")
 
 /obj/item/circlegame/Initialize()

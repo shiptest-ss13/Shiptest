@@ -352,8 +352,8 @@
 		set_pull_offsets(M, state)
 	else
 		// We already know it's an object since it's not a mob so no need to typecheck
-		var/obj/O = AM
-		if (O.density || O.drag_slowdown)
+		var/obj/pulled_obj = AM
+		if (!iscarbon(src) && (pulled_obj.density || pulled_obj.drag_slowdown)) // carbons face what they drag while moving instead
 			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
@@ -1967,6 +1967,9 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	. = body_position
 	body_position = new_value
 	SEND_SIGNAL(src, COMSIG_LIVING_SET_BODY_POSITION, new_value, .)
+	if(isliving(pulledby))
+		var/mob/living/puller = pulledby
+		puller.update_pull_movespeed() // update puller pullspeed if pullee position changes
 	if(new_value == LYING_DOWN) // From standing to lying down.
 		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
 			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking

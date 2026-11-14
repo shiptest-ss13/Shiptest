@@ -150,19 +150,23 @@
 			frying_burnt = FALSE
 			fry_loop.stop()
 			return
-	else if(user.pulling && user.a_intent == "grab" && iscarbon(user.pulling) && reagents.total_volume)
-		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!"))
-			return
-		var/mob/living/carbon/C = user.pulling
-		user.visible_message(span_danger("[user] dunks [C]'s face in [src]!"))
-		reagents.expose(C, TOUCH)
-		var/permeability = 1 - C.get_permeability_protection(list(HEAD))
-		C.apply_damage(min(30 * permeability, reagents.total_volume), BURN, BODY_ZONE_HEAD)
-		reagents.remove_any((reagents.total_volume/2))
-		C.Paralyze(60)
-		user.changeNext_move(CLICK_CD_MELEE)
 	return ..()
+
+/obj/machinery/deepfryer/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(frying || user.a_intent != INTENT_GRAB || !iscarbon(pulled) || !reagents.total_volume)
+		return FALSE
+	if(user.grab_state < GRAB_AGGRESSIVE)
+		to_chat(user, span_warning("You need a better grip to do that!"))
+		return TRUE
+	var/mob/living/carbon/dunked_carbon = pulled
+	user.visible_message(span_danger("[user] dunks [dunked_carbon]'s face in [src]!"))
+	reagents.expose(dunked_carbon, TOUCH)
+	var/permeability = 1 - dunked_carbon.get_permeability_protection(list(HEAD))
+	dunked_carbon.apply_damage(min(30 * permeability, reagents.total_volume), BURN, BODY_ZONE_HEAD)
+	reagents.remove_any((reagents.total_volume/2))
+	dunked_carbon.Paralyze(60)
+	user.changeNext_move(CLICK_CD_MELEE)
+	return TRUE
 
 #undef DEEPFRYER_COOKTIME
 #undef DEEPFRYER_BURNTIME
