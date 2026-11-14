@@ -2606,9 +2606,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "wO" = (
-/obj/structure/catwalk/over/plated_catwalk/white{
-	color = "#be1414"
-	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3418,19 +3416,16 @@
 /area/ship/cargo)
 "Dr" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 10
+	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning{
-	dir = 10
+	dir = 8
 	},
-/obj/effect/turf_decal/corner_techfloor_grid{
+/obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/structure/cable/white{
 	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/canteen)
@@ -3856,13 +3851,14 @@
 /area/ship/engineering/atmospherics)
 "HU" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 9
+	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning{
-	dir = 9
+	dir = 8
 	},
-/obj/effect/turf_decal/corner_techfloor_grid,
-/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/canteen)
 "HV" = (
@@ -5296,9 +5292,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Tn" = (
-/obj/structure/catwalk/over/plated_catwalk/white{
-	color = "#be1414"
-	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
