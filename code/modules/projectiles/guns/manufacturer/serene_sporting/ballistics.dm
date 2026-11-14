@@ -93,7 +93,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 3
+	recoil_unwielded = 0.5
 	recoil = 0.5
 
 	slot_offsets = list(
@@ -111,12 +111,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 /obj/item/ammo_box/magazine/m20_auto_elite
 	name = "Model 20 magazine (.44 Roumain)"
-	desc = "A nine-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
+	desc = "A ten-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/a44roum
 	caliber = ".44 Roumain"
-	max_ammo = 9
+	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m20_auto_elite/empty
