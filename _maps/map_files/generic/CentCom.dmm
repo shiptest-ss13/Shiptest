@@ -4943,7 +4943,8 @@
 /area/ctf)
 "ffK" = (
 /obj/machinery/holopad/secure/admin{
-	pixel_x = 16
+	pixel_x = 16;
+	name_override = "Hardliners Council of Captains"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -9254,7 +9255,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel,
 /area/centcom/commandoffices/hardliners)
 "lVC" = (
 /obj/structure/sign/poster/official/obey{
@@ -11976,7 +11977,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel,
 /area/centcom/commandoffices/hardliners)
 "pWP" = (
 /obj/machinery/light/small/directional/north,
