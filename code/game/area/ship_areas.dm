@@ -629,6 +629,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/storage/equip
 	name = "Equipment Room"
 
+/area/ship/roumain
+	name = "Hunter's Glade"
+	icon_state = "Sleep"
+
 /// External Areas ///
 /area/ship/external
 	name = "External"

@@ -10,7 +10,6 @@
 	role_name = "Outpost Salesman"
 	minimum_required = 1
 	var/salesman_outfit = /datum/outfit/job/independent/cargo_tech
-	var/locker = /obj/structure/closet/salesman
 
 /datum/round_event/ghost_role/salesman/spawn_role()
 	var/list/candidates = get_candidates(null, null, null)
@@ -35,42 +34,9 @@
 	salesman_mind.transfer_to(salesman)
 	salesman.equipOutfit(salesman_outfit)
 
-	new locker(spawn_location)
-
 	message_admins("[ADMIN_LOOKUPFLW(salesman)] has been made into a salesman by an event.")
 	log_game("[key_name(salesman)] was spawned as a salesman by an event.")
 	spawned_mobs += salesman
 	return SUCCESSFUL_SPAWN
-
-/obj/structure/closet/salesman
-
-/obj/structure/closet/salesman/PopulateContents()
-	..()
-	var/type = pick("hunters_pride")
-
-	var/list/stuff = list()
-
-	stuff += /obj/item/spacecash/bundle/loadsamoney
-	stuff += /obj/item/spacecash/bundle/loadsamoney
-
-	switch(type)
-		if("hunters_pride")
-			stuff += list(
-				/obj/item/gun/ballistic/rifle/illestren,
-				/obj/item/gun/ballistic/rifle/illestren,
-				/obj/item/gun/ballistic/rifle/scout,
-				/obj/item/gun/ballistic/shotgun/doublebarrel,
-				/obj/item/gun/ballistic/revolver/flint,
-				/obj/item/gun/ballistic/revolver/flint,
-				/obj/item/gun/ballistic/revolver/firebrand,
-				/obj/item/ammo_box/c38,
-				/obj/item/ammo_box/c38,
-				/obj/item/ammo_box/magazine/illestren_a850r,
-				/obj/item/ammo_box/magazine/illestren_a850r,
-				/obj/item/storage/toolbox/ammo/a850r
-			)
-
-	for(var/thing in stuff)
-		new thing(src)
 
 
