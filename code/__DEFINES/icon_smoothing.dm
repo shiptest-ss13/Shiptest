@@ -77,14 +77,15 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CARPET_NWPURPLE S_TURF(29) ///turf/open/floor/carpet/nanoweave/purple
 #define SMOOTH_GROUP_CARPET_NWORANGE S_TURF(30) ///turf/open/floor/carpet/nanoweave/orange
 #define SMOOTH_GROUP_CARPET_NWBEIGE S_TURF(31) ///turf/open/floor/carpet/nanoweave/beige
+#define SMOOTH_GROUP_CARPET_NWGREEN S_TURF(32) ///turf/open/floor/carpet/nanoweave/green
 
-#define SMOOTH_GROUP_CLOSED_TURFS S_TURF(32) ///turf/closed
-#define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(33) ///turf/closed/wall/material
-#define SMOOTH_GROUP_SYNDICATE_WALLS S_TURF(34) ///turf/closed/wall/r_wall/syndicate, turf/closed/indestructible/syndicate
-#define SMOOTH_GROUP_MINERAL_WALLS S_TURF(35) ///turf/closed/mineral, /turf/closed/indestructible
-#define SMOOTH_GROUP_BOSS_WALLS S_TURF(36) ///turf/closed/indestructible/riveted/boss
-#define SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS S_TURF(37)	///turf/closed/wall/mineral/titanium/survival
-#define SMOOTH_GROUP_SNOW_WALLS S_TURF(38) ///turf/closed/mineral/snow
+#define SMOOTH_GROUP_CLOSED_TURFS S_TURF(33) ///turf/closed
+#define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(34) ///turf/closed/wall/material
+#define SMOOTH_GROUP_SYNDICATE_WALLS S_TURF(35) ///turf/closed/wall/r_wall/syndicate, turf/closed/indestructible/syndicate
+#define SMOOTH_GROUP_MINERAL_WALLS S_TURF(36) ///turf/closed/mineral, /turf/closed/indestructible
+#define SMOOTH_GROUP_BOSS_WALLS S_TURF(37) ///turf/closed/indestructible/riveted/boss
+#define SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS S_TURF(38)	///turf/closed/wall/mineral/titanium/survival
+#define SMOOTH_GROUP_SNOW_WALLS S_TURF(39) ///turf/closed/mineral/snow
 
 #define MAX_S_TURF SMOOTH_GROUP_SNOW_WALLS //Always match this value with the one above it.
 

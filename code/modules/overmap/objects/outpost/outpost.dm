@@ -100,6 +100,9 @@
 		market = new()
 		market.name = "[name] market"
 
+	fluctuate_prices()
+	addtimer(CALLBACK(src, PROC_REF(fluctuate_prices)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+
 /datum/overmap/outpost/on_overmaps_loaded()
 	mission_system = current_overmap.next_overmap
 	fill_missions()
@@ -191,7 +194,7 @@
 	return FALSE
 
 /datum/overmap/outpost/proc/fill_missions()
-	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
+	max_missions = min(30 + (SSovermap.controlled_ships.len * 2), 50)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type(get_mission_sector())
 		if(!mission_type)
@@ -207,6 +210,14 @@
 			LAZYREMOVE(missions, target_mission)
 			qdel(target_mission)
 	fill_missions()
+
+/datum/overmap/outpost/proc/fluctuate_prices()
+	for(var/datum/export/exp in GLOB.outpost_exports)
+		if(exp.price_can_fluctuate)
+			exp.true_cost = round(exp.cost * (rand(75, 125) / 100), 1)
+			exp.desc = "[SSmissions.get_industrial_name()] has placed a bulk order for a large quantity of material. \
+			[outpost_administrator] has agreed to fill this order, and will provide payment for any goods delivered to fulfill it, \
+			proportional to the compensation provided by the client."
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
@@ -318,6 +329,9 @@
 	return docks
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
+	//snowflake
+	if(dock_requester.name == "overmap vessel")
+		return FALSE
 	for(var/mob/M as anything in GLOB.player_list)
 		if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
 			M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[name]</u></span><br>[station_time_timestamp("hh:mm")]")
@@ -328,6 +342,7 @@
 	// without creating a fucking ATOM first to give it a rubber fucking stamp.
 	// Using the token for the virtual speaker gives the message an appropriate name.
 	var/atom/movable/virtualspeaker/v_speaker = new(null, token, null)
+	v_speaker.name = "[token.name] Space Traffic Control"
 	var/datum/signal/subspace/vocal/signal = new(
 		dock_requester.shuttle_port.docked, // source: controls the physical space the message originates from. the docking port is in the mapzone so we use it
 		FREQ_COMMON, // frequency: Common
@@ -337,10 +352,31 @@
 		list(SPAN_ROBOT), // message font
 		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
 	)
-	signal.send_to_receivers()
+	signal.data["compression"] = 0
+	signal.transmission_method = TRANSMISSION_RADIO
+	signal.map_zones = list(mapzone)
+	signal.broadcast()
+
+	//repeat on wideband
+	signal = new(
+		dock_requester.shuttle_port.docked,
+		FREQ_WIDEBAND,
+		v_speaker,
+		/datum/language/galactic_common,
+		"[dock_requester.name] confirmed touchdown at [token.name].",
+		list(SPAN_ROBOT),
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
+	)
+	signal.data["compression"] = 0
+	signal.transmission_method = TRANSMISSION_SECTOR
+	signal.map_zones = list(0)  // reaches all Z-levels
+	signal.broadcast()
 	return
 
 /datum/overmap/outpost/post_undocked(datum/overmap/ship/controlled/dock_requester)
+	//snowflake
+	if(dock_requester.name == "overmap vessel")
+		return FALSE
 	// just get an arbitrary hangar dock. for the message source. at this point,
 	// we don't have enough information to know which hangar the ship was docked to.
 	// however, so long as the speaker is an atom on a virtual_level in the right mapzone, we should be good.
@@ -354,6 +390,7 @@
 	// Prepare and send a radio message about the undock over Common, in Common.
 	// See outpost post_docked() for some notes on what we're doing here.
 	var/atom/movable/virtualspeaker/v_speaker = new(null, token, null)
+	v_speaker.name = "[token.name] Space Traffic Control"
 	var/datum/signal/subspace/vocal/signal = new(
 		message_src,
 		FREQ_COMMON,
@@ -363,7 +400,26 @@
 		list(SPAN_ROBOT),
 		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
 	)
-	signal.send_to_receivers()
+	signal.transmission_method = TRANSMISSION_SUBSPACE
+	signal.data["compression"] = 0
+	signal.transmission_method = TRANSMISSION_RADIO
+	signal.map_zones = list(mapzone)
+	signal.broadcast()
+
+	//repeat on wideband
+	signal = new(
+		dock_requester.shuttle_port.docked,
+		FREQ_WIDEBAND,
+		v_speaker,
+		/datum/language/galactic_common,
+		"[dock_requester.name] has departed from [token.name].",
+		list(SPAN_ROBOT),
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
+	)
+	signal.data["compression"] = 0
+	signal.transmission_method = TRANSMISSION_SECTOR
+	signal.map_zones = list(0)  // reaches all Z-levels
+	signal.broadcast()
 
 /datum/overmap/outpost/proc/get_hangar_template(obj/docking_port/mobile/request_port)
 	RETURN_TYPE(/datum/map_template/outpost)

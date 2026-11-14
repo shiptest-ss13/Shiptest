@@ -76,9 +76,8 @@
 		/obj/item/storage/backpack = 20,
 		/obj/item/storage/backpack/satchel = 20,
 		/obj/item/storage/backpack/messenger = 20,
-		/obj/item/melee/baton/cattleprod/loaded = 5,
 		/obj/item/deployable_turret_folded = 4,
-		/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended = 3,
+		/obj/item/gun/ballistic/automatic/hmg/ml3/extended = 3,
 		))
 
 	if(prob(90))
@@ -107,9 +106,9 @@
 			for(var/i in 1 to loops)
 				var/ammotype = pick(list(
 					/obj/item/storage/box/ammo/a8_50r,
-					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a44roum,
 					/obj/item/storage/box/ammo/a357,
-					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a44roum,
 					/obj/item/storage/box/ammo/a4570,
 					/obj/item/stock_parts/cell/gun/mini))
 				if(istype(back, /obj/item/storage/backpack))
@@ -158,11 +157,11 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen)
 
-/datum/outfit/job/frontiersmen/ert/skm
-	name = "ERT - Frontiersman Grunt (SKM-24 AR)"
+/datum/outfit/job/frontiersmen/ert/fa2
+	name = "ERT - Frontiersman Grunt (FA2)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/skm
-	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo
+	suit_store = /obj/item/gun/ballistic/automatic/assault/fa2
+	belt = /obj/item/storage/belt/security/military/frontiersmen/fa2_ammo
 
 /datum/outfit/job/frontiersmen/ert/mauler_mp
 	name = "ERT - Frontiersman Grunt (Mauler MP)"
@@ -279,17 +278,17 @@
 
 
 /datum/outfit/job/frontiersmen/ert/sentry
-	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
+	name = "ERT - Frontiersman Sentry (ML3)"
 
 	head = /obj/item/clothing/head/helmet/frontier
 	mask = /obj/item/clothing/mask/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
-	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
+	suit_store = /obj/item/gun/ballistic/automatic/hmg/ml3/drum_mag
 	gloves = /obj/item/clothing/gloves/combat
 
 	belt = /obj/item/gun/ballistic/revolver/rhino
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/skm_762_40/drum=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
+	backpack_contents = list(/obj/item/ammo_box/magazine/fa2_762_40/drum=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
 
 /datum/outfit/job/frontiersmen/ert/sentry/shredder
 	name = "ERT - Frontiersman Sentry (Shredder LMG)"
@@ -298,3 +297,15 @@
 	l_hand = /obj/item/gun/ballistic/automatic/hmg/shredder // this doesnt even fit on the suit storage slot
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/m12_shredder=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
+
+/datum/outfit/job/frontiersmen/ert/hullpiercer
+	name = "ERT - Frontiersman Hullpiercer"
+
+	head = /obj/item/clothing/head/helmet/frontier
+	mask = /obj/item/clothing/mask/balaclava
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	suit_store = /obj/item/melee/axe/frontiersmen_axe
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/security/military/frontiersmen/spitter_with_ammo
+
+	backpack_contents = list(/obj/item/reagent_containers/hypospray/medipen/mammoth=3,/obj/item/grenade/smokebomb=1,/obj/item/radio=1)

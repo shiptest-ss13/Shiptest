@@ -162,6 +162,14 @@
 	R.add_fingerprint(user)
 	qdel(src)
 
+/obj/structure/sign/poster/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(hitting_projectile.damage * hitting_projectile.demolition_mod))
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
+		var/obj/structure/sign/poster/ripped/R = new(loc)
+		R.pixel_y = pixel_y
+		R.pixel_x = pixel_x
+
 /obj/structure/sign/poster/wrench_act(mob/living/user, obj/item/wrench/I)
 	return
 
@@ -1255,6 +1263,21 @@
 	name = "In It Together"
 	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
 	icon_state = "poster-pgf_together"
+
+/obj/structure/sign/poster/pgf/raider
+	name = "PGF Marine Raiders"
+	desc = "This poster depicts a PGF Marine Raider stalking a city skyline at night. \"Trained for infiltration, extraction, and all other matter of high risk mission, the PGF Marine Raiders are the best of the best. Do you have what it takes?\""
+	icon_state = "poster-pgf_raider"
+
+/obj/structure/sign/poster/pgf/juggernaut
+	name = "The Tool For the Job"
+	desc = "This poster depicts a PGF Marine in heavy armor looking out over a foggy mountaintop. \"Scalpel. Tweezers. Sledghammer. No matter the situation, the PGF Marines have the right tool for the job. Ready to put them to work?\""
+	icon_state = "poster-pgf_juggernaut"
+
+/obj/structure/sign/poster/pgf/dreadnaut
+	name = "See it for Yourself"
+	desc = "This poster depicts a PGF Sailor on an EVA mission in front of a cloudy nebula. \"The galaxy is dangerous, but in the PGFN, so are we. If we haven't been there? We're going. Ready to see it for yourself?\""
+	icon_state = "poster-pgf_dreadnaut"
 
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1

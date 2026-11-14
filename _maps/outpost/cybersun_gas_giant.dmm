@@ -1354,9 +1354,6 @@
 /area/outpost/exterior/csoutpost)
 "dr" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost{
-	low_priority = 1
-	},
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
@@ -1462,7 +1459,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost,
+/obj/machinery/fax/admin/outpost/thousandeyed,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/operations)
 "dD" = (
@@ -5225,6 +5222,17 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/glass/reinforced,
 /area/outpost/crew/bar/cybersun_outpost)
+"mk" = (
+/obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw,
+/obj/machinery/computer/processing_unit_console/directional/east{
+	dx = 7;
+	dy = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/outpost/cargo/smeltery)
 "ml" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 6
@@ -5475,10 +5483,10 @@
 	dir = 6
 	},
 /obj/structure/closet/secure_closet/armorycage,
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m10_cobra,
+/obj/item/ammo_box/magazine/m10_cobra,
+/obj/item/ammo_box/magazine/m10_cobra,
+/obj/item/ammo_box/magazine/m10_cobra,
 /turf/open/floor/plasteel/dark,
 /area/outpost/medical)
 "mO" = (
@@ -10213,7 +10221,6 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/outpost/exterior/csoutpost)
 "yJ" = (
-/obj/machinery/vending/custom,
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 5
 	},
@@ -10221,6 +10228,7 @@
 /obj/structure/sign/poster/clip/bard{
 	pixel_x = -29
 	},
+/obj/machinery/vending/lottery,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/vacant_rooms/shop)
 "yK" = (
@@ -10449,6 +10457,10 @@
 /obj/effect/turf_decal/trimline/opaque/orange/arrow_cw{
 	dir = 1
 	},
+/obj/machinery/computer/processing_unit_console/directional/east{
+	dx = 7;
+	dy = -1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
 "zq" = (
@@ -10604,10 +10616,6 @@
 /obj/machinery/conveyor/auto{
 	id = "outpost2";
 	dir = 8
-	},
-/obj/machinery/computer/processing_unit_console/directional/east{
-	pixel_x = 17;
-	pixel_y = 32
 	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
@@ -12032,10 +12040,10 @@
 /turf/open/floor/plating,
 /area/outpost/engineering)
 "Dj" = (
-/obj/machinery/vending/custom,
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 4
 	},
+/obj/machinery/vending/disposable_guns,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/vacant_rooms/shop)
 "Dk" = (
@@ -13444,10 +13452,6 @@
 	id = "outpost1";
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/east{
-	pixel_x = 17;
-	pixel_y = -32
-	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
 "GA" = (
@@ -13517,7 +13521,7 @@
 	id = "outpost3";
 	dir = 4
 	},
-/obj/effect/spawner/random/trash/ghetto_containers,
+/obj/effect/spawner/random/trash/misc_containers,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/recycling)
 "GL" = (
@@ -13950,7 +13954,9 @@
 /area/outpost/security/checkpoint)
 "HS" = (
 /obj/machinery/computer/processing_unit_console/directional/east{
-	name = "micro-furnace controller"
+	name = "micro-furnace controller";
+	dx = -1;
+	dy = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
@@ -17650,11 +17656,11 @@
 "Qv" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ammo/c45{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_y = 7;
 	pixel_x = -3
 	},
-/obj/item/storage/box/ammo/c45{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_x = 3
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -19438,7 +19444,7 @@
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
-/obj/effect/spawner/random/trash/ghetto_containers,
+/obj/effect/spawner/random/trash/misc_containers,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/recycling)
 "UB" = (
@@ -21107,11 +21113,11 @@
 	pixel_y = -5;
 	pixel_x = 3
 	},
-/obj/item/clothing/suit/jacket/letterman_syndie{
+/obj/item/clothing/suit/toggle/letterman_red{
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/clothing/suit/jacket/letterman_syndie{
+/obj/item/clothing/suit/toggle/letterman_red{
 	pixel_x = 4;
 	pixel_y = 5
 	},
@@ -34724,7 +34730,7 @@ nr
 sf
 he
 Gz
-wo
+mk
 xC
 sF
 xI

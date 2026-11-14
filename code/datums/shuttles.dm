@@ -432,7 +432,7 @@
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
 	name = "Runner-class Ambulance"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -442,7 +442,7 @@
 	name = "Nail-class Boarding Vessel"
 	faction = /datum/faction/pgf
 	token_icon_state = "ship_tiny_generic"
-	prefix = "PGF"
+	prefix = "PGFMC"
 
 /datum/map_template/shuttle/subshuttles/tanto
 	file_name = "independent_tanto"
@@ -460,6 +460,18 @@
 	name = "Haymaker-class Command Post"
 	prefix = "SV"
 
+/datum/map_template/shuttle/subshuttles/whollop
+	file_name = "frontiersmen_whollop"
+	name = "Whollop-class Smuggling Pod"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/whollop_populated
+	file_name = "frontiersmen_whollop_populated"
+	name = "Whollop-class Smuggling Pod (Populated)"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "warra_skink"
 	name = "Skink-class Cargo Runner"
@@ -471,7 +483,7 @@
 /datum/map_template/shuttle/subshuttles/nimbus
 	file_name = "cybersun_nimbus"
 	name = "Nimbus-class Executive Courier"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	prefix = "CSSV"
 	manufacturer = "ISF Spacecraft"
 	name_categories = list("NATURAL_AGGRESSIVE")
@@ -479,7 +491,7 @@
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 
@@ -513,13 +525,26 @@
 /datum/map_template/shuttle/subshuttles/karst
 	file_name = "ngr_karst"
 	name = "Karst-class Drop Pod"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
+	token_icon_state = "ship_tiny_generic"
+	prefix = "NGRV"
+
+/datum/map_template/shuttle/subshuttles/gryke
+	file_name = "ngr_gryke"
+	name = "Gryke-class Assault Lander"
+	faction = /datum/faction/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
 
 /datum/map_template/shuttle/subshuttles/june
 	file_name = "independent_june"
 	name = "June-class Dropship"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/starchaser
+	file_name = "independent_starchaser"
+	name = "Starchaser-class Delivery Shuttle"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 

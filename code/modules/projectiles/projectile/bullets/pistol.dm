@@ -106,36 +106,3 @@
 	armour_penetration = -30
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
-
-// .45 (Candor, C20r)
-
-/obj/projectile/bullet/c45
-	name = ".45 bullet"
-	damage = 25
-	armour_penetration = -20
-	speed = BULLET_SPEED_HANDGUN
-	bullet_identifier = "small bullet"
-
-/obj/projectile/bullet/c45/surplus
-	name = ".45 surplus bullet"
-	speed_mod = BULLET_SPEED_SURPLUS_MOD
-
-/obj/projectile/bullet/c45/ap
-	name = ".45 armor-piercing bullet"
-	damage = 22
-	armour_penetration = 10
-	speed_mod = BULLET_SPEED_AP_MOD
-
-/obj/projectile/bullet/c45/hp
-	name = ".45 hollow point bullet"
-	damage = 37
-	armour_penetration = -30
-	speed_mod = BULLET_SPEED_HP_MOD
-
-/obj/projectile/bullet/c45/rubber
-	name = ".45 rubber bullet"
-	damage = 7
-	stamina = 37
-	armour_penetration = -30
-	speed_mod = BULLET_SPEED_RUBBER_MOD
-	bullet_identifier = "small rubber bullet"

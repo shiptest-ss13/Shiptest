@@ -6,8 +6,8 @@
 	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_USE_PROSTHETIC,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT,)
 	inherent_biotypes = MOB_ROBOTIC | MOB_HUMANOID
-	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
-	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain")
+	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_brain")
+	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_brain" = "Posibrain")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
@@ -44,6 +44,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
+		BODY_ZONE_TAIL = null,
 	)
 
 	// This will be set manually based on IPC chassis selection.
@@ -241,9 +242,9 @@
 			if(A.crystal_charge == 0)
 				to_chat(H, span_warning("[A] is completely drained!"))
 				break
-			siphon_amt = A.crystal_charge <= (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+			siphon_amt = A.crystal_charge <= (8 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (8 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 			A.adjust_charge(-1 * siphon_amt)
-			H.nutrition += (siphon_amt)
+			H.nutrition += (siphon_amt/4)
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
 				to_chat(H, span_notice("You are now fully charged."))
 				break
@@ -251,11 +252,11 @@
 	H.visible_message(span_notice("[H] unplugs from the [target]."), span_notice("You unplug from the [target]."))
 	return
 
-/datum/species/ipc/spec_life(mob/living/carbon/human/H)
+/datum/species/ipc/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	. = ..()
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
 		H.adjustFireLoss(2, ignore_reduction = INFINITY)
-		if(prob(5))
+		if(SPT_PROB(2.5, seconds_per_tick))
 			to_chat(H, span_warning("Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent."))
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
 

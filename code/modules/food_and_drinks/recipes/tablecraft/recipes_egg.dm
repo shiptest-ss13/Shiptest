@@ -9,6 +9,16 @@
 	)
 	result = /obj/item/food/omelette
 	subcategory = CAT_EGG
+/datum/crafting_recipe/food/scotchegg
+	name = "Scotch egg"
+	reqs = list(
+		/datum/reagent/consumable/sodiumchloride = 1,
+		/datum/reagent/consumable/blackpepper = 1,
+		/obj/item/food/boiledegg = 1,
+		/obj/item/food/meatball = 1
+	)
+	result = /obj/item/food/scotchegg
+	subcategory = CAT_EGG
 
 /datum/crafting_recipe/food/chocolateegg
 	name = "Chocolate egg"
@@ -58,7 +68,7 @@
 		/obj/item/food/grown/cabbage = 1,
 	)
 	result = /obj/item/food/eggwrap
-	category = CAT_EGG
+	subcategory = CAT_EGG
 
 /datum/crafting_recipe/food/chawanmushi
 	name = "Chawanmushi"
@@ -69,4 +79,4 @@
 		/obj/item/food/grown/mushroom/chanterelle = 1
 	)
 	result = /obj/item/food/chawanmushi
-	category = CAT_EGG
+	subcategory = CAT_EGG

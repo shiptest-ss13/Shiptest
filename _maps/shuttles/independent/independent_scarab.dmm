@@ -1446,11 +1446,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "rC" = (
-/obj/machinery/computer/processing_unit_console/directional/south{
-	machinedir = 6;
-	output_dir = 1
-	},
 /obj/effect/turf_decal/corner_techfloor_grid,
+/obj/machinery/computer/processing_unit_console/directional/south{
+	dx = 1;
+	dy = -1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "rL" = (
@@ -2735,7 +2735,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/item/storage/guncase/pistol/detective,
+/obj/item/storage/guncase/pistol/flint,
 /obj/item/storage/backpack/industrial,
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/clothing/shoes/workboots{
@@ -2867,6 +2867,10 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/emergency_panel/dark{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "IL" = (
@@ -3622,7 +3626,7 @@
 	name = "\proper captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/storage/guncase/pistol/detective,
+/obj/item/storage/guncase/pistol/flint,
 /obj/item/storage/backpack/captain,
 /obj/item/storage/backpack/satchel/cap,
 /obj/item/clothing/under/rank/command/captain,
@@ -4037,10 +4041,10 @@
 	pixel_y = 2
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/ammo_box/magazine/m45_cobra{
+/obj/item/ammo_box/magazine/m10_cobra{
 	pixel_y = 4
 	},
-/obj/item/ammo_box/magazine/m45_cobra{
+/obj/item/ammo_box/magazine/m10_cobra{
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,

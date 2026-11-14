@@ -9,15 +9,16 @@
 	density = FALSE
 	opacity = FALSE
 	var/deconstructible = TRUE
+	var/deconstructible_loot = /obj/item/stack/sheet/metal
 
 /obj/structure/fluff/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_WRENCH && deconstructible)
 		user.visible_message(span_notice("[user] starts disassembling [src]..."), span_notice("You start disassembling [src]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 50))
-			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into scrap metal."))
+			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into spare materials."))
 			playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
-			new/obj/item/stack/sheet/metal(drop_location())
+			new deconstructible_loot(drop_location())
 			qdel(src)
 		return
 	..()
@@ -260,7 +261,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_HEDGE_FLUFF)
 	density = TRUE
 	anchored = TRUE
-	deconstructible = FALSE
+	deconstructible = TRUE
+	deconstructible_loot = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/fluff/hedge/opaque //useful for mazes and such
 	opacity = TRUE
@@ -280,3 +282,24 @@
 	desc = "An old, bent ladder - now practically unusable."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "ladder00"
+
+/obj/structure/fluff/fish
+	name = "display fish"
+	desc = "A replica of a solarian seabass that has been mounted onto a board for display. It includes a button labeled 'press me'. These fish became somewhat prized collectables after their manufacturer quickly discontinued them for their controversial remarks."
+	icon = 'icons/obj/fluff.dmi'
+	icon_state = "billybass"
+	deconstructible = FALSE
+	var/funnylines = "Keep Walking, Blub!;Are you being for reel?;You're not getting off the hook for this one!;Got any fino?;They call 'em minutemen because that's how long they last!;You ever feel like there's something... fishy?;Hook, Line, and Sinker!;Cyber Son, or Makosso Daughter?;Get me off this plaque and I'll kick your ass!;With out a shadow of trout.;What do you call an IPC in the ocean with no arms or legs? B-0b!;"
+	var/list/line_list = list()
+
+/obj/structure/fluff/fish/Initialize(mapload)
+	. = ..()
+	line_list = splittext(funnylines, ";")
+
+/obj/structure/fluff/fish/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+
+	var/line = pick(line_list)
+	say(line)

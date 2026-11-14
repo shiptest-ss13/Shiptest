@@ -21,9 +21,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aD" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -390,8 +388,7 @@
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard5"
@@ -540,9 +537,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "eB" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1359,6 +1354,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/blue{
 	dir = 1
 	},
+/obj/machinery/emergency_panel/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "ml" = (
@@ -1433,9 +1429,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "mN" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1636,6 +1630,9 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
+/obj/machinery/jukebox/boombox{
+	pixel_y = -3
+	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
@@ -1745,9 +1742,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/office/lobby)
 "oS" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3347,7 +3342,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yb" = (
-/obj/machinery/smartfridge/chemistry,
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3359,6 +3353,7 @@
 	pixel_y = 32;
 	pixel_x = -2
 	},
+/obj/machinery/smartfridge/chemistry/preloaded/jugs,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "yf" = (
@@ -3520,7 +3515,8 @@
 /obj/item/gps{
 	pixel_x = -14;
 	pixel_y = 3;
-	gpstag = "!RESCUE-SHIP"
+	gpstag = "!RESCUE-SHIP";
+	gps_active = 1
 	},
 /obj/item/binoculars{
 	pixel_y = 5;
@@ -5549,64 +5545,6 @@
 /obj/item/storage/box/beakers{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/glass/chem_jug/fluorine{
-	pixel_x = 7;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/copper{
-	pixel_x = 4;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/chlorine{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/carbon{
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/bromine{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/aluminium{
-	pixel_x = -8;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/phosphorus{
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/glass/chem_jug/oxygen{
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/glass/chem_jug/nitrogen{
-	pixel_x = 1
-	},
-/obj/item/reagent_containers/glass/chem_jug/mercury{
-	pixel_x = -2
-	},
-/obj/item/reagent_containers/glass/chem_jug/lithium{
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/glass/chem_jug/iodine{
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/glass/chem_jug/hydrogen{
-	pixel_y = -5;
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/glass/chem_jug/sulfur{
-	pixel_y = -5;
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/glass/chem_jug/sodium{
-	pixel_y = -5;
-	pixel_x = 1
-	},
-/obj/item/reagent_containers/glass/chem_jug/potassium{
-	pixel_y = -5;
-	pixel_x = -2
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "Pk" = (
@@ -6548,7 +6486,7 @@
 	layer = 2.030
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Xh" = (

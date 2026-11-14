@@ -56,6 +56,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 	slowdown = 0 //one day...
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "marine_light",
 		"Desert" = "marine_light_desert",
@@ -112,7 +113,7 @@
 	item_state = "duster_sec"
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
@@ -201,7 +202,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	icon = 'icons/obj/clothing/suits/armor.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"

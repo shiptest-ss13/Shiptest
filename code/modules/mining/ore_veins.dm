@@ -186,7 +186,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		drop_location = pick(adjacent_turfs)
 	for(var/vein_content_count in 1 to vein_class)
 		var/picked = pick(vein_contents)
-		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
+		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier, 1))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
@@ -534,9 +534,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/iron = 80,
+		/obj/item/stack/ore/iron = 60,
 		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 4,
+		/obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/silver = 10,
 		)
 
 /obj/structure/vein/rockplanet/classtwo
@@ -550,9 +551,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/iron = 60,
-		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 4,
+		/obj/item/stack/ore/iron = 50,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/silver = 15,
 		)
 
 	max_mobs = 3
@@ -572,12 +574,19 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/iron = 30,
-		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 6,
+		/obj/item/stack/ore/uranium = 15,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/bluespace_crystal = 10,
 		)
 
 	max_mobs = 3
 	spawn_time = 8 SECONDS
+
+/obj/structure/vein/rockplanet/classthree/rare
+	ore_list = list(
+		/obj/item/stack/ore/uranium = 10,
+		)
 
 /obj/structure/vein/rockplanet/classfour
 	mining_charges = 30
@@ -592,9 +601,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/iron = 20,
-		/obj/item/stack/ore/uranium = 5,
-		/obj/item/stack/ore/gold = 3,
+		/obj/item/stack/ore/iron = 25,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/gold = 15,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/bluespace_crystal = 15,
 		)
 
 //moons, have a dupe of asteroid but less of an emphasis on  goliaths

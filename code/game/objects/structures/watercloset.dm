@@ -339,18 +339,6 @@
 			to_chat(user, span_notice("\The [RG] is full."))
 			return FALSE
 
-	if(istype(O, /obj/item/melee/baton))
-		var/obj/item/melee/baton/B = O
-		if(B.cell && B.cell.charge && B.turned_on)
-			flick("baton_active", src)
-			user.Paralyze(B.stun_time)
-			user.stuttering = B.stun_time/20
-			B.deductcharge(B.cell_hit_cost)
-			user.visible_message(span_warning("[user] shocks [user.p_them()]self while attempting to wash the active [B.name]!"), \
-								span_userdanger("You unwisely attempt to wash [B] while it's still on."))
-			playsound(src, B.stun_sound, 50, TRUE)
-			return
-
 	if(istype(O, /obj/item/mop))
 		O.reagents.add_reagent(dispensedreagent, 5)
 		to_chat(user, span_notice("You wet [O] in [src]."))
@@ -614,3 +602,46 @@
 /obj/structure/curtain/cloth/fancy
 	icon_type = "cur_fancy"
 	icon_state = "cur_fancy-open"
+
+/obj/structure/curtain/thin
+	name = "thin curtains"
+	layer = WALL_OBJ_LAYER
+	desc = "Thin curtains used to separate debris and obfuscate vision while allowing easy passage."
+	icon_type = "curtain_thin"
+	icon_state = "curtain_thin-open"
+
+/obj/structure/curtain/thin/Initialize()
+	. = ..()
+	if(dir == 1)
+		layer = SIGN_LAYER
+
+/obj/structure/curtain/thin/toggle()
+	open = !open
+	if(open)
+		density = FALSE
+		set_opacity(FALSE)
+	else
+		if(opaque_closed)
+			set_opacity(TRUE)
+
+	if(dir == 1)
+		layer = SIGN_LAYER
+
+	update_appearance()
+
+/obj/structure/curtain/thin/cloth
+	color = null
+	alpha = 255
+	opaque_closed = TRUE
+
+/obj/structure/curtain/thin/cloth/grey
+	color = "#696969"
+
+/obj/structure/curtain/thin/plastic
+	name = "plastic strip curtains"
+	desc = "Plastic strip curtains used to separate debris, muffle noise, and control temperature while allowing easy passage."
+	color = null
+	alpha = 255
+	icon = 'icons/obj/structures/plasticflaps.dmi'
+	icon_type = "plastic_thin"
+	icon_state = "plastic_thin-open"

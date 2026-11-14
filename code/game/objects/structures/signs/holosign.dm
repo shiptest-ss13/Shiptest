@@ -129,6 +129,10 @@
 	. += span_notice("\nIt reads: \"[desc_add]\"")
 
 
+/obj/machinery/holosign/atom_break(damage_flag)
+	. = ..()
+	do_sparks(8, FALSE, src)
+
 /obj/machinery/holosign/makossowarra
 	name = "holosign - Buy Makosso"
 	desc_add = "Makosso-Warra. Selling ships, medical supplies, and technology since 342 FSC. Shop now."
@@ -362,6 +366,13 @@
 	desc_add = "It's blank. It seems like it's changing adverts at the moment."
 	icon_state = "switchadvert"
 	light_color = "#000000"
+	never_random = TRUE
+
+/obj/machinery/holosign/evacuation
+	name = "holosign - Emergency Evacuation"
+	desc_add = "An emergency evacuation is currently underway. Please proceed in an orderly fashion to the nearest evacuation point and follow the orders of emergency responders if present."
+	icon_state = "alert"
+	light_color = LIGHT_COLOR_INTENSE_RED
 	never_random = TRUE
 
 #undef POSTER_SUBTYPES

@@ -41,9 +41,15 @@
 
 NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
+/obj/item/gun/ballistic/automatic/pistol/challenger/indie
+	name = "Advantage CA9 Challenger Personal"
+	desc = "The civilian import version of the challenger. A popular first pick for gun owners due to its low price point, forgiving recoil, and generous mag capacity for its class."
+	icon_state = "challengerp"
+	item_state = "warra_civ"
+
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
-	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
+	desc = "A large machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
 	icon_state = "champion"
 	item_state = "champion"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -85,7 +91,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.08 SECONDS
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
@@ -154,6 +160,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "podium_inteq"
 	item_state = "inteq_generic"
+	manufacturer = MANUFACTURER_INTEQ
 
 NO_MAG_GUN_HELPER(automatic/pistol/podium/inteq)
 
@@ -249,13 +256,15 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
 
 	spread = 0
-	spread_unwielded = 12
+	spread_unwielded = 0
 	recoil = 1
 	recoil_unwielded = 3
 
 /obj/item/gun/ballistic/revolver/rhino/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+EMPTY_GUN_HELPER(revolver/rhino)
 
 /obj/item/gun/ballistic/automatic/smg/expedition
 	name = "\improper Advantage SGL9 Expedition"
@@ -266,8 +275,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	icon_state = "expedition"
 	item_state = "expedition"
+	manufacturer = MANUFACTURER_VIGILITAS
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
-	spread = 3
+	spread = 4
+	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_expedition,
 	) //you guys remember when the autorifle was chambered in 9mm
@@ -320,6 +331,16 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	desc = "A 30-round magazine for the Expedition submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
+/obj/item/gun/ballistic/automatic/smg/expedition/indie
+	name = "\improper Advantage SGP9 Expedition Defender"
+	desc = "The civilian import of the Expedition, marketed to private police forces and well-off bounty hunters. Retains most of its novel features aside from the rail mount."
+	icon_state = "civpedition"
+	item_state = "civpedition"
+	manufacturer = MANUFACTURER_VIGILITAS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
+
 // /obj/item/gun/ballistic/automatic/smg/resolution
 /obj/item/gun/ballistic/automatic/smg/resolution
 	name = "\improper Advantage PD46 Resolution"
@@ -340,7 +361,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
 	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_WARRA_OLD
+	manufacturer = MANUFACTURER_VIGILITAS
 	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
 
 	fire_delay = 0.13 SECONDS
@@ -402,12 +423,17 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "resolution_inteq"
 	item_state = "resolution_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/resolution_inteq)
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
-		/obj/item/attachment/foldable_stock/resolution_inteq
+		/obj/item/attachment/foldable_stock/resolution_inteq,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/ammo_counter
 	)
 
 NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
@@ -433,7 +459,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	name = "Advantage AST12 Negotiator"
-	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
+	desc = "An automatic shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
 
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
@@ -442,7 +468,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 	icon_state = "negotiator"
 	item_state = "negotiator"
-
+	manufacturer = MANUFACTURER_VIGILITAS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube/rubbershot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/tube,

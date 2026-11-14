@@ -91,10 +91,24 @@
 
 //gezena
 /datum/supply_pack/armor/pgf_marine_armor
-	name = "Marine Composite Armor Crate"
-	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
+	name = "Marine Combat Armor Crate"
+	desc = "One set of standard issue AR-98 body armor, protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,
+					/obj/item/clothing/head/helmet/gezena,
+					/obj/item/clothing/glasses/sunglasses/pgf,
+					/obj/item/clothing/mask/breath/pgfmask)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/pgf_marine_interceptor_armor
+	name = "Marine Interceptor Armor Crate"
+	desc = "One set of full coverage AR-98 body armor, highly protective and at the expense of additional weight. Comes with a matching L-98 respirator."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/gezena/marine/interceptor,
 					/obj/item/clothing/head/helmet/gezena,
 					/obj/item/clothing/glasses/sunglasses/pgf,
 					/obj/item/clothing/mask/breath/pgfmask)
@@ -139,7 +153,7 @@
 					/obj/item/clothing/head/helmet/hardliners)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -151,7 +165,7 @@
 					/obj/item/clothing/head/helmet/hardliners/swat)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -164,7 +178,7 @@
 					/obj/item/clothing/head/helmet/ngr)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -218,7 +232,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/armor/bulletproof_cybersun
 	name = "Cybersun Bulletproof Armor Crate"
@@ -231,7 +245,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/armor/marine_cybersun
 	name = "Cybersun Troubleshooter Armor Crate"
@@ -243,7 +257,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/armor/medium_marine_cybersun
 	name = "Heavy Troubleshooter Armor Crate"
@@ -255,7 +269,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 //cybersun trauma team
 /datum/supply_pack/armor/basic_cybersun/trauma_team

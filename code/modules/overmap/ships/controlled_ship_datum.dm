@@ -40,7 +40,7 @@
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
 	/// The maximum number of currently active missions that a ship may take on.
-	var/max_missions = 3
+	var/max_missions = 4
 
 	/// Manifest list of people on the ship. Indexed by mob REAL NAME. value is JOB INSTANCE
 	var/list/manifest = list()
@@ -123,7 +123,7 @@
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms)
+/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms, _ship_name)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
@@ -154,7 +154,10 @@
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
 #else
-	Rename(pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories)), TRUE)
+	if(_ship_name)
+		Rename(_ship_name, TRUE)
+	else
+		Rename(pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories)), TRUE)
 #endif
 	SSovermap.controlled_ships += src
 	current_overmap.controlled_ships += src
@@ -336,6 +339,10 @@
 
 /datum/overmap/ship/controlled/proc/is_join_option()
 	return (length(shuttle_port.spawn_points) >= 1) && (length(job_slots) >= 1) && join_mode != SHIP_JOIN_MODE_CLOSED
+
+// check if its still taking applications
+/datum/overmap/ship/controlled/proc/has_applications_open()
+	return is_join_option() && join_mode == SHIP_JOIN_MODE_APPLY
 
 /datum/overmap/ship/controlled/proc/get_application(mob/applicant)
 	var/index_key = applicant.client?.holder?.fakekey ? applicant.client.holder.fakekey : applicant.key
@@ -627,4 +634,3 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
-

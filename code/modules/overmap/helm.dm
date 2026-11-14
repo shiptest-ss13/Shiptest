@@ -72,6 +72,8 @@
 		jump_destination = new_system
 		jump_coords = newpos
 	else
+		jump_destination = null
+		jump_coords = null
 		priority_announce("Bluespace jump calibration initialized. Exiting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 
@@ -91,9 +93,13 @@
 /obj/machinery/computer/helm/proc/cancel_jump()
 	if(!calibrating)
 		return
+	if(jump_state == JUMP_STATE_FINALIZED)
+		say("Bluespace Pylon already firing. Unable to abort jump.")
+		return
 	say("Exiting jump sequence.")
 	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
+	jump_destination = null
 	jump_coords = null
 	deltimer(jump_timer)
 
@@ -115,15 +121,19 @@
 	if(!jump_destination)
 		qdel(current_ship)
 		return
-	var/quote = pick(jump_destination.entry_quotes)
-	for(var/mob/looker as anything in GLOB.player_list)
-		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
-			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
 
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
 		current_ship.move_overmaps(jump_destination)
+
+	var/quote
+	if(jump_destination.entry_quotes.len)
+		quote = pick(jump_destination.entry_quotes)
+	for(var/mob/looker as anything in GLOB.player_list)
+		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
+			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
+
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
@@ -132,7 +142,7 @@
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
 		return
-	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name] [jump_destination.faction ? "([jump_destination.faction.name]-controlled)" : ""]</u></span><br>[station_time_timestamp("hh:mm")]<br><i>\"[quote]\"</i>")
+	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name] [jump_destination.faction ? "([jump_destination.faction.name]-controlled)" : ""]</u></span><br>[station_time_timestamp("hh:mm")][quote ? "<br><i>\"[quote]\"</i>" : ""]")
 	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
 	SEND_SOUND(target, sound('sound/effects/overmap/jump.ogg', volume = 50))
 
@@ -186,18 +196,17 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-		// Register map objects
-		if(current_ship)
-			user.client.register_map_obj(current_ship.token.cam_screen)
-			user.client.register_map_obj(current_ship.token.cam_plane_master)
-			user.client.register_map_obj(current_ship.token.cam_background)
-			if(current_ship.cloaked_image)
-				user.client.images += current_ship.cloaked_image
-			current_ship.token.update_screen()
 
 		// Open UI
 		ui = new(user, src, "HelmConsole", name)
 		ui.open()
+
+		// Register map objects
+		if(current_ship)
+			current_ship.token.cam_screen.display_to(user, ui.window)
+			if(current_ship.cloaked_image)
+				user.client.images += current_ship.cloaked_image
+			current_ship.token.update_screen()
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
@@ -314,7 +323,7 @@
 		prefixed = current_ship.name,
 		class = current_ship.source_template.name,
 		mass = current_ship.shuttle_port.turf_count,
-		sensor_range = 4
+		sensor_range = current_ship.sensor_range
 	)
 	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
@@ -377,6 +386,10 @@
 				say(feedback_text)
 			return
 
+	if(action == "bluespace_jump" && calibrating)
+		cancel_jump()
+		return
+
 	if(jump_state != JUMP_STATE_OFF)
 		say("Bluespace Jump in progress. Controls suspended.")
 		return
@@ -415,37 +428,31 @@
 				current_ship.change_heading(BURN_NONE)
 				return
 			if("bluespace_jump")
-				if(calibrating)
-					cancel_jump()
-					return
-				else
-					if(length(SSovermap.tracked_star_systems) >= 1)
-						var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
-						for(var/datum/overmap_star_system/current_system as anything in choices)
-							if(!current_system.can_jump_to)
-								LAZYREMOVE(choices, current_system)
+				if(length(SSovermap.tracked_star_systems) >= 1)
+					var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+					for(var/datum/overmap_star_system/current_system as anything in choices)
+						if(!current_system.can_jump_to)
+							LAZYREMOVE(choices, current_system)
 
-						LAZYADD(choices, "Out of the Frontier")
-						LAZYREMOVE(choices, current_ship.current_overmap)
-						var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)
-						if(selected_system == "Out of the Frontier")
-							if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
-								return
-							calibrate_jump()
-							return
-						if(!selected_system)
-							return
-						else
-							jump_destination = selected_system
-						calibrate_jump(selected_system)
-						return
-
-
-					else
+					LAZYADD(choices, "Out of the Frontier")
+					LAZYREMOVE(choices, current_ship.current_overmap)
+					var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)
+					if(selected_system == "Out of the Frontier")
 						if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
 							return
 						calibrate_jump()
 						return
+					if(!selected_system)
+						return
+					calibrate_jump(selected_system)
+					return
+
+
+				else
+					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+						return
+					calibrate_jump()
+					return
 			if("dock_empty")
 				current_ship.dock_in_empty_space(usr)
 				return
@@ -463,7 +470,7 @@
 	concurrent_users -= user_ref
 	// Unregister map objects
 	if(current_ship)
-		user.client?.clear_map(current_ship.token.map_name)
+		current_ship.token.cam_screen.hide_from(user)
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)

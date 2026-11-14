@@ -49,12 +49,12 @@
 	if(specific_type)
 		paralysis_type = specific_type
 	if(!paralysis_type)
-		paralysis_type = pick("full","left","right","arms","legs","r_arm","l_arm","r_leg","l_leg")
+		paralysis_type = pick("full","left","right","arms","legs","r_arm","l_arm","r_leg","l_leg", "tail")
 	var/subject
 	switch(paralysis_type)
 		if("full")
 			subject = "your body"
-			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG)
+			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_TAIL)
 		if("left")
 			subject = "the left side of your body"
 			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_L_LEG)
@@ -66,7 +66,7 @@
 			paralysis_traits = list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM)
 		if("legs")
 			subject = "your legs"
-			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG)
+			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_TAIL)
 		if("r_arm")
 			subject = "your right arm"
 			paralysis_traits = list(TRAIT_PARALYSIS_R_ARM)
@@ -79,6 +79,9 @@
 		if("l_leg")
 			subject = "your left leg"
 			paralysis_traits = list(TRAIT_PARALYSIS_L_LEG)
+		if("tail")
+			subject = "your tail"
+			paralysis_traits = list(TRAIT_PARALYSIS_TAIL)
 
 	gain_text = span_warning("You can't feel [subject] anymore!")
 	lose_text = span_notice("You can feel [subject] again!")
@@ -107,7 +110,7 @@
 	gain_text = span_warning("You have a constant feeling of drowsiness...")
 	lose_text = span_notice("You feel awake and aware again.")
 
-/datum/brain_trauma/severe/narcolepsy/on_life()
+/datum/brain_trauma/severe/narcolepsy/on_life(seconds_per_tick, times_fired)
 	..()
 	if(owner.IsSleeping())
 		return
@@ -116,10 +119,10 @@
 		sleep_chance += 2
 	if(owner.drowsyness)
 		sleep_chance += 3
-	if(prob(sleep_chance))
+	if(SPT_PROB(0.5 * sleep_chance, seconds_per_tick))
 		to_chat(owner, span_warning("You fall asleep."))
 		owner.Sleeping(60)
-	else if(!owner.drowsyness && prob(sleep_chance * 2))
+	else if(!owner.drowsyness && SPT_PROB(sleep_chance, seconds_per_tick))
 		to_chat(owner, span_warning("You feel tired..."))
 		owner.drowsyness += 10
 
@@ -138,14 +141,14 @@
 	else
 		to_chat(owner, span_notice("You feel safe, as long as you have people around you."))
 
-/datum/brain_trauma/severe/monophobia/on_life()
+/datum/brain_trauma/severe/monophobia/on_life(seconds_per_tick, times_fired)
 	..()
 	if(check_alone())
 		stress = min(stress + 0.5, 100)
-		if(stress > 10 && (prob(5)))
+		if(stress > 10 && SPT_PROB(2.5, seconds_per_tick))
 			stress_reaction()
 	else
-		stress = max(stress - 4, 0)
+		stress = max(stress - (2 * seconds_per_tick), 0)
 
 /datum/brain_trauma/severe/monophobia/proc/check_alone()
 	if(owner.is_blind())
@@ -243,9 +246,9 @@
 	..()
 	owner.remove_status_effect(/datum/status_effect/trance)
 
-/datum/brain_trauma/severe/hypnotic_stupor/on_life()
+/datum/brain_trauma/severe/hypnotic_stupor/on_life(seconds_per_tick, times_fired)
 	..()
-	if(prob(1) && !owner.has_status_effect(/datum/status_effect/trance))
+	if(SPT_PROB(0.5, seconds_per_tick) && !owner.has_status_effect(/datum/status_effect/trance))
 		owner.apply_status_effect(/datum/status_effect/trance, rand(100,300), FALSE)
 
 /datum/brain_trauma/severe/hypnotic_trigger

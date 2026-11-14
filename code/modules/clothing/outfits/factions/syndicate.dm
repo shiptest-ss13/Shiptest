@@ -248,6 +248,15 @@
 	suit = /obj/item/clothing/suit/toggle/armor/vest/hardliners
 	shoes = /obj/item/clothing/shoes/combat
 
+/datum/outfit/job/syndicate/captain/gorlex/stripped
+	name = "Syndicate - Captain - Stripped (Hardliner)"
+	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
+
+	head = null
+	suit = null
+	shoes = /obj/item/clothing/shoes/combat
+
 /datum/outfit/job/syndicate/captain/ngr
 	name = "Syndicate - Captain (New Gorlex Republic)"
 	faction = FACTION_NGR
@@ -365,6 +374,18 @@
 	id = /obj/item/card/id/syndicate_command/captain_id
 	gloves = /obj/item/clothing/gloves/insulated
 
+/datum/outfit/job/syndicate/ce/hardliner
+	name = "Syndicate - Foreman (Hardliners)"
+
+	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	suit = null
+	head = null
+	shoes =/obj/item/clothing/shoes/workboots
+	belt = null
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
+	id = /obj/item/card/id/syndicate_command/captain_id
+	gloves = /obj/item/clothing/gloves/insulated
+
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
 	faction = FACTION_NGR
@@ -446,6 +467,11 @@
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = null
 	gloves = null
+
+/datum/outfit/job/syndicate/head_of_personnel/ngr/stripped
+	name = "Syndicate - Ensign - Stripped (NGR)"
+	suit = null
+	head = null
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
 	name = "Syndicate - Academic Staff (SUNS)"
@@ -860,7 +886,16 @@
 	head = /obj/item/clothing/head/hardhat/hardliners
 	suit = /obj/item/clothing/suit/hazardvest/hardliners
 	uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
-	accessory = /obj/item/clothing/accessory/armband/cargo
+	shoes = /obj/item/clothing/shoes/workboots
+	ears = /obj/item/radio/headset/alt
+
+/datum/outfit/job/syndicate/miner/gorlex/stripped
+	name = "Syndicate - Wrecker - Stripped (Hardliner)"
+	id_assignment = "Wrecker"
+
+	head = null
+	suit = null
+	uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
 
@@ -946,6 +981,16 @@
 
 	head = /obj/item/clothing/head/hardhat/hardliners
 	suit = /obj/item/clothing/suit/hazardvest/hardliners
+	uniform = /obj/item/clothing/under/syndicate/hardliners
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = null
+
+/datum/outfit/job/syndicate/engineer/gorlex/stripped
+	name = "Syndicate - Mechanic - Stripped (Hardliner)"
+	id_assignment = "Mechanic"
+
+	head = null
+	suit = null
 	uniform = /obj/item/clothing/under/syndicate/hardliners
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null

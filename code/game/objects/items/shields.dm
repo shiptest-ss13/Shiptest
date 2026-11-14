@@ -11,6 +11,7 @@
 	item_flags = SLOWS_WHILE_IN_HAND
 	slowdown = 1.25
 	drag_slowdown = 1.25
+	var/back_slowdown = 0.6
 	integrity_failure = 0.1
 	block_chance = 50
 	throwforce = 5
@@ -42,6 +43,24 @@
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	take_damage(damage)
 
+/obj/item/shield/proc/get_slowdown()
+	if(broken)
+		return 0
+	var/mob/holder = loc
+	if(ismob(holder) && holder.get_item_by_slot(ITEM_SLOT_BACK) == src)
+		return back_slowdown
+	return initial(slowdown)
+
+/obj/item/shield/proc/update_slowdown()
+	slowdown = get_slowdown()
+	if(ismob(loc))
+		var/mob/holder = loc
+		holder.update_equipment_speed_mods()
+
+/obj/item/shield/equipped(mob/user, slot, initial)
+	slowdown = get_slowdown()
+	return ..()
+
 /obj/item/shield/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
@@ -49,9 +68,9 @@
 			loc.balloon_alert(loc, "[src] cracks!")
 		name = "broken [src::name]"
 		block_chance = 0
-		slowdown = 0
 		drag_slowdown = 0
 		broken = TRUE
+		update_slowdown()
 
 /obj/item/shield/examine(mob/user)
 	. = ..()
@@ -67,8 +86,26 @@
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
 		return FALSE
-	if(!(REVERSE_DIR(hitby.dir) & owner.dir))
-		return FALSE
+
+	var/shield_worn = (owner.back == src)
+
+	switch(abs(dir2angle(hitby.dir) - dir2angle(owner.dir)))
+		//front facing impact
+		if(135, 180, 225)
+			//if we're wearing the shield our owner gets shot
+			if(shield_worn)
+				return FALSE
+		//Shot in the Ass Effect
+		if(0, 45, 315)
+			//if we're not wearing the shield our owner gets shot
+			if(!shield_worn)
+				return FALSE
+
+		//sideshots
+		if(90, 270)
+			if(prob(80))
+				return FALSE
+
 	if(attack_type == THROWN_PROJECTILE_ATTACK)
 		final_block_chance += 30
 	if(attack_type == LEAP_ATTACK)
@@ -106,8 +143,8 @@
 				name = src::name
 				broken = FALSE
 				block_chance = initial(block_chance)
-				slowdown = initial(slowdown)
 				drag_slowdown = initial(drag_slowdown)
+				update_slowdown()
 	else
 		to_chat(user, span_warning("[src] isn't made of this material!"))
 
@@ -130,6 +167,7 @@
 	item_state = "buckler"
 	slowdown = 0
 	drag_slowdown = 0
+	back_slowdown = 0
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
@@ -219,6 +257,8 @@
 	block_chance = 50
 	slowdown = 1
 	drag_slowdown = 1
+	back_slowdown = 0.5
+	var/folded_slowdown = 0
 	repair_material = /obj/item/stack/sheet/rglass
 	w_class = WEIGHT_CLASS_NORMAL
 	var/active = 0
@@ -227,6 +267,18 @@
 	if(active)
 		return ..()
 	return 0
+
+/obj/item/shield/tele/get_slowdown()
+	if(!active && !broken)
+		return folded_slowdown
+	return ..()
+
+/obj/item/shield/tele/update_slowdown()
+	if(broken)
+		drag_slowdown = 0
+	else
+		drag_slowdown = active ? initial(drag_slowdown) : folded_slowdown
+	return ..()
 
 /obj/item/shield/tele/attack_self(mob/living/user)
 	active = !active
@@ -247,6 +299,7 @@
 		w_class = WEIGHT_CLASS_NORMAL
 		slot_flags = null
 		to_chat(user, span_notice("[src] can now be concealed."))
+	update_slowdown()
 	add_fingerprint(user)
 
 /obj/item/shield/heavy
@@ -258,6 +311,8 @@
 	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
 	slowdown = 1.50
 	drag_slowdown = 1.50
+	back_slowdown = 0.75
+	var/wielded_slowdown = 3.50
 	throwforce = 10
 	throw_range = 2
 	max_integrity = 800
@@ -276,10 +331,15 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 10, force_wielded = 20)
 
+/obj/item/shield/heavy/get_slowdown()
+	if(wielded && !broken)
+		return wielded_slowdown
+	return ..()
+
 /// triggered on wield of two handed item
 /obj/item/shield/heavy/proc/on_wield(obj/item/source, mob/user)
-	slowdown = 3.50
 	wielded = TRUE
+	update_slowdown()
 	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
 /obj/item/shield/heavy/proc/do_wield(mob/user)
@@ -292,9 +352,9 @@
 /obj/item/shield/heavy/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 	wielded = FALSE
+	update_slowdown()
 	if(!broken)
 		block_chance = initial(block_chance)
-		slowdown = initial(slowdown)
 
 /obj/item/shield/heavy/proc/is_wielded()
 	return wielded

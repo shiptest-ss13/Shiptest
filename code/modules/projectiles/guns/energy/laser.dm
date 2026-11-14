@@ -1,7 +1,6 @@
 /obj/item/gun/energy/laser
-	name = "E-20 mining emitter"
-	desc = "A basic mining tool that fires concentrated bolts of light, which easily cause flesh, stone, and metal to yield."
-	//desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
+	name = "eoehoma fuckinator 9000"
+	desc = "This is a base type gun and you should not see this. Please make a bug report on the github if you see this."
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
 	item_state = "laser"
@@ -12,6 +11,9 @@
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
 	manufacturer = MANUFACTURER_EOEHOMA
+
+	bad_type = /obj/item/gun/energy/laser
+	autowiki_hidden = TRUE
 
 	spread = 0
 	spread_unwielded = 10
@@ -33,9 +35,10 @@
 	icon_state = "laser"
 	item_state = "laser"
 
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/retro
+	autowiki_hidden = TRUE //not obtainable afaik
 	name ="SL L104"
 	desc = "An antiquated model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
 
@@ -46,8 +49,6 @@
 
 	icon_state = "laser"
 	item_state = "laser"
-
-	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
@@ -62,7 +63,9 @@
 	ammo_x_offset = 3
 	selfcharge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
@@ -71,12 +74,14 @@
 	selfcharge = FALSE
 
 /obj/item/gun/energy/laser/captain/scattershot
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "scatter shot laser rifle"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	shaded_charge = FALSE
 
 /obj/item/gun/energy/laser/cyborg
+	autowiki_hidden = TRUE //borg module
 	can_charge = FALSE
 	desc = "An energy-based laser gun that draws power from the cyborg's internal energy cell directly. So this is what freedom looks like?"
 	use_cyborg_cell = TRUE
@@ -84,22 +89,6 @@
 
 /obj/item/gun/energy/laser/cyborg/emp_act()
 	return
-
-/obj/item/gun/energy/laser/scatter
-	name = "scatter laser gun"
-	desc = "A laser gun mimicking the function of a shotgun, manufactured with an adjustable lens capable of projecting scattershot or slugs."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
-	manufacturer = MANUFACTURER_NONE
-
-/obj/item/gun/energy/laser/scatter/shotty
-	name = "energy shotgun"
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "cshotgun"
-	item_state = "shotgun"
-	desc = "A combat shotgun gutted and refitted with an internal laser system. Can switch between taser and scattered disabler shots."
-	shaded_charge = FALSE
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
-	manufacturer = MANUFACTURER_NONE
 
 ///Laser Cannon
 
@@ -125,6 +114,8 @@
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
+
+	autowiki_hidden = TRUE
 
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/projectile/beam/laser/accelerator
@@ -152,6 +143,8 @@
 	ammo_x_offset = 3
 	w_class = WEIGHT_CLASS_BULKY
 
+	autowiki_hidden = TRUE
+
 ////////Laser Tag////////////////////
 
 /obj/item/gun/energy/laser/bluetag
@@ -163,6 +156,7 @@
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
+	autowiki_hidden = TRUE //laser tag who cares
 
 /obj/item/gun/energy/laser/bluetag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag/hitscan)
@@ -176,11 +170,13 @@
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
+	autowiki_hidden = TRUE //laser tag who cares
 
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
 
 /obj/item/gun/energy/laser/hitscanpistol
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "experimental laser gun"
 	desc = "A highly experimental laser gun, with unknown inner workings. It has no markings besides a \"GROUP A\" inscription on the barrel."
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -196,7 +192,6 @@
 		/obj/item/stock_parts/cell/gun/mini,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
-	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
 	. = ..()

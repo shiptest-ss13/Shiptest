@@ -424,7 +424,7 @@
 		return
 
 	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
-	selector.set_selected_zone(BODY_ZONE_PRECISE_GROIN, mob)
+	selector.set_selected_zone((mob.zone_selected == BODY_ZONE_PRECISE_GROIN) ? BODY_ZONE_TAIL : BODY_ZONE_PRECISE_GROIN, mob)
 
 ///Hidden verb to target the left leg, bound to 3
 /client/verb/body_l_leg()

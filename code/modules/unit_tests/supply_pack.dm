@@ -4,7 +4,7 @@
 		var/datum/supply_pack/pack = new pack_type
 		var/created = pack.generate(run_loc_bottom_left)
 
-		var/datum/export_report/rep = export_item_and_contents(created, apply_elastic = FALSE)
+		var/datum/export_report/rep = export_item_and_contents(created)
 		var/value = 0
 		for(var/thing in rep.total_value)
 			value += rep.total_value[thing]

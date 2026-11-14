@@ -783,6 +783,8 @@
 	supports_variations = VOX_VARIATION
 	var/chargesound
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
 	. += span_notice("This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.")
@@ -1043,7 +1045,7 @@
 	switch(random)
 		if(1)
 			to_chat(user, span_danger("Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities."))
-			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body")
+			H.dna.features = list("mcolor" = "A02720", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
@@ -1060,23 +1062,6 @@
 
 	playsound(user.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 	qdel(src)
-
-/datum/disease/transformation/dragon
-	name = "dragon transformation"
-	cure_text = "nothing"
-	cures = list(/datum/reagent/medicine/adminordrazine)
-	agent = "dragon's blood"
-	desc = "What do dragons have to do with Space Station 13?"
-	stage_prob = 20
-	severity = DISEASE_SEVERITY_BIOHAZARD
-	visibility_flags = 0
-	stage1	= list("Your bones ache.")
-	stage2	= list("Your skin feels scaly.")
-	stage3	= list(span_danger("You have an overwhelming urge to terrorize some peasants."), span_danger("Your teeth feel sharper."))
-	stage4	= list(span_danger("Your blood burns."))
-	stage5	= list(span_danger("You're a fucking dragon. However, any previous allegiances you held still apply. It'd be incredibly rude to eat your still human friends for no reason."))
-	new_form = /mob/living/simple_animal/hostile/megafauna/dragon/lesser
-
 
 //Lava Staff
 

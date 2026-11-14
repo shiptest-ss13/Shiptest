@@ -26,12 +26,10 @@
 	glass_name = "glass of coffee liquor"
 	glass_desc = "Bitter from the coffee and alcohol alike!"
 
-/datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M)
-	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+/datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.adjust_timed_status_effect(-5 SECONDS * seconds_per_tick, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.AdjustSleeping(-40)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.AdjustSleeping(-20 * seconds_per_tick)
 	..()
 	. = 1
 
@@ -154,9 +152,9 @@
 	glass_name = "glass of absinthe"
 	glass_desc = "The smell is enough to bring you to the verge of tears. The hint of liquorice threatens to bring you over the edge."
 
-/datum/reagent/consumable/ethanol/absinthe/on_mob_life(mob/living/carbon/M)
-	if(prob(10) && !HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.hallucination += 4 //Reference to the urban myth
+/datum/reagent/consumable/ethanol/absinthe/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(5, seconds_per_tick) && !HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
+		M.hallucination += 2*seconds_per_tick //Reference to the urban myth
 	..()
 
 /datum/reagent/consumable/ethanol/hooch
@@ -167,12 +165,6 @@
 	taste_description = "pure resignation"
 	glass_name = "Hooch"
 	glass_desc = "You can't help but feel like you'd rather drink anything else right now, just from looking at it."
-
-/datum/reagent/consumable/ethanol/hooch/on_mob_life(mob/living/carbon/M)
-	if(M.mind && M.mind.assigned_role == "Assistant")
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	return ..() || .
 
 /datum/reagent/consumable/ethanol/ale
 	name = "Ale"
@@ -309,9 +301,9 @@
 	glass_name = "Sososi-Seta"
 	glass_desc = "A white liquid with small pieces of fruit floating inside it. Typically served as a digestive after a hearty meal."
 
-/datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.5*REM, 0)
-	M.adjust_nutrition(-2)
+		M.adjustToxLoss(0.25 * REM * seconds_per_tick, 0)
+	M.adjust_nutrition(-1 * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()

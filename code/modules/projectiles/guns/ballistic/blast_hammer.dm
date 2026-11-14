@@ -30,7 +30,6 @@
 
 	actually_shoots = FALSE
 	door_breaching_weapon = FALSE //this doesn't breach doors. it OBLITERATES THEM
-	ignores_wear = TRUE
 	manufacturer = null
 	gunslinger_recoil_bonus = 0
 	wield_slowdown = 0
@@ -50,6 +49,9 @@
 /obj/item/gun/ballistic/shotgun/blasting_hammer/Initialize(mapload, spawn_empty)
 	. = ..()
 	update_appearance()
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/fire_gun(atom/target, mob/living/user, flag, params)
+	return // actually_shoot FALSE stops it from shooting but this disables the balloon alert
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/pre_attack(atom/A, mob/living/user, params)
 	if(charging)
@@ -177,6 +179,7 @@
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ramzislayer //Admin item. Don't actually map this anywhere.
 	name = "ramzislayers hammer"
+	autowiki_hidden = TRUE
 	desc = "Despite what the name may imply, not this is not a hammer for killing Ramzi. It's a hammer for Ramzi to kill you with."
 	actions_types = list(/datum/action/item_action/ramzislayer_charge)
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/blasting_hammer/ramzislayer

@@ -74,7 +74,7 @@ In all, this is a lot like the monkey code. /N
 /mob/living/carbon/alien/attack_paw(mob/living/carbon/monkey/M)
 	if(..())
 		if (stat != DEAD)
-			var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
+			var/obj/item/bodypart/affecting = get_bodypart(run_zone(M.zone_selected))
 			apply_damage(rand(1, 3), BRUTE, affecting)
 
 
@@ -131,5 +131,5 @@ In all, this is a lot like the monkey code. /N
 	return 0//aliens are immune to acid.
 
 
-/mob/living/carbon/alien/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
-	adjust_bodytemperature(((fire_handler.stacks * 12)) * 0.5 * delta_time)
+/mob/living/carbon/alien/on_fire_stack(seconds_per_tick, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+	adjust_bodytemperature(((fire_handler.stacks * 12)) * 0.5 * seconds_per_tick)

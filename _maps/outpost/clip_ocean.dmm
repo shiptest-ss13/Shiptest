@@ -829,10 +829,10 @@
 /area/outpost/cargo/smeltery)
 "cy" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended{
+/obj/item/gun/ballistic/automatic/hmg/ml3/extended{
 	pixel_x = -4;
 	pixel_y = 2;
-	name = "Decommissioned SKM-24u";
+	name = "Decommissioned ML3";
 	spawn_no_ammo = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1718,8 +1718,8 @@
 /area/outpost/crew/library)
 "fv" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost,
 /obj/machinery/light/directional/south,
+/obj/machinery/fax/admin/outpost/arrowsong,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/operations)
 "fw" = (
@@ -4234,12 +4234,12 @@
 /area/outpost/hallway/starboard)
 "nT" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault/skm/cm24{
+/obj/item/gun/ballistic/automatic/assault/fa2/clip{
 	pixel_x = -7;
 	pixel_y = 4;
 	spawn_no_ammo = 1
 	},
-/obj/item/gun/ballistic/automatic/assault/skm{
+/obj/item/gun/ballistic/automatic/assault/fa2{
 	pixel_x = -6;
 	pixel_y = -2;
 	spawn_no_ammo = 1
@@ -4823,10 +4823,10 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "pI" = (
-/obj/machinery/computer/processing_unit_console/directional/south{
-	machinedir = 8
-	},
 /obj/effect/turf_decal/box,
+/obj/machinery/computer/processing_unit_console/directional/south{
+	dx = -1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
 "pK" = (
@@ -7074,8 +7074,8 @@
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = null
 	},
-/obj/item/ammo_box/magazine/skm_762_40/extended,
-/obj/item/ammo_box/magazine/skm_762_40/extended,
+/obj/item/ammo_box/magazine/fa2_762_40/extended,
+/obj/item/ammo_box/magazine/fa2_762_40/extended,
 /obj/item/ammo_box/magazine/rottweiler_308_box,
 /obj/item/ammo_box/magazine/f4_308,
 /obj/item/ammo_box/magazine/f4_308,
@@ -8988,11 +8988,11 @@
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq,
+/obj/item/gun/ballistic/automatic/smg/fa2_carbine/inteq,
+/obj/item/gun/ballistic/automatic/smg/fa2_carbine/inteq,
 /obj/item/gun/ballistic/automatic/hmg/rottweiler,
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq,
-/obj/item/gun/ballistic/automatic/assault/skm/inteq,
+/obj/item/gun/ballistic/automatic/assault/fa2/inteq,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/item/gun/ballistic/automatic/marksman/f90/inteq,
 /turf/open/floor/plasteel/tech,
@@ -10008,7 +10008,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/obj/machinery/vending/custom,
+/obj/machinery/vending/lottery,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/office)
 "Gr" = (
@@ -14246,9 +14246,7 @@
 /area/outpost/hallway/starboard)
 "Ud" = (
 /obj/effect/turf_decal/box,
-/obj/machinery/computer/electrolyzer_console/directional/south{
-	density = 0
-	},
+/obj/machinery/computer/electrolyzer_console/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
 "Ue" = (
@@ -16083,13 +16081,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/vacant_rooms/office)
 "ZL" = (
-/obj/structure/rack,
-/obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = 4
-	},
-/obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = -2
-	},
+/obj/machinery/vending/disposable_guns,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/office)
 "ZM" = (

@@ -8,6 +8,7 @@
 	var/unique_blood = null
 	var/labelled = 0
 	fill_icon_thresholds = list(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+	custom_materials = list(/datum/material/plastic = 600)
 
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
@@ -29,7 +30,7 @@
 	. = ..()
 	if(!labelled)
 		if(blood_type)
-			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type.name]" : null]"
+			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type]" : null]"
 		else
 			name = "blood pack"
 

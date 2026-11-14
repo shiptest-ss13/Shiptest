@@ -17,8 +17,8 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/sl
-	desc = "It's a very amish looking suit."
-	name = "amish suit"
+	desc = "A rather formal looking suit."
+	name = "formal suit"
 	icon_state = "sl_suit"
 
 /obj/item/clothing/under/suit/waiter

@@ -71,7 +71,7 @@
 			owner.adjustCloneLoss(20) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
-/obj/item/organ/regenerative_core/on_life()
+/obj/item/organ/regenerative_core/on_life(seconds_per_tick, times_fired)
 	..()
 	if(owner.health <= owner.crit_threshold)
 		ui_action_click()

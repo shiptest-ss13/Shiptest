@@ -12,7 +12,7 @@
 	var/image/beaker_overlay
 	var/image/bottle_overlay
 	var/current_volume = 10
-	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but ghetto should be worse.
+	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but without a chem master this should be worse.
 	var/press_time = 15
 	var/pill_style = 9 // White pills
 	var/list/possible_styles = list(7,8,9,10,11,12) // These values only encompass the 'tablet' shaped pills.
@@ -31,8 +31,8 @@
 
 /obj/machinery/chem_press/examine(mob/user)
 	. = ..()
-	. += span_notice("There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.")
-	. += span_notice("There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.")
+	. += span_notice("Left click with a <b>screwdriver</b> to adjust the pill size.")
+	. += span_notice("Right click with a <b>screwdriver</b> to adjust the pill color.")
 	if(!bottle)
 		. += span_notice("The <b>pill bottle</b> slot is empty.")
 	if(!beaker)

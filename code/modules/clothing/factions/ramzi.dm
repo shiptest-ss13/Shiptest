@@ -91,6 +91,24 @@
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
+/obj/item/clothing/suit/armor/vest/marine/ramzi
+	name = "Ramzi tactical armor vest"
+	desc = "A reinforced vest repaired by the Ramzi Clique. Its bulky profile proves an intimidating sight to the person unlucky enough to be on the other side of it."
+	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
+	icon_state = "ramzi_light"
+	item_state = "armor"
+
+	unique_reskin = null
+
+/obj/item/clothing/suit/armor/vest/marine/medium/ramzi
+	name = "Ramzi medium tactical armor vest"
+	desc = "A reinforced vest repaired by the Ramzi Clique. Its bulky profile proves an intimidating sight to the person unlucky enough to be on the other side of it."
+	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
+	icon_state = "ramzi_medium"
+	unique_reskin = null
+
 ///////////////
 //Spacesuits//
 //////////////
@@ -105,7 +123,7 @@
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
 
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	name = "rust-red hardsuit"
@@ -118,7 +136,7 @@
 	hardsuit_type = "ramzi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	jetpack = null
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	slowdown = 0.7
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
@@ -156,7 +174,8 @@
 	hardsuit_type = "ramzielite"
 	icon_state = "hardsuit1-ramzielite"
 	item_state = "hardsuit1-ramzielite"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	name = "elite rust-red hardsuit"
@@ -168,7 +187,9 @@
 	item_state = "hardsuit1-ramzielite"
 	hardsuit_type = "ramzielite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	slowdown = 1.25
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -223,6 +244,21 @@
 	can_flashlight = TRUE
 	content_overlays = TRUE
 	unique_reskin = null
+
+/obj/item/clothing/head/helmet/ramzi
+	name = "\improper Ramzi Clique reinforced welding helmet"
+	desc = "A heavy, reinforced welding helmet with significant frontal plating. The welding visor seems to be useless now."
+	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/head.dmi'
+	icon_state = "ramzi_welder"
+	item_state = "ramzi_welder"
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	slowdown = 0.1
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	name = "\improper Ramzi Clique X-11 helmet"

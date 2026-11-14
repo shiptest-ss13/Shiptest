@@ -4,13 +4,12 @@
 
 	icon_state = ""		//Remove the inherent human icon that is visible on the map editor. We're rendering ourselves limb by limb, having it still be there results in a bug where the basic human icon appears below as south in all directions and generally looks nasty.
 
+	prepare_huds() //Prevents a nasty runtime on human init
+
 	//initialize limbs first
 	create_bodyparts()
 
 	setup_human_dna()
-
-
-	prepare_huds() //Prevents a nasty runtime on human init
 
 	if(dna.species)
 		INVOKE_ASYNC(src, PROC_REF(set_species), dna.species.type) //This generates new limbs based on the species, beware.
@@ -885,12 +884,17 @@
 		if(hud_used.healthdoll)
 			hud_used.healthdoll.cut_overlays()
 			if(stat != DEAD)
-				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
+				hud_used.healthdoll.icon_state = null
 				var/obj/item/bodypart/body_part
 				for(var/zone in bodyparts)
 					body_part = bodyparts[zone]
-					if(!body_part)
+					if(!body_part) //Missing limbs
+						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[zone]6"))
 						continue
+					if(body_part.bodypart_disabled) //Disabled limbs
+						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[zone]7"))
+						continue
+
 					var/numbing_wound = FALSE
 					for(var/datum/wound/iterated_wound in body_part.wounds)
 						if(iterated_wound.wound_flags & NUMBS_BODYPART)
@@ -911,12 +915,7 @@
 						icon_num = 5
 					if(hal_screwyhud == SCREWYHUD_HEALTHY || numbing_wound)
 						icon_num = 0
-					if(icon_num)
-						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[zone][icon_num]"))
-				for(var/t in get_missing_limbs()) //Missing limbs
-					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[t]6"))
-				for(var/t in get_disabled_limbs()) //Disabled limbs
-					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[t]7"))
+					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[zone][icon_num]"))
 			else
 				hud_used.healthdoll.icon_state = "healthdoll_DEAD"
 
@@ -927,6 +926,8 @@
 		regenerate_organs()
 	remove_all_embedded_objects()
 	set_heartattack(FALSE)
+	coretemperature = get_body_temp_normal(apply_change=FALSE)
+	heat_exposure_stacks = 0
 	for(var/datum/mutation/human/HM in dna.mutations)
 		if(HM.quality != POSITIVE)
 			dna.remove_mutation(HM.name)
@@ -1385,9 +1386,6 @@
 
 /mob/living/carbon/human/species/skeleton
 	race = /datum/species/skeleton
-
-/mob/living/carbon/human/species/snail
-	race = /datum/species/snail
 
 /mob/living/carbon/human/species/vox
 	race = /datum/species/vox

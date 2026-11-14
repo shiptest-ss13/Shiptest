@@ -11,13 +11,13 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "dull toxin"
 
-/datum/reagent/medicine/oculine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/oculine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
-	eyes.applyOrganDamage(-2)
+	eyes.applyOrganDamage(-1 * seconds_per_tick)
 	if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
-		if(prob(20))
+		if(SPT_PROB(10, seconds_per_tick))
 			to_chat(M, span_warning("Your vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
@@ -37,11 +37,11 @@
 	description = "Rapidly restores hearing to a patient, assuming the loss of hearing is not chronic."
 	color = "#606060" //inacusiate is light grey
 
-/datum/reagent/medicine/inacusiate/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/inacusiate/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	var/obj/item/organ/ears/ears = M.getorganslot(ORGAN_SLOT_EARS)
 	if(!ears)
 		return
-	ears.adjustEarDamage(-4 * REM)
+	ears.adjustEarDamage(-2 * REM * seconds_per_tick)
 	return ..()
 
 /datum/reagent/medicine/mannitol
@@ -49,8 +49,8 @@
 	description = "Efficiently restores brain damage."
 	color = "#A0A0A0" //mannitol is light grey, neurine is lighter grey
 
-/datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C)
-	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
+/datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/medicine/neurine
@@ -58,10 +58,10 @@
 	description = "Reacts with neural tissue, helping reform damaged connections. Can cure minor traumas."
 	color = "#C0C0C0" //ditto
 
-/datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/C)
+/datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	if(holder.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
 		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
-	if(prob(15))
+	if(SPT_PROB(7.5, seconds_per_tick))
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()
 
@@ -99,8 +99,8 @@
 
 	..()
 
-/datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2)//Add a chance to cure liver trauma once implemented.
+/datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -1 * seconds_per_tick)//Add a chance to cure liver trauma once implemented.
 	..()
 	. = 1
 
@@ -133,14 +133,14 @@
 	M.crit_threshold = M.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*2 //your heart is still pumping!
 
 
-/datum/reagent/medicine/penthrite/on_mob_life(mob/living/carbon/human/H)
-	H.adjustOrganLoss(ORGAN_SLOT_STOMACH,0.25)
+/datum/reagent/medicine/penthrite/on_mob_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
+	H.adjustOrganLoss(ORGAN_SLOT_STOMACH,0.125 * seconds_per_tick)
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold) //we cannot save someone above our raised crit threshold.
 
-		H.adjustToxLoss(-2 * REM, 0)
-		H.adjustBruteLoss(-2 * REM, 0)
-		H.adjustFireLoss(-2 * REM, 0)
-		H.adjustOxyLoss(-6 * REM, 0)
+		H.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
+		H.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
+		H.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
+		H.adjustOxyLoss(-3 * REM * seconds_per_tick, 0)
 
 		H.losebreath = 0
 
@@ -150,7 +150,7 @@
 		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 
 
-		if(prob(33))
+		if(SPT_PROB(17, seconds_per_tick))
 			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!"))
 
 	if(H.health <= H.crit_threshold) //certain death above this threshold
@@ -168,8 +168,8 @@
 	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT,type)
 	. = ..()
 
-/datum/reagent/medicine/penthrite/overdose_process(mob/living/carbon/human/H)
+/datum/reagent/medicine/penthrite/overdose_process(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	REMOVE_TRAIT(H, TRAIT_STABLEHEART, type)
-	H.adjustStaminaLoss(10)
-	H.adjustOrganLoss(ORGAN_SLOT_HEART,10)
+	H.adjustStaminaLoss(5 * seconds_per_tick)
+	H.adjustOrganLoss(ORGAN_SLOT_HEART, 5 * seconds_per_tick)
 	H.set_heartattack(TRUE)

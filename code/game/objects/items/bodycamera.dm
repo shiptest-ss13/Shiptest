@@ -177,7 +177,7 @@
 	see = view(view_range, pos)
 	return see
 
-/obj/item/bodycamera/proc/isXRay()
+/obj/item/bodycamera/proc/isXRay(ignore_malf_upgrades)
 	return FALSE
 
 /obj/item/bodycamera/update_remote_sight(mob/living/user)
@@ -317,5 +317,21 @@
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
+
+/obj/item/bodycamera/broadcast_camera/agnigrubcam
+	icon = 'icons/obj/machines/camera.dmi'
+	icon_state = "camera"
+	start_active = TRUE
+	status = TRUE
+	anchored = 1
+
+/obj/item/bodycamera/broadcast_camera/agnigrubcam/Initialize() //because the other initialize fucks up the name
+	. = ..()
+	radio = new /obj/item/radio/broadcast(src)
+	radio.sectorwide = TRUE
+	radio.canhear_range = 7
+	c_tag = "Agni Live - Grub Cam"
+	name = c_tag
+	update_appearance()
 
 #undef BODYCAM_UPDATE_BUFFER

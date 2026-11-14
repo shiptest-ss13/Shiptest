@@ -22,6 +22,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	tool_behaviour = TOOL_KNIFE
 	demolition_mod = 0.75
+	bad_type = /obj/item/melee/knife
 
 /obj/item/melee/knife/ComponentInitialize()
 	. = ..()
@@ -96,6 +97,7 @@
 	desc = "Despite its name, it's mainly used for cutting meat from dead prey rather than actual hunting."
 	item_state = "huntingknife"
 	icon_state = "huntingknife"
+	custom_materials = null
 
 /obj/item/melee/knife/hunting/set_butchering()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force + 10)
@@ -109,6 +111,7 @@
 	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	custom_materials = null
 
 /obj/item/melee/knife/survival
 	name = "survival knife"
@@ -119,6 +122,7 @@
 	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	custom_materials = null
 
 /obj/item/melee/knife/bone
 	name = "bone dagger"

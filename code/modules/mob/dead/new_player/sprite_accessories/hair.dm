@@ -418,6 +418,10 @@
 	name = "Ponytail (Rat)"
 	icon_state = "hair_ponytailrat"
 
+/datum/sprite_accessory/hair/wavytail
+	name = "Ponytail (Wavy)"
+	icon_state = "hair_wavytail"
+
 /datum/sprite_accessory/hair/ponytailwisp
 	name = "Ponytail (Wisp)"
 	icon_state = "hair_ponytailwisp"
@@ -489,6 +493,10 @@
 /datum/sprite_accessory/hair/sidecut
 	name = "Sidecut"
 	icon_state = "hair_sidecut"
+
+/datum/sprite_accessory/hair/sidebang
+	name = "Sidebang"
+	icon_state = "hair_sidebang"
 
 /datum/sprite_accessory/hair/stride
 	name = "Stride"
@@ -641,3 +649,15 @@
 /datum/sprite_accessory/hair_gradient/splotches
 	name = "Splotches"
 	icon_state = "splotches"
+
+/datum/sprite_accessory/hair_gradient/splotches_fade
+	name = "Splotches (Faded)"
+	icon_state = "splotches_fade"
+
+/datum/sprite_accessory/hair_gradient/spots
+	name = "Spots"
+	icon_state = "spots"
+
+/datum/sprite_accessory/hair_gradient/spots_thin
+	name = "Spots (Thin)"
+	icon_state = "spots_thin"

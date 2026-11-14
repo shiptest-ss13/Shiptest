@@ -186,10 +186,10 @@
 	desc = "Contains charcoal."
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
 
-/obj/item/reagent_containers/syringe/antiviral
-	name = "syringe (spaceacillin)"
-	desc = "Contains antiviral agents."
-	list_reagents = list(/datum/reagent/medicine/spaceacillin = 15)
+/obj/item/reagent_containers/syringe/antibiotic
+	name = "syringe (broad-spectrum antibiotics)"
+	desc = "Contains specialized antibodies to treat infection and disease."
+	list_reagents = list(/datum/reagent/medicine/antibiotic = 15)
 
 /obj/item/reagent_containers/syringe/bioterror
 	name = "bioterror syringe"
@@ -270,9 +270,6 @@
 
 /obj/item/reagent_containers/syringe/contraband/space_drugs
 	list_reagents = list(/datum/reagent/drug/space_drugs = 15)
-
-/obj/item/reagent_containers/syringe/contraband/crank
-	list_reagents = list(/datum/reagent/drug/crank = 15)
 
 /obj/item/reagent_containers/syringe/contraband/rahkrahene
 	list_reagents = list(/datum/reagent/drug/rahkrahene = 15)

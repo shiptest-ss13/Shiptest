@@ -8,14 +8,14 @@
 	taste_description = "milk"
 	metabolization_rate = 0
 
-/datum/reagent/medicine/bonefixingjuice/on_mob_life(mob/living/M)
+/datum/reagent/medicine/bonefixingjuice/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	var/mob/living/carbon/C = M
 	switch(current_cycle)
 		if(1 to 10)
 			if(C.drowsyness < 10)
 				C.drowsyness += 2
 		if(11 to 30)
-			C.adjustStaminaLoss(5)
+			C.adjustStaminaLoss(2.5 * seconds_per_tick)
 		if(31 to INFINITY)
 			C.AdjustSleeping(40)
 			//formerly everything-fixing juice

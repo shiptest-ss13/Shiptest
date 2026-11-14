@@ -37,3 +37,56 @@
 	icon_state = "elzuose_r_leg"
 	limb_id = SPECIES_ELZUOSE
 	uses_mutcolor = TRUE
+
+/obj/item/bodypart/leg/left/ethereal/digitigrade
+	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
+	icon_state = "elzuose_l_leg_digitigrade"
+	limb_id = SPECIES_ELZUOSE
+	uses_mutcolor = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ethereal/digitigrade
+	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
+	icon_state = "elzuose_r_leg_digitigrade"
+	limb_id = SPECIES_ELZUOSE
+	uses_mutcolor = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/tail/elzu
+	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
+	name = "elzuose tail"
+	desc = "A detached Elzuose's tail. You probably shouldn't plant this."
+	icon_state = "elzuose_tail"
+	limb_id = SPECIES_ELZUOSE
+	examine_id = SPECIES_ELZUOSE
+	uses_mutcolor = TRUE
+	body_weight = 8
+	can_thump = TRUE
+
+/obj/item/bodypart/tail/elzu/bifurcated
+	name = "bifurcated elzuose tail"
+	icon_state = "bifurcated_elzuose_tail"
+	limb_id = "bifurcated_" + SPECIES_ELZUOSE
+	can_thump = FALSE
+
+/obj/item/bodypart/tail/elzu/stubby
+	name = "stubby elzuose tail"
+	icon_state = "stubby_elzuose_tail"
+	limb_id = "stubby_" + SPECIES_ELZUOSE
+	body_weight = 4
+	can_thump = FALSE
+
+/obj/item/bodypart/tail/elzu/curled
+	name = "curled elzuose tail"
+	icon_state = "curled_elzuose_tail"
+	limb_id = "curled_" + SPECIES_ELZUOSE
+
+/obj/item/bodypart/tail/elzu/pine
+	name = "pine elzuose tail"
+	icon_state = "pine_elzuose_tail"
+	limb_id = "pine_" + SPECIES_ELZUOSE
+
+/obj/item/bodypart/tail/elzu/medium
+	name = "medium elzuose tail"
+	icon_state = "medium_elzuose_tail"
+	limb_id = "medium_" + SPECIES_ELZUOSE

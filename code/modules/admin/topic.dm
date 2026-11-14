@@ -1446,7 +1446,7 @@
 				else
 					target = marked_datum
 
-		var/obj/structure/closet/supplypod/pod
+		var/obj/structure/closet/supplypod/centcompod/generic/pod
 
 		if(target)
 			if(where == "frompod")
@@ -1775,27 +1775,6 @@
 			SD.r_code = code
 		message_admins("[key_name_admin(usr)] has set the self-destruct \
 			code to \"[code]\".")
-
-	else if(href_list["add_station_goal"])
-		if(!check_rights(R_ADMIN))
-			return
-		var/list/type_choices = typesof(/datum/station_goal)
-		var/picked = input("Choose goal type") in type_choices|null
-		if(!picked)
-			return
-		var/datum/station_goal/G = new picked()
-		if(picked == /datum/station_goal)
-			var/newname = input("Enter goal name:") as text|null
-			if(!newname)
-				return
-			G.name = newname
-			var/description = input("Enter CentCom message contents:") as message|null
-			if(!description)
-				return
-			G.report_message = description
-		message_admins("[key_name(usr)] created \"[G.name]\" station goal.")
-		SSticker.mode.station_goals += G
-		modify_goals()
 
 	else if(href_list["change_lag_switch"])
 		if(!check_rights(R_ADMIN))

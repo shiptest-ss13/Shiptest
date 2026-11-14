@@ -80,6 +80,8 @@
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner)
 			continue
 		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, braim_bamage, 200)
+		looking.flash_act(intensity = 3, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
+		SEND_SOUND(looking, 'sound/effects/anomaly/static.ogg')
 
 /obj/effect/temp_visual/phase_in
 	name = "anomalous field"

@@ -31,14 +31,21 @@
 	id = "rockplanet_rustbase"
 	suffix = "rockplanet_rustbase.dmm"
 
-/datum/map_template/ruin/rockplanet/river_valley_stash
-	name = "River Valley Stash"
+/datum/map_template/ruin/rockplanet/oasis_stash
+	name = "Oasis Stash"
 	description = "A frontiersman drug stash in the midst of being buried."
-	id = "rockplanet_river_valley_stash"
-	suffix = "rockplanet_river_valley_stash.dmm"
+	id = "rockplanet_oasis_stash"
+	suffix = "rockplanet_oasis_stash.dmm"
 
 /datum/map_template/ruin/rockplanet/somme
 	name = "Frontiersman Trench Complex"
 	description = "Frontiersmen have dug in like ticks to the planet's surface."
 	id = "rockplanet_somme"
 	suffix = "rockplanet_somme.dmm"
+
+/datum/map_template/ruin/rockplanet/ngr_mining_colony
+	name = "Abandoned New Gorlex Mining Colony"
+	description = "A New Gorlex Republic mining colony evacuated following anomalous fauna behaviour and composition, holding Ramzi Clique prisoners at the time of its abandonment."
+	id = "rockplanet_ngr_mining_colony"
+	suffix = "rockplanet_ngr_mining_colony.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)

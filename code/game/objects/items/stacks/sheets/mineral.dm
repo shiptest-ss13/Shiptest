@@ -51,44 +51,6 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	amount = 30
 
 /*
- * Sandbags
- */
-
-/obj/item/stack/sheet/mineral/sandbags
-	name = "sandbags"
-	icon_state = "sandbags"
-	singular_name = "sandbag"
-	layer = LOW_ITEM_LAYER
-	novariants = TRUE
-	merge_type = /obj/item/stack/sheet/mineral/sandbags
-
-GLOBAL_LIST_INIT(sandbag_recipes, list ( \
-	new/datum/stack_recipe("sandbags", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1), \
-	))
-
-/obj/item/stack/sheet/mineral/sandbags/get_main_recipes()
-	. = ..()
-	. += GLOB.sandbag_recipes
-
-/obj/item/emptysandbag
-	name = "empty sandbag"
-	desc = "A bag to be filled with sand."
-	icon_state = "sandbag"
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/emptysandbag/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/stack/ore/glass))
-		var/obj/item/stack/ore/glass/G = W
-		to_chat(user, span_notice("You fill the sandbag."))
-		var/obj/item/stack/sheet/mineral/sandbags/I = new /obj/item/stack/sheet/mineral/sandbags(drop_location())
-		qdel(src)
-		if (Adjacent(user) && !issilicon(user))
-			user.put_in_hands(I)
-		G.use(1)
-	else
-		return ..()
-
-/*
  * Diamond
  */
 /obj/item/stack/sheet/mineral/diamond

@@ -121,3 +121,12 @@
 	icon_state = "chorejacketteceti"
 	item_state = "chorejacketteceti"
 	unique_reskin = null
+
+/obj/item/clothing/suit/toggle/chorejacket/miski
+	name = "Miskilamao Spacefaring chore jacket"
+	desc = "A loose fitting jacket branded in Miskilamao Spacefaring's iconography. Deep pockets and large buttons ensure that the contents of the coat are accessible during work. Typically issued to line workers and sold in gift shops at Miski facilities. "
+	icon = 'icons/obj/clothing/suits/toggle.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	icon_state = "chorejacket_miski"
+	item_state = "chorejacket_miski"
+	unique_reskin = null

@@ -5,7 +5,6 @@ CONTAINS:
 T-RAY
 HEALTH ANALYZER
 GAS ANALYZER
-NANITE SCANNER
 GENE SCANNER
 
 */
@@ -89,7 +88,6 @@ GENE SCANNER
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
-	custom_materials = list(/datum/material/iron=200)
 	var/verbose = TRUE
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
@@ -180,7 +178,7 @@ GENE SCANNER
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		if(C.has_brain_worms() && (!C.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
+		if(C.has_brain_worms() && (!C.has_reagent(/datum/reagent/medicine/antibiotic) || advanced))
 			render_list += "[span_danger("Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.")]\n"
 
 	render_list += "[span_info("Analyzing results for [M]:")]\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
@@ -360,6 +358,7 @@ GENE SCANNER
 
 		// Species and body temperature
 		render_list += "<span class='info ml-1'>Species: [HAS_TRAIT(H, TRAIT_GENEMODDED) ? "Modified " : ""][H.dna.species.name]</span>\n"
+		render_list += "<span class='info ml-1'>Core temperature: [round(H.coretemperature-T0C,0.1)] &deg;C ([round(H.coretemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 	render_list += "<span class='info ml-1'>Body temperature: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 
 	// Time of death
@@ -375,15 +374,15 @@ GENE SCANNER
 		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
-				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
+				render_list += "<div class='ml-2'>[W.get_scanner_short_description()] <a href='byond://?src=[REF(W)];wound_description=1'>(?)</a></div>"
 			render_list += "</span>"
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(HAS_TRAIT(C,TRAIT_HUSK))
-			render_list += "<span class= 'alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
+			render_list += "<span class='alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
 			//render_list += "<span class='alert ml-2'>\n Subject has suffered catastrophic loss of body moisture due to intense exposure to heat. Resuscitation will be impossible until addressed."
-			render_list += "<span class='alert ml-2'>\n Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
+			render_list += "\n<span class='alert ml-2'> Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
@@ -445,8 +444,6 @@ GENE SCANNER
 			render_list += "<span class='notice ml-1'>Detected cybernetic modifications:</span>\n"
 			render_list += "<span class='notice ml-2'>[cyberimp_detect]</span>\n"
 
-	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
-
 	// we handled the last <br> so we don't need handholding
 	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
@@ -465,7 +462,7 @@ GENE SCANNER
 	if(target.surgeries.len)
 		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
-			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)]: "
+			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)] ([capitalize(parse_zone(procedure.location))]): "
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step
@@ -702,35 +699,6 @@ GENE SCANNER
 	// we let the join apply newlines so we do need handholding
 	to_chat(user, boxed_message(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
 	return TRUE
-
-/obj/item/nanite_scanner
-	name = "nanite scanner"
-	icon = 'icons/obj/device.dmi'
-	icon_state = "nanite_scanner"
-	item_state = "nanite_remote"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	pickup_sound =  'sound/items/handling/device_pickup.ogg'
-	drop_sound = 'sound/items/handling/device_drop.ogg'
-	desc = "A hand-held body scanner able to detect nanites and their programming."
-	flags_1 = CONDUCT_1
-	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
-	throwforce = 3
-	w_class = WEIGHT_CLASS_TINY
-	throw_speed = 3
-	throw_range = 7
-	custom_materials = list(/datum/material/iron=200)
-
-/obj/item/nanite_scanner/attack(mob/living/M, mob/living/carbon/human/user)
-	user.visible_message(span_notice("[user] analyzes [M]'s nanites."), \
-						span_notice("You analyze [M]'s nanites."))
-
-	add_fingerprint(user)
-
-	var/response = SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, TRUE)
-	if(!response)
-		to_chat(user, span_info("No nanites detected in the subject."))
 
 /obj/item/sequence_scanner
 	name = "genetic sequence scanner"

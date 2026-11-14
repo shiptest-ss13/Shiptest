@@ -18,6 +18,11 @@
 /obj/effect/light_emitter/singularity_act()
 	return
 
+/obj/effect/light_emitter/red_energy_sword //used so there's a combination of both their head light and light coming off the energy sword
+	set_luminosity = 2
+	set_cap = 2.5
+	light_color = COLOR_SOFT_RED
+
 /**********************Miner Lockers**************************/
 
 /obj/structure/closet/wardrobe/miner
@@ -48,7 +53,7 @@
 
 /obj/structure/closet/secure_closet/miner/PopulateContents()
 	..()
-	new /obj/item/stack/sheet/mineral/sandbags(src, 5)
+	new /obj/item/stack/empty_sandbags(src, 15)
 	new /obj/item/storage/box/emptysandbags(src)
 	new /obj/item/shovel(src)
 	new /obj/item/pickaxe/mini(src)

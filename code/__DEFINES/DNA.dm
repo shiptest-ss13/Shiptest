@@ -175,7 +175,7 @@
 
 //organ defines
 #define STANDARD_ORGAN_THRESHOLD 100
-#define STANDARD_ORGAN_HEALING 0.003
+#define STANDARD_ORGAN_HEALING 0.0015
 //Organs fail in around ~30 minutes
 #define STANDARD_ORGAN_DECAY 0.00050
 //Vital organs (brain, heart) fail in quite a long time

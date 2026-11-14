@@ -28,7 +28,7 @@
 
 /datum/supply_pack/sec_supply/empty_sandbags
 	name = "Empty Sandbags"
-	desc = "Contains one box of seven empty sandbags for deployable cover in the field. Sand not included."
+	desc = "Contains one box of thirty empty sandbags for deployable cover in the field. Sand not included."
 	contains = list(/obj/item/storage/box/emptysandbags)
 	cost = 150
 	crate_name = "sandbag crate"
@@ -226,7 +226,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -236,7 +236,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = -50
 	faction_locked = TRUE
 
@@ -247,7 +247,7 @@
 	contains = list(/obj/item/flamethrower/full)
 	crate_name = "flamethrower crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 20
 
 /datum/supply_pack/sec_supply/frag_grenade
@@ -258,6 +258,17 @@
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 
+/datum/supply_pack/sec_supply/lorentz_grenade
+	name = "Lorentz Grenade Crate"
+	desc = "Contains one lorentz grenade. Better not let it go off in your hands."
+	cost = 300
+	contains = list(/obj/item/grenade/lorentz)
+	crate_name = "lorentz grenade crate"
+	crate_type = /obj/structure/closet/crate/secure/weapon
+	faction = /datum/faction/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/sec_supply/c4duffel
 	name = "C-4 Demolitions Charge Crate"
 	desc = "Contains a duffel of C-4 demolitions charges, for use in scrapping and demolitions of large-scale structures."
@@ -265,7 +276,7 @@
 	contains = list(/obj/item/storage/backpack/duffelbag/syndie/c4)
 	crate_name = "demolitions charge crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 10
 
 /datum/supply_pack/sec_supply/halberd
@@ -296,12 +307,6 @@
 	contains = list(/obj/item/grenade/stingbang)
 	crate_name = "stingbang grenade pack crate"
 
-/datum/supply_pack/sec_supply/baton
-	name = "Stun Baton Crate"
-	desc = "Arm your vessel security with a stun baton. Batteries included."
-	cost = 2500
-	contains = list(/obj/item/melee/baton/loaded)
-	crate_name = "stun baton crate"
 /*
 		Factional
 */
@@ -326,7 +331,7 @@
 	cost = 500
 	contains = list(/obj/item/storage/belt/military/cybersun)
 	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -338,7 +343,7 @@
 	cost = 300
 	contains = list(/obj/item/storage/belt/security/webbing/hardliners)
 	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -374,7 +379,7 @@
 	cost = 300
 	contains = list(/obj/item/storage/belt/security/webbing/ngr)
 	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 

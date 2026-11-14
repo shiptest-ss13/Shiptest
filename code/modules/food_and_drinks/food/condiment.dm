@@ -34,6 +34,7 @@
 		/datum/reagent/consumable/tiris_sale = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sale", "desc" = "An intense reduction made from tiris blood."),
 		/datum/reagent/consumable/tiris_sele = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sele", "desc" = "An gravy made from tiris blood."),
 		/datum/reagent/consumable/tiris_milk = list("icon_state" = "tiris-milk", "item_state" = "", "icon_empty" = "", "name" = "tiris milk", "desc" = "A rich and heavy milk taken from a Tiris!"),
+		/datum/reagent/consumable/honey = list("icon_state" = "honey", "item_state" = "", "icon_empty" = "", "name" = "honey jar", "desc" = "A jar of cloyingly sweet, herbal honey."),
 	)
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 	var/icon_empty = ""
@@ -273,6 +274,7 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
+	custom_materials = list(/datum/material/plastic = 50)
 	possible_states = list(
 		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "A packet of ketchup. The old standby, given by the fistful."),
 		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "A packet of hotsauce. Good for spicing up food."),
@@ -400,3 +402,9 @@
 	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
 	icon_state = "tiris-sauce"
 	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)
+
+/obj/item/reagent_containers/condiment/honey
+	name = "honey jar"
+	desc = "A jar of cloyingly sweet, herbal honey."
+	icon_state = "honey"
+	list_reagents = list(/datum/reagent/consumable/honey = 50)

@@ -19,7 +19,7 @@
 	result = /mob/living/simple_animal/bot/secbot
 	reqs = list(/obj/item/assembly/signaler = 1,
 				/obj/item/clothing/head/helmet/m10 = 1,
-				/obj/item/melee/baton = 1,
+				/obj/item/melee/classic_baton = 1,
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/bodypart/r_arm/robot = 1)
 	tools = list(TOOL_WELDER)
@@ -52,16 +52,6 @@
 				/obj/item/storage/firstaid = 1,
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/bodypart/r_arm/robot = 1)
-	time = 40
-	category = CAT_ROBOT
-
-/datum/crafting_recipe/Firebot
-	name = "Firebot"
-	result = /mob/living/simple_animal/bot/firebot
-	reqs = list(/obj/item/extinguisher = 1,
-				/obj/item/bodypart/r_arm/robot = 1,
-				/obj/item/assembly/prox_sensor = 1,
-				/obj/item/clothing/head/hardhat/red = 1)
 	time = 40
 	category = CAT_ROBOT
 

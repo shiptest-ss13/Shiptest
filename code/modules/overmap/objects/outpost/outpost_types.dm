@@ -208,7 +208,7 @@
 	border_size = 1
 
 /datum/overmap/outpost/warra_ice
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/warra_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
 	faction = FACTION_WARRA
@@ -238,7 +238,7 @@
 	)
 
 /datum/overmap/outpost/ngr_rock
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/ngr_rock
 	elevator_template = /datum/map_template/outpost/elevator_rock
 	weather_controller_type = /datum/weather_controller/rockplanet_safe
@@ -341,4 +341,36 @@
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null
 	elevator_template = /datum/map_template/outpost/elevator_test
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/test_20x20,
+		/datum/map_template/outpost/hangar/test_40x20,
+		/datum/map_template/outpost/hangar/test_40x40,
+		/datum/map_template/outpost/hangar/test_56x20,
+		/datum/map_template/outpost/hangar/test_56x40
+	)
 	// Uses "test" hangars.
+
+/datum/map_template/outpost/hangar/test_20x20
+	name = "hangar/test_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/test_40x20
+	name = "hangar/test_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/test_40x40
+	name = "hangar/test_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/test_56x20
+	name = "hangar/test_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/test_56x40
+	name = "hangar/test_56x40"
+	dock_width = 56
+	dock_height = 40

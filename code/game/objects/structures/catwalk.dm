@@ -42,6 +42,19 @@
 	plated_tile = /obj/item/stack/tile/plasteel/white
 	icon_state = "catwalk_platedwhite"
 
+
+/obj/structure/catwalk/over/plated_catwalk/open
+	hatch_open = TRUE
+	icon_state = "catwalk_plated_open"
+
+/obj/structure/catwalk/over/plated_catwalk/dark/open
+	hatch_open = TRUE
+	icon_state = "catwalk_plateddark_open"
+
+/obj/structure/catwalk/over/plated_catwalk/white/open
+	hatch_open = TRUE
+	icon_state = "catwalk_platedwhite_open"
+
 /obj/structure/catwalk/update_appearance()
 	..()
 	cut_overlays()

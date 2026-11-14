@@ -231,7 +231,9 @@
 		/obj/item/shears,
 		/obj/item/bodycamera,
 		/obj/item/bonesetter,
-		/obj/item/stack/sticky_tape/surgical
+		/obj/item/stack/sticky_tape/surgical,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart,
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -316,7 +318,6 @@
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
 		/obj/item/melee/knife,
 		/obj/item/grenade,
@@ -364,7 +365,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/melee/baton/loaded(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/full/classic/PopulateContents()
@@ -508,6 +508,18 @@
 		"Urban" = "militarywebbing_urban",
 		)
 
+//this might seem obtuse instead of allowing infinte reskins, but then the reskin menu would open every alt click, which is not good for a storage item such as this
+/obj/item/storage/belt/military/examine(mob/user)
+	. = ..()
+	if(unique_reskin && current_skin)
+		. += "You can [span_bold("Ctrl-Click")] [src] to reskin it again after skinning it."
+
+/obj/item/storage/belt/military/CtrlClick(mob/user)
+	. = ..()
+	if(isliving(user) && in_range(src, user))
+		current_skin = null
+		to_chat(user, "You can now reskin [src] again wtih [span_bold("Alt-Click")].")
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -519,6 +531,8 @@
 		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/gun/energy/cybersun/lorentz/opportunist,
+		/obj/item/gun/energy/clover/pistol,
 		/obj/item/bodycamera,
 		))
 	STR.exception_hold = exception_cache
@@ -530,7 +544,7 @@
 /obj/item/storage/belt/military/cobra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m45_cobra(src)
+		new /obj/item/ammo_box/magazine/m10_cobra(src)
 
 /obj/item/storage/belt/military/hydra/PopulateContents()
 	. = ..()

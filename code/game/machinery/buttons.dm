@@ -210,6 +210,11 @@
 /obj/machinery/button/door/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+/obj/machinery/button/door/hazard
+	name = "door button"
+	icon_state = "launcher"
+	skin = "launcher"
+
 /obj/machinery/button/door/setup_device()
 	if(!device)
 		if(normaldoorcontrol)
@@ -237,6 +242,12 @@
 	id = INCINERATOR_ATMOS_AUXVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
+//very common var edit //to-do: update paths this
+/obj/machinery/button/door/bolts
+	name = "door lock"
+	desc = "A remote control for the bolts on a door"
+	normaldoorcontrol = TRUE
+	specialfunctions = 4
 
 /obj/machinery/button/massdriver
 	name = "mass driver button"

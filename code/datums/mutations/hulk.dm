@@ -46,7 +46,7 @@
 /datum/mutation/human/hulk/proc/scream_attack(mob/living/carbon/human/source)
 	source.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced="hulk")
 
-/datum/mutation/human/hulk/on_life()
+/datum/mutation/human/hulk/on_life(seconds_per_tick, times_fired)
 	if(owner.health < 0)
 		on_losing(owner)
 		to_chat(owner, span_danger("You suddenly feel very weak."))

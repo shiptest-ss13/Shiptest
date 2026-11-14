@@ -82,23 +82,6 @@
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
 
-/obj/item/food/clothing // fuck you
-	name = "temporary moth clothing snack item"
-	desc = "If you're reading this it means I messed up. This is related to moths eating clothes and I didn't know a better way to do it than making a new food object."
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	tastes = list("dust" = 1, "lint" = 1)
-	foodtypes = CLOTH
-
-/obj/item/clothing/attack(mob/M, mob/user, def_zone)
-	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
-		var/obj/item/food/clothing/clothing_as_food = new
-		clothing_as_food.name = name
-		if(clothing_as_food.attack(M, user, def_zone))
-			take_damage(15, sound_effect=FALSE)
-		qdel(clothing_as_food)
-	else
-		return ..()
-
 /obj/item/clothing/attackby(obj/item/tool, mob/user, params)
 	if(tool.get_sharpness() && cuttable)
 		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
@@ -356,7 +339,15 @@
 	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
 		return
 
-	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
+	var/greyscale_style = greyscale_icon_state
+	if(istype(src, /obj/item/clothing/under))
+		var/obj/item/clothing/under/under = src
+		if(under.adjusted == ALT_STYLE)
+			greyscale_style = "[greyscale_icon_state]_d"
+		if(under.adjusted == ROLLED_STYLE)
+			greyscale_style = "[greyscale_icon_state]_s"
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_style)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)

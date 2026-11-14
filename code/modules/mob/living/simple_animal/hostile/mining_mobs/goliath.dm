@@ -50,7 +50,7 @@
 
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
-/mob/living/simple_animal/hostile/asteroid/goliath/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	handle_preattack()
 
@@ -80,6 +80,9 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
+		return
+	//no tentacles if the target is space or the goliath is.
+	if(isspaceturf(tturf) || isspaceturf(loc))
 		return
 	if(get_dist(src, target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
 		visible_message(span_warning("[src] digs its tentacles under [target]!"))
@@ -112,7 +115,7 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/Aggro()
 	vision_range = aggro_vision_range
 	handle_preattack()
-	if(icon_state != icon_aggro)
+	if(icon_state != icon_aggro && stat != DEAD)
 		icon_state = icon_aggro
 
 /mob/living/simple_animal/hostile/asteroid/goliath/pup
@@ -260,7 +263,7 @@
 	var/turf/last_location
 	var/tentacle_recheck_cooldown = 70
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) // dead
 		return
@@ -275,7 +278,7 @@
 				LAZYADD(cached_tentacle_turfs, T)
 		for(var/t in cached_tentacle_turfs)
 			if(isopenturf(t))
-				if(prob(10))
+				if(SPT_PROB(5, seconds_per_tick))
 					new tentacle_type(t, src)
 			else
 				cached_tentacle_turfs -= t
@@ -296,6 +299,8 @@
 	var/difficulty = 3
 
 /obj/effect/temp_visual/goliath_tentacle/Initialize(mapload, mob/living/new_spawner,recursive = FALSE)
+	if(isspaceturf(loc))
+		return INITIALIZE_HINT_QDEL
 	. = ..()
 	flick(wiggle,src)
 	for(var/obj/effect/temp_visual/goliath_tentacle/T in loc)
@@ -415,9 +420,9 @@
 	else
 		visible_message(span_warning("[src] expels it's matter, releasing a spray of crystalline shards!"))
 		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)
-		shoot_projectile(Get_Angle(src,target) + 10)
-		shoot_projectile(Get_Angle(src,target))
-		shoot_projectile(Get_Angle(src,target) - 10)
+		shoot_projectile(get_angle(src,target) + 10)
+		shoot_projectile(get_angle(src,target))
+		shoot_projectile(get_angle(src,target) - 10)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/spray_of_crystals()
 	spiral_attack_inprogress = TRUE
