@@ -29,6 +29,7 @@
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
+	greyscale_colors = list(list(14, 7), list(16, 10), list(16, 9))
 
 /obj/item/clothing/under/pants/cargo/grey
 	name = "grey cargo pants"

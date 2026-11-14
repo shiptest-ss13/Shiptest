@@ -258,10 +258,10 @@
 	cost = 750
 	faction = /datum/faction/clip
 
-/datum/supply_pack/magazine/skm_ammo
-	name = "SKM Magazine Crate"
-	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of twenty rounds."
-	contains = list(/obj/item/ammo_box/magazine/skm_762_40/empty)
+/datum/supply_pack/magazine/fa2_ammo
+	name = "FA2 Magazine Crate"
+	desc = "Contains a 7.62x40mm magazine for the FA2 rifles, with a capacity of twenty rounds."
+	contains = list(/obj/item/ammo_box/magazine/fa2_762_40/empty)
 	cost = 300
 
 /datum/supply_pack/magazine/heater
@@ -270,10 +270,10 @@
 	contains = list(/obj/item/ammo_box/magazine/heater)
 	cost = 300
 
-/datum/supply_pack/magazine/skm_ammo_extended
-	name = "SKM Extended Magazine Crate"
-	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
-	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
+/datum/supply_pack/magazine/fa2_ammo_extended
+	name = "FA2 Extended Magazine Crate"
+	desc = "Contains a 7.62x40mm magazine for the FA2 rifles, with a capacity of fourty rounds."
+	contains = list(/obj/item/ammo_box/magazine/fa2_762_40/extended/empty)
 	cost = 750
 	faction = /datum/faction/inteq
 	faction_discount = 0
@@ -281,7 +281,7 @@
 
 /datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
-	desc = "Contains a .308 magazine for SsG-04 and CM-F4 platform rifles, with a capacity of ten rounds."
+	desc = "Contains a .308 magazine for CM-F4 platform rifles, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/f4_308/empty)
 	cost = 300
 	faction = /datum/faction/clip
@@ -357,7 +357,7 @@
 
 /datum/supply_pack/magazine/mongrel_mag
 	name = "Mongrel Magazine Crate"
-	desc = "Contains a 10mm magazine for the SKM-44v 'Mongrel' SMG, with a capacity of twenty-four rounds."
+	desc = "Contains a 10mm magazine for the PM-25 'Mongrel' SMG, with a capacity of twenty-four rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm10mm/empty)
 	cost = 200
 	faction = /datum/faction/inteq

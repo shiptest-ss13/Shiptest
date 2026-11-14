@@ -224,6 +224,17 @@
 	stock = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/guncase/swiss_cheese
+	name = "\"Swiss Cheese\" Assault Rifle"
+	desc = "Here's somethin nice for ya. Old Solarian rifle, genuine antique, mint condition, like it just came out of a museum or something. Has the launcher thing and the weird-ass ammo and all that stuff. All working. No lowballs, I know what I've got."
+	item = /obj/item/gun/ballistic/automatic/assault/swiss_cheese
+	pair_item = list(/datum/blackmarket_item/ammo/swiss_cheese)
+	cost_min = 8000
+	cost_max = 12000
+	stock_max = 2
+	availability_prob = 10
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/weapon/guncase/e10
 	name = "E-10 Laser Pistol"
 	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
@@ -291,6 +302,22 @@
 	cost_max = 750
 	stock_max = 3
 	availability_prob = 40
+	availability_prob = 60
+
+/datum/blackmarket_item/weapon/guncase/e20
+	name = "E-20 Mining Emitter"
+	desc = "Hey, listen. My buddies and I came across an abandoned mining site. All the miners were dead. Tragic. Anyway. Had a big box of those old Eoehoma mining guns. Great for mining and even better for shooting fuckers. If ya want one we'll send it to ya for a reasonable price."
+	item = /obj/item/gun/energy/laser/e20
+	pair_item = list( // these only have a chance to spawn, each
+		/datum/blackmarket_item/tech/e20_scatter,
+		/datum/blackmarket_item/tech/e20_heavy,
+		/datum/blackmarket_item/tech/e20_efficiency,
+		/datum/blackmarket_item/tech/e20_pierce)
+
+	cost_min = 800
+	cost_max = 2200
+	stock_max = 5
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/stingingnettle
 	name = "xPL-7 Stinging Nettle"
@@ -599,10 +626,10 @@
 	stock_max = 4
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/guncase/skm_carbine
-	name = "SKM-24v Carbine"
-	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+/datum/blackmarket_item/weapon/guncase/fa2_carbine
+	name = "FA2-v Carbine"
+	desc = "Technically this isn't even an FA2, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
+	item = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 	pair_item = list(/datum/blackmarket_item/ammo/carbine_mag)
 
 	cost_min = 2000
@@ -610,10 +637,10 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/guncase/skm_lmg
-	name = "SKM-24u Light Machinegun"
-	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machine gun, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
-	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
+/datum/blackmarket_item/weapon/guncase/ml3
+	name = "ML3 Light Machinegun"
+	desc = "Your regular rifles not have enough oomph for you? This ML3 was reconstructed with help from a 'liberated' CM-40 parts shipment, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	item = /obj/item/gun/ballistic/automatic/hmg/ml3
 
 	cost_min = 5000
 	cost_max = 7000

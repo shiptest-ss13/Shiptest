@@ -595,7 +595,7 @@
 
 // common drop pool
 /obj/structure/rusted_gun_safe/proc/drop_common()
-	var/roll = rand(1,135)
+	var/roll = rand(1,140)
 	switch(roll)
 		if(1 to 5)
 			// e10
@@ -710,6 +710,17 @@
 			// clip nettle
 			new /obj/item/gun/energy/clover/pistol(loc)
 			new /obj/item/stock_parts/cell/gun/mini(loc)
+		if(136 to 140)
+			// e20 and a conversion kit
+			new /obj/item/gun/energy/laser/e20(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			var/kit = pick(
+				/obj/item/attachment/e20mod/scatter,
+				/obj/item/attachment/e20mod/heavy,
+				/obj/item/attachment/e20mod/efficiency,
+				/obj/item/attachment/e20mod/pierce)
+			new kit(loc)
 
 // uncommon drop pool
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
@@ -729,9 +740,9 @@
 			new /obj/item/ammo_box/vickland_a8_50r(loc)
 			new /obj/item/ammo_box/vickland_a8_50r(loc)
 		if(16 to 20)
-			// skm-24
-			new /obj/item/gun/ballistic/automatic/assault/skm(loc)
-			new /obj/item/ammo_box/magazine/skm_762_40(loc)
+			// fa2
+			new /obj/item/gun/ballistic/automatic/assault/fa2(loc)
+			new /obj/item/ammo_box/magazine/fa2_762_40(loc)
 		if(21 to 25)
 			// normal hydra
 			new /obj/item/gun/ballistic/automatic/assault/hydra(loc)
@@ -803,7 +814,7 @@
 
 // rare drop pool
 /obj/structure/rusted_gun_safe/proc/drop_rare()
-	var/roll = rand(1,50)
+	var/roll = rand(1,55)
 	switch(roll)
 		if(1 to 5)
 			// invictus
@@ -846,7 +857,11 @@
 			// opportunist
 			new /obj/item/gun/energy/cybersun/lorentz/opportunist(loc)
 			new /obj/item/stock_parts/cell/gun/cybersun(loc)
-
+		if(51 to 55)
+			// swiss cheese
+			new /obj/item/gun/ballistic/automatic/assault/swiss_cheese(loc)
+			new /obj/item/ammo_box/magazine/swiss
+			new /obj/item/ammo_box/magazine/swiss
 
 // weird drop pool
 /obj/structure/rusted_gun_safe/proc/drop_weird()

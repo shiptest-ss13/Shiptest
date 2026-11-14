@@ -475,7 +475,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/melee/knife/combat
 
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	implants = list(/obj/item/implant/radio)
 

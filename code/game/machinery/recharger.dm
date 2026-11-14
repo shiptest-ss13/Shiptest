@@ -18,7 +18,6 @@
 
 	var/static/list/allowed_devices = typecacheof(list(
 		/obj/item/gun/energy,
-		/obj/item/melee/baton,
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
@@ -173,12 +172,6 @@
 			var/obj/item/gun/energy/E = charging
 			if(E.cell)
 				E.cell.emp_act(severity)
-
-		else if(istype(charging, /obj/item/melee/baton))
-			var/obj/item/melee/baton/B = charging
-			if(B.cell)
-				B.cell.charge = 0
-
 
 /obj/machinery/recharger/update_appearance(updates)
 	. = ..()

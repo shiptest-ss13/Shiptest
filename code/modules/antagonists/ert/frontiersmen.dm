@@ -18,8 +18,8 @@
 	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
-/datum/antagonist/ert/frontier/skm
-	outfit = /datum/outfit/job/frontiersmen/ert/skm
+/datum/antagonist/ert/frontier/fa2
+	outfit = /datum/outfit/job/frontiersmen/ert/fa2
 
 /datum/antagonist/ert/frontier/unarmed
 	outfit = /datum/outfit/job/frontiersmen/ert/unarmed
