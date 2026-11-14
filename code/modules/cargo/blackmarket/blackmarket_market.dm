@@ -64,20 +64,20 @@
 	if(!istype(uplink) || !(method in shipping))
 		return FALSE
 
-	for(var/datum/blackmarket_item/I in available_items[category])
-		if(I.type != item_to_buy)
+	for(var/datum/blackmarket_item/current_item in available_items[category])
+		if(current_item.type != item_to_buy)
 			continue
 		if(!isnull(item_key))
-			if(I.key != item_key)
+			if(current_item.key != item_key)
 				continue
 
-		var/cost = I.cost + shipping[method]
+		var/cost = current_item.cost + shipping[method]
 		// I can't get the cost of the item and shipping in a clean way to the UI, so I have to do this.
 		if(uplink.money < cost)
-			to_chat(user, span_warning("You don't have enough credits in [uplink] for [I] with [method] shipping."))
+			to_chat(user, span_warning("You don't have enough credits in [uplink] for [current_item] with [method] shipping."))
 			return FALSE
 
-		if(I.buy(uplink, user, method))
+		if(current_item.buy(uplink, user, method))
 			uplink.money -= cost
 			return TRUE
 		return FALSE
