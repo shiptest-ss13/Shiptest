@@ -114,7 +114,7 @@
 	icon_living = "survivor_gunslinger"
 	projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	casing_type = /obj/item/ammo_casing/c46x30mm/recycled
-	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	r_hand = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 
 /mob/living/basic/human/hermit/ranged/gunslinger/bomber
 	name = "Hermit Bomber"
@@ -129,7 +129,7 @@
 	icon_living = "survivor_gunslinger"
 	projectile_sound = 'sound/weapons/zapbang.ogg'
 	casing_type = /obj/item/ammo_casing/c46x30mm/tesla
-	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	r_hand = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 
 /mob/living/basic/human/hermit/ranged/energy
 	name = "Hermit Trooper"

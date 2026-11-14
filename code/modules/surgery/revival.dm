@@ -29,7 +29,6 @@
 	name = "shock brain"
 	implements = list(
 		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
-		/obj/item/melee/baton = 40,		//i hate this a lot
 		/obj/item/gun/energy = 30,		//should be tasers only
 		/obj/item/inducer = 30)			//why not
 	time = 3 SECONDS
@@ -44,11 +43,6 @@
 		var/obj/item/shockpaddles/S = tool
 		if((S.req_defib && !S.defib.powered) || !HAS_TRAIT(S, TRAIT_WIELDED) || S.cooldown || S.busy)
 			to_chat(user, span_warning("You need to wield both paddles, and [S.defib] must be powered!"))
-			return FALSE
-	if(istype(tool, /obj/item/melee/baton))
-		var/obj/item/melee/baton/B = tool
-		if(!B.turned_on)
-			to_chat(user, span_warning("[B] needs to be active!"))
 			return FALSE
 	if(istype(tool, /obj/item/gun/energy))
 		var/obj/item/gun/energy/E = tool

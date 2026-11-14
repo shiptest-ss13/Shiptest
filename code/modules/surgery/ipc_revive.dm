@@ -25,7 +25,6 @@
 	implements = list(
 		/obj/item/inducer = 100,
 		/obj/item/shockpaddles = 80,
-		/obj/item/melee/baton = 50,
 		/obj/item/gun/energy = 30)
 	time = 60
 

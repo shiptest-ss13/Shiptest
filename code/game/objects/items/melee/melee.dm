@@ -227,18 +227,6 @@
 
 		user.put_in_hands(S)
 		to_chat(user, span_notice("You fasten the glass shard to the top of the rod with the cable."))
-
-	else if(istype(I, /obj/item/assembly/igniter) && !(HAS_TRAIT(I, TRAIT_NODROP)))
-		var/obj/item/melee/baton/cattleprod/P = new /obj/item/melee/baton/cattleprod
-
-		remove_item_from_storage(user)
-
-		to_chat(user, span_notice("You fasten [I] to the top of the rod with the cable."))
-
-		qdel(I)
-		qdel(src)
-
-		user.put_in_hands(P)
 	else
 		return ..()
 
