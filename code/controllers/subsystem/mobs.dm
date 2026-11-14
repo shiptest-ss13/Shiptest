@@ -35,12 +35,25 @@ SUBSYSTEM_DEF(mobs)
 	var/times_fired = src.times_fired
 	var/seconds_per_tick = wait / (1 SECONDS)
 	while(currentrun.len)
-		var/mob/living/L = currentrun[currentrun.len]
+		var/mob/living/living_mob = currentrun[currentrun.len]
 		currentrun.len--
-		if(L)
-			L.Life(seconds_per_tick, times_fired)
+		if(living_mob)
+			if(!living_mob.client && !living_mob.mind) //dont throttle player bodies
+				if(!length(LAZYACCESS(players_by_virtual_z, "[living_mob.virtual_z()]")))
+					continue // no one in the z level, dont bother
+				if(living_mob.stat == DEAD && iscarbon(living_mob) && !living_mob.on_fire)
+					var/since_last_life = world.time - living_mob.last_life_time
+					if(since_last_life < CORPSE_LIFE_INTERVAL)
+						continue
+					living_mob.last_life_time = world.time
+					living_mob.Life(min(since_last_life, CORPSE_LIFE_INTERVAL * 2) / (1 SECONDS), times_fired)
+					if (MC_TICK_CHECK)
+						return
+					continue
+			living_mob.last_life_time = world.time
+			living_mob.Life(seconds_per_tick, times_fired)
 		else
-			GLOB.mob_living_list.Remove(L)
-			stack_trace("[L] no longer exists in mob_living_list")
+			GLOB.mob_living_list.Remove(living_mob)
+			stack_trace("[living_mob] no longer exists in mob_living_list")
 		if (MC_TICK_CHECK)
 			return
