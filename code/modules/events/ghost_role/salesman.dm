@@ -34,8 +34,6 @@
 	salesman_mind.transfer_to(salesman)
 	salesman.equipOutfit(salesman_outfit)
 
-	new locker(spawn_location)
-
 	message_admins("[ADMIN_LOOKUPFLW(salesman)] has been made into a salesman by an event.")
 	log_game("[key_name(salesman)] was spawned as a salesman by an event.")
 	spawned_mobs += salesman
