@@ -4,6 +4,8 @@
 	projectile_type = /obj/projectile/bullet/reusable/arrow
 	caliber = "arrow"
 	icon_state = "arrow"
+	force = 12 // it's sharp!
+	sharpness = SHARP_POINTY
 	throwforce = 3 //good luck hitting someone with the pointy end of the arrow
 	throw_speed = 3
 	firing_effect_type = null
@@ -23,3 +25,17 @@
 	var/obj/item/potential_bow = user.get_inactive_held_item()
 	if(istype(potential_bow, /obj/item/gun/ballistic/bow))
 		potential_bow.attackby(src, user)
+
+// not technically an arrow but close enough
+/obj/item/ammo_casing/caseless/dma_rod
+	name = "sharpened metal rod"
+	desc = "A metal rod with the tip ground to a fine point. Would probably hurt if launched at someone."
+	icon_state = "dma-rod"
+	force = 12 // pointy!
+	sharpness = SHARP_POINTY
+	caliber = "dmarod"
+	projectile_type = /obj/projectile/bullet/dma_rod
+	auto_rotate = FALSE
+	can_cookoff = FALSE
+	stack_type = null
+	w_class = WEIGHT_CLASS_SMALL

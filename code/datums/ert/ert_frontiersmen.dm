@@ -24,13 +24,13 @@
 
 /datum/ert/frontier/raiders
 	leader_role = /datum/antagonist/ert/frontier/leader
-	roles = list(/datum/antagonist/ert/frontier/skm, /datum/antagonist/ert/frontier/medic = 1, /datum/antagonist/ert/frontier/engineer = 1)
+	roles = list(/datum/antagonist/ert/frontier/fa2, /datum/antagonist/ert/frontier/medic = 1, /datum/antagonist/ert/frontier/engineer = 1)
 	rename_team = "Assault Frontiersmen Team"
 	polldesc = "a well armed squad of pirates"
 
 /datum/ert/frontier/shock
 	teamsize = 6
 	leader_role = /datum/antagonist/ert/frontier/leader/heavy
-	roles = list(/datum/antagonist/ert/frontier/skm, /datum/antagonist/ert/frontier/sentry = 1, /datum/antagonist/ert/frontier/flamer = 1, /datum/antagonist/ert/frontier/medic/heavy = 1, /datum/antagonist/ert/frontier/engineer = 1)
+	roles = list(/datum/antagonist/ert/frontier/fa2, /datum/antagonist/ert/frontier/sentry = 1, /datum/antagonist/ert/frontier/flamer = 1, /datum/antagonist/ert/frontier/medic/heavy = 1, /datum/antagonist/ert/frontier/engineer = 1)
 	rename_team = "Frontiersmen Shock Troops"
 	polldesc = "a frontiersmen shock troop squadron"

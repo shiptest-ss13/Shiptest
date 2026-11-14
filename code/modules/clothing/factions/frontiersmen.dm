@@ -312,9 +312,9 @@
 		new /obj/item/ammo_box/magazine/illestren_a850r(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
+/obj/item/storage/belt/security/military/frontiersmen/fa2_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()

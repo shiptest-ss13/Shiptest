@@ -13,7 +13,7 @@
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	cuttable = TRUE
 	clothamnt = 3
-	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
+	greyscale_colors = list(list(15, 17), list(14, 12), list(14, 7))
 	greyscale_icon_state = "under"
 
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
