@@ -48,6 +48,39 @@
 /obj/item/gun/energy/e_gun/e11/empty_cell
 	spawn_no_ammo = TRUE
 
+/obj/item/gun/energy/laser/e20
+	name = "E-20 mining emitter"
+	desc = "Eoehoma's first and only mining tool. Fires concentrated bolts of light capable of easily breaking apart stone, metal, and flesh. The design, while ancient, is very well documented, leading to a large amount of third-party modifications appearing over the years."
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
+
+	icon_state = "e20"
+	item_state = "e20"
+
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/mining)
+	ammo_x_offset = 1
+	shaded_charge = TRUE
+	manufacturer = MANUFACTURER_EOEHOMA
+
+	wield_delay = 0.6 SECONDS
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
+
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
+		/obj/item/attachment/e20mod,
+	)
+
+	spread = 0
+	spread_unwielded = 10
+
+/obj/item/gun/energy/laser/e20/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/laser/e50
 	name = "E-50 energy emitter"
