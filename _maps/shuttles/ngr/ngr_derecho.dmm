@@ -1153,6 +1153,9 @@
 /obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "kW" = (
@@ -1260,6 +1263,9 @@
 /obj/structure/cable/yellow,
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "lv" = (
@@ -1351,6 +1357,10 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "mq" = (
@@ -2307,9 +2317,6 @@
 	dir = 4;
 	id = "derecho_port_engine_blast"
 	},
-/obj/structure/cable{
-	icon_state = "0-6"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "vc" = (
@@ -2928,6 +2935,12 @@
 /obj/structure/sign/poster/official/moth/piping{
 	pixel_y = 30
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "BD" = (
@@ -3151,13 +3164,14 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "CY" = (
@@ -3216,23 +3230,6 @@
 /obj/item/t_scanner/adv_mining_scanner,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
-"DP" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "derecho_starboard_engine_blast"
-	},
-/obj/structure/cable{
-	icon_state = "0-5"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines)
 "DR" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3263,10 +3260,13 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "2-9"
+	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
@@ -3538,9 +3538,6 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "derecho_port_engine_blast"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -5220,9 +5217,6 @@
 	dir = 4;
 	id = "derecho_starboard_engine_blast"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "TW" = (
@@ -6048,7 +6042,7 @@ pC
 pC
 pC
 TT
-DP
+TT
 pC
 Tq
 Tq
