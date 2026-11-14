@@ -470,7 +470,7 @@
 	// Living creature or not, we remove you anyway.
 	concurrent_users -= user_ref
 	// Unregister map objects
-	if(current_ship)
+	if(current_ship && !QDELETED(current_ship))
 		current_ship.token.cam_screen.hide_from(user)
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
