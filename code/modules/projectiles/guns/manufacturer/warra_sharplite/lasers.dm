@@ -160,6 +160,9 @@
 /obj/item/gun/energy/sharplite/rush/empty_cell
 	spawn_no_ammo = TRUE
 
+/obj/item/gun/energy/sharplite/rush/no_cell
+	default_ammo_type = FALSE
+
 /obj/item/gun/energy/sharplite/surge
 	name = "SL L201 “Surge” Marksman Plasma Rifle"
 	desc = "A long rifle-sized electroplasma gun. Specialized for long-range shooting, with an extended focusing assembly that produces much higher projectile velocities and more powerful bolts at the cost of power usage."
@@ -344,6 +347,9 @@
 
 /obj/item/gun/energy/sharplite/amperage/empty_cell
 	spawn_no_ammo = TRUE
+
+/obj/item/gun/energy/sharplite/amperage/no_cell
+	default_ammo_type = FALSE
 
 /obj/item/gun/energy/sharplite/amperage/zeta
 	autowiki_hidden = TRUE //not obtainable afaik

@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Besra-class Light Landing Craft",
+	"prefix": "VISV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"faction": "/datum/faction/warra/vigilitas",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Besra-class",
+	"map_path": "_maps/shuttles/warra/warra_besra.dmm",
+	"token_icon_state": "ship_generic",
+	"description": "An older Makosso-Warra Shipworks vessel class, originally built for N+S supply operations, though quickly abandoned for its relatively low cargo capacity. The design has instead found its place in the Vigilitas Crisis Response fleet where it played the role of a rapid deployment platform for personnel, armored vehicles and heavy equipment - the duty it retains to this day. Besras became most notable during the ICW, where they would be the primary line of defense for the Warra colonies - both against external threats and internal fires.",
+	"tags": [
+		"Combat",
+		"RP Focus"
+	],
+	"limit": 1,
+	"tranist_x_offset": -15,
+	"tranist_y_offset": -10,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Crisis Response Director": {
+			"outfit": "/datum/outfit/job/warra/captain/vi/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Crisis Response Sergeant": {
+			"outfit": "/datum/outfit/job/warra/hos/vi/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Crisis Response Officer": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 3
+		},
+		"Medical Specialist": {
+			"outfit": "/datum/outfit/job/warra/paramedic/empty",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
