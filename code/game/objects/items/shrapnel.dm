@@ -68,7 +68,7 @@
 /obj/item/shrapnel/bullet/tracker/Initialize()
 	. = ..()
 	timer_id = QDEL_IN_STOPPABLE(src, lifespan)
-	AddComponent(/datum/component/gps/item, gps_tag)
+	AddComponent(/datum/component/gps, gps_tag)
 
 /obj/item/shrapnel/bullet/tracker/Destroy()
 	deltimer(timer_id)

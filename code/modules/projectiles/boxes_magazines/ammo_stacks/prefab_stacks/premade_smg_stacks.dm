@@ -1,4 +1,4 @@
-// 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)
+// 4.6x30mm (Resolution, Podium, SKM-24v)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	max_ammo = 20
@@ -59,9 +59,20 @@
 	ammo_type = /obj/item/ammo_casing/c46x30mm/tesla
 	max_ammo = 20
 
-// 4.73x33mm caseless (Solar)
+// 4.73x33mm caseless (Swiss Cheese)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
+	max_ammo = 15
+
+/obj/item/storage/box/ammo/c47x33mm
+	name = "box of 4.7x33mm caseless ammo"
+	desc = "A box of 4.7x33mm caseless ammo, an antiquated Solarian cartridge. Proudly manufactured by the Nkansah Historical Firearms Society."
+	icon_state = "47x33box"
+
+/obj/item/storage/box/ammo/c47x33mm/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm = 4)
+	generate_items_inside(items_inside,src)
 
 // 5.56mm HITP caseless (Pistole C)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm
@@ -70,7 +81,7 @@
 
 /obj/item/storage/box/ammo/c556mm
 	name = "box of 5.56mm HITP caseless ammo"
-	desc = "A box of 5.56mm HITP caseless ammo, a SolGov standard."
+	desc = "A box of 5.56mm HITP caseless ammo, a SolCon standard pistol cartridge."
 	icon_state = "556mmHITPbox"
 
 /obj/item/storage/box/ammo/c556mm/PopulateContents()

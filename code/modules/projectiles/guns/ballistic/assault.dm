@@ -30,8 +30,8 @@
 	wear_major_threshold = 600
 	wear_maximum = 1200
 
-/obj/item/gun/ballistic/automatic/assault/skm
-	name = "\improper SKM-24"
+/obj/item/gun/ballistic/automatic/assault/fa2
+	name = "\improper FA2"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
@@ -46,22 +46,22 @@
 	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
-	icon_state = "skm"
-	item_state = "skm"
+	icon_state = "fa2"
+	item_state = "fa2"
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_762_40,
+		/obj/item/ammo_box/magazine/fa2_762_40,
 	)
 
 	unique_reskin = list(\
-		"SKM" = "skm",
-		"Polymer" = "skm_polymer",
-		"Bright" = "skm_bright",
+		"fa2" = "fa2",
+		"Polymer" = "fa2_polymer",
+		"Bright" = "fa2_bright",
 		)
 	unique_reskin_changes_inhand = TRUE
 
@@ -96,21 +96,21 @@
 
 	fire_delay = 0.2 SECONDS
 
-/obj/item/gun/ballistic/automatic/assault/skm/no_mag
+/obj/item/gun/ballistic/automatic/assault/fa2/no_mag
 	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/automatic/assault/skm/pirate
+/obj/item/gun/ballistic/automatic/assault/fa2/pirate
 	autowiki_hidden = TRUE //not obtainable: referenced nowhere in code or maps
 	name = "\improper Chopper"
-	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
+	desc = "An FA2 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
 
-	icon_state = "skm_pirate"
-	item_state = "skm_pirate"
+	icon_state = "chopper"
+	item_state = "chopper"
 	manufacturer = MANUFACTURER_NONE
 	wear_rate = 2
 
-/obj/item/gun/ballistic/automatic/assault/skm/inteq
-	name = "\improper SKM-44"
+/obj/item/gun/ballistic/automatic/assault/fa2/inteq
+	name = "\improper KS-24 Ridgeback"
 	desc = "An obsolete model of assault rifle once used by CLIP. Most of these were seized from Frontiersmen armories or purchased in CLIP, then modified to IRMG standards. Chambered in 7.62x40mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
@@ -118,29 +118,28 @@
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 
-	icon_state = "skm_inteq"
-	item_state = "skm_inteq"
+	icon_state = "ridgeback"
+	item_state = "ridgeback"
 	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
-	desc = "An ancient longarm famous for its boxy, modular design. Mass produced by the Terran Confederation in ages past, these often mutiple century old designs have survied due to their sheer ruggedness. The DMA on this unit is sadly broken, but these rifles are known for their excellent burst fire. Uses 5.56mm ammunition for Matter mode."
+	desc = "An ancient longarm, once mass produced by the Terran Confederation. While most have broken down, a few well preserved models can still be found in the hands of dedicated collectors. Known for their excellent burst fire and integrated DMA unit, keeping it useful in times of logistical trouble. Chambered in 4.73x33mm caseless, and uses sharpened iron rods for the DMA."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
+	fire_sound_volume = 35
 	icon_state = "swiss"
 	item_state = "swiss"
 	show_magazine_on_sprite = TRUE
-	empty_indicator = TRUE
 	burst_size = 3
-	burst_delay = 0.08 SECONDS
+	burst_delay = 0.04 SECONDS
 	fire_delay = 0.25 SECONDS
-	spread = 8
 	weapon_weight = WEAPON_MEDIUM
-	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto", FIREMODE_OTHER = "hybrid")
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto")
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
 
 	fire_select_icon_state_prefix = "swisschesse_"
 
@@ -149,9 +148,28 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/swiss,
 	)
+	default_attachments = list(/obj/item/attachment/gun/ballistic/swiss_cheese_dma)
+	unique_attachments = list(/obj/item/attachment/gun/ballistic/swiss_cheese_dma)
 	manufacturer = MANUFACTURER_SOLARARMORIES
-	spread = 8
+	spread = 2
 	spread_unwielded = 15
 
-/obj/item/gun/ballistic/automatic/assault/swiss_cheese/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	to_chat(user, span_danger("You hear a strange sound from the DMA unit. It doesn't appear to be operational."))
+/obj/item/gun/ballistic/automatic/assault/swiss_cheese/examine(mob/examiner)
+	. = ..()
+	. += span_notice("You could <b>right click</b> a metal rod on it to sharpen it for use in the DMA.")
+
+/obj/item/gun/ballistic/automatic/assault/attackby_secondary(obj/item/thingy, mob/user, params)
+	if(istype(thingy, /obj/item/stack/rods))
+		to_chat(user, span_notice("You begin sharpening a rod on [src]..."))
+		var/obj/item/stack/rods/its_a_cylinder = thingy
+		if(do_after(user, 1 SECONDS))
+			if(!its_a_cylinder.use(1))
+				to_chat(user, span_warning("The rod you were sharpening isn't there anymore! What the hell?"))
+				return ..()
+			to_chat(user, span_notice("You sharpen the rod."))
+			playsound(src, 'sound/items/crowbar.ogg', 25, TRUE)
+			var/obj/item/not_anymore = new /obj/item/ammo_casing/caseless/dma_rod
+			user.put_in_hands(not_anymore)
+			src.attackby_secondary(not_anymore, user, params) // load if we can
+	else
+		return ..()

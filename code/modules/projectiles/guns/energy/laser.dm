@@ -1,7 +1,6 @@
 /obj/item/gun/energy/laser
-	name = "E-20 mining emitter"
-	desc = "A basic mining tool that fires concentrated bolts of light, which easily cause flesh, stone, and metal to yield."
-	//desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
+	name = "eoehoma fuckinator 9000"
+	desc = "This is a base type gun and you should not see this. Please make a bug report on the github if you see this."
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
 	item_state = "laser"
@@ -12,6 +11,9 @@
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
 	manufacturer = MANUFACTURER_EOEHOMA
+
+	bad_type = /obj/item/gun/energy/laser
+	autowiki_hidden = TRUE
 
 	spread = 0
 	spread_unwielded = 10
@@ -87,23 +89,6 @@
 
 /obj/item/gun/energy/laser/cyborg/emp_act()
 	return
-
-/obj/item/gun/energy/laser/scatter
-	name = "scatter laser gun"
-	desc = "A laser gun mimicking the function of a shotgun, manufactured with an adjustable lens capable of projecting scattershot or slugs."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
-	manufacturer = MANUFACTURER_NONE
-
-/obj/item/gun/energy/laser/scatter/shotty
-	autowiki_hidden = TRUE //not obtainable afaik
-	name = "energy shotgun"
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "cshotgun"
-	item_state = "shotgun"
-	desc = "A combat shotgun gutted and refitted with an internal laser system. Can switch between taser and scattered disabler shots."
-	shaded_charge = FALSE
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
-	manufacturer = MANUFACTURER_NONE
 
 ///Laser Cannon
 

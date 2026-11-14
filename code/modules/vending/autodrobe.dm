@@ -44,7 +44,7 @@
 		/obj/item/clothing/head/pirate = 1,
 		/obj/item/clothing/head/bandana = 1,
 		/obj/item/clothing/head/bandana = 1,
-		/obj/item/clothing/head/trapper = 1,
+		/obj/item/clothing/head/ushanka = 4,
 		/obj/item/clothing/mask/gas/cyborg = 1,
 		/obj/item/clothing/under/dress/sundress = 1,
 		/obj/item/staff/broom = 1,

@@ -92,18 +92,15 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		var/life_status
 
 		var/mob/living/carbon/human/H = i
-		var/nanite_sensors = FALSE
-		if(H in SSnanites.nanite_monitored_mobs)
-			nanite_sensors = TRUE
 		// Check if their z-level is correct and if they are wearing a uniform.
 		// Accept H.z==0 as well in case the mob is inside an object.
 		// Accept any station zlevel if the console user is on a station zlevel
-		if ((H.z == 0 || H.virtual_z() == z || (station && H.virtual_level_trait(ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
+		if ((H.z == 0 || H.virtual_z() == z || (station && H.virtual_level_trait(ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under)))
 			U = H.w_uniform
 
 			// Are the suit sensors on?
-			if (nanite_sensors || ((U.has_sensor > 0) && U.sensor_mode))
-				pos = H.z == 0 || (nanite_sensors || U.sensor_mode == SENSOR_COORDS) ? get_turf(H) : null
+			if ((U.has_sensor > 0) && U.sensor_mode)
+				pos = H.z == 0 || ( U.sensor_mode == SENSOR_COORDS) ? get_turf(H) : null
 
 				// Special case: If the mob is inside an object confirm the z-level on turf level.
 				if (H.z == 0 && (!pos || (pos.virtual_z() != z)))
@@ -118,16 +115,16 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 						var/datum/job/assigned_job = GLOB.name_occupations[I.assignment]
 						ijob = assigned_job.display_order
 
-				if (nanite_sensors || U.sensor_mode >= SENSOR_LIVING)
+				if (U.sensor_mode >= SENSOR_LIVING)
 					life_status = ((H.stat < DEAD) ? TRUE : FALSE) //So anything less that dead is marked as alive. (Soft crit, concious, unconcious)
 
-				if (nanite_sensors || U.sensor_mode >= SENSOR_VITALS)
+				if (U.sensor_mode >= SENSOR_VITALS)
 					oxydam = round(H.getOxyLoss(),1)
 					toxdam = round(H.getToxLoss(),1)
 					burndam = round(H.getFireLoss(),1)
 					brutedam = round(H.getBruteLoss(),1)
 
-				if (nanite_sensors || U.sensor_mode >= SENSOR_COORDS)
+				if (U.sensor_mode >= SENSOR_COORDS)
 					if (!pos)
 						pos = get_turf(H)
 					area = get_area_name(H, TRUE)

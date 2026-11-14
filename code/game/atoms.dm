@@ -379,24 +379,6 @@
 		return TRUE
 	return !density
 
-/**
- * Is the atom in an away mission
- *
- * Must be in the away mission z-level to return TRUE
- *
- * Also used in gamemode code for win conditions
- */
-/atom/proc/onAwayMission()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(is_away_level(T))
-		return TRUE
-
-	return FALSE
-
-
 
 ///This atom has been hit by a hulkified mob in hulk mode (user)
 /atom/proc/attack_hulk(mob/living/carbon/human/user)
@@ -1211,7 +1193,7 @@
 		C?.open_filter_editor(src)
 
 	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
-		export_item_and_contents(src, apply_elastic = FALSE)
+		export_item_and_contents(src)
 
 /atom/vv_get_header()
 	. = ..()

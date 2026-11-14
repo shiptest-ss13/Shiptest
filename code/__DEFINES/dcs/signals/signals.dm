@@ -123,9 +123,6 @@
 #define COMSIG_ATOM_RCD_ACT "atom_rcd_act"
 ///from base of atom/singularity_pull(): (S, current_size)
 #define COMSIG_ATOM_SING_PULL "atom_sing_pull"
-///from obj/machinery/bsa/full/proc/fire(): ()
-#define COMSIG_ATOM_BSA_BEAM "atom_bsa_beam_pass"
-	#define COMSIG_ATOM_BLOCKS_BSA_BEAM (1<<0)
 ///from base of atom/set_light(): (l_range, l_power, l_color, l_on)
 #define COMSIG_ATOM_SET_LIGHT "atom_set_light"
 ///from base of atom/setDir(): (old_dir, new_dir). Called before the direction changes.
@@ -222,6 +219,8 @@
 #define COMSIG_LIVING_START_PULL "living_start_pull"
 ///called on /living when someone is pulled (mob/living/puller)
 #define COMSIG_LIVING_GET_PULLED "living_start_pulled"
+///from /obj/projectile/proc/scan_moved_turf(), on a mob a projectile goes close by without hitting: (obj/projectile/projectile)
+#define COMSIG_LIVING_NEAR_MISS "living_near_miss"
 ///from base of mob/living/set_body_position(): (new_position, old_position)
 #define COMSIG_LIVING_SET_BODY_POSITION "living_set_body_position"
 
@@ -648,7 +647,7 @@
 
 ///from base of /obj/projectile/proc/on_hit(), like COMSIG_PROJECTILE_ON_HIT but on the projectile itself and with the hit limb (if any): (atom/movable/firer, atom/target, Angle, hit_limb)
 #define COMSIG_PROJECTILE_SELF_ON_HIT "projectile_self_on_hit"
-///from base of /obj/projectile/proc/on_hit(): (atom/movable/firer, atom/target, Angle)
+///from base of /obj/projectile/proc/on_hit(): (atom/movable/firer, atom/target, Angle, hit_limb, blocked)
 #define COMSIG_PROJECTILE_ON_HIT "projectile_on_hit"
 ///from base of /obj/projectile/proc/fire(): (obj/projectile, atom/original_target)
 #define COMSIG_PROJECTILE_BEFORE_FIRE "projectile_before_fire"
@@ -708,28 +707,6 @@
 
 //NTnet
 #define COMSIG_COMPONENT_NTNET_RECEIVE "ntnet_receive" //called on an object by its NTNET connection component on receive. (sending_id(number), sending_netname(text), data(datum/netdata))
-
-//Nanites
-#define COMSIG_HAS_NANITES "has_nanites" //() returns TRUE if nanites are found
-#define COMSIG_NANITE_IS_STEALTHY "nanite_is_stealthy" //() returns TRUE if nanites have stealth
-#define COMSIG_NANITE_DELETE "nanite_delete" //() deletes the nanite component
-#define COMSIG_NANITE_GET_PROGRAMS "nanite_get_programs" //(list/nanite_programs) - makes the input list a copy the nanites' program list
-#define COMSIG_NANITE_GET_VOLUME "nanite_get_volume" //(amount) Returns nanite amount
-#define COMSIG_NANITE_SET_VOLUME "nanite_set_volume" //(amount) Sets current nanite volume to the given amount
-#define COMSIG_NANITE_ADJUST_VOLUME "nanite_adjust" //(amount) Adjusts nanite volume by the given amount
-#define COMSIG_NANITE_SET_MAX_VOLUME "nanite_set_max_volume"	//(amount) Sets maximum nanite volume to the given amount
-#define COMSIG_NANITE_SET_CLOUD "nanite_set_cloud" //(amount(0-100)) Sets cloud ID to the given amount
-#define COMSIG_NANITE_SET_CLOUD_SYNC "nanite_set_cloud_sync"	//(method) Modify cloud sync status. Method can be toggle, enable or disable
-#define COMSIG_NANITE_SET_SAFETY "nanite_set_safety" //(amount) Sets safety threshold to the given amount
-#define COMSIG_NANITE_SET_REGEN "nanite_set_regen" //(amount) Sets regeneration rate to the given amount
-#define COMSIG_NANITE_SIGNAL "nanite_signal" //(code(1-9999)) Called when sending a nanite signal to a mob.
-#define COMSIG_NANITE_COMM_SIGNAL "nanite_comm_signal" //(comm_code(1-9999), comm_message) Called when sending a nanite comm signal to a mob.
-#define COMSIG_NANITE_SCAN "nanite_scan" //(mob/user, full_scan) - sends to chat a scan of the nanites to the user, returns TRUE if nanites are detected
-#define COMSIG_NANITE_UI_DATA "nanite_ui_data" //(list/data, scan_level) - adds nanite data to the given data list - made for ui_data procs
-#define COMSIG_NANITE_ADD_PROGRAM "nanite_add_program" //(datum/nanite_program/new_program, datum/nanite_program/source_program) Called when adding a program to a nanite component
-	#define COMPONENT_PROGRAM_INSTALLED 1 //Installation successful
-	#define COMPONENT_PROGRAM_NOT_INSTALLED 2 //Installation failed, but there are still nanites
-#define COMSIG_NANITE_SYNC "nanite_sync" //(datum/component/nanites, full_overwrite, copy_activation) Called to sync the target's nanites to a given nanite component
 
 // /datum/component/storage signals
 #define COMSIG_CONTAINS_STORAGE "is_storage" //() - returns bool.

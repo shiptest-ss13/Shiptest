@@ -161,7 +161,7 @@ There are several things that need to be remembered:
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = use_autogen)
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_state = target_overlay, override_file = icon_file, mob_species = use_autogen)
 
 		if(!uniform_overlay)
 			return

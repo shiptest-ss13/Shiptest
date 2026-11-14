@@ -38,13 +38,6 @@ GLOBAL_LIST_INIT(abductor_gear, subtypesof(/datum/abductor_gear))
 	id = "science_tool"
 	build_path = /obj/item/abductor/gizmo
 
-/datum/abductor_gear/advanced_baton
-	name = "Advanced Baton"
-	description = "A quad-mode baton used for incapacitation and restraining of specimens."
-	id = "advanced_baton"
-	cost = 2
-	build_path = /obj/item/melee/baton/abductor
-
 /datum/abductor_gear/superlingual_matrix
 	name = "Superlingual Matrix"
 	description = "A mysterious structure that allows for instant communication between users. Pretty impressive until you need to eat something."

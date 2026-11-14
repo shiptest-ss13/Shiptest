@@ -1,0 +1,727 @@
+//Meant for simple animals to drop lootable human bodies.
+
+//If someone can do this in a neater way, be my guest-Kor
+
+//This has to be separate from the Away Mission corpses, because New() doesn't work for those, and initialize() doesn't work for these.
+
+//To do: Allow corpses to appear mangled, bloody, etc. Allow customizing the bodies appearance (they're all bald and white right now).
+
+//List of different corpse types
+
+/obj/effect/mob_spawn/human/corpse/ramzi
+	name = "Ramzi Operative"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi
+
+/datum/outfit/ramzi
+	name = "Ramzi Clique Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
+	suit = /obj/item/clothing/suit/armor/ramzi
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	ears = /obj/item/radio/headset/alt
+	mask = /obj/item/clothing/mask/gas/ramzi
+	head = /obj/item/clothing/head/helmet/m10/ramzi
+	back = /obj/item/storage/backpack
+	neck = /obj/item/clothing/neck/dogtag/ramzi
+	id = /obj/item/card/id/syndicate
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt
+	name = "Ramzi Runt"
+	outfit = /datum/outfit/ramzi/runt
+
+/datum/outfit/ramzi/runt
+	name = "Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
+	ears = /obj/item/radio/headset //civilian
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap
+	name = "Flap-cap Ramzi Runt"
+	outfit = /datum/outfit/ramzi/runt/flapcap
+
+/datum/outfit/ramzi/runt/flapcap
+	name = "Flap-Cap Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi/flap
+	neck = /obj/item/clothing/neck/dogtag/ramzi
+	ears = /obj/item/radio/headset //civilian
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	name = "Ramzi Runt Unarmoured"
+	outfit = /datum/outfit/ramzi/runt/noarmour
+
+/datum/outfit/ramzi/runt/noarmour
+	name = "Unarmoured Ramzi Runt Corpse"
+	suit = /obj/item/clothing/suit/ramzi
+	neck = /obj/item/clothing/neck/shemagh/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
+	name = "Flap-cap Ramzi Runt Unarmoured"
+	outfit = /datum/outfit/ramzi/runt/noarmour/flapcap
+
+/datum/outfit/ramzi/runt/noarmour/flapcap
+	name = "Flap-Cap Unarmoured Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi/flap
+
+/obj/effect/mob_spawn/human/corpse/ramzi/engi
+	name = "Ramzi Engineer"
+	outfit = /datum/outfit/ramzi/engi
+
+
+/datum/outfit/ramzi/engi
+	name = "Ramzi Technician Corpse"
+	suit = /obj/item/clothing/suit/ramzi
+	gloves = /obj/item/clothing/gloves/color/fyellow/old
+	head = /obj/item/clothing/head/hardhat/ramzi
+	glasses = /obj/item/clothing/glasses/welding
+	belt = /obj/item/storage/belt/utility
+
+/obj/effect/mob_spawn/human/corpse/ramzi/engi/grinder
+	name = "Ramzi Grinder Guy"
+	outfit = /datum/outfit/ramzi/engi/grinder
+
+
+/datum/outfit/ramzi/engi/grinder
+	name = "Ramzi Angle Grinder Technician"
+	suit = /obj/item/clothing/suit/armor/ramzi
+	back = /obj/item/gear_pack/anglegrinder
+
+/obj/effect/mob_spawn/human/corpse/ramzi/doctor
+	name = "Ramzi Field Medic"
+	outfit = /datum/outfit/ramzi/doctor
+
+/datum/outfit/ramzi/doctor
+	name = "Ramzi Sawbones Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	suit = /obj/item/clothing/suit/ramzi/smock
+	gloves = /obj/item/clothing/gloves/nitrile/evil //EVIL
+	head = /obj/item/clothing/head/ramzi/surgical
+
+/datum/outfit/ramzi/bulletproof
+	name = "Ramzi Clique Rifleman"
+	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
+	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
+
+/obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	name = "Ramzi Trooper"
+	outfit = /datum/outfit/ramzi/bulletproof
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space
+	name = "Ramzi Hardsuit"
+	outfit = /datum/outfit/ramzi/commando
+
+/datum/outfit/ramzi/commando
+	name = "Ramzi Clique Space Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+	name = "Ramzi Softsuit"
+	outfit = /datum/outfit/ramzi/soft
+
+/datum/outfit/ramzi/soft
+	name = "Ramzi Clique Softsuit"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
+	name = "Ramzi Softsuit Surplus"
+	outfit = /datum/outfit/ramzi/soft/surplus
+
+/obj/effect/mob_spawn/human/corpse/ramzi/towel
+	name = "Ramzi Showerer"
+	outfit = /datum/outfit/ramzi/towel
+
+/datum/outfit/ramzi/towel
+	name = "Ramzi Clique Showerer"
+	uniform = null
+	head = null
+	suit = /obj/item/towel/full
+	back = null
+	id = null
+	shoes = null
+	gloves = null
+
+/datum/outfit/ramzi/soft/surplus
+	name = "Ramzi Clique Softsuit Surplus"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi/surplus
+	back = /obj/item/storage/backpack
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/datum/outfit/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/ramzi
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/ramzi
+	back = /obj/item/tank/jetpack/oxygen/harness
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/sniper
+
+/obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+	name = "Ramzi Clique Trooper"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/stormtrooper
+
+/datum/outfit/ramzi/officer
+	name = "Ramzi Clique Officer"
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/armor/ramzi/officer
+	head = /obj/item/clothing/head/ramzi/beret
+	back = null
+	mask = /obj/item/clothing/mask/breath/facemask
+	neck = /obj/item/clothing/neck/dogtag/gold
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer
+	name = "Ramzi Clique Officer"
+	outfit = /datum/outfit/ramzi/officer
+
+/obj/effect/mob_spawn/human/corpse/ramzi/ensign
+	name = "Ramzi Clique Ensign"
+	outfit = /datum/outfit/ramzi/officer/ensign
+
+/datum/outfit/ramzi/officer/ensign
+	name = "Ramzi Clique Ensign"
+	head = /obj/item/clothing/head/ramzi
+
+/obj/effect/mob_spawn/human/corpse/ramzi/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	outfit = /datum/outfit/ramzi/officer/lieutenant
+
+/datum/outfit/ramzi/officer/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	head = /obj/item/clothing/head/ramzi/peaked
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
+	name = "Ramzi Clique Captain"
+	outfit = /datum/outfit/ramzi/officer/captain
+
+/datum/outfit/ramzi/officer/captain
+	name = "Ramzi Clique Captain"
+	suit = /obj/item/clothing/suit/armor/ramzi/captain
+	head = /obj/item/clothing/head/ramzi/peaked
+	back = /obj/item/storage/backpack/satchel/leather
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
+	name = "Ramzi Clique Quartermaster"
+	mob_species = /datum/species/human
+	mob_gender = FEMALE
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
+	name = "Corrupt NGR Official"
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
+	glasses = null
+	neck = null
+	mob_gender = FEMALE
+	mob_species = /datum/species/human
+
+/datum/outfit/ramzi/stormtrooper
+	name = "Ramzi Clique Trooper Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+	back = /obj/item/tank/jetpack/oxygen/harness
+
+/datum/outfit/syndicatecaptaincorpse
+	name = "Syndicate Captain Corpse"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/syndicate
+	head = /obj/item/clothing/head/HoS/syndicate
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/syndicatecaptain
+	name = "Syndicate Captain"
+	id_job = "Syndicate Base Commander"
+	outfit = /datum/outfit/syndicatecaptaincorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersunfieldmediccorpse
+	name = "Cybersun Field Medic Corpse"
+	uniform = /obj/item/clothing/under/cybersun/medic
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate/cybersun
+	belt = /obj/item/storage/belt/medical/paramedic
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	back = /obj/item/storage/backpack/messenger
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunfieldmedic
+	name = "Cybersun Field Medic"
+	id_job = "Cybersun Field Medic"
+	outfit = /datum/outfit/cybersunfieldmediccorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+
+/obj/effect/mob_spawn/human/corpse/pirate
+	name = "Pirate"
+	outfit = /datum/outfit/piratecorpse
+
+/datum/outfit/piratecorpse
+	name = "Pirate Corpse"
+	uniform = /obj/item/clothing/under/costume/pirate
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/eyepatch
+	head = /obj/item/clothing/head/bandana
+
+
+/obj/effect/mob_spawn/human/corpse/pirate/ranged
+	name = "Pirate Gunner"
+	outfit = /datum/outfit/piratecorpse/ranged
+
+/datum/outfit/piratecorpse/ranged
+	name = "Pirate Gunner Corpse"
+	suit = /obj/item/clothing/suit/pirate
+	head = /obj/item/clothing/head/pirate
+
+/obj/effect/mob_spawn/human/corpse/wizard
+	name = "Space Wizard Corpse"
+	outfit = /datum/outfit/wizardcorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Long Beard"
+	skin_tone = "caucasian1"
+
+/datum/outfit/wizardcorpse
+	name = "Space Wizard Corpse"
+	uniform = /obj/item/clothing/under/color/lightpurple
+	suit = /obj/item/clothing/suit/wizrobe
+	shoes = /obj/item/clothing/shoes/sandal/magic
+	head = /obj/item/clothing/head/wizard
+
+
+/datum/outfit/vigilitas
+	name = "VI Corpse"
+	uniform = /obj/item/clothing/under/warra/security
+	suit = /obj/item/clothing/suit/armor/warra
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/black
+	ears = /obj/item/radio/headset/headset_sec/alt
+	mask = /obj/item/clothing/mask/gas/vigilitas
+	head = /obj/item/clothing/head/warra/cap/security
+	back = /obj/item/storage/backpack/messenger
+	id = /obj/item/card/id
+
+/datum/outfit/vigilitas/space
+	name = "VI Responder"
+	suit = /obj/item/clothing/suit/space/hardsuit/security
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/vigilitas/space/hos
+	name = "VI Breacher"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/hos
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/vigilitas/director
+	name = "VI director"
+	uniform = /obj/item/clothing/under/warra/security/director
+	suit = /obj/item/clothing/suit/armor/warra/sec_director
+	head = /obj/item/clothing/head/warra/beret/security/command
+
+/datum/outfit/vigilitas/private
+	name = "VI Private"
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_private
+	name = "VI Private"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/private
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_director
+	name = "VI Director"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/director
+
+/datum/outfit/vigilitas/trooper
+	name = "VI Trooper"
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/helmet/m10
+	back = /obj/item/storage/backpack/security
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_trooper
+	name = "VI Trooper"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/trooper
+
+/datum/outfit/vigilitas/elite
+	name = "VI Response Team"
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
+	head = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
+	back = /obj/item/storage/backpack/security
+	gloves = /obj/item/clothing/gloves/combat
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_hos
+	name = "VI Breacher"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/space/hos
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_space
+	name = "VI Responder"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/space
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_elite
+	name = "VI Response Team"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/elite
+
+/obj/effect/mob_spawn/human/corpse/cat_butcher
+	name = "The Cat Surgeon"
+	id_job = "Cat Surgeon"
+	id_access_list = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT)
+	hairstyle = "Cut Hair"
+	facial_hairstyle = "Watson Mustache"
+	skin_tone = "caucasian1"
+	outfit = /datum/outfit/cat_butcher
+
+/datum/outfit/cat_butcher
+	name = "Cat Butcher Uniform"
+	uniform = /obj/item/clothing/under/rank/medical/doctor/green
+	suit = /obj/item/clothing/suit/apron/surgical
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	gloves = /obj/item/clothing/gloves/nitrile/blue
+	ears = /obj/item/radio/headset
+	back = /obj/item/storage/backpack/satchel/med
+	id = /obj/item/card/id
+	glasses = /obj/item/clothing/glasses/hud/health
+
+/obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner
+	name = "SolGov Sonnensoldner"
+	id_job = "SolGov Sonnensoldner"
+	outfit = /datum/outfit/job/solgov/sonnensoldner
+	id_access_list = list(ACCESS_SOLGOV)
+
+//inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq
+	name = "Avery Inteq"
+
+/obj/effect/mob_spawn/human/corpse/inteq/recruit
+	name = "IRMG Auxiliary"
+	id_job = "Auxiliary"
+	outfit = /datum/outfit/job/inteq/assistant
+
+/obj/effect/mob_spawn/human/corpse/inteq/medic
+	name = "IRMG Corpsman"
+	id_job = "Corpsman"
+	outfit = /datum/outfit/job/inteq/paramedic/equipped
+
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer
+	name = "IRMG Enforcer"
+	id_job = "Enforcer"
+	outfit = /datum/outfit/job/inteq/security/equipped
+
+/obj/effect/mob_spawn/human/corpse/inteq/vanguard
+	name = "IRMG Vanguard"
+	id_job = "Vanguard"
+	outfit = /datum/outfit/job/inteq/command/captain/equipped
+
+/obj/effect/mob_spawn/human/corpse/inteq/artificer
+	name = "IRMG Artificer"
+	id_job = "Artificer"
+	outfit = /datum/outfit/job/inteq/engineer/equipped
+
+/* SRM */
+
+/obj/effect/mob_spawn/human/corpse/srm/hunter
+	name = "SRM Hunter"
+	id_job = "Hunter"
+	outfit = /datum/outfit/job/roumain/security
+	id_access_list = null
+
+/obj/effect/mob_spawn/human/corpse/srm/montagne
+	name = "SRM Montagne"
+	id_job = "Hunter Montagne"
+	outfit = /datum/outfit/job/roumain/captain
+	id_access_list = null
+
+/* PGF */
+
+/obj/effect/mob_spawn/human/corpse/pgf
+	name = "PGF Crewmate"
+	id_job = "Crewmate"
+	mob_species = /datum/species/lizard
+	outfit = /datum/outfit/job/gezena/assistant
+	id_access_list = null
+
+/obj/effect/mob_spawn/human/corpse/pgf/marine
+	name = "PGF Marine"
+	id_job = "Marine"
+	outfit = /datum/outfit/job/gezena/security
+
+/obj/effect/mob_spawn/human/corpse/pgf/captain
+	name = "PGF Captain"
+	id_job = "Captain"
+	outfit = /datum/outfit/job/gezena/captain
+
+
+//Hardliner
+
+/obj/effect/mob_spawn/human/corpse/hardliner
+	name = "Hardliner Junior Agent"
+	id_job = "Junior Agent"
+	outfit = /datum/outfit/job/syndicate/assistant/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/mechanic
+	name = "Hardliner Mechanic"
+	id_job = "Mechanic"
+	outfit = /datum/outfit/job/syndicate/engineer/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/trooper
+	name = "Hardliner Trooper"
+	id_job = "Trooper"
+	outfit = /datum/outfit/job/syndicate/security/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/sergeant
+	name = "Hardliner Sergeant"
+	id_job = "Sergeant"
+	outfit = /datum/outfit/job/syndicate/hos/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/captain
+	name = "Hardliner Captain"
+	id_job = "Captain"
+	outfit = /datum/outfit/job/syndicate/captain/gorlex
+
+/* NEW GORLEX REPUBLIC */
+
+
+/obj/effect/mob_spawn/human/corpse/ngr
+	name = "New Gorlex Corpse"
+	id_job = "Civilian"
+	outfit = /datum/outfit/ngr_corpse
+	id_access_list = null
+
+/datum/outfit/ngr_corpse
+	name = "NGR Generic Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/black
+	mask = /obj/item/clothing/mask/breath/ngr
+	ears = /obj/item/radio/headset/alt
+	head = /obj/item/clothing/head/ngr
+	back = /obj/item/storage/backpack
+	id = /obj/item/card/id/syndicate_command
+	l_pocket = /obj/item/tank/internals/emergency_oxygen
+	box = /obj/item/storage/box/survival
+
+
+/obj/effect/mob_spawn/human/corpse/ngr/miner
+	name = "New Gorlex Miner Corpse"
+	id_job = "Excavator"
+	outfit = /datum/outfit/ngr_corpse/miner
+
+/datum/outfit/ngr_corpse/miner
+	name = "NGR Miner Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	shoes = /obj/item/clothing/shoes/workboots
+	suit = /obj/item/clothing/suit/hazardvest/ngr
+	head = /obj/item/clothing/head/hardhat/ngr
+	mask = /obj/item/clothing/mask/gas/syndicate
+	belt = /obj/item/storage/belt/mining/ngr
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	r_pocket = /obj/item/storage/bag/ore
+
+/obj/effect/mob_spawn/human/corpse/ngr/miner/space
+	name = "New Gorlex EVA Miner Corpse"
+	outfit = /datum/outfit/ngr_corpse/miner/space
+
+/datum/outfit/ngr_corpse/miner/space
+	name = "NGR EVA Miner Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	suit = /obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr
+	suit_store = /obj/item/tank/internals/oxygen/yellow
+	head = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ngr
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi //only need a regular tank because they have the big back one as their main source of internals
+
+/obj/effect/mob_spawn/human/corpse/ngr/trooper
+	name = "New Gorlex Trooper Corpse"
+	id_job = "Operative"
+	outfit = /datum/outfit/ngr_corpse/trooper
+
+/datum/outfit/ngr_corpse/trooper
+	name = "NGR Trooper Corpse"
+	suit = /obj/item/clothing/suit/armor/ngr
+	head = /obj/item/clothing/head/helmet/ngr
+	mask = /obj/item/clothing/mask/balaclava/ngr
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/security/webbing/ngr
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
+	r_pocket = /obj/item/flashlight/seclite
+
+/obj/effect/mob_spawn/human/corpse/ngr/trooper/squad_lead
+	name = "New Gorlex Squad Leader Corpse"
+	id_job = "Operative Leader"
+	outfit = /datum/outfit/ngr_corpse/trooper/squad_lead
+
+/datum/outfit/ngr_corpse/trooper/squad_lead
+	name = "NGR Squad Leader Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr/peaked
+	neck = /obj/item/clothing/neck/shemagh/ngr
+	belt = /obj/item/storage/belt/security/webbing/ngr/alt
+	r_pocket = /obj/item/clothing/mask/whistle/trench //CHARGE
+
+/obj/effect/mob_spawn/human/corpse/ngr/mechanic
+	name = "New Gorlex Mechanic Corpse"
+	id_job = "Mechanic"
+	outfit = /datum/outfit/ngr_corpse/mechanic
+
+/datum/outfit/ngr_corpse/mechanic
+	name = "NGR Mechanic Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	suit = /obj/item/clothing/suit/hazardvest/ngr
+	head = /obj/item/clothing/head/hardhat/ngr
+	neck = /obj/item/clothing/neck/shemagh/ngr
+	mask = /obj/item/clothing/mask/gas/syndicate
+	belt = /obj/item/storage/belt/utility/full
+	gloves = /obj/item/clothing/gloves/insulated
+	r_pocket = /obj/item/flashlight //backup
+
+/obj/effect/mob_spawn/human/corpse/ipcshell
+	mob_species = /datum/species/ipc
+	icon_state = "corpsehuman"
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/* Cybersun */
+
+/datum/outfit/cybersunmedicaldirectorcorpse
+	name = "Cybersun Medical Director Corpse"
+	uniform = /obj/item/clothing/under/cybersun/doctor
+	suit = /obj/item/clothing/suit/cybersun
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate/cybersun
+	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
+	name = "Cybersun Medical Director Corpse"
+	id_job = "Cybersun Medical Director"
+	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersun
+	name = "Cybersun Aide Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/suit
+	shoes = /obj/item/clothing/shoes/laceup
+	id = /obj/item/card/id/syndicate_command
+	ears = /obj/item/radio/headset/syndicate/cybersun
+
+/obj/effect/mob_spawn/human/corpse/cybersun
+	name = "Cybersun Aide Corpse"
+	id_job = "Cybersun Aide"
+	outfit = /datum/outfit/cybersun
+
+/datum/outfit/cybersun/dev
+	name = "Cybersun Developer Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/suit
+	head = /obj/item/clothing/head/soft/cybersun
+
+/obj/effect/mob_spawn/human/corpse/cybersun/dev
+	name = "Cybersun Developer Corpse"
+	id_job = "Cybersun Developer"
+	outfit = /datum/outfit/cybersun/dev
+
+/datum/outfit/cybersun/troubleshooter
+	name = "Cybersun Troubleshooter Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/sneak
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
+	suit = /obj/item/clothing/suit/armor/vest/cybersun
+	mask = /obj/item/clothing/mask/gas/cybersun
+
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
+
+	l_pocket = /obj/item/storage/pouch/medical
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter
+	name = "Cybersun Developer Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter
+
+/datum/outfit/cybersun/troubleshooter/hardsuit
+	name = "Cybersun Hardsuited Troubleshooter Corpse"
+
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/cybersun
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit
+	name = "Cybersun Hardsuited Troubleshooter Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter/hardsuit
+
+/datum/outfit/cybersun/troubleshooter/hardsuit/heavy
+	name = "Cybersun Heavy Hardsuited Troubleshooter Corpse"
+
+	suit = /obj/item/clothing/suit/space/hardsuit/collapsar
+	head = /obj/item/clothing/head/helmet/space/hardsuit/collapsar
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit/heavy
+	name = "Cybersun Heavy Hardsuited Troubleshooter Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter/hardsuit/heavy
+
+/datum/outfit/cybersun/engineer
+	name = "Cybersun Engineer Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/coverall
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/soft/cybersun
+
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/cybersun/engineer
+	name = "Cybersun Engineer Corpse"
+	id_job = "Cybersun Engineer"
+	outfit = /datum/outfit/cybersun/engineer
+
+/datum/outfit/cybersun/director
+	name = "Cybersun V.S. Director Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/officer
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/cybersun
+	suit = /obj/item/clothing/suit/armor/cybersun
+
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
+	glasses = /obj/item/clothing/glasses/sunglasses
+
+/obj/effect/mob_spawn/human/corpse/cybersun/director
+	name = "Cybersun V.S. Director Corpse"
+	id_job = "Cybersun Director"
+	outfit = /datum/outfit/cybersun/director
