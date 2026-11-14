@@ -394,7 +394,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
-	name = "\improper SsG-04"
+	name = "\improper KW-4 Vizsla"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -544,8 +544,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/assault/skm/cm24
-	name = "\improper CM-24"
+/obj/item/gun/ballistic/automatic/assault/fa2/clip
+	name = "\improper FA2m"
 	desc = "An obsolete and very rugged assault rifle with a heavy projectile and slow action for its class. Once CLIP's standard assault rifle produced in phenomenal numbers for the First Frontiersman War, it now serves as an acceptable, if rare, battle rifle. Chambered in 7.62mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -554,16 +554,16 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 	unique_reskin = null
 
-	icon_state = "cm24"
-	item_state = "cm24"
+	icon_state = "fa2m"
+	item_state = "fa2m"
 	manufacturer = MANUFACTURER_MINUTEMAN //only until we init so that this goes to lanchester city firearms plant in autowiki
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
+NO_MAG_GUN_HELPER(automatic/assault/fa2/clip)
 
-/obj/item/gun/ballistic/automatic/assault/skm/cm24/Initialize(mapload, spawn_empty)
+/obj/item/gun/ballistic/automatic/assault/fa2/clip/Initialize(mapload, spawn_empty)
 	. = ..()
 	manufacturer = MANUFACTURER_NONE // back to the status quo
 
@@ -607,10 +607,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	spread_unwielded = 35
 
 	recoil = 2 //identical to other LMGS
-	recoil_unwielded = 7 //same as skm
+	recoil_unwielded = 7 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 
