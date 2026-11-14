@@ -170,11 +170,6 @@
 	name = "CLIP-DEED rubber stamp"
 	icon_state = "stamp-clip_deed"
 
-/obj/item/stamp/suns
-	name = "SUNS rubber stamp"
-	icon_state = "stamp-suns"
-	dye_color = DYE_PURPLE
-
 /obj/item/stamp/warra
 	name = "Makosso-Warra rubber stamp"
 	desc = "A small rubber stamp for stamping important documents."

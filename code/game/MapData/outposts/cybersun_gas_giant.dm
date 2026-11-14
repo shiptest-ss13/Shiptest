@@ -102,7 +102,7 @@
 	canSmoothWith = null
 
 /obj/structure/elevator_platform/tile/bamboo_hatch
-	icon = 'icons/turf/floors/suns.dmi'
+	icon = 'icons/turf/floors/fancy.dmi'
 	icon_state = "lighthatched"
 	base_icon_state = "lighthatched"
 	color = WOOD_COLOR_PALE2
@@ -165,7 +165,7 @@ CYBERSUN_OUTPOST_TURF_HELPER(plasteel/mono/dark)
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/patterned/brushed)
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/patterned/grid/dark)
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/tech/techmaint)
-CYBERSUN_OUTPOST_TURF_HELPER(suns/hatch/bamboo)
+CYBERSUN_OUTPOST_TURF_HELPER(fancy/hatch/bamboo)
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/tech)
 CYBERSUN_OUTPOST_TURF_HELPER(hangar)
 CYBERSUN_OUTPOST_TURF_HELPER(engine/hull/reinforced)

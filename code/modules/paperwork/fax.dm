@@ -568,13 +568,6 @@
 		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
 	)
 
-/obj/machinery/fax/suns
-	special_networks = list(
-		list(fax_name = "Student-Union Academic Headquarters", fax_id = "suns", color = "purple", emag_needed = FALSE),
-		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE),
-		list(fax_name = "Ramzi Clique Overwatch", fax_id = "ramzi", color = "darkred", emag_needed = TRUE),
-	)
-
 /obj/machinery/fax/cybersun
 	special_networks = list(
 		list(fax_name = "Cybersun Corporate", fax_id = "cybersun", color = "red", emag_needed = FALSE),
@@ -674,12 +667,6 @@
 	fax_name = "Solarian Confederation Frontier Affairs"
 	admin_fax_id = "solgov"
 	fax_id = "solgov"
-
-/obj/machinery/fax/admin/suns
-	name = "SUNS Fax Machine"
-	fax_name = "Student-Union Academic Headquarters"
-	admin_fax_id = "suns"
-	fax_id = "suns"
 
 /obj/machinery/fax/admin/syndicate
 	name = "Syndicate Coordination Fax Machine"
