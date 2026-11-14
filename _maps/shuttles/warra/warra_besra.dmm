@@ -5674,10 +5674,14 @@
 	},
 /obj/item/radio/headset/warra/alt/captain,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/guncase/pistol/inherit,
-/obj/item/gun/energy/sharplite/yari/no_cell,
-/obj/item/stock_parts/cell/gun/sharplite/plus,
-/obj/item/stock_parts/cell/gun/sharplite/plus,
+/obj/item/storage/guncase/pistol/inherit{
+	mag_count = 4
+	},
+/obj/item/gun/ballistic/revolver/rhino/empty,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357,
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/command)
 "Wq" = (
