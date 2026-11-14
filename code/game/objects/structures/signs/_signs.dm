@@ -259,12 +259,6 @@
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
 
-// suns seal
-/obj/structure/sign/suns
-	name = "emblem of the Student-Union Association of Naturalistic Sciences"
-	desc = "A large emblem showcasing the icon of SUNS."
-	icon_state = "suns"
-
 // clip seal
 /obj/structure/sign/clip
 	name = "Banner of the Confederated League of Independent Planets"

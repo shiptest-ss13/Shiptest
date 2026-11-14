@@ -185,8 +185,3 @@
 	name = "brig physician PDA"
 	default_cartridge = /obj/item/cartridge/medical
 	icon_state = "pda-brig_phys"
-
-/obj/item/pda/suns
-	name = "SUNS PDA"
-	default_cartridge = /obj/item/cartridge/medical
-	icon_state = "pda-suns"

@@ -120,16 +120,6 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/sabre
-	name = "SUNS Dueling Sabre"
-	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp; we had to spend hours stitching our fingers back on after getting it."
-	item = /obj/item/storage/belt/sabre/suns
-
-	cost_min = 1250
-	cost_max = 2000
-	stock = 1
-	availability_prob = 25
-
 /datum/blackmarket_item/weapon/mag_cleaver
 	name = "Magnetic Cleaver"
 	desc = "A prototype modification to the standard crusher. It features an energy blade rather than the standard alloy cutting edge, allowing for much more devasting detonations. The guy who sold this to us disappeared the next week, but that's probably a coincidence."

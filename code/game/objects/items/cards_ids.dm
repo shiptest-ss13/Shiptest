@@ -586,16 +586,3 @@ update_label()
 	name = "\improper SolGov commander keycard"
 	desc = "A SolGov keycard with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
-
-/obj/item/card/id/suns
-	name = "\improper SUNS keycard"
-	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences."
-	assignment = "Student"
-	icon_state = "suns"
-	uses_overlays = FALSE
-
-/obj/item/card/id/suns/command
-	name = "\improper SUNS command keycard"
-	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences. This one has a gold stripe, indicating a command member."
-	assignment = "Academic Staff"
-	icon_state = "sunscommand"

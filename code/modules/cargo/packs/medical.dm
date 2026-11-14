@@ -83,8 +83,6 @@
 		/obj/item/reagent_containers/glass/bottle/tramal,
 		/obj/item/reagent_containers/glass/bottle/tramal,
 	)
-	faction = /datum/faction/suns
-	faction_discount = 25
 
 /datum/supply_pack/medical/painkillers/fill(obj/structure/closet/crate/cargo_crate)
 	. = ..()
@@ -120,7 +118,6 @@
 					/obj/item/reagent_containers/medigel/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/suns
 
 /datum/supply_pack/medical/surgery/cybersun
 	name = "Advanced Surgical Supplies Crate"
@@ -183,8 +180,6 @@
 	contains = list(/obj/item/clothing/mask/breath/medical,
 					/obj/item/tank/internals/anesthetic)
 	crate_name = "anesthetics crate"
-	faction = /datum/faction/suns
-	faction_discount = 25
 
 /*
 		Bundles and supplies
@@ -207,8 +202,6 @@
 					/obj/item/reagent_containers/blood/synthetic)
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/suns
-	faction_discount = 25
 
 /datum/supply_pack/medical/rezadone_bottle
 	name = "Rezadone Bottle Crate"

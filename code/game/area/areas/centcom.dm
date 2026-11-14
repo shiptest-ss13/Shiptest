@@ -52,9 +52,6 @@
 /area/centcom/commandoffices/inteq
 	name = "Inteq Mothership"
 
-/area/centcom/commandoffices/suns
-	name = "Student-Union Academic Headquarters"
-
 /area/centcom/commandoffices/solgov
 	name = "Solar Confederation DAA"
 

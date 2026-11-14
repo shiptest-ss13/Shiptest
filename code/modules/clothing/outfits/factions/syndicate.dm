@@ -71,40 +71,6 @@
 
 	head = /obj/item/clothing/head/safety_helmet
 
-
-
-/datum/outfit/job/syndicate/assistant/suns
-	name = "Syndicate - Freshman (SUNS)"
-	id_assignment = "Freshman"
-
-	uniform = /obj/item/clothing/under/syndicate/suns
-	alt_uniform = /obj/item/clothing/under/syndicate/suns/alt
-	suit = /obj/item/clothing/suit/toggle/suns/alt
-	alt_suit = /obj/item/clothing/suit/toggle/suns
-	shoes = /obj/item/clothing/shoes/laceup/suns
-	gloves = null
-	ears = null
-	box = /obj/item/storage/box/survival
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
-/datum/outfit/job/syndicate/assistant/suns/halfway
-	name = "Syndicate - Junior (SUNS)"
-	id_assignment = "Junior"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/uniform2
-	alt_uniform = /obj/item/clothing/under/syndicate/suns/uniform2/alt
-
-/datum/outfit/job/syndicate/assistant/suns/complete
-	name = "Syndicate - Graduate (SUNS)"
-	id_assignment = "Graduate"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/uniform3
-	alt_uniform = /obj/item/clothing/under/syndicate/suns/uniform3/alt
-
 //atmos techs
 
 /datum/outfit/job/syndicate/atmos
@@ -165,28 +131,6 @@
 		W.registered_age = AGE_DRINKING
 		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_DRINKING]. Try to keep that a secret!"))
 
-/datum/outfit/job/syndicate/bartender/suns
-	name = "Syndicate - Student Mixologist (SUNS)"
-	id_assignment = "Student Mixologist"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/uniform2
-	alt_uniform = /obj/item/clothing/under/syndicate/suns/alt
-	mask = /obj/item/clothing/mask/breath/suns
-	suit = null
-	belt = null
-	head = null
-	shoes = /obj/item/clothing/shoes/laceup/suns
-	gloves = null
-	ears = null
-	accessory = /obj/item/clothing/accessory/waistcoat/suns/poof
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
-	backpack_contents = null
-
 //botanist
 /datum/outfit/job/syndicate/botanist
 	name = "Syndicate - Botanist"
@@ -196,23 +140,6 @@
 	suit = /obj/item/clothing/suit/apron
 	gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
-
-/datum/outfit/job/syndicate/botanist/suns
-	name = "Syndicate - Botanist-Chemist (SUNS)"
-	id_assignment = "Botanist-Chemist"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/sciencejumpsuit
-	id = /obj/item/card/id/syndicate_command/crew_id
-	shoes = /obj/item/clothing/shoes/sneakers/suns
-	glasses = /obj/item/clothing/glasses/science/suns
-	suit =  /obj/item/clothing/suit/hooded/suns
-	suit_store = null
-	neck = /obj/item/clothing/neck/cloak/suns
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
 
 //Captain
 
@@ -275,26 +202,6 @@
 	head = null
 	suit = null
 	shoes = /obj/item/clothing/shoes/combat
-
-
-
-/datum/outfit/job/syndicate/captain/suns
-	name = "Syndicate - Captain (SUNS)"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/captain
-	shoes = /obj/item/clothing/shoes/combat/suns
-	head = /obj/item/clothing/head/suns/captain
-	gloves = /obj/item/clothing/gloves/suns/captain
-	suit = /obj/item/clothing/suit/armor/vest/suns/captain
-	belt = /obj/item/storage/belt/sabre/suns/captain
-	mask = /obj/item/clothing/mask/breath/suns
-	neck = /obj/item/clothing/neck/cloak/suns/cap
-	ears = /obj/item/radio/headset/syndicate/alt/suns/command
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
 
 //cargo tech
 
@@ -410,31 +317,6 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = null
 
-//Chief Medical Officer
-
-/datum/outfit/job/syndicate/suns_doctor
-	name = "Syndicate - Medical Instructor (SUNS)"
-	id_assignment = "Medical Instructor"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
-	ears = /obj/item/radio/headset/syndicate/alt/suns
-	id = /obj/item/card/id/syndicate_command/captain_id
-	shoes = /obj/item/clothing/shoes/combat/suns
-	l_pocket = /obj/item/pinpointer/crew
-	suit = /obj/item/clothing/suit/toggle/labcoat/suns/cmo
-	l_hand = /obj/item/storage/firstaid/medical
-	r_hand = /obj/item/storage/belt/sabre/suns/cmo
-	suit_store = /obj/item/flashlight/pen/paramedic
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-	gloves = /obj/item/clothing/gloves/nitrile/suns
-	glasses = /obj/item/clothing/glasses/hud/health/suns
-	head = /obj/item/clothing/head/suns/cmo
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
 //"Head Of Personnel"
 
 /datum/outfit/job/syndicate/head_of_personnel
@@ -472,25 +354,6 @@
 	name = "Syndicate - Ensign - Stripped (NGR)"
 	suit = null
 	head = null
-
-/datum/outfit/job/syndicate/head_of_personnel/suns
-	name = "Syndicate - Academic Staff (SUNS)"
-	id_assignment = "Academic Staff"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/xo
-	suit = /obj/item/clothing/suit/armor/vest/suns/xo
-	belt = /obj/item/storage/belt/sabre/suns
-	shoes = /obj/item/clothing/shoes/combat/suns
-	head = /obj/item/clothing/head/suns
-	gloves = /obj/item/clothing/gloves/suns/xo
-	neck = /obj/item/clothing/neck/cloak/suns/xo
-	r_pocket = null
-	glasses = /obj/item/clothing/glasses/science/suns
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
 
 //head of security
 
@@ -544,29 +407,6 @@
 	suit_store = null
 	gloves = /obj/item/clothing/gloves/color/black
 
-/datum/outfit/job/syndicate/hos/suns
-	name = "Syndicate - Senior Peacekeeper (SUNS)"
-	id_assignment = "Senior Peacekeeper"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
-	suit = /obj/item/clothing/suit/armor/vest/suns/hos
-	belt = /obj/item/melee/sword/sabre/suns/telescopic
-	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
-	shoes = /obj/item/clothing/shoes/combat/suns
-	head = /obj/item/clothing/head/welding/suns/hos
-	glasses = /obj/item/clothing/glasses/hud/security/suns
-	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
-/datum/outfit/job/syndicate/hos/suns/alt
-	name = "Syndicate - Senior Peacekeeper Alt (SUNS)"
-	suit = /obj/item/clothing/suit/armor/vest/suns/ehos
-	head = /obj/item/clothing/head/HoS/syndicate/suns
-
 //medical doctors (assorted)
 
 /datum/outfit/job/syndicate/doctor
@@ -583,22 +423,6 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/med
 	courierbag = /obj/item/storage/backpack/messenger/med
-
-/datum/outfit/job/syndicate/doctor/suns
-	name = "Syndicate - Medical Doctor (SUNS)"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
-	shoes = /obj/item/clothing/shoes/sneakers/suns
-	suit = /obj/item/clothing/suit/toggle/labcoat/suns/doctorlabcoat
-	gloves = /obj/item/clothing/gloves/nitrile/suns
-	head = /obj/item/clothing/head/suns/surgery
-	glasses = /obj/item/clothing/glasses/hud/health/suns
-	mask = /obj/item/clothing/mask/surgical/suns
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
 
 /datum/outfit/job/syndicate/doctor/gorlex
 	name = "Syndicate - Medical Doctor (Hardliner)"
@@ -699,21 +523,6 @@
 	l_hand = /obj/item/clipboard
 	pda_slot = ITEM_SLOT_BELT
 
-/datum/outfit/job/syndicate/psychologist/suns
-	name = "Syndicate - Psychologist (SUNS)"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/uniform3
-	alt_uniform = /obj/item/clothing/under/syndicate/suns/uniform3/alt
-	suit = /obj/item/clothing/suit/toggle/suns
-	alt_suit = /obj/item/clothing/suit/toggle/suns/alt
-	shoes = /obj/item/clothing/shoes/laceup/suns
-	accessory = /obj/item/clothing/accessory/waistcoat/suns/poof
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
 //patient (prisoner)
 
 /datum/outfit/job/syndicate/patient
@@ -754,20 +563,6 @@
 
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
-
-/datum/outfit/job/syndicate/science/suns
-	name = "Syndicate - Scientist (SUNS)"
-//more futureproofing than anything, the Aegis currently uses /datum/outfit/job/syndicate/botanist/suns for a similar role
-	uniform = /obj/item/clothing/under/syndicate/suns/sciencejumpsuit
-	suit = /obj/item/clothing/suit/hooded/suns
-	shoes = /obj/item/clothing/shoes/sneakers/suns
-	glasses = /obj/item/clothing/glasses/science/suns
-	neck = /obj/item/clothing/neck/cloak/suns
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
 
 //security officers
 
@@ -832,32 +627,6 @@
 	head = null
 	l_pocket = null
 	r_pocket = null
-
-/datum/outfit/job/syndicate/security/suns
-	name = "Syndicate - Peacekeeper (SUNS)"
-	id_assignment = "Peacekeeper"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
-	suit = /obj/item/clothing/suit/armor/vest/suns
-	alt_suit = /obj/item/clothing/suit/toggle/suns/pkcoat
-	belt = /obj/item/melee/sword/sabre/suns/telescopic
-	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
-	shoes = /obj/item/clothing/shoes/jackboots/suns/long
-	head = /obj/item/clothing/head/welding/suns
-	glasses = /obj/item/clothing/glasses/hud/security/suns
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
-/datum/outfit/job/syndicate/security/suns/alternate
-	name = "Syndicate - Peacekeeper - Casual(SUNS)"
-	id_assignment = "Peacekeeper"
-
-	suit = /obj/item/clothing/suit/toggle/suns/pkcoat
-	belt = null
-	head = null
 
 //Miners
 
@@ -1017,19 +786,3 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null
-
-/datum/outfit/job/syndicate/engineer/suns
-	name = "Syndicate - Ship Engineer (SUNS)"
-
-	uniform = /obj/item/clothing/under/syndicate/suns/workerjumpsuit
-	suit = /obj/item/clothing/suit/toggle/suns/workervest
-	gloves = /obj/item/clothing/gloves/suns/yellow
-	shoes = /obj/item/clothing/shoes/jackboots/suns
-	head = /obj/item/clothing/head/safety_helmet/suns
-	accessory = null
-	glasses = null
-
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger

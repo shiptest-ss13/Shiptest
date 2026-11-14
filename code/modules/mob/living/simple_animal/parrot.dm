@@ -273,8 +273,6 @@
 								available_channels.Add(RADIO_TOKEN_CYBERSUN)
 							if(RADIO_CHANNEL_NGR)
 								available_channels.Add(RADIO_TOKEN_NGR)
-							if(RADIO_CHANNEL_SUNS)
-								available_channels.Add(RADIO_TOKEN_SUNS)
 							if(RADIO_CHANNEL_PIRATE)
 								available_channels.Add(RADIO_TOKEN_PIRATE)
 
