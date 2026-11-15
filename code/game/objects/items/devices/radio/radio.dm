@@ -17,7 +17,7 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
-	slot_flags = ITEM_SLOT_NECK //Allows to be worn on neck so it's not eating pocket slots.
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE //Allows to be worn on neck so it's not eating pocket slots.
 	obj_flags = USES_TGUI
 
 	var/on = TRUE
@@ -113,6 +113,9 @@
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
 
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
+
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/radio/ComponentInitialize()
 	. = ..()
