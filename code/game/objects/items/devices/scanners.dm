@@ -374,15 +374,15 @@ GENE SCANNER
 		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
-				render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
+				render_list += "<div class='ml-2'>[W.get_scanner_short_description()] <a href='byond://?src=[REF(W)];wound_description=1'>(?)</a></div>"
 			render_list += "</span>"
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(HAS_TRAIT(C,TRAIT_HUSK))
-			render_list += "<span class= 'alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
+			render_list += "<span class='alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
 			//render_list += "<span class='alert ml-2'>\n Subject has suffered catastrophic loss of body moisture due to intense exposure to heat. Resuscitation will be impossible until addressed."
-			render_list += "<span class='alert ml-2'>\n Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
+			render_list += "\n<span class='alert ml-2'> Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing

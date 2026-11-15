@@ -190,3 +190,48 @@
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tech/e20_scatter
+	name = "E-20 Scattershot Conversion Kit"
+	desc = "Got a few extra of these conversion kits for the E-20 lying around. Turns em into a nice punchy shotgun. Spread is shit but get close and you'll melt fuckers."
+	item = /obj/item/attachment/e20mod/scatter
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+
+/datum/blackmarket_item/tech/e20_heavy
+	name = "E-20 Overclock Conversion Kit"
+	desc = "So get this. Turns out all you need to turn the E-20 into an E-50 is some big capacitors and a new control board. Had one of our techs make some conversion kits if you'd like to get more kick out of those old things."
+	item = /obj/item/attachment/e20mod/heavy
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+
+/datum/blackmarket_item/tech/e20_efficiency
+	name = "E-20 Yellowjacket Conversion Kit"
+	desc = "Look, I'm gonna be straight with you. We got some leftover parts from building Wasps. Made em into little kits for turning an E-20 into a cute PDW sort of deal. Ruins the mining power but I bet you're not using it for that."
+	item = /obj/item/attachment/e20mod/efficiency
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+
+/datum/blackmarket_item/tech/e20_pierce
+	name = "E-20 Pierce Conversion Kit"
+	desc = "A nice little kit we've cooked up, slap this bad boy in an E-20 and it'll start shooting proper lasers. Shit'll punch straight through multiple targets and mines like a motherfucker. Doesn't go too far because of beam scatter but that's what you get with this sort of power."
+	item = /obj/item/attachment/e20mod/pierce
+
+	cost_min = 300
+	cost_max = 1500
+	stock = 2
+	availability_prob = 0
+	as_pair_prob = 40
+

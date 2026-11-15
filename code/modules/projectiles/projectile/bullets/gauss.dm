@@ -80,6 +80,8 @@
 		var/atom/throw_target = get_edge_target_turf(M, dir)
 		M.throw_at(throw_target, 4, 2)
 
+/* Cybersun Gauss Darts */
+
 /obj/projectile/bullet/gauss/tavsha
 	name = "tav'sha dart"
 	icon_state = "gauss-pellet"
@@ -151,3 +153,12 @@
 		var/mob/living/shocked = target
 		//marved
 		shocked.electrocute_act(2, src, 0)
+
+// swiss cheese dma rod
+/obj/projectile/bullet/dma_rod
+	name = "sharpened metal rod"
+	desc = "Now, about that beer I owed you."
+	icon_state = "magspear"
+	damage = 50
+	armour_penetration = 15
+	range = 15
