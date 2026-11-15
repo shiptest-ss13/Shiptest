@@ -30,8 +30,8 @@
 	wear_major_threshold = 600
 	wear_maximum = 1200
 
-/obj/item/gun/ballistic/automatic/assault/skm
-	name = "\improper SKM-24"
+/obj/item/gun/ballistic/automatic/assault/fa2
+	name = "\improper FA2"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
@@ -46,22 +46,22 @@
 	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
-	icon_state = "skm"
-	item_state = "skm"
+	icon_state = "fa2"
+	item_state = "fa2"
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_762_40,
+		/obj/item/ammo_box/magazine/fa2_762_40,
 	)
 
 	unique_reskin = list(\
-		"SKM" = "skm",
-		"Polymer" = "skm_polymer",
-		"Bright" = "skm_bright",
+		"fa2" = "fa2",
+		"Polymer" = "fa2_polymer",
+		"Bright" = "fa2_bright",
 		)
 	unique_reskin_changes_inhand = TRUE
 
@@ -96,21 +96,21 @@
 
 	fire_delay = 0.2 SECONDS
 
-/obj/item/gun/ballistic/automatic/assault/skm/no_mag
+/obj/item/gun/ballistic/automatic/assault/fa2/no_mag
 	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/automatic/assault/skm/pirate
+/obj/item/gun/ballistic/automatic/assault/fa2/pirate
 	autowiki_hidden = TRUE //not obtainable: referenced nowhere in code or maps
 	name = "\improper Chopper"
-	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
+	desc = "An FA2 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
 
-	icon_state = "skm_pirate"
-	item_state = "skm_pirate"
+	icon_state = "chopper"
+	item_state = "chopper"
 	manufacturer = MANUFACTURER_NONE
 	wear_rate = 2
 
-/obj/item/gun/ballistic/automatic/assault/skm/inteq
-	name = "\improper SKM-44"
+/obj/item/gun/ballistic/automatic/assault/fa2/inteq
+	name = "\improper KS-24 Ridgeback"
 	desc = "An obsolete model of assault rifle once used by CLIP. Most of these were seized from Frontiersmen armories or purchased in CLIP, then modified to IRMG standards. Chambered in 7.62x40mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
@@ -118,8 +118,8 @@
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 
-	icon_state = "skm_inteq"
-	item_state = "skm_inteq"
+	icon_state = "ridgeback"
+	item_state = "ridgeback"
 	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese

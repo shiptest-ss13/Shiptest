@@ -165,9 +165,9 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/carbine_mag
-	name = "SKM-24v Magazine"
-	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
-	item = /obj/item/ammo_box/magazine/skm_46_30
+	name = "FA2-v Magazine"
+	desc = "A 30 round magazine of 4.6x30mm for the FA2-v. A hermit classic."
+	item = /obj/item/ammo_box/magazine/fa2_46_30
 
 	cost_min = 200
 	cost_max = 500
@@ -175,22 +175,22 @@
 	stock_max = 5
 	availability_prob = 40
 
-/datum/blackmarket_item/ammo/skm_extended
-	name = "Extended SKM Magazine"
-	desc = "An extended 40 round 7.62x40mm CLIP magazine for the SKM family of assault rifles. Extra curves mean extra ammo."
-	item = /obj/item/ammo_box/magazine/skm_762_40/extended
+/datum/blackmarket_item/ammo/fa2_extended
+	name = "Extended FA2 Magazine"
+	desc = "An extended 40 round 7.62x40mm CLIP magazine for the FA2 family of assault rifles. Extra curves mean extra ammo."
+	item = /obj/item/ammo_box/magazine/fa2_762_40/extended
 
 	cost_min = 900
 	cost_max = 2500
 	stock_max = 4
 	availability_prob = 40
 
-/datum/blackmarket_item/ammo/skm_drum
-	name = "SKM Drum Magazine"
+/datum/blackmarket_item/ammo/fa2_drum
+	name = "FA2 Drum Magazine"
 	desc = "Do you have too much ammo on your hands? Do you have someone you really hate? \
 	Do you want them to be absolutely suppressed for the next 15 seconds? \
-	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
-	item = /obj/item/ammo_box/magazine/skm_762_40/drum
+	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (FA2 not included.)"
+	item = /obj/item/ammo_box/magazine/fa2_762_40/drum
 
 	cost_min = 1500
 	cost_max = 3500

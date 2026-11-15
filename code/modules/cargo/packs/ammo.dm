@@ -137,7 +137,7 @@
 
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
-	desc = "Contains an 80-round 4.6x30mm ammo box for PDWs such as the Resolution and the SKM-24v."
+	desc = "Contains an 80-round 4.6x30mm ammo box for PDWs such as the Resolution."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm)
 	cost = 295 //5.4 ammo efficiency at 20 damage
 
@@ -260,7 +260,7 @@
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
-	desc = "Contains one 60-round 7.62x40mm CLIP ammo box for various rifles, such as the SKM-24."
+	desc = "Contains one 60-round 7.62x40mm CLIP ammo box for various rifles, such as the FA2."
 	contains = list(/obj/item/storage/box/ammo/a762_40)
 	cost = 360 //5 ammo efficiency at 30 damage
 
@@ -370,7 +370,7 @@
 
 /datum/supply_pack/ammo/a308_ammo_box
 	name = ".308 Ammo Box Crate"
-	desc = "Contains a 30-round .308 ammo box for DMRs such as the SsG-04 and CM-F4."
+	desc = "Contains a 30-round .308 ammo box for DMRs such as the CM-F4 and Invictus."
 	contains = list(/obj/item/storage/box/ammo/a308)
 	cost = 185 //4.8 ammo efficiency at 30 damage //TTD 35 damage 215 cr DMR buff
 

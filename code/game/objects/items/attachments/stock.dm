@@ -1,7 +1,7 @@
 /obj/item/attachment/foldable_stock
 	name = "folding stock"
 	desc = "A folding stock that can be attached to certain weapons to improve stability and decreases recoil."
-	icon_state = "skm-carbine-stock"
+	icon_state = "fa2-carbine-stock"
 	slot = ATTACHMENT_SLOT_STOCK
 	attach_features_flags = ATTACH_TOGGLE
 
@@ -37,7 +37,7 @@
 	playsound(src, SOUND_EMPTY_MAG, 100, 1)
 
 /obj/item/attachment/foldable_stock/inteq
-	icon_state = "skm-inteqsmg-stock"
+	icon_state = "fa2-inteqsmg-stock"
 
 /obj/item/attachment/foldable_stock/spitter
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'

@@ -12,9 +12,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
-/obj/item/ammo_box/magazine/skm_46_30
+/obj/item/ammo_box/magazine/fa2_46_30
 	name = "subcaliber assault rifle magazine (4.6x30mm)"
-	desc = "A slightly-curved, 30-round magazine for the SKM-24v. These rounds do okay damage with average performance against armor"
+	desc = "A slightly-curved, 30-round magazine for the FA2-v. These rounds do okay damage with average performance against armor"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
 	max_ammo = 30
@@ -22,37 +22,37 @@
 	icon_state = "skmcarbine_mag-1"
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/skm_46_30/recycled
+/obj/item/ammo_box/magazine/fa2_46_30/recycled
 	ammo_type = /obj/item/ammo_casing/c46x30mm/recycled
 
-/obj/item/ammo_box/magazine/skm_762_40
+/obj/item/ammo_box/magazine/fa2_762_40
 	name = "assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_mag"
-	icon_state = "skm_mag-1"
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "fa2_mag"
+	icon_state = "fa2_mag-1"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/skm_762_40/empty
+/obj/item/ammo_box/magazine/fa2_762_40/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/skm_762_40/extended
+/obj/item/ammo_box/magazine/fa2_762_40/extended
 	name = "extended assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_extended_mag"
-	icon_state = "skm_extended_mag-1"
+	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "fa2_extended_mag"
+	icon_state = "fa2_extended_mag-1"
 	max_ammo = 40
 
-/obj/item/ammo_box/magazine/skm_762_40/extended/empty
+/obj/item/ammo_box/magazine/fa2_762_40/extended/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/skm_762_40/drum
+/obj/item/ammo_box/magazine/fa2_762_40/drum
 	name = "assault rifle drum (7.62x40mm CLIP)"
-	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_drum"
-	icon_state = "skm_drum-1"
+	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "fa2_drum"
+	icon_state = "fa2_drum-1"
 	max_ammo = 75
 	w_class = WEIGHT_CLASS_NORMAL
 

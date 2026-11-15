@@ -545,12 +545,12 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
-/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/fa2/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40(src)
 
-/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/fa2_carabine/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/smgm10mm(src)
