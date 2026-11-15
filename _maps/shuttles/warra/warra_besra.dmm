@@ -920,6 +920,16 @@
 "hJ" = (
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
+"hK" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/trimline/opaque/vired/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "hM" = (
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1;
@@ -1900,16 +1910,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/electrical)
-"rp" = (
-/obj/structure/chair,
-/obj/effect/turf_decal/trimline/opaque/vired/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "rr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
@@ -6643,7 +6643,7 @@ Hy
 jG
 of
 wO
-rp
+hK
 Eh
 sa
 Ux
