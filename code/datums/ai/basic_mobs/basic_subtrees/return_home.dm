@@ -98,6 +98,8 @@
 		forget_trail(controller)
 		close_to_home(controller, our_turf, home, was_heading_home)
 		return
+	if(sheltering_from_weather(controller, our_turf))
+		return
 	if(try_linger_over_downed(controller))
 		forget_waypoint(controller)
 		return
@@ -130,6 +132,15 @@
 
 /datum/ai_planning_subtree/return_home/proc/release_tether(datum/ai_controller/controller)
 	return
+
+/datum/ai_planning_subtree/return_home/proc/sheltering_from_weather(datum/ai_controller/controller, turf/our_turf)
+	var/mob/living/basic/basic_mob = controller.pawn
+	if(!istype(basic_mob) || !is_environment_safe_for(basic_mob, our_turf) || !ai_weather_about(basic_mob))
+		return FALSE
+	// so the wait doesn't count as being stuck on the way back
+	forget_waypoint(controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_NEXT)
+	return TRUE
 
 /datum/ai_planning_subtree/return_home/proc/try_linger_over_downed(datum/ai_controller/controller)
 	if(controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET])
