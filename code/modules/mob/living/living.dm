@@ -1223,6 +1223,13 @@
 	apply_damage((incoming_damage / ((100-blocked)/100)), BURN, null, blocked) //incoming damage is divided by the armor to avoid stacking the armor negation twice
 
 	if(COOLDOWN_FINISHED(src, rad_burn_msg_cooldown))
+		//inconsequential radiation burn warning
+		if(incoming_damage >= 0.1 && incoming_damage < 0.5)
+			if(src.mob_biotypes & MOB_ROBOTIC)	//for IPCs
+				to_chat(src, span_warning("You see minor visual static."))
+			else
+				to_chat(src, span_warning("You feel an uncomfortable warmth."))
+
 		//minor radiation burn warning
 		if(incoming_damage >= 0.5 && incoming_damage < 1.5)
 			if(src.mob_biotypes & MOB_ROBOTIC)	//for IPCs
