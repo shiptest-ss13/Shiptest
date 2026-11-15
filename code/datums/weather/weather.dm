@@ -124,10 +124,6 @@
 		return
 	if(prob(thunder_chance))
 		do_thunder()
-	for(var/i in GLOB.mob_living_list)
-		var/mob/living/L = i
-		if(can_weather_act(L))
-			weather_act(L)
 
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
@@ -273,13 +269,10 @@
  * Returns TRUE if the living mob can be affected by the weather
  *
  */
-/datum/weather/proc/can_weather_act(mob/living/L)
-	var/turf/mob_turf = get_turf(L)
-	if(mob_turf && !my_controller.mapzone.is_in_bounds(mob_turf))
+/datum/weather/proc/can_weather_act(mob/living/target_mob)
+	if(immunity_type in target_mob.weather_immunities)
 		return
-	if(immunity_type in L.weather_immunities)
-		return
-	if(!(get_area(L) in impacted_areas))
+	if(!(get_area(target_mob) in impacted_areas))
 		return
 	return TRUE
 
