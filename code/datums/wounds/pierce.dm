@@ -241,7 +241,6 @@
 	name = "Eyeball Puncture"
 	desc = "Patient's eye has sustained extreme damage, causing severe bleeding from the ocular cavity."
 	occur_text = "looses a violent spray of blood, revealing a crushed eyeball"
-
 	var/eye_scar = NONE
 
 /datum/wound/pierce/bleed/severe/eye/apply_wound(obj/item/bodypart/limb, silent, datum/wound/old_wound, smited, attack_direction, wound_source, replacing, eye_scar)
