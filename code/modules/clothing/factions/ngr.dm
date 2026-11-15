@@ -291,12 +291,13 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 	supports_variations = SNOUTED_VARIATION
-	actions_types = list(/datum/action/item_action/toggle_helmet_nightvision)
+	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_helmet_nightvision)
 	var/nightvision = FALSE
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_helmet_nightvision))
 		toggle_nightvision(user)
+		return
 	. = ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/proc/toggle_nightvision(mob/user)

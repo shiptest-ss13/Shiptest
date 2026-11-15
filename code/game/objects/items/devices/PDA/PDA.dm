@@ -792,9 +792,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else if(light_range)
 		set_light_on(TRUE)
 	update_appearance()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	update_item_action_buttons()
 
 /obj/item/pda/proc/remove_pen(mob/user)
 

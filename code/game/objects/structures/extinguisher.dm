@@ -28,6 +28,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 23)
 	else
 		stored_extinguisher = new /obj/item/extinguisher(src)
 	update_appearance()
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/structure/extinguisher_cabinet/examine(mob/user)
 	. = ..()
@@ -163,6 +164,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 23)
 			stored_extinguisher.forceMove(loc)
 			stored_extinguisher = null
 	qdel(src)
+
+/obj/structure/extinguisher_cabinet/bullet_act(obj/projectile/hitting_projectile)
+	if(stored_extinguisher && prob(60))
+		stored_extinguisher.bullet_act(hitting_projectile)
+	. = ..()
 
 /obj/item/wallframe/extinguisher_cabinet
 	name = "extinguisher cabinet frame"

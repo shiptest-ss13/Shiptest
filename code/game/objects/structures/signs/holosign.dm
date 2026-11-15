@@ -129,6 +129,10 @@
 	. += span_notice("\nIt reads: \"[desc_add]\"")
 
 
+/obj/machinery/holosign/atom_break(damage_flag)
+	. = ..()
+	do_sparks(8, FALSE, src)
+
 /obj/machinery/holosign/makossowarra
 	name = "holosign - Buy Makosso"
 	desc_add = "Makosso-Warra. Selling ships, medical supplies, and technology since 342 FSC. Shop now."

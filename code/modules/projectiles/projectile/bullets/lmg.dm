@@ -24,8 +24,8 @@
 
 /obj/projectile/bullet/csweet/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
+	if(isliving(target))
+		var/mob/living/M = target
 		M.adjust_fire_stacks(8)
 		M.ignite_mob()
 
@@ -45,8 +45,6 @@
 /obj/projectile/bullet/p50/penetrator/sabot
 	name = "Iron-tungsten rod"
 	icon_state = "sabot"
-	projectile_piercing = NONE // Piercing was requested to be disabled
-	projectile_phasing = NONE
 	var/anti_armour_damage = 50
 	ricochet_chance = 0 // Superheated tungsten rod - I'd like to imagine it's impossible for it to ricochet
 	speed = 0.1 // Railgun, go ludicrously fast to make up for lost piercing

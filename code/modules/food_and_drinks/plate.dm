@@ -97,6 +97,7 @@
 	force = 5
 	throwforce = 5
 	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_TINY
 	/// How many variants of shard there are
 	var/variants = 5
 

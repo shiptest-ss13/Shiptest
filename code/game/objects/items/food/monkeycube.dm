@@ -34,7 +34,7 @@
 
 /obj/item/food/monkeycube/frontiecube/Initialize()
 	. = ..()
-	spawned_mob = pick(subtypesof(/mob/living/simple_animal/hostile/human/frontier))
+	spawned_mob = pick(subtypesof(/mob/living/basic/human/frontier))
 
 /obj/item/food/monkeycube/ramzicube
 	name = "ramzi cube"
@@ -43,10 +43,10 @@
 
 /obj/item/food/monkeycube/ramzicube/Initialize()
 	. = ..()
-	spawned_mob = pick(subtypesof(/mob/living/simple_animal/hostile/human/ramzi))
+	spawned_mob = pick(subtypesof(/mob/living/basic/human/ramzi))
 
 /obj/item/food/monkeycube/supercollider
 	name = "ramzi clique supercubellider"
 	desc = "Adding water to this would probably be a terrible idea."
 	tastes = list("brutality" = 1, "combat stims" = 1)
-	spawned_mob = /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
+	spawned_mob = /mob/living/basic/human/ramzi/melee/space/stormtrooper/sledge

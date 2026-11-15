@@ -321,7 +321,7 @@
 				build_step--
 
 		if(ASSEMBLY_FOURTH_STEP)
-			if(istype(I, /obj/item/melee/baton))
+			if(istype(I, /obj/item/melee/classic_baton))
 				if(!can_finish_build(I, user))
 					return
 				to_chat(user, span_notice("You complete the Securitron! Beep boop."))

@@ -41,7 +41,8 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/suture = 2,
+		/obj/item/med_stapler/full = 1,
+		/obj/item/stack/medical/bruise_pack = 1,
 		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/healthanalyzer = 1,
@@ -109,6 +110,8 @@
 		/obj/item/holosign_creator/medical,
 		/obj/item/stack/sticky_tape,
 		/obj/item/stack/medical/bone_gel,
+		/obj/item/med_stapler,
+		/obj/item/med_staple_cart,
 	))
 
 /obj/item/storage/firstaid/medical/PopulateContents()
@@ -116,8 +119,9 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze/twelve = 1,
+		/obj/item/med_stapler/full = 1,
+		/obj/item/med_staple_cart = 1,
 		/obj/item/stack/medical/bruise_pack = 1,
-		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/scalpel = 1,
@@ -414,6 +418,7 @@
 /obj/item/storage/pill_bottle/charcoal
 	name = "bottle of charcoal pills"
 	desc = "Contains pills used to counter toxins."
+	icon_state = "pill_bottleg"
 
 /obj/item/storage/pill_bottle/charcoal/PopulateContents()
 	for(var/i in 1 to 7)
@@ -429,6 +434,7 @@
 /obj/item/storage/pill_bottle/epinephrine
 	name = "bottle of epinephrine pills"
 	desc = "Contains pills used to stabilize patients."
+	icon_state = "pill_bottlew"
 
 /obj/item/storage/pill_bottle/epinephrine/PopulateContents()
 	for(var/i in 1 to 7)
@@ -437,6 +443,7 @@
 /obj/item/storage/pill_bottle/mutadone
 	name = "bottle of mutadone pills"
 	desc = "Contains pills used to treat genetic abnormalities."
+	icon_state = "pill_bottley"
 
 /obj/item/storage/pill_bottle/mutadone/PopulateContents()
 	for(var/i in 1 to 7)
@@ -445,6 +452,7 @@
 /obj/item/storage/pill_bottle/potassiodide
 	name = "bottle of potassium iodide pills"
 	desc = "Contains pills used to reduce radiation damage."
+	icon_state = "pill_bottleg"
 
 /obj/item/storage/pill_bottle/potassiodide/PopulateContents()
 	for(var/i in 1 to 3)
@@ -453,6 +461,7 @@
 /obj/item/storage/pill_bottle/iron
 	name = "bottle of iron pills"
 	desc = "Contains pills used to reduce blood loss slowly.The tag in the bottle states 'Only take one each five minutes'."
+	icon_state = "pill_bottleblue"
 
 /obj/item/storage/pill_bottle/iron/PopulateContents()
 	for(var/i in 1 to 4)
@@ -461,6 +470,7 @@
 /obj/item/storage/pill_bottle/mannitol
 	name = "bottle of mannitol pills"
 	desc = "Contains pills used to treat brain damage."
+	icon_state = "pill_bottlew"
 
 /obj/item/storage/pill_bottle/mannitol/PopulateContents()
 	for(var/i in 1 to 7)
@@ -469,6 +479,7 @@
 /obj/item/storage/pill_bottle/stimulant
 	name = "bottle of stimulant pills"
 	desc = "Guaranteed to give you that extra burst of energy during a long shift!"
+	icon_state = "pill_bottleb_nolabel"
 
 /obj/item/storage/pill_bottle/stimulant/PopulateContents()
 	for(var/i in 1 to 5)
@@ -495,6 +506,7 @@
 /obj/item/storage/pill_bottle/lsd
 	name = "suspicious pill bottle"
 	desc = "There is a crude drawing which could be either a mushroom, or a deformed moon."
+	icon_state = "pill_bottle_nolabel"
 
 /obj/item/storage/pill_bottle/lsd/PopulateContents()
 	for(var/i in 1 to 5)
@@ -503,7 +515,7 @@
 /obj/item/storage/pill_bottle/aranesp
 	name = "suspicious pill bottle"
 	desc = "The label has 'fuck disablers' hastily scrawled in black marker."
-	icon_state = "pill_bottlew_nolabel"
+	icon_state = "pill_bottle_nolabel"
 
 /obj/item/storage/pill_bottle/aranesp/PopulateContents()
 	for(var/i in 1 to 5)
@@ -512,6 +524,7 @@
 /obj/item/storage/pill_bottle/psicodine
 	name = "bottle of psicodine pills"
 	desc = "Contains pills used to treat mental distress and traumas."
+	icon_state = "pill_bottlew"
 
 /obj/item/storage/pill_bottle/psicodine/PopulateContents()
 	for(var/i in 1 to 7)
@@ -520,6 +533,7 @@
 /obj/item/storage/pill_bottle/penacid
 	name = "bottle of pentetic acid pills"
 	desc = "Contains pills to expunge radiation and toxins."
+	icon_state = "pill_bottleg"
 
 /obj/item/storage/pill_bottle/penacid/PopulateContents()
 	for(var/i in 1 to 3)
@@ -529,6 +543,7 @@
 /obj/item/storage/pill_bottle/neurine
 	name = "bottle of neurine pills"
 	desc = "Contains pills to treat non-severe mental traumas."
+	icon_state = "pill_bottlew"
 
 /obj/item/storage/pill_bottle/neurine/PopulateContents()
 	for(var/i in 1 to 5)
@@ -555,6 +570,7 @@
 /obj/item/storage/pill_bottle/indomide
 	name = "bottle of indomide pills"
 	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
+	icon_state = "pill_bottler"
 
 /obj/item/storage/pill_bottle/indomide/PopulateContents()
 	for(var/i in 1 to 4)
@@ -564,6 +580,7 @@
 	name = "bottle of lithium carbonate pills"
 	desc = "Contains pills used to stabilize mood."
 	custom_price = 50
+	icon_state = "pill_bottlew"
 
 /obj/item/storage/pill_bottle/licarb/PopulateContents()
 	for(var/i in 1 to 7)
@@ -572,6 +589,7 @@
 /obj/item/storage/pill_bottle/finobranc
 	name = "bottle of finobranc tablets"
 	desc = "Party in the Solar Cantons, tonight."
+	icon_state = "pill_bottle_nolabel"
 
 /obj/item/storage/pill_bottle/finobranc/PopulateContents()
 	for(var/i in 1 to 7)
@@ -581,6 +599,7 @@
 	name = "bottle of stardrop patches"
 	desc = "Contains vision-enhancing patches."
 	custom_price = 300
+	icon_state = "pill_bottleb"
 
 /obj/item/storage/pill_bottle/stardrop/PopulateContents()
 	for(var/i in 1 to 7)
@@ -589,6 +608,7 @@
 /obj/item/storage/pill_bottle/starlight
 	name = "bottle of starlight patches"
 	desc = "Contains vision-enhancing patches."
+	icon_state = "pill_bottleb"
 
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
@@ -597,6 +617,7 @@
 /obj/item/storage/pill_bottle/strider
 	name = "bottle of strider patches"
 	desc = "Contains endurance-enhancing patches. The bottle is decorated with art of a heavily spliced human woman, galloping on 4 horse legs. A small caption reads \"GALLOP ON!\""
+	icon_state = "pill_bottler"
 
 /obj/item/storage/pill_bottle/strider/PopulateContents()
 	for(var/i in 1 to 7)
@@ -613,6 +634,7 @@
 /obj/item/storage/pill_bottle/tramal
 	name = "bottle of tramal pills"
 	desc = "Contains tramal pills, a mild painkiller."
+	icon_state = "pill_bottleb"
 
 /obj/item/storage/pill_bottle/tramal/PopulateContents()
 	for(var/i in 1 to 5)
@@ -621,6 +643,7 @@
 /obj/item/storage/pill_bottle/alvitane
 	name = "bottle of alvitane patches"
 	desc = "Contains alvitane patches, for treating burn injuries."
+	icon_state = "pill_bottley"
 
 /obj/item/storage/pill_bottle/alvitane/PopulateContents()
 	for(var/i in 1 to 5)
