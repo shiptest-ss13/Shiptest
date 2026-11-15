@@ -278,9 +278,14 @@
 	faction_locked = TRUE
 	faction_discount = 0
 
-/datum/supply_pack/medical/crisis/cybersun
-	desc = "Contains a pack of four Cybersun-brand crisis stimpacks for use in medical emergencies."
+/datum/supply_pack/medical/badstop
+	name = "Stabilizer Injectors"
+	desc = "Contains a pack of four stabilizer injectors for use in medical emergencies. A Cybersun Biodynamics product."
+	cost = 800
+	contains = list(/obj/item/storage/medpack/badstop)
 	faction = /datum/faction/cybersun
+	faction_locked = TRUE
+	faction_discount = 0
 
 // maybe these could be a unique medipen eventually?
 /datum/supply_pack/medical/crisis/pgf

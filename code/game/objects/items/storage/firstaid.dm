@@ -739,3 +739,11 @@
 /obj/item/storage/medpack/crisis/PopulateContents()
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/badstop
+	name = "pack of stabilizer injectors"
+	desc = "A sealed, sterile-white plastic package full of stabilizer injectors."
+
+/obj/item/storage/medpack/crisis/PopulateContents()
+	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/badstop = 4)
+	generate_items_inside(items_inside,src)
