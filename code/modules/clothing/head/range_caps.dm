@@ -3,7 +3,7 @@
 	desc = "An all-conditions headcover commonly found in surplus stores across the Frontier. The design features a neck-covering flap and chin strap which can be used to tie the hat up or down, depending on the weather."
 	icon_state = "range-steppe_up"
 	icon = 'icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 	vox_override_icon = 'icons/mob/species/vox/onmob_head_vox.dmi'
 	kepori_override_icon = 'icons/mob/species/kepori/onmob_head_kepori.dmi'
 	cold_protection = HEAD
