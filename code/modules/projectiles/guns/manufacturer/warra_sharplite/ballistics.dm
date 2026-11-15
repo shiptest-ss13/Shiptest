@@ -160,6 +160,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "podium_inteq"
 	item_state = "inteq_generic"
+	manufacturer = MANUFACTURER_INTEQ
 
 NO_MAG_GUN_HELPER(automatic/pistol/podium/inteq)
 
@@ -360,7 +361,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
 	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_WARRA_OLD
+	manufacturer = MANUFACTURER_VIGILITAS
 	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
 
 	fire_delay = 0.13 SECONDS
@@ -422,6 +423,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "resolution_inteq"
 	item_state = "resolution_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/resolution_inteq)
 

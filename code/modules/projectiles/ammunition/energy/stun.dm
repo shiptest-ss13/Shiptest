@@ -15,7 +15,7 @@
 /obj/item/ammo_casing/energy/disabler/sharplite
 	projectile_type = /obj/projectile/beam/disabler/sharplite
 	select_name  = "disable"
-	e_cost = 500
+	e_cost = 555
 	fire_sound = 'sound/weapons/taser2.ogg'
 	harmful = FALSE
 
@@ -36,7 +36,7 @@
 	pellets = 4
 	variance = 25
 	select_name = "disable"
-	e_cost = 1000
+	e_cost = 1666
 
 /obj/item/ammo_casing/energy/disabler/scatter/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap/sharplite
@@ -44,7 +44,7 @@
 
 /obj/item/ammo_casing/energy/disabler/smg
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
-	e_cost = 330
+	e_cost = 500
 	delay = 0.13 SECONDS
 
 /obj/item/ammo_casing/energy/disabler/sharplite/smg
@@ -55,7 +55,7 @@
 /obj/item/ammo_casing/energy/disabler/clover
 	projectile_type = /obj/projectile/beam/disabler/clover/weak
 	select_name  = "disable"
-	e_cost = 277
+	e_cost = 333
 	fire_sound = 'sound/weapons/taser.ogg'
 	harmful = FALSE
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
@@ -63,7 +63,7 @@
 /obj/item/ammo_casing/energy/disabler/clover/smg
 	projectile_type = /obj/projectile/beam/disabler/clover/weak
 	select_name  = "disable"
-	e_cost = 666
+	e_cost = 500
 	delay = 0.16 SECONDS
 	harmful = FALSE
 

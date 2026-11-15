@@ -14,14 +14,14 @@
 
 /obj/item/storage/guncase/pistol/candor
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
-	mag_type = /obj/item/ammo_box/magazine/m45
+	mag_type = /obj/item/ammo_box/magazine/m44
 
 /obj/item/storage/guncase/pistol/candor/factory
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor/factory
-	mag_type = /obj/item/ammo_box/magazine/m45
+	mag_type = /obj/item/ammo_box/magazine/m44
 
-/obj/item/storage/guncase/pistol/detective
-	gun_type = /obj/item/gun/ballistic/revolver/detective
+/obj/item/storage/guncase/pistol/flint
+	gun_type = /obj/item/gun/ballistic/revolver/flint
 	mag_type = /obj/item/ammo_box/c38
 
 /obj/item/storage/guncase/pistol/shadow
@@ -41,6 +41,13 @@
 
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
+
+/obj/item/storage/guncase/cinder/factory
+	gun_type = /obj/item/gun/ballistic/rifle/cinder/factory
+
+/obj/item/storage/guncase/cinder
+	gun_type = /obj/item/gun/ballistic/rifle/cinder
+
 
 /obj/item/storage/guncase/illestren
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
@@ -95,7 +102,11 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
 	mag_type = /obj/item/ammo_box/magazine/invictus_308_mag
 
+/obj/item/storage/guncase/bow
+	gun_type = /obj/item/gun/ballistic/bow
+
 /* Scarbourough */
+
 
 /obj/item/storage/guncase/pistol/a357
 	gun_type = /obj/item/gun/ballistic/revolver/viper
@@ -131,11 +142,11 @@
 
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
-	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+	mag_type = /obj/item/ammo_box/magazine/m10_cobra
 
 /obj/item/storage/guncase/c20r
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra
-	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+	mag_type = /obj/item/ammo_box/magazine/m10_cobra
 
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
@@ -168,9 +179,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
-/obj/item/storage/guncase/saw80
-	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/lmg
-	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+/obj/item/storage/guncase/python
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/python
+	mag_type = /obj/item/ammo_box/magazine/python_box
 
 /obj/item/storage/guncase/hydra80
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/indie
@@ -221,6 +232,10 @@
 /obj/item/storage/guncase/energy/hbg7l
 	gun_type = /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
+/obj/item/storage/guncase/g12
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/g12
+	mag_type = /obj/item/ammo_box/magazine/g12/empty
 
 /* Serene Outdoors Guns */
 
@@ -330,14 +345,14 @@
 
 /obj/item/storage/guncase/energy/al607
 	gun_type = /obj/item/gun/energy/sharplite/sarissa
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
 	gun_type = /obj/item/gun/energy/sharplite/hades
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/x01
 	gun_type = /obj/item/gun/energy/sharplite/yari
@@ -395,9 +410,9 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
 
-/obj/item/storage/guncase/cm24
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/cm24
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+/obj/item/storage/guncase/fa2m
+	gun_type = /obj/item/gun/ballistic/automatic/assault/fa2/clip
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40
 
 /obj/item/storage/guncase/cmf90
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90
@@ -439,17 +454,33 @@
 
 /obj/item/storage/guncase/ecm25
 	gun_type = /obj/item/gun/energy/clover/faveleira/clip
-	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /obj/item/storage/guncase/pl25
 	gun_type = /obj/item/gun/energy/clover/faveleira
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
+
+/obj/item/storage/guncase/ecm20
+	gun_type = /obj/item/gun/energy/clover/maguey/clip
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
+
+/obj/item/storage/guncase/pl20
+	gun_type = /obj/item/gun/energy/clover/maguey
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
+
+/obj/item/storage/guncase/ecm20
+	gun_type = /obj/item/gun/energy/clover/maguey/clip
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
+
+/obj/item/storage/guncase/pl20
+	gun_type = /obj/item/gun/energy/clover/maguey
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /* Inteq */
 
-/obj/item/storage/guncase/skm_inteq
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/inteq
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+/obj/item/storage/guncase/fa2_inteq
+	gun_type = /obj/item/gun/ballistic/automatic/assault/fa2/inteq
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40
 
 /obj/item/storage/guncase/commissioner
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
@@ -460,7 +491,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 /obj/item/storage/guncase/mongrel
-	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
+	gun_type = /obj/item/gun/ballistic/automatic/smg/fa2_carbine/inteq
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 
 /obj/item/storage/guncase/mastiff
@@ -489,7 +520,15 @@
 
 /obj/item/storage/guncase/barghest
 	gun_type = /obj/item/gun/energy/sharplite/hades/inteq
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
+
+/obj/item/storage/guncase/nahual
+	gun_type = /obj/item/gun/energy/clover/maguey/clip/inteq
+	mag_type = /obj/item/stock_parts/cell/gun
+
+/obj/item/storage/guncase/nahual
+	gun_type = /obj/item/gun/energy/clover/maguey/clip/inteq
+	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/bdm50
 	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution/inteq
@@ -502,13 +541,13 @@
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 
-/obj/item/storage/guncase/skm
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+/obj/item/storage/guncase/fa2
+	gun_type = /obj/item/gun/ballistic/automatic/assault/fa2
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40
 
-/obj/item/storage/guncase/skm_lmg
-	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+/obj/item/storage/guncase/ml3
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/ml3
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40/drum
 
 /obj/item/storage/guncase/slammer
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/slammer

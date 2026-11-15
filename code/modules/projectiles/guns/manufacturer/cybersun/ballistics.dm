@@ -38,6 +38,8 @@
 	//shameless asset reuse
 	fire_select_icon_state_prefix = "lance_"
 
+	manufacturer = MANUFACTURER_CYBERSUN
+
 	bad_type = /obj/item/gun/ballistic/cs_gauss
 
 	valid_attachments = list()
@@ -143,6 +145,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/cybersun/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_SMALL
+	wield_slowdown = PISTOL_SLOWDOWN
 	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss/pistol
 
 
@@ -203,6 +206,7 @@ NO_MAG_GUN_HELPER(cs_gauss/rectifier/export)
 
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
+	wield_slowdown = SMG_SLOWDOWN
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 380
@@ -254,6 +258,7 @@ NO_MAG_GUN_HELPER(cs_gauss/convergence/export)
 
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 
 	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss/rifle
 	allowed_ammo_types = list(

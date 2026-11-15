@@ -1,35 +1,5 @@
 //area defs go here :)
 
-//Abandoned Mechbay Ruin
-
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall
-	name = "Abandoned Exosuit Bay Main Corridor"
-	icon_state = "hallC"
-
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol
-	name = "Abandoned Exosuit Bay Command and Control"
-	icon_state = "bridge"
-
-/area/ruin/wasteplanet/abandoned_mechbay/bay1
-	name = "Abandoned Exosuit Bay Upper Hangar"
-	icon_state = "mechbay"
-
-/area/ruin/wasteplanet/abandoned_mechbay/bay2
-	name = "Abandoned Exosuit Bay Lower Hangar"
-	icon_state = "mechbay"
-
-/area/ruin/wasteplanet/abandoned_mechbay/crewquarters
-	name = "Abandoned Exosuit Bay Crew Quarters"
-	icon_state = "green"
-
-/area/ruin/wasteplanet/abandoned_mechbay/mechlab
-	name = "Abandoned Exosuit Lab"
-	icon_state = "mechbay"
-
-/area/ruin/wasteplanet/abandoned_mechbay/engineering
-	name = "Abandoned Exosuit Bay Engineering"
-	icon_state = "engine"
-
 //Wasteplanet_Tradepost
 
 /area/ruin/wasteplanet/tradepost/barracks
@@ -183,3 +153,89 @@
 /area/ruin/wasteplanet/recycle_bay/officers_office
 	name = "Recycle Bay Officers Office"
 	icon_state = "bridge"
+
+//Smuggler's Bunker
+
+/area/ruin/wasteplanet/smugglerbunker
+	name = "Bunker"
+	icon_state = "hallC"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/exterior
+	name = "Smuggler's Bunker Exterior"
+	light_range = 2
+	light_power = 0.4
+	light_color = "#5c4e5f"
+	icon_state = "green"
+
+/area/ruin/wasteplanet/smugglerbunker/dorms/one
+	name = "Bunker Dorms One"
+
+/area/ruin/wasteplanet/smugglerbunker/dorms/two
+	name = "Bunker Dorms Two"
+
+/area/ruin/wasteplanet/smugglerbunker/engineering
+	name = "Bunker Engineering"
+	icon_state = "engine"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/radiation
+	name = "Bunker Rad-room"
+	icon_state = "engine"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/checkpoint
+	name = "Bunker Radiation Checkpoint"
+	icon_state = "engine"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/controlroom
+	name = "Bunker Control Room"
+	icon_state = "security"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/armory
+	name = "Bunker Armory"
+	icon_state = "security"
+
+/area/ruin/wasteplanet/smugglerbunker/bathroom
+	name = "Bunker Washroom"
+	icon_state = "toilet"
+
+/area/ruin/wasteplanet/smugglerbunker/dorms
+	name = "Bunker Dorms"
+	icon_state = "blue"
+
+/area/ruin/wasteplanet/smugglerbunker/dorms/lounge
+	name = "Bunker Lounge"
+	icon_state = "blue"
+
+/area/ruin/wasteplanet/smugglerbunker/cargo
+	name = "Cargo Bay"
+	icon_state = "cargo_warehouse"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/lab
+	name = "Mechbay"
+	icon_state = "blue"
+
+/area/ruin/wasteplanet/smugglerbunker/dorms/lounge
+	name = "Bunker Lounge"
+	icon_state = "blue"
+
+/area/ruin/wasteplanet/smugglerbunker/medbay
+	name = "Bunker Medbay"
+	icon_state = "surgery"
+	power_light = TRUE
+
+/area/ruin/wasteplanet/smugglerbunker/mess
+	name = "Bunker Mess"
+	icon_state = "cafeteria"
+
+/area/ruin/wasteplanet/smugglerbunker/killroom
+	name = "Bunker Safe Storage"
+	icon_state = "security"
+
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones
+	name = "Drone Rooms"
+	icon_state = "security"

@@ -29,6 +29,29 @@
 
 #define SLOTS_AMT 20 // Keep this up to date!
 
+DEFINE_BITFIELD(inventory_slots, list(
+	"ITEM_SLOT_OCLOTHING" = ITEM_SLOT_OCLOTHING,
+	"ITEM_SLOT_ICLOTHING" = ITEM_SLOT_ICLOTHING,
+	"ITEM_SLOT_GLOVES" = ITEM_SLOT_GLOVES,
+	"ITEM_SLOT_EYES" = ITEM_SLOT_EYES,
+	"ITEM_SLOT_EARS" = ITEM_SLOT_EARS,
+	"ITEM_SLOT_MASK" = ITEM_SLOT_MASK,
+	"ITEM_SLOT_HEAD" = ITEM_SLOT_HEAD,
+	"ITEM_SLOT_FEET" = ITEM_SLOT_FEET,
+	"ITEM_SLOT_ID" = ITEM_SLOT_ID,
+	"ITEM_SLOT_BELT" = ITEM_SLOT_BELT,
+	"ITEM_SLOT_DEX_STORAGE" = ITEM_SLOT_DEX_STORAGE,
+	"ITEM_SLOT_NECK" = ITEM_SLOT_NECK,
+	"ITEM_SLOT_HANDS" = ITEM_SLOT_HANDS,
+	"ITEM_SLOT_BACKPACK" = ITEM_SLOT_BACKPACK,
+	"ITEM_SLOT_SUITSTORE" = ITEM_SLOT_SUITSTORE,
+	"ITEM_SLOT_LPOCKET" = ITEM_SLOT_LPOCKET,
+	"ITEM_SLOT_RPOCKET" = ITEM_SLOT_RPOCKET,
+	"ITEM_SLOT_HANDCUFFED" = ITEM_SLOT_HANDCUFFED,
+	"ITEM_SLOT_LEGCUFFED" = ITEM_SLOT_LEGCUFFED
+))
+
+
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
 //All the item slots that are allowed to be held in Kepori beaks (their mask slot)
@@ -67,6 +90,7 @@
 #define HAND_RIGHT (1<<10)
 #define HANDS (HAND_LEFT | HAND_RIGHT)
 #define NECK (1<<11)
+#define TAIL (1<<12)
 #define FULL_BODY (~0)
 
 //defines for the index of hands
@@ -110,7 +134,6 @@ GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_casing,
 	/obj/item/flashlight,
 	/obj/item/gun,
-	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals)))
@@ -122,7 +145,6 @@ GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
-	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals)))
@@ -137,7 +159,6 @@ GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
 	/obj/item/lighter,
-	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
@@ -154,7 +175,6 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/grenadelauncher,
 	/obj/item/flamethrower,
 	/obj/item/melee/knife/combat,
-	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
@@ -171,7 +191,6 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
 	/obj/item/lighter,
-	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,

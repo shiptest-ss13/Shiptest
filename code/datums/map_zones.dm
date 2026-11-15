@@ -417,6 +417,7 @@
 	parent_level.virtual_levels -= src
 	parent_level = null
 	LAZYREMOVE(SSidlenpcpool.idle_mobs_by_virtual_level, "[id]")
+	LAZYREMOVE(SSai_controllers.sleeping_ai_by_virtual_level, "[id]")
 	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
 	if(up_linkage)

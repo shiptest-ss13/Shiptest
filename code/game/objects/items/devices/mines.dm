@@ -377,6 +377,7 @@
 	if(tripwire_turfs)
 		for(var/turf/affected_turf in tripwire_turfs)
 			UnregisterSignal(affected_turf, COMSIG_ATOM_ENTERED)
+			REMOVE_TRAIT(affected_turf, TRAIT_AI_AVOID, REF(src))
 		tripwire_turfs = null
 	if(target_turf)
 		target_turf = null
@@ -393,6 +394,11 @@
 
 	for(var/turf/affected_turf in tripwire_turfs)
 		RegisterSignal(affected_turf,  COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+		ADD_TRAIT(affected_turf, TRAIT_AI_AVOID, REF(src))
+
+/obj/item/mine/directional/Destroy()
+	remove_tripwires()
+	return ..()
 
 /obj/item/mine/directional/claymore/now_armed()
 	draw_tripwires()
@@ -415,10 +421,10 @@
 
 
 //pew pew
-/obj/item/mine/directional/mine_effect(mob/victim)
+/obj/item/mine/directional/mine_effect(mob/living/victim)
 	if(casingtype && target_turf && victim ?(src.loc != victim.loc) : victim == null)
 		var/obj/item/ammo_casing/casing = new casingtype(src)
-		casing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 60, src)
+		casing.fire_casing(target_turf, null, null, null, 30, null, 60, src)
 	. = ..()
 
 /obj/item/mine/directional/disarm()
@@ -484,7 +490,7 @@
 
 
 /obj/item/mine/pressure/explosive/fire
-	name = "\improper G-82 Incindeary"
+	name = "\improper G-82 Incendiary"
 	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag and a ball of fire on detonation. "
 
 	range_flame = 6
@@ -613,7 +619,7 @@
 
 	shrapnel_magnitude = 8
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
-	manufacturer = MANUFACTURER_WARRA_OLD
+	manufacturer = MANUFACTURER_VIGILITAS
 
 
 /obj/item/mine/proximity/explosive/plasma
@@ -652,7 +658,7 @@
 /obj/item/mine/proximity/spawner/manhack
 	name = "\improper P-83 Lacerator"
 	desc = "An anti-infantry device produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
-	spawn_type = /mob/living/simple_animal/hostile/viscerator
+	spawn_type = /mob/living/basic/viscerator
 
 
 
@@ -702,7 +708,7 @@
 	else
 		. = ..()
 
-/obj/item/mine/directional/claymore/mine_effect(mob/victim)
+/obj/item/mine/directional/claymore/mine_effect(mob/living/victim)
 	. = ..()
 	//if you somehow explode it while on the same tile, you win bonus shrapnel
 	//also spews stuff everywhere if it's triggered while not set up
@@ -721,7 +727,7 @@
 		light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 		if(shredtype)
 			var/obj/item/ammo_casing/shredcasing = new shredtype(src)
-			shredcasing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 50, src)
+			shredcasing.fire_casing(target_turf, null, null, null, 30, null, 50, src)
 
 /obj/item/mine/directional/claymore/plasma
 	name = "\improper Etherbor EC-1"

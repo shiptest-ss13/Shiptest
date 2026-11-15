@@ -18,7 +18,7 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/pulse,
 	) //somone make this backpack mounted, or connected to the deathsquad suit at some point
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_NONE
 	ammo_x_offset = 2
 	charge_sections = 6
 
@@ -26,6 +26,8 @@
 
 	muzzleflash_iconstate = "muzzle_flash_pulse"
 	light_color = COLOR_BRIGHT_BLUE
+
+	autowiki_hidden = TRUE
 
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return

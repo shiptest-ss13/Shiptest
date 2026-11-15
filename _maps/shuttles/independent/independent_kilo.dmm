@@ -418,8 +418,8 @@
 /obj/item/gun/ballistic/rifle/illestren/empty,
 /obj/item/gun/ballistic/automatic/pistol/m17/no_mag,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/shotgun/doublebarrel/presawn/empty,
 /obj/item/radio/intercom/directional/south,
+/obj/item/gun/ballistic/shotgun/doublebarrel/empty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "cj" = (
@@ -488,7 +488,8 @@
 "cw" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 1;
 	id = "kiloprivate"
 	},
 /turf/open/floor/plating,
@@ -766,17 +767,6 @@
 /obj/effect/turf_decal/corner/transparent/green{
 	dir = 9
 	},
-/obj/machinery/button/door{
-	id = "kilodoor";
-	name = "Door bolt";
-	pixel_x = -22;
-	pixel_y = 8;
-	dir = 4;
-	specialfunctions = 4;
-	normaldoorcontrol = 1;
-	req_access_txt = "19";
-	req_ship_access = 1
-	},
 /obj/machinery/firealarm/directional/west{
 	pixel_x = -33;
 	pixel_y = -4
@@ -843,16 +833,20 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
-	pixel_x = 4;
-	pixel_y = 5
+	pixel_x = 5;
+	pixel_y = 9
 	},
 /obj/item/lighter/greyscale{
 	pixel_x = -8;
-	pixel_y = 6
+	pixel_y = 7
 	},
 /obj/item/cigbutt{
 	pixel_x = -8;
 	pixel_y = 3
+	},
+/obj/item/radio/weather_monitor{
+	pixel_x = -6;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1001,8 +995,11 @@
 	},
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
-	id_tag = "kilodoor";
 	name = "Bridge"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "kiloprivate"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1799,6 +1796,9 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/light/small/directional/south,
+/obj/item/storage/belt/mining/alt,
+/obj/item/storage/belt/mining,
+/obj/item/melee/knife/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "KB" = (
@@ -1857,15 +1857,22 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "MI" = (
-/obj/machinery/shower{
-	dir = 8
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 4
 	},
-/obj/machinery/door/window/westright,
-/obj/machinery/light/small/directional/north,
+/obj/item/soap{
+	pixel_x = 1;
+	pixel_y = -6
+	},
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/south,
+/obj/structure/towel_bar{
+	pixel_x = 0;
+	pixel_y = 19
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "MY" = (
@@ -2058,17 +2065,6 @@
 /obj/structure/chair/sofa/brown/old/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/confetti,
-/obj/machinery/button/door{
-	id = "kilodoor";
-	name = "Door bolt";
-	pixel_x = 21;
-	pixel_y = 8;
-	dir = 8;
-	specialfunctions = 4;
-	normaldoorcontrol = 1;
-	req_access_txt = "19";
-	req_ship_access = 1
-	},
 /turf/open/floor/carpet,
 /area/ship/crew/canteen/kitchen)
 "Ty" = (

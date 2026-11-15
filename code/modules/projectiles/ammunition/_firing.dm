@@ -23,6 +23,8 @@
 	var/obj/item/gun/ballistic/foulmouth = fired_from
 	if(istype(foulmouth))
 		foulmouth.adjust_wear(wear_modifier)
+	if(user)
+		alert_ai_to_gunfire(user, quiet, istype(src, /obj/item/ammo_casing/energy), fired_from)
 	update_appearance()
 	return TRUE
 
@@ -69,10 +71,11 @@
 		if(target) //if the target is right on our location we'll skip the travelling code in the proj's fire()
 			direct_target = target
 	if(!direct_target)
-		if(user)
-			BB.preparePixelProjectile(target, user, modifiers, spread)
-		else
-			BB.preparePixelProjectile(target, curloc, modifiers, spread)
+		// an earlier pellet can kill and delete the target, so aim at its last turf
+		var/atom/aim_target = get_turf(target) ? target : targloc
+		if(!BB.preparePixelProjectile(aim_target, user ? user : curloc, modifiers, spread))
+			BB = null
+			return FALSE
 	BB.fire(null, direct_target)
 	BB = null
 	return TRUE
@@ -81,12 +84,12 @@
 
 /obj/item/ammo_casing/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
-	if(!prob(BULLET_POP_CHANCE) || !BB)
+	if(!prob(BULLET_POP_CHANCE) || !BB || !can_cookoff)
 		return
 	ready_proj()
 	var/fire_dir = pick(GLOB.alldirs)
 	var/turf/target = get_ranged_target_turf(get_turf(src),fire_dir,6)
-	fire_casing(target,null, null, null, FALSE, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+	fire_casing(target,null, null, null, FALSE, null, 0, src,TRUE)
 	playsound(src, 'sound/weapons/gun/pistol/shot.ogg', 100, TRUE)
 	update_appearance()
 	return TRUE

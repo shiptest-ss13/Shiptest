@@ -7,7 +7,9 @@
 	icon_state = "sandbags"
 	singular_name = "sandbag"
 	layer = LOW_ITEM_LAYER
+	novariants = FALSE
 	merge_type = /obj/item/stack/sandbags
+	novariants = FALSE
 	max_amount = 15
 	full_w_class = WEIGHT_CLASS_HUGE
 
@@ -25,7 +27,9 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	desc = "A bag to be filled with sand."
 	icon_state = "empty_sandbags"
 	singular_name = "empty sandbag"
+	novariants = FALSE
 	full_w_class = WEIGHT_CLASS_BULKY
+	novariants = FALSE
 	max_amount = 60
 
 /obj/item/stack/empty_sandbags/attackby(obj/item/attacking_item, mob/user, params)

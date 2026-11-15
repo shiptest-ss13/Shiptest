@@ -7,6 +7,7 @@
 	auto_rotate = FALSE
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
 	stack_size = 22
+	can_cookoff = FALSE
 	var/energy_cost = 100
 
 /obj/item/ammo_casing/caseless/gauss/hc
@@ -78,6 +79,7 @@
 	auto_rotate = FALSE
 	stack_size = 30
 	energy_cost = 0
+	can_cookoff = TRUE
 
 /obj/item/ammo_casing/caseless/gauss/deusha
 	name = "3x20mm Deu'Sha gauss dart"
@@ -88,3 +90,4 @@
 	auto_rotate = FALSE
 	stack_size = 30
 	energy_cost = 0
+	can_cookoff = TRUE

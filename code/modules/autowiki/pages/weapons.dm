@@ -3,14 +3,11 @@
 
 /datum/autowiki/weapons/proc/manufacturer_name(raw)
 	var/static/list/names = list(
-		MANUFACTURER_SHARPLITE = "Sharplite Defense",
 		MANUFACTURER_SHARPLITE_NEW = "Makosso-Warra-Sharplite",
 		MANUFACTURER_HUNTERSPRIDE = "Hunter's Pride",
 		MANUFACTURER_SOLARARMORIES = "Solarbundswaffenkammer",
 		MANUFACTURER_SCARBOROUGH = "Scarborough Arms",
 		MANUFACTURER_EOEHOMA = "Eoehoma Firearms",
-		MANUFACTURER_WARRA_OLD = "Makosso-Warra (old)",
-		MANUFACTURER_WARRA = "Makosso-Warra",
 		MANUFACTURER_VIGILITAS = "Makosso-Warra Advantage",
 		MANUFACTURER_INTEQ = "Inteq Risk Management Group",
 		MANUFACTURER_MINUTEMAN = "Lanchester City Firearms Plant",
@@ -18,6 +15,7 @@
 		MANUFACTURER_PGF = "Etherbor Industries",
 		MANUFACTURER_IMPORT = "Lanchester Import Co.",
 		MANUFACTURER_SERENE = "Serene Outdoors",
+		MANUFACTURER_CYBERSUN = "Tadeusz Armory",
 	)
 
 	if (!raw)
@@ -103,7 +101,7 @@
 				if (count in seen)
 					continue
 				seen += count
-				var/mark = bold_default && length(charges) > 1 && charge == default_charge
+				var/mark = bold_default && charge == default_charge
 				counts += mark ? "'''[count]'''" : "[count]"
 			facts += "[counts.Join(" / ")] shots"
 

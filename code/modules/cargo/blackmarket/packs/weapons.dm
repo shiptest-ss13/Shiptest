@@ -200,20 +200,20 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/derringer
-	name = "Derringer"
+	name = "HP Spark"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/automatic/pistol/derringer
 	gun_unloaded = FALSE
 	mag_number = 0
 
-	cost_min = 100
-	cost_max = 300
+	cost_min = 50
+	cost_max = 200
 	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/syndi_derringer
-	name = ".357 Derringer"
-	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticeable. Chambered in .357, so you actually have a chance at killing something."
+	name = "D-9 \"Temblor\""
+	desc = "A concealable handgun painted in Scarborough black. Chambered in .357, so you actually have a chance at killing something."
 	item = /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
 	gun_unloaded = FALSE
@@ -223,6 +223,17 @@
 	cost_max = 800
 	stock = 2
 	availability_prob = 30
+
+/datum/blackmarket_item/weapon/guncase/swiss_cheese
+	name = "\"Swiss Cheese\" Assault Rifle"
+	desc = "Here's somethin nice for ya. Old Solarian rifle, genuine antique, mint condition, like it just came out of a museum or something. Has the launcher thing and the weird-ass ammo and all that stuff. All working. No lowballs, I know what I've got."
+	item = /obj/item/gun/ballistic/automatic/assault/swiss_cheese
+	pair_item = list(/datum/blackmarket_item/ammo/swiss_cheese)
+	cost_min = 8000
+	cost_max = 12000
+	stock_max = 2
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/guncase/e10
 	name = "E-10 Laser Pistol"
@@ -291,6 +302,22 @@
 	cost_max = 750
 	stock_max = 3
 	availability_prob = 40
+	availability_prob = 60
+
+/datum/blackmarket_item/weapon/guncase/e20
+	name = "E-20 Mining Emitter"
+	desc = "Hey, listen. My buddies and I came across an abandoned mining site. All the miners were dead. Tragic. Anyway. Had a big box of those old Eoehoma mining guns. Great for mining and even better for shooting fuckers. If ya want one we'll send it to ya for a reasonable price."
+	item = /obj/item/gun/energy/laser/e20
+	pair_item = list( // these only have a chance to spawn, each
+		/datum/blackmarket_item/tech/e20_scatter,
+		/datum/blackmarket_item/tech/e20_heavy,
+		/datum/blackmarket_item/tech/e20_efficiency,
+		/datum/blackmarket_item/tech/e20_pierce)
+
+	cost_min = 800
+	cost_max = 2200
+	stock_max = 5
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/stingingnettle
 	name = "xPL-7 Stinging Nettle"
@@ -311,6 +338,16 @@
 	cost_max = 4500
 	stock_max = 2
 	availability_prob = 20
+
+/datum/blackmarket_item/weapon/guncase/maguey
+	name = "ECM-20 Maguey"
+	desc = "No fuckin' clue how someone got their hands on one of these. An original production Clover Photonics ECM-20 Electroplasma Assault Rifle, with the overcharge function still intact. They only made a couple hundred of these before CLIP said no thanks. Uses Eoehoma cells - I reccomend stocking up."
+	item = /obj/item/gun/energy/clover/maguey/clip
+
+	cost_min = 4500
+	cost_max = 5500
+	stock_max = 1
+	availability_prob = 10
 
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
@@ -589,10 +626,10 @@
 	stock_max = 4
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/guncase/skm_carbine
-	name = "SKM-24v Carbine"
-	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+/datum/blackmarket_item/weapon/guncase/fa2_carbine
+	name = "FA2-v Carbine"
+	desc = "Technically this isn't even an FA2, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
+	item = /obj/item/gun/ballistic/automatic/smg/fa2_carbine
 	pair_item = list(/datum/blackmarket_item/ammo/carbine_mag)
 
 	cost_min = 2000
@@ -600,16 +637,26 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/guncase/skm_lmg
-	name = "SKM-24u Light Machinegun"
-	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machine gun, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
-	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
+/datum/blackmarket_item/weapon/guncase/ml3
+	name = "ML3 Light Machinegun"
+	desc = "Your regular rifles not have enough oomph for you? This ML3 was reconstructed with help from a 'liberated' CM-40 parts shipment, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	item = /obj/item/gun/ballistic/automatic/hmg/ml3
 
 	cost_min = 5000
 	cost_max = 7000
 	stock_max = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/invictus_old
+	name = "Old Model Invictus"
+	desc = "Found some croaked hunters who were straight up skeletons with these laying by 'em. Kinda old, kicks like a mule but damn does it put holes through EVERYTHING."
+	item = /obj/item/gun/ballistic/automatic/assault/invictus/old
+
+	cost_min = 5500
+	cost_max = 6500
+	stock_max = 2
+	availability_prob = 15
 
 /datum/blackmarket_item/weapon/guncase/rail_cannon
 	name = "Model 'Atelier' Railgun"
@@ -623,6 +670,17 @@
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/cinder
+	name = "HP Cinder"
+	desc = "My buddy Keith shot this shotgun one handed. Lemme tell ya, broken bones throughout his arm. If you want a streetsweeper with enough oomfh to blow a fist-sized hole right through a guy when you board their ship, you're in luck."
+	item = /obj/item/gun/ballistic/rifle/cinder
+	pair_item = list(/obj/item/storage/box/ammo/a4g_buckshot, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas)
+
+	cost_min = 4000
+	cost_max = 6000
+	stock = 1
+	availability_prob = 15
 
 /// mecha equipment
 

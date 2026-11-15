@@ -58,6 +58,7 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	burst_size = 1
 	fire_delay = 0.4 SECONDS
+	bad_type = /obj/item/gun/ballistic/rocketlauncher
 
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY

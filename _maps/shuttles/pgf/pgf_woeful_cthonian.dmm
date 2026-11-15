@@ -2501,7 +2501,8 @@
 "xK" = (
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
 	req_access_txt = "10";
-	name = "engineer's suit storage unit"
+	name = "engineer's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/tank/jetpack/oxygen,
 /obj/item/clothing/suit/space/gezena,
@@ -2868,7 +2869,8 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit/locked{
-	name = "EVA suit storage unit"
+	name = "EVA suit storage unit";
+	req_ship_access = 1
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/item/clothing/suit/space/gezena/dreadnaut,
@@ -3085,7 +3087,8 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit/locked{
-	name = "EVA suit storage unit"
+	name = "EVA suit storage unit";
+	req_ship_access = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{

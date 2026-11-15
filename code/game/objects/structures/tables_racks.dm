@@ -861,3 +861,30 @@
 	smoothing_groups = null
 	canSmoothWith = null
 	can_flip = FALSE
+
+/obj/structure/table/endtable
+	name = "wooden end table"
+	desc = "A small wooden table perfect for next to beds and the side of sofas."
+	icon = 'icons/obj/structures/end_table.dmi'
+	icon_state = "end_table"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+	anchored = TRUE
+	can_flip = FALSE
+	density = FALSE
+	buildstack = /obj/item/stack/sheet/mineral/wood
+	framestack = /obj/item/stack/sheet/mineral/wood
+	framestackamount = 1
+	buildstackamount = 1
+	frame = /obj/structure/table_frame/end_table
+
+/obj/structure/table/endtable/Initialize()
+	. = ..()
+	AddElement(/datum/element/nudge, -8, 8, 0, 16)
+
+/obj/structure/table/endtable/AfterPutItemOnTable(obj/item/I, mob/living/user)
+	. = ..()
+	//recenter objects since we can move this around
+	I.pixel_x += pixel_x
+	I.pixel_y += pixel_y

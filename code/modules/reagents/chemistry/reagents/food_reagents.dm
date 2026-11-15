@@ -13,7 +13,8 @@
 	taste_mult = 4
 	category = "Food and Drink"
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
-	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
+	var/quality = 0	// affects mood, typically higher for mixed drinks with more complex recipes
+	var/must_ingest = TRUE // whether or not this reagent must be ingested to enter the bloodstream
 	bad_type = /datum/reagent/consumable
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
@@ -38,6 +39,9 @@
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "quality_drink", /datum/mood_event/quality_fantastic)
 				if (FOOD_AMAZING)
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "quality_food", /datum/mood_event/amazingtaste)
+	else if(must_ingest)
+		M.reagents.remove_reagent(type, reac_volume) // believe it or not intrevenous caramel is not good for you
+		M.reagents.add_reagent(/datum/reagent/carbon, reac_volume) // for scanner feedback mostly
 	return ..()
 
 /datum/reagent/consumable/nutriment
@@ -279,6 +283,10 @@
 	taste_description = "scorching agony"
 
 /datum/reagent/consumable/condensedcapsaicin/expose_mob(mob/living/expose_target, method=TOUCH, reac_volume)
+	var/mob/living/basic/human/basic_human = expose_target
+	if(istype(basic_human) && (method == TOUCH || method == INHALE || method == VAPOR))
+		basic_human.pepper_act() // human NPCs, which aren't carbons, get it in the eyes too
+		return
 	if(!ishuman(expose_target) && !ismonkey(expose_target))
 		return
 

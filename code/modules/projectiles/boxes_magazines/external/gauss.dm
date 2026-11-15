@@ -60,6 +60,9 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/ammo_box/magazine/cs_gauss/pistol/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/cs_gauss/rifle
 	name = "gauss box (3x20mm Deu'Sha)"
 	desc = "A stamped 40-round magazine combined with a limited-use cell. \"PLEASE RECYCLE ME :)\" is engraved into the flip-side. 3x20mm Deu'Sha does low damage and relies on volume of fire."
@@ -68,3 +71,6 @@
 	caliber = "these"
 	max_ammo = 40
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cs_gauss/rifle/empty
+	start_empty = TRUE

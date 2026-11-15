@@ -502,7 +502,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/moon/hideout/canteen)
 "fl" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/basic/human/ramzi/ranged/space/smg,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
 "fn" = (
@@ -950,11 +950,11 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/canteen)
 "jF" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plating/asteroid/snow/safe/noplanet,
 /area/ruin/moon/hideout)
 "jG" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/soft/machete,
+/mob/living/basic/human/ramzi/melee/space/soft/machete,
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
@@ -1690,7 +1690,7 @@
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ruin/moon/hideout/dorms/one)
 "rm" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
+/mob/living/basic/human/ramzi/ranged/space/soft/smg,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
 "rq" = (
@@ -1901,7 +1901,7 @@
 	},
 /area/ruin/moon/hideout/dorms/officer)
 "sQ" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/mob/living/basic/human/ramzi/ranged/space,
 /turf/open/floor/plating/asteroid/snow/safe/noplanet,
 /area/ruin/moon/hideout)
 "sR" = (
@@ -1921,7 +1921,7 @@
 /obj/machinery/shower{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/civilian/towel,
+/mob/living/basic/human/ramzi/civilian/towel,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/moon/hideout/bathroom)
 "sZ" = (
@@ -2089,7 +2089,7 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
 "vg" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/soft/machete,
+/mob/living/basic/human/ramzi/melee/space/soft/machete,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 4
 	},
@@ -2118,7 +2118,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/canteen)
 "vt" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
+/mob/living/basic/human/ramzi/melee/machete,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -2476,12 +2476,12 @@
 /area/ruin/moon/hideout/engineering)
 "zz" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary{
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary{
 	retreat_distance = 0;
-	minimum_distance = 0;
 	melee_damage_upper = 15;
 	melee_damage_lower = 15;
-	rapid_melee = 2
+	rapid_melee = 2;
+	engage_distance = 0
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -3159,7 +3159,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/moon/hideout/bathroom/officer)
 "FZ" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
+/mob/living/basic/human/ramzi/melee/space/sledge,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
@@ -3471,7 +3471,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/moon/hideout)
 "Jw" = (
-/mob/living/simple_animal/hostile/human/ramzi/civilian/space,
+/mob/living/basic/human/ramzi/civilian/space,
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
@@ -4205,7 +4205,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/fortress)
 "RP" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
@@ -4367,7 +4367,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout)
 "TI" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/mob/living/basic/human/ramzi/ranged/shotgun,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
@@ -4646,7 +4646,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/engineering)
 "VX" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
+/mob/living/basic/human/ramzi/ranged/space/soft/smg,
 /obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -4746,7 +4746,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/moon/hideout/fortress)
 "Xo" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/sniper{
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/sniper{
 	weapon_drop_chance = 100;
 	wander = 0
 	},
@@ -4898,7 +4898,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/moon/hideout/fortress)
 "YG" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
+/mob/living/basic/human/ramzi/melee/space/sledge,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
 "YS" = (
@@ -4910,7 +4910,7 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
 "YW" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee,
+/mob/living/basic/human/ramzi/melee,
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/moon/hideout/canteen)

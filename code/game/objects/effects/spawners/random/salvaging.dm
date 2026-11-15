@@ -2,9 +2,9 @@
 
 // for the normal parts these all follow the same pattern of:
 // t1: 80%
-// t2: 15%
+// t2: 14.5%
 // t3: 4.5%
-// t4: 0.5%
+// t4: 1%
 
 /obj/effect/spawner/random/salvage/part
 	icon_state = "matter_bin"
@@ -12,37 +12,37 @@
 /obj/effect/spawner/random/salvage/part/capacitor
 	loot = list(
 		/obj/item/stock_parts/capacitor = 800,
-		/obj/item/stock_parts/capacitor/adv = 150,
+		/obj/item/stock_parts/capacitor/adv = 145,
 		/obj/item/stock_parts/capacitor/super = 45,
-		/obj/item/stock_parts/capacitor/quadratic = 5)
+		/obj/item/stock_parts/capacitor/quadratic = 10)
 
 /obj/effect/spawner/random/salvage/part/scanning
 	loot = list(
 		/obj/item/stock_parts/scanning_module = 800,
-		/obj/item/stock_parts/scanning_module/adv = 150,
+		/obj/item/stock_parts/scanning_module/adv = 145,
 		/obj/item/stock_parts/scanning_module/phasic = 45,
-		/obj/item/stock_parts/scanning_module/triphasic = 5)
+		/obj/item/stock_parts/scanning_module/triphasic = 10)
 
 /obj/effect/spawner/random/salvage/part/manipulator
 	loot = list(
 		/obj/item/stock_parts/manipulator = 800,
-		/obj/item/stock_parts/manipulator/nano = 150,
+		/obj/item/stock_parts/manipulator/nano = 145,
 		/obj/item/stock_parts/manipulator/pico = 45,
-		/obj/item/stock_parts/manipulator/femto = 5)
+		/obj/item/stock_parts/manipulator/femto = 10)
 
 /obj/effect/spawner/random/salvage/part/matter_bin
 	loot = list(
 		/obj/item/stock_parts/matter_bin = 800,
-		/obj/item/stock_parts/matter_bin/adv = 150,
+		/obj/item/stock_parts/matter_bin/adv = 145,
 		/obj/item/stock_parts/matter_bin/super = 45,
-		/obj/item/stock_parts/matter_bin/bluespace = 5)
+		/obj/item/stock_parts/matter_bin/bluespace = 10)
 
 /obj/effect/spawner/random/salvage/part/laser
 	loot = list(
 		/obj/item/stock_parts/micro_laser = 800,
-		/obj/item/stock_parts/micro_laser/high = 150,
+		/obj/item/stock_parts/micro_laser/high = 145,
 		/obj/item/stock_parts/micro_laser/ultra = 45,
-		/obj/item/stock_parts/micro_laser/quadultra = 5)
+		/obj/item/stock_parts/micro_laser/quadultra = 10)
 
 // parts for building telecomms machinery
 /obj/effect/spawner/random/salvage/part/tcomms
@@ -128,7 +128,6 @@
 		/obj/item/storage/box/ammo/c22lr/surplus = 2,
 		/obj/item/storage/box/ammo/c10mm_surplus = 2,
 		/obj/item/storage/box/ammo/c9mm_surplus = 2,
-		/obj/item/storage/box/ammo/c45_surplus = 2,
 
 		// big tools
 		/obj/item/hatchet = 10,
@@ -142,7 +141,7 @@
 // rare environmental storytelling elements
 /obj/effect/spawner/random/salvage/autolathe_weird
 	loot = list(
-		// /obj/item/organ/tail/lizard = 16, // waaa (TODO uncomment post tail refactor)
+		/obj/item/bodypart/tail/lizard = 16, // waaa
 		/obj/item/bodypart/l_arm = 1,
 		/obj/item/bodypart/r_arm = 1,
 		/obj/item/bodypart/l_arm/lizard = 1,
@@ -215,6 +214,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/mammoth = 10,
 		/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 10,
 		/obj/item/reagent_containers/hypospray/medipen/combat_drug = 10,
+		/obj/item/reagent_containers/hypospray/medipen/gambling = 10,
 		/obj/item/hypospray/mkii = 5,
 		/obj/item/hypospray/mkii/mkiii = 5)
 
@@ -242,24 +242,27 @@
 		/obj/item/gem/rupee = 60,
 		/obj/item/gem/fdiamond = 40,
 		/obj/item/strange_crystal = 35,
-		/obj/item/gem/amber = 15,
-		/obj/item/gem/bloodstone = 5,
-		/obj/item/gem/phoron = 3,
-		/obj/item/gem/void = 1)
+		/obj/item/gem/amber = 20,
+		/obj/item/gem/bloodstone = 15,
+		/obj/item/gem/phoron = 10,
+		/obj/item/gem/void = 5)
 
 // fucked up shit
 /obj/effect/spawner/random/salvage/analyzer/evil
 	loot = list(
 		/obj/machinery/syndicatebomb/live_fucking_bomb = 10,
-		/obj/effect/anomaly/tvstatic/planetary = 10)
+		/obj/effect/anomaly/tvstatic/planetary = 10,
+		/obj/item/nuke_core/waste = 10,
+		/obj/effect/anomaly/grav/planetary = 5,
+		/obj/effect/anomaly/grav/high/planetary = 5)
 
 /obj/effect/spawner/random/salvage/analyzer
 	loot = list(
-		/obj/effect/spawner/random/salvage/analyzer/gadget = 25,
-		/obj/effect/spawner/random/salvage/analyzer/medical = 25,
-		/obj/effect/spawner/random/salvage/analyzer/gem_alarm = 2,
-		/obj/effect/spawner/random/salvage/analyzer/anomaly_core = 2,
-		/obj/effect/spawner/random/salvage/analyzer/evil = 1)
+		/obj/effect/spawner/random/salvage/analyzer/gadget = 30,
+		/obj/effect/spawner/random/salvage/analyzer/medical = 30,
+		/obj/effect/spawner/random/salvage/analyzer/gem_alarm = 5,
+		/obj/effect/spawner/random/salvage/analyzer/anomaly_core = 5,
+		/obj/effect/spawner/random/salvage/analyzer/evil = 5)
 
 /obj/effect/spawner/random/salvage/machine
 	name = "salvageable machine spawner"

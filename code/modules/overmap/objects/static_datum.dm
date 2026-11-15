@@ -14,7 +14,7 @@
 
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
-	///The border size to use. It's recommended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
+	///The border size to use. //The border size to use. It's recommended to always have this set to at least one. Make sure your map has the borders mapped in, and that they match this number.
 	var/border_size = QUADRANT_SIZE_BORDER
 	///The preset map to load
 	var/datum/map_template/map_to_load
@@ -100,6 +100,7 @@
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
 				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
 				playsound(Mob, landing_sound, 50)
+				Mob.add_memory("Landed at [planet_name] at [station_time_timestamp("hh:mm")].")
 
 
 /datum/overmap/static_object/post_undocked(datum/overmap/dock_requester)

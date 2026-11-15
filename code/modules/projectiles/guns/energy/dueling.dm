@@ -143,6 +143,8 @@
 	var/datum/duel/duel
 	var/mutable_appearance/setting_overlay
 
+	autowiki_hidden = TRUE
+
 /obj/item/gun/energy/dueling/Initialize()
 	. = ..()
 	setting_overlay = mutable_appearance(icon,setting_iconstate())

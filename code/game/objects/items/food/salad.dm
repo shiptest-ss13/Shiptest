@@ -90,6 +90,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("rice" = 1)
 	foodtypes = GRAIN | RAW
+	microwaved_type = /obj/item/food/boiled_rice
 
 /obj/item/food/uncooked_rice/make_bakeable()
 	AddComponent(/datum/component/bakeable, /obj/item/food/boiled_rice, rand(15 SECONDS, 20 SECONDS), TRUE, TRUE)

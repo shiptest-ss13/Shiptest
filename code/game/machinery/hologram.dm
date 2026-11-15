@@ -288,7 +288,7 @@ Possible to do for anyone motivated enough:
 /obj/machinery/holopad/proc/holopad_hack(user, state, anchored)
 	if(!state || !anchored)
 		return FALSE
-	if(SPT_PROB(5, 1))
+	if(SPT_PROB(5, 1) && powered())
 		//wear your gloves kids
 		electrocute_mob(user, get_area(src), src, dist_check = TRUE)
 		do_sparks(3, 0, src)
