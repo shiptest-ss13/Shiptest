@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(weather)
 		var/datum/weather/active_weather = zone_controller.current_weathers[weather_type]
 		if(active_weather.aesthetic || active_weather.stage != MAIN_STAGE)
 			continue
-		if(active_weather.can_weather_act(living_mob))
+		if(active_weather.can_weather_act(living_mob) && active_weather.affects(living_mob))
 			active_weather.weather_act(living_mob)
 
 /datum/controller/subsystem/weather/proc/get_all_current_weather()

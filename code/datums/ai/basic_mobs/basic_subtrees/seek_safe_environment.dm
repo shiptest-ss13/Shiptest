@@ -10,6 +10,10 @@
 	//after this many safe spots in a row we couldn't get to, we stop looking for give_up_time and make the best of where we are
 	var/max_failures = 2
 	var/give_up_time = 30 SECONDS
+	//how far we look for shelter from bad weather
+	var/weather_search_range = 25
+	//how soon we look again when there's nowhere safe, or even less bad, in reach at all
+	var/nowhere_safe_interval = 10 SECONDS
 
 /datum/ai_planning_subtree/seek_safe_environment/on_skipped(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_SAFE_TURF) // safe where we are
@@ -54,7 +58,7 @@
 			return // nowhere safe last we looked, so carry on as best we can
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_SAFETY_SEARCH, world.time + search_interval)
 		var/hazard = get_environment_hazard(basic_mob, get_turf(basic_mob))
-		safe_turf = find_safe_turf(basic_mob, controller.blackboard[BB_BASIC_MOB_BAD_SAFE_TURF])
+		safe_turf = find_safe_turf(basic_mob, controller.blackboard[BB_BASIC_MOB_BAD_SAFE_TURF], hazard == AI_ENVIRONMENT_WEATHER ? weather_search_range : search_range)
 		least_bad = FALSE
 		if(!safe_turf && (hazard == AI_ENVIRONMENT_TOO_HOT || is_ai_hazard_turf(get_turf(basic_mob), basic_mob)))
 			safe_turf = find_least_bad_turf(basic_mob, controller.blackboard[BB_BASIC_MOB_BAD_SAFE_TURF])
@@ -62,6 +66,7 @@
 		if(!safe_turf)
 			controller.clear_blackboard_key(BB_BASIC_MOB_SAFE_TURF)
 			controller.clear_blackboard_key(BB_BASIC_MOB_SAFE_TURF_LEAST_BAD)
+			controller.set_blackboard_key(BB_BASIC_MOB_NEXT_SAFETY_SEARCH, world.time + nowhere_safe_interval) // nowhere to go, so ride it out
 			return
 		controller.set_blackboard_key(BB_BASIC_MOB_SAFE_TURF, safe_turf)
 		if(least_bad)
@@ -76,6 +81,8 @@
 				ai_callout(basic_mob, AI_CALLOUT_TOO_COLD)
 			if(AI_ENVIRONMENT_UNBREATHABLE)
 				ai_callout(basic_mob, AI_CALLOUT_BAD_AIR)
+			if(AI_ENVIRONMENT_WEATHER)
+				ai_callout(basic_mob, AI_CALLOUT_WEATHER)
 		AI_LOG_DECISION(controller, "seek_safe_environment: it's not safe here, heading for [safe_turf][least_bad ? ", the coolest spot out of the flames we could find" : ""]")
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_SAFE_TURF)
 	return SUBTREE_RETURN_FINISH_PLANNING // getting out of here comes first
@@ -84,25 +91,31 @@
 /datum/ai_planning_subtree/seek_safe_environment/proc/is_refuge(mob/living/basic/basic_mob, turf/spot)
 	return is_environment_safe_for(basic_mob, spot) && !is_ai_hazard_turf(spot, basic_mob) && !is_ai_swimming_water(spot) && (ai_immune_to_tear_gas(basic_mob) || !is_ai_irritant_smoke(spot))
 
-/datum/ai_planning_subtree/seek_safe_environment/proc/find_safe_turf(mob/living/basic/basic_mob, turf/exclude)
+/datum/ai_planning_subtree/seek_safe_environment/proc/find_safe_turf(mob/living/basic/basic_mob, turf/exclude, range = search_range)
 	var/turf/our_turf = get_turf(basic_mob)
-	var/list/taken_turfs = get_ai_ally_claimed_turfs(basic_mob, search_range)
+	var/list/taken_turfs = get_ai_ally_claimed_turfs(basic_mob, range)
 	var/turf/best_turf
 	var/best_score = INFINITY
-	for(var/turf/open/candidate in RANGE_TURFS(search_range, our_turf))
-		var/score = get_dist(our_turf, candidate)
-		if(score >= best_score || taken_turfs[candidate] || (exclude && get_dist(candidate, exclude) <= 3) || candidate.is_blocked_turf(TRUE, basic_mob)) // not by somewhere we couldn't get to, as its neighbours likely aren't any easier
-			continue
-		if(ai_is_doorway(candidate))
-			continue
-		if(next_to_doorway(candidate))
-			score += 2
-			if(score >= best_score)
+	// nearest first
+	for(var/radius in 1 to range)
+		if(radius >= best_score)
+			break
+		for(var/turf/open/candidate in ai_turfs_in_ring(our_turf, radius))
+			var/score = radius
+			if(score >= best_score || taken_turfs[candidate] || (exclude && get_dist(candidate, exclude) <= 3) || candidate.is_blocked_turf(TRUE, basic_mob)) // not by somewhere we couldn't get to, as its neighbours likely aren't any easier
 				continue
-		if(!is_refuge(basic_mob, candidate))
-			continue
-		best_turf = candidate
-		best_score = score
+			if(ai_weather_threatens(basic_mob, candidate))
+				continue
+			if(ai_is_doorway(candidate))
+				continue
+			if(next_to_doorway(candidate))
+				score += 2
+				if(score >= best_score)
+					continue
+			if(!is_refuge(basic_mob, candidate))
+				continue
+			best_turf = candidate
+			best_score = score
 	return best_turf
 
 // nowhere safe in reach, with the fire all round us, so the coolest spot out of the flames themselves, rather than burning where we stand. Nearer first among those as cool

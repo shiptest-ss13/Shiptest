@@ -100,6 +100,10 @@
 	var/opacity_in_main_stage = FALSE
 	/// This weather's effect on fires
 	var/fire_suppression = 0
+	/// Whether this weather is harmful
+	var/harmful = FALSE
+	/// When the telegraph ends and the weather starts in earnest
+	var/main_stage_at = 0
 
 /datum/weather/New(datum/weather_controller/passed_controller)
 	..()
@@ -164,6 +168,7 @@
 				to_chat(M, telegraph_message)
 			if(telegraph_sound)
 				SEND_SOUND(M, sound(telegraph_sound))
+	main_stage_at = world.time + telegraph_duration
 	addtimer(CALLBACK(src, PROC_REF(start)), telegraph_duration)
 
 	if(sound_active_outside)
@@ -269,10 +274,10 @@
  * Returns TRUE if the living mob can be affected by the weather
  *
  */
-/datum/weather/proc/can_weather_act(mob/living/target_mob)
-	if(immunity_type in target_mob.weather_immunities)
+/datum/weather/proc/can_weather_act(mob/living/victim)
+	if(immunity_type in victim.weather_immunities)
 		return
-	if(!(get_area(target_mob) in impacted_areas))
+	if(!(get_area(victim) in impacted_areas))
 		return
 	return TRUE
 
@@ -280,8 +285,22 @@
  * Affects the mob with whatever the weather does
  *
  */
-/datum/weather/proc/weather_act(mob/living/L)
+/datum/weather/proc/weather_act(mob/living/victim)
 	return
+
+/// Whether weather_act does anything to victim
+/datum/weather/proc/affects(mob/living/victim)
+	return TRUE
+
+/// Whether this weather is or could hurt
+/datum/weather/proc/threatens(mob/living/victim)
+	if(!harmful || aesthetic || (stage != STARTUP_STAGE && stage != MAIN_STAGE))
+		return FALSE
+	if(stage == STARTUP_STAGE && world.time < main_stage_at - AI_WEATHER_SHELTER_LEAD)
+		return FALSE
+	if(immunity_type in victim.weather_immunities)
+		return FALSE
+	return affects(victim)
 
 /**
  * Updates the overlays on impacted areas
