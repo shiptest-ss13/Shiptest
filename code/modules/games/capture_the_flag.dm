@@ -392,36 +392,36 @@
 
 // RED TEAM GUNS
 
-/obj/item/gun/ballistic/automatic/assault/skm/ctf
+/obj/item/gun/ballistic/automatic/assault/fa2/ctf
 	desc = "An obsolete model of assault rifle once used by CLIP. This rifle will disintegrate if dropped."
 
-/obj/item/gun/ballistic/automatic/assault/skm/ctf/dropped()
+/obj/item/gun/ballistic/automatic/assault/fa2/ctf/dropped()
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
-/obj/item/gun/ballistic/automatic/assault/skm/ctf/proc/floor_vanish()
+/obj/item/gun/ballistic/automatic/assault/fa2/ctf/proc/floor_vanish()
 	if(isturf(loc))
 		qdel(src)
 
-/obj/item/ammo_box/magazine/skm_762_40/ctf
-	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These magazines will disintegrate if dropped."
+/obj/item/ammo_box/magazine/fa2_762_40/ctf
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These magazines will disintegrate if dropped."
 
-/obj/item/ammo_box/magazine/skm_762_40/ctf/dropped()
+/obj/item/ammo_box/magazine/fa2_762_40/ctf/dropped()
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
 
-/obj/item/ammo_box/magazine/skm_762_40/ctf/proc/floor_vanish()
+/obj/item/ammo_box/magazine/fa2_762_40/ctf/proc/floor_vanish()
 	if(isturf(loc))
 		qdel(src)
 
-/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/ComponentInitialize()
+/obj/item/storage/belt/security/military/frontiersmen/fa2_ammo/ctf/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
-/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/PopulateContents()
+/obj/item/storage/belt/security/military/frontiersmen/fa2_ammo/ctf/PopulateContents()
 	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/skm_762_40/ctf(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40/ctf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf(src)
 	new /obj/item/melee/knife/combat/ctf(src)
@@ -583,10 +583,10 @@
 	uniform = /obj/item/clothing/under/frontiersmen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
-	suit_store = /obj/item/gun/ballistic/automatic/assault/skm/ctf
+	suit_store = /obj/item/gun/ballistic/automatic/assault/fa2/ctf
 	l_pocket = /obj/item/ammo_box/magazine/m9mm_mauler/ctf
 	r_pocket = /obj/item/storage/pouch/medical/ctf
-	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf
+	belt = /obj/item/storage/belt/security/military/frontiersmen/fa2_ammo/ctf
 	id = /obj/item/card/id/syndicate_command //it's red
 
 /datum/outfit/ctf/red/instagib

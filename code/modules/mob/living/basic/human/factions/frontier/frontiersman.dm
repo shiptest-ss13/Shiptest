@@ -434,21 +434,21 @@
 /mob/living/basic/human/frontier/ranged/trooper/flame/neutered
 	weapon_drop_chance = 0
 
-/mob/living/basic/human/frontier/ranged/trooper/skm
+/mob/living/basic/human/frontier/ranged/trooper/fa2
 	name = "Frontiersman Gunner"
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one could almost be mistaken for a real soldier by their assault rifle and armor, if it weren't for their swaggering demeanor."
 	icon_state = "frontiersmanrangedak47"
 	projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
 	casing_type = /obj/item/ammo_casing/a762_40
-	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
+	r_hand = /obj/item/gun/ballistic/automatic/assault/fa2
 
-/mob/living/basic/human/frontier/ranged/trooper/skm/demolitionist
+/mob/living/basic/human/frontier/ranged/trooper/fa2/demolitionist
 	name = "Frontiersman Demolitionist"
 	desc = "A member of the brutal Frontiersman terrorist fleet! Sticks of mining dynamite are tucked into their webbing, and they look all too eager to find a use for them."
 	grenade_type = /obj/item/grenade/firecracker/dynamite
 	grenade_count = 2
 
-/mob/living/basic/human/frontier/ranged/trooper/skm/space
+/mob/living/basic/human/frontier/ranged/trooper/fa2/space
 	in_hardsuit = TRUE
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = 0
@@ -457,16 +457,16 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
-/mob/living/basic/human/frontier/ranged/trooper/skm/internals
+/mob/living/basic/human/frontier/ranged/trooper/fa2/internals
 	icon_state = "frontiersmanrangedak47_mask"
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 
-/mob/living/basic/human/frontier/ranged/trooper/skm/internals/neutered
+/mob/living/basic/human/frontier/ranged/trooper/fa2/internals/neutered
 	weapon_drop_chance = 0
 
-/mob/living/basic/human/frontier/ranged/trooper/skm/neutered
+/mob/living/basic/human/frontier/ranged/trooper/fa2/neutered
 	weapon_drop_chance = 0
 
 /mob/living/basic/human/frontier/ranged/trooper/rifle

@@ -12,9 +12,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
-/obj/item/ammo_box/magazine/skm_46_30
+/obj/item/ammo_box/magazine/fa2_46_30
 	name = "subcaliber assault rifle magazine (4.6x30mm)"
-	desc = "A slightly-curved, 30-round magazine for the SKM-24v. These rounds do okay damage with average performance against armor"
+	desc = "A slightly-curved, 30-round magazine for the FA2-v. These rounds do okay damage with average performance against armor"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
 	max_ammo = 30
@@ -22,37 +22,37 @@
 	icon_state = "skmcarbine_mag-1"
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/skm_46_30/recycled
+/obj/item/ammo_box/magazine/fa2_46_30/recycled
 	ammo_type = /obj/item/ammo_casing/c46x30mm/recycled
 
-/obj/item/ammo_box/magazine/skm_762_40
+/obj/item/ammo_box/magazine/fa2_762_40
 	name = "assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_mag"
-	icon_state = "skm_mag-1"
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "fa2_mag"
+	icon_state = "fa2_mag-1"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/skm_762_40/empty
+/obj/item/ammo_box/magazine/fa2_762_40/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/skm_762_40/extended
+/obj/item/ammo_box/magazine/fa2_762_40/extended
 	name = "extended assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_extended_mag"
-	icon_state = "skm_extended_mag-1"
+	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "fa2_extended_mag"
+	icon_state = "fa2_extended_mag-1"
 	max_ammo = 40
 
-/obj/item/ammo_box/magazine/skm_762_40/extended/empty
+/obj/item/ammo_box/magazine/fa2_762_40/extended/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/skm_762_40/drum
+/obj/item/ammo_box/magazine/fa2_762_40/drum
 	name = "assault rifle drum (7.62x40mm CLIP)"
-	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_drum"
-	icon_state = "skm_drum-1"
+	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the FA2 assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "fa2_drum"
+	icon_state = "fa2_drum-1"
 	max_ammo = 75
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -109,15 +109,32 @@
 /obj/item/ammo_box/magazine/p16/casket/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/swiss
-	name = "\improper Swiss Cheese Magazine (5.56x42mm CLIP)"
-	desc = "A deft, 30-round magazine for the Swiss Cheese assault rifle. These rounds do moderate damage with good armor penetration."
-	icon_state = "swissmag-1"
-	base_icon_state = "swissmag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = "5.56x42mm"
+// E-40
+/obj/item/ammo_box/magazine/e40
+	name = "E-40 magazine (.299 Eoehoma caseless)"
+	icon_state = "e40_mag-1"
+	base_icon_state = "e40_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	caliber = ".299 caseless"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/e40/empty
+	start_empty = TRUE
+
+// Swiss Cheese
+/obj/item/ammo_box/magazine/swiss
+	name = "\improper Swiss Cheese Magazine (4.73x33mm caseless)"
+	desc = "A 45-round magazine for the Swiss Cheese assault rifle. These rounds do moderate damage with good armor penetration."
+	icon_state = "swissmag-1"
+	base_icon_state = "swissmag"
+	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
+	caliber = "4.73x33mm caseless"
+	max_ammo = 45
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/swiss/empty
+	start_empty = TRUE
 
 // 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
 
