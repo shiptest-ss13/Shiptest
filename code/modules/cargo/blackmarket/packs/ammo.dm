@@ -266,7 +266,7 @@
 /datum/blackmarket_item/ammo/advanced_weapon_cell
 	name = "Upgraded Clover Heavy Power Cells"
 	desc = "Clover Photonic's secret, limited-run big ass heavy power cells. They only make 'em for CLIP - good thing they lost a whole shipment of them."
-	item = /obj/item/stock_parts/cell/gun/upgraded
+	item = /obj/item/stock_parts/cell/gun/heavy/upgraded
 
 	cost_min = 2000
 	cost_max = 2800
