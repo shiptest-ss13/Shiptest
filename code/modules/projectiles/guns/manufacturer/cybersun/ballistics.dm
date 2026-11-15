@@ -122,7 +122,9 @@
 /obj/item/gun/ballistic/cs_gauss/before_firing(atom/target, mob/user)
 	if(current_target && chambered)
 		if(isnull(chambered.BB))
-
+			qdel(chambered)
+			chambered = null
+			chamber_round()
 		if(!prob(lock_loss) || !lock_loss)
 			chambered.BB.homing = TRUE
 			chambered.BB.homing_target = current_target.resolve()
