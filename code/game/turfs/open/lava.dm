@@ -267,14 +267,18 @@
 	light_color = LIGHT_COLOR_PURPLE
 	particle_emitter = null
 
-/turf/open/lava/plasma/attackby(obj/item/I, mob/user, params)
-	var/obj/item/reagent_containers/glass/C = I
-	if(C.reagents.total_volume >= C.volume)
-		to_chat(user, span_danger("[C] is full."))
-		return
-	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
-	user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [C]."), span_notice("You scoop out some plasma from the [src] using \the [C]."))
-	return TRUE
+/turf/open/lava/plasma/attackby(obj/item/attacking_item, mob/user, params)
+	if(istype(attacking_item, /obj/item/stack/rods))
+		return ..()
+	if(istype(attacking_item, /obj/item/reagent_containers/glass))
+		var/obj/item/reagent_containers/glass/chugjug = attacking_item
+		if(chugjug.reagents.total_volume >= chugjug.volume)
+			to_chat(user, span_danger("[chugjug] is full."))
+			return
+		chugjug.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
+		user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [chugjug]."), span_notice("You scoop out some plasma from the [src] using \the [chugjug]."))
+		return TRUE
+	return FALSE
 
 /turf/open/lava/plasma/burn_stuff(AM)
 	. = 0

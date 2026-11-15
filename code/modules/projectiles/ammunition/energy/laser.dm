@@ -215,6 +215,7 @@
 
 /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
+	variance = 15
 	delay = 0.4 SECONDS
 
 /obj/item/ammo_casing/energy/laser/heavy
