@@ -6,7 +6,6 @@
 	color = "#878687"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
-	value_per_unit = 0.0025
 
 ///Breaks extremely easily but is transparent.
 /datum/material/glass
@@ -18,7 +17,6 @@
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	integrity_modifier = 0.1
 	sheet_type = /obj/item/stack/sheet/glass
-	value_per_unit = 0.0025
 	beauty_modifier = 0.05
 	armor_modifiers = list("melee" = 0.2, "bullet" = 0.2, "laser" = 0, "energy" = 1, "bomb" = 0, "bio" = 0.2, "rad" = 0.2, "fire" = 1, "acid" = 0.2)
 
@@ -35,7 +33,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#ffffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
-	value_per_unit = 0.025
 	beauty_modifier = 0.075
 
 ///Slight force increase
@@ -47,7 +44,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
-	value_per_unit = 0.0625
 	beauty_modifier = 0.15
 	armor_modifiers = list("melee" = 1.1, "bullet" = 1.1, "laser" = 1.15, "energy" = 1.15, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1.1)
 
@@ -60,7 +56,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	alpha = 132
-	value_per_unit = 0.25
 	beauty_modifier = 0.3
 	armor_modifiers = list("melee" = 1.3, "bullet" = 1.3, "laser" = 0.6, "energy" = 1, "bomb" = 1.2, "bio" = 1, "rad" = 1, "fire" = 1, "acid" = 1)
 
@@ -72,7 +67,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#30ed1a"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
-	value_per_unit = 0.05
 	beauty_modifier = 0.3 //It shines so beautiful
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.4, "laser" = 0.5, "energy" = 0.5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 1, "acid" = 1)
 
@@ -92,7 +86,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#ff2eff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
-	value_per_unit = 0.1
 	beauty_modifier = 0.15
 	armor_modifiers = list("melee" = 1.4, "bullet" = 0.7, "laser" = 0, "energy" = 1.2, "bomb" = 0, "bio" = 1.2, "rad" = 1, "fire" = 0, "acid" = 0.5)
 
@@ -117,7 +110,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	categories = list(MAT_CATEGORY_ORE = TRUE)
 	beauty_modifier = 0.5
 	sheet_type = /obj/item/stack/sheet/bluespace_crystal
-	value_per_unit = 0.15
 
 
 ///Mediocre force increase
@@ -129,7 +121,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 1.3
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
-	value_per_unit = 0.0625
 	beauty_modifier = 0.05
 	armor_modifiers = list("melee" = 1.35, "bullet" = 1.3, "laser" = 1.3, "energy" = 1.25, "bomb" = 1.25, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1)
 
@@ -142,7 +133,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 0.85
 	sheet_type = /obj/item/stack/sheet/plastic
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	value_per_unit = 0.0125
 	beauty_modifier = -0.01
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.1, "laser" = 0.3, "energy" = 0.5, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 1.1, "acid" = 1)
 
@@ -153,7 +143,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "Organic matter"
 	color = "#735b4d"
 	strength_modifier = 0.8
-	value_per_unit = 0.025
 
 /datum/material/wood
 	name = "wood"
@@ -163,7 +152,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 0.5
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	value_per_unit = 0.01
 	beauty_modifier = 0.1
 	armor_modifiers = list("melee" = 1.1, "bullet" = 1.1, "laser" = 0.4, "energy" = 0.4, "bomb" = 1, "bio" = 0.2, "rad" = 0, "fire" = 0, "acid" = 0.3)
 
@@ -188,7 +176,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 1.5
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
-	value_per_unit = 0.25
 	beauty_modifier = 0.4
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.5, "laser" = 1.3, "energy" = 1.3, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 2.5, "acid" = 1)
 
@@ -201,7 +188,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/hot_ice
-	value_per_unit = 0.2
 	beauty_modifier = 0.2
 
 /datum/material/hot_ice/on_applied(atom/source, amount, material_flags)
@@ -220,7 +206,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#EDC9AF"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/sandblock
-	value_per_unit = 0.001
 	strength_modifier = 0.5
 	integrity_modifier = 0.1
 	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 1.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
@@ -236,7 +221,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#B77D31"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/sandstone
-	value_per_unit = 0.0025
 	armor_modifiers = list("melee" = 0.5, "bullet" = 0.5, "laser" = 1.25, "energy" = 0.5, "bomb" = 0.5, "bio" = 0.25, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
 	beauty_modifier = 0.3
 	turf_sound_override = FOOTSTEP_WOOD
@@ -249,7 +233,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#FFFFFF"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/snow
-	value_per_unit = 0.0025
 	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 0.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 0.25, "acid" = 1.5)
 	beauty_modifier = 0.3
 	turf_sound_override = FOOTSTEP_ASTEROID
@@ -262,7 +245,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#92661A"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/tile/bronze
-	value_per_unit = 0.025
 	armor_modifiers = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 1, "bio" = 1, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
 	beauty_modifier = 0.2
 
@@ -273,7 +255,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#E5DCD5"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/paperframes
-	value_per_unit = 0.0025
 	armor_modifiers = list("melee" = 0.1, "bullet" = 0.1, "laser" = 0.1, "energy" = 0.1, "bomb" = 0.1, "bio" = 0.1, "rad" = 1.5, "fire" = 0, "acid" = 1.5)
 	beauty_modifier = 0.3
 	turf_sound_override = FOOTSTEP_ASTEROID
@@ -299,7 +280,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#5F625C"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/cardboard
-	value_per_unit = 0.003
 	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 0.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 0, "acid" = 1.5)
 	beauty_modifier = -0.1
 
@@ -323,7 +303,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#e3dac9"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/bone
-	value_per_unit = 0.05
 	armor_modifiers = list("melee" = 1.2, "bullet" = 0.75, "laser" = 0.75, "energy" = 1.2, "bomb" = 1, "bio" = 1, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
 	beauty_modifier = -0.2
 
@@ -334,7 +313,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#339933"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/bamboo
-	value_per_unit = 0.0025
 	armor_modifiers = list("melee" = 0.5, "bullet" = 0.5, "laser" = 0.5, "energy" = 0.5, "bomb" = 0.5, "bio" = 0.51, "rad" = 1.5, "fire" = 0.5, "acid" = 1.5)
 	beauty_modifier = 0.2
 	turf_sound_override = FOOTSTEP_WOOD

@@ -439,6 +439,8 @@
 	if(!safety)
 		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
 		playsound(src, dry_fire_sound, 30, TRUE)
+		if(isliving(user) && is_out_of_ammo())
+			ai_note_enemy_reloading(user, AI_DRY_FIRE_HEARING_RANGE)
 		if(!semi_auto)
 			toggle_safety(silent = TRUE, rack_gun = FALSE)
 		return

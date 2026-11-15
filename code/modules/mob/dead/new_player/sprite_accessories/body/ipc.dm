@@ -608,4 +608,11 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customalsa,
 	)
 
+/datum/sprite_accessory/body/chumaniform
+	name = "Custom 'Humaniform'"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/chumaniform,
+	)
+	color_src = MUTCOLORS
+
 #undef GENERIC_3D_PRINTED_DESC

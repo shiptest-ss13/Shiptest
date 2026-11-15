@@ -192,14 +192,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/plantgene(src)
 
-/obj/item/storage/box/disks_nanite
-	name = "nanite program disks box"
-	illustration = "disks"
-
-/obj/item/storage/box/disks_nanite/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/disk/nanite_program(src)
-
 // Ordinary survival box
 /obj/item/storage/box/survival
 	var/mask_type = /obj/item/clothing/mask/breath
@@ -615,17 +607,6 @@
 		/obj/item/implantcase/chem = 5,
 		/obj/item/implanter = 1,
 		/obj/item/implantpad = 1)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/exileimp
-	name = "boxed exile implant kit"
-	desc = "Box of exile implants. It has a picture of a clown being booted through the Gateway."
-	illustration = "implant"
-
-/obj/item/storage/box/exileimp/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/implantcase/exile = 5,
-		/obj/item/implanter = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/bodybags

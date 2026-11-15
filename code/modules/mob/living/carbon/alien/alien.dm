@@ -149,7 +149,6 @@
  *
  * Handles the transformation of an alien into another type of alien.
  * Gives them some message fluff, transfers their mind (important as to transfer other antag statuses)
- * and then also transfers their nanites should the original body have them.
  * Arguments:
  * * new_xeno - The new body of the alien.
  */
@@ -169,10 +168,6 @@
 		new_xeno.real_name = real_name
 	if(mind)
 		mind.transfer_to(new_xeno)
-	var/datum/component/nanites/nanites = GetComponent(/datum/component/nanites)
-	if(nanites)
-		new_xeno.AddComponent(/datum/component/nanites, nanites.linked_techweb, nanites.nanite_volume)
-		SEND_SIGNAL(new_xeno, COMSIG_NANITE_SYNC, nanites)
 	qdel(src)
 
 /mob/living/carbon/alien/on_lying_down(new_lying_angle)

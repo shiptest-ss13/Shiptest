@@ -15,6 +15,7 @@
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 	sheet_type = null
 	girder_type = /obj/structure/grille
+	scrap_type = null
 
 	var/time_to_harden = 30 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
@@ -23,11 +24,6 @@
 
 	burn_mod = 0.66
 	repair_amount = 0
-	//mining projectiles do extra damage
-	extra_dam_proj = list(
-		/obj/projectile/kinetic,
-		/obj/projectile/destabilizer,
-		/obj/projectile/plasma)
 
 /turf/closed/wall/concrete/Initialize(mapload, ...)
 	. = ..()
@@ -95,10 +91,17 @@
 	// explosion block is diminished on a damaged / soft wall
 	explosion_block = (atom_integrity / max_integrity) * harden_lvl * initial(explosion_block)
 
+/turf/closed/wall/concrete/bullet_act(obj/projectile/impacting)
+	. = ..()
+	if(prob(25))
+		var/datum/effect_system/smoke_spread/transparent/concrete/smokepuff = new
+		smokepuff.set_up(1, impacting.loc)
+		smokepuff.start()
+
 /turf/closed/wall/concrete/alter_integrity(damage)
 	// 8x as vulnerable when unhardened
 	if(damage < 0)
-		damage *= 1 + 7*(1-harden_lvl)
+		damage *= 1 + 7 * (1-harden_lvl)
 	.= ..()
 
 /turf/closed/wall/concrete/mech_melee_attack(obj/mecha/M)
@@ -123,13 +126,13 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = min_dam)
-	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = minimum_damage)
+	t_min = minimum_damage / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = .. ()
 
 
-/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P, t_min = min_dam)
-	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P, t_min = minimum_damage)
+	t_min = minimum_damage / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = ..()
 
 /turf/closed/wall/concrete/reinforced
@@ -144,7 +147,7 @@
 	explosion_block = 4 // good for bunkers
 	girder_type = /obj/structure/girder
 
-	min_dam = 13
+	minimum_damage = 13
 	max_integrity = 1300
 	time_to_harden = 60 SECONDS
 

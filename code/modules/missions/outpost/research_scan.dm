@@ -126,7 +126,7 @@
 	value = 2500
 	objective_type = /obj/structure/geyser
 	scanner_type = /obj/item/survey_handheld/elite
-	weight = 4
+	weight = 6
 
 	num_wanted = 1
 	required_locations = list(
@@ -145,7 +145,7 @@
 	name = ""
 	desc = ""
 	value = 3000
-	weight = 4
+	weight = 6
 	scanner_type = /obj/item/survey_handheld/elite
 	objective_type = /obj/effect/anomaly
 	num_wanted = 2

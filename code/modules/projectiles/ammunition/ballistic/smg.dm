@@ -26,7 +26,7 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c57x39mm/rubber
 
-// 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)
+// 4.6x30mm (WT-550 Automatic Rifle & FA2-v)
 
 /obj/item/ammo_casing/c46x30mm
 	name = "4.6x30mm bullet casing"
@@ -77,7 +77,7 @@
 	icon_state = "caseless"
 	caliber = "4.73x33mm caseless"
 	projectile_type = /obj/projectile/bullet/c47x33mm
-	stack_size = 12
+	stack_size = 15
 
 // 5.56mm HITP caseless (Pistole C)
 

@@ -163,10 +163,8 @@
 /datum/outfit/job/independent/captain/merc/naked
 	name = "Independent - Captain (Naked Mercenary)"
 
-	uniform = /obj/item/clothing/under/rank/medical/gown
 	suit = null
 	dcoat = null
-	shoes = /obj/item/clothing/shoes/sandal/slippers
 	suit = null
 
 	accessory = null
@@ -371,9 +369,25 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/beret
+	head = /obj/item/clothing/head/beret/color/red
 	glasses = null
 	l_pocket = null
+
+/datum/outfit/job/independent/hos/merc/naked
+	name = "Independent - Mercenary XO (Naked)"
+	id_assignment = "Lieutenant"
+
+	ears = null
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	suit = null
+
+/datum/outfit/job/independent/hos/merc/naked/gown
+	name = "Independent - Mercenary XO (Gowned)"
+	id_assignment = "Lieutenant"
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
 
 // Roboticist
 
@@ -461,7 +475,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/melee/knife/combat
 
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	implants = list(/obj/item/implant/radio)
 

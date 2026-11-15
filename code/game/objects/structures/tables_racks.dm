@@ -879,17 +879,9 @@
 	buildstackamount = 1
 	frame = /obj/structure/table_frame/end_table
 
-/obj/structure/table/endtable/examine(mob/user)
+/obj/structure/table/endtable/Initialize()
 	. = ..()
-	. += span_notice("You could shift this table by <b>Alt+Clicking</b> it!")
-
-/obj/structure/table/endtable/AltClick(mob/user)
-	. = ..()
-	if(isliving(user))
-		var/x = clamp(input(user, "Choose your X coordinate: Valid Range (-8, 8)", "Pick a location", 0) as num, -8, 8)
-		var/y = clamp(input(user, "Choose your y coordinate: Valid Range (0, 16)", "Pick a location", 0) as num, 0, 16)
-		pixel_x = x
-		pixel_y = y
+	AddElement(/datum/element/nudge, -8, 8, 0, 16)
 
 /obj/structure/table/endtable/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()

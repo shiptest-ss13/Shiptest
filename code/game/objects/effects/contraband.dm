@@ -162,6 +162,14 @@
 	R.add_fingerprint(user)
 	qdel(src)
 
+/obj/structure/sign/poster/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(hitting_projectile.damage * hitting_projectile.demolition_mod))
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
+		var/obj/structure/sign/poster/ripped/R = new(loc)
+		R.pixel_y = pixel_y
+		R.pixel_x = pixel_x
+
 /obj/structure/sign/poster/wrench_act(mob/living/user, obj/item/wrench/I)
 	return
 

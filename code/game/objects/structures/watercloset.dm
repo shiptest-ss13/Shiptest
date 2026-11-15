@@ -339,18 +339,6 @@
 			to_chat(user, span_notice("\The [RG] is full."))
 			return FALSE
 
-	if(istype(O, /obj/item/melee/baton))
-		var/obj/item/melee/baton/B = O
-		if(B.cell && B.cell.charge && B.turned_on)
-			flick("baton_active", src)
-			user.Paralyze(B.stun_time)
-			user.stuttering = B.stun_time/20
-			B.deductcharge(B.cell_hit_cost)
-			user.visible_message(span_warning("[user] shocks [user.p_them()]self while attempting to wash the active [B.name]!"), \
-								span_userdanger("You unwisely attempt to wash [B] while it's still on."))
-			playsound(src, B.stun_sound, 50, TRUE)
-			return
-
 	if(istype(O, /obj/item/mop))
 		O.reagents.add_reagent(dispensedreagent, 5)
 		to_chat(user, span_notice("You wet [O] in [src]."))
