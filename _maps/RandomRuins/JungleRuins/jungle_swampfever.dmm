@@ -652,7 +652,7 @@
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/ruin/jungle/swamp)
 "iI" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "iT" = (
@@ -1127,7 +1127,7 @@
 /turf/closed/wall/mineral/iron,
 /area/ruin/jungle/swamp)
 "oT" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/jungleplanet/lit,
 /area/ruin/jungle/swamp/flamebearer)
 "oU" = (
@@ -1300,11 +1300,11 @@
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/small/directional/south,
-/obj/item/candle{
+/obj/item/flashlight/flare/candle{
 	pixel_x = -6;
 	pixel_y = 1
 	},
-/obj/item/candle{
+/obj/item/flashlight/flare/candle{
 	pixel_x = 8;
 	pixel_y = 1
 	},
@@ -2534,7 +2534,7 @@
 /turf/open/floor/carpet/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "IG" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/jungleplanet/lit,
 /area/ruin/jungle/swamp/colligne)
 "IM" = (
@@ -3238,7 +3238,7 @@
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Rm" = (
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_x = 12;
 	pixel_y = -1
 	},
@@ -3438,7 +3438,7 @@
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "TT" = (
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_x = -12;
 	pixel_y = -1
 	},

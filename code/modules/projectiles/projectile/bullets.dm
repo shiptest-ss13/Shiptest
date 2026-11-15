@@ -30,6 +30,8 @@
 	embed_falloff_tile = -2
 	wound_bonus = -10
 
+	projectile_piercing = PASSWEAKSTRUCTURE
+
 /obj/projectile/bullet/smite
 	name = "divine retribution"
 	damage = 10
