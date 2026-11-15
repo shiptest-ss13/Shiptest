@@ -1219,7 +1219,7 @@
 
 	//if(blocked != 100) //If the radiation isn't fully blocked
 	if(amount > RAD_BURN_THRESHOLD)
-		incoming_damage = (RAD_BURN_CURVE(amount) * (100-blocked)/100)
+		incoming_damage = round((RAD_BURN_CURVE(amount) * (100-blocked)/100), 0.1)
 	apply_damage((incoming_damage / ((100-blocked)/100)), BURN, null, blocked) //incoming damage is divided by the armor to avoid stacking the armor negation twice
 
 	if(COOLDOWN_FINISHED(src, rad_burn_msg_cooldown))
