@@ -241,6 +241,7 @@
 	name = "Eyeball Puncture"
 	desc = "Patient's eye has sustained extreme damage, causing severe bleeding from the ocular cavity."
 	occur_text = "looses a violent spray of blood, revealing a crushed eyeball"
+
 	var/eye_scar = NONE
 
 /datum/wound/pierce/bleed/severe/eye/apply_wound(obj/item/bodypart/limb, silent, datum/wound/old_wound, smited, attack_direction, wound_source, replacing, eye_scar)
@@ -276,7 +277,7 @@
 
 /datum/wound_pregen_data/flesh_pierce/open_puncture/eye
 	wound_path_to_generate = /datum/wound/pierce/bleed/severe/eye
-	excluded_zones = list(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	excluded_zones = list(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_TAIL)
 	weight = WOUND_EYE_SCAR_WEIGHT
 
 /datum/wound_pregen_data/flesh_pierce/open_puncture/eye/can_be_applied_to(obj/item/bodypart/limb, list/suggested_wounding_types, datum/wound/old_wound, random_roll, duplicates_allowed, care_about_existing_wounds)
