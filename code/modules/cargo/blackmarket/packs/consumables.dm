@@ -21,12 +21,21 @@
 	return new pillbottle(loc)
 
 /datum/blackmarket_item/consumable/floor_pill
-	name = "Strange Pill"
-	desc = "The Russian Roulette of the Maintenance Tunnels."
-	item = /obj/item/reagent_containers/pill/floorpill
+	name = "Bottle of Strange Pills"
+	desc = "We found like, five boxes of these stupid things in our warehouse. No idea where they came from. Had our lab guy look at some of em and they're all full of weird bullshit. We don't need em and I'm honestly sick of looking at em so I'll give em to you for real cheap. No promises they won't fuck you up."
+	item = /obj/item/storage/pill_bottle/floorpill/full
 
-	cost_min = 5
-	cost_max = 15
+	cost_min = 35
+	cost_max = 105
+	stock = INFINITY
+	availability_prob = 50
+
+/datum/blackmarket_item/consumable/unlabeled_medipen_pack
+	name = "Pack of Unlabeled Autoinjectors"
+	desc = "Uh, right. Got a bunch of these injector packets out of some drug runner we hit. No clue what they are but the boss says I gotta sell em anyway. I shot one up and it was fine so they're probably safe."
+	item = /obj/item/storage/medpack/gambling
+	cost_min = 40
+	cost_max = 80
 	stock = INFINITY
 	availability_prob = 50
 

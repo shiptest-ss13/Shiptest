@@ -18,6 +18,7 @@
 	protect_indoors = TRUE
 
 	immunity_type = "snow"
+	harmful = TRUE
 
 	barometer_predictable = TRUE
 	affects_underground = FALSE
@@ -28,9 +29,10 @@
 	sound_weak_outside = /datum/looping_sound/weather/wind/indoors
 	sound_weak_inside = /datum/looping_sound/weather/wind
 
-/datum/weather/hailstorm/weather_act(mob/living/living_mob)
+/datum/weather/hailstorm/affects(mob/living/victim)
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
-	if(isanimal(living_mob))
-		return
+	return !isanimal(victim)
+
+/datum/weather/hailstorm/weather_act(mob/living/living_mob)
 	living_mob.adjust_bodytemperature(-rand(3,6), 243)
 	living_mob.adjustBruteLoss(rand(2,4))

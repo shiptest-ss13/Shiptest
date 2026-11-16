@@ -732,6 +732,7 @@
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
 	generate_items_inside(items_inside,src)
 
+<<<<<<< HEAD
 /obj/item/storage/medpack/crisis
 	name = "pack of crisis stimpacks"
 	desc = "A sealed, sterile-white plastic package full of crisis stimpacks."
@@ -744,6 +745,15 @@
 	name = "pack of stabilizer injectors"
 	desc = "A sealed, sterile-white plastic package full of stabilizer injectors."
 
-/obj/item/storage/medpack/crisis/PopulateContents()
+/obj/item/storage/medpack/badstop/PopulateContents()
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/badstop = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/gambling
+	name = "pack of unlabeled autoinjectors"
+	desc = "A conspicuously unlabeled package full of autoinjectors."
+	icon_state = "medpack_no_label"
+
+/obj/item/storage/medpack/gambling/PopulateContents()
+	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/gambling = 4)
 	generate_items_inside(items_inside,src)

@@ -55,6 +55,8 @@
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
 
+	pass_flags_self = PASSDOOR
+
 	close_speed = 150
 
 	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
