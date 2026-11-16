@@ -49,6 +49,6 @@
 		return initial(language.flags) & TONGUELESS_SPEECH
 
 /mob/living/carbon/treat_message(message, datum/language/our_language)
-	if(wear_mask && wear_mask.slot_flags != ITEM_SLOT_MASK)
+	if((wear_mask && wear_mask.slot_flags != ITEM_SLOT_MASK) || DOING_INTERACTION(src, DOAFTER_SOURCE_EATING) || is_holding_item_of_type(/obj/item/lighter/liz))
 		message = muffle(message)
 	. = ..()
