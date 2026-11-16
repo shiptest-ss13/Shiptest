@@ -284,9 +284,17 @@
 /**
  * Affects the mob with whatever the weather does
  *
+ * seconds_per_tick is how many seconds of weather this hit covers, scale amounts by it
  */
-/datum/weather/proc/weather_act(mob/living/victim)
+/datum/weather/proc/weather_act(mob/living/victim, seconds_per_tick)
 	return
+
+/// Rolls the chance once per second, returns how many hit
+/datum/weather/proc/roll_hits(chance_per_second, seconds_per_tick)
+	. = 0
+	for(var/second in 1 to round(seconds_per_tick))
+		if(prob(chance_per_second))
+			.++
 
 /// Whether weather_act does anything to victim
 /datum/weather/proc/affects(mob/living/victim)
