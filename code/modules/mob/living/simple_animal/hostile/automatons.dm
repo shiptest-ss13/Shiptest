@@ -589,7 +589,7 @@
 //hyena
 
 /mob/living/simple_animal/hostile/automated/hyena
-	name = "ACD-40 'Hyena' Command Munition"
+	name = "ACD 'Hyena' Command Munition"
 	desc = "A tall, humanoid drone manufactured by the Al'Sa guild. Originally a failed IPC chassis due to its considerable bulk and poor heat management, the Hyena would be revitalized as a drone command unit. Able to do simple coordination with other automatons, it grew a fearsome reputation due to its above average intelligence for a droid."
 	icon_state = "hyena"
 	health = 120
@@ -609,13 +609,13 @@
 	faction = list(FACTION_NEUTRAL)
 
 /mob/living/simple_animal/hostile/automated/hyena/warra
-	name = "ACD-40 'Hyena' Command Munition"
+	name = "ACD 'Hyena' Command Munition"
 	desc = "A tall, humanoid drone manufactured by the Al'Sa guild. Originally a failed IPC chassis due to its considerable bulk and poor heat management, the Hyena would be revitalized as a drone command unit. Able to do simple coordination with other automatons, it grew a fearsome reputation due to its above average intelligence for a droid. Its integrated plasma cannon whirrs at you."
 	icon_state = "hyena_makosso"
 	faction = list(ROLE_DEATHSQUAD)
 
 /mob/living/simple_animal/hostile/automated/hyena/coalition
-	name = "ACD-40 'Hyena' Command Munition"
+	name = "ACD 'Hyena' Command Munition"
 	desc = "A tall, humanoid drone manufactured by the Al'Sa guild. Originally a failed IPC chassis due to its considerable bulk and poor heat management, the Hyena would be revitalized as a drone command unit. Able to do simple coordination with other automatons, it grew a fearsome reputation due to its above average intelligence for a droid. Its integrated plasma cannon whirrs at you."
 	icon_state = "hyena_coalition"
 	faction = list(FACTION_HOSTILE)
