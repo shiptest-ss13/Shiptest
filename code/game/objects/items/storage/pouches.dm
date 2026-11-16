@@ -199,3 +199,18 @@
 		/obj/item/bodycamera,
 		/obj/item/gps
 		))
+
+/obj/item/storage/pouch/flare
+	name = "flare pouch"
+	desc = "A row of small pouches intended for holding flares."
+	icon_state = "pouch_flare"
+
+/obj/item/storage/pouch/flare/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.max_items = 8
+	STR.max_combined_w_class = 24
+	STR.set_holdable(list(
+		/obj/item/flashlight/flare
+		))
