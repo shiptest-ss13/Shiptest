@@ -15,7 +15,7 @@
 	name = "Mop"
 	id = "mop"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 150)
+	materials = list(/datum/material/iron = 750)
 	build_path = /obj/item/mop
 	category = list("initial","Tools","Tool Designs")
 
@@ -24,7 +24,7 @@
 	name="Push Broom"
 	id="pushbroom"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 150)
+	materials = list(/datum/material/iron = 750)
 	build_path = /obj/item/pushbroom
 	category = list("initial","Tools","Tool Designs")
 
@@ -267,7 +267,7 @@
 	name = "Ashtray"
 	id = "ashtray"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 50)
+	materials = list(/datum/material/iron = 100)
 	build_path = /obj/item/ashtray
 	category = list("initial", "Misc")
 
@@ -275,7 +275,7 @@
 	name = "Pipe Painter"
 	id = "pipe_painter"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)
 	build_path = /obj/item/pipe_painter
 	category = list("initial","Tools","Tool Designs")
 
@@ -283,7 +283,7 @@
 	name = "Airlock Painter"
 	id = "airlock_painter"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)
 	build_path = /obj/item/airlock_painter
 	category = list("initial","Tools","Tool Designs")
 
@@ -291,7 +291,7 @@
 	name = "Decal Painter"
 	id = "decal_painter"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)
 	build_path = /obj/item/decal_painter
 	category = list("initial","Tools","Tool Designs")
 
@@ -378,7 +378,7 @@
 	name = "Kitchen Knife"
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 250)
+	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
@@ -460,7 +460,7 @@
 	name = "Bowl"
 	id = "bowl"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass = 200)
+	materials = list(/datum/material/glass = 500)
 	build_path = /obj/item/reagent_containers/glass/bowl
 	category = list("initial","Dinnerware")
 
@@ -468,7 +468,7 @@
 	name = "Drinking Glass"
 	id = "drinking_glass"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass = 200)
+	materials = list(/datum/material/glass = 500)
 	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass
 	category = list("initial","Dinnerware")
 
@@ -476,7 +476,7 @@
 	name = "Shot Glass"
 	id = "shot_glass"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass = 100)
+	materials = list(/datum/material/glass = 150)
 	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass
 	category = list("initial","Dinnerware")
 
@@ -484,7 +484,7 @@
 	name = "Malleable Glass"
 	id = "mod_glass"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=150, /datum/material/silver=50)
+	materials = list(/datum/material/glass=500)
 	build_path = /obj/item/reagent_containers/food/drinks/modglass
 	category = list("initial", "Dinnerware")
 
@@ -492,7 +492,7 @@
 	name = "Small Malleable Glass"
 	id = "mod_glass_small"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=75, /datum/material/silver=25)
+	materials = list(/datum/material/glass=250)
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/small
 	category = list("initial", "Dinnerware")
 
@@ -500,7 +500,7 @@
 	name = "Large Malleable Glass"
 	id = "mod_glass_large"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=300, /datum/material/silver=100)
+	materials = list(/datum/material/glass=1000)
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
 	category = list("initial", "Dinnerware")
 
@@ -508,7 +508,7 @@
 	name = "Mug"
 	id = "mug"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=120)
+	materials = list(/datum/material/glass=300)
 	build_path = /obj/item/reagent_containers/food/drinks/mug
 	category = list("initial", "Dinnerware")
 
@@ -516,7 +516,7 @@
 	name = "Teacup"
 	id = "teacup"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=120)
+	materials = list(/datum/material/glass=300)
 	build_path = /obj/item/reagent_containers/food/drinks/teacup
 	category = list("initial", "Dinnerware")
 
@@ -524,7 +524,7 @@
 	name = "Glass Bottle"
 	id = "glass_bottle"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=400)
+	materials = list(/datum/material/glass=1000)
 	build_path = /obj/item/reagent_containers/food/drinks/bottle
 	category = list("initial", "Dinnerware")
 
@@ -532,7 +532,7 @@
 	name = "Small Glass Bottle"
 	id = "glass_bottle_small"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass=200)
+	materials = list(/datum/material/glass=500)
 	build_path = /obj/item/reagent_containers/food/drinks/bottle/small
 	category = list("initial", "Dinnerware")
 
@@ -566,7 +566,7 @@
 	name = "Shovel"
 	id = "shovel"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 500)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/shovel
 	category = list("initial","Misc", "Tool Designs")
 
@@ -590,7 +590,7 @@
 	name = "Hatchet"
 	id = "hatchet"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 750)
+	materials = list(/datum/material/iron = 3000)
 	build_path = /obj/item/hatchet
 	category = list("initial","Misc", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
@@ -653,7 +653,7 @@
 	name = "Bonesetter"
 	id = "bonesetter"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 500)
+	materials = list(/datum/material/iron=500, /datum/material/glass=500)
 	build_path = /obj/item/bonesetter
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -662,7 +662,7 @@
 	name = "Beaker"
 	id = "beaker"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/glass = 200)
+	materials = list(/datum/material/glass = 500)
 	build_path = /obj/item/reagent_containers/glass/beaker
 	category = list("initial", "Medical", "Medical Designs")
 
@@ -670,7 +670,7 @@
 	name = "Large Beaker"
 	id = "large_beaker"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/glass = 400)
+	materials = list(/datum/material/glass = 1000)
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 	category = list("initial", "Medical", "Medical Designs")
 
@@ -719,7 +719,7 @@
 	name = "Bottle"
 	id = "bottle"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/glass = 120)
+	materials = list(/datum/material/glass = 300)
 	build_path = /obj/item/reagent_containers/glass/bottle
 	category = list("initial", "Medical", "Medical Designs")
 
@@ -727,7 +727,7 @@
 	name = "Chemical Jug"
 	id = "chem_jug"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/plastic = 600)
+	materials = list(/datum/material/plastic = 3000)
 	build_path = /obj/item/reagent_containers/glass/chem_jug/open
 	category = list("initial", "Medical", "Medical Designs")
 
@@ -1017,8 +1017,16 @@
 	name = "Butcher's Cleaver"
 	id = "cleaver"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 350)
+	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/melee/knife/butcher
+	category = list("initial", "Dinnerware")
+
+/datum/design/pizza_cutter
+	name = "Pizza Cutter"
+	id = "pizza-cutter"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/melee/knife/pizza_cutter
 	category = list("initial", "Dinnerware")
 
 /datum/design/spraycan
@@ -1407,7 +1415,6 @@
 	build_path = /obj/item/fishing_rod
 	category = list("initial","Misc","Equipment")
 
-
 /datum/design/paper_biscuit
 	name = "Paper Biscuit"
 	id = "biscuit"
@@ -1431,3 +1438,11 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
 	build_path = /obj/item/stack/marker_beacon
 	category = list("initial","Misc")
+
+/datum/design/defib_mount
+	name = "Defibrillator Mount"
+	id = "defib_mount"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
+	build_path = /obj/item/wallframe/defib_mount
+	category = list("initial","Construction","Medical")

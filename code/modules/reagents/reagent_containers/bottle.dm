@@ -17,7 +17,7 @@
 	cap_on = TRUE
 	drop_sound = 'sound/items/handling/beaker_drop.ogg'
 	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
-	custom_materials = list(/datum/material/glass = 120)
+	custom_materials = list(/datum/material/glass = 300)
 	var/label = null
 
 /obj/item/reagent_containers/glass/bottle/examine(mob/user)

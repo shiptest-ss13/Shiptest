@@ -11,7 +11,7 @@
 	fill_icon_thresholds = list(1, 20, 50, 70, 90)
 	amount_per_transfer_from_this = 10
 	volume = 50
-	custom_materials = list(/datum/material/glass=200)
+	custom_materials = list(/datum/material/glass=500)
 	max_integrity = 20
 	spillable = TRUE
 	resistance_flags = ACID_PROOF
@@ -55,7 +55,7 @@
 	fill_icon_thresholds = list(1, 30, 60, 90)
 	possible_transfer_amounts = list()
 	volume = 15
-	custom_materials = list(/datum/material/glass=100)
+	custom_materials = list(/datum/material/glass=150)
 	custom_price = 1
 	var/filled_desc = "The challenge is not taking as many as you can, but guessing what it is before you pass out."
 
