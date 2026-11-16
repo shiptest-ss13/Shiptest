@@ -117,39 +117,70 @@
 
 /datum/reagent/drug/mammoth
 	name = "Mammoth"
-	description = "A muscle stimulant said to turn the user into an unarmed fighting machine. Greatly increases stamina regeneration and allows the user to tackle."
+	description = "An extremely potent aggression-enhancing stimulant. Massively enhances unarmed combat abilities and grants extraordinary strength at the cost of a horrific crash once the drug has run its course."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	taste_description = "chemical salts"
-	var/datum/brain_trauma/special/psychotic_brawling/mammoth/rage
+	var/datum/martial_art/berserk/zerk // martial art to grant
 
-/datum/reagent/drug/mammoth/on_mob_metabolize(mob/living/L)
+/datum/reagent/drug/mammoth/on_mob_metabolize(mob/living/our_guy)
 	..()
-	ADD_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
-	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
-	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
-	L.impact_effect /= 10
-	if(iscarbon(L))
-		var/mob/living/carbon/C = L
-		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+	// add traits
+	ADD_TRAIT(our_guy, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
+	ADD_TRAIT(our_guy, TRAIT_STUNIMMUNE, type)
+	ADD_TRAIT(our_guy, TRAIT_SLEEPIMMUNE, type)
+	our_guy.impact_effect /= 10
 
-/datum/reagent/drug/mammoth/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
-	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
-	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-	L.impact_effect *= 10
-	if(L.GetComponent(/datum/component/tackler))
-		qdel(L.GetComponent(/datum/component/tackler))
-	if(rage)
-		QDEL_NULL(rage)
+	// add color
+	if(islizard(our_guy))
+		our_guy.add_client_colour(/datum/client_colour/berserk/sarathi)
+	else if(iselzuose(our_guy))
+		our_guy.add_client_colour(/datum/client_colour/berserk/elzuose)
+	else
+		our_guy.add_client_colour(/datum/client_colour/berserk)
+
+	// add tackle component
+	our_guy.AddComponent(/datum/component/tackler, stamina_cost = 25, base_knockdown = 2 SECONDS, range = 6, speed = 1, skill_mod = 2)
+
+	// add berserk martial art
+	zerk = new(null)
+	zerk.teach(our_guy, TRUE)
+
+	// clear hangover, we're back on our bullshit
+	if(our_guy.has_status_effect(/datum/status_effect/mammoth_crash))
+		our_guy.remove_status_effect(/datum/status_effect/mammoth_crash)
+
+/datum/reagent/drug/mammoth/on_mob_end_metabolize(mob/living/our_guy)
+	// remove traits
+	REMOVE_TRAIT(our_guy, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
+	REMOVE_TRAIT(our_guy, TRAIT_STUNIMMUNE, type)
+	REMOVE_TRAIT(our_guy, TRAIT_SLEEPIMMUNE, type)
+	our_guy.impact_effect *= 10
+
+	// remove color
+	our_guy.remove_client_colour(/datum/client_colour/berserk)
+	our_guy.remove_client_colour(/datum/client_colour/berserk/sarathi)
+	our_guy.remove_client_colour(/datum/client_colour/berserk/elzuose)
+
+	// remove tackle ability
+	if(our_guy.GetComponent(/datum/component/tackler))
+		qdel(our_guy.GetComponent(/datum/component/tackler))
+
+	// remove berserk martial art
+	zerk.remove(our_guy)
+	QDEL_NULL(zerk)
+
+	// give hangover
+	var/punishment = overdosed ? 10 MINUTES : 5 MINUTES
+	our_guy.adjust_timed_status_effect(punishment, /datum/status_effect/mammoth_crash)
 	..()
 
 /datum/reagent/drug/mammoth/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(SPT_PROB(2.5, seconds_per_tick))
-		var/high_message = pick("Flatten them", "Crush them", "Smash them", "Kill them") //flat it. crush it. smash it. bop it.
+		var/high_message = pick( //flat it. crush it. smash it. bop it.
+			"Flatten them.", "Crush them.", "Smash them.", "Kill them.",
+			"Shred them.", "Tear them to pieces.", "KILL KILL KILL.", "RAAAHHHH!!")
 		to_chat(metabolizer, span_boldwarning("[high_message]"))
 	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
 	metabolizer.adjustStaminaLoss(-5 * seconds_per_tick, 0)

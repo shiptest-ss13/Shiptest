@@ -240,6 +240,19 @@
 	fade_in = 3 SECONDS
 	easing = SINE_EASING
 
+/datum/client_colour/berserk
+	colour = list(rgb(230,0,0), rgb(128,0,0), rgb(64,0,0), rgb(0,0,0))
+	fade_in = 1 SECONDS
+	easing = SINE_EASING
+	fade_out = 1 SECONDS
+	priority = PRIORITY_HIGH
+
+/datum/client_colour/berserk/sarathi
+	colour = list(rgb(0,64,64), rgb(0,100,100), rgb(0,100,100), rgb(0,0,0))
+
+/datum/client_colour/berserk/elzuose
+	colour = list(rgb(32,128,0), rgb(32,200,0), rgb(32,64,0), rgb(0,0,0))
+
 /datum/client_colour/rahkrahene
 	colour = "#e5a5b5"
 	fade_in = 5 SECONDS
