@@ -187,7 +187,7 @@
 	. = ""
 	var/newletter = ""
 	var/rawchar = ""
-	var/static/regex/mmph_exempt = regex(@@[aeiouAEIOU "'()[\]{}.!?,:;_`~-]@)
+	var/static/regex/mmph_exempt = regex(@@[aeiouAEIOUmnhfMNHF "'()[\]{}.!?,:;_`~-]@)
 	for(var/i = 1, i <= leng, i += length(rawchar))
 		rawchar = newletter = phrase[i]
 		if(!mmph_exempt.Find(rawchar))
