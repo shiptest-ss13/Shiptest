@@ -58,14 +58,14 @@
 	desc = "Contains a civilian variant of the Ringneck pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/ringneck)
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 
 /datum/supply_pack/gun/pc76
 	name = "PC-76 'Ringneck' Pistol Crate"
 	desc = "Contains a noticably smaller military variant of the Ringneck pistol, chambered in 10mm."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/pc76)
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -109,7 +109,7 @@
 	desc = "Contains a compact armor-piercing sidearm, chambered in 5.7mm"
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/asp)
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -185,7 +185,7 @@
 	desc = "Contains a civilian variant of the Viper revolver, chambered in .357 magnum."
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/viper)
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 5
 
 /datum/supply_pack/gun/a357
@@ -193,7 +193,7 @@
 	desc = "Contains a double-action military variant of the Viper revolver, chambered in .357 magnum."
 	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/a357)
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -545,7 +545,7 @@
 	contains = list(/obj/item/storage/guncase/bulldog)
 	cost = 4000
 	crate_name = "shotgun crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -555,7 +555,7 @@
 	contains = list(/obj/item/storage/guncase/gaboon)
 	cost = 2000
 	crate_name = "shotgun crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -618,7 +618,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/cobra)
 	crate_name = "SMG crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 10
 
 /datum/supply_pack/gun/c20r
@@ -627,7 +627,7 @@
 	cost = 2800 // 100 more than the civ variant (counting it's discount), because they are literally the same right now.
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -724,7 +724,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -764,7 +764,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -792,7 +792,7 @@
 	contains = list(/obj/item/storage/guncase/hydra80)
 	cost = 3000
 	crate_name = "rifle crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 10
 
 /datum/supply_pack/gun/winchester
@@ -904,7 +904,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hydra)
 	crate_name = "rifle crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -946,7 +946,7 @@
 	cost = 6000
 	contains = list(/obj/item/storage/guncase/python)
 	crate_name = "LMG crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -988,7 +988,7 @@
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/sbr80)
 	crate_name = "dmr crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1035,7 +1035,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/boomslang)
 	crate_name = "dmr crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 
 /datum/supply_pack/gun/boomslang10
 	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
@@ -1043,7 +1043,7 @@
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
 	crate_name = "marksman rifle crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1113,7 +1113,7 @@
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/rectifier)
 	crate_name = "rectifier crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1123,7 +1123,7 @@
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/rectifier/export)
 	crate_name = "amend crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/convergence
@@ -1132,7 +1132,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/convergence)
 	crate_name = "convergence crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1142,7 +1142,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/convergence/export)
 	crate_name = "amend crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/vector
@@ -1151,7 +1151,7 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "convergence crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1161,7 +1161,7 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/vector/export)
 	crate_name = "director crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/troubleshooter
@@ -1170,7 +1170,7 @@
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/troubleshooter)
 	crate_name = "troubleshooter crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1180,7 +1180,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/opportunist)
 	crate_name = "opportunist crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1190,7 +1190,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/anode)
 	crate_name = "anode crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1200,7 +1200,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/impactor)
 	crate_name = "impactor crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1210,7 +1210,7 @@
 	cost = 7000
 	contains = list(/obj/item/storage/guncase/catalyzer)
 	crate_name = "catalyzer crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1220,7 +1220,7 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/galvanizer)
 	crate_name = "galvanizer crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1233,7 +1233,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
 
@@ -1243,7 +1243,7 @@
 	cost = 2800
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
 
@@ -1253,7 +1253,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
 
@@ -1263,7 +1263,7 @@
 	contains = list(/obj/item/storage/guncase/gaboon)
 	cost = 2000
 	crate_name = "shotgun crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
 
@@ -1273,7 +1273,7 @@
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
 	crate_name = "marksman rifle crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = -10
 	faction_locked = TRUE
 

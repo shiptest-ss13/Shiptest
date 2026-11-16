@@ -124,7 +124,7 @@
 					/obj/item/roller,
 					/obj/item/stack/sheet/mineral/silver)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -148,7 +148,7 @@
 	cost = 3000
 	contains = list(/obj/item/disk/surgery/t3)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -158,7 +158,7 @@
 	cost = 4000
 	contains = list(/obj/item/disk/surgery/cybersun)
 	crate_name = "surgical supplies crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -284,7 +284,7 @@
 
 /datum/supply_pack/medical/mkiii_hypo/cybersun
 	desc = "Contains a mk.III Cybersun Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/medical/mkii_hypo_standalone
 	name = "Standalone mk.II Hypospray"
@@ -306,7 +306,7 @@
 
 /datum/supply_pack/medical/mkiii_hypo/cybersun
 	desc = "Contains a standalone mk.III Cybersun Hypospray, for on the field medical care."
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/medical/vials
 	faction = /datum/faction/warra

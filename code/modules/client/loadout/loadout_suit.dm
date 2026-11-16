@@ -63,9 +63,33 @@
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
 
+/datum/gear/suit/jacket/two_tone
+	display_name = "two tone coat, colorable"
+	path = /obj/item/clothing/suit/jacket/twotone
+
 /datum/gear/suit/toggle/aclf
 	display_name = "ACLF leather jacket"
 	path = /obj/item/clothing/suit/toggle/aclf
+
+/datum/gear/suit/toggle/bikerjacket
+	display_name = "biker jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/biker
+
+/datum/gear/suit/toggle/letterman
+	display_name = "letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman
+
+/datum/gear/suit/toggle/letterman_blue
+	display_name = "blue letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman_blue
+
+/datum/gear/suit/toggle/letterman_red
+	display_name = "red letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman_red
+
+/datum/gear/suit/toggle/letterman_black
+	display_name = "black letterman jacket"
+	path = /obj/item/clothing/suit/toggle/letterman_black
 
 /datum/gear/suit/toggle/capsule
 	display_name = "capsule jacket"
