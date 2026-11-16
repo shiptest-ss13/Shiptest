@@ -585,3 +585,37 @@
 	casingtype = /obj/item/ammo_casing/p50
 	projectiletype = /obj/projectile/bullet/p50
 	projectilesound = 'sound/weapons/gun/sniper/shot.ogg'
+
+//hyena
+
+/mob/living/simple_animal/hostile/automated/hyena
+	name = "ACD-40 'Hyena' Command Munition"
+	desc = "A tall, humanoid drone manufactured by the Al'Sa guild. Originally a failed IPC chassis due to its considerable bulk and poor heat management, the Hyena would be revitalized as a drone command unit. Able to do simple coordination with other automatons, it grew a fearsome reputation due to its above average intelligence for a droid."
+	icon_state = "hyena"
+	health = 120
+	maxHealth = 120
+	armor = list("melee" = 35, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	retreat_distance = 2
+	minimum_distance = 4
+	rapid = 3
+	rapid_fire_delay = 3
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectiletype = /obj/projectile/beam/laser/assault
+	casingtype = null
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
+	faction = list(FACTION_NEUTRAL)
+
+/mob/living/simple_animal/hostile/automated/hyena/warra
+	name = "ACD-40 'Hyena' Command Munition"
+	desc = "A tall, humanoid drone manufactured by the Al'Sa guild. Originally a failed IPC chassis due to its considerable bulk and poor heat management, the Hyena would be revitalized as a drone command unit. Able to do simple coordination with other automatons, it grew a fearsome reputation due to its above average intelligence for a droid. Its integrated plasma cannon whirrs at you."
+	icon_state = "hyena_makosso"
+	faction = list(ROLE_DEATHSQUAD)
+
+/mob/living/simple_animal/hostile/automated/hyena/coalition
+	name = "ACD-40 'Hyena' Command Munition"
+	desc = "A tall, humanoid drone manufactured by the Al'Sa guild. Originally a failed IPC chassis due to its considerable bulk and poor heat management, the Hyena would be revitalized as a drone command unit. Able to do simple coordination with other automatons, it grew a fearsome reputation due to its above average intelligence for a droid. Its integrated plasma cannon whirrs at you."
+	icon_state = "hyena_coalition"
+	faction = list(FACTION_HOSTILE)
