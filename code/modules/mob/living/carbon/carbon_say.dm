@@ -47,3 +47,8 @@
 		return T.could_speak_language(language)
 	else
 		return initial(language.flags) & TONGUELESS_SPEECH
+
+/mob/living/carbon/treat_message(message, datum/language/our_language)
+	if(wear_mask && wear_mask.slot_flags != ITEM_SLOT_MASK)
+		message = muffle(message)
+	. = ..()
