@@ -3,7 +3,7 @@
 	name = "Berserk!"
 	id = MARTIALART_BERSERK
 
-// HARM - Punch for greatly increased damage, with a chance of sending the target flying.
+// HARM - Punch for MASSIVELY increased damage
 /datum/martial_art/berserk/harm_act(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/choice = pick(1, 4)
 	var/static/hit_verbs = list("slam", "smash", "pulverize", "crush")
