@@ -255,7 +255,7 @@
 	minimum_distance = 4
 	rapid = 2
 	rapid_fire_delay = 3
-	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
@@ -599,7 +599,7 @@
 	minimum_distance = 4
 	rapid = 3
 	rapid_fire_delay = 3
-	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 	projectiletype = /obj/projectile/beam/laser/assault
 	casingtype = null
 	melee_damage_lower = 15
