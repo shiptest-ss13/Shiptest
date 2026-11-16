@@ -326,7 +326,7 @@ Behavior that's still missing from this component that original food items had t
 	var/time_to_eat = (eater == feeder) ? eat_time : EAT_TIME_FORCE_FEED
 
 	if(eater == feeder)//If you're eating it yourself.
-		if(eat_time && !do_after(feeder, time_to_eat, eater, timed_action_flags = food_flags & FOOD_FINGER_FOOD ? IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE : NONE)) //Gotta pass the minimal eat time
+		if(eat_time && !do_after(feeder, time_to_eat, eater, timed_action_flags = food_flags & FOOD_FINGER_FOOD ? IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE : NONE, interaction_key = DOAFTER_SOURCE_EATING)) //Gotta pass the minimal eat time
 			return
 		if(IsFoodGone(owner, feeder))
 			return
