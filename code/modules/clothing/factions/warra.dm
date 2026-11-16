@@ -476,3 +476,30 @@
 	vox_override_icon = 'icons/mob/clothing/faction/warra/vox.dmi'
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+
+	//Warden hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/esh/warden
+	name = "Vigilitas Warden helmet"
+	desc = "A state of the art helmet attached to the Warden hardsuit. Armored tubing around the injector lines allow for chemicals to inject around the user safely."
+	icon = 'icons/obj/clothing/faction/warra/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/warra/head.dmi'
+	icon_state = "hardsuit0-warden"
+	item_state = "hardsuit0-warden"
+	hardsuit_type = "warden"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = HEAD
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	light_range = 4
+
+/obj/item/clothing/suit/space/hardsuit/esh/warden
+	name = "\improper Vigilitas Warden heavy hardsuit"
+	desc = "A state of the art hardsuit utilized by Vigilitas Interstellar. Heavy composite armor alongside an easy use injector system around the suit results in a hardsuit as close as can be to heavier power armor. It may be slow, but you will be unbreakable."
+	icon = 'icons/obj/clothing/faction/warra/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/warra/suits.dmi'
+	icon_state = "hardsuit-warden"
+	item_state = "hardsuit-warden"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	slowdown = 1.25
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/esh/warden

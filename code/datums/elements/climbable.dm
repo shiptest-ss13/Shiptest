@@ -100,6 +100,7 @@
 /datum/element/climbable/proc/do_climb(atom/climbed_thing, mob/living/user, params)
 	if(!can_climb(climbed_thing, user))
 		return
+	var/climbed_density = climbed_thing.density
 	climbed_thing.density = FALSE
 	var/dir_step = get_dir(user, climbed_thing.loc)
 	var/same_loc = climbed_thing.loc == user.loc
@@ -115,8 +116,34 @@
 				dir_step = (x_dist >= y_dist ? (EAST|WEST) : (NORTH|SOUTH)) & climbed_thing.dir
 		else
 			dir_step = get_dir(user, get_step(climbed_thing, climbed_thing.dir))
+	var/list/also_in_the_way = get_climbables_in_step(get_turf(user), get_step(user, dir_step)) - climbed_thing
+	var/list/old_densities = list()
+	for(var/atom/movable/blocker as anything in also_in_the_way)
+		old_densities[blocker] = blocker.density
+		blocker.density = FALSE
 	. = step(user, dir_step)
-	climbed_thing.density =TRUE
+	for(var/atom/movable/blocker as anything in old_densities)
+		if(!QDELETED(blocker))
+			blocker.density = old_densities[blocker]
+	if(!QDELETED(climbed_thing))
+		climbed_thing.density = climbed_density
+
+// enumerate the climbables in a step, so we can get over them all at once
+/proc/get_climbables_in_step(turf/from_turf, turf/to_turf)
+	. = list()
+	if(!from_turf || !to_turf || from_turf == to_turf)
+		return
+	var/step_dir = get_dir(from_turf, to_turf)
+	if(ISDIAGONALDIR(step_dir))
+		return // a diagonal's two steps, so only what we're climbing
+	for(var/obj/thing in from_turf)
+		if(thing.density && (thing.flags_1 & ON_BORDER_1) && (thing.dir & step_dir) && HAS_TRAIT(thing, TRAIT_CLIMBABLE))
+			. += thing
+	for(var/obj/thing in to_turf)
+		if(!thing.density || !HAS_TRAIT(thing, TRAIT_CLIMBABLE))
+			continue
+		if(!(thing.flags_1 & ON_BORDER_1) || (thing.dir & REVERSE_DIR(step_dir)))
+			. += thing
 
 ///Handles climbing onto the atom when you click-drag
 /datum/element/climbable/proc/mousedrop_receive(atom/climbed_thing, atom/movable/dropped_atom, mob/user, params)

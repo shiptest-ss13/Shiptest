@@ -1374,6 +1374,8 @@
 	VV_DROPDOWN_OPTION(VV_HK_DIRECT_CONTROL, "Assume Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_GIVE_DIRECT_CONTROL, "Give Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_OFFER_GHOSTS, "Offer Control to Ghosts")
+	if(ai_controller)
+		VV_DROPDOWN_OPTION(VV_HK_AI_SET_HOME, "Set AI Home")
 
 /mob/vv_do_topic(list/href_list)
 	. = ..()
@@ -1425,6 +1427,10 @@
 		if(!check_rights(NONE))
 			return
 		offer_control(src)
+	if(href_list[VV_HK_AI_SET_HOME])
+		if(!check_rights(R_DEBUG))
+			return
+		ai_controller?.admin_set_home(usr)
 
 /**
  * extra var handling for the logging var

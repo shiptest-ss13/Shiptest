@@ -151,14 +151,14 @@
 		return
 
 	user.toggle_throw_mode()
-	if(!iscarbon(hit))
+	if(!iscarbon(hit) && !istype(hit, /mob/living/basic/human)) // tackle human basicmobs too, i dare you
 		if(hit.density)
 			INVOKE_ASYNC(src, PROC_REF(splat), user, hit)
 		return
 
-	var/mob/living/carbon/target = hit
-	var/mob/living/carbon/human/T = target
-	var/mob/living/carbon/human/S = user
+	var/mob/living/target = hit
+	var/mob/living/carbon/human/human_target = target
+	var/mob/living/carbon/human/human_user = user
 
 	var/roll = rollTackle(target)
 
@@ -181,9 +181,9 @@
 			to_chat(target, span_userdanger("[user] lands a weak tackle on you, briefly knocking you off-balance!"))
 
 			user.Knockdown(30)
-			if(ishuman(target) && !T.has_movespeed_modifier(/datum/movespeed_modifier/shove))
-				T.add_movespeed_modifier(/datum/movespeed_modifier/shove) // maybe define a slightly more severe/longer slowdown for this
-				addtimer(CALLBACK(T, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH * 2)
+			if(ishuman(target) && !human_target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
+				human_target.add_movespeed_modifier(/datum/movespeed_modifier/shove) // maybe define a slightly more severe/longer slowdown for this
+				addtimer(CALLBACK(human_target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH * 2)
 
 		if(-1 to 0) // decent hit, both parties are about equally inconvenienced
 			user.visible_message(span_warning("[user] lands a passable tackle on [target], sending them both tumbling!"), span_userdanger("You land a passable tackle on [target], sending you both tumbling!"), target)
@@ -214,9 +214,9 @@
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				if(S.pulling == T)
-					S.setGrabState(GRAB_PASSIVE)
+				INVOKE_ASYNC(human_user.dna.species, TYPE_PROC_REF(/datum/species, grab), human_user, human_target)
+				if(human_user.pulling == human_target)
+					human_user.setGrabState(GRAB_PASSIVE)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message(span_warning("[user] lands a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), span_userdanger("You land a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), target)
@@ -229,9 +229,9 @@
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				if(S.pulling == T)
-					S.setGrabState(GRAB_AGGRESSIVE)
+				INVOKE_ASYNC(human_user.dna.species, TYPE_PROC_REF(/datum/species, grab), human_user, human_target)
+				if(human_user.pulling == human_target)
+					human_user.setGrabState(GRAB_AGGRESSIVE)
 
 
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
@@ -248,7 +248,7 @@
  * In addition, after subtracting the defender's mod and adding the attacker's mod to the roll, the component's base (skill) mod is added as well. Some sources of tackles
  *	are better at taking people down, like the bruiser and rocket gloves, while the dolphin gloves have a malus in exchange for better mobility.
 */
-/datum/component/tackler/proc/rollTackle(mob/living/carbon/target)
+/datum/component/tackler/proc/rollTackle(mob/living/target)
 	var/defense_mod = 0
 	var/attack_mod = 0
 
@@ -271,26 +271,37 @@
 		defense_mod -= 1
 
 	var/leg_wounds = 0 // -1 defense per 2 leg wounds
-	for(var/i in target.all_wounds)
-		var/datum/wound/iterwound = i
-		if((iterwound.limb.body_zone in list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)))
-			leg_wounds++
+	var/mob/living/carbon/carbon_target = target
+	if(istype(carbon_target))
+		for(var/datum/wound/iterwound as anything in carbon_target.all_wounds)
+			if((iterwound.limb.body_zone in list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)))
+				leg_wounds++
 	defense_mod -= round(leg_wounds * 0.5)
 
-	if(ishuman(target))
-		var/mob/living/carbon/human/T = target
-
-		if(isnull(T.wear_suit) && isnull(T.w_uniform)) // who honestly puts all of their effort into tackling a naked guy?
-			defense_mod += 2
-		if(T.mob_negates_gravity())
-			defense_mod += 1
-		if(T.is_shove_knockdown_blocked()) // riot armor and such
+	// human NPCs, which aren't carbons, so their gear's what they're set up as wearing and holding
+	var/mob/living/basic/human/npc_target = target
+	if(istype(npc_target))
+		if(npc_target.blocks_shove_knockdown()) // riot armor and such
 			defense_mod += 5
-		if(T.is_holding_item_of_type(/obj/item/shield))
+		if(npc_target.get_held_shield_type())
+			defense_mod += 2
+		if(npc_target.knockdowns_slow_instead) // juiced up brutes
+			defense_mod += 3
+
+	if(ishuman(target))
+		var/mob/living/carbon/human/human_target = target
+
+		if(isnull(human_target.wear_suit) && isnull(human_target.w_uniform)) // who honestly puts all of their effort into tackling a naked guy?
+			defense_mod += 2
+		if(human_target.mob_negates_gravity())
+			defense_mod += 1
+		if(human_target.is_shove_knockdown_blocked()) // riot armor and such
+			defense_mod += 5
+		if(human_target.is_holding_item_of_type(/obj/item/shield))
 			defense_mod += 2
 
-		if(islizard(T))
-			var/obj/item/bodypart/tail/lizard_tail = T.get_bodypart(BODY_ZONE_TAIL)
+		if(islizard(human_target))
+			var/obj/item/bodypart/tail/lizard_tail = human_target.get_bodypart(BODY_ZONE_TAIL)
 			if(!lizard_tail) // lizards without tails are off-balance
 				defense_mod -= 1
 			else if(lizard_tail.wagging) // lizard tail wagging is robust and can swat away assailants!
@@ -313,15 +324,15 @@
 		attack_mod += 2
 
 	if(ishuman(target))
-		var/mob/living/carbon/human/S = sacker
+		var/mob/living/carbon/human/human_sacker = sacker
 
-		var/suit_slot = S.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+		var/suit_slot = human_sacker.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/riot))) // tackling in riot armor is more effective, but tiring
 			attack_mod += 2
 			sacker.adjustStaminaLoss(20)
 
-	var/r = rand(-3, 3) - defense_mod + attack_mod + skill_mod
-	return r
+	var/tackle_roll = rand(-3, 3) - defense_mod + attack_mod + skill_mod
+	return tackle_roll
 
 /**
  * splat()

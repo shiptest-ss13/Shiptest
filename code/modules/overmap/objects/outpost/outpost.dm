@@ -43,6 +43,8 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
+	///The border size to use. It's recommended to always have this set to at least one. Make sure your map has the borders mapped in, and that they match this number.
+	var/border_size = QUADRANT_SIZE_BORDER
 	///The weather the virtual z will have. If null, the outpost will have no weather.
 	var/datum/weather_controller/weather_controller_type
 
@@ -97,6 +99,9 @@
 	if(!market)
 		market = new()
 		market.name = "[name] market"
+
+	fluctuate_prices()
+	addtimer(CALLBACK(src, PROC_REF(fluctuate_prices)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/on_overmaps_loaded()
 	mission_system = current_overmap.next_overmap
@@ -206,6 +211,14 @@
 			qdel(target_mission)
 	fill_missions()
 
+/datum/overmap/outpost/proc/fluctuate_prices()
+	for(var/datum/export/exp in GLOB.outpost_exports)
+		if(exp.price_can_fluctuate)
+			exp.true_cost = round(exp.cost * (rand(75, 125) / 100), 1)
+			exp.desc = "[SSmissions.get_industrial_name()] has placed a bulk order for a large quantity of material. \
+			[outpost_administrator] has agreed to fill this order, and will provide payment for any goods delivered to fulfill it, \
+			proportional to the compensation provided by the client."
+
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
 		CRASH("[src] ([src.type]) tried to load without a template!")
@@ -217,14 +230,16 @@
 		name,
 		main_level_ztraits,
 		mapzone,
-		QUADRANT_MAP_SIZE,
-		QUADRANT_MAP_SIZE,
+		main_template.width,
+		main_template.height,
 		ALLOCATION_QUADRANT,
 		QUADRANT_MAP_SIZE
 	)
-	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+	vlevel.reserve_margin(border_size)
 
-	main_template.load(vlevel.get_unreserved_bottom_left_turf())
+	var/turf/spawn_turf = locate(vlevel.low_x,vlevel.low_y,vlevel.z_value)
+
+	main_template.load(spawn_turf)
 
 	if(weather_controller_type)
 		new weather_controller_type(mapzone)

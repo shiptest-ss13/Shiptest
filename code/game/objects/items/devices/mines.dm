@@ -377,6 +377,7 @@
 	if(tripwire_turfs)
 		for(var/turf/affected_turf in tripwire_turfs)
 			UnregisterSignal(affected_turf, COMSIG_ATOM_ENTERED)
+			REMOVE_TRAIT(affected_turf, TRAIT_AI_AVOID, REF(src))
 		tripwire_turfs = null
 	if(target_turf)
 		target_turf = null
@@ -393,6 +394,11 @@
 
 	for(var/turf/affected_turf in tripwire_turfs)
 		RegisterSignal(affected_turf,  COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+		ADD_TRAIT(affected_turf, TRAIT_AI_AVOID, REF(src))
+
+/obj/item/mine/directional/Destroy()
+	remove_tripwires()
+	return ..()
 
 /obj/item/mine/directional/claymore/now_armed()
 	draw_tripwires()
@@ -652,7 +658,7 @@
 /obj/item/mine/proximity/spawner/manhack
 	name = "\improper P-83 Lacerator"
 	desc = "An anti-infantry device produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
-	spawn_type = /mob/living/simple_animal/hostile/viscerator
+	spawn_type = /mob/living/basic/viscerator
 
 
 

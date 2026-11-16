@@ -1015,8 +1015,7 @@
 /mob/living/proc/resist_restraints()
 	return
 
-/mob/living/proc/get_visible_name()
-	return name
+
 
 /mob/living/update_gravity(has_gravity)
 	. = ..()
@@ -1238,6 +1237,10 @@
 
 /mob/living/proc/fakefire()
 	return
+
+/// Whether being chilled down to floor_temperature would hurt us
+/mob/living/proc/hurt_by_chill(floor_temperature)
+	return TRUE
 
 /mob/living/proc/unfry_mob() //Callback proc to tone down spam from multiple sizzling frying oil dipping.
 	REMOVE_TRAIT(src, TRAIT_OIL_FRIED, "cooking_oil_react")
