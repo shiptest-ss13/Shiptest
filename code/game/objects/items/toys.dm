@@ -1017,6 +1017,7 @@
 	desc = "A compact ball of snow. Good for throwing at people."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snowball"
+	w_class = WEIGHT_CLASS_SMALL
 	var/stam_dam = 8
 
 /obj/item/toy/snowball/afterattack(atom/target as mob|obj|turf|area, mob/user)
@@ -1416,3 +1417,16 @@
 	if(cooldown <= world.time)
 		cooldown = (world.time + 10)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)
+
+/obj/item/toy/stressball
+	name = "stress ball"
+	desc = "A bright green stress ball. Filled with a special compound that glows when you squeeze it, how fun!"
+	icon = 'icons/obj/nuke_tools.dmi'
+	icon_state = "plutonium_core"
+	var/cooldown = 0
+
+/obj/item/toy/stressball/attack_self(mob/user)
+	if(cooldown <= world.time)
+		cooldown = (world.time + 10)
+		to_chat(user, span_notice("You give the stress ball a firm squeeze."))
+		flick("plutonium_core_pulse", src)

@@ -168,6 +168,7 @@
 	anchored = TRUE
 	density = TRUE
 	pixel_y = -32
+	gps_active = TRUE
 
 /obj/item/gps/computer/wrench_act(mob/living/user, obj/item/I)
 	..()

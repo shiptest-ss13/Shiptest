@@ -128,3 +128,46 @@
 	icon_state = "white_dress"
 	item_state = "white_dress"
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/under/dress/overall_dress
+	name = "overall dress"
+	desc = "A practical, yet stylish, pair of overalls with a loose skirt attached."
+	roll_sleeves = TRUE
+	icon_state = "overalldress_denim"
+	item_state = "overalldress_denim"
+	icon = 'icons/obj/clothing/under/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/dresses/dress.dmi'
+	unique_reskin = list("denim overall dress" = "overalldress_denim",
+						"green overall dress" = "overalldress_green",
+						"denim overall dress" = "overalldress_denim",
+						"navy overall dress" = "overalldress_navy",
+						"brown overall dress" = "overalldress_brown",
+						"black overall dress" = "overalldress_black",
+						"white overall dress" = "overalldress_white",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/under/dress/overall_dress/denim
+	name = "denim overall dress"
+	current_skin = "denim overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/navy
+	name = "navy overall dress"
+	current_skin = "navy overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/green
+	name = "green overall dress"
+	current_skin = "green overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/brown
+	name = "brown overall dress"
+	current_skin = "brown overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/black
+	name = "black overall dress"
+	current_skin = "black overall dress"
+
+/obj/item/clothing/under/dress/overall_dress/white
+	name = "white overall dress"
+	current_skin = "white overall dress"

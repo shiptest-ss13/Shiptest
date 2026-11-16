@@ -17,15 +17,17 @@
 	protect_indoors = TRUE
 	barometer_predictable = TRUE
 	affects_underground = FALSE
+	overlay_alpha = 75
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
 	sound_active_outside = /datum/looping_sound/weather/rain
 
 	fire_suppression = 6
 
+/datum/weather/rain/affects(mob/living/victim)
+	return iscarbon(victim)
+
 /datum/weather/rain/weather_act(mob/living/living_mob)
-	if(!iscarbon(living_mob))
-		return
 	var/mob/living/carbon/carbon = living_mob
 	carbon.adjust_wet_stacks(fire_suppression/2)
 	if(prob(25))
@@ -64,6 +66,7 @@
 	desc = "Massive storm that blocks vision."
 	opacity_in_main_stage = TRUE
 	thunder_chance = 60
+	overlay_alpha = 255
 
 	telegraph_message = "<span class='notice'>It starts to fog up, the clouds hinting at a severe storm...</span>"
 	telegraph_overlay = "smoke"
@@ -81,6 +84,7 @@
 /datum/weather/rain/toxic
 	name = "toxic rain"
 	desc = "Toxic Rain falling down the surface."
+	overlay_alpha = 255
 
 	telegraph_message = "<span class='danger'>Toxic clouds hover above and you feel humidity in the air. Equip a gas mask and properly cover yourself.</span>"
 	telegraph_duration = 300
@@ -103,11 +107,10 @@
 	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
+	harmful = TRUE
 	var/toxic_power = 2
 
 /datum/weather/rain/toxic/weather_act(mob/living/living_mob)
-	if(!iscarbon(living_mob))
-		return
 	var/mob/living/carbon/carbon = living_mob
 	handle_face(carbon)
 	handle_eyes(carbon)
@@ -206,6 +209,7 @@
 	name = "storm"
 	desc = "Storm with rain and lightning."
 	weather_overlay = "storm_very"
+	overlay_alpha = 125
 	thunder_chance = 20
 	weather_color = "#a3daf7"
 	weather_duration_lower = 420690

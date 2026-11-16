@@ -396,9 +396,7 @@
 			H.regenerate_icons()
 		else
 			hood.forceMove(src)
-		for(var/X in actions)
-			var/datum/action/A = X
-			A.UpdateButtonIcon()
+		update_item_action_buttons()
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
 	if(ponchotoggled)
@@ -428,9 +426,7 @@
 				H.update_inv_neck()
 				update_appearance()
 				H.regenerate_icons()
-				for(var/X in actions)
-					var/datum/action/A = X
-					A.UpdateButtonIcon()
+				update_item_action_buttons()
 	else
 		remove_hood()
 
@@ -771,10 +767,19 @@
 	pickup_sound = "dogtag"
 	var/list/tag_fluff = list()
 
+/obj/item/clothing/neck/dogtag/examine(mob/user)
+	. = ..()
+	if(length(tag_fluff))
+		. += span_notice("Some characters have been imprinted on the tag. You can look closer to see them.")
+
 /obj/item/clothing/neck/dogtag/examine_more(mob/user)
 	. = ..()
+	var/temp_string = null
 	for(var/line in tag_fluff)
-		. += span_boldnotice(line)
+		temp_string += line
+		temp_string += "\n"
+	if(temp_string)
+		. += custom_boxed_message("grey_box center", temp_string)
 
 /obj/item/clothing/neck/dogtag/equipped(mob/user, slot)
 	. = ..()
@@ -831,7 +836,7 @@
 		return
 
 /obj/item/clothing/neck/dogtag/loadout
-	desc = "A non-military dogtag, often worn for style in certain circles."
+	desc = "A dogtag, often worn by current and former soldiers."
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"

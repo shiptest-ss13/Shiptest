@@ -92,6 +92,7 @@
 
 /obj/projectile/beam/emitter/hitscan/clip
 	damage = 35
+	fire_color = "blue"
 
 /obj/projectile/beam/hitscan/kalix/faveleira
 	tracer_type = /obj/effect/projectile/tracer/kalix_hunt

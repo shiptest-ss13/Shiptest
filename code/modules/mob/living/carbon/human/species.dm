@@ -360,7 +360,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		all_zones |= old_species.species_limbs
 	for(var/zone in all_zones)
 		old_part = C.bodyparts[zone]
-		if(!old_part && old_species && !isnull(old_species?.species_limbs)) // if the old species has a bodypart by default but it's missing, don't replace it
+		if(!old_part && old_species?.species_limbs?[zone]) // if the old species has a bodypart by default but it's missing, don't replace it
 			continue
 		var/obj/item/bodypart/new_part = new_species.new_body_part(C, zone, robotic, FALSE)
 		if(new_part)
@@ -1468,18 +1468,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(attacker_style && attacker_style.grab_act(user,target))
 		return TRUE
 	else
-		//Steal them shoes
-		if(target.body_position == LYING_DOWN && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) && user.a_intent == INTENT_GRAB && target.shoes)
-			var/obj/item/I = target.shoes
-			user.visible_message(span_warning("[user] starts stealing [target]'s [I.name]!"),
-							span_danger("You start stealing [target]'s [I.name]..."), null, null, target)
-			to_chat(target, span_userdanger("[user] starts stealing your [I.name]!"))
-			if(do_after(user, I.strip_delay, target))
-				target.dropItemToGround(I, TRUE)
-				user.put_in_hands(I)
-				user.visible_message(span_warning("[user] stole [target]'s [I.name]!"),
-								span_notice("You stole [target]'s [I.name]!"), null, null, target)
-				to_chat(target, span_userdanger("[user] stole your [I.name]!"))
 		target.grabbedby(user)
 		return TRUE
 

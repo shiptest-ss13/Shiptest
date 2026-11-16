@@ -65,8 +65,8 @@
 	encounter_name = "scrungled planetoid"
 	///What should the planet be called when it's landed on?
 	var/planet_name = "Mappeious Goofius Upper"
-	/// What planet type do we spawn? By default its reebe just so it's obvious when something's gone wrong
-	var/planet_type = /datum/planet_type/reebe
+	/// What planet type do we spawn? By default its a dustball just so it's obvious when something's gone wrong
+	var/planet_type = /datum/planet_type/dustball
 	/// Do we want ruins? If true and ruin_force is not set, we spawn a random ruin. NOTE: If FALSE up to four ships can dock to the encounter
 	var/spawn_ruins = FALSE
 	/// What ruin do we want to spawn? If none, we randomize unless above was set to random

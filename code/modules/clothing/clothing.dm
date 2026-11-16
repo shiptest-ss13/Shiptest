@@ -339,7 +339,15 @@
 	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
 		return
 
-	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
+	var/greyscale_style = greyscale_icon_state
+	if(istype(src, /obj/item/clothing/under))
+		var/obj/item/clothing/under/under = src
+		if(under.adjusted == ALT_STYLE)
+			greyscale_style = "[greyscale_icon_state]_d"
+		if(under.adjusted == ROLLED_STYLE)
+			greyscale_style = "[greyscale_icon_state]_s"
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_style)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)
@@ -526,9 +534,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.head_update(src, forced = 1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	update_item_action_buttons()
 	return TRUE
 
 /obj/item/clothing/proc/visor_toggling() //handles all the actual toggling of flags

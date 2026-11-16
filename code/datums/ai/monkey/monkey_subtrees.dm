@@ -32,7 +32,7 @@
 					return SUBTREE_RETURN_FINISH_PLANNING
 
 				controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET] = selected_enemy
-				controller.current_movement_target = selected_enemy
+				controller.set_movement_target(/datum/ai_behavior/monkey_attack_mob, selected_enemy)
 				if(controller.blackboard[BB_MONKEY_RECRUIT_COOLDOWN] < world.time)
 					LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/recruit_monkeys))
 				LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/battle_screech/monkey))
@@ -66,7 +66,7 @@
 			possible_targets += thing
 		var/atom/target = pick(possible_targets)
 		if(target)
-			controller.current_movement_target = target
+			controller.set_movement_target(/datum/ai_behavior/use_on_object, target)
 			LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/use_on_object))
 			return
 
@@ -77,7 +77,7 @@
 
 		if(length(possible_receivers))
 			var/mob/living/target = pick(possible_receivers)
-			controller.current_movement_target = target
+			controller.set_movement_target(/datum/ai_behavior/give, target)
 			LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/give))
 			return
 
