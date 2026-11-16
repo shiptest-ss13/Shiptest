@@ -9,6 +9,8 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_METAL
 
+	pass_flags_self = PASSSTRUCTURE
+
 	bad_type = /obj/structure
 
 	///is this assigned the climbable element on init?

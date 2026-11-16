@@ -167,9 +167,7 @@
 	return TRUE
 
 /turf/open/lava/proc/is_safe()
-	if(HAS_TRAIT(src, TRAIT_LAVA_STOPPED))
-		return TRUE
-	return FALSE
+	return HAS_TRAIT(src, TRAIT_LAVA_STOPPED)
 
 /turf/open/lava/proc/burn_stuff(AM, seconds_per_tick = 1)
 	. = 0

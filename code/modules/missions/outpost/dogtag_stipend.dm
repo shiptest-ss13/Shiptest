@@ -19,7 +19,7 @@
 	if(!desc)
 		desc = "The [pirate_type] are ramping up activity near [source_outpost]. We are offering a [value]cr bounty to kill at least [num_wanted] of them, in addition to the usual pirate bounty. \
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
-	value += (num_wanted*200)
+	value += (num_wanted*300)
 
 /datum/mission/acquire/dogtags/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
