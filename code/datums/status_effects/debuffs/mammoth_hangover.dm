@@ -33,15 +33,15 @@
 /datum/status_effect/mammoth_crash/tick()
 	if(prob(5))
 		var/suffering_message = pick(
-		"Your head pounds.",
-		"You can't focus.",
-		"You feel slow.",
-		"You feel sluggish.",
-		"You feel dizzy.",
-		"You feel lightheaded.",
-		"You feel nauseous.",
-		"You feel terrible.",
-		"You feel horrific.",
-		"Every muscle in your body burns.",
-		"A searing pain shoots through your chest.")
+			"Your head pounds.",
+			"You can't focus.",
+			"You feel slow.",
+			"You feel sluggish.",
+			"You feel dizzy.",
+			"You feel lightheaded.",
+			"You feel nauseous.",
+			"You feel terrible.",
+			"You feel horrific.",
+			"Every muscle in your body burns.",
+			"A searing pain shoots through your chest.")
 		to_chat(owner, span_warning(suffering_message))

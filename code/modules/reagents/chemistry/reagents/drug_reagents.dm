@@ -185,6 +185,10 @@
 	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
 	metabolizer.adjustStaminaLoss(-5 * seconds_per_tick, 0)
 	metabolizer.hallucination += 5
+	if(SPT_PROB(10, seconds_per_tick))
+		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	if(SPT_PROB(10, seconds_per_tick))
+		metabolizer.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
 
