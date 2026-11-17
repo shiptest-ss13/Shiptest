@@ -126,7 +126,6 @@
 	loot = list(
 			/obj/item/food/grown/ambrosia/deus = 1,
 			/obj/item/food/grown/berries/death/stealth = 2,
-			/obj/item/food/grown/citrus/orange_3d = 1,
 			/obj/item/food/grown/trumpet = 1,
 			/obj/item/food/grown/bungofruit = 1,
 			/obj/item/seeds/random = 1,
