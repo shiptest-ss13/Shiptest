@@ -6,9 +6,9 @@
 	species_age_max = 280
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")
-	meat = /obj/item/food/meat/slab/chicken
-	disliked_food = GRAIN
+	disliked_food = NONE
 	liked_food = MEAT
+	toxic_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Vox are a big bird-like species with quills, much larger and much more long-lasting than other species. Sadly, not much else is known."
 	attack_verb = "slash"
