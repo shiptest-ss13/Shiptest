@@ -233,6 +233,7 @@
 	name = "legion tumor"
 	desc = "A legion tumor, likely torn from a soon-to-be host."
 	icon_state = "legion_tumor"
+	icon = 'icons/obj/lavaland/artefacts.dmi'
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_REGENERATIVE_CORE
 	grind_results = list(/datum/reagent/medicine/soulus = 2, /datum/reagent/blood = 5)
@@ -294,22 +295,6 @@
 	malignance_countdown = initial(malignance_countdown)
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
-//Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced
-	name = "Signifer"
-	desc = "A shrunken legion, carring the remnants of a mouldering battle standard. The cadre of lackeys surrounding it seem particularly attentive."
-	stat_attack = DEAD
-	maxHealth = 120
-	health = 120
-	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/advanced
-	icon_state = "dwarf_legion"
-	icon_living = "dwarf_legion"
-	icon_aggro = "dwarf_legion"
-	icon_dead = "dwarf_legion"
-
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/advanced
-	stat_attack = DEAD
-	can_infest_dead = TRUE
 
 //Legion that spawns Legions
 /mob/living/simple_animal/hostile/big_legion
@@ -351,7 +336,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal
 	name = "disfigured legion"
-	desc = "Disfigured, contorted, and corrupted. This thing was once part of the legion, now it has a different vile and twisted allegiance."
+	desc = "Disfigured, contorted, and corrupted. This shambling mass of flesh seems even more decayed."
 	icon_state = "disfigured_legion"
 	icon_living = "disfigured_legion"
 	icon_aggro = "disfigured_legion"
