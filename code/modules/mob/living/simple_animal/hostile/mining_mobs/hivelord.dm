@@ -232,7 +232,7 @@
 /obj/item/organ/legion_skull
 	name = "legion tumor"
 	desc = "A legion tumor, likely torn from a soon-to-be host."
-	icon_state = "legion_tumor"
+	icon_state = "legion_skull"
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_REGENERATIVE_CORE
