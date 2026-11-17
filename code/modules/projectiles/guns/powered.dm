@@ -18,7 +18,6 @@
 
 	var/obj/item/stock_parts/cell/gun/cell // type of cell we use
 	var/internal_cell = FALSE // can we remove the cell
-	var/unscrewing_time = 2 SECONDS // time to remove cell
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
@@ -32,6 +31,10 @@
 		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 	else
 		. += span_notice("[src] doesn't seem to have a cell!")
+	if(internal_mag)
+		. += span_notice("You can remove the cell by holding the gun and clicking it with your other hand.")
+	else
+		. += span_notice("You can remove the cell by holding the gun and clicking it with your other hand while the magazine is out.")
 
 /obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(cell))
@@ -83,12 +86,11 @@
 	to_chat(user, span_notice("You pull the cell out of \the [src]."))
 	update_appearance()
 
-/obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell)
-		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
-		if(I.use_tool(src, user, unscrewing_time, volume=100))
-			to_chat(user, span_notice("You remove the power cell."))
+/obj/item/gun/ballistic/automatic/powered/attack_hand(mob/living/user)
+	if(user.is_holding(src) && loc == user)
+		if(!magazine || internal_magazine && cell && !internal_cell) // yank cell out if mag is already out
 			eject_cell(user)
+			return
 	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/update_overlays()
