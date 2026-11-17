@@ -290,11 +290,6 @@
 		if(human_target.is_holding_item_of_type(/obj/item/shield))
 			defense_mod += 2
 
-		if(islizard(human_target))
-			var/obj/item/bodypart/tail/lizard_tail = human_target.get_bodypart(BODY_ZONE_TAIL)
-			if(!lizard_tail) // lizards without tails are off-balance
-				defense_mod -= 1
-
 	// OF-FENSE
 	var/mob/living/carbon/sacker = parent
 

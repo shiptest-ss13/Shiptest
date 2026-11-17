@@ -40,7 +40,7 @@
 	/// See: [/datum/component/tackler/var/base_knockdown]
 	var/base_knockdown = 0.2 SECONDS
 	/// See: [/datum/component/tackler/var/range]
-	var/tackle_range = 8
+	var/tackle_range = 6
 	/// See: [/datum/component/tackler/var/min_distance]
 	var/min_distance = 1
 	/// See: [/datum/component/tackler/var/speed]
