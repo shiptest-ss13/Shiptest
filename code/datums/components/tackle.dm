@@ -220,7 +220,7 @@
 
 			takeTackleDamage(target, stamina = 40, knockdown = 30, paralyze = 5)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(human_target, TYPE_PROC_REF(/mob/living, grabbedby), human_user, list(supress_message = TRUE))
+				INVOKE_ASYNC(human_target, TYPE_PROC_REF(/mob/living, grabbedby), human_user, TRUE)
 				INVOKE_ASYNC(human_target, TYPE_PROC_REF(/mob/living, grippedby), human_user)
 
 
