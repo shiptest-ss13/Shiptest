@@ -135,7 +135,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
-	foodtypes = VEGETABLES | DEEP_FRIED | SEAFOOD
+	foodtypes = VEGETABLES | MEAT
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/vegetariansushiroll

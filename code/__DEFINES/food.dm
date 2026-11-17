@@ -13,11 +13,7 @@
 #define EGG (1<<12)
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
-#define GRILLED (1<<15)
-#define NUTS (1<<16)
-#define SEAFOOD (1<<17)
-#define ORANGES (1<<18)
-#define GORE (1<<19)
+#define GORE (1<<16)
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
@@ -35,9 +31,6 @@ DEFINE_BITFIELD(foodtypes, list(
 	"EGG" = EGG,
 	"BREAKFAST" = BREAKFAST,
 	"CLOTH" = CLOTH,
-	"NUTS" = NUTS,
-	"SEAFOOD" = SEAFOOD,
-	"ORANGES" = ORANGES,
 	"GORE" = GORE,
 ))
 
@@ -58,10 +51,6 @@ DEFINE_BITFIELD(foodtypes, list(
 	"Eggs", \
 	"Breakfast food", \
 	"Clothing", \
-	"Nuts", \
-	"Seafood", \
-	"Oranges", \
-	"Bugs", \
 )
 
 #define DRINK_NICE 1
