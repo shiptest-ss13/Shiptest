@@ -109,7 +109,7 @@
 	)
 	bite_consumption = 1
 	tastes = list("fish" = 1, "breadcrumbs" = 1)
-	foodtypes = MEAT | HEAVILY_FRIED
+	foodtypes = MEAT | HEAVILY_FRIED | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/fishandchips
