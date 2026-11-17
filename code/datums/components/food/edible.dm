@@ -370,7 +370,7 @@ Behavior that's still missing from this component that original food items had t
 			if(eater.is_blind())
 				to_chat(eater, span_userdanger("You're too full to eat what's being fed to you!"))
 			return
-		if(!do_after(feeder, delay = time_to_eat, target = eater, interaction_key = DOAFTER_SOURCE_EATING)) //Wait 3 seconds before you can feed
+		if(!do_after(feeder, delay = time_to_eat, target = eater)) //Wait 3 seconds before you can feed
 			return
 		if(IsFoodGone(owner, feeder))
 			return
