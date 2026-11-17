@@ -48,7 +48,18 @@
 	else
 		return initial(language.flags) & TONGUELESS_SPEECH
 
+/mob/living/carbon/proc/should_muffle(datum/language/our_language) //this if statement was getting way too long
+	if(initial(our_language?.flags) & SIGNED_LANGUAGE) //dont muffle sign language
+		return FALSE
+	if(wear_mask && wear_mask.slot_flags != ITEM_SLOT_MASK) //something in our mouth?
+		return TRUE
+	if(is_holding_item_of_type(/obj/item/lighter/liz)) //including sarathi flame breath
+		return TRUE
+	if(DOING_INTERACTION(src, DOAFTER_SOURCE_EATING)) //are we eating something?
+		return TRUE
+	return FALSE
+
 /mob/living/carbon/treat_message(message, datum/language/our_language)
-	if((wear_mask && wear_mask.slot_flags != ITEM_SLOT_MASK) || DOING_INTERACTION(src, DOAFTER_SOURCE_EATING) || is_holding_item_of_type(/obj/item/lighter/liz))
+	if(should_muffle(our_language))
 		message = muffle(message)
 	. = ..()
