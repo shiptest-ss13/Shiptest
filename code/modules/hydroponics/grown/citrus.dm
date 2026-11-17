@@ -51,7 +51,7 @@
 	icon_grow = "lime-grow"
 	icon_dead = "lime-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/lime, /obj/item/seeds/orange_3d)
+	mutatelist = list(/obj/item/seeds/lime)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/food/grown/citrus/orange
@@ -162,41 +162,3 @@
 			update_mob()
 			explosion(src.loc,-1,-1,2, flame_range = 5)
 			qdel(src)
-
-//3D Orange
-/obj/item/seeds/orange_3d
-	name = "pack of extradimensional orange seeds"
-	desc = "Polygonal seeds."
-	icon_state = "seed-orange"
-	species = "orange"
-	plantname = "Extradimensional Orange Tree"
-	product = /obj/item/food/grown/citrus/orange_3d
-	lifespan = 60
-	endurance = 50
-	yield = 5
-	potency = 20
-	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
-	icon_grow = "lime-grow"
-	icon_dead = "lime-dead"
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/haloperidol = 0.15) //insert joke about the effects of haloperidol and our glorious headcoder here
-	research = PLANT_RESEARCH_TIER_3//wegottastudythis.png
-
-/obj/item/food/grown/citrus/orange_3d
-	seed = /obj/item/seeds/orange_3d
-	name = "extradimensional orange"
-	desc = "You can hardly wrap your head around this thing."
-	icon_state = "orang"
-	bite_consumption_mod = 2
-	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
-	tastes = list("polygons" = 1, "oranges" = 1)
-	wine_power = 90
-	wine_flavor = "removals" //WS edit: new wine flavors
-
-/obj/item/food/grown/citrus/orange_3d/pickup(mob/user)
-	. = ..()
-	icon_state = "orange"
-
-/obj/item/food/grown/citrus/orange_3d/dropped(mob/user)
-	. = ..()
-	icon_state = "orang"
