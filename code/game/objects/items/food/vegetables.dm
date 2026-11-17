@@ -21,7 +21,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("sweet potato" = 1)
-	foodtypes = VEGETABLES | SUGAR
+	foodtypes = VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	//burns_in_oven = TRUE
 
@@ -60,7 +60,7 @@
 		/datum/reagent/consumable/nutriment/protein = 4,
 	)
 	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
-	foodtypes = MEAT | SUGAR | VEGETABLES | DAIRY
+	foodtypes = MEAT | VEGETABLES | DAIRY
 
 // Fries
 /obj/item/food/fries
