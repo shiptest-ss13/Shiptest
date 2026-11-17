@@ -19,7 +19,7 @@
 	close_sound_volume = 50
 	//half as much as a closet
 	drag_slowdown = 0.75
-	pass_flags_self = LETPASSCLICKS
+	pass_flags_self = LETPASSCLICKS | PASSWEAKSTRUCTURE | PASSSTRUCTURE
 	var/manifest_id = null
 	var/shelve = FALSE
 	var/shelve_range = 0

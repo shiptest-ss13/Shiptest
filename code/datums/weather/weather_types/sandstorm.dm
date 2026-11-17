@@ -19,6 +19,7 @@
 	protect_indoors = TRUE
 
 	immunity_type = "ash"
+	harmful = TRUE
 
 	barometer_predictable = TRUE
 	affects_underground = FALSE
@@ -30,16 +31,18 @@
 
 	opacity_in_main_stage = TRUE
 
+/datum/weather/sandstorm/affects(mob/living/victim)
+	return iscarbon(victim)
+
 /datum/weather/sandstorm/weather_act(mob/living/living_mob)
-	if(iscarbon(living_mob))
-		var/mob/living/carbon/carbon = living_mob
-		if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
-			return
-		if(carbon.is_mouth_covered())
-			return
-		carbon.adjustOxyLoss(1.5)
-		if(prob(10))
-			carbon.emote("cough")
+	var/mob/living/carbon/carbon = living_mob
+	if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
+		return
+	if(carbon.is_mouth_covered())
+		return
+	carbon.adjustOxyLoss(1.5)
+	if(prob(10))
+		carbon.emote("cough")
 
 /datum/weather/sandstorm/desert
 	weather_overlay = "sandstorm-sand"
@@ -59,17 +62,16 @@
 	end_overlay = "dust_low"
 
 /datum/weather/sandstorm/rockplanet/weather_act(mob/living/living_mob)
-	if(iscarbon(living_mob))
-		var/mob/living/carbon/carbon = living_mob
-		carbon.adjustBruteLoss(6)
-		to_chat(carbon, span_danger("You are battered by the coarse sand!"))
-		if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
-			return
-		if(carbon.is_mouth_covered())
-			return
-		carbon.adjustOxyLoss(3.5)
-		if(prob(10))
-			carbon.emote("cough")
+	var/mob/living/carbon/carbon = living_mob
+	carbon.adjustBruteLoss(6)
+	to_chat(carbon, span_danger("You are battered by the coarse sand!"))
+	if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
+		return
+	if(carbon.is_mouth_covered())
+		return
+	carbon.adjustOxyLoss(3.5)
+	if(prob(10))
+		carbon.emote("cough")
 
 /datum/weather/sandstorm/rockplanet/harmless
 	name = "Sandfall"
