@@ -502,7 +502,7 @@
 				icon_state = "pineapplebox"
 				name = "pineapple juice box"
 				desc = "Sweet, tart pineapple juice."
-				foodtype = FRUIT | PINEAPPLE
+				foodtype = FRUIT
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"

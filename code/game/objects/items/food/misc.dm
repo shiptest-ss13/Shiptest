@@ -202,7 +202,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	gender = PLURAL
 	tastes = list("batter" = 3, "onion" = 1)
-	foodtypes = VEGETABLES
+	foodtypes = VEGETABLES | FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/pineappleslice
@@ -215,7 +215,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	)
 	tastes = list("pineapple" = 1)
-	foodtypes = FRUIT | PINEAPPLE
+	foodtypes = FRUIT
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/crab_rangoon
