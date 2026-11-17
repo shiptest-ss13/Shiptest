@@ -39,7 +39,7 @@
 	/// See: [/datum/component/tackler/var/base_knockdown]
 	var/base_knockdown = 0.2 SECONDS
 	/// See: [/datum/component/tackler/var/range]
-	var/tackle_range = 8
+	var/tackle_range = 6
 	/// See: [/datum/component/tackler/var/min_distance]
 	var/min_distance = 1
 	/// See: [/datum/component/tackler/var/speed]
@@ -188,7 +188,11 @@
 /datum/action/innate/keptackle/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/kepori/kep = H.dna.species
-	if(H.GetComponent(/datum/component/tackler))
+	var/datum/component/tackler/tackler = H.GetComponent(/datum/component/tackler)
+	if(tackler)
+		if(tackler.tackling)
+			to_chat(H, span_warning("You can't relax while pouncing!"))
+			return
 		qdel(H.GetComponent(/datum/component/tackler))
 		to_chat(H, span_notice("You relax, no longer ready to pounce."))
 		return
