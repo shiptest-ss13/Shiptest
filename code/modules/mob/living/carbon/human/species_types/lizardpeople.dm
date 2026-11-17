@@ -81,7 +81,7 @@
 	icon_icon = 'icons/effects/fire.dmi'
 	background_icon_state = "bg_alien"
 	var/cooldown_time = 3 MINUTES
-	var/last_use = 0
+	var/last_use = (0 - 3 MINUTES) //so you can use it roundstart
 
 
 /datum/action/innate/liz_lighter/Activate()
@@ -93,10 +93,10 @@
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
 		last_use = world.time
-		to_chat(H, span_notice("You ignite a small flame in your mouth."))
+		H.visible_message(message = span_notice("[H] ignites a small flame in their mouth!"), self_message = span_usernotice("You ignite a small flame in your mouth."))
 	else
 		qdel(N)
-		to_chat(H, span_warning("You don't have any free hands."))
+		to_chat(H, span_warning("You don't have any free hands to direct your fire."))
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())

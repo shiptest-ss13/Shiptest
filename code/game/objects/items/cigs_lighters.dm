@@ -515,7 +515,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(ismob(loc))
 			var/mob/living/M = loc
 			to_chat(M, span_notice("Your [name] goes out."))
-			lit = 0
+			lit = FALSE
 			icon_state = icon_off
 			item_state = icon_off
 			M.update_inv_wear_mask()
@@ -558,7 +558,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/turf/location = get_turf(user)
 	if(lit)
 		user.visible_message(span_notice("[user] puts out [src]."), span_notice("You put out [src]."))
-		lit = 0
+		lit = FALSE
 		icon_state = icon_off
 		item_state = icon_off
 		STOP_PROCESSING(SSobj, src)
@@ -603,7 +603,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	light_power = 0.6
 	light_color = LIGHT_COLOR_FIRE
 	light_on = FALSE
-	var/lit = 0
+	var/lit = FALSE
 	var/fancy = TRUE
 	var/overlay_state
 	var/overlay_list = list(
