@@ -57,6 +57,7 @@
 
 /datum/component/tackler/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOB_CLICKON, COMSIG_MOVABLE_IMPACT, COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_POST_THROW))
+	REMOVE_TRAIT(parent, TRAIT_FLOORED, "tackling")
 
 ///Store the thrownthing datum for later use
 /datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/tackle)
