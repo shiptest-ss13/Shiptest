@@ -38,17 +38,6 @@
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/item/storage/box/ammo/c22lr{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m17{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/item/ammo_box/magazine/m17{
-	pixel_y = 4
-	},
 /obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = -2;
 	pixel_y = -7
@@ -60,15 +49,20 @@
 /obj/structure/cable/pink{
 	icon_state = "5-10"
 	},
-/obj/item/ammo_box/magazine/m17{
-	pixel_x = 4;
-	pixel_y = 4
-	},
 /obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = 2;
 	pixel_y = -7
 	},
 /obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "av" = (
@@ -416,10 +410,10 @@
 	dir = 1
 	},
 /obj/item/gun/ballistic/rifle/illestren/empty,
-/obj/item/gun/ballistic/automatic/pistol/m17/no_mag,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/south,
 /obj/item/gun/ballistic/shotgun/doublebarrel/empty,
+/obj/item/gun/energy/laser/e20/empty_cell,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "cj" = (
@@ -1627,6 +1621,10 @@
 /obj/item/pinpointer/mineral{
 	pixel_x = 7;
 	pixel_y = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)

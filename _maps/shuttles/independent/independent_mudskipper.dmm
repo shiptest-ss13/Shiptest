@@ -825,6 +825,14 @@
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/armor/vest/alt{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_x = -11;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "hV" = (
@@ -2783,7 +2791,8 @@
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = 32
 	},
-/obj/item/gun/energy/laser/e20/empty_cell,
+/obj/item/gun/energy/sharplite/rush/empty_cell,
+/obj/item/gun/energy/sharplite/surge/resistor/empty_cell,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "yA" = (
@@ -5487,15 +5496,12 @@
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stock_parts/cell/gun{
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = 8
-	},
+/obj/item/stock_parts/cell/gun/sharplite/plus,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Vy" = (
