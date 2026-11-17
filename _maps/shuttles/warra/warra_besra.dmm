@@ -510,6 +510,17 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
+"ea" = (
+/obj/effect/spawner/bunk_bed,
+/obj/item/radio/intercom/directional/west,
+/obj/machinery/button/door{
+	id = "besra_dorm2";
+	name = "Shutter Control";
+	pixel_x = 21;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "er" = (
 /obj/machinery/atmospherics/components/trinary/mixer{
 	dir = 1;
@@ -843,6 +854,21 @@
 /obj/item/storage/backpack/satchel/tailbag,
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
+"gQ" = (
+/obj/structure/bed/roller,
+/obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/effect/turf_decal/corner/transparent/white/mono,
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/button/door{
+	pixel_y = -20;
+	id = "besra_med_ext";
+	name = "Shutter Control";
+	dir = 1;
+	req_ship_access = 1;
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/medical)
 "hg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1194,6 +1220,9 @@
 /obj/effect/turf_decal/trimline/transparent/white/filled/line{
 	dir = 8
 	},
+/obj/machinery/iv_drip{
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "kH" = (
@@ -1492,19 +1521,14 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
 "nk" = (
-/obj/structure/dresser/wall/directional/south,
-/obj/effect/turf_decal/siding/wood/mahogany,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "besra_med_ext"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/turf/open/floor/wood/birch,
-/area/ship/crew/dorm)
+/turf/open/floor/plating,
+/area/ship/medical)
 "nl" = (
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge/cool)
@@ -1984,21 +2008,19 @@
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 5
 	},
-/obj/structure/chair/handrail,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/button/door{
 	id = "besra_airlock";
 	name = "Airlock Lockdown";
 	pixel_x = 21;
-	dir = 8;
-	pixel_y = -8
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "si" = (
-/obj/structure/chair/plastic{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
@@ -2451,7 +2473,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/binary/pump/layer5,
+/obj/machinery/atmospherics/components/binary/pump/layer5{
+	name = "Input to Plasma"
+	},
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
 	},
@@ -2490,6 +2514,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/cool)
+"wu" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "besra_dorm2"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "wv" = (
 /obj/effect/turf_decal/stairs{
 	dir = 8;
@@ -2674,9 +2706,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "xe" = (
-/obj/structure/chair/plastic{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
@@ -2837,14 +2866,14 @@
 /area/ship/cargo)
 "zu" = (
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
+	dir = 8;
+	name = "Input to Waste"
 	},
 /obj/structure/cable/white{
 	icon_state = "1-8"
 	},
-/obj/structure/sign/poster/official/warra_logo{
-	pixel_y = -32
-	},
+/obj/structure/noticeboard/directional/south,
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/atmospherics)
 "zw" = (
@@ -3008,7 +3037,9 @@
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 9
 	},
-/obj/structure/chair/handrail,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/white{
 	icon_state = "0-2"
@@ -3022,7 +3053,6 @@
 	name = "Armoury Shutters";
 	pixel_x = -21;
 	dir = 4;
-	pixel_y = -8;
 	req_access_txt = "3";
 	req_ship_access = 1
 	},
@@ -3039,7 +3069,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
-/obj/machinery/atmospherics/components/binary/pump/layer5,
+/obj/machinery/atmospherics/components/binary/pump/layer5{
+	name = "Input to Air"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Aq" = (
@@ -3217,6 +3249,17 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge/cool)
+"BP" = (
+/obj/effect/spawner/bunk_bed,
+/obj/item/radio/intercom/directional/west,
+/obj/machinery/button/door{
+	id = "besra_dorm1";
+	name = "Shutter Control";
+	pixel_x = 21;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 8
@@ -3579,7 +3622,6 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
 "EM" = (
-/obj/structure/dresser/wall/directional/south,
 /obj/effect/turf_decal/siding/wood/mahogany,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3764,6 +3806,14 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
+"GN" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "besra_dorm1"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "GR" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
@@ -4064,7 +4114,7 @@
 "IX" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 4;
-	name = "Air to Input"
+	name = "Air to Output"
 	},
 /obj/structure/cable/white{
 	icon_state = "1-2"
@@ -4255,8 +4305,13 @@
 /area/ship/cargo)
 "KG" = (
 /obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/cloth/grey,
-/obj/item/radio/intercom/directional/south,
+/obj/item/radio/intercom/directional/west,
+/obj/machinery/button/door{
+	id = "besra_dorm3";
+	name = "Shutter Control";
+	pixel_x = 21;
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "KL" = (
@@ -5200,6 +5255,14 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
+"Sv" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "besra_dorm3"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "Sw" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
@@ -5397,12 +5460,13 @@
 /area/ship/cargo)
 "TD" = (
 /obj/structure/bed/roller,
-/obj/machinery/iv_drip{
-	pixel_x = -11
-	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 24;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "TH" = (
@@ -5850,9 +5914,6 @@
 	pixel_y = -1;
 	pixel_x = -1
 	},
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = -24
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "XW" = (
@@ -6138,7 +6199,7 @@ hx
 oZ
 ab
 ab
-ab
+nk
 ab
 ab
 oZ
@@ -6163,7 +6224,7 @@ ab
 fZ
 TD
 XV
-TD
+gQ
 fZ
 ab
 ZG
@@ -6604,7 +6665,7 @@ hJ
 EL
 EM
 KG
-Ux
+Sv
 "}
 (23,1,1) = {"
 oZ
@@ -6650,9 +6711,9 @@ Ux
 OB
 Dt
 Vc
-nk
-KG
-Ux
+xk
+ea
+wu
 "}
 (25,1,1) = {"
 oZ
@@ -6699,8 +6760,8 @@ zU
 VG
 VG
 xk
-KG
-Ux
+BP
+GN
 "}
 (27,1,1) = {"
 oZ
@@ -6874,7 +6935,7 @@ oZ
 oZ
 oZ
 hE
-hE
+yo
 El
 yo
 hE
