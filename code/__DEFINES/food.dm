@@ -17,8 +17,7 @@
 #define NUTS (1<<16)
 #define SEAFOOD (1<<17)
 #define ORANGES (1<<18)
-#define BUGS (1<<19)
-#define GORE (1<<20)
+#define GORE (1<<19)
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
@@ -39,7 +38,6 @@ DEFINE_BITFIELD(foodtypes, list(
 	"NUTS" = NUTS,
 	"SEAFOOD" = SEAFOOD,
 	"ORANGES" = ORANGES,
-	"BUGS" = BUGS,
 	"GORE" = GORE,
 ))
 

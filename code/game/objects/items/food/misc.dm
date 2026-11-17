@@ -91,7 +91,7 @@
 		/datum/reagent/toxin = 2,
 	)
 	tastes = list("cobwebs" = 1)
-	foodtypes = MEAT | TOXIC// | BUGS
+	foodtypes = MEAT | TOXIC | RAW
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/spiderling
@@ -104,7 +104,7 @@
 		/datum/reagent/toxin = 4,
 	)
 	tastes = list("cobwebs" = 1, "guts" = 2)
-	foodtypes = MEAT | TOXIC// | BUGS
+	foodtypes = MEAT | TOXIC | RAW
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/melonfruitbowl
