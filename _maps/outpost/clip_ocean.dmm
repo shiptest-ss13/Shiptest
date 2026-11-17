@@ -2888,6 +2888,10 @@
 	specialfunctions = 4;
 	normaldoorcontrol = 1
 	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = -14;
+	pixel_y = 28
+	},
 /turf/open/water/beach/deep/outpost,
 /area/outpost/crew/bathroom)
 "hv" = (
@@ -11421,10 +11425,10 @@
 	},
 /area/outpost/crew/court)
 "CD" = (
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "hydrogen"
+	},
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -12279,10 +12283,10 @@
 /obj/structure/platform/ship_four{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "hydrogen"
+	},
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -15002,12 +15006,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/vacant_rooms/shop)
-"KH" = (
-/obj/effect/spawner/bunk_bed{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/crew/dorm)
 "KI" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -15127,6 +15125,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/blue,
 /area/outpost/crew/dorm)
 "KW" = (
@@ -16961,13 +16960,13 @@
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/exterior/ocean)
 "PF" = (
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/railing{
 	dir = 4;
 	layer = 4.1
+	},
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "hydrogen"
 	},
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
@@ -18586,6 +18585,10 @@
 	id = "clipb1";
 	specialfunctions = 4;
 	normaldoorcontrol = 1
+	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = -14;
+	pixel_y = 28
 	},
 /turf/open/water/beach/deep/outpost,
 /area/outpost/crew/bathroom)
@@ -23667,7 +23670,7 @@ bD
 ED
 NT
 IG
-KH
+TA
 NT
 WF
 rj
