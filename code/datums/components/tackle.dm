@@ -121,7 +121,8 @@
 
 	ADD_TRAIT(user, TRAIT_FLOORED, "tackling")
 	user.adjustStaminaLoss(stamina_cost)
-	user.throw_at(atom_target, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user), gentle = TRUE) //gentle because we'll handle our own impact damage
+	if(!user.throw_at(atom_target, range, speed, user, FALSE, FALSE, CALLBACK(src, PROC_REF(resetTackle), user), gentle = TRUE)) //gentle because we'll handle our own impact damage
+		resetTackle(user)
 	return(COMSIG_MOB_CANCEL_CLICKON)
 
 /**
