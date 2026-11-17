@@ -456,10 +456,10 @@
 	stock = 2
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/guncase/sgg
-	name = "SSG-669C Rotary Sniper Rifle"
-	desc = "I could tell you its full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
-	item = /obj/item/gun/ballistic/rifle/solgov
+/datum/blackmarket_item/weapon/guncase/modelj
+	name = "Model 'Jura' Marksman Rifle"
+	desc = "Picked up a few of these last time I swung by Mars. Nice caseless sniper, lets you pop someone and get moving without having to pick up brass."
+	item = /obj/item/gun/ballistic/rifle/modelj
 	mag_type = /obj/item/ammo_box/a858
 	pair_item = list(/datum/blackmarket_item/ammo/a858_box)
 
@@ -467,17 +467,6 @@
 	cost_max = 6000
 	stock = 1
 	availability_prob = 20
-
-/datum/blackmarket_item/weapon/guncase/pistole_c
-	name = "Pistole C"
-	desc = "Pistole Compact? Pistole Caseless? Pistole Cheese? Fuck if I know. All I know is these little numbers pack a nasty sting. Chambered in 5.56 caseless."
-	item = /obj/item/gun/ballistic/automatic/pistol/solgov/old
-	pair_item = list(/datum/blackmarket_item/ammo/pistole_c_mag)
-
-	cost_min = 900
-	cost_max = 1600
-	stock_max = 3
-	availability_prob = 30
 
 /datum/blackmarket_item/weapon/guncase/cycler
 	name = "Cycler Shotgun"

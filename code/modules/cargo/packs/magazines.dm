@@ -339,10 +339,10 @@
 	cost = 350
 	faction = /datum/faction/solgov
 
-/datum/supply_pack/magazine/gar_ammo
-	name = "GAR Ferromagnetic Lance Magazine Crate"
-	desc = "Contains a ferromagnetic lance magazine for the GAR rifle, with a capacity of thirty two rounds."
-	contains = list(/obj/item/ammo_box/magazine/gar/empty)
+/datum/supply_pack/magazine/lucerne_ammo
+	name = "Model L Ferromagnetic Lance Magazine Crate"
+	desc = "Contains a ferromagnetic lance magazine for the Model L carbine, with a capacity of thirty two rounds."
+	contains = list(/obj/item/ammo_box/magazine/lucerne/empty)
 	cost = 500
 	faction = /datum/faction/solgov
 

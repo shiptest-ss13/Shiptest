@@ -695,7 +695,7 @@
 			new /obj/item/gun/energy/sharplite/surge/resistor(loc)
 			new /obj/item/stock_parts/cell/gun/sharplite(loc)
 		if(116 to 120)
-			// pistole c
+			// model e
 			new /obj/item/gun/ballistic/automatic/pistol/solgov/old(loc)
 			new /obj/item/ammo_box/magazine/pistol556mm(loc)
 		if(121 to 125)

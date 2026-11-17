@@ -1,4 +1,4 @@
-// Ferromagnetic Pellet (Prototype Gauss Rifle & Claris)
+// Ferromagnetic Pellet (Claris)
 
 /obj/projectile/bullet/gauss
 	name = "ferromagnetic pellet"
@@ -11,7 +11,7 @@
 
 /obj/projectile/bullet/gauss/hc
 	name = "ferromagnetic pellet"
-	damage = 15
+	damage = 20
 	armour_penetration = 60
 	range = 50
 	hitscan = TRUE
@@ -21,7 +21,7 @@
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss
 
-// Ferromagnetic Lance (GAR AR)
+// Ferromagnetic Lance (Lucerne)
 
 /obj/projectile/bullet/gauss/lance
 	name = "ferromagnetic lance"
@@ -41,18 +41,18 @@
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss
 
-// Ferromagnetic Slug (Model H)
+// Ferromagnetic Slug (Hasenmatt)
 
 /obj/projectile/bullet/gauss/slug
 	name = "ferromagnetic slug"
 	icon_state = "gauss-slug"
 	damage = 50
-	armour_penetration = -60
+	armour_penetration = -30
 	speed = 0.8
 
 /obj/projectile/bullet/gauss/slug/hc
-	name = "ferromagnetic lance"
-	damage = 25
+	name = "ferromagnetic slug"
+	damage = 35
 	armour_penetration = 0
 	range = 50
 	hitscan = TRUE
@@ -62,16 +62,18 @@
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss
 
-// Ferromagnetic rod (Gauss cannon)
+// Ferromagnetic rod (Atelier)
 
 /obj/projectile/bullet/gauss/rod
 	name = "ferrogmagnetic rod"
 	icon_state = "sabot"
+	stamina = 10
 	damage = 60
 	armour_penetration = 50
 	knockdown = 30
 	demolition_mod = 4
 	wall_damage_override = 250
+	projectile_piercing = PASSMOB | PASSCLOSEDTURF | PASSGLASS | PASSSTRUCTURE | PASSWEAKSTRUCTURE | PASSTABLE | PASSGLASS | PASSGRILLE | PASSMACHINE // we stop for nobody
 
 /obj/projectile/bullet/gauss/rod/on_hit(atom/target, blocked)
 	. = ..()
@@ -79,6 +81,8 @@
 		var/atom/movable/M = target
 		var/atom/throw_target = get_edge_target_turf(M, dir)
 		M.throw_at(throw_target, 4, 2)
+	if(pierces > 5) // no immovable rod rp
+		qdel(src)
 
 /* Cybersun Gauss Darts */
 

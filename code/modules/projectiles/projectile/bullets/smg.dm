@@ -70,7 +70,7 @@
 	armour_penetration = 20
 	bullet_identifier = "small bullet"
 
-// 5.56 HITP caseless (Pistole C)
+// 5.56 HITP caseless (Model E)
 
 /obj/projectile/bullet/c556mm
 	name = "5.56mm HITP bullet"

@@ -79,7 +79,7 @@
 	projectile_type = /obj/projectile/bullet/c47x33mm
 	stack_size = 15
 
-// 5.56mm HITP caseless (Pistole C)
+// 5.56mm HITP caseless (Model E)
 
 /obj/item/ammo_casing/caseless/c556mm
 	name = "5.56mm HITP caseless round"

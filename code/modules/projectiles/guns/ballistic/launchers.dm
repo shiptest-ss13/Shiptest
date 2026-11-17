@@ -104,20 +104,3 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 
 /obj/item/gun/ballistic/rocketlauncher/attack_self_tk(mob/user)
 	return //too difficult to remove the rocket with TK
-
-/obj/item/gun/ballistic/rocketlauncher/solgov
-	autowiki_hidden = TRUE //not obtainable afaik
-	name = "Panzerfaust XII"
-	desc = "The standard recoiless rifle of the Solarian Confederation. Barely varies from previous models."
-
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
-
-	//recoiless rifles use shells
-	cartridge_wording = "shell"
-
-	icon_state = "panzerfaust"
-	item_state = "panzerfaust"
-	manufacturer = MANUFACTURER_SOLARARMORIES

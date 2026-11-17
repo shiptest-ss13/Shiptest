@@ -147,29 +147,3 @@
 	. = ..()
 	if(has_bipod)
 		. += "[base_icon_state || initial(icon_state)][bipod_deployed ? "_deployed" : "_undeployed"]"
-
-/obj/item/gun/ballistic/automatic/hmg/solar //This thing fires a 5.56 equivalent, that's an LMG, not an HMG, get out
-	autowiki_hidden = TRUE //not obtainable afaik
-	name = "\improper Solar"
-	desc = "A TerraGov LMG-169 designed in 169 FS, nicknamed 'Solar.' A inscription reads: 'PROPERTY OF TERRAGOV', with 'TERRAGOV' poorly scribbled out, and replaced by 'SOLAR ARMORIES'. Chambered in 4.73×33mm caseless ammunition."
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
-
-	icon_state = "solar"
-
-	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	default_ammo_type = /obj/item/ammo_box/magazine/rifle47x33mm
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/rifle47x33mm,
-	)
-	spread = 7
-
-	fire_delay = 0.1 SECONDS
-
-	fire_select_icon_state_prefix = "caseless_"
-
-	show_magazine_on_sprite = TRUE
-	w_class = WEIGHT_CLASS_BULKY
-	manufacturer = MANUFACTURER_SOLARARMORIES

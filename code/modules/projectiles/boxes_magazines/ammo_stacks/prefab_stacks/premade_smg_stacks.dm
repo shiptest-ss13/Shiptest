@@ -74,7 +74,7 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm = 4)
 	generate_items_inside(items_inside,src)
 
-// 5.56mm HITP caseless (Pistole C)
+// 5.56mm HITP caseless (Model E)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm
 	max_ammo = 15

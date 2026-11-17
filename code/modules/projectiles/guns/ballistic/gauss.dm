@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/powered/gauss
-	name = "prototype gauss rifle"
-	desc = "An experimental Makosso-Warra rifle with a high capacity. Useful for putting down crowds. Chambered in ferromagnetic pellets."
+	name = "evil gauss rifle"
+	desc = "I'm evil as fuuuuuuuuuck."
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
@@ -9,9 +9,7 @@
 	item_state = "arg"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/gauss,
-	)
+	allowed_ammo_types = list(/obj/item/ammo_box/magazine/gauss)
 	fire_sound = 'sound/weapons/gun/gauss/magrifle.ogg'
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
 	burst_size = 1
@@ -24,6 +22,8 @@
 	charge_sections = 4
 	ammo_x_offset = 2
 	manufacturer = MANUFACTURER_NONE
+	light_range = 0 // no explosion, no light
+	bad_type = /obj/item/gun/ballistic/automatic/powered/gauss
 
 	spread = 0
 	spread_unwielded = 25

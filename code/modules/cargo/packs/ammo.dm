@@ -456,13 +456,13 @@
 
 /datum/supply_pack/ammo/ferrolanceboxcrate
 	name = "Ferromagnetic Lance Box Crate"
-	desc = "Contains a 60-round ferromagnetic lance ammo box for high-powered gauss guns such as the GAR assault rifle."
+	desc = "Contains a 60-round ferromagnetic lance ammo box for high-powered gauss guns such as the Lucerne carbine."
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
 	cost = 300 //5 ammo efficiency at 30 damage - I don't know how this formula works so I just eyeballed it to be on par with 556CLIP
 
 /datum/supply_pack/ammo/ferrolanceboxcrate_hc
 	name = "High Conductivity Lance Box Crate"
-	desc = "Contains a 60-round ferromagnetic lance ammo box. These are highly conductive, greatly improving bullet speed and penetration while notably reducing damage."
+	desc = "Contains a 60-round ferromagnetic lance ammo box for high-powered gauss guns such as the Lucerne carbine. These are highly conductive, greatly improving bullet speed and penetration while notably reducing damage."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
 	cost = 380
 

@@ -141,14 +141,12 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/pistolec
-	name = "Pistole 'C' Crate"
-	desc = "Contains a compact solarian-produced sidearm, chambered in 5.56mm HITP. Not to be confused with 5.56x42 CLIP."
+/datum/supply_pack/gun/modele
+	name = "Model 'Eiger' Caseless Pistol"
+	desc = "Contains a compact solarian-produced sidearm, chambered in 5.56mm HITP."
 	cost = 1000
-	contains = list(/obj/item/storage/guncase/pistol/pistolec)
+	contains = list(/obj/item/storage/guncase/pistol/modele)
 	faction = /datum/faction/solgov
-	faction_discount = 0
-	faction_locked = TRUE
 
 /datum/supply_pack/gun/modelh
 	name = "Model 'H' Gauss Pistol Crate"
@@ -861,11 +859,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/gar
-	name = "Solarian 'GAR' Automatic Rifle"
-	desc = "A modern solarian military rifle, chambered in ferromagnetic lances. Not for export."
+/datum/supply_pack/gun/lucerne
+	name = "Model 'Lucerne' Gauss Carbine"
+	desc = "A modern military gauss carbine. Chambered in ferromagnetic lances."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/gar)
+	contains = list(/obj/item/storage/guncase/lucerne)
 	crate_name = "auto rifle crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
@@ -1088,11 +1086,11 @@
 	crate_name = "sniper rifle crate"
 	faction = /datum/faction/srm
 
-/datum/supply_pack/gun/ssg669
-	name = "SSG-669C Sniper Rifle Crate"
-	desc = "Contains a traditional solarian marksman rifle chambered in 8x58mm Caseless."
+/datum/supply_pack/gun/modelj
+	name = "Model 'Jura' Marksman Rifle"
+	desc = "Contains a traditional high-powered marksman rifle. Chambered in 8x58mm Caseless."
 	cost = 4000
-	contains = list(/obj/item/storage/guncase/ssg669)
+	contains = list(/obj/item/storage/guncase/modelj)
 	crate_name = "sniper rifle crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
@@ -1100,7 +1098,7 @@
 
 /datum/supply_pack/gun/railgun
 	name = "Model 'Atelier' Railgun"
-	desc = "A high powered Solarian gauss sniper with high penetration power. Chambered in ferromagnetic rods Not for export."
+	desc = "A high-powered gauss sniper for punching straight through armored targets. Fires ferromagnetic rods."
 	cost = 6500
 	contains = list(/obj/item/storage/guncase/railgun)
 	crate_name = "gauss crate"
