@@ -258,6 +258,14 @@
 	name = "Keanu Hair"
 	icon_state = "hair_keanu"
 
+/datum/sprite_accessory/hair/knotlessbraids
+	name = "Knotless Braids"
+	icon_state = "hair_knotlessbraids"
+
+/datum/sprite_accessory/hair/knotlessbraidsloose
+	name = "Knotless Braids (Loose)"
+	icon_state = "hair_knotlessbraidsloose"
+
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi Hair"
 	icon_state = "hair_kusanagi"
