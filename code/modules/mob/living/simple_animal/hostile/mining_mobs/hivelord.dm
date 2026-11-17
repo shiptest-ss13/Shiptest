@@ -226,12 +226,7 @@
 		var/obj/item/organ/legion_skull/throwyouabone = new()
 		throwyouabone.Insert(H)
 	else
-		var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
-			L = new(H.loc)
-		visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
 		H.adjustBruteLoss(1000)
-		L.stored_mob = H
-		H.forceMove(L)
 	qdel(src)
 
 /obj/item/organ/legion_skull
