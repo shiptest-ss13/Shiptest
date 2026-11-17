@@ -100,7 +100,7 @@
 	)
 	bite_consumption = 1
 	tastes = list("egg" = 4, "salt" = 1, "pepper" = 1)
-	foodtypes = EGG | HEAVILY_FRIED | BREAKFAST
+	foodtypes = EGG | BREAKFAST
 
 /obj/item/food/rawegg
 	name = "raw egg"
@@ -203,7 +203,7 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
-	foodtypes = BREAKFAST | HEAVILY_FRIED | EGG
+	foodtypes = BREAKFAST | EGG
 
 /obj/item/food/eggwrap
 	name = "egg wrap"

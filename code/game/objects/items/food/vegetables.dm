@@ -85,7 +85,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("fries" = 3, "cheese" = 1)
-	foodtypes = VEGETABLES | DAIRY
+	foodtypes = VEGETABLES | DAIRY | HEAVILY_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cheesyfries/Initialize(mapload)
