@@ -20,7 +20,7 @@
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 	light_power = 0.25
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	space_lit = TRUE
 	bullet_bounce_sound = null
 
 	vis_flags = VIS_INHERIT_ID	//when this be added to vis_contents of something it be associated with something on clicking, important for visualisation of turf in openspace and interraction with openspace that show you turf.
@@ -66,8 +66,8 @@
 	if (length(no_connector_typecache))
 		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
-	var/area/A = loc
-	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
+	var/area/our_area = loc
+	if(!our_area.area_has_base_lighting && space_lit) //Only provide your own lighting if the area doesn't for you
 		add_overlay(/obj/effect/fullbright)
 
 	if (light_system == STATIC_LIGHT && light_power && light_range)

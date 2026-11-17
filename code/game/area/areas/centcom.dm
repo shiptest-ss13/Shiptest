@@ -4,7 +4,6 @@
 /area/centcom
 	name = "CentCom"
 	icon_state = "centcom"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | UNIQUE_AREA
@@ -96,7 +95,8 @@
 /area/centcom/supplypod
 	name = "Supplypod Facility"
 	icon_state = "supplypod"
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 
 /area/centcom/supplypod/pod_storage
 	name = "Supplypod Storage"
@@ -140,7 +140,6 @@
 /area/tdome
 	name = "Thunderdome"
 	icon_state = "yellow"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
@@ -148,12 +147,14 @@
 /area/tdome/arena
 	name = "Thunderdome Arena"
 	icon_state = "thunder"
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 
 /area/tdome/arena_source
 	name = "Thunderdome Arena Template"
 	icon_state = "thunder"
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 
 /area/tdome/tdome1
 	name = "Thunderdome (Team 1)"
@@ -178,7 +179,6 @@
 /area/wizard_station
 	name = "Wizard's Den"
 	icon_state = "yellow"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
@@ -189,6 +189,8 @@
 	name = "Abductor Ship"
 	icon_state = "yellow"
 	requires_power = FALSE
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
@@ -198,6 +200,8 @@
 	name = "Syndicate Mothership"
 	icon_state = "syndie-ship"
 	requires_power = FALSE
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
@@ -206,7 +210,8 @@
 /area/syndicate_mothership/control
 	name = "Syndicate Control Room"
 	icon_state = "syndie-control"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	static_lighting = TRUE
+	base_lighting_alpha = 0
 
 /area/syndicate_mothership/elite_squad
 	name = "Syndicate Elite Squad"
@@ -218,6 +223,8 @@
 	name = "Capture the Flag"
 	icon_state = "yellow"
 	requires_power = FALSE
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
 

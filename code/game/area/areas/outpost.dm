@@ -1,7 +1,6 @@
 // Outpost areas. Generally fairly similar to ship ones, but need to be kept separate due to their not having a corresponding docking port.
 
 /area/outpost
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | NOTELEPORT | NO_RANDOM_LIGHT_BREAKAGE // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
@@ -251,7 +250,6 @@
 	name = "External"
 	icon_state = "space_near"
 	always_unpowered = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	allow_weather = TRUE
@@ -263,7 +261,6 @@
 
 	area_flags = UNIQUE_AREA | NOTELEPORT | HIDDEN_AREA
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
 
 	power_equip = TRUE // provided begrudgingly, mostly for mappers

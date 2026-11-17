@@ -14,8 +14,8 @@
 	if (lighting_object)
 		qdel(lighting_object, force=TRUE) //Shitty fix for lighting objects persisting after death
 
-	var/area/A = loc
-	if (!IS_DYNAMIC_LIGHTING(A) && !light_sources)
+	var/area/turf_area = loc
+	if (!turf_area.static_lighting && !light_sources)
 		return
 
 	new/atom/movable/lighting_object(src)
@@ -43,6 +43,10 @@
 
 	totallums /= 12 // 4 corners, each with 3 channels, get the average.
 
+	// Base lighting is an overlay, not corners, so add it in.
+	var/area/turf_area = loc
+	totallums += turf_area.base_lighting_lumcount
+
 	totallums = (totallums - minlum) / (maxlum - minlum)
 
 	totallums += dynamic_lumcount
@@ -57,7 +61,8 @@
 	if (!lighting_object)
 		return FALSE
 
-	return !(lighting_object.luminosity || dynamic_lumcount)
+	var/area/turf_area = loc
+	return !(turf_area.area_has_base_lighting || lighting_object.luminosity || dynamic_lumcount)
 
 
 ///Proc to add movable sources of opacity on the turf and let it handle lighting code.
@@ -97,24 +102,22 @@
 
 
 /turf/proc/change_area(area/old_area, area/new_area)
-	if(SSlighting.initialized)
-		if (new_area.dynamic_lighting != old_area.dynamic_lighting)
-			if (IS_DYNAMIC_LIGHTING(src))
+	if(SSlighting.initialized && !space_lit)
+		if (new_area.static_lighting != old_area.static_lighting)
+			if (new_area.static_lighting)
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()
 
-/turf/proc/generate_missing_corners()
-	if (!lighting_corner_NE)
-		lighting_corner_NE = new/datum/lighting_corner(src, NORTH|EAST)
+	// Manage removing/adding starlight overlays, we'll inherit from the area so we can drop it if the area has it already
+	if(space_lit)
+		if(!new_area.lighting_effects && old_area.lighting_effects)
+			add_overlay(/obj/effect/fullbright)
+		else if (new_area.lighting_effects && !old_area.lighting_effects)
+			cut_overlay(/obj/effect/fullbright)
 
-	if (!lighting_corner_SE)
-		lighting_corner_SE = new/datum/lighting_corner(src, SOUTH|EAST)
-
-	if (!lighting_corner_SW)
-		lighting_corner_SW = new/datum/lighting_corner(src, SOUTH|WEST)
-
-	if (!lighting_corner_NW)
-		lighting_corner_NW = new/datum/lighting_corner(src, NORTH|WEST)
-
-	lighting_corners_initialised = TRUE
+	// Only touch visibility when base lighting is gained or lost.
+	if(new_area.area_has_base_lighting)
+		luminosity = 1
+	else if(old_area.area_has_base_lighting && lighting_object)
+		luminosity = 0

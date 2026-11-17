@@ -45,7 +45,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
 	var/dynamic_lumcount = 0
 
-	var/dynamic_lighting = TRUE
+	///Bool, whether this turf will always be illuminated no matter what area it is in
+	var/space_lit = FALSE
 
 	var/tmp/lighting_corners_initialised = FALSE
 
@@ -117,8 +118,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	for(var/atom/movable/content as anything in src)
 		Entered(content, null)
 
-	var/area/A = loc
-	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
+	var/area/our_area = loc
+	if(!our_area.area_has_base_lighting && space_lit) //Only provide your own lighting if the area doesn't for you
 		add_overlay(/obj/effect/fullbright)
 
 	if(requires_activation)
