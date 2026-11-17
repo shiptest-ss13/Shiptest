@@ -611,7 +611,7 @@
 			stamp_x_pos += 62
 		diet_text_data += "</td></tr>"
 		var/species_count = 0
-		var/static/list/food_groups = list(MEAT, RAW, GRAIN, FRUIT, VEGETABLES, DAIRY, CLOTH, DEEP_FRIED)
+		var/static/list/food_groups = list(MEAT, RAW, GRAIN, FRUIT, VEGETABLES, DAIRY, CLOTH, HEAVILY_FRIED)
 		for(var/species_id in GLOB.roundstart_races)
 			var/datum/species/species = GLOB.species_list[species_id]
 			species = new species()

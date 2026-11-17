@@ -69,7 +69,7 @@
 	icon_state = "fries"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("fries" = 3, "salt" = 1)
-	foodtypes = VEGETABLES | DEEP_FRIED
+	foodtypes = VEGETABLES | HEAVILY_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/fries/Initialize(mapload)

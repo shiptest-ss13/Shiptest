@@ -275,7 +275,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 		/datum/reagent/consumable/cooking_oil = 2,
 	)
-	foodtypes = GRAIN | MEAT | DEEP_FRIED | EGG
+	foodtypes = GRAIN | MEAT | HEAVILY_FRIED | EGG
 
 /obj/item/food/burger/cheese
 	name = "cheese burger"

@@ -29,7 +29,7 @@
 	desc = "Breaded, fried chunks of fish. While crisp at one point, the breading has gone soft after some time."
 	filling_color = "#f08934"
 	tastes = list("warm fish" = 1, "soggy breading" = 1)
-	foodtypes = DEEP_FRIED
+	foodtypes = HEAVILY_FRIED
 
 /obj/item/food/ration/entree/beef_strips
 	name = "beef strips in tomato sauce"
@@ -85,7 +85,7 @@
 	desc = "Battered fish sticks, deep-fried before being dehydrated."
 	filling_color = "#336699"
 	tastes = list("dry fish" = 1, "breading" = 2)
-	foodtypes = MEAT | DEEP_FRIED
+	foodtypes = MEAT | HEAVILY_FRIED
 
 /obj/item/food/ration/entree/assorted_salted_offal
 	name = "assorted salted offal"

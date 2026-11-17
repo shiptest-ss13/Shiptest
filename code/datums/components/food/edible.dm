@@ -208,15 +208,15 @@ Behavior that's still missing from this component that original food items had t
 		if(30 to 80)
 			this_food.name = "grilled [this_food.name]"
 			this_food.desc = "[this_food.desc] It's been grilled."
-			foodtypes |= DEEP_FRIED
+			foodtypes |= HEAVILY_FRIED
 		if(80 to 100)
 			this_food.name = "heavily grilled [this_food.name]"
 			this_food.desc = "[this_food.desc] It's been heavily grilled."
-			foodtypes |= DEEP_FRIED
+			foodtypes |= HEAVILY_FRIED
 		if(100 to INFINITY) //grill marks reach max alpha
 			this_food.name = "Powerfully Grilled [this_food.name]"
 			this_food.desc = "A [this_food.name]. Reminds you of your wife, wait, no, it's prettier!"
-			foodtypes |= DEEP_FRIED
+			foodtypes |= HEAVILY_FRIED
 
 ///Called when food is created through processing (Usually this means it was sliced). We use this to pass the OG items reagents.
 /datum/component/edible/proc/on_processed(datum/source, atom/original_atom, list/chosen_processing_option)
