@@ -47,7 +47,6 @@
 		to_chat(affected_mob, pick(stage5))
 	H.visible_message(span_warning("[H] suddenly collapses, a pallid grey mass bursting from their body!"))
 	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
-	else
 		L = new(H.loc)
 	H.death()
 	H.adjustBruteLoss(1000)
