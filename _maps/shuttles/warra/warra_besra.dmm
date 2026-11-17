@@ -510,17 +510,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"ea" = (
-/obj/effect/spawner/bunk_bed,
-/obj/item/radio/intercom/directional/west,
-/obj/machinery/button/door{
-	id = "besra_dorm2";
-	name = "Shutter Control";
-	pixel_x = 21;
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "er" = (
 /obj/machinery/atmospherics/components/trinary/mixer{
 	dir = 1;
@@ -854,21 +843,6 @@
 /obj/item/storage/backpack/satchel/tailbag,
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
-"gQ" = (
-/obj/structure/bed/roller,
-/obj/effect/turf_decal/corner/transparent/blue/mono,
-/obj/effect/turf_decal/corner/transparent/white/mono,
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/button/door{
-	pixel_y = -20;
-	id = "besra_med_ext";
-	name = "Shutter Control";
-	dir = 1;
-	req_ship_access = 1;
-	pixel_x = 7
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/medical)
 "hg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -965,6 +939,14 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/cool)
+"hQ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "besra_dorm2"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "ic" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
@@ -1012,6 +994,17 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
+"iG" = (
+/obj/structure/bed/roller,
+/obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/effect/turf_decal/corner/transparent/white/mono,
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 24;
+	pixel_x = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/medical)
 "iH" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/corner{
 	dir = 1
@@ -1234,6 +1227,19 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
+"kL" = (
+/obj/effect/spawner/bunk_bed,
+/obj/item/radio/intercom/directional/west{
+	pixel_y = -3
+	},
+/obj/machinery/button/door{
+	id = "besra_dorm2";
+	name = "Shutter Control";
+	pixel_x = 21;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "kQ" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 1
@@ -1404,6 +1410,14 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
+"mu" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "besra_dorm3"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "mv" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1524,11 +1538,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "besra_med_ext"
+	id = "besra_dorm1"
 	},
 /turf/open/floor/plating,
-/area/ship/medical)
+/area/ship/crew/dorm)
 "nl" = (
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge/cool)
@@ -2262,6 +2275,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
+"up" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "besra_med_ext"
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "uK" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
@@ -2514,14 +2536,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/cool)
-"wu" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "besra_dorm2"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "wv" = (
 /obj/effect/turf_decal/stairs{
 	dir = 8;
@@ -3249,17 +3263,6 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge/cool)
-"BP" = (
-/obj/effect/spawner/bunk_bed,
-/obj/item/radio/intercom/directional/west,
-/obj/machinery/button/door{
-	id = "besra_dorm1";
-	name = "Shutter Control";
-	pixel_x = 21;
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 8
@@ -3806,14 +3809,6 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
-"GN" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "besra_dorm1"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "GR" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
@@ -4305,7 +4300,9 @@
 /area/ship/cargo)
 "KG" = (
 /obj/effect/spawner/bunk_bed,
-/obj/item/radio/intercom/directional/west,
+/obj/item/radio/intercom/directional/west{
+	pixel_y = -3
+	},
 /obj/machinery/button/door{
 	id = "besra_dorm3";
 	name = "Shutter Control";
@@ -5255,14 +5252,6 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
-"Sv" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "besra_dorm3"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "Sw" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
@@ -5463,9 +5452,13 @@
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 24;
-	pixel_x = 4
+/obj/machinery/button/door{
+	pixel_y = -20;
+	id = "besra_med_ext";
+	name = "Shutter Control";
+	dir = 1;
+	req_ship_access = 1;
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
@@ -6117,6 +6110,19 @@
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/electrical)
+"ZF" = (
+/obj/effect/spawner/bunk_bed,
+/obj/item/radio/intercom/directional/west{
+	pixel_y = -3
+	},
+/obj/machinery/button/door{
+	id = "besra_dorm1";
+	name = "Shutter Control";
+	pixel_x = 21;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "ZG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
@@ -6199,7 +6205,7 @@ hx
 oZ
 ab
 ab
-nk
+up
 ab
 ab
 oZ
@@ -6222,9 +6228,9 @@ SM
 hx
 ab
 fZ
-TD
+iG
 XV
-gQ
+TD
 fZ
 ab
 ZG
@@ -6665,7 +6671,7 @@ hJ
 EL
 EM
 KG
-Sv
+mu
 "}
 (23,1,1) = {"
 oZ
@@ -6712,8 +6718,8 @@ OB
 Dt
 Vc
 xk
-ea
-wu
+kL
+hQ
 "}
 (25,1,1) = {"
 oZ
@@ -6760,8 +6766,8 @@ zU
 VG
 VG
 xk
-BP
-GN
+ZF
+nk
 "}
 (27,1,1) = {"
 oZ
