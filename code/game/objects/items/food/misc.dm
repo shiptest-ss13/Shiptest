@@ -276,7 +276,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	//filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
-	foodtypes = MEAT
+	foodtypes = EGG
 
 /obj/item/food/fara_reti
 	name = "fara-reti"
@@ -285,7 +285,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	//filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
-	foodtypes = MEAT | FRUIT
+	foodtypes = EGG | FRUIT
 
 /obj/item/food/roe_tiris
 	name = "reti-tiris"
@@ -294,7 +294,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	//filling_color = "#ECA735"
 	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
-	foodtypes = MEAT | GROSS | GORE
+	foodtypes = MEAT | GROSS | GORE | EGG
 
 /obj/item/food/mirasegg
 	name = "miras eggs"
@@ -305,7 +305,7 @@
 		/datum/reagent/consumable/eggyolk = 2,
 	)
 	tastes = list("egg" = 1, "hints of spice" = 1)
-	foodtypes = MEAT | RAW
+	foodtypes = EGG | RAW
 
 /obj/item/food/mirasegg/make_dryable()
 	AddElement(/datum/element/dryable, /obj/item/food/reti/homemade)

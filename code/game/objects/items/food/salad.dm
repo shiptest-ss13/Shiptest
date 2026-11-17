@@ -141,7 +141,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("rice" = 1, "egg" = 1)
-	foodtypes = GRAIN | MEAT
+	foodtypes = GRAIN | EGG
 
 /obj/item/reagent_containers/glass/bowl
 	name = "bowl"

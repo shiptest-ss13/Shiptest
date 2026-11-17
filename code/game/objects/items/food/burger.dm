@@ -261,7 +261,7 @@
 		/datum/reagent/consumable/nutriment/protein = 7,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	)
-	foodtypes = GRAIN | MEAT | BREAKFAST
+	foodtypes = GRAIN | MEAT | BREAKFAST | EGG
 
 /obj/item/food/burger/chicken
 	name = "chicken sandwich" //Apparently the proud people of Americlapstan object to this thing being called a burger. Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
@@ -275,7 +275,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 		/datum/reagent/consumable/cooking_oil = 2,
 	)
-	foodtypes = GRAIN | MEAT | FRIED
+	foodtypes = GRAIN | MEAT | FRIED | EGG
 
 /obj/item/food/burger/cheese
 	name = "cheese burger"

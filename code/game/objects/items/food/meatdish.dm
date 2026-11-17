@@ -622,7 +622,7 @@
 	)
 	bite_consumption = 4
 	tastes = list("meat" = 1, "the colour green" = 1)
-	foodtypes = MEAT | BREAKFAST
+	foodtypes = EGG | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/sashimi

@@ -225,7 +225,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/nutriment/protein = 2,
 	)
-	foodtypes = BREAKFAST | MEAT
+	foodtypes = BREAKFAST | EGG
 
 /obj/item/food/ration/side/tirila
 	name = "tirila-li"

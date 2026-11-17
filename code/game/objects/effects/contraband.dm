@@ -594,7 +594,7 @@
 	. = ..()
 	if(!diet_guide_text || !LAZYLEN(icon_positions))
 		var/static/list/food_images = list(
-			"Meat, Eggs" = "food-cooked_meat",
+			"Meat" = "food-cooked_meat",
 			"Raw Meat" = "food-raw_meat",
 			"Grains" = "food-bread",
 			"Fruits" = "food-fruit",

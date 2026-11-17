@@ -512,7 +512,7 @@
 				icon_state = "nog2"
 				name = "carton of eggnog"
 				desc = "A carton of eggnog, a drink of choice for celebrating Winter Solstice."
-				foodtype = MEAT
+				foodtype = EGG
 	else
 		icon_state = "juicebox"
 		name = "small carton"

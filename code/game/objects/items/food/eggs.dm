@@ -26,7 +26,7 @@
 		/datum/reagent/consumable/eggwhite = 4,
 	)
 	microwaved_type = /obj/item/food/boiledegg
-	foodtypes = MEAT | RAW
+	foodtypes = EGG | RAW
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/egg/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -100,7 +100,7 @@
 	)
 	bite_consumption = 1
 	tastes = list("egg" = 4, "salt" = 1, "pepper" = 1)
-	foodtypes = MEAT | FRIED | BREAKFAST
+	foodtypes = EGG | FRIED | BREAKFAST
 
 /obj/item/food/rawegg
 	name = "raw egg"
@@ -111,7 +111,7 @@
 	bite_consumption = 1
 	tastes = list("raw egg" = 6, "sliminess" = 1)
 	eatverbs = list("gulp down")
-	foodtypes = MEAT | RAW
+	foodtypes = EGG | RAW
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/rawegg/make_grillable()
@@ -127,7 +127,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
 	tastes = list("egg" = 1)
-	foodtypes = MEAT | BREAKFAST
+	foodtypes = EGG | BREAKFAST
 	food_flags = FOOD_FINGER_FOOD // pretty sure I've seen people pop these in their mouths... right?
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -143,7 +143,7 @@
 	bite_consumption = 1
 	w_class = WEIGHT_CLASS_SMALL
 	tastes = list("egg" = 1, "cheese" = 1)
-	foodtypes = MEAT | BREAKFAST | DAIRY //yeah, I say this just about reaches the threshold of dairy foodgroup
+	foodtypes = EGG | BREAKFAST | DAIRY //yeah, I say this just about reaches the threshold of dairy foodgroup
 
 /obj/item/food/omelette/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/kitchen/fork))
@@ -165,7 +165,7 @@
 
 /obj/item/food/scotchegg
 	name = "scotch egg"
-	desc = "A boiled egg wrapped in a delicious, seasoned meatball."
+	desc = "A boiled egg wrapped in a delicious, seasoned EGGball."
 	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "scotchegg"
 	//filling_color = "#FFFFF0"
@@ -175,8 +175,8 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 	w_class = WEIGHT_CLASS_SMALL
-	tastes = list("egg" = 1, "meat" = 1)
-	foodtypes = MEAT | BREAKFAST
+	tastes = list("egg" = 1, "EGG" = 1)
+	foodtypes = EGG | BREAKFAST
 
 /obj/item/food/benedict
 	name = "eggs benedict"
@@ -190,7 +190,7 @@
 	)
 	w_class = WEIGHT_CLASS_SMALL
 	tastes = list("egg" = 1, "bacon" = 1, "bun" = 1)
-	foodtypes = MEAT | BREAKFAST | GRAIN
+	foodtypes = MEAT | BREAKFAST | GRAIN | EGG
 
 /obj/item/food/eggrolls
 	name = "tamagoyaki nigiri"
@@ -203,7 +203,7 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
-	foodtypes = BREAKFAST | FRIED
+	foodtypes = BREAKFAST | FRIED | EGG
 
 /obj/item/food/eggwrap
 	name = "egg wrap"
@@ -216,7 +216,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3
 	)
 	tastes = list("egg" = 1)
-	foodtypes = MEAT | VEGETABLES
+	foodtypes = EGG | VEGETABLES
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/chawanmushi
@@ -230,4 +230,4 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
 	tastes = list("custard" = 1)
-	foodtypes = MEAT | VEGETABLES
+	foodtypes = EGG | VEGETABLES

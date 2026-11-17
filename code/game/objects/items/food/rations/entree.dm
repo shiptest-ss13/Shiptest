@@ -85,7 +85,7 @@
 	desc = "Battered fish sticks, deep-fried before being dehydrated."
 	filling_color = "#336699"
 	tastes = list("dry fish" = 1, "breading" = 2)
-	foodtypes = MEAT
+	foodtypes = MEAT | FRIED
 
 /obj/item/food/ration/entree/assorted_salted_offal
 	name = "assorted salted offal"
