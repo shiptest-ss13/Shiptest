@@ -27,7 +27,7 @@
 		on = TRUE
 	update_brightness()
 
-/obj/item/flashlight/proc/update_brightness(mob/user)
+/obj/item/flashlight/proc/update_brightness()
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
 	else
@@ -37,13 +37,14 @@
 		update_light()
 
 /obj/item/flashlight/attack_self(mob/user)
+	toggle_light()
+
+/obj/item/flashlight/proc/toggle_light()
 	on = !on
-	playsound(user, on ? toggle_on_sound : toggle_off_sound, 40, TRUE)
-	update_brightness(user)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-	return 1
+	playsound(src, on ? toggle_on_sound : toggle_off_sound, 40, TRUE)
+	update_brightness()
+	update_item_action_buttons()
+	return TRUE
 
 /obj/item/flashlight/attack_hand_secondary(mob/user, modifiers)
 	attack_self(user)
@@ -251,7 +252,7 @@
 	icon_state = "lampgreen"
 	item_state = "lampgreen"
 
-/obj/item/flashlight/lamp/verb/toggle_light()
+/obj/item/flashlight/lamp/verb/toggle_lamp()
 	set name = "Toggle light"
 	set category = "Object"
 	set src in oview(1)
@@ -268,10 +269,6 @@
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
-	/// How many seconds of fuel we have left
-	var/fuel = 0
-	var/on_damage = 7
-	var/produce_heat = 1500
 	heat = 1000
 	light_color = LIGHT_COLOR_FLARE
 	light_system = MOVABLE_LIGHT
@@ -279,65 +276,166 @@
 	light_color = "#FA421A" //Cit lighting
 	light_power = 0.8 //Cit lighting
 
+	toggle_on_sound = 'sound/items/flare_on.ogg'
+
+	///can this light ignite itself?
+	var/self_lighting = TRUE
+	/// Do we randomize the fuel when initialized
+	var/randomize_fuel = TRUE
+	/// How much damage it does when turned on
+	var/on_damage = 7
+	/// Type of atom thats spawns after fuel is used up
+	var/trash_type = /obj/item/flashlight/flare/burnt
+	/// If the light source can be extinguished
+	var/can_be_extinguished = FALSE
+
+	/// How many seconds of fuel we have left
+	var/fuel = 0
+
 /obj/item/flashlight/flare/burnt
 	desc = "A burnt out red flare."
 	icon_state = "flare-empty"
 	fuel = 0
 	grind_results = list(/datum/reagent/sulfur = 2)
 
-/obj/item/flashlight/flare/Initialize()
+/obj/item/flashlight/flare/Initialize(mapload)
 	. = ..()
-	fuel = rand(1600, 2000)
+	if(randomize_fuel)
+		fuel = rand(25 MINUTES, 35 MINUTES)
+	if(on)
+		attack_verb = string_list(list("burn", "singe"))
+		hitsound = 'sound/items/welder.ogg'
+		force = on_damage
+		damtype = BURN
+		update_brightness()
 
-/obj/item/flashlight/flare/process(seconds_per_tick)
-	open_flame(heat)
-	fuel = max(fuel -= seconds_per_tick, 0)
-	if(fuel <= 0 || !on)
-		turn_off()
-		if(fuel <= 0)
-			icon_state = "[initial(icon_state)]-empty"
-		STOP_PROCESSING(SSobj, src)
+/obj/item/flashlight/flare/examine(mob/user)
+	. = ..()
+	if(!on && !self_lighting)
+		. += span_notice("You'll need another flame to light this...")
 
-/obj/item/flashlight/flare/ignition_effect(atom/A, mob/user)
-	. = fuel && on ? span_notice("[user] lights [A] with [src] like a real badass.") : ""
+/obj/item/flashlight/flare/toggle_light()
+	if(on || !fuel)
+		return FALSE
+
+	if(!self_lighting)
+		return FALSE
+
+	name = "lit [initial(name)]"
+	attack_verb = string_list(list("burn", "singe"))
+	hitsound = 'sound/items/welder.ogg'
+	force = on_damage
+	damtype = BURN
+	. = ..()
 
 /obj/item/flashlight/flare/proc/turn_off()
 	on = FALSE
-	force = initial(src.force)
-	damtype = initial(src.damtype)
-	if(ismob(loc))
-		var/mob/U = loc
-		update_brightness(U)
-	else
-		update_brightness(null)
+	name = initial(name)
+	attack_verb = initial(attack_verb)
+	hitsound = initial(hitsound)
+	force = initial(force)
+	damtype = initial(damtype)
+	update_brightness()
 
-/obj/item/flashlight/flare/update_brightness(mob/user = null)
+/obj/item/flashlight/flare/extinguish()
+	if(fuel != INFINITY && can_be_extinguished)
+		turn_off()
+	return ..()
+
+/obj/item/flashlight/flare/process(delta_time)
+	open_flame(heat)
+	fuel = max(fuel - delta_time * (1 SECONDS), 0)
+
+	if(!fuel || !on)
+		turn_off()
+		STOP_PROCESSING(SSobj, src)
+
+		if(!fuel && trash_type)
+			new trash_type(loc)
+			qdel(src)
+
+/obj/item/flashlight/flare/ignition_effect(atom/A, mob/user)
+	if(get_temperature())
+		. = span_notice("[user] puts [src]'s flame to [A] and lights it.")
+
+/obj/item/flashlight/flare/proc/ignition(mob/user)
+	if(user && !fuel)
+		to_chat(user, span_warning("[src] is out of fuel!"))
+		return FALSE
+	if(user && on)
+		to_chat(user, span_warning("[src] is already lit!"))
+		return FALSE
+	if(!toggle_light())
+		return FALSE
+	if(fuel != INFINITY)
+		START_PROCESSING(SSobj, src)
+	return TRUE
+
+/obj/item/flashlight/flare/fire_act(exposed_temperature, exposed_volume)
+	ignition()
+	return ..()
+
+/obj/item/flashlight/flare/update_brightness()
 	..()
-	if(on)
-		item_state = "[initial(item_state)]-on"
-	else
-		item_state = "[initial(item_state)]"
+	item_state = "[initial(item_state)]" + (on ? "-on" : "")
+	update_appearance()
 
 /obj/item/flashlight/flare/attack_self(mob/user)
-
-	// Usual checks
-	if(fuel <= 0)
-		to_chat(user, span_warning("[src] is out of fuel!"))
-		return
-	if(on)
-		to_chat(user, span_warning("[src] is already on!"))
-		return
-
-	. = ..()
-	// All good, turn it on.
-	if(.)
+	if(ignition(user))
 		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
-		force = on_damage
-		damtype = "fire"
-		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/get_temperature()
 	return on * heat
+
+/obj/item/flashlight/flare/candle
+	name = "red candle"
+	desc = "The humble red candle has accompanied many quiet nights throughout the years."
+	icon = 'icons/obj/candle.dmi'
+	icon_state = "candle1"
+	item_state = null
+	w_class = WEIGHT_CLASS_TINY
+	light_color = LIGHT_COLOR_FIRE
+	light_range = 2
+	fuel = 35 MINUTES
+	randomize_fuel = FALSE
+	trash_type = /obj/item/trash/candle
+	can_be_extinguished = TRUE
+	self_lighting = FALSE
+
+/obj/item/flashlight/flare/candle/update_icon_state()
+	. = ..()
+	var/wax_level
+	switch(fuel)
+		if(25 MINUTES to INFINITY)
+			wax_level = 1
+		if(15 MINUTES to 25 MINUTES)
+			wax_level = 2
+		if(0 to 15 MINUTES)
+			wax_level = 3
+	icon_state = "candle[wax_level][on ? "_lit" : ""]"
+
+/obj/item/flashlight/flare/candle/attackby(obj/item/fire_starter, mob/user, params)
+	var/success_msg = fire_starter.ignition_effect(src, user)
+	if(success_msg && ignition(user))
+		user.visible_message(success_msg)
+	else
+		return ..()
+
+/obj/item/flashlight/flare/candle/attack_self(mob/user)
+	if(on && fuel != INFINITY && !can_be_extinguished) // can't extinguish eternal candles
+		turn_off()
+		user.visible_message(span_notice("[user] snuffs [src]."))
+
+/obj/item/flashlight/flare/candle/process(delta_time)
+	. = ..()
+	update_appearance()
+
+/obj/item/flashlight/flare/candle/infinite
+	name = "eternal candle"
+	fuel = INFINITY
+	on = TRUE
+	randomize_fuel = FALSE
+	can_be_extinguished = FALSE
 
 /obj/item/flashlight/flare/torch
 	name = "torch"
@@ -353,6 +451,46 @@
 	slot_flags = null
 	light_color = "#FAA44B" //Cit lighting
 	light_power = 0.8 //Cit lighting
+	trash_type = /obj/effect/decal/cleanable/ash
+	can_be_extinguished = TRUE
+	self_lighting = FALSE
+
+/obj/item/flashlight/flare/torch/attackby(obj/item/fire_starter, mob/user, params)
+	var/success_msg = fire_starter.ignition_effect(src, user)
+	if(success_msg && ignition(user))
+		user.visible_message(success_msg)
+	else
+		return ..()
+
+/obj/item/flashlight/flare/torch/standing
+	name = "standing torch"
+	desc = "A standing torch, used to provide light in dark environments."
+	icon_state = "tribal"
+	item_state = "torch"
+	w_class = WEIGHT_CLASS_BULKY
+	light_range = 7
+	heat = 2000
+
+/obj/item/flashlight/flare/torch/standing/examine(mob/user)
+	. = ..()
+	. += span_notice("You could plant this in the ground by clicking on a nearby tile.")
+
+//one day: genericize 'plant this object in ground' behavior. would be cool with flags.
+/obj/item/flashlight/flare/torch/standing/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
+	if(proximity_flag)
+		if(!isopenturf(target))
+			return FALSE
+		var/turf/open/target_turf = target
+		to_chat(user, span_notice("You start pushing [src] into the ground ..."))
+		if (do_after(user, 20, target=src))
+			if(on)
+				new /obj/structure/standing_torch/lit(target_turf)
+			else
+				new /obj/structure/standing_torch(target_turf)
+			user.visible_message(span_notice("[user] plants \the [src] firmly on [target_turf]."), span_notice("You plant \the [src] firmly in the ground."))
+			qdel(src)
+			return
 
 /obj/item/flashlight/lantern
 	name = "lantern"
@@ -400,20 +538,6 @@
 			M.confused += 15
 	cooldown = TRUE
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 20 SECONDS)
-
-/obj/item/flashlight/slime
-	gender = PLURAL
-	name = "glowing slime extract"
-	desc = "Extract from a yellow slime. It emits a strong light when squeezed."
-	icon = 'icons/obj/lighting.dmi'
-	icon_state = "slime"
-	item_state = "slime"
-	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
-	custom_materials = null
-	light_range = 6 //luminosity when on
-	light_color = "#FFEEAA" //Cit lighting
-	light_power = 0.6 //Cit lighting
 
 /obj/item/flashlight/emp
 	var/emp_max_charges = 4
@@ -489,7 +613,7 @@
 	toggle_off_sound = 'sound/effects/glowstick.ogg'
 
 /obj/item/flashlight/glowstick/Initialize()
-	fuel = rand(3200, 4000)
+	fuel = rand(50 MINUTES, 60 MINUTES)
 	set_light_color(color)
 	return ..()
 
@@ -595,25 +719,6 @@
 		set_light_power(_light_power)
 	if(!isnull(_light_color))
 		set_light_color(_light_color)
-
-/obj/item/flashlight/flashdark
-	name = "flashdark"
-	desc = "A strange device manufactured with mysterious elements that somehow emits darkness. Or maybe it just sucks in light? Nobody knows for sure."
-	icon_state = "flashdark"
-	item_state = "flashdark"
-	light_system = STATIC_LIGHT //The overlay light component is not yet ready to produce darkness.
-	light_range = 0
-	///Variable to preserve old lighting behavior in flashlights, to handle darkness.
-	var/dark_light_range = 2.5
-	///Variable to preserve old lighting behavior in flashlights, to handle darkness.
-	var/dark_light_power = -3
-
-/obj/item/flashlight/flashdark/update_brightness(mob/user)
-	. = ..()
-	if(on)
-		set_light(dark_light_range, dark_light_power)
-	else
-		set_light(0)
 
 /obj/item/flashlight/eyelight
 	name = "eyelight"

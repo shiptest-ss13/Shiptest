@@ -95,7 +95,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "bx" = (
@@ -106,7 +106,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 6
 	},
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_x = 10
 	},
 /turf/open/floor/wood/ebony,
@@ -334,7 +334,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "eW" = (
 /obj/effect/turf_decal/siding/blue,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
 "fe" = (
@@ -496,7 +496,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "ii" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "ik" = (
@@ -614,7 +614,7 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken7"
 	},
@@ -696,7 +696,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "ll" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/plating/asteroid/snow,
 /area/overmap_encounter/planetoid/cave/explored)
 "lw" = (
@@ -763,16 +763,45 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "ms" = (
 /obj/structure/rack,
-/obj/item/storage/box/techshot{
-	pixel_y = 5
-	},
 /obj/item/gun/ballistic/shotgun/brimstone{
 	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "mz" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -828,7 +857,7 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -945,7 +974,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "pi" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -956,7 +985,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_y = 18
 	},
 /turf/open/floor/wood/maple{
@@ -1043,7 +1072,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/candle/tribal_torch,
+/obj/item/flashlight/flare/torch/standing,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
@@ -1559,7 +1588,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wj" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "wm" = (
@@ -1707,7 +1736,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "yE" = (
@@ -1758,7 +1787,7 @@
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "zN" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/brown{
 	dir = 9
 	},
@@ -1814,7 +1843,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "AE" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -1885,27 +1914,27 @@
 	pixel_y = 20;
 	pixel_x = -2
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = 4
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = -2
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = 10
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = 10
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 22;
 	pixel_x = 10
 	},
@@ -2033,7 +2062,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
 "DM" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
@@ -2180,7 +2209,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "GS" = (
@@ -2244,22 +2273,22 @@
 /area/ruin/powered/icemoon/lodge/gear_room)
 "HQ" = (
 /obj/structure/table/wood/fancy,
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = -2
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = 4
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_x = 10
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = 10
 	},
@@ -2680,7 +2709,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 5
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken2"
 	},
@@ -2898,7 +2927,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "SE" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -2927,7 +2956,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "To" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "TF" = (
@@ -3013,7 +3042,7 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "UL" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/brown{
 	dir = 6
 	},
@@ -3031,7 +3060,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Vc" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
@@ -3080,7 +3109,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany{
 	icon_state = "wood-broken6"
 	},
@@ -3341,7 +3370,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/gear_room)
 "Zn" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/structure/railing/wood{
 	dir = 8
 	},
