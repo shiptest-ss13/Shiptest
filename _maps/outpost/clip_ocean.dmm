@@ -1268,11 +1268,10 @@
 	},
 /area/outpost/external)
 "cT" = (
-/obj/structure/rack,
-/obj/item/stack/cable_coil/yellow,
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "cU" = (
@@ -7940,6 +7939,15 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/security/checkpoint)
+"tD" = (
+/obj/effect/turf_decal/industrial/warning/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "tE" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -8975,29 +8983,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "wz" = (
-/obj/structure/railing/thin{
-	dir = 4
-	},
-/obj/structure/sign/directions/service{
-	dir = 4;
-	pixel_x = 30;
-	pixel_y = -5
-	},
-/obj/structure/sign/directions/supply{
-	pixel_x = 30;
-	pixel_y = 3;
-	dir = 8
-	},
-/obj/structure/sign/directions/security{
-	dir = 4;
-	pixel_x = 30;
-	pixel_y = 10
-	},
-/obj/machinery/light/street{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/clip_outpost/lit,
-/area/outpost/exterior/ocean)
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "wA" = (
 /obj/structure/fluff/steam_vent,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -14283,6 +14270,27 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
+"IU" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/structure/sign/directions/service{
+	dir = 4;
+	pixel_x = 30;
+	pixel_y = -5
+	},
+/obj/structure/sign/directions/supply{
+	pixel_x = 30;
+	pixel_y = 3;
+	dir = 8
+	},
+/obj/structure/sign/directions/security{
+	dir = 4;
+	pixel_x = 30;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/tech/clip_outpost/lit,
+/area/outpost/exterior/ocean)
 "IV" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
 	dir = 1
@@ -15006,6 +15014,21 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/vacant_rooms/shop)
+"KH" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/structure/sign/directions/service{
+	dir = 4;
+	pixel_x = 30;
+	pixel_y = 10
+	},
+/obj/structure/sign/directions/supply{
+	pixel_x = 30;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/tech/clip_outpost/lit,
+/area/outpost/exterior/ocean)
 "KI" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -17391,10 +17414,14 @@
 /turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
 /area/outpost/external)
 "QH" = (
-/obj/structure/table/chem,
-/obj/item/stack/medical/gauze/five,
-/obj/effect/turf_decal/corner/transparent/blue/mono,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 5
+	},
+/obj/machinery/vending/wallmed{
+	pixel_x = 0;
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel/dark,
 /area/outpost/medical)
 "QI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18275,10 +18302,13 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "SA" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 5
+/obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/structure/table/chem,
+/obj/item/stack/medical/gauze/five{
+	pixel_x = 5;
+	pixel_y = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "SB" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -19120,23 +19150,13 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/exterior/ocean)
 "UI" = (
-/obj/structure/railing/thin{
+/obj/item/stack/cable_coil/yellow,
+/obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
-/obj/structure/sign/directions/service{
-	dir = 4;
-	pixel_x = 30;
-	pixel_y = 10
-	},
-/obj/structure/sign/directions/supply{
-	pixel_x = 30;
-	pixel_y = 3
-	},
-/obj/machinery/light/street{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/clip_outpost/lit,
-/area/outpost/exterior/ocean)
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/outpost/medical)
 "UJ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw{
 	dir = 8
@@ -20398,12 +20418,10 @@
 /turf/open/floor/wood/ebony,
 /area/outpost/crew/sauna)
 "XS" = (
-/obj/structure/table/chem,
-/obj/machinery/vending/wallmed{
-	pixel_x = 26;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/structure/bed/roller{
+	name = "Mr. Stretcher"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "XT" = (
@@ -26383,8 +26401,8 @@ Lf
 bq
 JG
 Ep
-Lf
-UI
+KH
+wo
 bg
 kX
 Pp
@@ -26392,8 +26410,8 @@ CH
 Lg
 cK
 yH
-wz
-Lf
+wo
+IU
 bq
 as
 Ep
@@ -26506,7 +26524,7 @@ HH
 vV
 JG
 pL
-PS
+rL
 rL
 rL
 Nk
@@ -26516,7 +26534,7 @@ mN
 Nk
 rL
 rL
-UX
+rL
 vV
 as
 pL
@@ -26629,17 +26647,17 @@ CW
 vV
 JG
 pL
-UH
 rL
 GV
 Ts
+wz
 Yg
 rL
 Qf
+wz
 gR
 JX
 rL
-tH
 vV
 as
 pL
@@ -26752,17 +26770,17 @@ pn
 vV
 JG
 pL
-Mx
 rL
 LD
 Ts
+wz
 Rh
 rL
 ai
+wz
 gR
 wu
 rL
-zm
 vV
 as
 pL
@@ -26875,17 +26893,17 @@ na
 pR
 JG
 we
-vB
 mf
 gQ
 Ts
+wz
 RJ
 rL
 Qf
+wz
 gR
 YC
 mf
-vB
 jr
 as
 pL
@@ -26998,17 +27016,17 @@ na
 eb
 JG
 fc
-jM
 yQ
 qh
 Ts
+wz
 AP
 yq
 PR
+wz
 gR
 YC
 yQ
-jM
 dl
 as
 we
@@ -27121,17 +27139,17 @@ na
 YG
 JG
 pL
-PS
 rL
 rL
-SA
+QH
+Qv
 Qv
 RI
 bU
+wz
 gR
 rL
 rL
-UX
 vV
 as
 GD
@@ -27244,17 +27262,17 @@ na
 Lp
 JG
 pL
-UH
 rL
 oN
 tX
 tX
+tX
 rL
 wD
+wz
 gR
 gx
 rL
-tH
 vV
 as
 GD
@@ -27367,17 +27385,17 @@ XJ
 cQ
 GJ
 pL
-UH
 rL
 ET
+tX
 tX
 ub
 rL
 hX
+tD
 gf
 gx
 rL
-tH
 vV
 as
 GD
@@ -27490,17 +27508,17 @@ ZK
 qL
 Ae
 pL
-UH
 rL
 rL
+SA
 XS
-QH
+XS
 rL
 FQ
 cT
+UI
 rL
 rL
-tH
 vV
 as
 gK
@@ -27613,7 +27631,6 @@ ZK
 eb
 Ae
 pL
-Mx
 kG
 rL
 rL
@@ -27622,8 +27639,9 @@ rL
 rL
 rL
 rL
+rL
+rL
 kG
-zm
 vV
 as
 GD
