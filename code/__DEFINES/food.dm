@@ -5,15 +5,15 @@
 #define GRAIN (1<<4)
 #define FRUIT (1<<5)
 #define DAIRY (1<<6)
-#define HEAVILY_FRIED (1<<7)
+#define HEAVILY_FRIED (1<<7) // heavily fried stuff like french fries and onion rings
 #define ALCOHOL (1<<8)
 #define SUGAR (1<<9)
-#define GROSS (1<<10)
+#define GROSS (1<<10) // weird shit like baseball burgers, not just icky
 #define TOXIC (1<<11)
 #define EGG (1<<12)
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
-#define GORE (1<<16)
+#define GORE (1<<16) // straight up organs and stuff
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
