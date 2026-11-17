@@ -475,7 +475,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/melee/knife/combat
 
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	implants = list(/obj/item/implant/radio)
 
@@ -903,7 +903,6 @@
 	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
 	suit = /obj/item/clothing/suit/armor/vest
-	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
 	accessory = /obj/item/clothing/accessory/waistcoat
 
