@@ -294,7 +294,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	//filling_color = "#ECA735"
 	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
-	foodtypes = MEAT | GROSS | GORE | EGG
+	foodtypes = MEAT | GORE | EGG
 
 /obj/item/food/mirasegg
 	name = "miras eggs"

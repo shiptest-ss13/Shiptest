@@ -8,7 +8,7 @@
 #define HEAVILY_FRIED (1<<7) // heavily fried stuff like french fries and onion rings
 #define ALCOHOL (1<<8)
 #define SUGAR (1<<9)
-#define GROSS (1<<10) // weird shit like baseball burgers, not just icky
+#define GROSS (1<<10) // weird stuff like baseball burgers, not just icky
 #define TOXIC (1<<11)
 #define EGG (1<<12)
 #define BREAKFAST (1<<13)
