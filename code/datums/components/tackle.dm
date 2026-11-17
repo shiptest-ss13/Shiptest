@@ -107,7 +107,6 @@
 		return
 
 	tackling = TRUE
-	user.throw_mode_off(THROW_MODE_TOGGLE)
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(checkObstacle))
 	playsound(user, 'sound/weapons/thudswoosh.ogg', 40, TRUE, -1)
 
@@ -153,7 +152,6 @@
 		tackle = null
 		return
 
-	user.toggle_throw_mode()
 	if(!iscarbon(hit) && !istype(hit, /mob/living/basic/human)) // tackle human basicmobs too, i dare you
 		if(hit.density)
 			INVOKE_ASYNC(src, PROC_REF(splat), user, hit)
@@ -209,7 +207,7 @@
 
 			takeTackleDamage(target, stamina = 40, knockdown = 30, paralyze = 5)
 			if(ishuman(target) && ishuman(user))
-				human_target.grabbedby(human_user)
+				INVOKE_ASYNC(human_target, TYPE_PROC_REF(/mob/living, grabbedby), human_user)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message(span_warning("[user] lands a monster tackle on [target], knocking [target.p_them()] senseless[ishuman(target) ? " and applying an aggressive grab" : ""]!"), span_userdanger("You land a monster tackle on [target], knocking [target.p_them()] senseless[ishuman(target) ? " and applying an aggressive grab" : ""]!"), target)
@@ -222,8 +220,8 @@
 
 			takeTackleDamage(target, stamina = 40, knockdown = 30, paralyze = 5)
 			if(ishuman(target) && ishuman(user))
-				human_target.grabbedby(human_user)
-				human_target.grippedby(human_user)
+				INVOKE_ASYNC(human_target, TYPE_PROC_REF(/mob/living, grabbedby), human_user, list(supress_message = TRUE))
+				INVOKE_ASYNC(human_target, TYPE_PROC_REF(/mob/living, grippedby), human_user)
 
 
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
