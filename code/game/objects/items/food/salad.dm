@@ -46,7 +46,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("leaves" = 1, "potato" = 1, "meat" = 1,)
-	foodtypes = VEGETABLES | MEAT | FRIED | FRUIT
+	foodtypes = VEGETABLES | MEAT | DEEP_FRIED | FRUIT
 
 /obj/item/food/salad/fruit
 	name = "fruit salad"

@@ -57,7 +57,7 @@
 	)
 	junkiness = 20
 	tastes = list("salt" = 1, "crisps" = 1)
-	foodtypes = JUNKFOOD | FRIED
+	foodtypes = JUNKFOOD | DEEP_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/no_raisin

@@ -5,7 +5,7 @@
 #define GRAIN (1<<4)
 #define FRUIT (1<<5)
 #define DAIRY (1<<6)
-#define FRIED (1<<7)
+#define DEEP_FRIED (1<<7)
 #define ALCOHOL (1<<8)
 #define SUGAR (1<<9)
 #define GROSS (1<<10)
@@ -28,7 +28,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"GRAIN" = GRAIN,
 	"FRUIT" = FRUIT,
 	"DAIRY" = DAIRY,
-	"FRIED" = FRIED,
+	"DEEP_FRIED" = DEEP_FRIED,
 	"ALCOHOL" = ALCOHOL,
 	"SUGAR" = SUGAR,
 	"GROSS" = GROSS,
@@ -52,7 +52,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"Grain", \
 	"Fruits", \
 	"Dairy products", \
-	"Fried food", \
+	"Deep fried food", \
 	"Alcohol", \
 	"Sugary food", \
 	"Gross food", \

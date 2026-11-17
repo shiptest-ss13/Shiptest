@@ -202,7 +202,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	gender = PLURAL
 	tastes = list("batter" = 3, "onion" = 1)
-	foodtypes = VEGETABLES | FRIED
+	foodtypes = VEGETABLES | DEEP_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/pineappleslice
@@ -245,7 +245,7 @@
 	)
 	junkiness = 20
 	tastes = list("fried corn" = 1)
-	foodtypes = JUNKFOOD | FRIED
+	foodtypes = JUNKFOOD | DEEP_FRIED
 
 //todo: sort these into correct files
 /obj/item/food/stuffed_refa

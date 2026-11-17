@@ -13,7 +13,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("fish" = 4, "batter" = 1, "hot peppers" = 1)
-	foodtypes = MEAT | FRIED
+	foodtypes = MEAT | DEEP_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/fishmeat
@@ -109,7 +109,7 @@
 	)
 	bite_consumption = 1
 	tastes = list("fish" = 1, "breadcrumbs" = 1)
-	foodtypes = MEAT | FRIED
+	foodtypes = MEAT | DEEP_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/fishandchips
@@ -123,7 +123,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("fish" = 1, "chips" = 1)
-	foodtypes = MEAT | VEGETABLES | FRIED
+	foodtypes = MEAT | VEGETABLES | DEEP_FRIED
 
 /obj/item/food/fishfry
 	name = "fish fry"
@@ -135,7 +135,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
-	foodtypes = VEGETABLES | FRIED | SEAFOOD
+	foodtypes = VEGETABLES | DEEP_FRIED | SEAFOOD
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/vegetariansushiroll
