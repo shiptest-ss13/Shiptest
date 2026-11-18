@@ -20,3 +20,16 @@
   rye-rice:
   - bugfix: Outpost maps should no longer have space in between their borders and
       edges.
+2026-11-18:
+  AnomalousPotato:
+  - bugfix: You can no longer tackle in the middle of space.
+  - bugfix: Tackles will no longer stop in the middle of space.
+  - bugfix: You no longer take bonus damage from being thrown at a wall when you tackle
+      one.
+  - bugfix: Very good tackles now actually grab as stated.
+  - rscadd: Tackling a wall now respects armor.
+  - balance: A very bad tackle will no longer IRREVERSIBLY paralyze you.
+  prodirus:
+  - bugfix: Ships no longer lose the ability to bluespace jump after one of their
+      helm consoles is destroyed.
+  - bugfix: Ships can exit the Frontier while having an accepted mission again.
