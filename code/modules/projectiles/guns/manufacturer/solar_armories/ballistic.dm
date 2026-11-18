@@ -269,6 +269,7 @@
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
 	manufacturer = MANUFACTURER_SOLARARMORIES
+	mag_display_ammo = TRUE // rocket overlay
 
 	autowiki_hidden = TRUE // aspawn only
 
