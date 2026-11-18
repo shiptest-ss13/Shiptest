@@ -148,11 +148,26 @@ def obtain_midi_file(root):
     """
     file = filedialog.askopenfilename(parent=root,
                                       title='Choose MIDI file to convert',
-                                      filetypes=[('MIDI files', '*.mid *.midi'), ('All files', '*.*')])
+                                      filetypes=[('MIDI files', '*.mid *.midi *.rmi'), ('All files', '*.*')])
     if not file:
         return None
     with open(file, mode='rb') as midi_file:
         return midi_file.read()
+
+def unwrap_riff_midi(midi_file):
+    """
+    Returns the standard MIDI inside a RIFF MIDI (.rmi), or the file unchanged if it isn't one
+    """
+    if midi_file[:4] != b'RIFF' or midi_file[8:12] != b'RMID':
+        return midi_file
+    offset = 12
+    while offset + 8 <= len(midi_file):
+        chunk_id = midi_file[offset:offset + 4]
+        chunk_size = int.from_bytes(midi_file[offset + 4:offset + 8], 'little')
+        if chunk_id == b'data':
+            return midi_file[offset + 8:offset + 8 + chunk_size]
+        offset += 8 + chunk_size + (chunk_size % 2)
+    raise ValueError("RIFF MIDI has no data chunk")
 
 def delta_ticks_to_millisecs(opus):
     """
@@ -201,7 +216,7 @@ def midi2score_without_ticks(midi_file):
     """
     Transforms aforementioned file into a score, truncates it and returns it
     """
-    opus = mi.midi2opus(midi_file)
+    opus = mi.midi2opus(unwrap_riff_midi(midi_file))
     opus = delta_ticks_to_millisecs(opus)
     score = mi.opus2score(opus)
     return score[1:] # Ticks don't matter anymore, it is always 1000

@@ -35,7 +35,7 @@
 	/// Our volume
 	var/volume = 75
 	/// Max volume
-	var/max_volume = 75
+	var/max_volume = 100
 	/// Min volume - This is so someone doesn't decide it's funny to set it to 0 and play invisible songs.
 	var/min_volume = 1
 
