@@ -28,7 +28,7 @@
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
+		. += span_notice("\The [name]'s cell has <b>[cell.percent()]%</b> charge remaining.")
 	else
 		. += span_notice("[src] doesn't seem to have a cell!")
 	if(internal_magazine)

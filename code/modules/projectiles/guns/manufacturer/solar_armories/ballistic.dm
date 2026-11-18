@@ -204,7 +204,6 @@
 	autowiki_hidden = FALSE
 
 // BIELERSEE - GAUSS SCATTERGUN //
-
 /obj/item/gun/ballistic/automatic/powered/gauss/bielersee
 	name = "Model 'Bielersee' Magnetic Scattergun"
 	desc = "A gauss scattergun of Solarian make for close-quarters engagements. Fires tight clusters of ferromagnetic flechettes."
@@ -231,9 +230,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 	fire_delay = 0.5 SECONDS
+	recoil = 2
+	recoil_unwielded = 4
 
 // RUTLI - GAUSS SMG //
-
 /obj/item/gun/ballistic/automatic/powered/gauss/rutli
 	name = "Model 'Rutli' Submachine Gun"
 	desc = "A lightweight Solarian gauss SMG. Features a large internal magazine and fast charging electronics allowing it to fire much faster than other gauss weaponry. Chambered in ferromagnetic pellets."
