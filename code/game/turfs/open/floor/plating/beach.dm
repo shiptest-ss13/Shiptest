@@ -76,6 +76,7 @@
 		light_color = COLOR_BEACHPLANET_LIGHT;						\
 	}																\
 	/turf/open/floor/##turf_type/beachplanet/lit {					\
+		can_emit_planet_daylight = TRUE;								\
 		light_power = 0.8;											\
 		light_range = 2;											\
 	}																\

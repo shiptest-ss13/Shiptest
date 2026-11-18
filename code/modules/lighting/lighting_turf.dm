@@ -45,7 +45,11 @@
 
 	// Base lighting is an overlay, not corners, so add it in.
 	var/area/turf_area = loc
-	totallums += turf_area.base_lighting_lumcount
+	if(turf_area.base_lighting_is_daylight)
+		if(!planet_daylight_exact || IS_OPAQUE_TURF(src) || !totallums)
+			totallums = max(totallums, turf_area.base_lighting_lumcount)
+	else
+		totallums += turf_area.base_lighting_lumcount
 
 	totallums = (totallums - minlum) / (maxlum - minlum)
 
@@ -88,6 +92,7 @@
 		directional_opacity = ALL_CARDINALS
 		if(. != directional_opacity)
 			reconsider_lights()
+			queue_daylight_opacity_redraw()
 		return
 	directional_opacity = NONE
 	for(var/am in opacity_sources)
@@ -99,6 +104,7 @@
 			break
 	if(. != directional_opacity && (. == ALL_CARDINALS || directional_opacity == ALL_CARDINALS))
 		reconsider_lights() //The lighting system only cares whether the tile is fully concealed from all directions or not.
+		queue_daylight_opacity_redraw()
 
 
 /turf/proc/change_area(area/old_area, area/new_area)

@@ -167,6 +167,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
 
 /turf/open/floor/plating/ice/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 1
 	light_color = LIGHT_COLOR_LIGHT_CYAN

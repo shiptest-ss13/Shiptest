@@ -29,11 +29,6 @@
 	/// If a room is too big it doesn't have beauty.
 	var/beauty_threshold = 150
 
-	/// For space, the asteroid, lavaland, etc. Used with blueprints to determine if we are adding a new area (vs editing a station room)
-	var/outdoors = FALSE
-	///Do we allow weather?
-	var/allow_weather = FALSE
-
 	/// Size of the area in open turfs, only calculated for indoors areas.
 	var/areasize = 0
 
@@ -85,8 +80,12 @@
 	/// The current weather active in this area
 	var/datum/weather/active_weather
 
-	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
-	var/underground = FALSE
+	/// Used with blueprints to determine if we are adding a new area (vs editing a station room). Should probably be renamed 'allow_area_creation'
+	var/outdoors = FALSE
+	/// Do we allow weather in this area?
+	var/allow_weather = FALSE
+	/// Whether area is underground, used for weathers which shouldn't or should affect caves.
+	var/allow_underground_specific_weather = FALSE
 
 
 /**

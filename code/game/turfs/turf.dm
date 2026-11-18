@@ -125,7 +125,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(requires_activation)
 		ImmediateCalculateAdjacentTurfs()
 
-	if (light_power && light_range)
+	if(can_emit_planet_daylight || our_area.planet_daylight)
+		update_planet_daylight()
+	else if (light_power && light_range)
 		update_light()
 
 	var/turf/T = above()

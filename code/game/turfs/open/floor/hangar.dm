@@ -27,6 +27,7 @@ Each floor in a hangar map must be subtyped here.
 	icon_state = "tiled_light"
 
 /turf/open/floor/hangar/temperate
+	can_emit_planet_daylight = TRUE
 	name = "hangar"
 	icon_state = "plating"
 	base_icon_state = "plating"
@@ -38,6 +39,7 @@ Each floor in a hangar map must be subtyped here.
 	light_color = "#1B1D2E"
 
 /turf/open/floor/hangar/clipoutpost
+	can_emit_planet_daylight = TRUE
 	name = "hangar"
 	icon_state = "plating"
 	base_icon_state = "plating"
@@ -49,6 +51,7 @@ Each floor in a hangar map must be subtyped here.
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"
 
 /turf/open/floor/hangar/plasteel/dark/clipoutpost
+	can_emit_planet_daylight = TRUE
 	name = "dark"
 	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled_dark"

@@ -1,5 +1,6 @@
 #define NGR_OUTPOST_TURF_HELPER(turf_type)			\
 	/turf/open/floor/##turf_type/ngr_outpost {		\
+		can_emit_planet_daylight = TRUE;				\
 		initial_gas_mix = OPENTURF_DEFAULT_ATMOS;		\
 		planetary_atmos = FALSE;							\
 		light_color = COLOR_ROCKPLANET_LIGHT;	\
@@ -9,6 +10,7 @@
 
 #define NGR_OUTPOST_OUTSIDE_TURF_HELPER(turf_type)			\
 	/turf/open/floor/##turf_type/ngr_outpost_outside {		\
+		can_emit_planet_daylight = TRUE;				\
 		initial_gas_mix = OPENTURF_DEFAULT_ATMOS;		\
 		planetary_atmos = TRUE;							\
 		light_color = COLOR_ROCKPLANET_LIGHT;	\
@@ -52,6 +54,22 @@ NGR_OUTPOST_OUTSIDE_TURF_HELPER(concrete/slab_2)
 NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/mid)
 NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/right)
 NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/left)
+
+/area/hangar/agni
+	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
+
+/area/outpost/exterior/rock
+	name = "Agni"
+	icon_state = "space"
+	ambience_index = AMBIENCE_DESERT
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	use_ztrait_lighting = TRUE
+
+/area/outpost/exterior/rock/noweather
+	name = "Agni Underground"
+	icon_state = "blue"
+	allow_weather = FALSE
 
 /turf/open/water/ngr_outpost //all the water is indoors so we can't use the helper
 	name = "river water"

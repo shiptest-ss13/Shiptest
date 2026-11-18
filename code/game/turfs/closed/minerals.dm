@@ -2,6 +2,7 @@
 
 /turf/closed/mineral //wall piece
 	name = "rock"
+	can_emit_planet_daylight = TRUE
 	icon = MAP_SWITCH('icons/turf/walls/smoothrocks.dmi', 'icons/turf/walls/mapping_wall.dmi')
 	icon_state = "smoothrocks-0"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
@@ -39,30 +40,6 @@
 	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
 
 	overlay_layer = ON_EDGED_TURF_LAYER
-
-/turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-
-	var/area/overmap_encounter/selected_area = get_area(src)
-	if(!istype(selected_area))
-		return
-
-	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
-	if(istype(selected_area))
-		light_range = selected_area.light_range
-		light_range = selected_area.light_range
-		light_power = selected_area.light_power
-		update_light()
-
-/turf/closed/mineral/Destroy()
-	. = ..()
-	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-
-/turf/closed/mineral/proc/get_light(obj/item/source, target_light, target_power, target_color,)
-	light_range = target_light
-	light_power = target_power
-	light_color = target_color
-	update_light()
 
 /turf/closed/mineral/proc/Spread_Vein()
 	var/spreadChance = initial(mineralType.spreadChance)

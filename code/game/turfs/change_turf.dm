@@ -144,6 +144,9 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	if(SSlighting.initialized)
 		lighting_object = old_lighting_object
+		var/area/turf_area = loc
+		if(turf_area.base_lighting_is_daylight)
+			queue_lighting_object_update()
 
 		directional_opacity = old_directional_opacity
 		recalculate_directional_opacity()
