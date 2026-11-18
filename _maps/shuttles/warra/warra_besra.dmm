@@ -6075,7 +6075,8 @@
 "Zk" = (
 /obj/structure/closet/secure_closet/armorycage{
 	name = "ammo cage";
-	anchored = 1
+	anchored = 1;
+	req_access_txt = "1"
 	},
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/turf_decal/techfloor{
