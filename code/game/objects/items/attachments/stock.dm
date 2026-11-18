@@ -92,3 +92,8 @@
 		pixel_shift_x = 32
 	else
 		pixel_shift_x = 16
+
+/obj/item/attachment/foldable_stock/bielersee
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	icon_state = "model-b_stock"
+

@@ -14,10 +14,6 @@
 	name = "Model 'Hasenmatt' Gauss Pistol"
 	desc = "A standard-issue pistol exported from the Solarian Confederation. While rather small for a gauss gun it carries formidable stopping power thanks to its oversized ferromagnetic slugs. A popular choice for self-defense and police forces."
 
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	icon_state = "model-h"
 	item_state = "model-h"
 	fire_sound = 'sound/weapons/gun/gauss/modelh.ogg'
@@ -25,14 +21,11 @@
 
 	default_ammo_type = /obj/item/ammo_box/magazine/modelh
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/modelh)
-	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_cell_types = list(/obj/item/stock_parts/cell/gun/solgov)
 
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0.4 SECONDS //pistol, but heavy caliber.
 	show_magazine_on_sprite = FALSE
-	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	recoil = 1
 	recoil_unwielded = 4
@@ -54,12 +47,12 @@
 /obj/item/gun/ballistic/automatic/pistol/solgov
 	name = "Model 'Eiger' Caseless Pistol"
 	desc = "A Solarian handgun dating back to the Terran Confederacy. While no longer a primary service pistol, it still sees occasional use and is popular among civilians. Chambered in 5.56mm caseless."
-	icon_state = "model-e"
-	item_state = "model-e"
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+	icon_state = "model-e"
+	item_state = "model-e"
 
 	weapon_weight = WEAPON_LIGHT
 	default_ammo_type = /obj/item/ammo_box/magazine/pistol556mm
@@ -83,27 +76,23 @@
 	desc = "An antiquated Solarian gauss rifle. While long since shifted out of military service, the Claris still sees popularity among civilians as a hunting and self defense weapon. Chambered in ferromagnetic pellets."
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/claris
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/claris)
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	icon_state = "claris"
 	item_state = "claris"
 	fire_sound = 'sound/weapons/gun/gauss/claris.ogg'
 	load_sound = 'sound/weapons/gun/gauss/sniper_reload.ogg'
-	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_cell_types = list(/obj/item/stock_parts/cell/gun/solgov)
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.36 SECONDS
 	internal_magazine = TRUE
 	show_magazine_on_sprite = FALSE
-	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	fire_select_icon_state_prefix = "pellet_"
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	valid_attachments = SOLAR_ATTACHMENTS
-	slot_available = SOLAR_ATTACH_SLOTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
 
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -120,23 +109,16 @@
 	desc = "A modern Solarian military carbine, boasting a sizeable magazine capacity and rapid rate of fire. Uses magazines loaded with ferromagnetic lances."
 	default_ammo_type = /obj/item/ammo_box/magazine/lucerne
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/lucerne)
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	icon_state = "model-l"
 	item_state = "model-l"
 	fire_sound = 'sound/weapons/gun/gauss/gar.ogg'
 	fire_sound_volume = 35
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
-	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_cell_types = list(/obj/item/stock_parts/cell/gun/solgov)
 	burst_size = 1
 
 	fire_delay = 0.2 SECONDS
 
 	actions_types = list()
-	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -184,15 +166,9 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
 	name = "Model 'Atelier' Railgun"
 	desc = "A high powered Solarian railgun, designed for punching heavy armor, cover, and just about anything else. The heavy-duty electromagnets require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait."
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/rail
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/rail)
-	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_cell_types = list(/obj/item/stock_parts/cell/gun/solgov)
 
 	gun_firemodes = list(FIREMODE_AIMED)
 	default_firemode = FIREMODE_AIMED
@@ -222,7 +198,6 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	internal_magazine = TRUE
 	show_magazine_on_sprite = FALSE
-	empty_indicator = FALSE
 
 	refused_attachments = list(/obj/item/attachment/silencer)
 
@@ -230,11 +205,53 @@
 
 // BIELERSEE - GAUSS SCATTERGUN //
 
-// TODO :)
+/obj/item/gun/ballistic/automatic/powered/gauss/bielersee
+	name = "Model 'Bielersee' Magnetic Scattergun"
+	desc = "A gauss scattergun of Solarian make for close-quarters engagements. Fires tight clusters of ferromagnetic flechettes."
+	icon_state = "model-b"
+	item_state = "model-b"
+	manufacturer = MANUFACTURER_SOLARARMORIES
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/bielersee
+	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/bielersee)
+	unique_attachments = list(/obj/item/attachment/foldable_stock/bielersee)
+	default_attachments = list(/obj/item/attachment/foldable_stock/bielersee)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 6,
+			"y" = 18,
+		)
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+	internal_magazine = TRUE
+	w_class = WEIGHT_CLASS_NORMAL
+
+	fire_delay = 0.5 SECONDS
 
 // RUTLI - GAUSS SMG //
 
-// TODO :)
+/obj/item/gun/ballistic/automatic/powered/gauss/rutli
+	name = "Model 'Rutli' Submachine Gun"
+	desc = "A lightweight Solarian gauss SMG. Features a large internal magazine and fast charging electronics allowing it to fire much faster than other gauss weaponry. Chambered in ferromagnetic pellets."
+	icon_state = "model-r"
+	item_state = "model-r"
+	internal_magazine = TRUE
+	manufacturer = MANUFACTURER_SOLARARMORIES
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rutli
+	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/rutli)
+	fire_sound = 'sound/weapons/gun/cybersun/gauss.ogg'
+	fire_sound_volume = 35
+	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
+
+	fire_delay = 0.14 SECONDS
+	burst_delay = 0.09
+	burst_size = 4
+	gun_firemodes = list(FIREMODE_BURST, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
 
 // PANZERFAUST - ROCKET LAUNCHER //
 /obj/item/gun/ballistic/rocketlauncher/solgov

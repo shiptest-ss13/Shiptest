@@ -26,7 +26,7 @@
 	caliber = "lance"
 	icon_state = "gauss-lance"
 	projectile_type = /obj/projectile/bullet/gauss/lance
-	auto_rotate = TRUE
+	auto_rotate = FALSE
 	energy_cost = 155
 	stack_size = 16
 
@@ -46,7 +46,7 @@
 	caliber = "slug"
 	icon_state = "gauss-slug"
 	projectile_type = /obj/projectile/bullet/gauss/slug
-	auto_rotate = TRUE
+	auto_rotate = FALSE
 	energy_cost = 700
 	stack_size = 10
 
@@ -66,9 +66,34 @@
 	caliber = "rod"
 	icon_state = "gauss-rod"
 	projectile_type = /obj/projectile/bullet/gauss/rod
-	auto_rotate = TRUE
+	auto_rotate = FALSE
 	energy_cost = 1500
 	stack_size = 5
+
+/obj/item/ammo_casing/caseless/gauss/flechette
+	name = "ferromagnetic flechette bundle"
+	desc = "A tightly packed bundle of metal flechettes."
+	caliber = "flechette"
+	projectile_type = /obj/projectile/bullet/gauss/flechette
+	icon_state = "gauss-slug"
+	auto_rotate = FALSE
+	energy_cost = 300
+	pellets = 4
+	variance = 8
+	stack_size = 10
+
+/obj/item/ammo_casing/caseless/gauss/flechette/hc
+	name = "high conductivity flechette bundle"
+	desc = "A tightly packed bundle of crystal-metal flechettes."
+	caliber = "flechette"
+	projectile_type = /obj/projectile/bullet/gauss/flechette/hc
+	icon_state = "hc-slug"
+	auto_rotate = FALSE
+	energy_cost = 600
+	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
+	pellets = 4
+	variance = 8
+	stack_size = 10
 
 /obj/item/ammo_casing/caseless/gauss/tavsha
 	name = "2x15mm Tav'Sha gauss dart"

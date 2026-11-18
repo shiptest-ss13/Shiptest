@@ -93,3 +93,31 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/flechette
+	max_ammo = 10
+
+/obj/item/storage/box/ammo/flechette
+	name = "box of ferromagnetic flechettes"
+	desc = "A box of ferromagnetic flechettes for gauss firearms."
+	icon_state = "ferrorodsbox"
+
+/obj/item/storage/box/ammo/flechette/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette/hc
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/flechette/hc
+	max_ammo = 10
+
+/obj/item/storage/box/ammo/flechette/hc
+	name = "box of high conductivity flechettes"
+	desc = "A box of ferromagnetic flechettes for gauss firearms."
+	icon_state = "ferrorodsbox"
+
+/obj/item/storage/box/ammo/flechette/hc/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette/hc = 4)
+	generate_items_inside(items_inside,src)

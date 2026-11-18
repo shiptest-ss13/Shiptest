@@ -81,8 +81,27 @@
 		var/atom/movable/M = target
 		var/atom/throw_target = get_edge_target_turf(M, dir)
 		M.throw_at(throw_target, 4, 2)
-	if(pierces > 5) // no immovable rod rp
-		qdel(src)
+	if(pierces > 4) // no immovable rod rp
+		projectile_piercing = null
+
+// Ferromagnetic flechettes (Bielersee)
+
+/obj/projectile/bullet/gauss/flechette
+	name = "ferromagnetic flechette"
+	icon_state = "redtrac"
+	damage = 15
+
+/obj/projectile/bullet/gauss/flechette/hc
+	name = "ferromagnetic flechette"
+	damage = 10
+	armour_penetration = 20
+	range = 50
+	hitscan = TRUE
+	light_system = 0
+	light_range = 0
+	muzzle_type = /obj/effect/projectile/muzzle/gauss
+	tracer_type = /obj/effect/projectile/tracer/gauss
+	impact_type = /obj/effect/projectile/impact/gauss
 
 /* Cybersun Gauss Darts */
 

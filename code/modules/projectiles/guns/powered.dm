@@ -31,7 +31,7 @@
 		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 	else
 		. += span_notice("[src] doesn't seem to have a cell!")
-	if(internal_mag)
+	if(internal_magazine)
 		. += span_notice("You can remove the cell by holding the gun and clicking it with your other hand.")
 	else
 		. += span_notice("You can remove the cell by holding the gun and clicking it with your other hand while the magazine is out.")
