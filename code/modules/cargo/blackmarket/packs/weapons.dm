@@ -448,7 +448,7 @@
 /datum/blackmarket_item/weapon/guncase/model_h
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
-	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
+	item = /obj/item/gun/ballistic/sol_gauss/modelh
 	pair_item = list(/datum/blackmarket_item/ammo/model_h_mag, /datum/blackmarket_item/ammo/gauss_cell)
 
 	cost_min = 2000
@@ -650,7 +650,7 @@
 /datum/blackmarket_item/weapon/guncase/rail_cannon
 	name = "Model 'Atelier' Railgun"
 	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
-	item = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	item = /obj/item/gun/ballistic/sol_gauss/rail_cannon
 	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
 	pair_item = list(/datum/blackmarket_item/ammo/rods)
 
@@ -663,7 +663,7 @@
 /datum/blackmarket_item/weapon/guncase/bielersee
 	name = "Model 'Bielersee' Magnetic Scattergun"
 	desc = "Two words: Gauss. Shotgun. Yeah I didn't think it was real either til I bought this off some guy from Ganymede. Shoots a bunch of fuckin needles and leaves people lookin like a porcupine. Or something like that."
-	item = /obj/item/gun/ballistic/automatic/powered/gauss/bielersee
+	item = /obj/item/gun/ballistic/sol_gauss/bielersee
 	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette
 	pair_item = list(/datum/blackmarket_item/ammo/flechette)
 

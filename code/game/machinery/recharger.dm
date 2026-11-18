@@ -20,7 +20,7 @@
 		/obj/item/gun/energy,
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
-		/obj/item/gun/ballistic/automatic/powered,
+		/obj/item/gun/ballistic/sol_gauss,
 		/obj/item/gun/ballistic/automatic/assault/e40,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/melee/energy/flyssa

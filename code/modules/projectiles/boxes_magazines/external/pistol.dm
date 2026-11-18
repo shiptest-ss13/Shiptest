@@ -26,12 +26,12 @@
 	icon_state = "[base_icon_state]-[min(ammo_count(), 8)]"
 
 /obj/item/ammo_box/magazine/pistol556mm
-	name = "Model 'Eiger' magazine (5.56mm HITP caseless)"
+	name = "Model 'Eiger' magazine (6mm HITP caseless)"
 	desc = "A 12-round, double-stack magazine for the Model 'Eiger' pistol. These rounds do okay damage with average performance against armor."
 	icon_state = "pistolec_mag-12" //ok i did it
 	base_icon_state = "pistolec_mag"
-	ammo_type = /obj/item/ammo_casing/caseless/c556mm
-	caliber = "5.56mm caseless"
+	ammo_type = /obj/item/ammo_casing/caseless/c6mm
+	caliber = "6mm caseless"
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/pistol556mm/update_icon_state()

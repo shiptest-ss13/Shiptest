@@ -703,7 +703,7 @@
 			new /obj/item/ammo_box/magazine/pistol556mm(loc)
 		if(121 to 125)
 			// hasenmatt
-			new /obj/item/gun/ballistic/automatic/powered/gauss/modelh(loc)
+			new /obj/item/gun/ballistic/sol_gauss/modelh(loc)
 			new /obj/item/ammo_box/magazine/modelh(loc)
 		if(126 to 130)
 			// civvie thistle
@@ -726,7 +726,7 @@
 			new kit(loc)
 		if(141 to 145)
 			// claris
-			new /obj/item/gun/ballistic/automatic/powered/gauss/claris(loc)
+			new /obj/item/gun/ballistic/sol_gauss/claris(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
 			new /obj/item/stock_parts/cell/gun/solgov(loc)
@@ -822,7 +822,7 @@
 			new /obj/item/ammo_box/magazine/cs_gauss/rifle(loc)
 		if(111 to 115)
 			// rutli
-			new /obj/item/gun/ballistic/automatic/powered/gauss/rutli(loc)
+			new /obj/item/gun/ballistic/sol_gauss/rutli(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
 			new /obj/item/stock_parts/cell/gun/solgov(loc)
@@ -866,7 +866,7 @@
 			new /obj/item/stock_parts/cell/gun/large(loc)
 		if(41 to 45)
 			// atelier
-			new /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon(loc)
+			new /obj/item/gun/ballistic/sol_gauss/rail_cannon(loc)
 			new /obj/item/storage/box/ammo/ferrorods(loc)
 			new /obj/item/stock_parts/cell/gun/solgov(loc)
 		if(46 to 50)

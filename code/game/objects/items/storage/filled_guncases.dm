@@ -271,7 +271,7 @@
 /* Solar Armories */
 
 /obj/item/storage/guncase/pistol/modelh
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
+	gun_type = /obj/item/gun/ballistic/sol_gauss/modelh
 	mag_type = /obj/item/ammo_box/magazine/modelh
 
 /obj/item/storage/guncase/pistol/modele
@@ -283,22 +283,22 @@
 	mag_type = /obj/item/ammo_box/a858
 
 /obj/item/storage/guncase/claris
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/claris
+	gun_type = /obj/item/gun/ballistic/sol_gauss/claris
 	mag_type = /obj/item/ammo_box/amagpellet_claris
 
 /obj/item/storage/guncase/rutli
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rutli
+	gun_type = /obj/item/gun/ballistic/sol_gauss/rutli
 	mag_type = /obj/item/ammo_box/amagpellet_claris
 
 /obj/item/storage/guncase/lucerne
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/lucerne
+	gun_type = /obj/item/gun/ballistic/sol_gauss/lucerne
 	mag_type = /obj/item/ammo_box/magazine/lucerne
 
 /obj/item/storage/guncase/railgun
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	gun_type = /obj/item/gun/ballistic/sol_gauss/rail_cannon
 
 /obj/item/storage/guncase/bielersee
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/bielersee
+	gun_type = /obj/item/gun/ballistic/sol_gauss/bielersee
 
 /* VI */
 

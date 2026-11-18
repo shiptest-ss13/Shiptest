@@ -70,31 +70,27 @@
 	armour_penetration = 20
 	bullet_identifier = "small bullet"
 
-// 5.56 HITP caseless (Model E)
+// 6mm HITP caseless (Eiger)
 
-/obj/projectile/bullet/c556mm
-	name = "5.56mm HITP bullet"
+/obj/projectile/bullet/c6mm
+	name = "6mm bullet"
 	damage = 20
 	bullet_identifier = "small bullet"
 
-/obj/projectile/bullet/c556mm/surplus
-	name = "5.56mm HITP surplus bullet"
-	speed_mod = BULLET_SPEED_SURPLUS_MOD
-
-/obj/projectile/bullet/c556mm/ap
-	name = "5.56mm HITP AP bullet"
+/obj/projectile/bullet/c6mm/ap
+	name = "6mm AP bullet"
 	damage = 19
 	armour_penetration = 20
 	speed_mod = BULLET_SPEED_AP_MOD
 
-/obj/projectile/bullet/c556mm/hp
-	name = "5.56mm HITP hollow point bullet"
+/obj/projectile/bullet/c6mm/hp
+	name = "6mm hollow point bullet"
 	damage = 30
 	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
-/obj/projectile/bullet/c556mm/rubber
-	name = "5.56mm HITP rubber bullet"
+/obj/projectile/bullet/c6mm/rubber
+	name = "6mm rubber bullet"
 	damage = 5
 	stamina = 30
 	armour_penetration = -10

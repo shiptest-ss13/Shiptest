@@ -81,30 +81,24 @@
 
 // 5.56mm HITP caseless (Model E)
 
-/obj/item/ammo_casing/caseless/c556mm
-	name = "5.56mm HITP caseless round"
-	desc = "A 5.56mm HITP caseless round."
+/obj/item/ammo_casing/caseless/c6mm
+	name = "6mm HITP caseless round"
+	desc = "A 6mm HITP caseless round."
 	icon_state = "caseless"
-	caliber = "5.56mm caseless"
-	projectile_type = /obj/projectile/bullet/c556mm
+	caliber = "6mm caseless"
+	projectile_type = /obj/projectile/bullet/c6mm
 
-/obj/item/ammo_casing/caseless/c556mm/surplus
-	name = "5.56mm HITP caseless surplus round"
-	desc = "A 5.56mm HITP caseless surplus round."
-	projectile_type = /obj/projectile/bullet/c556mm/surplus
-	wear_modifier = 2
+/obj/item/ammo_casing/caseless/c6mm/ap
+	name = "6mm HITP caseless armor-piercing round"
+	desc = "A 6mm HITP caseless armor-piercing round."
+	projectile_type = /obj/projectile/bullet/c6mm/ap
 
-/obj/item/ammo_casing/caseless/c556mm/ap
-	name = "5.56mm HITP caseless armor-piercing round"
-	desc = "A 5.56mm HITP caseless armor-piercing round."
-	projectile_type = /obj/projectile/bullet/c556mm/ap
+/obj/item/ammo_casing/caseless/c6mm/hp
+	name = "6mm HITP caseless hollow-point round"
+	desc = "A 6mm HITP caseless hollow-point round."
+	projectile_type = /obj/projectile/bullet/c6mm/hp
 
-/obj/item/ammo_casing/caseless/c556mm/hp
-	name = "5.56mm HITP caseless hollow-point round"
-	desc = "A 5.56mm HITP caseless hollow-point round."
-	projectile_type = /obj/projectile/bullet/c556mm/hp
-
-/obj/item/ammo_casing/caseless/c556mm/rubbershot
-	name = "5.56mm HITP caseless rubber round"
-	desc = "A 5.56mm HITP caseless rubber round."
-	projectile_type = /obj/projectile/bullet/c556mm/rubber
+/obj/item/ammo_casing/caseless/c6mm/rubbershot
+	name = "6mm HITP caseless rubber round"
+	desc = "A 6mm HITP caseless rubber round."
+	projectile_type = /obj/projectile/bullet/c6mm/rubber

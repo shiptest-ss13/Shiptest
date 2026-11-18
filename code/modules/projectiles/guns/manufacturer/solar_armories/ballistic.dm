@@ -10,7 +10,7 @@
 //
 
 // HASENMATT - GAUSS PISTOL //
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh
+/obj/item/gun/ballistic/sol_gauss/modelh
 	name = "Model 'Hasenmatt' Gauss Pistol"
 	desc = "A standard-issue pistol exported from the Solarian Confederation. While rather small for a gauss gun it carries formidable stopping power thanks to its oversized ferromagnetic slugs. A popular choice for self-defense and police forces."
 
@@ -40,7 +40,7 @@
 
 	autowiki_hidden = FALSE
 
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
+/obj/item/gun/ballistic/sol_gauss/modelh/no_mag
 	default_ammo_type = FALSE
 
 // EIGER - CASELESS PISTOL //
@@ -71,7 +71,7 @@
 	fire_select_icon_state_prefix = "caseless_"
 
 // CLARIS - GAUSS RIFLE //
-/obj/item/gun/ballistic/automatic/powered/gauss/claris
+/obj/item/gun/ballistic/sol_gauss/claris
 	name = "Model 'Claris' Ferromagnetic Line Rifle"
 	desc = "An antiquated Solarian gauss rifle. While long since shifted out of military service, the Claris still sees popularity among civilians as a hunting and self defense weapon. Chambered in ferromagnetic pellets."
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/claris
@@ -95,7 +95,7 @@
 	)
 
 	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_amt = 10
 	zoom_out_amt = 5
 
 	doesnt_keep_bullet = TRUE
@@ -104,7 +104,7 @@
 	autowiki_hidden = FALSE
 
 // LUCERNE - GAUSS CARBINE //
-/obj/item/gun/ballistic/automatic/powered/gauss/lucerne
+/obj/item/gun/ballistic/sol_gauss/lucerne
 	name = "Model 'Lucerne' Gauss Carbine"
 	desc = "A modern Solarian military carbine, boasting a sizeable magazine capacity and rapid rate of fire. Uses magazines loaded with ferromagnetic lances."
 	default_ammo_type = /obj/item/ammo_box/magazine/lucerne
@@ -151,7 +151,7 @@
 	can_be_sawn_off = FALSE
 
 	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_amt = 10
 	zoom_out_amt = 5
 
 	manufacturer = MANUFACTURER_SOLARARMORIES
@@ -163,7 +163,7 @@
 	wield_delay = 1.3 SECONDS
 
 // ATELIER - HIGH POWERED RAILGUN //
-/obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+/obj/item/gun/ballistic/sol_gauss/rail_cannon
 	name = "Model 'Atelier' Railgun"
 	desc = "A high powered Solarian railgun, designed for punching heavy armor, cover, and just about anything else. The heavy-duty electromagnets require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait."
 
@@ -189,7 +189,7 @@
 	aiming_time_fire_threshold = 10
 
 	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_amt = 10
 	zoom_out_amt = 5
 
 	fire_sound = 'sound/weapons/gun/general/tank_cannon.ogg'
@@ -204,7 +204,7 @@
 	autowiki_hidden = FALSE
 
 // BIELERSEE - GAUSS SCATTERGUN //
-/obj/item/gun/ballistic/automatic/powered/gauss/bielersee
+/obj/item/gun/ballistic/sol_gauss/bielersee
 	name = "Model 'Bielersee' Magnetic Scattergun"
 	desc = "A gauss scattergun of Solarian make for close-quarters engagements. Fires tight clusters of ferromagnetic flechettes."
 	icon_state = "model-b"
@@ -230,11 +230,11 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 	fire_delay = 0.5 SECONDS
-	recoil = 2
-	recoil_unwielded = 4
+	recoil = 1
+	recoil_unwielded = 2
 
 // RUTLI - GAUSS SMG //
-/obj/item/gun/ballistic/automatic/powered/gauss/rutli
+/obj/item/gun/ballistic/sol_gauss/rutli
 	name = "Model 'Rutli' Submachine Gun"
 	desc = "A lightweight Solarian gauss SMG. Features a large internal magazine and fast charging electronics allowing it to fire much faster than other gauss weaponry. Chambered in ferromagnetic pellets."
 	icon_state = "model-r"

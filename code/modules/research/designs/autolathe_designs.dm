@@ -990,14 +990,6 @@
 	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/c556mmHITP_surplus
-	name = "Ammo Box (surplus 5.56mm HITP caseless)"
-	id = "c556mmHITP-surplus"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 16000)
-	build_path = /obj/item/storage/box/ammo/c556mm_surplus
-	category = list("initial", "Security", "Ammo")
-
 /datum/design/buckshot_surplus
 	name = "Surplus Buckshot"
 	id = "buckshot-surplus"
