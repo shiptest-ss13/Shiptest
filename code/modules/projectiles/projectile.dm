@@ -853,6 +853,8 @@
 
 /obj/projectile/proc/process_homing()			//may need speeding up in the future performance wise.
 	if(!homing_target)
+		//stop running this check if we're not homing.
+		homing = FALSE
 		return FALSE
 	var/datum/point/PT = RETURN_PRECISE_POINT(homing_target)
 	PT.x += clamp(homing_offset_x, 1, world.maxx)
