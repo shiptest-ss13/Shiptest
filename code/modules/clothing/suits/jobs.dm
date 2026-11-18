@@ -201,11 +201,3 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
-
-/obj/item/clothing/suit/armor/witchhunter
-	name = "witchunter garb"
-	desc = "This worn outfit saw much use back in the day."
-	icon_state = "chaplain_witchhunter"
-	item_state = "witchhunter"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/storage/book/bible, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

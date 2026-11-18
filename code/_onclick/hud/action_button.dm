@@ -185,6 +185,13 @@
 
 //see human and alien hud for specific implementations.
 
+/**
+ * Updates all action buttons associated with this item
+ *
+ * Arguments:
+ * * status_only - Update only current availability status of the buttons to show if they are ready or not to use
+ * * force - Force buttons update even if the given button icon state has not changed
+ */
 /mob/proc/update_action_buttons_icon(status_only = FALSE)
 	for(var/X in actions)
 		var/datum/action/A = X

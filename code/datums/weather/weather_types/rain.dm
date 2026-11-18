@@ -24,9 +24,10 @@
 
 	fire_suppression = 6
 
+/datum/weather/rain/affects(mob/living/victim)
+	return iscarbon(victim)
+
 /datum/weather/rain/weather_act(mob/living/living_mob)
-	if(!iscarbon(living_mob))
-		return
 	var/mob/living/carbon/carbon = living_mob
 	carbon.adjust_wet_stacks(fire_suppression/2)
 	if(prob(25))
@@ -106,11 +107,10 @@
 	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
+	harmful = TRUE
 	var/toxic_power = 2
 
 /datum/weather/rain/toxic/weather_act(mob/living/living_mob)
-	if(!iscarbon(living_mob))
-		return
 	var/mob/living/carbon/carbon = living_mob
 	handle_face(carbon)
 	handle_eyes(carbon)

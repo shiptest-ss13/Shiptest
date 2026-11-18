@@ -227,12 +227,22 @@
 
 /obj/item/storage/box/ammo/c215
 	name = "box of short 2x15mm dart magazines"
-	desc = "A box of short 2x15mm dart magazines, for the Rectifier gauss pistol."
+	desc = "A box of short 2x15mm dart magazines, for the Rectifier gauss pistol and Convergence light gauss rifle."
 	icon_state = "2x15box"
 
 /obj/item/storage/box/ammo/c215/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/cs_gauss/pistol = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/ammo/c215/shock
+	name = "box of short 2x15mm shock dart magazines"
+	desc = "A box of short 2x15mm shock dart magazines, for when it's better to bring someone back alive."
+	icon_state = "2x15box"
+
+/obj/item/storage/box/ammo/c215/shock/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/cs_gauss/pistol/shock = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/ammo/c215/long
@@ -245,6 +255,16 @@
 		/obj/item/ammo_box/magazine/cs_gauss = 4)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/ammo/c215/long/shock
+	name = "box of long 2x15mm shock dart magazines"
+	desc = "A box of long 2x15mm shock dart magazines, for the Convergence light gauss rifle."
+	icon_state = "2x15box"
+
+/obj/item/storage/box/ammo/c215/long/shock/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/cs_gauss/shock = 4)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/ammo/c320
 	name = "box of 3x20mm dart magazines"
 	desc = "A box of long 3x20mm dart magazines, for the Vector gauss rifle."
@@ -253,4 +273,14 @@
 /obj/item/storage/box/ammo/c320/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/cs_gauss/rifle = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/ammo/c320/shock
+	name = "box of 3x20mm dart magazines"
+	desc = "A box of long 3x20mm shock dart magazines, for the Vector gauss rifle."
+	icon_state = "3x20box"
+
+/obj/item/storage/box/ammo/c320/shock/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/cs_gauss/rifle/shock = 4)
 	generate_items_inside(items_inside,src)
