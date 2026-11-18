@@ -471,7 +471,7 @@
 	name = "SolCon Weapon Cell Crate"
 	desc = "Contains a Solarian weapon cell, compatible with Solarian gauss weaponry."
 	contains = list(/obj/item/stock_parts/cell/gun/solgov)
-	cost = 500
+	cost = 1000
 	faction = /datum/faction/solgov
 
 /datum/supply_pack/magazine/warra_guncell
