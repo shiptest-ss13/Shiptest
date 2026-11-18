@@ -139,9 +139,10 @@
 
 /turf/closed/bullet_act(obj/projectile/impacting)
 	. = ..()
-	var/shooter = impacting.firer
-
 	var/turf/victim_turf = impacting.loc
+	//zero/negative damage & stamina weaponry isn't so explosive
+	if(impacting.damage <= 0 || impacting.damage_type == STAMINA)
+		return
 	if(!isclosedturf(victim_turf))
 		var/turf/open/interceptor = victim_turf
 		//GET BEHIND ME MS REINFORCED WALL
@@ -155,7 +156,7 @@
 		visible_message(span_danger("[src] is hit by \a [impacting]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
 		add_dent(WALL_DENT_SHOT)
-		alter_integrity(-dam, shooter)
+		alter_integrity(-dam, impacting.firer)
 
 /turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, turf_minimum_damage = minimum_damage)
 	used_item.closed_turf_attack(src,user)
