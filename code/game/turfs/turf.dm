@@ -119,7 +119,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		Entered(content, null)
 
 	var/area/our_area = loc
-	if(!our_area.area_has_base_lighting && space_lit) //Only provide your own lighting if the area doesn't for you
+	if(!area_lights_space_turfs(our_area) && space_lit) //Only provide your own lighting if the area doesn't for you
 		add_overlay(/obj/effect/fullbright)
 
 	if(requires_activation)

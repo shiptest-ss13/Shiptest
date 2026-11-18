@@ -149,6 +149,10 @@
 	if(turf_area.base_lighting_is_daylight)
 		queue_lighting_object_update()
 
+// space lit turfs stay fullbright under planet daylight
+/proc/area_lights_space_turfs(area/turf_area)
+	return turf_area.area_has_base_lighting && !turf_area.base_lighting_is_daylight
+
 // lights this turf with daylight only where exact turfs need it; without daylight it uses its own light
 /turf/proc/update_planet_daylight_source()
 	var/area/turf_area = loc

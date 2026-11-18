@@ -117,9 +117,9 @@
 
 	// Manage removing/adding starlight overlays, we'll inherit from the area so we can drop it if the area has it already
 	if(space_lit)
-		if(!new_area.lighting_effects && old_area.lighting_effects)
+		if(!area_lights_space_turfs(new_area) && area_lights_space_turfs(old_area))
 			add_overlay(/obj/effect/fullbright)
-		else if (new_area.lighting_effects && !old_area.lighting_effects)
+		else if (area_lights_space_turfs(new_area) && !area_lights_space_turfs(old_area))
 			cut_overlay(/obj/effect/fullbright)
 
 	// Only touch visibility when base lighting is gained or lost.
