@@ -8,8 +8,8 @@
 
 //legion
 /obj/item/mob_trophy/legion_skull
-	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Could be used in crafting."
+	name = "legion tumor"
+	desc = "A dead and lifeless legion tumor. Could be used in crafting."
 	icon_state = "legion_skull"
 
 /obj/item/mob_trophy/wolf_ear
