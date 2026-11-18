@@ -7,6 +7,7 @@
 	name = "evil gauss rifle"
 	desc = "I'm evil as fuuuuuuuuuck."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	icon_state = "model-e-old" // blatantly incorrect
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'

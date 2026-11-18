@@ -30,7 +30,7 @@
 	projectile_type = /obj/projectile/bullet/gauss/lance
 	auto_rotate = FALSE
 	energy_cost = 155
-	stack_size = 30
+	stack_size = 16
 
 /obj/item/ammo_casing/caseless/gauss/lance/hc
 	name = "high conductivity lance"
