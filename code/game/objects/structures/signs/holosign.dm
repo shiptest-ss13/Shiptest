@@ -306,7 +306,7 @@
 
 /obj/machinery/holosign/cs_outpost_lift
 	name = "holosign - Lift"
-	desc_add = "Lift - Transfer to docking ares here."
+	desc_add = "Lift - Transfer to docking areas here."
 	icon_state = "outpost_lift"
 	light_color = LIGHT_COLOR_FLARE
 	never_random = TRUE
@@ -333,7 +333,7 @@
 
 /obj/machinery/holosign/tiny/cs_med
 	name = "holosign - Medical"
-	desc_add = "Engineering this way."
+	desc_add = "Medical this way."
 	icon_state = "holodir_med"
 	light_color = LIGHT_COLOR_FLARE
 
