@@ -149,8 +149,8 @@
 	faction = /datum/faction/solgov
 
 /datum/supply_pack/gun/modelh
-	name = "Model 'H' Gauss Pistol Crate"
-	desc = "Contains a compact solarian-produced gauss pistol, chambered in ferromagnetic slugs. Remember to sign your necessary forms upon arrival."
+	name = "Model 'Hasenmatt' Gauss Pistol Crate"
+	desc = "Contains a solarian-produced heavy gauss pistol, chambered in ferromagnetic slugs."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/modelh)
 	faction = /datum/faction/solgov
@@ -609,6 +609,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/bielersee
+	name = "Model 'Bielersee' Magnetic Scattergun"
+	desc = "Contains a gauss scattergun for close quarters combat that fires groups of flechettes."
+	cost = 4000
+	contains =list(/obj/item/storage/guncase/bielersee)
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		SMGs
 */
@@ -766,6 +775,15 @@
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
 	faction = /datum/faction/scarborough
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/rutli
+	name = "Model 'Rutli' Submachine gun"
+	desc = "Contains a fast-firing gauss SMG chambered in ferromagnetic pellets."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/rutli)
+	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -1021,11 +1039,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/claris
-	name = "'Claris' Gauss Rifle"
+	name = "Model 'Claris' Gauss Rifle"
 	desc = "Contains a low-powered gauss rifle, loaded directly via ferromagnetic pellet speedloaders."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/claris)
-	crate_name = "dmr crate"
+	crate_name = "rifle crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE

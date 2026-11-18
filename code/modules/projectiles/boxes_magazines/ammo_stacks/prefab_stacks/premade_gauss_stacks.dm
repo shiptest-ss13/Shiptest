@@ -101,7 +101,7 @@
 /obj/item/storage/box/ammo/flechette
 	name = "box of ferromagnetic flechettes"
 	desc = "A box of ferromagnetic flechettes for gauss firearms."
-	icon_state = "ferrorodsbox"
+	icon_state = "flechettebox"
 
 /obj/item/storage/box/ammo/flechette/PopulateContents()
 	var/static/items_inside = list(
@@ -115,7 +115,7 @@
 /obj/item/storage/box/ammo/flechette/hc
 	name = "box of high conductivity flechettes"
 	desc = "A box of ferromagnetic flechettes for gauss firearms."
-	icon_state = "ferrorodsbox"
+	icon_state = "flechettebox-hc"
 
 /obj/item/storage/box/ammo/flechette/hc/PopulateContents()
 	var/static/items_inside = list(

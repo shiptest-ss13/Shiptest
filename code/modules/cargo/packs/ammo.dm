@@ -466,11 +466,27 @@
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
 	cost = 380
 
+/* ferro rods */
+
 /datum/supply_pack/ammo/ferrorodboxcrate
 	name = "Ferromagnetic Rod Box Crate"
 	desc = "Contains a 20-round ferromagnetic rod box for high-powered gauss guns such as the Model 'Atelier' Railgun."
 	contains = list(/obj/item/storage/box/ammo/ferrorods)
 	cost = 500
+
+/* ferro flechettes */
+
+/datum/supply_pack/ammo/flechette
+	name = "Ferromagnetic Flechette Box Crate"
+	desc = "Contains 40 bundles of ferromagnetic flechettes for gauss scatterguns such as the Bielersee."
+	contains = list(/obj/item/storage/box/ammo/flechette)
+	cost = 400 // bit over buckshot
+
+/datum/supply_pack/ammo/hcflechette
+	name = "High Conductivity Flechette Box Crate"
+	desc = "Contains 40 bundles of high conductivity flechettes for gauss scatterguns such as the Bielersee."
+	contains = list(/obj/item/storage/box/ammo/flechette/hc)
+	cost = 480
 
 /* cybersun gauss darts */
 

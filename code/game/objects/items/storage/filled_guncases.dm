@@ -286,12 +286,19 @@
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/claris
 	mag_type = /obj/item/ammo_box/amagpellet_claris
 
+/obj/item/storage/guncase/rutli
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rutli
+	mag_type = /obj/item/ammo_box/amagpellet_claris
+
 /obj/item/storage/guncase/lucerne
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/lucerne
 	mag_type = /obj/item/ammo_box/magazine/lucerne
 
 /obj/item/storage/guncase/railgun
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+
+/obj/item/storage/guncase/bielersee
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/bielersee
 
 /* VI */
 

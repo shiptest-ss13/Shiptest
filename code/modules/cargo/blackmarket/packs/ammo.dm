@@ -455,6 +455,15 @@
 	stock_max = 6
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/flechette
+	name = "Ferromagnetic flechettes"
+	desc = "40 bundles of ferromagnetic flechettes."
+	item = /obj/item/storage/box/ammo/flechette
+	cost_min = 400
+	cost_max = 600
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0
 
 /datum/blackmarket_item/ammo/a4gflashbang
 	name = "4-Gauge Flashbang Shells"

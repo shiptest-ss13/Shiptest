@@ -660,6 +660,19 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/weapon/guncase/bielersee
+	name = "Model 'Bielersee' Magnetic Scattergun"
+	desc = "Two words: Gauss. Shotgun. Yeah I didn't think it was real either til I bought this off some guy from Ganymede. Shoots a bunch of fuckin needles and leaves people lookin like a porcupine. Or something like that."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss/bielersee
+	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette
+	pair_item = list(/datum/blackmarket_item/ammo/flechette)
+
+	cost_min = 4000
+	cost_max = 6000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/weapon/guncase/cinder
 	name = "HP Cinder"
 	desc = "My buddy Keith shot this shotgun one handed. Lemme tell ya, broken bones throughout his arm. If you want a streetsweeper with enough oomfh to blow a fist-sized hole right through a guy when you board their ship, you're in luck."
