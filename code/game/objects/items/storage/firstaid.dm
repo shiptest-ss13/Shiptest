@@ -732,7 +732,6 @@
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
 	generate_items_inside(items_inside,src)
 
-<<<<<<< HEAD
 /obj/item/storage/medpack/crisis
 	name = "pack of crisis stimpacks"
 	desc = "A sealed, sterile-white plastic package full of crisis stimpacks."
