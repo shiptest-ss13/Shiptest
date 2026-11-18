@@ -128,6 +128,7 @@
 		/obj/item/gun/ballistic/cs_gauss/rectifier,
 		/obj/item/gun/energy/cybersun/troubleshooter,
 		/obj/item/gun/energy/cybersun/lorentz/opportunist,
+		/obj/item/gun/ballistic/sol_gauss/modelh,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
 	can_hold_max_of_items = typecacheof(list(
 		/obj/item/gun = 1,
