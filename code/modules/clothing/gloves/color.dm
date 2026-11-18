@@ -335,7 +335,11 @@
 	)
 
 /obj/item/clothing/gloves/armwarmers/white
+	name = "white arm warmers"
+	icon_state = "armwarmerswhite"
 	current_skin = "white arm warmers"
 
 /obj/item/clothing/gloves/armwarmers/striped
+	name = "striped arm warmers"
+	icon_state = "armwarmersstriped"
 	current_skin = "striped arm warmers"
