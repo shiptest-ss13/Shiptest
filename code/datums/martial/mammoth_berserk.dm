@@ -52,7 +52,7 @@
 
 // DISARM - Tear off limbs of people we are grabbing. Get it. Becau
 /datum/martial_art/berserk/disarm_act(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user.grab_state >= GRAB_AGGRESSIVE)
+	if(user.grab_state >= GRAB_AGGRESSIVE && user.pulling == target)
 		var/rip_time = 3 SECONDS // how long it takes to rip a limb off
 
 		// first, some checks
