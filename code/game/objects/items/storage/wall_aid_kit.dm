@@ -98,3 +98,22 @@
 			qdel(src)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/wall_firstaid, 27)
+
+/obj/item/storage/wall_firstaid/burn
+	name = "burn first-aid kit"
+	icon_state = "wall_aid_kit_burn"
+
+/obj/item/storage/wall_firstaid/burn/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stack/medical/ointment = 1,
+		/obj/item/stack/medical/mesh = 1,
+		/obj/item/stack/medical/gauze = 1,
+		/obj/item/reagent_containers/medigel/quardexane = 1,
+		/obj/item/storage/pill_bottle/alvitane = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
+		/obj/item/reagent_containers/hypospray/medipen = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
+	)
+	generate_items_inside(items_inside,src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/wall_firstaid/burn, 27)
