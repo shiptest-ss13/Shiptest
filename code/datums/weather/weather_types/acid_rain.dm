@@ -19,6 +19,7 @@
 	protect_indoors = TRUE
 
 	immunity_type = "acid" // temp
+	harmful = TRUE
 
 	barometer_predictable = TRUE
 
@@ -29,10 +30,11 @@
 
 	fire_suppression = 6
 
-/datum/weather/acid_rain/weather_act(mob/living/L)
+/datum/weather/acid_rain/affects(mob/living/victim)
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
-	if(isanimal(L))
-		return
-	var/resist = L.getarmor(null, "acid")
+	return !isanimal(victim) && victim.getarmor(null, "acid") < 100
+
+/datum/weather/acid_rain/weather_act(mob/living/victim)
+	var/resist = victim.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
-		L.acid_act(20,1)
+		victim.acid_act(20,1)

@@ -180,6 +180,10 @@
 	display_name = "track jacket, colorable"
 	path = /obj/item/clothing/suit/toggle/track
 
+/datum/gear/suit/jacket/range
+	display_name = "range fleece"
+	path = /obj/item/clothing/suit/toggle/fleece
+
 //trenchcoats
 
 /datum/gear/suit/jacket/trenchcoat
