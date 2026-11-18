@@ -209,7 +209,9 @@
 			legacy = FALSE
 		if(isnull(old_legacy) || (old_legacy != instrument_legacy))
 			if(playing)
+				compiling = TRUE
 				compile_chords()
+				compiling = FALSE
 
 /**
  * Attempts to start playing our song.
@@ -267,6 +269,8 @@
 /datum/song/proc/process_song(ticks_passed = 1)
 	if(!length(compiled_chords) || should_stop_playing(user_playing))
 		stop_playing()
+		return
+	if(compiling)
 		return
 	if(finishing)
 		// stop abruptly stopping the song at the end

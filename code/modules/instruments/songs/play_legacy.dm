@@ -5,8 +5,8 @@
 	if(!length(src.lines))
 		return
 	var/list/lines = src.lines		//cache for hyepr speed!
-	compiled_chords = list()
-	compiled_chord_lines = list()
+	var/list/new_chords = list()
+	var/list/new_chord_lines = list()
 	var/line_number = 0
 	var/list/octaves = list(3, 3, 3, 3, 3, 3, 3)
 	var/list/accents = list("n", "n", "n", "n", "n", "n", "n")
@@ -46,9 +46,11 @@
 					compiled_chord[++compiled_chord.len] = list(key, accents[key], octaves[key], note_volume)
 			compiled_chord += tempodiv		//this goes last
 			if(length(compiled_chord))
-				compiled_chords[++compiled_chords.len] = compiled_chord
-				compiled_chord_lines += line_number
+				new_chords[++new_chords.len] = compiled_chord
+				new_chord_lines += line_number
 			CHECK_TICK
+	compiled_chords = new_chords
+	compiled_chord_lines = new_chord_lines
 
 /**
  * Proc to play a legacy note. Just plays the sound to hearing mobs (and does hearcheck if necessary), no fancy channel/sustain/management.
