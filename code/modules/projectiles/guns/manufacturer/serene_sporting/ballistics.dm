@@ -425,7 +425,7 @@ NO_MAG_GUN_HELPER(automatic/m15)
 		"Wood" = "buckmaster",
 		"Polymer" = "buckmasterclip"
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

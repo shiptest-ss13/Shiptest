@@ -255,7 +255,7 @@
 		"Woodland" = "riot_woodland",
 		"Snow" = "riot_snow",
 		)
-	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"

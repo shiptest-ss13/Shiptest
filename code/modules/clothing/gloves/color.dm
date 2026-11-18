@@ -21,7 +21,6 @@
 						"brown gloves" = "brown",
 						"maroon gloves" = "maroon"
 						)
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/gloves/insulated
 	desc = "These gloves provide protection against electric shock."
@@ -304,15 +303,12 @@
 		"white long gloves" = "longgloveswhite",
 		"black long gloves" = "longglovesblack",
 	)
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/gloves/long/white
-	name = "white long gloves"
 	icon_state = "longgloveswhite"
 	current_skin = "white long gloves"
 
 /obj/item/clothing/gloves/long/black
-	name = "black long gloves"
 	icon_state = "longglovesblack"
 	current_skin = "black long gloves"
 
@@ -337,14 +333,9 @@
 		"white arm warmers" = "armwarmerswhite",
 		"striped arm warmers" = "armwarmersstriped",
 	)
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/gloves/armwarmers/white
-	name = "white arm warmers"
-	icon_state = "armwarmerswhite"
 	current_skin = "white arm warmers"
 
 /obj/item/clothing/gloves/armwarmers/striped
-	name = "striped arm warmers"
-	icon_state = "armwarmersstriped"
 	current_skin = "striped arm warmers"

@@ -42,6 +42,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hlcoat"
+	base_icon_state = "hlcoat"
 	icon_state = "hlcoat"
 
 /obj/item/clothing/suit/hardliners //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.

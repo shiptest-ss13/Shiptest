@@ -232,11 +232,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/current_skin
 	/// List of options to reskin.
 	var/list/unique_reskin
-	/// If reskins change base icon state as well
-	var/unique_reskin_changes_base_icon_state = FALSE
-	/// If reskins change inhands as well
-	var/unique_reskin_changes_inhand = FALSE
-	var/unique_reskin_changes_name = FALSE
+	/// flags used to tell unique reskin what might need to be changed during a reskin
+	var/unique_reskin_flags = null
 
 	bad_type = /obj/item
 
