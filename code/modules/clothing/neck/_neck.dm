@@ -378,7 +378,7 @@
 
 /obj/item/clothing/neck/poncho/item_action_slot_check(slot, mob/user)
 	if(slot == ITEM_SLOT_NECK)
-		return 1
+		return TRUE
 
 /obj/item/clothing/neck/poncho/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_NECK)

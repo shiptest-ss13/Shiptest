@@ -1180,7 +1180,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/update_item_action_buttons(status_only = FALSE, force = FALSE)
 	for(var/datum/action/current_action as anything in actions)
-		current_action.UpdateButton(current_action, status_only, force)
+		current_action.UpdateButtons(status_only, force)
 
 
 // Update icons if this is being carried by a mob
