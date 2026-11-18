@@ -472,26 +472,6 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
-/obj/item/clothing/suit/toggle/flight/Initialize()
-	. = ..()
-	base_icon_state = icon_state
-
-/obj/item/clothing/suit/toggle/flight/suit_toggle()
-	set src in usr
-
-	if(!can_use(usr))
-		return 0
-
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[base_icon_state]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[base_icon_state]_t"
-		src.suittoggled = TRUE
-	usr.update_inv_wear_suit()
-	update_item_action_buttons()
-
 /obj/item/clothing/suit/toggle/flight/white
 	name = "White Flight Jacket"
 	desc = "A large, comfy furred coat. Typically worn by showoff drivers."
@@ -499,6 +479,7 @@
 
 /obj/item/clothing/suit/toggle/flight/black
 	current_skin = "Black Flight Jacket"
+	icon_state = "flightblack"
 
 /obj/item/clothing/suit/toggle/aclf
 	name = "ACLF leather jacket"
