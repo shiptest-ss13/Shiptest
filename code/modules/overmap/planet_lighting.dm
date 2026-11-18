@@ -137,7 +137,29 @@
 	if(new_exact == planet_daylight_exact)
 		return
 	planet_daylight_exact = new_exact
-	queue_lighting_object_update()
+	for(var/turf/sharing_turf as anything in RANGE_TURFS(1, src))
+		sharing_turf.queue_lighting_object_update()
+
+// whether a turf touching this corner is exact, so the corner shows its own light
+/datum/lighting_corner/proc/touches_exact_daylight()
+	return master_NE?.planet_daylight_exact || master_SE?.planet_daylight_exact || master_SW?.planet_daylight_exact || master_NW?.planet_daylight_exact
+
+// re-check daylight around a turf that joined or left a daylit area, like a docking ship
+/turf/proc/refresh_planet_daylight_around(list/daylight)
+	var/daylight_reach = ceil(daylight[ZTRAIT_LIGHT_RANGE])
+	var/near_daylight = FALSE
+	for(var/turf/nearby_turf as anything in RANGE_TURFS(daylight_reach, src))
+		var/area/nearby_area = nearby_turf.loc
+		if(nearby_area.planet_daylight)
+			near_daylight = TRUE
+			break
+	if(!near_daylight)
+		return
+	for(var/turf/nearby_turf as anything in RANGE_TURFS(daylight_reach, src))
+		nearby_turf.update_planet_daylight_exact()
+	for(var/turf/nearby_turf as anything in RANGE_TURFS(daylight_reach * 2, src))
+		if(nearby_turf.can_emit_planet_daylight)
+			nearby_turf.update_planet_daylight_source()
 
 /turf/proc/queue_lighting_object_update()
 	if(lighting_object && !lighting_object.needs_update)

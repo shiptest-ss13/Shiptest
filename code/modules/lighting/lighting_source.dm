@@ -331,11 +331,29 @@ GLOBAL_LIST_EMPTY(lighting_sheets)
 	source_turf.luminosity = old_luminosity
 	return corners
 
+/// Drops corners whose position is outside our light sheet, since reading them would crash the lighting subsystem
+/datum/light_source/proc/remove_unreachable_corners(list/datum/lighting_corner/corners)
+	var/list/sheet = get_sheet()
+	var/range_offset = CEILING(light_range, 1) + 0.5 + 1 + visual_offset
+	var/list/datum/lighting_corner/unreachable_corners
+	for(var/datum/lighting_corner/corner as anything in corners)
+		var/sheet_column = corner.x - source_turf.x + range_offset
+		var/sheet_row = corner.y - source_turf.y + range_offset
+		if(corner.z == source_turf.z && sheet_column >= 1 && sheet_column <= length(sheet) && sheet_row >= 1 && sheet_row <= length(sheet[sheet_column]))
+			continue
+		LAZYADD(unreachable_corners, corner)
+	if(!unreachable_corners)
+		return
+	var/datum/lighting_corner/first_corner = unreachable_corners[1]
+	stack_trace("Light at [source_turf.x],[source_turf.y],[source_turf.z] got [length(unreachable_corners)] corner(s) outside its reach, first at [first_corner.x],[first_corner.y],[first_corner.z] (masters NE [first_corner.master_NE?.x],[first_corner.master_NE?.y] SW [first_corner.master_SW?.x],[first_corner.master_SW?.y])")
+	corners -= unreachable_corners
+
 /datum/light_source/proc/update_corners()
 	if(!refresh_values())
 		return
 
 	var/list/datum/lighting_corner/corners = impacted_corners()
+	remove_unreachable_corners(corners)
 	SETUP_CORNERS_CACHE(src)
 	var/had_effects = length(effect_str)
 	var/list/datum/lighting_corner/new_corners = (corners - effect_str)

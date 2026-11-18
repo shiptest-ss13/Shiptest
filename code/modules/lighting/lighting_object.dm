@@ -87,19 +87,15 @@
 	#endif
 
 	var/area/turf_area = myturf.loc
-	var/new_layer = LIGHTING_LAYER
-	var/list/daylight_channels
-	if(turf_area.base_lighting_is_daylight)
-		new_layer = LIGHTING_ABOVE_BASE_LAYER
-		// Opaque tiles and unlit corners show daylight, exact turfs show their corners as they are.
-		if(!myturf.planet_daylight_exact || !set_luminosity || IS_OPAQUE_TURF(myturf))
-			daylight_channels = turf_area.base_lighting_channels
+	var/new_layer = turf_area.base_lighting_is_daylight ? LIGHTING_ABOVE_BASE_LAYER : LIGHTING_LAYER
 	if(layer != new_layer)
 		layer = new_layer
 
-	if(daylight_channels)
+	if(turf_area.base_lighting_is_daylight)
 		icon_state = null
-		color = daylight_color(daylight_channels, red_corner, green_corner, blue_corner, alpha_corner)
+		// Opaque tiles show daylight, since light never reaches their own corners.
+		var/opaque = IS_OPAQUE_TURF(myturf)
+		color = daylight_color(turf_area.base_lighting_channels, red_corner, green_corner, blue_corner, alpha_corner, opaque)
 	else if(!set_luminosity)
 		icon_state = "dark"
 		color = null
@@ -115,17 +111,17 @@
 
 	luminosity = set_luminosity
 
-/atom/movable/lighting_object/proc/daylight_color(list/daylight_channels, datum/lighting_corner/red_corner, datum/lighting_corner/green_corner, datum/lighting_corner/blue_corner, datum/lighting_corner/alpha_corner)
-	var/daylight_red = daylight_channels[1]
-	var/daylight_green = daylight_channels[2]
-	var/daylight_blue = daylight_channels[3]
-	return list(
-		max(daylight_red, red_corner.cache_r), max(daylight_green, red_corner.cache_g), max(daylight_blue, red_corner.cache_b), 00,
-		max(daylight_red, green_corner.cache_r), max(daylight_green, green_corner.cache_g), max(daylight_blue, green_corner.cache_b), 00,
-		max(daylight_red, blue_corner.cache_r), max(daylight_green, blue_corner.cache_g), max(daylight_blue, blue_corner.cache_b), 00,
-		max(daylight_red, alpha_corner.cache_r), max(daylight_green, alpha_corner.cache_g), max(daylight_blue, alpha_corner.cache_b), 00,
-		00, 00, 00, 01
-	)
+/atom/movable/lighting_object/proc/daylight_color(list/daylight_channels, datum/lighting_corner/red_corner, datum/lighting_corner/green_corner, datum/lighting_corner/blue_corner, datum/lighting_corner/alpha_corner, opaque)
+	return daylight_corner(daylight_channels, red_corner, opaque) \
+		+ daylight_corner(daylight_channels, green_corner, opaque) \
+		+ daylight_corner(daylight_channels, blue_corner, opaque) \
+		+ daylight_corner(daylight_channels, alpha_corner, opaque) \
+		+ list(00, 00, 00, 01)
+
+/atom/movable/lighting_object/proc/daylight_corner(list/daylight_channels, datum/lighting_corner/corner, opaque)
+	if(!opaque && corner.largest_color_luminosity && corner.touches_exact_daylight())
+		return list(corner.cache_r, corner.cache_g, corner.cache_b, 00)
+	return list(max(daylight_channels[1], corner.cache_r), max(daylight_channels[2], corner.cache_g), max(daylight_channels[3], corner.cache_b), 00)
 
 // Variety of overrides so the overlays don't get affected by weird things.
 

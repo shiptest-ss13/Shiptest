@@ -127,3 +127,8 @@
 		luminosity = 1
 	else if(old_area.area_has_base_lighting && lighting_object)
 		luminosity = 0
+
+	// a docking ship or similar moves daylight's edge, so the ground around needs to catch up
+	if(!old_area.planet_daylight != !new_area.planet_daylight)
+		refresh_planet_daylight_around(old_area.planet_daylight || new_area.planet_daylight)
+		queue_lighting_object_update()

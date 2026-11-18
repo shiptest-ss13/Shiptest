@@ -72,7 +72,8 @@
 	SET_PLANE_W_SCALAR(light, LIGHTING_PLANE, 0)
 	lighting_effects += light
 
-	add_overlay(lighting_effects[1])
+	if(!base_lighting_is_daylight)
+		add_overlay(lighting_effects[1])
 	area_has_base_lighting = TRUE
 	var/list/color_channels = rgb2num(base_lighting_color)
 	base_lighting_lumcount = (base_lighting_alpha / 255) * (color_channels[1] + color_channels[2] + color_channels[3]) / 765
