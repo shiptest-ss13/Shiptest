@@ -35,8 +35,7 @@
 	unique_reskin = list("armored olive space suit" = "syndicate-generic",
 						"armored grey space suit" = "syndicate-generic-grey"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_NAME
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 

@@ -203,6 +203,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
 	icon_state = "officer_formal"
+	base_icon_state = "officer_formal"
 	item_state = "bluecloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra
@@ -213,24 +214,28 @@
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
 	icon_state = "labcoat"
+	base_icon_state = "labcoat"
 	item_state = "whitecloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra/blue
 	name = "medical director's labcoat"
 	desc = "A well-made, fitted labcoat, crafted from high-quality materials and sporting blue markings around the arms and hem. A Makosso-Warra logo is neatly embroidered on the front. Stylish, practical, and exceptionally professional."
 	icon_state = "med_labcoat"
+	base_icon_state = "med_labcoat"
 	item_state = "whitecloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra/black
 	name = "science director's labcoat"
 	desc = "An overdesigned and rather intimidating black labcoat with a very high collar, as impervious to lab hazards as one can get without a full-body suit. Makosso-Warra Corporation's logo is proudly emblazoned on the chest."
 	icon_state = "black_labcoat"
+	base_icon_state = "black_labcoat"
 	item_state = "blackcloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra/paramedic
 	name = "bright blue paramedic jacket"
 	desc = "A thick, protective blue jacket with reflective visibility stripes and a Makosso-Warra logo stitched into the chest. Safe against all manner of scrapes and splashes."
 	icon_state = "med_jacket"
+	base_icon_state = "med_jacket"
 	item_state = "bluecloth"
 
 /obj/item/clothing/suit/toggle/chorejacket/warra

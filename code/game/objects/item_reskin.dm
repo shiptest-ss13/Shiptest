@@ -70,18 +70,9 @@
 	if(!unique_reskin[pick])
 		return
 	current_skin = pick
-	icon_state = unique_reskin[pick]
-
-	if (unique_reskin_changes_base_icon_state)
-		base_icon_state = icon_state
-	if (unique_reskin_changes_inhand)
-		item_state = icon_state
-	if(unique_reskin_changes_name)
-		name = pick
-
+	to_chat(user, "[src] is now skinned as '[pick].'")
 	update_item_skin()
 
-	to_chat(user, "[src] is now skinned as '[pick].'")
 	SEND_SIGNAL(src, COMSIG_ITEM_RESKIN, user, pick)
 
 /obj/item/proc/update_item_skin()
@@ -89,11 +80,11 @@
 
 	if(!icon_state)
 		WARNING("The current skin of [src] does not exist in its list of reskins.")
-	if (unique_reskin_changes_base_icon_state)
+	if(unique_reskin_flags & UNIQUE_RESKIN_CHANGES_BASE_ICON)
 		base_icon_state = icon_state
-	if (unique_reskin_changes_inhand)
+	if(unique_reskin_flags & UNIQUE_RESKIN_CHANGES_INHAND)
 		item_state = icon_state
-	if(unique_reskin_changes_name)
+	if(unique_reskin_flags & UNIQUE_RESKIN_CHANGES_NAME)
 		name = current_skin
 
 	update_appearance()
