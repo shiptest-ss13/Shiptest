@@ -574,7 +574,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
-/obj/item/candle{
+/obj/item/flashlight/flare/candle{
 	pixel_y = 6;
 	pixel_x = 12
 	},
@@ -3515,7 +3515,8 @@
 /obj/item/gps{
 	pixel_x = -14;
 	pixel_y = 3;
-	gpstag = "!RESCUE-SHIP"
+	gpstag = "!RESCUE-SHIP";
+	gps_active = 1
 	},
 /obj/item/binoculars{
 	pixel_y = 5;

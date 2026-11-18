@@ -107,6 +107,13 @@
 	contains = list(/obj/item/storage/pouch/grenade)
 	crate_name = "pouch crate"
 
+/datum/supply_pack/sec_supply/pouch_flare
+	name = "Flare Pouch Crate"
+	desc = "Contains a pouch designed to hold flares, both lighting and signalling."
+	cost = 100
+	contains = list(/obj/item/storage/pouch/flare)
+	crate_name = "pouch crate"
+
 /datum/supply_pack/sec_supply/pouch_squad
 	name = "Communications & Command Pouch Crate"
 	desc = "Contains a medium command pouch for holding various items often used by commanders everywhere."
@@ -307,12 +314,6 @@
 	contains = list(/obj/item/grenade/stingbang)
 	crate_name = "stingbang grenade pack crate"
 
-/datum/supply_pack/sec_supply/baton
-	name = "Stun Baton Crate"
-	desc = "Arm your vessel security with a stun baton. Batteries included."
-	cost = 2500
-	contains = list(/obj/item/melee/baton/loaded)
-	crate_name = "stun baton crate"
 /*
 		Factional
 */

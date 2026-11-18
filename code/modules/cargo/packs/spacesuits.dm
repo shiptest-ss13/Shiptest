@@ -301,6 +301,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/warden_hardsuit
+	name = "Warden Advanced Heavy Hardsuit Crate"
+	desc = "Vigilitas Interstellar's very own state of the art heavy armor solution. An advanced injector system is integrated into its heavy plating, allowing for one to stand resolute far longer than many others."
+	cost = 5500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/esh/warden)
+	crate_name = "advanced hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/warra
+	faction_discount = 0
+	faction_locked = TRUE
+
 //cybersun breaker
 
 /datum/supply_pack/spacesuits/neutron_hardsuit

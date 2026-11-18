@@ -39,6 +39,7 @@
 		/obj/item/folder/biscuit,
 		/obj/item/spacecash,
 		/obj/item/documents,
+		/obj/item/scratch_ticket,
 	)
 	/// List of types which should be allowed to be faxed if hacked
 	var/static/list/exotic_types = list(

@@ -886,10 +886,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	spread_unwielded = 35
 
 	recoil = 1.5 //identical to other LMGS
-	recoil_unwielded = 7 //same as skm
+	recoil_unwielded = 7 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 

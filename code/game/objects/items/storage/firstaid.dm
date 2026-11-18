@@ -731,3 +731,12 @@
 /obj/item/storage/medpack/epipens/PopulateContents()
 	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/gambling
+	name = "pack of unlabeled autoinjectors"
+	desc = "A conspicuously unlabeled package full of autoinjectors."
+	icon_state = "medpack_no_label"
+
+/obj/item/storage/medpack/gambling/PopulateContents()
+	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen/gambling = 4)
+	generate_items_inside(items_inside,src)

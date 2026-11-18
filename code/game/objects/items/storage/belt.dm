@@ -318,7 +318,6 @@
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
 		/obj/item/melee/knife,
 		/obj/item/grenade,
@@ -366,7 +365,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/melee/baton/loaded(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/full/classic/PopulateContents()
