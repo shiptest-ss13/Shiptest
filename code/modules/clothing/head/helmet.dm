@@ -24,7 +24,7 @@
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
-	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON_STATE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
 	var/can_flashlight = FALSE
