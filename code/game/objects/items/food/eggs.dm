@@ -175,7 +175,7 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 	w_class = WEIGHT_CLASS_SMALL
-	tastes = list("egg" = 1, "EGG" = 1)
+	tastes = list("egg" = 1, "meat" = 1)
 	foodtypes = EGG | BREAKFAST
 
 /obj/item/food/benedict
