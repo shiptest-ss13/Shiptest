@@ -65,6 +65,7 @@
 	name = "owl cloak"
 	desc = "A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."
 	icon_state = "owl_wings"
+	base_icon_state = "owl_wings"
 	item_state = "owl_wings"
 	togglename = "wings"
 	body_parts_covered = ARMS|CHEST
@@ -252,18 +253,21 @@
 		"brown leather coat" = "leatherbrown",
 		"navy leather coat" = "leathernavy",
 	)
-	unique_reskin_changes_inhand = TRUE
 
 /obj/item/clothing/suit/jacket/leather/coat/black
+	icon_state = "leatherblack"
 	current_skin = "black leather coat"
 
 /obj/item/clothing/suit/jacket/leather/coat/white
+	icon_state = "leatherwhite"
 	current_skin = "white leather coat"
 
 /obj/item/clothing/suit/jacket/leather/coat/brown
+	icon_state = "leatherbrown"
 	current_skin = "brown leather coat"
 
 /obj/item/clothing/suit/jacket/leather/coat/navy
+	icon_state = "leathernavy"
 	current_skin = "navy leather coat"
 
 /obj/item/clothing/suit/jacket/leather/duster
@@ -280,7 +284,6 @@
 	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
 	icon_state = "duster_black"
 	item_state = "duster_black"
-
 
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
@@ -302,29 +305,24 @@
 	icon_state = "baggy"
 	item_state = "baggy"
 
-/obj/item/clothing/suit/jacket/letterman
-	name = "letterman jacket"
-	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
-	icon_state = "letterman"
-	item_state = "letterman"
-
-/obj/item/clothing/suit/jacket/letterman_red
-	name = "red letterman jacket"
-	desc = "A letterman jacket in a sick red color. Radical."
-	icon_state = "letterman_red"
-	item_state = "letterman_red"
-
-/obj/item/clothing/suit/jacket/letterman_syndie
-	name = "blood-red letterman jacket"
-	desc = "Oddly, this jacket seems to have a large S on the back..."
-	icon_state = "letterman_s"
-	item_state = "letterman_s"
-
-/obj/item/clothing/suit/jacket/letterman_warra
-	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Makosso-Warra M on the back. It seems cheaply made."
-	icon_state = "letterman_n"
-	item_state = "letterman_n"
+/obj/item/clothing/suit/jacket/twotone
+	name = "two-tone coat"
+	desc = "An expensive looking two-tone coat. Has no buttons, but is still comfortably warm."
+	icon_state = "twotone"
+	item_state = "twotone"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	unique_reskin = list(
+		"olive two-tone coat" = "twotone",
+		"khaki two-tone coat" = "twotonekhaki",
+		"leather two-tone coat" = "twotoneleather",
+		"black two-tone coat" = "twotoneblack",
+		"white two-tone coat" = "twotonewhite",
+		"red two-tone coat" = "twotonered",
+	)
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/suit/gothcoat
 	name = "gothic coat"
@@ -427,12 +425,14 @@
 	desc = "The symbol of hard labor and dirty jobs."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "suspenders_blue"
+	base_icon_state = "suspenders_blue"
 
 /obj/item/clothing/suit/toggle/suspenders/gray
 	name = "gray suspenders"
 	desc = "The symbol of hard labor and dirty jobs."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "suspenders_gray"
+	base_icon_state = "suspenders_gray"
 
 /obj/item/clothing/suit/hawaiian
 	name = "floral shirt"
@@ -460,39 +460,17 @@
 	name = "Flight Jacket"
 	desc = "A large, comfy furred coat. Typically worn by showoff pilots."
 	icon_state = "flightbrown"
+	base_icon_state = "flightbrown"
 	unique_reskin = list(
 		"Brown Flight Jacket" = "flightbrown",
 		"White Flight Jacket" = "flightwhite",
 		"Black Flight Jacket" = "flightblack",
 	)
-	unique_reskin_changes_inhand = TRUE
 	togglename = "zipper"
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
-
-/obj/item/clothing/suit/toggle/flight/Initialize()
-	. = ..()
-	base_icon_state = icon_state
-
-/obj/item/clothing/suit/toggle/flight/suit_toggle()
-	set src in usr
-
-	if(!can_use(usr))
-		return 0
-
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[base_icon_state]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[base_icon_state]_t"
-		src.suittoggled = TRUE
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
 
 /obj/item/clothing/suit/toggle/flight/white
 	name = "White Flight Jacket"
@@ -500,13 +478,14 @@
 	icon_state = "flightwhite"
 
 /obj/item/clothing/suit/toggle/flight/black
-	name = "Black Flight Jacket"
+	current_skin = "Black Flight Jacket"
 	icon_state = "flightblack"
 
 /obj/item/clothing/suit/toggle/aclf
 	name = "ACLF leather jacket"
 	desc = "A hand-stitched dark leather jacket with Anti-Corporation Liberation Front iconography sewn on. It's relatively stiff."
 	icon_state = "aclfcoat"
+	base_icon_state = "aclfcoat"
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -515,5 +494,38 @@
 	name = "capsule jacket"
 	desc = "A poorly made jacket with a pill capsule resting on the backside. Good for your health, but not good for your education. Take only as prescribed."
 	icon_state = "capsule"
+	base_icon_state = "capsule"
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
+
+/obj/item/clothing/suit/toggle/biker
+	name = "Biker Jacket"
+	desc = "A well made leather jacket for the high-speed biker. Feels comfortably stiff."
+	icon_state = "biker"
+	base_icon_state = "biker"
+	unique_reskin = list(
+		"Brown Biker Jacket" = "biker",
+		"White Biker Jacket" = "bikerwhite",
+		"Black Biker Jacket" = "bikerblack",
+		"Navy Biker Jacket" = "bikernavy",
+	)
+	togglename = "zipper"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/biker/white
+	name = "White Biker Jacket"
+	icon_state = "bikerwhite"
+	current_skin = "White Biker Jacket"
+
+/obj/item/clothing/suit/toggle/biker/black
+	name = "Black Biker Jacket"
+	icon_state = "bikerblack"
+	current_skin = "Black Biker Jacket"
+
+/obj/item/clothing/suit/toggle/biker/navy
+	name = "Navy Biker Jacket"
+	icon_state = "bikernavy"
+	current_skin = "Navy Biker Jacket"

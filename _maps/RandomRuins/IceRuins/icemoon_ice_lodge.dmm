@@ -36,7 +36,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
+/mob/living/basic/human/frontier/ranged/trooper/rifle/internals/neutered,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "ao" = (
@@ -95,7 +95,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "bx" = (
@@ -106,7 +106,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 6
 	},
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_x = 10
 	},
 /turf/open/floor/wood/ebony,
@@ -266,7 +266,6 @@
 "dT" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/structure/table/wood,
-/obj/item/melee/baton/cattleprod/loaded,
 /obj/item/storage/case/surgery,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -319,13 +318,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/mob/living/basic/human/frontier/ranged/trooper/flame/neutered,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "eC" = (
-/obj/item/clothing/head/bearpelt{
-	pixel_y = 10
-	},
 /obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -338,7 +334,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "eW" = (
 /obj/effect/turf_decal/siding/blue,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
 "fe" = (
@@ -357,7 +353,6 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "fn" = (
@@ -369,7 +364,7 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "fu" = (
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
 "fw" = (
@@ -475,10 +470,10 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "hz" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
+/mob/living/basic/human/frontier/ranged/trooper/fa2/internals/neutered{
 	retreat_distance = 3;
-	minimum_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
@@ -500,7 +495,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "ii" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "ik" = (
@@ -618,7 +613,7 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken7"
 	},
@@ -665,7 +660,7 @@
 "kq" = (
 /obj/structure/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals{
+/mob/living/basic/human/frontier/ranged/officer/internals{
 	weapon_drop_chance = 100
 	},
 /turf/open/floor/carpet/black,
@@ -700,7 +695,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "ll" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/plating/asteroid/snow,
 /area/overmap_encounter/planetoid/cave/explored)
 "lw" = (
@@ -767,16 +762,45 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "ms" = (
 /obj/structure/rack,
-/obj/item/storage/box/techshot{
-	pixel_y = 5
-	},
 /obj/item/gun/ballistic/shotgun/brimstone{
 	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "mz" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -832,7 +856,7 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -949,7 +973,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "pi" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -960,7 +984,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit{
+/obj/structure/standing_torch/lit{
 	pixel_y = 18
 	},
 /turf/open/floor/wood/maple{
@@ -1047,7 +1071,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/candle/tribal_torch,
+/obj/item/flashlight/flare/torch/standing,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
@@ -1140,7 +1164,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "rc" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/ice_lodge{
+/mob/living/basic/human/frontier/ranged/trooper/heavy/internals/ice_lodge{
 	environment_smash = 0
 	},
 /turf/open/floor/wood/mahogany,
@@ -1563,7 +1587,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wj" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "wm" = (
@@ -1575,7 +1599,7 @@
 /obj/structure/chair/stool{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wD" = (
@@ -1613,9 +1637,9 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "wU" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1
+	engage_distance = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -1669,10 +1693,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
+/mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -1711,7 +1735,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "yE" = (
@@ -1762,7 +1786,7 @@
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "zN" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/brown{
 	dir = 9
 	},
@@ -1818,7 +1842,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "AE" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -1874,10 +1898,10 @@
 "Bx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
+/mob/living/basic/human/frontier/ranged/trooper/fa2/internals/neutered{
 	retreat_distance = 3;
-	minimum_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken5"
@@ -1889,27 +1913,27 @@
 	pixel_y = 20;
 	pixel_x = -2
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = 4
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = -2
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = 10
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 2;
 	pixel_x = 10
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 22;
 	pixel_x = 10
 	},
@@ -2037,7 +2061,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
 "DM" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
@@ -2184,7 +2208,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "GS" = (
@@ -2248,22 +2272,22 @@
 /area/ruin/powered/icemoon/lodge/gear_room)
 "HQ" = (
 /obj/structure/table/wood/fancy,
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = -2
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = 4
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_x = 10
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 11;
 	pixel_x = 10
 	},
@@ -2343,16 +2367,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/overmap_encounter/planetoid/cave/explored)
-"JS" = (
-/obj/effect/turf_decal/siding/brown{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
-	minimum_distance = 2
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/powered/icemoon/lodge/residential)
 "Kg" = (
 /turf/open/floor/wood/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2368,11 +2382,6 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Kn" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
-	retreat_distance = 2;
-	check_friendly_fire = 1
-	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "Ks" = (
@@ -2535,7 +2544,7 @@
 "Ni" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/mob/living/basic/human/frontier/ranged/trooper/flame/neutered,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "Nl" = (
@@ -2570,7 +2579,7 @@
 /obj/item/ammo_casing/a8_50r{
 	projectile_type = null
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/basic/human/frontier/internals,
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "NH" = (
@@ -2580,7 +2589,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/mob/living/basic/human/frontier/ranged/neutered,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "NL" = (
@@ -2658,10 +2667,10 @@
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Or" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
+/mob/living/basic/human/frontier/ranged/internals/neutered{
 	retreat_distance = 2;
-	check_friendly_fire = 1
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2684,7 +2693,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 5
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken2"
 	},
@@ -2735,10 +2744,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
+/mob/living/basic/human/frontier/ranged/trooper/fa2/internals/neutered{
 	retreat_distance = 3;
-	minimum_distance = 2
+	engage_distance = 2;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -2788,9 +2797,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+/mob/living/basic/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1
+	engage_distance = 1
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -2808,9 +2817,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Rf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
-	check_friendly_fire = 1;
-	minimum_distance = 3
+/mob/living/basic/human/frontier/ranged/mosin/internals/neutered{
+	engage_distance = 3;
+	friendly_fire_tolerance = 0.15
 	},
 /turf/open/floor/concrete/slab_3/iceplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2902,7 +2911,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "SE" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -2931,7 +2940,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "To" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "TF" = (
@@ -3017,7 +3026,7 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "UL" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/siding/brown{
 	dir = 6
 	},
@@ -3035,7 +3044,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Vc" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
@@ -3084,7 +3093,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/mahogany{
 	icon_state = "wood-broken6"
 	},
@@ -3103,7 +3112,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter,
+/mob/living/basic/human/frontier/ranged/surgeon/internals/neutered,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
 "Wk" = (
@@ -3275,7 +3284,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken3"
 	},
@@ -3345,7 +3353,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/gear_room)
 "Zn" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /obj/structure/railing/wood{
 	dir = 8
 	},
@@ -4027,7 +4035,7 @@ LZ
 Yo
 hI
 vs
-JS
+eU
 Yo
 ne
 nD

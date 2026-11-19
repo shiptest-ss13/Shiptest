@@ -120,7 +120,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "vacsuit_solgov"
 	item_state = "vacsuit_solgov"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/energy, /obj/item/tank/internals)
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75, "wound" = 10)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
@@ -146,7 +146,7 @@
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75, "wound" = 30) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	slowdown = 0.2
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -219,6 +219,7 @@
 	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	base_icon_state = "coat_solgov"
 	icon_state = "coat_solgov"
 	item_state = "coat_solgov"
 	blood_overlay_type = "coat"
@@ -228,6 +229,7 @@
 /obj/item/clothing/suit/toggle/solgov/terragov
 	name = "\improper Terragov coat"
 	desc = "An armored coat worn for special occasions. This one is still dyed in original TerraGov green."
+	base_icon_state = "coat_terragov"
 	icon_state = "coat_terragov"
 	item_state = "coat_terragov"
 

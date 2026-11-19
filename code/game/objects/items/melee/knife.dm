@@ -14,7 +14,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 6
-	custom_materials = list(/datum/material/iron=12000)
+	custom_materials = list(/datum/material/iron=2000)
 	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
@@ -74,7 +74,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 1
 	throw_range = 6
-	custom_materials = list(/datum/material/iron=4000)
+	custom_materials = list(/datum/material/iron=1000)
 	attack_verb = list("prodded", "whiffed","rolled", "poked")
 	sharpness = SHARP_EDGED
 
@@ -86,7 +86,7 @@
 	flags_1 = CONDUCT_1
 	force = 15
 	throwforce = 10
-	custom_materials = list(/datum/material/iron=18000)
+	custom_materials = list(/datum/material/iron=4000)
 	attack_cooldown = CLICK_CD_MELEE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
@@ -97,6 +97,7 @@
 	desc = "Despite its name, it's mainly used for cutting meat from dead prey rather than actual hunting."
 	item_state = "huntingknife"
 	icon_state = "huntingknife"
+	custom_materials = null
 
 /obj/item/melee/knife/hunting/set_butchering()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force + 10)
@@ -110,6 +111,7 @@
 	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	custom_materials = null
 
 /obj/item/melee/knife/survival
 	name = "survival knife"
@@ -120,6 +122,7 @@
 	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	custom_materials = null
 
 /obj/item/melee/knife/bone
 	name = "bone dagger"

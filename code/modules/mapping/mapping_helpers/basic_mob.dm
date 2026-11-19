@@ -22,6 +22,20 @@
 		CRASH("[src] called on a turf without any basic mobs.")
 	qdel(src)
 
+///Basic mob AI won't path through or step onto this tile, treating it like lava, like a doorway to keep a group in its room. Players and everything else are unaffected.
+///Anyone they're after stood past it is out of their reach, so they wait it out as they would behind a locked door. Shoving or throwing them onto it still works,
+///and one that ends up on it walks off to the nearest clear tile within 8, so don't place mobs on these, or make a field wider than 16 tiles a mob could end up in the middle of
+/obj/effect/mapping_helpers/ai_path_blocker
+	name = "AI path blocker"
+	desc = "Basic mob AI won't path through or step onto this tile."
+	icon_state = "ai_path_blocker"
+
+/obj/effect/mapping_helpers/ai_path_blocker/Initialize(mapload)
+	var/turf/our_turf = get_turf(src)
+	if(our_turf)
+		ADD_TRAIT(our_turf, TRAIT_AI_AVOID, MAPPING_HELPER_TRAIT)
+	return ..()
+
 /obj/effect/mapping_helpers/basic_mob_flags/del_on_death
 	name = "Basic mob del on death flag helper"
 	icon_state = "basic_mob_del_on_death"

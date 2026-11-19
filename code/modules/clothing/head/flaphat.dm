@@ -26,7 +26,6 @@
 		"brown Betzu-il cap" = "flapbrown",
 		"light brown Betzu-il cap" = "flaplightbrown"
 	)
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/head/flap/white
 	name = "white Betzu-il cap"

@@ -21,6 +21,11 @@
 
 	end_message = span_notice("The ash stops falling.")
 	immunity_type = "rad"
+	harmful = TRUE
+
+// basic mobs don't sicken from radiation, and it's too weak to burn
+/datum/weather/nuclear_fallout/affects(mob/living/victim)
+	return !isbasicmob(victim) && !HAS_TRAIT(victim, TRAIT_RADIMMUNE)
 
 /datum/weather/nuclear_fallout/weather_act(mob/living/akimov)
 	akimov.rad_act(100)

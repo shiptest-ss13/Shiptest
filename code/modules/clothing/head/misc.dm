@@ -70,12 +70,6 @@
 	icon_state = "bandana"
 	item_state = "bandana"
 
-/obj/item/clothing/head/bearpelt
-	name = "bear pelt hat"
-	desc = "Fuzzy."
-	icon_state = "bearpelt"
-	item_state = "bearpelt"
-
 /obj/item/clothing/head/fedora
 	name = "fedora"
 	icon_state = "fedora"
@@ -197,8 +191,7 @@
 						"green motorcycle helmet" = "motohelmgreen",
 						"brown motorcycle helmet" = "motohelmbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50, "wound" = 20)
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -321,20 +314,166 @@
 		"olive boonie" = "boonieolive",
 		"navy boonie" = "boonienavy"
 	)
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/head/boonie/brown
 	name = "brown boonie"
+	icon_state = "booniebrown"
 	current_skin = "brown boonie"
 
 /obj/item/clothing/head/boonie/beige
 	name = "beige boonie"
+	icon_state = "booniebeige"
 	current_skin = "beige boonie"
 
 /obj/item/clothing/head/boonie/olive
 	name = "olive boonie"
+	icon_state = "boonieolive"
 	current_skin = "olive boonie"
 
 /obj/item/clothing/head/boonie/navy
 	name = "navy boonie"
+	icon_state = "boonienavy"
 	current_skin = "navy boonie"
+
+/obj/item/clothing/head/ushanka
+	name = "bomber hat"
+	desc = "A winter hat, with flaps covered in faux fur to protect your ears from frigid winds."
+	icon_state = "ushanka"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	unique_reskin = list(
+		"black bomber hat" = "ushanka",
+		"maroon bomber hat" = "ushankamaroon",
+		"olive bomber hat" = "ushankaolive",
+		"navy bomber hat" = "ushankanavy",
+		"grey bomber hat" = "ushankagrey",
+	)
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
+
+/obj/item/clothing/head/ushanka/maroon
+	name = "maroon bomber hat"
+	icon_state = "ushankamaroon"
+	current_skin = "maroon bomber hat"
+
+/obj/item/clothing/head/ushanka/olive
+	name = "olive bomber hat"
+	icon_state = "ushankaolive"
+	current_skin = "olive bomber hat"
+
+/obj/item/clothing/head/ushanka/navy
+	name = "navy bomber hat"
+	icon_state = "ushankanavy"
+	current_skin = "navy bomber hat"
+
+/obj/item/clothing/head/ushanka/grey
+	name = "grey bomber hat"
+	icon_state = "ushankagrey"
+	current_skin = "grey bomber hat"
+
+/obj/item/clothing/head/smallbow
+	name = "small hairbow"
+	desc = "A petite version of a standard hairbow, for a more elegant look."
+	icon_state = "smallbow"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	unique_reskin = list(
+		"small black hairbow" = "smallbow",
+		"small white hairbow" = "smallbow_white",
+		"small grey hairbow" = "smallbow_grey",
+		"small maroon hairbow" = "smallbow_maroon",
+		"small red hairbow" = "smallbow_red",
+		"small orange hairbow" = "smallbow_orange",
+		"small yellow hairbow" = "smallbow_yellow",
+		"small green hairbow" = "smallbow_green",
+		"small dark green hairbow" = "smallbow_darkgreen",
+		"small teal hairbow" = "smallbow_teal",
+		"small blue hairbow" = "smallbow_blue",
+		"small dark blue hairbow" = "smallbow_darkblue",
+		"small purple hairbow" = "smallbow_purple",
+		"small pink hairbow" = "smallbow_pink",
+		"small brown hairbow" = "smallbow_brown",
+		"small light brown hairbow" = "smallbow_lightbrown",
+
+	)
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
+
+/obj/item/clothing/head/smallbow/black
+	name = "small black hairbow"
+	icon_state = "smallbow"
+	current_skin = "small black hairbow"
+
+/obj/item/clothing/head/smallbow/white
+	name = "small white hairbow"
+	icon_state = "smallbow_white"
+	current_skin = "small white hairbow"
+
+/obj/item/clothing/head/smallbow/grey
+	name = "small grey hairbow"
+	icon_state = "smallbow_grey"
+	current_skin = "small grey hairbow"
+
+/obj/item/clothing/head/smallbow/maroon
+	name = "small maroon hairbow"
+	icon_state = "smallbow_maroon"
+	current_skin = "small maroon hairbow"
+
+/obj/item/clothing/head/smallbow/red
+	name = "small red hairbow"
+	icon_state = "smallbow_red"
+	current_skin = "small red hairbow"
+
+/obj/item/clothing/head/smallbow/orange
+	name = "small orange hairbow"
+	icon_state = "smallbow_yellow"
+	current_skin = "small orange hairbow"
+
+/obj/item/clothing/head/smallbow/yellow
+	name = "small yellow hairbow"
+	icon_state = "smallbow_yellow"
+	current_skin = "small yellow hairbow"
+
+/obj/item/clothing/head/smallbow/green
+	name = "small green hairbow"
+	icon_state = "smallbow_green"
+	current_skin = "small green hairbow"
+
+/obj/item/clothing/head/smallbow/darkgreen
+	name = "small dark green hairbow"
+	icon_state = "smallbow_darkgreen"
+	current_skin = "small dark green hairbow"
+
+/obj/item/clothing/head/smallbow/teal
+	name = "small teal hairbow"
+	icon_state = "smallbow_teal"
+	current_skin = "small teal hairbow"
+
+/obj/item/clothing/head/smallbow/blue
+	name = "small blue hairbow"
+	icon_state = "smallbow_blue"
+	current_skin = "small blue hairbow"
+
+/obj/item/clothing/head/smallbow/darkblue
+	name = "small dark blue hairbow"
+	icon_state = "smallbow_darkblue"
+	current_skin = "small dark blue hairbow"
+
+/obj/item/clothing/head/smallbow/purple
+	name = "small purple hairbow"
+	icon_state = "smallbow"
+	current_skin = "small purple hairbow"
+
+/obj/item/clothing/head/smallbow/pink
+	name = "small pink hairbow"
+	icon_state = "smallbow_pink"
+	current_skin = "small pink hairbow"
+
+/obj/item/clothing/head/smallbow/brown
+	name = "small brown hairbow"
+	icon_state = "smallbow_brown"
+	current_skin = "small brown hairbow"
+
+/obj/item/clothing/head/smallbow/lightbrown
+	name = "small light brown hairbow"
+	icon_state = "smallbow_lightbrown"
+	current_skin = "small light brown hairbow"

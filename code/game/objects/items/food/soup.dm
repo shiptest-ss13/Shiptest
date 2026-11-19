@@ -228,13 +228,14 @@
 
 /obj/item/food/soup/beet
 	name = "beet soup"
-	desc = "A sour soup consisting of a meat stock with tomatoes and beetroots. Usually served hot or cold."
+	desc = "A sour soup consisting of a vegetable stock with tomatoes and beetroots. Usually served hot or cold."
 	icon_state = "beetsoup"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 9,
 		/datum/reagent/water = 5,
 		/datum/reagent/consumable/nutriment/vitamin = 6
 	)
+	tastes = list("beetroot" = 1, "tomato" = 1)
 	foodtypes = VEGETABLES
 
 /obj/item/food/soup/spacylibertyduff
@@ -288,7 +289,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6
 	)
 	tastes = list("sweet potato" = 1)
-	foodtypes = VEGETABLES | SUGAR
+	foodtypes = VEGETABLES
 
 /obj/item/food/soup/redbeet
 	name = "red beet soup"

@@ -55,6 +55,8 @@
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
 
+	pass_flags_self = PASSDOOR
+
 	close_speed = 150
 
 	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
@@ -1380,9 +1382,13 @@
 	qdel(airlock)
 	qdel(assembly)
 
-/obj/machinery/door/airlock/CanAStarPass(obj/item/card/id/ID)
-//Airlock is passable if it is open (!density), bot has access, and is not bolted shut or powered off)
-	return !density || (check_access(ID) && !locked && hasPower())
+/obj/machinery/door/airlock/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	//Airlock is passable if it is open (!density), bot has access, mob has trait, and is not bolted shut or powered off)
+	if(!density)
+		return TRUE
+	if(hasPower())
+		return check_access(ID) && !locked && !welded && !seal
+	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && !locked && !welded && !seal
 
 /obj/machinery/door/airlock/emag_act(mob/user)
 	if(!operating && density && hasPower() && !(obj_flags & EMAGGED))

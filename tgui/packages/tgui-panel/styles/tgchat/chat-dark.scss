@@ -594,17 +594,6 @@ em {
   font-size: 310%;
 }
 
-.hierophant {
-  color: #b441ee;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.hierophant_warning {
-  color: #c56bf1;
-  font-style: italic;
-}
-
 .purple {
   color: #9956d3;
 }
@@ -979,6 +968,11 @@ em {
   &.purple_box {
     background: hsl(260, 25%, 12.5%);
     border-color: hsla(260, 100%, 75%, 0.5);
+  }
+
+  &.grey_box {
+    background: hsl(0, 0%, 67.8%);
+    border-color: hsla(0, 20%, 10%, 0.5);
   }
 
   hr {

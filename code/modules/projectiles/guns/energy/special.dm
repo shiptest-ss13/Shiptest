@@ -21,7 +21,7 @@
 /obj/item/gun/energy/ionrifle/update_overlays()
 	. = ..()
 	var/mutable_appearance/cooldown_overlay = mutable_appearance('icons/obj/guns/energy.dmi')
-	if(current_cooldown)
+	if(on_fire_cooldown())
 		cooldown_overlay = "[icon_state]_cooldown"
 		.+= cooldown_overlay
 
@@ -29,8 +29,11 @@
 	. = ..()
 	update_appearance()
 
-/obj/item/gun/energy/ionrifle/reset_current_cooldown()
+/obj/item/gun/energy/ionrifle/start_fire_cooldown(duration)
 	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(on_cooldown_finished)), duration, TIMER_UNIQUE|TIMER_OVERRIDE)
+
+/obj/item/gun/energy/ionrifle/proc/on_cooldown_finished()
 	update_appearance()
 	playsound(src, 'sound/machines/synth_yes.ogg', 100, TRUE, frequency = 6120)
 

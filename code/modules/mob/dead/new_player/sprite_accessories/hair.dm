@@ -258,6 +258,14 @@
 	name = "Keanu Hair"
 	icon_state = "hair_keanu"
 
+/datum/sprite_accessory/hair/knotlessbraids
+	name = "Knotless Braids"
+	icon_state = "hair_knotlessbraids"
+
+/datum/sprite_accessory/hair/knotlessbraidsloose
+	name = "Knotless Braids (Loose)"
+	icon_state = "hair_knotlessbraidsloose"
+
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi Hair"
 	icon_state = "hair_kusanagi"
@@ -649,3 +657,15 @@
 /datum/sprite_accessory/hair_gradient/splotches
 	name = "Splotches"
 	icon_state = "splotches"
+
+/datum/sprite_accessory/hair_gradient/splotches_fade
+	name = "Splotches (Faded)"
+	icon_state = "splotches_fade"
+
+/datum/sprite_accessory/hair_gradient/spots
+	name = "Spots"
+	icon_state = "spots"
+
+/datum/sprite_accessory/hair_gradient/spots_thin
+	name = "Spots (Thin)"
+	icon_state = "spots_thin"

@@ -80,6 +80,8 @@
 		var/atom/throw_target = get_edge_target_turf(M, dir)
 		M.throw_at(throw_target, 4, 2)
 
+/* Cybersun Gauss Darts */
+
 /obj/projectile/bullet/gauss/tavsha
 	name = "tav'sha dart"
 	icon_state = "gauss-pellet"
@@ -99,6 +101,25 @@
 
 	transform = matrix(0.7, 0, 0, 0, 0.7, 0)
 
+/obj/projectile/bullet/gauss/tavsha/shock
+	name = "tav'sha shock dart"
+	icon_state = "shock-pellet"
+	bullet_identifier = "dart"
+
+	damage = 7
+	armour_penetration = 30
+	damage_type = STAMINA
+
+/obj/projectile/bullet/gauss/tavsha/shock/on_hit(atom/target, blocked, pierce_hit, hit_zone)
+	. = ..()
+	//add some vfx so it looks evil as fuck
+	if(prob(25))
+		do_sparks(1, TRUE, target)
+	if(isliving(target) && blocked < 100 && prob(7))
+		var/mob/living/shocked = target
+		//marved
+		shocked.electrocute_act(2, src, 0)
+
 /obj/projectile/bullet/gauss/deusha
 	name = "deu'sha dart"
 	icon_state = "gauss-pellet"
@@ -114,4 +135,30 @@
 	ricochets_max = 0
 	range = 30
 	light_system = 0
-	speed = BULLET_SPEED_SHOTGUN
+	//old shotgun speed & intended value.
+	speed = 0.5
+
+/obj/projectile/bullet/gauss/deusha/shock
+	name = "deu'sha shock dart"
+	damage = 10
+	armour_penetration = 35
+	damage_type = STAMINA
+
+/obj/projectile/bullet/gauss/deusha/shock/on_hit(atom/target, blocked, pierce_hit, hit_zone)
+	. = ..()
+	//add some vfx so it looks evil as fuck
+	if(prob(25))
+		do_sparks(1, TRUE, target)
+	if(isliving(target) && blocked < 100 && prob(15))
+		var/mob/living/shocked = target
+		//marved
+		shocked.electrocute_act(2, src, 0)
+
+// swiss cheese dma rod
+/obj/projectile/bullet/dma_rod
+	name = "sharpened metal rod"
+	desc = "Now, about that beer I owed you."
+	icon_state = "magspear"
+	damage = 50
+	armour_penetration = 15
+	range = 15

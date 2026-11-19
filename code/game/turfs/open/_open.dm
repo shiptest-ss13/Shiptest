@@ -102,25 +102,6 @@
 /turf/open/indestructible/boss/air
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
-/turf/open/indestructible/hierophant
-	icon = 'icons/turf/floors/hierophant_floor.dmi'
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	baseturfs = /turf/open/indestructible/hierophant
-	smoothing_flags = SMOOTH_CORNERS
-	tiled_dirt = FALSE
-
-/turf/open/indestructible/hierophant/two //I assume this exists to bypass turf smoothing to make patterns in the floor of the arena. cool!
-
-/turf/open/indestructible/hierophant/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
-	return FALSE
-
-/turf/open/indestructible/paper
-	name = "notebook floor"
-	desc = "A floor made of invulnerable notebook paper."
-	icon_state = "paperfloor"
-	turf_footstep_type = null
-	tiled_dirt = FALSE
-
 /turf/open/indestructible/binary
 	name = "tear in the fabric of reality"
 	CanAtmosPass = ATMOS_PASS_NO
@@ -270,6 +251,26 @@
 		qdel(active_hotspot)
 	if(turf_fire)
 		qdel(turf_fire)
+
+/turf/open/proc/check_for_wallmounts()
+	RETURN_TYPE(/list)
+
+	var/list/found_wallmounts = list()
+	for(var/obj/wallmount_maybe in contents)
+		if(HAS_TRAIT(wallmount_maybe, TRAIT_WALLMOUNTED))
+			found_wallmounts += wallmount_maybe
+	return found_wallmounts
+
+/turf/open/proc/check_projectile_intercept(obj/projectile/intercepted)
+	var/list/interceptors = check_for_wallmounts()
+	if(interceptors.len)
+		for(var/obj/intercepting in interceptors)
+			if(prob(40))
+				intercepting.bullet_act(intercepted)
+				break
+		return TRUE
+	return FALSE
+
 
 #undef IGNITE_TURF_LOW_POWER
 #undef IGNITE_TURF_HIGH_POWER
