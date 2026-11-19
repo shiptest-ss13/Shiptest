@@ -335,11 +335,14 @@ GLOBAL_LIST_EMPTY(lighting_sheets)
 /datum/light_source/proc/remove_unreachable_corners(list/datum/lighting_corner/corners)
 	var/list/sheet = get_sheet()
 	var/range_offset = CEILING(light_range, 1) + 0.5 + 1 + visual_offset
+	var/lowest_x = source_turf.x - range_offset + 1
+	var/highest_x = source_turf.x - range_offset + length(sheet)
+	var/lowest_y = source_turf.y - range_offset + 1
+	var/highest_y = source_turf.y - range_offset + length(sheet[1])
+	var/source_z = source_turf.z
 	var/list/datum/lighting_corner/unreachable_corners
 	for(var/datum/lighting_corner/corner as anything in corners)
-		var/sheet_column = corner.x - source_turf.x + range_offset
-		var/sheet_row = corner.y - source_turf.y + range_offset
-		if(corner.z == source_turf.z && sheet_column >= 1 && sheet_column <= length(sheet) && sheet_row >= 1 && sheet_row <= length(sheet[sheet_column]))
+		if(corner.z == source_z && corner.x >= lowest_x && corner.x <= highest_x && corner.y >= lowest_y && corner.y <= highest_y)
 			continue
 		LAZYADD(unreachable_corners, corner)
 	if(!unreachable_corners)

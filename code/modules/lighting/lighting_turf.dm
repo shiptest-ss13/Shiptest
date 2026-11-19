@@ -107,7 +107,7 @@
 		queue_daylight_opacity_redraw()
 
 
-/turf/proc/change_area(area/old_area, area/new_area)
+/turf/proc/change_area(area/old_area, area/new_area, skip_daylight_refresh = FALSE)
 	if(SSlighting.initialized && !space_lit)
 		if (new_area.static_lighting != old_area.static_lighting)
 			if (new_area.static_lighting)
@@ -130,5 +130,6 @@
 
 	// a docking ship or similar moves daylight's edge, so the ground around needs to catch up
 	if(!old_area.planet_daylight != !new_area.planet_daylight)
-		refresh_planet_daylight_around(old_area.planet_daylight || new_area.planet_daylight)
+		if(!skip_daylight_refresh)
+			refresh_planet_daylight_around(old_area.planet_daylight || new_area.planet_daylight)
 		queue_lighting_object_update()

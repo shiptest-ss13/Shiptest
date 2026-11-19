@@ -161,6 +161,26 @@
 		if(nearby_turf.can_emit_planet_daylight)
 			nearby_turf.update_planet_daylight_source()
 
+// one refresh for many area changes, so overlapping parts are only checked once
+/proc/refresh_planet_daylight_for_turfs(list/turf/changed_turfs)
+	var/list/turf/exact_turfs = list()
+	var/list/turf/source_turfs = list()
+	for(var/turf/changed_turf as anything in changed_turfs)
+		var/list/daylight = changed_turf.virtual_level_trait(ZTRAIT_PLANETARY_LIGHTING)
+		if(!daylight || !daylight[ZTRAIT_LIGHT_RANGE])
+			continue
+		var/daylight_reach = ceil(daylight[ZTRAIT_LIGHT_RANGE])
+		for(var/turf/nearby_turf as anything in RANGE_TURFS(daylight_reach, changed_turf))
+			exact_turfs[nearby_turf] = TRUE
+		for(var/turf/nearby_turf as anything in RANGE_TURFS(daylight_reach * 2, changed_turf))
+			if(nearby_turf.can_emit_planet_daylight)
+				source_turfs[nearby_turf] = TRUE
+	for(var/turf/exact_turf as anything in exact_turfs)
+		exact_turf.update_planet_daylight_exact()
+	CHECK_TICK
+	for(var/turf/source_turf as anything in source_turfs)
+		source_turf.update_planet_daylight_source()
+
 /turf/proc/queue_lighting_object_update()
 	if(lighting_object && !lighting_object.needs_update)
 		lighting_object.needs_update = TRUE

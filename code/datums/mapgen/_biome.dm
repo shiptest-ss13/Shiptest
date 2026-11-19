@@ -48,7 +48,7 @@
 
 	// change the area
 	new_area.contents += gen_turf
-	gen_turf.change_area(A, new_area)
+	gen_turf.change_area(A, new_area, skip_daylight_refresh = TRUE)
 
 	// take NO_RUINS_1 from gen_turf.flags_1, and save it
 	var/stored_flags = gen_turf.flags_1 & NO_RUINS_1
