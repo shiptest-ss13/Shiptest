@@ -65,7 +65,15 @@
 
 /obj/machinery/ltsrbt/examine(mob/user)
 	. = ..()
+	if(occupant)
+		. += span_notice("There is \a [occupant.name] loaded in the trunk.")
+	. += span_notice("You can empty the trunk by <b>Alt-clicking</b> it.")
 	. += span_notice("You can load a crate into \the [name] by dragging it onto the machine while the trunk is open.")
+
+/obj/machinery/ltsrbt/examine_more(mob/user)
+	. = ..()
+	ui_interact(user)
+	return
 
 /obj/machinery/ltsrbt/RefreshParts()
 	recharge_time = base_recharge_time
@@ -97,6 +105,9 @@
 		if(!user.transferItemToLoc(attacking_item, src))
 			balloon_alert(user, "stuck to your hands!")
 			return TRUE
+		if(occupant)
+			balloon_alert(user, "already something loaded!")
+			return
 		balloon_alert(user, "item loaded")
 		close_machine(attacking_item)
 		return TRUE
@@ -113,8 +124,16 @@
 	if(!state_open)
 		to_chat(user, span_warning("The [name]'s trunk is closed! Open it up first!"))
 		return
+	else if(occupant)
+		to_chat(user, span_warning("There's already something inside the trunk! Empty it first!"))
+		return
 	else
 		close_machine(our_crate)
+
+/obj/machinery/ltsrbt/AltClick(mob/user)
+	. = ..()
+	if(Adjacent(user))
+		open_machine(TRUE,TRUE) // dump out our contents
 
 /// Adds /datum/blackmarket_purchase to queue unless the machine is free, then it sets the purchase to be instantly recieved
 /obj/machinery/ltsrbt/proc/add_to_queue(datum/blackmarket_purchase/purchase)
@@ -180,9 +199,13 @@
 	if(.)
 		return
 	if(!state_open)
-		open_machine(density_to_set = TRUE)
+		open_machine(FALSE,TRUE)
 	else
-		close_machine()
+		var/nearby_crate = locate(/obj/structure/closet/crate) in get_turf(src)
+		if(nearby_crate && !occupant)
+			close_machine(nearby_crate)
+		else
+			close_machine()
 
 /obj/machinery/ltsrbt/open_machine(drop = TRUE, density_to_set = FALSE)
 	. = ..()
@@ -192,7 +215,7 @@
 
 /obj/machinery/ltsrbt/close_machine(atom/movable/target, density_to_set = TRUE)
 	. = ..()
-	if(istype(target, /obj/structure/closet/crate))
+	if(istype(target, /obj/structure/closet/crate) || istype(occupant,/obj/structure/closet/crate))
 		valid_as_stock = TRUE
 	playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
 
@@ -281,6 +304,9 @@
 		return
 	if(!seller_id || !id_locked)
 		say("You need a confirmed seller ID first bucko. What kinda rodeo you think we're running here?")
+		return
+	if(state_open)
+		say("Close the trunk first!")
 		return
 	if(locate(/mob/living) in occupant.get_all_contents())
 		say("Living being detected, cannot sell!")
