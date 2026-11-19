@@ -36,12 +36,6 @@
 	name = "Dynamite Pit"
 	icon_state = "red"
 
-//Hierophant Arena
-
-/area/ruin/unpowered/hierophant
-	name = "Hierophant's Arena"
-	icon_state = "dk_yellow"
-
 // Wrecked Factory
 
 /area/ruin/lavaland/factory/warehouse
