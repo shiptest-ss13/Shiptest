@@ -67,7 +67,7 @@
 	name = "small hypovial"
 	icon_state = "hypovial-small"
 	volume = 30
-	custom_materials = list(/datum/material/glass = 250)
+	custom_materials = list(/datum/material/glass = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/small
 	name = "hypovial"
