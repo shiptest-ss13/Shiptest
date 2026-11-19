@@ -5,20 +5,15 @@
 #define GRAIN (1<<4)
 #define FRUIT (1<<5)
 #define DAIRY (1<<6)
-#define FRIED (1<<7)
+#define HEAVILY_FRIED (1<<7) // heavily fried stuff like french fries and onion rings
 #define ALCOHOL (1<<8)
 #define SUGAR (1<<9)
-#define GROSS (1<<10)
+#define GROSS (1<<10) // stuff you really shouldn't eat, like baseball burgers and mold
 #define TOXIC (1<<11)
-#define PINEAPPLE (1<<12)
+#define EGG (1<<12)
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
-#define GRILLED (1<<15)
-#define NUTS (1<<16)
-#define SEAFOOD (1<<17)
-#define ORANGES (1<<18)
-#define BUGS (1<<19)
-#define GORE (1<<20)
+#define GORE (1<<16) // straight up organs and stuff
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
@@ -28,18 +23,14 @@ DEFINE_BITFIELD(foodtypes, list(
 	"GRAIN" = GRAIN,
 	"FRUIT" = FRUIT,
 	"DAIRY" = DAIRY,
-	"FRIED" = FRIED,
+	"HEAVILY_FRIED" = HEAVILY_FRIED,
 	"ALCOHOL" = ALCOHOL,
 	"SUGAR" = SUGAR,
 	"GROSS" = GROSS,
 	"TOXIC" = TOXIC,
-	"PINEAPPLE" = PINEAPPLE,
+	"EGG" = EGG,
 	"BREAKFAST" = BREAKFAST,
 	"CLOTH" = CLOTH,
-	"NUTS" = NUTS,
-	"SEAFOOD" = SEAFOOD,
-	"ORANGES" = ORANGES,
-	"BUGS" = BUGS,
 	"GORE" = GORE,
 ))
 
@@ -52,18 +43,14 @@ DEFINE_BITFIELD(foodtypes, list(
 	"Grain", \
 	"Fruits", \
 	"Dairy products", \
-	"Fried food", \
+	"Deep fried food", \
 	"Alcohol", \
 	"Sugary food", \
 	"Gross food", \
 	"Toxic food", \
-	"Pineapples", \
+	"Eggs", \
 	"Breakfast food", \
 	"Clothing", \
-	"Nuts", \
-	"Seafood", \
-	"Oranges", \
-	"Bugs", \
 )
 
 #define DRINK_NICE 1

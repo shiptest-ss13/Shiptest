@@ -502,7 +502,7 @@
 				icon_state = "pineapplebox"
 				name = "pineapple juice box"
 				desc = "Sweet, tart pineapple juice."
-				foodtype = FRUIT | PINEAPPLE
+				foodtype = FRUIT
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"
@@ -512,7 +512,7 @@
 				icon_state = "nog2"
 				name = "carton of eggnog"
 				desc = "A carton of eggnog, a drink of choice for celebrating Winter Solstice."
-				foodtype = MEAT
+				foodtype = EGG
 	else
 		icon_state = "juicebox"
 		name = "small carton"
