@@ -46,6 +46,10 @@
 	var/seller_id = ""
 	/// You can't change the ID once it's set. If you sell too many fraudulent goods, people won't trust your ID.
 	var/id_locked = FALSE
+	/// If we're placing all the contents of this item as stock for the entry
+	var/as_stock = FALSE
+	/// if the occupant can be used as a stocked item
+	var/valid_as_stock = FALSE
 
 /obj/machinery/ltsrbt/Destroy()
 	// Bye bye orders.
@@ -182,10 +186,14 @@
 
 /obj/machinery/ltsrbt/open_machine(drop = TRUE, density_to_set = FALSE)
 	. = ..()
+	as_stock = FALSE
+	valid_as_stock = FALSE
 	playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 
 /obj/machinery/ltsrbt/close_machine(atom/movable/target, density_to_set = TRUE)
 	. = ..()
+	if(istype(target, /obj/structure/closet/crate))
+		valid_as_stock = TRUE
 	playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
 
 /obj/machinery/ltsrbt/can_be_occupant(atom/movable/atom)
@@ -224,6 +232,8 @@
 	data["desc"] = current_desc
 	data["seller_id"] = seller_id
 	data["id_locked"] = id_locked
+	data["stock_item"] = as_stock
+	data["is_stockable"] = valid_as_stock
 	return data
 
 /obj/machinery/ltsrbt/ui_act(action, list/params)
@@ -239,6 +249,9 @@
 			return TRUE
 		if("set_id")
 			id_locked = TRUE
+			return TRUE
+		if("set_stocking")
+			as_stock = !as_stock
 			return TRUE
 		if("change_name")
 			var/value = params["value"]
@@ -262,7 +275,7 @@
 #undef LTSRBT_MIN_PRICE
 #undef LTSRBT_MAX_PRICE
 
-#define LTSRBT_MAX_MARKET_ITEMS 40
+#define LTSRBT_MAX_MARKET_ITEMS 100
 /obj/machinery/ltsrbt/proc/place_on_market(mob/user)
 	if(QDELETED(occupant))
 		return
@@ -297,20 +310,30 @@
 	var/obj/item/item = occupant //occupant, name, price and desc will be null'd once it exits the machine so we need this.
 	var/name_to_use = current_name || item.name
 	var/desc_to_use = current_desc
-	if(account)
-		desc_to_use += "[current_desc ? " - " : ""]Seller: [seller_id]"
+	desc_to_use += "[current_desc ? " - " : ""]Seller: [seller_id]"
 	var/price_to_use = current_price
-	item.moveToNullspace()
-	//Something happened and the item was deleted or relocated as soon as it was moved to nullspace.
-	if(QDELETED(item) || item.loc != null)
-		say("Runtime at market_placement.dm, line 153: item gone!") //metajoke
-		return
 
 	var/datum/blackmarket_item/local_good/new_item = new(item, account, our_market.local_good_id)
 	new_item.name = name_to_use
 	new_item.desc = desc_to_use
 	new_item.cost = price_to_use
-
+	if(as_stock)
+		var/items_stocked = 0
+		for(var/atom/movable/to_be_stocked in item.contents)
+			new_item.stocked_items.Add(to_be_stocked)
+			to_be_stocked.moveToNullspace()
+			//Something happened and the item was deleted or relocated as soon as it was moved to nullspace.
+			if(QDELETED(to_be_stocked) || to_be_stocked.loc != null)
+				say("Runtime at market_placement.dm, line 326: item gone!")
+				return
+			items_stocked++
+		new_item.stock = items_stocked
+		item.Destroy() // dont need the crate anymore
+	else
+		item.moveToNullspace()
+		if(QDELETED(item) || item.loc != null)
+			say("Runtime at market_placement.dm, line 332: item gone!")
+			return
 	our_market.add_item(new_item)
 	our_market.local_good_id++
 	say("Item placed on the market!")
@@ -326,7 +349,6 @@
 	reqs = list(
 		/obj/item/stack/ore/bluespace_crystal = 2,
 		/obj/item/stack/tape/industrial = 5,
-		/obj/item/card/bank = 1,
 		/obj/item/computer_hardware/network_card = 1,
 		/obj/item/circuitboard = 1
 	)

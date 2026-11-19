@@ -4,6 +4,7 @@ import {
   Button,
   Input,
   NumberInput,
+  Section,
   Stack,
   TextArea,
 } from '../components';
@@ -11,8 +12,17 @@ import { Window } from '../layouts';
 
 export const BlackMarketTelepad = (props, context) => {
   const { act, data } = useBackend(context);
-  const { name, price, min_price, max_price,
-  desc, seller_id, id_locked } = data;
+  const {
+    name,
+    price,
+    min_price,
+    max_price,
+    desc,
+    seller_id,
+    id_locked,
+    stock_item,
+    is_stockable,
+  } = data;
 
   return (
     <Window width={600} height={380} theme="hackerman">
@@ -81,12 +91,24 @@ export const BlackMarketTelepad = (props, context) => {
           </Stack.Item>
           <Stack.Divider />
           <Stack.Item>
+            <Section title="Use crate contents as stock?"
+            buttons={
+            <Button
+              icon={stock_item ? 'toggle-off' : 'toggle-on'}
+              disabled={!is_stockable}
+              selected={stock_item}
+              content={stock_item ? 'Yes' : 'No'}
+              onClick={() => act('set_stocking')}
+            />
+          }
+          >
             <Button.Confirm
               fluid
               icon="truck-arrow-right"
               content="Place on Market"
               onClick={() => act('place_on_market')}
             />
+            </Section>
           </Stack.Item>
         </Stack>
       </Window.Content>

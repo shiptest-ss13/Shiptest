@@ -9,7 +9,6 @@
 
 /datum/blackmarket_item/local_good/New(atom/movable/thing, datum/bank_account/seller, id_num)
 	..()
-	//set_item(thing)
 	item = thing
 	src.seller = seller
 	if(id_num)
@@ -17,13 +16,14 @@
 	if(seller)
 		RegisterSignal(seller, COMSIG_QDELETING, PROC_REF(delete_reference))
 
-/datum/blackmarket_item/local_good/buy(obj/item/blackmarket_uplink, mob/buyer, shipping_method, legal_status)
+/datum/blackmarket_item/local_good/buy(obj/item/blackmarket_uplink, mob/buyer, shipping_method)
 	. = ..()
 	if(. && seller)
 		var/tax = round(cost * MARKET_WITHHOLDING_TAX)
 		seller.adjust_money(cost - tax, "Market: [name] sold for [cost].")
 		seller.bank_card_talk("[name] sold on the Black Market for [cost] cr. A [MARKET_WITHHOLDING_TAX]% broker fee has been deducted for a total of [tax] cr.")
-	QDEL_IN(src, 10 MINUTES) //This category cannot hold more than 40 items at a time, so we need to clear sold items.
+	if(stock <= 0)
+		QDEL_IN(src, 10 MINUTES) //This category cannot hold more than 40 items at a time, so we need to clear sold items.
 
 /datum/blackmarket_item/local_good/proc/delete_reference(datum/source)
 	SIGNAL_HANDLER

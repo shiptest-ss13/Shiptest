@@ -16,6 +16,9 @@
 	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
 	var/item
 
+	/// List of (actual) items associated with this entry. For local good items with multiple stock.
+	var/list/stocked_items = list()
+
 	/// Minimum cost for the item if generated randomly.
 	var/cost_min	= 0
 	/// Maximum cost for the item if generated randomly.
@@ -122,6 +125,8 @@
 	method = _method
 
 /datum/blackmarket_purchase/proc/get_item()
-	if(!item || ispath(item))
+	if(entry.stocked_items.len)
+		item = pick_n_take(entry.stocked_items)
+	else if(!item || ispath(item))
 		item = entry.spawn_item()
 	return item
