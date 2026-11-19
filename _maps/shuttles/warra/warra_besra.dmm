@@ -106,7 +106,7 @@
 /area/ship/storage/equip)
 "be" = (
 /obj/structure/closet/secure_closet/chemical{
-	name = "paramedic's locker";
+	name = "medical doctor's locker";
 	req_access = list(5);
 	populate = 0
 	},
@@ -131,8 +131,11 @@
 	pixel_x = 5
 	},
 /obj/item/clothing/under/warra/medical,
-/obj/item/clothing/under/warra/medical/paramedic{
-	pixel_x = -5
+/obj/item/clothing/under/warra/security{
+	pixel_x = -4
+	},
+/obj/item/clothing/under/warra/security{
+	pixel_x = -9
 	},
 /obj/item/clothing/shoes/jackboots{
 	pixel_x = -6;
@@ -160,7 +163,7 @@
 /obj/item/clothing/suit/warra/medical_smock{
 	pixel_y = -8
 	},
-/obj/item/clothing/suit/toggle/labcoat/warra/paramedic{
+/obj/item/clothing/suit/hooded/wintercoat/security{
 	pixel_x = -6
 	},
 /obj/item/clothing/gloves/nitrile{
@@ -178,9 +181,13 @@
 /obj/item/clothing/head/warra/surgical{
 	pixel_y = 9
 	},
-/obj/item/clothing/head/warra/cap/medical{
+/obj/item/clothing/head/warra/beret/security{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/warra/cap/security{
 	pixel_y = 8;
-	pixel_x = -8
+	pixel_x = -11
 	},
 /obj/item/storage/belt/medical{
 	pixel_y = -4
@@ -596,6 +603,23 @@
 	pixel_y = 4
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/button/door{
+	id = "besra_med_ext";
+	name = "Shutter Control";
+	pixel_x = -21;
+	dir = 4;
+	req_access_txt = "3";
+	req_ship_access = 1;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -12;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -12;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "ff" = (
@@ -1125,12 +1149,14 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate,
+/obj/structure/closet/crate/wooden,
 /obj/item/food/canned/beefbroth,
 /obj/item/food/canned/beefbroth,
 /obj/item/food/canned/peaches,
 /obj/item/food/canned/peaches,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/food/canned/peaches,
+/obj/item/food/canned/beefbroth,
 /turf/open/floor/plating,
 /area/ship/storage)
 "kc" = (
@@ -1231,21 +1257,18 @@
 /obj/machinery/iv_drip{
 	pixel_x = -11
 	},
-/obj/effect/decal/cleanable/blood/drip{
-	icon_state = "drip1"
-	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "kH" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/toy/prize/marauder{
 	pixel_y = 13;
-	pixel_x = 4
+	pixel_x = 5
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/effect/spawner/random/entertainment/deck{
 	pixel_x = -7;
-	pixel_y = 6
+	pixel_y = 7
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
@@ -1600,6 +1623,7 @@
 	pixel_y = -6;
 	dir = 8
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/command)
 "nQ" = (
@@ -4297,6 +4321,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/blood/drip{
+	icon_state = "drip1"
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Ku" = (
@@ -5163,7 +5190,7 @@
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "pyrotechnic hold";
-	req_access_txt = "3"
+	req_access_txt = "1"
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
@@ -5241,21 +5268,13 @@
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/clothing/suit/armor/warra{
-	pixel_x = 10;
-	pixel_y = -3
-	},
-/obj/item/clothing/suit/armor/warra{
-	pixel_x = 10;
-	pixel_y = -3
+/obj/item/clothing/suit/armor/warra/slim{
+	pixel_y = -4;
+	pixel_x = 7
 	},
 /obj/item/clothing/suit/armor/warra/slim{
 	pixel_y = -4;
-	pixel_x = 2
-	},
-/obj/item/clothing/suit/armor/warra/slim{
-	pixel_y = -4;
-	pixel_x = 2
+	pixel_x = 7
 	},
 /obj/item/clothing/glasses/sunglasses/ballistic{
 	pixel_y = 8;
@@ -5282,6 +5301,10 @@
 	pixel_x = -8
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/item/clothing/suit/armor/warra/slim{
+	pixel_y = -4;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "Sx" = (
@@ -5481,21 +5504,6 @@
 /obj/effect/turf_decal/corner_steel_grid,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"TD" = (
-/obj/structure/bed/roller,
-/obj/effect/turf_decal/corner/transparent/blue/mono,
-/obj/effect/turf_decal/corner/transparent/white/mono,
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/button/door{
-	pixel_y = -20;
-	id = "besra_med_ext";
-	name = "Shutter Control";
-	dir = 1;
-	req_ship_access = 1;
-	pixel_x = 7
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/medical)
 "TH" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -5788,14 +5796,10 @@
 	},
 /obj/item/radio/headset/warra/alt/captain,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/guncase/pistol/inherit{
-	mag_count = 4
-	},
-/obj/item/gun/ballistic/revolver/rhino/empty,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357,
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357,
+/obj/item/storage/guncase/pistol/inherit,
+/obj/item/gun/energy/sharplite/yari/no_cell,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/command)
 "Wq" = (
@@ -5933,10 +5937,6 @@
 /obj/structure/table/glass,
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 7;
-	pixel_y = 7
-	},
 /obj/item/healthanalyzer{
 	pixel_y = -1;
 	pixel_x = -1
@@ -6254,7 +6254,7 @@ fZ
 fZ
 PB
 XV
-TD
+PB
 fZ
 fZ
 ZG

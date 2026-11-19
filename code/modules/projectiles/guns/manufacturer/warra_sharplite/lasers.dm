@@ -97,6 +97,9 @@
 /obj/item/gun/energy/sharplite/yari/empty_cell
 	spawn_no_ammo = TRUE
 
+/obj/item/gun/energy/sharplite/yari/no_cell
+	default_ammo_type = FALSE
+
 /obj/item/gun/energy/sharplite/yari/brazil
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
