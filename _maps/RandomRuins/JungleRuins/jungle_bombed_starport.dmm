@@ -6181,11 +6181,22 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/airbase/tower)
 "BH" = (
-/obj/structure/closet/secure_closet/medical,
 /obj/effect/turf_decal/corner/opaque/cybersunteal{
 	dir = 9
 	},
 /obj/machinery/light/broken/directional/west,
+/obj/structure/closet/secure_closet/medical{
+	populate = 0
+	},
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/syringe/charcoal,
+/obj/item/reagent_containers/syringe/epinephrine,
+/obj/item/reagent_containers/syringe,
+/obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},

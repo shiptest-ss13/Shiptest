@@ -844,10 +844,83 @@
 	},
 /obj/structure/closet/wall{
 	dir = 4;
-	pixel_x = 28
+	pixel_x = 28;
+	name = "formal uniform locker"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/clip/formal/alt{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/clip/formal/alt{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/clip/formal/alt{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/clothing/accessory/clip_formal_overshirt{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/accessory/clip_formal_overshirt{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/accessory/clip_formal_overshirt{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 3;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 3;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 3;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 3;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 3;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 3;
+	pixel_y = -12
+	},
+/obj/item/clothing/accessory/clip_formal_overshirt{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/clip/formal/alt{
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -3698,13 +3771,93 @@
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner,
 /obj/structure/closet/wall{
 	dir = 4;
-	pixel_x = 28
+	pixel_x = 28;
+	name = "uniform locker"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/under/clip{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/clothing/under/clip{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/security/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 10;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "AO" = (
@@ -4602,6 +4755,124 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"HU" = (
+/obj/effect/turf_decal/siding/black/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/wall/directional/west{
+	name = "uniform locker";
+	dir = 4;
+	pixel_x = 28
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/satchel/sec/clip,
+/obj/item/storage/backpack/security/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/clothing/under/clip{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/clothing/under/clip{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/clothing/under/clip{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/dark,
+/area/template_noop)
 "HW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -7003,7 +7274,7 @@ qc
 HW
 ps
 ps
-ps
+HU
 "}
 (13,1,1) = {"
 ps

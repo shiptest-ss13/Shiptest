@@ -1,7 +1,6 @@
 /obj/structure/closet/secure_closet
 	name = "secure locker"
 	desc = "It's a card-locked storage unit."
-	locked = TRUE
 	anchored = TRUE
 	icon_state = "secure"
 	max_integrity = 250

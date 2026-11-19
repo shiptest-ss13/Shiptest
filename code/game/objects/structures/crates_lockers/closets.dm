@@ -9,6 +9,7 @@
 	integrity_failure = 0.25
 	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60)
+	anchored = TRUE
 
 	var/icon_door = null
 	var/icon_door_override = FALSE //override to have open overlay use icon different to its base's
