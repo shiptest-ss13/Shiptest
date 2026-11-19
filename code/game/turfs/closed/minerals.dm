@@ -2,7 +2,6 @@
 
 /turf/closed/mineral //wall piece
 	name = "rock"
-	can_emit_planet_daylight = TRUE
 	icon = MAP_SWITCH('icons/turf/walls/smoothrocks.dmi', 'icons/turf/walls/mapping_wall.dmi')
 	icon_state = "smoothrocks-0"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
