@@ -165,7 +165,7 @@
 
 /obj/item/food/scotchegg
 	name = "scotch egg"
-	desc = "A boiled egg wrapped in a delicious, seasoned EGGball."
+	desc = "A boiled egg wrapped in a delicious, seasoned meatball."
 	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "scotchegg"
 	//filling_color = "#FFFFF0"
