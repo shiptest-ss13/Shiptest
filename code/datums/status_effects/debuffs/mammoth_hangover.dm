@@ -14,7 +14,7 @@
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/mammoth_crash)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/tweaker = owner
-		tweaker.physiology.do_after_speed -= 0.3
+		tweaker.physiology.do_after_speed += 0.3
 	return TRUE
 
 /datum/status_effect/mammoth_crash/on_remove()
@@ -22,7 +22,7 @@
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/mammoth_crash)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/tweaker = owner
-		tweaker.physiology.do_after_speed += 0.3
+		tweaker.physiology.do_after_speed -= 0.3
 	return TRUE
 
 // remove hangover on death
