@@ -33,3 +33,19 @@
   - bugfix: Ships no longer lose the ability to bluespace jump after one of their
       helm consoles is destroyed.
   - bugfix: Ships can exit the Frontier while having an accepted mission again.
+2026-11-19:
+  AnomalousPotato:
+  - balance: Adjusted a bunch of autolathe costs. Things are largely cheaper now.
+  - rscadd: You can make pizza cutters in an autolathe now.
+  prodirus:
+  - bugfix: Firing guns should drop clicks less and full auto should not cancel under
+      laggy conditions.
+  - bugfix: Burst fire should now always have consistent timing.
+  - rscadd: Click buffer for firing weapons, so clicking slightly early will fire
+      the gun when ready instead of doing nothing
+  - bugfix: Weapon firerates should now be accurate to their defines.
+  - balance: CM40 and Python slight firerate nerf
+  - bugfix: Fixed firerate delay timing to be correct. This leads to firerate being
+      increased across the board.
+  thearbiber:
+  - rscadd: Ruin difficulty adjustment
