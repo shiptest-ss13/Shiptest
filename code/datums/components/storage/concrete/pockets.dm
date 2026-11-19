@@ -107,6 +107,14 @@
 		/obj/item/bodycamera,
 	))
 
+/datum/component/storage/concrete/pockets/helmet/attackby(datum/source, obj/item/tool, mob/user, params)
+	// intercept seclites, CLIP IT instead of putting it in storage
+	var/obj/item/clothing/head/helmet/helmet = parent
+	if(istype(tool, /obj/item/flashlight/seclite) && istype(helmet) && helmet.can_flashlight)
+		helmet.try_attach_light(tool, user)
+		return TRUE
+	return ..()
+
 /datum/component/storage/concrete/pockets/holster
 	max_items = 3
 	max_w_class = WEIGHT_CLASS_NORMAL

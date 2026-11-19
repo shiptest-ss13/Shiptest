@@ -215,7 +215,7 @@ EMPTY_GUN_HELPER(revolver/viper)
 		"Merc's Best Friend" = "viper23_larp",
 		"Rancher" = "viper23_cowboy"
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND | UNIQUE_RESKIN_CHANGES_NAME //pickle
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()

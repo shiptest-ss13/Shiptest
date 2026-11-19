@@ -145,29 +145,32 @@
 						"black overall dress" = "overalldress_black",
 						"white overall dress" = "overalldress_white",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/under/dress/overall_dress/denim
 	name = "denim overall dress"
 	current_skin = "denim overall dress"
 
-/obj/item/clothing/under/dress/overall_dress/navy
-	name = "navy overall dress"
-	current_skin = "navy overall dress"
-
 /obj/item/clothing/under/dress/overall_dress/green
 	name = "green overall dress"
 	current_skin = "green overall dress"
+	icon_state = "overalldress_green"
+
+/obj/item/clothing/under/dress/overall_dress/navy
+	name = "navy overall dress"
+	current_skin = "navy overall dress"
+	icon_state = "overalldress_navy"
 
 /obj/item/clothing/under/dress/overall_dress/brown
 	name = "brown overall dress"
 	current_skin = "brown overall dress"
+	icon_state = "overalldress_brown"
 
 /obj/item/clothing/under/dress/overall_dress/black
 	name = "black overall dress"
 	current_skin = "black overall dress"
+	icon_state = "overalldress_black"
 
 /obj/item/clothing/under/dress/overall_dress/white
 	name = "white overall dress"
 	current_skin = "white overall dress"
+	icon_state = "overalldress_white"

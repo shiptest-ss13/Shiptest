@@ -25,7 +25,6 @@
 		"brown hairbow" = "hairbowbrown",
 		"light brown hairbow" = "hairbowlightbrown"
 	)
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/head/hairbow/white
 	name = "white hairbow"

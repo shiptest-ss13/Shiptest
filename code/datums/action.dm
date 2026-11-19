@@ -380,6 +380,9 @@
 /datum/action/item_action/toggle_helmet_flashlight
 	name = "Toggle Helmet Flashlight"
 
+/datum/action/item_action/toggle_helmet_eyewear
+	name = "Toggle Helmet Eyewear"
+
 /datum/action/item_action/toggle_helmet_mode
 	name = "Toggle Helmet Mode"
 

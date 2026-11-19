@@ -26,50 +26,41 @@
 						"brown cargo pants" = "cargobrown",
 						"navy cargo pants" = "cargonavy",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 	greyscale_colors = list(list(14, 7), list(16, 10), list(16, 9))
 
 /obj/item/clothing/under/pants/cargo/grey
 	name = "grey cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargogrey"
 	current_skin = "grey cargo pants"
 
 /obj/item/clothing/under/pants/cargo/black
 	name = "black cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargoblack"
 	current_skin = "black cargo pants"
 
 /obj/item/clothing/under/pants/cargo/khaki
 	name = "khaki cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargokhaki"
 	current_skin = "khaki cargo pants"
 
 /obj/item/clothing/under/pants/cargo/navy
 	name = "navy cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargonavy"
 	current_skin = "navy cargo pants"
 
 /obj/item/clothing/under/pants/cargo/jeans
 	name = "jean cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargojeans"
 	current_skin = "jean cargo pants"
 
 /obj/item/clothing/under/pants/cargo/brown
 	name = "brown cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargobrown"
 	current_skin = "brown cargo pants"
 
 /obj/item/clothing/under/pants/cargo/olive
 	name = "olive cargo pants"
-	desc = "A pocket for every need."
 	icon_state = "cargoolive"
 	current_skin = "olive cargo pants"
 
@@ -106,28 +97,26 @@
 						"red track pants" = "trackpantsred",
 						"purple track pants" = "trackpantspurple",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/track/teal
-	name = "teal track pants"
+	icon_state = "trackpantsteal"
 	current_skin = "teal track pants"
 
 /obj/item/clothing/under/pants/track/pink
-	name = "pink track pants"
+	icon_state = "trackpantspink"
 	current_skin = "pink track pants"
 
 /obj/item/clothing/under/pants/track/blue
-	name = "blue track pants"
+	icon_state = "trackpantsblue"
 	current_skin = "blue track pants"
 
 /obj/item/clothing/under/pants/track/red
-	name = "red track pants"
+	icon_state = "trackpantsred"
 	current_skin = "red track pants"
 
 /obj/item/clothing/under/pants/track/purple
-	name = "purple track pants"
+	icon_state = "trackpantspurple"
 	current_skin = "purple track pants"
 
 /obj/item/clothing/under/pants/jeans
@@ -176,26 +165,24 @@
 						"red sweatpants" = "sweatpantsred",
 						"purple sweatpants" = "sweatpantspurple",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/sweat/teal
-	name = "teal sweatpants"
+	icon_state = "sweatpantsteal"
 	current_skin = "teal sweatpants"
 
 /obj/item/clothing/under/pants/sweat/pink
-	name = "pink sweatpants"
+	icon_state = "sweatpantspink"
 	current_skin = "pink sweatpants"
 
 /obj/item/clothing/under/pants/sweat/blue
-	name = "blue sweatpants"
+	icon_state = "sweatpantsblue"
 	current_skin = "blue sweatpants"
 
 /obj/item/clothing/under/pants/sweat/red
-	name = "red sweatpants"
+	icon_state = "sweatpantsred"
 	current_skin = "red sweatpants"
 
 /obj/item/clothing/under/pants/sweat/purple
-	name = "purple sweatpants"
+	icon_state = "sweatpantspurple"
 	current_skin = "purple sweatpants"

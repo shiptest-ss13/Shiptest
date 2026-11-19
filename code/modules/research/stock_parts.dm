@@ -109,7 +109,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "stock part"
 	desc = "What?"
 	icon = 'icons/obj/stock_parts.dmi'
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	var/rating = 1
 	var/part_behaviour
 	var/auto_scatter = TRUE
