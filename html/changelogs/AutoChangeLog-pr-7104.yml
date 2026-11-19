@@ -1,0 +1,12 @@
+author: prodirus
+changes:
+  - {bugfix: Firing guns should drop clicks less and full auto should not cancel
+      under laggy conditions.}
+  - {bugfix: Burst fire should now always have consistent timing.}
+  - {rscadd: 'Click buffer for firing weapons, so clicking slightly early will fire
+      the gun when ready instead of doing nothing'}
+  - {bugfix: Weapon firerates should now be accurate to their defines.}
+  - {balance: CM40 and Python slight firerate nerf}
+  - {bugfix: Fixed firerate delay timing to be correct. This leads to firerate 
+      being increased across the board.}
+delete-after: true
