@@ -320,12 +320,12 @@
 	if(as_stock)
 		var/items_stocked = 0
 		for(var/atom/movable/to_be_stocked in item.contents)
-			new_item.stocked_items.Add(to_be_stocked)
 			to_be_stocked.moveToNullspace()
 			//Something happened and the item was deleted or relocated as soon as it was moved to nullspace.
 			if(QDELETED(to_be_stocked) || to_be_stocked.loc != null)
 				say("Runtime at market_placement.dm, line 326: item gone!")
-				return
+				continue
+			new_item.stocked_items.Add(to_be_stocked)
 			items_stocked++
 		new_item.stock = items_stocked
 		item.Destroy() // dont need the crate anymore
