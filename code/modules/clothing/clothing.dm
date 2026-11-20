@@ -9,7 +9,7 @@
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
 
 	//We assume that we're changing everything because of customization.
-	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_INHAND
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_NAME
 
 	var/damaged_clothes = 0 //similar to machine's BROKEN stat and structure's broken var
 	///What level of bright light protection item has.
