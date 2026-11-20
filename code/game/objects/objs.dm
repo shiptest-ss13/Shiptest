@@ -248,6 +248,8 @@
  * * requester- The movable we're checking pass flags for, if we're making any such checks
  **/
 /obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if((flags_1 & ON_BORDER_1) && !(to_dir & dir))
+		return TRUE // edge things only block steps across their own edge, diagonals included
 	if(istype(requester) && (requester.pass_flags & pass_flags_self))
 		return TRUE
 	. = !density

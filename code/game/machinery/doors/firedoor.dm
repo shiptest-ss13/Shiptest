@@ -83,10 +83,8 @@
 	return ..()
 
 /obj/machinery/door/firedoor/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
-	if(!density)
+	if(..())
 		return TRUE
-	if((flags_1 & ON_BORDER_1) && !(to_dir & dir))
-		return TRUE // an edge firelock only closes off the edge it's on
 	return ai_opens_for(requester)
 
 /obj/machinery/door/firedoor/ai_can_open(mob/living/opener)
@@ -817,11 +815,6 @@
 	. = ..()
 	if(!(get_dir(loc, target) == dir)) //Make sure looking at appropriate border
 		return TRUE
-
-/obj/structure/firelock_frame/border/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
-	if(!(to_dir & dir))
-		return TRUE
-	return ..()
 
 /obj/structure/firelock_frame/border/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER

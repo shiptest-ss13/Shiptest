@@ -95,11 +95,6 @@
 
 	return TRUE
 
-/obj/structure/barricade/concrete/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
-	if(!(to_dir & dir))
-		return TRUE
-	return ..()
-
 /*
 /obj/structure/barricade/concrete/CanPass(atom/movable/mover, border_dir)
 	. = ..()
