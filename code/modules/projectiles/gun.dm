@@ -283,17 +283,17 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 	update_dual_wield_slowdown(user)
 
-// sums wield cooldown for dual wielding weapons
+// dual wielding uses the highest wield slowdown of the held guns
 /obj/item/gun/proc/update_dual_wield_slowdown(mob/living/user)
 	if(!istype(user))
 		return
 	var/held_gun_count = 0
-	var/total_slowdown = 0
+	var/highest_slowdown = 0
 	for(var/obj/item/gun/held_gun in user.held_items)
 		held_gun_count++
-		total_slowdown += held_gun.wield_slowdown
+		highest_slowdown = max(highest_slowdown, held_gun.wield_slowdown)
 	if(held_gun_count >= 2)
-		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun_dual_wield, multiplicative_slowdown = total_slowdown)
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun_dual_wield, multiplicative_slowdown = highest_slowdown)
 	else
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/gun_dual_wield)
 
