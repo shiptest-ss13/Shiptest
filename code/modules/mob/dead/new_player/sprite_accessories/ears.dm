@@ -21,13 +21,6 @@
 	secondary_color_overlay = TRUE
 	color_src = HAIR
 
-/datum/sprite_accessory/ears/human/cat/slime
-	name = "Slimecat"
-	icon_state = "cat"
-	secondary_color_overlay = FALSE
-	color_src = HAIR
-	image_alpha = 150
-
 /datum/sprite_accessory/ears/human/dog
 	icon = 'icons/mob/species/human/dog.dmi'
 	name = "Dog"
