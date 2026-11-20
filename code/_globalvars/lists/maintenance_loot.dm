@@ -14,7 +14,7 @@
 
 //Loot tables
 
-GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto chemistry items
+GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or chemistry items
 	list(//trash
 		/obj/item/trash/can = 1,
 		/obj/item/trash/raisins = 1,
@@ -144,6 +144,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/spacecash/bundle/pocketchange = 1,
 		/obj/item/stack/tape = 1,
+		/obj/item/toy/stressball = 1,
 
 		//light sources
 		/obj/item/flashlight = 1,
@@ -166,7 +167,6 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/melee/spear = 1,
 		/obj/item/shield/buckler = 1,
 		/obj/item/grenade/iedcasing/spawned = 1,
-		/obj/item/melee/baton/cattleprod = 1,
 		/obj/item/throwing_star = 1,
 		/obj/item/gun/ballistic/automatic/pistol/derringer = 1,
 		) = 8,
@@ -242,7 +242,6 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/clothing/suit/armor/reactive/repulse = 1,
 		/obj/item/melee/axe/fire = 1,
 		/mob/living/simple_animal/crab = 1,
-		/obj/item/melee/baton/boomerang = 1,
 		/obj/item/circular_saw/best = 1,
 		/obj/item/gun/ballistic/shotgun/doublebarrel/brazil = 1,
 		/obj/item/toner/extreme = 1,

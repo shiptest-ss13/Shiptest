@@ -12,7 +12,7 @@
 	var/image/beaker_overlay
 	var/image/bottle_overlay
 	var/current_volume = 10
-	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but ghetto should be worse.
+	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but without a chem master this should be worse.
 	var/press_time = 15
 	var/pill_style = 9 // White pills
 	var/list/possible_styles = list(7,8,9,10,11,12) // These values only encompass the 'tablet' shaped pills.

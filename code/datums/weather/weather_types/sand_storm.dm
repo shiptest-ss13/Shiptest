@@ -20,27 +20,25 @@
 
 	immunity_type = "sand"
 
-/datum/weather/ash_storm/sand_storm/is_ash_immune(atom/L)
-	while (L && !isturf(L))
-		if(ismecha(L)) //Mechs are immune
+/datum/weather/ash_storm/sand_storm/is_ash_immune(atom/victim)
+	while (victim && !isturf(victim))
+		if(ismecha(victim)) //Mechs are immune
 			return TRUE
-		if(ishuman(L)) //Are you immune?
-			var/mob/living/carbon/human/H = L
-			if(H.head && istype(H.head, /obj/item/clothing) && H.wear_suit && istype(H.wear_suit, /obj/item/clothing))
-				var/obj/item/clothing/CH = H.head
-				var/obj/item/clothing/CS = H.wear_suit
-				if (CH.clothing_flags & THICKMATERIAL && CS.clothing_flags & THICKMATERIAL)
+		if(ishuman(victim)) //Are you immune?
+			var/mob/living/carbon/human/human_victim = victim
+			if(human_victim.head && istype(human_victim.head, /obj/item/clothing) && human_victim.wear_suit && istype(human_victim.wear_suit, /obj/item/clothing))
+				var/obj/item/clothing/helmet = human_victim.head
+				var/obj/item/clothing/suit = human_victim.wear_suit
+				if (helmet.clothing_flags & THICKMATERIAL && suit.clothing_flags & THICKMATERIAL)
 					return TRUE
-		if(isliving(L))// if we're a non immune mob inside an immune mob we have to reconsider if that mob is immune to protect ourselves
-			var/mob/living/the_mob = L
+		if(isliving(victim))// if we're a non immune mob inside an immune mob we have to reconsider if that mob is immune to protect ourselves
+			var/mob/living/the_mob = victim
 			if("sand" in the_mob.weather_immunities)
 				return TRUE
-		L = L.loc //Check parent items immunities (recurses up to the turf)
+		victim = victim.loc //Check parent items immunities (recurses up to the turf)
 	return FALSE //RIP you
 
-/datum/weather/ash_storm/sand_storm/weather_act(mob/living/L)
-	if(is_ash_immune(L))
-		return
-	L.adjustBruteLoss(3)
-	if(!L.is_eyes_covered())
-		L.blind_eyes(3)
+/datum/weather/ash_storm/sand_storm/weather_act(mob/living/victim)
+	victim.adjustBruteLoss(3)
+	if(!victim.is_eyes_covered())
+		victim.blind_eyes(3)

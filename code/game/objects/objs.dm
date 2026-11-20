@@ -252,6 +252,16 @@
 		return TRUE
 	. = !density
 
+/obj/proc/ai_can_open(mob/living/opener)
+	return FALSE
+
+// after ai_can_open() returns TRUE
+/obj/proc/ai_open(mob/living/opener)
+	return
+
+/obj/proc/ai_opens_for(atom/movable/requester)
+	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && ai_can_open(requester)
+
 /obj/proc/check_uplink_validity()
 	return 1
 
@@ -357,6 +367,9 @@
 // Should move all contained objects to it's location.
 /obj/proc/dump_contents()
 	CRASH("Unimplemented.")
+
+/obj/proc/get_demolition_damage()
+	return demolition_mod * force
 
 /obj/handle_ricochet(obj/projectile/P)
 	. = ..()

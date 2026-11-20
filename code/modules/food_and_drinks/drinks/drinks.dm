@@ -502,7 +502,7 @@
 				icon_state = "pineapplebox"
 				name = "pineapple juice box"
 				desc = "Sweet, tart pineapple juice."
-				foodtype = FRUIT | PINEAPPLE
+				foodtype = FRUIT
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"
@@ -512,7 +512,7 @@
 				icon_state = "nog2"
 				name = "carton of eggnog"
 				desc = "A carton of eggnog, a drink of choice for celebrating Winter Solstice."
-				foodtype = MEAT
+				foodtype = EGG
 	else
 		icon_state = "juicebox"
 		name = "small carton"
@@ -571,7 +571,7 @@
 	desc = "A metal shaker to mix drinks in."
 	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "shaker"
-	custom_materials = list(/datum/material/iron=1500)
+	custom_materials = list(/datum/material/iron=50)
 	amount_per_transfer_from_this = 10
 	volume = 100
 	isGlass = FALSE
@@ -599,7 +599,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
 //////////////////////////soda_cans//
-//These are in their own group to be used as IED's in /obj/item/grenade/ghettobomb.dm
+//These are in their own group to be used as IED's in /obj/item/grenade/ied.dm
 
 /obj/item/reagent_containers/food/drinks/soda_cans
 	name = "soda can"

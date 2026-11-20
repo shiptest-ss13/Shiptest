@@ -112,7 +112,7 @@
 /area/ruin/space/pgf_wreck)
 "aJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/pgf_wreck/dorms)
 "aK" = (
@@ -686,7 +686,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "dF" = (
@@ -760,7 +760,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "ec" = (
 /obj/structure/lattice/catwalk,
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
+/mob/living/basic/human/ramzi/melee/space/sledge,
 /turf/open/space/basic,
 /area/ruin/space)
 "ee" = (
@@ -920,7 +920,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "fb" = (
@@ -982,7 +982,7 @@
 	id = "office_a";
 	name = "privacy shutters"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "ft" = (
@@ -1303,7 +1303,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "hj" = (
@@ -1418,12 +1418,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "hP" = (
 /obj/machinery/light/directional/north,
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
+/mob/living/basic/human/ramzi/melee/space/sledge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "hQ" = (
@@ -1464,7 +1464,7 @@
 /obj/structure/chair/greyscale{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee,
+/mob/living/basic/human/ramzi/melee,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "hY" = (
@@ -1669,7 +1669,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "jG" = (
@@ -1999,7 +1998,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "lD" = (
@@ -2173,7 +2172,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "mN" = (
@@ -2376,7 +2375,7 @@
 /obj/structure/fluff/broken_flooring{
 	icon_state = "plating"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
 "nY" = (
@@ -2498,7 +2497,7 @@
 "os" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/machinery/light/directional/south,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "ou" = (
@@ -2609,7 +2608,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "oY" = (
@@ -2866,7 +2865,6 @@
 /obj/structure/platform/ship_three{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "qc" = (
@@ -2962,7 +2960,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
@@ -2984,7 +2982,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "re" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
+/mob/living/basic/human/ramzi/ranged/space/soft/smg,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
 "ri" = (
@@ -3168,7 +3166,7 @@
 	icon_state = "4-8"
 	},
 /obj/item/stack/tile/plasteel/dark,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft,
+/mob/living/basic/human/ramzi/ranged/space/soft,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "sq" = (
@@ -3204,7 +3202,7 @@
 /area/ruin/space/pgf_wreck/external)
 "sy" = (
 /obj/machinery/airalarm/directional/north,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
+/mob/living/basic/human/ramzi/ranged/space/soft/smg,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/pgf_wreck/engineering)
 "sB" = (
@@ -3379,10 +3377,10 @@
 /area/ruin/space/pgf_wreck/bridge)
 "tg" = (
 /obj/structure/chair/office,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	minimum_distance = 1;
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/shotgun{
 	retreat_distance = null;
-	name = "Foreman Bonsha"
+	name = "Foreman Bonsha";
+	engage_distance = 1
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -3392,7 +3390,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "tm" = (
@@ -3626,10 +3623,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "uv" = (
-/obj/effect/turf_decal/trimline/opaque/green/filled/line{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/mob/living/basic/human/ramzi/melee/space/stormtrooper/sledge,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
 "uw" = (
@@ -3911,18 +3906,18 @@
 "wn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = -16
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 7
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 1;
 	pixel_x = 8
 	},
@@ -4556,7 +4551,7 @@
 /area/ruin/space/pgf_wreck/dorms)
 "zV" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
+/mob/living/basic/human/ramzi/ranged/space/soft/smg,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
 "zW" = (
@@ -4727,9 +4722,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun{
+/mob/living/basic/human/ramzi/ranged/space/shotgun{
 	retreat_distance = null;
-	minimum_distance = 1
+	engage_distance = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
@@ -4839,7 +4834,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
 "Bc" = (
@@ -4897,9 +4892,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun{
+/mob/living/basic/human/ramzi/ranged/space/shotgun{
 	retreat_distance = null;
-	minimum_distance = 1
+	engage_distance = 1
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
@@ -5015,7 +5010,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Cc" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/mob/living/simple_animal/hostile/human/ramzi/ranged{
+/mob/living/basic/human/ramzi/ranged{
 	environment_smash = 0
 	},
 /turf/open/floor/plasteel/white,
@@ -5170,7 +5165,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "Dc" = (
@@ -5551,7 +5546,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Ff" = (
@@ -5674,7 +5669,7 @@
 	dir = 6
 	},
 /obj/machinery/light/broken/directional/south,
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
 "FX" = (
@@ -5894,7 +5889,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/melee/sawbones,
+/mob/living/basic/human/ramzi/melee/sawbones,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "Hl" = (
@@ -5940,9 +5935,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun{
-	minimum_distance = 1;
-	retreat_distance = null
+/mob/living/basic/human/ramzi/ranged/shotgun{
+	retreat_distance = null;
+	engage_distance = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
@@ -6255,7 +6250,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "JD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/mob/living/basic/human/ramzi/ranged/shotgun,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "JG" = (
@@ -6376,7 +6371,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/greenglow,
-/mob/living/simple_animal/hostile/human/ramzi/civilian,
+/mob/living/basic/human/ramzi/civilian,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Kh" = (
@@ -6411,7 +6406,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "Km" = (
 /obj/effect/turf_decal/syndicateemblem/middle/middle,
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Kn" = (
@@ -6422,15 +6417,15 @@
 /area/ruin/space/pgf_wreck/dorms)
 "Kq" = (
 /obj/structure/table,
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 1;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_x = 8;
 	pixel_y = 11
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 7
 	},
 /obj/item/clothing/neck/dogtag/ramzi{
@@ -6733,7 +6728,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "LG" = (
 /obj/structure/chair/greyscale,
-/mob/living/simple_animal/hostile/human/ramzi/melee,
+/mob/living/basic/human/ramzi/melee,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "LH" = (
@@ -7013,20 +7008,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
-"MQ" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "MS" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
 	dir = 4
@@ -7041,7 +7022,6 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck)
 "Nq" = (
@@ -7183,7 +7163,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station)
 "NW" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime,
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "NX" = (
@@ -7525,9 +7505,9 @@
 /area/ruin/space/pgf_wreck)
 "PG" = (
 /obj/machinery/light/directional/north,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun{
-	minimum_distance = 1;
-	retreat_distance = null
+/mob/living/basic/human/ramzi/ranged/shotgun{
+	retreat_distance = null;
+	engage_distance = 1
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
@@ -7644,8 +7624,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Qu" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/basic/human/ramzi/ranged,
+/turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "Qw" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -7777,7 +7761,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "QV" = (
@@ -7971,7 +7955,7 @@
 /area/ruin/space/pgf_wreck/external)
 "Sa" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg,
+/mob/living/basic/human/ramzi/ranged/space/soft/smg,
 /turf/open/space/basic,
 /area/ruin/space)
 "Sb" = (
@@ -8049,7 +8033,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck/cargo)
 "Sw" = (
@@ -8078,7 +8062,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "SB" = (
@@ -8110,18 +8094,18 @@
 "SI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = -8
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = -16
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12
 	},
-/obj/item/candle/infinite{
+/obj/item/flashlight/flare/candle/infinite{
 	pixel_y = 12;
 	pixel_x = 8
 	},
@@ -8206,11 +8190,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/space/pgf_wreck/dorms)
-"Ta" = (
-/obj/effect/turf_decal/siding/wood,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Tg" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/freezer,
@@ -8523,7 +8502,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/engineering)
 "Uy" = (
@@ -8547,7 +8526,7 @@
 "UE" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut,
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/soft/machete,
+/mob/living/basic/human/ramzi/melee/space/soft/machete,
 /turf/open/space/basic,
 /area/ruin/space)
 "UG" = (
@@ -8772,7 +8751,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "VL" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft,
+/mob/living/basic/human/ramzi/ranged/space/soft,
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck/cargo)
 "VM" = (
@@ -8826,20 +8805,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
-"Wa" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Wc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8854,7 +8819,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "Wj" = (
@@ -9068,9 +9032,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	minimum_distance = 1;
-	retreat_distance = null
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/shotgun{
+	retreat_distance = null;
+	engage_distance = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -9117,11 +9081,6 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
-"XD" = (
-/obj/structure/lattice/catwalk,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft,
-/turf/open/space/basic,
-/area/ruin/space)
 "XG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9309,7 +9268,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/oil/streak,
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/basic/human/ramzi/ranged,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Ys" = (
@@ -9345,10 +9304,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck)
-"Yw" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Yz" = (
 /obj/structure/grille/broken,
 /obj/structure/poddoor_assembly/shutters{
@@ -9518,7 +9473,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "YZ" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Ze" = (
@@ -10091,7 +10046,7 @@ lk
 lk
 lk
 mo
-XD
+WD
 mo
 lk
 lk
@@ -10603,7 +10558,7 @@ ls
 Jl
 my
 rE
-Ta
+wm
 Jt
 Xe
 cA
@@ -10736,7 +10691,7 @@ yd
 zA
 Sd
 NA
-hX
+Jl
 my
 sL
 Ez
@@ -11482,7 +11437,7 @@ fV
 fV
 fV
 CP
-MQ
+Gy
 aU
 aU
 aU
@@ -11515,7 +11470,7 @@ lk
 IR
 aF
 rx
-uv
+JM
 UQ
 KG
 sM
@@ -11584,7 +11539,7 @@ AR
 BV
 JJ
 Ax
-GI
+uv
 PE
 sM
 QB
@@ -11908,7 +11863,7 @@ NY
 hc
 yN
 vr
-Yw
+AU
 ds
 Vf
 yN
@@ -12449,7 +12404,7 @@ Ll
 Ty
 Ku
 WN
-WN
+Qu
 WN
 WN
 mN
@@ -12656,7 +12611,7 @@ rO
 RE
 io
 Yl
-Qu
+zc
 vk
 Ll
 Na
@@ -13595,7 +13550,7 @@ gR
 gR
 gR
 aD
-Wa
+lG
 ja
 jR
 jR

@@ -5,7 +5,7 @@
 	tick_interval = 0.8 SECONDS
 
 /datum/status_effect/stop_drop_roll/on_apply()
-	if(!iscarbon(owner))
+	if(!iscarbon(owner) && !istype(owner, /mob/living/basic/human))
 		return FALSE
 
 	var/actual_interval = initial(tick_interval)

@@ -9,6 +9,8 @@
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	climbable = TRUE
 	layer = BELOW_OBJ_LAYER
+	flags_1 = ON_BORDER_1
+	pass_flags_self = LETPASSTHROW
 	var/barricade_type = "concrete"
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 10)
 
@@ -20,6 +22,13 @@
 	. = ..()
 	if(.) //received damage
 		update_appearance()
+
+/obj/structure/barricade/concrete/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(prob(25))
+		var/datum/effect_system/smoke_spread/transparent/concrete/smokepuff = new
+		smokepuff.set_up(1, hitting_projectile.loc)
+		smokepuff.start()
 
 /obj/structure/barricade/concrete/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -85,6 +94,11 @@
 		return FALSE
 
 	return TRUE
+
+/obj/structure/barricade/concrete/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!(to_dir & dir))
+		return TRUE
+	return ..()
 
 /*
 /obj/structure/barricade/concrete/CanPass(atom/movable/mover, border_dir)

@@ -574,7 +574,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
-/obj/item/candle{
+/obj/item/flashlight/flare/candle{
 	pixel_y = 6;
 	pixel_x = 12
 	},
@@ -1629,6 +1629,9 @@
 /obj/item/book/fish_catalog{
 	pixel_x = 7;
 	pixel_y = 3
+	},
+/obj/machinery/jukebox/boombox{
+	pixel_y = -3
 	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/sepia,
@@ -3512,7 +3515,8 @@
 /obj/item/gps{
 	pixel_x = -14;
 	pixel_y = 3;
-	gpstag = "!RESCUE-SHIP"
+	gpstag = "!RESCUE-SHIP";
+	gps_active = 1
 	},
 /obj/item/binoculars{
 	pixel_y = 5;
@@ -6482,7 +6486,7 @@
 	layer = 2.030
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Xh" = (

@@ -113,7 +113,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 		"Cavalry" = "shadow_cavalry",
 		"Lanchester Special" = "shadow_lanchester"
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_INHAND
 
 	recoil = 0
 
@@ -187,6 +187,8 @@ EMPTY_GUN_HELPER(revolver/flint)
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	show_magazine_on_sprite = TRUE
 	wear_rate = 0.66 //HP weapons are more resistant to wear
+	recoil_unwielded = 1.5
+	recoil = 1.5
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,

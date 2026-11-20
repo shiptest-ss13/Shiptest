@@ -324,7 +324,7 @@
 	throw_speed = 3
 	throw_range = 5
 	flags_1 = CONDUCT_1
-	custom_materials = list(/datum/material/iron=3000)
+	custom_materials = list(/datum/material/iron=400)
 
 /obj/item/storage/bag/tray/ComponentInitialize()
 	. = ..()
@@ -377,6 +377,7 @@
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "foodtray"
 	desc = "A cheap metal tray to pile today's meal onto."
+	custom_materials = list(/datum/material/iron = 400)
 
 /*
  *	Chemistry bag
