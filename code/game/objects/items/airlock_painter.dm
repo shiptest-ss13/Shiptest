@@ -4,6 +4,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "paint sprayer"
 	item_state = "paint sprayer"
+	custom_materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)
 
 	w_class = WEIGHT_CLASS_SMALL
 

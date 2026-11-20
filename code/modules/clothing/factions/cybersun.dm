@@ -273,6 +273,7 @@
 	)
 
 /obj/item/clothing/head/helmet/m10/cybersun/trauma/teal
+	icon_state = "trauma_teal_m10helm"
 	current_skin = "Trauma Teal"
 
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
