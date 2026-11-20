@@ -167,9 +167,7 @@
 	return TRUE
 
 /turf/open/lava/proc/is_safe()
-	if(HAS_TRAIT(src, TRAIT_LAVA_STOPPED))
-		return TRUE
-	return FALSE
+	return HAS_TRAIT(src, TRAIT_LAVA_STOPPED)
 
 /turf/open/lava/proc/burn_stuff(AM, seconds_per_tick = 1)
 	. = 0
@@ -251,6 +249,78 @@
 
 /turf/open/lava/smooth/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
+//liquid plasma!!!!!!//
+
+/turf/open/lava/plasma
+	name = "liquid plasma"
+	desc = "A flowing stream of chilled liquid plasma. You probably shouldn't get in."
+	icon_state = "liquidplasma"
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
+	baseturfs = /turf/open/lava/plasma
+	slowdown = 2
+
+	light_range = 3
+	light_power = 0.75
+	light_color = LIGHT_COLOR_PURPLE
+	particle_emitter = null
+
+/turf/open/lava/plasma/attackby(obj/item/attacking_item, mob/user, params)
+	if(istype(attacking_item, /obj/item/stack/rods))
+		return ..()
+	if(istype(attacking_item, /obj/item/reagent_containers/glass))
+		var/obj/item/reagent_containers/glass/chugjug = attacking_item
+		if(chugjug.reagents.total_volume >= chugjug.volume)
+			to_chat(user, span_danger("[chugjug] is full."))
+			return
+		chugjug.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
+		user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [chugjug]."), span_notice("You scoop out some plasma from the [src] using \the [chugjug]."))
+		return TRUE
+	return FALSE
+
+/turf/open/lava/plasma/burn_stuff(AM)
+	. = 0
+
+	if(is_safe())
+		return FALSE
+
+	var/thing_to_check = src
+	if (AM)
+		thing_to_check = list(AM)
+	for(var/thing in thing_to_check)
+		if(isobj(thing))
+			var/obj/O = thing
+			if((O.resistance_flags & (FREEZE_PROOF)) || O.throwing)
+				continue
+
+		else if (isliving(thing))
+			. = 1
+			var/mob/living/L = thing
+			if(L.movement_type & FLYING)
+				continue	//YOU'RE FLYING OVER IT
+			if("snow" in L.weather_immunities)
+				continue
+
+			var/buckle_check = L.buckling
+			if(!buckle_check)
+				buckle_check = L.buckled
+			if(isobj(buckle_check))
+				var/obj/O = buckle_check
+				if(O.resistance_flags & FREEZE_PROOF)
+					continue
+
+			else if(isliving(buckle_check))
+				var/mob/living/live = buckle_check
+				if("snow" in live.weather_immunities)
+					continue
+
+			L.adjustFireLoss(2)
+			if(L)
+				L.adjust_fire_stacks(20) //dipping into a stream of plasma would probably make you more flammable than usual
+				L.adjust_bodytemperature(-rand(10,20)) //its cold, man
+				if(prob(35)) //used to be used to slowly convert limbs, I'm not changing the mechnical function outside of removing limb/species conversion, so plasma just kinda random crits now lol.
+					L.adjustToxLoss(15)
+					L.adjustFireLoss(25)
 
 /obj/effect/particle_holder
 	name = ""

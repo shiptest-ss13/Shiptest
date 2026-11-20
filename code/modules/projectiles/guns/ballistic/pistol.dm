@@ -138,65 +138,78 @@
 	return ..()
 
 // now available in fun colors
+// these are all hidden from the autowiki as they're just cosmetic reskins
 /obj/item/gun/ballistic/automatic/pistol/disposable/red
 	name = "red disposable gun"
 	icon_state = "zippy_red"
 	desc_more = "This one is made out of a bright red plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/purple
 	name = "purple disposable gun"
 	icon_state = "zippy_purple"
 	desc_more = "This one is made out of a bold purple plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/blue
 	name = "blue disposable gun"
 	icon_state = "zippy_blue"
 	desc_more = "This one is made out of a deep blue plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/gold
 	name = "golden disposable gun"
 	icon_state = "zippy_gold"
 	desc_more = "This one has an exceptionally tacky gold finish. Lucky you."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/pink
 	name = "pink disposable gun"
 	icon_state = "zippy_pink"
 	desc_more = "This one is made out of a rosy pink plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/green
 	name = "green disposable gun"
 	icon_state = "zippy_green"
 	desc_more = "This one is made out of an earthy green plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/black
 	name = "tactical disposable gun"
 	icon_state = "zippy_black"
 	desc_more = "This one is made out of a dark black plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/silver
 	name = "silver disposable gun"
 	icon_state = "zippy_silver"
 	desc_more = "This one has a matte silver finish."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/beige
 	name = "beige disposable gun"
 	icon_state = "zippy_beige"
 	desc_more = "This one is made out of a dull beige plastic."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/phenex
 	name = "disposable phenex"
 	icon_state = "zippy_phenex"
 	desc_more = "This one has a paint job resembling the infamous HP Phenex, though you suspect its make is nowhere matching the quality."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/inteq
 	name = "PS-22 Pug"
 	icon_state = "zippy_inteq"
 	desc_more = "This one has a paint job resembling IRMG's weapons, though it is very clearly not official."
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/sharplite
 	name = "SL X22 “Spark” Disposable Handgun"
 	icon_state = "zarplite"
 	desc_more = "This one has a paint job resembling a Sharplite electroplasma gun, barely disguising its true nature."
+	autowiki_hidden = TRUE
 
 // ASPAWN INFINITE AMMO VARIANT //
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo
@@ -207,6 +220,7 @@
 	default_firemode = FIREMODE_FULLAUTO
 	wear_rate = 0
 	trigger_pull_fail = 0
+	autowiki_hidden = TRUE // admin gun
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/process_fire()
 	. = ..()
@@ -219,6 +233,7 @@
 	icon_state = "zippy_chocolate"
 	spread = 30 // it's made of chocolate...
 	spread_unwielded = 30
+	autowiki_hidden = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate/Initialize()
 	. = ..()

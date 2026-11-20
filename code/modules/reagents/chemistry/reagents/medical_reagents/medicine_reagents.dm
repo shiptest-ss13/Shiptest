@@ -482,13 +482,13 @@
 
 /datum/reagent/medicine/dexalin
 	name = "Dexalin"
-	description = "Restores oxygen loss. Overdose causes it instead."
+	description = "A medication that rapidly restores blood oxygenation. Overdose reverses this effect."
 	reagent_state = LIQUID
 	color = "#0080FF"
 	overdose_threshold = 30
 
 /datum/reagent/medicine/dexalin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjustOxyLoss(-0.25 * REM * seconds_per_tick, 0)
+	M.adjustOxyLoss(-1 * REM * seconds_per_tick, 0)
 	..()
 	. = 1
 

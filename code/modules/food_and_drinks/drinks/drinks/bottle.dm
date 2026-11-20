@@ -44,6 +44,7 @@
 	icon_state = "glassbottlesmall"
 	volume = 50
 	custom_price = 1
+	custom_materials = list(/datum/material/glass = 500)
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
 	if(!target)
@@ -408,7 +409,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 100)
-	foodtype = FRUIT | PINEAPPLE
+	foodtype = FRUIT
 	fill_icon_thresholds = null
 
 

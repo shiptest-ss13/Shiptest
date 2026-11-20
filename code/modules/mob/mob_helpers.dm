@@ -324,8 +324,8 @@
 
 
 	if (a_intent == INTENT_HARM)
-		var/obj/O = pulling
-		if (istype(O) && (O.density || O.drag_slowdown))
+		var/obj/pulled_obj = pulling
+		if (!iscarbon(src) && istype(pulled_obj) && (pulled_obj.density || pulled_obj.drag_slowdown)) // carbons face what they drag while moving instead
 			face_mouse = FALSE
 		else
 			face_mouse = TRUE

@@ -138,33 +138,12 @@ other types of metals and chemistry for reagents).
 	max_blueprints = 10
 
 //Disks with content
-/obj/item/disk/design_disk/ammo_c10mm
-	design_name = "10mm Ammo"
-	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in several pistols."
-	starting_blueprints = (/datum/design/c10mm)
-
 /obj/item/disk/design_disk/disposable_gun
 	design_name = "Disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
 	max_blueprints = 2
 	starting_blueprints = list(/datum/design/disposable_gun)
-
-/obj/item/disk/design_disk/clip_mechs
-	design_name = "CLIP exosuit modifications"
-	desc = "A design disk containing specifications for CLIP-custom exosuit conversions."
-	color = "#57b8f0"
-	max_blueprints = 2
-	starting_blueprints = list(/datum/design/clip_ripley_upgrade, /datum/design/clip_durand_upgrade)
-
-/obj/item/disk/design_disk/ammo_c9mm
-	design_name = "9mm Ammo"
-	desc = "A design disk containing the pattern for a refill box of standard 9mm ammo, used in Commander pistols."
-	starting_blueprints = list(/datum/design/c9mmautolathe)
-
-/obj/item/disk/design_disk/ammo_c9mm/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/c9mmautolathe()
 
 /obj/item/disk/design_disk/telecomms
 	name = "design disk - Telecomms parts"
@@ -176,13 +155,6 @@ other types of metals and chemistry for reagents).
 /obj/item/disk/design_disk/blanks
 	design_name = "Blank Ammo"
 	starting_blueprints = list(/datum/design/blank_shell)
-
-
-/obj/item/disk/design_disk/ammo_1911
-	design_name = "1911 Magazine"
-	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
-	illustration = "ammo"
-	starting_blueprints = list(/datum/design/colt_1911_magazine)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc

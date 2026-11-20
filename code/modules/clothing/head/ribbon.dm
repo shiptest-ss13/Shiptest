@@ -26,7 +26,6 @@
 		"brown ribbon" = "ribbonbrown",
 		"light brown ribbon" = "ribbonlightbrown",
 	)
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/head/ribbon/AltClick(mob/user)
 	. = ..()

@@ -359,7 +359,7 @@
 // Gun procs.
 
 /obj/item/gun/proc/on_aimedfire_start(datum/source, atom/target, mob/living/shooter, params)
-	if(current_cooldown || shooter.stat)
+	if(on_fire_cooldown() || shooter.stat)
 		return FALSE
 	if(!can_shoot()) //we call pre_fire so bolts/slides work correctly
 		INVOKE_ASYNC(src, PROC_REF(do_aimedfire_shot), source, target, shooter, params)
@@ -378,7 +378,7 @@
 
 /obj/item/gun/proc/do_aimedfire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(current_cooldown || shooter.incapacitated())
+	if(on_fire_cooldown() || shooter.incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))

@@ -22,6 +22,9 @@ Featuring:
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot
 	name = "Ramzi Clique Exowarrior"
 	desc = "A highly-trained pilot of the Clique, specialized in Exosuit operations."
+	icon_state = "syndicate"
+	icon_living = "syndicate"
+	faction = list(FACTION_RAMZI)
 	wanted_objects = list()
 	search_objects = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID

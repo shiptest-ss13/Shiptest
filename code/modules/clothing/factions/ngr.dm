@@ -74,6 +74,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "garrisoncoat"
+	base_icon_state = "garrisoncoat"
 	item_state = "blackcloth"
 
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -196,6 +197,7 @@
 	hardsuit_type = "ngrelite"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/ngr
 	name = "elite beige-red hardsuit"
@@ -291,12 +293,13 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 	supports_variations = SNOUTED_VARIATION
-	actions_types = list(/datum/action/item_action/toggle_helmet_nightvision)
+	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_helmet_nightvision)
 	var/nightvision = FALSE
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_helmet_nightvision))
 		toggle_nightvision(user)
+		return
 	. = ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/ngroutrider/proc/toggle_nightvision(mob/user)

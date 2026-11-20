@@ -458,6 +458,14 @@
 /obj/machinery/door/proc/hasPower()
 	return !(machine_stat & NOPOWER)
 
+// forcing an unpowered airlock or windoor open
+/obj/machinery/door/ai_open(mob/living/opener)
+	if(operating || !do_after(opener, 2 SECONDS, src))
+		return
+	if(!density || operating || !ai_can_open(opener))
+		return
+	open(2) // force it if its an airlock
+
 /obj/machinery/door/proc/update_freelook_sight()
 	if(!glass && GLOB.cameranet)
 		GLOB.cameranet.updateVisibility(src, 0)

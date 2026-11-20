@@ -41,7 +41,6 @@
 		"light brown hoodie" = "hoodielightbrown"
 	)
 
-
 /obj/item/clothing/suit/hooded/hoodie/update_appearance(updates)
 	. = ..()
 	if(isobj(hood))
@@ -65,6 +64,7 @@
 	name = "white hoodie"
 	desc = "A hoodie that is white. It has a comfy pocket for keeping your hands warm."
 	current_skin = "white hoodie"
+	icon_state = "hoodiewhite"
 	hoodtype = /obj/item/clothing/head/hooded/hood/white
 
 /obj/item/clothing/head/hooded/hood/white
@@ -75,6 +75,7 @@
 	name = "grey hoodie"
 	desc = "A hoodie that is grey. It has a comfy pocket for keeping your hands warm."
 	current_skin = "grey hoodie"
+	icon_state = "hoodiegrey"
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
 
 /obj/item/clothing/head/hooded/hood/gray
@@ -85,6 +86,7 @@
 	name = "black hoodie"
 	desc = "A hoodie that is black. It has a comfy pocket for keeping your hands warm."
 	current_skin = "black hoodie"
+	icon_state = "hoodieblack"
 	hoodtype = /obj/item/clothing/head/hooded/hood/black
 
 /obj/item/clothing/head/hooded/hood/black
@@ -95,6 +97,7 @@
 	name = "red hoodie"
 	desc = "A hoodie that is red. It has a comfy pocket for keeping your hands warm."
 	current_skin = "red hoodie"
+	icon_state = "hoodiered"
 	hoodtype = /obj/item/clothing/head/hooded/hood/red
 
 /obj/item/clothing/head/hooded/hood/red
@@ -105,6 +108,7 @@
 	name = "maroon hoodie"
 	desc = "A hoodie that is maroon. It has a comfy pocket for keeping your hands warm."
 	current_skin = "maroon hoodie"
+	icon_state = "hoodiemaroon"
 	hoodtype = /obj/item/clothing/head/hooded/hood/maroon
 
 /obj/item/clothing/head/hooded/hood/maroon
@@ -115,6 +119,7 @@
 	name = "orange hoodie"
 	desc = "A hoodie that is orange. It has a comfy pocket for keeping your hands warm."
 	current_skin = "orange hoodie"
+	icon_state = "hoodieorange"
 	hoodtype = /obj/item/clothing/head/hooded/hood/orange
 
 /obj/item/clothing/head/hooded/hood/orange
@@ -125,6 +130,7 @@
 	name = "yellow hoodie"
 	desc = "A hoodie that is yellow. It has a comfy pocket for keeping your hands warm."
 	current_skin = "yellow hoodie"
+	icon_state = "hoodieyellow"
 	hoodtype = /obj/item/clothing/head/hooded/hood/yellow
 
 /obj/item/clothing/head/hooded/hood/yellow
@@ -135,6 +141,7 @@
 	name = "green hoodie"
 	desc = "A hoodie that is green. It has a comfy pocket for keeping your hands warm."
 	current_skin = "green hoodie"
+	icon_state = "hoodiegreen"
 	hoodtype = /obj/item/clothing/head/hooded/hood/green
 
 /obj/item/clothing/head/hooded/hood/green
@@ -145,6 +152,7 @@
 	name = "dark green hoodie"
 	desc = "A hoodie that is dark green. It has a comfy pocket for keeping your hands warm."
 	current_skin = "dark green hoodie"
+	icon_state = "hoodiedarkgreen"
 	hoodtype = /obj/item/clothing/head/hooded/hood/darkgreen
 
 /obj/item/clothing/head/hooded/hood/darkgreen
@@ -155,6 +163,7 @@
 	name = "teal hoodie"
 	desc = "A hoodie that is teal. It has a comfy pocket for keeping your hands warm."
 	current_skin = "teal hoodie"
+	icon_state = "hoodieteal"
 	hoodtype = /obj/item/clothing/head/hooded/hood/teal
 
 /obj/item/clothing/head/hooded/hood/teal
@@ -165,6 +174,7 @@
 	name = "blue hoodie"
 	desc = "A hoodie that is blue. It has a comfy pocket for keeping your hands warm."
 	current_skin = "blue hoodie"
+	icon_state = "hoodieblue"
 	hoodtype = /obj/item/clothing/head/hooded/hood/blue
 
 /obj/item/clothing/head/hooded/hood/blue
@@ -175,6 +185,7 @@
 	name = "dark blue hoodie"
 	desc = "A hoodie that is dark blue. It has a comfy pocket for keeping your hands warm."
 	current_skin = "dark blue hoodie"
+	icon_state = "hoodiedarkblue"
 	hoodtype = /obj/item/clothing/head/hooded/hood/darkblue
 
 /obj/item/clothing/head/hooded/hood/darkblue
@@ -185,6 +196,7 @@
 	name = "purple hoodie"
 	desc = "A hoodie that is purple. It has a comfy pocket for keeping your hands warm."
 	current_skin = "purple hoodie"
+	icon_state = "hoodiepurple"
 	hoodtype = /obj/item/clothing/head/hooded/hood/purple
 
 /obj/item/clothing/head/hooded/hood/purple
@@ -195,6 +207,7 @@
 	name = "pink hoodie"
 	desc = "A hoodie that is pink. It has a comfy pocket for keeping your hands warm."
 	current_skin = "pink hoodie"
+	icon_state = "hoodiepink"
 	hoodtype = /obj/item/clothing/head/hooded/hood/pink
 
 /obj/item/clothing/head/hooded/hood/pink
@@ -205,6 +218,7 @@
 	name = "brown hoodie"
 	desc = "A hoodie that is brown. It has a comfy pocket for keeping your hands warm."
 	current_skin = "brown hoodie"
+	icon_state = "hoodiebrown"
 	hoodtype = /obj/item/clothing/head/hooded/hood/brown
 
 /obj/item/clothing/head/hooded/hood/brown
@@ -215,6 +229,7 @@
 	name = "light brown hoodie"
 	desc = "A hoodie that is light brown. It has a comfy pocket for keeping your hands warm."
 	current_skin = "light brown hoodie"
+	icon_state = "hoodielightbrown"
 	hoodtype = /obj/item/clothing/head/hooded/hood/lightbrown
 
 /obj/item/clothing/head/hooded/hood/lightbrown
@@ -313,10 +328,8 @@
 		"cropped orange hoodie" = "crophoodorange",
 		"cropped yellow hoodie" = "crophoodyellow",
 		"cropped green hoodie" = "crophoodgreen",
-		"cropped dark green hoodie" = "crophooddgreen",
 		"cropped teal hoodie" = "crophoodteal",
 		"cropped blue hoodie" = "crophoodblue",
-		"cropped dark blue hoodie" = "crophooddblue",
 		"cropped purple hoodie" = "crophoodpurple",
 		"cropped pink hoodie" = "crophoodpink",
 		"cropped brown hoodie" = "crophoodbrown",
@@ -326,82 +339,86 @@
 /obj/item/clothing/suit/hooded/croppedhoodie/white
 	name = "cropped white hoodie"
 	current_skin = "cropped white hoodie"
+	icon_state = "crophoodwhite"
 	hoodtype = /obj/item/clothing/head/hooded/hood/white
 
 /obj/item/clothing/suit/hooded/croppedhoodie/gray
 	name = "cropped grey hoodie"
 	current_skin = "cropped grey hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
+	icon_state = "crophoodgrey"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/black
 	name = "cropped black hoodie"
 	current_skin = "cropped black hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/black
+	icon_state = "crophoodblack"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/red
 	name = "cropped red hoodie"
 	current_skin = "cropped red hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/red
+	icon_state = "crophoodred"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/maroon
 	name = "cropped maroon hoodie"
 	current_skin = "cropped maroon hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/maroon
+	icon_state = "crophoodmaroon"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/orange
 	name = "cropped orange hoodie"
 	current_skin = "cropped orange hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/orange
+	icon_state = "crophoodorange"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/yellow
 	name = "cropped yellow hoodie"
 	current_skin = "cropped yellow hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/yellow
+	icon_state = "crophoodyellow"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/green
 	name = "cropped green hoodie"
 	current_skin = "cropped green hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/green
-
-/obj/item/clothing/suit/hooded/croppedhoodie/darkgreen
-	name = "cropped dark green hoodie"
-	current_skin = "cropped dark green hoodie"
-	hoodtype = /obj/item/clothing/head/hooded/hood/darkgreen
+	icon_state = "crophoodgreen"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/teal
 	name = "cropped teal hoodie"
 	current_skin = "cropped teal hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/teal
+	icon_state = "crophoodteal"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/blue
 	name = "cropped blue hoodie"
 	current_skin = "cropped blue hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/blue
-
-/obj/item/clothing/suit/hooded/croppedhoodie/darkblue
-	name = "cropped dark blue hoodie"
-	current_skin = "cropped dark blue hoodie"
-	hoodtype = /obj/item/clothing/head/hooded/hood/darkblue
+	icon_state = "crophoodblue"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/purple
 	name = "cropped purple hoodie"
 	current_skin = "cropped purple hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/purple
+	icon_state = "crophoodpurple"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/pink
 	name = "cropped pink hoodie"
 	current_skin = "cropped pink hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/pink
+	icon_state = "crophoodpink"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/brown
 	name = "cropped brown hoodie"
 	current_skin = "cropped brown hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/brown
+	icon_state = "crophoodbrown"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/lightbrown
 	name = "cropped light brown hoodie"
 	current_skin = "cropped light brown hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/lightbrown
+	icon_state = "crophoodlightbrown"
 
 /obj/item/clothing/suit/hooded/croppedhoodie/blackwa
 	name = "cropped black and white hoodie"

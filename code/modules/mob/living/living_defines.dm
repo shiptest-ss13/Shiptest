@@ -2,7 +2,7 @@
 	see_invisible = SEE_INVISIBLE_LIVING
 	sight = 0
 	see_in_dark = 2
-	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
+	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD)
 	pressure_resistance = 10
 	plane = GAME_PLANE_FOV_HIDDEN
 	flags_1 = SHOW_BEHIND_LARGE_ICONS_1
@@ -21,6 +21,8 @@
 	var/maxHealth = MAX_LIVING_HEALTH
 	/// The mob's current health.
 	var/health = MAX_LIVING_HEALTH
+	/// world.time of our last Life(), so a corpse that skips some ticks catches up on the time it missed
+	var/last_life_time = 0
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0	///Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)

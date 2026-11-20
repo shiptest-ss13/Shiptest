@@ -74,6 +74,9 @@
 /datum/movespeed_modifier/shove
 	multiplicative_slowdown = SHOVE_SLOWDOWN_STRENGTH
 
+/datum/movespeed_modifier/ai_staggered
+	multiplicative_slowdown = 1.5
+
 /datum/movespeed_modifier/human_carry
 	multiplicative_slowdown = HUMAN_CARRY_SLOWDOWN
 
@@ -123,6 +126,11 @@
 /datum/movespeed_modifier/basicmob_varspeed
 	variable = TRUE
 	flags = IGNORE_NOSLOW
+
+///What a basic mob's worn outfit slows it, which drops off while floating, same as equipment_speedmod for players
+/datum/movespeed_modifier/basicmob_equipment
+	variable = TRUE
+	blacklisted_movetypes = FLOATING
 
 ///Slowdown for wading through water
 /datum/movespeed_modifier/wading

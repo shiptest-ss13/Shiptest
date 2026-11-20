@@ -100,11 +100,6 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 	output_dir = angle2dir(rotation + dir2angle(output_dir))
 
 //prevents shuttles attempting to rotate this since it messes up sprites
-/obj/machinery/gateway/shuttleRotate(rotation, params)
-	params = NONE
-	return ..()
-
-//prevents shuttles attempting to rotate this since it messes up sprites
 /obj/machinery/gravity_generator/shuttleRotate(rotation, params)
 	params = NONE
 	return ..()

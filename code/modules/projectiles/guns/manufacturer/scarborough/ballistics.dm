@@ -215,7 +215,7 @@ EMPTY_GUN_HELPER(revolver/viper)
 		"Merc's Best Friend" = "viper23_larp",
 		"Rancher" = "viper23_cowboy"
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND | UNIQUE_RESKIN_CHANGES_NAME //pickle
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -870,7 +870,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 
-	fire_delay = 0.1 SECONDS
+	fire_delay = 0.13 SECONDS
 
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -886,10 +886,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	spread_unwielded = 35
 
 	recoil = 1.5 //identical to other LMGS
-	recoil_unwielded = 7 //same as skm
+	recoil_unwielded = 7 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 

@@ -156,6 +156,12 @@
 			visible_message("<span class='notice'>[src]'s shell absorbs the damage, dealing minimal the [src] itself!</span>")
 	return ..()
 
+// need this so basilisks arent invulnerable to melee basicmobs. kinda a soft nerf but whatever
+/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if(user.melee_damage_upper > 0 && !HAS_TRAIT(user, TRAIT_PACIFISM))
+		shell_damage(rand(user.melee_damage_lower, user.melee_damage_upper))
+	return ..()
+
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
 	shell_damage(P.damage/4)
 	if(has_shell)

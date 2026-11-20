@@ -211,7 +211,7 @@
 	crate_name = "premium coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/organic/syrup
+/datum/supply_pack/civilian/syrup
 	name = "Coffee Syrups Box"
 	desc = "A packaged box of various syrups, perfect to make your delicious coffee even more diabetic."
 	cost = 100

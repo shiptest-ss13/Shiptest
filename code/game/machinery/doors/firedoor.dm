@@ -82,6 +82,29 @@
 	affecting_areas.Cut()
 	return ..()
 
+/obj/machinery/door/firedoor/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!density)
+		return TRUE
+	if((flags_1 & ON_BORDER_1) && !(to_dir & dir))
+		return TRUE // an edge firelock only closes off the edge it's on
+	return ai_opens_for(requester)
+
+/obj/machinery/door/firedoor/ai_can_open(mob/living/opener)
+	return !welded && (!is_holding_pressure() || ai_safe_to_vent(opener, src))
+
+/obj/machinery/door/firedoor/ai_open(mob/living/opener)
+	if(operating)
+		return
+	var/holding_pressure = is_holding_pressure()
+	if(holding_pressure && !do_after(opener, 2 SECONDS, src))
+		return
+	if(!density || operating || !ai_can_open(opener))
+		return
+	if(holding_pressure)
+		whack_a_mole() // nearby firelocks slam shut to stop leak
+	emergency_close_timer = world.time + 6 SECONDS // so it doesn't snap shut again instantly
+	open()
+
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
 	if(panel_open || operating || welded || (machine_stat & NOPOWER))
 		return
@@ -794,6 +817,11 @@
 	. = ..()
 	if(!(get_dir(loc, target) == dir)) //Make sure looking at appropriate border
 		return TRUE
+
+/obj/structure/firelock_frame/border/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!(to_dir & dir))
+		return TRUE
+	return ..()
 
 /obj/structure/firelock_frame/border/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
