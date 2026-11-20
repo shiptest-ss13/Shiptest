@@ -32,6 +32,6 @@
 /datum/weather/snow_storm/affects(mob/living/victim)
 	return victim.hurt_by_chill(0)
 
-/datum/weather/snow_storm/weather_act(mob/living/living_mob)
-	living_mob.adjust_bodytemperature(-rand(2,4))
+/datum/weather/snow_storm/weather_act(mob/living/living_mob, seconds_per_tick)
+	living_mob.adjust_bodytemperature(-rand(2,4) * seconds_per_tick)
 
