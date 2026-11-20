@@ -44,6 +44,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navyjacket"
+	base_icon_state = "navyjacket"
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
 	togglename = "zipper"
@@ -60,6 +61,7 @@
 	name = "marine silkenweave jacket"
 	desc = "Comfortable, light, and surprisingly warm with it's removable liner, the silkenweave jacket has found few complaints. This one is in Marine Corps green."
 	icon_state = "marinejacket"
+	base_icon_state = "marinejacket"
 	item_state = "greencloth"
 
 //Armored suit

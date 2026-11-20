@@ -91,7 +91,7 @@
 		/datum/reagent/toxin = 2,
 	)
 	tastes = list("cobwebs" = 1)
-	foodtypes = MEAT | TOXIC// | BUGS
+	foodtypes = MEAT | TOXIC | RAW
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/spiderling
@@ -104,7 +104,7 @@
 		/datum/reagent/toxin = 4,
 	)
 	tastes = list("cobwebs" = 1, "guts" = 2)
-	foodtypes = MEAT | TOXIC// | BUGS
+	foodtypes = MEAT | TOXIC | RAW
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/melonfruitbowl
@@ -202,7 +202,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	gender = PLURAL
 	tastes = list("batter" = 3, "onion" = 1)
-	foodtypes = VEGETABLES
+	foodtypes = VEGETABLES | HEAVILY_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/pineappleslice
@@ -215,7 +215,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	)
 	tastes = list("pineapple" = 1)
-	foodtypes = FRUIT | PINEAPPLE
+	foodtypes = FRUIT
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/crab_rangoon
@@ -245,7 +245,7 @@
 	)
 	junkiness = 20
 	tastes = list("fried corn" = 1)
-	foodtypes = JUNKFOOD | FRIED
+	foodtypes = JUNKFOOD | HEAVILY_FRIED
 
 //todo: sort these into correct files
 /obj/item/food/stuffed_refa
@@ -276,7 +276,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	//filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
-	foodtypes = MEAT
+	foodtypes = EGG
 
 /obj/item/food/fara_reti
 	name = "fara-reti"
@@ -285,7 +285,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	//filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
-	foodtypes = MEAT | FRUIT
+	foodtypes = EGG | FRUIT
 
 /obj/item/food/roe_tiris
 	name = "reti-tiris"
@@ -294,7 +294,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	//filling_color = "#ECA735"
 	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
-	foodtypes = MEAT | GROSS | GORE
+	foodtypes = MEAT | GORE | EGG
 
 /obj/item/food/mirasegg
 	name = "miras eggs"
@@ -305,7 +305,7 @@
 		/datum/reagent/consumable/eggyolk = 2,
 	)
 	tastes = list("egg" = 1, "hints of spice" = 1)
-	foodtypes = MEAT | RAW
+	foodtypes = EGG | RAW
 
 /obj/item/food/mirasegg/make_dryable()
 	AddElement(/datum/element/dryable, /obj/item/food/reti/homemade)

@@ -181,13 +181,11 @@
 	name = "frontiersman cap"
 	desc = "An olive-green and grey baseball hat, worn by cargo technicians working under the Frontiersmen. Even they have the rights for a cool cap!"
 	icon_state = "frontiersoft"
-	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 	unique_reskin = null
-	current_skin = null
 
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"

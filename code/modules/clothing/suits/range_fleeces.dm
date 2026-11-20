@@ -6,6 +6,7 @@
 	vox_override_icon = 'icons/mob/species/vox/onmob_suit_vox.dmi'
 	kepori_override_icon = 'icons/mob/species/kepori/onmob_suit_kepori.dmi'
 	icon_state = "fleece-steppe"
+	base_icon_state = "fleece-steppe"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
@@ -27,17 +28,15 @@
 		"tundra range fleece" = "fleece-tundra",
 		"coyote range fleece" = "fleece-coyote"
 	)
-	unique_reskin_changes_name = TRUE
-
-/obj/item/clothing/suit/toggle/fleece/Initialize()
-	. = ..()
-	base_icon_state = icon_state
 
 /obj/item/clothing/suit/toggle/fleece/steppe
+	icon_state = "fleece-steppe"
 	current_skin = "steppe range fleece"
 
 /obj/item/clothing/suit/toggle/fleece/tundra
+	icon_state = "fleece-tundra"
 	current_skin = "tundra range fleece"
 
 /obj/item/clothing/suit/toggle/fleece/coyote
+	icon_state = "fleece-coyote"
 	current_skin = "coyote range fleece"

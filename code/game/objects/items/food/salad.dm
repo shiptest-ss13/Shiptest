@@ -46,7 +46,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("leaves" = 1, "potato" = 1, "meat" = 1,)
-	foodtypes = VEGETABLES | MEAT | FRIED | FRUIT
+	foodtypes = VEGETABLES | MEAT | HEAVILY_FRIED | FRUIT
 
 /obj/item/food/salad/fruit
 	name = "fruit salad"
@@ -141,7 +141,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("rice" = 1, "egg" = 1)
-	foodtypes = GRAIN | MEAT
+	foodtypes = GRAIN | EGG
 
 /obj/item/reagent_containers/glass/bowl
 	name = "bowl"

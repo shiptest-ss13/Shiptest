@@ -8,8 +8,7 @@
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
 	pocket_storage_component_path = FALSE
 
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -120,8 +119,8 @@
 /obj/item/clothing/suit/toggle
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC

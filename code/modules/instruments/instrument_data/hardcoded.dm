@@ -11,7 +11,7 @@
 	name = "Accordian"
 	id = "accordian"
 	legacy_instrument_ext = "mid"
-	legacy_instrument_path = "accordian"
+	legacy_instrument_path = "accordion"
 
 /datum/instrument/hardcoded/bikehorn
 	name = "Bike Horn"

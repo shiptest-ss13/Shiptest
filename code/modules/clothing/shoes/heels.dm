@@ -28,8 +28,6 @@
 						"brown heels" = "heels-brown",
 						"light brown heels" = "heels-lightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/shoes/heels/white
 	name = "white heels"

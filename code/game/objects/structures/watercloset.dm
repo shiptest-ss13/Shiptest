@@ -20,6 +20,38 @@
 	update_appearance()
 
 
+/obj/structure/toilet/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(swirlie || user.a_intent != INTENT_GRAB || !isliving(pulled))
+		return FALSE
+	user.changeNext_move(CLICK_CD_MELEE)
+	var/mob/living/grabbed_mob = pulled
+	if(user.grab_state >= GRAB_AGGRESSIVE)
+		if(grabbed_mob.loc != get_turf(src))
+			to_chat(user, span_warning("[grabbed_mob] needs to be on [src]!"))
+			return TRUE
+		if(open)
+			grabbed_mob.visible_message(span_danger("[user] starts to give [grabbed_mob] a swirlie!"), span_userdanger("[user] starts to give you a swirlie..."))
+			swirlie = grabbed_mob
+			var/was_alive = (swirlie.stat != DEAD)
+			if(do_after(user, 30, target = src, timed_action_flags = IGNORE_HELD_ITEM))
+				grabbed_mob.visible_message(span_danger("[user] gives [grabbed_mob] a swirlie!"), span_userdanger("[user] gives you a swirlie!"), span_hear("You hear a toilet flushing."))
+				if(iscarbon(grabbed_mob))
+					var/mob/living/carbon/grabbed_carbon = grabbed_mob
+					if(!grabbed_carbon.internal)
+						grabbed_carbon.adjustOxyLoss(5)
+				else
+					grabbed_mob.adjustOxyLoss(5)
+			if(was_alive && swirlie.stat == DEAD && swirlie.client)
+				swirlie.client.give_award(/datum/award/achievement/misc/swirlie, swirlie) // just like space high school all over again!
+			swirlie = null
+		else
+			playsound(src.loc, 'sound/effects/bang.ogg', 25, TRUE)
+			grabbed_mob.visible_message(span_danger("[user] slams [grabbed_mob.name] into [src]!"), span_userdanger("[user] slams you into [src]!"))
+			grabbed_mob.adjustBruteLoss(5)
+	else
+		to_chat(user, span_warning("You need a tighter grip!"))
+	return TRUE
+
 /obj/structure/toilet/attack_hand(mob/living/user)
 	. = ..()
 	if(.)
@@ -29,36 +61,6 @@
 		playsound(src.loc, "swing_hit", 25, TRUE)
 		swirlie.visible_message(span_danger("[user] slams the toilet seat onto [swirlie]'s head!"), span_userdanger("[user] slams the toilet seat onto your head!"), span_hear("You hear reverberating porcelain."))
 		swirlie.adjustBruteLoss(5)
-
-	else if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
-		user.changeNext_move(CLICK_CD_MELEE)
-		var/mob/living/GM = user.pulling
-		if(user.grab_state >= GRAB_AGGRESSIVE)
-			if(GM.loc != get_turf(src))
-				to_chat(user, span_warning("[GM] needs to be on [src]!"))
-				return
-			if(!swirlie)
-				if(open)
-					GM.visible_message(span_danger("[user] starts to give [GM] a swirlie!"), span_userdanger("[user] starts to give you a swirlie..."))
-					swirlie = GM
-					var/was_alive = (swirlie.stat != DEAD)
-					if(do_after(user, 30, target = src, timed_action_flags = IGNORE_HELD_ITEM))
-						GM.visible_message(span_danger("[user] gives [GM] a swirlie!"), span_userdanger("[user] gives you a swirlie!"), span_hear("You hear a toilet flushing."))
-						if(iscarbon(GM))
-							var/mob/living/carbon/C = GM
-							if(!C.internal)
-								C.adjustOxyLoss(5)
-						else
-							GM.adjustOxyLoss(5)
-					if(was_alive && swirlie.stat == DEAD && swirlie.client)
-						swirlie.client.give_award(/datum/award/achievement/misc/swirlie, swirlie) // just like space high school all over again!
-					swirlie = null
-				else
-					playsound(src.loc, 'sound/effects/bang.ogg', 25, TRUE)
-					GM.visible_message(span_danger("[user] slams [GM.name] into [src]!"), span_userdanger("[user] slams you into [src]!"))
-					GM.adjustBruteLoss(5)
-		else
-			to_chat(user, span_warning("You need a tighter grip!"))
 
 	else if(cistern && !open && user.CanReach(src))
 		if(!contents.len)
@@ -173,23 +175,26 @@
 	. = ..()
 	hiddenitem = new /obj/item/food/urinalcake
 
+/obj/structure/urinal/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(user.a_intent != INTENT_GRAB || !isliving(pulled))
+		return FALSE
+	var/mob/living/grabbed_mob = pulled
+	if(user.grab_state >= GRAB_AGGRESSIVE)
+		if(grabbed_mob.loc != get_turf(src))
+			to_chat(user, span_notice("[grabbed_mob.name] needs to be on [src]."))
+			return TRUE
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.visible_message(span_danger("[user] slams [grabbed_mob] into [src]!"), span_danger("You slam [grabbed_mob] into [src]!"))
+		grabbed_mob.adjustBruteLoss(8)
+	else
+		to_chat(user, span_warning("You need a tighter grip!"))
+	return TRUE
+
 /obj/structure/urinal/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
-	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
-		var/mob/living/GM = user.pulling
-		if(user.grab_state >= GRAB_AGGRESSIVE)
-			if(GM.loc != get_turf(src))
-				to_chat(user, span_notice("[GM.name] needs to be on [src]."))
-				return
-			user.changeNext_move(CLICK_CD_MELEE)
-			user.visible_message(span_danger("[user] slams [GM] into [src]!"), span_danger("You slam [GM] into [src]!"))
-			GM.adjustBruteLoss(8)
-		else
-			to_chat(user, span_warning("You need a tighter grip!"))
-
-	else if(exposed)
+	if(exposed)
 		if(!hiddenitem)
 			to_chat(user, span_warning("There is nothing in the drain holder!"))
 		else
