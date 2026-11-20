@@ -146,7 +146,14 @@
 	if(.)
 		return
 	// AI that opens doors can get through
-	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && can_open(requester)
+	return ai_opens_for(requester)
+
+/obj/structure/fence/door/ai_can_open(mob/living/opener)
+	return can_open(opener)
+
+/obj/structure/fence/door/ai_open(mob/living/opener)
+	if(density)
+		toggle(opener)
 
 #undef CUT_TIME
 #undef CLIMB_TIME
