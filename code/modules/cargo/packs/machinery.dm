@@ -380,11 +380,20 @@
 	cost = 500
 	contains = list(/obj/item/circuitboard/machine/reagentgrinder)
 
-
 /datum/supply_pack/machinery/holopad
 	name = "Holopad Installation Kit"
 	desc = "Contains one circuit board for a standard holopad. Tools purchased separately."
 	cost = 400
 	contains = list(/obj/item/circuitboard/machine/holopad)
-	crate_name = "holopad"
+	crate_name = "holopad crate"
+	crate_type = /obj/structure/closet/crate
+
+/datum/supply_pack/machinery/slot_machine
+	name = "Slot Machine Construction Kit"
+	desc = "Contains the components needed for building your very own OFFICIAL Kiyatirawkitchi Entertainment slot machine. For the gambler on the go."
+	cost = 100 // look how cheap it is don't you want one
+	contains = list(
+		/obj/item/circuitboard/machine/slot_machine,
+		/obj/item/gambling_link)
+	crate_name = "slot machine crate"
 	crate_type = /obj/structure/closet/crate

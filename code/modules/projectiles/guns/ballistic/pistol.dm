@@ -211,7 +211,7 @@
 	desc_more = "This one has a paint job resembling a Sharplite electroplasma gun, barely disguising its true nature."
 	autowiki_hidden = TRUE
 
-// ASPAWN INFINITE AMMO VARIANT //
+// INFINITE AMMO VARIANT //
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo
 	name = "true disposable gun"
 	desc = "The brutal conclusion of arms development research. Gaze upon it and despair. Chambered in .22 LR."
@@ -220,7 +220,7 @@
 	default_firemode = FIREMODE_FULLAUTO
 	wear_rate = 0
 	trigger_pull_fail = 0
-	autowiki_hidden = TRUE // admin gun
+	autowiki_hidden = TRUE // admin gun (or EXTREMELY rare from slots)
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/process_fire()
 	. = ..()
