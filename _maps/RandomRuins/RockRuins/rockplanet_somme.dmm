@@ -69,12 +69,14 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "ap" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
+/obj/structure/platform/wood{
+	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "au" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -114,11 +116,12 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "aB" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/wood/mid{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "aC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -384,12 +387,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/seclock)
-"bD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "bH" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1;
@@ -433,19 +430,23 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "bQ" = (
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "gibbl2"
+	},
+/obj/structure/platform/wood/corner{
 	dir = 1
 	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"bW" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken5"
 	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/somme/trench)
+"bW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "ca" = (
 /obj/structure/platform/wood{
 	dir = 10
@@ -798,11 +799,6 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"dw" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "dy" = (
 /obj/structure/platform/wood/corner{
 	dir = 8
@@ -866,10 +862,17 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "dK" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/basic/human/frontier/ranged/internals/neutered{
+	retreat_distance = 2;
+	environment_smash = 0
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "dL" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8;
@@ -1019,13 +1022,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"ee" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "ei" = (
 /obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -1087,15 +1083,6 @@
 "eA" = (
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/restroom)
-"eE" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "eG" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -1793,11 +1780,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "hC" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+/obj/structure/platform/wood{
+	dir = 1
 	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 4
+	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "hE" = (
 /obj/machinery/power/smes/engineering,
@@ -1837,11 +1826,9 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "hM" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "hQ" = (
 /obj/structure/cable{
@@ -2014,16 +2001,12 @@
 /area/ruin/rockplanet/somme/trench)
 "iK" = (
 /obj/structure/platform/wood,
-/obj/effect/turf_decal/siding/wood{
+/obj/structure/platform/wood{
 	dir = 1
 	},
-/mob/living/basic/human/frontier/ranged/internals/neutered{
-	retreat_distance = 2;
-	environment_smash = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "iL" = (
 /obj/structure/noticeboard/directional/north,
 /obj/item/paper/fluff/ruins{
@@ -2259,12 +2242,14 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/dorms)
 "jn" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
+/obj/structure/platform/wood{
+	dir = 8
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "jo" = (
 /obj/structure/platform/wood{
 	dir = 6
@@ -2381,13 +2366,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"jX" = (
-/obj/structure/geyser/random,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "jZ" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -2759,13 +2737,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"lP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "lQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3040,12 +3011,13 @@
 	},
 /area/ruin/rockplanet/somme/trench)
 "nm" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/platform/wood/corner{
+	dir = 1;
+	pixel_x = -5
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "nq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/platform/military/corner{
@@ -3194,12 +3166,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"oh" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "oj" = (
 /obj/structure/platform/wood{
 	dir = 10
@@ -3304,11 +3270,10 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oM" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
+/obj/structure/platform/wood,
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 4
 	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oO" = (
 /obj/effect/decal/cleanable/blood/splatter{
@@ -3415,11 +3380,12 @@
 	},
 /area/ruin/rockplanet/somme/trench)
 "pc" = (
-/obj/effect/turf_decal/siding/wood{
+/obj/structure/platform/wood{
 	dir = 4
 	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 1
+	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pf" = (
 /obj/structure/cable{
@@ -3633,13 +3599,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"qw" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "qx" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -4109,22 +4068,6 @@
 /obj/structure/platform/wood/corner,
 /turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"sL" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"sM" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "sQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -4244,15 +4187,14 @@
 /obj/structure/platform/wood{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "drip3"
 	},
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "coatblood"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
@@ -4346,7 +4288,6 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
 "tS" = (
-/obj/effect/turf_decal/siding/wood,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -4447,12 +4388,13 @@
 /turf/closed/wall/concrete,
 /area/overmap_encounter/planetoid/cave/explored)
 "uM" = (
+/obj/structure/platform/wood,
 /obj/effect/turf_decal/siding/wood{
-	dir = 9
+	dir = 5
 	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "uP" = (
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/number/left_zero,
@@ -5251,10 +5193,10 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "xJ" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 8
+/obj/structure/platform/wood{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plasteel/stairs/wood/mid,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "xK" = (
 /obj/structure/cable{
@@ -5393,12 +5335,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/landing)
 "yw" = (
-/obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/siding/wood{
-	dir = 10
+	dir = 5
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "yA" = (
 /obj/machinery/light/small/directional/north,
 /obj/structure/platform/wood{
@@ -5460,11 +5404,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/rockplanet/somme/trench)
-"yR" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "yS" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -5709,6 +5648,7 @@
 /mob/living/basic/human/frontier/ranged/pounder/internals{
 	environment_smash = 0
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Av" = (
@@ -5936,17 +5876,12 @@
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
 "BA" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "drip2"
 	},
-/turf/open/floor/concrete/slab_1/rockplanet,
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/trench)
 "BF" = (
 /obj/structure/platform/wood,
@@ -6044,13 +5979,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/trench)
-"Cm" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Cn" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -7110,9 +7038,6 @@
 /area/ruin/rockplanet/somme/trench)
 "Hd" = (
 /obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "He" = (
@@ -7178,13 +7103,12 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Ho" = (
-/obj/effect/turf_decal/siding/wood/corner{
+/obj/structure/platform/wood{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
+/turf/open/floor/plasteel/stairs/wood/mid{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Hq" = (
 /obj/structure/cable{
@@ -7893,13 +7817,14 @@
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Kf" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood/corner{
+/obj/structure/platform/wood{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "Kk" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -8391,13 +8316,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"Mt" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Mu" = (
 /obj/structure/platform/wood{
 	dir = 6
@@ -8536,9 +8454,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)
 "Ne" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/wood/mid,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Nf" = (
 /obj/structure/platform/wood/corner{
@@ -8737,11 +8656,13 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "NU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
+/obj/structure/platform/wood{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 1
+	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "NV" = (
 /obj/structure/platform/wood{
@@ -8773,12 +8694,13 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
 "Oa" = (
-/obj/structure/platform/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/platform/wood{
+	dir = 10
+	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Ob" = (
@@ -9076,9 +8998,10 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Pq" = (
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 1
+	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Pr" = (
 /obj/structure/platform/wood,
@@ -9122,13 +9045,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"PA" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "PC" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9502,13 +9418,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
-"Rw" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Rz" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -10060,12 +9969,14 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Ua" = (
-/obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/siding/wood{
-	dir = 6
+	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "Ud" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
@@ -11144,12 +11055,10 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/dorms)
 "Zn" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood/corner,
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "Zq" = (
 /obj/structure/closet/body_bag{
 	tagged = 1;
@@ -11606,10 +11515,10 @@ mm
 BK
 BK
 BK
-yR
 Hd
 Hd
-ap
+Hd
+Hd
 BK
 BK
 BK
@@ -11661,26 +11570,26 @@ BK
 BK
 BK
 BK
-yR
+BK
 Hd
-sL
+Hd
 js
 Is
-Mt
+Hd
+BK
+BK
 Hd
 Hd
+Ho
+hM
+oM
 Hd
 Hd
+BK
+BK
+BK
 Hd
 Hd
-Hd
-Hd
-Hd
-Hd
-Hd
-Hd
-Hd
-ap
 BK
 BK
 BK
@@ -11689,11 +11598,11 @@ BK
 BK
 BK
 BK
-WJ
-bD
-bD
-bD
-Mp
+BK
+BK
+BK
+BK
+BK
 AW
 BK
 "}
@@ -11717,8 +11626,8 @@ BK
 BK
 BK
 BK
-yR
-Ua
+BK
+BK
 Oy
 Bq
 tE
@@ -11728,16 +11637,16 @@ Bq
 Bq
 Bq
 wT
-Bq
-Bq
-Bq
+Ua
+Xp
+nm
 Bq
 Bq
 Bq
 Bq
 Fb
 fN
-aB
+Hd
 BK
 Kk
 BK
@@ -11745,13 +11654,13 @@ BK
 BK
 BK
 Zd
-WJ
-Tp
+BK
+BK
 BT
 gg
 oj
-AD
-Mp
+BK
+BK
 BK
 "}
 (10,1,1) = {"
@@ -11764,17 +11673,17 @@ BK
 BK
 BK
 BK
-yR
 Hd
 Hd
-ap
+Hd
+Hd
 BK
 BK
 BK
 BK
 BK
-yR
-Ua
+BK
+BK
 SP
 rW
 Xp
@@ -11794,21 +11703,21 @@ Qp
 Xp
 Qp
 Gg
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-WJ
-bD
-Tp
+BK
+BK
+BK
 qt
 uS
 Qo
 HF
 oj
-LP
+BK
 AW
 "}
 (11,1,1) = {"
@@ -11819,18 +11728,18 @@ hG
 hG
 BK
 BK
-yR
-pc
-sL
+Hd
+Hd
+Hd
 qt
 ZQ
-aB
+Hd
 BK
 BK
 BK
 BK
-yR
-Ua
+Hd
+Hd
 Oy
 rW
 LX
@@ -11851,13 +11760,13 @@ SG
 Ue
 sq
 Gg
-jn
-ap
+Hd
+Hd
 BK
-WJ
-bD
-bD
-Tp
+BK
+BK
+BK
+BK
 DR
 vj
 IJ
@@ -11865,7 +11774,7 @@ PC
 cv
 GB
 nR
-LP
+BK
 AW
 "}
 (12,1,1) = {"
@@ -11876,17 +11785,17 @@ hG
 hG
 BK
 BK
-dK
+Hd
 kI
 DM
 KW
 Gg
-jn
+BK
+BK
+BK
+hC
+oM
 Hd
-Hd
-Hd
-Hd
-Ua
 Oy
 rW
 Xp
@@ -11909,20 +11818,20 @@ Xn
 Xp
 cS
 ox
-jn
-ap
-pP
+Hd
+Hd
+BK
 ua
 vj
 vj
 Ai
-xJ
+BK
 WT
 wI
 Bp
 XB
 Eo
-LP
+BK
 AW
 "}
 (13,1,1) = {"
@@ -11932,16 +11841,16 @@ Rm
 hG
 BK
 BK
-yR
-sL
+Hd
+Hd
 Va
 JS
 HK
 UV
 Fb
 NH
-Fb
-Fb
+jn
+dm
 BA
 tl
 rW
@@ -11967,19 +11876,19 @@ ii
 Xp
 Gh
 te
-jn
-Tp
+Hd
+BK
 QV
-KA
-oh
-oh
-eE
-zR
+BK
+BK
+BK
+BK
+BK
 ea
 uD
 Eo
-KA
-ay
+BK
+BK
 AW
 "}
 (14,1,1) = {"
@@ -11989,7 +11898,7 @@ hG
 BK
 BK
 BK
-Ne
+Hd
 Uh
 KW
 am
@@ -12000,7 +11909,7 @@ yf
 Xp
 rx
 At
-Xp
+xO
 Hb
 Hb
 qs
@@ -12027,15 +11936,15 @@ wN
 vj
 cb
 Ai
-LP
 BK
 BK
 BK
-hk
-zR
+BK
+BK
+BK
 gi
-sM
-ay
+BK
+BK
 gc
 BK
 "}
@@ -12046,7 +11955,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 qA
 lb
 uu
@@ -12081,17 +11990,17 @@ Dy
 lM
 GL
 Jb
-nm
-oh
-oh
-ay
+Hd
 BK
 BK
 BK
-WJ
-Tp
+BK
+BK
+BK
+BK
+BK
 yl
-LP
+BK
 mm
 BK
 BK
@@ -12103,9 +12012,9 @@ BK
 BK
 BK
 BK
-hM
-Rw
-yw
+Hd
+Hd
+BK
 kk
 Ns
 Jv
@@ -12138,17 +12047,17 @@ KD
 wP
 BW
 Pr
-aB
+Hd
 BK
 Kk
 BK
 BK
 BK
 BK
-dw
+pt
 OZ
 Mu
-LP
+BK
 BK
 Pg
 Pg
@@ -12162,7 +12071,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 OA
 Xp
 SY
@@ -12195,17 +12104,17 @@ Xw
 Tg
 mt
 cV
-Ho
 BK
 BK
 BK
 BK
 BK
-WJ
-Tp
+BK
+BK
+BK
 Fn
-KA
-ay
+BK
+BK
 Bf
 Pg
 Pg
@@ -12219,7 +12128,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 iG
 Rz
 jr
@@ -12252,16 +12161,16 @@ KD
 Yk
 Sv
 MZ
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-pP
+BK
 CR
 xa
-LP
+BK
 Pg
 Pg
 Pg
@@ -12276,7 +12185,7 @@ BK
 BK
 BK
 BK
-pP
+BK
 EY
 PZ
 EB
@@ -12309,15 +12218,15 @@ Dr
 Sc
 xx
 Gg
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-pP
+BK
 sC
-KA
+BK
 Pg
 Pg
 Pg
@@ -12333,7 +12242,7 @@ BK
 BK
 BK
 BK
-pP
+BK
 EY
 vT
 Rq
@@ -12366,15 +12275,15 @@ yA
 LM
 xK
 Gg
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-pP
+BK
 yl
-LP
+BK
 Pg
 Pg
 Pg
@@ -12390,7 +12299,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 Bm
 iv
 oQ
@@ -12423,15 +12332,15 @@ Fy
 wF
 Pz
 VZ
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-pP
+BK
 yl
-LP
+BK
 Pg
 Pg
 Pg
@@ -12447,7 +12356,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 OA
 PU
 BF
@@ -12479,16 +12388,16 @@ Wu
 nC
 sd
 hf
-nm
-ee
+Hd
+Hd
 BK
 BK
 BK
 BK
 BK
-pP
+BK
 yl
-LP
+BK
 BK
 BK
 Pg
@@ -12504,7 +12413,7 @@ BK
 BK
 Pg
 Pg
-Ne
+Hd
 is
 IG
 GH
@@ -12536,16 +12445,16 @@ RY
 eR
 qj
 Qg
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-WJ
-Tp
+BK
+BK
 TH
-LP
+BK
 BK
 BK
 Pg
@@ -12593,16 +12502,16 @@ wD
 Pw
 qj
 AB
-aB
+Hd
 BK
 BK
 BK
 BK
 BK
-pP
+BK
 DQ
 Mu
-LP
+BK
 BK
 BK
 pt
@@ -12650,16 +12559,16 @@ yJ
 nq
 Qs
 JU
-aB
+Hd
 Kk
 BK
 BK
 BK
 BK
-pP
+BK
 MN
-jX
-ay
+cx
+BK
 BK
 BK
 BK
@@ -12707,15 +12616,15 @@ FB
 dy
 xO
 Gg
-bQ
 BK
 BK
 BK
 BK
 BK
-NU
-di
-ay
+BK
+BK
+BK
+BK
 BK
 BK
 gc
@@ -12764,7 +12673,7 @@ Ct
 NV
 VE
 Gg
-bQ
+BK
 BK
 BK
 BK
@@ -12821,12 +12730,12 @@ XF
 Hg
 Xp
 wr
-Mt
-pc
-pc
-pc
-pc
-ap
+BK
+BK
+BK
+BK
+Hd
+Hd
 BK
 VA
 VA
@@ -12883,7 +12792,7 @@ cb
 cb
 Ce
 Kd
-bQ
+Hd
 BK
 VA
 BK
@@ -12935,12 +12844,12 @@ wR
 lf
 PZ
 Jb
-uM
-hC
-hC
-hC
-hC
-ee
+Hd
+BK
+BK
+BK
+Hd
+Hd
 VA
 VA
 BK
@@ -12991,8 +12900,8 @@ Ji
 Ss
 zE
 PZ
-Gg
-bQ
+yw
+Hd
 BK
 BK
 BK
@@ -13048,8 +12957,8 @@ Ct
 Ct
 lf
 xx
-Gg
-bQ
+qj
+BK
 BK
 BK
 BK
@@ -13074,7 +12983,7 @@ Pg
 Pg
 Pg
 BK
-Ne
+Hd
 qA
 OB
 Xp
@@ -13105,8 +13014,8 @@ Ct
 Dr
 kS
 Eq
-Gg
-bQ
+qj
+BK
 BK
 BK
 BK
@@ -13131,8 +13040,8 @@ Pg
 Pg
 BK
 BK
-hM
-yw
+Hd
+Hd
 Fg
 Em
 Xp
@@ -13163,7 +13072,7 @@ Ir
 uC
 de
 Oa
-bQ
+Hd
 BK
 Kk
 BK
@@ -13189,8 +13098,8 @@ Pg
 Pg
 BK
 BK
-hM
-yw
+BK
+BK
 RW
 sX
 Xp
@@ -13220,7 +13129,7 @@ Xn
 Pw
 Pz
 Vz
-aB
+Hd
 BK
 BK
 BK
@@ -13247,8 +13156,8 @@ BK
 BK
 BK
 BK
-hM
-yw
+BK
+BK
 Jq
 OB
 Qh
@@ -13276,8 +13185,8 @@ Ct
 jJ
 op
 Gg
-nm
-ee
+BK
+BK
 BK
 BK
 BK
@@ -13305,8 +13214,8 @@ BK
 BK
 BK
 BK
-hM
-yw
+BK
+BK
 Vl
 bq
 Xp
@@ -13332,8 +13241,8 @@ fC
 fC
 cW
 hV
-iK
-aB
+Gg
+Hd
 BK
 BK
 BK
@@ -13363,8 +13272,8 @@ BK
 BK
 BK
 BK
-hM
-yw
+BK
+BK
 Ms
 Qp
 xO
@@ -13389,9 +13298,9 @@ AY
 TY
 va
 op
-Gg
-jn
-qw
+dK
+Hd
+Hd
 BK
 BK
 BK
@@ -13421,7 +13330,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 Ms
 xO
 Xp
@@ -13448,7 +13357,7 @@ QG
 Iz
 az
 mh
-aB
+Hd
 BK
 BK
 BK
@@ -13477,8 +13386,8 @@ gc
 BK
 pt
 BK
-yR
-Ua
+Hd
+Hd
 OA
 Xp
 RK
@@ -13505,7 +13414,7 @@ Lq
 Hb
 xO
 Gg
-aB
+Hd
 BK
 BK
 BK
@@ -13534,7 +13443,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 JH
 Oo
 ky
@@ -13562,7 +13471,7 @@ mo
 bP
 xO
 OT
-aB
+BK
 BK
 BK
 BK
@@ -13591,7 +13500,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 CA
 nW
 Xp
@@ -13619,7 +13528,7 @@ Rb
 dp
 VE
 Gg
-aB
+BK
 BK
 BK
 BK
@@ -13648,8 +13557,8 @@ BK
 BK
 BK
 BK
-oM
-bW
+Hd
+Hd
 OA
 aC
 ju
@@ -13676,7 +13585,7 @@ Rb
 oP
 Xp
 Gg
-aB
+BK
 BK
 BK
 Kk
@@ -13706,8 +13615,8 @@ BK
 BK
 BK
 BK
-Ne
-OA
+Hd
+ap
 QC
 ZW
 Gq
@@ -13733,7 +13642,7 @@ Rb
 ho
 Hb
 Gg
-aB
+BK
 BK
 BK
 BK
@@ -13763,8 +13672,8 @@ BK
 BK
 BK
 BK
-Ne
-OA
+aB
+eI
 XH
 cF
 NN
@@ -13790,8 +13699,8 @@ Rb
 oP
 Xp
 ed
-jn
-ap
+Hd
+Hd
 BK
 BK
 BK
@@ -13813,15 +13722,15 @@ hG
 hG
 wk
 hG
-WJ
-bD
-bD
-Mp
 BK
 BK
 BK
-Ne
-OA
+BK
+BK
+BK
+BK
+Pq
+xO
 QH
 QS
 QE
@@ -13848,7 +13757,7 @@ WB
 FQ
 XE
 El
-aB
+Hd
 BK
 BK
 BK
@@ -13870,15 +13779,15 @@ AW
 BK
 hG
 BK
-pP
+BK
 Va
 tm
-aB
 BK
 BK
 BK
-Ne
-OA
+BK
+pc
+lM
 lE
 aX
 QE
@@ -13905,7 +13814,7 @@ zq
 Ka
 Fz
 jo
-aB
+Hd
 BK
 BK
 BK
@@ -13930,12 +13839,12 @@ oR
 KD
 rb
 qz
-Mt
-ap
 BK
 BK
-Ne
-OA
+BK
+BK
+Hd
+Kf
 iv
 tY
 QE
@@ -13961,14 +13870,14 @@ Rb
 cy
 VE
 ed
-nm
-ee
+Hd
+Hd
 BK
 BK
 BK
-WJ
-bD
-lP
+BK
+BK
+BK
 BK
 BK
 BK
@@ -13988,10 +13897,10 @@ Zk
 Hl
 ao
 Vg
-jn
+BK
+BK
+BK
 Hd
-Hd
-Ua
 OA
 iv
 oz
@@ -14018,14 +13927,14 @@ Rb
 EA
 Xp
 Dc
-aB
+Hd
 BK
 BK
 BK
 BK
-pP
+BK
 QW
-LP
+BK
 BK
 BK
 BK
@@ -14042,8 +13951,8 @@ lA
 Gk
 WC
 KD
-Rw
-yw
+Hd
+Hd
 pz
 EC
 Nn
@@ -14080,9 +13989,9 @@ BK
 BK
 BK
 BK
-pP
+BK
 gi
-LP
+BK
 BK
 BK
 BK
@@ -14100,12 +14009,12 @@ BK
 BK
 BK
 BK
-hM
-Rw
-Rw
-Rw
-Rw
-yw
+BK
+BK
+BK
+BK
+BK
+BK
 OA
 PZ
 gI
@@ -14136,10 +14045,10 @@ BK
 BK
 BK
 Kk
-WJ
-Tp
+BK
+BK
 TH
-LP
+BK
 BK
 BK
 BK
@@ -14162,7 +14071,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 OA
 TK
 EB
@@ -14189,14 +14098,14 @@ wf
 Eq
 Ao
 Fu
-aB
+Hd
 BK
 BK
 BK
-pP
+BK
 sK
 lS
-LP
+BK
 BK
 BK
 BK
@@ -14219,7 +14128,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 OA
 hV
 tY
@@ -14246,14 +14155,14 @@ wF
 xO
 Pz
 VZ
-aB
+Hd
 BK
 BK
 BK
-pP
+BK
 xh
-KA
-ay
+BK
+BK
 BK
 BK
 BK
@@ -14276,7 +14185,7 @@ pt
 BK
 BK
 BK
-Ne
+BK
 OA
 xl
 oA
@@ -14302,14 +14211,14 @@ my
 LM
 Pz
 VZ
-nm
-ee
+Hd
+Hd
 BK
 BK
 mm
-pP
-an
-LP
+BK
+iK
+BK
 BK
 BK
 gc
@@ -14333,7 +14242,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 OA
 Qh
 gS
@@ -14358,15 +14267,15 @@ Gj
 xO
 Pz
 FO
-nm
-ee
 BK
 BK
 BK
 BK
-pP
+BK
+BK
+BK
 TH
-LP
+BK
 BK
 BK
 BK
@@ -14390,7 +14299,7 @@ BK
 BK
 BK
 BK
-dK
+BK
 co
 CW
 mv
@@ -14414,17 +14323,17 @@ rE
 Xp
 Pz
 VZ
-nm
-ee
+BK
+BK
 Kk
 BK
 BK
 BK
 BK
-pP
+BK
 TH
-AD
-Mp
+BK
+BK
 BK
 yg
 BK
@@ -14447,10 +14356,10 @@ BK
 BK
 BK
 BK
-oM
-hC
-Rw
-yw
+BK
+BK
+Hd
+Hd
 wl
 OB
 AH
@@ -14470,18 +14379,18 @@ Xl
 xO
 Pz
 VZ
-nm
-ee
+Hd
+BK
 BK
 BK
 BK
 Zd
 BK
 BK
-pP
+BK
 YP
 ca
-LP
+BK
 BK
 BK
 Zw
@@ -14507,8 +14416,8 @@ mm
 BK
 BK
 BK
-hM
-yw
+Hd
+Hd
 qA
 CW
 sg
@@ -14526,8 +14435,8 @@ WP
 Ny
 lb
 NE
-nm
-ee
+Hd
+Hd
 BK
 BK
 BK
@@ -14535,10 +14444,10 @@ BK
 BK
 BK
 BK
-hk
-zR
+BK
+BK
 an
-LP
+BK
 BK
 hB
 Bf
@@ -14565,10 +14474,10 @@ BK
 BK
 BK
 BK
-hM
-Rw
-yw
-OA
+Hd
+Hd
+BK
+ap
 kY
 VN
 OF
@@ -14581,9 +14490,9 @@ sH
 va
 sc
 Gg
-nm
-Rw
-ee
+Hd
+Hd
+Hd
 BK
 BK
 BK
@@ -14593,9 +14502,9 @@ BK
 BK
 BK
 BK
-pP
+BK
 TH
-LP
+BK
 oF
 RR
 RR
@@ -14625,7 +14534,7 @@ BK
 BK
 BK
 Ne
-OA
+Fy
 Ta
 ec
 AT
@@ -14638,7 +14547,7 @@ cm
 lW
 Xa
 Gg
-aB
+Hd
 BK
 BK
 BK
@@ -14650,9 +14559,9 @@ BK
 gc
 BK
 BK
-pP
+BK
 xh
-LP
+BK
 BK
 sn
 BK
@@ -14681,8 +14590,8 @@ BK
 BK
 BK
 BK
-Ne
-OA
+xJ
+bW
 WP
 EB
 fo
@@ -14695,7 +14604,7 @@ VY
 LL
 iv
 Gg
-aB
+Hd
 BK
 BK
 BK
@@ -14706,12 +14615,12 @@ BK
 BK
 BK
 BK
-WJ
-Tp
+BK
+BK
 ji
-AD
-Zn
-Mp
+BK
+yg
+BK
 sn
 BK
 BK
@@ -14738,8 +14647,8 @@ BK
 BK
 BK
 Kk
-Ne
-OA
+BK
+Kf
 PZ
 JJ
 AT
@@ -14752,23 +14661,23 @@ cm
 va
 kr
 Gg
-bQ
 BK
-Pq
-pc
-pc
-pc
-pc
-pc
-pc
-qw
-WJ
-Tp
+BK
+BK
+BK
+Hd
+Hd
+Hd
+Hd
+BK
+BK
+BK
+BK
 BM
 xU
 Nn
 Vg
-LP
+BK
 BK
 SI
 BK
@@ -14791,11 +14700,11 @@ BK
 BK
 BK
 BK
-yR
-Hd
-Hd
-Hd
-Ua
+BK
+BK
+BK
+BK
+BK
 OA
 hV
 iI
@@ -14809,23 +14718,23 @@ VY
 sF
 gP
 Gg
-jn
-Hd
-sL
+BK
+BK
+BK
 Uo
 ge
 fw
 Ly
 fw
 vB
-Mt
-Ua
+BK
+BK
 ba
 jV
 rG
 pg
 Fs
-LP
+BK
 BK
 BK
 BK
@@ -14848,7 +14757,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 Df
 Sh
 Sh
@@ -14870,10 +14779,10 @@ qZ
 Cs
 Cs
 RV
-uM
-hC
-hC
-bW
+Hd
+Hd
+Hd
+Hd
 dW
 Hs
 su
@@ -14882,7 +14791,7 @@ PC
 NA
 og
 Fs
-LP
+BK
 BK
 BK
 BK
@@ -14905,11 +14814,11 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 Dh
-nm
-Rw
-yw
+BK
+BK
+BK
 OA
 Xp
 mH
@@ -14922,24 +14831,24 @@ YW
 cm
 va
 hV
-Gg
-nm
-hC
-hC
-hC
-PA
+uM
+Hd
 BK
 BK
-oM
-hC
-hC
-yw
+BK
+BK
+BK
+BK
+BK
+BK
+BK
+BK
 XX
 SK
 tB
 yN
 Fs
-LP
+BK
 BK
 BK
 Bf
@@ -14962,11 +14871,11 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 WD
-aB
+Hd
 BK
-Ne
+BK
 OA
 xO
 aQ
@@ -14979,7 +14888,7 @@ YW
 VY
 jJ
 iv
-OT
+bQ
 aB
 BK
 BK
@@ -14990,13 +14899,13 @@ BK
 BK
 BK
 BK
-hk
-zR
+BK
+BK
 pz
 ER
 ER
 Ld
-LP
+BK
 BK
 BK
 BK
@@ -15019,11 +14928,11 @@ BK
 Bf
 BK
 BK
-hM
-Rw
-ee
+Hd
+Hd
+Hd
 mm
-Ne
+BK
 OA
 oO
 tY
@@ -15036,8 +14945,8 @@ YW
 tI
 va
 PZ
-Gg
-aB
+Zn
+NU
 BK
 pt
 BK
@@ -15048,12 +14957,12 @@ BK
 BK
 BK
 BK
-hk
-oh
-oh
-oh
-oh
-ay
+BK
+BK
+BK
+BK
+BK
+BK
 BK
 BK
 BK
@@ -15080,7 +14989,7 @@ BK
 BK
 BK
 BK
-Ne
+BK
 OA
 rx
 EB
@@ -15093,8 +15002,8 @@ Dv
 qT
 gH
 UJ
-Gg
-aB
+Jb
+Hd
 BK
 BK
 BK
@@ -15137,7 +15046,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 OA
 Xp
 hU
@@ -15151,7 +15060,7 @@ QF
 Kl
 QA
 Gg
-aB
+Hd
 BK
 BK
 BK
@@ -15194,7 +15103,7 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 qA
 FA
 yf
@@ -15208,7 +15117,7 @@ sm
 xO
 Pz
 FO
-aB
+Hd
 BK
 BK
 BK
@@ -15251,8 +15160,8 @@ BK
 BK
 BK
 BK
-hM
-bW
+Hd
+Hd
 qA
 pT
 JK
@@ -15264,8 +15173,8 @@ lb
 HH
 qV
 oT
-nm
-ee
+Hd
+Hd
 BK
 BK
 BK
@@ -15309,19 +15218,19 @@ BK
 BK
 BK
 BK
-hM
-Rw
-Rw
-oh
-oh
-bW
+Hd
+Hd
+Hd
+BK
+BK
+Hd
 vy
 Bv
-Cm
+Hd
 jU
-nm
-hC
-ee
+BK
+BK
+BK
 BK
 BK
 BK
@@ -15371,12 +15280,12 @@ BK
 BK
 BK
 BK
-hM
-Rw
-Rw
-Kf
+Hd
+Hd
+Hd
+Hd
 jU
-aB
+BK
 BK
 BK
 BK
@@ -15431,9 +15340,9 @@ BK
 BK
 BK
 BK
-Ne
+BK
 jU
-aB
+BK
 BK
 BK
 BK
@@ -15488,9 +15397,9 @@ mm
 BK
 BK
 BK
-Ne
+BK
 Ku
-aB
+BK
 BK
 BK
 BK
@@ -15545,9 +15454,9 @@ BK
 BK
 BK
 BK
-Ne
+Hd
 vZ
-aB
+Hd
 BK
 BK
 BK
@@ -15602,9 +15511,9 @@ BK
 BK
 BK
 BK
-hM
-Rw
-ee
+Hd
+Hd
+Hd
 BK
 BK
 BK
