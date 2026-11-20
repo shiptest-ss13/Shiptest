@@ -216,7 +216,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3
 	)
 	tastes = list("egg" = 1)
-	foodtypes = MEAT | VEGETABLES
+	foodtypes = EGG | VEGETABLES
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/chawanmushi
@@ -230,7 +230,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
 	tastes = list("custard" = 1)
-	foodtypes = MEAT | VEGETABLES
+	foodtypes = EGG | VEGETABLES
 
 /obj/item/food/egg/small ///made this for the awebo bird but could be reused for other small birds added in the future?
 	name = "small egg"
@@ -243,7 +243,7 @@
 		/datum/reagent/consumable/eggwhite = 2,
 	)
 	microwaved_type = /obj/item/food/boiledegg ///cooking it completely changes the contents anyway so i think it's fine if it gets the same stats as usual once it's cooked. it's just a poor source of egg chems
-	foodtypes = MEAT | RAW
+	foodtypes = EGG | RAW
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/egg/small/Initialize()
