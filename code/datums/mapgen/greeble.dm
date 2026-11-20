@@ -63,6 +63,7 @@
 	var/static/list/banned_objects
 	var/blocked_by_anchored = FALSE
 	var/clear_everything = TRUE
+	should_place_on_top = FALSE
 
 /datum/map_template/greeble/New()
 	. = ..()

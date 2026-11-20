@@ -8,6 +8,9 @@
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
 
+	//We assume that we're changing everything because of customization.
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_INHAND
+
 	var/damaged_clothes = 0 //similar to machine's BROKEN stat and structure's broken var
 	///What level of bright light protection item has.
 	var/flash_protect = FLASH_PROTECTION_NONE
@@ -39,6 +42,8 @@
 	var/datum/weakref/wearer
 
 	var/pocket_storage_component_path
+	/// Holds pocket items
+	var/obj/item/clothing_pocket/pocket
 
 	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/armor_list = list()
@@ -66,9 +71,44 @@
 		actions_types += /datum/action/item_action/toggle_voice_box
 	. = ..()
 	if(ispath(pocket_storage_component_path))
-		LoadComponent(pocket_storage_component_path)
+		setup_pocket_storage()
 	if(can_be_bloody && ((body_parts_covered & FEET) || (flags_inv & HIDESHOES)))
 		LoadComponent(/datum/component/bloodysoles)
+
+/obj/item/clothing/Destroy()
+	QDEL_NULL(pocket)
+	return ..()
+
+/obj/item/clothing/proc/setup_pocket_storage()
+	var/datum/component/storage/concrete/pocket_storage = LoadComponent(pocket_storage_component_path)
+	pocket = new(src)
+	pocket_storage.set_real_location(pocket)
+
+/obj/item/clothing/proc/on_pocket_changed(atom/movable/thing)
+	return
+
+/obj/item/clothing_pocket
+	name = "pocket"
+	item_flags = ABSTRACT
+	resistance_flags = INDESTRUCTIBLE
+	var/obj/item/clothing/owner
+
+/obj/item/clothing_pocket/Initialize(mapload)
+	. = ..()
+	if(istype(loc, /obj/item/clothing))
+		owner = loc
+
+/obj/item/clothing_pocket/Destroy()
+	owner = null
+	return ..()
+
+/obj/item/clothing_pocket/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	owner?.on_pocket_changed(arrived)
+
+/obj/item/clothing_pocket/Exited(atom/movable/gone, direction)
+	. = ..()
+	owner?.on_pocket_changed(gone)
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()

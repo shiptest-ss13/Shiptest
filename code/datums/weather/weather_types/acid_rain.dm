@@ -34,7 +34,8 @@
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
 	return !isanimal(victim) && victim.getarmor(null, "acid") < 100
 
-/datum/weather/acid_rain/weather_act(mob/living/victim)
+/datum/weather/acid_rain/weather_act(mob/living/victim, seconds_per_tick)
 	var/resist = victim.getarmor(null, "acid")
-	if(prob(max(0,100-resist)))
-		victim.acid_act(20,1)
+	var/hits = roll_hits(max(0,100-resist), seconds_per_tick)
+	if(hits)
+		victim.acid_act(20, hits)

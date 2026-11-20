@@ -29,7 +29,7 @@
 	desc = "Starship-ready titanium plating is in high demand in the Frontier, with the most active buyer being the Clover Corporation. An open purchasing channel is maintained with all major outposts."
 	container_type = /obj/structure/material_crate/titanium
 	objective_type = /obj/item/stack/sheet/mineral/titanium
-	weight = 10
+	weight = 5
 
 /datum/mission/acquire/material/titanium/get_material_value(amount)
 	//amount = titanium IEV * amount
@@ -38,7 +38,7 @@
 /datum/mission/acquire/material/plasteel
 	desc = "A standing subsidy is maintained by Miskilamao Spacefaring for the purchase of intact scrap pieces - including common plasteel."
 	objective_type = /obj/item/stack/sheet/plasteel
-	weight = 12
+	weight = 6
 
 /datum/mission/acquire/material/plasteel/get_material_value(amount)
 	//amount = iron IEV + plasma IEV * amount
@@ -48,7 +48,7 @@
 	desc = "The New Gorlex Republic often purchases bulk quantity of refined plastitanium to fuel the expansion of its fleets. Several such contracts are up today."
 	container_type = /obj/structure/material_crate/plastit
 	objective_type = /obj/item/stack/sheet/mineral/plastitanium
-	weight = 8
+	weight = 4
 
 /datum/mission/acquire/material/plastitanium/get_material_value(amount)
 	//amount = plasma IEV + titanium IEV * amount

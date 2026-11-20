@@ -200,7 +200,7 @@
 /proc/ai_step_blockers(atom/movable/mover, turf/leaving, turf/entering, direction, access, list/already_broken)
 	. = list()
 	for(var/obj/thing in leaving)
-		if(!(thing.flags_1 & ON_BORDER_1) && !istype(thing, /obj/structure/window))
+		if(!(thing.flags_1 & ON_BORDER_1))
 			continue
 		if(!(thing in already_broken) && !thing.CanAStarPass(access, direction, mover))
 			. += thing

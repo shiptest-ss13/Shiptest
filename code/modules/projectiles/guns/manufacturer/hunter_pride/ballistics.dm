@@ -113,7 +113,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 		"Cavalry" = "shadow_cavalry",
 		"Lanchester Special" = "shadow_lanchester"
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_INHAND
 
 	recoil = 0
 

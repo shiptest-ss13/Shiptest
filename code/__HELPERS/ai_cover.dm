@@ -365,6 +365,11 @@
 /proc/ai_is_door(atom/thing)
 	return istype(thing, /obj/machinery/door) || istype(thing, /obj/structure/mineral_door) || istype(thing, /obj/structure/fence/door)
 
+/proc/ai_can_pass_door(mob/living/mover, obj/door, turf/from_turf, turf/toward)
+	var/turf/door_turf = get_turf(door)
+	var/direction = door_turf == from_turf ? get_dir(from_turf, toward) : get_dir(door_turf, from_turf)
+	return door.CanAStarPass(mover.ai_controller?.get_access(), direction, mover)
+
 /proc/ai_is_doorway(turf/spot)
 	for(var/atom/thing as anything in spot)
 		if(ai_is_door(thing))
