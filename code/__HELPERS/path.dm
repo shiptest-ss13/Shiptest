@@ -327,6 +327,8 @@
 		if(current_turf != end && sources[current_turf])
 			return // already visited, don't check again
 		if(!CAN_STEP(lag_turf, current_turf))
+			if(steps_taken == 1)
+				edge_corner_scan(original_turf, heading, parent_node)
 			return
 
 		if(current_turf == end || (mintargetdist && (get_dist(current_turf, end) <= mintargetdist)))
@@ -376,6 +378,19 @@
 				if(possible_child_node.tile == end || (mintargetdist && (get_dist(possible_child_node.tile, end) <= mintargetdist)))
 					unwind_path(possible_child_node)
 			return
+
+/datum/pathfind/proc/edge_corner_scan(turf/original_turf, heading, datum/jps_node/parent_node)
+	var/turf/corner_turf = get_step(original_turf, heading)
+	if(path || !corner_turf || corner_turf.density)
+		return
+	var/turf/vertical_turf = get_step(original_turf, heading & (NORTH|SOUTH))
+	var/turf/horizontal_turf = get_step(original_turf, heading & (EAST|WEST))
+	if(!CAN_STEP(original_turf, vertical_turf) || !CAN_STEP(original_turf, horizontal_turf))
+		return
+	if(CAN_STEP(vertical_turf, corner_turf))
+		open.insert(new /datum/jps_node(vertical_turf, parent_node, 1))
+	if(CAN_STEP(horizontal_turf, corner_turf))
+		open.insert(new /datum/jps_node(horizontal_turf, parent_node, 1))
 
 /**
  * For seeing if we can actually move between 2 given turfs while accounting for our access and the requester's pass_flags
