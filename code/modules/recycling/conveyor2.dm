@@ -142,6 +142,10 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 	use_power(6)
 
+	// nothing but the belt itself, so nothing to move
+	if(length(loc.contents) <= 1)
+		return
+
 	//get the first 30 items in contents
 	affecting = list()
 	var/i = 0
