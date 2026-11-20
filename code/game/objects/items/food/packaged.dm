@@ -71,4 +71,4 @@
 	trash_type = /obj/item/trash/can/food/beefbroth
 	food_reagents = list(/datum/reagent/consumable/beefbroth = 50)
 	tastes = list("disgust" = 7, "tin" = 1)
-	foodtypes = MEAT | GROSS | JUNKFOOD
+	foodtypes = MEAT | JUNKFOOD

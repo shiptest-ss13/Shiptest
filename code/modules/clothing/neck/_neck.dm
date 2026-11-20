@@ -7,6 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 1
+	blood_overlay_type = "mask"
 	greyscale_colors = list(list(15, 20), list(16, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
@@ -17,7 +18,7 @@
 			if(damaged_clothes)
 				. += mutable_appearance('icons/effects/item_damage.dmi', "damagedmask")
 			if(HAS_BLOOD_DNA(src))
-				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
+				. += setup_blood_overlay()
 
 /obj/item/clothing/neck/tie
 	name = "tie"
@@ -49,7 +50,6 @@
 		"genderfae tie" = "genderfae",
 		"ally tie" = "ally_tie"
 	)
-	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
@@ -227,8 +227,7 @@
 						"brown scarf" = "scarfbrown",
 						"light brown scarf" = "scarflightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/neck/scarf/white
 	name = "white scarf"
@@ -338,8 +337,7 @@
 						"brown poncho" = "ponchobrown",
 						"light brown poncho" = "poncholightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	var/ponchotoggled = FALSE
 	var/obj/item/clothing/head/hooded/hood
@@ -395,9 +393,7 @@
 			H.regenerate_icons()
 		else
 			hood.forceMove(src)
-		for(var/X in actions)
-			var/datum/action/A = X
-			A.UpdateButtonIcon()
+		update_item_action_buttons()
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
 	if(ponchotoggled)
@@ -427,9 +423,7 @@
 				H.update_inv_neck()
 				update_appearance()
 				H.regenerate_icons()
-				for(var/X in actions)
-					var/datum/action/A = X
-					A.UpdateButtonIcon()
+				update_item_action_buttons()
 	else
 		remove_hood()
 
@@ -605,8 +599,7 @@
 						"navy mantle" = "mantle_navy",
 						"leather mantle" = "mantle_leather"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/neck/mantle/black
 	name = "black mantle"
@@ -658,8 +651,6 @@
 						"red neckwraps" = "neckwraps_red",
 						"blue neckwraps" = "neckwraps_blue"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/neck/neckwraps/grey
 	name = "grey neckwraps"
@@ -706,8 +697,7 @@
 						"green shawl" = "shawl_green",
 						"yellow shawl" = "shawl_yellow"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/neck/shawl/grey
 	name = "grey shawl"
@@ -767,12 +757,64 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 	strip_delay = 10
+	pickup_sound = "dogtag"
 	var/list/tag_fluff = list()
+
+/obj/item/clothing/neck/dogtag/examine(mob/user)
+	. = ..()
+	if(length(tag_fluff))
+		. += span_notice("Some characters have been imprinted on the tag. You can look closer to see them.")
 
 /obj/item/clothing/neck/dogtag/examine_more(mob/user)
 	. = ..()
+	var/temp_string = null
 	for(var/line in tag_fluff)
-		. += span_boldnotice(line)
+		temp_string += line
+		temp_string += "\n"
+	if(temp_string)
+		. += custom_boxed_message("grey_box center", temp_string)
+
+/obj/item/clothing/neck/dogtag/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_NECK)
+		RegisterSignal(user, COMSIG_MOUSEDROP_ONTO, PROC_REF(on_wearer_dragged), override = TRUE)
+		RegisterSignal(user, COMSIG_ATOM_EXAMINE, PROC_REF(on_wearer_examine), override = TRUE)
+	else
+		UnregisterSignal(user, list(COMSIG_MOUSEDROP_ONTO, COMSIG_ATOM_EXAMINE))
+
+/obj/item/clothing/neck/dogtag/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, list(COMSIG_MOUSEDROP_ONTO, COMSIG_ATOM_EXAMINE))
+
+/obj/item/clothing/neck/dogtag/proc/on_wearer_examine(mob/living/carbon/human/wearer, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+	if(wearer.stat == DEAD)
+		examine_list += span_notice("You could take [src] by dragging [wearer.p_them()] onto yourself while aiming for the head.")
+
+/obj/item/clothing/neck/dogtag/proc/on_wearer_dragged(mob/living/carbon/human/wearer, atom/over, mob/living/carbon/human/user)
+	SIGNAL_HANDLER
+	if(over != user || !ishuman(user) || user == wearer || wearer.stat != DEAD || user.zone_selected != BODY_ZONE_HEAD)
+		return
+	if(user.pulling == wearer && user.a_intent == INTENT_GRAB)
+		return
+	if(!canStrip(wearer) || !user.Adjacent(wearer) || user.incapacitated())
+		return
+	INVOKE_ASYNC(src, PROC_REF(pull_from_wearer), wearer, user)
+	return COMPONENT_NO_MOUSEDROP
+
+/obj/item/clothing/neck/dogtag/proc/pull_from_wearer(mob/living/carbon/human/wearer, mob/living/carbon/human/user)
+	user.visible_message(span_notice("[user] starts pulling the dogtag from [wearer]'s neck."), \
+					span_notice("You start pulling [src] from [wearer]'s neck..."))
+	add_fingerprint(user)
+	if(!do_after(user, strip_delay, wearer, interaction_key = src))
+		return
+	if(QDELETED(src) || wearer.wear_neck != src || !user.Adjacent(wearer))
+		return
+	if(!doStrip(user, wearer))
+		return
+	log_combat(user, wearer, "stripped [src] off")
+	if(!user.put_in_hands(src))
+		playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 
 /obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen))
@@ -787,7 +829,7 @@
 		return
 
 /obj/item/clothing/neck/dogtag/loadout
-	desc = "A non-military dogtag, often worn for style in certain circles."
+	desc = "A dogtag, often worn by current and former soldiers."
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"

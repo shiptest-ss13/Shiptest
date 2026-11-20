@@ -1,4 +1,5 @@
 /obj/item/attachment/gun/energy
+	bad_type = /obj/item/attachment/gun/energy
 	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
 	underbarrel_prefix = "laser_"
@@ -55,9 +56,26 @@
 	weapon_type = /obj/item/gun/energy/e_gun/underbarrel
 
 /obj/item/gun/energy/e_gun/underbarrel
+	autowiki_hidden = TRUE //attachment
 	name = "underbarrel energy gun"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/underbarrel, /obj/item/ammo_casing/energy/laser/underbarrel)
 	spawn_no_ammo = TRUE
+
+// not a proper attachhment yet, but.
+/obj/item/gun/energy/laser/e40_laser_secondary
+	name = "secondary e40 laser gun"
+	autowiki_hidden = TRUE //part of the E-40, not a weapon itself
+	desc = "The laser component of a E-40 Hybrid Rifle. You probably shouldn't see this. If you can though, you should probably know lorewise, this is primary, the ballistic compontent in universe is secondary. Unfortunately, we cannot simulate this, So codewise this is secondary."
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault)
+	fire_delay = 0.2 SECONDS
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+	latch_toggle_delay = 0.6 SECONDS
+	valid_attachments = list()
+
+	spread_unwielded = 20
 
 /obj/item/attachment/gun/energy/e50
 	name = "underbarrel energy cannon"
@@ -67,6 +85,7 @@
 	attach_features_flags = ATTACH_REMOVABLE_HAND
 
 /obj/item/gun/energy/laser/e50/clip/underbarrel
+	autowiki_hidden = TRUE //attachment
 	name = "underbarrel energy cannon"
 	desc = "Watch out, its hot."
 	default_ammo_type = /obj/item/stock_parts/cell/gun

@@ -98,6 +98,7 @@
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
+	GLOB.porta_turrets += src
 	if(!reaction_time)
 		reaction_time = shot_delay
 
@@ -109,6 +110,7 @@
 	spark_system.attach(src)
 
 /obj/machinery/porta_turret/Destroy()
+	GLOB.porta_turrets -= src
 	targets.Cut()
 	targets = null
 
@@ -629,6 +631,7 @@
 	shot.firer = src
 	shot.fired_from = src
 	shot.fire()
+	return shot
 
 /obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
 	if(current_target)

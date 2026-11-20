@@ -28,7 +28,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	spread = 15
-	spread_unwielded = 35
+	spread_unwielded = 15
 	recoil = -2
 	recoil_unwielded = -2
 
@@ -93,7 +93,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 3
+	recoil_unwielded = 0.5
 	recoil = 0.5
 
 	slot_offsets = list(
@@ -111,12 +111,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 /obj/item/ammo_box/magazine/m20_auto_elite
 	name = "Model 20 magazine (.44 Roumain)"
-	desc = "A nine-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
+	desc = "A ten-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/a44roum
 	caliber = ".44 Roumain"
-	max_ammo = 9
+	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m20_auto_elite/empty
@@ -132,6 +132,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
 	item_state = "m20_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -395,7 +396,7 @@ NO_MAG_GUN_HELPER(automatic/m15)
 	icon_state = "buckmaster"
 	item_state = "buckmaster"
 
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.3 SECONDS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/buckmaster
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/buckmaster,
@@ -419,6 +420,12 @@ NO_MAG_GUN_HELPER(automatic/m15)
 
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
+
+	unique_reskin = list(\
+		"Wood" = "buckmaster",
+		"Polymer" = "buckmasterclip"
+		)
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

@@ -21,12 +21,21 @@
 	return new pillbottle(loc)
 
 /datum/blackmarket_item/consumable/floor_pill
-	name = "Strange Pill"
-	desc = "The Russian Roulette of the Maintenance Tunnels."
-	item = /obj/item/reagent_containers/pill/floorpill
+	name = "Bottle of Strange Pills"
+	desc = "We found like, five boxes of these stupid things in our warehouse. No idea where they came from. Had our lab guy look at some of em and they're all full of weird bullshit. We don't need em and I'm honestly sick of looking at em so I'll give em to you for real cheap. No promises they won't fuck you up."
+	item = /obj/item/storage/pill_bottle/floorpill/full
 
-	cost_min = 5
-	cost_max = 15
+	cost_min = 35
+	cost_max = 105
+	stock = INFINITY
+	availability_prob = 50
+
+/datum/blackmarket_item/consumable/unlabeled_medipen_pack
+	name = "Pack of Unlabeled Autoinjectors"
+	desc = "Uh, right. Got a bunch of these injector packets out of some drug runner we hit. No clue what they are but the boss says I gotta sell em anyway. I shot one up and it was fine so they're probably safe."
+	item = /obj/item/storage/medpack/gambling
+	cost_min = 40
+	cost_max = 80
 	stock = INFINITY
 	availability_prob = 50
 
@@ -51,6 +60,15 @@
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 50
+
+/datum/blackmarket_item/consumable/anomaly_pack
+	name = "The Anomaly Pack"
+	desc = "Listen. Limited time offer. I've got some ultra-premium smokes for a buyer with taste. Stuff's from another dimension. Serious offers only."
+	item = /obj/item/storage/fancy/cigarettes/cigpack_anomaly
+
+	cost_min = 1000
+	cost_max = 2000
+	availability_prob = 20
 
 /datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
@@ -272,6 +290,36 @@
 	cost_max = 1200
 	stock_max = 8
 	availability_prob = 25
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/chrono
+	name = "Chrono Cocktail"
+	desc = "Man. Or Girl. Or They. I don't really know any more. We found these things from one of our usual dealers and he didn't even know what the hell they're supposed to do. Man knows all the drugs. Even the secret ones. No idea. So we got them for real cheap and now we're passin that saving onto you."
+	item = /obj/item/reagent_containers/hypospray/medipen/chrono
+	cost_min = 800
+	cost_max = 1600
+	stock_max = 8
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/elaborate_suicide
+	name = "Perfect Kiss"
+	desc = "I was standing around thinking about the weather and one of my buds came by. He was totally armed but who gives a fuck. We went out even though it was totally fine where I was. Turns out he got a whole shipment of these things. Flat out? They kill you. But they don't kill you for a few minutes. You just keep rewinding back to where you started."
+	item = /obj/item/reagent_containers/hypospray/medipen/chrono/fatal
+	cost_min = 1500
+	cost_max = 1500
+	stock_max = 1
+	availability_prob = 5
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/assault_pack
+	name = "Assault Pack"
+	desc = "We got a hold of these off some researchers headin back to the Perch.. Don't tell the Watcher bout it though. They won't believe you anyways. Especially without bodies. These injectors though? I haven't seen someone go through as much as someone on this did since Krititirawk dosed up on shoalmix at the club."
+	item = /obj/item/reagent_containers/hypospray/medipen/assault_pack
+	cost_min = 800
+	cost_max = 2400
+	stock_max = 1
+	availability_prob = 10
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/mammoth

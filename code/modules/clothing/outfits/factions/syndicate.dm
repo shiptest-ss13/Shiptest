@@ -154,7 +154,6 @@
 	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
 	suit = /obj/item/clothing/suit/armor/vest
-	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
 
 /datum/outfit/job/syndicate/bartender/post_equip(mob/living/carbon/human/H, visualsOnly)
@@ -467,6 +466,11 @@
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = null
 	gloves = null
+
+/datum/outfit/job/syndicate/head_of_personnel/ngr/stripped
+	name = "Syndicate - Ensign - Stripped (NGR)"
+	suit = null
+	head = null
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
 	name = "Syndicate - Academic Staff (SUNS)"

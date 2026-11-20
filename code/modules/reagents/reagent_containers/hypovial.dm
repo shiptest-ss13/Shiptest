@@ -21,10 +21,11 @@
 		"black hypovial" = "hypovial-t",
 		"pink hypovial" = "hypovial-pink"
 	)
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME
 	can_have_cap = FALSE
 	cap_icon_state = null
 	cap_on = FALSE
+	custom_materials = list(/datum/material/glass = 500, /datum/material/plastic = 200)
 
 /obj/item/reagent_containers/glass/bottle/vial/Initialize()
 	. = ..()
@@ -66,7 +67,7 @@
 	name = "small hypovial"
 	icon_state = "hypovial-small"
 	volume = 30
-	//Shouldn't be possible to get this without adminbuse
+	custom_materials = list(/datum/material/glass = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/small
 	name = "hypovial"
@@ -95,7 +96,7 @@
 		"large purple hypovial" = "hypoviallarge-p",
 		"large black hypovial" = "hypoviallarge-t"
 	)
-	unique_reskin_changes_name = TRUE
+	custom_materials = list(/datum/material/silver = 200, /datum/material/glass = 1000)
 
 //TODO: When you resprite this, make this code... less copy and pasted
 /obj/item/reagent_containers/glass/bottle/vial/large/update_appearance()

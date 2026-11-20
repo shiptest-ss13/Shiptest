@@ -68,6 +68,16 @@
 	stock = 4
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/swiss_cheese
+	name = "\"Swiss Cheese\" 4.73 Caseless Magazine"
+	desc = "A 45 round magazine for the \"Swiss Cheese\" Assault Rifle."
+	item = /obj/item/ammo_box/magazine/swiss
+
+	cost_min = 300
+	cost_max = 500
+	stock = 4
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/cm23_mag
 	name = "CM-23 Magazines"
 	desc = "10 round 10mm magazines for use in the CM-23 pistol."
@@ -99,6 +109,28 @@
 	cost_max = 500
 	stock_min = 2
 	stock_max = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cs_mini
+	name = "Cybersun Micro Cell"
+	desc = "A micro plasma cell for use in the Lensman-5"
+	item = /obj/item/stock_parts/cell/gun/cybersun/mini
+
+	cost_min = 200
+	cost_max = 500
+	stock_min = 2
+	stock_max = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cs_cell
+	name = "Cybersun Plasma Cell"
+	desc = "A plasma cell for usage in the opportunist revolver."
+	item = /obj/item/stock_parts/cell/gun/cybersun
+
+	cost_min = 400
+	cost_max = 800
+	stock_min = 2
+	stock_max = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/model_h_mag
@@ -133,9 +165,9 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/carbine_mag
-	name = "SKM-24v Magazine"
-	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
-	item = /obj/item/ammo_box/magazine/skm_46_30
+	name = "FA2-v Magazine"
+	desc = "A 30 round magazine of 4.6x30mm for the FA2-v. A hermit classic."
+	item = /obj/item/ammo_box/magazine/fa2_46_30
 
 	cost_min = 200
 	cost_max = 500
@@ -143,22 +175,22 @@
 	stock_max = 5
 	availability_prob = 40
 
-/datum/blackmarket_item/ammo/skm_extended
-	name = "Extended SKM Magazine"
-	desc = "An extended 40 round 7.62x40mm CLIP magazine for the SKM family of assault rifles. Extra curves mean extra ammo."
-	item = /obj/item/ammo_box/magazine/skm_762_40/extended
+/datum/blackmarket_item/ammo/fa2_extended
+	name = "Extended FA2 Magazine"
+	desc = "An extended 40 round 7.62x40mm CLIP magazine for the FA2 family of assault rifles. Extra curves mean extra ammo."
+	item = /obj/item/ammo_box/magazine/fa2_762_40/extended
 
 	cost_min = 900
 	cost_max = 2500
 	stock_max = 4
 	availability_prob = 40
 
-/datum/blackmarket_item/ammo/skm_drum
-	name = "SKM Drum Magazine"
+/datum/blackmarket_item/ammo/fa2_drum
+	name = "FA2 Drum Magazine"
 	desc = "Do you have too much ammo on your hands? Do you have someone you really hate? \
 	Do you want them to be absolutely suppressed for the next 15 seconds? \
-	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
-	item = /obj/item/ammo_box/magazine/skm_762_40/drum
+	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (FA2 not included.)"
+	item = /obj/item/ammo_box/magazine/fa2_762_40/drum
 
 	cost_min = 1500
 	cost_max = 3500
@@ -183,6 +215,17 @@
 
 	cost_min = 800
 	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/sharplite_superheavy_cell
+	name = "Sharplite Plus Cell"
+	desc = "A sharplite 'super' heavy cell. It's like a plus cell for the biggest of the sharplites."
+	item = /obj/item/stock_parts/cell/gun/sharplite/heavy/plus
+
+	cost_min = 1200
+	cost_max = 2000
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 40
@@ -221,11 +264,22 @@
 
 /datum/blackmarket_item/ammo/advanced_weapon_cell
 	name = "Upgraded Eoehoma Power Cells"
-	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
+	desc = "These upgraded weapon powercells come with (almost) twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
 	cost_min = 800
 	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 25
+
+/datum/blackmarket_item/ammo/advanced_weapon_cell
+	name = "Upgraded Clover Heavy Power Cells"
+	desc = "Clover Photonic's secret, limited-run big ass heavy power cells. They only make 'em for CLIP - good thing they lost a whole shipment of them."
+	item = /obj/item/stock_parts/cell/gun/upgraded
+
+	cost_min = 2000
+	cost_max = 2800
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 25
@@ -254,7 +308,7 @@
 
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
-	desc = "A 12 round 9mm magazine for the Mauler machine pistol."
+	desc = "A 18 round 9mm magazine for the Mauler machine pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 
 	cost_min = 150
@@ -262,6 +316,17 @@
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 0
+
+/datum/blackmarket_item/ammo/heater_mag
+	name = "Heater Casket Magazine"
+	desc = "50 rounds for when you really gotta stroke that flame."
+	item = /obj/item/ammo_box/magazine/heater/extended
+
+	cost_min = 900
+	cost_max = 1500
+	stock_min = 1
+	stock_max = 3
+	availability_prob = 20
 
 /datum/blackmarket_item/ammo/spitter_mag
 	name = "Spitter Magazine"
@@ -399,3 +464,24 @@
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 0
+
+
+/datum/blackmarket_item/ammo/a4gflashbang
+	name = "4-Gauge Flashbang Shells"
+	desc = "We founda box of these bad boys when we raided a PD. Look like bigger shells than twelve gauge. Bet they're just as potent as real flashbangs too."
+	item = /obj/item/storage/box/ammo/a4g_flashbang
+	cost_min = 1000
+	cost_max = 1500
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/a4gteargas
+	name = "4-Gauge Teargas Shells"
+	desc = "We staged a prison breakout. Managed to raid the armoury while we were at it. Found these bad boys, don't got a use for 'em."
+	item = /obj/item/storage/box/ammo/a4g_gas
+	cost_min = 1000
+	cost_max = 1500
+	stock_min = 1
+	stock_max = 3
+	availability_prob = 30

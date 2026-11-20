@@ -169,7 +169,7 @@
 		var/brutedamage = round(limb.brute_dam/limb_max_damage*100)
 		var/burndamage = round(limb.burn_dam/limb_max_damage*100)
 		switch(brutedamage)
-			if(20 to 35)
+			if(10 to 35)
 				status = limb.light_brute_msg
 			if(36 to 65)
 				status = limb.medium_brute_msg
@@ -179,7 +179,7 @@
 		if(burndamage >= 20 && status)
 			status += "and "
 		switch(burndamage)
-			if(20 to 35)
+			if(10 to 35)
 				status += limb.light_burn_msg
 			if(36 to 65)
 				status += limb.medium_burn_msg
@@ -204,10 +204,10 @@
 					msg += "\t<span class='warning'><b>[t_His] [limb.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!!</b></span>"
 		if(limb.current_gauze)
 			var/datum/bodypart_aid/current_gauze = limb.current_gauze
-			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
+			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_gauze.desc_prefix] with <a href='byond://?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
 		if(limb.current_splint)
 			var/datum/bodypart_aid/current_splint = limb.current_splint
-			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
+			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_splint.desc_prefix] with <a href='byond://?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
 
 	if(!any_bodypart_damage)
 		msg += "\t<span class='smallnotice'><i>[t_He] [t_Has] no significantly damaged bodyparts.</i></span>"

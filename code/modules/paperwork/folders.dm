@@ -17,6 +17,7 @@
 		/obj/item/tape,
 		/obj/item/spacecash/bundle,
 		/obj/item/holochip,
+		/obj/item/scratch_ticket,
 	))
 
 /obj/item/folder/Initialize()

@@ -2,6 +2,7 @@
 	name = "labcoat"
 	desc = "A suit that protects against minor chemical spills."
 	icon_state = "labcoat"
+	base_icon_state = "labcoat"
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS|GROIN
@@ -12,6 +13,7 @@
 /obj/item/clothing/suit/toggle/labcoat/cmo
 	name = "chief medical officer's labcoat"
 	desc = "Bluer than the standard model."
+	base_icon_state = "labcoat_cmo"
 	icon_state = "labcoat_cmo"
 	item_state = "labcoat_cmo"
 
@@ -19,42 +21,49 @@
 	name = "paramedic's jacket"
 	desc = "A dark blue jacket for paramedics with reflective stripes."
 	icon_state = "labcoat_paramedic"
+	base_icon_state = "labcoat_paramedic"
 	item_state = "labcoat_paramedic"
 
 /obj/item/clothing/suit/toggle/labcoat/mad
 	name = "\proper The Mad's labcoat"
 	desc = "It makes you look capable of konking someone on the noggin and shooting them into space."
-	icon_state = "labgreen"
+	base_icon_state = "labgreen"
 	item_state = "labgreen"
 
 /obj/item/clothing/suit/toggle/labcoat/genetics
 	name = "geneticist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a blue stripe on the shoulder."
+	base_icon_state = "labcoat_gen"
 	icon_state = "labcoat_gen"
 
 /obj/item/clothing/suit/toggle/labcoat/chemist
 	name = "chemist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
+	base_icon_state = "labcoat_chem"
 	icon_state = "labcoat_chem"
 
 /obj/item/clothing/suit/toggle/labcoat/chemist/side
 	name = "pharmacologist labcoat"
 	desc = "A lab coat that buttons on the side, which provides some protection from chemical spills. It in chemistry colors."
+	base_icon_state = "labcoat_side_chem"
 	icon_state = "labcoat_side_chem"
 
 /obj/item/clothing/suit/toggle/labcoat/virologist
 	name = "virologist labcoat"
 	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
+	base_icon_state = "labcoat_vir"
 	icon_state = "labcoat_vir"
 
 /obj/item/clothing/suit/toggle/labcoat/science
 	name = "scientist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
+	base_icon_state = "labcoat_tox"
 	icon_state = "labcoat_tox"
 
 /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	name = "security medic's labcoat"
 	desc = "A lightly armoured suit that protects against minor chemical spills and rogue patients. Has a dark red stripe on the shoulder."
+	base_icon_state = "labcoat_brig"
 	icon_state = "labcoat_brig"
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 50, acid = 50)
 
@@ -66,6 +75,7 @@ You're pretty sure this is just a raincoat.
 <i>Wearing a raincoat inside is like wearing sunglasses at night. A good chemist does both.</i>
 "}
 	icon_state = "raincoat"
+	base_icon_state = "raincoat"
 	item_state = "raincoat"
 
 /obj/item/clothing/suit/longcoat

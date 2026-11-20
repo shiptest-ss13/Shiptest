@@ -15,10 +15,14 @@
 	var/projectile_type = null
 	/// Caliber string, used to determine if the casing can be loaded into specific guns or magazines.
 	var/caliber = null
+	/// Flags if it should be hidden in autowiki
+	var/autowiki_hidden = FALSE
 	/// Used for pacifism checks. Set to FALSE if the bullet is non-lethal and pacifists should be able to fire.
 	var/harmful = TRUE
 	/// String, used to determine the appearance of the bullet on the casing sprite if the casing is filled.
 	var/bullet_skin
+	// can the ammo cook off
+	var/can_cookoff = TRUE
 
 	/// The sound played when this ammo is fired by an energy gun.
 	var/fire_sound = null
@@ -51,6 +55,9 @@
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
 	///Maximum stack size of ammunition
 	var/stack_size = 15
+
+	///If the caliber is caseless or not
+	var/caseless = FALSE
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
@@ -189,15 +196,17 @@
 	bounce_away(FALSE, NONE)
 	. = ..()
 
-/obj/item/ammo_casing/proc/on_eject(atom/shooter)
-	forceMove(drop_location()) //Eject casing onto ground.
+/obj/item/ammo_casing/proc/on_eject(atom/shooter, was_shot = TRUE)
+	if(caseless && was_shot) //early return for caseless rounds if we shot them
+		return
 	if(QDELETED(src))
 		return
+	forceMove(drop_location()) //Eject casing onto ground.
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(-4, 4)
 	pixel_z = 8 //bounce time
 	var/angle_of_movement = !isnull(shooter) ? (rand(-3000, 3000) / 100) + dir2angle(turn(shooter.dir, 180)) : rand(-3000, 3000) / 100
-	AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(400, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = bounce_sfx_override)
+	eject_bounce(angle_of_movement, rand(400, 450) / 100, rand(400, 450) / 100, rand(20, 24) / 100, bounce_sfx_override)
 
 /obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3)
 	if(!heavy_metal)

@@ -22,6 +22,10 @@
 	if(user)
 		to_chat(user, span_warning("There doesn't seem to be anywhere to put [src]..."))
 
+/obj/item/clothing/accessory/setup_pocket_storage()
+	// our storage moves onto the uniform we're attached to, so it can't go through a pocket holder
+	LoadComponent(pocket_storage_component_path)
+
 /obj/item/clothing/accessory/proc/attach(obj/item/clothing/under/U, user)
 	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
 	if(storage)
@@ -428,7 +432,7 @@
 
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/gun/ballistic/revolver/flint(src)
 	new /obj/item/ammo_box/c38(src)
 	new /obj/item/ammo_box/c38(src)
 
@@ -472,8 +476,8 @@
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
 	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m44(src)
+	new /obj/item/ammo_box/magazine/m44(src)
 
 
 /obj/item/clothing/accessory/holster/cybersun/Initialize()

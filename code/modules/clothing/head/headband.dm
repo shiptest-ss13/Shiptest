@@ -6,6 +6,7 @@
 	icon_state = "headbandwhite"
 	item_state = "headbandwhite"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	w_class = WEIGHT_CLASS_SMALL
 	unique_reskin = list(
 		"white headband" = "headbandwhite",
 		"grey headband" = "headbandgrey",
@@ -24,7 +25,7 @@
 		"brown headband" = "headbandbrown",
 		"light brown headband" = "headbandlightbrown",
 	)
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME
 
 /obj/item/clothing/head/headband/white
 	name = "white headband"

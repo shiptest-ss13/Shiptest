@@ -93,7 +93,7 @@
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
 
 	spread = 8
-	spread_unwielded = 20
+	spread_unwielded = 8
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
@@ -206,8 +206,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
-
-	spread = 3
+	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
+	spread = 4
 	spread_unwielded = 7
 
 	valid_attachments = CLIP_ATTACHMENTS
@@ -234,6 +234,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
@@ -393,7 +394,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
-	name = "\improper SsG-04"
+	name = "\improper KW-4 Vizsla"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -411,6 +412,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	manufacturer = MANUFACTURER_IMPORT
 
 	icon_state = "f4_indie"
 	item_state = "f4_indie"
@@ -501,6 +503,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	fire_sound = 'sound/weapons/gun/rifle/cm82.ogg'
 	icon_state = "cm82"
 	item_state = "cm82"
+	manufacturer = MANUFACTURER_MINUTEMAN
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -541,8 +544,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/assault/skm/cm24
-	name = "\improper CM-24"
+/obj/item/gun/ballistic/automatic/assault/fa2/clip
+	name = "\improper FA2m"
 	desc = "An obsolete and very rugged assault rifle with a heavy projectile and slow action for its class. Once CLIP's standard assault rifle produced in phenomenal numbers for the First Frontiersman War, it now serves as an acceptable, if rare, battle rifle. Chambered in 7.62mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -551,14 +554,18 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 	unique_reskin = null
 
-	icon_state = "cm24"
-	item_state = "cm24"
-	manufacturer = MANUFACTURER_NONE
+	icon_state = "fa2m"
+	item_state = "fa2m"
+	manufacturer = MANUFACTURER_MINUTEMAN //only until we init so that this goes to lanchester city firearms plant in autowiki
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
+NO_MAG_GUN_HELPER(automatic/assault/fa2/clip)
+
+/obj/item/gun/ballistic/automatic/assault/fa2/clip/Initialize(mapload, spawn_empty)
+	. = ..()
+	manufacturer = MANUFACTURER_NONE // back to the status quo
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
@@ -584,7 +591,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 
-	fire_delay = 0.1 SECONDS
+	fire_delay = 0.13 SECONDS
 
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -600,10 +607,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	spread_unwielded = 35
 
 	recoil = 2 //identical to other LMGS
-	recoil_unwielded = 7 //same as skm
+	recoil_unwielded = 7 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 
@@ -755,9 +762,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
-
+	fire_delay = 0.3 SECONDS
 	manufacturer = MANUFACTURER_MINUTEMAN
-
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_FULLAUTO = "auto")
 	weapon_weight = WEAPON_MEDIUM
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 	allowed_ammo_types = list(
@@ -807,6 +815,5 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
-
-

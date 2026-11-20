@@ -46,6 +46,8 @@
 
 /obj/machinery/emergency_panel/AltClick(mob/user)
 	. = ..()
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(!hatch_open)
 		to_chat(user, span_notice("You open the hatch of the emergency panel."))
 		playsound(src, 'sound/effects/bin_open.ogg', 50, FALSE)

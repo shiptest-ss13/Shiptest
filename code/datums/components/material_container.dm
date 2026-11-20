@@ -80,7 +80,7 @@
 	if(!has_space(material_amount))
 		to_chat(user, span_warning("[parent] is full. Please remove materials from [parent] in order to insert more."))
 		return
-	if(I.contents.len && !istype(I, /obj/item/stack) && !istype(I, /obj/item/ammo_box/magazine/ammo_stack))
+	if(I.contents.len && !istype(I, /obj/item/stack) && !istype(I, /obj/item/ammo_box/magazine/ammo_stack) && !istype(I, /obj/item/ammo_box/magazine/cs_gauss))
 		to_chat(user, span_warning("[I] has items inside of it. Please remove them before inserting it."))
 		return
 	user_insert(I, user)

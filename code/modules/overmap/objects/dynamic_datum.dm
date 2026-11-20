@@ -286,7 +286,9 @@
 	loading = TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
+	start_level_generation_grace() // so mobs don't take damage in case they need to wait for atmos to settle
 	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
+	end_level_generation_grace()
 	if(!length(dynamic_encounter_values))
 		return FALSE
 
@@ -526,15 +528,6 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored
 	area_flags = VALID_TERRITORY
 
-/area/overmap_encounter/planetoid/reebe
-	name = "\improper Yellow Space"
-	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
-	ambience_index = AMBIENCE_REEBE
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
-
 /area/overmap_encounter/planetoid/desert
 	name = "\improper Desert Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
@@ -608,7 +601,6 @@
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambience_index = AMBIENCE_REEBE
 	has_gravity = GAS_GIANT_GRAVITY
 	light_range = 2
 	light_power = 0.6

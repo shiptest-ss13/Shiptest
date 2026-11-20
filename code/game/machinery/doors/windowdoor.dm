@@ -129,8 +129,16 @@
 		return 1
 
 //used in the AStar algorithm to determinate if the turf the door is on is passable
-/obj/machinery/door/window/CanAStarPass(obj/item/card/id/ID, to_dir)
-	return !density || (dir != to_dir) || (check_access(ID) && hasPower())
+/obj/machinery/door/window/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!density || dir != to_dir)
+		return TRUE
+	if(hasPower())
+		return check_access(ID)
+	return ai_opens_for(requester)
+
+// forcing it open unpowered
+/obj/machinery/door/window/ai_can_open(mob/living/opener)
+	return !hasPower() && !welded
 
 /obj/machinery/door/window/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER

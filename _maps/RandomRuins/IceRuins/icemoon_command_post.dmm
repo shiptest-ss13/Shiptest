@@ -50,7 +50,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/kitchen/second)
 "aw" = (
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/command_post)
 "aZ" = (
@@ -150,7 +150,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "bX" = (
 /obj/machinery/light/directional/north,
@@ -658,7 +658,7 @@
 	dir = 9;
 	layer = 2.041
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
+/mob/living/basic/human/ramzi/melee/machete,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/kitchen)
 "gZ" = (
@@ -685,7 +685,7 @@
 /obj/effect/turf_decal/road/line{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/ruin/icemoon/command_post)
 "hl" = (
 /obj/effect/turf_decal/borderfloor{
@@ -762,7 +762,7 @@
 /area/ruin/icemoon/command_post/eva)
 "hz" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/concrete/slab_1/icemoon/lit,
+/turf/open/floor/concrete/slab_1/iceplanet/lit,
 /area/ruin/icemoon/command_post)
 "hN" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
@@ -958,7 +958,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/crew_quarters)
@@ -993,7 +993,7 @@
 	dir = 1;
 	name = "overhead handrail"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder,
+/mob/living/basic/human/ramzi/ranged/smg/sidewinder,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/eva)
 "jR" = (
@@ -1056,9 +1056,9 @@
 /obj/structure/railing/thin{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry,
+/mob/living/basic/human/ramzi/ranged/space/sniper/sentry,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "kp" = (
 /turf/closed/mineral/random/snow,
@@ -1174,7 +1174,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/officer,
+/mob/living/basic/human/ramzi/ranged/officer,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/command_post/mission_control)
 "lT" = (
@@ -1545,8 +1545,8 @@
 /obj/effect/turf_decal/road/line{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/pavement/icemoon,
+/mob/living/basic/viscerator,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/ruin/icemoon/command_post)
 "oC" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -1569,13 +1569,13 @@
 /obj/structure/railing/thin{
 	dir = 10
 	},
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "oP" = (
 /obj/effect/turf_decal/road/line{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/ruin/icemoon/command_post)
 "oQ" = (
 /obj/machinery/power/floodlight{
@@ -1774,11 +1774,11 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/icemoon/command_post/dorms)
 "qg" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/mob/living/basic/human/ramzi/ranged/smg,
 /turf/open/floor/concrete/tiles,
 /area/ruin/icemoon/command_post/mission_control)
 "qr" = (
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "qs" = (
@@ -1833,7 +1833,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 2
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/hydra,
+/mob/living/basic/human/ramzi/ranged/space/hydra,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -2098,7 +2098,7 @@
 /area/ruin/icemoon/command_post/eva)
 "ul" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "ur" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -2172,7 +2172,7 @@
 /area/ruin/icemoon/command_post/armory)
 "uB" = (
 /obj/machinery/light/directional/east,
-/turf/open/floor/concrete/slab_1/icemoon/lit,
+/turf/open/floor/concrete/slab_1/iceplanet/lit,
 /area/ruin/icemoon/command_post)
 "uK" = (
 /obj/effect/spawner/bunk_bed,
@@ -2679,7 +2679,7 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "xX" = (
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -2920,7 +2920,7 @@
 /obj/structure/railing/thin/corner{
 	dir = 8
 	},
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "Ao" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2956,7 +2956,7 @@
 "AZ" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/mob/living/basic/human/ramzi/ranged/cottonmouth,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -3037,7 +3037,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/engi)
 "BT" = (
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /obj/structure/platform/corner{
 	dir = 8
 	},
@@ -3243,7 +3243,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/icemoon/command_post/officer)
 "En" = (
-/obj/structure/closet/wall/med/directional/north,
+/obj/structure/closet/wall/white/med/directional/north,
 /obj/item/bonesetter{
 	pixel_x = -3;
 	pixel_y = 7
@@ -3382,7 +3382,7 @@
 /area/ruin/icemoon/command_post/kitchen/second)
 "EI" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/mob/living/basic/human/ramzi/ranged/shotgun,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/kitchen/second)
 "ES" = (
@@ -3552,19 +3552,19 @@
 /area/ruin/icemoon/command_post/crew_quarters)
 "Hg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr/sentry,
+/mob/living/basic/human/ramzi/ranged/space/stormtrooper/hydra/dmr/sentry,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
 "Ho" = (
 /obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/ruin/icemoon/command_post)
 "Hx" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge{
+/mob/living/basic/human/ramzi/melee/space/sledge{
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -3604,7 +3604,7 @@
 /area/ruin/icemoon/command_post)
 "Ii" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/mob/living/basic/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/concrete,
 /area/ruin/icemoon/command_post/engi)
 "Il" = (
@@ -3692,7 +3692,7 @@
 "Jn" = (
 /obj/structure/railing/thin/corner,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "Jr" = (
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -3925,7 +3925,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/eva)
 "LA" = (
-/turf/open/floor/concrete/slab_1/icemoon/lit,
+/turf/open/floor/concrete/slab_1/iceplanet/lit,
 /area/ruin/icemoon/command_post)
 "LD" = (
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -4506,7 +4506,7 @@
 /obj/effect/turf_decal/road/line{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/overmap_encounter/planetoid/ice/explored)
 "QY" = (
 /obj/effect/decal/cleanable/oil,
@@ -4563,7 +4563,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/command_post/mission_control)
 "RG" = (
-/turf/open/floor/concrete/slab_2/icemoon,
+/turf/open/floor/concrete/slab_2/iceplanet,
 /area/ruin/icemoon/command_post)
 "RI" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -4744,7 +4744,7 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/viscerator,
+/mob/living/basic/viscerator,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "Te" = (
@@ -4849,8 +4849,8 @@
 /area/ruin/icemoon/command_post)
 "Vf" = (
 /obj/effect/turf_decal/road,
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/pavement/icemoon,
+/mob/living/basic/viscerator,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/ruin/icemoon/command_post)
 "Vi" = (
 /obj/effect/decal/cleanable/oil/streak,
@@ -4861,8 +4861,8 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "Vr" = (
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/slab_1/icemoon/lit,
+/mob/living/basic/viscerator,
+/turf/open/floor/concrete/slab_1/iceplanet/lit,
 /area/ruin/icemoon/command_post)
 "Vs" = (
 /obj/structure/table/reinforced,
@@ -5071,7 +5071,7 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
 "Wt" = (
-/turf/open/floor/concrete/slab_1/icemoon/lit,
+/turf/open/floor/concrete/slab_1/iceplanet/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Wz" = (
 /obj/machinery/door/airlock/grunge{
@@ -5241,10 +5241,10 @@
 /area/ruin/icemoon/command_post/dorms)
 "Yb" = (
 /obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ye" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder{
+/mob/living/basic/human/ramzi/ranged/smg/sidewinder{
 	wander = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -5268,7 +5268,7 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/icemoon/command_post/kitchen/second)
 "Yy" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/mob/living/basic/human/ramzi/ranged/cottonmouth,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/command_post)
@@ -5404,7 +5404,7 @@
 /obj/effect/turf_decal/road/line{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/iceplanet,
 /area/overmap_encounter/planetoid/ice/explored)
 "Zp" = (
 /obj/effect/turf_decal/corner_steel_grid{

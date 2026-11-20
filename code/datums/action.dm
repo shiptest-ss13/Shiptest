@@ -277,8 +277,21 @@
 /datum/action/item_action/activate_injector
 	name = "Activate Injector"
 
+/datum/action/item_action/activate_suit_injector
+	name = "Activate Injector System"
+	icon_icon = 'icons/obj/syringe.dmi'
+	button_icon_state = "syringe_15"
+
+/datum/action/item_action/activate_suit_injector/Trigger()
+	if(istype(target, /obj/item/clothing/suit/space/hardsuit/esh))
+		var/obj/item/clothing/suit/space/hardsuit/esh/esh_hardsuit = target
+		esh_hardsuit.check_inject(owner)
+
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"
+
+/datum/action/item_action/toggle_helmet_nightvision
+	name = "Toggle Helmet Nightvision"
 
 /datum/action/item_action/toggle_welding_screen
 	name = "Toggle Welding Screen"
@@ -306,17 +319,6 @@
 	if(..())
 		UpdateButtonIcon()
 
-/datum/action/item_action/toggle_unfriendly_fire/UpdateButtonIcon(status_only = FALSE, force)
-	if(istype(target, /obj/item/hierophant_club))
-		var/obj/item/hierophant_club/H = target
-		if(H.friendly_fire_check)
-			button_icon_state = "vortex_ff_off"
-			name = "Toggle Friendly Fire \[OFF\]"
-		else
-			button_icon_state = "vortex_ff_on"
-			name = "Toggle Friendly Fire \[ON\]"
-	..()
-
 /*WS revert
 /// Toggle the action icon for the space suit thermal regulator
 /datum/action/item_action/toggle_spacesuit/proc/toggle(obj/item/clothing/suit/space/suit)
@@ -325,24 +327,6 @@
 	button_icon_state = "thermal_[suit.thermal_on ? "on" : "off"]"
 	UpdateButtonIcon()
 */
-
-/datum/action/item_action/vortex_recall
-	name = "Vortex Recall"
-	desc = "Recall yourself, and anyone nearby, to an attuned hierophant beacon at any time.<br>If the beacon is still attached, will detach it."
-	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "vortex_recall"
-
-/datum/action/item_action/vortex_recall/IsAvailable()
-	var/turf/current_location = get_turf(target)
-	var/area/current_area = current_location.loc
-	if(current_area.area_flags & NOTELEPORT)
-		to_chat(target, "[src] fizzles uselessly.")
-		return
-	if(istype(target, /obj/item/hierophant_club))
-		var/obj/item/hierophant_club/H = target
-		if(H.teleporting)
-			return 0
-	return ..()
 
 /datum/action/item_action/berserk_mode
 	name = "Berserk"
@@ -366,6 +350,9 @@
 
 /datum/action/item_action/toggle_helmet_flashlight
 	name = "Toggle Helmet Flashlight"
+
+/datum/action/item_action/toggle_helmet_eyewear
+	name = "Toggle Helmet Eyewear"
 
 /datum/action/item_action/toggle_helmet_mode
 	name = "Toggle Helmet Mode"

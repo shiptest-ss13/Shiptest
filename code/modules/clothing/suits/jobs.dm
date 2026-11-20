@@ -34,6 +34,7 @@
 	name = "chef's apron"
 	desc = "An apron-jacket used by a high class chef."
 	icon_state = "chef"
+	base_icon_state = "chef"
 	item_state = "chef"
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -51,33 +52,6 @@
 	body_parts_covered = CHEST|GROIN
 	allowed = list(/obj/item/kitchen)
 
-//Detective
-/obj/item/clothing/suit/det_suit
-	name = "trenchcoat"
-	desc = "An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business."
-	icon_state = "detective"
-	item_state = "det_suit"
-	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
-
-/obj/item/clothing/suit/det_suit/Initialize()
-	. = ..()
-	allowed = GLOB.detective_vest_allowed
-
-/obj/item/clothing/suit/det_suit/grey
-	name = "noir trenchcoat"
-	desc = "A hard-boiled private investigator's grey trenchcoat."
-	icon_state = "greydet"
-	item_state = "greydet"
-
-/obj/item/clothing/suit/det_suit/noir
-	name = "noir suit coat"
-	desc = "A dapper private investigator's grey suit coat."
-	icon_state = "detsuit"
-	item_state = "detsuit"
 
 //Engineering
 /obj/item/clothing/suit/hazardvest
@@ -102,6 +76,7 @@
 	name = "high-visibility jacket"
 	desc = "A bright-yellow jacket with reflective stripes."
 	icon_state = "jacket_hazard"
+	base_icon_state = "jacket_hazard"
 	item_state = "jacket_hazard"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
@@ -116,18 +91,21 @@
 	name = "high-visibility jacket"
 	desc = "An orange jacket with reflective stripes."
 	icon_state = "jacket_hazardo"
+	base_icon_state = "jacket_hazardo"
 	item_state = "jacket_hazardo"
 
 /obj/item/clothing/suit/toggle/hazard/lime
 	name = "high-visibility jacket"
 	desc = "A highlighter-yellow jacket with reflective stripes."
 	icon_state = "jacket_hazardl"
+	base_icon_state = "jacket_hazardl"
 	item_state = "jacket_hazardl"
 
 /obj/item/clothing/suit/toggle/industrial
 	name = "industrial jacket"
 	desc = "A black bomber jacket with high-visibility markings."
 	icon_state = "highvis"
+	base_icon_state = "highvis"
 	item_state = "highvis"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
@@ -143,6 +121,7 @@
 	name = "blue suit jacket"
 	desc = "A snappy dress jacket."
 	icon_state = "suitjacket_blue"
+	base_icon_state = "suitjacket_blue"
 	item_state = "suitjacket_blue"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
@@ -153,6 +132,7 @@
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
 	desc = "A foppish dress jacket."
+	base_icon_state = "suitjacket_purp"
 	icon_state = "suitjacket_purp"
 	item_state = "suitjacket_purp"
 
@@ -170,55 +150,65 @@
 	name = "burgundy suit jacket"
 	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
 	icon_state = "suitjacket_burgundy"
+	base_icon_state = "suitjacket_burgundy"
 	item_state = "suitjacket_burgundy"
 
 /obj/item/clothing/suit/lawyer/navy
 	name = "navy suit jacket"
 	desc = "An orderly dress jacket."
 	icon_state = "suitjacket_navy"
+	base_icon_state = "suitjacket_navy"
 	item_state = "suitjacket_navy"
 
 /obj/item/clothing/suit/lawyer/charcoal
 	name = "charcoal suit jacket"
 	desc = "An enterprising dress jacket."
 	icon_state = "suitjacket_charcoal"
+	base_icon_state = "suitjacket_charcoal"
 	item_state = "suitjacket_charcoal"
 
 /obj/item/clothing/suit/toggle/lawyer/cmo
 	name = "light blue suit jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_cmo"
+	base_icon_state = "suitjacket_cmo"
 
 /obj/item/clothing/suit/toggle/lawyer/medical
 	name = "saturated blue suit jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_medical"
+	base_icon_state = "suitjacket_medical"
 
 /obj/item/clothing/suit/toggle/lawyer/science
 	name = "purple suit jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_science"
+	base_icon_state = "suitjacket_science"
 
 /obj/item/clothing/suit/toggle/lawyer/brown
 	name = "brown suit jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_brown"
+	base_icon_state = "suitjacket_brown"
 
 /obj/item/clothing/suit/toggle/lawyer/orange
 	name = "orange suit jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_orange"
+	base_icon_state = "suitjacket_orange"
 
 /obj/item/clothing/suit/toggle/lawyer/atmos
 	name = "light blue jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_light_blue"
+	base_icon_state = "suitjacket_light_blue"
 
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
 	desc = "The symbol of hard labor and dirty jobs."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "suspenders"
+	base_icon_state = "suspenders"
 	blood_overlay_type = "armor" //it's the less thing that I can put here
 	togglename = "straps"
 
@@ -228,11 +218,3 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
-
-/obj/item/clothing/suit/armor/witchhunter
-	name = "witchunter garb"
-	desc = "This worn outfit saw much use back in the day."
-	icon_state = "chaplain_witchhunter"
-	item_state = "witchhunter"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/storage/book/bible, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

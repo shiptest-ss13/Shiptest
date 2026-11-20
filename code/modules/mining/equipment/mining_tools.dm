@@ -12,13 +12,13 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	supports_variations = VOX_VARIATION
-	custom_materials = list(/datum/material/iron=2000) //one sheet, but where can you make them?
+	custom_materials = list(/datum/material/iron=1000)
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
-	demolition_mod = 1.15
+	demolition_mod = 1.25
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
@@ -162,7 +162,7 @@
 	throwforce = 4
 	item_state = "shovel"
 	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/datum/material/iron=50)
+	custom_materials = list(/datum/material/iron=1000)
 	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
 	sharpness = SHARP_EDGED
 

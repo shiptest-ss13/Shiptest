@@ -13,6 +13,8 @@
 	var/list/valid_parents = list()
 	///Unused.. but could hold extra callbacks I assume?
 	var/list/signals = list()
+	///Flags if it should be hidden in autowiki
+	var/autowiki_hidden = FALSE
 	///Component that handles most of the logic of attachments
 	var/datum/component/attachment/attachment_comp
 
@@ -42,6 +44,9 @@
 	var/wield_delay = 0
 	///Modifier applied to the parent
 	var/size_mod = 0
+
+	///Sound to play when attached
+	var/attach_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 
 /obj/item/attachment/Initialize()
 	. = ..()
@@ -94,7 +99,7 @@
 	if(istype(gun, /obj/item/gun/energy))
 		var/obj/item/gun/energy/egun = gun
 		gun_cell = egun.cell
-	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
+	playsound(src.loc, attach_sound, 75, 1)
 	return TRUE
 
 /obj/item/attachment/proc/remove_attachment(obj/item/gun/gun, mob/user)

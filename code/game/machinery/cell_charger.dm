@@ -6,11 +6,16 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_LOW
+	power_flags = POWER_ALLOW_WIRE | POWER_ALLOW_AREA
 	power_channel = AREA_USAGE_EQUIP
 	circuit = /obj/item/circuitboard/machine/cell_charger
 	pass_flags = PASSTABLE
 	var/obj/item/stock_parts/cell/charging = null
 	var/charge_rate = 250
+
+/obj/machinery/cell_charger/Initialize()
+	. = ..()
+	AddElement(/datum/element/nudge, -8, 8, -8, 8)
 
 /obj/machinery/cell_charger/update_overlays()
 	. = ..()

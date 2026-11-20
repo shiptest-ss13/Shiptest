@@ -192,14 +192,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/plantgene(src)
 
-/obj/item/storage/box/disks_nanite
-	name = "nanite program disks box"
-	illustration = "disks"
-
-/obj/item/storage/box/disks_nanite/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/disk/nanite_program(src)
-
 // Ordinary survival box
 /obj/item/storage/box/survival
 	var/mask_type = /obj/item/clothing/mask/breath
@@ -348,6 +340,25 @@
 /obj/item/storage/box/syringes/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/syringe(src)
+
+/obj/item/storage/box/vials
+	name = "box of hypospray vials"
+	desc = "A box full of hypospray vials."
+	illustration = "writing"
+
+/obj/item/storage/box/vials/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/glass/bottle/vial/small
+
+/obj/item/storage/box/vials_large
+	name = "box of large hypospray vials"
+	desc = "A box full of large hypospray vials."
+	illustration = "writing"
+
+/obj/item/storage/box/vials_large/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/glass/bottle/vial/large
+
 
 /obj/item/storage/box/syringes/variety
 	name = "syringe variety box"
@@ -596,17 +607,6 @@
 		/obj/item/implantcase/chem = 5,
 		/obj/item/implanter = 1,
 		/obj/item/implantpad = 1)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/exileimp
-	name = "boxed exile implant kit"
-	desc = "Box of exile implants. It has a picture of a clown being booted through the Gateway."
-	illustration = "implant"
-
-/obj/item/storage/box/exileimp/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/implantcase/exile = 5,
-		/obj/item/implanter = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/bodybags
@@ -915,10 +915,19 @@
 
 /obj/item/storage/box/flares
 	name = "box of flares"
-	illustration = "firecracker"
+	desc = "A box made to hold flares - and nothing else."
+	illustration = "flare"
+
+/obj/item/storage/box/flares/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
+	STR.max_combined_w_class = 24
+	STR.max_items = 8
+	STR.set_holdable(list(/obj/item/flashlight/flare))
 
 /obj/item/storage/box/flares/PopulateContents()
-	for(var/i in 1 to 7)
+	for(var/i in 1 to 8)
 		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/glowsticks
@@ -977,73 +986,6 @@
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/medipen(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/rubbershot
-	name = "box of rubber shots"
-	desc = "A box full of rubber shots, designed for riot shotguns."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "rubbershot_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/rubbershot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/rubbershot(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/lethalshot
-	name = "box of lethal shotgun shots"
-	desc = "A box full of lethal shots, designed for riot shotguns."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "lethalshot_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/lethalshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/buckshot(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/techshot
-	name = "box of unloaded shotgun tech shells"
-	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "techshot_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/techshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/techshell(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/beanbag
-	name = "box of beanbags"
-	desc = "A box full of beanbag shells."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "beanbag_box"
-	illustration = null
-	possible_illustrations = null
-
-/obj/item/storage/box/beanbag/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/ammo_casing/shotgun/beanbag(src)
-
-//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
-/obj/item/storage/box/slugshot
-	name = "box of 12-gauge slug shotgun shells"
-	desc = "a box full of slug shots, designed for riot shotguns"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "slugshot_box"
-
-	illustration = null
-	possible_illustrations = null
-
-
-/obj/item/storage/box/slugshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"
@@ -1739,4 +1681,31 @@
 		)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/disposable_gun_gacha
+	name = "disposable gun variety pack"
+	desc = "A box containing an assortment of disposable guns. A label reads: COLLECT THEM ALL! Bizarrely, there are no markings identifying the manufacturer."
+	icon_state = "gachabox"
+	custom_price = 300 // 4 for the price of 3!
 
+/obj/item/storage/box/disposable_gun_gacha/PopulateContents()
+	for(var/i in 1 to 4)
+		if(prob(0.25)) // ultra rare chocolate gun
+			new /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate(src)
+		else if(prob(2.5)) // rare pool
+			var/rare_goun = pick(list(
+				/obj/item/gun/ballistic/automatic/pistol/disposable/gold,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/pink,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/phenex,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/sharplite,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/inteq))
+			new rare_goun(src)
+		else
+			var/goun = pick(list(
+				/obj/item/gun/ballistic/automatic/pistol/disposable/red,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/purple,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/green,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/blue,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/beige,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/silver,
+				/obj/item/gun/ballistic/automatic/pistol/disposable/black))
+			new goun(src)

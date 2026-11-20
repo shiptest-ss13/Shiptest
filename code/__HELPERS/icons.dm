@@ -1359,6 +1359,12 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 		icon_states_cache[file][state] = FALSE
 		return FALSE
 
+/// Picks which file should supply an eye state, missing sprite states should resolve to nothing
+/proc/resolve_eye_icon(species_eye_path, state)
+	if(species_eye_path && icon_exists(species_eye_path, state))
+		return species_eye_path
+	return 'icons/mob/human_face.dmi'
+
 /// Cache of the width and height of icon files, to avoid repeating the same expensive operation
 
 

@@ -123,7 +123,6 @@
 		/obj/item/ammo_box,
 		/obj/item/gun/ballistic,
 		/obj/item/gun/energy,
-		/obj/item/melee/baton,
 	)
 
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq
@@ -163,6 +162,7 @@
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "flightinteq"
+	base_icon_state = "flightinteq"
 	unique_reskin = null
 
 /obj/item/clothing/suit/space/inteq
@@ -294,6 +294,7 @@
 	hardsuit_type = "rampart"
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	name = "elite rampart hardsuit"
@@ -307,7 +308,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION
-
 
 // pilot softsuit
 /obj/item/clothing/suit/space/inteq/pilot
@@ -323,6 +323,8 @@
 	resistance_flags = FIRE_PROOF
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	slowdown = 0.2
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/inteq/pilot
 	name = "inteq pilot helmet"
@@ -338,6 +340,8 @@
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS | FLASH_PROTECTION_WELDER
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 	up = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet)
@@ -373,9 +377,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.head_update(src, forced = 1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	update_item_action_buttons()
 
 // Headgear
 
@@ -542,12 +544,12 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
-/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/fa2/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40(src)
 
-/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/fa2_carabine/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/smgm10mm(src)

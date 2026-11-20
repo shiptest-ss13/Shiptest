@@ -255,3 +255,30 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_SANDPLANET_LIGHT
+
+#define SAND_TURF_HELPER(turf_type)								\
+	/turf/open/floor/##turf_type/whitesands {						\
+		baseturfs = /turf/open/floor/plating/asteroid/whitesands;	\
+		initial_gas_mix = SANDPLANET_DEFAULT_ATMOS;				\
+		planetary_atmos = TRUE;										\
+		light_color = COLOR_SANDPLANET_LIGHT;						\
+	}																\
+	/turf/open/floor/##turf_type/whitesands/lit {					\
+		light_power = 0.6;											\
+		light_range = 2;											\
+		baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit;	\
+	}																\
+	/turf/open/floor/##turf_type/whitesands/interior {			\
+		baseturfs = /turf/open/floor/plating/asteroid/whitesands;	\
+		planetary_atmos = FALSE;									\
+	}
+
+/// concrete
+SAND_TURF_HELPER(concrete)
+SAND_TURF_HELPER(concrete/slab_1)
+SAND_TURF_HELPER(concrete/slab_2)
+SAND_TURF_HELPER(concrete/slab_3)
+SAND_TURF_HELPER(concrete/slab_4)
+SAND_TURF_HELPER(concrete/tiles)
+SAND_TURF_HELPER(concrete/reinforced)
+SAND_TURF_HELPER(concrete/pavement)

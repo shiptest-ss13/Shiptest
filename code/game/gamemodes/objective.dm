@@ -173,7 +173,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 
 /datum/objective/assassinate/check_completion()
-	return completed || (!considered_alive(target) || considered_afk(target) || considered_exiled(target))
+	return completed || (!considered_alive(target) || considered_afk(target))
 
 /datum/objective/assassinate/update_explanation_text()
 	..()
@@ -204,7 +204,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 
 /datum/objective/mutiny/check_completion()
-	if(!target || !considered_alive(target) || considered_afk(target) || considered_exiled(target))
+	if(!target || !considered_alive(target) || considered_afk(target))
 		return TRUE
 	return isspaceturf(get_turf(target.current))
 

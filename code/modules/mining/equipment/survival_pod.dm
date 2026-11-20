@@ -168,6 +168,7 @@
 	anchored = TRUE
 	density = TRUE
 	pixel_y = -32
+	gps_active = TRUE
 
 /obj/item/gps/computer/wrench_act(mob/living/user, obj/item/I)
 	..()
@@ -312,9 +313,8 @@
 						/obj/item/shield/changeling,
 						/obj/item/lava_staff,
 						/obj/item/melee/sword/energy_katana,
-						/obj/item/hierophant_club,
 						/obj/item/gun/energy/minigun,
-						/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended,
+						/obj/item/gun/ballistic/automatic/hmg/python,
 						/obj/item/stack/telecrystal/twenty,
 						/obj/item/nuke_core,
 						/obj/item/phylactery)

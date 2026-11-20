@@ -46,7 +46,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("leaves" = 1, "potato" = 1, "meat" = 1,)
-	foodtypes = VEGETABLES | MEAT | FRIED | FRUIT
+	foodtypes = VEGETABLES | MEAT | HEAVILY_FRIED | FRUIT
 
 /obj/item/food/salad/fruit
 	name = "fruit salad"
@@ -90,6 +90,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("rice" = 1)
 	foodtypes = GRAIN | RAW
+	microwaved_type = /obj/item/food/boiled_rice
 
 /obj/item/food/uncooked_rice/make_bakeable()
 	AddComponent(/datum/component/bakeable, /obj/item/food/boiled_rice, rand(15 SECONDS, 20 SECONDS), TRUE, TRUE)
@@ -140,7 +141,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("rice" = 1, "egg" = 1)
-	foodtypes = GRAIN | MEAT
+	foodtypes = GRAIN | EGG
 
 /obj/item/reagent_containers/glass/bowl
 	name = "bowl"

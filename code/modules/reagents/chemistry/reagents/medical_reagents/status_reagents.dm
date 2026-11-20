@@ -2,9 +2,9 @@
 //i.e. jitter, drunk, dizzy
 
 //I consider disease a status
-/datum/reagent/medicine/spaceacillin
-	name = "Spaceacillin"
-	description = "Spaceacillin will prevent a patient from conventionally spreading any diseases they are currently infected with."
+/datum/reagent/medicine/antibiotic
+	name = "Broad-spectrum antibiotics"
+	description = "Broad-spectrum antibiotics will prevent a patient from conventionally spreading any diseases they are currently infected with."
 	color = "#E1F2E6"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 

@@ -6,6 +6,7 @@
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 	icon_state = "tcoat"
+	base_icon_state = "tcoat"
 	item_state = "tcoat"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
@@ -30,49 +31,31 @@
 		"purple track jacket" = "tcoatpurple",
 		"pink track jacket" = "tcoatpink"
 	)
-	unique_reskin_changes_inhand = TRUE
-
-/obj/item/clothing/suit/toggle/track/Initialize()
-	. = ..()
-	base_icon_state = icon_state
-
-/obj/item/clothing/suit/toggle/track/suit_toggle()
-	set src in usr
-
-	if(!can_use(usr))
-		return 0
-
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[base_icon_state]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[base_icon_state]_t"
-		src.suittoggled = TRUE
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
 
 /obj/item/clothing/suit/toggle/track/white
+	icon_state = "tcoatwhite"
 	current_skin = "white track jacket"
 
 /obj/item/clothing/suit/toggle/track/black
+	icon_state = "tcoat"
 	current_skin = "black track jacket"
 
-/obj/item/clothing/suit/toggle/track/teal
-	current_skin = "teal track jacket"
-
 /obj/item/clothing/suit/toggle/track/red
+	icon_state = "tcoatred"
 	current_skin = "red track jacket"
 
+/obj/item/clothing/suit/toggle/track/teal
+	icon_state = "tcoatteal"
+	current_skin = "teal track jacket"
+
 /obj/item/clothing/suit/toggle/track/blue
+	icon_state = "tcoatblue"
 	current_skin = "blue track jacket"
 
 /obj/item/clothing/suit/toggle/track/purple
+	icon_state = "tcoatpurple"
 	current_skin = "purple track jacket"
 
 /obj/item/clothing/suit/toggle/track/pink
+	icon_state = "tcoatpink"
 	current_skin = "pink track jacket"
-
-

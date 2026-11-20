@@ -98,23 +98,41 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define SHIP_SMOOTHING (1<<8)
 /// If false, allows light bulbs and light tubes to randomly break upon late initialization
 #define NO_RANDOM_LIGHT_BREAKAGE (1<<9)
+/// Whether lights in this area have a randomised delay for turning on
+#define STAGGER_LIGHTS (1<<10)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
 	the atom/checkpass() proc uses them (tables will call movable atom checkpass(PASSTABLE) for example)
 */
 //flags for pass_flags
+/// Allows you to pass over tables.
 #define PASSTABLE (1<<0)
+/// Allows you to pass over glass(this generally includes anything see-through that's glass-adjacent, ie. windows, windoors, airlocks with glass, etc.)
 #define PASSGLASS (1<<1)
+/// Allows you to pass over grilles.
 #define PASSGRILLE (1<<2)
+
+/// Allows you to pass over mobs.
 #define PASSMOB (1<<4)
+/// Allows you to pass over closed turfs, ie. walls.
 #define PASSCLOSEDTURF (1<<5)
 /// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**
 #define LETPASSTHROW (1<<6)
+/// Allows you to pass through the bottom hatches on airlocks
 #define PASSDOORHATCH (1<<7)
+/// Allows you to pass platforms if you couldn't.
 #define PASSPLATFORM (1<<8)
+/// Allows you to pass over airlocks and mineral doors.
+#define PASSDOOR (1<<9)
+/// Allows you to pass over structures, ie. racks, tables(if you don't already have PASSTABLE), etc.
+#define PASSSTRUCTURE (1<<10)
+/// Allows you to pass through weak structures (crates, hedges, other objects that should be able to be shot through...)
+#define PASSWEAKSTRUCTURE (1<<11)
+/// Allows you to pass through machinery
+#define PASSMACHINE (1<<12)
 /// Do not intercept click attempts during Adjacent() checks. See [turf/proc/ClickCross]. **ONLY MEANINGFUL ON pass_flags_self!**
-#define LETPASSCLICKS (1<<9)
+#define LETPASSCLICKS (1<<13)
 
 //Movement Types
 #define GROUND (1<<0)
@@ -211,6 +229,10 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define NSCOMPONENT(d) (d&(NORTH|SOUTH))
 ///True if the dir is east/west, false otherwise
 #define EWCOMPONENT(d) (d&(EAST|WEST))
+///The corner a diagonal step from start to finish passes through going east/west first
+#define DIAGONAL_CORNER_X(start, finish) locate((finish).x, (start).y, (start).z)
+///The corner a diagonal step from start to finish passes through if it goes north/south first
+#define DIAGONAL_CORNER_Y(start, finish) locate((start).x, (finish).y, (start).z)
 ///Flips the dir for north/south directions
 #define NSDIRFLIP(d) (d^(NORTH|SOUTH))
 ///Flips the dir for east/west directions
@@ -220,3 +242,12 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 /// 33554431 (2^24 - 1) is the maximum value our bitflags can reach.
 #define MAX_BITFLAG_DIGITS 8
+
+
+//flags for unique reskin
+/// does the reskin change the object's base icon state
+#define UNIQUE_RESKIN_CHANGES_BASE_ICON (1<<0)
+/// does the reskin alter the object's inhand icon
+#define UNIQUE_RESKIN_CHANGES_INHAND (1<<1)
+/// if the reskin changes the object name to the new skin's name
+#define UNIQUE_RESKIN_CHANGES_NAME (1<<2)

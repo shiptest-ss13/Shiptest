@@ -8,6 +8,7 @@
 	base_icon_state = "foamdart"
 	custom_materials = list(/datum/material/iron = 11.25)
 	harmful = FALSE
+	can_cookoff = FALSE
 	var/modified = FALSE
 
 /obj/item/ammo_casing/caseless/foam_dart/update_icon_state()

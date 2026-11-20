@@ -254,7 +254,6 @@
 		"baseskill" = 'icons/UI_Icons/Achievements/baseskill.png',
 		"bbgum" = 'icons/UI_Icons/Achievements/Boss/bbgum.png',
 		"colossus" = 'icons/UI_Icons/Achievements/Boss/colossus.png',
-		"hierophant" = 'icons/UI_Icons/Achievements/Boss/hierophant.png',
 		"legion" = 'icons/UI_Icons/Achievements/Boss/legion.png',
 		"miner" = 'icons/UI_Icons/Achievements/Boss/miner.png',
 		"tendril" = 'icons/UI_Icons/Achievements/Boss/tendril.png',
@@ -478,6 +477,7 @@
 		if(sprites[id]) //no dupes
 			continue
 		Insert(id, fish_icon, fish_icon_state)
+	return ..()
 
 
 /datum/asset/simple/fishing_minigame
