@@ -4,14 +4,14 @@
 /turf/template_noop,
 /area/template_noop)
 "c" = (
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
 /obj/structure/elevator_platform/tile/tech,
 /obj/machinery/light/dim/directional/east,
 /obj/structure/railing/thin{
 	dir = 5;
 	layer = 2.7
+	},
+/obj/structure/crate_shelf{
+	capacity = 2
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -71,26 +71,26 @@
 /turf/template_noop,
 /area/template_noop)
 "B" = (
+/obj/structure/elevator_platform/tile/dark,
 /obj/machinery/elevator_floor_button{
 	pixel_y = 0;
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/structure/chair/bench/blue/directional/west,
-/obj/structure/elevator_platform/tile/dark,
 /obj/structure/railing/thin{
 	dir = 4
 	},
+/obj/structure/chair/bench/blue/directional/west,
 /turf/template_noop,
 /area/template_noop)
 "L" = (
-/obj/structure/chair/bench/blue/directional/west,
 /obj/structure/elevator_platform/tile/dark,
-/obj/machinery/status_display/elevator{
-	pixel_x = 32
-	},
 /obj/structure/railing/thin{
 	dir = 4
+	},
+/obj/structure/chair/bench/blue/directional/west,
+/obj/machinery/status_display/elevator{
+	pixel_x = 32
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -110,13 +110,13 @@
 /turf/template_noop,
 /area/template_noop)
 "S" = (
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
 /obj/structure/elevator_platform/tile/tech,
 /obj/machinery/light/dim/directional/east,
 /obj/structure/railing/thin{
 	dir = 6
+	},
+/obj/structure/crate_shelf{
+	capacity = 2
 	},
 /turf/template_noop,
 /area/template_noop)
