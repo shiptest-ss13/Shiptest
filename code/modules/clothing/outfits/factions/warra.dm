@@ -846,7 +846,7 @@
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	suit = /obj/item/clothing/suit/jacket/leather/duster
-	glasses = /obj/item/clothing/glasses/hud/spacecop
+	glasses = /obj/item/clothing/glasses/sunglasses/big
 	accessory = /obj/item/clothing/accessory/holster
 	head = /obj/item/clothing/head/beret/command
 

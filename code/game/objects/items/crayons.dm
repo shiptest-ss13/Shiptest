@@ -422,33 +422,6 @@
 	else
 		..()
 
-/obj/item/toy/crayon/proc/can_claim_for_gang(mob/user, atom/target)
-	var/area/A = get_area(target)
-	if(!A)
-		to_chat(user, span_warning("[A] is unsuitable for tagging."))
-		return FALSE
-
-	var/spraying_over = FALSE
-	for(var/obj/effect/decal/cleanable/crayon/gang/G in target)
-		spraying_over = TRUE
-
-	for(var/obj/machinery/power/apc in target)
-		to_chat(user, span_warning("You can't tag an APC."))
-		return FALSE
-
-	var/occupying_gang = territory_claimed(A, user)
-	if(occupying_gang && !spraying_over)
-		to_chat(user, span_danger("[A] has already been tagged by a gang! You must find and spray over the old tag first!"))
-		return FALSE
-
-	// stolen from oldgang lmao
-	return TRUE
-
-/obj/item/toy/crayon/proc/territory_claimed(area/territory, mob/user)
-	for(var/obj/effect/decal/cleanable/crayon/gang/G in GLOB.gang_tags)
-		if(get_area(G) == territory)
-			return TRUE
-
 /obj/item/toy/crayon/red
 	icon_state = "crayonred"
 	paint_color = "#DA0000"
@@ -650,7 +623,7 @@
 		return
 
 
-	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang) && !istype(target, /obj/item/clothing))
+	if(isobj(target) && !istype(target, /obj/item/clothing))
 		if(actually_paints)
 			if(color_hex2num(paint_color) < 200 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
 				to_chat(usr, span_warning("A color that dark on an object like this? Surely not..."))
