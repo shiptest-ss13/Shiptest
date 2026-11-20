@@ -114,28 +114,6 @@
 /turf/open/indestructible/boss/air
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
-/turf/open/indestructible/hierophant
-	icon = 'icons/turf/floors/hierophant_floor.dmi'
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	baseturfs = /turf/open/indestructible/hierophant
-	smoothing_flags = SMOOTH_CORNERS
-	tiled_dirt = FALSE
-
-/turf/open/indestructible/hierophant/two //I assume this exists to bypass turf smoothing to make patterns in the floor of the arena. cool!
-
-/turf/open/indestructible/hierophant/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
-	return FALSE
-
-/turf/open/indestructible/paper
-	name = "notebook floor"
-	desc = "A floor made of invulnerable notebook paper."
-	icon_state = "paperfloor"
-	footstep = null
-	barefootstep = null
-	clawfootstep = null
-	heavyfootstep = null
-	tiled_dirt = FALSE
-
 /turf/open/indestructible/binary
 	name = "tear in the fabric of reality"
 	CanAtmosPass = ATMOS_PASS_NO

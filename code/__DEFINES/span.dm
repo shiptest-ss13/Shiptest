@@ -57,8 +57,6 @@
 #define span_header(str) ("<span class='header'>" + str + "</span>")
 #define span_hear(str) ("<span class='hear'>" + str + "</span>")
 #define span_hidden(str) ("<span class='hidden'>" + str + "</span>")
-#define span_hierophant(str) ("<span class='hierophant'>" + str + "</span>")
-#define span_hierophant_warning(str) ("<span class='hierophant_warning'>" + str + "</span>")
 #define span_highlight(str) ("<span class='highlight'>" + str + "</span>")
 #define span_holoparasite(str) ("<span class='holoparasite'>" + str + "</span>")
 #define span_hypnophrase(str) ("<span class='hypnophrase'>" + str + "</span>")

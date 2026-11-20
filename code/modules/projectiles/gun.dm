@@ -114,7 +114,9 @@
 	var/burst_delay = 0.15 SECONDS // delay between shots in a burst
 	var/fire_delay = 0.2 SECONDS // delay between shots or between bursts
 	var/currently_firing_burst = FALSE // are we currently firing a burst?
-	var/current_cooldown = 0 // current firing cooldown, affected by lag
+	var/datum/gun_burst/active_burst // fires the rest of the current burst
+	var/datum/buffered_gun_click/buffered_click // an early click waiting for the gun to be ready
+	var/fire_cooldown_end = 0 // world.time the gun can fire again
 
 	// OVERLAYS //
 	var/ammo_x_offset = 0 // ammo counter sprite x offset
@@ -233,6 +235,8 @@
 	return wielded
 
 /obj/item/gun/Destroy()
+	QDEL_NULL(active_burst)
+	QDEL_NULL(buffered_click)
 	if(chambered)
 		QDEL_NULL(chambered)
 	if(azoom)
@@ -354,7 +358,7 @@
 	add_fingerprint(user)
 
 	// If we have a cooldown, don't do anything, obviously
-	if(current_cooldown)
+	if(on_fire_cooldown())
 		return
 
 	//We check if the user can even use the gun, if not, we assume the user isn't alive(turrets) so we go ahead.
@@ -439,7 +443,7 @@
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	//OKAY, this prevents us from firing until our cooldown is done
 	if(!burst_firing) //if we're firing a burst, dont interfere to avoid issues
-		if(current_cooldown)
+		if(on_fire_cooldown())
 			return FALSE
 
 	//Check one last time for safeties...
@@ -499,18 +503,15 @@
 	var/current_firemode = gun_firemodes[firemode_index]
 
 	//If we are set to burst fire, then we burst fire!
-	if(burst_size > 1 && (current_firemode == FIREMODE_BURST) && !burst_firing)
+	if(burst_size > 1 && (current_firemode == FIREMODE_BURST) && !burst_firing && !active_burst)
 		currently_firing_burst = TRUE
-		for(var/i = 2 to burst_size) //we fire the first burst normally, hence why its 2
-			addtimer(CALLBACK(src, PROC_REF(process_fire), target, user, message, params, zone_override, 0, TRUE, sprd, i), burst_delay * (i - 1))
+		active_burst = new(src, target, user, message, params, zone_override, sprd)
 
 	//if we have a fire delay, set up a cooldown
 	if(fire_delay && (!burst_firing && !currently_firing_burst))
-		current_cooldown = TRUE
-		addtimer(CALLBACK(src, PROC_REF(reset_current_cooldown)), fire_delay)
+		start_fire_cooldown(fire_delay)
 	if(burst_firing && iteration >= burst_size)
-		current_cooldown = TRUE
-		addtimer(CALLBACK(src, PROC_REF(reset_current_cooldown)), fire_delay+burst_delay)
+		start_fire_cooldown(fire_delay + burst_delay)
 		currently_firing_burst = FALSE
 
 	// update our inhands...
@@ -520,8 +521,11 @@
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
 	return TRUE
 
-/obj/item/gun/proc/reset_current_cooldown()
-	current_cooldown = FALSE
+/obj/item/gun/proc/start_fire_cooldown(duration)
+	fire_cooldown_end = world.time + duration
+
+/obj/item/gun/proc/on_fire_cooldown()
+	return world.time < fire_cooldown_end
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	if(!safety && has_safety)
@@ -686,7 +690,7 @@
 	if(!ishuman(user) || !ishuman(target))
 		return
 
-	if(current_cooldown)
+	if(on_fire_cooldown())
 		return
 
 	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
@@ -700,18 +704,21 @@
 		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
 			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
-	current_cooldown = TRUE
+	// lock the gun while the do_after runs
+	var/suicide_delay = 10 SECONDS
+	if(!bypass_timer)
+		start_fire_cooldown(suicide_delay * user.do_after_coefficent() + 1 SECONDS)
 
-	if(!bypass_timer && (!do_after(user, 100, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_after(user, suicide_delay, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
 				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target && target.Adjacent(user))
 				target.visible_message(span_notice("[user] has decided to spare [target]."), span_notice("[user] has decided to spare your life!"))
-		current_cooldown = FALSE
+		fire_cooldown_end = 0
 		return
 
-	current_cooldown = FALSE
+	fire_cooldown_end = 0
 
 	if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
 		killspeople = FALSE
