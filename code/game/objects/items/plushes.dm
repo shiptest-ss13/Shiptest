@@ -765,7 +765,7 @@
 
 /obj/item/toy/plush/blahaj
 	name = "Solarian Marine Society mascot plushie"
-	desc = "The adorable little mascot of the solarian marine society. Popular with cute girls."
+	desc = "The adorable little mascot of the solarian marine society. Popular with cute people."
 	icon_state = "blahaj"
 	item_state = "blahaj"
 	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: sort the god damn plushie inhands
