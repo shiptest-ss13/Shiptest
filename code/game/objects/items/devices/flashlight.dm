@@ -370,6 +370,9 @@
 		return FALSE
 	if(fuel != INFINITY)
 		START_PROCESSING(SSobj, src)
+	if(iscarbon(user))
+		var/mob/living/carbon/thrower = user
+		thrower.toggle_throw_mode()
 	return TRUE
 
 /obj/item/flashlight/flare/fire_act(exposed_temperature, exposed_volume)
