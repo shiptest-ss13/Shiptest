@@ -53,10 +53,10 @@
 // Default time_of_day_weights for planet types
 // can override at the planet level
 #define PLANET_DEFAULT_TIMES_OF_DAY list(\
-	/datum/time_of_day/day = 40,\
-	/datum/time_of_day/dawn = 20,\
-	/datum/time_of_day/dusk = 20,\
-	/datum/time_of_day/night = 20,\
+	/datum/time_of_day/day = 60,\
+	/datum/time_of_day/dawn = 15,\
+	/datum/time_of_day/dusk = 15,\
+	/datum/time_of_day/night = 10,\
 )
 
 // update_planet_lighting results
