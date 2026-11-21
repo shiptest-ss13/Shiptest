@@ -197,8 +197,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CHASM_STOPPED "chasm_stopped"
 ///The effects of the immerse element will be halted while this trait is present.
 #define TRAIT_IMMERSE_STOPPED "immerse_stopped"
-///Basic mob AI won't path through or step onto a turf with this, as if it were lava
+///Basic mob AI won't path through or step onto a turf with this
 #define TRAIT_AI_AVOID "ai_avoid"
+///Basic mob AI can't see through a turf with this
+#define TRAIT_AI_BLOCKS_SIGHT "ai_blocks_sight"
+///Basic mob AI can't hear through a turf with this
+#define TRAIT_AI_BLOCKS_SOUND "ai_blocks_sound"
 ///The effects of acid turfs will be stopped while the trait is present
 #define TRAIT_ACID_STOPPED "immerse_stopped"
 ///Turf slowdown will be ignored when this trait is added to a turf.
