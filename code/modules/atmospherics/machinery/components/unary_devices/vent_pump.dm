@@ -95,7 +95,6 @@
 		icon_state = "vent_in"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/process_atmos(seconds_per_tick)
-	..()
 	if(!is_operational)
 		return
 	if(!nodes[1])
@@ -120,7 +119,7 @@
 				var/transfer_moles = pressure_delta*environment.return_volume()/(air_contents.return_temperature() * R_IDEAL_GAS_EQUATION)
 
 				loc.assume_air_moles(air_contents, transfer_moles)
-				air_update_turf()
+				update_parents()
 
 	else // external -> internal
 		if(environment.return_pressure() > 0)
@@ -133,8 +132,7 @@
 
 			if(moles_delta > 0)
 				loc.transfer_air(air_contents, moles_delta)
-				air_update_turf()
-	update_parents()
+				update_parents()
 
 //Radio remote control
 

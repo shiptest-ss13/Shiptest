@@ -18,7 +18,6 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	var/backwards		// hopefully self-explanatory
 	var/movedir			// the actual direction to move stuff in
 
-	var/list/affecting	// the list of all items that will be moved this ptick
 	var/id = ""			// the control ID	- must match controller ID
 	var/verted = 1		// Inverts the direction the conveyor belt moves.
 	var/conveying = FALSE
@@ -142,13 +141,17 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 	use_power(6)
 
+	// nothing but the belt itself, so nothing to move
+	if(length(loc.contents) <= 1)
+		return
+
 	//get the first 30 items in contents
-	affecting = list()
-	var/i = 0
+	var/list/affecting = list()
+	var/item_count = 0
 	var/list/items = loc.contents - src
 	for(var/item in items)
-		i++ // we're sure it's a real target to move at this point
-		if(i >= MAX_CONVEYOR_ITEMS_MOVE)
+		item_count++ // we're sure it's a real target to move at this point
+		if(item_count >= MAX_CONVEYOR_ITEMS_MOVE)
 			break
 		affecting.Add(item)
 

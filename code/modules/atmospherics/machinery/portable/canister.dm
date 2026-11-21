@@ -39,6 +39,7 @@
 	interaction_flags_machine = INTERACT_MACHINE_UNPOWERED | INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 
 	var/update = 0
+	var/shown_pressure_level
 	var/static/list/label2types = list(
 		"nitrogen" = /obj/machinery/portable_atmospherics/canister/nitrogen,
 		"oxygen" = /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -259,11 +260,11 @@
 		. += "can-connector"
 	if(machine_stat & BROKEN)
 		return
-	var/pressure = air_contents?.return_pressure()
-	var/pressure_display = round(pressure / 500)
-	if(pressure_display > 10)
-		pressure_display = 10
-	. += "can-o" + num2text(pressure_display)
+	shown_pressure_level = get_pressure_level()
+	. += "can-o" + num2text(shown_pressure_level)
+
+/obj/machinery/portable_atmospherics/canister/proc/get_pressure_level()
+	return min(round(air_contents?.return_pressure() / 500), 10)
 
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -345,7 +346,8 @@
 		if(air_contents.release_gas_to(target_air, release_pressure) && !holding)
 			air_update_turf()
 
-	update_appearance()
+	if(get_pressure_level() != shown_pressure_level)
+		update_appearance()
 
 /obj/machinery/portable_atmospherics/canister/ui_state(mob/user)
 	return GLOB.physical_state
