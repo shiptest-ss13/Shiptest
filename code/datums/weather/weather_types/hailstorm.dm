@@ -33,6 +33,6 @@
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
 	return !isanimal(victim)
 
-/datum/weather/hailstorm/weather_act(mob/living/living_mob)
-	living_mob.adjust_bodytemperature(-rand(3,6), 243)
-	living_mob.adjustBruteLoss(rand(2,4))
+/datum/weather/hailstorm/weather_act(mob/living/living_mob, seconds_per_tick)
+	living_mob.adjust_bodytemperature(-rand(3,6) * seconds_per_tick, 243)
+	living_mob.adjustBruteLoss(rand(2,4) * seconds_per_tick)
