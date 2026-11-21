@@ -347,13 +347,6 @@ GLOBAL_LIST_EMPTY(lighting_sheets)
 		LAZYADD(unreachable_corners, corner)
 	if(!unreachable_corners)
 		return
-	var/datum/lighting_corner/first_corner = unreachable_corners[1]
-	var/list/holders = list()
-	for(var/turf/nearby_turf as anything in RANGE_TURFS(ceil(light_range + visual_offset) + 1, source_turf))
-		if(first_corner in list(nearby_turf.lighting_corner_NE, nearby_turf.lighting_corner_SE, nearby_turf.lighting_corner_SW, nearby_turf.lighting_corner_NW))
-			holders += "[nearby_turf.x],[nearby_turf.y] [nearby_turf.type]"
-	var/owned_by_masters = first_corner.master_NE?.lighting_corner_SW == first_corner || first_corner.master_SW?.lighting_corner_NE == first_corner
-	stack_trace("Light at [source_turf.x],[source_turf.y],[source_turf.z] from [source_atom] ([source_atom?.type]) on [top_atom] ([top_atom?.type]), range [light_range], offset [offset_x],[offset_y], visual offset [visual_offset], got [length(unreachable_corners)] corner(s) outside its reach, first at [first_corner.x],[first_corner.y],[first_corner.z] (masters NE [first_corner.master_NE?.x],[first_corner.master_NE?.y] SW [first_corner.master_SW?.x],[first_corner.master_SW?.y], its masters still point at it: [owned_by_masters ? "yes" : "no"], held by nearby turfs: [length(holders) ? jointext(holders, "; ") : "none"])")
 	corners -= unreachable_corners
 
 /datum/light_source/proc/update_corners()
