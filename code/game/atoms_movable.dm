@@ -283,10 +283,6 @@
 	return TRUE
 
 /atom/movable/proc/stop_pulling()
-	if(pulling)
-		pulling.set_pulledby(null)
-		setGrabState(GRAB_PASSIVE)
-/atom/movable/proc/stop_pulling()
 	if(!pulling)
 		return
 	var/atom/movable/old_pulling = pulling
