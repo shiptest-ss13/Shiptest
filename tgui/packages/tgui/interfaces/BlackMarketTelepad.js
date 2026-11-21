@@ -29,26 +29,34 @@ export const BlackMarketTelepad = (props, context) => {
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item>
-            {!id_locked && <Input
-              width="80%"
-              value={seller_id}
-              placeholder="Set a seller ID. Don't use your real name, dumbass."
-              onChange={(e, value) =>
-                act('change_id', {
-                  value: value,
-                })
-              }
-            />
-            }
-            {!id_locked && <Button.Confirm
-              fluid
-              disabled={id_locked}
-              width="80%"
-              icon="truck-arrow-right"
-              content="Set Seller ID"
-              onClick={() => act('set_id')}
-            />}
-            {!!id_locked && <Box inline bold> Seller ID: {seller_id} </Box>}
+            {!id_locked && (
+              <Input
+                width="80%"
+                value={seller_id}
+                placeholder="Set a seller ID. Don't use your real name, dumbass."
+                onChange={(e, value) =>
+                  act('change_id', {
+                    value: value,
+                  })
+                }
+              />
+            )}
+            {!id_locked && (
+              <Button.Confirm
+                fluid
+                disabled={id_locked}
+                width="80%"
+                icon="truck-arrow-right"
+                content="Set Seller ID"
+                onClick={() => act('set_id')}
+              />
+            )}
+            {!!id_locked && (
+              <Box inline bold>
+                {' '}
+                Seller ID: {seller_id}{' '}
+              </Box>
+            )}
           </Stack.Item>
           <Stack.Divider />
           <Stack.Item>
@@ -91,7 +99,8 @@ export const BlackMarketTelepad = (props, context) => {
           </Stack.Item>
           <Stack.Divider />
           <Stack.Item>
-            <Section title="Use crate contents as stock?"
+            <Section
+              title="Use crate contents as stock?"
               buttons={
                 <Button
                   icon={stock_item ? 'toggle-off' : 'toggle-on'}
