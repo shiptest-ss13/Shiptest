@@ -217,9 +217,15 @@
 
 // one refresh for many area changes, so overlapping parts are only checked once
 /proc/refresh_planet_daylight_for_turfs(list/turf/changed_turfs)
+	var/list/turf/changed_set = list()
+	for(var/turf/changed_turf as anything in changed_turfs)
+		changed_set[changed_turf] = TRUE
 	var/list/turf/exact_turfs = list()
 	var/list/turf/source_turfs = list()
-	for(var/turf/changed_turf as anything in changed_turfs)
+	for(var/turf/changed_turf as anything in changed_set)
+		// deep inside a moved block nothing can change, so only its edges need checking
+		if(!changed_turf.needs_daylight_refresh(changed_set))
+			continue
 		var/list/daylight = changed_turf.virtual_level_trait(ZTRAIT_PLANETARY_LIGHTING)
 		if(!daylight || !daylight[ZTRAIT_LIGHT_RANGE])
 			continue
@@ -236,6 +242,21 @@
 	for(var/turf/source_turf as anything in source_turfs)
 		source_turf.update_planet_daylight_source()
 		CHECK_TICK
+
+// whether a moved turf sits where daylight can change
+/turf/proc/needs_daylight_refresh(list/turf/changed_set)
+	if(planet_daylight_exact || is_daylight_break_light())
+		return TRUE
+	var/area/our_area = loc
+	var/daylit = !!our_area.planet_daylight
+	for(var/direction in GLOB.alldirs)
+		var/turf/neighbour = get_step(src, direction)
+		if(!neighbour || !changed_set[neighbour])
+			return TRUE
+		var/area/neighbour_area = neighbour.loc
+		if(!!neighbour_area.planet_daylight != daylit)
+			return TRUE
+	return FALSE
 
 /turf/proc/queue_lighting_object_update()
 	if(lighting_object && !lighting_object.needs_update)
