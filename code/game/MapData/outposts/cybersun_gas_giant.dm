@@ -25,7 +25,7 @@
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 	light_power = 0.25
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	space_lit = TRUE
 
 	var/cleaning = FALSE
 

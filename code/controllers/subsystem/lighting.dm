@@ -27,6 +27,28 @@ SUBSYSTEM_DEF(lighting)
 
 	return ..()
 
+
+/datum/controller/subsystem/lighting/proc/create_all_lighting_objects()
+	for(var/area/area in world)
+		if(!area.static_lighting)
+			continue
+		for(var/turf/area_turf in area)
+			if(area_turf.space_lit)
+				continue
+			var/atom/movable/lighting_object/existing_object = area_turf.lighting_object
+			if(!QDELETED(existing_object) && existing_object.myturf == area_turf)
+				continue
+			new /atom/movable/lighting_object(area_turf)
+			CHECK_TICK
+		CHECK_TICK
+
+	// Starlight is config gated here, so only walk space when it's on.
+	if(!CONFIG_GET(flag/starlight))
+		return
+	for(var/turf/open/space/space_turf in world)
+		space_turf.recalculate_starlight()
+		CHECK_TICK
+
 /datum/controller/subsystem/lighting/fire(resumed, init_tick_checks)
 	MC_SPLIT_TICK_INIT(3)
 	if(!init_tick_checks)

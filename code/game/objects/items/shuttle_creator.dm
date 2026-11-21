@@ -206,7 +206,6 @@
 		return FALSE
 	newS = new /area/ship()
 	newS.setup(str)
-	newS.set_dynamic_lighting()
 	//Shuttles always have gravity
 	newS.has_gravity = TRUE
 	newS.requires_power = TRUE
