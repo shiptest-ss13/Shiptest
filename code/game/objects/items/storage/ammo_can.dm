@@ -21,6 +21,7 @@
 		"5.7x39mm" = "ammobox_57",
 		"4.6mm" = "ammobox_46",
 		"5.56x42mm CLIP" = "ammobox_556",
+		"6mm HITP" = "ammobox_6HITP",
 		"7.62x40mm CLIP" = "ammobox_762",
 		".44 Roumain" = "ammobox_44",
 		"8x50mmR" = "ammobox_850",
@@ -125,12 +126,12 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a556_42/hp(src)
 
-/obj/item/storage/toolbox/ammo/c556hitp/PopulateContents()
-	name = "ammo can (5.56 HITP)"
-	icon_state = "ammobox_556"
-	current_skin = "5.56x42mm CLIP"
+/obj/item/storage/toolbox/ammo/c6hitp/PopulateContents()
+	name = "ammo can (6mm HITP)"
+	icon_state = "ammobox_6HITP"
+	current_skin = "6mm HITP"
 	for (var/i in 1 to 4)
-		new /obj/item/storage/box/ammo/c556mm(src)
+		new /obj/item/storage/box/ammo/c6mm(src)
 
 /obj/item/storage/toolbox/ammo/c57/PopulateContents()
 	name = "ammo can (5.7x39mm)"

@@ -271,27 +271,34 @@
 /* Solar Armories */
 
 /obj/item/storage/guncase/pistol/modelh
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
+	gun_type = /obj/item/gun/ballistic/sol_gauss/modelh
 	mag_type = /obj/item/ammo_box/magazine/modelh
 
-/obj/item/storage/guncase/pistol/pistolec
+/obj/item/storage/guncase/pistol/modele
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/solgov
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 
-/obj/item/storage/guncase/ssg669
-	gun_type = /obj/item/gun/ballistic/rifle/solgov
+/obj/item/storage/guncase/modelj
+	gun_type = /obj/item/gun/ballistic/rifle/modelj
 	mag_type = /obj/item/ammo_box/a858
 
 /obj/item/storage/guncase/claris
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/claris
+	gun_type = /obj/item/gun/ballistic/sol_gauss/claris
 	mag_type = /obj/item/ammo_box/amagpellet_claris
 
-/obj/item/storage/guncase/gar
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/gar
-	mag_type = /obj/item/ammo_box/magazine/gar
+/obj/item/storage/guncase/rutli
+	gun_type = /obj/item/gun/ballistic/sol_gauss/rutli
+	mag_type = /obj/item/ammo_box/amagpellet_claris
+
+/obj/item/storage/guncase/lucerne
+	gun_type = /obj/item/gun/ballistic/sol_gauss/lucerne
+	mag_type = /obj/item/ammo_box/magazine/lucerne
 
 /obj/item/storage/guncase/railgun
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	gun_type = /obj/item/gun/ballistic/sol_gauss/rail_cannon
+
+/obj/item/storage/guncase/bielersee
+	gun_type = /obj/item/gun/ballistic/sol_gauss/bielersee
 
 /* VI */
 

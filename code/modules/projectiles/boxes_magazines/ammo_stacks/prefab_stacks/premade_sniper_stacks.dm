@@ -20,7 +20,7 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/p50/penetrator
 	ammo_type = /obj/item/ammo_casing/p50/penetrator
 
-// 8x58mm Caseless (SSG-669C)
+// 8x58mm Caseless (Jura)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a858
 	ammo_type = /obj/item/ammo_casing/caseless/a858

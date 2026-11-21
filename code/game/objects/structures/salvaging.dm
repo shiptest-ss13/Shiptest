@@ -595,7 +595,7 @@
 
 // common drop pool
 /obj/structure/rusted_gun_safe/proc/drop_common()
-	var/roll = rand(1,140)
+	var/roll = rand(1,145)
 	switch(roll)
 		if(1 to 5)
 			// e10
@@ -695,12 +695,15 @@
 			new /obj/item/gun/energy/sharplite/surge/resistor(loc)
 			new /obj/item/stock_parts/cell/gun/sharplite(loc)
 		if(116 to 120)
-			// pistole c
-			new /obj/item/gun/ballistic/automatic/pistol/solgov/old(loc)
+			// eiger
+			if(prob(10))
+				new /obj/item/gun/ballistic/automatic/pistol/solgov/old(loc)
+			else
+				new /obj/item/gun/ballistic/automatic/pistol/solgov(loc)
 			new /obj/item/ammo_box/magazine/pistol556mm(loc)
 		if(121 to 125)
-			// model h
-			new /obj/item/gun/ballistic/automatic/powered/gauss/modelh(loc)
+			// hasenmatt
+			new /obj/item/gun/ballistic/sol_gauss/modelh(loc)
 			new /obj/item/ammo_box/magazine/modelh(loc)
 		if(126 to 130)
 			// civvie thistle
@@ -721,10 +724,15 @@
 				/obj/item/attachment/e20mod/efficiency,
 				/obj/item/attachment/e20mod/pierce)
 			new kit(loc)
+		if(141 to 145)
+			// claris
+			new /obj/item/gun/ballistic/sol_gauss/claris(loc)
+			new /obj/item/ammo_box/amagpellet_claris(loc)
+			new /obj/item/ammo_box/amagpellet_claris(loc)
 
 // uncommon drop pool
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
-	var/roll = rand(1,110)
+	var/roll = rand(1,115)
 	switch(roll)
 		if(1 to 5)
 			// gaboon
@@ -811,6 +819,11 @@
 			// director
 			new /obj/item/gun/ballistic/cs_gauss/vector/export(loc)
 			new /obj/item/ammo_box/magazine/cs_gauss/rifle(loc)
+		if(111 to 115)
+			// rutli
+			new /obj/item/gun/ballistic/sol_gauss/rutli(loc)
+			new /obj/item/ammo_box/amagpellet_claris(loc)
+			new /obj/item/ammo_box/amagpellet_claris(loc)
 
 // rare drop pool
 /obj/structure/rusted_gun_safe/proc/drop_rare()
@@ -851,7 +864,7 @@
 			new /obj/item/stock_parts/cell/gun/large(loc)
 		if(41 to 45)
 			// atelier
-			new /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon(loc)
+			new /obj/item/gun/ballistic/sol_gauss/rail_cannon(loc)
 			new /obj/item/storage/box/ammo/ferrorods(loc)
 		if(46 to 50)
 			// opportunist

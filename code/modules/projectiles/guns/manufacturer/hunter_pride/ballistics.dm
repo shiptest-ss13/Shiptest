@@ -1277,9 +1277,9 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	icon_state = "scout"
 	item_state = "scout"
 
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/scout
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/boltaction/smile,
+		/obj/item/ammo_box/magazine/internal/boltaction/scout,
 	)
 	fire_sound = 'sound/weapons/gun/rifle/scout.ogg'
 

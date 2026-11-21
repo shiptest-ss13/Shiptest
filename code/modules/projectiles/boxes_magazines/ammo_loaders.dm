@@ -81,7 +81,7 @@
 
 /obj/item/ammo_box/a858
 	name = "stripper clip (8x58mm)"
-	desc = "A 5-round stripper clip for the SSG-669C rifle. These rounds do good damage with significant armor penetration."
+	desc = "A 5-round stripper clip for the Model 'Jura' rifle. These rounds do good damage with significant armor penetration."
 	icon_state = "enbloc_858"
 	ammo_type = /obj/item/ammo_casing/caseless/a858
 	max_ammo = 5
