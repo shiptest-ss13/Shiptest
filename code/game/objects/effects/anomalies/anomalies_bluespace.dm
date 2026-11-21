@@ -28,6 +28,7 @@
 /obj/effect/anomaly/bluespace/Bumped(atom/movable/AM)
 	do_teleport(AM, locate(AM.x, AM.y, AM.z), 8, channel = TELEPORT_CHANNEL_BLUESPACE)
 
+//needs to be refactored really badly
 /obj/effect/anomaly/bluespace/detonate()
 	var/turf/T = pick(get_area_turfs(impact_area))
 	if(!T)
@@ -50,7 +51,6 @@
 	var/turf/TO = get_turf(chosen) // the turf of origin we're travelling TO
 
 	playsound(TO, 'sound/effects/phasein.ogg', 100, TRUE)
-	priority_announce("Massive bluespace translocation detected.", "Anomaly Alert")
 
 	var/list/flashers = list()
 	for(var/mob/living/carbon/C in viewers(TO, null))

@@ -96,7 +96,6 @@
 
 /obj/effect/anomaly/grav/high/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
-
 	transform *= 1.5
 
 

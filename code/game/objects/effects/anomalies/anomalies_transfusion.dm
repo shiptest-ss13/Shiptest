@@ -9,6 +9,13 @@
 
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 
+/obj/effect/anomaly/transfusion/Initialize(mapload, new_lifespan, drops_core)
+	. = ..()
+
+	if(core)
+		var/obj/item/assembly/signaler/anomaly/transfusion/our_core = core
+		core.set_blood_stored(rand(our_core.blood_max/3, our_core.blood_max))
+
 /obj/effect/anomaly/transfusion/anomalyEffect()
 	..()
 
@@ -29,22 +36,21 @@
 			visible_message(span_boldwarning("[src] vomits up blood, seemingly satiated!"))
 			core?:set_blood_stored(core?:get_blood_max())
 			return
-		//if there's blood to take, take it
-		if(victim.blood_volume > BLOOD_VOLUME_SAFE)
-			var/bleeder
-			bleeder = rand(10,30)
-			victim.bleed(bleeder)
-			victim.spray_blood(get_dir(victim, src), splatter_strength = 1) //slurp
-			visible_message(span_boldwarning("Ichor flows out of [victim], and into [src]!"))
-			core?:set_blood_stored(bleeder)
-			break
-		//but if there's blood to give, share.
+		//if there's blood to give, share.
 		if(victim.blood_volume < BLOOD_VOLUME_SAFE && core?:get_blood_stored() > (core?:get_blood_max() / 2))
 			var/present_time
 			present_time = rand((core?:get_blood_stored() / 10), (core?:get_blood_stored() / 2))
 			visible_message(span_boldwarning("Globules of ichor fly away from [src], and into [victim]!"))
 			core?:set_blood_stored(-present_time)
 			victim.blood_volume += present_time
+			break
+		//but if there's blood to take, take it
+		if(victim.blood_volume > BLOOD_VOLUME_SAFE)
+			var/bleed_amount = rand(10,30)
+			victim.bleed(bleed_amount)
+			victim.spray_blood(get_dir(victim, src), splatter_strength = 1) //slurp
+			visible_message(span_boldwarning("Ichor flows out of [victim], and into [src]!"))
+			core?:set_blood_stored(bleed_amount)
 			break
 	return
 

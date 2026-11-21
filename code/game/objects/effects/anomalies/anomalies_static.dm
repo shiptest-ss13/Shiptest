@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	. = ..()
 	if(!iscarbon(user))
 		return
-	if(iscarbon(user) && !user.research_scanner)
+	if(iscarbon(user) && !(user.research_scanner || HAS_TRAIT(user, TRAIT_BLIND)))
 		var/mob/living/carbon/victim = user
 		to_chat(victim, span_userdanger("Your head aches as you stare into [src]!"))
 		victim.flash_act(intensity = 3, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
