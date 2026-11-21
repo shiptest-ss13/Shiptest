@@ -277,8 +277,10 @@
 	baseturfs = /turf/open/floor/plating/asteroid/iceberg/lit
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	opacity = FALSE
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 1
+	light_color = COLOR_ICEPLANET_LIGHT
 	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
@@ -608,6 +610,7 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/random/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
