@@ -52,11 +52,16 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	. = ..()
 	if(!iscarbon(user))
 		return
-	if(iscarbon(user) && !(user.research_scanner || HAS_TRAIT(user, TRAIT_BLIND)))
+	if(iscarbon(user) && !user.research_scanner)
 		var/mob/living/carbon/victim = user
+		SEND_SOUND(victim, 'sound/effects/anomaly/static.ogg')
+		if(HAS_TRAIT(user, TRAIT_BLIND))
+			to_chat(victim, span_boldwarning("Your hand slips into warm static!"))
+			to_chat(victim, span_boldwarning(pick("and a dozen whispers surrend you.", "and sweet temptations flow into your mind.", "and the pressure of the world is atop you", "and there is someone who wants to see you.", "and tomorrow is tinged in static hisses")))
+			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, 50)
+			return
 		to_chat(victim, span_userdanger("Your head aches as you stare into [src]!"))
 		victim.flash_act(intensity = 3, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
-		SEND_SOUND(victim, 'sound/effects/anomaly/static.ogg')
 		victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
 
 /obj/effect/anomaly/tvstatic/anomalyEffect()
@@ -65,19 +70,22 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
 	new /obj/effect/particle_effect/staticball(spot)
 
-
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
+	if(stored_mob && looking.stat != DEAD && prob(25))
+		say_fucky_things()
+
 	for(var/mob/living/carbon/human/looking in range(effectrange, src))
 		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
-		if(stored_mob && looking.stat != DEAD && prob(25))
-			say_fucky_things()
-		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner || HAS_TRAIT(looking, TRAIT_DEAF))
+
+		var/blind = HAS_TRAIT(looking, TRAIT_BLIND)
+		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner || (HAS_TRAIT(looking, TRAIT_DEAF) && blind))
 			continue
-		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
+		//being blind can protect you but will not save you
+		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, blind ? 5 : 20, 200)
 		looking.flash_act(intensity = 2, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
 		playsound(src, 'sound/effects/radiohiss.ogg', 50)
 		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
