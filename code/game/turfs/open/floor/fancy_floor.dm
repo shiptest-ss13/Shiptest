@@ -35,6 +35,9 @@
 /turf/open/floor/wood/maple
 	color = WOOD_COLOR_PALE
 
+/turf/open/floor/wood/maple/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/wood/maple/chlorine
 	initial_gas_mix = COMBAT_CHLORINE
 
@@ -43,6 +46,9 @@
 
 /turf/open/floor/wood/ebony/cold
 	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
+
+/turf/open/floor/wood/ebony/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/wood/walnut
 	color = WOOD_COLOR_CHOCOLATE
