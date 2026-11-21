@@ -4,6 +4,11 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 	"power_supply", "important_recursive_contents", "contents", "reagents", "stat", "x", "y", "z", "group", "atmos_adjacent_turfs", "comp_lookup"
 	))
 
+// Turf lighting vars that belong to the turf itself, so copy_contents_to must not copy them onto another turf
+GLOBAL_LIST_INIT(duplicate_forbidden_turf_vars, list(
+	"light_sources", "opacity_sources", "lighting_corners_initialised", "directional_opacity", "dynamic_lumcount", "luminosity",
+	))
+
 /proc/DuplicateObject(atom/original, perfectcopy = TRUE, sameloc, atom/newloc = null, nerf, holoitem)
 	RETURN_TYPE(original.type)
 	if(!original)
@@ -127,11 +132,13 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 			var/mob/SM = DuplicateObject(M , perfectcopy=TRUE, newloc = B, holoitem=TRUE)
 			copiedobjs += SM.GetAllContents()
 
-		for(var/V in T.vars - GLOB.duplicate_forbidden_vars)
+		for(var/V in T.vars - GLOB.duplicate_forbidden_vars - GLOB.duplicate_forbidden_turf_vars)
 			if(V == "air")
 				var/turf/open/O1 = B
 				var/turf/open/O2 = T
 				O1.air.copy_from(O2.return_air())
+				continue
+			if(istype(T.vars[V], /datum))
 				continue
 			B.vars[V] = T.vars[V]
 		toupdate += B
