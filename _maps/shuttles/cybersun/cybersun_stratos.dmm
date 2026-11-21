@@ -288,6 +288,12 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/command)
+"cU" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering/communications)
 "cZ" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -720,8 +726,15 @@
 /turf/open/floor/plating,
 /area/ship/engineering/communications)
 "gD" = (
-/obj/machinery/telecomms/hub,
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/machinery/telecomms/hub{
+	id = "cybersun_comm_net";
+	network = "cybernet";
+	autolinkers = list("hub","bus","relay","messaging","inteq","broadcasterB","receiverB")
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "gF" = (
@@ -838,6 +851,9 @@
 /area/ship/cargo)
 "hv" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
 "hA" = (
@@ -1697,11 +1713,20 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "oP" = (
-/obj/machinery/telecomms/message_server,
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/machinery/telecomms/broadcaster/preset_right{
+	network = "cybernet";
+	autolinkers = list("broadcasterB","hub")
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "oQ" = (
@@ -2550,6 +2575,15 @@
 /turf/open/floor/suns/hatch/maple,
 /area/ship/engineering/communications/room)
 "vQ" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
 "vW" = (
@@ -2708,6 +2742,18 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
+"xG" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering/communications)
 "xK" = (
 /obj/structure/table/glass,
 /obj/machinery/fax/cybersun,
@@ -2802,8 +2848,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "yD" = (
-/obj/machinery/telecomms/processor,
+/obj/machinery/telecomms/processor{
+	id = "processor";
+	autolinkers = list("hub");
+	network = "cybernet"
+	},
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "yK" = (
@@ -3535,8 +3588,20 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/captain)
 "EL" = (
-/obj/machinery/telecomms/broadcaster,
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/obj/machinery/telecomms/server/presets/cybersun{
+	autolinkers = list("cybersun","broadcasterB", "hub");
+	network = "cybernet"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "EO" = (
@@ -3954,6 +4019,12 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
+"Im" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/communications)
 "It" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/suns/dark/plain,
@@ -4725,13 +4796,26 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/storage)
 "Qe" = (
-/obj/machinery/telecomms/server,
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/machinery/telecomms/receiver/preset_right{
+	network = "cybernet";
+	freq_listening = list(1203, 1459, 1213);
+	autolinkers = list("receiverB","hub")
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "Qg" = (
-/obj/machinery/telecomms/bus,
+/obj/machinery/telecomms/bus{
+	autolinkers = list("hub");
+	id = "mainframe"
+	},
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "Qi" = (
@@ -4967,6 +5051,9 @@
 /obj/effect/turf_decal/stairs{
 	color = "#777777";
 	dir = 5
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
@@ -5969,7 +6056,7 @@ uE
 Vw
 bU
 eg
-eI
+Im
 qG
 uE
 vc
@@ -6035,8 +6122,8 @@ AI
 AI
 uE
 EL
-vQ
-vQ
+cU
+xG
 vQ
 hv
 uE
