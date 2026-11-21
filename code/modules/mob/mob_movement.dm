@@ -262,7 +262,6 @@
 			L.setDir(direct)
 	return TRUE
 
-
 /**
  * Handles mob/living movement in space (or no gravity)
  *
@@ -273,48 +272,14 @@
  * You can move in space if you have a spacewalk ability
  */
 /mob/Process_Spacemove(movement_dir = 0, continuous_move = FALSE)
-	if(HAS_TRAIT(src, TRAIT_SPACEWALK) || ..())
+	. = ..()
+	if(. || HAS_TRAIT(src, TRAIT_SPACEWALK))
 		return TRUE
-	var/atom/movable/backup = get_spacemove_backup()
-	if(backup)
-		if(istype(backup) && movement_dir && !backup.anchored)
-			if(backup.newtonian_move(turn(movement_dir, 180))) //You're pushing off something movable, so it moves
-				to_chat(src, span_info("You push off of [backup] to propel yourself."))
-		return TRUE
-	return FALSE
 
-/**
- * Find movable atoms? near a mob that are viable for pushing off when moving
- */
-/mob/get_spacemove_backup()
-	for(var/A in orange(1, get_turf(src)))
-		if(isarea(A))
-			continue
-		else if(isturf(A))
-			var/turf/turf = A
-			if(isspaceturf(turf))
-				continue
-			if(!turf.density && !mob_negates_gravity())
-				continue
-			return A
-		else
-			var/atom/movable/AM = A
-			if(AM == buckled)
-				continue
-			if(ismob(AM))
-				var/mob/M = AM
-				if(M.buckled)
-					continue
-			if(AM.density || !AM.CanPass(src, get_dir(AM, src)))
-				if(AM.anchored)
-					return AM
-				if(pulling == AM)
-					continue
-/mob/Process_Spacemove(movement_dir = 0, continuous_move = FALSE)
-	if(HAS_TRAIT(src, TRAIT_SPACEWALK) || ..())
-		return TRUE
+	// FUCK OFF
 	if(buckled)
 		return TRUE
+
 	var/atom/movable/backup = get_spacemove_backup(movement_dir, continuous_move)
 	if(!backup)
 		return FALSE
@@ -373,7 +338,7 @@
 			return rebound
 		if(pulling == rebound)
 			continue
-		. = rebound
+		return rebound
 
 /**
  * Returns true if a mob has gravity
