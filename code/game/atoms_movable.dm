@@ -286,7 +286,15 @@
 	if(pulling)
 		pulling.set_pulledby(null)
 		setGrabState(GRAB_PASSIVE)
-		pulling = null
+/atom/movable/proc/stop_pulling()
+	if(!pulling)
+		return
+	var/atom/movable/old_pulling = pulling
+	pulling.set_pulledby(null)
+	setGrabState(GRAB_PASSIVE)
+	pulling = null
+	SEND_SIGNAL(old_pulling, COMSIG_ATOM_NO_LONGER_PULLED, src)
+	SEND_SIGNAL(src, COMSIG_ATOM_NO_LONGER_PULLING, old_pulling)
 
 
 ///Reports the event of the change in value of the pulledby variable.
