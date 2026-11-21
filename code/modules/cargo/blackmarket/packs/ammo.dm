@@ -39,7 +39,7 @@
 /datum/blackmarket_item/ammo/a762_box
 	name = "7.62x40mm CLIP Ammo Box"
 	desc = "A 60 round ammo box of 7.62x40mm CLIP."
-	item = /datum/supply_pack/ammo/a762_ammo_box
+	item = /obj/item/storage/box/ammo/a762_40
 
 	cost_min = 250
 	cost_max = 600
@@ -276,7 +276,7 @@
 /datum/blackmarket_item/ammo/advanced_weapon_cell
 	name = "Upgraded Clover Heavy Power Cells"
 	desc = "Clover Photonic's secret, limited-run big ass heavy power cells. They only make 'em for CLIP - good thing they lost a whole shipment of them."
-	item = /obj/item/stock_parts/cell/gun/upgraded
+	item = /obj/item/stock_parts/cell/gun/heavy/upgraded
 
 	cost_min = 2000
 	cost_max = 2800

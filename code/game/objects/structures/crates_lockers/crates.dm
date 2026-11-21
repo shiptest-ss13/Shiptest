@@ -62,9 +62,11 @@
 	var/mob/living/user = usr
 	if(!isliving(user))
 		return // Ghosts busted.
+	if(anchored)
+		return // This is bolted to the ground, you can't move it.
 	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
 		return // If the user is in a weird state, don't bother trying.
-	if(get_dist(drop_atom, src) != 1 || get_dist(drop_atom, user) != 1)
+	if(get_dist(drop_atom, src) > 1 || get_dist(drop_atom, user) > 1)
 		return // Check whether the crate is exactly 1 tile from the shelf and the user.
 	if(istype(drop_atom, /turf/open) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom))
 		var/obj/structure/crate_shelf/shelf = loc
@@ -75,6 +77,9 @@
 	if(istype(drop_atom, /obj/structure/crate_shelf) && isturf(loc) && user.Adjacent(src))
 		var/obj/structure/crate_shelf/shelf = drop_atom
 		return shelf.load(src, user) // If we're being dropped onto a crate shelf, and we're in a turf, load.
+	if(istype(drop_atom, /obj/machinery/ltsrbt))
+		var/obj/machinery/ltsrbt/telepad = drop_atom
+		telepad.load_crate(src,user)
 
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	. = ..()

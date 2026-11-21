@@ -177,6 +177,10 @@
 	name = "chemical jug (thermite)"
 	list_reagents = list(/datum/reagent/thermite = 150)
 
+/obj/item/reagent_containers/glass/chem_jug/synthflesh
+	name = "chemical jug (synthflesh)"
+	list_reagents = list(/datum/reagent/medicine/synthflesh = 150)
+
 /obj/item/reagent_containers/glass/chem_jug/hexacrete
 	name = "chemical jug (hexacrete)"
 	list_reagents = list(/datum/reagent/concrete/hexacrete = 150)

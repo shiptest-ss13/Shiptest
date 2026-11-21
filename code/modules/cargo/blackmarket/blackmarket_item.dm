@@ -16,14 +16,21 @@
 	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
 	var/item
 
+	/// List of (actual) items associated with this entry. For local good items with multiple stock.
+	var/list/stocked_items = list()
+
 	/// Minimum cost for the item if generated randomly.
 	var/cost_min	= 0
 	/// Maximum cost for the item if generated randomly.
 	var/cost_max	= 0
+	/// Whether the cost should randomized on cycle.
+	var/cycle_cost = TRUE
 	/// Minimum amount that there should be of this item in the market if generated randomly. This defaults to 1 as most items will have it as 1.
 	var/stock_min	= 1
 	/// Maximum amount that there should be of this item in the market if generated randomly.
 	var/stock_max	= 0
+	/// Whether the stock on this should be randomized on cycle
+	var/cycle_stock = FALSE
 	/// Whether the item is visible and purchasable on the market
 	var/available = TRUE
 	/// Probability for this item to be available. Used by SSblackmarket on init.
@@ -37,6 +44,7 @@
 	/// Should another item spawn alongside this one in the catalogue?
 	var/list/pair_item = null
 
+	var/key
 
 /datum/blackmarket_item/New()
 	if(isnull(cost))
@@ -62,7 +70,7 @@
 	else
 		stock = rand(stock_min, stock_max)
 
-/datum/blackmarket_item/proc/cycle(cost = TRUE, availibility = TRUE, stock = TRUE, force_appear = FALSE)
+/datum/blackmarket_item/proc/cycle(cost = TRUE, availibility = TRUE, stock = FALSE, force_appear = FALSE)
 	if(cost)
 		randomize_price()
 	if(stock)
@@ -117,3 +125,10 @@
 		item = entry.item
 	uplink = _uplink
 	method = _method
+
+/datum/blackmarket_purchase/proc/get_item()
+	if(entry.stocked_items.len)
+		item = pick_n_take(entry.stocked_items)
+	else if(!item || ispath(item))
+		item = entry.spawn_item()
+	return item
