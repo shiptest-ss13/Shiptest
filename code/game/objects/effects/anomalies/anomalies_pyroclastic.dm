@@ -38,7 +38,6 @@
 
 /obj/effect/anomaly/pyro/proc/on_entered(atom/movable/AM)
 	//hold on a second while I irritate the ABSOLUTE SHIT out of this thing
-	. = ..()
 	if(isobj(AM))
 		var/obj/firething = AM
 		if(firething.resistance_flags & FIRE_PROOF)
@@ -53,10 +52,10 @@
 		now_on_fire.ignite_mob()
 
 	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
-	for(var/turf/blossom_turf as anything in spiral_range_turfs(i + 1, spot))
-		var/obj/effect/abstract/turf_fire/small/flame_tile = locate(nearby_turf) || new(nearby_turf)
+	for(var/turf/blossom_turf as anything in spiral_range_turfs(2, spot))
+		var/obj/effect/abstract/turf_fire/small/flame_tile = locate(blossom_turf) || new(blossom_turf)
 		flame_tile.alpha = 125
-		nearby_turf.hotspot_expose(750, 25, 1)
+		blossom_turf.hotspot_expose(750, 25, 1)
 
 /obj/effect/anomaly/pyro/detonate()
 	INVOKE_ASYNC(src, PROC_REF(makepyroslime))
