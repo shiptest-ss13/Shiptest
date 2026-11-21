@@ -8,6 +8,7 @@
 		light_color = COLOR_JUNGLEPLANET_LIGHT;						\
 	}																\
 	/turf/open/floor/##turf_type/jungleplanet/lit {					\
+		can_emit_planet_daylight = TRUE;								\
 		light_power = 0.8;											\
 		light_range = 2;											\
 	}																\
@@ -90,6 +91,7 @@
 	light_color = COLOR_JUNGLEPLANET_LIGHT;
 
 /turf/open/floor/plating/moss/jungle/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.8
 

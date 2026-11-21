@@ -29,6 +29,12 @@
 	var/selfloop = FALSE
 	///How much of a radio message we mess up on nearby or on landed/orbitting ships
 	var/interference_power = -15
+	///This planet's light range per turf
+	var/light_range = 0
+	///This planet's light power per turf.
+	var/light_power = 0
+	///This planet's light color per turf.
+	var/light_color = COLOR_WHITE
 
 	///what kind of veins spawn on this planet? Mostly a holder for drill missions.
 	var/vein_type = null
@@ -41,6 +47,9 @@
 	icon_state = "lava"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
+	light_color = COLOR_LAVAPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
@@ -61,6 +70,9 @@
 	icon_state = "ice"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
+	light_color = COLOR_ICEPLANET_LIGHT
+	light_range = 2
+	light_power = 1
 	default_baseturf = /turf/open/floor/plating/asteroid/snow
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
@@ -80,6 +92,9 @@
 	icon_state = "jungle"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
+	light_color = COLOR_VERY_LIGHT_GRAY
+	light_range = 2
+	light_power = 1
 	default_baseturf = /turf/open/floor/plating/asteroid/dirt/jungle
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
@@ -99,6 +114,9 @@
 	icon_state = "rock"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
+	light_color = COLOR_ROCKPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 	default_baseturf = /turf/open/floor/plating/asteroid
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/rockplanet
@@ -117,6 +135,9 @@
 	icon_state = "whitesands"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
+	light_color = COLOR_SANDPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/desert
@@ -137,7 +158,10 @@
 	icon_state = "ocean"
 	color = "#c6b597"
 	mapgen = /datum/map_generator/planet_generator/beach
-	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
+	light_color = COLOR_BEACHPLANET_LIGHT
+	light_range = 2
+	light_power = 0.8
+	default_baseturf = /turf/open/floor/plating/asteroid/sand
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
@@ -204,6 +228,9 @@
 	icon_state = "waste"
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
+	light_color = COLOR_WASTEPLANET_LIGHT
+	light_range = 2
+	light_power = 0.2
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
@@ -222,6 +249,9 @@
 	icon_state = "giant"
 	color = COLOR_DARK_MODERATE_ORANGE
 	mapgen = /datum/map_generator/single_biome/gas_giant
+	light_color = COLOR_DARK_MODERATE_ORANGE
+	light_range = 2
+	light_power = 0.6
 	gravity = GAS_GIANT_GRAVITY
 	default_baseturf = /turf/open/chasm/gas_giant
 	weather_controller_type = null
@@ -235,6 +265,9 @@
 	planet = DYNAMIC_WORLD_PLASMA_GIANT
 	color = COLOR_PURPLE
 	mapgen = /datum/map_generator/single_biome/plasma_giant
+	light_color = COLOR_DARK_MODERATE_ORANGE
+	light_range = 2
+	light_power = 0.6
 	gravity = GAS_GIANT_GRAVITY
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
 	icon_state = "giant"
@@ -250,6 +283,9 @@
 
 	//ruin_type = RUINTYPE_WATER
 	mapgen = /datum/map_generator/planet_generator/waterplanet
+	light_color = "#09121a"
+	light_range = 2
+	light_power = 1
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/water/beach/deep
 	weather_controller_type = /datum/weather_controller/waterplanet
@@ -267,8 +303,11 @@
 	color = "#f3c282"
 	//ruin_type = RUINTYPE_DESERT
 	mapgen = /datum/map_generator/planet_generator/desert
+	light_color = "#ffd2bd"
+	light_range = 2
+	light_power = 0.6
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/desert_yellow
 	primary_ores = list(
 		/obj/item/stack/ore/gold,
@@ -303,9 +342,12 @@
 	interference_power = -5
 
 	mapgen = /datum/map_generator/planet_generator/moon
+	light_color = COLOR_WHITE // should look liminal, due to moons lighting
+	light_range = 2
+	light_power = 1
 	ruin_type = RUINTYPE_MOON
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/moon
 	weather_controller_type = null
 
 	vein_type = /obj/structure/vein/moon
@@ -324,6 +366,9 @@
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
+	light_color = COLOR_FOGGY_LIGHT
+	light_range = 2
+	light_power = 1
 	default_baseturf = /turf/open/floor/plating/asteroid/dirt/battlefield
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/toxic
@@ -337,12 +382,16 @@
 	icon_state = "hazard"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/test
+	light_color = COLOR_WHITE
+	light_range = 2
+	light_power = 0.8
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/white/lit
 	weather_controller_type = null
 	ruin_type = null
 
 /turf/open/floor/white/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 1
 	light_color = COLOR_VERY_LIGHT_GRAY
@@ -359,6 +408,9 @@
 	icon_state = "misc"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/snowball
+	light_color = "#67769e"
+	light_range = 2
+	light_power = 1
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit
 	weather_controller_type = /datum/weather_controller/snow_planet/severe
@@ -375,12 +427,15 @@
 	icon_state = "misc"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/dustball
+	light_color = "#bf9b9b"
+	light_range = 2
+	light_power = 1
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/whitesands/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
 
 /datum/map_generator/single_turf/dustball
-	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
+	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	area_type = /area/overmap_encounter/planetoid/dustball
 
 
@@ -391,12 +446,15 @@
 	icon_state = "misc"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/duneball
+	light_color = "#be956b"
+	light_range = 2
+	light_power = 1
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
 
 /datum/map_generator/single_turf/duneball
-	turf_type = /turf/open/floor/plating/asteroid/desert/lit
+	turf_type = /turf/open/floor/plating/asteroid/desert
 	area_type = /area/overmap_encounter/planetoid/duneball
 
 /datum/planet_type/waterball
@@ -406,10 +464,13 @@
 	icon_state = "misc"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/waterball
+	light_color = "#09121a"
+	light_range = 2
+	light_power = 1
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/waterplanet/severe
 
 /datum/map_generator/single_turf/waterball
-	turf_type = /turf/open/water/stormy_planet_lit
+	turf_type = /turf/open/water/stormy_planet_underground
 	area_type = /area/overmap_encounter/planetoid/waterball

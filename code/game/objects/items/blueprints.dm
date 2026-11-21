@@ -347,7 +347,6 @@
 			return
 		newA = new area_choice
 		newA.setup(str)
-		newA.set_dynamic_lighting()
 		newA.has_gravity = oldA.has_gravity
 	else
 		newA = area_choice
@@ -370,6 +369,9 @@
 		var/list/sanity = thing.baseturfs.Copy()
 		sanity.Insert(3, /turf/baseturf_skipover/shuttle)
 		thing.baseturfs = baseturfs_string_list(sanity, thing)
+
+	if(!isarea(area_choice) && newA.static_lighting)
+		newA.create_area_lighting_objects()
 
 	var/list/firedoors = oldA.firedoors
 	for(var/door in firedoors)

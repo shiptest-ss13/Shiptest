@@ -44,6 +44,13 @@
 	//controls what kind of sound we play when we land and the maptext comes up
 	var/landing_sound
 
+	///This planet's light range per turf
+	var/light_range = 0
+	///This planet's light power per turf.
+	var/light_power = 0
+	///This planet's light color per turf.
+	var/light_color = COLOR_WHITE
+
 /datum/overmap/static_object/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock

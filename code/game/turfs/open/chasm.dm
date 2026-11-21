@@ -125,6 +125,7 @@
 	baseturfs = /turf/open/chasm/jungle
 
 /turf/open/chasm/jungle/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.8
 
@@ -136,6 +137,7 @@
 //gas giant "chasm"
 /turf/open/chasm/gas_giant
 	name = "void"
+	can_emit_planet_daylight = TRUE
 	desc = "The gas that makes up the gas giant. You can't see further, but you're fairly sure if you slipped in, you'd be dead."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "reebemap" //to-do. Don't use Rebee Sprite

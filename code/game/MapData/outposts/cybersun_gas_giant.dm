@@ -2,6 +2,7 @@
 
 #define CYBERSUN_OUTPOST_TURF_HELPER(turf_type)			\
 	/turf/open/floor/##turf_type/cybersun_outpost {		\
+		can_emit_planet_daylight = TRUE;				\
 		initial_gas_mix = OPENTURF_DEFAULT_ATMOS;		\
 		planetary_atmos = TRUE;							\
 		light_color = COLOR_CYBERSUN_OUTPOST_LIGHTING;	\
@@ -10,6 +11,7 @@
 	}
 
 /turf/open/cybersun_outpost_exterior
+	can_emit_planet_daylight = TRUE
 	name = "gas giant"
 	desc = "The gravitic bubble that protects 1000 Eyes Perch from the winds of Artena has the side-effect of compressing down the gas giant's atmosphere into something <i>almost</i> walkable. If you're a moron with a death-wish."
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -25,7 +27,7 @@
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 	light_power = 0.25
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	space_lit = TRUE
 
 	var/cleaning = FALSE
 
@@ -158,6 +160,14 @@
 	name = "Scaffolding"
 	sound_environment = SOUND_ENVIRONMENT_UNDERWATER
 	ambience_index = AMBIENCE_MAINT
+	use_ztrait_lighting = TRUE
+
+/area/hangar/csoutpost_outdoors_noweather
+	use_ztrait_lighting = TRUE
+
+/area/hangar/csoutpost_outdoors
+	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
 
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/mono)
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/mono/white)

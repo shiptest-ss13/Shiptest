@@ -21,7 +21,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "space"
 	requires_power = TRUE
 	always_unpowered = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	power_light = FALSE
 	power_equip = FALSE
 	power_environ = FALSE
@@ -34,17 +35,22 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/space/nearstation
 	icon_state = "space_near"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	static_lighting = TRUE
+	base_lighting_alpha = 0
+	static_lighting_if_starlight = TRUE
 
 /area/start
 	name = "start area"
 	icon_state = "start"
 	requires_power = FALSE
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	has_gravity = STANDARD_GRAVITY
 
 /area/testroom
 	requires_power = FALSE
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	name = "Test Room"
 	icon_state = "storage"
 
@@ -52,7 +58,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "space"
 	requires_power = TRUE
 	always_unpowered = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	power_light = FALSE
 	power_equip = FALSE
 	power_environ = FALSE
@@ -83,7 +90,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 // SHIP AREAS //
 
 /area/ship
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	always_unpowered = FALSE
 	area_flags = VALID_TERRITORY | SHIP_SMOOTHING | NO_RANDOM_LIGHT_BREAKAGE // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
@@ -633,12 +639,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/external
 	name = "External"
 	icon_state = "space_near"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	static_lighting_if_starlight = TRUE
 	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	lightswitch = TRUE
 
 /area/ship/external/dark
 	name = "Dark External"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	static_lighting_if_starlight = FALSE
 	icon_state = "space_near"

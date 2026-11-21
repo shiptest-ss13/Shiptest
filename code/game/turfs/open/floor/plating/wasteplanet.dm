@@ -115,6 +115,7 @@
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/engine/hull/waste/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_WASTEPLANET_LIGHT
@@ -123,6 +124,7 @@
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/engine/hull/reinforced/waste/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_WASTEPLANET_LIGHT
@@ -131,6 +133,7 @@
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/engine/waste/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_WASTEPLANET_LIGHT
@@ -200,10 +203,12 @@
 //open turfs then open lits.
 
 /turf/open/floor/plating/wasteplanet/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.2
 
 /turf/open/floor/plating/wasteplanet/rust/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.2
 
@@ -216,16 +221,19 @@
 	light_power = 0.2
 
 /turf/open/floor/concrete/wasteplanet/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.2
 	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/concrete/reinforced/wasteplanet/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.2
 	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/concrete/pavement/wasteplanet/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.2
 	light_color = COLOR_WASTEPLANET_LIGHT

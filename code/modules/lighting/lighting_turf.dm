@@ -14,8 +14,8 @@
 	if (lighting_object)
 		qdel(lighting_object, force=TRUE) //Shitty fix for lighting objects persisting after death
 
-	var/area/A = loc
-	if (!IS_DYNAMIC_LIGHTING(A) && !light_sources)
+	var/area/turf_area = loc
+	if (!turf_area.static_lighting && !light_sources)
 		return
 
 	new/atom/movable/lighting_object(src)
@@ -43,6 +43,14 @@
 
 	totallums /= 12 // 4 corners, each with 3 channels, get the average.
 
+	// Base lighting is an overlay, not corners, so add it in.
+	var/area/turf_area = loc
+	if(turf_area.base_lighting_is_daylight)
+		if(!planet_daylight_exact || IS_OPAQUE_TURF(src) || !totallums)
+			totallums = max(totallums, turf_area.base_lighting_lumcount)
+	else
+		totallums += turf_area.base_lighting_lumcount
+
 	totallums = (totallums - minlum) / (maxlum - minlum)
 
 	totallums += dynamic_lumcount
@@ -57,7 +65,8 @@
 	if (!lighting_object)
 		return FALSE
 
-	return !(lighting_object.luminosity || dynamic_lumcount)
+	var/area/turf_area = loc
+	return !(turf_area.area_has_base_lighting || lighting_object.luminosity || dynamic_lumcount)
 
 
 ///Proc to add movable sources of opacity on the turf and let it handle lighting code.
@@ -83,6 +92,7 @@
 		directional_opacity = ALL_CARDINALS
 		if(. != directional_opacity)
 			reconsider_lights()
+			queue_daylight_opacity_redraw()
 		return
 	directional_opacity = NONE
 	for(var/am in opacity_sources)
@@ -94,27 +104,32 @@
 			break
 	if(. != directional_opacity && (. == ALL_CARDINALS || directional_opacity == ALL_CARDINALS))
 		reconsider_lights() //The lighting system only cares whether the tile is fully concealed from all directions or not.
+		queue_daylight_opacity_redraw()
 
 
-/turf/proc/change_area(area/old_area, area/new_area)
-	if(SSlighting.initialized)
-		if (new_area.dynamic_lighting != old_area.dynamic_lighting)
-			if (IS_DYNAMIC_LIGHTING(src))
+/turf/proc/change_area(area/old_area, area/new_area, skip_daylight_refresh = FALSE)
+	if(SSlighting.initialized && !space_lit)
+		if (new_area.static_lighting != old_area.static_lighting)
+			if (new_area.static_lighting)
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()
 
-/turf/proc/generate_missing_corners()
-	if (!lighting_corner_NE)
-		lighting_corner_NE = new/datum/lighting_corner(src, NORTH|EAST)
+	// Manage removing/adding starlight overlays, we'll inherit from the area so we can drop it if the area has it already
+	if(space_lit)
+		if(!area_lights_space_turfs(new_area) && area_lights_space_turfs(old_area))
+			add_overlay(/obj/effect/fullbright)
+		else if (area_lights_space_turfs(new_area) && !area_lights_space_turfs(old_area))
+			cut_overlay(/obj/effect/fullbright)
 
-	if (!lighting_corner_SE)
-		lighting_corner_SE = new/datum/lighting_corner(src, SOUTH|EAST)
+	// Only touch visibility when base lighting is gained or lost.
+	if(new_area.area_has_base_lighting)
+		luminosity = 1
+	else if(old_area.area_has_base_lighting && lighting_object)
+		luminosity = 0
 
-	if (!lighting_corner_SW)
-		lighting_corner_SW = new/datum/lighting_corner(src, SOUTH|WEST)
-
-	if (!lighting_corner_NW)
-		lighting_corner_NW = new/datum/lighting_corner(src, NORTH|WEST)
-
-	lighting_corners_initialised = TRUE
+	// a docking ship or similar moves daylight's edge, so the ground around needs to catch up
+	if(!old_area.planet_daylight != !new_area.planet_daylight)
+		if(!skip_daylight_refresh)
+			refresh_planet_daylight_around(old_area.planet_daylight || new_area.planet_daylight)
+		queue_lighting_object_update()

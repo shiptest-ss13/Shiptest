@@ -139,6 +139,7 @@
 
 #define LIGHTING_PLANE 15
 #define LIGHTING_LAYER 15
+#define LIGHTING_ABOVE_BASE_LAYER 15.01 // for stuff we need to draw over the base layer
 #define LIGHTING_RENDER_TARGET "LIGHT_PLANE"
 
 #define RAD_TEXT_LAYER 15.1

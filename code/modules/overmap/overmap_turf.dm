@@ -51,5 +51,7 @@
 	name = "Overmap"
 	icon_state = "yellow"
 	requires_power = FALSE
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 	area_flags = NOTELEPORT | UNIQUE_AREA
 	flags_1 = NONE
