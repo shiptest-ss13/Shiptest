@@ -48,10 +48,10 @@ export const BlackMarketTelepad = (props, context) => {
               content="Set Seller ID"
               onClick={() => act('set_id')}
             />}
-           {!!id_locked && <Box inline bold> Seller ID: {seller_id} </Box>}
+            {!!id_locked && <Box inline bold> Seller ID: {seller_id} </Box>}
           </Stack.Item>
-            <Stack.Divider />
-            <Stack.Item>
+          <Stack.Divider />
+          <Stack.Item>
             <Input
               width="80%"
               value={name}
@@ -75,7 +75,7 @@ export const BlackMarketTelepad = (props, context) => {
                 })
               }
             />
-            </Stack.Item>
+          </Stack.Item>
           <Stack.Divider />
           <Stack.Item grow>
             <TextArea
@@ -92,22 +92,22 @@ export const BlackMarketTelepad = (props, context) => {
           <Stack.Divider />
           <Stack.Item>
             <Section title="Use crate contents as stock?"
-            buttons={
-            <Button
-              icon={stock_item ? 'toggle-off' : 'toggle-on'}
-              disabled={!is_stockable}
-              selected={stock_item}
-              content={stock_item ? 'Yes' : 'No'}
-              onClick={() => act('set_stocking')}
-            />
-          }
-          >
-            <Button.Confirm
-              fluid
-              icon="truck-arrow-right"
-              content="Place on Market"
-              onClick={() => act('place_on_market')}
-            />
+              buttons={
+                <Button
+                  icon={stock_item ? 'toggle-off' : 'toggle-on'}
+                  disabled={!is_stockable}
+                  selected={stock_item}
+                  content={stock_item ? 'Yes' : 'No'}
+                  onClick={() => act('set_stocking')}
+                />
+              }
+            >
+              <Button.Confirm
+                fluid
+                icon="truck-arrow-right"
+                content="Place on Market"
+                onClick={() => act('place_on_market')}
+              />
             </Section>
           </Stack.Item>
         </Stack>
