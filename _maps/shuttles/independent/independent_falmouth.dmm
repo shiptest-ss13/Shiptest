@@ -2101,6 +2101,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Bn" = (
@@ -3453,6 +3454,29 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/captain)
+"Va" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/structure/platform{
+	dir = 4
+	},
+/obj/structure/closet/crate/wooden{
+	name = "disembarking supplies"
+	},
+/obj/item/pickaxe/mini,
+/obj/item/pickaxe/mini,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/storage/bag/ore{
+	pixel_y = 2
+	},
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/effect/mapping_helpers/crate_shelve,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "Vl" = (
 /obj/structure/table,
 /obj/machinery/firealarm/directional/south{
@@ -3945,7 +3969,7 @@ mp
 Oq
 Ny
 aQ
-aQ
+Va
 pB
 wt
 Rm
