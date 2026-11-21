@@ -892,7 +892,7 @@
 	if(!direction)
 		return TRUE
 	set_glide_size(MOVEMENT_ADJUSTED_GLIDE_SIZE(inertia_move_delay, SSspacedrift.visual_delay))
-	AddComponent(/datum/component/drift, direction)
+	AddComponent(/datum/component/drift, direction, instant, start_delay)
 	return TRUE
 
 /atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
