@@ -246,11 +246,11 @@
 /obj/item/assembly/signaler/anomaly/veins
 	name = "\improper fountain anomaly core"
 	desc = "The stabilized core of a fountain anomaly. It's slippery, like an intestine."
-	grind_results = list(/datum/reagent/medicine/strange_reagent = 20)
+	grind_results = list(/datum/reagent/medicine/strange_reagent = 1)
 
 /obj/item/assembly/signaler/anomaly/veins/Initialize()
 	. = ..()
-	grind_results = list(/datum/reagent/medicine/strange_reagent = rand(10,20))
+	grind_results = list(/datum/reagent/medicine/strange_reagent = rand(20, 40))
 
 /obj/item/assembly/signaler/anomaly/veins/anomaly_core_detonation()
 	//goreshit
