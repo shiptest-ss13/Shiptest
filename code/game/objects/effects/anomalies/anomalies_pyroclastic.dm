@@ -7,9 +7,8 @@
 	pulse_delay = 10 SECONDS
 	core = /obj/item/assembly/signaler/anomaly/pyro
 
-/obj/effect/anomaly/pyro/Initialize(mapload, new_lifespan, drops_core = TRUE, explosive = FLUX_EXPLOSIVE)
+/obj/effect/anomaly/pyro/Initialize(mapload, new_lifespan, drops_core = TRUE)
 	. = ..()
-	src.explosive = explosive
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)

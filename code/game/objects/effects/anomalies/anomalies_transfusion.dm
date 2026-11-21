@@ -14,7 +14,7 @@
 
 	if(core)
 		var/obj/item/assembly/signaler/anomaly/transfusion/our_core = core
-		core.set_blood_stored(rand(our_core.blood_max/3, our_core.blood_max))
+		our_core.set_blood_stored(rand(our_core.blood_max/3, our_core.blood_max))
 
 /obj/effect/anomaly/transfusion/anomalyEffect()
 	..()

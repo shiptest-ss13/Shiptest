@@ -75,11 +75,11 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
-	if(stored_mob && looking.stat != DEAD && prob(25))
-		say_fucky_things()
-
 	for(var/mob/living/carbon/human/looking in range(effectrange, src))
 		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
+
+		if(stored_mob && looking.stat != DEAD && prob(25))
+			say_fucky_things()
 
 		var/blind = HAS_TRAIT(looking, TRAIT_BLIND)
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner || (HAS_TRAIT(looking, TRAIT_DEAF) && blind))
