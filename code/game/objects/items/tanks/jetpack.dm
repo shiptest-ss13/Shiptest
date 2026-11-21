@@ -98,9 +98,9 @@
 		turn_off(user)
 
 /obj/item/tank/jetpack/proc/allow_thrust(num)
-	if(!ismob(loc))
+	var/mob/user = get_user()
+	if(!user)
 		return FALSE
-	var/mob/user = loc
 	if((num < 0.005 || air_contents.total_moles() < num))
 		turn_off(user)
 		return
@@ -108,6 +108,9 @@
 	assume_air_moles(air_contents, num)
 
 	return TRUE
+
+/obj/item/tank/jetpack/proc/get_user()
+	return ismob(loc) ? loc : null
 
 /obj/item/tank/jetpack/improvised
 	name = "improvised jetpack"
@@ -174,6 +177,7 @@
 	distribute_pressure = 0
 	gas_type = GAS_CO2
 
+//its ion jetpack so its cooler
 /obj/item/tank/jetpack/suit
 	name = "hardsuit jetpack upgrade"
 	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It draws propellant from an external air tank."
@@ -186,14 +190,17 @@
 	slot_flags = null
 	gas_type = null
 	custom_price = 2000
-	var/datum/gas_mixture/temp_air_contents
-	var/obj/item/tank/internals/tank = null
+
+	power_use_amount = POWER_CELL_USE_VERY_LOW
+
 	var/mob/living/carbon/human/cur_user
+
+	var/cell_override = /obj/item/stock_parts/cell/high
 
 /obj/item/tank/jetpack/suit/Initialize()
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	temp_air_contents = air_contents
+	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE)
 
 /obj/item/tank/jetpack/suit/attack_self()
 	return
@@ -202,41 +209,17 @@
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit))
 		to_chat(user, span_warning("\The [src] must be connected to a hardsuit!"))
 		return
-
-	var/mob/living/carbon/human/H = user
-	if((!istype(H.s_store, /obj/item/tank/internals)) && (!istype(H.back, /obj/item/tank/internals)) && (!istype(H.belt, /obj/item/tank/internals)) && (!istype(H.l_store, /obj/item/tank/internals)) && (!istype(H.r_store, /obj/item/tank/internals)))
-		to_chat(user, span_warning("You need to equip a tank!"))
-		return
 	..()
 
 /obj/item/tank/jetpack/suit/turn_on(mob/user)
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit) || !ishuman(loc.loc) || loc.loc != user)
 		return
-	var/mob/living/carbon/human/H = user
-
-	//Cascades down a priority list, taking air from first the suit storage slot, then the back, the belt, the left pocket and the right pocket
-	if(istype(H.back, /obj/item/tank))
-		tank = H.back
-	else if(istype(H.s_store, /obj/item/tank))
-		tank = H.s_store
-	else if(istype(H.belt, /obj/item/tank))
-		tank = H.belt
-	else if(istype(H.l_store, /obj/item/tank))
-		tank = H.l_store
-	else if (istype(H.r_store, /obj/item/tank))
-		tank = H.r_store
-	else
-		tank = null
-		return
-
-	air_contents = tank.air_contents
 	START_PROCESSING(SSobj, src)
 	cur_user = user
 	..()
 
 /obj/item/tank/jetpack/suit/turn_off(mob/user)
-	tank = null
-	air_contents = temp_air_contents
+	playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
 	STOP_PROCESSING(SSobj, src)
 	cur_user = null
 	..()
@@ -246,8 +229,20 @@
 		turn_off(cur_user)
 		return
 
-	if(!tank)
+	if(!allow_thrust())
 		to_chat(usr, span_warning("\The [src] shuts down!"))
 		turn_off(cur_user)
 		return
 	..()
+
+/obj/item/tank/jetpack/suit/allow_thrust(num)
+	var/mob/user = get_user()
+	if(!user)
+		return FALSE
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		return FALSE
+
+	return TRUE
+
+/obj/item/tank/jetpack/suit/get_user()
+	return cur_user

@@ -141,6 +141,14 @@
 	. = ..()
 	if(!helmet && helmettype)
 		. += span_notice(" The helmet on [src] seems to be malfunctioning. It's light bulb needs to be replaced.")
+	if(jetpack)
+		. += span_notice("A jetpack is mounted and could be examined if you looked closely")
+		. += span_notice("You could remove the jetpack with a <b> crowbar</b>, or remove the cell with a <b>right click</b>")
+
+/obj/item/clothing/suit/space/hardsuit/examine_more(mob/user)
+	. = ..()
+	if(jetpack)
+		. += jetpack.examine(user)
 
 /obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/tank/jetpack/suit))
@@ -155,19 +163,10 @@
 			jetpack = I
 			to_chat(user, span_notice("You successfully install the jetpack into [src]."))
 			return
-	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(!jetpack)
-			to_chat(user, span_warning("[src] has no jetpack installed."))
-			return
-		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING))
-			to_chat(user, span_warning("You cannot remove the jetpack from [src] while wearing it."))
-			return
+	else if(istype(I, /obj/item/stock_parts/cell))
+		if(jetpack)
+			jetpack.attackby(I, user, params)
 
-		jetpack.turn_off(user)
-		jetpack.forceMove(drop_location())
-		jetpack = null
-		to_chat(user, span_notice("You successfully remove the jetpack from [src]."))
-		return
 	else if(istype(I, /obj/item/light) && helmettype)
 		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING))
 			to_chat(user, span_warning("You cannot replace the bulb in the helmet of [src] while wearing it."))
@@ -185,6 +184,28 @@
 			to_chat(user, span_notice("You have successfully repaired [src]'s helmet."))
 			new /obj/item/light/bulb/broken(drop_location())
 	return ..()
+
+/obj/item/clothing/suit/space/hardsuit/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	if(!jetpack)
+		to_chat(user, span_warning("[src] has no jetpack installed."))
+		return FALSE
+	jetpack.attack_hand_secondary(user, modifiers)
+
+/obj/item/clothing/suit/space/hardsuit/crowbar_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
+	if(!jetpack)
+		to_chat(user, span_warning("[src] has no jetpack installed."))
+		return FALSE
+	if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING))
+		to_chat(user, span_warning("You cannot remove the jetpack from [src] while wearing it."))
+		return FALSE
+
+	jetpack.turn_off(user)
+	jetpack.forceMove(drop_location())
+	jetpack = null
+	to_chat(user, span_notice("You successfully remove the jetpack from [src]."))
+	return TRUE
 
 /obj/item/clothing/suit/space/hardsuit/equipped(mob/user, slot)
 	..()
@@ -314,7 +335,7 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe, /obj/item/tank/jetpack)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	custom_price = 2000
@@ -329,7 +350,6 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100, "wound" = 30)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	custom_price = 4500
 
@@ -390,7 +410,6 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 20)
 	slowdown = 0.4
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
 	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/activate_suit_injector)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/esh
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -556,7 +575,7 @@
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 35, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 30)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/tank/jetpack)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
 	slowdown = 0.5

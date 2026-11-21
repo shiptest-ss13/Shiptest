@@ -137,7 +137,8 @@ GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
-	/obj/item/tank/internals)))
+	/obj/item/tank/internals,
+	/obj/item/tank/jetpack)))
 
 GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -149,7 +150,9 @@ GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
-	/obj/item/tank/internals)))
+	/obj/item/tank/internals,
+	/obj/item/tank/jetpack
+	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/ammo_box,
