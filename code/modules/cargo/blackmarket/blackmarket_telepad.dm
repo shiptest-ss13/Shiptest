@@ -364,6 +364,8 @@
 	our_market.local_good_id++
 	say("Item placed on the market!")
 	playsound(src, 'sound/effects/cashregister.ogg', 40, FALSE)
+	as_stock = FALSE
+	valid_as_stock = FALSE
 
 #undef LTSRBT_MAX_MARKET_ITEMS
 

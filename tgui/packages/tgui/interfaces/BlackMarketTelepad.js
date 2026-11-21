@@ -100,13 +100,14 @@ export const BlackMarketTelepad = (props, context) => {
           <Stack.Divider />
           <Stack.Item>
             <Section
-              title="Use crate contents as stock?"
+              title={
+                'Stock items ' + [stock_item ? 'individually' : 'as a group']
+              }
               buttons={
                 <Button
                   icon={stock_item ? 'toggle-off' : 'toggle-on'}
                   disabled={!is_stockable}
                   selected={stock_item}
-                  content={stock_item ? 'Yes' : 'No'}
                   onClick={() => act('set_stocking')}
                 />
               }
