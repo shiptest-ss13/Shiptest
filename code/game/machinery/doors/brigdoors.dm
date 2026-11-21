@@ -59,10 +59,6 @@
 			if(F.id == id)
 				targets += F
 
-		for(var/obj/structure/closet/secure_closet/brig/C in urange(20, src))
-			if(C.id == id)
-				targets += C
-
 	if(!targets.len)
 		atom_break()
 	update_appearance()
@@ -99,16 +95,6 @@
 			continue
 		INVOKE_ASYNC(airlock, TYPE_PROC_REF(/obj/machinery/door/airlock/security/brig, close))
 
-	for(var/obj/structure/closet/secure_closet/brig/C in targets)
-		if(C.broken)
-			continue
-		if(C.opened && !C.close())
-			continue
-		C.locked = TRUE
-		C.update_appearance()
-	return 1
-
-
 /obj/machinery/door_timer/proc/timer_end(forced = FALSE)
 
 	if(machine_stat & (NOPOWER|BROKEN))
@@ -132,14 +118,6 @@
 		if(!airlock.density)
 			continue
 		INVOKE_ASYNC(airlock, TYPE_PROC_REF(/obj/machinery/door/airlock/security/brig, open))
-
-	for(var/obj/structure/closet/secure_closet/brig/C in targets)
-		if(C.broken)
-			continue
-		if(C.opened)
-			continue
-		C.locked = FALSE
-		C.update_appearance()
 
 	return 1
 

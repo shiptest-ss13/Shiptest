@@ -80,10 +80,6 @@
 	name = "photo album (Quartermaster)"
 	persistence_id = "QM"
 
-/obj/item/storage/photo_album/CE
-	name = "photo album (Chief Engineer)"
-	persistence_id = "CE"
-
 /obj/item/storage/photo_album/bar
 	name = "photo album (Bar)"
 	persistence_id = "bar"
