@@ -139,6 +139,14 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "blackcube"
 
+/obj/effect/anomaly/tvstatic/television
+	name = "cracked televison"
+	//the textglob is intentional. referentional even.
+	desc = "shehasbeenn~melesssinceourbi=thaconstantadversarycaringfornothingbutmyruinasworddrenchedinmybloodfor%vermygreatestand+nlylovesheisthedarkoLetheenemyandloverwithoutwhoZmyveryexistencewouldbepatheticandvulgar"
+	immortal = TRUE
+	immobile = TRUE
+	icon_state = "static_tv"
+
 /obj/effect/particle_effect/staticball
 	name = "static blob"
 	desc = "An unsettling mass of free floating static"
