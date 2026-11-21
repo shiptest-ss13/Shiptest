@@ -17,6 +17,60 @@
 /// Furthest a turf's own coloured light is looked for when deciding exact daylight
 #define DAYLIGHT_BREAK_LIGHT_REACH 3
 
+/// A time of day a planet can be at, rolled once when the planet is created
+/datum/time_of_day
+	var/name = "midday"
+	/// Multiplies the planet's own daylight power
+	var/power_multiplier = 1
+	/// Dimmest power allowed after multiplier
+	var/min_power = 0.15
+	/// Colour blended into the planet's own daylight colour, null for none
+	var/tint
+	/// How far the daylight colour is blended towards the tint, 0 to 1
+	var/tint_strength = 0
+
+/datum/time_of_day/day
+
+/datum/time_of_day/dawn
+	name = "dawn"
+	power_multiplier = 0.65
+	tint = "#ffae7a"
+	tint_strength = 0.3
+
+/datum/time_of_day/dusk
+	name = "dusk"
+	power_multiplier = 0.5
+	tint = "#ff7f50"
+	tint_strength = 0.4
+
+/datum/time_of_day/night
+	name = "night"
+	power_multiplier = 0.25
+	tint = "#2b3a78"
+	tint_strength = 0.55
+
+// much darker than night, bring a light
+/datum/time_of_day/eclipse
+	name = "eclipse"
+	power_multiplier = 0.08
+	min_power = 0.05
+	tint = "#1a1f3d"
+	tint_strength = 0.65
+
+// for when the weather is manually set by VV
+/datum/time_of_day/anomalous
+	name = "anomalous"
+
+/proc/time_of_day_power(datum/time_of_day/time_of_day, light_power)
+	if(!time_of_day || !light_power)
+		return light_power
+	return max(light_power * initial(time_of_day.power_multiplier), min(light_power, initial(time_of_day.min_power)))
+
+/proc/time_of_day_color(datum/time_of_day/time_of_day, light_color)
+	if(!time_of_day || !initial(time_of_day.tint))
+		return light_color
+	return BlendRGB(light_color, initial(time_of_day.tint), initial(time_of_day.tint_strength))
+
 /proc/planet_daylight_strength(light_range)
 	var/static/list/strength_by_range = list()
 	var/cached_strength = strength_by_range["[light_range]"]
@@ -175,11 +229,13 @@
 		for(var/turf/nearby_turf as anything in RANGE_TURFS(daylight_reach * 2, changed_turf))
 			if(nearby_turf.can_emit_planet_daylight)
 				source_turfs[nearby_turf] = TRUE
+		CHECK_TICK
 	for(var/turf/exact_turf as anything in exact_turfs)
 		exact_turf.update_planet_daylight_exact()
-	CHECK_TICK
+		CHECK_TICK
 	for(var/turf/source_turf as anything in source_turfs)
 		source_turf.update_planet_daylight_source()
+		CHECK_TICK
 
 /turf/proc/queue_lighting_object_update()
 	if(lighting_object && !lighting_object.needs_update)
@@ -246,46 +302,106 @@
 * For use when needing to update a planet's lighting. This does nothing on non-dockable overmap objects.
 */
 /datum/overmap/proc/update_planet_lighting_gui()
-	var/new_light_range = input(usr, "Enter light range", "Update planet lighting", 2) as num|null
-	if(isnull(new_light_range))
-		return
-	var/new_light_power = input(usr, "Enter light power", "Update planet lighting", 0.8) as num|null
-	if(isnull(new_light_power))
-		return
-	var/new_light_color = input(usr, "Enter hex color:", "Update planet lighting", COLOR_WHITE) as color|null
-	if(isnull(new_light_color))
-		return
-	if(!update_planet_lighting(new_light_range, new_light_power, new_light_color))
-		to_chat(usr, span_warning("You can only use this on a loaded planet, outpost or static object."), confidential = TRUE)
-		return
-	message_admins("[key_name_admin(usr)] set the lighting of [src] to range [new_light_range], power [new_light_power], colour [new_light_color].")
-	log_admin("[key_name(usr)] set the lighting of [src] to range [new_light_range], power [new_light_power], colour [new_light_color].")
+	var/new_light_range
+	var/new_light_power
+	var/new_light_color
+	var/datum/time_of_day/new_time_of_day
 
-/datum/overmap/proc/update_planet_lighting(new_light_range, new_light_power, new_light_color)
-	return FALSE
+	var/datum/overmap/dynamic/dynamic_planet = src
+	var/datum/planet_type/planet = istype(dynamic_planet) ? dynamic_planet.planet : null
+	// fixed lighting planets, like wastes, never show a time of day
+	var/has_time_of_day = length(planet?.time_of_day_weights)
+	var/mode = "Custom"
+	if(planet)
+		var/prompt = has_time_of_day \
+			? "Preset picks a time of day or the planet's original roll, Custom sets it by hand and shows as anomalous to players." \
+			: "This planet has fixed lighting. Preset returns it to its planet type's lighting, Custom sets it by hand."
+		mode = tgui_alert(usr, prompt, "Update planet lighting", list("Preset", "Custom"))
+		if(!mode)
+			return
 
-/datum/overmap/dynamic/update_planet_lighting(new_light_range, new_light_power, new_light_color)
+	var/mode_text = ""
+	var/result
+	if(mode == "Preset")
+		var/list/presets = list()
+		if(has_time_of_day)
+			var/datum/time_of_day/rolled = dynamic_planet.rolled_time_of_day
+			presets["original roll ([initial(rolled.name)])"] = rolled
+			for(var/datum/time_of_day/preset as anything in subtypesof(/datum/time_of_day) - /datum/time_of_day/anomalous)
+				// midday leaves the planet type's lighting untouched, say so
+				var/preset_name = (preset == /datum/time_of_day/day) ? "[initial(preset.name)] (base lighting)" : initial(preset.name)
+				presets[preset_name] = preset
+		else
+			// fixed planets have no times of day, only their planet type's lighting
+			presets["base lighting"] = null
+		var/picked = tgui_input_list(usr, "Pick a preset", "Update planet lighting", presets)
+		if(!picked)
+			return
+		new_time_of_day = presets[picked]
+		mode_text = " ([picked] preset)"
+		result = dynamic_planet.set_time_of_day_lighting(new_time_of_day)
+		new_light_range = dynamic_planet.light_range
+		new_light_power = dynamic_planet.light_power
+		new_light_color = dynamic_planet.light_color
+	else
+		new_light_range = input(usr, "Enter light range", "Update planet lighting", 2) as num|null
+		if(isnull(new_light_range))
+			return
+		new_light_power = input(usr, "Enter light power", "Update planet lighting", 0.8) as num|null
+		if(isnull(new_light_power))
+			return
+		new_light_color = input(usr, "Enter hex color:", "Update planet lighting", COLOR_WHITE) as color|null
+		if(isnull(new_light_color))
+			return
+		if(has_time_of_day)
+			new_time_of_day = /datum/time_of_day/anomalous
+		result = update_planet_lighting(new_light_range, new_light_power, new_light_color, new_time_of_day)
+
+	if(result == PLANET_LIGHTING_FAILED)
+		to_chat(usr, span_warning("You can only use this on a loaded outpost, or a planet or static object."), confidential = TRUE)
+		return
+	var/pending_text = (result == PLANET_LIGHTING_PENDING) ? " It will apply when the level loads." : ""
+	message_admins("[key_name_admin(usr)] set the lighting of [src] to range [new_light_range], power [new_light_power], colour [new_light_color][mode_text].[pending_text]")
+	log_admin("[key_name(usr)] set the lighting of [src] to range [new_light_range], power [new_light_power], colour [new_light_color][mode_text].")
+
+/datum/overmap/proc/update_planet_lighting(new_light_range, new_light_power, new_light_color, datum/time_of_day/new_time_of_day)
+	return PLANET_LIGHTING_FAILED
+
+/datum/overmap/dynamic/update_planet_lighting(new_light_range, new_light_power, new_light_color, datum/time_of_day/new_time_of_day)
+	light_range = new_light_range
+	light_power = new_light_power
+	light_color = new_light_color
+	if(new_time_of_day)
+		time_of_day = new_time_of_day
+		alter_token_appearance()
+	if(!mapzone)
+		return PLANET_LIGHTING_PENDING
+	set_mapzone_planetary_lighting(mapzone, new_light_range, new_light_power, new_light_color)
+	return PLANET_LIGHTING_APPLIED
+
+/datum/overmap/dynamic/proc/set_time_of_day_lighting(datum/time_of_day/new_time_of_day)
+	if(!planet)
+		return PLANET_LIGHTING_FAILED
+	return update_planet_lighting(
+		planet.light_range,
+		time_of_day_power(new_time_of_day, planet.light_power),
+		time_of_day_color(new_time_of_day, planet.light_color),
+		new_time_of_day,
+	)
+
+/datum/overmap/static_object/update_planet_lighting(new_light_range, new_light_power, new_light_color, datum/time_of_day/new_time_of_day)
 	light_range = new_light_range
 	light_power = new_light_power
 	light_color = new_light_color
 	if(!mapzone)
-		return FALSE
+		return PLANET_LIGHTING_PENDING
 	set_mapzone_planetary_lighting(mapzone, new_light_range, new_light_power, new_light_color)
-	return TRUE
+	return PLANET_LIGHTING_APPLIED
 
-/datum/overmap/static_object/update_planet_lighting(new_light_range, new_light_power, new_light_color)
-	light_range = new_light_range
-	light_power = new_light_power
-	light_color = new_light_color
+/datum/overmap/outpost/update_planet_lighting(new_light_range, new_light_power, new_light_color, datum/time_of_day/new_time_of_day)
 	if(!mapzone)
-		return FALSE
+		return PLANET_LIGHTING_FAILED
 	set_mapzone_planetary_lighting(mapzone, new_light_range, new_light_power, new_light_color)
-	return TRUE
-
-/datum/overmap/outpost/update_planet_lighting(new_light_range, new_light_power, new_light_color)
-	if(!mapzone)
-		return FALSE
-	set_mapzone_planetary_lighting(mapzone, new_light_range, new_light_power, new_light_color)
-	return TRUE
+	return PLANET_LIGHTING_APPLIED
 
 #undef DAYLIGHT_BREAK_LIGHT_REACH

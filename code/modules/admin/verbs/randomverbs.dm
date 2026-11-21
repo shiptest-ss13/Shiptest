@@ -1470,7 +1470,7 @@
 	for(var/datum/overmap/dynamic/found_planet as anything in SSovermap.dynamic_encounters)
 		if(selected_system && found_planet.current_overmap != selected_system)
 			continue
-		found_planet.update_planet_lighting(new_light_range, new_light_power, new_light_color)
+		found_planet.update_planet_lighting(new_light_range, new_light_power, new_light_color, found_planet.rolled_time_of_day ? /datum/time_of_day/anomalous : null)
 		CHECK_TICK
 
 	var/where = selected_system ? "all planets in [selected_system.name]" : "all planets in the round"

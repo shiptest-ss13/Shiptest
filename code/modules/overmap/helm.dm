@@ -241,11 +241,14 @@
 
 		objects |= object.contents
 
+		var/datum/overmap/dynamic/planet_object = object
+		var/hidden = HAS_TRAIT(object, TRAIT_CLOAKED)
 		var/list/other_data = list(
 			name = object.name,
 			candock = available_dock,
 			object_class = object.ship_class,
-			hidden = HAS_TRAIT(object, TRAIT_CLOAKED),
+			hidden = hidden,
+			time_of_day = (!hidden && istype(planet_object) && planet_object.time_of_day) ? initial(planet_object.time_of_day.name) : null,
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)

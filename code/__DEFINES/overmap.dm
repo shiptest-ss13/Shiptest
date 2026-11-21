@@ -50,6 +50,21 @@
 
 #define DYNAMIC_WORLD_TEST "test"
 
+// Default time_of_day_weights for planet types
+// can override at the planet level
+#define PLANET_DEFAULT_TIMES_OF_DAY list(\
+	/datum/time_of_day/day = 40,\
+	/datum/time_of_day/dawn = 20,\
+	/datum/time_of_day/dusk = 20,\
+	/datum/time_of_day/night = 20,\
+)
+
+// update_planet_lighting results
+#define PLANET_LIGHTING_FAILED 0
+#define PLANET_LIGHTING_APPLIED 1
+/// Stored, and used when the level loads
+#define PLANET_LIGHTING_PENDING 2
+
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
 #define OVERMAP_SHIP_FLYING "flying"

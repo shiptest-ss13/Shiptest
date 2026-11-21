@@ -35,6 +35,8 @@
 	var/light_power = 0
 	///This planet's light color per turf.
 	var/light_color = COLOR_WHITE
+	///Weighted list of time of day datums the planet rolls from. Null keeps the lighting fixed.
+	var/list/time_of_day_weights
 
 	///what kind of veins spawn on this planet? Mostly a holder for drill missions.
 	var/vein_type = null
@@ -47,6 +49,7 @@
 	icon_state = "lava"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = COLOR_LAVAPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -70,6 +73,7 @@
 	icon_state = "ice"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = COLOR_ICEPLANET_LIGHT
 	light_range = 2
 	light_power = 1
@@ -92,6 +96,7 @@
 	icon_state = "jungle"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = COLOR_VERY_LIGHT_GRAY
 	light_range = 2
 	light_power = 1
@@ -114,6 +119,7 @@
 	icon_state = "rock"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -135,6 +141,7 @@
 	icon_state = "whitesands"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = COLOR_SANDPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -158,6 +165,7 @@
 	icon_state = "ocean"
 	color = "#c6b597"
 	mapgen = /datum/map_generator/planet_generator/beach
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = COLOR_BEACHPLANET_LIGHT
 	light_range = 2
 	light_power = 0.8
@@ -303,6 +311,7 @@
 	color = "#f3c282"
 	//ruin_type = RUINTYPE_DESERT
 	mapgen = /datum/map_generator/planet_generator/desert
+	time_of_day_weights = PLANET_DEFAULT_TIMES_OF_DAY
 	light_color = "#ffd2bd"
 	light_range = 2
 	light_power = 0.6

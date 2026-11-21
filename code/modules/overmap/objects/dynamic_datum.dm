@@ -73,6 +73,10 @@
 	var/light_power = 0
 	///This planet's light color per turf.
 	var/light_color = COLOR_WHITE
+	///Planet's time of day
+	var/datum/time_of_day/time_of_day
+	///The time of day this planet rolled, for resetting if needed
+	var/datum/time_of_day/rolled_time_of_day
 
 /datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
@@ -212,6 +216,7 @@
 
 
 /datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
+	src.planet = planet
 	if(!is_type_in_list(planet, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin)))
 		planet_name = "[gen_planet_name()]"
 		name = "[planet_name] ([planet.name])"
@@ -230,6 +235,14 @@
 	light_power = planet.light_power
 	light_color = planet.light_color
 
+	time_of_day = length(planet.time_of_day_weights) ? pick_weight(planet.time_of_day_weights) : null
+	rolled_time_of_day = time_of_day
+	light_power = time_of_day_power(time_of_day, light_power)
+	light_color = time_of_day_color(time_of_day, light_color)
+	var/rolled_light_range = light_range
+	var/rolled_light_power = light_power
+	var/rolled_light_color = light_color
+
 	//if an admin overidded planet lighting, lets use that instead
 	if(GLOB.override_new_planet_lighting_range)
 		light_range = GLOB.override_new_planet_lighting_range
@@ -244,6 +257,10 @@
 	else if(current_overmap?.dynamic_light_color_override)
 		light_color = current_overmap.dynamic_light_color_override
 
+	// an override replaced the rolled lighting, so the rolled label would be wrong
+	if(time_of_day && (light_range != rolled_light_range || light_power != rolled_light_power || light_color != rolled_light_color))
+		time_of_day = /datum/time_of_day/anomalous
+
 	alter_token_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()
@@ -252,6 +269,8 @@
 	token.name = name
 	token_icon_state = planet.icon_state
 	desc = planet.desc
+	if(time_of_day)
+		desc += span_notice("\nLocal time at the landing zone: [initial(time_of_day.name)].")
 	default_color = planet.color
 	var/orestext
 	if(planet.primary_ores)

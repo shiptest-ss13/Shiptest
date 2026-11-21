@@ -102,6 +102,7 @@ const SharedContent = (_props, context) => {
         <Table>
           <Table.Row bold>
             <Table.Cell>Name</Table.Cell>
+            <Table.Cell>Local Time</Table.Cell>
             {!isViewer && <Table.Cell>Act</Table.Cell>}
             {!isViewer && <Table.Cell>Dock</Table.Cell>}
           </Table.Row>
@@ -110,6 +111,7 @@ const SharedContent = (_props, context) => {
               <Table.Cell>
                 {ship.hidden ? 'Unidentified ' + ship.object_class : ship.name}
               </Table.Cell>
+              <Table.Cell color="label">{ship.time_of_day}</Table.Cell>
               {!isViewer && (
                 <Table.Cell>
                   <Button
