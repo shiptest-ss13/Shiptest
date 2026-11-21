@@ -409,8 +409,7 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/check_should_sleep()
 	if(ai_status == AI_STATUS_OFF || QDELETED(pawn))
 		return // a player's in control, or we've been switched off
-	var/atom/target = blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	if(!QDELETED(target))
+	if(in_a_fight())
 		wake_up()
 		return // in the middle of a fight, so see it through even if there's nobody around to watch
 	var/virtual_level = pawn.virtual_z()
@@ -425,6 +424,10 @@ multiple modular subtrees with behaviors
 		stop_sleeping()
 		sleeping_on_virtual_level = "[virtual_level]"
 		LAZYADDASSOCLIST(SSai_controllers.sleeping_ai_by_virtual_level, sleeping_on_virtual_level, src)
+
+/// Whether we're in a fight, which keeps us awake even with nobody around
+/datum/ai_controller/proc/in_a_fight()
+	return FALSE
 
 /// Takes us off the list of sleeping AI for our virtual z-level
 /datum/ai_controller/proc/stop_sleeping()
@@ -518,25 +521,11 @@ multiple modular subtrees with behaviors
 
 /// Forgets where home is and the way back to it, so we make wherever we are now home
 /datum/ai_controller/proc/forget_home()
-	clear_blackboard_key(BB_BASIC_MOB_HOME_TURF)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT_SINCE)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_WAYPOINT_HOP)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_NEXT)
-	clear_blackboard_key(BB_BASIC_MOB_HOME_TRAIL_SINCE)
-	clear_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR)
-	clear_blackboard_key(BB_BASIC_MOB_GUARD_ANCHOR_FOR)
-	clear_blackboard_key(BB_BASIC_MOB_GUARD_HOME_TRAIL)
-	cancel_movement_actions() // and stop walking back to the old one
+	return
 
 /// Makes spot home, and forgets the way back to the old one, like when an admin picks somewhere for us to hold
 /datum/ai_controller/proc/set_home(turf/spot)
-	forget_home()
-	set_blackboard_key(BB_BASIC_MOB_HOME_TURF, spot)
-	set_blackboard_key(BB_BASIC_MOB_HOME_CHOSEN, TRUE)
-	wake_up() // so we go there even if we were asleep
+	return
 
 /// Ends behavior, passing along the arguments it was queued with, like if we've given up on it or are doing something else instead
 /datum/ai_controller/proc/finish_behavior(datum/ai_behavior/behavior, succeeded = FALSE)
@@ -576,55 +565,10 @@ multiple modular subtrees with behaviors
 
 // whether we gave up on getting to them lately, unless they've just shot at us
 /datum/ai_controller/proc/check_still_ignoring(atom/target)
-	var/leashed_until = LAZYACCESS(blackboard[BB_BASIC_MOB_LEASHED_OFF], target)
-	var/ignore_until = LAZYACCESS(blackboard[BB_BASIC_MOB_IGNORED_TARGETS], target)
-	if((!leashed_until || world.time >= leashed_until) && (!ignore_until || world.time >= ignore_until))
-		return FALSE
-	if(blackboard[BB_BASIC_MOB_SHOT_BY] == target && AI_RECENTLY_SHOT_AT(src, 2 SECONDS))
-		if(leashed_until)
-			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target) // they've picked the fight back up, so it's on again until they lead us too far again
-		return FALSE
-	if(leashed_until && world.time < leashed_until)
-		var/turf/home = blackboard[BB_BASIC_MOB_GUARD_ANCHOR] || blackboard[BB_BASIC_MOB_HOME_TURF] // where we're guarding someone we downed, if we are, as our leash is from there
-		var/turf/their_turf = get_turf(target)
-		if(their_turf && (get_dist(pawn, their_turf) <= 1 || (home && their_turf.z == home.z && get_dist(home, their_turf) <= blackboard[BB_BASIC_MOB_LEASHED_OFF_RANGE])))
-			remove_thing_from_blackboard_key(BB_BASIC_MOB_LEASHED_OFF, target)
-		else
-			return TRUE
-	if(!ignore_until || world.time >= ignore_until)
-		return FALSE
-	// a way's opened up, like the window's gone or they've come round it. Only the straight line, as pathing every look would cost too much
-	var/turf/their_turf = get_turf(target)
-	if(their_turf && their_turf.z == pawn.z && get_dist(pawn, their_turf) <= AI_IGNORE_RECHECK_RANGE && can_walk_straight_to(pawn, their_turf))
-		remove_thing_from_blackboard_key(BB_BASIC_MOB_IGNORED_TARGETS, target)
-		return FALSE
-	return TRUE
+	return FALSE
 
 // goes after target that mob learns about without direct confirmation
 /datum/ai_controller/proc/learn_of_target(atom/target, turf/seen_at, how)
-	if(how != AI_LEARNED_SHOT && check_still_ignoring(target))
-		return FALSE // we know there's no getting to them
-	if(blackboard[BB_BASIC_MOB_CURRENT_TARGET] != target)
-		set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time) // someone new, so how long we've been after them starts now, as it does for anyone we pick ourselves
-	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
-	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
-	if(how == AI_LEARNED_TOLD)
-		set_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET, TRUE)
-	else
-		clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know it for ourselves
-	if(how == AI_LEARNED_HEARD)
-		set_blackboard_key(BB_BASIC_MOB_HEARD_TARGET, TRUE)
-	else
-		clear_blackboard_key(BB_BASIC_MOB_HEARD_TARGET)
-	clear_blackboard_key(BB_BASIC_MOB_SEARCH_CALLED_OUT)
-	wake_up()
-	if(ai_can_see(pawn, target, AI_VISION_RANGE(src)))
-		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME) // they're right there, so spot them the usual way
-		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)
-		return TRUE
-	set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, FALSE)
-	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, seen_at)
-	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
 	return FALSE
 
 ///Returns the minimum required distance to preform one of our current behaviors. Honestly this should just be cached or something but fuck you
@@ -944,58 +888,11 @@ multiple modular subtrees with behaviors
 
 /// The AI_CONDITION_* flags true for our mob itself
 /datum/ai_controller/proc/get_pawn_conditions()
-	. = NONE
-	var/mob/living/basic/basic_pawn = pawn
-	if(istype(basic_pawn))
-		var/turf/our_turf = get_turf(basic_pawn)
-		if(!is_environment_safe_for(basic_pawn, our_turf) || is_ai_hazard_turf(our_turf, basic_pawn))
-			. |= AI_CONDITION_UNSAFE_SPOT
-		else if(!ai_immune_to_tear_gas(basic_pawn) && is_ai_irritant_smoke(our_turf))
-			. |= AI_CONDITION_UNSAFE_SPOT // in tear gas, so we get out of it
-		else if(!(basic_pawn.movement_type & FLYING) && is_ai_swimming_water(our_turf) && !passing_through_water())
-			. |= AI_CONDITION_UNSAFE_SPOT // stood about in deep water, slowed and in the open, rather than crossing it on our way somewhere, so we get out
-	if(pawn.GetComponent(/datum/component/ranged_attacks))
-		. |= AI_CONDITION_HAS_RANGED_ATTACK
-	var/datum/component/ai_magazine/magazine = pawn.GetComponent(/datum/component/ai_magazine)
-	if(magazine?.reloading)
-		. |= AI_CONDITION_RELOADING
-
-/// Whether we're in deep water on our way somewhere, rather than stood about in it.
-/datum/ai_controller/proc/passing_through_water()
-	if(blackboard[BB_BASIC_MOB_SAFE_TURF])
-		return FALSE
-	var/atom/destination = current_movement_target
-	if(!destination || !ai_movement?.moving_controllers[src])
-		return FALSE
-	return ismob(destination) || !is_ai_swimming_water(get_turf(destination))
+	return NONE
 
 /// The AI_CONDITION_* flags true going by what's on our blackboard
 /datum/ai_controller/proc/get_blackboard_conditions()
-	. = NONE
-	var/atom/target = blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	if(!QDELETED(target))
-		. |= AI_CONDITION_HAS_TARGET
-		var/in_sight = blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT]
-		if(in_sight == TRUE)
-			. |= AI_CONDITION_TARGET_SEEN
-		else if(in_sight == FALSE)
-			. |= AI_CONDITION_TARGET_LOST
-		if(target.Adjacent(pawn))
-			. |= AI_CONDITION_TARGET_ADJACENT
-	if(blackboard[BB_BASIC_MOB_TAKING_COVER_TURF])
-		. |= AI_CONDITION_TAKING_COVER
-	if(blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF])
-		. |= AI_CONDITION_FIGHTING_FROM_COVER
-	if(blackboard[BB_BASIC_MOB_FLANKING])
-		. |= AI_CONDITION_FLANKING
-	if(blackboard[BB_BASIC_MOB_REPOSITION_TURF])
-		. |= AI_CONDITION_REPOSITIONING
-	if(world.time < blackboard[BB_BASIC_MOB_BACKING_OFF_UNTIL])
-		. |= AI_CONDITION_BACKING_OFF
-	if(blackboard[BB_BASIC_MOB_SAFE_TURF])
-		. |= AI_CONDITION_SEEKING_SAFETY
-	if(AI_MORALE_IS(src, AI_MORALE_BROKEN))
-		. |= AI_CONDITION_BROKEN
+	return NONE
 
 /// Plans again straight away when one of our interrupt_keys changes, rather than waiting until we'd next plan anyway, so we react to things like a target turning up or getting shot at once
 /datum/ai_controller/proc/on_interrupt_key_changed(datum/source)

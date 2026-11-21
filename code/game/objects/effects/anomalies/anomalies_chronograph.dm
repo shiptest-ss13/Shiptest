@@ -3,7 +3,7 @@
 	icon_state = "chronograph"
 	desc = "Time beats forward at greater and greater speeds. The accelerando of life is constant. Here it drives reality."
 	density = FALSE
-	core = /obj/item/assembly/signaler/anomaly/grav
+	core = /obj/item/assembly/signaler/anomaly/chrono
 	effectrange = 6
 	pulse_delay = 1 SECONDS
 	light_range = 6

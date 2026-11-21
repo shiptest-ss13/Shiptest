@@ -120,7 +120,7 @@
 	maturation = 3
 	yield = 4
 	growthstages = 2
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04, /datum/reagent/consumable/sugar)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04, /datum/reagent/consumable/sugar = 0.1)
 	mutatelist = list(/obj/item/seeds/bamboo)
 
 /obj/item/food/grown/sugarcane

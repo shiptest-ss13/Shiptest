@@ -59,7 +59,6 @@
 /datum/export/hunting/trophy/rare
 	cost = 1000
 	unit_name = "rare hunting trophy"
-	elasticity_coeff = 0
 	export_types = list(
 		/obj/item/mob_trophy/dwarf_skull,
 		/obj/item/mob_trophy/fang,
@@ -73,7 +72,6 @@
 
 /datum/export/hunting/trophy/mega
 	cost = 3000
-	elasticity_coeff = 0
 	unit_name = "big game hunting trophy"
 	export_types = list(
 		/obj/item/mob_trophy/legionnaire_spine,
@@ -82,7 +80,7 @@
 		/obj/item/mob_trophy/broodmother_tongue,
 		/obj/item/mob_trophy/ice_block_talisman,
 		/obj/item/mob_trophy/miner_eye,
-		/obj/item/mob_trophy/vortex_talisman,
+		/obj/item/mob_trophy/obol,
 		/obj/item/mob_trophy/blaster_tubes,
 		/obj/item/mob_trophy/megabot_reactor
 	)

@@ -248,7 +248,7 @@
 	name = "Syndicate Captain Corpse"
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	shoes = /obj/item/clothing/shoes/combat/coldres
+	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate
 	head = /obj/item/clothing/head/HoS/syndicate

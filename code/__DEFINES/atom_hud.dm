@@ -74,8 +74,6 @@
 #define ANTAG_HUD_BROTHER "brother"
 #define ANTAG_HUD_OBSESSED "obsessed"
 #define ANTAG_HUD_FUGITIVE "fugitive"
-#define ANTAG_HUD_GANGSTER "gangster"
-#define ANTAG_HUD_SPACECOP "spacecop"
 
 
 // Notification action types

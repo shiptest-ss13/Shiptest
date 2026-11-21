@@ -166,6 +166,10 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	if(mind && mind.current)
 		mind.current.med_hud_set_status()
 
+	// strip images from ghosts' clients while we can still find them
+	for(var/mob/dead/observer/other_ghost in GLOB.player_list)
+		other_ghost.client?.images -= list(ghostimage_default, ghostimage_simple)
+
 	GLOB.ghost_images_default -= ghostimage_default
 	QDEL_NULL(ghostimage_default)
 

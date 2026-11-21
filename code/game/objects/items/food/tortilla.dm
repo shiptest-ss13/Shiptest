@@ -76,7 +76,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("nachos" = 1)
-	foodtypes = GRAIN | FRIED
+	foodtypes = GRAIN | HEAVILY_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cheesynachos
@@ -90,7 +90,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("nachos" = 2, "cheese" = 1)
-	foodtypes = GRAIN | FRIED | DAIRY
+	foodtypes = GRAIN | HEAVILY_FRIED | DAIRY
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cubannachos
@@ -104,7 +104,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("nachos" = 2, "hot pepper" = 1)
-	foodtypes = VEGETABLES | FRIED | DAIRY
+	foodtypes = VEGETABLES | HEAVILY_FRIED | DAIRY
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/taco

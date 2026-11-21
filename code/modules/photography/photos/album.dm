@@ -9,7 +9,7 @@
 	item_state = "album"
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
-	resistance_flags = FLAMMABLE
+	resistance_flags = FIRE_PROOF | LAVA_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE | LANDING_PROOF | HYPERSPACE_PROOF
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
 	var/persistence_id

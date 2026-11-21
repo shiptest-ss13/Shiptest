@@ -3,16 +3,19 @@
 	name = "global positioning system"
 	desc = "A positioning system that uses standard navigational beacons in system to triangulate positions. Useful for locating crewmembers or places of interest."
 	icon = 'icons/obj/item/gps.dmi'
-	//world_file = 'icons/obj/item/gps_world.dmi'
+	world_file = 'icons/obj/world/items/gps.dmi'
 	icon_state = "gps-c"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	obj_flags = UNIQUE_RENAME
+	//what is the tag of the gps
 	var/gpstag
+	//does the gps start on
+	var/gps_active = FALSE
 
 /obj/item/gps/Initialize()
 	. = ..()
-	AddComponent(/datum/component/gps/item, gpstag)
+	AddComponent(/datum/component/gps/item, gpstag, _tracking = gps_active)
 
 /obj/item/gps/science
 	icon_state = "gps-s"
@@ -31,7 +34,7 @@
 	icon_state = "gps-b"
 	gpstag = "BORG0"
 	desc = "A mining cyborg internal positioning system. Used as a recovery beacon for damaged cyborg assets, or a collaboration tool for mining teams."
-	//world_file = null
+	world_file = null
 
 /obj/item/gps/cyborg/Initialize()
 	. = ..()

@@ -50,7 +50,6 @@
 		"genderfae tie" = "genderfae",
 		"ally tie" = "ally_tie"
 	)
-	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
@@ -228,8 +227,7 @@
 						"brown scarf" = "scarfbrown",
 						"light brown scarf" = "scarflightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/neck/scarf/white
 	name = "white scarf"
@@ -339,8 +337,7 @@
 						"brown poncho" = "ponchobrown",
 						"light brown poncho" = "poncholightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	var/ponchotoggled = FALSE
 	var/obj/item/clothing/head/hooded/hood
@@ -396,9 +393,7 @@
 			H.regenerate_icons()
 		else
 			hood.forceMove(src)
-		for(var/X in actions)
-			var/datum/action/A = X
-			A.UpdateButtonIcon()
+		update_item_action_buttons()
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
 	if(ponchotoggled)
@@ -428,9 +423,7 @@
 				H.update_inv_neck()
 				update_appearance()
 				H.regenerate_icons()
-				for(var/X in actions)
-					var/datum/action/A = X
-					A.UpdateButtonIcon()
+				update_item_action_buttons()
 	else
 		remove_hood()
 
@@ -606,8 +599,7 @@
 						"navy mantle" = "mantle_navy",
 						"leather mantle" = "mantle_leather"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/neck/mantle/black
 	name = "black mantle"
@@ -659,8 +651,6 @@
 						"red neckwraps" = "neckwraps_red",
 						"blue neckwraps" = "neckwraps_blue"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/neck/neckwraps/grey
 	name = "grey neckwraps"
@@ -707,8 +697,7 @@
 						"green shawl" = "shawl_green",
 						"yellow shawl" = "shawl_yellow"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/neck/shawl/grey
 	name = "grey shawl"

@@ -129,7 +129,7 @@
 		if(do_after(user, 30, target = src))
 			to_chat(user, span_notice("You fillet the [src]."))
 			new fillet_type(loc, 1)
-		qdel(src)
+			qdel(src)
 
 /obj/item/fish/examine(mob/user)
 	. = ..()
