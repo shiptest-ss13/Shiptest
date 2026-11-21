@@ -59,7 +59,7 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 
 	mob.log_talk(raw_msg, LOG_LOOC, tag = "(LOOC)")
 
-	var/list/heard = get_hearers_in_view(7, get_top_level_mob(mob))
+	var/list/heard = get_hearers_in_view(7, mob)
 	for(var/mob/hearer_mob in heard)
 		var/client/hearer = hearer_mob.client
 
