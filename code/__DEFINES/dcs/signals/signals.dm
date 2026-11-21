@@ -345,17 +345,9 @@
 #define COMSIG_MOVABLE_LIGHT_OVERLAY_SET_COLOR "movable_light_overlay_set_range"
 ///Called when the movable tries to toggle its dynamic light LIGHTING_ON status, from base atom/movable/lighting_overlay_toggle_on(): (new_state)
 #define COMSIG_MOVABLE_LIGHT_OVERLAY_TOGGLE_ON "movable_light_overlay_toggle_on"
-///called when the movable's glide size is updated: (new_glide_size)
-#define COMSIG_MOVABLE_UPDATE_GLIDE_SIZE "movable_glide_size"
 /// from base of atom/movable/Process_Spacemove(): (movement_dir, continuous_move)
 #define COMSIG_MOVABLE_SPACEMOVE "spacemove"
 	#define COMSIG_MOVABLE_STOP_SPACEMOVE (1<<0)
-	///from datum/component/drift/apply_initial_visuals(): ()
-#define COMSIG_MOVABLE_DRIFT_VISUAL_ATTEMPT "movable_drift_visual_attempt"
-	#define DRIFT_VISUAL_FAILED (1<<0)
-	///from datum/component/drift/allow_final_movement(): ()
-#define COMSIG_MOVABLE_DRIFT_BLOCK_INPUT "movable_drift_block_input"
-	#define DRIFT_ALLOW_INPUT (1<<0)
 
 /// Sent from /obj/item/radio/talk_into(): (obj/item/radio/used_radio)
 #define COMSIG_MOVABLE_USING_RADIO "movable_radio"
@@ -385,10 +377,6 @@
 ///signal sent out by an atom when it checks if it can be pulled, for additional checks
 #define COMSIG_ATOM_CAN_BE_PULLED "movable_can_be_pulled"
 	#define COMSIG_ATOM_CANT_PULL (1 << 0)
-///signal sent out by an atom when it is no longer being pulled by something else
-#define COMSIG_ATOM_NO_LONGER_PULLED "movable_no_longer_pulled"
-///signal sent out by an atom when it is no longer pulling something : (atom/pulling)
-#define COMSIG_ATOM_NO_LONGER_PULLING "movable_no_longer_pulling"
 ///called on /living, when pull is attempted, but before it completes, from base of [/mob/living/start_pulling]: (atom/movable/thing, force)
 #define COMSIG_LIVING_TRY_PULL "living_try_pull"
 	#define COMSIG_LIVING_CANCEL_PULL (1 << 0)

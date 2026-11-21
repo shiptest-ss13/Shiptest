@@ -172,7 +172,7 @@
 	charging = TRUE
 	revving_charge = TRUE
 	wind_up_visual(FALSE)
-	walk(src, 0)
+	GLOB.move_manager.stop_looping(src)
 	setDir(dir)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#605959", transform = matrix()*2, time = 3)
@@ -180,9 +180,9 @@
 	SLEEP_CHECK_DEATH(delay)
 	revving_charge = FALSE
 	var/movespeed = 0.7
-	walk_towards(src, T, movespeed)
+	GLOB.move_manager.home_onto(src, T, movespeed)
 	SLEEP_CHECK_DEATH(get_dist(src, T) * movespeed)
-	walk(src, 0) // cancel the movement
+	GLOB.move_manager.stop_looping(src) // cancel the movement
 	charging = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/plant_mine()

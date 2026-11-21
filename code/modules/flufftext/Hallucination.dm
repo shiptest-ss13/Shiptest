@@ -1337,7 +1337,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(pump)
 		borer = new(pump.loc, C)
 		for(var/i=0, i<11, i++)
-			walk_to(borer, get_step(borer, get_cardinal_dir(borer, C)))
+			GLOB.move_manager.move_to(borer, get_step(borer, get_cardinal_dir(borer, C)))
 			if(borer.Adjacent(C))
 				target.visible_message(span_warning("Shivers slightly."),span_userdanger("You feel a creeping, horrible sense of dread come over you, freezing your limbs and setting your heart racing."))
 				C.Paralyze(60)
