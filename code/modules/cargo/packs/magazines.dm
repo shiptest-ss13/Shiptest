@@ -473,6 +473,8 @@
 	contains = list(/obj/item/stock_parts/cell/gun/solgov)
 	cost = 1000
 	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/magazine/warra_guncell
 	name = "Sharplite Power Cell"

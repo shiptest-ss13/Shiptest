@@ -46,7 +46,7 @@
 // EIGER - CASELESS PISTOL //
 /obj/item/gun/ballistic/automatic/pistol/solgov
 	name = "Model 'Eiger' Caseless Pistol"
-	desc = "A Solarian handgun dating back to the Terran Confederacy. While no longer a primary service pistol, it still sees occasional use and is popular among civilians. Chambered in 5.56mm caseless."
+	desc = "A Solarian handgun dating back to the Terran Confederacy. While no longer a primary service pistol, it still sees occasional use and is popular among civilians. Chambered in 6mm caseless."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -73,7 +73,7 @@
 // CLARIS - GAUSS RIFLE //
 /obj/item/gun/ballistic/sol_gauss/claris
 	name = "Model 'Claris' Ferromagnetic Line Rifle"
-	desc = "An antiquated Solarian gauss rifle. While long since shifted out of military service, the Claris still sees popularity among civilians as a hunting and self defense weapon. Chambered in ferromagnetic pellets."
+	desc = "An antiquated Solarian gauss rifle. While long since shifted out of military service, the Claris still sees popularity among civilians as a hunting and self defense weapon. Chambered in ferromagnetic pellets, and has an internal magazine that holds 22."
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/claris
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/claris)
 	icon_state = "claris"
@@ -165,7 +165,7 @@
 // ATELIER - HIGH POWERED RAILGUN //
 /obj/item/gun/ballistic/sol_gauss/rail_cannon
 	name = "Model 'Atelier' Railgun"
-	desc = "A high powered Solarian railgun, designed for punching heavy armor, cover, and just about anything else. The heavy-duty electromagnets require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait."
+	desc = "A high powered Solarian railgun, designed for punching heavy armor, cover, and just about anything else. The heavy-duty electromagnets require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait. Has an internal magazine with a capacity of 2."
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/rail
 	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/rail)
@@ -236,7 +236,7 @@
 // RUTLI - GAUSS SMG //
 /obj/item/gun/ballistic/sol_gauss/rutli
 	name = "Model 'Rutli' Submachine Gun"
-	desc = "A lightweight Solarian gauss SMG. Features a large internal magazine and fast charging electronics allowing it to fire much faster than other gauss weaponry. Chambered in ferromagnetic pellets."
+	desc = "A lightweight Solarian gauss SMG. Features a large internal magazine and fast charging electronics allowing it to fire much faster than other gauss weaponry. Chambered in ferromagnetic pellets, and has an internal magazine with a capacity of 44."
 	icon_state = "model-r"
 	item_state = "model-r"
 	internal_magazine = TRUE

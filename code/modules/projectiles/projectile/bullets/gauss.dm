@@ -71,7 +71,7 @@
 	damage = 60
 	armour_penetration = 50
 	knockdown = 30
-	demolition_mod = 4
+	demolition_mod = 2
 	wall_damage_override = 250
 	projectile_piercing = PASSMOB | PASSCLOSEDTURF | PASSGLASS | PASSSTRUCTURE | PASSWEAKSTRUCTURE | PASSTABLE | PASSGLASS | PASSGRILLE | PASSMACHINE // we stop for nobody
 

@@ -729,7 +729,6 @@
 			new /obj/item/gun/ballistic/sol_gauss/claris(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
-			new /obj/item/stock_parts/cell/gun/solgov(loc)
 
 // uncommon drop pool
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
@@ -825,7 +824,6 @@
 			new /obj/item/gun/ballistic/sol_gauss/rutli(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
 			new /obj/item/ammo_box/amagpellet_claris(loc)
-			new /obj/item/stock_parts/cell/gun/solgov(loc)
 
 // rare drop pool
 /obj/structure/rusted_gun_safe/proc/drop_rare()
@@ -868,7 +866,6 @@
 			// atelier
 			new /obj/item/gun/ballistic/sol_gauss/rail_cannon(loc)
 			new /obj/item/storage/box/ammo/ferrorods(loc)
-			new /obj/item/stock_parts/cell/gun/solgov(loc)
 		if(46 to 50)
 			// opportunist
 			new /obj/item/gun/energy/cybersun/lorentz/opportunist(loc)
