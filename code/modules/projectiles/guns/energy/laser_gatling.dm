@@ -147,6 +147,7 @@
 
 /obj/item/gun/energy/minigun/dropped(mob/user)
 	SHOULD_CALL_PARENT(0)
+	update_dual_wield_slowdown(user) //skips parent proc so need this here
 	if(ammo_pack)
 		ammo_pack.attach_gun(user)
 	else
