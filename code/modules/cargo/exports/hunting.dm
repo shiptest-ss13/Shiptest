@@ -3,6 +3,7 @@
 	desc = "People of the frontier need to eat too. Any slab does the trick."
 	cost = 10
 	export_types = list(/obj/item/food/meat, /obj/item/food/fishmeat)
+	exclude_types = list(/obj/item/food/meat/slab/meatproduct, /obj/item/food/meat/slab/synthmeat)
 
 /datum/export/hunting/stack/get_amount(obj/O)
 	if(!typesof(/obj/item/stack))
@@ -33,6 +34,7 @@
 	desc = "Processed hide of an animal. Paid per sheet."
 	cost = 100 // You need to process goliath hide, which takes effort!
 	export_types = list(/obj/item/stack/sheet/leather)
+	exclude_types = list(/obj/item/stack/sheet/leather/synthetic)
 
 /datum/export/hunting/stack/sinew
 	unit_name = "animal sinew"
