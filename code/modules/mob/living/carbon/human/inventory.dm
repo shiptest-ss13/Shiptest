@@ -387,6 +387,9 @@
 		else
 			to_chat(src, span_warning("You can't fit [thing] into your [equipped_item.name]!"))
 		return
+	if(!thing && storage.needs_opening(src))
+		storage.user_show_to_mob(src)
+		return
 	if(thing) // put thing in storage item
 		if(!SEND_SIGNAL(equipped_item, COMSIG_TRY_STORAGE_INSERT, thing, src))
 			to_chat(src, span_warning("You can't fit [thing] into your [equipped_item.name]!"))

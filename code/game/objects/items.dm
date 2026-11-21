@@ -448,7 +448,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(isitem(loc))
 		//if so, can we actually access it?
 		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
-		if(ourstorage && !ourstorage.access_check())
+		if(ourstorage && !ourstorage.access_check(user))
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
 			return
 
