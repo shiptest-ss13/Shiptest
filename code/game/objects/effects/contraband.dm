@@ -250,9 +250,8 @@
 	icon_state = "random_contraband"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/contraband
-	random_type = POSTER_ADD_FROM_LIST // what this does is add the SUNS poster, which would usually only be in the solgov poster pool to the contraband pool.
+	random_type = POSTER_ADD_FROM_LIST
 	random_pool = list(
-		/obj/structure/sign/poster/solgov/suns,
 		/obj/structure/sign/poster/official/ion_carbine,
 		/obj/structure/sign/poster/official/mini_energy_gun,
 		)
@@ -986,7 +985,7 @@
 
 /obj/structure/sign/poster/solgov/skiing
 	name = "Lo-Fly Skiing Advert"
-	desc = "An advertisement for some low-gravity skiing resort on Mars. \"Popular with SUNS groups!\""
+	desc = "An advertisement for some low-gravity skiing resort on Mars. \"Jump for it!\""
 	icon_state = "poster-solgov-loskiing"
 
 /obj/structure/sign/poster/solgov/recyle
@@ -1027,11 +1026,6 @@
 	name = "Nanomichi Ad"
 	desc = " A poster advertising a early post-NOF solarian computer. Severely outdated, but the advert is now a pretty nifty decoration."
 	icon_state = "poster_nanomichi"
-
-/obj/structure/sign/poster/solgov/suns
-	name = "Student Union of Natural Sciences"
-	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, and dealing with internal fighting via dueling with swords." //Makosso-Warra ruined the NSV joke and the rule of three, RIP
-	icon_state = "poster-solgov_suns"
 
 //CLIP poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CLIP ships.
 
@@ -1113,7 +1107,6 @@
 	/obj/structure/sign/poster/contraband/stechkin,
 	/obj/structure/sign/poster/contraband/c20r,
 	/obj/structure/sign/poster/contraband/syndiemoth,
-	/obj/structure/sign/poster/solgov/suns,
 	/obj/structure/sign/poster/contraband/bulldog,
 	/obj/structure/sign/poster/contraband/m90,
 	/obj/structure/sign/poster/contraband/cybersun,

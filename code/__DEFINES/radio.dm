@@ -21,10 +21,6 @@
 #define RADIO_KEY_NGR "f"
 #define RADIO_TOKEN_NGR ":f"
 
-#define RADIO_CHANNEL_SUNS "SUNS"
-#define RADIO_KEY_SUNS "u"
-#define RADIO_TOKEN_SUNS ":u"
-
 #define RADIO_CHANNEL_CENTCOM "CentCom"
 #define RADIO_KEY_CENTCOM "e"
 #define RADIO_TOKEN_CENTCOM ":e"
@@ -61,7 +57,6 @@
 #define FREQ_SYNDICATE 1213 // Syndicate Coalition comms frequency, dark brown
 #define FREQ_CYBERSUN 1203 // Cybersun Industries and Hardliners comms frequency, teal
 #define FREQ_NGR 1205 // New Gorlex Republic comms frequency, beige
-#define FREQ_SUNS 1207 // Student Union comms frequency, lilac
 #define FREQ_CENTCOM 1337 // MW-CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown

@@ -36,11 +36,6 @@
 	name = "new gorlex encryption key"
 	channels = list(RADIO_CHANNEL_NGR = 1)
 
-/obj/item/encryptionkey/syndicate/suns
-	name = "SUNS encryption key"
-	icon_state = "suns_cypherkey"
-	channels = list(RADIO_CHANNEL_SUNS = 1)
-
 /obj/item/encryptionkey/binary
 	name = "binary translator key"
 	icon_state = "bin_cypherkey"

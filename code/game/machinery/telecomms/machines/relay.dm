@@ -108,11 +108,6 @@
 	id = "New Gorlex Relay"
 	network = "ngr_commnet"
 
-/obj/machinery/telecomms/relay/preset/suns
-	freq_listening = list(FREQ_EMERGENCY, FREQ_SYNDICATE, FREQ_SUNS)
-	id = "SUNS Relay"
-	network = "suns_commnet"
-
 /obj/machinery/telecomms/relay/preset/frontiersmen
 	freq_listening = list(FREQ_EMERGENCY, FREQ_PIRATE)
 	id = "Frontiersmen Relay"
