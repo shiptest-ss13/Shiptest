@@ -246,8 +246,8 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/warra/kepori.dmi'
 	icon_state = "chorejacketns"
 	item_state = "chorejacketns"
+	base_icon_state = "chorejacketns"
 	unique_reskin = null
-
 
 /obj/item/clothing/under/warra/supply/qm
 	name = "supply director slacks"
