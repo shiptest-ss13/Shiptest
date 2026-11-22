@@ -405,6 +405,10 @@
 	base_icon_state = "syndipen"
 	item_state = "syndipen"
 
+/obj/item/reagent_containers/hypospray/medipen/mammoth/examine(mob/examiner)
+	. = ..()
+	. += span_notice("While under the effects of mammoth, you can immediately obtain aggressive grabs and punch significantly harder. You can tear the limbs off of people you have grabbed by using disarm intent on the limb.")
+
 /obj/item/reagent_containers/hypospray/medipen/netzach
 	name = "\improper Nesah injector"
 	desc = "A combat injector filled with a tightly curated mixture of regenerative compounds. \"The Fearlessness To Go Forward\" is etched in small text opposite the activator."
