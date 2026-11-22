@@ -11,7 +11,7 @@
 
 /obj/projectile/bullet/gauss/hc
 	name = "ferromagnetic pellet"
-	damage = 20
+	damage = 15
 	armour_penetration = 60
 	range = 50
 	hitscan = TRUE
@@ -72,12 +72,13 @@
 	armour_penetration = 50
 	knockdown = 30
 	demolition_mod = 2
-	wall_damage_override = 250
+	wall_damage_override = 125
 	projectile_piercing = PASSMOB | PASSCLOSEDTURF | PASSGLASS | PASSSTRUCTURE | PASSWEAKSTRUCTURE | PASSTABLE | PASSGLASS | PASSGRILLE | PASSMACHINE // we stop for nobody
 
 /obj/projectile/bullet/gauss/rod/on_hit(atom/target, blocked)
 	. = ..()
-	if(ismovable(target) && isliving(target))
+	// throw targets we hit, but only on the last hit so we don't give iframes
+	if(!projectile_piercing && ismovable(target) && isliving(target))
 		var/atom/movable/M = target
 		var/atom/throw_target = get_edge_target_turf(M, dir)
 		M.throw_at(throw_target, 4, 2)
