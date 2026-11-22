@@ -140,6 +140,7 @@
 
 /obj/projectile/bullet/gauss/deusha/shock
 	name = "deu'sha shock dart"
+	icon_state = "shock-pellet"
 	damage = 10
 	armour_penetration = 35
 	damage_type = STAMINA

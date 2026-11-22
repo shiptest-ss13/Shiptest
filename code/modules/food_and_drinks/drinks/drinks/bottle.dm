@@ -114,6 +114,16 @@
 
 	return
 
+/obj/item/reagent_containers/food/drinks/bottle/attackby(obj/item/attacking_item, mob/user, params)
+	. = ..()
+	if(istype(attacking_item, /obj/item/reagent_containers/glass/rag))
+		to_chat(user, span_notice("You start assembling a molotov cocktail.."))
+		if(do_after(user, 3 SECONDS, src))
+			var/obj/item/cocktail = new /obj/item/reagent_containers/food/drinks/molotov(drop_location())
+			forceMove(cocktail)
+			cocktail.CheckParts()
+			qdel(attacking_item)
+
 //Keeping this here for now, I'll ask if I should keep it here.
 /obj/item/broken_bottle
 	name = "broken bottle"
@@ -573,45 +583,115 @@
 	isGlass = TRUE
 	foodtype = ALCOHOL
 	list_reagents = list()
+
+	//holder for how intense the accelerant burns. Higher value means it's going to detonate faster. Checked when we ignite the molly
+	var/fire_intensity = 0 //the average container is going to hold 100u which means this can be anywhere from 0 to 3000
+
 	var/active = 0
 
 /obj/item/reagent_containers/food/drinks/molotov/CheckParts(list/parts_list)
 	..()
 	var/obj/item/reagent_containers/food/drinks/bottle/B = locate() in contents
 	if(B)
+		volume = B.volume
 		icon_state = B.icon_state
-		B.reagents.copy_to(src,100)
+		B.reagents.copy_to(src, volume)
 		if(!B.isGlass)
 			desc += " You're not sure if making this out of a carton was the brightest idea."
 			isGlass = FALSE
 	return
 
 /obj/item/reagent_containers/food/drinks/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	var/firestarter = FALSE
-	for(var/datum/reagent/reagent as anything in reagents.reagent_list)
-		if(reagent.accelerant_quality)
-			firestarter = TRUE
-			break
-	if(firestarter && active)
+	. = ..()
+	if(active)
+
+		/*
+		I'm assuming 3 different bottles.
+		30u beer bottles (which require a special accelerant to hit the breakpoints)
+		50u small bottles, which can hit the first with plain booze
+		and 100u normal bottles, which will pass the first easily
+
+		250 fire power is 50u of ethanol (lowest defined accelerant) and a half filled big bottle is our starting point
+		3000u is 100u of plasma
+		*/
+
+		var/turf/impact_turf = get_turf(hit_atom)
+
+		//this sucks but its easy to read
+		switch(fire_intensity)
+			//not enough fuel in the molotov. Put more stuff in next time
+			if(-INFINITY to 0)
+				return FALSE
+
+			if(0 to 250)
+				impact_turf.ignite_turf(5)
+
+			//basically old behavior
+			if(250 to 500)
+				impact_turf.ignite_turf(10)
+				flame_radius(impact_turf, 1, 8)
+
+			//mix anything good into small bottle and up
+			if(500 to 1000)
+				impact_turf.ignite_turf(25)
+				flame_radius(impact_turf, 1, 12, type = "square")
+
+			//decent mix gets 2 tile radius w/ center being more intense
+			if(1000 to 1500)
+				impact_turf.ignite_turf(50)
+				flame_radius(impact_turf, 1, 12)
+				flame_radius(impact_turf, 2, 8)
+
+			// 2 tile cube
+			if(1500 to 2000)
+				impact_turf.ignite_turf(50)
+				flame_radius(impact_turf, 1, 16)
+				flame_radius(impact_turf, 2, 12, type = "square")
+
+			///3 tile circle
+			if(2000 to 2500)
+				impact_turf.ignite_turf(50)
+				flame_radius(impact_turf, 2, 20)
+				flame_radius(impact_turf, 3, 12)
+
+			if(2500 to 3000)
+				impact_turf.ignite_turf(50)
+				flame_radius(impact_turf, 2, 20)
+				flame_radius(impact_turf, 3, 16, type = "square")
+
+			//holy shit what are you doing
+			if(3000 to INFINITY)
+				impact_turf.ignite_turf(50)
+				flame_radius(impact_turf, 2, 30)
+				flame_radius(impact_turf, 3, 20, type = "square")
+
 		hit_atom.fire_act()
-		var/turf/T = get_turf(hit_atom)
-		T.ignite_turf(30)
-		var/turf/otherT
-		for(var/direction in GLOB.cardinals)
-			otherT = get_step(T, direction)
-			otherT.ignite_turf(30)
-			new /obj/effect/hotspot(otherT)
-	..()
 
-/obj/item/reagent_containers/food/drinks/molotov/attackby(obj/item/I, mob/user, params)
-	if(I.get_temperature() && !active)
-		active = TRUE
+/obj/item/reagent_containers/food/drinks/molotov/attackby(obj/item/revolutionary_implement, mob/user, params)
+	var/success_msg = revolutionary_implement.ignition_effect(src, user)
+	if(success_msg && !active)
+		visible_message(success_msg)
+		ready_molly(user)
+
+/obj/item/reagent_containers/food/drinks/molotov/proc/ready_molly(mob/user)
+	if(active)
+		return FALSE
+	active = TRUE
+	if(user)
 		log_bomber(user, "has primed a", src, "for detonation")
+		if(iscarbon(user))
+			var/mob/living/carbon/thrower = user
+			thrower.toggle_throw_mode()
+			if(thrower.get_inactive_held_item() == src)
+				thrower.swap_hand()
+				to_chat(thrower, span_boldwarning("You raise \the [src] and ready a throw!"))
+	add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
+	fire_intensity = reagents.get_total_accelerant_quality()
+	var/timer_length = isGlass ? rand(10, 25) : rand(2, 5)
+	if(fire_intensity > 1000)
+		timer_length = min((fire_intensity -1000) /3000, 0.6) * timer_length
 
-		to_chat(user, span_info("You light [src] on fire."))
-		add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
-		if(!isGlass)
-			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(explode)), timer_length SECONDS)
 
 /obj/item/reagent_containers/food/drinks/molotov/proc/explode()
 	if(!active)
@@ -625,14 +705,31 @@
 		target.fire_act()
 	qdel(src)
 
+/obj/item/reagent_containers/food/drinks/molotov/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	if(exposed_temperature >= 300)
+		ready_molly()
+	else if(exposed_temperature >= 750)
+		ready_molly()
+		explode()
+
 /obj/item/reagent_containers/food/drinks/molotov/attack_self(mob/user)
-	if(active)
+	if(!active)
+		if(!iscarbon(user))
+			return
+		var/mob/living/carbon/revolutionary = user
+		var/obj/item/possible_lighter = revolutionary.get_inactive_held_item()
+		if(possible_lighter.ignition_effect(src, user))
+			visible_message(span_warning("[user] lights a molotov with the open flame of [possible_lighter]!"), span_warning("You hold [src] over the flame of [possible_lighter]. It begins to crackle and burn."))
+			ready_molly(user)
+
+	else if(active)
 		if(!isGlass)
 			to_chat(user, span_danger("The flame's spread too far on it!"))
 			return
 		to_chat(user, span_info("You snuff out the flame on [src]."))
 		cut_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
-		active = 0
+		active = FALSE
 
 /obj/item/reagent_containers/food/drinks/molotov/full
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)

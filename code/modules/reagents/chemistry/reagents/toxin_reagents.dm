@@ -74,7 +74,7 @@
 	toxpwr = 1.5
 	material = /datum/material/plasma
 	process_flags = ORGANIC | SYNTHETIC
-	accelerant_quality = 10
+	accelerant_quality = 30
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
