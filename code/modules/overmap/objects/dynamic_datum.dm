@@ -192,6 +192,22 @@
 	current_overmap.dynamic_probabilities[planet.planet] += 20
 	qdel(src)
 
+
+// turns planet type inputted into the shared datum, so it properly inherits list vars
+/proc/resolve_planet_type(planet_type)
+	if(istype(planet_type, /datum/planet_type))
+		return planet_type
+	if(istext(planet_type))
+		return SSmapping.planet_types[planet_type]
+	if(ispath(planet_type, /datum/planet_type))
+		var/datum/planet_type/path = planet_type
+		var/datum/planet_type/shared = SSmapping.planet_types[initial(path.planet)]
+		if(shared?.type == planet_type)
+			return shared
+		// not the type registered under its key, so it gets its own
+		return new planet_type
+	CRASH("resolve_planet_type given [planet_type], which is not a planet type")
+
 /**
  * Chooses a type of level for the dynamic level to use.
  */
@@ -199,7 +215,7 @@
 	if(isnull(probabilities))
 		probabilities = current_overmap.dynamic_probabilities
 	if(!isnull(force_encounter))
-		planet = force_encounter
+		planet = resolve_planet_type(force_encounter)
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 		current_overmap.dynamic_probabilities[planet.planet] -= 20
@@ -237,7 +253,8 @@
 
 	time_of_day = length(planet.time_of_day_weights) ? pick_weight(planet.time_of_day_weights) : null
 	rolled_time_of_day = time_of_day
-	light_power = time_of_day_power(time_of_day, light_power)
+	// power first, it needs the planet's own colour to know how bright its base daylight is
+	light_power = time_of_day_power(time_of_day, light_power, light_color, light_range)
 	light_color = time_of_day_color(time_of_day, light_color)
 	var/rolled_light_range = light_range
 	var/rolled_light_power = light_power

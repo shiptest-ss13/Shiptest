@@ -815,6 +815,12 @@
 	},
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"hp" = (
+/mob/living/basic/human/ramzi/ranged/cottonmouth{
+	wander = 0
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "hx" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 4
@@ -2600,10 +2606,6 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/lavaland/holdout/engineering)
-"wI" = (
-/obj/item/ammo_casing/spent/pistol_steel,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/ruin/lavaland/holdout/ramzihq)
 "wJ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -3786,10 +3788,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/lava,
 /area/ruin/lavaland/holdout/ramziflea)
-"Gu" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/ruin/lavaland/holdout/ramzihq)
 "Gv" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /obj/structure/cable/yellow{
@@ -5857,12 +5855,6 @@
 	},
 /turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
-"WL" = (
-/mob/living/basic/human/ramzi/ranged/cottonmouth{
-	wander = 0
-	},
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/ruin/lavaland/holdout/ramzihq)
 "WM" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
 /obj/effect/decal/cleanable/dirt,
@@ -6673,9 +6665,9 @@ FN
 Vi
 Vi
 VW
-Gu
-Gu
-Gu
+WD
+WD
+WD
 Vi
 Sx
 dL
@@ -6732,9 +6724,9 @@ Vi
 Hy
 Vi
 Vi
-wI
-WL
-Gu
+oJ
+hp
+WD
 Vi
 dL
 dL

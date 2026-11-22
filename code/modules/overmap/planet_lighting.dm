@@ -20,10 +20,10 @@
 /// A time of day a planet can be at, rolled once when the planet is created
 /datum/time_of_day
 	var/name = "midday"
-	/// Multiplies the planet's own daylight power
+	/// Multiplies how bright the planet's daylight looks, 0.5 is half as bright as its base daylight
 	var/power_multiplier = 1
-	/// Dimmest power allowed after multiplier
-	var/min_power = 0.15
+	/// Dimmest the daylight may look after the multiplier, as a fraction of full brightness. Keep above 0, zero removes daylight entirely
+	var/min_brightness = 0.15
 	/// Colour blended into the planet's own daylight colour, null for none
 	var/tint
 	/// How far the daylight colour is blended towards the tint, 0 to 1
@@ -45,7 +45,7 @@
 
 /datum/time_of_day/night
 	name = "night"
-	power_multiplier = 0.25
+	power_multiplier = 0.2
 	tint = "#2b3a78"
 	tint_strength = 0.55
 
@@ -53,7 +53,7 @@
 /datum/time_of_day/eclipse
 	name = "eclipse"
 	power_multiplier = 0.08
-	min_power = 0.05
+	min_brightness = 0.05
 	tint = "#1a1f3d"
 	tint_strength = 0.65
 
@@ -61,10 +61,31 @@
 /datum/time_of_day/anomalous
 	name = "anomalous"
 
-/proc/time_of_day_power(datum/time_of_day/time_of_day, light_power)
+
+// brightness per point of light power
+/proc/planet_daylight_brightness_per_power(light_color, light_range)
+	var/list/channels = rgb2num(light_color)
+	return planet_daylight_strength(light_range) * max(channels[1], channels[2], channels[3]) / 255
+
+// How bright daylight looks. Capped to 1 so overlapping light don't go too far
+/proc/planet_daylight_brightness(light_color, light_power, light_range)
+	return min(1, light_power * planet_daylight_brightness_per_power(light_color, light_range))
+
+// daylight power relative to base daylight
+/proc/time_of_day_power(datum/time_of_day/time_of_day, light_power, light_color, light_range)
 	if(!time_of_day || !light_power)
 		return light_power
-	return max(light_power * initial(time_of_day.power_multiplier), min(light_power, initial(time_of_day.min_power)))
+	var/multiplier = initial(time_of_day.power_multiplier)
+	if(multiplier >= 1)
+		return light_power
+	// the tinted colour is what gets drawn, so convert back to power through it
+	var/per_power = planet_daylight_brightness_per_power(time_of_day_color(time_of_day, light_color), light_range)
+	if(!per_power)
+		return light_power
+	var/base_brightness = planet_daylight_brightness(light_color, light_power, light_range)
+	// if already dimmer dont brighten
+	var/target = max(base_brightness * multiplier, min(base_brightness, initial(time_of_day.min_brightness)))
+	return target / per_power
 
 /proc/time_of_day_color(datum/time_of_day/time_of_day, light_color)
 	if(!time_of_day || !initial(time_of_day.tint))
@@ -405,7 +426,7 @@
 		return PLANET_LIGHTING_FAILED
 	return update_planet_lighting(
 		planet.light_range,
-		time_of_day_power(new_time_of_day, planet.light_power),
+		time_of_day_power(new_time_of_day, planet.light_power, planet.light_color, planet.light_range),
 		time_of_day_color(new_time_of_day, planet.light_color),
 		new_time_of_day,
 	)

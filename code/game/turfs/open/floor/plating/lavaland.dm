@@ -115,8 +115,10 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	layer = HIGH_TURF_LAYER
 	gender = PLURAL
+	can_emit_planet_daylight = TRUE
 	light_power = 1
 	light_range = 2
+	light_color = COLOR_LAVAPLANET_LIGHT
 	pixel_x = -9
 	pixel_y = -9
 
