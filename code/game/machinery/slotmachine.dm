@@ -24,9 +24,18 @@
 	verb_exclaim = "shrieks"
 	integrity_failure = 0.5
 
+	// bet multiplier adjustment
+	var/can_change_mult = TRUE // can we adjust the bet multiplier
+	var/bet_mult = 1 // global multiplier for bets/prizes
+	var/min_mult = 1 // minimum selectable bet multiplier
+	var/max_mult = 10 // maximum selectable bet multiplier
+
+	// overlay stuff
 	var/banner_state = "banner_game" // what our default banner should win
 	var/flashing_win = FALSE // if we are currently flashing the WINNER animation
 	var/flashing_die = FALSE // if we are currently flashing the DIE animation
+
+	// game vars
 	var/spin_time = 1.5 SECONDS // how long a spin takes
 	var/cost_to_play = 10 // how much a spin costs
 	var/balance = 0 // the player's current balance
@@ -43,7 +52,8 @@
 		"FFF" = 80,
 		"66W" = 40,
 		"66" = 20)
-	var/extended_description = "A small placard reads:\n<b>PRIZES!</b>\n$-$-$: <b>200 CR!</b>\nC-C-C: <b>160 CR!</b>\nL-L-L: <b>120 CR!</b>\nF-F-F: <b>80 CR!</b>\n6-6-W: <b>40 CR!</b>\n6-6: <b>20 CR!</b>\nPAYOUT IMMEDIATELY! GOOD LUCK AND HAVE FUN!" // text to show on examine_more
+
+	var/placard_legible = TRUE // whether or not we can double examine this for a prize list
 
 // convert the internal IDs to a display name
 /obj/machinery/slot_machine/proc/print_reels()
@@ -112,15 +122,33 @@
 
 /obj/machinery/slot_machine/examine(mob/examiner)
 	. = ..()
-	. += span_notice("The machine reports a balance of <b>[balance]</b> credits. It costs <b>[cost_to_play]</b> to play.")
+	. += span_notice("The machine reports a balance of <b>[balance]</b> credits. It costs <b>[cost_to_play * bet_mult]</b> to play.")
 	. += span_notice("You can <b>left click</b> the machine to pull the lever and <b>right click</b> it to eject your winnings.")
 	. += span_notice("The reels read: <b>[print_reels()]</b>.")
 	. += span_notice("There is an explanation of prizes you can read by <b>examining this closely</b>.")
 	. += span_notice("The maintenance panel is [panel_open ? "opened" : "closed"].")
+	if(panel_open && can_change_mult)
+		. += span_notice("You could adjust the bet multiplier with a <b>multitool</b>.")
 
 /obj/machinery/slot_machine/examine_more(mob/examiner)
 	. = ..()
-	. += extended_description
+	if(placard_legible)
+		. += "A small placard reads:\n<b>PRIZES!</b>"
+		for(var/prize in prizes)
+			var/buf = ""
+			if(length(prize) == 2)
+				buf += "[prize[1]]-[prize[2]]: "
+			else
+				buf += "[prize[1]]-[prize[2]]-[prize[3]]: "
+			if(ispath(prizes[prize]))
+				var/obj/oprize = prizes[prize]
+				buf += "<b>[oprize.name] x[bet_mult]!</b>"
+			else
+				buf += "<b>[prizes[prize] * bet_mult] CR!</b>"
+			. += buf
+		. += "PAYOUT IMMEDIATELY! GOOD LUCK AND HAVE FUN."
+	else
+		. += "The prize placard is completely illegible. You're on your own, good luck."
 
 // money insertion
 /obj/machinery/slot_machine/attackby(obj/item/object, mob/living/user, params)
@@ -148,6 +176,18 @@
 	else
 		return ..()
 
+/obj/machinery/slot_machine/multitool_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return
+	if(panel_open && !spinning && can_change_mult)
+		var/picked_mult = clamp(input(user, "Change bet multiplier: Valid Range ([min_mult], [max_mult])", "Change Bet Multiplier", 0) as num, min_mult, max_mult)
+		if(!user.canUseTopic(src, BE_CLOSE) || !panel_open || spinning)
+			return TRUE
+		bet_mult = picked_mult
+		to_chat(user, span_notice("You change the machine's bet multiplier to [bet_mult]."))
+		return TRUE
+
 // left click... spin the slot machine if we are able to
 /obj/machinery/slot_machine/attack_hand(mob/user, list/modifiers)
 	. = ..()
@@ -167,7 +207,7 @@
 	if(spinning)
 		to_chat(user, span_boldwarning("It's still spinning! Be patient."))
 		return
-	if(balance < cost_to_play)
+	if(balance < cost_to_play * bet_mult)
 		speak("INSERT MORE MONEY TO PLAY!", prob(50))
 		return
 	// we're good. spin!
@@ -177,7 +217,7 @@
 		span_notice("[user] pulls the lever on [src]."),
 		span_notice("You pull the lever on [src]."))
 	spinning = TRUE
-	balance -= cost_to_play
+	balance -= cost_to_play * bet_mult
 	update_appearance()
 	addtimer(CALLBACK(src, PROC_REF(spinny)), 1)
 	addtimer(CALLBACK(src, PROC_REF(done_spinning)), spin_time)
@@ -211,7 +251,7 @@
 	var/all_three = reels[1] + reels[2] + reels[3]
 	for (var/prize in prizes)
 		if ((length(prize) == 2 && first_two == prize) || all_three == prize)
-			cash_prize = prizes[prize]
+			cash_prize = prizes[prize] * bet_mult
 			break
 
 	balance += cash_prize
@@ -270,7 +310,8 @@
 		"FFF" = /obj/item/gun/energy/laser/e10,
 		"66W" = /obj/item/gun/energy/e_gun/e11,
 		"66" = /obj/item/storage/box/disposable_gun_gacha)
-	extended_description = "The prize placard is completely illegible. You're on your own, good luck."
+	can_change_mult = FALSE
+	placard_legible = FALSE
 
 	// SNOWFLAKE PROBS (override the actual reels rolling)
 	var/zippy_prob = 0.000001 // probability of getting The Zippy
@@ -311,9 +352,11 @@
 	visible_message(span_notice("The machine stops on <b>[reels[1]]-[reels[2]]-[reels[3]]</b>."))
 
 	if(gun_prize)
-		var/obj/item/our_prize = new gun_prize(loc)
+		var/obj/item/our_prize
+		for(var/i = 1, i <= bet_mult, i++)
+			our_prize = new gun_prize(loc)
 		if(special_prize)
-			visible_message(span_notice("The machine blares an alarm and dispenses... A disposable gun?"))
+			visible_message(span_notice("The machine blares an alarm and dispenses... [our_prize]?"))
 			speak("JACKPOT!! JACKPOT!!", prob(50))
 			playsound(src, 'sound/machines/engine_alert2.ogg', 50, FALSE)
 		else
