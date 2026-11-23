@@ -26,6 +26,7 @@
 		/datum/language/codespeak,
 		/datum/language/aphasia,
 		/datum/language/league_kalixcian,
+		/datum/language/rachnidian,
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -107,6 +108,7 @@
 		/datum/language/codespeak,
 		/datum/language/aphasia,
 		/datum/language/league_kalixcian,
+		/datum/language/rachnidian,
 	))
 
 /obj/item/organ/tongue/bone/Initialize()
@@ -181,6 +183,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/rachnidian,
 	))
 
 /obj/item/organ/tongue/ethereal/Initialize(mapload)
@@ -205,6 +208,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/rachnidian,
 	))
 
 /obj/item/organ/tongue/moth/Initialize(mapload)
@@ -226,6 +230,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/rachnidian,
 	))
 
 /obj/item/organ/tongue/kepori/Initialize(mapload)
@@ -250,6 +255,7 @@
 		/datum/language/codespeak,
 		/datum/language/aphasia,
 		/datum/language/vox_pidgin,
+		/datum/language/rachnidian,
 	))
 
 /obj/item/organ/tongue/vox/Initialize(mapload)
