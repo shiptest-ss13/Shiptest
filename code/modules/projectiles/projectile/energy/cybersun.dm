@@ -48,6 +48,8 @@
 	damage = 35
 	armour_penetration = 20
 
+	accuracy_mod = 2 //double accuracy against cover
+
 	range = 20
 
 	tracer_type = /obj/effect/projectile/tracer/ionization/sniper
@@ -59,7 +61,6 @@
 	icon_state = ""
 	pass_flags = PASSTABLE | PASSGRILLE
 
-	/* to set */
 	damage = 35
 	armour_penetration = 0
 	damage_type = BURN
@@ -103,7 +104,7 @@
 	wound_bonus = -20
 	bare_wound_bonus = 10
 
-	range = 5
+	range = 6
 
 	flag = "laser"
 
@@ -123,7 +124,12 @@
 	if(damage < 0)
 		qdel(src)
 
+/obj/projectile/beam/lorentz/skirmish
+	damage = 40
+	range = 8
+
 /obj/projectile/beam/lorentz/mg
+	damage = 22
 	range = 12
 
 /obj/projectile/beam/lorentz/heavy

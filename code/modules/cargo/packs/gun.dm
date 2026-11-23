@@ -1207,6 +1207,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/fusilier
+	name = "Fusilier Lorentz Rifle"
+	desc = "Contains an LS620 Fusilier lorentz rifle. Longer reach than lighter Lorentz Weaponry and a slightly tougher punch makes an effective commbat tool."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/fusilier)
+	crate_name = "impactor crate"
+	faction = /datum/faction/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/catalyzer
 	name = "Catalyzer Lorentz Rifle"
 	desc = "Contains an LS451 Catalyzer Lorentz Rifle. Adept for assaulting fixed positions."
