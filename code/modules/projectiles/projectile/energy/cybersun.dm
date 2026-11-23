@@ -126,11 +126,11 @@
 
 /obj/projectile/beam/lorentz/skirmish
 	damage = 40
-	range = 8
+	range = 10
 
 /obj/projectile/beam/lorentz/mg
 	damage = 22
-	range = 12
+	range = 9
 
 /obj/projectile/beam/lorentz/heavy
 	damage = 75
