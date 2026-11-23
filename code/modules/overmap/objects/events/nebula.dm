@@ -21,7 +21,7 @@
 	if(LAZYLEN(affected_ships))
 		STOP_PROCESSING(SSfastprocess, src)
 		for(var/datum/overmap/ship/controlled/ship as anything in affected_ships)
-			stop_the_lights(ship)
+			stop_bullshit(ship)
 
 /datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
@@ -37,12 +37,12 @@
 
 	for(var/datum/overmap/ship/controlled/ship as anything in affected_ships)
 		if(!(ship in nearby_objects))
-			stop_the_lights(ship)
+			stop_bullshit(ship)
 
 	if(!LAZYLEN(affected_ships))
 		STOP_PROCESSING(SSfastprocess, src)
 
-/datum/overmap/event/nebula/proc/stop_the_lights(datum/overmap/ship/controlled/target_ship)
+/datum/overmap/event/nebula/proc/stop_bullshit(datum/overmap/ship/controlled/target_ship)
 	LAZYREMOVE(affected_ships, target_ship)
 	REMOVE_TRAIT(target_ship, TRAIT_CLOAKED, REF(src))
 
