@@ -16,8 +16,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	// ORE SPAWNING //
 	var/mining_charges = 6 // how many ore lodes we have
 	var/mining_charge_variance = 2 // how much to vary lodes by on init, + or - base
-	var/vein_class = 1 // difficulty class - 1 to 4, with 4 being setpiece-only
-					   // determines number of spawners and ore yields
+	var/vein_class = 1 // difficulty class - 1 to 4, with 4 being setpiece-only. determines number of spawns and ore yields
 	var/list/ore_list = list( // weighted list of ores to pick to spawn in a vein
 		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/plasma = 20)
@@ -28,14 +27,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/ore_types_max = 1 // maximum number of types of ores we can roll
 
 	// MOB SPAWNING //
-	var/max_mobs = 3 // how many mobs EACH spawner is allowed to have out at once
-					 // putting this at more than six causes balance/lag problems
+	var/max_mobs = 3 // how many mobs EACH spawner is allowed to have out at once. setting this higher than 6 causes lag and balance problems so don't.
 	var/spawn_time = 10 SECONDS // time between spawns
 	var/mob_types = list( // weighted list of mobs to roll from
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
-		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
-		)
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20)
 	var/spawn_text = "emerges from" // text for spawn message
 	var/faction = list(FACTION_HOSTILE, FACTION_MINING) // factions spawned mobs have
 	var/spawn_sound = list('sound/effects/break_stone.ogg') // sound for spawning
