@@ -69,8 +69,6 @@ DEFINE_BITFIELD(food_types, list(
 	"FOOD_IN_CONTAINER" = FOOD_IN_CONTAINER,
 ))
 
-#define STOP_SERVING_BREAKFAST (15 MINUTES)
-
 ///Amount of reagents you start with on crafted food excluding the used parts
 #define CRAFTED_FOOD_BASE_REAGENT_MODIFIER 0.7
 ///Modifier of reagents you get when crafting food from the parts used

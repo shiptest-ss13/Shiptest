@@ -42,6 +42,6 @@
 				if(foodtype & human_eater.dna.species.toxic_food)
 					to_chat(human_eater, span_warning("You don't feel so good..."))
 					human_eater.adjust_disgust(25 + 30 * fraction)
-			if((foodtype & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
+			if((foodtype & BREAKFAST) && human_eater.has_status_effect(STATUS_EFFECT_BREAKFAST))
 				SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
 			last_check_time = world.time
