@@ -118,7 +118,8 @@ SUBSYSTEM_DEF(jukeboxes)
 		song_played.falloff = jukeinfo[4]
 
 		for(var/mob/M as anything in GLOB.player_list)
-			if(!(M.client?.prefs.toggles & SOUND_INSTRUMENTS) || !M.can_hear())
+			var/listener_volume = M.get_instrument_volume()
+			if(!listener_volume || !M.can_hear())
 				M.stop_sound_channel(jukeinfo[2])
 				continue
 
@@ -130,7 +131,7 @@ SUBSYSTEM_DEF(jukeboxes)
 				if((get_area(M) in areas) || (M in hearerscache))
 					inrange = TRUE
 
-			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))
+			M.playsound_local(currentturf, null, jukebox.volume * listener_volume * 0.01, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))
 
 			if(MC_TICK_CHECK)
 				return

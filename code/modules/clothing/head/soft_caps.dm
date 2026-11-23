@@ -24,8 +24,6 @@
 						"brown cap" = "brownsoft",
 						"light brown cap" = "lightbrownsoft"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 	var/flipped = FALSE
 
 /obj/item/clothing/head/soft/Initialize()

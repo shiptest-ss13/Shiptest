@@ -40,5 +40,5 @@
 		return FALSE
 	return TRUE
 
-/datum/weather/floor_is_lava/weather_act(mob/living/victim)
-	victim.adjustFireLoss(3)
+/datum/weather/floor_is_lava/weather_act(mob/living/victim, seconds_per_tick)
+	victim.adjustFireLoss(3 * seconds_per_tick)

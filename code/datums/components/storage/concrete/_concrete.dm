@@ -12,6 +12,8 @@
 
 	var/list/_contents_limbo // Where objects go to live mid transfer
 	var/list/_user_limbo // The last users before the component started moving
+	/// Where our items are kept, when that isn't our parent
+	var/atom/movable/real_location_override
 
 /datum/component/storage/concrete/Initialize()
 	. = ..()
@@ -29,13 +31,41 @@
 		slave.change_master(null)
 	QDEL_LIST(_contents_limbo)
 	_user_limbo = null
+	set_real_location(null)
 	return ..()
 
 /datum/component/storage/concrete/master()
 	return src
 
 /datum/component/storage/concrete/real_location()
-	return parent
+	return real_location_override || parent
+
+// items kept in another atom, need this to handle the storage requests sent to it
+// this fucked up proc is original_parent = parent made general
+/datum/component/storage/concrete/proc/set_real_location(atom/movable/new_real_location)
+	var/static/list/real_location_signals = list(
+		COMSIG_CONTAINS_STORAGE,
+		COMSIG_TRY_STORAGE_TAKE,
+		COMSIG_TRY_STORAGE_HIDE_FROM,
+		COMSIG_ATOM_CANREACH,
+		COMSIG_ATOM_CONTENTS_DEL,
+		COMSIG_QDELETING,
+	)
+	if(real_location_override)
+		UnregisterSignal(real_location_override, real_location_signals)
+	real_location_override = new_real_location
+	if(!real_location_override)
+		return
+	RegisterSignal(real_location_override, COMSIG_CONTAINS_STORAGE, PROC_REF(on_check))
+	RegisterSignal(real_location_override, COMSIG_TRY_STORAGE_TAKE, PROC_REF(signal_take_obj))
+	RegisterSignal(real_location_override, COMSIG_TRY_STORAGE_HIDE_FROM, PROC_REF(signal_hide_attempt))
+	RegisterSignal(real_location_override, COMSIG_ATOM_CANREACH, PROC_REF(canreach_react))
+	RegisterSignal(real_location_override, COMSIG_ATOM_CONTENTS_DEL, PROC_REF(on_contents_del))
+	RegisterSignal(real_location_override, COMSIG_QDELETING, PROC_REF(on_real_location_deleted))
+
+/datum/component/storage/concrete/proc/on_real_location_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_real_location(null)
 
 /datum/component/storage/concrete/PreTransfer()
 	if(is_using)
@@ -91,11 +121,11 @@
 	slaves -= S
 	return FALSE
 
-/datum/component/storage/concrete/proc/on_contents_del(datum/source, atom/A)
-	var/atom/real_location = parent
-	if(A in real_location)
+/datum/component/storage/concrete/proc/on_contents_del(datum/source, atom/deleted)
+	var/atom/real_location = real_location()
+	if(deleted in real_location)
 		usr = null
-		remove_from_storage(A, null)
+		remove_from_storage(deleted, null)
 
 /datum/component/storage/concrete/proc/on_deconstruct(datum/source, disassembled)
 	if(drop_all_on_deconstruct)

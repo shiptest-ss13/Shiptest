@@ -232,7 +232,7 @@
 		/datum/reagent/consumable/pineapplejuice = 8,
 	)
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "pineapple" = 2, "ham" = 2)
-	foodtypes = GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT | PINEAPPLE
+	foodtypes = GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT
 	slice_type = /obj/item/food/pizzaslice/pineapple
 
 /obj/item/food/pizzaslice/pineapple
@@ -240,12 +240,12 @@
 	desc = "A slice of delicious controversy."
 	icon_state = "pineapplepizzaslice"
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "pineapple" = 2, "ham" = 2)
-	foodtypes = GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT | PINEAPPLE
+	foodtypes = GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT
 
 /obj/item/food/pizza/pineapple/raw
 	name = "raw Hawaiian pizza"
 	icon_state = "pineapplepizza_raw"
-	foodtypes =  GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT | PINEAPPLE | RAW
+	foodtypes =  GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT | RAW
 	slice_type = null
 
 /obj/item/food/pizza/pineapple/raw/make_bakeable()

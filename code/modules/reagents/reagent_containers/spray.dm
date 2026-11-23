@@ -340,4 +340,4 @@
 		"Yellow" = "sprayer_med_yellow",
 		"Blue" = "sprayer_med_blue"
 	)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND

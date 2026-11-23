@@ -242,3 +242,12 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 /// 33554431 (2^24 - 1) is the maximum value our bitflags can reach.
 #define MAX_BITFLAG_DIGITS 8
+
+
+//flags for unique reskin
+/// does the reskin change the object's base icon state
+#define UNIQUE_RESKIN_CHANGES_BASE_ICON (1<<0)
+/// does the reskin alter the object's inhand icon
+#define UNIQUE_RESKIN_CHANGES_INHAND (1<<1)
+/// if the reskin changes the object name to the new skin's name
+#define UNIQUE_RESKIN_CHANGES_NAME (1<<2)
