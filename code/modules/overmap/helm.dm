@@ -123,6 +123,8 @@
 		qdel(current_ship)
 		return
 
+	calibrating = FALSE
+
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
@@ -138,7 +140,6 @@
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
-	calibrating = FALSE
 
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
