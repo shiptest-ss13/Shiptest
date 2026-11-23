@@ -211,7 +211,7 @@
 	desc_more = "This one has a paint job resembling a Sharplite electroplasma gun, barely disguising its true nature."
 	autowiki_hidden = TRUE
 
-// INFINITE AMMO VARIANT //
+// ASPAWN INFINITE AMMO VARIANT //
 /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo
 	name = "true disposable gun"
 	desc = "The brutal conclusion of arms development research. Gaze upon it and despair. Chambered in .22 LR."
@@ -220,11 +220,32 @@
 	default_firemode = FIREMODE_FULLAUTO
 	wear_rate = 0
 	trigger_pull_fail = 0
-	autowiki_hidden = TRUE // admin gun (or EXTREMELY rare from slots)
+	bolt_type = BOLT_TYPE_OPEN // no racking this one
+	autowiki_hidden = TRUE // admin gun
 
-/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/process_fire()
-	. = ..()
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/can_shoot()
 	magazine.top_off(null, TRUE) // experimental bluespace magazine
+	. = ..()
+
+// CHRONO ZIPPY - RARE FROM SLOTS //
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono
+	name = "chronozippy"
+	desc = "It doesn't have to stop."
+	fire_delay = 0.15 SECONDS
+	casing_ejector = FALSE // no infinite 22 for other guns, sorry
+	var/mutable_appearance/glow
+
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono/Initialize()
+	. = ..()
+	glow = mutable_appearance('icons/effects/anomalies.dmi', "chronograph")
+	var/matrix/scoot = matrix()
+	scoot.Translate(-2, 0)
+	glow.transform = scoot
+	update_appearance()
+
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono/update_overlays()
+	. = ..()
+	. += glow
 
 // CHOCOLATE GUN - YOU CAN EAT IT //
 /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate

@@ -110,7 +110,7 @@
 				reel_state = "six"
 			if("W")
 				reel_state = "warra"
-			if("GUN")
+			if("!")
 				reel_state = "zip"
 		. += prefixes[i] + reel_state
 
@@ -314,7 +314,7 @@
 	placard_legible = FALSE
 
 	// SNOWFLAKE PROBS (override the actual reels rolling)
-	var/zippy_prob = 0.000001 // probability of getting The Zippy
+	var/zippy_prob = 0.001 // probability of getting The Zippy
 	var/bullet_prob = 1 // probability of the machine shooting you
 
 // special prize calculation proc because we dispense items not cash
@@ -335,11 +335,11 @@
 	// special Super Zippy
 	if(prob(zippy_prob))
 		special_prize = TRUE
-		reels[1] = "GUN"
-		reels[2] = "GUN"
-		reels[3] = "GUN"
-		gun_prize = /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo
-		message_admins("An infinite ammo zippy has been won! [ADMIN_LOOKUPFLW(src)]")
+		reels[1] = "!"
+		reels[2] = "!"
+		reels[3] = "!"
+		gun_prize = /obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono
+		message_admins("A chrono zippy has been won! [ADMIN_LOOKUPFLW(src)]")
 
 	// snowflake chance to roll a bullet
 	if(prob(bullet_prob) && !special_prize)
