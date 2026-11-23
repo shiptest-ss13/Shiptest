@@ -14,7 +14,23 @@
 	)
 
 	//list of ships we are currently affecting so we can stop flicking the lights when they leave
-	var/list/affected_ships = list()
+	var/list/affected_ships = null
+
+/datum/overmap/event/nebula/Destroy()
+	. = ..()
+	if(LAZYLEN(affected_ships))
+		STOP_PROCESSING(SSfastprocess, src)
+		var/datum/virtual_level/ship_vlevel
+		for(var/datum/overmap/ship/controlled/ship as anything in affected_ships)
+			ship_vlevel = ship.shuttle_port.get_virtual_level()
+			LAZYREMOVE(affected_ships, ship)
+			REMOVE_TRAIT(ship, TRAIT_CLOAKED, REF(src))
+
+			for(var/obj/machinery/light/light_to_mess in GLOB.machines)
+				if(light_to_mess.virtual_z() != ship_vlevel.id)
+					continue
+				light_to_mess.stop_flickering()
+
 
 /datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
@@ -32,7 +48,7 @@
 		if(!(ship in nearby_objects))
 
 			ship_vlevel = ship.shuttle_port.get_virtual_level()
-			affected_ships -= ship
+			LAZYREMOVE(affected_ships, ship)
 			REMOVE_TRAIT(ship, TRAIT_CLOAKED, REF(src))
 
 			for(var/obj/machinery/light/light_to_mess in GLOB.machines)
@@ -40,20 +56,19 @@
 					continue
 				light_to_mess.stop_flickering()
 
-	if(affected_ships.len == 0)
+	if(!LAZYLEN(affected_ships))
 		STOP_PROCESSING(SSfastprocess, src)
 
 /datum/overmap/event/nebula/affect_ship(datum/overmap/ship/controlled/ship)
-	var/datum/virtual_level/ship_vlevel = ship.shuttle_port.get_virtual_level()
-
-	if(ship in affected_ships)
+	if(LAZYFIND(affected_ships, ship))
 		return
 
-	if(affected_ships.len == 0)
-		START_PROCESSING(SSfastprocess, src)
-	affected_ships += ship
-	ADD_TRAIT(ship, TRAIT_CLOAKED, REF(src))
+	var/datum/virtual_level/ship_vlevel = ship.shuttle_port.get_virtual_level()
 
+	LAZYADD(affected_ships, ship)
+	START_PROCESSING(SSfastprocess, src)
+
+	ADD_TRAIT(ship, TRAIT_CLOAKED, REF(src))
 
 	for(var/obj/machinery/light/light_to_mess in GLOB.machines)
 		if(light_to_mess.virtual_z() != ship_vlevel.id)
