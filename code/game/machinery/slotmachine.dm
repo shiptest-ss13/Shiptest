@@ -407,6 +407,9 @@
 
 /obj/item/ammo_casing/c22lr/prefired/Initialize()
 	. = ..()
+	INVOKE_ASYNC(src, PROC_REF(bang))
+
+/obj/item/ammo_casing/c22lr/prefired/proc/bang()
 	var/target
 	for(var/mob/living/loser in range(6, get_turf(src)))
 		if(!isInSight(src, loser))
