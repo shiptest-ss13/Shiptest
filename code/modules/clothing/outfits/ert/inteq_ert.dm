@@ -49,12 +49,12 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = /obj/item/clothing/suit/armor/vest
-	suit_store = /obj/item/gun/ballistic/automatic/assault/skm/inteq
+	suit_store = /obj/item/gun/ballistic/automatic/assault/fa2/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/inteq/alt
 	id = /obj/item/card/id
-	belt = /obj/item/storage/belt/security/webbing/inteq/skm
+	belt = /obj/item/storage/belt/security/webbing/inteq/fa2
 
 	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
@@ -131,9 +131,9 @@
 	head = /obj/item/clothing/head/helmet/m10/inteq
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq
-	belt = /obj/item/storage/belt/security/webbing/inteq/skm_carabine
+	belt = /obj/item/storage/belt/security/webbing/inteq/fa2_carabine
 	suit = /obj/item/clothing/suit/armor/hos/inteq
-	suit_store = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
+	suit_store = /obj/item/gun/ballistic/automatic/smg/fa2_carbine/inteq
 	id = /obj/item/card/id/gold
 
 	backpack_contents = list(/obj/item/megaphone/sec)

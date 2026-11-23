@@ -25,7 +25,8 @@
 		examine_list += span_notice("-The [name] does not seem to have a round chambered.")
 	if (ballistic_gun.bolt_locked)
 		examine_list += span_notice("-The [name]'s [ballistic_gun.bolt_wording] is locked back and needs to be released before firing.")
-	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
+	if (ballistic_gun.bolt_type != BOLT_TYPE_NO_BOLT)
+		examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
 
 /obj/item/gun/ballistic/shotgun/underbarrel
@@ -88,3 +89,29 @@
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty
 	start_empty = TRUE
+
+/obj/item/attachment/gun/ballistic/swiss_cheese_dma
+	name = "Swiss Cheese DMA Unit"
+	desc = "You shouldn't see this. If for some reason you do... This is the matter cannon thing on the Swiss Cheese. Except broken off somehow."
+	weapon_type = /obj/item/gun/ballistic/swiss_cheese_dma
+	attach_features_flags = ATTACH_NO_SPRITE
+
+/obj/item/gun/ballistic/swiss_cheese_dma
+	autowiki_hidden = TRUE //underbarrel
+	name = "Swiss Cheese DMA Unit"
+	desc = "Now you've done it you freak shit. You've fucked up. You're being tracked by the grid. The eye in the sky is watching. We're coming for you. Prepare to die. This is an internal item and you should not see this in game. Please report this on the github."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/dma
+	allowed_ammo_types = list(/obj/item/ammo_box/magazine/internal/dma)
+	fire_sound = 'sound/weapons/gun/general/grenade_launch_old.ogg'
+	bolt_type = BOLT_TYPE_NO_BOLT
+	internal_magazine = TRUE
+	load_sound = null
+	wear_rate = 0
+
+/obj/item/ammo_box/magazine/internal/dma
+	name = "swiss cheese dma unit internal gun internal magazine holy shit"
+	desc = "report this on the github if you see it in game"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow
+	start_empty = TRUE
+	caliber = "dmarod"
+	max_ammo = 1

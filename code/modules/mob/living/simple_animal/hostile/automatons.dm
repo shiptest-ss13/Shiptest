@@ -25,7 +25,7 @@
 
 /mob/living/simple_animal/hostile/automated/quadrotor
 	name = "Quadrotor drone"
-	desc = "A lightweight quadrotor drone design carrying a gimbal-mounted .45 pistol. Ubiquitous across the frontier for its ease of manufacture and set-and-forget nature."
+	desc = "A strange looking drone with a mounted 10mm gun. You get the feeling you shouldn't see this and should file a bug report."
 	icon_state = "quadrotor_indie"
 	health = 45
 	maxHealth = 45
@@ -59,6 +59,9 @@
 	faction = list(FACTION_HOSTILE)
 	icon_state = "quadrotor_coalition"
 
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/waste
+	faction = list(FACTION_HIVEBOT)
+
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly
 	name = "Mr. Drone"
 	desc = "A military drone manufactured by Cybersun primarily during the Inter-Corporate War. It whirrs happily in the air."
@@ -74,8 +77,8 @@
 	faction = list(FACTION_RAMZI)
 
 /mob/living/simple_animal/hostile/automated/quadrotor/makosso
-	name = "Vigilitas Drone"
-	desc = "A defensive drone manufactured by Sharplite."
+	name = "Faulty Vigilitas \"Hornet\" Drone"
+	desc = "A defensive drone manufactured by Sharplite. Popular during the Inter-Corporate War as a cheap perimeter defense measure, many can be found continuing to hover around deterring intruders from long-lost sites. This one is no exception, and its electroplasma gun follows your movements closely."
 	health = 60
 	maxHealth = 60
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
@@ -85,6 +88,9 @@
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 	icon_state = "quadrotor_warra"
+
+/mob/living/simple_animal/hostile/automated/quadrotor/makosso/waste
+	faction = list(FACTION_HIVEBOT)
 
 //rovers
 
@@ -205,6 +211,9 @@
 	aggro_say_chance = 70
 	faction = list(FACTION_HOSTILE)
 
+/mob/living/simple_animal/hostile/automated/agrav/cybersun/waste
+	faction = list(FACTION_HIVEBOT)
+
 //bipedal
 
 /mob/living/simple_animal/hostile/automated/bipedal
@@ -216,7 +225,7 @@
 	health = 250
 	maxHealth = 250
 	armor = list("melee" = 10, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
-	move_to_delay = 20
+	move_to_delay = 9
 	speed = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -358,6 +367,9 @@
 
 /mob/living/simple_animal/hostile/automated/walkmine/Aggro()
 	mob_light(2, 0.25, light_color)
+
+/mob/living/simple_animal/hostile/automated/walkmine/waste
+	faction = list(FACTION_HIVEBOT)
 
 /mob/living/simple_animal/hostile/automated/walkmine/makosso
 	faction = list("Deathsquad")

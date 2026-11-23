@@ -34,6 +34,8 @@
 	var/damaged	= FALSE	//damaged indicates that our eyes are undergoing some level of negative effect
 	/// Scarring on this organ
 	var/scarring = NONE
+	/// Scars that eye surgery can't fix, e.g. from the scarred eye quirk
+	var/permanent_scarring = NONE
 
 /obj/item/organ/eyes/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE, initialising)
 	if(!..())
@@ -116,7 +118,9 @@
 	if(scarring & LEFT_EYE_SCAR)
 		. += mutable_appearance('icons/obj/surgery.dmi', "eye_scar_left")
 
-/obj/item/organ/eyes/proc/apply_scar(side)
+/obj/item/organ/eyes/proc/apply_scar(side, permanent = FALSE)
+	if(permanent)
+		permanent_scarring |= side
 	if(scarring & side)
 		return
 	scarring |= side
@@ -137,6 +141,7 @@
 	if(!(scarring & side))
 		return
 	scarring &= ~side
+	permanent_scarring &= ~side
 	maxHealth += 15
 	update_appearance()
 	if(!owner)
@@ -146,6 +151,15 @@
 		owner.clear_fullscreen(EYE_SCARRING_TRAIT)
 	owner.cure_blind(EYE_SCARRING_TRAIT)
 	owner.update_body()
+
+// used by the surgery to fix non-permanent scars
+/obj/item/organ/eyes/proc/fix_injury_scars()
+	var/fixable_scarring = scarring & ~permanent_scarring
+	if(!fixable_scarring)
+		return FALSE
+	fix_scar(fixable_scarring & RIGHT_EYE_SCAR)
+	fix_scar(fixable_scarring & LEFT_EYE_SCAR)
+	return TRUE
 
 /obj/item/organ/eyes/on_life(seconds_per_tick, times_fired)
 	..()

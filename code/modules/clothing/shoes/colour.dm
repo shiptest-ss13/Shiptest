@@ -28,8 +28,7 @@
 						"brown shoes" = "brown",
 						"light brown shoes" = "lightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 /obj/item/clothing/shoes/sneakers/white
 	name = "white shoes"

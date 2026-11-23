@@ -1,6 +1,5 @@
 #define SCANGATE_NONE "Off"
 #define SCANGATE_MINDSHIELD "Mindshield"
-#define SCANGATE_NANITES "Nanites"
 #define SCANGATE_DISEASE "Disease"
 #define SCANGATE_GUNS "Guns"
 #define SCANGATE_WANTED "Wanted"
@@ -35,7 +34,6 @@
 	var/locked = FALSE
 	var/scangate_mode = SCANGATE_NONE
 	var/disease_threshold = DISEASE_SEVERITY_MINOR
-	var/nanite_cloud = 1
 	var/detect_species = SCANGATE_HUMAN
 	var/reverse = FALSE //If true, signals if the scan returns false
 
@@ -111,14 +109,6 @@
 		if(SCANGATE_MINDSHIELD)
 			if(HAS_TRAIT(M, TRAIT_MINDSHIELD))
 				beep = TRUE
-		if(SCANGATE_NANITES)
-			if(SEND_SIGNAL(M, COMSIG_HAS_NANITES))
-				if(nanite_cloud)
-					var/datum/component/nanites/nanites = M.GetComponent(/datum/component/nanites)
-					if(nanites && nanites.cloud_id == nanite_cloud)
-						beep = TRUE
-				else
-					beep = TRUE
 		if(SCANGATE_DISEASE)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M
@@ -189,7 +179,6 @@
 	data["locked"] = locked
 	data["scan_mode"] = scangate_mode
 	data["reverse"] = reverse
-	data["nanite_cloud"] = nanite_cloud
 	data["disease_threshold"] = disease_threshold
 	data["target_species"] = detect_species
 	return data
@@ -215,10 +204,6 @@
 			var/new_threshold = params["new_threshold"]
 			disease_threshold = new_threshold
 			. = TRUE
-		if("set_nanite_cloud")
-			var/new_cloud = text2num(params["new_cloud"])
-			nanite_cloud = clamp(round(new_cloud, 1), 1, 100)
-			. = TRUE
 		//Some species are not scannable, like abductors (too unknown), androids (too artificial) or skeletons (too magic)
 		if("set_target_species")
 			var/new_species = params["new_species"]
@@ -227,7 +212,6 @@
 
 #undef SCANGATE_NONE
 #undef SCANGATE_MINDSHIELD
-#undef SCANGATE_NANITES
 #undef SCANGATE_DISEASE
 #undef SCANGATE_GUNS
 #undef SCANGATE_WANTED

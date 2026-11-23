@@ -232,7 +232,10 @@
 /datum/component/automatic_fire/proc/process_shot()
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
 		return FALSE
-	if(!COOLDOWN_FINISHED(src, next_shot_cd))
+	if(world.time < next_shot_cd)
+		return TRUE
+	var/obj/item/gun/gun = parent
+	if(gun.on_fire_cooldown())
 		return TRUE
 	if(QDELETED(target) || get_turf(target) != target_loc) //Target moved or got destroyed since we last aimed.
 		target = target_loc //So we keep firing on the emptied tile until we move our mouse and find a new target.
@@ -252,7 +255,7 @@
 // Gun procs.
 
 /obj/item/gun/proc/on_autofire_start(datum/source, atom/target, mob/living/shooter, params)
-	if(current_cooldown || shooter.stat)
+	if(shooter.stat)
 		return FALSE
 	if(!can_shoot()) //we call pre_fire so bolts/slides work correctly
 		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
@@ -271,7 +274,7 @@
 
 /obj/item/gun/proc/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(current_cooldown || shooter.incapacitated())
+	if(shooter.incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))

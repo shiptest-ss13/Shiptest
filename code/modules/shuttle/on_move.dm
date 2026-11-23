@@ -335,6 +335,8 @@ All ShuttleMove procs go here
 /mob/living/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
 	if(buckled)
 		return
+	if(pulledby && pulledby.buckled && pulledby.grab_state >= GRAB_AGGRESSIVE)
+		return
 
 	. = ..()
 

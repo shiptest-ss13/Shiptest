@@ -43,5 +43,5 @@
 	desc = "There MUST be a chicken inside."
 	icon_state = "eggyplant"
 	trash_type = /obj/item/food/egg
-	foodtypes = MEAT
+	foodtypes = EGG
 	distill_reagent = /datum/reagent/consumable/ethanol/eggnog

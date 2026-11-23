@@ -825,6 +825,14 @@
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/armor/vest/alt{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_x = -11;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "hV" = (
@@ -2104,7 +2112,8 @@
 /obj/item/gps{
 	pixel_y = 5;
 	pixel_x = -12;
-	gpstag = "!SCAV-SHIP"
+	gpstag = "!SCAV-SHIP";
+	gps_active = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -2777,12 +2786,13 @@
 	dir = 1
 	},
 /obj/structure/guncloset,
-/obj/item/gun/energy/sharplite/rush/empty_cell,
 /obj/item/gun/energy/laser/e10/empty_cell,
 /obj/item/gun/energy/laser/e10/empty_cell,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = 32
 	},
+/obj/item/gun/energy/sharplite/rush/empty_cell,
+/obj/item/gun/energy/sharplite/surge/resistor/empty_cell,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "yA" = (
@@ -5461,15 +5471,10 @@
 	name = "ammunition locker";
 	req_access = null
 	},
-/obj/item/storage/box/ammo/a44roum,
-/obj/item/storage/box/ammo/a44roum,
-/obj/item/stock_parts/cell/gun/sharplite{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_x = -8
 	},
-/obj/item/stock_parts/cell/gun/sharplite{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/sharplite{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_x = -8
 	},
 /obj/item/stock_parts/cell/gun{
@@ -5491,6 +5496,12 @@
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun/sharplite/plus,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Vy" = (

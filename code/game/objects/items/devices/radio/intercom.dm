@@ -102,6 +102,23 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 	return TRUE
 
+/obj/item/radio/intercom/bullet_act(obj/projectile/hitting_projectile)
+	if(hitting_projectile.damage_type == BRUTE && prob(30))
+		switch(rand(1,5)) // intensity
+			if(1 to 2)
+				manual_emote(random_string(rand(8, 16), list("#", "@", "!", "*",)))
+			if(3 to 4)
+				manual_emote(random_string(rand(8, 16), list("#", "@", "!", "*",)))
+				if(wires)
+					wires.cut_random()
+			if(5)
+				for(var/mob/living/M in get_hearers_in_view(rand(1,2), loc))
+					playsound(loc, 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
+					M.show_message(span_boldwarning("BANG"), MSG_AUDIBLE)
+					M.soundbang_act(1, 200, rand(0, 5))
+	. = ..()
+
+
 
 /obj/item/radio/intercom/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, list/spans, list/message_mods = list())
 	if(message_mods[RADIO_EXTENSION] == MODE_INTERCOM)

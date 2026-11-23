@@ -10,18 +10,20 @@
 	display_overlays = FALSE
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/glass = 1000) // WS Edit - Item Materials
 
+	world_file = 'icons/obj/modular_laptop_world.dmi'
+
 	hardware_flag = PROGRAM_LAPTOP
 	max_hardware_size = 2
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 	// No running around with open laptops in hands.
-	item_flags = SLOWS_WHILE_IN_HAND
+	item_flags = NONE
 
 	screen_on = 0 		// Starts closed
-	var/start_open = TRUE	// unless this var is set to 1
+	var/start_open = FALSE	// unless this var is set to 1
 	var/icon_state_closed = "laptop-closed"
-	var/w_class_open = WEIGHT_CLASS_BULKY
-	var/slowdown_open = TRUE
+	var/w_class_open = WEIGHT_CLASS_NORMAL
+	var/slowdown_open = FALSE
 
 /obj/item/modular_computer/laptop/examine(mob/user)
 	. = ..()

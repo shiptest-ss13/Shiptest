@@ -206,8 +206,6 @@
 #define FROZEN_ATMOS "o2=22;n2=82;TEMP=180"
 /// -80°C kitchen coldroom; higher amount of mol to reach about 101.3 kpA
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
-/// used in the holodeck burn test program
-#define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"

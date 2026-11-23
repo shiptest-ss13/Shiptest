@@ -17,6 +17,8 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON
+
 	equipping_sound = EQUIP_SOUND_MED_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
 	equip_delay_self = EQUIP_DELAY_SUIT
@@ -404,6 +406,7 @@
 	name = "\improper CentCom formal coat"
 	desc = "A stylish coat given to CentCom Commanders. Perfect for sending ERTs to suicide missions with style!"
 	icon_state = "centcom_formal"
+	base_icon_state = "centcom_formal"
 	item_state = "centcom"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
 	togglename = "buttons"

@@ -8,20 +8,40 @@
 	anchored = TRUE
 	density = FALSE
 	opacity = FALSE
+	pass_flags_self = PASSWEAKSTRUCTURE | PASSSTRUCTURE
+	//can this be disassembled traditionally
 	var/deconstructible = TRUE
+	//what does this given when disassembled?
 	var/deconstructible_loot = /obj/item/stack/sheet/metal
+	//what does this give when broken?
+	var/scrap_loot = /obj/item/stack/ore/salvage/scrapmetal
 
-/obj/structure/fluff/attackby(obj/item/I, mob/living/user, params)
-	if(I.tool_behaviour == TOOL_WRENCH && deconstructible)
+/obj/structure/fluff/wrench_act(mob/living/user, obj/item/wrenching_it, list/modifiers)
+	. = ..()
+	if(deconstructible)
 		user.visible_message(span_notice("[user] starts disassembling [src]..."), span_notice("You start disassembling [src]..."))
-		I.play_tool_sound(src)
-		if(I.use_tool(src, user, 50))
-			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into spare materials."))
+		wrenching_it.play_tool_sound(src)
+		if(wrenching_it.use_tool(src, user, 50))
 			playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
-			new deconstructible_loot(drop_location())
-			qdel(src)
-		return
-	..()
+			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into spare materials."))
+			deconstruct(TRUE)
+
+/obj/structure/fluff/deconstruct_act(mob/living/user, obj/item/deconstructing_it)
+	. = ..()
+	if(deconstructible)
+		user.visible_message(span_notice("[user] starts disassembling [src]..."), span_notice("You start disassembling [src]..."))
+		deconstructing_it.play_tool_sound(src)
+		if(deconstructing_it.use_tool(src, user, 50))
+			playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
+			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into spare materials."))
+			deconstruct(TRUE)
+
+/obj/structure/fluff/deconstruct(disassembled)
+	. = ..()
+	if(disassembled)
+		new deconstructible_loot(drop_location())
+	else
+		new scrap_loot(drop_location())
 
 /obj/structure/fluff/empty_terrarium //Empty terrariums are created when a preserved terrarium in a lavaland seed vault is activated.
 	name = "empty terrarium"
@@ -71,44 +91,6 @@
 	desc = "A towering basalt sculpture of a drake. Cracks run down its surface and parts of it have fallen off."
 	icon_state = "drake_statue_falling"
 
-
-/obj/structure/fluff/bus
-	name = "bus"
-	desc = "GO TO SCHOOL. READ A BOOK."
-	icon_state = "backseat"
-	icon = 'icons/obj/bus.dmi'
-	density = TRUE
-	anchored = TRUE
-	deconstructible = FALSE
-
-/obj/structure/fluff/bus/dense
-	name = "bus"
-	icon_state = "backwall"
-
-/obj/structure/fluff/bus/passable
-	name = "bus"
-	icon_state = "frontwalltop"
-	density = FALSE
-	layer = ABOVE_ALL_MOB_LAYER //except for the stairs tile, which should be set to OBJ_LAYER aka 3.
-
-
-/obj/structure/fluff/bus/passable/seat
-	name = "seat"
-	desc = "Buckle up! ...What do you mean, there's no seatbelts?!"
-	icon_state = "backseat"
-	pixel_y = 17
-	layer = OBJ_LAYER
-
-
-/obj/structure/fluff/bus/passable/seat/driver
-	name = "driver's seat"
-	desc = "Space Jesus is my copilot."
-	icon_state = "driverseat"
-
-/obj/structure/fluff/bus/passable/seat/driver/attack_hand(mob/user)
-	playsound(src, 'sound/items/carhorn.ogg', 50, TRUE)
-	. = ..()
-
 /obj/structure/fluff/paper
 	name = "dense lining of papers"
 	desc = "A lining of paper scattered across the bottom of a wall."
@@ -124,7 +106,6 @@
 	name = "dense stack of papers"
 	desc = "A stack of various papers, childish scribbles scattered across each page."
 	icon_state = "paperstack"
-
 
 /obj/structure/fluff/divine
 	name = "Miracle"
@@ -263,6 +244,7 @@
 	anchored = TRUE
 	deconstructible = TRUE
 	deconstructible_loot = /obj/item/stack/sheet/mineral/wood
+	scrap_loot = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/fluff/hedge/opaque //useful for mazes and such
 	opacity = TRUE

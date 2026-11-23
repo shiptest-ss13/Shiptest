@@ -108,5 +108,5 @@
 	desc = "Gel bottle loaded with a potent non-toxic sterilizer synthesized by Cybersun Industries. Useful in preparation for surgery. A label reads: <i>\"Apply directly to patient after initiating surgery.\"</i>"
 	icon_state = "purifadine"
 	current_skin = "Cybersun"
-	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
+	list_reagents = list(/datum/reagent/space_cleaner/sterilizine/purifadine = 60)
 	custom_price = 200

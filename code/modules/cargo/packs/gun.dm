@@ -264,13 +264,6 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/warra
 
-/datum/supply_pack/gun/scatterlaser
-	name = "Scatter Laser Crate"
-	desc = "Contains a multi-function scatter energy gun, capable of firing armour penetrating slugs, and devastating scattered laser bolts."
-	cost = 1250
-	contains = list(/obj/item/gun/energy/laser/scatter)
-	crate_name = "scatter laser crate"
-
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
 	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range."
@@ -608,6 +601,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/g12
+	name = "Etherbor G-12 Breaching Tool Crate"
+	desc = "Contains a single G-12 'Torch' breaching tool. Chambered in 12 gauge, using 4 round box magazines."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/g12)
+	crate_name = "breaching tool crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		SMGs
 */
@@ -652,8 +655,8 @@
 
 
 /datum/supply_pack/gun/mongrel
-	name = "SKM-44v Mongrel SMG Crate"
-	desc = "Contains a shortened variant of the SKM rechambered to 10mm and painted in the brown-and-gold of Inteq."
+	name = "PM-25 Mongrel SMG Crate"
+	desc = "Contains a shortened variant of the FA2 rechambered to 10mm and painted in the brown-and-gold of Inteq."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/mongrel)
 	crate_name = "SMG crate"
@@ -841,18 +844,18 @@
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 
-/datum/supply_pack/gun/skm
-	name = "SKM-24 Rifle Crate"
+/datum/supply_pack/gun/fa2
+	name = "FA2 Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 7.62x40mm CLIP."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/skm)
+	contains = list(/obj/item/storage/guncase/fa2)
 	crate_name = "auto rifle crate"
 
-/datum/supply_pack/gun/inteq_skm
-	name = "SKM-44 Rifle Crate"
-	desc = "Contains a SKM painted in the brown-and-gold of Inteq, chambered in 7.62x40mm CLIP. "
+/datum/supply_pack/gun/inteq_fa2
+	name = "FA2 Rifle Crate"
+	desc = "Contains an FA2 painted in the brown-and-gold of Inteq, chambered in 7.62x40mm CLIP. "
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/skm_inteq)
+	contains = list(/obj/item/storage/guncase/fa2_inteq)
 	crate_name = "auto rifle crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
@@ -918,11 +921,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/cm24
-	name = "CM-24 Surplus Stockpile Rifle"
-	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the SKM-24 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
+/datum/supply_pack/gun/fa2m
+	name = "FA2m Surplus Stockpile Rifle"
+	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the FA2 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/cm24)
+	contains = list(/obj/item/storage/guncase/fa2m)
 	crate_name = "rifle crate"
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -973,7 +976,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/ssg04
-	name = "SsG-04 Designated Marksman Rifle"
+	name = "KW-4 Vizsla Designated Marksman Rifle"
 	desc = "Contains a high-powered marksman rifle chambered in .308. Painted in the brown-and-gold of Inteq."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/ssg04)

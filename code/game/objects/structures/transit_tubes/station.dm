@@ -59,43 +59,46 @@
 	user.visible_message(span_notice("[user] inserts [R]."), span_notice("You insert [R]."))
 	qdel(R)
 
+//I think structure occurs in only 1 crufty as fuck ruin I resent having to make this proc
+/obj/structure/transit_tube/station/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(pod_moving || user.a_intent != INTENT_GRAB || !isliving(pulled))
+		return FALSE
+	if(open_status == STATION_TUBE_OPEN)
+		var/mob/living/grabbed_mob = pulled
+		if(user.grab_state >= GRAB_AGGRESSIVE)
+			if(grabbed_mob.buckled || grabbed_mob.has_buckled_mobs())
+				to_chat(user, span_warning("[grabbed_mob] is attached to something!"))
+				return TRUE
+			for(var/obj/structure/transit_tube_pod/pod in loc)
+				pod.visible_message(span_warning("[user] starts putting [grabbed_mob] into the [pod]!"))
+				if(do_after(user, 15, target = src))
+					if(open_status == STATION_TUBE_OPEN && grabbed_mob && user.grab_state >= GRAB_AGGRESSIVE && user.pulling == grabbed_mob && !grabbed_mob.buckled && !grabbed_mob.has_buckled_mobs())
+						grabbed_mob.Paralyze(100)
+						src.Bumped(grabbed_mob)
+				break
+	return TRUE
 
 /obj/structure/transit_tube/station/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
 	if(!pod_moving)
-		if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
-			if(open_status == STATION_TUBE_OPEN)
-				var/mob/living/GM = user.pulling
-				if(user.grab_state >= GRAB_AGGRESSIVE)
-					if(GM.buckled || GM.has_buckled_mobs())
-						to_chat(user, span_warning("[GM] is attached to something!"))
-						return
-					for(var/obj/structure/transit_tube_pod/pod in loc)
-						pod.visible_message(span_warning("[user] starts putting [GM] into the [pod]!"))
-						if(do_after(user, 15, target = src))
-							if(open_status == STATION_TUBE_OPEN && GM && user.grab_state >= GRAB_AGGRESSIVE && user.pulling == GM && !GM.buckled && !GM.has_buckled_mobs())
-								GM.Paralyze(100)
-								src.Bumped(GM)
-						break
-		else
-			for(var/obj/structure/transit_tube_pod/pod in loc)
-				if(!pod.moving && (pod.dir in tube_dirs))
-					if(open_status == STATION_TUBE_CLOSED)
-						open_animation()
+		for(var/obj/structure/transit_tube_pod/pod in loc)
+			if(!pod.moving && (pod.dir in tube_dirs))
+				if(open_status == STATION_TUBE_CLOSED)
+					open_animation()
 
-					else if(open_status == STATION_TUBE_OPEN)
-						if(pod.contents.len && user.loc != pod)
-							user.visible_message(span_notice("[user] starts emptying [pod]'s contents onto the floor."), span_notice("You start emptying [pod]'s contents onto the floor..."))
-							if(do_after(user, 10, target = src)) //So it doesn't default to close_animation() on fail
-								if(pod && pod.loc == loc)
-									for(var/atom/movable/AM in pod)
-										AM.forceMove(get_turf(user))
+				else if(open_status == STATION_TUBE_OPEN)
+					if(pod.contents.len && user.loc != pod)
+						user.visible_message(span_notice("[user] starts emptying [pod]'s contents onto the floor."), span_notice("You start emptying [pod]'s contents onto the floor..."))
+						if(do_after(user, 10, target = src)) //So it doesn't default to close_animation() on fail
+							if(pod && pod.loc == loc)
+								for(var/atom/movable/pod_content in pod)
+									pod_content.forceMove(get_turf(user))
 
-						else
-							close_animation()
-				break
+					else
+						close_animation()
+			break
 
 
 /obj/structure/transit_tube/station/attackby(obj/item/W, mob/user, params)

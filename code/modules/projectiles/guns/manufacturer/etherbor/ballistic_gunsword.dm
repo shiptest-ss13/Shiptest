@@ -1,0 +1,77 @@
+/obj/item/gun/ballistic/shotgun/automatic/g12
+	name = "\improper Etherbor G-12 'Torch'"
+	desc = "Supplementing PGFAF laser weapons' poor forced entry capabilities, the Etherbor G-12 breaching tool provides a compact solution for urban obstacles. Highly unconventional for an Etherbor design, the G-12 has been nicknamed the 'Torch' for its resemblance to an industrial cutting tool."
+	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/etherbor/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/etherbor/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/etherbor/onmob.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+
+	icon_state = "g12"
+	item_state = "g12"
+
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
+	fire_delay = 0.3 SECONDS
+	manufacturer = MANUFACTURER_PGF
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	weapon_weight = WEAPON_MEDIUM
+	default_ammo_type = /obj/item/ammo_box/magazine/g12
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/g12,
+	)
+
+	empty_indicator = FALSE
+	unique_mag_sprites_for_variants = FALSE
+
+	show_magazine_on_sprite = TRUE
+	semi_auto = TRUE
+	internal_magazine = FALSE
+	casing_ejector = TRUE
+	tac_reloads = TRUE
+
+	pickup_sound = 'sound/items/handling/rifle_pickup.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 3
+	recoil_unwielded = 6
+	wield_slowdown = SMG_SLOWDOWN
+	wield_delay = 0.4 SECONDS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 21,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 18,
+		)
+	)
+
+/obj/item/gun/ballistic/shotgun/automatic/g12/no_mag
+	default_ammo_type = FALSE
+
+/obj/item/ammo_box/magazine/g12
+	name = "G-12 'Torch' magazine (12g buckshot)"
+	desc = "A single-stack, 4-round box magazine for Etherbor's G-12 'Torch' breaching tool."
+	icon_state = "g12_mag-1"
+	base_icon_state = "g12_mag"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "12ga"
+	max_ammo = 4
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/g12/slug
+	name = "G-12 'Torch' magazine (12g Slugs)"
+	ammo_type = /obj/item/ammo_casing/shotgun
+
+/obj/item/ammo_box/magazine/g12/empty
+	start_empty = TRUE

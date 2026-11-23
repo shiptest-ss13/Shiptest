@@ -181,13 +181,11 @@
 	name = "frontiersman cap"
 	desc = "An olive-green and grey baseball hat, worn by cargo technicians working under the Frontiersmen. Even they have the rights for a cool cap!"
 	icon_state = "frontiersoft"
-	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 	unique_reskin = null
-	current_skin = null
 
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
@@ -312,9 +310,9 @@
 		new /obj/item/ammo_box/magazine/illestren_a850r(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
+/obj/item/storage/belt/security/military/frontiersmen/fa2_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()

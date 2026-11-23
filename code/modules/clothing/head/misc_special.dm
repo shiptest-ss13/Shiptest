@@ -2,7 +2,6 @@
  * Contents:
  *		Welding mask
  *		Cakehat
- *		trapper
  *		Pumpkin head
  *		Kitty ears
  *		Cardborg disguise
@@ -39,33 +38,6 @@
 
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
-
-/*
- * Trapper Hat
- */
-/obj/item/clothing/head/trapper
-	name = "trapper hat"
-	desc = "Perfect for the cold weather."
-	icon_state = "ushankadown"
-	item_state = "ushankadown"
-	flags_inv = HIDEEARS|HIDEHAIR
-	var/earflaps = 1
-	cold_protection = HEAD
-	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
-
-	dog_fashion = /datum/dog_fashion/head/trapper
-
-/obj/item/clothing/head/trapper/attack_self(mob/user)
-	if(earflaps)
-		src.icon_state = "ushankaup"
-		src.item_state = "ushankaup"
-		earflaps = 0
-		to_chat(user, span_notice("You raise the ear flaps on the trapper."))
-	else
-		src.icon_state = "ushankadown"
-		src.item_state = "ushankadown"
-		earflaps = 1
-		to_chat(user, span_notice("You lower the ear flaps on the trapper."))
 
 /*
  * Pumpkin head
