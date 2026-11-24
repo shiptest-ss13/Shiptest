@@ -215,5 +215,5 @@ NO_MAG_GUN_HELPER(automatic/assault/needle)
 	max_ammo = 40
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/needlee/empty
+/obj/item/ammo_box/magazine/needle/empty
 	start_empty = TRUE
