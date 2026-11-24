@@ -586,7 +586,7 @@
 	contains = list(/obj/item/ammo_box/magazine/needle/empty)
 	cost = 700
 
-/datum/supply_pack/magazine/needle
+/datum/supply_pack/magazine/thorn
 	name = "Thorn Magazine Crate"
 	desc = "Contains a 5.8x20mm flechette box magazine, with a 25 round capacity. Hit your target guaranteed."
 	contains = list(/obj/item/ammo_box/magazine/thorn/empty)

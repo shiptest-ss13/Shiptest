@@ -329,7 +329,7 @@ EMPTY_GUN_HELPER(automatic/pistol/derringer)
 
 /obj/item/gun/ballistic/automatic/pistol/thorn
 	name = "FL-M Thorn"
-	desc = "A machine pistol of Reh'himl origin, recently manufactured by the Lixsur'sha Worskhop. As an attempt to branch out their inventory from just the Needle, the 5.8 flechette round was cut down to a pistol size. Opinions on the thorn are mixed, but it is at least remarkably easy to use."
+	desc = "A machine pistol of Reh'himl origin, recently manufactured by the Lixsur'sha Worskhop. The Thorn exists as an attempt at a smaller sized flechette gun, done by simply cutting down the 5.8x42mm cartridge down. Opinions on the Thorn are mixed, though most agree it is remarkably easy to use."
 
 	icon = 'icons/obj/guns/manufacturer/lixsurworkshop/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/lefthand.dmi'
