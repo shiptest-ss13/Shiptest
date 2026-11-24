@@ -35,14 +35,14 @@
 /obj/item/catalog_handheld/ui_data(mob/user)
 	var/list/data = list()
 
-	data["onShip"] = !isnull(current_ship)
-	data["shipFaction"] = current_ship.source_template.faction.name
+	// data["onShip"] = !isnull(current_ship)
+	data["shipFaction"] = (current_ship ? current_ship.source_template.faction.name : null)
 	//data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
 	//data["maxMissions"] = current_ship ? current_ship.max_missions : 0
 	//data["outpostDocked"] = istype(outpost_docked)
 	//data["points"] = charge_account ? charge_account.account_balance : 0
-	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	message = "Purchases will be delivered to your hangar's delivery zone."
+	// data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
+	message = "The Handheld Catalog is for requests purpose only. No actual purchases will be placed."
 	// data["blockade"] = FALSE
 	// if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
 	// 	message = blockade_warning
@@ -61,7 +61,7 @@
 			var/total_cost = text2num(params["total"])
 
 			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-			say("Order incoming!")
+			say("Printing order!")
 
 			var/list/unprocessed_packs = list()
 			for(var/list/pack_ref as anything in purchasing)
@@ -69,9 +69,13 @@
 				var/amount = purchasing[pack_ref]
 				for(var/i = 0; i < amount; i++)
 					unprocessed_packs += pack
+			generate_punchcard(unprocessed_packs,total_cost,usr)
 
-			//outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 
+/obj/item/catalog_handheld/proc/generate_punchcard(purchasing, total_cost, mob/user)
+	var/obj/item/order_punchcard/new_card = new(src, purchasing, total_cost)
+	if(!usr.put_in_hand(new_card))
+		new_card.forceMove(get_turf(src))
 
 /obj/item/catalog_handheld/proc/generate_pack_data()
 	categories_data = list()
@@ -111,3 +115,36 @@
 				+ (discountedcost ? "\n[-current_pack.faction_discount]% [current_pack.faction_discount > 0 ? "off" : "upcharge"] due to your faction affiliation.\nWas [current_pack.cost]" : ""),
 			"no_bundle" = current_pack.no_bundle
 		)
+
+/obj/item/order_punchcard
+	name = "Order Punchcard"
+	desc = "A piece of paper with carfully organized holes through it. Can be inserted into a cargo console to quickly fill in order data."
+	gender = NEUTER
+	icon = 'icons/obj/bureaucracy.dmi'
+	icon_state = "punchcard"
+	var/list/purchases
+	var/total_cost = null
+
+/obj/item/order_punchcard/Initialize(mapload, purchasing, totaled_cost)
+	. = ..()
+	if(purchasing)
+		purchases = purchasing
+	if(totaled_cost)
+		total_cost = totaled_cost
+
+/obj/item/order_punchcard/examine_more(mob/user)
+	. = ..()
+	var/list_of_orders = "The order includes:"
+	var/list/unique_orders = uniqueList(purchases)
+
+	for(var/orders in unique_orders)
+		var/datum/supply_pack/pack = orders
+		var/purchase_count = count_by_type(purchases, pack)
+		list_of_orders += " [pack.name] x [purchase_count]"
+	if(total_cost)
+		list_of_orders += "; For an estimated total of [total_cost] cr."
+	. += span_notice(list_of_orders)
+
+
+
+
