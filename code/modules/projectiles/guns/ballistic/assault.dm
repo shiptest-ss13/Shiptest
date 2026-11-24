@@ -176,7 +176,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/needle
 	name = "\improper FL-R Needle"
-	desc = "A reliable rifle of Reh'himl origin, recently manufactured by the Lixsur'sha Worskhop. Firing a barrage of four flechettes, It has excellent hit probability and accuracy at longer distances. "
+	desc = "A rifle of Reh'himl origin, recently manufactured by the Lixsur'sha Worskhop. Firing a barrage of four flechettes, It has excellent hit probability and accuracy at longer distances. While excellent in design, the Needle has been criticized for its lack of modularity and expensive maintenance."
 	icon = 'icons/obj/guns/manufacturer/lixsurworkshop/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/righthand.dmi'
@@ -189,7 +189,7 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/needle,
 	)
-	wear_rate = 1.25
+	wear_rate = 1.75 //not as bad as the literal garbage rifle but its got more than usual
 	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
 	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
