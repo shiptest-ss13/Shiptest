@@ -19,7 +19,7 @@ import { formatMoney } from '../../format';
 export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend(context);
 
-  const { self_paid, app_cost, blockade } = data;
+  const { self_paid, app_cost, blockade, punchcard_order } = data;
 
   const categories = Object.values(data.categories);
   const all_packs = data.all_packs;
@@ -50,6 +50,14 @@ export const CargoCatalog = (props, context) => {
       delete tmpcart[pack_ref];
     }
     setCart(tmpcart);
+  };
+
+  const setOrder = (orderlist) => {
+    for (let index = 0; index < orderlist.length; index++) {
+      const newpack = orderlist[index];
+      addPack(newpack);
+    }
+    act('finish_punchcard');
   };
 
   const itemCount = Object.values(cart).reduce(
@@ -86,6 +94,12 @@ export const CargoCatalog = (props, context) => {
               {itemCount >= 2 && itemCount + ' items'}{' '}
               {cartTotal > 0 && `(${formatMoney(cartTotal)} cr)`}
             </Box>
+            <Button
+              icon="trash"
+              color="transparent"
+              content="Read Punchcard"
+              onClick={() => setOrder(punchcard_order)}
+            />
             <Button
               icon="trash"
               color="transparent"

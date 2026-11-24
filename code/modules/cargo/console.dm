@@ -32,6 +32,8 @@
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
 
+	var/list/punchcard_orders = list()
+
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
 	var/obj/item/circuitboard/computer/cargo/board = circuit
@@ -116,6 +118,9 @@
 			for(var/datum/mission/M as anything in outpost_docked.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
+	if(punchcard_orders.len > 0)
+		data["punchcard_order"] = punchcard_orders
+
 	return data
 
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
@@ -162,7 +167,8 @@
 					unprocessed_packs += pack
 
 			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
-
+		if("finish_punchcard")
+			punchcard_orders = list()
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
@@ -190,6 +196,17 @@
 		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
 		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
+		return TRUE
+	if(istype(W, /obj/item/order_punchcard))
+		var/obj/item/order_punchcard/inserted_card = W
+		for(var/untreated_order in inserted_card.purchases)
+			var/treated_order = REF(untreated_order)
+			if(!treated_order)
+				continue
+			punchcard_orders.Add(treated_order)
+		qdel(inserted_card)
+		say("eats your card")
+		ui_interact(user)
 		return TRUE
 	..()
 

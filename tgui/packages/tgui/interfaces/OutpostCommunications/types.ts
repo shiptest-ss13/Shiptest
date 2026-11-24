@@ -9,6 +9,12 @@ export type Data = {
   outpostMissions: Array<Mission>;
   message: string;
   highPriorityAssigned: boolean;
+  punchard_order: Array<any>;
+};
+
+export type PackOrder = {
+  ref: string;
+  count: number;
 };
 
 export type Mission = {

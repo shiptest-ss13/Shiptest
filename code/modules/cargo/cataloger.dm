@@ -62,8 +62,7 @@
 
 /obj/item/catalog_handheld/proc/generate_punchcard(purchasing, total_cost, mob/user)
 	var/obj/item/order_punchcard/new_card = new(src, purchasing, total_cost)
-	if(!usr.put_in_hand(new_card))
-		new_card.forceMove(get_turf(src))
+	usr.put_in_hand(new_card, forced = TRUE)
 
 /obj/item/catalog_handheld/proc/generate_pack_data()
 	categories_data = list()
