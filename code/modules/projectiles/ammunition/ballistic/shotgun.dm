@@ -254,7 +254,7 @@
 	pellets = 4
 	variance = 7
 	stack_size = 20
-
+	caliber = "needle"
 	wear_modifier = 1
 
 /obj/item/ammo_casing/thorn
@@ -265,6 +265,6 @@
 	projectile_type = /obj/projectile/bullet/slug/thorn
 	variance = 10
 	stack_size = 25
-
+	caliber = "thorn"
 
 	wear_modifier = 1

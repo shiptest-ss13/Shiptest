@@ -211,7 +211,7 @@ NO_MAG_GUN_HELPER(automatic/assault/needle)
 	icon_state = "needlemag-1"
 	base_icon_state = "needlemag"
 	ammo_type = /obj/item/ammo_casing/needle
-	caliber = "5.8x42mm"
+	caliber = "needle"
 	max_ammo = 40
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 

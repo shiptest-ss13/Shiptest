@@ -374,11 +374,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/thorn)
 
 /obj/item/ammo_box/magazine/thorn
 	name = "Thorn magazine (5.8x20mm)"
-	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
+	desc = "A long, 25 round magazine for the Thorn flechette pistol. These rounds have poor penetration and diverge quickly."
 	icon_state = "thornmag-1"
 	base_icon_state = "thornmag"
 	ammo_type = /obj/item/ammo_casing/thorn
-	caliber = "5.8x20mm"
+	caliber = "thorn"
 	max_ammo = 25
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
