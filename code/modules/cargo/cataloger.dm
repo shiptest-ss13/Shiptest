@@ -21,8 +21,6 @@
 	if(!ui)
 		ui = new(user, src, "HandheldCatalog", name)
 		ui.open()
-		// if(!charge_account)
-		// 	reconnect()
 
 /obj/item/catalog_handheld/ui_static_data(mob/user)
 	generate_pack_data()
@@ -35,18 +33,8 @@
 /obj/item/catalog_handheld/ui_data(mob/user)
 	var/list/data = list()
 
-	// data["onShip"] = !isnull(current_ship)
 	data["shipFaction"] = (current_ship ? current_ship.source_template.faction.name : null)
-	//data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
-	//data["maxMissions"] = current_ship ? current_ship.max_missions : 0
-	//data["outpostDocked"] = istype(outpost_docked)
-	//data["points"] = charge_account ? charge_account.account_balance : 0
-	// data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	message = "The Handheld Catalog is for requests purpose only. No actual purchases will be placed."
-	// data["blockade"] = FALSE
-	// if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
-	// 	message = blockade_warning
-	// 	data["blockade"] = TRUE
+	message = "The Handheld Catalog is for browsing purposes only. No actual purchases will be placed."
 	data["message"] = message
 
 	return data
@@ -80,9 +68,6 @@
 /obj/item/catalog_handheld/proc/generate_pack_data()
 	categories_data = list()
 	all_packs_data = list()
-
-	// if(!current_ship.docked_to)
-	// 	return
 
 	if(!istype(parent_outpost))
 		return
