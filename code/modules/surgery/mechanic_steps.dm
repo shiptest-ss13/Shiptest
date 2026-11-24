@@ -130,8 +130,8 @@
 //manipulate organs (metal edition)
 /datum/surgery_step/manipulate_organs/mechanic
 	name = "manipulate mechanical organs"
-	preop_sound = 'sound/surgery/organ2.ogg'
-	success_sound = 'sound/surgery/organ1.ogg'
+	preop_sound = 'sound/items/tape_flip.ogg'
+	success_sound = 'sound/items/taperecorder_close.ogg'
 	implements_extract = list(
 		TOOL_HEMOSTAT = 55,
 		TOOL_CROWBAR = 100,
