@@ -129,7 +129,7 @@
 	range = 10
 
 /obj/projectile/beam/lorentz/mg
-	damage = 22
+	damage = 30
 	range = 9
 
 /obj/projectile/beam/lorentz/heavy

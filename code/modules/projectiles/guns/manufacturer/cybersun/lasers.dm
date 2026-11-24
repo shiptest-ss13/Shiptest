@@ -409,9 +409,9 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 1.5
+	recoil = 0.75
 
-	spread = 5
+	spread = 6
 	spread_unwielded = 20
 
 	///is the bipod deployed?
@@ -420,7 +420,7 @@
 	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
-	var/deploy_recoil_bonus = -1
+	var/deploy_recoil_bonus = -0.5
 	var/deploy_spread_bonus = -4
 
 	var/list/deployable_on_structures = list(
