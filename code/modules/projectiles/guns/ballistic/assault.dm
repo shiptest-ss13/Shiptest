@@ -189,7 +189,7 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/needle,
 	)
-	wear_rate = 1.75 //not as bad as the literal garbage rifle but its got more than usual
+	wear_rate = 1.5 //not as bad as the literal garbage rifle but its got more than usual
 	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
 	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
