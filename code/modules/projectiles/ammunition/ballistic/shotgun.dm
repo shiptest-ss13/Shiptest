@@ -245,3 +245,26 @@
 
 
 	wear_modifier = 1
+
+/obj/item/ammo_casing/needle
+	name = "5.8x42mm needle flechette shell"
+	desc = "A 5.8x42mm needle flechette shell."
+	icon_state = "needleround"
+	projectile_type = /obj/projectile/bullet/slug/needle
+	pellets = 4
+	variance = 6
+	stack_size = 20
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/thorn
+	name = "5.8x20mm thorn flechette shell"
+	desc = "A 5.8x20mm thorn flechette shell."
+	icon_state = "thornround"
+	pellets = 4
+	projectile_type = /obj/projectile/bullet/slug/thorn
+	variance = 10
+	stack_size = 25
+
+
+	wear_modifier = 1

@@ -205,3 +205,16 @@
 	G.prime()
 	return ..()
 
+/obj/projectile/bullet/slug/needle
+	name = "needle flechette"
+	damage = 7
+	armour_penetration = 20
+	bullet_identifier = "small pellet"
+	speed = BULLET_SPEED_RIFLE
+
+/obj/projectile/bullet/slug/thorn
+	name = "thorn flechette"
+	damage = 5
+	armour_penetration = 10
+	bullet_identifier = "small pellet"
+	speed = BULLET_SPEED_RIFLE
