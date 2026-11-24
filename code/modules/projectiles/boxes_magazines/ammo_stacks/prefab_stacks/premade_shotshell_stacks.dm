@@ -202,6 +202,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/needle
 	ammo_type = /obj/item/ammo_casing/needle
+	max_ammo = 20
 
 /obj/item/storage/box/ammo/needle
 	name = "box of 5.8x42mm needle flechettes"
@@ -215,6 +216,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/thorn
 	ammo_type = /obj/item/ammo_casing/thorn
+	max_ammo = 25
 
 /obj/item/storage/box/ammo/thorn
 	name = "box of 5.8x20mm thorn flechettes"
