@@ -215,6 +215,6 @@
 /obj/projectile/bullet/slug/thorn
 	name = "thorn flechette"
 	damage = 5
-	armour_penetration = 10
+	armour_penetration = -10
 	bullet_identifier = "small pellet"
 	speed = BULLET_SPEED_RIFLE

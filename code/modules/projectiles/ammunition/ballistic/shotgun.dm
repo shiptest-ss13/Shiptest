@@ -252,7 +252,7 @@
 	icon_state = "needleround"
 	projectile_type = /obj/projectile/bullet/slug/needle
 	pellets = 4
-	variance = 6
+	variance = 7
 	stack_size = 20
 
 	wear_modifier = 1
