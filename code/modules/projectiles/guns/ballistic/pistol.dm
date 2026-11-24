@@ -381,3 +381,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/thorn)
 	caliber = "5.8x20mm"
 	max_ammo = 25
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/thorn/empty
+	start_empty = TRUE

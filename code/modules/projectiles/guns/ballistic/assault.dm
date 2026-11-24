@@ -214,3 +214,6 @@ NO_MAG_GUN_HELPER(automatic/assault/needle)
 	caliber = "5.8x42mm"
 	max_ammo = 40
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/needlee/empty
+	start_empty = TRUE

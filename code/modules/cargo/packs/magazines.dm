@@ -577,3 +577,17 @@
 	cost = 1500
 	faction_discount = 0
 	faction_locked = TRUE
+
+// workshop
+
+/datum/supply_pack/magazine/needle
+	name = "Needle Helical Magazine Crate"
+	desc = "Contains a 5.8x42mm flechette helical magazine, with a 40 round capacity. Hit your target guaranteed."
+	contains = list(/obj/item/ammo_box/magazine/needle/empty)
+	cost = 700
+
+/datum/supply_pack/magazine/needle
+	name = "Thorn Magazine Crate"
+	desc = "Contains a 5.8x20mm flechette box magazine, with a 25 round capacity. Hit your target guaranteed."
+	contains = list(/obj/item/ammo_box/magazine/thorn/empty)
+	cost = 500
