@@ -339,9 +339,16 @@
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
 	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
-	..()
+	if(icon_update) // don't rebuild icon until we're done swapping everything
+		hold_icons()
+	try
+		..()
+	catch(var/exception/error)
+		if(icon_update)
+			release_icons()
+		throw error
 	if(icon_update)
-		update_hair()
+		release_icons()
 		update_mutations_overlay()// no lizard with human hulk overlay please.
 	AddComponent(/datum/component/bloodysoles/feet)
 

@@ -59,7 +59,19 @@ There are several things that need to be remembered:
 	dna.species.handle_mutant_bodyparts(src)
 
 
+/mob/living/carbon/human/release_icons()
+	. = ..()
+	if(!.)
+		return
+	// parent's update_body() runs handle_mutant_bodyparts(), which decides whether digitigrade legs show.
+	// clothing drawn while we were held used the old leg state, so redraw the clothes that depend on it
+	update_inv_w_uniform()
+	update_inv_wear_suit()
+	update_inv_shoes()
+
 /mob/living/carbon/human/update_body()
+	if(icon_holds)
+		return
 	remove_overlay(BODY_LAYER)
 	dna.species.handle_body(src)
 

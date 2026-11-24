@@ -349,7 +349,14 @@
 	if(!O)
 		return 0
 
-	if (O.equip(src, visualsOnly, preference_source)) // Need the mob equipped to access its ID
+	hold_icons() // each item equipped rebuilds our icons otherwise
+	try
+		. = O.equip(src, visualsOnly, preference_source)
+	catch(var/exception/error)
+		release_icons()
+		throw error
+	release_icons()
+	if (.) // Need the mob equipped to access its ID
 		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 		if (ship)
 			var/obj/item/card/id/idcard = get_idcard(TRUE)
