@@ -1361,7 +1361,7 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 // do not cache runtime generated icons
 #define IS_CACHEABLE_ICON_FILE(icon_file) (isfile(icon_file) && length("[icon_file]"))
 
- // quickly check if an icon state exists in an icon, runtime icons do the normal icon_states search
+// quickly check if an icon state exists in an icon, runtime icons do the normal icon_states search
 /proc/icon_state_exists_cached(icon_file, state)
 	if(isnull(state))
 		return FALSE
