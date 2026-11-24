@@ -61,6 +61,7 @@
 		return FALSE // we know there's no getting to them
 	if(blackboard[BB_BASIC_MOB_CURRENT_TARGET] != target)
 		set_blackboard_key(BB_BASIC_MOB_TARGET_SINCE, world.time) // someone new, so how long we've been after them starts now, as it does for anyone we pick ourselves
+		ai_clear_search(src) // our search for whoever we had doesn't carry over
 	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
 	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
 	if(how == AI_LEARNED_TOLD)

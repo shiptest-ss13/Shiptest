@@ -221,7 +221,7 @@
 	var/step_dir = get_dir(movable_pawn, next_step)
 	var/step_delay = controller.movement_delay * ((NSCOMPONENT(step_dir) && EWCOMPONENT(step_dir)) ? SQRT_2 : 1)
 	movable_pawn.set_glide_size(DELAY_TO_GLIDE_SIZE(step_delay))
-	movable_pawn.Move(next_step, step_dir)
+	ai_step_to(movable_pawn, next_step, controller.get_access())
 	if(get_turf(movable_pawn) != next_step)
 		return FALSE
 	controller.movement_cooldown += step_delay - controller.movement_delay // the extra a diagonal takes
