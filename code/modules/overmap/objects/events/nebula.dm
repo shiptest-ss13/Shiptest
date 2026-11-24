@@ -52,7 +52,7 @@
 			continue
 		light_to_mess.stop_flickering()
 
-/datum/overmap/event/nebula/affect_ship()
+/datum/overmap/event/nebula/affect_ship(datum/overmap/ship/controlled/ship)
 	if(LAZYFIND(affected_ships, ship))
 		return
 
