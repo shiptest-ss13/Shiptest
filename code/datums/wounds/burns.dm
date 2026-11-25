@@ -72,9 +72,9 @@
 	var/list/condition = list("[victim.p_their(TRUE)] [limb.name] [examine_desc]")
 
 	if(limb.current_gauze)
-		condition += " underneath a dressing of [limb.current_gauze.get_description()]."
+		condition += " underneath a dressing of [limb.current_gauze.get_description()]"
 
-	return "<B>[condition.Join()]</B>"
+	return "<B>[condition.Join()][severity >= WOUND_SEVERITY_SEVERE ? "!" : "."]</B>"
 
 /datum/wound/burn/flesh/get_scanner_description(mob/user)
 	. = ..()
@@ -157,7 +157,7 @@
 /datum/wound/burn/flesh/moderate
 	name = "Second Degree Burns"
 	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
-	treat_text = "Application of ointment, regenerative mesh, and bandages."
+	treat_text = "Recommended application of regenerative mesh, or ointment and bandages to affected region."
 	examine_desc = "is badly burned"
 	occur_text = "breaks out with violent red burns"
 	severity = WOUND_SEVERITY_MODERATE
@@ -175,7 +175,7 @@
 /datum/wound/burn/flesh/severe
 	name = "Third Degree Burns"
 	desc = "Patient is suffering extreme burns with full skin penetration, causing greatly reduced limb integrity."
-	treat_text = "Application of ointment, regenerative mesh, and bandages."
+	treat_text = "Recommended application of regenerative mesh, or ointment and bandages to affected region."
 	examine_desc = "appears seriously charred, with aggressive red splotches"
 	occur_text = "chars rapidly, spreading angry red burns"
 	severity = WOUND_SEVERITY_SEVERE
@@ -196,7 +196,7 @@
 /datum/wound/burn/flesh/critical
 	name = "Catastrophic Burns"
 	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, causing negligible limb integrity."
-	treat_text = "Application of ointment, regenerative mesh, and bandages."
+	treat_text = "Recommended application of regenerative mesh, or ointment and bandages to affected region."
 	examine_desc = "is a mess of bone and charred flesh"
 	occur_text = "vaporizes as the flesh melts"
 	severity = WOUND_SEVERITY_CRITICAL
