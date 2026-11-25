@@ -125,6 +125,7 @@
 
 /obj/item/order_punchcard/examine(mob/user)
 	. = ..()
+	. += span_notice("You could <b>examine<b> it more closely to see the list of orders.")
 	. += span_warning("You could probably tear it apart in your hands if you were feeling paticularly <b>harmful</b>.")
 
 /obj/item/order_punchcard/attack_self(mob/user, modifiers)
