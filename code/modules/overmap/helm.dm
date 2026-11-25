@@ -179,9 +179,6 @@
 	if(isliving(user) && !viewer && check_keylock())
 		return
 
-	if(!current_ship.is_player_ship && istype(user) && Adjacent(user) && !viewer)
-		current_ship.is_player_ship = TRUE
-
 	if(!current_ship.shipkey && istype(user) && Adjacent(user) && !viewer)
 		say("Generated new shipkey, do not lose it!")
 		var/key = new /obj/item/key/ship(get_turf(src), current_ship)
@@ -465,6 +462,7 @@
 			current_ship.calculate_avg_fuel()
 			if(current_ship.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
 				return
+			is_player_ship = TRUE
 			current_ship.Undock()
 
 /obj/machinery/computer/helm/ui_close(mob/user)
