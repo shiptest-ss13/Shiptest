@@ -46,7 +46,11 @@
 		playsound(current_turf, 'sound/effects/footstep/crawl1.ogg', 15 * volume, falloff_distance = 1)
 		return
 
-	if(iscarbon(stepper) && stepper.m_intent == MOVE_INTENT_WALK)
+	if(iscarbon(stepper))
+		var/mob/living/carbon/carbon_stepper = stepper
+		if(!carbon_stepper.get_bodypart(BODY_ZONE_L_LEG) && !carbon_stepper.get_bodypart(BODY_ZONE_R_LEG))
+			return
+		if(carbon_stepper.m_intent == MOVE_INTENT_WALK)
 		return// stealth
 
 	steps++
@@ -104,11 +108,12 @@
 
 	if(steps % 4 == 0) //steps 0, 4, and 8
 		leg = stepper.get_bodypart(BODY_ZONE_L_LEG)
+		if(!leg)
+			leg = stepper.get_bodypart(BODY_ZONE_R_LEG) //hopping around on one leg, we already checked for no legs in prepare_step() so no problem
 	else if((steps + 2) % 4 == 0) //steps 2, 6, and 10
 		leg = stepper.get_bodypart(BODY_ZONE_R_LEG)
-
-	if(leg == null) //no leg?
-		return
+		if(!leg)
+			stepper.get_bodypart(BODY_ZONE_L_LEG)
 
 	var/current_footstep_sound
 

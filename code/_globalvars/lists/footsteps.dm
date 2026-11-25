@@ -125,6 +125,12 @@ GLOBAL_LIST_INIT(footstep_overrides, list(
 			'sound/effects/footstep/hardbarefoot2.ogg',
 			'sound/effects/footstep/hardbarefoot3.ogg',
 			'sound/effects/footstep/hardbarefoot4.ogg',
+			'sound/effects/footstep/hardbarefoot5.ogg'), 80, -1),
+		FOOTSTEP_CONCRETE = list(list(
+			'sound/effects/footstep/hardbarefoot1.ogg',
+			'sound/effects/footstep/hardbarefoot2.ogg',
+			'sound/effects/footstep/hardbarefoot3.ogg',
+			'sound/effects/footstep/hardbarefoot4.ogg',
 			'sound/effects/footstep/hardbarefoot5.ogg'), 80, -1)
 	),
 	FOOTSTEP_MOB_CLAW = list(
@@ -153,6 +159,12 @@ GLOBAL_LIST_INIT(footstep_overrides, list(
 			'sound/effects/footstep/carpetbarefoot4.ogg',
 			'sound/effects/footstep/carpetbarefoot5.ogg'), 75, -2),
 		FOOTSTEP_CATWALK = list(list(
+			'sound/effects/footstep/hardclaw1.ogg',
+			'sound/effects/footstep/hardclaw2.ogg',
+			'sound/effects/footstep/hardclaw3.ogg',
+			'sound/effects/footstep/hardclaw4.ogg',
+			'sound/effects/footstep/hardclaw1.ogg'), 90, 1),
+		FOOTSTEP_CONCRETE = list(list(
 			'sound/effects/footstep/hardclaw1.ogg',
 			'sound/effects/footstep/hardclaw2.ogg',
 			'sound/effects/footstep/hardclaw3.ogg',
