@@ -2,7 +2,7 @@
 
 /obj/machinery/emergency_panel
 	name = "emergency distress panel"
-	desc = "A panel installed in the floor of a vessel that can be used to signal distress with the ship's key. Functions without ship electricity."
+	desc = "A panel installed in the floor of a vessel that can be used to signal distress. Functions without ship electricity."
 	icon = 'icons/obj/machines/emergency_panel.dmi'
 	icon_state = "panel"
 	density = FALSE
@@ -14,30 +14,26 @@
 	plane = FLOOR_PLANE
 	layer = LOW_OBJ_LAYER
 
-	// inserted ship key
-	var/obj/item/key/ship/ship_key
 	// ship that the panel is linked to
 	var/datum/overmap/ship/controlled/linked_ship
 	// hatch open
 	var/hatch_open = FALSE
-	// timestamp for cooldown
-	var/distress_cooldown = 0
+	// cooldown
+	var/on_cooldown = FALSE
 
 /obj/machinery/emergency_panel/examine(mob/user)
 	. = ..()
 	. += span_warning("Per interstellar travel code, misuse of emergency communication systems can lead to fines, questioning, and/or legal action.")
 	if(!hatch_open)
 		. += span_notice("You can Alt-Click to open the hatch and access the panel.")
-	if(ship_key)
-		. += span_notice("There's a key inserted in the panel. You can Alt-Click to take it.")
 
 /obj/machinery/emergency_panel/update_icon_state()
-	if(ship_key)
-		icon_state = "[initial(icon_state)]_open_key"
-	else if(hatch_open)
+	if(!hatch_open)
+		icon_state = initial(icon_state)
+	else if(on_cooldown)
 		icon_state = "[initial(icon_state)]_open"
 	else
-		icon_state = initial(icon_state)
+		icon_state = "[initial(icon_state)]_open_key"
 	return ..()
 
 /obj/machinery/emergency_panel/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
@@ -52,42 +48,17 @@
 		to_chat(user, span_notice("You open the hatch of the emergency panel."))
 		playsound(src, 'sound/effects/bin_open.ogg', 50, FALSE)
 		hatch_open = TRUE
-	else if(ship_key) // don't forget your key
-		to_chat(user, span_notice("You twist the key sideways and take it from the panel."))
-		playsound(src, 'sound/machines/locktoggle.ogg', 50, FALSE)
-		try_put_in_hand(ship_key, user)
-		ship_key = null
 	else
 		to_chat(user, span_notice("You close the hatch of the emergency panel."))
 		playsound(src, 'sound/effects/bin_close.ogg', 50, FALSE)
 		hatch_open = FALSE
 	update_appearance()
 
-/obj/machinery/emergency_panel/attackby(obj/item/item, mob/living/user, params)
-	if(istype(item, /obj/item/key/ship))
-		if(!hatch_open)
-			to_chat(user, span_warning("You need to open the hatch first."))
-			return
-		var/obj/item/key/ship/key = item
-		if(key.master_ship != linked_ship) // what are you trying to pull here
-			to_chat(user, span_warning("That key doesn't go there."))
-			return
-		to_chat(user, span_notice("You insert the key into the panel and twist it sideways."))
-		playsound(src, 'sound/machines/locktoggle.ogg', 50, FALSE)
-		key.forceMove(src)
-		ship_key = key
-	else
-		. = ..()
-	update_appearance()
-
 /obj/machinery/emergency_panel/attack_hand(mob/living/user)
 	. = ..()
 	if(!hatch_open)
 		return
-	if(!ship_key)
-		to_chat(user, span_warning("The panel needs a ship key to work."))
-		return
-	if(distress_cooldown >= world.time)
+	if(on_cooldown)
 		to_chat(user, span_warning("The panel is not ready to send another distress signal."))
 		return
 
@@ -96,9 +67,15 @@
 			create_distress_beacon(linked_ship)
 			playsound(src, 'sound/machines/triple_beep.ogg', 50, FALSE)
 			to_chat(user, span_warning("Distress signal broadcasted."))
-			distress_cooldown = world.time + EMERGENCY_PANEL_COOLDOWN
+			on_cooldown = TRUE
+			update_appearance()
+			addtimer(CALLBACK(src, PROC_REF(reset_cooldown)), EMERGENCY_PANEL_COOLDOWN)
 		else
 			return
+
+/obj/machinery/emergency_panel/proc/reset_cooldown()
+	on_cooldown = FALSE
+	update_appearance()
 
 /obj/machinery/emergency_panel/dark
 	icon_state = "panel-dark"
