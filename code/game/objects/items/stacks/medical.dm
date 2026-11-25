@@ -253,7 +253,7 @@
 
 /obj/item/stack/medical/ointment
 	name = "ointment"
-	desc = "Basic burn ointment, rated effective for second degree burns with proper bandaging, though it's still an effective stabilizer for worse burns. Not terribly good at outright healing burns though."
+	desc = "Burn ointment, intended to stabilize burns and stimulate healing in severe burns in conjuction with bandages. Not terribly effective at clearing up surface burns, however."
 	gender = PLURAL
 	singular_name = "ointment"
 	icon_state = "ointment"
@@ -265,7 +265,7 @@
 	other_delay = 1.5 SECONDS
 
 	heal_burn = 5
-	flesh_regeneration = 2.5
+	flesh_regeneration = 6
 	// grind_results = list(/datum/reagent/medicine/C2/lenturi = 10)
 	merge_type = /obj/item/stack/medical/ointment
 
