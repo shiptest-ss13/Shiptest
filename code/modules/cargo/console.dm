@@ -33,6 +33,7 @@
 	var/datum/bank_account/charge_account
 
 	var/list/punchcard_orders = list()
+	var/obj/item/order_punchcard/inserted_card
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
@@ -169,7 +170,8 @@
 			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 		if("finish_punchcard")
 			punchcard_orders = list()
-			ui_interact(usr)
+			inserted_card.Destroy()
+			inserted_card = null
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
@@ -206,11 +208,14 @@
 		if(outpost_docked)
 			handheld.parent_outpost = outpost_docked
 		handheld.update_static_data_for_all_viewers()
-		to_chat(user,span_notice("You sync the [handheld.name] to the [name]"))
+		to_chat(user,span_notice("You sync the [handheld.name] to the [name]."))
 		return TRUE
 	if(istype(W, /obj/item/order_punchcard))
+		if(inserted_card)
+			to_chat(user,span_warning("There's already a punchcard inside! Eject it first."))
+			return FALSE
 		var/unfilled_orders = FALSE
-		var/obj/item/order_punchcard/inserted_card = W
+		inserted_card = W
 		punchcard_orders = list()
 		for(var/untreated_order in inserted_card.purchases)
 			var/datum/supply_pack/untreated_pack = untreated_order
@@ -226,10 +231,20 @@
 		if(unfilled_orders)
 			say("Some orders could not be loaded due to lack of permissions.")
 		to_chat(user, span_notice("You feed the [inserted_card] into the [name]."))
-		qdel(inserted_card)
+		inserted_card.forceMove(src)
 		ui_interact(user)
 		return TRUE
 	..()
+
+/obj/machinery/computer/cargo/AltClick(mob/user)
+	. = ..()
+	if(Adjacent(user))
+		if(inserted_card)
+			to_chat(user,span_notice("You eject the [inserted_card.name] from the [name]."))
+			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+			user.put_in_hands(inserted_card)
+			punchcard_orders = list()
+			inserted_card = null
 
 /obj/machinery/computer/cargo/proc/generate_pack_data()
 	categories_data = list()
