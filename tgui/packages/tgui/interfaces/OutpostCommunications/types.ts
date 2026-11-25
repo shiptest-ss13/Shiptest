@@ -10,12 +10,6 @@ export type Data = {
   message: string;
   highPriorityAssigned: boolean;
   punchcard_order: Array<any>;
-  punchcard_order_len: number;
-};
-
-export type PackOrder = {
-  ref: string;
-  count: number;
 };
 
 export type Mission = {

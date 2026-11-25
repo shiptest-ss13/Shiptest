@@ -206,6 +206,7 @@
 		if(outpost_docked)
 			handheld.parent_outpost = outpost_docked
 		handheld.update_static_data_for_all_viewers()
+		to_chat(user,span_notice("You sync the [handheld.name] to the [name]"))
 		return TRUE
 	if(istype(W, /obj/item/order_punchcard))
 		var/unfilled_orders = FALSE
