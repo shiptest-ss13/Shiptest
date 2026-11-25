@@ -125,7 +125,7 @@
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms, _ship_name)
+/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms, _ship_name, _is_player_ship = FALSE)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
@@ -163,6 +163,8 @@
 #endif
 	SSovermap.controlled_ships += src
 	current_overmap.controlled_ships += src
+
+	is_player_ship = _is_player_ship
 
 	GLOB.ship_select_tgui?.update_static_data_for_all_viewers()
 	GLOB.crew_manifest_tgui?.update_static_data_for_all_viewers()
