@@ -529,3 +529,22 @@
 	name = "Navy Biker Jacket"
 	icon_state = "bikernavy"
 	current_skin = "Navy Biker Jacket"
+
+/obj/item/clothing/suit/jacket/militaryponcho
+	name = "military poncho"
+	desc = "A large poncho with sleeves. Keeps wind and rain out well."
+	icon_state = "milponcho"
+	item_state = "milponcho"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	unique_reskin = list(
+		"olive military poncho" = "milponchogreen",
+		"tan military poncho" = "milponchotan",
+		"grey military poncho" = "milponchogrey",
+		"black military poncho" = "milponcho",
+		"white military poncho" = "milponchowhite",
+	)
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	supports_variations = DIGITIGRADE_VARIATION
