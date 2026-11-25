@@ -19,7 +19,13 @@ import { formatMoney } from '../../format';
 export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend(context);
 
-  const { self_paid, app_cost, blockade, punchcard_order } = data;
+  const {
+    self_paid,
+    app_cost,
+    blockade,
+    punchcard_order,
+    punchcard_order_length,
+  } = data;
 
   const categories = Object.values(data.categories);
   const all_packs = data.all_packs;
@@ -40,23 +46,29 @@ export const CargoCatalog = (props, context) => {
 
   const addPack = (pack_ref, count = 1) => {
     setPack(pack_ref, (cart[pack_ref] ? cart[pack_ref] : 0) + count);
-  };
+    act('speak', { index_num: 'addpack triggered', ref: pack_ref });
+  }; // issue is here
 
   const setPack = (pack_ref, count) => {
     let tmpcart = { ...cart };
     if (count > 0) {
-      tmpcart[pack_ref] = count;
+      act('speak', { index_num: 'setpack triggered', ref: pack_ref });
+      tmpcart[pack_ref] = count; // is it all going at the same time?
     } else {
       delete tmpcart[pack_ref];
+      act('speak', { index_num: 'why are we deleting', ref: pack_ref });
     }
     setCart(tmpcart);
   };
 
   const setOrder = (orderlist) => {
-    for (let index = 0; index < orderlist.length; index++) {
-      const newpack = orderlist[index];
-      addPack(newpack);
+    let tmpcart = { ...cart };
+    for (let index = 0; index < punchcard_order_length; index++) {
+      const pack_ref = orderlist[index];
+      let count = (tmpcart[pack_ref] ? tmpcart[pack_ref] : 0) + 1;
+      tmpcart[pack_ref] = count;
     }
+    setCart(tmpcart);
     act('finish_punchcard');
   };
 
@@ -96,8 +108,9 @@ export const CargoCatalog = (props, context) => {
             </Box>
             <Button
               icon="trash"
-              color="transparent"
+              color="green"
               content="Read Punchcard"
+              disabled={!punchcard_order}
               onClick={() => setOrder(punchcard_order)}
             />
             <Button

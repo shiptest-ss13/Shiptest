@@ -120,6 +120,7 @@
 
 	if(punchcard_orders.len > 0)
 		data["punchcard_order"] = punchcard_orders
+		data["punchcard_order_length"] = punchcard_orders.len
 
 	return data
 
@@ -169,6 +170,11 @@
 			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 		if("finish_punchcard")
 			punchcard_orders = list()
+		if("speak")
+			var/index_num = params["index_num"]
+			var/ref = params["ref"]
+			say(index_num)
+			say(ref)
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
