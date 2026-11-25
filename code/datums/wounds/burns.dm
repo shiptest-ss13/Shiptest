@@ -165,7 +165,7 @@
 	name = "Second Degree Burns"
 	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
 	treat_text = "Application of ointment, regenerative mesh, and bandages."
-	examine_desc = "is badly burned"
+	examine_desc = "is badly burned."
 	occur_text = "breaks out with violent red burns"
 	severity = WOUND_SEVERITY_MODERATE
 	damage_mulitplier_penalty = 1.05
@@ -183,7 +183,7 @@
 	name = "Third Degree Burns"
 	desc = "Patient is suffering extreme burns with full skin penetration, causing greatly reduced limb integrity."
 	treat_text = "Application of ointment, regenerative mesh, and bandages."
-	examine_desc = "appears seriously charred, with aggressive red splotches"
+	examine_desc = "appears seriously charred, with aggressive red splotches."
 	occur_text = "chars rapidly, spreading angry red burns"
 	severity = WOUND_SEVERITY_SEVERE
 	wound_flags = ACCEPTS_GAUZE | NUMBS_BODYPART
@@ -203,7 +203,7 @@
 	name = "Catastrophic Burns"
 	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, causing negligible limb integrity."
 	treat_text = "Application of ointment, regenerative mesh, and bandages."
-	examine_desc = "is a mess of bone and charred flesh"
+	examine_desc = "is a mess of bone and charred flesh!"
 	occur_text = "vaporizes as the flesh melts"
 	severity = WOUND_SEVERITY_CRITICAL
 	damage_mulitplier_penalty = 1.15
