@@ -61,12 +61,6 @@
 		Costumes
 */
 
-/datum/supply_pack/costumes_toys/collectable_hats/fill(obj/structure/closet/crate/C)
-	var/list/L = contains.Copy()
-	for(var/i in 1 to 3)
-		var/item = pick_n_take(L)
-		new item(C)
-
 /datum/supply_pack/costumes_toys/rilena_merch
 	name = "RILENA Merchandise Crate"
 	desc = "A crate full of all the RILENA merch you could ever want. Except the offbrand stuff. That's not in here."
