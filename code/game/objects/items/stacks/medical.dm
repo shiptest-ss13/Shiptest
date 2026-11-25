@@ -32,8 +32,6 @@
 	var/stop_bleeding
 	/// How much we add to flesh_healing for burn wounds on application
 	var/flesh_regeneration
-	/// This is a multiplier used to speed up burn recoveries
-	var/burn_cleanliness_bonus
 
 /obj/item/stack/medical/attack(mob/living/patient, mob/user)
 	. = ..()
@@ -152,7 +150,6 @@
 	amount = 6
 	grind_results = list(/datum/reagent/cellulose = 2)
 	custom_price = 50
-	burn_cleanliness_bonus = 0.35
 	merge_type = /obj/item/stack/medical/gauze
 	var/gauze_type = /datum/bodypart_aid/gauze
 
@@ -217,7 +214,6 @@
 	desc = "A roll of cloth roughly cut from something that does a decent job of stabilizing wounds, but less efficiently so than real medical gauze."
 	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
-	burn_cleanliness_bonus = 0.7
 	merge_type = /obj/item/stack/medical/gauze/improvised
 	gauze_type = /datum/bodypart_aid/gauze/improvised
 
