@@ -166,6 +166,7 @@
 
 /// When a wound is staining the gauze with blood
 #define GAUZE_STAIN_BLOOD 1
+#define GAUZE_STAIN_PUS 2
 
 /// Limb integrity is reduced to this before being used to calculate how much integrity loss it should have.
 #define WOUND_MAX_INTEGRITY_CONSIDERED 50

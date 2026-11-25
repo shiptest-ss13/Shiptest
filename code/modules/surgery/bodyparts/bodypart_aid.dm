@@ -160,15 +160,17 @@
 	overlay_prefix = "gauze"
 	desc_prefix = "bandaged"
 	/// How much more can we absorb
-	var/absorption_capacity = 5
+	var/absorption_capacity = 6
 	/// How fast do we absorb
 	var/absorption_rate = 0.06
 	/// How effective the gauze is at stopping current blood flow - see [get_part_bleed_rate()]
 	var/bleed_suppress = 0.4
-	/// How much does the gauze help with healing burns
+	/// How much does the gauze help with healing burn wounds
 	var/flesh_healing_decrement_modifier = 0.4
 	/// Is it blood stained? For description
 	var/blood_stained = FALSE
+	/// Is it pus stained? For description
+	var/pus_stained = FALSE
 
 /datum/bodypart_aid/gauze/get_description()
 	var/desc
@@ -185,7 +187,10 @@
 	if(blood_stained)
 		desc += ", bloodied"
 
-	desc += " [name]"
+	if(pus_stained)
+		desc += ", pus stained"
+
+	desc += "[name]"
 	return desc
 
 /datum/bodypart_aid/gauze/New(obj/item/bodypart/BP)
@@ -213,21 +218,26 @@
  *
  * Arguments:
  * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
- * * type - Is it blood or pus we're being stained with? GAUZE_STAIN_BLOOD defines from wounds.dm (holdover from infections, could be reimplemented later)
+ * * type - Is it blood or pus we're being stained with? GAUZE_STAIN_BLOOD, GAUZE_STAIN_PUS defines from wounds.dm
  */
 /datum/bodypart_aid/gauze/proc/seep_gauze(amount, type)
 	if(absorption_capacity > 0)
 		. = TRUE
 		absorption_capacity -= amount
+		flesh_healing_decrement_modifier = initial(flesh_healing_decrement_modifier) * (absorption_capacity / initial(absorption_capacity))
 	else
 		return FALSE
 
 	//If our remaining absorption capacity is low, make so blood stains show
-	if(absorption_capacity < 4)
+	if(absorption_capacity < 3)
 		if(type == GAUZE_STAIN_BLOOD && !blood_stained)
 			blood_stained = TRUE
 			if(bodypart.owner)
 				to_chat(bodypart.owner, span_warning("The [name] on your [bodypart.name] [pick(list("pools", "trickles", "seeps"))] with blood."))
+		else if(type == GAUZE_STAIN_PUS && !pus_stained)
+			pus_stained = TRUE
+			if(bodypart.owner)
+				to_chat(bodypart.owner, span_warning("The [name] on your [bodypart.name] [pick(list("pools", "trickles", "seeps"))] with pus."))
 
 /datum/bodypart_aid/gauze/improvised
 	name = "improvised gauze"

@@ -21,6 +21,8 @@
 	var/flesh_healing = 0
 	/// How much will flesh_healing decrement by each tick? Affected by sterilizers, antibiotics, and bandages.
 	var/flesh_healing_decrement = 1
+	/// How quickly do we ruin bandages
+	var/bandage_seep_amount = 0.02
 
 /datum/wound_pregen_data/flesh_burn
 	abstract = TRUE
@@ -48,7 +50,7 @@
 		else if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
 			flesh_healing_decrement -= 0.1
 
-	if(limb.current_gauze)
+	if(limb.current_gauze && limb.current_gauze.seep_gauze(bandage_seep_amount, GAUZE_STAIN_PUS))
 		flesh_healing_decrement -= limb.current_gauze.flesh_healing_decrement_modifier
 
 	// if the limb doesn't have much burn damage, and our nutrition is good, heal some flesh
@@ -165,7 +167,7 @@
 	name = "Second Degree Burns"
 	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
 	treat_text = "Application of ointment, regenerative mesh, and bandages."
-	examine_desc = "is badly burned."
+	examine_desc = "is badly burned"
 	occur_text = "breaks out with violent red burns"
 	severity = WOUND_SEVERITY_MODERATE
 	damage_mulitplier_penalty = 1.05
@@ -183,7 +185,7 @@
 	name = "Third Degree Burns"
 	desc = "Patient is suffering extreme burns with full skin penetration, causing greatly reduced limb integrity."
 	treat_text = "Application of ointment, regenerative mesh, and bandages."
-	examine_desc = "appears seriously charred, with aggressive red splotches."
+	examine_desc = "appears seriously charred, with aggressive red splotches"
 	occur_text = "chars rapidly, spreading angry red burns"
 	severity = WOUND_SEVERITY_SEVERE
 	wound_flags = ACCEPTS_GAUZE | NUMBS_BODYPART
@@ -192,6 +194,7 @@
 	status_effect_type = /datum/status_effect/wound/burn/flesh/severe
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	flesh_damage = 25
+	bandage_seep_amount = 0.04
 
 /datum/wound_pregen_data/flesh_burn/third_degree
 	abstract = FALSE
@@ -203,7 +206,7 @@
 	name = "Catastrophic Burns"
 	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, causing negligible limb integrity."
 	treat_text = "Application of ointment, regenerative mesh, and bandages."
-	examine_desc = "is a mess of bone and charred flesh!"
+	examine_desc = "is a mess of bone and charred flesh"
 	occur_text = "vaporizes as the flesh melts"
 	severity = WOUND_SEVERITY_CRITICAL
 	damage_mulitplier_penalty = 1.15
@@ -213,6 +216,7 @@
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	flesh_damage = 40
 	wound_flags = ACCEPTS_GAUZE | MANGLES_EXTERIOR | NUMBS_BODYPART
+	bandage_seep_amount = 0.06
 
 /datum/wound_pregen_data/flesh_burn/fourth_degree
 	abstract = FALSE
