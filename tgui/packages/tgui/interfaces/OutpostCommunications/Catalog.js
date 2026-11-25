@@ -46,17 +46,14 @@ export const CargoCatalog = (props, context) => {
 
   const addPack = (pack_ref, count = 1) => {
     setPack(pack_ref, (cart[pack_ref] ? cart[pack_ref] : 0) + count);
-    act('speak', { index_num: 'addpack triggered', ref: pack_ref });
-  }; // issue is here
+  };
 
   const setPack = (pack_ref, count) => {
     let tmpcart = { ...cart };
     if (count > 0) {
-      act('speak', { index_num: 'setpack triggered', ref: pack_ref });
-      tmpcart[pack_ref] = count; // is it all going at the same time?
+      tmpcart[pack_ref] = count;
     } else {
       delete tmpcart[pack_ref];
-      act('speak', { index_num: 'why are we deleting', ref: pack_ref });
     }
     setCart(tmpcart);
   };

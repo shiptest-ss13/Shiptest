@@ -203,14 +203,23 @@
 		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
 		return TRUE
+	var/unfilled_orders = FALSE
 	if(istype(W, /obj/item/order_punchcard))
 		var/obj/item/order_punchcard/inserted_card = W
 		for(var/untreated_order in inserted_card.purchases)
+			var/datum/supply_pack/untreated_pack = untreated_order
+			if((untreated_pack.faction != current_faction) && untreated_pack.faction_locked)
+				unfilled_orders = TRUE
+				continue
 			var/treated_order = REF(untreated_order)
 			if(!treated_order)
+				unfilled_orders = TRUE
 				continue
 			punchcard_orders.Add(treated_order)
 		qdel(inserted_card)
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+		if(unfilled_orders)
+			say("Certain orders could not be transferred.")
 		say("eats your card")
 		ui_interact(user)
 		return TRUE
