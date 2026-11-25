@@ -48,14 +48,14 @@
 
 /obj/item/food/ration/bar/dote_on
 	name = "\improper Doting..."
-	desc = "A specialty fruit bar made to mimic \"Dote On It!\". The berries have been compressed down and joined with some seeds "
+	desc = "A specialty fruit bar made to mimic \"Dote On It!\". The berries have been compressed down and joined with some seeds."
 	filling_color = "#70829a"
 	tastes = list("crunchy seeds" = 2, "sweet berries" = 4)
-	foodtypes = FRUIT | GRAIN
+	foodtypes = FRUIT
 
 /obj/item/food/ration/bar/wanderer
 	name = "wanderer bar"
 	desc = "A bar of shredded miras meat, refa-li, and seeds, not too much unlike Tirili-La. Great for a power-up before a trip."
 	filling_color = "#70829a"
 	tastes = list("sweet meat" = 4, "dried out fruit flesh" = 2, "crunchy seeds" = 1)
-	foodtypes = MEAT | GRAIN | FRUIT
+	foodtypes = MEAT | FRUIT

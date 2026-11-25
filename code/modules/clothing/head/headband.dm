@@ -25,7 +25,7 @@
 		"brown headband" = "headbandbrown",
 		"light brown headband" = "headbandlightbrown",
 	)
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME
 
 /obj/item/clothing/head/headband/white
 	name = "white headband"

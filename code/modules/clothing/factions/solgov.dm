@@ -219,6 +219,7 @@
 	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	base_icon_state = "coat_solgov"
 	icon_state = "coat_solgov"
 	item_state = "coat_solgov"
 	blood_overlay_type = "coat"
@@ -228,6 +229,7 @@
 /obj/item/clothing/suit/toggle/solgov/terragov
 	name = "\improper Terragov coat"
 	desc = "An armored coat worn for special occasions. This one is still dyed in original TerraGov green."
+	base_icon_state = "coat_terragov"
 	icon_state = "coat_terragov"
 	item_state = "coat_terragov"
 

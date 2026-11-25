@@ -252,6 +252,7 @@
 	pixel_y = 0
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aX" = (
@@ -1003,7 +1004,6 @@
 	pixel_x = -1;
 	pixel_y = 0
 	},
-/obj/structure/barricade/sandbags,
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
@@ -1133,6 +1133,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gh" = (
@@ -2430,13 +2431,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/electrical)
-"nm" = (
-/obj/effect/turf_decal/road/line{
-	dir = 4
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "nn" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Mine Equipment"
@@ -3058,19 +3052,11 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qt" = (
-/obj/effect/turf_decal/road/line/edge{
+/obj/structure/railing/thick{
 	dir = 8
 	},
 /obj/structure/barricade/sandbags,
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = 0;
-	pixel_y = -5
-	},
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qu" = (
 /obj/structure/platform/industrial_alt{
@@ -4305,6 +4291,7 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xx" = (
@@ -7764,7 +7751,6 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/ammo_casing/spent/rifle_brass,
-/mob/living/basic/human/frontier,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
@@ -8939,14 +8925,11 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Yy" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
+/obj/structure/railing/thick{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/mob/living/basic/human/frontier/ranged/mosin/neutered/sentry,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "YA" = (
 /obj/effect/spawner/bunk_bed{
@@ -10753,7 +10736,7 @@ tR
 wn
 yc
 nc
-ZO
+Yy
 ZO
 ZO
 ZO
@@ -12133,7 +12116,7 @@ Ap
 eq
 go
 Sz
-vS
+qt
 Ch
 zF
 Gg
@@ -12270,8 +12253,8 @@ kS
 VL
 hr
 cj
+hr
 Ef
-Yy
 cz
 vQ
 RI
@@ -12339,8 +12322,8 @@ CJ
 pI
 uy
 uy
-nm
-qt
+oA
+af
 Xy
 Sh
 hW

@@ -27,7 +27,7 @@
 
 /datum/outfit/job/syndicate/ert/cybersun/outpost_security
 	name = "ERT - Thousand Eyes Security"
-	id_assignment = "Troubleshooter"
+	id_assignment = "Perch Troubleshooter"
 	job_icon = "syndicate"
 
 	uniform = /obj/item/clothing/under/cybersun/suit
@@ -39,9 +39,9 @@
 	belt = /obj/item/storage/belt/military/cybersun/security
 
 	suit = /obj/item/clothing/suit/armor/vest/cybersun
-	suit_store = /obj/item/gun/energy/cybersun/lorentz/opportunist
+	suit_store = /obj/item/gun/ballistic/cs_gauss/rectifier/shock
+	//sec ai in my ear
 	ears = /obj/item/radio/headset/syndicate/alt/cybersun
-
 
 	l_pocket = /obj/item/storage/pouch/medical
 	r_pocket = /obj/item/tank/internals/emergency_oxygen

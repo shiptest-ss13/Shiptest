@@ -1014,11 +1014,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
-"rv" = (
-/obj/structure/chair/plastic,
-/mob/living/basic/human/frontier/ranged,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "rz" = (
 /obj/effect/mob_spawn/human/corpse/clip/minuteman,
 /obj/machinery/light/small/directional/south,
@@ -1163,7 +1158,7 @@
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "uE" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/officers)
 "uF" = (
@@ -1329,7 +1324,7 @@
 /obj/structure/platform/wood{
 	dir = 8
 	},
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/standing_torch/lit,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/kitchen)
 "xe" = (
@@ -2622,19 +2617,12 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
-"TP" = (
-/mob/living/basic/human/frontier/ranged,
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "TR" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "TV" = (
-/mob/living/basic/human/frontier/ranged/trooper/f3/sentry,
+/mob/living/basic/human/frontier/ranged/mosin/neutered/sentry,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ud" = (
@@ -4995,7 +4983,7 @@ fh
 fh
 QP
 rA
-rv
+pg
 gM
 fh
 fh
@@ -5692,7 +5680,7 @@ mK
 Qf
 Dy
 kL
-TP
+pJ
 Dy
 Dy
 oU

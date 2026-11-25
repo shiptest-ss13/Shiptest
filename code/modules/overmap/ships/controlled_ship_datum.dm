@@ -170,8 +170,13 @@
 	. = ..()
 	SSovermap.controlled_ships -= src
 	current_overmap.controlled_ships -= src
+	for(var/obj/machinery/computer/helm/helm_console as anything in helms)
+		if(helm_console.current_ship == src)
+			helm_console.current_ship = null
 	helms.Cut()
-	QDEL_LIST(missions)
+	for(var/datum/mission/accepted_mission as anything in missions)
+		qdel(accepted_mission)
+	missions = null
 	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null

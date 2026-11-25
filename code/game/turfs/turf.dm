@@ -198,11 +198,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/clear_signal_refs()
 	return
 
-/turf/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
+/turf/pull_hand_act(mob/living/user, atom/movable/pulled)
 	user.Move_Pulled(src)
+	return FALSE
 
 /turf/proc/multiz_turf_del(turf/T, dir)
 	SEND_SIGNAL(src, COMSIG_TURF_MULTIZ_DEL, T, dir)

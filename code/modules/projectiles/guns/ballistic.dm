@@ -396,7 +396,7 @@
 		return
 	casing.forceMove(drop_location())
 	var/angle_of_movement = (rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-	casing.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing.bounce_sfx_override)
+	casing.eject_bounce(angle_of_movement, rand(350, 450) / 100, rand(400, 450) / 100, rand(20, 24) / 100, casing.bounce_sfx_override)
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing.name)
 	return
 
