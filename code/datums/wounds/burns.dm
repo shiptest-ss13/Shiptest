@@ -47,8 +47,9 @@
 			flesh_healing_decrement -= 0.2
 		else if(victim.reagents.has_reagent(/datum/reagent/medicine/antibiotic))
 			flesh_healing_decrement -= 0.2
-		else if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
-			flesh_healing_decrement -= 0.1
+
+		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
+			flesh_healing += 0.5
 
 	if(limb.current_gauze && limb.current_gauze.seep_gauze(bandage_seep_amount, GAUZE_STAIN_PUS))
 		flesh_healing_decrement -= limb.current_gauze.flesh_healing_decrement_modifier
