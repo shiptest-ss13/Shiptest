@@ -251,42 +251,34 @@
 #undef AQUARIUM_MAX_OFFSET
 
 
-/obj/structure/aquarium/prefilled/Initialize(mapload)
-	. = ..()
+/obj/structure/aquarium/prefilled/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/aquarium_prop/rocks = 1,
+		/obj/item/aquarium_prop/seaweed = 1,
+		/obj/item/fish/goldfish = 1,
+		/obj/item/fish/angelfish = 1,
+		/obj/item/fish/guppy = 1
+	)
+	generate_items_inside(items_inside,src)
 
-	new /obj/item/aquarium_prop/rocks(src)
-	new /obj/item/aquarium_prop/seaweed(src)
+/obj/structure/aquarium/outpost
+	panel_open = FALSE
 
-	new /obj/item/fish/goldfish(src)
-	new /obj/item/fish/angelfish(src)
-	new /obj/item/fish/guppy(src)
+/obj/structure/aquarium/cirrus/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/aquarium_prop/rocks = 1,
+		/obj/item/aquarium_prop/seaweed = 1,
+		/obj/item/aquarium_prop/treasure = 1,
+		/obj/item/fish/trout = 2,
+		/obj/item/fish/catfish = 1
+	)
+	generate_items_inside(items_inside,src)
 
-/obj/structure/aquarium/outpost/Initialize(mapload)
-	. = ..()
-
-	new /obj/item/aquarium_prop/rocks(src)
-	new /obj/item/aquarium_prop/seaweed(src)
-
-	new /obj/item/fish/goldfish/outpost(src)
-	new /obj/item/fish/angelfish/outpost(src)
-	new /obj/item/fish/guppy/outpost(src)
-
-/obj/structure/aquarium/cirrus/Initialize(mapload)
-	. = ..()
-
-	new /obj/item/aquarium_prop/rocks(src)
-	new /obj/item/aquarium_prop/seaweed(src)
-	new /obj/item/aquarium_prop/treasure(src)
-
-	new /obj/item/fish/trout(src)
-	new /obj/item/fish/trout(src)
-	new /obj/item/fish/catfish(src)
-
-/obj/structure/aquarium/sunskipper/Initialize(mapload)
-	. = ..()
-
-	new /obj/item/aquarium_prop/rocks(src)
-	new /obj/item/aquarium_prop/seaweed(src)
-	new /obj/item/aquarium_prop/castle(src)
-
-	new /obj/item/fish/emulsijack(src)
+/obj/structure/aquarium/sunskipper/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/aquarium_prop/rocks = 1,
+		/obj/item/aquarium_prop/seaweed = 1,
+		/obj/item/aquarium_prop/castle = 1,
+		/obj/item/fish/emulsijack = 1,
+	)
+	generate_items_inside(items_inside,src)

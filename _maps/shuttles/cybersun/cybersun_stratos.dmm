@@ -6,10 +6,13 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "af" = (
@@ -181,11 +184,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "bH" = (
-/obj/effect/turf_decal/siding/wood/maple{
-	dir = 8
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
 	},
 /obj/structure/cable/cyan{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
@@ -370,9 +373,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-8"
 	},
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "dG" = (
@@ -400,9 +400,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "ec" = (
-/obj/effect/turf_decal/siding/wood/corner/maple{
-	dir = 8
-	},
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
@@ -762,6 +759,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark/open,
 /turf/open/floor/plating,
 /area/ship/engineering/communications)
+"gA" = (
+/obj/structure/table/glass,
+/turf/open/floor/suns/hatch/bamboo,
+/area/ship/crew/ccommons)
 "gD" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/cable/cyan{
@@ -1012,6 +1013,10 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
+"iF" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "iN" = (
 /obj/structure/dresser/wall/directional/south,
 /obj/effect/turf_decal/siding/wood/mahogany,
@@ -1732,6 +1737,10 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
+"nV" = (
+/obj/structure/chair/sofa/red/corpo/corner/directional/west,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "nW" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
@@ -2088,6 +2097,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
+"qv" = (
+/obj/structure/chair/sofa/red/corpo/right/directional/west,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "qw" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
@@ -2655,6 +2668,9 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/engineering/hallway)
+"ve" = (
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "vi" = (
 /obj/structure/mirror{
 	pixel_y = 30
@@ -3444,6 +3460,10 @@
 /obj/effect/turf_decal/number/right_zero,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"BG" = (
+/obj/structure/chair/sofa/red/corpo/directional/north,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "Ca" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/half,
 /obj/effect/turf_decal/siding/black,
@@ -3681,19 +3701,13 @@
 /area/ship/engineering/communications/room)
 "DE" = (
 /obj/effect/turf_decal/siding/wood/corner/maple{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-8"
-	},
-/obj/effect/turf_decal/siding/wood/corner/maple{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/corner{
 	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
@@ -4024,7 +4038,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
 "Gu" = (
-/turf/open/space/basic,
+/obj/structure/chair/sofa/red/corpo/left/directional/north,
+/turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Gw" = (
 /obj/structure/table/chem,
@@ -4164,6 +4179,9 @@
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
 	id_tag = "bridge"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -4368,6 +4386,11 @@
 /area/ship/cargo)
 "Iv" = (
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/item/kirbyplants{
+	icon_state = "plant-21";
+	pixel_x = 11;
+	pixel_y = 15
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "Iw" = (
@@ -5354,6 +5377,10 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/template_noop)
+"RA" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "RB" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled,
 /obj/machinery/porta_turret/ruin/cybersun/light{
@@ -5523,6 +5550,15 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"Tm" = (
+/obj/item/reagent_containers/food/drinks/teacup{
+	pixel_x = 8
+	},
+/obj/structure/table/endtable{
+	pixel_x = 8
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "Tu" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/reagent_dispensers/watertank,
@@ -5616,13 +5652,15 @@
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew)
 "UF" = (
-/obj/effect/turf_decal/siding/wood/end/maple{
-	dir = 8
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/line,
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 10
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "grav couch";
+	desc = "A comfortable seat designed to support the pilot during high-g manuevers."
+	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
 "UJ" = (
@@ -5693,7 +5731,13 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/communications)
 "VP" = (
-/turf/open/space/basic,
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
 "Wd" = (
 /obj/structure/cable/cyan{
@@ -6055,14 +6099,19 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engine)
 "ZA" = (
-/obj/effect/turf_decal/siding/wood/end/maple{
-	dir = 8
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-4"
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 9
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "grav couch";
+	desc = "A comfortable seat designed to support the pilot during high-g manuevers."
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
@@ -7398,8 +7447,8 @@ CS
 CS
 CS
 CS
-CS
 Eg
+CS
 YE
 sP
 AJ
@@ -7432,8 +7481,8 @@ An
 An
 An
 An
-An
 RC
+An
 An
 sP
 AJ
@@ -7462,12 +7511,12 @@ An
 nH
 Ya
 An
-Gu
+An
 Yo
 Yo
-Gu
-Gu
+An
 RC
+An
 An
 An
 AJ
@@ -7500,8 +7549,8 @@ DU
 It
 It
 gc
-Gu
 Uy
+WX
 WX
 WX
 BA
@@ -7525,7 +7574,7 @@ mu
 vF
 Qv
 Ms
-us
+iF
 An
 An
 An
@@ -7534,10 +7583,10 @@ DU
 It
 It
 gc
-Gu
 RC
-Gu
-Gu
+An
+An
+sP
 AJ
 OP
 lL
@@ -7568,9 +7617,9 @@ DU
 It
 It
 gc
-Gu
 RC
-Gu
+An
+An
 Gu
 fH
 fH
@@ -7598,14 +7647,14 @@ gq
 An
 An
 An
-Gu
+An
 uy
 uy
-Gu
-Gu
+An
 RC
 An
-sP
+An
+BG
 fH
 vD
 yP
@@ -7632,14 +7681,14 @@ CX
 us
 kn
 sP
-Gu
-Gu
-Gu
-Gu
-Gu
 An
 An
-sP
+An
+An
+RC
+An
+gA
+BG
 fH
 EF
 fs
@@ -7666,14 +7715,14 @@ Md
 UJ
 WB
 UJ
-Gu
-Gu
-Gu
-Gu
-Gu
+RA
+ve
+ve
 An
-An
-sP
+RC
+Tm
+qv
+nV
 fH
 wM
 fs
