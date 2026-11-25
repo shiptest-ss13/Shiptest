@@ -80,7 +80,7 @@
 			controller.set_blackboard_key(BB_BASIC_MOB_HOLD_FIRE_UNTIL, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
 	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, target, world.time)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know about them for ourselves now
-	clear_search(controller)
+	ai_clear_search(controller)
 	if(controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] == target && !ai_is_downed(target))
 		// we stayed on them while they were down, as those who finish people off do, and they're back up
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
@@ -123,12 +123,13 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME)
 	controller.clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET)
-	clear_search(controller)
+	ai_clear_search(controller)
 
-/datum/ai_sensor/track_target/proc/clear_search(datum/ai_controller/controller)
+/proc/ai_clear_search(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_SEARCH_CALLED_OUT)
 	controller.clear_blackboard_key(BB_BASIC_MOB_PICKED_SEARCH_STYLE)
 	controller.clear_blackboard_key(BB_BASIC_MOB_ACTIVE_SEARCH_STYLE)
+	controller.clear_blackboard_key(BB_BASIC_MOB_OVERWATCH_TURF)
 	controller.clear_blackboard_key(BB_BASIC_MOB_HEARD_TARGET)
 	controller.clear_blackboard_key(BB_BASIC_MOB_SWEEP_CENTER)
 	controller.clear_blackboard_key(BB_BASIC_MOB_SWEEP_RADIUS)
