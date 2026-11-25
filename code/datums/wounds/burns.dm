@@ -87,7 +87,7 @@
 	. = ..()
 	. += "<div class='ml-3'>"
 
-	if(flesh_damage <= flesh_healing)
+	if(flesh_damage / flesh_healing_decrement <= flesh_healing)
 		. += "No further treatment required: Burns will heal shortly."
 	else
 		if(flesh_damage > 0)
@@ -142,14 +142,14 @@
 /datum/wound/burn/flesh/on_stasis(seconds_per_tick, times_fired)
 	. = ..()
 	if(flesh_healing > 0)
-		flesh_damage = max(flesh_damage - (0.1 * seconds_per_tick), 0)
+		flesh_damage = max(flesh_damage - (0.2 * seconds_per_tick), 0)
 	if(flesh_damage <= 0)
 		to_chat(victim, "<span class='green'>The burns on your [limb.name] have cleared up!</span>")
 		qdel(src)
 		return
 
 /datum/wound/burn/flesh/on_synthflesh(amount)
-	flesh_healing += amount * 0.5 // 20u patch will heal 10 flesh standard
+	flesh_healing += amount
 
 /// When a -tane chem is applied to the victim, we call this.
 /datum/wound/burn/flesh/on_tane(amount)
@@ -157,7 +157,7 @@
 		qdel(src)
 		return
 
-	flesh_healing += amount * 0.25
+	flesh_healing += amount // the reagents themselves already multiply the 'amount' var passed here, no need to do it again
 	return
 
 // we don't even care about first degree burns, straight to second

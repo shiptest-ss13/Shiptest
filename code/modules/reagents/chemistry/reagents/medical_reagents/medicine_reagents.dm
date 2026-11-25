@@ -261,7 +261,7 @@
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/owie in burn_ward_attendee.all_wounds)
 			var/datum/wound/burn = owie
-			burn.on_tane(reac_volume/4)
+			burn.on_tane(reac_volume/2)
 	if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 		to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -326,7 +326,7 @@
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/owie in burn_ward_attendee.all_wounds)
 			var/datum/wound/burn = owie
-			burn.on_tane(reac_volume/2)
+			burn.on_tane(reac_volume)
 
 	..()
 
@@ -365,7 +365,7 @@
 			var/mob/living/carbon/burn_ward_attendee = M
 			for(var/owie in burn_ward_attendee.all_wounds)
 				var/datum/wound/burn = owie
-				burn.on_tane(reac_volume)
+				burn.on_tane(reac_volume*2)
 
 	..()
 
