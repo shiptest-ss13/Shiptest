@@ -19,6 +19,8 @@
 	var/flesh_damage = 5
 	/// Our current counter for how much flesh regeneration we have stacked from regenerative mesh/synthflesh/whatever, decrements each tick and lowers flesh_damage
 	var/flesh_healing = 0
+	/// How much will flesh_healing decrement by each tick? Affected by sterilizers, antibiotics, and bandages.
+	var/flesh_healing_decrement = 1
 
 /datum/wound_pregen_data/flesh_burn
 	abstract = TRUE
@@ -34,27 +36,28 @@
 
 	. = ..()
 
+	flesh_healing_decrement = 1
+
 	if(victim.reagents)
-		if(victim.reagents.has_reagent(/datum/reagent/medicine/antibiotic))
-			flesh_healing += 0.5
-		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
-			flesh_healing += 0.5
 		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine/purifadine))
-			flesh_healing += 0.9
-		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
-			flesh_healing += 0.5
+			flesh_healing_decrement -= 0.4
+		else if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
+			flesh_healing_decrement -= 0.2
+		else if(victim.reagents.has_reagent(/datum/reagent/medicine/antibiotic))
+			flesh_healing_decrement -= 0.2
+		else if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
+			flesh_healing_decrement -= 0.1
 
-	var/bandage_factor = 1
 	if(limb.current_gauze)
-		bandage_factor = limb.current_gauze.flesh_heal
-
-	if(flesh_healing > 0) // good bandages multiply the length of flesh healing
-		flesh_damage = max(0, flesh_damage - (0.5 * seconds_per_tick))
-		flesh_healing = max(0, flesh_healing - (bandage_factor * seconds_per_tick))
+		flesh_healing_decrement -= limb.current_gauze.flesh_healing_decrement_modifier
 
 	// if the limb doesn't have much burn damage, and our nutrition is good, heal some flesh
 	if(limb.burn_dam < 5 && victim.nutrition >= NUTRITION_LEVEL_FED)
 		flesh_healing += 0.1 * seconds_per_tick
+
+	if(flesh_healing > 0) // now we actually reduce the damage
+		flesh_damage = max(0, flesh_damage - (0.5 * seconds_per_tick))
+		flesh_healing = max(0, flesh_healing - (flesh_healing_decrement * 0.5 * seconds_per_tick)) // good bandages multiply the length of flesh healing
 
 	// here's the check to see if we're cleared up
 	if(flesh_damage <= 0)
@@ -116,7 +119,8 @@
 
 	// i kinda wish that other wounds worked like this, it's way more interesting to treat something and have it slowly get better
 	// in this fashion rather than have the cut immediately clear up. maybe bleed wounds could downgrade into muscle wounds...?
-	if((flesh_damage <= 0 || flesh_healing > flesh_damage))
+
+	if((flesh_damage <= 0 || flesh_healing / flesh_healing_decrement > flesh_damage))
 		to_chat(user, span_notice("You've done all you can with [I], [victim]'s [limb.name] can't be treated further."))
 		return TRUE
 	else
@@ -167,7 +171,7 @@
 	damage_mulitplier_penalty = 1.05
 	threshold_penalty = 20
 	status_effect_type = /datum/status_effect/wound/burn/flesh/moderate
-	flesh_damage = 5
+	flesh_damage = 10
 
 /datum/wound_pregen_data/flesh_burn/second_degree
 	abstract = FALSE
@@ -187,7 +191,7 @@
 	threshold_penalty = 30
 	status_effect_type = /datum/status_effect/wound/burn/flesh/severe
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	flesh_damage = 12.5
+	flesh_damage = 25
 
 /datum/wound_pregen_data/flesh_burn/third_degree
 	abstract = FALSE
@@ -207,7 +211,7 @@
 	threshold_penalty = 80
 	status_effect_type = /datum/status_effect/wound/burn/flesh/critical
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	flesh_damage = 20
+	flesh_damage = 40
 	wound_flags = ACCEPTS_GAUZE | MANGLES_EXTERIOR | NUMBS_BODYPART
 
 /datum/wound_pregen_data/flesh_burn/fourth_degree

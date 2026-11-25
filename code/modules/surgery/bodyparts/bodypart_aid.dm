@@ -165,8 +165,8 @@
 	var/absorption_rate = 0.06
 	/// How effective the gauze is at stopping current blood flow - see [get_part_bleed_rate()]
 	var/bleed_suppress = 0.4
-	/// How much does the gauze help with healing burns, lower = better
-	var/flesh_heal = 0.4
+	/// How much does the gauze help with healing burns
+	var/flesh_healing_decrement_modifier = 0.4
 	/// Is it blood stained? For description
 	var/blood_stained = FALSE
 
@@ -235,4 +235,4 @@
 	absorption_rate = 0.05
 	absorption_capacity = 4
 	bleed_suppress = 0.6
-	flesh_heal = 0.1
+	flesh_healing_decrement_modifier = 0.2
