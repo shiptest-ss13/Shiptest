@@ -269,33 +269,38 @@
 /obj/item/clothing/under/shortjumpsuit/black
 	name = "black short jumpsuit"
 	current_skin = "black short jumpsuit"
-
+	icon_state = "shortjumpblack"
 
 /obj/item/clothing/under/shortjumpsuit/grey
 	name = "grey short jumpsuit"
 	current_skin = "grey short jumpsuit"
-
+	icon_state = "shortjumpgrey"
 
 /obj/item/clothing/under/shortjumpsuit/navy
 	name = "navy short jumpsuit"
 	current_skin = "navy short jumpsuit"
-
+	icon_state = "shortjumpblue"
 
 /obj/item/clothing/under/shortjumpsuit/green
 	name = "green short jumpsuit"
 	current_skin = "green short jumpsuit"
-
+	icon_state = "shortjumpgreen"
 
 /obj/item/clothing/under/shortjumpsuit/maroon
 	name = "maroon short jumpsuit"
 	current_skin = "maroon short jumpsuit"
-
+	icon_state = "shortjumpred"
 
 /obj/item/clothing/under/shortjumpsuit/white
 	name = "white short jumpsuit"
 	current_skin = "white short jumpsuit"
-
+	icon_state = "shortjumpwhite"
 
 /obj/item/clothing/under/shortjumpsuit/brown
 	name = "brown short jumpsuit"
 	current_skin = "brown short jumpsuit"
+	icon_state = "shortjumpbrown"
+
+/obj/item/clothing/under/shortjumpsuit/khaki
+	name = "khaki short jumpsuit"
+	current_skin = "khaki short jumpsuit"

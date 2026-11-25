@@ -127,6 +127,6 @@
 		/datum/reagent/medicine/panacea = 2,
 	) //lollipop, but vitamins = toxins
 	tastes = list("cobwebs" = 1, "sugar" = 2)
-	foodtypes = JUNKFOOD | SUGAR //| BUGS
+	foodtypes = JUNKFOOD | SUGAR | MEAT | RAW | TOXIC
 	food_flags = FOOD_FINGER_FOOD
 	slot_flags = ITEM_SLOT_MASK

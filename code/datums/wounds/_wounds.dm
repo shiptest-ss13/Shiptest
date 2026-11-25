@@ -574,6 +574,9 @@
 		return span_bold("[desc]!")
 	return "[desc]."
 
+/datum/wound/proc/get_scanner_short_description(mob/user)
+	return "Type: [name] - [severity_text()]"
+
 /datum/wound/proc/get_scanner_description(mob/user)
 	return "Type: [name]\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
 
@@ -587,6 +590,11 @@
 			return "Severe"
 		if(WOUND_SEVERITY_CRITICAL)
 			return "Critical"
+
+/datum/wound/Topic(href, list/href_list) //used by scanners.dm (/proc/healthscan)
+	. = ..()
+	if(href_list["wound_description"])
+		to_chat(usr, boxed_message("<div class='alert'><b>Physical trauma analysis:</b></div><div class='alert ml-1'>[get_scanner_description()]</div>"), type = MESSAGE_TYPE_INFO)
 
 /// Returns TRUE if our limb is the head or chest, FALSE otherwise.
 /// Essential in the sense of "we cannot live without it".

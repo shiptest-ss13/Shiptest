@@ -74,6 +74,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "garrisoncoat"
+	base_icon_state = "garrisoncoat"
 	item_state = "blackcloth"
 
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -196,6 +197,7 @@
 	hardsuit_type = "ngrelite"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/ngr
 	name = "elite beige-red hardsuit"

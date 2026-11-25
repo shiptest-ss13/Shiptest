@@ -383,15 +383,6 @@
 	underlay_appearance.icon_state = "basalt"
 	return TRUE
 
-/turf/closed/indestructible/riveted/hierophant
-	name = "wall"
-	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
-	icon = 'icons/turf/walls/hierophant_wall.dmi'
-	icon_state = "wall"
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_HIERO_WALL)
-	canSmoothWith = list(SMOOTH_GROUP_HIERO_WALL)
-
 /turf/closed/indestructible/blank
 	name = "space"
 	desc = "It's the end of the world every day, for someone."

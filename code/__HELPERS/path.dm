@@ -20,13 +20,17 @@
  * * through_fire: If TRUE, an AI requester goes through fire rather than round it, for getting out of one
  */
 /proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE, list/search_notes, through_fire = FALSE)
-	if(!requester || !get_turf(end))
+	if(!get_turf(requester) || !get_turf(end))
 		return
 
-	var/l = SSpathfinder.mobs.getfree(requester)
-	while(!l)
+	var/pathfinder_slot = SSpathfinder.mobs.getfree(requester)
+	while(!pathfinder_slot)
 		stoplag(3)
-		l = SSpathfinder.mobs.getfree(requester)
+		pathfinder_slot = SSpathfinder.mobs.getfree(requester)
+
+	if(!get_turf(requester) || !get_turf(end))
+		SSpathfinder.mobs.found(pathfinder_slot)
+		return
 
 	var/list/path
 	var/datum/pathfind/pathfind_datum = new(requester, end, id, max_distance, mintargetdist, simulated_only, exclude, climbing, through_fire)
@@ -35,7 +39,7 @@
 		search_notes["found_climbable"] = pathfind_datum.found_climbable
 	qdel(pathfind_datum)
 
-	SSpathfinder.mobs.found(l)
+	SSpathfinder.mobs.found(pathfinder_slot)
 	return path
 
 /**
@@ -323,6 +327,8 @@
 		if(current_turf != end && sources[current_turf])
 			return // already visited, don't check again
 		if(!CAN_STEP(lag_turf, current_turf))
+			if(steps_taken == 1)
+				edge_corner_scan(original_turf, heading, parent_node)
 			return
 
 		if(current_turf == end || (mintargetdist && (get_dist(current_turf, end) <= mintargetdist)))
@@ -373,6 +379,19 @@
 					unwind_path(possible_child_node)
 			return
 
+/datum/pathfind/proc/edge_corner_scan(turf/original_turf, heading, datum/jps_node/parent_node)
+	var/turf/corner_turf = get_step(original_turf, heading)
+	if(path || !corner_turf || corner_turf.density)
+		return
+	var/turf/vertical_turf = get_step(original_turf, heading & (NORTH|SOUTH))
+	var/turf/horizontal_turf = get_step(original_turf, heading & (EAST|WEST))
+	if(!CAN_STEP(original_turf, vertical_turf) || !CAN_STEP(original_turf, horizontal_turf))
+		return
+	if(CAN_STEP(vertical_turf, corner_turf))
+		open.insert(new /datum/jps_node(vertical_turf, parent_node, 1))
+	if(CAN_STEP(horizontal_turf, corner_turf))
+		open.insert(new /datum/jps_node(horizontal_turf, parent_node, 1))
+
 /**
  * For seeing if we can actually move between 2 given turfs while accounting for our access and the requester's pass_flags
  *
@@ -389,12 +408,10 @@
 
 	// any border object an edge of the tile we're leaving that stops us stepping off that way. One pass, as this gets called millions of times
 	for(var/obj/iter_border in src)
-		if(!(iter_border.flags_1 & ON_BORDER_1) && !istype(iter_border, /obj/structure/window))
+		if(!(iter_border.flags_1 & ON_BORDER_1))
 			continue
 		if(iter_border.CanAStarPass(ID, actual_dir, requester))
 			continue
-		if(istype(iter_border, /obj/machinery/door/window))
-			return TRUE
 		if(!path_can_climb_over(iter_border, climbing, search) || (diagonal && climbed_over && climbed_over != iter_border))
 			return TRUE
 		climbed_over = iter_border

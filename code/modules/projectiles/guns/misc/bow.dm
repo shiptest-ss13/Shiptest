@@ -40,8 +40,7 @@
 	wield_slowdown = 0.1
 
 	unique_reskin = list( "Default" = "bow", "Dark" = "bow_dark")
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_INHAND
 
 	valid_attachments = list(/obj/item/attachment/ammo_counter)
 	slot_available = list(ATTACHMENT_SLOT_RAIL = 1)

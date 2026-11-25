@@ -4,14 +4,6 @@
 	pixel_x = -31;
 	pixel_y = -1
 	},
-/obj/item/ammo_box/magazine/m23/empty{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/ammo_box/magazine/m23/empty{
-	pixel_x = -8;
-	pixel_y = -5
-	},
 /obj/item/gun/energy/kalix/pistol/empty_cell{
 	pixel_x = -7;
 	pixel_y = 0
@@ -24,9 +16,22 @@
 	number_of_tumblers = 3;
 	tumblers = list(20,45,19)
 	},
-/obj/item/ammo_box/magazine/m23/empty{
-	pixel_x = 1;
-	pixel_y = -10
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/gun/energy/kalix/hunt/empty_cell,
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 6
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -9;
@@ -2503,6 +2508,10 @@
 	pixel_x = 8;
 	pixel_y = -32
 	},
+/obj/machinery/recharger{
+	pixel_x = 4;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "JN" = (
@@ -3194,10 +3203,6 @@
 "Tf" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/west,
-/obj/item/storage/toolbox/ammo/a850r{
-	pixel_x = -2;
-	pixel_y = 1
-	},
 /obj/machinery/button/door{
 	pixel_x = 10;
 	id = "ivory_captains";
@@ -3598,14 +3603,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engines/starboard)
-"Xm" = (
-/obj/structure/cabinet/m23{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 0
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ship/crew/dorm/captain)
 "Xu" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
@@ -4468,7 +4465,7 @@ AL
 MO
 Ed
 Wd
-Xm
+Ht
 eU
 Qg
 Cl

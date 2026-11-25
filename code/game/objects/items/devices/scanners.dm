@@ -315,7 +315,10 @@ GENE SCANNER
 			if(C.is_blind())
 				message += "\n<span class='alert ml-2'>Subject is blind.</span>"
 			if(HAS_TRAIT(C, TRAIT_SCARRED_EYE))
-				message += "\n<span class='alert ml-2'>Subject's vision is impaired by severe ocular scarring."
+				if(eyes.scarring & ~eyes.permanent_scarring)
+					message += "\n<span class='alert ml-2'>Subject's vision is impaired by ocular scarring, treatable with eye scar repair surgery, which requires injected synthflesh.</span>"
+				else
+					message += "\n<span class='alert ml-2'>Subject's vision is impaired by permanent ocular scarring.</span>"
 			if(HAS_TRAIT(C, TRAIT_NEARSIGHT))
 				message += "\n<span class='alert ml-2'>Subject is nearsighted.</span>"
 			if(eyes.damage > 30)
@@ -374,15 +377,15 @@ GENE SCANNER
 		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
-				render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
+				render_list += "<div class='ml-2'>[W.get_scanner_short_description()] <a href='byond://?src=[REF(W)];wound_description=1'>(?)</a></div>"
 			render_list += "</span>"
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(HAS_TRAIT(C,TRAIT_HUSK))
-			render_list += "<span class= 'alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
+			render_list += "<span class='alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
 			//render_list += "<span class='alert ml-2'>\n Subject has suffered catastrophic loss of body moisture due to intense exposure to heat. Resuscitation will be impossible until addressed."
-			render_list += "<span class='alert ml-2'>\n Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
+			render_list += "\n<span class='alert ml-2'> Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
@@ -475,10 +478,13 @@ GENE SCANNER
 				else
 					alternative_step = "Finish operation"
 				render_list += "[alternative_step] </span>"
-				render_list += alt_chems_needed
+				if(alt_chems_needed)
+					render_list += " (requires [alt_chems_needed])"
 				break
-			render_list += "[surgery_step.name] "
-			render_list += "[chems_needed]</span><br>"
+			render_list += "[surgery_step.name]"
+			if(chems_needed)
+				render_list += " (requires [chems_needed])"
+			render_list += "</span><br>"
 
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 

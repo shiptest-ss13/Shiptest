@@ -6,6 +6,7 @@
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 	icon_state = "chorejacketwhite"
+	base_icon_state = "chorejacketwhite"
 	item_state = "chorejacketwhite"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
@@ -41,76 +42,69 @@
 		"brown chorejacket" = "chorejacketbrown",
 		"light brown chorejacket" = "chorejacketlightbrown"
 	)
-	unique_reskin_changes_inhand = TRUE
-
-/obj/item/clothing/suit/toggle/chorejacket/Initialize()
-	. = ..()
-	base_icon_state = icon_state
-
-/obj/item/clothing/suit/toggle/chorejacket/suit_toggle()
-	set src in usr
-
-	if(!can_use(usr))
-		return 0
-
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[base_icon_state]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[base_icon_state]_t"
-		src.suittoggled = TRUE
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
 
 /obj/item/clothing/suit/toggle/chorejacket/white
+	icon_state = "chorejacketwhite"
 	current_skin = "white chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/grey
+	icon_state = "chorejacketgrey"
 	current_skin = "grey chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/black
+	icon_state = "chorejacketblack"
 	current_skin = "black chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/red
+	icon_state = "chorejacketred"
 	current_skin = "red chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/maroon
+	icon_state = "chorejacketmaroon"
 	current_skin = "maroon chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/orange
+	icon_state = "chorejacketorange"
 	current_skin = "orange chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/yellow
+	icon_state = "chorejacketyellow"
 	current_skin = "yellow chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/green
+	icon_state = "chorejacketgreen"
 	current_skin = "green chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/darkgreen
+	icon_state = "chorejacketdarkgreen"
 	current_skin = "dark green chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/teal
+	icon_state = "chorejacketteal"
 	current_skin = "teal chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/blue
+	icon_state = "chorejacketblue"
 	current_skin = "blue chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/darkblue
+	icon_state = "chorejacketdarkblue"
 	current_skin = "dark blue chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/purple
+	icon_state = "chorejacketpurple"
 	current_skin = "purple chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/pink
+	icon_state = "chorejacketpink"
 	current_skin = "pink chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/brown
+	icon_state = "chorejacketbrown"
 	current_skin = "brown chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/lightbrown
+	icon_state = "chorejacketlightbrown"
 	current_skin = "light brown chorejacket"
 
 /obj/item/clothing/suit/toggle/chorejacket/teceti
@@ -118,6 +112,7 @@
 	desc = "A loose fitting jacket of Riso-Teceian origin, featuring deep pockets and large buttons for easy access in work conditions. This one commemorates the Northern Teceti Coalition flag in it's design, where it proves extremely popular among agricultural workers."
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	base_icon_state = "chorejacketteceti"
 	icon_state = "chorejacketteceti"
 	item_state = "chorejacketteceti"
 	unique_reskin = null
@@ -127,6 +122,7 @@
 	desc = "A loose fitting jacket branded in Miskilamao Spacefaring's iconography. Deep pockets and large buttons ensure that the contents of the coat are accessible during work. Typically issued to line workers and sold in gift shops at Miski facilities. "
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	base_icon_state = "chorejacket_miski"
 	icon_state = "chorejacket_miski"
 	item_state = "chorejacket_miski"
 	unique_reskin = null
