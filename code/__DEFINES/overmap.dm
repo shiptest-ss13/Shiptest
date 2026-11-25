@@ -59,6 +59,13 @@
 	/datum/time_of_day/night = 14,\
 )
 
+// no atmos no dawn/dusk but run surprise!
+#define PLANET_MOON_TIMES_OF_DAY list(\
+	/datum/time_of_day/day = 55,\
+	/datum/time_of_day/night = 35,\
+	/datum/time_of_day/eclipse = 10,\
+)
+
 // update_planet_lighting results
 #define PLANET_LIGHTING_FAILED 0
 #define PLANET_LIGHTING_APPLIED 1

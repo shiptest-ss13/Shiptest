@@ -351,6 +351,7 @@
 	interference_power = -5
 
 	mapgen = /datum/map_generator/planet_generator/moon
+	time_of_day_weights = PLANET_MOON_TIMES_OF_DAY
 	light_color = COLOR_WHITE // should look liminal, due to moons lighting
 	light_range = 2
 	light_power = 1
