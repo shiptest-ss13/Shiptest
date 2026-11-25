@@ -1,10 +1,10 @@
 /obj/item/catalog_handheld
 	name = "Outpost Catalog Handheld"
 	desc = "A small portable catalogue for viewing outpost stock. Can print out supply punchcards that can be read by supply consoles."
-	icon = 'icons/obj/item/survey_handheld.dmi'
-	base_icon_state = "survey"
-	icon_state = "survey"
-	resistance_flags = FLAMMABLE
+	icon = 'icons/obj/contractor_tablet.dmi'
+	base_icon_state = "tablet"
+	icon_state = "tablet"
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000)
 	var/datum/overmap/ship/controlled/current_ship
 	var/datum/faction/current_faction
 	var/datum/overmap/outpost/parent_outpost
@@ -111,10 +111,10 @@
 	desc = "A piece of paper with carfully organized holes through it. Can be inserted into a cargo console to quickly fill in order data."
 	gender = NEUTER
 	icon = 'icons/obj/bureaucracy.dmi'
-	icon_state = "punchcard"
+	icon_state = "punchcard_cargo"
 	var/list/purchases
 	var/total_cost = null
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000)
+	resistance_flags = FLAMMABLE
 
 /obj/item/order_punchcard/Initialize(mapload, purchasing, totaled_cost)
 	. = ..()
