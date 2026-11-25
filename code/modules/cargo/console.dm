@@ -44,6 +44,11 @@
 	else
 		obj_flags &= ~EMAGGED
 
+/obj/machinery/computer/cargo/examine(mob/user)
+	. = ..()
+	if(inserted_card)
+		. += span_notice("It has a supply punchcard inserted. <b>Alt-Click</b> to eject it.")
+
 /obj/machinery/computer/cargo/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
