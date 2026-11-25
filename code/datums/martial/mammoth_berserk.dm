@@ -5,7 +5,7 @@
 
 // HARM - Punch for MASSIVELY increased damage
 /datum/martial_art/berserk/harm_act(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	var/choice = pick(1, 4)
+	var/choice = rand(1, 4)
 	var/static/hit_verbs = list("slam", "smash", "pulverize", "crush")
 	var/static/hit_verbs_past = list("slammed", "smashed", "pulverized", "crushed")
 	if(!can_use(user))
@@ -69,6 +69,10 @@
 			to_chat(user, span_danger("There is no limb here to tear off!"))
 			return TRUE
 
+		if(!limb.can_dismember()) // make sure it's dismemberable
+			to_chat(user, span_danger("Despite your strength, there's no way you're ripping this off!"))
+			return TRUE
+
 		// begin tearing
 		target.visible_message(
 			span_warning("[user] starts to tear off [target]'s [limb_wording]!"),
@@ -87,8 +91,16 @@
 			to_chat(user, span_danger("The limb you were trying to tear off is no longer there!"))
 			return TRUE
 
+		if(!limb.can_dismember()) // ...and it's still dismemberable
+			to_chat(user, span_danger("You pull on [limb_wording] but it refuses to come off!"))
+			return TRUE
+
+		if(!target || !(user.grab_state >= GRAB_AGGRESSIVE) || !(user.pulling == target)) // ...and we still have our grab
+			to_chat(user, span_danger("You fail to keep your grip on [target]!"))
+			return TRUE
+
 		target.visible_message(
-			span_warning("[user] tear's off [target]'s [limb_wording]!"),
+			span_warning("[user] tears off [target]'s [limb_wording]!"),
 			span_userdanger("Your [limb_wording] is torn off by [user]!"),
 			span_hear("You hear a gruesome tearing sound!"),
 			COMBAT_MESSAGE_RANGE, user)

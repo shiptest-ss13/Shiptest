@@ -37,7 +37,7 @@
 
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
 		// snowflake case for berserk martial art
-		if(user?.mind.has_martialart(MARTIALART_BERSERK))
+		if(user?.mind?.has_martialart(MARTIALART_BERSERK))
 			damage = rand(20, 30)
 			playsound(loc, 'sound/weapons/melee/slam.ogg', 25, TRUE, -1)
 		else
