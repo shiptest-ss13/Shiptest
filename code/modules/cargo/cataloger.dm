@@ -34,7 +34,7 @@
 	var/list/data = list()
 
 	data["shipFaction"] = (current_ship ? current_ship.source_template.faction.name : null)
-	message = "The Handheld Catalog is for browsing purposes only. No actual purchases will be placed."
+	message = "The Handheld Catalog is for browsing purposes only. Purchases will generate a requisition form."
 	data["message"] = message
 
 	return data
@@ -58,7 +58,6 @@
 				for(var/i = 0; i < amount; i++)
 					unprocessed_packs += pack
 			generate_punchcard(unprocessed_packs,total_cost,usr)
-
 
 /obj/item/catalog_handheld/proc/generate_punchcard(purchasing, total_cost, mob/user)
 	var/obj/item/order_punchcard/new_card = new(src, purchasing, total_cost)

@@ -92,7 +92,7 @@
 
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/list/data = list()
-
+	data["console"] = TRUE
 	data["onShip"] = !isnull(current_ship)
 	data["shipFaction"] = current_ship.source_template.faction.name
 	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
@@ -118,9 +118,8 @@
 			for(var/datum/mission/M as anything in outpost_docked.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
-	if(punchcard_orders.len > 0)
-		data["punchcard_order"] = punchcard_orders
-		data["punchcard_order_length"] = punchcard_orders.len
+	data["can_read"] = (punchcard_orders.len > 0 ? TRUE : FALSE)
+	data["punchcard_order"] = punchcard_orders
 
 	return data
 
@@ -170,11 +169,7 @@
 			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 		if("finish_punchcard")
 			punchcard_orders = list()
-		if("speak")
-			var/index_num = params["index_num"]
-			var/ref = params["ref"]
-			say(index_num)
-			say(ref)
+			ui_interact(usr)
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
@@ -203,9 +198,19 @@
 		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
 		return TRUE
-	var/unfilled_orders = FALSE
+	if(istype(W, /obj/item/catalog_handheld))
+		reconnect()
+		var/obj/item/catalog_handheld/handheld = W
+		handheld.current_ship = current_ship
+		handheld.current_faction = current_faction
+		if(outpost_docked)
+			handheld.parent_outpost = outpost_docked
+		handheld.update_static_data_for_all_viewers()
+		return TRUE
 	if(istype(W, /obj/item/order_punchcard))
+		var/unfilled_orders = FALSE
 		var/obj/item/order_punchcard/inserted_card = W
+		punchcard_orders = list()
 		for(var/untreated_order in inserted_card.purchases)
 			var/datum/supply_pack/untreated_pack = untreated_order
 			if((untreated_pack.faction != current_faction) && untreated_pack.faction_locked)
@@ -216,11 +221,11 @@
 				unfilled_orders = TRUE
 				continue
 			punchcard_orders.Add(treated_order)
-		qdel(inserted_card)
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		if(unfilled_orders)
-			say("Certain orders could not be transferred.")
-		say("eats your card")
+			say("Some orders could not be loaded due to lack of permissions.")
+		to_chat(user, span_notice("You feed the [inserted_card] into the [name]."))
+		qdel(inserted_card)
 		ui_interact(user)
 		return TRUE
 	..()
