@@ -31,6 +31,14 @@
 	var/worn_access = TRUE
 	/// If the storage object can be accessed while being held anywhere on a mob
 	var/carry_access = TRUE
+	/// Time to open this while it's worn or held.
+	var/open_delay = 0
+	/// Slowdown on the holder while inventory is open.
+	var/open_slowdown = 0
+	/// If the open delay and slowdown also apply while held, not just worn.
+	var/delay_when_held = FALSE
+	/// Set when the holder clicks the bag again to stop opening it.
+	var/open_cancelled = FALSE
 
 	/// Storage flags, including what kinds of limiters we use for how many items we can hold
 	var/storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
@@ -228,10 +236,12 @@
 /datum/component/storage/proc/on_move()
 	SIGNAL_HANDLER
 
-	var/atom/A = parent
-	for(var/mob/living/L in can_see_contents())
-		if(!L.CanReach(A))
-			ui_hide(L)
+	var/atom/parent_atom = parent
+	for(var/mob/living/viewer in can_see_contents())
+		if(!viewer.CanReach(parent_atom))
+			ui_hide(viewer)
+		else
+			update_open_slowdown(viewer)
 
 /datum/component/storage/proc/attack_self(datum/source, mob/M)
 	SIGNAL_HANDLER
@@ -248,7 +258,7 @@
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
-	if(!access_check(M))
+	if(!access_check(M, ignore_opening = TRUE))
 		return FALSE
 	if(locked)
 		to_chat(M, span_warning("[parent] [locked_flavor]"))
@@ -385,6 +395,22 @@
 
 /datum/component/storage/proc/close(mob/M)
 	ui_hide(M)
+
+// send the message only if the player closes it manually
+/datum/component/storage/proc/player_close(mob/user)
+	var/atom/parent_atom = parent
+	var/was_viewing = user.active_storage == src
+	if(open_delay && was_viewing && parent_atom.loc == user)
+		to_chat(user, span_notice("You close [parent_atom]."))
+	close(user)
+	// matryoshka storage, step back to parent container
+	var/atom/container_atom = parent_atom.loc
+	var/datum/component/storage/container_storage = container_atom?.GetComponent(/datum/component/storage)
+	if(!was_viewing || !container_storage || container_storage.locked)
+		return
+	if(!user.CanReach(container_atom, view_only = TRUE) || !container_storage.access_check(user, message = FALSE, ignore_opening = TRUE))
+		return
+	container_storage.user_show_to_mob(user, force = TRUE)
 
 /datum/component/storage/proc/close_all()
 	SIGNAL_HANDLER
@@ -545,113 +571,119 @@
 		return
 	A.add_fingerprint(M)
 
-/datum/component/storage/proc/user_show_to_mob(mob/M, force = FALSE, silent = FALSE)
-	var/atom/A = parent
-	if(!istype(M))
+/datum/component/storage/proc/user_show_to_mob(mob/user, force = FALSE, silent = FALSE)
+	var/atom/parent_atom = parent
+	if(!istype(user))
 		return FALSE
-	A.add_fingerprint(M)
+	parent_atom.add_fingerprint(user)
 	if(!force && locked)
-		to_chat(M, span_warning("[parent] seems to be [locked_flavor]!"))
+		to_chat(user, span_warning("[parent] seems to be [locked_flavor]!"))
 		return FALSE
-	if(!force && !access_check(M))
+	if(!force && !access_check(user, ignore_opening = TRUE))
 		return FALSE
-	if(force || M.CanReach(parent, view_only = TRUE))
+	if(!force && DOING_INTERACTION(user, src))
+		open_cancelled = TRUE
+		return FALSE
+	if(!force && needs_opening(user))
+		INVOKE_ASYNC(src, PROC_REF(timed_open), user)
+		return FALSE
+	if(force || user.CanReach(parent, view_only = TRUE))
 		if(use_sound && !silent)
-			playsound(A, use_sound, 50, TRUE, -5)
-		ui_show(M)
+			playsound(parent_atom, use_sound, 50, TRUE, -5)
+		ui_show(user)
 
-/datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
+/datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/dropped, mob/user)
 	SIGNAL_HANDLER
 
-	if(isitem(O))
-		var/obj/item/I = O
-		if(iscarbon(M) || isdrone(M))
-			var/mob/living/L = M
-			if(!L.incapacitated() && I == L.get_active_held_item())
-				if(!SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && can_be_inserted(I, FALSE))	//If it has storage it should be trying to dump, not insert.
-					handle_item_insertion(I, FALSE, L)
+	if(isitem(dropped))
+		var/obj/item/dropped_item = dropped
+		if(iscarbon(user) || isdrone(user))
+			var/mob/living/living_user = user
+			if(!living_user.incapacitated() && dropped_item == living_user.get_active_held_item())
+				if(!SEND_SIGNAL(dropped_item, COMSIG_CONTAINS_STORAGE) && can_be_inserted(dropped_item, FALSE, living_user))	//If it has storage it should be trying to dump, not insert.
+					handle_item_insertion(dropped_item, FALSE, living_user)
 
 //This proc return 1 if the item can be picked up and 0 if it can't.
 //Set the stop_messages to stop it from printing messages
-/datum/component/storage/proc/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/M, bypass_access = FALSE)
-	if(!istype(I) || (I.item_flags & ABSTRACT))
+/datum/component/storage/proc/can_be_inserted(obj/item/inserting, stop_messages = FALSE, mob/user, bypass_access = FALSE)
+	if(!istype(inserting) || (inserting.item_flags & ABSTRACT))
 		return FALSE //Not an item
-	if(I == parent)
+	if(inserting == parent)
 		return FALSE	//no paradoxes for you
 	var/atom/real_location = real_location()
 	var/atom/host = parent
-	if(real_location == I.loc)
+	if(real_location == inserting.loc)
 		return FALSE //Means the item is already in the storage item
 	if(!bypass_access)//For stuff like setting up outfits, setting up roundstart backpacks, etc.
-		if(!access_check(M))
+		if(!access_check(user, message = !stop_messages, ignore_opening = TRUE))
 			return FALSE
 	if(locked)
-		if(M && !stop_messages)
-			host.add_fingerprint(M)
-			to_chat(M, span_warning("[host] seems to be [locked_flavor]!"))
+		if(user && !stop_messages)
+			host.add_fingerprint(user)
+			to_chat(user, span_warning("[host] seems to be [locked_flavor]!"))
 		return FALSE
 	if(length(can_hold))
-		if(!is_type_in_typecache(I, can_hold))
+		if(!is_type_in_typecache(inserting, can_hold))
 			if(!stop_messages)
-				to_chat(M, span_warning("[host] cannot hold [I]!"))
+				to_chat(user, span_warning("[host] cannot hold [inserting]!"))
 			return FALSE
 	if(length(can_hold_max_of_items))
-		if(is_type_in_typecache(I,can_hold_max_of_items))
+		if(is_type_in_typecache(inserting,can_hold_max_of_items))
 			var/amount = 0
 			for(var/_item in contents())
 				if(is_type_in_typecache(_item,can_hold_max_of_items))
 					amount++
-			if(amount >= can_hold_max_of_items[I.type])
+			if(amount >= can_hold_max_of_items[inserting.type])
 				if(!stop_messages)
-					to_chat(M, span_warning("[host] cannot hold another [I]!"))
+					to_chat(user, span_warning("[host] cannot hold another [inserting]!"))
 				return FALSE
-	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
+	if(is_type_in_typecache(inserting, cant_hold) || HAS_TRAIT(inserting, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(inserting, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
-			to_chat(M, span_warning("[host] cannot hold [I]!"))
+			to_chat(user, span_warning("[host] cannot hold [inserting]!"))
 		return FALSE
 	// STORAGE LIMITS
 	if(storage_flags & STORAGE_LIMIT_MAX_ITEMS)
 		if(real_location.contents.len >= max_items)
 			if(!stop_messages)
-				to_chat(M, span_warning("[host] has too much junk in it, make some space!"))
+				to_chat(user, span_warning("[host] has too much junk in it, make some space!"))
 			return FALSE //Storage item is full
 	if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS)
-		if(I.w_class > max_w_class && !is_type_in_typecache(I, exception_hold))
+		if(inserting.w_class > max_w_class && !is_type_in_typecache(inserting, exception_hold))
 			if(!stop_messages)
-				to_chat(M, span_warning("[I] is much too long for [host]!"))
+				to_chat(user, span_warning("[inserting] is much too long for [host]!"))
 			return FALSE
 	if(storage_flags & STORAGE_LIMIT_COMBINED_W_CLASS)
-		var/sum_w_class = I.w_class
-		for(var/obj/item/_I in real_location)
-			sum_w_class += _I.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
+		var/sum_w_class = inserting.w_class
+		for(var/obj/item/stored_item in real_location)
+			sum_w_class += stored_item.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
 		if(sum_w_class > max_combined_w_class)
 			if(!stop_messages)
-				to_chat(M, span_warning("[I] won't fit in [host], make some space!"))
+				to_chat(user, span_warning("[inserting] won't fit in [host], make some space!"))
 			return FALSE
 	if(storage_flags & STORAGE_LIMIT_VOLUME)
-		var/sum_volume = I.get_w_volume()
-		for(var/obj/item/_I in real_location)
-			sum_volume += _I.get_w_volume()
+		var/sum_volume = inserting.get_w_volume()
+		for(var/obj/item/stored_item in real_location)
+			sum_volume += stored_item.get_w_volume()
 		if(sum_volume > get_max_volume())
 			if(!stop_messages)
-				to_chat(M, span_warning("[I] is too large to fit in [host], make some space!"))
+				to_chat(user, span_warning("[inserting] is too large to fit in [host], make some space!"))
 			return FALSE
 	/////////////////
 	if(isitem(host))
-		var/obj/item/IP = host
-		var/datum/component/storage/STR_I = I.GetComponent(/datum/component/storage)
-		if((I.w_class >= IP.w_class) && STR_I && !allow_big_nesting && !is_type_in_list(I, exception_hold))
+		var/obj/item/host_item = host
+		var/datum/component/storage/inserting_storage = inserting.GetComponent(/datum/component/storage)
+		if((inserting.w_class >= host_item.w_class) && inserting_storage && !allow_big_nesting && !is_type_in_list(inserting, exception_hold))
 			if(!stop_messages)
-				to_chat(M, span_warning("[IP] cannot hold [I] as it's a storage item of the same size!"))
+				to_chat(user, span_warning("[host_item] cannot hold [inserting] as it's a storage item of the same size!"))
 			return FALSE //To prevent the stacking of same sized storage items.
-	if(HAS_TRAIT(I, TRAIT_NODROP)) //SHOULD be handled in unEquip, but better safe than sorry.
+	if(HAS_TRAIT(inserting, TRAIT_NODROP)) //SHOULD be handled in unEquip, but better safe than sorry.
 		if(!stop_messages)
-			to_chat(M, span_warning("\the [I] is stuck to your hand, you can't put it in \the [host]!"))
+			to_chat(user, span_warning("\the [inserting] is stuck to your hand, you can't put it in \the [host]!"))
 		return FALSE
 	var/datum/component/storage/concrete/master = master()
 	if(!istype(master))
 		return FALSE
-	return master.slave_can_insert_object(src, I, stop_messages, M)
+	return master.slave_can_insert_object(src, inserting, stop_messages, user)
 
 /datum/component/storage/proc/_insert_physical_item(obj/item/I, override = FALSE)
 	return FALSE
@@ -759,39 +791,31 @@
 /datum/component/storage/proc/on_attack_hand(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	var/atom/A = parent
+	var/atom/parent_atom = parent
 	if(!attack_hand_interact)
 		return
-	if(user.active_storage == src && A.loc == user) //if you're already looking inside the storage item
-		user.active_storage.close(user)
-		close(user)
+	if(user.active_storage == src && parent_atom.loc == user) //if you're already looking inside the storage item
+		player_close(user)
 		. = COMPONENT_NO_ATTACK_HAND
 		return
 
 	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
+		var/mob/living/carbon/human/human_user = user
 		if(!pocket_openable) //some things should be opened in pockets
-			if(H.l_store == A && !H.get_active_held_item())	//Prevents opening if it's in a pocket.
+			if(human_user.l_store == parent_atom && !human_user.get_active_held_item())	//Prevents opening if it's in a pocket.
 				. = COMPONENT_NO_ATTACK_HAND
-				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
-				H.l_store = null
+				INVOKE_ASYNC(human_user, TYPE_PROC_REF(/mob, put_in_hands), parent_atom)
+				human_user.l_store = null
 				return
-			if(H.r_store == A && !H.get_active_held_item())
+			if(human_user.r_store == parent_atom && !human_user.get_active_held_item())
 				. = COMPONENT_NO_ATTACK_HAND
-				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
-				H.r_store = null
+				INVOKE_ASYNC(human_user, TYPE_PROC_REF(/mob, put_in_hands), parent_atom)
+				human_user.r_store = null
 				return
 
-	if(A.loc == user)
+	if(parent_atom.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
-		if(!access_check(user))
-			return FALSE
-		if(locked)
-			to_chat(user, span_warning("[parent] seems to be [locked_flavor]!"))
-		else
-			ui_show(user)
-			if(use_sound)
-				playsound(A, use_sound, 50, TRUE, -5)
+		user_show_to_mob(user)
 
 /datum/component/storage/proc/signal_on_pickup(datum/source, mob/user)
 	SIGNAL_HANDLER
@@ -805,6 +829,12 @@
 
 	if(!worn_access)
 		close(user)
+		return
+	var/atom/parent_atom = parent
+	if(open_delay && !delay_when_held && user.active_storage == src && !user.is_holding(parent_atom))
+		close(user)
+		return
+	update_open_slowdown(user)
 
 /datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE)
 	SIGNAL_HANDLER
@@ -830,11 +860,11 @@
 		return FALSE
 
 	. = TRUE
-	var/atom/A = parent
-	if(!quickdraw)
-		A.add_fingerprint(user)
+	var/atom/parent_atom = parent
+	if(!quickdraw || needs_opening(user))
+		parent_atom.add_fingerprint(user)
 		user_show_to_mob(user)
-		playsound(A, "rustle", 50, TRUE, -5)
+		playsound(parent_atom, "rustle", 50, TRUE, -5)
 		return
 	var/obj/item/to_remove = locate() in real_location()
 	if(!to_remove)
@@ -885,13 +915,14 @@
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)
 
 //checks for mob-related storage access conditions
-/datum/component/storage/proc/access_check(mob/user, message = TRUE)
+/datum/component/storage/proc/access_check(mob/user, message = TRUE, ignore_opening = FALSE)
 	var/atom/parent_atom = parent
 
 	//if we are inside another storage object, check access there recursively
 	var/atom/container_atom = parent_atom.loc
 	var/datum/component/storage/container_storage = container_atom.GetComponent(/datum/component/storage)
-	if(container_storage && !container_storage.access_check(user))
+	// only one storage open at a time
+	if(container_storage && !container_storage.access_check(user, message, ignore_opening = TRUE))
 		return FALSE // If we can't access the storage we're in, we can't access us, message is handled by recursion
 
 	if(ismob(container_atom))
@@ -906,4 +937,63 @@
 			if(message)
 				to_chat(user, span_warning("Your arms aren't long enough to reach [parent_atom] while it's on your back!"))
 			return FALSE
+
+		if(!ignore_opening && needs_opening(user))
+			if(message)
+				to_chat(user, span_warning("You need to open [parent_atom] first!"))
+			return FALSE
 	return TRUE
+
+/datum/component/storage/proc/needs_opening(mob/user)
+	return open_delay && user && delays_on(user) && user.active_storage != src
+
+// where the bag has open delay/slowdown when on back
+/datum/component/storage/proc/delays_on(mob/user)
+	var/atom/parent_atom = parent
+	return parent_atom.loc == user && (delay_when_held || !user.is_holding(parent_atom))
+
+/datum/component/storage/proc/timed_open(mob/user)
+	var/atom/parent_atom = parent
+	open_cancelled = FALSE
+	to_chat(user, span_notice("You start opening [parent_atom]..."))
+	if(use_sound)
+		playsound(parent_atom, use_sound, 50, TRUE, -5)
+	var/opened = do_after(user, open_delay, parent_atom, IGNORE_USER_LOC_CHANGE, extra_checks = CALLBACK(src, PROC_REF(open_not_cancelled)), interaction_key = src)
+	if(QDELETED(src))
+		return
+	if(open_cancelled)
+		open_cancelled = FALSE
+		to_chat(user, span_notice("You stop opening [parent_atom]."))
+		return
+	if(!opened || parent_atom.loc != user || locked || !access_check(user, ignore_opening = TRUE))
+		return
+	ui_show(user)
+
+/datum/component/storage/proc/open_not_cancelled()
+	return !open_cancelled
+
+/datum/component/storage/proc/update_open_slowdown(mob/user)
+	if(user.active_storage != src)
+		return
+	var/slowdown = get_open_slowdown(user)
+	var/datum/movespeed_modifier/current = LAZYACCESS(user.movespeed_modification, "[/datum/movespeed_modifier/storage_open]")
+	if(slowdown)
+		if(current?.multiplicative_slowdown != slowdown)
+			user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/storage_open, multiplicative_slowdown = slowdown)
+	else if(current)
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/storage_open)
+
+// get slowdown of the slowest container even in nested containers (most likely to be the main bag)
+/datum/component/storage/proc/get_open_slowdown(mob/user)
+	var/slowdown = 0
+	var/atom/movable/current = parent
+	while(ismovable(current))
+		var/datum/component/storage/storage = current.GetComponent(/datum/component/storage)
+		if(current.loc == user)
+			if(storage?.delays_on(user))
+				slowdown = max(slowdown, storage.open_slowdown)
+			return slowdown
+		if(storage)
+			slowdown = max(slowdown, storage.open_slowdown)
+		current = current.loc
+	return 0
