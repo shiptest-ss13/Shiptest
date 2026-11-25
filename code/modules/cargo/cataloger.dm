@@ -4,6 +4,7 @@
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	base_icon_state = "survey"
 	icon_state = "survey"
+	resistance_flags = FLAMMABLE
 	var/datum/overmap/ship/controlled/current_ship
 	var/datum/faction/current_faction
 	var/datum/overmap/outpost/parent_outpost
@@ -15,6 +16,12 @@
 /obj/item/catalog_handheld/Initialize()
 	. = ..()
 	parent_outpost = pick(SSovermap.outposts)
+
+/obj/item/catalog_handheld/examine(mob/user)
+	. = ..()
+	. += span_notice("You can sync the catalog handheld to a cargo console to load an outpost's catalog while docked, or link it to a vessel.")
+	. += span_notice("The [name] is currently [parent_outpost ? "displaying [parent_outpost]'s catalog." : "not linked to any outpost."]")
+	. += span_notice("The [name] is currently linked to [current_ship ? current_ship.name : "no vessel."]")
 
 /obj/item/catalog_handheld/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -107,6 +114,7 @@
 	icon_state = "punchcard"
 	var/list/purchases
 	var/total_cost = null
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000)
 
 /obj/item/order_punchcard/Initialize(mapload, purchasing, totaled_cost)
 	. = ..()
@@ -114,6 +122,32 @@
 		purchases = purchasing
 	if(totaled_cost)
 		total_cost = totaled_cost
+
+/obj/item/order_punchcard/examine(mob/user)
+	. = ..()
+	. += span_warning("You could probably tear it apart in your hands if you were feeling paticularly <b>harmful</b>.")
+
+/obj/item/order_punchcard/attack_self(mob/user, modifiers)
+	. = ..()
+	if(user.a_intent == INTENT_HARM)
+		user.visible_message(span_warning("\The [user] violently tears the [name] to shreds!"), span_warning("You tear the [name] to shreds. That was satisfying."), span_warning("You hear something ripping."))
+		new /obj/effect/decal/cleanable/paper(get_turf(user))
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
+		sleep(5)
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
+		sleep(5)
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
+		Destroy()
+	else
+		to_chat(user,span_warning("You need to be more <b>harmful</b> to tear the [name] apart."))
+
+/obj/item/order_punchcard/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	if(I.get_temperature())
+		user.visible_message(span_warning("\The [user] lights the [name] on fire!"), span_warning("You burn the [name] to ash. That was satisfying."), span_warning("You hear something burning."))
+		if(user.is_holding(src))
+			user.dropItemToGround(src)
+		fire_act(I.get_temperature())
 
 /obj/item/order_punchcard/examine_more(mob/user)
 	. = ..()
