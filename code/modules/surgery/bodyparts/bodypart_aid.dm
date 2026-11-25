@@ -175,6 +175,8 @@
 /datum/bodypart_aid/gauze/get_description()
 	var/desc
 	switch(absorption_capacity)
+		if(-INFINITY to 0)
+			desc = "ruined"
 		if(0 to 1.25)
 			desc = "nearly ruined"
 		if(1.25 to 2.75)
@@ -190,7 +192,7 @@
 	if(pus_stained)
 		desc += ", pus stained"
 
-	desc += "[name]"
+	desc += " [name]"
 	return desc
 
 /datum/bodypart_aid/gauze/New(obj/item/bodypart/BP)
