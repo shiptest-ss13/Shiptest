@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	icon_state = "blackcube"
 
 /obj/effect/anomaly/tvstatic/television
-	name = "cracked televison"
+	name = "cracked television"
 	//the textglob is intentional. referentional even.
 	desc = "shehasbeenn~melesssinceourbi=thaconstantadversarycaringfornothingbutmyruinasworddrenchedinmybloodfor%vermygreatestand+nlylovesheisthedarkoLetheenemyandloverwithoutwhoZmyveryexistencewouldbepatheticandvulgar"
 	immortal = TRUE
