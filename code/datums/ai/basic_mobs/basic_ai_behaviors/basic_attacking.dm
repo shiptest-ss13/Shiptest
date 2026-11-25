@@ -139,7 +139,10 @@
 	var/datum/component/ranged_attacks/ranged_attack = basic_mob.GetComponent(/datum/component/ranged_attacks)
 	var/friendly_fire_tolerance = ai_friendly_fire_tolerance(controller)
 	var/mob/living/in_the_way = get_friendly_in_the_way(basic_mob, target, targetting_datum, ranged_attack, friendly_fire_tolerance)
-	if(in_the_way)
+	var/ally_beside_target = in_the_way && ai_ally_beside_target(in_the_way, target)
+	if(ally_beside_target)
+		controller.clear_blackboard_key(BB_BASIC_MOB_ALLY_IN_LANE_SINCE)
+	else if(in_the_way)
 		// track how long, so cover and flank can react if it goes on
 		if(isnull(controller.blackboard[BB_BASIC_MOB_ALLY_IN_LANE_SINCE]))
 			controller.set_blackboard_key(BB_BASIC_MOB_ALLY_IN_LANE_SINCE, world.time)
@@ -232,13 +235,16 @@
 	if(LAZYLEN(living_pawn.do_afters))
 		return // mid-climb, or anything else that moving would cancel
 	var/turf/our_turf = get_turf(living_pawn)
+	var/datum/ai_controller/controller = living_pawn.ai_controller
+	if(controller?.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF] == our_turf)
+		return
 	var/list/possible_turfs = list()
 
 	for(var/direction in GLOB.alldirs)
 		var/turf/target_turf = get_step(our_turf, direction)
 		if(isnull(target_turf))
 			continue
-		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf, living_pawn) || ai_diagonal_crosses_hazard(our_turf, target_turf, living_pawn) || get_dist(target_turf, target) > get_dist(living_pawn, target))
+		if(target_turf.is_blocked_turf() || !ai_can_step_to(living_pawn, our_turf, target_turf) || get_dist(target_turf, target) > get_dist(living_pawn, target))
 			continue
 		if(get_friendly_in_the_way(living_pawn, target, targetting_datum, ranged_attack, friendly_fire_tolerance, target_turf))
 			continue // no better from there
@@ -247,7 +253,7 @@
 	if(!length(possible_turfs))
 		return
 	var/turf/picked_turf = get_closest_atom(/turf, possible_turfs, target)
-	step(living_pawn, get_dir(living_pawn, picked_turf))
+	ai_step_to(living_pawn, picked_turf, controller?.get_access())
 
 /datum/ai_behavior/basic_ranged_attack/proc/calculate_trajectory(atom/source, atom/target)
 	var/list/turf_list = get_line(source, target)

@@ -48,8 +48,8 @@
 // tell an ally location of an enemy, unless they've got their own to deal with. TRUE if they're after them now
 /datum/ai_behavior/alert_allies/proc/tell_ally(datum/ai_controller/ally_controller, atom/target, turf/seen_at, target_key)
 	var/atom/their_target = ally_controller.blackboard[target_key]
-	if(!QDELETED(their_target))
-		return FALSE // already busy, or already on it
+	if(!QDELETED(their_target) && (their_target == target || ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE))
+		return FALSE // already on it, or busy with someone they can see
 	if(AI_RECENTLY_SAW_ENEMY(ally_controller, AI_FIGHT_MEMORY) || AI_RECENTLY_HURT(ally_controller, AI_FIGHT_MEMORY))
 		return FALSE // between targets in a fight of their own, so they'll find the next one themselves rather than running off to ours
 	ally_controller.learn_of_target(target, seen_at, AI_LEARNED_TOLD)

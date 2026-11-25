@@ -33,8 +33,8 @@
 	icon_state = "backpack_close"
 
 /atom/movable/screen/storage/close/Click()
-	var/datum/component/storage/S = master
-	S.close(usr)
+	var/datum/component/storage/storage = master
+	storage.player_close(usr)
 	return TRUE
 
 /atom/movable/screen/storage/left

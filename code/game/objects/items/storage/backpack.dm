@@ -43,16 +43,20 @@
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
-	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
-	STR.use_sound = 'sound/items/storage/unzip.ogg'
-	STR.worn_access = FALSE
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	storage.max_volume = STORAGE_VOLUME_BACKPACK
+	storage.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
+	storage.use_sound = 'sound/items/storage/unzip.ogg'
+	storage.open_delay = 1 SECONDS
+	storage.open_slowdown = 0.5
 
 /obj/item/storage/backpack/examine(mob/user)
 	. = ..()
 	var/datum/component/storage/bpack = GetComponent(/datum/component/storage)
+	if(bpack.open_delay && (bpack.worn_access || bpack.carry_access))
+		var/where = bpack.delay_when_held ? "wearing or holding" : "wearing"
+		. += span_notice("It takes a moment to open while you're [where] it, and slows you down while it's open.")
 	if(bpack.worn_access == FALSE)
 		. += span_notice("You won't be able to open this once it's on your back.")
 	if(bpack.carry_access == FALSE)
@@ -83,8 +87,9 @@
 
 /obj/item/storage/backpack/holding/debug/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.worn_access = TRUE
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.open_delay = 0
+	storage.open_slowdown = 0
 
 
 /obj/item/storage/backpack/cultpack
@@ -201,10 +206,11 @@
 
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_SATCHEL
-	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
-	STR.worn_access = TRUE
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_volume = STORAGE_VOLUME_SATCHEL
+	storage.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	storage.open_delay = 0
+	storage.open_slowdown = 0
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -369,12 +375,19 @@
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
 
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	equip_delay_other = EQUIP_DELAY_BACK
+	strip_delay = EQUIP_DELAY_BACK
+
 /obj/item/storage/backpack/messenger/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_SATCHEL
-	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
-	STR.worn_access = TRUE
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_volume = STORAGE_VOLUME_SATCHEL
+	storage.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	storage.open_delay = 0
+	storage.open_slowdown = 0
 
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
@@ -451,12 +464,14 @@
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_DUFFLEBAG
-	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
-	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
-	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
-	STR.carry_access = FALSE
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_volume = STORAGE_VOLUME_DUFFLEBAG
+	storage.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
+	LAZYINITLIST(storage.exception_hold) // This code allows you to fit one mob holder into a duffel bag
+	storage.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
+	storage.open_delay = 2 SECONDS
+	storage.open_slowdown = 1
+	storage.delay_when_held = TRUE
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"

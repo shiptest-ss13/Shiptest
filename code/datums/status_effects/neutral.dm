@@ -301,3 +301,9 @@
 	to_chat(owner, span_notice("You begin digging yourself free."))
 	SEND_SIGNAL(owner,COMSIG_DIGOUT)
 
+/datum/status_effect/breakfast
+	id = "breakfast"
+	duration = 15 MINUTES
+	alert_type = null
+	tick_interval = STATUS_EFFECT_NO_TICK
+	status_type = STATUS_EFFECT_REPLACE

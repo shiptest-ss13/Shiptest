@@ -7,13 +7,6 @@
 		Pistols
 */
 
-/datum/supply_pack/gun/disposable
-	name = "Disposable Guns Crate"
-	desc = "In some sectors, these disposable pistols are the only firearms that can be legally sold for less than 200cr. That price is still far too high. This crate contains two."
-	cost = 200
-	contains = list(/obj/item/storage/guncase/pistol/disposable)
-	crate_name = "disposable gun crate"
-
 /datum/supply_pack/gun/derringer
 	name = "HP Spark"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."

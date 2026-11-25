@@ -957,7 +957,7 @@
 	if(!istype(M))
 		return
 	if(method == TOUCH || method == INHALE)
-		M.adjustFireLoss(2, FALSE) // burns,
+		M.adjustFireLoss(2) // burns,
 		M.adjust_fire_stacks((reac_volume / 10))
 	..()
 
