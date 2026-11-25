@@ -141,8 +141,9 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 	use_power(6)
 
-	// nothing but the belt itself, so nothing to move
-	if(length(loc.contents) <= 1)
+	// nothing but the belt itself (and the turf's lighting object), so nothing to move
+	var/turf/our_turf = loc
+	if(!isturf(our_turf) || length(our_turf.contents) <= (our_turf.lighting_object ? 2 : 1))
 		return
 
 	//get the first 30 items in contents

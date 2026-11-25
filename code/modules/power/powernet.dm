@@ -89,7 +89,7 @@
 	netexcess = avail - load
 
 	var/is_powered = avail ? TRUE : FALSE
-	if(is_powered != was_powered || (is_powered && has_new_nodes))
+	if(is_powered != was_powered || has_new_nodes)
 		was_powered = is_powered
 		has_new_nodes = FALSE
 		for(var/obj/machinery/machine in nodes)
