@@ -51,7 +51,7 @@
 		if(!carbon_stepper.get_bodypart(BODY_ZONE_L_LEG) && !carbon_stepper.get_bodypart(BODY_ZONE_R_LEG))
 			return
 		if(carbon_stepper.m_intent == MOVE_INTENT_WALK)
-		return// stealth
+			return // stealth
 
 	steps++
 
