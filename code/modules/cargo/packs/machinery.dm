@@ -172,52 +172,13 @@
 	no_bundle = TRUE
 
 /*
-		Bots
-*/
-
-/datum/supply_pack/machinery/mule
-	name = "MULEbot Crate"
-	desc = "A dilligent MULEbot from the N+S Factories, happy to carry everything you could possibly need, if it's a crate that is." //this description screamed TG. It has been changed.
-	cost = 2000
-	contains = list(/mob/living/simple_animal/bot/mulebot)
-	crate_name = "\improper MULEbot Crate"
-	crate_type = /obj/structure/closet/crate/large
-	no_bundle = TRUE
-
-/datum/supply_pack/machinery/robotics
-	name = "Robotics Assembly Crate"
-	desc = "The tools you need to replace those finicky humans with a loyal robot army! Contains four proximity sensors, four robotic arms, two empty first aid kits, two health analyzers, two red hardhats, two mechanical toolboxes, and two cleanbot assemblies!"
-	cost = 2500 // maybe underpriced ? unsure
-	contains = list(/obj/item/assembly/prox_sensor,
-					/obj/item/assembly/prox_sensor,
-					/obj/item/assembly/prox_sensor,
-					/obj/item/assembly/prox_sensor,
-					/obj/item/bodypart/r_arm/robot/surplus,
-					/obj/item/bodypart/r_arm/robot/surplus,
-					/obj/item/bodypart/r_arm/robot/surplus,
-					/obj/item/bodypart/r_arm/robot/surplus,
-					/obj/item/storage/firstaid,
-					/obj/item/storage/firstaid,
-					/obj/item/healthanalyzer,
-					/obj/item/healthanalyzer,
-					/obj/item/clothing/head/hardhat/red,
-					/obj/item/clothing/head/hardhat/red,
-					/obj/item/storage/toolbox/mechanical,
-					/obj/item/storage/toolbox/mechanical,
-					/obj/item/bot_assembly/cleanbot,
-					/obj/item/bot_assembly/cleanbot)
-	crate_name = "robotics assembly crate"
-	crate_type = /obj/structure/closet/crate/science
-	no_bundle = TRUE
-
-/*
 		Miscellaneous machines
 */
 
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
 	desc = "An experimental laser-based mining drill that Makoso-Warra is kindly allowing YOU, the customer, to opt into testing of."
-	cost = 1000 //Only while TMed, jack up the price before merging
+	cost = 1000 //Only while TMed, jack up the price before merging // or not
 	contains = list(
 		/obj/machinery/drill,
 		/obj/item/pinpointer/mineral,

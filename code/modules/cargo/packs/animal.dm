@@ -7,15 +7,6 @@
 		Vaguely useful animals
 */
 
-/datum/supply_pack/animal/monkey
-	name = "Monkey Cube Crate"
-	desc = "Stop monkeying around! Contains seven monkey cubes. Just add water!"
-	cost = 1500
-	contains = list (/obj/item/storage/box/monkeycubes)
-	crate_name = "monkey cube crate"
-	crate_type = /obj/structure/closet/crate
-	no_bundle = FALSE
-
 /datum/supply_pack/animal/chick
 	name = "Chicken Crate"
 	desc = "A crate containing a chicken."
@@ -81,14 +72,6 @@
 			qdel(D)
 			new /mob/living/simple_animal/pet/dog/corgi/Lisa(.)
 
-/datum/supply_pack/animal/corgis/exotic
-	name = "Exotic Corgi Crate"
-	desc = "Corgis fit for a king, these corgis come in a unique color to signify their superiority. Comes with a cute collar!"
-	cost = 1500
-	contains = list(/mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
-					/obj/item/clothing/neck/petcollar)
-	crate_name = "exotic corgi crate"
-
 /*
 		Exotic pets
 */
@@ -122,23 +105,7 @@
 
 /datum/supply_pack/animal/snake
 	name = "Snake Crate"
-	desc = "Contains a poisonous snake. N+S Logistics are not responsible for any venomous injuries you may sustain."
+	desc = "Contains a snake. N+S Logistics are not responsible for any bites you may sustain."
 	cost = 1000
 	contains = list(/mob/living/simple_animal/hostile/retaliate/poison/snake)
 	crate_name = "snake crate"
-
-/*
-		Insane
-*/
-
-/datum/supply_pack/animal/crab
-	name = "Crab Rocket"
-	desc = "CRAAAAAAB ROCKET. CRAB ROCKET. CRAB ROCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROCKET. CRAFT. ROCKET. BUY. CRAFT ROCKET. CRAB ROOOCKET. CRAB ROOOOCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROOOOOOOOOOOOOOOOOOOOOOCK EEEEEEEEEEEEEEEEEEEEEEEEE EEEETTTTTTTTTTTTAAAAAAAAA AAAHHHHHHHHHHHHH. CRAB ROCKET. CRAAAB ROCKEEEEEEEEEGGGGHHHHTT CRAB CRAB CRAABROCKET CRAB ROCKEEEET."//fun fact: i actually spent like 10 minutes and transcribed the entire video.
-	cost = 10000
-	contains = list(/mob/living/simple_animal/crab)
-	crate_name = "look sir free crabs"
-
-/datum/supply_pack/animal/crab/generate()
-	. = ..()
-	for(var/i in 1 to 49)
-		new /mob/living/simple_animal/crab(.)

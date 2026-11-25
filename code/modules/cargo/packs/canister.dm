@@ -55,10 +55,3 @@
 	cost = 2500
 	contains = list(/obj/machinery/portable_atmospherics/canister/water_vapor)
 	crate_name = "water vapor canister crate"
-
-/datum/supply_pack/canister/bz
-	name = "BZ Canister"
-	desc = "Contains a canister of BZ."
-	cost = 8000
-	contains = list(/obj/machinery/portable_atmospherics/canister/bz)
-	crate_name = "\improper BZ canister crate"

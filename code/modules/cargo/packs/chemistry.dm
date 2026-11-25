@@ -38,7 +38,7 @@
 /datum/supply_pack/chemistry/tools
 	name = "Chemical Synthesis Crate"
 	desc = "Contains all the tools you will need for drug making."
-	cost = 750
+	cost = 300 // everything here is autolathe junk except the book and the science goggles
 	contains = list(/obj/item/reagent_containers/glass/filter,
 					/obj/item/book/manual/wiki/chemistry,
 					/obj/item/clothing/glasses/science,
