@@ -53,7 +53,7 @@
 
 /obj/item/clothing/head/fedora/det_hat/Initialize()
 	. = ..()
-	new /obj/item/reagent_containers/food/drinks/flask/det(src)
+	new /obj/item/reagent_containers/food/drinks/flask/det(pocket || src)
 
 /obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
 	. = ..()

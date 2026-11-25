@@ -379,14 +379,6 @@
 /obj/structure/window/get_dumping_location(obj/item/storage/source,mob/user)
 	return null
 
-/obj/structure/window/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
-	if(!density)
-		return TRUE
-	if(fulltile || (dir == to_dir))
-		return FALSE
-
-	return 1
-
 /obj/structure/window/GetExplosionBlock()
 	return reinf && fulltile ? real_explosion_block : 0
 

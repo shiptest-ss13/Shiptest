@@ -10,6 +10,7 @@ click on it or use it inhand to make a noise, click-drag to bring to inventory, 
 	icon_state = "table-bell"
 	w_class = WEIGHT_CLASS_TINY
 	var/bell_sound = 'sound/items/ding.ogg'
+	var/movable = TRUE
 
 /obj/item/table_bell/Initialize(mapload)
 	. = ..()
@@ -31,7 +32,7 @@ click on it or use it inhand to make a noise, click-drag to bring to inventory, 
 /obj/item/table_bell/MouseDrop(atom/over_object)
 	. = ..()
 	var/mob/living/M = usr
-	if(!istype(M) || M.incapacitated() || !Adjacent(M))
+	if(!istype(M) || M.incapacitated() || !Adjacent(M) || !movable)
 		return
 
 	if(over_object == M)
@@ -47,3 +48,18 @@ click on it or use it inhand to make a noise, click-drag to bring to inventory, 
 	name = "ornate table bell"
 	desc = "A small bell with intricate engravings and four clawed legs."
 	icon_state = "table-bell-brass"
+
+/obj/item/table_bell/wall
+	name = "buzzer"
+	desc = "A small buzzer used to get people's attention."
+	icon = 'icons/obj/wallmounts/buttons.dmi'
+	icon_state = "buzzer"
+	w_class = WEIGHT_CLASS_NORMAL
+	bell_sound = 'sound/machines/chime.ogg'
+	movable = FALSE
+	anchored = TRUE
+
+/obj/item/table_bell/wall/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
+

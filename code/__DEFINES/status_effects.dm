@@ -157,6 +157,8 @@
 #define STATUS_EFFECT_OFFERING /datum/status_effect/offering // you are offering up an item to people
 
 #define STATUS_EFFECT_SURRENDER /datum/status_effect/surrender // gives an alert to quickly surrender
+
+#define STATUS_EFFECT_BREAKFAST /datum/status_effect/breakfast // you recently woke up and are eligible for the breakfast moodlet
 /////////////
 //  SLIME  //
 /////////////

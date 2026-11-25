@@ -4,6 +4,7 @@
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	base_icon_state = "survey"
 	icon_state = "survey"
+	w_class = WEIGHT_CLASS_SMALL
 	//all of these vars are assigned by the mission that creates us.
 	///how many scans does this handheld want?
 	var/scans_required

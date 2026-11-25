@@ -8,8 +8,7 @@
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
 	pocket_storage_component_path = FALSE
 
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -64,9 +63,7 @@
 			H.regenerate_icons()
 		else
 			hood.forceMove(src)
-		for(var/X in actions)
-			var/datum/action/A = X
-			A.UpdateButtonIcon()
+		update_item_action_buttons()
 
 /obj/item/clothing/suit/hooded/update_appearance(updates)
 	if(suittoggled)
@@ -94,9 +91,7 @@
 				H.update_inv_wear_suit()
 				update_appearance()
 				H.regenerate_icons()
-				for(var/X in actions)
-					var/datum/action/A = X
-					A.UpdateButtonIcon()
+				update_item_action_buttons()
 	else
 		remove_hood()
 
@@ -124,8 +119,8 @@
 /obj/item/clothing/suit/toggle
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_NAME | UNIQUE_RESKIN_CHANGES_BASE_ICON
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -133,6 +128,8 @@
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
+
+	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/ComponentInitialize()
 	. = ..()
@@ -152,27 +149,29 @@
 	suit_toggle(user)
 	return TRUE
 
-/obj/item/clothing/suit/toggle/ui_action_click()
-	suit_toggle()
+/obj/item/clothing/suit/toggle/ui_action_click(mob/user, actiontype)
+	suit_toggle(user)
 
-/obj/item/clothing/suit/toggle/proc/suit_toggle()
+/obj/item/clothing/suit/toggle/verb/toggle_suit()
+	set name = "Toggle Suit"
+	set category = "Object"
 	set src in usr
+	suit_toggle(usr)
 
-	if(!can_use(usr))
-		return 0
+/obj/item/clothing/suit/toggle/proc/suit_toggle(mob/user)
+	if(!can_use(user))
+		return FALSE
 
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
-	if(src.suittoggled)
-		src.icon_state = "[initial(icon_state)]"
-		src.suittoggled = FALSE
-	else if(!src.suittoggled)
-		src.icon_state = "[initial(icon_state)]_t"
-		src.suittoggled = TRUE
+	to_chat(user, span_notice("You toggle [src]'s [togglename]."))
+	if(suittoggled)
+		icon_state = "[base_icon_state]"
+		suittoggled = FALSE
+	else if(!suittoggled)
+		icon_state = "[base_icon_state]_t"
+		suittoggled = TRUE
 	update_appearance()
-	usr.update_inv_wear_suit()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	user.update_inv_wear_suit()
+	update_item_action_buttons()
 
 /obj/item/clothing/suit/toggle/examine(mob/user)
 	. = ..()

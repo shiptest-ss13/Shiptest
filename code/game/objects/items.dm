@@ -232,11 +232,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/current_skin
 	/// List of options to reskin.
 	var/list/unique_reskin
-	/// If reskins change base icon state as well
-	var/unique_reskin_changes_base_icon_state = FALSE
-	/// If reskins change inhands as well
-	var/unique_reskin_changes_inhand = FALSE
-	var/unique_reskin_changes_name = FALSE
+	/// flags used to tell unique reskin what might need to be changed during a reskin
+	var/unique_reskin_flags = null
 
 	bad_type = /obj/item
 
@@ -626,12 +623,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/equipped(mob/user, slot, initial = FALSE)
 	SHOULD_CALL_PARENT(1)
 	visual_equipped(user, slot, initial)
-	for(var/X in actions)
-		var/datum/action/A = X
-		if(item_action_slot_check(slot, user)) //some items only give their actions buttons when in a specific slot.
-			A.Grant(user)
+	for(var/datum/action/action as anything in actions)
+		if(item_action_slot_check(slot, user, action))
+			action.Grant(user)
 	item_flags |= IN_INVENTORY
 	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
+	SEND_SIGNAL(user, COMSIG_MOB_EQUIPPED_ITEM, src, slot)
 	if(!initial)
 		if(equip_sound && (slot_flags & slot))
 			playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
@@ -1166,6 +1163,18 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		jostle_pain_mult = (!isnull(embedding["jostle_pain_mult"]) ? embedding["jostle_pain_mult"] : EMBEDDED_JOSTLE_PAIN_MULTIPLIER),\
 		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT))
 	return TRUE
+
+/**
+ * Updates all action buttons associated with this item
+ *
+ * Arguments:
+ * * status_only - Update only current availability status of the buttons to show if they are ready or not to use
+ * * force - Force buttons update even if the given button icon state has not changed
+ */
+/obj/item/proc/update_item_action_buttons(status_only = FALSE, force = FALSE)
+	for(var/datum/action/current_action as anything in actions)
+		current_action.UpdateButtonIcon(status_only, force)
+
 
 // Update icons if this is being carried by a mob
 /obj/item/wash(clean_types)

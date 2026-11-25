@@ -108,6 +108,17 @@
 	display_name = "utility cover, navy"
 	path = /obj/item/clothing/head/soft/utility_navy
 
+/datum/gear/hat/range_steppe
+	display_name = "range cap, steppe"
+	path = /obj/item/clothing/head/range
+
+/datum/gear/hat/range_tundra
+	display_name = "range cap, tundra"
+	path = /obj/item/clothing/head/range/tundra
+
+/datum/gear/hat/range_coyote
+	display_name = "range cap, coyote"
+	path = /obj/item/clothing/head/range/coyote
 
 //Beanies
 

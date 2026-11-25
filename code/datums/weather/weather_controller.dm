@@ -26,6 +26,9 @@
 		if(!possible_weathers_cache[type])
 			possible_weathers_cache[type] = possible_weathers
 		possible_weathers = possible_weathers_cache[type]
+	// Replace any controller made earlier, or it's orphaned
+	if(passed_mapzone.weather_controller)
+		qdel(passed_mapzone.weather_controller)
 	mapzone = passed_mapzone
 	mapzone.weather_controller = src
 	SSweather.weather_controllers += src
@@ -55,6 +58,14 @@
 	if(possible_weathers && world.time > next_weather)
 		run_weather(next_weather_type)
 		roll_next_weather()
+
+// weather is in main stage and affects mobs
+/datum/weather_controller/proc/has_acting_weather()
+	for(var/weather_type in current_weathers)
+		var/datum/weather/active_weather = current_weathers[weather_type]
+		if(!active_weather.aesthetic && active_weather.stage == MAIN_STAGE)
+			return TRUE
+	return FALSE
 
 /datum/weather_controller/proc/roll_next_weather()
 	if(!possible_weathers)

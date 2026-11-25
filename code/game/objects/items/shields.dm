@@ -87,6 +87,9 @@
 	if(transparent && (hitby.pass_flags & PASSGLASS))
 		return FALSE
 
+	if(damage <= 0)
+		return FALSE
+
 	var/shield_worn = (owner.back == src)
 
 	switch(abs(dir2angle(hitby.dir) - dir2angle(owner.dir)))

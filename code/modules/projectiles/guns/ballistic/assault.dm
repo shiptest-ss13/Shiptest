@@ -63,7 +63,7 @@
 		"Polymer" = "fa2_polymer",
 		"Bright" = "fa2_bright",
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND
 
 	//truly a doohickey for every occasion
 	unique_attachments = list (

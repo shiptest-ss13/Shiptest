@@ -89,19 +89,22 @@
 		else
 			return ..()
 
+/obj/machinery/processor/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(processing || user.a_intent != INTENT_GRAB || !ismob(pulled) || !select_recipe(pulled))
+		return FALSE
+	if(user.grab_state < GRAB_AGGRESSIVE)
+		to_chat(user, span_warning("You need a better grip to do that!"))
+		return TRUE
+	var/mob/living/pushed_mob = pulled
+	visible_message(span_warning("[user] stuffs [pushed_mob] into [src]!"))
+	pushed_mob.forceMove(src)
+	user.stop_pulling()
+	return TRUE
+
 /obj/machinery/processor/interact(mob/user)
 	if(processing)
 		to_chat(user, span_warning("[src] is in the process of processing!"))
 		return TRUE
-	if(user.a_intent == INTENT_GRAB && ismob(user.pulling) && select_recipe(user.pulling))
-		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!"))
-			return
-		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[user] stuffs [pushed_mob] into [src]!"))
-		pushed_mob.forceMove(src)
-		user.stop_pulling()
-		return
 	if(contents.len == 0)
 		to_chat(user, span_warning("[src] is empty!"))
 		return TRUE

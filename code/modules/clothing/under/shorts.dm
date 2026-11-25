@@ -15,8 +15,6 @@
 						"purple athletic shorts" = "purpleshorts",
 						"pink athletic shorts" = "pinkshorts",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/under/shorts/red
 	name = "red athletic shorts"
@@ -50,6 +48,7 @@
 	name = "grilling shorts"
 	desc = "For when all you want in life is to grill for god's sake!"
 	icon_state = "greyshorts"
+	unique_reskin = null
 
 /obj/item/clothing/under/shorts/jorts
 	name = "jorts"
@@ -77,12 +76,11 @@
 	desc = "Short shorts made for blistering hot days and athletic use."
 	icon_state = "compshorts"
 	supports_variations = DIGITIGRADE_VARIATION
-	unique_reskin = null
 	unique_reskin = list("black compression shorts" = "compshorts",
 						"red compression shorts" = "compshortsred",
 						"brown compression shorts" = "compshortsbrown",
 						"blue compression shorts" = "compshortsblue",
-							)
+						)
 
 /obj/item/clothing/under/shorts/explorer
 	name = "explorer shorts"
@@ -103,71 +101,73 @@
 						"brown short skirt" = "shortskirtbrown",
 						"pink short skirt" = "shortskirtpink",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/under/shorts/skirt/white
-	name = "selago short skirt"
+	current_skin = "selago short skirt"
 	icon_state = "shortskirtwhite"
 
 /obj/item/clothing/under/shorts/skirt/burgundy
-	name = "burgundy short skirt"
+	current_skin = "burgundy short skirt"
 	icon_state = "shortskirtred"
 
 /obj/item/clothing/under/shorts/skirt/navy
-	name = "navy short skirt"
+	current_skin = "navy short skirt"
 	icon_state = "shortskirtnavy"
 
 /obj/item/clothing/under/shorts/skirt/tan
-	name = "tan short skirt"
+	current_skin = "tan short skirt"
 	icon_state = "shortskirttan"
 
 /obj/item/clothing/under/shorts/skirt/brown
-	name = "brown short skirt"
+	current_skin = "brown short skirt"
 	icon_state = "shortskirtbrown"
 
 /obj/item/clothing/under/shorts/skirt/pink
-	name = "pink short skirt"
+	current_skin = "pink short skirt"
 	icon_state = "shortskirtpink"
 
 /obj/item/clothing/under/shorts/miniskirt
 	name = "mini skirt"
 	desc = "the shortest skirt."
 	icon_state = "miniskirt"
-	unique_reskin = list("black miniskirt" = "miniskirt",
-						"selago miniskirt" = "miniskirtwhite",
-						"burgundy miniskirt" = "miniskirtred",
-						"navy miniskirt" = "miniskirtnavy",
-						"tan miniskirt" = "miniskirttan",
-						"brown miniskirt" = "miniskirtbrown",
-						"pink miniskirt" = "miniskirtpink",
+	unique_reskin = list("black mini skirt" = "miniskirt",
+						"selago mini skirt" = "miniskirtwhite",
+						"burgundy mini skirt" = "miniskirtred",
+						"navy mini skirt" = "miniskirtnavy",
+						"tan mini skirt" = "miniskirttan",
+						"brown mini skirt" = "miniskirtbrown",
+						"pink mini skirt" = "miniskirtpink",
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/under/shorts/miniskirt/white
 	name = "selago mini skirt"
 	icon_state = "miniskirtwhite"
+	current_skin = "selago mini skirt"
 
 /obj/item/clothing/under/shorts/miniskirt/burgundy
 	name = "burgundy mini skirt"
 	icon_state = "miniskirtred"
+	current_skin = "burgundy mini skirt"
 
 /obj/item/clothing/under/shorts/miniskirt/navy
 	name = "navy mini skirt"
 	icon_state = "miniskirtnavy"
+	current_skin = "navy mini skirt"
 
 /obj/item/clothing/under/shorts/miniskirt/tan
 	name = "tan mini skirt"
 	icon_state = "miniskirttan"
+	current_skin = "tan mini skirt"
 
 /obj/item/clothing/under/shorts/miniskirt/brown
 	name = "brown mini skirt"
 	icon_state = "miniskirtbrown"
+	current_skin = "brown mini skirt"
 
 /obj/item/clothing/under/shorts/miniskirt/pink
 	name = "pink mini skirt"
 	icon_state = "miniskirtpink"
+	current_skin = "pink mini skirt"
 
 /obj/item/clothing/under/shorts/pencilskirt
 	name = "pencil skirt"
@@ -181,33 +181,37 @@
 						"tan pencil skirt" = "pencilskirttan",
 						"brown pencil skirt" = "pencilskirtbrown",
 						"olive pencil skirt" = "pencilskirtolive",
-							)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
+						)
 
 /obj/item/clothing/under/shorts/pencilskirt/red
 	name = "burgundy pencil skirt"
 	icon_state = "pencilskirtred"
+	current_skin = "burgundy pencil skirt"
 
 /obj/item/clothing/under/shorts/pencilskirt/white
 	name = "white pencil skirt"
 	icon_state = "pencilskirtwhite"
+	current_skin = "white pencil skirt"
 
 /obj/item/clothing/under/shorts/pencilskirt/navy
 	name = "navy pencil skirt"
 	icon_state = "pencilskirtnavy"
+	current_skin = "white pencil skirt"
 
 /obj/item/clothing/under/shorts/pencilskirt/tan
 	name = "tan pencil skirt"
 	icon_state = "pencilskirttan"
+	current_skin = "white pencil skirt"
 
 /obj/item/clothing/under/shorts/pencilskirt/brown
 	name = "brown pencil skirt"
 	icon_state = "pencilskirtbrown"
+	current_skin = "white pencil skirt"
 
 /obj/item/clothing/under/shorts/pencilskirt/olive
 	name = "olive pencil skirt"
 	icon_state = "pencilskirtolive"
+	current_skin = "white pencil skirt"
 
 /obj/item/clothing/under/shorts/cargo
 	name = "cargo shorts"
@@ -222,6 +226,44 @@
 						"navy cargo pants" = "shortcargonavy",
 						"camo cargo pants" = "shortcargocamo"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/shorts/cargo/grey
+	name = "grey cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "grey cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/black
+	name = "black cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "black cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/khaki
+	name = "khaki cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "khaki cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/jean
+	name = "jean cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "jean cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/olive
+	name = "olive cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "olive cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/brown
+	name = "brown cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "brown cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/navy
+	name = "navy cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "navy cargo shorts"
+
+/obj/item/clothing/under/shorts/cargo/camo
+	name = "camo cargo shorts"
+	icon_state = "shortcargogrey"
+	current_skin = "camo cargo shorts"

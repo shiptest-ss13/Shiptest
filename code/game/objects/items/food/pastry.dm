@@ -215,7 +215,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("bread" = 1, "egg" = 1, "cheese" = 1)
-	foodtypes = GRAIN | MEAT | DAIRY
+	foodtypes = GRAIN | EGG | DAIRY
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cherrycupcake

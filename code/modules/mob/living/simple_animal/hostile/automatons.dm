@@ -225,7 +225,7 @@
 	health = 250
 	maxHealth = 250
 	armor = list("melee" = 10, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
-	move_to_delay = 20
+	move_to_delay = 9
 	speed = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'

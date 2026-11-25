@@ -393,4 +393,4 @@
 		/datum/reagent/consumable/dote_juice = 4,
 		/datum/reagent/consumable/sugar = 2,
 	)
-	foodtypes = MEAT | DAIRY | SUGAR
+	foodtypes = DAIRY | SUGAR | EGG
