@@ -17,6 +17,8 @@
 	var/investigate_distance = 3
 	//what we fire at where they were with AI_SEARCH_STYLE_SUPPRESS
 	var/datum/ai_behavior/fire_at_position/suppress_behavior = /datum/ai_behavior/fire_at_position
+	//how long after we last saw them we keep firing where they were
+	var/suppress_time = 20 SECONDS
 	//how many more spots we check around where we heard someone, after the first
 	var/sweep_spots = 3
 	//how far out we look around where we last saw them, once we're there and they're not
@@ -68,7 +70,9 @@
 			if(overwatch(controller))
 				return SUBTREE_RETURN_FINISH_PLANNING
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
-			controller.queue_behavior(suppress_behavior, BB_BASIC_MOB_LAST_KNOWN_TURF)
+			var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])
+			if(isnull(last_saw_them) || world.time - last_saw_them < suppress_time)
+				controller.queue_behavior(suppress_behavior, BB_BASIC_MOB_LAST_KNOWN_TURF)
 	return SUBTREE_RETURN_FINISH_PLANNING // searching, so don't go after them blind
 
 // to where we last saw them, or watching it if there's no way there
@@ -240,12 +244,12 @@
 // whether going after them, or moving up behind whoever has, would be asking for it
 /datum/ai_planning_subtree/search_lost_target/proc/too_risky_to_go(datum/ai_controller/controller)
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))
-		return TRUE
+		return TRUE // an ally just died nearby, so don't walk into whatever got them
 	if(world.time < controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
-		return TRUE
+		return TRUE // they're dug in behind cover we can't match, so don't walk back into their line of fire
 	var/mob/living/living_pawn = controller.pawn
 	if(cautious_health_fraction && living_pawn.health < living_pawn.maxHealth * cautious_health_fraction)
-		return TRUE
+		return TRUE // too hurt to go chasing them
 	return FALSE
 
 /datum/ai_planning_subtree/search_lost_target/proc/ally_already_searching(datum/ai_controller/controller)
