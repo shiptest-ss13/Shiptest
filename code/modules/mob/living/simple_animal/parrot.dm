@@ -563,7 +563,7 @@
 		if(!parrot_interest || !isliving(parrot_interest)) //Sanity
 			parrot_state = PARROT_WANDER
 
-		walk_away(src, parrot_interest, 1, parrot_speed)
+		GLOB.move_manager.move_away(src, parrot_interest, 1, parrot_speed)
 		if(isStuck())
 			return
 

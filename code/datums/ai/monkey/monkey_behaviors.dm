@@ -110,7 +110,7 @@
 			break
 
 	if(target)
-		walk_away(living_pawn, target, MONKEY_ENEMY_VISION, 5)
+		GLOB.move_manager.move_away(living_pawn, target, MONKEY_ENEMY_VISION, 5)
 	else
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
