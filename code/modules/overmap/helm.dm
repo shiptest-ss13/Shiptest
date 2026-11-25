@@ -179,6 +179,9 @@
 	if(isliving(user) && !viewer && check_keylock())
 		return
 
+	if(!current_ship.is_player_ship && istype(user) && Adjacent(user) && !viewer)
+		current_ship.is_player_ship = TRUE
+
 	if(!current_ship.shipkey && istype(user) && Adjacent(user) && !viewer)
 		say("Generated new shipkey, do not lose it!")
 		var/key = new /obj/item/key/ship(get_turf(src), current_ship)

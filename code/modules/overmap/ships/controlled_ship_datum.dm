@@ -24,6 +24,8 @@
 	///Whether objects on the ship require an ID with ship access granted
 	var/unique_ship_access = FALSE
 
+	/// Has this ship been used or spawned by a player? Used to prevent ships that players have used from despawning.
+	var/is_player_ship = FALSE
 	/// The shipkey for this ship
 	var/obj/item/key/ship/shipkey
 	/// All helms connected to this ship
