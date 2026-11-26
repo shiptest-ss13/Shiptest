@@ -188,6 +188,7 @@
 		overlay = mutable_appearance(icon_file, "[accessory_state]")
 	overlay.alpha = accessory.alpha
 	overlay.color = accessory.color
+
 	return overlay
 
 /obj/item/clothing/under/proc/remove_accessory(mob/user)
