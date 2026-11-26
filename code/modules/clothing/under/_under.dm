@@ -158,7 +158,7 @@
 
 			return TRUE
 
-/obj/item/clothing/under/proc/build_accessory_overlay(mob/living/carbon/human/H) // Accessory overlay building moved
+/obj/item/clothing/under/proc/build_accessory_overlay(mob/living/carbon/human/H)
 	if(!attached_accessory)
 		return
 	var/obj/item/clothing/accessory/accessory = attached_accessory
