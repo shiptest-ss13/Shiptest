@@ -27,6 +27,11 @@
 	juice_results = list(/datum/reagent/consumable/berryjuice = 0)
 	tastes = list("berry" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/gin
+	var/examine_more_string = "safe and delicious!"
+
+/obj/item/food/grown/berries/examine_more(mob/user)
+	. = ..()
+	. += span_info("\The [src] looks [examine_more_string]")
 
 // Poison Berries
 /obj/item/seeds/berry/poison
@@ -52,6 +57,7 @@
 	tastes = list("poison-berry" = 1)
 	distill_reagent = null
 	wine_power = 35
+	examine_more_string = "a bit off."
 
 // Death Berries
 /obj/item/seeds/berry/death
@@ -80,6 +86,7 @@
 	distill_reagent = null
 	wine_power = 70
 	wine_flavor = "something breathtaking" //WS edit: new wine flavors
+	examine_more_string = "dangerous!"
 
 // Glow Berries
 /obj/item/seeds/berry/glow
