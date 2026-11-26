@@ -25,7 +25,7 @@
 		return
 
 	var/A = input(user, "", "Pinpoint") as null|anything in sortList(beacons)
-	if(!A || QDELETED(src) || !user || !user.is_holding(src) || user.incapacitated())
+	if(!A || QDELETED(src) || !user || !user.is_holding(src) || user.is_incapacitated())
 		return
 
 	target = beacons[A]

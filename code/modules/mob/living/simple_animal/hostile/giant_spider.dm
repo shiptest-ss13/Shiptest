@@ -420,7 +420,7 @@
 /obj/effect/proc_holder/wrap/InterceptClickOn(mob/living/clicker, params, atom/target)
 	if(..())
 		return
-	if(ranged_ability_user.incapacitated() || !istype(ranged_ability_user, /mob/living/simple_animal/hostile/poison/giant_spider/nurse))
+	if(ranged_ability_user.is_incapacitated() || !istype(ranged_ability_user, /mob/living/simple_animal/hostile/poison/giant_spider/nurse))
 		remove_ranged_ability()
 		return
 

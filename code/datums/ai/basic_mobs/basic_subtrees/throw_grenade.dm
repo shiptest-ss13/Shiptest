@@ -31,7 +31,7 @@
 	if(!controller.blackboard[BB_BASIC_MOB_GRENADES_LEFT] || (!throw_spot && world.time < controller.blackboard[BB_BASIC_MOB_NEXT_GRENADE]))
 		return // none left, or we've only just thrown one, which is most of us most of the time, so this is first
 	var/mob/living/basic/basic_mob = controller.pawn
-	if(AI_MORALE_IS(controller, AI_MORALE_BROKEN) || basic_mob.incapacitated() || HAS_TRAIT(basic_mob, TRAIT_FLOORED) || LAZYLEN(basic_mob.do_afters))
+	if(AI_MORALE_IS(controller, AI_MORALE_BROKEN) || basic_mob.is_incapacitated() || HAS_TRAIT(basic_mob, TRAIT_FLOORED) || LAZYLEN(basic_mob.do_afters))
 		give_up_throw_spot(controller) // too busy running, or can't
 		return
 	var/turf/target_turf = pick_aim(controller, committed = !!throw_spot)
@@ -367,7 +367,7 @@
 /datum/ai_behavior/throw_grenade/perform(seconds_per_tick, datum/ai_controller/controller, aim_key)
 	var/mob/living/basic/basic_mob = controller.pawn
 	var/turf/aim = controller.blackboard[aim_key]
-	if(!isturf(aim) || basic_mob.stat != CONSCIOUS || basic_mob.incapacitated() || HAS_TRAIT(basic_mob, TRAIT_FLOORED))
+	if(!isturf(aim) || basic_mob.stat != CONSCIOUS || basic_mob.is_incapacitated() || HAS_TRAIT(basic_mob, TRAIT_FLOORED))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED // put down mid-throw, so finish_action() drops whatever we're holding
 	var/obj/item/grenade/grenade = controller.blackboard[BB_BASIC_MOB_HELD_GRENADE]
 	if(!grenade)

@@ -32,7 +32,7 @@ click on it or use it inhand to make a noise, click-drag to bring to inventory, 
 /obj/item/table_bell/MouseDrop(atom/over_object)
 	. = ..()
 	var/mob/living/M = usr
-	if(!istype(M) || M.incapacitated() || !Adjacent(M) || !movable)
+	if(!istype(M) || M.is_incapacitated() || !Adjacent(M) || !movable)
 		return
 
 	if(over_object == M)

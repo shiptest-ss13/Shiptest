@@ -21,7 +21,7 @@
 	if(!delta)
 		return
 
-	if(incapacitated(ignore_grab=TRUE))
+	if(is_incapacitated(ignore_grab=TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return
 
@@ -48,7 +48,7 @@
 /mob/living/verb/shift_layer_reset()
 	set name = "Layershift Reset"
 	set category = "IC"
-	if(incapacitated(ignore_grab=TRUE))
+	if(is_incapacitated(ignore_grab=TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return
 	layer = initial(layer)

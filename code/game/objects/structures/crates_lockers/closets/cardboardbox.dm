@@ -28,7 +28,7 @@
 		return TRUE
 
 /obj/structure/closet/cardboard/relaymove(mob/living/user, direction)
-	if(opened || move_delay || user.incapacitated() || !isturf(loc) || !has_gravity(loc))
+	if(opened || move_delay || user.is_incapacitated() || !isturf(loc) || !has_gravity(loc))
 		return
 	move_delay = TRUE
 	var/oldloc = loc
@@ -64,7 +64,7 @@
 		egged = world.time + SNAKE_SPAM_TICKS
 		for(var/mob/living/L in alerted)
 			if(!L.stat)
-				if(!L.incapacitated(ignore_restraints = 1))
+				if(!L.is_incapacitated(ignore_restraints = 1))
 					L.face_atom(src)
 				L.do_alert_animation()
 		playsound(loc, 'sound/machines/chime.ogg', 50, FALSE, -5)

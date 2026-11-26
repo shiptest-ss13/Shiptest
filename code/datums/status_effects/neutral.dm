@@ -202,7 +202,7 @@
 		give_alert_type = give_alert_override
 
 	for(var/mob/living/carbon/possible_taker in orange(1, owner))
-		if(!owner.CanReach(possible_taker) || possible_taker.incapacitated() || !possible_taker.can_hold_items())
+		if(!owner.CanReach(possible_taker) || possible_taker.is_incapacitated() || !possible_taker.can_hold_items())
 			continue
 		register_candidate(possible_taker)
 
@@ -241,7 +241,7 @@
 /// One of our possible takers moved, see if they left us hanging
 /datum/status_effect/offering/proc/check_taker_in_range(mob/living/carbon/taker)
 	SIGNAL_HANDLER
-	if(owner.CanReach(taker) && !taker.incapacitated())
+	if(owner.CanReach(taker) && !taker.is_incapacitated())
 		return
 
 	remove_candidate(taker)
@@ -252,7 +252,7 @@
 
 	for(var/i in possible_takers)
 		var/mob/living/carbon/checking_taker = i
-		if(!istype(checking_taker) || !owner.CanReach(checking_taker) || checking_taker.incapacitated())
+		if(!istype(checking_taker) || !owner.CanReach(checking_taker) || checking_taker.is_incapacitated())
 			remove_candidate(checking_taker)
 
 /// We lost the item, give it up

@@ -24,7 +24,7 @@
 	return ..()
 
 /obj/item/instrument/proc/should_stop_playing(mob/user)
-	return user.incapacitated() || !((loc == user) || (isturf(loc) && Adjacent(user)))		// sorry, no more TK playing.
+	return user.is_incapacitated() || !((loc == user) || (isturf(loc) && Adjacent(user)))		// sorry, no more TK playing.
 
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())

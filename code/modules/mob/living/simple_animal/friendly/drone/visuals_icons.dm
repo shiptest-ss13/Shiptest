@@ -146,7 +146,7 @@
 /mob/living/simple_animal/drone/proc/check_menu()
 	if(!istype(src))
 		return FALSE
-	if(incapacitated())
+	if(is_incapacitated())
 		return FALSE
 	return TRUE
 

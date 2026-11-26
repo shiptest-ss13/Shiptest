@@ -217,7 +217,7 @@
 	set category = "AI Commands"
 	set name = "Toggle Camera Acceleration"
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	acceleration = !acceleration
 	to_chat(usr, "Camera acceleration has been toggled [acceleration ? "on" : "off"].")

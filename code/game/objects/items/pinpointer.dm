@@ -149,7 +149,7 @@
 		return
 
 	var/A = input(user, "Person to track", "Pinpoint") in sortList(names)
-	if(!A || QDELETED(src) || !user || !user.is_holding(src) || user.incapacitated())
+	if(!A || QDELETED(src) || !user || !user.is_holding(src) || user.is_incapacitated())
 		return
 
 	target = names[A]

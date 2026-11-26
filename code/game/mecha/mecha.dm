@@ -310,7 +310,7 @@
 	if(user != occupant)
 		return 0
 	if(user && ismob(user))
-		if(!user.incapacitated())
+		if(!user.is_incapacitated())
 			return 1
 	return 0
 
@@ -452,7 +452,7 @@
 		var/lights_energy_drain = 2
 		use_power(lights_energy_drain)
 
-	if(!enclosed && occupant?.incapacitated()) //no sides mean it's easy to just sorta fall out if you're incapacitated.
+	if(!enclosed && occupant?.is_incapacitated()) //no sides mean it's easy to just sorta fall out if you're incapacitated.
 		visible_message(span_warning("[occupant] tumbles out of the cockpit!"))
 		go_out() //Maybe we should install seat belts?
 
@@ -500,7 +500,7 @@
 	if(phasing)
 		occupant_message(span_warning("Unable to interact with objects while phasing."))
 		return
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return
 	if(construction_state)
 		occupant_message(span_warning("Maintenance protocols in effect."))
@@ -941,7 +941,7 @@
 		. = t_air.return_temperature()
 
 /obj/mecha/MouseDrop_T(mob/M, mob/user)
-	if((user != M) || user.incapacitated() || !Adjacent(user))
+	if((user != M) || user.is_incapacitated() || !Adjacent(user))
 		return
 	if(!ishuman(user)) // no silicons or drones in mechas.
 		return
