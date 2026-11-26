@@ -719,7 +719,7 @@
 			return
 		var/mob/living/carbon/revolutionary = user
 		var/obj/item/possible_lighter = revolutionary.get_inactive_held_item()
-		if(possible_lighter.ignition_effect(src, user))
+		if(possible_lighter?.ignition_effect(src, user))
 			visible_message(span_warning("[user] lights a molotov with the open flame of [possible_lighter]!"), span_warning("You hold [src] over the flame of [possible_lighter]. It begins to crackle and burn."))
 			ready_molly(user)
 
