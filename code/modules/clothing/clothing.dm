@@ -349,15 +349,12 @@
 	. += damaged_clothes_icon
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
-	to_chat(world, "GEN ENTER: [src] file=[file2use] state=[state2use] layer=[layer] exists=[icon_exists(file2use, state2use) ? 1 : 0]")
 	if(!icon_exists(file2use, state2use))
 		return
 
 	var/cache_key = "[file2use]-[state2use]-[layer]"
 
 	var/has_species_template = greyscale_colors && greyscale_icon_state && mob_species.species_clothing_path && icon_exists(mob_species.species_clothing_path, greyscale_icon_state) // Makes greyscale templated items not be affected by offsets
-
-	to_chat(world, "GEN: [src] layer=[layer] gc=[greyscale_colors ? 1 : 0] gis=[greyscale_icon_state] path=[mob_species.species_clothing_path] tmpl=[has_species_template ? 1 : 0]")
 
 	if(!has_species_template && ("[layer]" in mob_species.offset_clothing))
 		// This code taken from Baystation 12

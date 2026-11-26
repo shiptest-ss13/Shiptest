@@ -848,7 +848,6 @@ There are several things that need to be remembered:
 	return "[file2use]-[state2use]-[layer]"
 
 /obj/item/proc/wear_species_version(file2use, state2use, layer, datum/species/mob_species)
-	to_chat(world, "WSV called: [src] layer=[layer]")
 	if(!slot_flags && !istype(src, /obj/item/clothing/accessory)) // If it's not wearable, don't try
 		return FALSE
 	var/cache_key = species_clothing_key(file2use, state2use, layer)
@@ -998,7 +997,6 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
 
-	to_chat(world, "BWI: [src] species=[mob_species?.id] path=[mob_species?.species_clothing_path] layer=[layer2use] state=[t_state] file=[file2use]")
 	var/mutable_appearance/standing
 	if(mob_species && (mob_species.species_clothing_path || ("[layer2use]" in mob_species.offset_clothing)))
 		standing = wear_species_version(file2use, t_state, layer2use, mob_species)
