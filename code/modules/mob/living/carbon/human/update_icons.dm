@@ -467,7 +467,7 @@ There are several things that need to be remembered:
 				handled_by_bodytype = TRUE
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			suit_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = use_autogen)
+			suit_store_overlay = I.build_worn_icon(default_layer = SUIT_STORE_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen)
 
 			if(!suit_store_overlay)
 				return
@@ -844,14 +844,20 @@ There are several things that need to be remembered:
  * You will not be missed, goodbye.
  */
 
+/proc/species_clothing_key(file2use, state2use, layer)
+	return "[file2use]-[state2use]-[layer]"
+
 /obj/item/proc/wear_species_version(file2use, state2use, layer, datum/species/mob_species)
-	if(!slot_flags) // If it's not wearable, don't try
+	to_chat(world, "WSV called: [src] layer=[layer]")
+	if(!slot_flags && !istype(src, /obj/item/clothing/accessory)) // If it's not wearable, don't try
 		return FALSE
-	var/icon/species_clothing_icon = GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"]
-	if(!species_clothing_icon) 	//Create standing/laying icons if they don't exist
+	var/cache_key = species_clothing_key(file2use, state2use, layer)
+	var/icon/species_clothing_icon = GLOB.species_clothing_icons[mob_species.id][cache_key]
+	if(!species_clothing_icon) //Create standing/laying icons if they don't exist
 		if(!generate_species_clothing(file2use, state2use, layer, mob_species))
 			return FALSE
-	return mutable_appearance(GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"], layer = -layer)
+		species_clothing_icon = GLOB.species_clothing_icons[mob_species.id][cache_key]
+	return mutable_appearance(species_clothing_icon, layer = (layer == FLOAT_LAYER) ? FLOAT_LAYER : -layer)
 
 /mob/living/carbon/human/proc/get_overlays_copy(list/unwantedLayers)
 	var/list/out = new
@@ -992,6 +998,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
 
+	to_chat(world, "BWI: [src] species=[mob_species?.id] path=[mob_species?.species_clothing_path] layer=[layer2use] state=[t_state] file=[file2use]")
 	var/mutable_appearance/standing
 	if(mob_species && (mob_species.species_clothing_path || ("[layer2use]" in mob_species.offset_clothing)))
 		standing = wear_species_version(file2use, t_state, layer2use, mob_species)

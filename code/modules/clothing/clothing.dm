@@ -349,12 +349,17 @@
 	. += damaged_clothes_icon
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
+	to_chat(world, "GEN ENTER: [src] file=[file2use] state=[state2use] layer=[layer] exists=[icon_exists(file2use, state2use) ? 1 : 0]")
 	if(!icon_exists(file2use, state2use))
 		return
 
-	var/icon/human_clothing_icon = icon(file2use, state2use)
+	var/cache_key = "[file2use]-[state2use]-[layer]"
 
-	if("[layer]" in mob_species.offset_clothing)
+	var/has_species_template = greyscale_colors && greyscale_icon_state && mob_species.species_clothing_path && icon_exists(mob_species.species_clothing_path, greyscale_icon_state) // Makes greyscale templated items not be affected by offsets
+
+	to_chat(world, "GEN: [src] layer=[layer] gc=[greyscale_colors ? 1 : 0] gis=[greyscale_icon_state] path=[mob_species.species_clothing_path] tmpl=[has_species_template ? 1 : 0]")
+
+	if(!has_species_template && ("[layer]" in mob_species.offset_clothing))
 		// This code taken from Baystation 12
 		var/icon/final_I = icon('icons/blanks/64x64.dmi', "nothing")
 		var/list/shifts = mob_species.offset_clothing["[layer]"]
@@ -369,11 +374,13 @@
 			final_I.Insert(canvas, dir = use_dir)
 
 		final_I = fcopy_rsc(final_I)
-		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		GLOB.species_clothing_icons[mob_species.id][cache_key] = final_I
 		return TRUE
 
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
 	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
+		GLOB.species_clothing_icons[mob_species.id][cache_key] = human_clothing_icon
 		return
 
 	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
@@ -401,7 +408,7 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id][cache_key] = species_icon
 
 	return TRUE
 

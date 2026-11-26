@@ -108,15 +108,27 @@
 							),
 		"[EARS_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = -3),
-							"[EAST]" = list("x" = 19, "y" = -3),
+							"[EAST]" = list("x" = 18, "y" = -2),
 							"[SOUTH]" = list("x" = 8, "y" = -3),
-							"[WEST]" = list("x" =  -3, "y" = -3)
+							"[WEST]" = list("x" =  -2, "y" = -2)
 							),
 		"[SUIT_STORE_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = -1),
-							"[EAST]" = list("x" = 8, "y" = -1),
+							"[EAST]" = list("x" = 16, "y" = -1),
 							"[SOUTH]" = list("x" = 8, "y" = -1),
-							"[WEST]" = list("x" =  -8, "y" = -1)
+							"[WEST]" = list("x" =  0, "y" = -1)
+							),
+		"[BACK_LAYER]" = list( //To catch back mounted guns/tanks/jetpacks, this doesn't affect Kepori-specific bag sprites
+							"[NORTH]" = list("x" = 8, "y" = -1),
+							"[EAST]" = list("x" = 16, "y" = -1),
+							"[SOUTH]" = list("x" = 8, "y" = -1),
+							"[WEST]" = list("x" =  0, "y" = -1)
+							),
+		"[FLOAT_LAYER]" = list( // To catch accessories attached to the uniform
+							"[NORTH]" = list("x" = 8, "y" = -2),
+							"[EAST]" = list("x" = 16, "y" = -2),
+							"[SOUTH]" = list("x" = 8, "y" = -2),
+							"[WEST]" = list("x" =  0, "y" = -2)
 							),
 	)
 

@@ -89,15 +89,33 @@
 	offset_clothing = list(
 		"[SUIT_STORE_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = 0),
-							"[EAST]" = list("x" = 8, "y" = 0),
+							"[EAST]" = list("x" = 16, "y" = 0),
 							"[SOUTH]" = list("x" = 8, "y" = 0),
-							"[WEST]" = list("x" =  -8, "y" = 0)
+							"[WEST]" = list("x" =  0, "y" = 0)
+							),
+		"[BACK_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = 0),
+							"[EAST]" = list("x" = 16, "y" = 0),
+							"[SOUTH]" = list("x" = 8, "y" = 0),
+							"[WEST]" = list("x" =  0, "y" = 0)
 							),
 		"[EARS_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = 0),
 							"[EAST]" = list("x" = 8, "y" = 0),
 							"[SOUTH]" = list("x" = 8, "y" = 0),
 							"[WEST]" = list("x" =  -8, "y" = 0)
+							),
+		"[UNIFORM_LAYER]" = list( // To catch uniform edgecases, these won't overwrite fallback sprites
+							"[NORTH]" = list("x" = 8, "y" = 1),
+							"[EAST]" = list("x" = 8, "y" = 1),
+							"[SOUTH]" = list("x" = 8, "y" = 1),
+							"[WEST]" = list("x" =  8, "y" = 1)
+							),
+		"[FLOAT_LAYER]" = list( // For accessories
+							"[NORTH]" = list("x" = 8, "y" = 1),
+							"[EAST]" = list("x" = 8, "y" = 1),
+							"[SOUTH]" = list("x" = 8, "y" = 1),
+							"[WEST]" = list("x" =  8, "y" = 1)
 							),
 	)
 
