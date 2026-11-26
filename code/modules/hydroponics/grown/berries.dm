@@ -20,7 +20,7 @@
 /obj/item/food/grown/berries
 	seed = /obj/item/seeds/berry
 	name = "bunch of berries"
-	desc = "Nutritious!"
+	desc = "A tasty bunch of berries, still on the branch."
 	icon_state = "berrypile"
 	gender = PLURAL
 	foodtypes = FRUIT
