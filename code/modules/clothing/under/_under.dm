@@ -43,10 +43,10 @@
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 		if(HAS_BLOOD_DNA(src))
 			. += setup_blood_overlay()
-		if(attached_accessory) // Rebuild the accessory to account for species variations such as offsets
+		if(attached_accessory)
 			var/mob/living/carbon/human/H = loc
 			if(ishuman(H))
-				accessory_overlay = build_accessory_overlay(H)
+				accessory_overlay = build_accessory_overlay(H) // Rebuild the accessory to account for species variations such as offsets. Potentially in the future only rebuild when necessary via cached species? Tried and it was kind of buggy.
 		if(accessory_overlay)
 			. += accessory_overlay
 
