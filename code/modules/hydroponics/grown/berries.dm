@@ -115,6 +115,7 @@
 	distill_reagent = null
 	wine_power = 60
 	wine_flavor = "gentle warmth" //WS edit: new wine flavors
+	examine_more_string = "a bit off, with a gentle glow to them."
 
 // Cherries
 /obj/item/seeds/cherry
