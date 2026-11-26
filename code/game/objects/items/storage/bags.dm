@@ -215,7 +215,7 @@
 	set name = "Activate Seed Extraction"
 	set category = "Object"
 	set desc = "Activate to convert your plants into plantable seeds."
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return
 	for(var/obj/item/O in contents)
 		seedify(O, 1, FALSE, TRUE)

@@ -274,7 +274,7 @@
 
 /obj/item/gun/proc/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(shooter.incapacitated())
+	if(shooter.is_incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))

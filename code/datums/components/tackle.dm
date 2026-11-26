@@ -70,7 +70,7 @@
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/atom_target, params)
 	SIGNAL_HANDLER
 
-	if(!user.throw_mode || user.get_active_held_item() || user.pulling || user.buckled || user.incapacitated() || !isturf(user.loc))
+	if(!user.throw_mode || user.get_active_held_item() || user.pulling || user.buckled || user.is_incapacitated() || !isturf(user.loc))
 		return
 
 	if(!atom_target || !(isturf(atom_target) || isturf(atom_target.loc)))

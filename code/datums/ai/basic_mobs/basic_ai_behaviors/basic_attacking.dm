@@ -65,7 +65,7 @@
 
 /datum/ai_behavior/basic_melee_attack/proc/follow_up_hit(datum/ai_controller/controller, atom/hit_target, datum/targetting_datum/targetting_datum)
 	var/mob/living/basic/basic_mob = controller?.pawn
-	if(QDELETED(basic_mob) || QDELETED(hit_target) || basic_mob.incapacitated() || !isturf(basic_mob.loc) || !hit_target.Adjacent(basic_mob))
+	if(QDELETED(basic_mob) || QDELETED(hit_target) || basic_mob.is_incapacitated() || !isturf(basic_mob.loc) || !hit_target.Adjacent(basic_mob))
 		return
 	if(isliving(hit_target) && !targetting_datum.can_attack(basic_mob, hit_target))
 		return
@@ -210,7 +210,7 @@
 	if(isnull(shielded_since))
 		controller.set_blackboard_key(BB_BASIC_MOB_SHIELDED_FIRST_SINCE, world.time)
 		return FALSE
-	if(!in_the_way.incapacitated() || world.time - shielded_since < AI_SHIELDED_FIRE_TIME)
+	if(!in_the_way.is_incapacitated() || world.time - shielded_since < AI_SHIELDED_FIRE_TIME)
 		return FALSE
 	if(!controller.blackboard[BB_BASIC_MOB_TAKING_THE_SHOT])
 		controller.set_blackboard_key(BB_BASIC_MOB_TAKING_THE_SHOT, TRUE)

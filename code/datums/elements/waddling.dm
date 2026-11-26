@@ -17,7 +17,7 @@
 /datum/element/waddling/proc/LivingWaddle(mob/living/target)
 	SIGNAL_HANDLER
 
-	if(target.incapacitated() || target.body_position == LYING_DOWN)
+	if(target.is_incapacitated() || target.body_position == LYING_DOWN)
 		return
 	Waddle(target)
 

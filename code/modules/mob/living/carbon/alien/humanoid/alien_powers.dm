@@ -167,7 +167,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/acid/fire(mob/living/carbon/alien/user)
 	var/O = input("Select what to dissolve:","Dissolve",null) as obj|turf in oview(1,user)
-	if(!O || user.incapacitated())
+	if(!O || user.is_incapacitated())
 		return 0
 	else
 		return corrode(O,user)

@@ -35,7 +35,7 @@
 	adjust(user)
 
 /obj/item/clothing/ears/earmuffs/proc/adjust(mob/living/user)
-	if(user && user.incapacitated())
+	if(user && user.is_incapacitated())
 		return
 	var/datum/component/wearertargeting/earprotection/ear_prot = GetComponent(/datum/component/wearertargeting/earprotection)
 	adjusted = !adjusted

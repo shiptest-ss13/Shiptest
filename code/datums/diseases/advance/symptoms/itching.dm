@@ -50,7 +50,7 @@ BONUS
 	var/picked_bodypart = pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 	var/obj/item/bodypart/bodypart = M.get_bodypart(picked_bodypart)
 	if(bodypart && (IS_ORGANIC_LIMB(bodypart)) && !bodypart.is_pseudopart)	 //robotic limbs will mean less scratching overall
-		var/can_scratch = scratch && !M.incapacitated()
+		var/can_scratch = scratch && !M.is_incapacitated()
 		M.visible_message("[can_scratch ? span_warning("[M] scratches [M.p_their()] [bodypart.name].") : ""]", span_warning("Your [bodypart.name] itches. [can_scratch ? " You scratch it." : ""]"))
 		if(can_scratch)
 			bodypart.receive_damage(0.5)

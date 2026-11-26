@@ -17,7 +17,7 @@
 		return
 	var/part_reference = display_names[pick]
 	var/obj/item/part = locate(part_reference) in mod_parts
-	if(!istype(part) || user.incapacitated())
+	if(!istype(part) || user.is_incapacitated())
 		return
 	if((active && part != helmet) || activating)
 		to_chat(user, span_warning("Deactivate the suit first!"))

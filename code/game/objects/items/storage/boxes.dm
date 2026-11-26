@@ -1076,7 +1076,7 @@
 /obj/item/storage/box/papersack/proc/check_menu(mob/user, obj/item/pen/P)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return FALSE
 	if(contents.len)
 		to_chat(user, span_warning("You can't modify [src] with items still inside!"))

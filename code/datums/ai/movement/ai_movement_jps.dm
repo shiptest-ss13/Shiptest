@@ -330,10 +330,10 @@
 // unbuckle a body if it's in the way
 /datum/ai_movement/jps/proc/unbuckle_body_in_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
 	var/mob/living/living_mover = mover
-	if(!istype(living_mover) || living_mover.incapacitated())
+	if(!istype(living_mover) || living_mover.is_incapacitated())
 		return FALSE
 	for(var/mob/living/body in next_step)
-		if(!body.density || !body.buckled || (body.stat == CONSCIOUS && !body.incapacitated()))
+		if(!body.density || !body.buckled || (body.stat == CONSCIOUS && !body.is_incapacitated()))
 			continue
 		var/atom/movable/seat = body.buckled
 		living_mover.visible_message(span_warning("[living_mover] tips [body] out of [seat]."))

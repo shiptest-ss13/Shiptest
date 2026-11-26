@@ -729,7 +729,7 @@
 
 /obj/item/hypospray/mkii/attack_self(mob/living/user)
 	if(user)
-		if(user.incapacitated())
+		if(user.is_incapacitated())
 			return
 		else if(!vial)
 			to_chat(user, "This Hypo needs to be loaded first!")

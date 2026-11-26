@@ -117,7 +117,7 @@
 	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return
 
-	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
+	if(!M.is_incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
@@ -602,7 +602,7 @@
 
 /obj/item/clothing/proc/can_use(mob/user)
 	if(user && ismob(user))
-		if(!user.incapacitated())
+		if(!user.is_incapacitated())
 			return 1
 	return 0
 

@@ -75,7 +75,7 @@
 	moveToNullspace()
 
 /obj/item/bodybag/bluespace/container_resist_act(mob/living/user)
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		to_chat(user, span_warning("You can't get out while you're restrained like this!"))
 		return
 	user.changeNext_move(CLICK_CD_BREAKOUT)

@@ -309,7 +309,7 @@
 /obj/machinery/artillery/mortar/MouseDrop(atom/over_object)
 	. = ..()
 	var/mob/living/user = usr
-	if(!istype(user) || user.incapacitated() || !Adjacent(user))
+	if(!istype(user) || user.is_incapacitated() || !Adjacent(user))
 		return
 
 	if(over_object == user)

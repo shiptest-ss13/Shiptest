@@ -336,7 +336,7 @@
 
 /datum/component/storage/proc/quick_empty(mob/M)
 	var/atom/A = parent
-	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
+	if(!M.canUseStorage() || !A.Adjacent(M) || M.is_incapacitated())
 		return
 	if(!access_check(M))
 		return FALSE
@@ -553,7 +553,7 @@
 		return
 	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return
-	if(M.incapacitated() || !M.canUseStorage())
+	if(M.is_incapacitated() || !M.canUseStorage())
 		return
 	A.add_fingerprint(M)
 	// this must come before the screen objects only block, dunno why it wasn't before
@@ -599,7 +599,7 @@
 		var/obj/item/dropped_item = dropped
 		if(iscarbon(user) || isdrone(user))
 			var/mob/living/living_user = user
-			if(!living_user.incapacitated() && dropped_item == living_user.get_active_held_item())
+			if(!living_user.is_incapacitated() && dropped_item == living_user.get_active_held_item())
 				if(!SEND_SIGNAL(dropped_item, COMSIG_CONTAINS_STORAGE) && can_be_inserted(dropped_item, FALSE, living_user))	//If it has storage it should be trying to dump, not insert.
 					handle_item_insertion(dropped_item, FALSE, living_user)
 
@@ -853,7 +853,7 @@
 
 	return ui_hide(target)
 /datum/component/storage/proc/open_storage(mob/user)
-	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
+	if(!isliving(user) || !user.CanReach(parent) || user.is_incapacitated())
 		return FALSE
 	if(locked)
 		to_chat(user, span_warning("[parent] seems to be locked!"))

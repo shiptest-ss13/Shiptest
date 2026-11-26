@@ -331,7 +331,7 @@
 
 // whether an ally in the way is being used as a shield, rather than just standing there
 /proc/ai_used_as_shield(mob/living/in_the_way)
-	return in_the_way.incapacitated() || in_the_way.buckled || in_the_way.pulledby
+	return in_the_way.is_incapacitated() || in_the_way.buckled || in_the_way.pulledby
 
 // whether an ally's right next to target, so there's no angle we can move to that would avoid friendly fire
 /proc/ai_ally_beside_target(mob/living/ally, atom/target)
