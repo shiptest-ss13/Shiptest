@@ -107,7 +107,8 @@
 			//throw the goddamn grenade private.
 			if(iscarbon(user))
 				var/mob/living/carbon/thrower = user
-				thrower.throw_mode_on()
+				if(thrower.get_active_held_item() == src)
+					thrower.throw_mode_on()
 	if(shrapnel_type && shrapnel_radius)
 		shrapnel_initialized = TRUE
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)

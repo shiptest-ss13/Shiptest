@@ -372,7 +372,8 @@
 		START_PROCESSING(SSobj, src)
 	if(iscarbon(user))
 		var/mob/living/carbon/thrower = user
-		thrower.toggle_throw_mode()
+		if(thrower.get_active_held_item() == src)
+			thrower.toggle_throw_mode()
 	return TRUE
 
 /obj/item/flashlight/flare/fire_act(exposed_temperature, exposed_volume)
