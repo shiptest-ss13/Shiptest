@@ -1473,8 +1473,8 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	L.put_in_hands(holder)
 
 /mob/living/proc/set_name()
-	numba = rand(1, 1000)
-	name = "[name] ([numba])"
+	mob_id = rand(1, 1000)
+	name = "[name] ([mob_id])"
 	real_name = name
 
 /mob/living/proc/mob_try_pickup(mob/living/user)
