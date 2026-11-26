@@ -352,7 +352,7 @@
 	if(!icon_exists(file2use, state2use))
 		return
 
-	var/cache_key = "[file2use]-[state2use]-[layer]"
+	var/cache_key = species_clothing_key(file2use, state2use, layer)
 
 	var/has_species_template = greyscale_colors && greyscale_icon_state && mob_species.species_clothing_path && icon_exists(mob_species.species_clothing_path, greyscale_icon_state) // Makes greyscale templated items not be affected by offsets
 
