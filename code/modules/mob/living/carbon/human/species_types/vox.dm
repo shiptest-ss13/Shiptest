@@ -105,7 +105,7 @@
 							"[SOUTH]" = list("x" = 8, "y" = 0),
 							"[WEST]" = list("x" =  -8, "y" = 0)
 							),
-		"[UNIFORM_LAYER]" = list( // To catch uniform edgecases, these won't overwrite fallback sprites
+		"[UNIFORM_LAYER]" = list( // To catch uniform edgecases, these won't overwrite fallback sprites. They look slightly less horrible.
 							"[NORTH]" = list("x" = 9, "y" = 1),
 							"[EAST]" = list("x" = 11, "y" = 1),
 							"[SOUTH]" = list("x" = 9, "y" = 1),
