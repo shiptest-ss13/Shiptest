@@ -134,9 +134,6 @@
 /obj/item/clothing/under/warra/security{
 	pixel_x = -4
 	},
-/obj/item/clothing/under/warra/security{
-	pixel_x = -9
-	},
 /obj/item/clothing/shoes/jackboots{
 	pixel_x = -6;
 	pixel_y = -7
@@ -2209,36 +2206,10 @@
 /area/ship/bridge/cool)
 "tr" = (
 /obj/structure/table,
-/obj/item/storage/fancy/coffee_cart_rack{
-	pixel_x = -8
-	},
-/obj/item/coffee_cartridge/decaf{
-	pixel_y = 5;
-	pixel_x = 3
-	},
-/obj/item/coffee_cartridge/fancy/blend{
-	pixel_x = 3;
-	pixel_y = 2
-	},
-/obj/item/coffee_cartridge/fancy/mocha{
-	pixel_x = 3;
-	pixel_y = -1
-	},
-/obj/item/coffee_cartridge/fancy/roast{
-	pixel_y = -4;
-	pixel_x = 3
-	},
 /obj/effect/turf_decal/corner/opaque/vired/three_quarters{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_y = -9;
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_y = -14;
-	pixel_x = 4
-	},
+/obj/machinery/jukebox/boombox,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/canteen)
 "tv" = (
@@ -2295,22 +2266,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
-"tU" = (
-/obj/structure/table,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 7;
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_y = 2;
-	pixel_x = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "ub" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -4480,9 +4435,24 @@
 /area/ship/cargo)
 "LP" = (
 /obj/structure/table,
-/obj/machinery/coffeemaker,
 /obj/effect/turf_decal/corner/opaque/vired{
 	dir = 6
+	},
+/obj/machinery/coffeemaker{
+	pixel_y = 3
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_x = -8;
+	pixel_y = 15;
+	spawn_type = /obj/item/coffee_cartridge/fancy/blue
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_y = 15;
+	spawn_type = /obj/item/coffee_cartridge/fancy/blend
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_y = 15;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/canteen)
@@ -5000,7 +4970,7 @@
 "Qf" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
-	req_access = "19,3";
+	req_access = list(19,3);
 	name = "Sergeant's locker"
 	},
 /obj/item/storage/backpack/security,
@@ -5190,7 +5160,7 @@
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "pyrotechnic hold";
-	req_access_txt = "1"
+	req_access = list(1,10)
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
@@ -6755,7 +6725,7 @@ os
 wT
 Ku
 Zu
-tU
+SU
 bU
 wO
 An
