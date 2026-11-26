@@ -107,15 +107,15 @@
 							),
 		"[UNIFORM_LAYER]" = list( // To catch uniform edgecases, these won't overwrite fallback sprites
 							"[NORTH]" = list("x" = 9, "y" = 1),
-							"[EAST]" = list("x" = 9, "y" = 1),
+							"[EAST]" = list("x" = 11, "y" = 1),
 							"[SOUTH]" = list("x" = 9, "y" = 1),
-							"[WEST]" = list("x" =  9, "y" = 1)
+							"[WEST]" = list("x" =  7, "y" = 1)
 							),
 		"[FLOAT_LAYER]" = list( // For accessories
 							"[NORTH]" = list("x" = 9, "y" = 1),
-							"[EAST]" = list("x" = 9, "y" = 1),
+							"[EAST]" = list("x" = 13, "y" = 1),
 							"[SOUTH]" = list("x" = 9, "y" = 1),
-							"[WEST]" = list("x" =  9, "y" = 1)
+							"[WEST]" = list("x" =  5, "y" = 1)
 							),
 	)
 
