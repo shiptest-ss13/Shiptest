@@ -138,11 +138,17 @@
 	// can't use GLOB.sortedAreas since it won't be there until template loads
 	var/list/area/daylit_areas = list()
 	var/list/turf/break_lights = list()
+	// lit turfs outside daylit areas, like ruin grounds, still follow the sky
+	var/list/turf/sky_lit_turfs = list()
 	for(var/turf/level_turf as anything in get_block())
 		if(level_turf.is_daylight_break_light())
 			break_lights += level_turf
 		var/area/level_area = level_turf.loc
-		if(daylit_areas[level_area] || !level_area.use_ztrait_lighting)
+		if(!level_area.use_ztrait_lighting)
+			if(level_turf.can_emit_planet_daylight && initial(level_turf.light_range))
+				sky_lit_turfs += level_turf
+			continue
+		if(daylit_areas[level_area])
 			continue
 		daylit_areas[level_area] = TRUE
 	for(var/area/daylit_area as anything in daylit_areas)
@@ -166,6 +172,9 @@
 		for(var/turf/area_turf in daylit_area)
 			area_turf.update_planet_daylight_source()
 			CHECK_TICK
+	for(var/turf/sky_lit_turf as anything in sky_lit_turfs)
+		sky_lit_turf.update_planet_daylight_source()
+		CHECK_TICK
 
 /datum/virtual_level/proc/set_planetary_lighting(light_range, light_power, light_color)
 	traits = traits.Copy()
@@ -298,8 +307,8 @@
 	var/area/turf_area = loc
 	var/list/daylight = turf_area.planet_daylight
 	if(!can_emit_planet_daylight || !(daylight || istype(turf_area, /area/overmap_encounter)))
-		if(can_emit_planet_daylight && (light_range != initial(light_range) || light_power != initial(light_power) || light_color != initial(light_color)))
-			set_light(initial(light_range), initial(light_power), initial(light_color))
+		if(can_emit_planet_daylight)
+			restore_planet_lit_light()
 		else if(light_power && light_range)
 			update_light()
 		return
@@ -307,6 +316,21 @@
 		set_light(daylight[ZTRAIT_LIGHT_RANGE], daylight[ZTRAIT_LIGHT_POWER], daylight[ZTRAIT_LIGHT_COLOR])
 	else if(light_range)
 		set_light(0)
+
+// outside daylit areas a lit turf uses its own light, which stands in for the sky,
+// so on a planet it follows the planet's current lighting and time of day instead
+/turf/proc/restore_planet_lit_light()
+	var/new_range = initial(light_range)
+	var/new_power = initial(light_power)
+	var/new_color = initial(light_color)
+	if(new_range && new_power)
+		var/list/sky = virtual_level_trait(ZTRAIT_PLANETARY_LIGHTING)
+		if(sky && sky[ZTRAIT_LIGHT_RANGE] && sky[ZTRAIT_LIGHT_POWER])
+			new_range = sky[ZTRAIT_LIGHT_RANGE]
+			new_power = sky[ZTRAIT_LIGHT_POWER]
+			new_color = sky[ZTRAIT_LIGHT_COLOR]
+	if(light_range != new_range || light_power != new_power || light_color != new_color)
+		set_light(new_range, new_power, new_color)
 
 // whether this turf has a light of its own that isn't daylight, like plasma
 /turf/proc/is_daylight_break_light()
