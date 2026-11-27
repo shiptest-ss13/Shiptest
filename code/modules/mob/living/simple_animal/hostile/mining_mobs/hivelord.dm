@@ -226,7 +226,12 @@
 		var/obj/item/organ/legion_skull/throwyouabone = new()
 		throwyouabone.Insert(H)
 	else
+		var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
+		L = new(H.loc)
+		visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
 		H.adjustBruteLoss(1000)
+		L.stored_mob = H
+		H.forceMove(L)
 	qdel(src)
 
 /obj/item/organ/legion_skull
@@ -296,10 +301,10 @@
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
 
-//Legion that spawns Legions
+//Ripoff tank l4d2
 /mob/living/simple_animal/hostile/big_legion
 	name = "Legate"
-	desc = "A rare and incredibly dangerous legion mutation, forming a large shambling mass of hosts. Its arm looks to swing at you."
+	desc = "A rare and incredibly dangerous legion mutation, with multiple hosts merged together into one new being. Its arm looks to swing at you."
 	icon = 'icons/mob/lavaland/largelegion.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
