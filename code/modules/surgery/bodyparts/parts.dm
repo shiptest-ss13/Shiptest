@@ -239,6 +239,8 @@
 
 /obj/item/bodypart/leg
 	biological_state = BIO_STANDARD_JOINTED
+	var/footstep_type = FOOTSTEP_MOB_BAREFOOT
+	//which footstep sound type should this leg use?
 
 /obj/item/bodypart/leg/left
 	name = "left leg"
@@ -320,6 +322,7 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right
 	name = "right leg"
@@ -407,6 +410,7 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/left/hooves
 	name = "hooved left leg"
@@ -424,6 +428,7 @@
 	digitigrade_clawed = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/clawed
 	name = "clawed right leg"
@@ -431,6 +436,7 @@
 	digitigrade_clawed = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/tail
 	name = "tail"

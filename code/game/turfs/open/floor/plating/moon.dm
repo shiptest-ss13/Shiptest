@@ -8,9 +8,7 @@
 	icon = 'icons/turf/floors/moonsand.dmi'
 	icon_state = "sand-255"
 	base_icon_state = "sand"
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	turf_footstep_type = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
 	planetary_atmos = TRUE
 	initial_gas_mix = AIRLESS_ATMOS
@@ -67,10 +65,7 @@
 	icon_state = "moonsand_coarse"
 	base_icon_state = "moonsand_coarse"
 	gender = PLURAL
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	floor_variance = 0
 	max_icon_states = 0
 	planetary_atmos = TRUE
