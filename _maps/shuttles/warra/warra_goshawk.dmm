@@ -2404,15 +2404,18 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nH" = (
+/obj/effect/turf_decal/industrial/hatch/blue,
 /obj/structure/railing{
-	dir = 1;
+	dir = 9;
 	pixel_y = 7
 	},
+/obj/machinery/power/ship_gravity,
 /obj/effect/turf_decal/siding/black{
-	dir = 1
+	dir = 9
 	},
-/obj/machinery/vending/cigarette,
-/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/structure/cable/white{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "nI" = (
@@ -2691,20 +2694,8 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/office)
 "pP" = (
-/obj/structure/railing{
-	dir = 1;
-	pixel_y = 7
-	},
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
-/obj/machinery/power/ship_gravity,
-/obj/structure/cable/white{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/industrial/hatch/blue,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering/atmospherics)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/template_noop)
 "pY" = (
 /obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 5
@@ -3864,6 +3855,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/railing/corner{
+	dir = 1;
+	pixel_y = 7
+	},
+/obj/structure/cable/white{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
 "xJ" = (
@@ -4485,6 +4483,10 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/stairs,
+/area/ship/engineering/atmospherics)
+"AS" = (
+/obj/machinery/atmospherics/pipe/simple/purple,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "AX" = (
 /obj/effect/turf_decal/siding/black{
@@ -6023,8 +6025,9 @@
 /obj/structure/cable/white{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/white{
-	icon_state = "1-4"
+/obj/structure/railing{
+	dir = 1;
+	pixel_y = 7
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -6114,18 +6117,14 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "KS" = (
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/open,
 /obj/machinery/button/door{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = -22;
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 1;
 	id = "goshawk_starboard_plasma";
 	name = "thruster shield control"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "KX" = (
 /obj/machinery/atmospherics/pipe/simple/purple{
@@ -8903,9 +8902,9 @@ Zx
 Zx
 QQ
 ed
-ed
 QQ
-Zx
+ed
+pP
 Zx
 Zx
 "}
@@ -8941,9 +8940,9 @@ Zx
 Zx
 QQ
 Ky
+QQ
 Ky
 QQ
-IU
 IU
 QQ
 "}
@@ -8980,8 +8979,8 @@ LT
 QQ
 bs
 KS
+bs
 QQ
-ir
 ir
 QQ
 "}
@@ -9017,8 +9016,8 @@ jB
 UT
 QQ
 jq
+AS
 YG
-pP
 Ka
 Ja
 QQ
