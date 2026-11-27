@@ -31,12 +31,15 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.show_credits)
 			C.screen += new /atom/movable/screen/credit/title_card(null, null, SSticker.mode.title_icon)
-	for(var/i in 1 to length(GLOB.end_titles))
-		var/C = GLOB.end_titles[i]
-		if(!C)
-			continue
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(roll_credit_lines))
 
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(create_credit), C), CREDIT_SPAWN_SPEED * i + (3 * CREDIT_SPAWN_SPEED), TIMER_CLIENT_TIME)
+/proc/roll_credit_lines()
+	sleep(3 * CREDIT_SPAWN_SPEED)
+	for(var/credit in GLOB.end_titles)
+		if(!credit)
+			continue
+		create_credit(credit)
+		sleep(CREDIT_SPAWN_SPEED)
 
 /proc/create_credit(credit)
 	new /atom/movable/screen/credit(null, credit)
