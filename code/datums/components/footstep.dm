@@ -113,7 +113,7 @@
 	else if((steps + 2) % 4 == 0) //steps 2, 6, and 10
 		leg = stepper.get_bodypart(BODY_ZONE_R_LEG)
 		if(!leg)
-			stepper.get_bodypart(BODY_ZONE_L_LEG)
+			leg = stepper.get_bodypart(BODY_ZONE_L_LEG)
 
 	var/current_footstep_sound
 
