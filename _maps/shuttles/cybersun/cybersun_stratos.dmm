@@ -61,6 +61,9 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/storage)
 "ai" = (
@@ -1520,9 +1523,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -4052,6 +4052,21 @@
 /obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
+"tG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
 "tK" = (
 /obj/effect/turf_decal/atmos/mix,
 /turf/open/floor/engine/hydrogen_fuel,
@@ -4117,6 +4132,15 @@
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
+"um" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/storage)
 "uo" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/south,
@@ -5408,6 +5432,7 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/half,
 /obj/effect/turf_decal/siding/black,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/cyan,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "Ci" = (
@@ -7983,6 +8008,9 @@
 	pixel_x = 7;
 	pixel_y = -1
 	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/storage)
 "Pc" = (
@@ -9966,7 +9994,7 @@ AM
 rR
 jZ
 ah
-ux
+um
 ux
 fV
 tb
@@ -10335,7 +10363,7 @@ mT
 Tf
 Gd
 Ss
-dt
+tG
 Ca
 GO
 GO
