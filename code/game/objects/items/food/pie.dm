@@ -181,7 +181,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("pie" = 1, "mushroom" = 1)
-	foodtypes = GRAIN | VEGETABLES | TOXIC | GROSS
+	foodtypes = GRAIN | VEGETABLES | TOXIC
 
 /obj/item/food/pie/plump_pie
 	name = "plump pie"
@@ -362,7 +362,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("nuts" = 1, "pie" = 1)
-	foodtypes = /*NUTS | */SUGAR
+	foodtypes = SUGAR
 	slice_type = /obj/item/food/pieslice/baklava
 	yield = 6
 
@@ -371,4 +371,4 @@
 	desc = "A portion of a many-layered baklava."
 	icon_state = "baklavaslice"
 	tastes = list("nuts" = 1, "pie" = 1)
-	foodtypes = /*NUTS | */SUGAR
+	foodtypes = SUGAR

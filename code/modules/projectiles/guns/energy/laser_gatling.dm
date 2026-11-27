@@ -76,7 +76,7 @@
 		if(!over_object)
 			return
 
-		if(!M.incapacitated())
+		if(!M.is_incapacitated())
 
 			if(istype(over_object, /atom/movable/screen/inventory/hand))
 				var/atom/movable/screen/inventory/hand/H = over_object

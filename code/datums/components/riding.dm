@@ -88,9 +88,9 @@
 	var/atom/movable/AM = parent
 	var/mob/AMM = AM
 	var/kick_us_off
-	if((ride_check_rider_restrained && HAS_TRAIT(M, TRAIT_RESTRAINED)) || (ride_check_rider_incapacitated && M.incapacitated(TRUE, TRUE)))
+	if((ride_check_rider_restrained && HAS_TRAIT(M, TRAIT_RESTRAINED)) || (ride_check_rider_incapacitated && M.is_incapacitated(TRUE, TRUE)))
 		kick_us_off = TRUE
-	if(kick_us_off || (istype(AMM) && ((ride_check_ridden_restrained && HAS_TRAIT(AMM, TRAIT_RESTRAINED)) || (ride_check_ridden_incapacitated && AMM.incapacitated(TRUE, TRUE)))))
+	if(kick_us_off || (istype(AMM) && ((ride_check_ridden_restrained && HAS_TRAIT(AMM, TRAIT_RESTRAINED)) || (ride_check_ridden_incapacitated && AMM.is_incapacitated(TRUE, TRUE)))))
 		M.visible_message(span_warning("[M] falls off of [AM]!"), \
 						span_warning("You fall off of [AM]!"))
 		AM.unbuckle_mob(M)
@@ -184,7 +184,7 @@
 
 /datum/component/riding/proc/handle_ride(mob/user, direction)
 	var/atom/movable/AM = parent
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		Unbuckle(user)
 		return
 
@@ -295,7 +295,7 @@
 
 /datum/component/riding/cyborg/ride_check(mob/user)
 	var/atom/movable/AM = parent
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		var/kick = TRUE
 		if(iscyborg(AM))
 			var/mob/living/silicon/robot/R = AM
@@ -348,9 +348,16 @@
 		else
 			inhand.rider = riding_target_override
 		inhand.parent = AM
-		for(var/obj/item/I in user.held_items) // yes i know this sucks but these are ABSTRACT++ dumbness and i'm not adding a whole new flag for these two meme items
-			if((I.obj_flags & HAND_ITEM))
-				qdel(I)
+		var/has_free_hand = FALSE
+		for(var/hand_index in 1 to length(user.held_items))
+			if(user.can_put_in_hand(inhand, hand_index))
+				has_free_hand = TRUE
+				break
+		if(!has_free_hand)
+			for(var/obj/item/held_item in user.held_items)
+				if(held_item.item_flags & HAND_ITEM)
+					qdel(held_item)
+					break
 		if(user.put_in_hands(inhand, TRUE))
 			amount_equipped++
 		else

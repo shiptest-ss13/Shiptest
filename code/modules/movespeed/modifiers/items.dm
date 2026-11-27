@@ -31,3 +31,7 @@
 
 /datum/movespeed_modifier/equipping
 	multiplicative_slowdown = 1.5
+
+/datum/movespeed_modifier/storage_open
+	multiplicative_slowdown = 0
+	variable = TRUE

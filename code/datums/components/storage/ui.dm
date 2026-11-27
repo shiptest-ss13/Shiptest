@@ -180,33 +180,34 @@
 
 
 // Shows our UI to a mob.
-/datum/component/storage/proc/ui_show(mob/M)
-	if(!M.client)
+/datum/component/storage/proc/ui_show(mob/user)
+	if(!user.client)
 		return FALSE
-	if(ui_by_mob[M] || LAZYFIND(is_using, M))
+	if(ui_by_mob[user] || LAZYFIND(is_using, user))
 		// something went horribly wrong
 		// hide first
-		ui_hide(M)
-	var/list/cview = getviewsize(M.client.view)
+		ui_hide(user)
+	var/list/cview = getviewsize(user.client.view)
 	// in tiles
 	var/maxallowedscreensize = cview[1]-8
 	// we got screen size, register signal
-	RegisterSignal(M, COMSIG_QDELETING, PROC_REF(on_logout), override = TRUE)
-	if(M.active_storage != src)
-		if(M.active_storage)
-			M.active_storage.ui_hide(M)
-		M.active_storage = src
-	LAZYOR(is_using, M)
+	RegisterSignal(user, COMSIG_QDELETING, PROC_REF(on_logout), override = TRUE)
+	if(user.active_storage != src)
+		if(user.active_storage)
+			user.active_storage.ui_hide(user)
+		user.active_storage = src
+	update_open_slowdown(user)
+	LAZYOR(is_using, user)
 	if(volumetric_ui())
 		//new volumetric ui bay-style
-		var/list/objects = orient2hud_volumetric(M, maxallowedscreensize)
-		M.client.screen |= objects
-		ui_by_mob[M] = objects
+		var/list/objects = orient2hud_volumetric(user, maxallowedscreensize)
+		user.client.screen |= objects
+		ui_by_mob[user] = objects
 	else
 		//old ui
-		var/list/objects = orient2hud_legacy(M, maxallowedscreensize)
-		M.client.screen |= objects
-		ui_by_mob[M] = objects
+		var/list/objects = orient2hud_legacy(user, maxallowedscreensize)
+		user.client.screen |= objects
+		ui_by_mob[user] = objects
 	return TRUE
 
 // VV hooked to ensure no lingering screen objects.
@@ -226,16 +227,18 @@
 	ui_hide(source)
 
 // Hides our UI from a mob
-/datum/component/storage/proc/ui_hide(mob/M)
-	if(!M.client)
+/datum/component/storage/proc/ui_hide(mob/user)
+	if(user.active_storage == src)
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/storage_open)
+	if(!user.client)
 		return TRUE
-	UnregisterSignal(M, list(COMSIG_QDELETING))
-	M.client.screen -= ui_by_mob[M]
-	var/list/objects = ui_by_mob[M]
+	UnregisterSignal(user, list(COMSIG_QDELETING))
+	user.client.screen -= ui_by_mob[user]
+	var/list/objects = ui_by_mob[user]
 	QDEL_LIST(objects)
-	if(M.active_storage == src)
-		M.active_storage = null
-	LAZYREMOVE(is_using, M)
+	if(user.active_storage == src)
+		user.active_storage = null
+	LAZYREMOVE(is_using, user)
 	return TRUE
 
 // Returns TRUE if we are using volumetric UI instead of box UI

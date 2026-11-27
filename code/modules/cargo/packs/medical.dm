@@ -269,6 +269,29 @@
 	cost = 300
 	contains = list(/obj/item/storage/medpack/epipens)
 
+/datum/supply_pack/medical/crisis
+	name = "Crisis Stimpacks"
+	desc = "Contains a pack of four crisis stimpacks for use in medical emergencies. Produced by Matahari Pharmaceuticals."
+	cost = 800
+	contains = list(/obj/item/storage/medpack/crisis)
+	faction = /datum/faction/warra
+	faction_locked = TRUE
+	faction_discount = 0
+
+/datum/supply_pack/medical/badstop
+	name = "Stabilizer Injectors"
+	desc = "Contains a pack of four stabilizer injectors for use in medical emergencies. A Cybersun Biodynamics product."
+	cost = 800
+	contains = list(/obj/item/storage/medpack/badstop)
+	faction = /datum/faction/cybersun
+	faction_locked = TRUE
+	faction_discount = 0
+
+// maybe these could be a unique medipen eventually?
+/datum/supply_pack/medical/crisis/pgf
+	desc = "Contains a pack of four standard-issue crisis stimpacks for use in medical emergencies."
+	faction = /datum/faction/pgf
+
 /* Hypospray supplies */
 
 /datum/supply_pack/medical/mkii_hypo

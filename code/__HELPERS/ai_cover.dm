@@ -331,10 +331,14 @@
 
 // whether an ally in the way is being used as a shield, rather than just standing there
 /proc/ai_used_as_shield(mob/living/in_the_way)
-	return in_the_way.incapacitated() || in_the_way.buckled || in_the_way.pulledby
+	return in_the_way.is_incapacitated() || in_the_way.buckled || in_the_way.pulledby
+
+// whether an ally's right next to target, so there's no angle we can move to that would avoid friendly fire
+/proc/ai_ally_beside_target(mob/living/ally, atom/target)
+	return ally.stat == CONSCIOUS && ally.Adjacent(target)
 
 // whether shooting at target from from risks an ally more than the mob tolerates. Pass the target, not its turf, so aim settling counts
-/proc/ai_ally_in_lane(mob/living/shooter, atom/target, turf/from)
+/proc/ai_ally_in_lane(mob/living/shooter, atom/target, turf/from, ignore_allies_beside_target = FALSE)
 	var/turf/start = from || get_turf(shooter)
 	var/turf/their_turf = get_turf(target)
 	if(!start || !their_turf)
@@ -344,7 +348,9 @@
 		return ally_in_line_of_fire(shooter, start, their_turf)
 	var/datum/component/ranged_attacks/ranged_attack = shooter.GetComponent(/datum/component/ranged_attacks)
 	var/list/risk = ranged_attack ? ranged_attack.friendly_fire_risk(target, from = start) : ai_friendly_fire_risk(shooter, target, 0, 0, get_ai_shot_pass_flags(shooter), start)
-	return risk[1] > tolerance
+	if(risk[1] <= tolerance)
+		return FALSE
+	return !(ignore_allies_beside_target && risk[2] && ai_ally_beside_target(risk[2], target))
 
 // whether a shot not aimed at someone flies over them
 /proc/ai_shot_passes_over(mob/living/someone)
@@ -364,6 +370,11 @@
 
 /proc/ai_is_door(atom/thing)
 	return istype(thing, /obj/machinery/door) || istype(thing, /obj/structure/mineral_door) || istype(thing, /obj/structure/fence/door)
+
+/proc/ai_can_pass_door(mob/living/mover, obj/door, turf/from_turf, turf/toward)
+	var/turf/door_turf = get_turf(door)
+	var/direction = door_turf == from_turf ? get_dir(from_turf, toward) : get_dir(door_turf, from_turf)
+	return door.CanAStarPass(mover.ai_controller?.get_access(), direction, mover)
 
 /proc/ai_is_doorway(turf/spot)
 	for(var/atom/thing as anything in spot)

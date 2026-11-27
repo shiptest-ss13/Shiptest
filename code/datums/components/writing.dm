@@ -332,7 +332,7 @@
 /datum/component/writing/ui_status(mob/user, datum/ui_state/state)
 	if(!in_range(user, parent) && !isobserver(user))
 		return UI_CLOSE
-	if(user.incapacitated(TRUE, TRUE) || (isobserver(user) && !check_rights_for(user.client, R_ADMIN)))
+	if(user.is_incapacitated(TRUE, TRUE) || (isobserver(user) && !check_rights_for(user.client, R_ADMIN)))
 		return UI_UPDATE
 	// Even harder to read if you're blind... unless it has braille!
 	// .. or if you cannot read

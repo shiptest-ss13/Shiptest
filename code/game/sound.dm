@@ -198,6 +198,11 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 			var/mob/M = m
 			M.playsound_local(M, null, volume, vary, frequency, null, channel, pressure_affected, S)
 
+/mob/proc/get_instrument_volume()
+	if(!(client?.prefs?.toggles & SOUND_INSTRUMENTS))
+		return 0
+	return client.prefs.instrument_volume
+
 /mob/proc/stop_sound_channel(chan)
 	SEND_SOUND(src, sound(null, repeat = 0, wait = 0, channel = chan))
 

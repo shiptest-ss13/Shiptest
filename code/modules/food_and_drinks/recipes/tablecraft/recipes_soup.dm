@@ -171,7 +171,7 @@
 		/datum/reagent/water = 10,
 		/obj/item/reagent_containers/glass/bowl = 1,
 		/obj/item/food/grown/whitebeet = 1,
-		/obj/item/food/grown/cabbage = 1,
+		/obj/item/food/grown/tomato = 1,
 	)
 	result = /obj/item/food/soup/beet
 	subcategory = CAT_SOUP

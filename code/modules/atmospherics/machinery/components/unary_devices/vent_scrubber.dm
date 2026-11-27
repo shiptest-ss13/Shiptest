@@ -134,8 +134,6 @@
 	..()
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos(seconds_per_tick)
-	..()
-
 	if(welded || !on || !is_operational)
 		if(use_static_power != NO_POWER_USE)
 			set_no_power()
@@ -159,12 +157,12 @@
 	var/datum/gas_mixture/environment = tile.return_air()
 
 	if(scrubbing & SCRUBBING)
-		environment.scrub_into(airs[1], volume_rate * seconds_per_tick / environment.return_volume(), filter_types)
+		if(!environment.scrub_into(airs[1], volume_rate * seconds_per_tick / environment.return_volume(), filter_types))
+			return FALSE
 
 	else //Just siphoning all air
 		environment.transfer_ratio_to(airs[1], volume_rate * seconds_per_tick / environment.return_volume())
 
-	tile.air_update_turf()
 	update_parents()
 
 	return TRUE

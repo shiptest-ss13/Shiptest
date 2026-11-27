@@ -60,7 +60,6 @@
 	cost = 1000
 	unit_name = "rare hunting trophy"
 	export_types = list(
-		/obj/item/mob_trophy/dwarf_skull,
 		/obj/item/mob_trophy/fang,
 		/obj/item/mob_trophy/war_paw,
 		/obj/item/mob_trophy/elder_tentacle,
@@ -80,7 +79,7 @@
 		/obj/item/mob_trophy/broodmother_tongue,
 		/obj/item/mob_trophy/ice_block_talisman,
 		/obj/item/mob_trophy/miner_eye,
-		/obj/item/mob_trophy/vortex_talisman,
+		/obj/item/mob_trophy/obol,
 		/obj/item/mob_trophy/blaster_tubes,
 		/obj/item/mob_trophy/megabot_reactor
 	)

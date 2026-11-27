@@ -17,6 +17,8 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON
+
 	equipping_sound = EQUIP_SOUND_MED_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
 	equip_delay_self = EQUIP_DELAY_SUIT

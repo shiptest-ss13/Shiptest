@@ -56,7 +56,7 @@
 
 /datum/component/ai_dodging/proc/sidestep(atom/target)
 	var/mob/living/basic/basic_mob = parent
-	if(QDELETED(target) || !isturf(target.loc) || !isturf(basic_mob.loc) || basic_mob.stat != CONSCIOUS || basic_mob.incapacitated())
+	if(QDELETED(target) || !isturf(target.loc) || !isturf(basic_mob.loc) || basic_mob.stat != CONSCIOUS || basic_mob.is_incapacitated())
 		return
 	var/static/list/cardinal_sidestep_directions = list(-90, -45, 0, 45, 90)
 	var/static/list/diagonal_sidestep_directions = list(-45, 0, 45)
@@ -75,7 +75,7 @@
 	if(projectile.homing)
 		return // it'd follow us across anyway, so the step only loses us ground
 	var/turf/shot_from = get_turf(projectile.starting)
-	if(!shot_from || !isturf(source.loc) || source.stat != CONSCIOUS || source.incapacitated())
+	if(!shot_from || !isturf(source.loc) || source.stat != CONSCIOUS || source.is_incapacitated())
 		return
 	var/datum/ai_controller/controller = source.ai_controller
 	if(controller && (source.loc == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] || source.loc == controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]))

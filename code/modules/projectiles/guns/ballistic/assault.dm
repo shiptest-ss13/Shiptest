@@ -158,7 +158,7 @@
 	. = ..()
 	. += span_notice("You could <b>right click</b> a metal rod on it to sharpen it for use in the DMA.")
 
-/obj/item/gun/ballistic/automatic/assault/attackby_secondary(obj/item/thingy, mob/user, params)
+/obj/item/gun/ballistic/automatic/assault/swiss_cheese/attackby_secondary(obj/item/thingy, mob/user, params)
 	if(istype(thingy, /obj/item/stack/rods))
 		to_chat(user, span_notice("You begin sharpening a rod on [src]..."))
 		var/obj/item/stack/rods/its_a_cylinder = thingy
@@ -171,5 +171,6 @@
 			var/obj/item/not_anymore = new /obj/item/ammo_casing/caseless/dma_rod
 			user.put_in_hands(not_anymore)
 			src.attackby_secondary(not_anymore, user, params) // load if we can
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	else
 		return ..()

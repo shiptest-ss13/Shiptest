@@ -150,7 +150,7 @@
 /obj/vehicle/ridden/scooter/skateboard/MouseDrop(atom/over_object)
 	. = ..()
 	var/mob/living/carbon/M = usr
-	if(!istype(M) || M.incapacitated() || !Adjacent(M))
+	if(!istype(M) || M.is_incapacitated() || !Adjacent(M))
 		return
 	if(has_buckled_mobs() && over_object == M)
 		to_chat(M, span_warning("You can't lift this up when somebody's on it."))

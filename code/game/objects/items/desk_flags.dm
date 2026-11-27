@@ -12,8 +12,8 @@
 /obj/item/desk_flag/Initialize()
 	. = ..()
 	if(prob(3))
-		name = "vampire flag"
-		desc = "The blue, cyan, and white flag of the transylvanian society of vampires."
+		name = "transgender flag"
+		desc = "The blue, cyan, and white flag of transgender people."
 		icon_state = "trans"
 
 /obj/item/desk_flag/solgov
@@ -22,8 +22,8 @@
 	icon_state = "solgov"
 
 /obj/item/desk_flag/trans
-	name = "vampire desk flag"
-	desc = "The blue, cyan, and white flag of the transylvanian society of vampires."
+	name = "transgender desk flag"
+	desc = "The blue, cyan, and white flag of transgender people."
 	icon_state = "trans"
 
 /obj/item/desk_flag/gezena

@@ -6,10 +6,7 @@
 	thermal_conductivity = 0.025
 	heat_capacity = INFINITY
 	floor_tile = /obj/item/stack/sheet/metal
-	footstep = FOOTSTEP_PLATING
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_PLATING
 	tiled_dirt = FALSE
 	flammability = 0 // fireproof!
 
@@ -94,12 +91,6 @@
 
 /turf/open/floor/engine/attack_paw(mob/user)
 	return attack_hand(user)
-
-/turf/open/floor/engine/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	user.Move_Pulled(src)
 
 //air filled floors; used in atmos pressure chambers
 

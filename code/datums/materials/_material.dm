@@ -108,10 +108,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	if(isopenturf(T))
 		if(turf_sound_override)
 			var/turf/open/O = T
-			O.footstep = turf_sound_override
-			O.barefootstep = turf_sound_override
-			O.clawfootstep = turf_sound_override
-			O.heavyfootstep = turf_sound_override
+			O.turf_footstep_type = turf_sound_override
 	if(alpha < 255)
 		T.AddElement(/datum/element/turf_z_transparency, TRUE)
 	return

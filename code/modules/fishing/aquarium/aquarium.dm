@@ -141,13 +141,17 @@
 		to_chat(user,span_notice("You feed the fish."))
 	return NONE
 
+/obj/structure/aquarium/pull_hand_act(mob/living/user, atom/movable/pulled)
+	if(broken || !isliving(pulled))
+		return FALSE
+	var/mob/living/living_pulled = pulled
+	var/datum/component/aquarium_content/content_component = living_pulled.GetComponent(/datum/component/aquarium_content)
+	if(content_component && content_component.is_ready_to_insert(src))
+		try_to_put_mob_in(user)
+	return TRUE
+
 /obj/structure/aquarium/interact(mob/user)
-	if(!broken && user.pulling && isliving(user.pulling))
-		var/mob/living/living_pulled = user.pulling
-		var/datum/component/aquarium_content/content_component = living_pulled.GetComponent(/datum/component/aquarium_content)
-		if(content_component && content_component.is_ready_to_insert(src))
-			try_to_put_mob_in(user)
-	else if(panel_open)
+	if(panel_open)
 		. = ..() //call base ui_interact
 
 /// Tries to put mob pulled by the user in the aquarium after a delay
@@ -162,7 +166,7 @@
 			if(QDELETED(living_pulled) || user.pulling != living_pulled || living_pulled.buckled || living_pulled.has_buckled_mobs())
 				return
 			var/datum/component/aquarium_content/content_component = living_pulled.GetComponent(/datum/component/aquarium_content)
-			if(content_component || content_component.is_ready_to_insert(src))
+			if(!content_component || !content_component.is_ready_to_insert(src))
 				return
 			user.visible_message(span_danger("[user] stuffs [living_pulled] into [src]!"))
 			living_pulled.forceMove(src)
