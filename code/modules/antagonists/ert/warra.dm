@@ -5,7 +5,7 @@
 
 /datum/antagonist/ert/warra/delivery
 	name = "N+S Cargo Technician"
-	outfit = /datum/outfit/job/warra/cargo_tech
+	outfit = /datum/outfit/job/warra/assistant/cargo
 	role = "Cargo Technician"
 
 /datum/antagonist/ert/warra/inspector
