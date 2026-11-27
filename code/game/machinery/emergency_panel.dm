@@ -64,7 +64,10 @@
 
 	switch(alert(user, "Are you sure you want to create a distress signal?",, "Yes", "No"))
 		if("Yes")
+			if(on_cooldown || !hatch_open || !user.canUseTopic(src, BE_CLOSE))
+				return
 			create_distress_beacon(linked_ship)
+
 			playsound(src, 'sound/machines/triple_beep.ogg', 50, FALSE)
 			to_chat(user, span_warning("Distress signal broadcasted."))
 			on_cooldown = TRUE
