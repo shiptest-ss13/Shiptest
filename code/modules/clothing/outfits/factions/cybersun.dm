@@ -132,6 +132,11 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	glasses = /obj/item/clothing/glasses/sunglasses
 
+/* same shit different name */
+/datum/outfit/job/cybersun/officer/intelligence_officer/agent
+	name = "Cybersun - Executive Agent"
+	id_assignment = "Executive Agent"
+
 /datum/outfit/job/cybersun/officer/cmo
 	name = "Cybersun - Medical Director"
 	id_assignment = "Medical Director"

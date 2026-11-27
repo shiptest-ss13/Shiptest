@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "4510bis Stratos-class Galeas",
+	"faction": "/datum/faction/cybersun",
+	"prefix": "CSSV",
+	"manufacturer": "ISF Spacecraft",
+	"map_short_name": "Stratos-class",
+	"description": "The pride of Cybersun's fleet during the Intercorprate War, the Stratos-Class Galeas was a heavily upgunned, nimble warship that excelled at surprise attacks and knife-fighting, and vessels of the class such as the CSSV Iterant 22 and CSSV Lysine easily became aces at the Battle at Kapche-Legnica. Originally laid down in 485 FSC by ISF Shipyards, working off designs made by Cybersun Virtual Solutions, the 4510bis is an upgrade package and retrofit made by Cybersun Industries. Bound by post-ICW treaties and legal legislation, the 4510bis does not mount any of the heavy guns that gave the ship its distinctive combat style, but maintains its high-power drive train. Cybersun negotiations with the Galactic Engineers Concordant has lead to an increase in amenities beyond the Cybersun standard, while space that was formerly dedicated to mounting 771 Velum Interceptors is now quarters for a combination Trauma Team / Troubleshooter compliment. Ammunition storage was converted into an infirmary and the old crew block was refit to peacetime standards. The targetting computer has been swapped out for a full-spectrum communications suite. Little of the original model exists in the 4510bis. Excessive production costs have kept many examples of the vessel from being made, as Cybersun Industries does not see the need for a high-powered combat fleet in the modern day. The Stratos suffices as a heavy troop carrier and transport for high-ranking members of Cybersun Industries alike, leaving existing hulls in safe condition until such a time as another conflict begins to brew.",
+	"starting_funds": 3000,
+	"limit": 1,
+	"tags": [
+		"Generalist",
+		"Telecomms",
+		"Engineering",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/cybersun/cybersun_stratos.dmm",
+	"namelists": [
+		"CYBERSUN"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/cybersun/officer/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Executive Agent": {
+			"outfit": "/datum/outfit/job/cybersun/officer/intelligence_officer/agent",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Director": {
+			"outfit": "/datum/outfit/job/cybersun/officer/cmo",
+			"officer": true,
+			"slots": 1
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/cybersun/engineer",
+			"slots": 2
+		},
+		"Troubleshooter": {
+			"outfit": "/datum/outfit/job/cybersun/troubleshooter",
+			"slots": 2
+		},
+		"Trauma Team Technician": {
+			"outfit": "/datum/outfit/job/cybersun/paramedic",
+			"slots": 2
+		},
+		"Ship's Aide": {
+			"outfit": "/datum/outfit/job/cybersun/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

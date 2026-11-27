@@ -251,7 +251,8 @@
 #undef AQUARIUM_MAX_OFFSET
 
 
-/obj/structure/aquarium/prefilled/PopulateContents()
+/obj/structure/aquarium/prefilled/Initialize(mapload)
+	. = ..()
 	var/static/items_inside = list(
 		/obj/item/aquarium_prop/rocks = 1,
 		/obj/item/aquarium_prop/seaweed = 1,
@@ -264,7 +265,8 @@
 /obj/structure/aquarium/outpost
 	panel_open = FALSE
 
-/obj/structure/aquarium/cirrus/PopulateContents()
+/obj/structure/aquarium/cirrus/Initialize(mapload)
+	. = ..()
 	var/static/items_inside = list(
 		/obj/item/aquarium_prop/rocks = 1,
 		/obj/item/aquarium_prop/seaweed = 1,
@@ -274,7 +276,8 @@
 	)
 	generate_items_inside(items_inside,src)
 
-/obj/structure/aquarium/sunskipper/PopulateContents()
+/obj/structure/aquarium/sunskipper/Initialize(mapload)
+	. = ..()
 	var/static/items_inside = list(
 		/obj/item/aquarium_prop/rocks = 1,
 		/obj/item/aquarium_prop/seaweed = 1,
