@@ -1343,6 +1343,10 @@
 /obj/item/storage/box/modglasses{
 	pixel_y = 5
 	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 3;
+	pixel_x = 7
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "hf" = (
@@ -2802,6 +2806,14 @@
 /obj/item/clothing/head/hairbow/maroon{
 	pixel_x = -6;
 	pixel_y = 9
+	},
+/obj/item/clothing/under/shorts/pencilskirt{
+	pixel_y = 2;
+	pixel_x = -8
+	},
+/obj/item/paper/crumpled{
+	pixel_x = 7;
+	default_raw_text = "I have a suggestion."
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/engine)
@@ -4639,6 +4651,20 @@
 	pixel_x = 10;
 	pixel_y = -21;
 	id = "bath"
+	},
+/obj/item/mop/advanced{
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 3;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 3;
+	pixel_x = 7
+	},
+/obj/item/soap{
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -8359,6 +8385,10 @@
 /area/ship/hallway/starboard)
 "RJ" = (
 /obj/machinery/photocopier,
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 8;
+	pixel_x = -1
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/command)
 "RU" = (
