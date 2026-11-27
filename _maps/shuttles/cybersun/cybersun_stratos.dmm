@@ -799,6 +799,15 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/storage)
+"ep" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/obj/machinery/porta_turret/ruin/cybersun/light{
+	dir = 4;
+	id = "stratos_grid"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "er" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -986,6 +995,13 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"fv" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "fz" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/bordercorner{
 	dir = 8
@@ -1612,6 +1628,11 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/engineering/communications)
+"hZ" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "ia" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Captain's Quarters";
@@ -2119,6 +2140,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 5
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "kA" = (
@@ -2281,6 +2303,10 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
+"ln" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "lo" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
 	dir = 8
@@ -3303,6 +3329,13 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
+"pC" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "pD" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
@@ -4882,6 +4915,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
+"ys" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "yy" = (
 /obj/effect/turf_decal/atmos/mix,
 /obj/machinery/portable_atmospherics/canister/hydrogen,
@@ -5567,6 +5604,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 6
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "CA" = (
@@ -5672,6 +5710,11 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
+"Dg" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/light/directional/west,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Dq" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "stratus_airlock_shield";
@@ -6700,6 +6743,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/storage)
+"HA" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10;
+	layer = 2.030
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "HB" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
@@ -7488,6 +7539,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
+"Mq" = (
+/obj/effect/turf_decal/number/left_four,
+/obj/effect/turf_decal/number/right_five,
+/obj/machinery/light/directional/north,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Mr" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 4
@@ -9808,7 +9865,7 @@ GH
 fh
 fh
 fh
-sE
+HA
 og
 pN
 og
@@ -9942,7 +9999,7 @@ mu
 mu
 mu
 fh
-fh
+ln
 og
 jp
 og
@@ -9966,7 +10023,7 @@ GX
 Tu
 aK
 GX
-tL
+Mq
 IE
 mu
 mu
@@ -10316,7 +10373,7 @@ mu
 mu
 mu
 Nh
-sE
+HA
 uE
 uE
 uE
@@ -10340,7 +10397,7 @@ xw
 Go
 ps
 kW
-eS
+pC
 lE
 mu
 mu
@@ -10487,7 +10544,7 @@ mu
 mu
 mu
 lE
-sE
+HA
 Gd
 Gd
 YB
@@ -10509,7 +10566,7 @@ GO
 au
 au
 GO
-eS
+pC
 Nh
 mu
 mu
@@ -10712,7 +10769,7 @@ Fv
 Sp
 Jf
 Xd
-fh
+ys
 mu
 mu
 mu
@@ -10950,7 +11007,7 @@ xp
 CT
 hF
 Xd
-fh
+ys
 mu
 mu
 mu
@@ -10997,7 +11054,7 @@ mu
 mu
 mu
 mu
-Nh
+hZ
 UJ
 Yt
 hL
@@ -11236,7 +11293,7 @@ mu
 mu
 fh
 Nh
-lE
+fv
 Ms
 gq
 Pz
@@ -11256,7 +11313,7 @@ yP
 LZ
 qB
 sz
-Nh
+Dg
 lE
 fh
 mu
@@ -11410,7 +11467,7 @@ rF
 mu
 fh
 db
-RB
+ep
 Wq
 gH
 Fw
@@ -11422,7 +11479,7 @@ NS
 mS
 Pk
 WJ
-RB
+ep
 rF
 fh
 mu
