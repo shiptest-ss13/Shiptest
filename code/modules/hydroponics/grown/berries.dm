@@ -106,8 +106,8 @@
 
 /obj/item/food/grown/berries/glow
 	seed = /obj/item/seeds/berry/glow
-	name = "A tasty bunch of berries, still on the branch. These ones have a gentle glow to them."
-	desc = "Nutritious!"
+	name = "bunch of glow-berries"
+	desc = "A tasty bunch of berries, still on the branch. These ones have a gentle glow to them."
 	icon_state = "glowberrypile"
 	bite_consumption_mod = 3
 	foodtypes = FRUIT
