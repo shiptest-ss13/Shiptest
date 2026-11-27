@@ -83,12 +83,13 @@
 /obj/machinery/computer/helm/Destroy()
 	. = ..()
 	SStgui.close_uis(src)
-	ASSERT(length(concurrent_users) == 0)
 	QDEL_NULL(ntnet_relay)
 	SSpoints_of_interest.remove_point_of_interest(src)
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
+	if(length(concurrent_users))
+		stack_trace("Helm destroyed with [length(concurrent_users)] concurrent users still registered.")
 
 /obj/machinery/computer/helm/proc/cancel_jump()
 	if(!calibrating)
@@ -122,6 +123,8 @@
 		qdel(current_ship)
 		return
 
+	calibrating = FALSE
+
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
@@ -137,7 +140,6 @@
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
-	calibrating = FALSE
 
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
@@ -186,6 +188,10 @@
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		// Open UI
+		ui = new(user, src, "HelmConsole", name)
+		if(!ui.open())
+			return
 		var/user_ref = REF(user)
 		var/is_living = isliving(user)
 		// Ghosts shouldn't count towards concurrent users, which produces
@@ -196,10 +202,6 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-
-		// Open UI
-		ui = new(user, src, "HelmConsole", name)
-		ui.open()
 
 		// Register map objects
 		if(current_ship)
@@ -469,7 +471,7 @@
 	// Living creature or not, we remove you anyway.
 	concurrent_users -= user_ref
 	// Unregister map objects
-	if(current_ship)
+	if(current_ship && !QDELETED(current_ship))
 		current_ship.token.cam_screen.hide_from(user)
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")

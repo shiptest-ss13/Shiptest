@@ -349,7 +349,14 @@
 	if(!O)
 		return 0
 
-	if (O.equip(src, visualsOnly, preference_source)) // Need the mob equipped to access its ID
+	hold_icons() // each item equipped rebuilds our icons otherwise
+	try
+		. = O.equip(src, visualsOnly, preference_source)
+	catch(var/exception/error)
+		release_icons()
+		throw error
+	release_icons()
+	if (.) // Need the mob equipped to access its ID
 		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 		if (ship)
 			var/obj/item/card/id/idcard = get_idcard(TRUE)
@@ -369,7 +376,7 @@
 /// take the most recent item out of a slot or place held item in a slot
 
 /mob/living/carbon/human/proc/smart_equip_targeted(slot_type = ITEM_SLOT_BELT, slot_item_name = "belt")
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	var/obj/item/thing = get_active_held_item()
 	var/obj/item/equipped_item = get_item_by_slot(slot_type)
@@ -386,6 +393,9 @@
 			equipped_item.attack_hand(src)
 		else
 			to_chat(src, span_warning("You can't fit [thing] into your [equipped_item.name]!"))
+		return
+	if(!thing && storage.needs_opening(src))
+		storage.user_show_to_mob(src)
 		return
 	if(thing) // put thing in storage item
 		if(!SEND_SIGNAL(equipped_item, COMSIG_TRY_STORAGE_INSERT, thing, src))

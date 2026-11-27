@@ -22,6 +22,10 @@
 	if(user)
 		to_chat(user, span_warning("There doesn't seem to be anywhere to put [src]..."))
 
+/obj/item/clothing/accessory/setup_pocket_storage()
+	// our storage moves onto the uniform we're attached to, so it can't go through a pocket holder
+	LoadComponent(pocket_storage_component_path)
+
 /obj/item/clothing/accessory/proc/attach(obj/item/clothing/under/U, user)
 	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
 	if(storage)

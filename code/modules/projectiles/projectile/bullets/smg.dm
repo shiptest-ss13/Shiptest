@@ -26,7 +26,7 @@
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
 
-// 4.6x30mm (WT-550 Automatic Rifle & NT-SVG)
+// 4.6x30mm (Resolution, SKM-24v, Podium)
 
 /obj/projectile/bullet/c46x30mm
 	name = "4.6x30mm bullet"
@@ -62,7 +62,7 @@
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
 
-// 4.73x33mm caseless (Solar)
+// 4.73x33mm caseless (Swiss Cheese)
 
 /obj/projectile/bullet/c47x33mm
 	name = "4.73x33mm bullet"
@@ -70,7 +70,7 @@
 	armour_penetration = 20
 	bullet_identifier = "small bullet"
 
-// 5.56 HITP caseless (Solare C)
+// 5.56 HITP caseless (Pistole C)
 
 /obj/projectile/bullet/c556mm
 	name = "5.56mm HITP bullet"

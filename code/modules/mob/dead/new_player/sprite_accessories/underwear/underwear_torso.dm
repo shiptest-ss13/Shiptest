@@ -155,9 +155,17 @@
 	name = "Long Shoulderless Top (Greyscale)"
 	icon_state = "longshoulder"
 
+/datum/sprite_accessory/undershirt/longshoulderlesschoker
+	name = "Long Shoulderless Top (Greyscale, Choker)"
+	icon_state = "longshoulder_choker"
+
 /datum/sprite_accessory/undershirt/shortlongshoulderless // dude i suck ass at naming
 	name = "Shortsleeve Long Shoulderless Top (Greyscale)"
 	icon_state = "longshouldershort"
+
+/datum/sprite_accessory/undershirt/shortlongshoulderlesschoker //it gets worse
+	name = "Shortsleeve Long Shoulderless Top (Greyscale, Choker)"
+	icon_state = "longshouldershort_choker"
 
 /datum/sprite_accessory/undershirt/turtle
 	name = "Turtleneck (Greyscale)"

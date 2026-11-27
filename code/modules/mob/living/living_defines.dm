@@ -21,6 +21,8 @@
 	var/maxHealth = MAX_LIVING_HEALTH
 	/// The mob's current health.
 	var/health = MAX_LIVING_HEALTH
+	/// world.time of our last Life(), so a corpse that skips some ticks catches up on the time it missed
+	var/last_life_time = 0
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0	///Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
@@ -122,7 +124,7 @@
 
 	var/last_bumped = 0
 	var/unique_name = 0 ///if a mob's name should be appended with an id when created e.g. Mob (666)
-	var/numba = 0 ///the id a mob gets when it's created
+	var/mob_id = 0 ///the id a mob gets when it's created
 
 	var/list/butcher_results = null ///these will be yielded from butchering with a probability chance equal to the butcher item's effectiveness
 	var/list/guaranteed_butcher_results = null ///these will always be yielded from butchering

@@ -241,6 +241,7 @@
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
 
+#define GUN_CLICK_BUFFER_WINDOW (0.2 SECONDS) //Fire click within this time of the cooldown reset will be buffered instead of thrown away
 
 #define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 #define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'

@@ -410,9 +410,9 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
 
-/obj/item/storage/guncase/cm24
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/cm24
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+/obj/item/storage/guncase/fa2m
+	gun_type = /obj/item/gun/ballistic/automatic/assault/fa2/clip
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40
 
 /obj/item/storage/guncase/cmf90
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90
@@ -478,9 +478,9 @@
 
 /* Inteq */
 
-/obj/item/storage/guncase/skm_inteq
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/inteq
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+/obj/item/storage/guncase/fa2_inteq
+	gun_type = /obj/item/gun/ballistic/automatic/assault/fa2/inteq
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40
 
 /obj/item/storage/guncase/commissioner
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
@@ -491,7 +491,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 /obj/item/storage/guncase/mongrel
-	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
+	gun_type = /obj/item/gun/ballistic/automatic/smg/fa2_carbine/inteq
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 
 /obj/item/storage/guncase/mastiff
@@ -541,13 +541,13 @@
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 
-/obj/item/storage/guncase/skm
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+/obj/item/storage/guncase/fa2
+	gun_type = /obj/item/gun/ballistic/automatic/assault/fa2
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40
 
-/obj/item/storage/guncase/skm_lmg
-	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+/obj/item/storage/guncase/ml3
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/ml3
+	mag_type = /obj/item/ammo_box/magazine/fa2_762_40/drum
 
 /obj/item/storage/guncase/slammer
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/slammer

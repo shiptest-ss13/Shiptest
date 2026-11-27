@@ -17,22 +17,26 @@
 	name = "noir trenchcoat"
 	desc = "Sleek colors accentuate the fabrics of this heavy trenchcoat. A design beloved in South Teceti."
 	icon_state = "trenchcoat_noir"
+	base_icon_state = "trenchcoat_noir"
 	item_state = "trenchcoat_noir"
 
 /obj/item/clothing/suit/toggle/trenchcoat/navy
 	name = "navy trenchcoat"
 	desc = "A hard-boiled private investigator's grey trenchcoat."
 	icon_state = "trenchcoat_navy"
+	base_icon_state = "trenchcoat_navy"
 	item_state = "trenchcoat_navy"
 
 /obj/item/clothing/suit/toggle/trenchcoat/aclf
 	name = "\improper ACLF trenchcoat"
 	desc = "Perhaps the most try-hard piece of clothing the Frontier has ever seen. A heavy machine-woven trenchcoat with ACLF iconography scrawled across the backside. A plush liner runs the inside of the neck."
 	icon_state = "trenchcoat_aclf"
+	base_icon_state = "trenchcoat_aclf"
 	item_state = "trenchcoat_aclf"
 
 /obj/item/clothing/suit/toggle/trenchcoat/dm
 	name = "\improper deaf/mute trenchcoat"
 	desc = "A dark trenchcoat emblazoned with a roundel on the backside. \"I thought what I'd do was, I'd pretend I was one of those deaf-mutes.\""
 	icon_state = "trenchcoat_dm"
+	base_icon_state = "trenchcoat_dm"
 	item_state = "trenchcoat_dm"

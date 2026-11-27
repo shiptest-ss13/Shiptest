@@ -43,12 +43,6 @@
 	database_id = BOSS_MEDAL_DRAKE
 	icon = "drake"
 
-/datum/award/achievement/boss/hierophant_kill
-	name = "Hierophant Killer"
-	desc = "Hierophant, but not triumphant."
-	database_id = BOSS_MEDAL_HIEROPHANT
-	icon = "hierophant"
-
 /datum/award/achievement/boss/legion_kill
 	name = "Legion Killer"
 	desc = "We were many..now we are none."
@@ -88,12 +82,6 @@
 	desc = "Now I can wear Rune Platebodies!"
 	database_id = BOSS_MEDAL_DRAKE_CRUSHER
 	icon = "drake"
-
-/datum/award/achievement/boss/hierophant_crusher
-	name = "Hierophant Crusher"
-	desc = "Hierophant, but not triumphant."
-	database_id = BOSS_MEDAL_HIEROPHANT_CRUSHER
-	icon = "hierophant"
 
 /datum/award/achievement/boss/legion_crusher
 	name = "Legion Crusher"

@@ -792,9 +792,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else if(light_range)
 		set_light_on(TRUE)
 	update_appearance()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	update_item_action_buttons()
 
 /obj/item/pda/proc/remove_pen(mob/user)
 
@@ -1060,13 +1058,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 			var/datum/picture/Pic = aicamera.selectpicture(user)
 			aiPDA.picture = Pic
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	aiPDA.create_message(src, selected)
 
 /mob/living/silicon/proc/cmd_show_message_log(mob/user)
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	if(!isnull(aiPDA))
 		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"

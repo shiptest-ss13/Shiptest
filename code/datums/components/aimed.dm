@@ -217,7 +217,9 @@
 	mouse_status = AIMEDFIRE_MOUSEUP
 	process_aim()
 	if(aiming_time_left <= aiming_time_fire_threshold && !shot_canceled)
-		process_shot()
+		var/atom/target = shooter.client.mouse_object_ref?.resolve()
+		if(target)
+			process_shot()
 	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
 		stop_aiming()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
@@ -313,7 +315,9 @@
 	else
 		P.color = rgb(0, 255, 0)
 	var/turf/curloc = get_turf(parent)
-	var/turf/targloc = get_turf(shooter.client.mouseObject)
+
+	var/atom/target_atom = shooter.client.mouse_object_ref?.resolve()
+	var/turf/targloc = get_turf(target_atom)
 	if(!istype(targloc))
 		if(!istype(curloc))
 			return
@@ -359,7 +363,7 @@
 // Gun procs.
 
 /obj/item/gun/proc/on_aimedfire_start(datum/source, atom/target, mob/living/shooter, params)
-	if(current_cooldown || shooter.stat)
+	if(on_fire_cooldown() || shooter.stat)
 		return FALSE
 	if(!can_shoot()) //we call pre_fire so bolts/slides work correctly
 		INVOKE_ASYNC(src, PROC_REF(do_aimedfire_shot), source, target, shooter, params)
@@ -378,7 +382,7 @@
 
 /obj/item/gun/proc/do_aimedfire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(current_cooldown || shooter.incapacitated())
+	if(on_fire_cooldown() || shooter.is_incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))

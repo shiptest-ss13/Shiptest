@@ -148,7 +148,7 @@
 	holder.pixel_y = I.Height() - world.icon_size
 	if(stat == DEAD)
 		holder.icon_state = "huddead2"
-	else if(incapacitated())
+	else if(is_incapacitated())
 		holder.icon_state = "hudoffline"
 	else
 		holder.icon_state = "hudstat"

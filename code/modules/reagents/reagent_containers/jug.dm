@@ -11,7 +11,7 @@
 	volume = 150
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25,50,75,100,150)
-	custom_materials = list(/datum/material/plastic=1000)
+	custom_materials = list(/datum/material/plastic=3000)
 	fill_icon_thresholds = null
 	can_have_cap = TRUE
 	cap_on = TRUE

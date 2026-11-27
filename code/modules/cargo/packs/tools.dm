@@ -6,15 +6,6 @@
 		Actual tools
 */
 
-/datum/supply_pack/tools/toolbox
-	name = "Tool Crate"
-	desc = "Get some work done. Contains an electrical toolbox, a mechanical toolbox, and a welding helmet."
-	contains = list(/obj/item/storage/toolbox/electrical,
-					/obj/item/storage/toolbox/mechanical,
-					/obj/item/clothing/head/welding)
-	cost = 200
-	crate_name = "toolbox crate"
-
 /datum/supply_pack/tools/engigear
 	name = "Engineering Gear Crate"
 	desc = "Contains one toolbelt and a set of meson goggles."

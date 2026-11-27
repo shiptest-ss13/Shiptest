@@ -19,7 +19,7 @@
 	close_sound_volume = 50
 	//half as much as a closet
 	drag_slowdown = 0.75
-	pass_flags_self = LETPASSCLICKS
+	pass_flags_self = LETPASSCLICKS | PASSWEAKSTRUCTURE | PASSSTRUCTURE
 	var/manifest_id = null
 	var/shelve = FALSE
 	var/shelve_range = 0
@@ -64,7 +64,7 @@
 		return // Ghosts busted.
 	if(anchored)
 		return // This is bolted to the ground, you can't move it.
-	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
+	if(!isturf(user.loc) || user.is_incapacitated() || user.body_position == LYING_DOWN)
 		return // If the user is in a weird state, don't bother trying.
 	if(get_dist(drop_atom, src) > 1 || get_dist(drop_atom, user) > 1)
 		return // Check whether the crate is exactly 1 tile from the shelf and the user.

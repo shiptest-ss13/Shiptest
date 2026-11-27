@@ -40,7 +40,7 @@
 
 
 /obj/item/tank/jetpack/proc/cycle(mob/living/user)
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return
 
 	if(!on)
@@ -49,10 +49,7 @@
 	else
 		turn_off(user)
 		to_chat(user, span_notice("You turn the jetpack off."))
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-
+	update_item_action_buttons()
 
 /obj/item/tank/jetpack/proc/turn_on(mob/living/user)
 	if(!allow_thrust(0.01, user))

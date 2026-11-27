@@ -54,8 +54,6 @@
 						"brown beret" = "beretbrown",
 						"light brown beret" = "beretlightbrown"
 						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/head/beret/color/white
 	name = "white beret"

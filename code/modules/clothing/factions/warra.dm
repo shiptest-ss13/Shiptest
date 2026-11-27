@@ -203,6 +203,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
 	icon_state = "officer_formal"
+	base_icon_state = "officer_formal"
 	item_state = "bluecloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra
@@ -213,24 +214,28 @@
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
 	icon_state = "labcoat"
+	base_icon_state = "labcoat"
 	item_state = "whitecloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra/blue
 	name = "medical director's labcoat"
 	desc = "A well-made, fitted labcoat, crafted from high-quality materials and sporting blue markings around the arms and hem. A Makosso-Warra logo is neatly embroidered on the front. Stylish, practical, and exceptionally professional."
 	icon_state = "med_labcoat"
+	base_icon_state = "med_labcoat"
 	item_state = "whitecloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra/black
 	name = "science director's labcoat"
 	desc = "An overdesigned and rather intimidating black labcoat with a very high collar, as impervious to lab hazards as one can get without a full-body suit. Makosso-Warra Corporation's logo is proudly emblazoned on the chest."
 	icon_state = "black_labcoat"
+	base_icon_state = "black_labcoat"
 	item_state = "blackcloth"
 
 /obj/item/clothing/suit/toggle/labcoat/warra/paramedic
 	name = "bright blue paramedic jacket"
 	desc = "A thick, protective blue jacket with reflective visibility stripes and a Makosso-Warra logo stitched into the chest. Safe against all manner of scrapes and splashes."
 	icon_state = "med_jacket"
+	base_icon_state = "med_jacket"
 	item_state = "bluecloth"
 
 /obj/item/clothing/suit/toggle/chorejacket/warra
@@ -241,8 +246,8 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/warra/kepori.dmi'
 	icon_state = "chorejacketns"
 	item_state = "chorejacketns"
+	base_icon_state = "chorejacketns"
 	unique_reskin = null
-
 
 /obj/item/clothing/under/warra/supply/qm
 	name = "supply director slacks"
@@ -476,3 +481,30 @@
 	vox_override_icon = 'icons/mob/clothing/faction/warra/vox.dmi'
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+
+	//Warden hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/esh/warden
+	name = "Vigilitas Warden helmet"
+	desc = "A state of the art helmet attached to the Warden hardsuit. Armored tubing around the injector lines allow for chemicals to inject around the user safely."
+	icon = 'icons/obj/clothing/faction/warra/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/warra/head.dmi'
+	icon_state = "hardsuit0-warden"
+	item_state = "hardsuit0-warden"
+	hardsuit_type = "warden"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = HEAD
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	light_range = 4
+
+/obj/item/clothing/suit/space/hardsuit/esh/warden
+	name = "\improper Vigilitas Warden heavy hardsuit"
+	desc = "A state of the art hardsuit utilized by Vigilitas Interstellar. Heavy composite armor alongside an easy use injector system around the suit results in a hardsuit as close as can be to heavier power armor. It may be slow, but you will be unbreakable."
+	icon = 'icons/obj/clothing/faction/warra/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/warra/suits.dmi'
+	icon_state = "hardsuit-warden"
+	item_state = "hardsuit-warden"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 80, "wound" = 50)
+	slowdown = 1.25
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/esh/warden

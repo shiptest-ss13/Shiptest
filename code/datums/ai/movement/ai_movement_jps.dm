@@ -221,7 +221,7 @@
 	var/step_dir = get_dir(movable_pawn, next_step)
 	var/step_delay = controller.movement_delay * ((NSCOMPONENT(step_dir) && EWCOMPONENT(step_dir)) ? SQRT_2 : 1)
 	movable_pawn.set_glide_size(DELAY_TO_GLIDE_SIZE(step_delay))
-	movable_pawn.Move(next_step, step_dir)
+	ai_step_to(movable_pawn, next_step, controller.get_access())
 	if(get_turf(movable_pawn) != next_step)
 		return FALSE
 	controller.movement_cooldown += step_delay - controller.movement_delay // the extra a diagonal takes
@@ -330,10 +330,10 @@
 // unbuckle a body if it's in the way
 /datum/ai_movement/jps/proc/unbuckle_body_in_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
 	var/mob/living/living_mover = mover
-	if(!istype(living_mover) || living_mover.incapacitated())
+	if(!istype(living_mover) || living_mover.is_incapacitated())
 		return FALSE
 	for(var/mob/living/body in next_step)
-		if(!body.density || !body.buckled || (body.stat == CONSCIOUS && !body.incapacitated()))
+		if(!body.density || !body.buckled || (body.stat == CONSCIOUS && !body.is_incapacitated()))
 			continue
 		var/atom/movable/seat = body.buckled
 		living_mover.visible_message(span_warning("[living_mover] tips [body] out of [seat]."))

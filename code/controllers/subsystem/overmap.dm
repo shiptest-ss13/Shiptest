@@ -142,7 +142,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
-			if(E.get_nearby_overmap_objects())
+			if(length(E.get_nearby_overmap_objects()))
 				E.apply_effect()
 				if(MC_TICK_CHECK)
 					return

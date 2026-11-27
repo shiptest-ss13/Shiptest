@@ -37,7 +37,27 @@
 		return AI_ENVIRONMENT_TOO_COLD
 	if(basic_mob.unsuitable_heat_damage && temperature > basic_mob.maximum_survivable_temperature && !(istype(human_mob) && human_mob.insulated_from_heat(temperature)))
 		return AI_ENVIRONMENT_TOO_HOT
+	if(ai_weather_threatens(basic_mob, spot))
+		return AI_ENVIRONMENT_WEATHER
 	return null
+
+// whether weather at current spot threatens mob
+/proc/ai_weather_threatens(mob/living/mover, turf/spot)
+	var/area/spot_area = spot.loc
+	var/datum/weather/weather = spot_area.active_weather
+	if(!weather || !weather.my_controller?.mapzone?.is_in_bounds(spot))
+		return FALSE
+	return weather.threatens(mover)
+
+// the weather about a mob (and they're not necessarily in), and if it threatens them
+/proc/ai_weather_about(mob/living/mover)
+	var/datum/map_zone/mapzone = mover.get_map_zone()
+	var/datum/weather_controller/weather_controller = mapzone?.weather_controller
+	for(var/weather_type in weather_controller?.current_weathers)
+		var/datum/weather/weather = weather_controller.current_weathers[weather_type]
+		if(weather.threatens(mover))
+			return TRUE
+	return FALSE
 
 // whether basic_mob needs some gas or other in the air, so no air at all hurts it
 /proc/ai_needs_to_breathe(mob/living/basic/basic_mob)
@@ -78,7 +98,28 @@
 
 // whether mover could take one step from start onto finish
 /proc/ai_can_step_to(atom/movable/mover, turf/start, turf/finish)
-	return finish && !finish.is_blocked_turf(TRUE, mover) && !is_ai_hazard_turf(finish, mover) && !ai_diagonal_crosses_hazard(start, finish, mover)
+	return finish && !finish.is_blocked_turf(TRUE, mover) && !start.LinkBlockedWithAccess(finish, mover) && !is_ai_hazard_turf(finish, mover) && !ai_diagonal_crosses_hazard(start, finish, mover)
+
+/proc/ai_step_to(atom/movable/mover, turf/finish, access)
+	var/step_dir = get_dir(mover, finish)
+	var/turf/side_turf = ai_diagonal_side_first(mover, finish, step_dir, access)
+	if(!side_turf)
+		return mover.Move(finish, step_dir)
+	return mover.Move(side_turf, step_dir & (EAST|WEST)) && mover.Move(finish, step_dir & (NORTH|SOUTH))
+
+/proc/ai_diagonal_side_first(atom/movable/mover, turf/finish, step_dir, access)
+	if(!(NSCOMPONENT(step_dir) && EWCOMPONENT(step_dir)))
+		return null
+	var/turf/start = get_turf(mover)
+	var/turf/upright_turf = get_step(start, step_dir & (NORTH|SOUTH))
+	var/turf/side_turf = get_step(start, step_dir & (EAST|WEST))
+	if(!upright_turf || !side_turf)
+		return null
+	if(start.LinkBlockedWithAccess(upright_turf, mover, access) || !upright_turf.LinkBlockedWithAccess(finish, mover, access))
+		return null // Move manages fine on its own
+	if(start.LinkBlockedWithAccess(side_turf, mover, access) || side_turf.LinkBlockedWithAccess(finish, mover, access))
+		return null
+	return side_turf
 
 // looks for candidate spots it can run away to
 /proc/ai_spots_away_from(atom/movable/mover, turf/start, turf/danger, distance, list/angle_offsets, min_danger_distance = 0)

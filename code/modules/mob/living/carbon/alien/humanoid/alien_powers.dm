@@ -167,7 +167,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/acid/fire(mob/living/carbon/alien/user)
 	var/O = input("Select what to dissolve:","Dissolve",null) as obj|turf in oview(1,user)
-	if(!O || user.incapacitated())
+	if(!O || user.is_incapacitated())
 		return 0
 	else
 		return corrode(O,user)
@@ -201,7 +201,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/neurotoxin/update_icon()
 	action.button_icon_state = "alien_neurotoxin_[active]"
-	action.UpdateButtonIcon()
+	action.UpdateButtons()
 	return ..()
 
 /obj/effect/proc_holder/alien/neurotoxin/InterceptClickOn(mob/living/clicker, params, atom/target)
@@ -320,7 +320,7 @@ Doesn't work on other aliens/AI.*/
 	for(var/X in abilities)
 		var/obj/effect/proc_holder/alien/APH = X
 		if(APH.has_action)
-			APH.action.UpdateButtonIcon()
+			APH.action.UpdateButtons()
 	return 1
 
 /mob/living/carbon/alien/adjustPlasma(amount)

@@ -232,11 +232,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/current_skin
 	/// List of options to reskin.
 	var/list/unique_reskin
-	/// If reskins change base icon state as well
-	var/unique_reskin_changes_base_icon_state = FALSE
-	/// If reskins change inhands as well
-	var/unique_reskin_changes_inhand = FALSE
-	var/unique_reskin_changes_name = FALSE
+	/// flags used to tell unique reskin what might need to be changed during a reskin
+	var/unique_reskin_flags = null
 
 	bad_type = /obj/item
 
@@ -451,7 +448,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(isitem(loc))
 		//if so, can we actually access it?
 		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
-		if(ourstorage && !ourstorage.access_check())
+		if(ourstorage && !ourstorage.access_check(user))
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
 			return
 
@@ -580,12 +577,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/proc/dropped(mob/user, silent = FALSE)
-	SHOULD_CALL_PARENT(1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.Remove(user)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.Remove(user)
+
 	if(item_flags & DROPDEL)
 		qdel(src)
+
 	item_flags &= ~IN_INVENTORY
 	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user)
 	remove_outline()
@@ -626,12 +627,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/equipped(mob/user, slot, initial = FALSE)
 	SHOULD_CALL_PARENT(1)
 	visual_equipped(user, slot, initial)
-	for(var/X in actions)
-		var/datum/action/A = X
-		if(item_action_slot_check(slot, user)) //some items only give their actions buttons when in a specific slot.
-			A.Grant(user)
+	for(var/datum/action/action as anything in actions)
+		if(item_action_slot_check(slot, user, action))
+			action.Grant(user)
 	item_flags |= IN_INVENTORY
 	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
+	SEND_SIGNAL(user, COMSIG_MOB_EQUIPPED_ITEM, src, slot)
 	if(!initial)
 		if(equip_sound && (slot_flags & slot))
 			playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
@@ -678,7 +679,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr))
+	if(usr.is_incapacitated() || !Adjacent(usr))
 		return
 
 	if(isliving(usr))
@@ -940,7 +941,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/user = usr
 		tip_timer = addtimer(CALLBACK(src, PROC_REF(openTip), location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
 	var/mob/living/L = usr
-	if(istype(L) && L.incapacitated())
+	if(istype(L) && L.is_incapacitated())
 		apply_outline(COLOR_RED_GRAY)
 	else
 		apply_outline()
@@ -1166,6 +1167,18 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		jostle_pain_mult = (!isnull(embedding["jostle_pain_mult"]) ? embedding["jostle_pain_mult"] : EMBEDDED_JOSTLE_PAIN_MULTIPLIER),\
 		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT))
 	return TRUE
+
+/**
+ * Updates all action buttons associated with this item
+ *
+ * Arguments:
+ * * status_only - Update only current availability status of the buttons to show if they are ready or not to use
+ * * force - Force buttons update even if the given button icon state has not changed
+ */
+/obj/item/proc/update_item_action_buttons(status_only = FALSE, force = FALSE)
+	for(var/datum/action/current_action as anything in actions)
+		current_action.UpdateButtons(status_only, force)
+
 
 // Update icons if this is being carried by a mob
 /obj/item/wash(clean_types)

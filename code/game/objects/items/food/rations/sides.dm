@@ -97,7 +97,7 @@
 	desc = "A packet of fried potato curls, coated in salt and sealed."
 	filling_color = "#ffcc00"
 	tastes = list("potato" = 1)
-	foodtypes = GRAIN
+	foodtypes = GRAIN | HEAVILY_FRIED
 
 /obj/item/food/ration/side/stewed_asparagus_butter
 	name = "stewed asparagus with butter"
@@ -206,7 +206,7 @@
 	desc = "Dry pork rinds coated in a barbecue-flavored seasoning."
 	filling_color = "#b82121"
 	tastes = list("pork rinds" = 1, "powdery barbecue" = 1)
-	foodtypes = MEAT
+	foodtypes = MEAT | HEAVILY_FRIED
 
 /obj/item/food/ration/side/applesauce_mango_peach_puree
 	name = "applesauce with mango and peach puree"
@@ -225,7 +225,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/nutriment/protein = 2,
 	)
-	foodtypes = BREAKFAST | MEAT
+	foodtypes = BREAKFAST | EGG
 
 /obj/item/food/ration/side/tirila
 	name = "tirila-li"

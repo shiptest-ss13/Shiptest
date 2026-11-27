@@ -348,12 +348,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller/internal,
 			for(var/V in vents)
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 				if(vents[vent] & AIRLOCK_CYCLEROLE_INT_PRESSURIZE)		// If we're already pressurizing, keep doing it
+					if(vent.on && vent.pump_direction == VENT_RELEASE && vent.pressure_checks == VENT_EXT_BOUND && vent.external_pressure_bound == interior_pressure)
+						continue
 					vent.pump_direction = VENT_RELEASE
 					vent.pressure_checks = VENT_EXT_BOUND
 					vent.external_pressure_bound = interior_pressure
 					vent.on = TRUE
 					vent.update_appearance()
-				else
+				else if(vent.on)
 					vent.on = FALSE
 					vent.update_appearance()
 			return

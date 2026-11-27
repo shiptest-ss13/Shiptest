@@ -254,27 +254,6 @@
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
 	update_appearance()
 
-/obj/item/storage/belt/medical/traumateam/PopulateContents()
-	new /obj/item/sensor_device(src)
-	new /obj/item/pinpointer/crew(src)
-	new /obj/item/stack/medical/gauze/twelve(src)
-	new /obj/item/hypospray/mkii/chimorph(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
-	update_appearance()
-
-/obj/item/storage/belt/medical/webbing/traumateam/PopulateContents()
-	new /obj/item/sensor_device(src)
-	new /obj/item/pinpointer/crew(src)
-	new /obj/item/stack/medical/gauze/twelve(src)
-	new /obj/item/hypospray/mkii/chimorph(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
-	update_appearance()
-
-
 /obj/item/storage/belt/medical/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
 	new /obj/item/circular_saw(src)
@@ -318,7 +297,6 @@
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
 		/obj/item/melee/knife,
 		/obj/item/grenade,
@@ -366,7 +344,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/melee/baton/loaded(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/full/classic/PopulateContents()

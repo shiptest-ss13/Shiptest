@@ -165,7 +165,7 @@
 	if(turfs.len)
 		L["None (Dangerous)"] = pick(turfs)
 	var/t1 = input(user, "Please select a teleporter to lock in on.", "Hand Teleporter") as null|anything in L
-	if (!t1 || user.get_active_held_item() != src || user.incapacitated())
+	if (!t1 || user.get_active_held_item() != src || user.is_incapacitated())
 		return
 	if(active_portal_pairs.len >= max_portal_pairs)
 		user.show_message(span_notice("\The [src] is recharging!"))

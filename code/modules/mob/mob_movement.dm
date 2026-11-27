@@ -151,8 +151,8 @@
 		if(mob.throwing)
 			mob.throwing.finalize(FALSE)
 
-	var/atom/movable/P = mob.pulling
-	if(P && !ismob(P) && P.density)
+	var/atom/movable/pulled_atom = mob.pulling
+	if(pulled_atom && !ismob(pulled_atom) && pulled_atom.density && !iscarbon(mob))
 		mob.setDir(turn(mob.dir, 180))
 
 /**
@@ -165,7 +165,7 @@
 		return FALSE
 	if(mob.pulledby == mob.pulling && mob.pulledby.grab_state == GRAB_PASSIVE) //Don't autoresist passive grabs if we're grabbing them too.
 		return FALSE
-	if(mob.incapacitated(ignore_restraints = TRUE))
+	if(mob.is_incapacitated(ignore_restraints = TRUE))
 		COOLDOWN_START(src, move_delay, 1 SECONDS)
 		return TRUE
 	else if(HAS_TRAIT(mob, TRAIT_RESTRAINED))
@@ -480,7 +480,7 @@
 	if(dir != UP && dir != DOWN)
 		return FALSE
 	var/turf/target = get_step_multiz(src, dir)
-	if(incapacitated())//I'm so so sorry	//WS Start - No more flying while dead
+	if(is_incapacitated())//I'm so so sorry	//WS Start - No more flying while dead
 		if(feedback)
 			to_chat(src, span_warning("You can't do that right now!"))
 			return FALSE					//WS End

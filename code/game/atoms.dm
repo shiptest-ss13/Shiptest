@@ -1193,7 +1193,7 @@
 		C?.open_filter_editor(src)
 
 	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
-		export_item_and_contents(src, apply_elastic = FALSE)
+		export_item_and_contents(src)
 
 /atom/vv_get_header()
 	. = ..()
@@ -1668,8 +1668,9 @@
 	if(isnull(user))
 		return
 
-	// Face directions on harm intent
-	if(user.face_mouse)
+	// Face directions on harm intent, except for if we're dragging and moving at the same time
+	var/mob/living/carbon/carbon_user = user
+	if(user.face_mouse && !(istype(carbon_user) && carbon_user.is_drag_walking()))
 		user.face_atom(src)
 
 	//Screentips
