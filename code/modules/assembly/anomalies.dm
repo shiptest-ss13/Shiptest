@@ -233,13 +233,18 @@
 
 /obj/item/assembly/signaler/anomaly/transfusion/anomaly_core_detonation()
 	visible_message(span_warning("Ichor flies out of [src], trying to force itself into everything around!"))
-	while(blood_stored > 0)
-		for(var/mob/living/carbon/victim in range(2, src))
-			var/present_time
-			present_time = rand((blood_stored / 10), (blood_stored / 2))
-			visible_message(span_boldwarning("[victim] finds themselves transfused with the crimson ichor!"))
-			victim.blood_volume += present_time
-			blood_stored += -present_time
+	for(var/mob/living/carbon/victim in range(4, src))
+		if(blood_stored <= 0)
+			break
+		var/present_time
+		present_time = rand((blood_stored / 10), (blood_stored / 2))
+		visible_message(span_boldwarning("[victim] finds themselves transfused with the crimson ichor!"))
+		victim.blood_volume += present_time
+		blood_stored -= present_time
+
+		var/obj/effect/decal/cleanable/blood/hitsplatter/our_splatter = new(get_turf(src))
+		var/turf/target_turf = get_ranged_target_turf(src, get_dir(src, victim), splatter_strength)
+		INVOKE_ASYNC(our_splatter, TYPE_PROC_REF(/obj/effect/decal/cleanable/blood/hitsplatter, fly_towards), targ, get_dist(get_turf(src), target_turf))
 	..()
 
 ///Veins Anomaly
