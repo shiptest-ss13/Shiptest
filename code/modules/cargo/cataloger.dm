@@ -158,9 +158,9 @@
 	for(var/orders in unique_orders)
 		var/datum/supply_pack/pack = orders
 		var/purchase_count = count_by_type(purchases, pack)
-		list_of_orders += " [pack.name] x [purchase_count]"
+		list_of_orders += "<br>[pack.name] x [purchase_count]"
 	if(total_cost)
-		list_of_orders += "; For an estimated total of [total_cost] cr."
+		list_of_orders += ";<br>For an estimated total of [total_cost] cr."
 	. += span_notice(list_of_orders)
 
 
