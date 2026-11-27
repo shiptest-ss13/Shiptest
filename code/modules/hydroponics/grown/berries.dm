@@ -20,7 +20,7 @@
 /obj/item/food/grown/berries
 	seed = /obj/item/seeds/berry
 	name = "bunch of berries"
-	desc = "A tasty bunch of berries, still on the branch."
+	desc = "A tasty bunch of berries, still on the branch. Better look closely, they might be poisonous."
 	icon_state = "berrypile"
 	gender = PLURAL
 	foodtypes = FRUIT
@@ -106,7 +106,7 @@
 
 /obj/item/food/grown/berries/glow
 	seed = /obj/item/seeds/berry/glow
-	name = "bunch of glow-berries"
+	name = "A tasty bunch of berries, still on the branch. These ones have a gentle glow to them."
 	desc = "Nutritious!"
 	icon_state = "glowberrypile"
 	bite_consumption_mod = 3
@@ -115,7 +115,7 @@
 	distill_reagent = null
 	wine_power = 60
 	wine_flavor = "gentle warmth" //WS edit: new wine flavors
-	examine_more_string = "a bit off, with a gentle glow to them."
+	examine_more_string = "a bit off. You can taste metal when you get close."
 
 // Cherries
 /obj/item/seeds/cherry
