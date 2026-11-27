@@ -175,7 +175,7 @@
 			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 		if("finish_punchcard")
 			punchcard_orders = list()
-			inserted_card.Destroy()
+			qdel(inserted_card)
 			inserted_card = null
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])

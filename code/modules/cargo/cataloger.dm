@@ -138,7 +138,7 @@
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 		sleep(5)
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		Destroy()
+		qdel(src)
 	else
 		to_chat(user,span_warning("You need to be more <b>harmful</b> to tear the [name] apart."))
 
