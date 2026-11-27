@@ -753,6 +753,7 @@
 	ears = /obj/item/radio/headset/headset_cargo
 	head = /obj/item/clothing/head/warra/cap/supply
 	uniform = /obj/item/clothing/under/warra/assistant/supply
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 /datum/outfit/job/warra/assistant/cargo/empty

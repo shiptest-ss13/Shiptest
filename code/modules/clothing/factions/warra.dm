@@ -7,11 +7,12 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/warra/uniforms.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
+	icon_state = "deckhand"
 	item_state = "graycloth"
 	vox_override_icon = 'icons/mob/clothing/faction/warra/vox.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
-// Deckhand uniforms
+// Assistant uniforms
 
 /obj/item/clothing/under/warra/assistant
 	name = "assistant uniform"
@@ -26,7 +27,7 @@
 		"watchman shorts" = "assistant_security",
 		"custodial uniform" = "assistant_janitor",
 		)
-	unique_reskin_changes_name = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_NAME
 
 /obj/item/clothing/under/warra/assistant/supply
 	name = "cargo handler shorts"
