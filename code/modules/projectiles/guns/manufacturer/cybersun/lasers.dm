@@ -328,9 +328,9 @@
 	spawn_no_ammo = TRUE
 
 //flare shotgun
-/obj/item/gun/energy/cybersun/lorentz/fusilier
-	name = "\improper LS620 Fusilier"
-	desc = "A more traditional energy weapon within Tadeusz's Lorentz line, the Fusilier is a heavy rifle made for engaging armored targets in closer quarters. Compared to the Galvanizer rifle, it works off brute force and suffers from the same ranging issues that Lorentz weapons tend to suffer. It is still a fearsome weapon to fight against"
+/obj/item/gun/energy/cybersun/lorentz/inductor
+	name = "\improper LS620 Inductor"
+	desc = "A more traditional energy weapon within Tadeusz's Lorentz line, the Inductor is a heavy rifle made for engaging armored targets in closer quarters. Compared to the Galvanizer rifle, it works off brute force and suffers from the same ranging issues that Lorentz weapons tend to suffer. It is still a fearsome weapon to fight against"
 
 	icon_state = "fusilier"
 	item_state = "fusilier"
@@ -371,7 +371,7 @@
 	recoil = 2
 	recoil_unwielded = 12
 
-/obj/item/gun/energy/cybersun/lorentz/fusilier/empty_cell
+/obj/item/gun/energy/cybersun/lorentz/inductor/empty_cell
 	spawn_no_ammo = TRUE
 
 
