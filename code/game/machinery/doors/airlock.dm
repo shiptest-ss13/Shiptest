@@ -1388,7 +1388,11 @@
 		return TRUE
 	if(hasPower())
 		return check_access(ID) && !locked && !welded && !seal
-	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && !locked && !welded && !seal
+	return ai_opens_for(requester)
+
+// forcing it open unpowered
+/obj/machinery/door/airlock/ai_can_open(mob/living/opener)
+	return !hasPower() && !locked && !welded && !seal
 
 /obj/machinery/door/airlock/emag_act(mob/user)
 	if(!operating && density && hasPower() && !(obj_flags & EMAGGED))

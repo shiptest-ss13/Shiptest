@@ -163,7 +163,7 @@
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
-
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/breaker
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'

@@ -100,7 +100,7 @@ RSF
 	return radial_list
 
 /obj/item/rsf/proc/check_menu(mob/user)
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.is_incapacitated() || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

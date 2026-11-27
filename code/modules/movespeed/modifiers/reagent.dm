@@ -46,8 +46,8 @@
 /datum/movespeed_modifier/reagent/freon
 	multiplicative_slowdown = 1.6
 
-/datum/movespeed_modifier/reagent/lenturi
-	multiplicative_slowdown = 1.5
+/datum/movespeed_modifier/reagent/mammoth_crash
+	multiplicative_slowdown = 0.3
 
 /datum/movespeed_modifier/reagent/nuka_cola
 	multiplicative_slowdown = -0.35

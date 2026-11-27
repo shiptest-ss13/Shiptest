@@ -6,8 +6,8 @@
 	inherent_traits = list(TRAIT_FLIP_ON_LYING)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None")
-	disliked_food = FRIED | GROSS | CLOTH
-	liked_food = MEAT | GORE
+	disliked_food = HEAVILY_FRIED | GROSS | CLOTH
+	liked_food = MEAT | GORE | EGG
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Kepori are a species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. They tend to woop when excited, scared, or for any other reason at all."
 	attack_verb = "slash"
@@ -108,15 +108,27 @@
 							),
 		"[EARS_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = -3),
-							"[EAST]" = list("x" = 19, "y" = -3),
+							"[EAST]" = list("x" = 18, "y" = -2),
 							"[SOUTH]" = list("x" = 8, "y" = -3),
-							"[WEST]" = list("x" =  -3, "y" = -3)
+							"[WEST]" = list("x" =  -2, "y" = -2)
 							),
 		"[SUIT_STORE_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = -1),
-							"[EAST]" = list("x" = 8, "y" = -1),
+							"[EAST]" = list("x" = 16, "y" = -1),
 							"[SOUTH]" = list("x" = 8, "y" = -1),
-							"[WEST]" = list("x" =  -8, "y" = -1)
+							"[WEST]" = list("x" =  0, "y" = -1)
+							),
+		"[BACK_LAYER]" = list( //To catch back mounted guns/tanks/jetpacks, this doesn't affect Kepori-specific bag sprites
+							"[NORTH]" = list("x" = 8, "y" = -1),
+							"[EAST]" = list("x" = 16, "y" = -1),
+							"[SOUTH]" = list("x" = 8, "y" = -1),
+							"[WEST]" = list("x" =  0, "y" = -1)
+							),
+		"[FLOAT_LAYER]" = list( // To catch accessories attached to the uniform
+							"[NORTH]" = list("x" = 8, "y" = -2),
+							"[EAST]" = list("x" = 16, "y" = -2),
+							"[SOUTH]" = list("x" = 8, "y" = -2),
+							"[WEST]" = list("x" =  0, "y" = -2)
 							),
 	)
 

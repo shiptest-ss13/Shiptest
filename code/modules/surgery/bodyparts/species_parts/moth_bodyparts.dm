@@ -33,12 +33,14 @@
 	limb_id = SPECIES_MOTH
 	should_draw_greyscale = TRUE
 	plantigrade_forced = TRUE
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/moth
 	icon = 'icons/mob/species/moth/bodyparts.dmi'
 	icon_state = "moth_r_leg"
 	limb_id = SPECIES_MOTH
 	should_draw_greyscale = TRUE
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 // Digitigrade
 

@@ -128,9 +128,6 @@
 		return
 	if(prob(thunder_chance))
 		do_thunder()
-	for(var/mob/living/victim as anything in GLOB.mob_living_list)
-		if(can_weather_act(victim) && affects(victim))
-			weather_act(victim)
 
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
@@ -278,9 +275,6 @@
  *
  */
 /datum/weather/proc/can_weather_act(mob/living/victim)
-	var/turf/mob_turf = get_turf(victim)
-	if(mob_turf && !my_controller.mapzone.is_in_bounds(mob_turf))
-		return
 	if(immunity_type in victim.weather_immunities)
 		return
 	if(!(get_area(victim) in impacted_areas))
@@ -290,9 +284,17 @@
 /**
  * Affects the mob with whatever the weather does
  *
+ * seconds_per_tick is how many seconds of weather this hit covers, scale amounts by it
  */
-/datum/weather/proc/weather_act(mob/living/victim)
+/datum/weather/proc/weather_act(mob/living/victim, seconds_per_tick)
 	return
+
+/// Rolls the chance once per second, returns how many hit
+/datum/weather/proc/roll_hits(chance_per_second, seconds_per_tick)
+	. = 0
+	for(var/second in 1 to round(seconds_per_tick))
+		if(prob(chance_per_second))
+			.++
 
 /// Whether weather_act does anything to victim
 /datum/weather/proc/affects(mob/living/victim)

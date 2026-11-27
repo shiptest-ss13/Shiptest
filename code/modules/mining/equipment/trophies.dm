@@ -8,8 +8,8 @@
 
 //legion
 /obj/item/mob_trophy/legion_skull
-	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Could be used in crafting."
+	name = "legion tumor"
+	desc = "A dead and lifeless legion tumor. Could be used in crafting."
 	icon_state = "legion_skull"
 
 /obj/item/mob_trophy/wolf_ear
@@ -69,13 +69,6 @@
 	icon_state = "watcher_wing_crystal"
 	gender = NEUTER
 
-//dwarf legion
-/obj/item/mob_trophy/dwarf_skull
-	name = "shrunken skull"
-	desc = "Looks like someone hasn't been drinking their milk. Could be used in crafting."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "shrunk_skull"
-
 //disfigured legion
 /obj/item/mob_trophy/legion_skull_crystal
 	name = "disfigured legion skull"
@@ -124,11 +117,11 @@
 	icon_state = "blaster_tubes"
 	gender = PLURAL
 
-//hierophant
-/obj/item/mob_trophy/vortex_talisman
-	name = "vortex talisman"
-	desc = "A glowing trinket that was originally the Hierophant's beacon."
-	icon_state = "vortex_talisman"
+//shoalbot
+/obj/item/mob_trophy/obol
+	name = "damaged obol"
+	desc = "A lightly damaged sphere of ancient Vox origin. You can see small particles of dust orbit around it in awkward paths."
+	icon_state = "obol"
 
 //megabot
 /obj/item/mob_trophy/megabot_reactor

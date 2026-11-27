@@ -149,12 +149,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			"Large" = "Large Sarathi Tail",
 			"Prosthetic" = PROSTHETIC_ROBOTIC,
 			"Cat" = "Cat Tail",
-			"Slimecat" = "Cat Tail",
 			"Dog" = "Dog Tail",
 			"Fox" = "Fox Tail",
 			"Fox 2" = "Fox Tail (Alt)",
 			"Horse" = "Horse Tail",
 			"Rabbit" = "Rabbit Tail",
+			"Fluffy Cat" = "Fluffy Cat Tail",
 			"Synthetic Sarathi" = "Synthetic Sarathi Tail",
 			"Synthetic Sarathi (Secondary Color)" = "Synthetic Sarathi Tail (Secondary Color)",
 			"Synthetic Sarathi Large" = "Synthetic Large Sarathi Tail",
@@ -267,7 +267,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	READ_FILE(S["tgui_fancy"], tgui_fancy)
 	READ_FILE(S["tgui_lock"], tgui_lock)
-	READ_FILE(S["buttons_locked"], buttons_locked)
+
 	READ_FILE(S["windowflash"], windowflashing)
 	READ_FILE(S["be_special"] , be_special)
 
@@ -275,6 +275,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["default_slot"], default_slot)
 	READ_FILE(S["chat_toggles"], chat_toggles)
 	READ_FILE(S["toggles"], toggles)
+	READ_FILE(S["instrument_volume"], instrument_volume)
 	READ_FILE(S["ghost_form"], ghost_form)
 	READ_FILE(S["ghost_orbit"], ghost_orbit)
 	READ_FILE(S["ghost_accs"], ghost_accs)
@@ -345,10 +346,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	broadcast_login_logout = sanitize_integer(broadcast_login_logout, FALSE, TRUE, initial(broadcast_login_logout))
 	tgui_fancy		= sanitize_integer(tgui_fancy, FALSE, TRUE, initial(tgui_fancy))
 	tgui_lock		= sanitize_integer(tgui_lock, FALSE, TRUE, initial(tgui_lock))
-	buttons_locked	= sanitize_integer(buttons_locked, FALSE, TRUE, initial(buttons_locked))
+
 	windowflashing	= sanitize_integer(windowflashing, FALSE, TRUE, initial(windowflashing))
 	default_slot	= sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
 	toggles			= sanitize_integer(toggles, 0, (2**24)-1, initial(toggles))
+	instrument_volume	= sanitize_integer(instrument_volume, 0, 100, initial(instrument_volume))
 	clientfps		= sanitize_integer(clientfps, 0, 1000, 0)
 	parallax		= sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
 	ambientocclusion	= sanitize_integer(ambientocclusion, FALSE, TRUE, initial(ambientocclusion))
@@ -418,11 +420,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["broadcast_login_logout"], broadcast_login_logout)
 	WRITE_FILE(S["tgui_fancy"], tgui_fancy)
 	WRITE_FILE(S["tgui_lock"], tgui_lock)
-	WRITE_FILE(S["buttons_locked"], buttons_locked)
+
 	WRITE_FILE(S["windowflash"], windowflashing)
 	WRITE_FILE(S["be_special"], be_special)
 	WRITE_FILE(S["default_slot"], default_slot)
 	WRITE_FILE(S["toggles"], toggles)
+	WRITE_FILE(S["instrument_volume"], instrument_volume)
 	WRITE_FILE(S["chat_toggles"], chat_toggles)
 	WRITE_FILE(S["ghost_form"], ghost_form)
 	WRITE_FILE(S["ghost_orbit"], ghost_orbit)

@@ -26,6 +26,16 @@
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
+/obj/effect/mob_spawn/human/corpse/ramzi/breaker
+	name = "Ramzi Breaker"
+	outfit = /datum/outfit/ramzi/breaker
+
+/datum/outfit/ramzi/breaker
+	name = "Ramzi Clique Breaker Corpse"
+	mask = /obj/item/clothing/mask/breath/facemask
+	head = /obj/item/clothing/head/helmet/ramzi
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+
 /obj/effect/mob_spawn/human/corpse/ramzi/runt
 	name = "Ramzi Runt"
 	outfit = /datum/outfit/ramzi/runt
@@ -86,6 +96,8 @@
 	name = "Ramzi Angle Grinder Technician"
 	suit = /obj/item/clothing/suit/armor/ramzi
 	back = /obj/item/gear_pack/anglegrinder
+	mask = /obj/item/clothing/mask/breath/facemask
+	head = /obj/item/clothing/head/helmet/ramzi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/doctor
 	name = "Ramzi Field Medic"

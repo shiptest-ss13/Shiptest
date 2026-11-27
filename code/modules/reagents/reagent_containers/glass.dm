@@ -152,7 +152,7 @@
 	name = "large beaker"
 	desc = "A large beaker. Can hold up to 100 units."
 	icon_state = "beakerlarge"
-	custom_materials = list(/datum/material/glass=2500)
+	custom_materials = list(/datum/material/glass=1000)
 	volume = 100
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100)

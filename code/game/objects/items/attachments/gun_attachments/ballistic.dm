@@ -109,7 +109,7 @@
 	wear_rate = 0
 
 /obj/item/ammo_box/magazine/internal/dma
-	name = "swiss cheese dma unit internal gun internal magazine holy shit"
+	name = "Swiss Cheese DMA Unit Chamber"
 	desc = "report this on the github if you see it in game"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
 	start_empty = TRUE

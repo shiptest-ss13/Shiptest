@@ -36,8 +36,10 @@
 /datum/view_data/proc/safeApplyFormat()
 	if(isZooming())
 		assertFormat()
-		return
-	resetFormat()
+	else
+		resetFormat()
+	var/datum/hud/our_hud = chief?.mob?.hud_used
+	our_hud.view_audit_buttons() // Make sure our hud's buttons are in our new size
 
 /datum/view_data/proc/assertFormat()//T-Pose
 	winset(chief, "mapwindow.map", "zoom=0")

@@ -448,7 +448,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(isitem(loc))
 		//if so, can we actually access it?
 		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
-		if(ourstorage && !ourstorage.access_check())
+		if(ourstorage && !ourstorage.access_check(user))
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
 			return
 
@@ -577,12 +577,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/proc/dropped(mob/user, silent = FALSE)
-	SHOULD_CALL_PARENT(1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.Remove(user)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.Remove(user)
+
 	if(item_flags & DROPDEL)
 		qdel(src)
+
 	item_flags &= ~IN_INVENTORY
 	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user)
 	remove_outline()
@@ -675,7 +679,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr))
+	if(usr.is_incapacitated() || !Adjacent(usr))
 		return
 
 	if(isliving(usr))
@@ -937,7 +941,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/user = usr
 		tip_timer = addtimer(CALLBACK(src, PROC_REF(openTip), location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
 	var/mob/living/L = usr
-	if(istype(L) && L.incapacitated())
+	if(istype(L) && L.is_incapacitated())
 		apply_outline(COLOR_RED_GRAY)
 	else
 		apply_outline()
@@ -1173,7 +1177,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/update_item_action_buttons(status_only = FALSE, force = FALSE)
 	for(var/datum/action/current_action as anything in actions)
-		current_action.UpdateButtonIcon(status_only, force)
+		current_action.UpdateButtons(status_only, force)
 
 
 // Update icons if this is being carried by a mob

@@ -221,6 +221,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 /obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.set_sleeping(60)
 	sleepyhead.set_nutrition(200)
+	sleepyhead.apply_status_effect(STATUS_EFFECT_BREAKFAST)
 	to_chat(sleepyhead, span_boldnotice("You begin to wake from cryosleep..."))
 	var/ship_name = "<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[linked_ship.current_ship.name]</u></span>"
 	var/sector_name = "[linked_ship.current_ship.current_overmap.name]"
@@ -405,7 +406,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 	occupant = null
 
 /obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
-	if(!istype(target) || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
+	if(!istype(target) || user.is_incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
 		return
 
 	if(occupant)
@@ -426,7 +427,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 		if(tgui_alert(target, "Would you like to enter cryosleep?", "Cryopod", list("Yes","No")) != "Yes")
 			return
 
-	if(!target || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
+	if(!target || user.is_incapacitated() || !target.Adjacent(user) || !Adjacent(user) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
 		return
 		//rerun the checks in case of shenanigans
 

@@ -19,7 +19,7 @@
 	if(body_position == LYING_DOWN && !resting && !client && stat == CONSCIOUS && !HAS_TRAIT(src, TRAIT_FLOORED) && !LAZYACCESS(do_afters, DOAFTER_SOURCE_GETTING_UP))
 		get_up()
 	// unbuckle self if you can, chair cheese mitigation
-	if(buckled && !client && stat == CONSCIOUS && !incapacitated())
+	if(buckled && !client && stat == CONSCIOUS && !is_incapacitated())
 		buckled.user_unbuckle_mob(src, src)
 	// try to escape from locker/containment unit. same length of time as normal player
 	if(!isturf(loc) && !client && stat == CONSCIOUS && can_resist() && !LAZYACCESS(do_afters, loc))

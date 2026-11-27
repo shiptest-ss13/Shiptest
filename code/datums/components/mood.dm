@@ -16,8 +16,11 @@
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 
-	START_PROCESSING(SSmood, src)
+	var/mob/living/living_parent = parent
+	if(living_parent.stat != DEAD)
+		START_PROCESSING(SSmood, src)
 
+	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(on_death))
 	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, PROC_REF(add_event))
 	RegisterSignal(parent, COMSIG_CLEAR_MOOD_EVENT, PROC_REF(clear_event))
 	RegisterSignal(parent, COMSIG_ENTER_AREA, PROC_REF(check_area_mood))
@@ -374,10 +377,17 @@
 		if(BEAUTY_LEVEL_GREAT to INFINITY)
 			add_event(null, "area_beauty", /datum/mood_event/greatroom)
 
+//dead mobs don't need their mood ticked; resumed in on_revive
+/datum/component/mood/proc/on_death(datum/source)
+	SIGNAL_HANDLER
+
+	STOP_PROCESSING(SSmood, src)
+
 ///Called when parent is ahealed.
 /datum/component/mood/proc/on_revive(datum/source, full_heal)
 	SIGNAL_HANDLER
 
+	START_PROCESSING(SSmood, src)
 	if(!full_heal)
 		return
 	remove_temp_moods()

@@ -13,10 +13,7 @@
 	icon = 'icons/turf/wood.dmi'
 	floor_tile = /obj/item/stack/tile/wood
 	broken_states = list("wood-broken", "wood-broken2", "wood-broken3", "wood-broken4", "wood-broken5", "wood-broken6", "wood-broken7")
-	footstep = FOOTSTEP_WOOD
-	barefootstep = FOOTSTEP_WOOD_BAREFOOT
-	clawfootstep = FOOTSTEP_WOOD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_WOOD
 	tiled_dirt = FALSE
 	color = WOOD_COLOR_GENERIC
 	flammability = 3
@@ -91,7 +88,7 @@
 
 /turf/open/floor/wood/pry_tile(obj/item/C, mob/user, silent = FALSE)
 	C.play_tool_sound(src, 80)
-	return remove_tile(user, silent, (C.tool_behaviour == TOOL_SCREWDRIVER))
+	return remove_tile(user, silent, TRUE)
 
 /turf/open/floor/wood/remove_tile(mob/user, silent = FALSE, make_tile = TRUE)
 	if(broken || burnt)
@@ -102,12 +99,9 @@
 	else
 		if(make_tile)
 			if(user && !silent)
-				to_chat(user, span_notice("You unscrew the planks."))
+				to_chat(user, span_notice("You unseat the planks from the floor."))
 			if(floor_tile)
 				new floor_tile(src)
-		else
-			if(user && !silent)
-				to_chat(user, span_notice("You forcefully pry off the planks, destroying them in the process."))
 	return make_plating()
 
 /turf/open/floor/wood/airless
@@ -121,10 +115,7 @@
 	broken_states = list("sand")
 	flags_1 = NONE
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_GRASS
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
@@ -175,10 +166,7 @@
 	initial_gas_mix = FROZEN_ATMOS
 	slowdown = 2
 	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	flammability = -5 // absolutely not
 
 /turf/open/floor/grass/snow/spawniconchange()
@@ -204,10 +192,7 @@
 	ore_type = /obj/item/stack/ore/glass/basalt
 	turfverb = "dig up"
 	slowdown = 0
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 
 /turf/open/floor/carpet
 	name = "carpet"
@@ -222,10 +207,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_CARPET)
 	flags_1 = NONE
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_CARPET
-	barefootstep = FOOTSTEP_CARPET_BAREFOOT
-	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_CARPET
 	tiled_dirt = FALSE
 	flammability = 5
 
