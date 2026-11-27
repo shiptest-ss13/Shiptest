@@ -8,8 +8,8 @@
 
 //legion
 /obj/item/mob_trophy/legion_skull
-	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Could be used in crafting."
+	name = "legion tumor"
+	desc = "A dead and lifeless legion tumor. Could be used in crafting."
 	icon_state = "legion_skull"
 
 /obj/item/mob_trophy/wolf_ear
@@ -68,13 +68,6 @@
 	desc = "A wing with a terminal infection of the strange crystals."
 	icon_state = "watcher_wing_crystal"
 	gender = NEUTER
-
-//dwarf legion
-/obj/item/mob_trophy/dwarf_skull
-	name = "shrunken skull"
-	desc = "Looks like someone hasn't been drinking their milk. Could be used in crafting."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "shrunk_skull"
 
 //disfigured legion
 /obj/item/mob_trophy/legion_skull_crystal

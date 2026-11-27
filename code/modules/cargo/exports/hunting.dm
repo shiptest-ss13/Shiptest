@@ -60,7 +60,6 @@
 	cost = 1000
 	unit_name = "rare hunting trophy"
 	export_types = list(
-		/obj/item/mob_trophy/dwarf_skull,
 		/obj/item/mob_trophy/fang,
 		/obj/item/mob_trophy/war_paw,
 		/obj/item/mob_trophy/elder_tentacle,

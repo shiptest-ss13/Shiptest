@@ -47,10 +47,7 @@
 		to_chat(affected_mob, pick(stage5))
 	H.visible_message(span_warning("[H] suddenly collapses, a pallid grey mass bursting from their body!"))
 	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
-	if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
-		L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
-	else
-		L = new(H.loc)
+	L = new(H.loc)
 	H.death()
 	H.adjustBruteLoss(1000)
 	L.stored_mob = H

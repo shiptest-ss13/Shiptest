@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/burrow/ice_planet/hard
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 35,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 35,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 35,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 15,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon = 15
 	)
