@@ -154,9 +154,6 @@
 	if(lit)
 		playsound(loc, acti_sound, 50, TRUE)
 		START_PROCESSING(SSobj, src)
-		if(!warned_admins)
-			message_admins("[ADMIN_LOOKUPFLW(user)] has lit a flamethrower.")
-			warned_admins = TRUE
 	else
 		playsound(loc, deac_sound, 50, TRUE)
 		STOP_PROCESSING(SSobj,src)

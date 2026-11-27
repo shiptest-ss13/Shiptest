@@ -36,3 +36,9 @@
 	replacement_bodyparts = list(
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/human/rabbit
 	)
+
+/datum/sprite_accessory/body/human_tail/fluffycat
+	name = "Fluffy Cat Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/human/fluffycat
+	)

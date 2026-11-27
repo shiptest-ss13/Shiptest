@@ -77,12 +77,12 @@
 
 		var/damage = rand(min_damage, max_damage)
 		var/haslightstep = HAS_TRAIT(H, TRAIT_LIGHT_STEP) //BeginWS edit - caltrops don't paralyze people with light step
-		if(haslightstep && !H.incapacitated(ignore_restraints = TRUE))
+		if(haslightstep && !H.is_incapacitated(ignore_restraints = TRUE))
 			damage *= 0.75
 
 		if(cooldown < world.time - 10) //cooldown to avoid message spam.
 			//var/atom/A = parent		WS edit
-			if(!H.incapacitated(ignore_restraints = TRUE))
+			if(!H.is_incapacitated(ignore_restraints = TRUE))
 				if(haslightstep)
 					H.visible_message(
 						span_danger("[H] carefully steps on [A]."),

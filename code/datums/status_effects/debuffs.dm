@@ -529,7 +529,7 @@
 					to_chat(owner, span_warning("Your leg spasms!"))
 					step(owner, pick(GLOB.cardinals))
 			if(2)
-				if(owner.incapacitated())
+				if(owner.is_incapacitated())
 					return
 				var/obj/item/I = owner.get_active_held_item()
 				if(I)
@@ -561,7 +561,7 @@
 				owner.ClickOn(owner)
 				owner.a_intent = prev_intent
 			if(5)
-				if(owner.incapacitated())
+				if(owner.is_incapacitated())
 					return
 				var/obj/item/I = owner.get_active_held_item()
 				var/list/turf/targets = list()
@@ -720,3 +720,19 @@
 	if(ishostile(owner))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time /= 2.5
+
+//Holder effect for posi smoking vfx
+/datum/status_effect/cellsmoking
+	id = "cellsmoking"
+	duration = 10 SECONDS
+	tick_interval = 1 SECONDS
+	var/obj/effect/abstract/particle_holder/particle_generator
+
+/datum/status_effect/cellsmoking/on_apply()
+	. = ..()
+	particle_generator = new(owner, /particles/smoke/burning, PARTICLE_ATTACH_MOB)
+
+/datum/status_effect/cellsmoking/on_remove()
+	. = ..()
+	QDEL_NULL(particle_generator)
+

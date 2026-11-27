@@ -1,6 +1,7 @@
 // subtype for all energy guns
 /obj/item/gun/energy
 	name = "energy gun"
+	gunfire_hearing_range = AI_LASER_HEARING_RANGE
 	desc = "A profoundly boring and basic energy-based gun. You get the feeling you shouldn't be seeing this and should file a bug report."
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "laser"
@@ -297,7 +298,7 @@
 			if(default_ammo_type == ammo_type[i])
 				ammotype_index = i
 				if(our_action)
-					our_action.UpdateButtonIcon()
+					our_action.UpdateButtons()
 				return
 		ammotype_index = 1
 
@@ -308,7 +309,7 @@
 	else
 		..()
 
-/datum/action/item_action/toggle_ammotype/UpdateButtonIcon(status_only = FALSE, force = FALSE)
+/datum/action/item_action/toggle_ammotype/UpdateButtons(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/energy/our_gun = target
 	var/obj/item/ammo_casing/energy/shot = our_gun.ammo_type[our_gun.select]
 	var/current_ammotype = shot.select_name

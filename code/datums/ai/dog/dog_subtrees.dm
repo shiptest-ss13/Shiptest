@@ -18,7 +18,7 @@
 	if(!controller.blackboard[BB_SIMPLE_CARRY_ITEM] && controller.blackboard[BB_FETCH_TARGET])
 		var/atom/movable/interact_target = controller.blackboard[BB_FETCH_TARGET]
 		if(in_range(living_pawn, interact_target) && (isturf(interact_target.loc)))
-			controller.current_movement_target = interact_target
+			controller.set_movement_target(IS_EDIBLE(interact_target) ? /datum/ai_behavior/eat_snack : /datum/ai_behavior/simple_equip, interact_target)
 			if(IS_EDIBLE(interact_target))
 				LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/eat_snack))
 			else if(isitem(interact_target))
@@ -35,6 +35,6 @@
 			// if the return target isn't in sight, we'll just forget about it and carry the thing around
 			controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 			return
-		controller.current_movement_target = return_target
+		controller.set_movement_target(/datum/ai_behavior/deliver_item, return_target)
 		LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/deliver_item))
 		return

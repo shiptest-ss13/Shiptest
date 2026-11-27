@@ -65,7 +65,7 @@
 		return FALSE
 	if(!isliving(user) && !isAdminGhostAI(user))
 		return FALSE
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return FALSE
 	return TRUE
 

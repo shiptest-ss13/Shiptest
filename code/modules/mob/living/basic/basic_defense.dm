@@ -34,9 +34,14 @@
 		visible_message(span_danger("[user] [response_harm_continuous] [src]!"),\
 						span_userdanger("[user] [response_harm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, user)
 		to_chat(user, span_danger("You [response_harm_simple] [src]!"))
-		playsound(loc, attacked_sound, 25, TRUE, -1)
 
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
+		// snowflake case for berserk martial art
+		if(user?.mind?.has_martialart(MARTIALART_BERSERK))
+			damage = rand(20, 30)
+			playsound(loc, 'sound/weapons/melee/slam.ogg', 25, TRUE, -1)
+		else
+			playsound(loc, attacked_sound, 25, TRUE, -1)
 
 		attack_threshold_check(damage)
 		log_combat(user, src, "attacked")
@@ -130,9 +135,10 @@
 	return TRUE
 
 /mob/living/basic/bullet_act(obj/projectile/Proj, def_zone, piercing_hit = FALSE)
-	apply_damage(Proj.damage, Proj.damage_type)
-	Proj.on_hit(src, 0, piercing_hit)
-	return BULLET_ACT_HIT
+	. = ..()
+	// so things like ai_retaliate know we've been shot at, as bullet_act() doesn't send it.
+	if(!QDELETED(src))
+		SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, Proj, def_zone)
 
 /mob/living/basic/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
@@ -162,7 +168,7 @@
 			adjustBruteLoss(bloss)
 
 /mob/living/basic/do_attack_animation(atom/A, visual_effect_icon, used_item, no_effect)
-	if(!no_effect && !visual_effect_icon && melee_damage_upper)
+	if(!no_effect && !visual_effect_icon && !used_item && melee_damage_upper)
 		if(attack_vis_effect && !iswallturf(A)) // override the standard visual effect.
 			visual_effect_icon = attack_vis_effect
 		else if(melee_damage_upper < 10)

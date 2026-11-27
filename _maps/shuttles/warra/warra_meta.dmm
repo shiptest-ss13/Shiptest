@@ -1231,8 +1231,8 @@
 /obj/item/clothing/shoes/sneakers/black{
 	pixel_y = -10
 	},
-/obj/item/clothing/under/warra/supply,
-/obj/item/clothing/under/warra/supply,
+/obj/item/clothing/under/warra/assistant/supply,
+/obj/item/clothing/under/warra/assistant/supply,
 /obj/item/clothing/suit/hooded/wintercoat/cargo,
 /obj/item/clothing/suit/hooded/wintercoat/cargo,
 /obj/item/clothing/gloves/fingerless,
@@ -1554,8 +1554,8 @@
 	pixel_y = -10
 	},
 /obj/item/storage/backpack/satchel,
-/obj/item/clothing/under/warra,
-/obj/item/clothing/under/warra,
+/obj/item/clothing/under/warra/assistant,
+/obj/item/clothing/under/warra/assistant,
 /obj/item/clothing/under/suit/navy,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
@@ -2150,8 +2150,8 @@
 /obj/item/clothing/shoes/sneakers/black{
 	pixel_y = -10
 	},
-/obj/item/clothing/under/warra/supply,
-/obj/item/clothing/under/warra/supply,
+/obj/item/clothing/under/warra/assistant/supply,
+/obj/item/clothing/under/warra/assistant/supply,
 /obj/item/clothing/suit/hooded/wintercoat/cargo,
 /obj/item/clothing/suit/hooded/wintercoat/cargo,
 /obj/item/clothing/gloves/fingerless,
@@ -2191,7 +2191,7 @@
 "nR" = (
 /obj/structure/table,
 /obj/machinery/light/dim/directional/east,
-/obj/item/candle{
+/obj/item/flashlight/flare/candle{
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -2479,8 +2479,8 @@
 	pixel_y = -10
 	},
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/clothing/under/warra,
-/obj/item/clothing/under/warra,
+/obj/item/clothing/under/warra/assistant,
+/obj/item/clothing/under/warra/assistant,
 /obj/item/clothing/under/suit/blacktwopiece,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
@@ -3360,7 +3360,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "Ag" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4841,7 +4841,8 @@
 /obj/item/gps{
 	gpstag = "NSREC1";
 	pixel_x = -9;
-	pixel_y = -2
+	pixel_y = -2;
+	gps_active = 1
 	},
 /obj/machinery/recharger{
 	pixel_x = -8;
@@ -5585,7 +5586,7 @@
 /area/ship/storage)
 "ZZ" = (
 /obj/structure/table/wood,
-/obj/machinery/fax/warra{
+/obj/machinery/fax/tricorp{
 	pixel_y = 4
 	},
 /obj/machinery/firealarm/directional/east,

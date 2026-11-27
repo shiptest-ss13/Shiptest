@@ -321,7 +321,7 @@ update_label()
 				return ..()
 
 		var/popup_input = alert(user, "Choose Action", "Agent ID", "Show", "Forge/Reset")
-		if(user.incapacitated())
+		if(user.is_incapacitated())
 			return
 		if(popup_input == "Forge/Reset" && !forged)
 			var/input_name = stripped_input(user, "What name would you like to put on this card? Leave blank to randomise.", "Agent card name", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)

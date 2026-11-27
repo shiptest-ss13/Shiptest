@@ -22,8 +22,6 @@ Simple datum which is instanced once per type and is used for every object of sa
 	var/strength_modifier = 1
 	///This is a modifier for integrity, and resembles the strength of the material
 	var/integrity_modifier = 1
-	///This is the amount of value per 1 unit of the material
-	var/value_per_unit = 0
 	///Armor modifiers, multiplies an items normal armor vars by these amounts.
 	var/armor_modifiers = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 1, "acid" = 1)
 	///How beautiful is this material per unit
@@ -77,16 +75,6 @@ Simple datum which is instanced once per type and is used for every object of sa
 /atom/proc/mat_update_desc(/datum/material/mat)
 	return
 
-
-/**
- * This proc is called when the mat is found in an item that's consumed by accident. see /obj/item/proc/on_accidental_consumption.
- * Arguments
- * * M - person consuming the mat
- * * S - (optional) item the mat is contained in (NOT the item with the mat itself)
- */
-/datum/material/proc/on_accidental_mat_consumption(mob/living/carbon/M, obj/item/S)
-	return FALSE
-
 ///This proc is called when the material is added to an object specifically.
 /datum/material/proc/on_applied_obj(obj/o, amount, material_flags)
 	if(material_flags & MATERIAL_AFFECT_STATISTICS)
@@ -120,10 +108,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	if(isopenturf(T))
 		if(turf_sound_override)
 			var/turf/open/O = T
-			O.footstep = turf_sound_override
-			O.barefootstep = turf_sound_override
-			O.clawfootstep = turf_sound_override
-			O.heavyfootstep = turf_sound_override
+			O.turf_footstep_type = turf_sound_override
 	if(alpha < 255)
 		T.AddElement(/datum/element/turf_z_transparency, TRUE)
 	return

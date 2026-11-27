@@ -30,12 +30,14 @@
 	icon_state = "sarathi_l_leg"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_SARATHI
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
 	icon_state = "sarathi_r_leg"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_SARATHI
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/left/lizard/digitigrade
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
@@ -109,6 +111,18 @@
 	limb_id = "synth_" + SPECIES_SARATHI
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	biological_state = BIO_ROBOTIC
+	overlay_use_primary_color = TRUE
+	draw_color_use_secondary = TRUE
+
+/obj/item/bodypart/tail/lizard/synth/large
+	name = "prosthetic large sarathi tail"
+	icon_state = "large_sarathi_tail"
+	examine_id = "prosthetic large " + SPECIES_SARATHI
+	limb_id = "large_" + SPECIES_SARATHI
+	max_damage = 50
+	max_stamina_damage = 50
+	body_damage_coeff = 0.75
+	body_weight = 16 // big tail == big target
 
 /obj/item/bodypart/tail/lizard/one_color
 	name = "sarathi tail (one color)"

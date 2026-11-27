@@ -8,6 +8,9 @@
 	var/power = 10000
 	var/constant_zaps = TRUE
 
+/obj/projectile/energy/tesla/get_splash_radius()
+	return zap_range
+
 /obj/projectile/energy/tesla/on_hit(atom/target)
 	. = ..()
 	tesla_zap(src, zap_range, power, zap_flags)
@@ -30,9 +33,13 @@
 /obj/projectile/energy/tesla/explosive
 	constant_zaps = FALSE
 	power = 5000
+	var/flame_range = 3
+
+/obj/projectile/energy/tesla/explosive/get_splash_radius()
+	return max(..(), flame_range)
 
 /obj/projectile/energy/tesla/explosive/on_hit(atom/target)
-	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	explosion(get_turf(loc),0,0,0,flame_range = flame_range)
 	. = ..()
 
 /obj/projectile/energy/tesla_cannon

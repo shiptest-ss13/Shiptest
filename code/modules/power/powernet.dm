@@ -17,6 +17,10 @@
 
 	var/static_load = 0
 
+	/// Whether avail was nonzero at the last reset; nodes only refresh power when this flips.
+	var/was_powered = FALSE
+	var/has_new_nodes = FALSE
+
 /datum/powernet/New()
 	SSmachines.powernets += src
 
@@ -75,16 +79,19 @@
 			M.disconnect_from_network()//..remove it
 	M.powernet = src
 	nodes[M] = M
+	has_new_nodes = TRUE
 
 //handles the power changes in the powernet
 //called every ticks by the powernet controller
 /datum/powernet/proc/reset()
 	load += static_load
 	//see if there's a surplus of power remaining in the powernet and stores unused power in the SMES
-	var/last_excess = netexcess
 	netexcess = avail - load
 
-	if(netexcess != last_excess)
+	var/is_powered = avail ? TRUE : FALSE
+	if(is_powered != was_powered || has_new_nodes)
+		was_powered = is_powered
+		has_new_nodes = FALSE
 		for(var/obj/machinery/machine in nodes)
 			machine.power_change()
 

@@ -55,8 +55,8 @@ GLOBAL_DATUM_INIT(default_state, /datum/ui_state/default, new)
 		. = min(., shared_living_ui_distance(src_object)) //simple animals can only use things they're near.
 
 /mob/living/silicon/pai/default_can_use_topic(src_object)
-	// pAIs can only use themselves and the owner's radio.
-	if((src_object == src || src_object == radio) && !stat)
+	// pAIs can only use themselves, the owner's radio and their synthesizer.
+	if((src_object == src || src_object == radio || src_object == internal_instrument) && !stat)
 		return UI_INTERACTIVE
 	else
 		return ..()

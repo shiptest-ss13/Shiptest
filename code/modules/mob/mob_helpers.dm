@@ -180,6 +180,25 @@
 
 #define CLOCK_CULT_SLUR(phrase) sanitize(text2ratvar(phrase))
 
+//muffles speech
+/proc/muffle(phrase)
+	phrase = html_decode(phrase)
+	var/leng = length(phrase)
+	. = ""
+	var/newletter = ""
+	var/rawchar = ""
+	var/static/regex/mmph_exempt = regex(@@[aeiouyAEIOUYmnhfMNHF "'()[\]{}.!?,:;_`~-]@)
+	for(var/i = 1, i <= leng, i += length(rawchar))
+		rawchar = newletter = phrase[i]
+		if(!mmph_exempt.Find(rawchar))
+			if(is_uppercase_character(rawchar))
+				newletter = pick("M","N","H","F")
+			else
+				newletter = pick("m","n","h","f")
+		. += newletter
+
+	return sanitize(.)
+
 ///Adds stuttering to the message passed in
 /proc/stutter(phrase)
 	phrase = html_decode(phrase)
@@ -324,8 +343,8 @@
 
 
 	if (a_intent == INTENT_HARM)
-		var/obj/O = pulling
-		if (istype(O) && (O.density || O.drag_slowdown))
+		var/obj/pulled_obj = pulling
+		if (!iscarbon(src) && istype(pulled_obj) && (pulled_obj.density || pulled_obj.drag_slowdown)) // carbons face what they drag while moving instead
 			face_mouse = FALSE
 		else
 			face_mouse = TRUE

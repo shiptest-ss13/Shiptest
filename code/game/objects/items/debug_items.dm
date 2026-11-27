@@ -40,7 +40,7 @@
 /obj/item/debug/omnitool/proc/check_menu(mob/user)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.is_incapacitated() || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

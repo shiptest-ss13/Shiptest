@@ -44,7 +44,10 @@
 /obj/effect/countdown/process(seconds_per_tick)
 	if(!attached_to || QDELETED(attached_to))
 		qdel(src)
-	forceMove(get_turf(attached_to))
+		return
+	var/turf/attached_turf = get_turf(attached_to)
+	if(loc != attached_turf)
+		forceMove(attached_turf)
 	var/new_val = get_value()
 	if(new_val == displayed_text)
 		return

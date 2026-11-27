@@ -223,7 +223,7 @@
 /datum/component/automatic_fire_mecha/proc/process_shot()
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
 		return FALSE
-	if(!COOLDOWN_FINISHED(src, next_shot_cd))
+	if(world.time < next_shot_cd)
 		return TRUE
 	if(QDELETED(target) || get_turf(target) != target_loc) //Target moved or got destroyed since we last aimed.
 		target = target_loc //So we keep firing on the emptied tile until we move our mouse and find a new target.
@@ -255,7 +255,7 @@
 
 /obj/mecha/proc/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(shooter.incapacitated())
+	if(shooter.is_incapacitated())
 		return NONE
 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 	return COMPONENT_AUTOFIRE_SHOT_SUCCESS //All is well, we can continue shooting.

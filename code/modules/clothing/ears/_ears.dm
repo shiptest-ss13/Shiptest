@@ -22,6 +22,7 @@
 	custom_price = 250
 	alternate_worn_layer = UNDER_HEAD_LAYER
 	actions_types = list(/datum/action/item_action/adjust_earmuffs)
+	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
 	var/adjusted = TRUE //whether we're wearing it "properly" around our ears
 	var/ear_protection = 3
 
@@ -34,7 +35,7 @@
 	adjust(user)
 
 /obj/item/clothing/ears/earmuffs/proc/adjust(mob/living/user)
-	if(user && user.incapacitated())
+	if(user && user.is_incapacitated())
 		return
 	var/datum/component/wearertargeting/earprotection/ear_prot = GetComponent(/datum/component/wearertargeting/earprotection)
 	adjusted = !adjusted

@@ -111,7 +111,7 @@
 	. = ..()
 	if(ismob(loc))
 		var/mob/M = loc
-		if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
+		if(!M.is_incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
 			var/atom/movable/screen/inventory/hand/H = over_object
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE)
 
@@ -169,10 +169,7 @@
 		remove_gear_handle(user)
 
 	update_power()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-
+	update_item_action_buttons()
 
 /obj/item/gear_pack/equipped(mob/user, slot)
 	..()

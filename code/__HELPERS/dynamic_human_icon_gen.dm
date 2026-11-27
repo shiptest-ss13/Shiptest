@@ -32,6 +32,7 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 			spawner.l_hand = l_hand
 		spawner.special(dummy, dummy)
 		spawner.equip(dummy)
+		qdel(spawner)
 	for(var/obj/item/carried_item in dummy)
 		if(dummy.is_holding(carried_item))
 			var/datum/component/two_handed/twohanded = carried_item.GetComponent(/datum/component/two_handed)

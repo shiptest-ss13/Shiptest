@@ -6,15 +6,6 @@
 		Actual tools
 */
 
-/datum/supply_pack/tools/toolbox
-	name = "Tool Crate"
-	desc = "Get some work done. Contains an electrical toolbox, a mechanical toolbox, and a welding helmet."
-	contains = list(/obj/item/storage/toolbox/electrical,
-					/obj/item/storage/toolbox/mechanical,
-					/obj/item/clothing/head/welding)
-	cost = 200
-	crate_name = "toolbox crate"
-
 /datum/supply_pack/tools/engigear
 	name = "Engineering Gear Crate"
 	desc = "Contains one toolbelt and a set of meson goggles."
@@ -81,7 +72,7 @@
 	cost = 500
 	contains = list(/obj/item/trench_tool)
 	crate_name = "mining crate"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 20
 
 /datum/supply_pack/tools/entrenching_gezena
@@ -187,7 +178,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
 	crate_name = "sledgehammer crate"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_locked = TRUE
 	faction_discount = 0
 
@@ -197,7 +188,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
 	crate_name = "sledgehammer crate"
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_locked = TRUE
 	faction_discount = 0
 

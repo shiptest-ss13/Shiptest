@@ -1,7 +1,7 @@
 /datum/computer_file/program/aidiag
 	filename = "aidiag"
-	filedesc = "NT FRK"
-	program_icon_state = "generic"
+	filedesc = "MW FRK"
+	program_icon_state = "ai-fixer-empty"
 	extended_desc = "Firmware Restoration Kit, capable of reconstructing damaged AI systems. Requires direct AI connection via intellicard slot."
 	size = 12
 	requires_ntnet = FALSE
@@ -27,6 +27,7 @@
 			if(cardcheck == 2)
 				return ai_slot.stored_card
 			if(ai_slot.stored_card.AI)
+				program_icon_state = "ai-fixer-full"
 				return ai_slot.stored_card.AI
 
 	return

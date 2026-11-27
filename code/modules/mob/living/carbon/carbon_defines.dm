@@ -4,7 +4,7 @@
 	gender = MALE
 	pressure_resistance = 15
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,GLAND_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
+	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,GLAND_HUD)
 	has_limbs = 1
 	held_items = list(null, null)
 	num_legs = 0 //Populated on init through list/bodyparts
@@ -13,6 +13,10 @@
 	usable_hands = 0 //Populated on init through list/bodyparts
 
 	rotate_on_lying = TRUE
+
+
+	var/icon_holds = 0 	/// Counter of icon holds. While above zero, body icon updates are skipped and redrawn by [/mob/living/carbon/proc/release_icons]
+	var/held_limb_data = FALSE 	/// Whether a skipped update_body_parts() call asked to refresh limb data
 
 	var/list/internal_organs		= list()	///List of [/obj/item/organ] in the mob. They don't go in the contents for some reason I don't want to know.
 	var/list/internal_organs_slot= list() ///Same as [above][/mob/living/carbon/var/internal_organs], but stores "slot ID" - "organ" pairs for easy access.

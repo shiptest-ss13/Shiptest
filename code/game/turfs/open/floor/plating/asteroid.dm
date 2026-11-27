@@ -7,10 +7,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroid"
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_ASTEROID
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 	attachment_holes = FALSE
 	/// the icon name to be used: for example, asteroid1 - asteroid12 in the icon file
 	base_icon_state  = "asteroid"
@@ -263,10 +260,7 @@
 	icon_state = "rock-255"
 	base_icon_state = "rock"
 	layer = STONE_TURF_LAYER
-	footstep = FOOTSTEP_ASTEROID
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_ASTEROID
 
 	smoothing_flags = SMOOTH_BITMASK
 	smooth_icon = 'icons/turf/floors/asteroid.dmi'

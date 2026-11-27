@@ -247,11 +247,11 @@
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
 	visible_message(span_danger("[src] shoots all the spikes!"))
 	icon_state = "claw-phase2"
-	shoot_projectile(Get_Angle(src,target) + 10)
-	shoot_projectile(Get_Angle(src,target) + 5)
-	shoot_projectile(Get_Angle(src,target))
-	shoot_projectile(Get_Angle(src,target) - 5)
-	shoot_projectile(Get_Angle(src,target) - 10)
+	shoot_projectile(get_angle(src,target) + 10)
+	shoot_projectile(get_angle(src,target) + 5)
+	shoot_projectile(get_angle(src,target))
+	shoot_projectile(get_angle(src,target) - 5)
+	shoot_projectile(get_angle(src,target) - 10)
 	shouldnt_move = FALSE
 
 /obj/projectile/claw_projectille

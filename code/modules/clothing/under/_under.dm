@@ -13,7 +13,7 @@
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	cuttable = TRUE
 	clothamnt = 3
-	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
+	greyscale_colors = list(list(15, 17), list(14, 12), list(14, 7))
 	greyscale_icon_state = "under"
 
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -43,6 +43,10 @@
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 		if(HAS_BLOOD_DNA(src))
 			. += setup_blood_overlay()
+		if(attached_accessory)
+			var/mob/living/carbon/human/H = loc
+			if(ishuman(H))
+				accessory_overlay = build_accessory_overlay(H) // Rebuild the accessory to account for species variations such as offsets. Potentially in the future only rebuild when necessary via cached species? Tried and it was kind of buggy.
 		if(accessory_overlay)
 			. += accessory_overlay
 
@@ -147,33 +151,45 @@
 
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc
-				var/accessory_state = accessory.icon_state
-				var/icon_file = accessory.mob_overlay_icon
-
-				if((H.dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((accessory.supports_variations & DIGITIGRADE_VARIATION) || (accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
-					icon_file = DIGITIGRADE_ACCESSORY_PATH
-					if((accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
-						icon_file = accessory.mob_overlay_icon
-						accessory_state = "[accessory_state]_digi"
-
-				else if((H.dna.species.bodytype & BODYTYPE_VOX) && (accessory.supports_variations & VOX_VARIATION))
-					icon_file = VOX_ACCESSORY_PATH
-					if(accessory.vox_override_icon)
-						icon_file = accessory.vox_override_icon
-
-				else if((H.dna.species.bodytype & BODYTYPE_KEPORI) && (accessory.supports_variations & KEPORI_VARIATION))
-					icon_file = KEPORI_ACCESSORY_PATH
-					if(accessory.kepori_override_icon)
-						icon_file = accessory.kepori_override_icon
-
-				accessory_overlay = mutable_appearance(icon_file, "[accessory_state]")
-				accessory_overlay.alpha = attached_accessory.alpha
-				accessory_overlay.color = attached_accessory.color
+				accessory_overlay = build_accessory_overlay(H)
 
 				H.update_inv_w_uniform()
 				H.update_inv_wear_suit()
 
 			return TRUE
+
+/obj/item/clothing/under/proc/build_accessory_overlay(mob/living/carbon/human/H)
+	if(!attached_accessory)
+		return
+	var/obj/item/clothing/accessory/accessory = attached_accessory
+	var/accessory_state = accessory.icon_state
+	var/icon_file = accessory.mob_overlay_icon
+
+	if((H.dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((accessory.supports_variations & DIGITIGRADE_VARIATION) || (accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
+		icon_file = DIGITIGRADE_ACCESSORY_PATH
+		if((accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
+			icon_file = accessory.mob_overlay_icon
+			accessory_state = "[accessory_state]_digi"
+
+	else if((H.dna.species.bodytype & BODYTYPE_VOX) && (accessory.supports_variations & VOX_VARIATION))
+		icon_file = VOX_ACCESSORY_PATH
+		if(accessory.vox_override_icon)
+			icon_file = accessory.vox_override_icon
+
+	else if((H.dna.species.bodytype & BODYTYPE_KEPORI) && (accessory.supports_variations & KEPORI_VARIATION))
+		icon_file = KEPORI_ACCESSORY_PATH
+		if(accessory.kepori_override_icon)
+			icon_file = accessory.kepori_override_icon
+
+	var/mutable_appearance/overlay
+	if(((H.dna.species.bodytype & BODYTYPE_KEPORI) && !(accessory.supports_variations & KEPORI_VARIATION)) || ((H.dna.species.bodytype & BODYTYPE_VOX) && !(accessory.supports_variations & VOX_VARIATION)))
+		overlay = accessory.wear_species_version(icon_file, accessory_state, FLOAT_LAYER, H.dna.species)
+	if(!overlay)
+		overlay = mutable_appearance(icon_file, "[accessory_state]")
+	overlay.alpha = accessory.alpha
+	overlay.color = accessory.color
+
+	return overlay
 
 /obj/item/clothing/under/proc/remove_accessory(mob/user)
 	if(!isliving(user))

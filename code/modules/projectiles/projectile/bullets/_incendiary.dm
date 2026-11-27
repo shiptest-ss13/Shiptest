@@ -4,8 +4,8 @@
 
 /obj/projectile/bullet/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
+	if(isliving(target))
+		var/mob/living/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.ignite_mob()
 

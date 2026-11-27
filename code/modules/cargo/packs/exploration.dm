@@ -4,17 +4,6 @@
 
 /* Exploration Gear */
 
-/datum/supply_pack/exploration/lava
-	name = "Lava Exploration Kit"
-	desc = "Contains 50 rods, a pocket extinguisher, and goggles to protect yourself from the heat."
-	cost = 50
-	contains = list(
-		/obj/item/extinguisher/mini,
-		/obj/item/clothing/glasses/heat,
-		/obj/item/stack/rods/fifty,
-	)
-	crate_name = "Lava Exploration Kit"
-
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
 	desc = "Contains a set of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
@@ -30,14 +19,6 @@
 /*
 		General Exploration Gear
 */
-
-/datum/supply_pack/exploration/capsules
-	name = "Bluespace Shelter Capsule"
-	desc = "Contains a Bluespace Shelter Capsule, for instant shelter in rough situations."
-	cost = 500
-	contains = list(
-		/obj/item/survivalcapsule
-	)
 
 /datum/supply_pack/exploration/binocular
 	name = "Binoculars"

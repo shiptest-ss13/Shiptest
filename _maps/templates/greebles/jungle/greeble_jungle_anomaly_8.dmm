@@ -2,6 +2,10 @@
 "a" = (
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
+"f" = (
+/obj/structure/chair/sofa/blue/corpo/directional/north,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/template_noop)
 "h" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "i";
@@ -19,6 +23,17 @@
 	pixel_x = 9
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/template_noop)
+"k" = (
+/obj/structure/table/endtable{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/teacup{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "m" = (
 /obj/effect/decal/cleanable/crayon{
@@ -69,6 +84,10 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/template_noop)
+"t" = (
+/obj/structure/chair/sofa/blue/corpo/left/directional/north,
+/turf/open/floor/plating/asteroid/dirt/wasteland,
+/area/template_noop)
 "v" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "thinline";
@@ -117,8 +136,13 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/template_noop)
+"E" = (
+/obj/effect/anomaly/tvstatic/television,
+/obj/structure/table/wood,
+/turf/open/floor/plating/asteroid/dirt/wasteland,
+/area/template_noop)
 "I" = (
-/obj/effect/anomaly/tvstatic/planetary,
+/obj/structure/chair/sofa/blue/corpo/right/directional/north,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
 "K" = (
@@ -137,6 +161,7 @@
 K
 A
 K
+k
 p
 o
 "}
@@ -144,13 +169,15 @@ o
 K
 a
 a
+t
 h
 C
 "}
 (3,1,1) = {"
 A
-I
+E
 a
+f
 O
 m
 "}
@@ -158,6 +185,7 @@ m
 K
 K
 a
+I
 q
 v
 "}
@@ -165,6 +193,7 @@ v
 K
 A
 o
+a
 s
 y
 "}

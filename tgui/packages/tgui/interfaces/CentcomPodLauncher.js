@@ -758,8 +758,8 @@ const ReverseMenu = (props, context) => {
                 disabled={!data.effectReverse}
                 selected={
                   option.key
-                    ? data.reverse_option_list[option.key]
-                    : data.reverse_option_list[option.title]
+                    ? data.reverseOptionList[option.key]
+                    : data.reverseOptionList[option.title]
                 }
                 tooltip={option.title}
                 onClick={() =>

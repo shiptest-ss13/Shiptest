@@ -417,6 +417,7 @@
 	parent_level.virtual_levels -= src
 	parent_level = null
 	LAZYREMOVE(SSidlenpcpool.idle_mobs_by_virtual_level, "[id]")
+	LAZYREMOVE(SSai_controllers.sleeping_ai_by_virtual_level, "[id]")
 	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
 	if(up_linkage)
@@ -439,17 +440,14 @@
 
 	var/list/turf/block_turfs = get_block()
 
-	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
-	for(var/turf/turf as anything in block_turfs)
-		// don't waste time trying to qdelete the lighting object
-		for(var/atom/movable/thing as anything in turf.contents)
-			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
-			//And this needs to be fast
-			if(ignored_atoms[thing.type])
-				continue
-			qdel(thing)
-			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
-			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
+	stop_reservation_machinery()
+
+	// multiple passes with yielding to catch anythin that moved
+	for(var/pass in 1 to 2)
+		if(!delete_reservation_contents(block_turfs, can_yield = TRUE))
+			break
+	// final pass without yielding, catch stragglers
+	delete_reservation_contents(block_turfs, can_yield = FALSE)
 
 	for(var/turf/turf as anything in block_turfs)
 		// Reset turf
@@ -462,13 +460,12 @@
 		CHECK_TICK
 
 	for(var/turf/turf as anything in block_turfs)
-		turf.AfterChange(CHANGETURF_IGNORE_AIR)
-
 		// we don't need to smooth anything in the reserve, because it's empty, nor do we need to check its starlight.
 		// only the sides need to do that. this saved ~4-5% of reservation clear times in testing
 		if(turf.x != low_x && turf.x != high_x && turf.y != low_y && turf.y != high_y)
 			continue
 
+		turf.AfterChange(CHANGETURF_IGNORE_AIR)
 		QUEUE_SMOOTH(turf)
 		QUEUE_SMOOTH_NEIGHBORS(turf)
 		for(var/turf/open/space/adj in RANGE_TURFS(1, turf))
@@ -476,6 +473,32 @@
 		CHECK_TICK
 
 	qdel(safeguard)
+
+/// Stops machinery in the virtual zlevel processing
+/datum/virtual_level/proc/stop_reservation_machinery()
+	for(var/obj/machinery/machine as anything in GLOB.machines)
+		if(!is_in_bounds(machine))
+			continue
+		if(machine.datum_flags & DF_ISPROCESSING)
+			machine.end_processing()
+		SSair.stop_processing_machine(machine)
+
+/// Deletes everything in the turfs except observers and lighting. Returns how many things were deleted.
+/datum/virtual_level/proc/delete_reservation_contents(list/turf/block_turfs, can_yield)
+	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
+	var/deleted_count = 0
+	for(var/turf/turf as anything in block_turfs)
+		// don't waste time trying to qdelete the lighting object
+		for(var/atom/movable/thing as anything in turf.contents)
+			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
+			//And this needs to be fast
+			if(ignored_atoms[thing.type])
+				continue
+			qdel(thing)
+			deleted_count++
+		if(can_yield)
+			CHECK_TICK
+	return deleted_count
 
 /datum/virtual_level/proc/get_trait(trait)
 	return traits[trait]

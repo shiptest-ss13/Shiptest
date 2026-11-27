@@ -62,6 +62,20 @@
 	if(istype(mover, /obj/effect/beam))
 		return !opacity
 
+/obj/structure/mineral_door/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	. = ..()
+	if(.)
+		return
+	// AI mobs that opens doors can get through
+	return ai_opens_for(requester)
+
+/obj/structure/mineral_door/ai_can_open(mob/living/opener)
+	return anchored
+
+/obj/structure/mineral_door/ai_open(mob/living/opener)
+	if(!isSwitchingStates)
+		Open()
+
 /obj/structure/mineral_door/proc/TryToSwitchState(atom/user)
 	if(isSwitchingStates || !anchored)
 		return

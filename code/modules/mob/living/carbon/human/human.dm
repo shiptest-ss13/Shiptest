@@ -1,4 +1,5 @@
 /mob/living/carbon/human/Initialize()
+	hold_icons()
 	add_verb(src, /mob/living/proc/mob_sleep)
 	add_verb(src, /mob/living/proc/toggle_resting)
 
@@ -24,6 +25,7 @@
 	AddComponent(/datum/component/personal_crafting)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
 	GLOB.human_list += src
+	release_icons()
 
 /mob/living/carbon/human/proc/setup_human_dna()
 	//initialize dna. for spawned humans; overwritten by other code
@@ -1192,7 +1194,7 @@
 	return ishuman(target) && target.body_position == LYING_DOWN
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
-	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB))
+	if(!can_be_firemanned(target) || is_incapacitated(IGNORE_GRAB))
 		to_chat(src, span_warning("You can't fireman carry [target] while [target.p_they()] [target.p_are()] standing!"))
 		return
 
@@ -1214,7 +1216,7 @@
 		return
 
 	//Second check to make sure they're still valid to be carried
-	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB) || target.buckled)
+	if(!can_be_firemanned(target) || is_incapacitated(IGNORE_GRAB) || target.buckled)
 		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!"))
 		return
 
@@ -1236,14 +1238,14 @@
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 15
 		skills_space = "quickly"
-	if(!incapacitated(FALSE, TRUE))
+	if(!is_incapacitated(FALSE, TRUE))
 		visible_message(span_notice("[src] starts [skills_space] scooping [target] into their arms.."),
 		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
 		span_notice("[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
-			if(!incapacitated(FALSE, TRUE) && !target.buckled)
+			if(!is_incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
 				return TRUE
 		visible_message(span_warning("[src] fails to scoop [target]!"))
@@ -1255,7 +1257,7 @@
 			if(can_piggyback(target))
 				if(target.buckled)
 					target.buckled.unbuckle_mob(target)
-				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
+				if(target.is_incapacitated(FALSE, TRUE) || is_incapacitated(FALSE, TRUE))
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return
 				buckle_mob(target, TRUE, TRUE, FALSE, 0, 2)

@@ -99,6 +99,8 @@ Class Procs:
 
 	initial_language_holder = /datum/language_holder/gal_com
 
+	pass_flags_self = PASSMACHINE
+
 	var/machine_stat = NONE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
@@ -345,7 +347,7 @@ Class Procs:
 			if(!(istype(H) && H.has_dna() && H.dna.check_mutation(TK)))
 				return FALSE
 
-		if(L.incapacitated()) // Finally make sure we aren't incapacitated
+		if(L.is_incapacitated()) // Finally make sure we aren't incapacitated
 			return FALSE
 
 	else // If we aren't a silicon, living, or admin ghost, bad!

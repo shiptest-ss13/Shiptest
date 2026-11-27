@@ -17,7 +17,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/noticeboard/directional/north,
-/obj/machinery/fax/warra,
+/obj/machinery/fax/tricorp,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge/cool)
@@ -350,16 +350,13 @@
 	pixel_y = 5
 	},
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/clothing/under/warra/supply{
+/obj/item/clothing/under/warra/assistant/supply{
 	pixel_x = -8
 	},
-/obj/item/clothing/under/warra/supply{
+/obj/item/clothing/under/warra/assistant/supply{
 	pixel_x = -8
 	},
-/obj/item/clothing/under/warra{
-	pixel_x = 8
-	},
-/obj/item/clothing/under/warra{
+/obj/item/clothing/under/warra/assistant/supply{
 	pixel_x = 8
 	},
 /obj/item/clothing/head/warra/cap/supply{
@@ -1127,7 +1124,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
@@ -3078,7 +3075,7 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/under/warra/janitor,
+/obj/item/clothing/under/warra/assistant/janitor,
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
@@ -3806,16 +3803,13 @@
 	pixel_y = 5
 	},
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/clothing/under/warra/supply{
+/obj/item/clothing/under/warra/assistant/supply{
 	pixel_x = -8
 	},
-/obj/item/clothing/under/warra/supply{
+/obj/item/clothing/under/warra/assistant/supply{
 	pixel_x = -8
 	},
-/obj/item/clothing/under/warra{
-	pixel_x = 8
-	},
-/obj/item/clothing/under/warra{
+/obj/item/clothing/under/warra/assistant/supply{
 	pixel_x = 8
 	},
 /obj/item/clothing/head/warra/cap/supply{
@@ -5905,7 +5899,8 @@
 /obj/item/gps{
 	pixel_y = 6;
 	pixel_x = -8;
-	gpstag = "!NS-KIWI-CLASS"
+	gpstag = "!NS-KIWI-CLASS";
+	gps_active = 1
 	},
 /obj/item/binoculars{
 	pixel_y = -13;
