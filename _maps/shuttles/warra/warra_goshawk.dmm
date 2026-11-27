@@ -4206,7 +4206,7 @@
 	pixel_y = 32;
 	pixel_x = -32
 	},
-/turf/open/space/basic,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "zg" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -4497,7 +4497,11 @@
 /area/ship/external/dark)
 "Bj" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
-/turf/open/space/basic,
+/obj/structure/sign/warra/vigilitas{
+	pixel_y = -32;
+	pixel_x = -32
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Bo" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line,
@@ -6116,7 +6120,7 @@
 	dir = 1;
 	pixel_x = 0;
 	pixel_y = -22;
-	id = "goshawk_starboard_plasma"\";
+	id = "goshawk_starboard_plasma";
 	name = "thruster shield control"
 	},
 /turf/open/floor/plating,
@@ -9907,13 +9911,13 @@ wd
 uf
 Aj
 iz
-Bh
+JZ
 Zx
 Zx
 Zx
 Zx
 Zx
-Bh
+bk
 bM
 dq
 nI
