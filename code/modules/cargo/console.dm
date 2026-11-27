@@ -210,7 +210,7 @@
 		var/obj/item/catalog_handheld/handheld = W
 		handheld.current_ship = current_ship
 		handheld.current_faction = current_faction
-		if(outpost_docked)
+		if(istype(outpost_docked))
 			handheld.parent_outpost = outpost_docked
 		handheld.update_static_data_for_all_viewers()
 		to_chat(user,span_notice("You sync the [handheld.name] to the [name]."))
