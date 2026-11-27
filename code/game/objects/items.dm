@@ -577,12 +577,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/proc/dropped(mob/user, silent = FALSE)
-	SHOULD_CALL_PARENT(1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.Remove(user)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.Remove(user)
+
 	if(item_flags & DROPDEL)
 		qdel(src)
+
 	item_flags &= ~IN_INVENTORY
 	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user)
 	remove_outline()
@@ -1173,7 +1177,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/update_item_action_buttons(status_only = FALSE, force = FALSE)
 	for(var/datum/action/current_action as anything in actions)
-		current_action.UpdateButtonIcon(status_only, force)
+		current_action.UpdateButtons(status_only, force)
 
 
 // Update icons if this is being carried by a mob

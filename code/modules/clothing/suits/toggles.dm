@@ -45,7 +45,7 @@
 
 /obj/item/clothing/suit/hooded/item_action_slot_check(slot, mob/user)
 	if(slot == ITEM_SLOT_OCLOTHING)
-		return 1
+		return TRUE
 
 /obj/item/clothing/suit/hooded/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_OCLOTHING)

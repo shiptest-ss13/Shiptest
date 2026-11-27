@@ -331,7 +331,7 @@
 		update_appearance()
 
 	for(var/datum/action/action as anything in actions)
-		action.UpdateButtonIcon()
+		action.UpdateButtons()
 
 // check species (or override) first, then helmet own, then fallback to armor.dmi
 /obj/item/clothing/head/helmet/proc/get_flashlight_overlay(list/icon_files)
