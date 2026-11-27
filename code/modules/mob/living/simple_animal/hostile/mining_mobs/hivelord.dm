@@ -109,7 +109,7 @@
 //Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	name = "legion"
-	desc = "You can still see what was once a human under the shifting mass of corruption."
+	desc = "You can still see what was once a person under the shifting mass of flesh and chitin."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
@@ -132,7 +132,6 @@
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
-	var/dwarf_mob = FALSE
 	var/mob_to_spawn //if this legion is suppossed to spawn a specific mob
 	var/mob/living/carbon/human/stored_mob
 	has_clickbox = FALSE
@@ -148,28 +147,12 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
 	. = ..()
-	if(prob(15))
-		new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(loc)
 	if(prob(5))
 		new /mob/living/simple_animal/hostile/big_legion(loc)
 		return INITIALIZE_HINT_QDEL
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf
-	name = "dwarf legion"
-	desc = "You can still see what was once a rather small human under the shifting mass of corruption. It seems quick on its feet."
-	icon_state = "dwarf_legion"
-	icon_living = "dwarf_legion"
-	icon_aggro = "dwarf_legion"
-	icon_dead = "dwarf_legion"
-	mob_trophy = /obj/item/mob_trophy/dwarf_skull
-	maxHealth = 75
-	health = 75
-	move_to_delay = 2
-	speed = 1 //much faster!
-	dwarf_mob = TRUE
-
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
-	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
+	visible_message(span_warning("The tumors from [src] wail in anger as they flee from their dying host!"))
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
@@ -179,8 +162,6 @@
 			new mob_to_spawn(T)
 		else if(from_nest)
 			new /obj/effect/mob_spawn/human/corpse/charredskeleton(T)
-		else if(dwarf_mob)
-			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf(T)
 		else
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(T)
 	..(gibbed)
@@ -188,19 +169,11 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest
 	from_nest = TRUE
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest
-	from_nest = TRUE
-
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/death(gibbed)
-	move_force = MOVE_FORCE_DEFAULT
-	move_resist = MOVE_RESIST_DEFAULT
-	pull_force = PULL_FORCE_DEFAULT
-	..()
 
 //Legion skull
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
 	name = "legion"
-	desc = "One of many."
+	desc = "A bloated tumor flying towards you, tendrils reaching to break you open."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "legion_head"
 	icon_living = "legion_head"
@@ -227,19 +200,6 @@
 	clickbox_state = "sphere"
 	clickbox_max_scale = 2
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff
-	name = "emaciated legion"
-	desc = "One of many. This one was spawned from a surrogate host, and is quite short-lived and nearsighted. However, it is freindly to humans."
-	color = "#c8e6fb"
-	melee_damage_lower = 10
-	melee_damage_upper = 10
-	vision_range = 5
-
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(death)), 5 SECONDS)
-	AddComponent(/datum/component/swarming)
-
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(stat == DEAD || !isturf(loc))
@@ -264,10 +224,7 @@
 		throwyouabone.Insert(H)
 	else
 		var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
-		if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
-			L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
-		else
-			L = new(H.loc)
+		L = new(H.loc)
 		visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
 		H.adjustBruteLoss(1000)
 		L.stored_mob = H
@@ -275,9 +232,10 @@
 	qdel(src)
 
 /obj/item/organ/legion_skull
-	name = "legion skull"
-	desc = "The skull of a legion, likely torn from a soon-to-be host."
+	name = "legion tumor"
+	desc = "A legion tumor, likely torn from a soon-to-be host."
 	icon_state = "legion_skull"
+	icon = 'icons/obj/lavaland/artefacts.dmi'
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_REGENERATIVE_CORE
 	grind_results = list(/datum/reagent/medicine/soulus = 2, /datum/reagent/blood = 5)
@@ -339,28 +297,12 @@
 	malignance_countdown = initial(malignance_countdown)
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
-//Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced
-	name = "Signifer"
-	desc = "A shrunken legion, carring the remnants of a mouldering battle standard. The cadre of lackeys surrounding it seem particularly attentive."
-	stat_attack = DEAD
-	maxHealth = 120
-	health = 120
-	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/advanced
-	icon_state = "dwarf_legion"
-	icon_living = "dwarf_legion"
-	icon_aggro = "dwarf_legion"
-	icon_dead = "dwarf_legion"
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/advanced
-	stat_attack = DEAD
-	can_infest_dead = TRUE
-
-//Legion that spawns Legions
+//Ripoff tank l4d2
 /mob/living/simple_animal/hostile/big_legion
 	name = "Legate"
-	desc = "A rare and incredibly dangerous legion mutation, forming from a plethora of legion joined in union around a young necropolis spire. It's looking particularly self-confident."
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	desc = "A rare and incredibly dangerous legion mutation, with multiple hosts merged together into one new being. Its arm looks to swing at you."
+	icon = 'icons/mob/lavaland/largelegion.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
 	icon_dead = "legion"
@@ -383,59 +325,20 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = INFINITY
-	move_to_delay = 7
-	vision_range = 4
-	aggro_vision_range = 4
+	move_to_delay = 6
+	vision_range = 5
+	aggro_vision_range = 5
 	speed = 8
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
 	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-
-/mob/living/simple_animal/hostile/big_legion/death(gibbed)
-	move_force = MOVE_FORCE_DEFAULT
-	move_resist = MOVE_RESIST_DEFAULT
-	pull_force = PULL_FORCE_DEFAULT
-	visible_message(span_userwarning("[src] falls over with a mighty crash, the remaining legions within it falling apart!"))
-	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
-	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
-	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
-	..(gibbed)
-
-/mob/living/simple_animal/hostile/big_legion/Initialize()
-	.=..()
-	AddComponent(/datum/component/spawner, list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest), 200, faction, "peels itself off from", 3)
-
-// Snow Legion
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow
-	name = "snow legion"
-	desc = "You can still see what was once a human under the shifting snowy mass, clearly decorated by a clown."
-	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
-	icon_state = "snowlegion"
-	icon_living = "snowlegion"
-	icon_aggro = "snowlegion_alive"
-	icon_dead = "snowlegion"
-	mob_trophy = /obj/item/mob_trophy/legion_skull
-	loot = list(/obj/item/organ/regenerative_core/legion)
-	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow
-
-// Snow Legion skull
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow
-	name = "snow legion"
-	desc = "One of many."
-	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
-	icon_state = "snowlegion_head"
-	icon_living = "snowlegion_head"
-	icon_aggro = "snowlegion_head"
-	icon_dead = "snowlegion_head"
-
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest
-	from_nest = TRUE
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal
 	name = "disfigured legion"
-	desc = "Disfigured, contorted, and corrupted. This thing was once part of the legion, now it has a different vile and twisted allegiance."
+	desc = "Disfigured, contorted, and corrupted. This shambling mass of flesh seems even more decayed."
 	icon_state = "disfigured_legion"
 	icon_living = "disfigured_legion"
 	icon_aggro = "disfigured_legion"

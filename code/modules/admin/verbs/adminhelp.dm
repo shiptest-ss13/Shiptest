@@ -286,6 +286,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 //message from the initiator without a target, all admins will see this
 //won't bug irc/discord
 /datum/admin_help/proc/message_no_recipient(msg)
+	//clean the input msg
+	msg = sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN))
+
 	var/ref_src = "[REF(src)]"
 	//Message to be sent to all admins
 	var/admin_msg = span_adminnotice("[span_adminhelp("Ticket [ticket_href("#[id]", ref_src)]")]<b>: [linked_reply_name(ref_src)] [full_monty(ref_src)]:</b> [span_linkify("[keywords_lookup(msg)]")]")

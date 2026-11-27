@@ -82,7 +82,6 @@
 		//try to keep this list more permissive.
 		banned_objects = typecacheof(list(
 			/obj/structure/stone_tile,
-			/obj/structure/vein/classfour,
 			/obj/structure/vein/ice/classfour,
 			/obj/structure/vein/jungle/classfour,
 			/obj/structure/vein/moon/classfour,

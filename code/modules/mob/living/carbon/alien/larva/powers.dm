@@ -44,7 +44,7 @@
 		to_chat(L, span_name("Drones</span> <span class='info'>are the weakest and slowest of the castes, but can grow into a praetorian and then queen if no queen exists, and are vital to maintaining a hive with their resin secretion abilities."))
 		var/alien_caste = alert(L, "Please choose which alien caste you shall belong to.",,"Hunter","Sentinel","Drone")
 
-		if(user.incapacitated()) //something happened to us while we were choosing.
+		if(user.is_incapacitated()) //something happened to us while we were choosing.
 			return
 
 		var/mob/living/carbon/alien/humanoid/new_xeno

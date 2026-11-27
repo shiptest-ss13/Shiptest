@@ -30,12 +30,14 @@
 	icon_state = "sarathi_l_leg"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_SARATHI
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
 	icon_state = "sarathi_r_leg"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_SARATHI
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/left/lizard/digitigrade
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'

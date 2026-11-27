@@ -71,7 +71,7 @@
 		deconstruct(FALSE)
 
 /obj/structure/transit_tube_pod/container_resist_act(mob/living/user)
-	if(!user.incapacitated())
+	if(!user.is_incapacitated())
 		empty_pod()
 		return
 	if(!moving)

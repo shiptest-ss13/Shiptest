@@ -229,9 +229,6 @@
 	psychotic_brawling.remove(owner)
 	QDEL_NULL(psychotic_brawling)
 
-/datum/brain_trauma/special/psychotic_brawling/mammoth
-	name = "Chemical Violent Psychosis"
-
 /datum/brain_trauma/special/tenacity
 	name = "Tenacity"
 	desc = "Patient is psychologically unaffected by pain and injuries, and can remain standing far longer than a normal person."

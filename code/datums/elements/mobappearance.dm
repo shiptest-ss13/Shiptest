@@ -34,7 +34,7 @@
 /datum/element/appearance_on_login/proc/check_menu(mob/living/simple_animal/target)
 	if(!istype(target))
 		return FALSE
-	if(target.incapacitated())
+	if(target.is_incapacitated())
 		return FALSE
 	return TRUE
 

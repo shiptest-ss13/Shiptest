@@ -189,6 +189,16 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/mob)
+	mob.hold_icons()
+	try
+		setup_human(mob)
+	catch(var/exception/error)
+		mob.release_icons()
+		throw error
+	mob.release_icons()
+
+/// Sets up the spawned human's species, appearance, outfit and ID
+/obj/effect/mob_spawn/human/proc/setup_human(mob/living/carbon/human/mob)
 	if(mob_species)
 		mob.set_species(mob_species)
 		// replace mob name with species specific name if possible

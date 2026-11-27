@@ -42,7 +42,7 @@
 	var/search_failed_recently = world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]
 	var/urgent = !has_shot
 	if(!urgent && !(waiting && search_failed_recently)) // the costly part, so only when it'd change what we do
-		urgent = ai_ally_in_lane(living_pawn, target)
+		urgent = ai_ally_in_lane(living_pawn, target, ignore_allies_beside_target = TRUE)
 	var/under_fire = AI_RECENTLY_SHOT_AT(controller, under_fire_time)
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it

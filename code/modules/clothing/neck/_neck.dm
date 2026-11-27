@@ -375,7 +375,7 @@
 
 /obj/item/clothing/neck/poncho/item_action_slot_check(slot, mob/user)
 	if(slot == ITEM_SLOT_NECK)
-		return 1
+		return TRUE
 
 /obj/item/clothing/neck/poncho/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_NECK)
@@ -797,7 +797,7 @@
 		return
 	if(user.pulling == wearer && user.a_intent == INTENT_GRAB)
 		return
-	if(!canStrip(wearer) || !user.Adjacent(wearer) || user.incapacitated())
+	if(!canStrip(wearer) || !user.Adjacent(wearer) || user.is_incapacitated())
 		return
 	INVOKE_ASYNC(src, PROC_REF(pull_from_wearer), wearer, user)
 	return COMPONENT_NO_MOUSEDROP

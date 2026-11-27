@@ -37,6 +37,7 @@
 	should_draw_greyscale = FALSE
 	dismemberable = FALSE //BIG MEATY THIGHS
 	dmg_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/vox
 	static_icon = 'icons/mob/species/vox/bodyparts.dmi'
@@ -45,6 +46,7 @@
 	should_draw_greyscale = FALSE
 	dismemberable = FALSE
 	dmg_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/tail/vox
 	static_icon = 'icons/mob/species/vox/bodyparts.dmi'

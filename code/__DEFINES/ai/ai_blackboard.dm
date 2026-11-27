@@ -334,6 +334,8 @@
 #define BB_BASIC_MOB_PICKED_SEARCH_STYLE "BB_basic_picked_search_style"
 ///How we're searching right now, after anything that changes our mind, so allies can tell who's already gone after them
 #define BB_BASIC_MOB_ACTIVE_SEARCH_STYLE "BB_basic_active_search_style"
+///Where we're moving up to, to keep one of ours who's gone after our target in sight while we cover them
+#define BB_BASIC_MOB_OVERWATCH_TURF "BB_basic_overwatch_turf"
 
 // Getting about: paths, obstacles, hazards, breaching and waiting out
 ///Until when we won't step aside again for one of ours who wants past, as a world.time

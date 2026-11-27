@@ -323,7 +323,7 @@
 	return null
 
 ///Is the mob incapacitated
-/mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
+/mob/proc/is_incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
 	return
 
 /**
@@ -524,7 +524,7 @@
 
 /mob/living/blind_examine_check(atom/examined_thing)
 	//need to be next to something and awake
-	if(!in_range(examined_thing, src) || incapacitated())
+	if(!in_range(examined_thing, src) || is_incapacitated())
 		to_chat(src, span_warning("Something is there, but you can't see it!"))
 		return FALSE
 	//also neeed an empty hand, and you can only initiate as many examines as you have hands
@@ -653,7 +653,7 @@
 	if(ismecha(loc))
 		return
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -673,7 +673,7 @@
 		var/obj/mecha/mech = loc
 		return mech.handle_unique_action(src)
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -713,7 +713,7 @@
 
 	if(ismecha(loc))
 		return
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()

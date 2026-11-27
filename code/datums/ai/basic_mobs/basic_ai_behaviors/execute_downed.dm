@@ -18,7 +18,7 @@
 	var/mob/living/carbon/human/victim = controller.blackboard[target_key]
 	if(!istype(executioner) || QDELETED(victim) || victim != controller.blackboard[BB_BASIC_MOB_EXECUTION_VICTIM] || !ai_is_downed(victim) || victim.stat == DEAD)
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED // back up, or dead already, or we're after someone else now
-	if(!executioner.Adjacent(victim) || executioner.incapacitated() || HAS_TRAIT(executioner, TRAIT_FLOORED))
+	if(!executioner.Adjacent(victim) || executioner.is_incapacitated() || HAS_TRAIT(executioner, TRAIT_FLOORED))
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED // like if they were dragged off, or we were knocked down
 	var/style = executioner.get_execution_style()
 	if(!style)

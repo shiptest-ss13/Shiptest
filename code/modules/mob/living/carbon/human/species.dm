@@ -110,8 +110,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/inert_mutation 	= DWARFISM
 	///Used to set the mob's deathsound upon species change
 	var/deathsound
-	///Sounds to override barefeet walking
-	var/list/special_step_sounds
 	///Special sound for grabbing
 	var/grab_sound
 	/// A path to an outfit that is important for species life e.g. plasmaman outfit
@@ -523,6 +521,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * forced_colour - The colour of hair we're forcing on this human. Leave null to not change. Mind the british spelling!
  */
 /datum/species/proc/handle_hair(mob/living/carbon/human/H, forced_colour)
+	if(H.icon_holds && !forced_colour)
+		return
 	H.remove_overlay(HAIR_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 	if(!HD) //Decapitated
@@ -641,6 +641,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * H - Human, whoever we're handling the body for
  */
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
+	if(H.icon_holds)
+		return
 	H.remove_overlay(BODY_LAYER)
 
 	var/list/standing = list()
@@ -777,6 +779,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * forced_colour - The forced color of an accessory. Leave null to use mutant color.
  */
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
+	if(H.icon_holds && !forced_colour)
+		return
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
 	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_ADJ_HIGH_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
