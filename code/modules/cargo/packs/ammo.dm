@@ -536,4 +536,4 @@
 	name = "5.8x20mm Thorn Flechette Ammo Box Crate"
 	desc = "Contains one 100-round 5.8x20mm flechette box for the FL-M Thorn."
 	contains = list(/obj/item/storage/box/ammo/thorn)
-	cost = 320 //vibes based I'm Not whipping the calc out
+	cost = 375 //vibes based I'm Not whipping the calc out
