@@ -209,6 +209,7 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"champagne",
 	"olive",
 	"tawny",
+	"tan",
 	"ochre",
 	"cedar",
 	"sable"

@@ -314,6 +314,8 @@
 			. = "471c18"
 		if("ivory")
 			. = "fff4e6"
+		if("tan")
+			. = "cf9a72"
 		if("orange")
 			. = "ffc905"
 
