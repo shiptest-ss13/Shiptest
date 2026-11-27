@@ -224,7 +224,8 @@
 		punchcard_orders = list()
 		for(var/untreated_order in inserted_card.purchases)
 			var/datum/supply_pack/untreated_pack = untreated_order
-			if((untreated_pack.faction != current_faction) && untreated_pack.faction_locked)
+			var/same_faction = untreated_pack.faction ? untreated_pack.faction.allowed_faction(current_faction) : FALSE
+			if(!same_faction && untreated_pack.faction_locked)
 				unfilled_orders = TRUE
 				continue
 			var/treated_order = REF(untreated_order)
