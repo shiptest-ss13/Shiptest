@@ -1484,6 +1484,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "hv" = (
@@ -1807,6 +1810,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -2460,19 +2466,6 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
-"mh" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/storage/eva)
 "mi" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
@@ -3249,6 +3242,9 @@
 "pr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "ps" = (
@@ -5774,16 +5770,16 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "DT" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "DY" = (
@@ -8785,6 +8781,7 @@
 	pixel_x = -9;
 	pixel_y = -19
 	},
+/obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "Tu" = (
@@ -10208,7 +10205,7 @@ Vf
 Vf
 kW
 Oc
-mh
+Or
 DT
 Or
 nW
