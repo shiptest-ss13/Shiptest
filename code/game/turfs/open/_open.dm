@@ -12,10 +12,7 @@
 
 	var/wet
 
-	var/footstep = null
-	var/barefootstep = null
-	var/clawfootstep = null
-	var/heavyfootstep = null
+	var/turf_footstep_type = null
 	/// Reference to the turf fire on the turf
 	var/obj/effect/abstract/turf_fire/turf_fire
 
@@ -54,10 +51,7 @@
 	name = "floor"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "floor"
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	turf_footstep_type = FOOTSTEP_FLOOR
 	tiled_dirt = TRUE
 
 /turf/open/indestructible/Melt()
@@ -72,10 +66,7 @@
 
 /turf/open/indestructible/sound
 	name = "squeaky floor"
-	footstep = null
-	barefootstep = null
-	clawfootstep = null
-	heavyfootstep = null
+	turf_footstep_type = null
 	var/sound
 
 /turf/open/indestructible/sound/Entered(atom/movable/AM)
@@ -90,10 +81,7 @@
 	icon_state = "necro1"
 	baseturfs = /turf/open/indestructible/necropolis
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	footstep = FOOTSTEP_LAVA
-	barefootstep = FOOTSTEP_LAVA
-	clawfootstep = FOOTSTEP_LAVA
-	heavyfootstep = FOOTSTEP_LAVA
+	turf_footstep_type = FOOTSTEP_LAVA
 	tiled_dirt = FALSE
 
 /turf/open/indestructible/necropolis/Initialize(mapload, inherited_virtual_z)
@@ -114,37 +102,12 @@
 /turf/open/indestructible/boss/air
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
-/turf/open/indestructible/hierophant
-	icon = 'icons/turf/floors/hierophant_floor.dmi'
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	baseturfs = /turf/open/indestructible/hierophant
-	smoothing_flags = SMOOTH_CORNERS
-	tiled_dirt = FALSE
-
-/turf/open/indestructible/hierophant/two //I assume this exists to bypass turf smoothing to make patterns in the floor of the arena. cool!
-
-/turf/open/indestructible/hierophant/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
-	return FALSE
-
-/turf/open/indestructible/paper
-	name = "notebook floor"
-	desc = "A floor made of invulnerable notebook paper."
-	icon_state = "paperfloor"
-	footstep = null
-	barefootstep = null
-	clawfootstep = null
-	heavyfootstep = null
-	tiled_dirt = FALSE
-
 /turf/open/indestructible/binary
 	name = "tear in the fabric of reality"
 	CanAtmosPass = ATMOS_PASS_NO
 	baseturfs = /turf/open/indestructible/binary
 	icon_state = "binary"
-	footstep = null
-	barefootstep = null
-	clawfootstep = null
-	heavyfootstep = null
+	turf_footstep_type = null
 
 /turf/open/indestructible/airblock
 	icon_state = "bluespace"
@@ -288,6 +251,26 @@
 		qdel(active_hotspot)
 	if(turf_fire)
 		qdel(turf_fire)
+
+/turf/open/proc/check_for_wallmounts()
+	RETURN_TYPE(/list)
+
+	var/list/found_wallmounts = list()
+	for(var/obj/wallmount_maybe in contents)
+		if(HAS_TRAIT(wallmount_maybe, TRAIT_WALLMOUNTED))
+			found_wallmounts += wallmount_maybe
+	return found_wallmounts
+
+/turf/open/proc/check_projectile_intercept(obj/projectile/intercepted)
+	var/list/interceptors = check_for_wallmounts()
+	if(interceptors.len)
+		for(var/obj/intercepting in interceptors)
+			if(prob(40))
+				intercepting.bullet_act(intercepted)
+				break
+		return TRUE
+	return FALSE
+
 
 #undef IGNITE_TURF_LOW_POWER
 #undef IGNITE_TURF_HIGH_POWER

@@ -68,6 +68,10 @@
 	id = "flail_window_shut"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/item/gun/energy/kalix/pgf/pdw/empty_cell{
+	pixel_x = -4;
+	pixel_y = 9
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "g" = (
@@ -181,10 +185,6 @@
 "o" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -7;
-	pixel_y = 14
 	},
 /obj/machinery/recharger{
 	pixel_x = 9;
@@ -613,6 +613,11 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor4-old"
 	},
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_box/magazine/g12/empty{
+	pixel_x = 7;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "R" = (
@@ -689,15 +694,21 @@
 /area/ship/bridge)
 "V" = (
 /obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/item/gun/energy/kalix/pgf/pdw/empty_cell{
-	pixel_x = -4;
-	pixel_y = 9
+	color = "#c1b6a5";
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/east{
 	layer = 2.7
+	},
+/obj/item/gun/ballistic/shotgun/automatic/g12/no_mag{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/item/ammo_box/magazine/g12{
+	pixel_x = -4;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)

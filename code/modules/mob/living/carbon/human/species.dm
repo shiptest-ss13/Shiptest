@@ -110,8 +110,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/inert_mutation 	= DWARFISM
 	///Used to set the mob's deathsound upon species change
 	var/deathsound
-	///Sounds to override barefeet walking
-	var/list/special_step_sounds
 	///Special sound for grabbing
 	var/grab_sound
 	/// A path to an outfit that is important for species life e.g. plasmaman outfit
@@ -360,7 +358,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		all_zones |= old_species.species_limbs
 	for(var/zone in all_zones)
 		old_part = C.bodyparts[zone]
-		if(!old_part && old_species && !isnull(old_species?.species_limbs)) // if the old species has a bodypart by default but it's missing, don't replace it
+		if(!old_part && old_species?.species_limbs?[zone]) // if the old species has a bodypart by default but it's missing, don't replace it
 			continue
 		var/obj/item/bodypart/new_part = new_species.new_body_part(C, zone, robotic, FALSE)
 		if(new_part)
@@ -523,6 +521,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * forced_colour - The colour of hair we're forcing on this human. Leave null to not change. Mind the british spelling!
  */
 /datum/species/proc/handle_hair(mob/living/carbon/human/H, forced_colour)
+	if(H.icon_holds && !forced_colour)
+		return
 	H.remove_overlay(HAIR_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 	if(!HD) //Decapitated
@@ -641,6 +641,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * H - Human, whoever we're handling the body for
  */
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
+	if(H.icon_holds)
+		return
 	H.remove_overlay(BODY_LAYER)
 
 	var/list/standing = list()
@@ -777,6 +779,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * forced_colour - The forced color of an accessory. Leave null to use mutant color.
  */
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
+	if(H.icon_holds && !forced_colour)
+		return
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
 	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_ADJ_HIGH_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
@@ -1468,18 +1472,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(attacker_style && attacker_style.grab_act(user,target))
 		return TRUE
 	else
-		//Steal them shoes
-		if(target.body_position == LYING_DOWN && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) && user.a_intent == INTENT_GRAB && target.shoes)
-			var/obj/item/I = target.shoes
-			user.visible_message(span_warning("[user] starts stealing [target]'s [I.name]!"),
-							span_danger("You start stealing [target]'s [I.name]..."), null, null, target)
-			to_chat(target, span_userdanger("[user] starts stealing your [I.name]!"))
-			if(do_after(user, I.strip_delay, target))
-				target.dropItemToGround(I, TRUE)
-				user.put_in_hands(I)
-				user.visible_message(span_warning("[user] stole [target]'s [I.name]!"),
-								span_notice("You stole [target]'s [I.name]!"), null, null, target)
-				to_chat(target, span_userdanger("[user] stole your [I.name]!"))
 		target.grabbedby(user)
 		return TRUE
 

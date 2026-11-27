@@ -498,7 +498,7 @@
 	return ..()
 
 /mob/living/silicon/robot/execute_mode()
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	var/obj/item/W = get_active_held_item()
 	if(W)
@@ -1006,7 +1006,7 @@
 	icon_icon = 'icons/mob/actions/actions_AI.dmi'
 	button_icon_state = "ai_core"
 
-/datum/action/innate/undeployment/Trigger()
+/datum/action/innate/undeployment/Trigger(trigger_flags)
 	if(!..())
 		return FALSE
 	var/mob/living/silicon/robot/R = owner
@@ -1061,7 +1061,7 @@
 			return
 	if(stat)
 		return
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	if(module)
 		if(!module.allow_riding)
@@ -1070,7 +1070,7 @@
 	M.visible_message(span_boldwarning("[M] is being loaded onto [src]!"))//if you have better flavor text for this by all means change it
 	if(!do_after(src, 5, target = M))
 		return
-	if(iscarbon(M) && !M.incapacitated() && !riding_datum.equip_buckle_inhands(M, 1))
+	if(iscarbon(M) && !M.is_incapacitated() && !riding_datum.equip_buckle_inhands(M, 1))
 		if(M.usable_hands == 0)
 			M.visible_message(span_boldwarning("[M] can't climb onto [src] because [M.p_they()] don't have any usable arms!"))
 		else

@@ -149,7 +149,6 @@
  *
  * Handles the transformation of an alien into another type of alien.
  * Gives them some message fluff, transfers their mind (important as to transfer other antag statuses)
- * and then also transfers their nanites should the original body have them.
  * Arguments:
  * * new_xeno - The new body of the alien.
  */
@@ -161,18 +160,14 @@
 	to_chat(src, span_noticealien("You begin to evolve!"))
 	visible_message(span_alertalien("[src] begins to twist and contort!"))
 	new_xeno.setDir(dir)
-	if(numba && unique_name)
-		new_xeno.numba = numba
+	if(mob_id && unique_name)
+		new_xeno.mob_id = mob_id
 		new_xeno.set_name()
 	if(!alien_name_regex.Find(name))
 		new_xeno.name = name
 		new_xeno.real_name = real_name
 	if(mind)
 		mind.transfer_to(new_xeno)
-	var/datum/component/nanites/nanites = GetComponent(/datum/component/nanites)
-	if(nanites)
-		new_xeno.AddComponent(/datum/component/nanites, nanites.linked_techweb, nanites.nanite_volume)
-		SEND_SIGNAL(new_xeno, COMSIG_NANITE_SYNC, nanites)
 	qdel(src)
 
 /mob/living/carbon/alien/on_lying_down(new_lying_angle)

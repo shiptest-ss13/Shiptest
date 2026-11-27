@@ -881,7 +881,8 @@
 /obj/item/gps{
 	pixel_y = -7;
 	pixel_x = 9;
-	gpstag = "!MW-CARACARA-CLASS"
+	gpstag = "!MW-CARACARA-CLASS";
+	gps_active = 1
 	},
 /obj/machinery/light_switch{
 	dir = 4;
@@ -1926,6 +1927,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer1{
 	dir = 10
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
 "vS" = (
@@ -1969,7 +1971,7 @@
 /area/ship/crew/dorm)
 "wM" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/warra,
+/obj/machinery/fax/tricorp,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/white,
 /obj/machinery/firealarm/directional/west{
@@ -3231,6 +3233,7 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/item/radio/intercom/directional/west,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "OS" = (

@@ -11,7 +11,7 @@
 		"Scope" = "small_scope",
 		"Classic" = "small_scope_old",
 		)
-	unique_reskin_changes_inhand = TRUE
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_INHAND
 	var/zoom_mod = 4
 	var/zoom_out_mod = 0
 	var/min_recoil_mod = 0.1

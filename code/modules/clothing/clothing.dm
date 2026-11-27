@@ -8,6 +8,9 @@
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
 
+	//We assume that we're changing everything because of customization.
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON | UNIQUE_RESKIN_CHANGES_NAME
+
 	var/damaged_clothes = 0 //similar to machine's BROKEN stat and structure's broken var
 	///What level of bright light protection item has.
 	var/flash_protect = FLASH_PROTECTION_NONE
@@ -39,6 +42,8 @@
 	var/datum/weakref/wearer
 
 	var/pocket_storage_component_path
+	/// Holds pocket items
+	var/obj/item/clothing_pocket/pocket
 
 	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/armor_list = list()
@@ -66,9 +71,44 @@
 		actions_types += /datum/action/item_action/toggle_voice_box
 	. = ..()
 	if(ispath(pocket_storage_component_path))
-		LoadComponent(pocket_storage_component_path)
+		setup_pocket_storage()
 	if(can_be_bloody && ((body_parts_covered & FEET) || (flags_inv & HIDESHOES)))
 		LoadComponent(/datum/component/bloodysoles)
+
+/obj/item/clothing/Destroy()
+	QDEL_NULL(pocket)
+	return ..()
+
+/obj/item/clothing/proc/setup_pocket_storage()
+	var/datum/component/storage/concrete/pocket_storage = LoadComponent(pocket_storage_component_path)
+	pocket = new(src)
+	pocket_storage.set_real_location(pocket)
+
+/obj/item/clothing/proc/on_pocket_changed(atom/movable/thing)
+	return
+
+/obj/item/clothing_pocket
+	name = "pocket"
+	item_flags = ABSTRACT
+	resistance_flags = INDESTRUCTIBLE
+	var/obj/item/clothing/owner
+
+/obj/item/clothing_pocket/Initialize(mapload)
+	. = ..()
+	if(istype(loc, /obj/item/clothing))
+		owner = loc
+
+/obj/item/clothing_pocket/Destroy()
+	owner = null
+	return ..()
+
+/obj/item/clothing_pocket/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	owner?.on_pocket_changed(arrived)
+
+/obj/item/clothing_pocket/Exited(atom/movable/gone, direction)
+	. = ..()
+	owner?.on_pocket_changed(gone)
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()
@@ -77,7 +117,7 @@
 	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return
 
-	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
+	if(!M.is_incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
@@ -312,9 +352,11 @@
 	if(!icon_exists(file2use, state2use))
 		return
 
-	var/icon/human_clothing_icon = icon(file2use, state2use)
+	var/cache_key = species_clothing_key(file2use, state2use, layer)
 
-	if("[layer]" in mob_species.offset_clothing)
+	var/has_species_template = greyscale_colors && greyscale_icon_state && mob_species.species_clothing_path && icon_exists(mob_species.species_clothing_path, greyscale_icon_state) // Makes greyscale templated items not be affected by offsets
+
+	if(!has_species_template && ("[layer]" in mob_species.offset_clothing))
 		// This code taken from Baystation 12
 		var/icon/final_I = icon('icons/blanks/64x64.dmi', "nothing")
 		var/list/shifts = mob_species.offset_clothing["[layer]"]
@@ -329,17 +371,27 @@
 			final_I.Insert(canvas, dir = use_dir)
 
 		final_I = fcopy_rsc(final_I)
-		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		GLOB.species_clothing_icons[mob_species.id][cache_key] = final_I
 		return TRUE
 
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
 	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
+		GLOB.species_clothing_icons[mob_species.id][cache_key] = human_clothing_icon
 		return
 
 	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
 		return
 
-	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
+	var/greyscale_style = greyscale_icon_state
+	if(istype(src, /obj/item/clothing/under))
+		var/obj/item/clothing/under/under = src
+		if(under.adjusted == ALT_STYLE)
+			greyscale_style = "[greyscale_icon_state]_d"
+		if(under.adjusted == ROLLED_STYLE)
+			greyscale_style = "[greyscale_icon_state]_s"
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_style)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)
@@ -353,7 +405,7 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id][cache_key] = species_icon
 
 	return TRUE
 
@@ -526,9 +578,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.head_update(src, forced = 1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+	update_item_action_buttons()
 	return TRUE
 
 /obj/item/clothing/proc/visor_toggling() //handles all the actual toggling of flags
@@ -556,7 +606,7 @@
 
 /obj/item/clothing/proc/can_use(mob/user)
 	if(user && ismob(user))
-		if(!user.incapacitated())
+		if(!user.is_incapacitated())
 			return 1
 	return 0
 

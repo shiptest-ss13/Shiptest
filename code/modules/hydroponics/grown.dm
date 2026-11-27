@@ -115,7 +115,7 @@
 			for(var/datum/plant_gene/trait/T in seed.genes)
 				T.on_attackby(src, O, user)
 
-//Ghetto Seed Extraction
+// Manual Seed Extraction
 	switch(O.tool_behaviour)
 		if(TOOL_SCREWDRIVER)
 			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)

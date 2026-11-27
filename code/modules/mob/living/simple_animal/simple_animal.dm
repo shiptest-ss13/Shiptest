@@ -526,7 +526,7 @@
 			return new childspawn(target)
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
-	if(incapacitated())
+	if(is_incapacitated())
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -642,7 +642,7 @@
 /mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user, check_loc = FALSE)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(riding_datum)
-		if(user.incapacitated())
+		if(user.is_incapacitated())
 			return
 		for(var/atom/movable/A in get_turf(src))
 			if(A != src && A != M && A.density)

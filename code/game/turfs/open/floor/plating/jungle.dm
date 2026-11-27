@@ -22,9 +22,7 @@
 	slowdown = 0
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-	footstep = FOOTSTEP_MUD
-	barefootstep = FOOTSTEP_MUD
-	clawfootstep = FOOTSTEP_MUD
+	turf_footstep_type = FOOTSTEP_MUD
 
 /turf/open/floor/plating/asteroid/dirt/jungle/dark
 	icon_state = "greenerdirt"

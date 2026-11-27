@@ -138,9 +138,11 @@
 		return
 
 	var/atom/movable/thrown_thing
-	var/obj/item/I = get_active_held_item()
+	var/obj/item/held_item = get_active_held_item()
+	// read before the throw lets go of the grab
+	var/atom/movable/neck_grabbed = grab_state >= GRAB_NECK ? pulling : null
 
-	if(!I)
+	if(!held_item)
 		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
 			var/mob/living/throwable_mob = pulling
 			if(!throwable_mob.buckled)
@@ -150,20 +152,18 @@
 					to_chat(src, span_notice("You gently let go of [throwable_mob]."))
 					return
 	else
-		thrown_thing = I.on_thrown(src, target)
+		thrown_thing = held_item.on_thrown(src, target)
 
 	if(thrown_thing)
 		if(isliving(thrown_thing))
-			var/turf/start_T = get_turf(loc) //Get the start and target tile for the descriptors
-			var/turf/end_T = get_turf(target)
-			if(start_T && end_T)
-				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+			var/turf/start_turf = get_turf(loc) //Get the start and target tile for the descriptors
+			var/turf/end_turf = get_turf(target)
+			if(start_turf && end_turf)
+				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_turf)] towards tile at [AREACOORD(end_turf)]")
 		do_attack_animation(target, no_effect = 1)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
 
-		var/power_throw = 0
-		if(pulling && grab_state >= GRAB_NECK)
-			power_throw++
+		var/power_throw = (thrown_thing == neck_grabbed) ? 1 : 0
 		visible_message(
 			span_danger("[src] throws [thrown_thing][power_throw ? " really hard!" : "."]"),
 			span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"),

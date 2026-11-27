@@ -767,9 +767,8 @@ world
 	var/render_icon = curicon
 
 	if (render_icon)
-		var/curstates = icon_states(curicon)
-		if(!(curstate in curstates))
-			if ("" in curstates)
+		if(!icon_state_exists_cached(curicon, curstate))
+			if (icon_state_exists_cached(curicon, ""))
 				curstate = ""
 			else
 				render_icon = FALSE
@@ -782,7 +781,7 @@ world
 		if (curdir != SOUTH)
 			// icon states either have 1, 4 or 8 dirs. We only have to check
 			// one of NORTH, EAST or WEST to know that this isn't a 1-dir icon_state since they just have SOUTH.
-			if(!length(icon_states(icon(curicon, curstate, NORTH))))
+			if(icon_state_is_single_dir(curicon, curstate))
 				base_icon_dir = SOUTH
 
 		var/list/icon_dimensions = get_icon_dimensions(curicon)
@@ -1340,24 +1339,41 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 	return icon2html(I, target, sourceonly = sourceonly)
 
 /proc/icon_exists(file, state)
-	var/static/list/icon_states_cache = list()
-	if(icon_states_cache[file]?[state])
-		return TRUE
+	return icon_state_exists_cached(file, state)
 
-	if(icon_states_cache[file]?[state] == FALSE)
+// do not cache runtime generated icons
+#define IS_CACHEABLE_ICON_FILE(icon_file) (isfile(icon_file) && length("[icon_file]"))
+
+// quickly check if an icon state exists in an icon, runtime icons do the normal icon_states search
+/proc/icon_state_exists_cached(icon_file, state)
+	if(isnull(state))
 		return FALSE
+	if(!IS_CACHEABLE_ICON_FILE(icon_file))
+		return (state in icon_states(icon_file))
+	var/static/list/state_sets = list()
+	var/list/state_set = state_sets[icon_file]
+	if(!state_set)
+		state_set = list()
+		for(var/existing_state in icon_states(icon_file))
+			state_set[existing_state] = TRUE
+		state_sets[icon_file] = state_set
+	// stringify to prevent typing issues with the state being misinterpreted
+	return !!state_set["[state]"]
 
-	var/list/states = icon_states(file)
+/proc/icon_state_is_single_dir(icon_file, state)
+	if(!IS_CACHEABLE_ICON_FILE(icon_file))
+		return !length(icon_states(icon(icon_file, state, NORTH)))
+	var/static/list/single_dir_cache = list()
+	var/list/file_cache = single_dir_cache[icon_file]
+	if(!file_cache)
+		file_cache = list()
+		single_dir_cache[icon_file] = file_cache
+	var/state_key = "[state]"
+	if(!(state_key in file_cache))
+		file_cache[state_key] = !length(icon_states(icon(icon_file, state, NORTH)))
+	return file_cache[state_key]
 
-	if(!icon_states_cache[file])
-		icon_states_cache[file] = list()
-
-	if(state in states)
-		icon_states_cache[file][state] = TRUE
-		return TRUE
-	else
-		icon_states_cache[file][state] = FALSE
-		return FALSE
+#undef IS_CACHEABLE_ICON_FILE
 
 /// Picks which file should supply an eye state, missing sprite states should resolve to nothing
 /proc/resolve_eye_icon(species_eye_path, state)

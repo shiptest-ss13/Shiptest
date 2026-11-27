@@ -21,11 +21,17 @@
 	protect_indoors = TRUE
 
 	immunity_type = "rad"
+	harmful = TRUE
 	multiply_blend_on_main_stage = TRUE
 
-/datum/weather/rad_storm/weather_act(mob/living/L)
-	if(prob(40))
-		L.rad_act(20)
+// basicmobs dont care bout radiation
+/datum/weather/rad_storm/affects(mob/living/victim)
+	return !isbasicmob(victim) && !HAS_TRAIT(victim, TRAIT_RADIMMUNE)
+
+/datum/weather/rad_storm/weather_act(mob/living/victim, seconds_per_tick)
+	var/hits = roll_hits(40, seconds_per_tick)
+	if(hits)
+		victim.rad_act(20 * hits)
 
 /datum/weather/rad_storm/end()
 	if(..())

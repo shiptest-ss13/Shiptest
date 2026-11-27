@@ -4,6 +4,7 @@
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	base_icon_state = "survey"
 	icon_state = "survey"
+	w_class = WEIGHT_CLASS_SMALL
 	//all of these vars are assigned by the mission that creates us.
 	///how many scans does this handheld want?
 	var/scans_required
@@ -44,7 +45,7 @@
 		var/obj/effect/anomaly/scan_target = O
 		to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(scan_target.core.frequency)], code [scan_target.core.code]. An unstable wavelength is at code [scan_target.core.code_b]!"))
 		scan_target.drops_core = FALSE
-		scan_target.visible_message(span_warning("Scanning [src] has solidified it's presence in the area! It can no longer be stabilized into a core!"))
+		scan_target.visible_message(span_warning("Scanning [scan_target] has solidified it's presence in the area! It can no longer be stabilized into a core!"))
 		return
 	return
 

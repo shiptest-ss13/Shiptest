@@ -126,7 +126,7 @@
 				brainmob.forceMove(brain)
 				brain.brainmob = brainmob
 				brainmob = null
-			if(violent_removal && prob(rand(80, 100))) //ghetto surgery can damage the brain.
+			if(violent_removal && prob(rand(80, 100))) //botched surgery can damage the brain.
 				to_chat(user, span_warning("[brain] was damaged in the process!"))
 				brain.setOrganDamage(brain.maxHealth)
 			brain.forceMove(T)

@@ -9,7 +9,7 @@
 /datum/supply_pack/chemistry/starter
 	name = "Chemical Starter Kit Crate"
 	desc = "Contains thirteen different chemicals, for all the fun experiments you can make."
-	cost = 1250 // This is intentionally underpriced; the hope is that people will start using ghettochem, upon which time the price can be raised.
+	cost = 1250
 	contains = list(/obj/item/reagent_containers/glass/bottle/aluminium,
 					/obj/item/reagent_containers/glass/bottle/bromine,
 					/obj/item/reagent_containers/glass/bottle/carbon,
@@ -38,7 +38,7 @@
 /datum/supply_pack/chemistry/tools
 	name = "Chemical Synthesis Crate"
 	desc = "Contains all the tools you will need for drug making."
-	cost = 750
+	cost = 300 // everything here is autolathe junk except the book and the science goggles
 	contains = list(/obj/item/reagent_containers/glass/filter,
 					/obj/item/book/manual/wiki/chemistry,
 					/obj/item/clothing/glasses/science,

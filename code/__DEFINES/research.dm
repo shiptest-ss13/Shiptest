@@ -66,14 +66,12 @@
 
 ///Techweb names for new point types. Can be used to define specific point values for specific types of research (science, security, engineering, etc.)
 #define TECHWEB_POINT_TYPE_GENERIC "General Research"
-#define TECHWEB_POINT_TYPE_NANITES "Nanite Research"
 
 #define TECHWEB_POINT_TYPE_DEFAULT TECHWEB_POINT_TYPE_GENERIC
 
 ///Associative names for techweb point values, see: [/modules/research/techweb/all_nodes][all_nodes]
 #define TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES list( \
 	TECHWEB_POINT_TYPE_GENERIC = "General Research", \
-	TECHWEB_POINT_TYPE_NANITES = "Nanite Research" \
 	)
 
 #define BOMB_TARGET_POINTS 50000 //Adjust as needed. Actual hard cap is double this, but will never be reached due to hyperbolic curve.

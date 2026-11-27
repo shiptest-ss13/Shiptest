@@ -63,6 +63,7 @@
 	var/static/list/banned_objects
 	var/blocked_by_anchored = FALSE
 	var/clear_everything = TRUE
+	should_place_on_top = FALSE
 
 /datum/map_template/greeble/New()
 	. = ..()
@@ -81,7 +82,6 @@
 		//try to keep this list more permissive.
 		banned_objects = typecacheof(list(
 			/obj/structure/stone_tile,
-			/obj/structure/vein/classfour,
 			/obj/structure/vein/ice/classfour,
 			/obj/structure/vein/jungle/classfour,
 			/obj/structure/vein/moon/classfour,

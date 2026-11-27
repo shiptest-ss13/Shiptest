@@ -105,6 +105,13 @@
 	contains = list(/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
 
+/datum/supply_pack/medical/compact_defib
+	name = "Compact Defibrillator Crate"
+	desc = "Contains a compact defibrillator for bringing the recently deceased back to life. Fits around your belt."
+	cost = 1250
+	contains = list(/obj/item/defibrillator/compact/loaded)
+	crate_name = "defibrillator crate"
+
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical case, Sterilizine spray and collapsible roller bed."
@@ -114,7 +121,19 @@
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
 	faction = /datum/faction/suns
-	faction_discount = 50 //this shouldnt be 3k but if it is...
+
+/datum/supply_pack/medical/surgery/cybersun
+	name = "Advanced Surgical Supplies Crate"
+	desc = "An advanced surgical self-sterilizing tray that includes state of the art surgical tools. Comes with a Sterilizine spray made by Cybersun Industries, a collapsible roller bed, and a spare silver sheet for a proper medical bay."
+	cost = 4500
+	contains = list(/obj/item/storage/case/surgery/cybersun,
+					/obj/item/reagent_containers/medigel/sterilizine/purifadine,
+					/obj/item/roller,
+					/obj/item/stack/sheet/mineral/silver)
+	crate_name = "surgical supplies crate"
+	faction = /datum/faction/cybersun
+	faction_locked = TRUE
+	faction_discount = 0
 
 /datum/supply_pack/medical/filter
 	name = "Blood Filter Crate"
@@ -129,6 +148,26 @@
 	cost = 2000
 	contains = list(/obj/item/disk/surgery/t2)
 	crate_name = "surgical supplies crate"
+
+/datum/supply_pack/medical/disk/t3
+	name = "Experimental Surgical Procedure Disk"
+	desc = "A disk containing Advanced T3 surgical procedures for wound tending. Requires an Operating Console."
+	cost = 3000
+	contains = list(/obj/item/disk/surgery/t3)
+	crate_name = "surgical supplies crate"
+	faction = /datum/faction/cybersun
+	faction_locked = TRUE
+	faction_discount = 0
+
+/datum/supply_pack/medical/disk/cybersun
+	name = "Cybersun Surgical Procedure Disk"
+	desc = "A disk containing Advanced Cybersun-exclusive surgical procedures. Requires an Operating Console."
+	cost = 4000
+	contains = list(/obj/item/disk/surgery/cybersun)
+	crate_name = "surgical supplies crate"
+	faction = /datum/faction/cybersun
+	faction_locked = TRUE
+	faction_discount = 0
 
 /datum/supply_pack/medical/console
 	name = "Operating Console Crate"
@@ -209,7 +248,7 @@
 /datum/supply_pack/medical/bruise
 	name = "Bruise Pack Pack"
 	desc = "Contains a pack of bruise packs, for refilling medical kits, or simply building up a stock."
-	cost = 200
+	cost = 300
 	contains = list(/obj/item/storage/medpack/bruisepacks)
 
 /datum/supply_pack/medical/mesh
@@ -229,6 +268,29 @@
 	desc = "Contains a pack of epinephrine autoinjectors, for refilling medical kits, or simply building up a stock."
 	cost = 300
 	contains = list(/obj/item/storage/medpack/epipens)
+
+/datum/supply_pack/medical/crisis
+	name = "Crisis Stimpacks"
+	desc = "Contains a pack of four crisis stimpacks for use in medical emergencies. Produced by Matahari Pharmaceuticals."
+	cost = 800
+	contains = list(/obj/item/storage/medpack/crisis)
+	faction = /datum/faction/warra
+	faction_locked = TRUE
+	faction_discount = 0
+
+/datum/supply_pack/medical/badstop
+	name = "Stabilizer Injectors"
+	desc = "Contains a pack of four stabilizer injectors for use in medical emergencies. A Cybersun Biodynamics product."
+	cost = 800
+	contains = list(/obj/item/storage/medpack/badstop)
+	faction = /datum/faction/cybersun
+	faction_locked = TRUE
+	faction_discount = 0
+
+// maybe these could be a unique medipen eventually?
+/datum/supply_pack/medical/crisis/pgf
+	desc = "Contains a pack of four standard-issue crisis stimpacks for use in medical emergencies."
+	faction = /datum/faction/pgf
 
 /* Hypospray supplies */
 
@@ -252,7 +314,7 @@
 
 /datum/supply_pack/medical/mkiii_hypo/cybersun
 	desc = "Contains a mk.III Cybersun Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/medical/mkii_hypo_standalone
 	name = "Standalone mk.II Hypospray"
@@ -274,7 +336,7 @@
 
 /datum/supply_pack/medical/mkiii_hypo/cybersun
 	desc = "Contains a standalone mk.III Cybersun Hypospray, for on the field medical care."
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/medical/vials
 	faction = /datum/faction/warra
@@ -436,3 +498,17 @@
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan)
 	crate_name = "chitosan vial crate"
+
+/datum/supply_pack/medical/stapler
+	name = "Medical Stapler Crate"
+	desc = "Contains a medical stapler for rapidly sealing bleeding wounds."
+	cost = 200
+	contains = list(/obj/item/med_stapler/full)
+	crate_name = "medical stapler crate"
+
+/datum/supply_pack/medical/stapler_refill
+	name = "Medical Staple Cartridge"
+	desc = "Contains a cartridge for refilling a medical stapler."
+	cost = 100
+	contains = list(/obj/item/med_staple_cart)
+	crate_name = "medical staples crate"

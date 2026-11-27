@@ -248,9 +248,21 @@
  * * requester- The movable we're checking pass flags for, if we're making any such checks
  **/
 /obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if((flags_1 & ON_BORDER_1) && !(to_dir & dir))
+		return TRUE // edge things only block steps across their own edge, diagonals included
 	if(istype(requester) && (requester.pass_flags & pass_flags_self))
 		return TRUE
 	. = !density
+
+/obj/proc/ai_can_open(mob/living/opener)
+	return FALSE
+
+// after ai_can_open() returns TRUE
+/obj/proc/ai_open(mob/living/opener)
+	return
+
+/obj/proc/ai_opens_for(atom/movable/requester)
+	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && ai_can_open(requester)
 
 /obj/proc/check_uplink_validity()
 	return 1
@@ -357,6 +369,9 @@
 // Should move all contained objects to it's location.
 /obj/proc/dump_contents()
 	CRASH("Unimplemented.")
+
+/obj/proc/get_demolition_damage()
+	return demolition_mod * force
 
 /obj/handle_ricochet(obj/projectile/P)
 	. = ..()

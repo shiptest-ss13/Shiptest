@@ -17,18 +17,20 @@
 	protect_indoors = TRUE
 	barometer_predictable = TRUE
 	affects_underground = FALSE
+	overlay_alpha = 75
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
 	sound_active_outside = /datum/looping_sound/weather/rain
 
 	fire_suppression = 6
 
-/datum/weather/rain/weather_act(mob/living/living_mob)
-	if(!iscarbon(living_mob))
-		return
+/datum/weather/rain/affects(mob/living/victim)
+	return iscarbon(victim)
+
+/datum/weather/rain/weather_act(mob/living/living_mob, seconds_per_tick)
 	var/mob/living/carbon/carbon = living_mob
-	carbon.adjust_wet_stacks(fire_suppression/2)
-	if(prob(25))
+	carbon.adjust_wet_stacks(fire_suppression/2 * seconds_per_tick)
+	if(SPT_PROB(25, seconds_per_tick))
 		carbon.wash(clean_types = CLEAN_TYPE_BLOOD)
 
 /datum/weather/rain/heavy
@@ -64,6 +66,7 @@
 	desc = "Massive storm that blocks vision."
 	opacity_in_main_stage = TRUE
 	thunder_chance = 60
+	overlay_alpha = 255
 
 	telegraph_message = "<span class='notice'>It starts to fog up, the clouds hinting at a severe storm...</span>"
 	telegraph_overlay = "smoke"
@@ -81,6 +84,7 @@
 /datum/weather/rain/toxic
 	name = "toxic rain"
 	desc = "Toxic Rain falling down the surface."
+	overlay_alpha = 255
 
 	telegraph_message = "<span class='danger'>Toxic clouds hover above and you feel humidity in the air. Equip a gas mask and properly cover yourself.</span>"
 	telegraph_duration = 300
@@ -103,31 +107,30 @@
 	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
+	harmful = TRUE
 	var/toxic_power = 2
 
-/datum/weather/rain/toxic/weather_act(mob/living/living_mob)
-	if(!iscarbon(living_mob))
-		return
+/datum/weather/rain/toxic/weather_act(mob/living/living_mob, seconds_per_tick)
 	var/mob/living/carbon/carbon = living_mob
-	handle_face(carbon)
-	handle_eyes(carbon)
+	handle_face(carbon, seconds_per_tick)
+	handle_eyes(carbon, seconds_per_tick)
 
 	if(!ishuman(living_mob))
-		carbon.reagents.add_reagent(/datum/reagent/toxin, toxic_power/2)
+		carbon.reagents.add_reagent(/datum/reagent/toxin, toxic_power/2 * seconds_per_tick)
 		return
 	var/mob/living/carbon/human/human = living_mob
 	if(!human.head)
-		carbon.reagents.add_reagent(/datum/reagent/toxin, toxic_power/4)
+		carbon.reagents.add_reagent(/datum/reagent/toxin, toxic_power/4 * seconds_per_tick)
 
 	if(!human.wear_suit)
 		if(human.wear_neck)
 			if(istype (human.wear_neck,/obj/item/clothing/neck/cloak)) //cloaks protect in steed of suits
 				return
-		human.reagents.add_reagent(/datum/reagent/toxin, toxic_power/4)
+		human.reagents.add_reagent(/datum/reagent/toxin, toxic_power/4 * seconds_per_tick)
 	. = ..()
 
 
-/datum/weather/rain/toxic/proc/handle_face(mob/living/carbon/living_mob)
+/datum/weather/rain/toxic/proc/handle_face(mob/living/carbon/living_mob, seconds_per_tick)
 	if(HAS_TRAIT(living_mob, TRAIT_NOBREATH))
 		return
 	if(living_mob.internal)
@@ -136,13 +139,14 @@
 		if(living_mob.wear_mask)
 			if(istype(living_mob.wear_mask, /obj/item/clothing/mask/gas)) //gas masks FINALLY useful?
 				return
-	living_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS, toxic_power/4)
-	if(prob(45))
+	living_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS, toxic_power/4 * seconds_per_tick)
+	var/coughs = roll_hits(45, seconds_per_tick)
+	if(coughs)
 		living_mob.emote("cough")
 		to_chat(living_mob, "<span class='userdanger'>It's painful to breathe!</span>")
-		living_mob.adjustOxyLoss(1.5*toxic_power)
+		living_mob.adjustOxyLoss(1.5*toxic_power * coughs)
 
-/datum/weather/rain/toxic/proc/handle_eyes(mob/living/carbon/living_mob)
+/datum/weather/rain/toxic/proc/handle_eyes(mob/living/carbon/living_mob, seconds_per_tick)
 	if(living_mob.is_eyes_covered())
 		return
 
@@ -154,8 +158,8 @@
 	if((eye_damage < 0))
 		return
 
-	living_mob.adjustOrganLoss(ORGAN_SLOT_EYES, toxic_power/2)
-	if(prob(65))
+	living_mob.adjustOrganLoss(ORGAN_SLOT_EYES, toxic_power/2 * seconds_per_tick)
+	if(SPT_PROB(65, seconds_per_tick))
 		living_mob.emote("cry")
 		to_chat(living_mob, "<span class='userdanger'>Your eyes tear up and burn severely!</span>")
 		living_mob.blur_eyes(10)
@@ -206,6 +210,7 @@
 	name = "storm"
 	desc = "Storm with rain and lightning."
 	weather_overlay = "storm_very"
+	overlay_alpha = 125
 	thunder_chance = 20
 	weather_color = "#a3daf7"
 	weather_duration_lower = 420690

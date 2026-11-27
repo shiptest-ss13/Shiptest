@@ -40,6 +40,7 @@
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
 	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
@@ -48,6 +49,7 @@
 	limb_id = SPECIES_KEPORI
 	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/tail/kepori
 	name = "kepori tail"

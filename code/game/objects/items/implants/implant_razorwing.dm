@@ -9,7 +9,7 @@
 	if(cooldown)
 		to_chat(imp_in, span_warning("You can't do that yet!"))
 		return
-	if(imp_in.incapacitated())
+	if(imp_in.is_incapacitated())
 		to_chat(imp_in, span_warning("You're in no state to do that!"))
 		return
 

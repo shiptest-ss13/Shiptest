@@ -27,6 +27,7 @@
 
 /obj/machinery/reagentgrinder/Initialize()
 	. = ..()
+	AddElement(/datum/element/nudge, -8, 8, 0, 16)
 	holdingitems = list()
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
 	beaker.desc += " May contain blended dust. Don't breathe this in!"

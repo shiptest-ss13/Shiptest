@@ -108,6 +108,17 @@
 	display_name = "utility cover, navy"
 	path = /obj/item/clothing/head/soft/utility_navy
 
+/datum/gear/hat/range_steppe
+	display_name = "range cap, steppe"
+	path = /obj/item/clothing/head/range
+
+/datum/gear/hat/range_tundra
+	display_name = "range cap, tundra"
+	path = /obj/item/clothing/head/range/tundra
+
+/datum/gear/hat/range_coyote
+	display_name = "range cap, coyote"
+	path = /obj/item/clothing/head/range/coyote
 
 //Beanies
 
@@ -153,9 +164,9 @@
 	display_name = "black cowboy hat"
 	path = /obj/item/clothing/head/cowboy/black
 
-/datum/gear/hat/trapper
-	display_name = "trapper hat"
-	path = /obj/item/clothing/head/trapper
+/datum/gear/hat/ushanka
+	display_name = "bomber hat, recolorable"
+	path = /obj/item/clothing/head/ushanka
 
 /datum/gear/hat/flowers
 	display_name = "plastic flower, pickable"
@@ -176,6 +187,10 @@
 /datum/gear/hat/hairbow
 	display_name = "hairbow, recolorable"
 	path = /obj/item/clothing/head/hairbow
+
+/datum/gear/hat/smallbow
+	display_name = "small hairbow, recolorable"
+	path = /obj/item/clothing/head/smallbow
 
 /datum/gear/hat/headband
 	display_name = "headband, recolorable"

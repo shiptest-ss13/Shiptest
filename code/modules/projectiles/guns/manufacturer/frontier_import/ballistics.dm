@@ -412,17 +412,17 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg
-	name = "\improper SKM-24u"
-	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
+/obj/item/gun/ballistic/automatic/hmg/ml3
+	name = "\improper ML3"
+	desc = "What appears to be a standard FA2 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
-	icon_state = "skm_lmg"
-	item_state = "skm_lmg"
+	icon_state = "ml3"
+	item_state = "ml3"
 
 	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
@@ -440,9 +440,9 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_762_40,
+		/obj/item/ammo_box/magazine/fa2_762_40,
 	)
 
 	fire_delay = 0.13 SECONDS
@@ -451,10 +451,10 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 	spread_unwielded = 25
 
 	recoil = 1 //identical to other LMGS
-	recoil_unwielded = 4 //same as skm
+	recoil_unwielded = 4 //same as fa2
 
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal fa2
+	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock fa2
 
 	has_bipod = TRUE
 
@@ -535,16 +535,16 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 		chambered.BB.set_light_color(COLOR_SOFT_RED)
 		chambered.BB.set_light_range(2)
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/hmg/ml3/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
+/obj/item/gun/ballistic/automatic/hmg/ml3/extended //spawns with the proper extended magazine, for erts
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40/extended
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+/obj/item/gun/ballistic/automatic/hmg/ml3/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
 	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+	default_ammo_type = /obj/item/ammo_box/magazine/fa2_762_40/drum
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"
@@ -682,3 +682,57 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 
 /obj/item/ammo_box/magazine/m12g_slammer/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/assault/ripper
+	name = "Ripper"
+	desc = "A cut-down variant of the venerable CLIP F4. This one seems to have been cobbled together with various parts of various guns. Its bolt seems different than the conventional F4."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "ripper"
+	item_state = "ripper"
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	bolt_type = BOLT_TYPE_OPEN
+	default_ammo_type = /obj/item/ammo_box/magazine/f4_308
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/f4_308,
+	)
+	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	fire_delay = 3.5
+	actions_types = list()
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	manufacturer = MANUFACTURER_IMPORT
+
+	valid_attachments = list(
+		/obj/item/attachment/foldable_stock/ripper
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+	unique_attachments = list(/obj/item/attachment/foldable_stock/ripper)
+
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+	spread = 10
+	recoil = 2
+

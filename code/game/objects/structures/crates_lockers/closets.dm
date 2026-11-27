@@ -124,6 +124,11 @@
 	if(wall_mounted)
 		return TRUE
 
+/obj/structure/closet/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(ai_can_open_closet(requester, src))
+		return TRUE
+	return ..()
+
 /obj/structure/closet/proc/can_open(mob/living/user, force = FALSE)
 	if(force)
 		return TRUE
@@ -365,7 +370,7 @@
 /obj/structure/closet/MouseDrop_T(atom/movable/O, mob/living/user)
 	if(!istype(O) || O.anchored || istype(O, /atom/movable/screen))
 		return
-	if(!istype(user) || user.incapacitated() || user.body_position == LYING_DOWN)
+	if(!istype(user) || user.is_incapacitated() || user.body_position == LYING_DOWN)
 		return
 	if(!Adjacent(user) || !user.Adjacent(O))
 		return

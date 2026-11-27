@@ -138,16 +138,40 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	hardsuit_type = "frontier"
-	supports_variations = null
+	supports_variations = SNOUTED_VARIATION
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	name = "\improper Frontiersmen hardsuit"
 	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
 	icon_state = "hardsuit_frontier"
 	hardsuit_type = "hardsuit_frontier"
+	supports_variations = DIGITIGRADE_VARIATION
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
+	name = "\improper Frontiersmen 'Runner' hardsuit helmet"
+	desc = "A helmet for a Runner hardsuit. The design originally raised alarm bells as intelligence agencies suspected Zohilan design - though the original creator was traced to a anti-league anarchist who designed the armor in a shed."
+	icon_state = "hardsuit0-frontierlight"
+	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	hardsuit_type = "frontierlight"
+	supports_variations = SNOUTED_VARIATION
+	lighting_alpha = null
+	darkness_view = 2
+
+/obj/item/clothing/suit/space/hardsuit/stealth/frontier
+	name = "\improper Frontiersmen 'Runner' hardsuit"
+	desc = "A modern, well-designed hardsuit with a stealth cloak draped over it. Utilized by the Frontiersman fleet for those looking for less restrictive movement in space."
+	icon_state = "hardsuit-frontierlight"
+	hardsuit_type = "frontierlight"
+	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/frontier
+	supports_variations = DIGITIGRADE_VARIATION
 
 /////////
 //Hats//
@@ -157,13 +181,11 @@
 	name = "frontiersman cap"
 	desc = "An olive-green and grey baseball hat, worn by cargo technicians working under the Frontiersmen. Even they have the rights for a cool cap!"
 	icon_state = "frontiersoft"
-	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 	unique_reskin = null
-	current_skin = null
 
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
@@ -288,9 +310,9 @@
 		new /obj/item/ammo_box/magazine/illestren_a850r(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
+/obj/item/storage/belt/security/military/frontiersmen/fa2_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
+		new /obj/item/ammo_box/magazine/fa2_762_40(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()

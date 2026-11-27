@@ -46,3 +46,10 @@
 	icon_state = "rabbit_tail"
 	limb_id = "rabbit"
 	body_weight = 2 // MUCH too small
+
+/obj/item/bodypart/tail/human/fluffycat
+	name = "fluffy cat tail"
+	desc = "A severed fluffy cat tail. How cruel."
+	icon_state = "fluffycat_tail"
+	limb_id = "fluffycat"
+	can_wag = FALSE

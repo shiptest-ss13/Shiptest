@@ -75,7 +75,8 @@
 					/obj/item/reagent_containers/food/drinks/bottle/cream,
 					/obj/item/reagent_containers/condiment/mayonnaise,
 					/obj/item/reagent_containers/condiment/bbqsauce,
-					/obj/item/reagent_containers/condiment/soysauce
+					/obj/item/reagent_containers/condiment/soysauce,
+					/obj/item/reagent_containers/condiment/enzyme
 	)
 	crate_name = "condiments crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -180,6 +181,15 @@
 	)
 
 /datum/supply_pack/food/ingredients_basic/honey
+	name = "Honey Crate"
+	desc = "Crate containing five jars of honey."
+	cost = 300
+	contains = list(/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+					/obj/item/reagent_containers/condiment/honey,
+	)
 
 /datum/supply_pack/food/ingredients_basic/redbeet
 	name = "Redbeet Crate"

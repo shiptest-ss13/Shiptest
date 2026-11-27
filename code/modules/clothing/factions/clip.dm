@@ -82,6 +82,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 
 	icon_state = "suitjacket_clip"
+	base_icon_state = "suitjacket_clip"
 	item_state = "suitjacket_navy"
 
 /obj/item/clothing/suit/toggle/lawyer/clip/Initialize()
@@ -94,6 +95,7 @@
 	desc = "A fancy buttoned dress jacket issued to senior officers of CLIP."
 
 	icon_state = "suitjacket_clip_command"
+	base_icon_state = "suitjacket_clip_command"
 	item_state = "suitjacket_clip_command"
 
 //armor

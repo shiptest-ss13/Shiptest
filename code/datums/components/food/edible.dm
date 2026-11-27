@@ -208,15 +208,15 @@ Behavior that's still missing from this component that original food items had t
 		if(30 to 80)
 			this_food.name = "grilled [this_food.name]"
 			this_food.desc = "[this_food.desc] It's been grilled."
-			foodtypes |= FRIED
+			foodtypes |= HEAVILY_FRIED
 		if(80 to 100)
 			this_food.name = "heavily grilled [this_food.name]"
 			this_food.desc = "[this_food.desc] It's been heavily grilled."
-			foodtypes |= FRIED
+			foodtypes |= HEAVILY_FRIED
 		if(100 to INFINITY) //grill marks reach max alpha
 			this_food.name = "Powerfully Grilled [this_food.name]"
 			this_food.desc = "A [this_food.name]. Reminds you of your wife, wait, no, it's prettier!"
-			foodtypes |= FRIED
+			foodtypes |= HEAVILY_FRIED
 
 ///Called when food is created through processing (Usually this means it was sliced). We use this to pass the OG items reagents.
 /datum/component/edible/proc/on_processed(datum/source, atom/original_atom, list/chosen_processing_option)
@@ -326,7 +326,7 @@ Behavior that's still missing from this component that original food items had t
 	var/time_to_eat = (eater == feeder) ? eat_time : EAT_TIME_FORCE_FEED
 
 	if(eater == feeder)//If you're eating it yourself.
-		if(eat_time && !do_after(feeder, time_to_eat, eater, timed_action_flags = food_flags & FOOD_FINGER_FOOD ? IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE : NONE)) //Gotta pass the minimal eat time
+		if(eat_time && !do_after(feeder, time_to_eat, eater, timed_action_flags = food_flags & FOOD_FINGER_FOOD ? IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE : NONE, interaction_key = DOAFTER_SOURCE_EATING)) //Gotta pass the minimal eat time
 			return
 		if(IsFoodGone(owner, feeder))
 			return
@@ -448,7 +448,7 @@ Behavior that's still missing from this component that original food items had t
 	if(!ishuman(eater))
 		return FALSE
 	var/mob/living/carbon/human/human_eater = eater
-	if((foodtypes & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
+	if((foodtypes & BREAKFAST) && human_eater.has_status_effect(STATUS_EFFECT_BREAKFAST))
 		SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
 	if(HAS_TRAIT(human_eater, TRAIT_AGEUSIA))
 		if(foodtypes & human_eater.dna.species.toxic_food)

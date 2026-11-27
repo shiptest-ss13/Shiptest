@@ -215,7 +215,7 @@
 	set name = "Activate Seed Extraction"
 	set category = "Object"
 	set desc = "Activate to convert your plants into plantable seeds."
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return
 	for(var/obj/item/O in contents)
 		seedify(O, 1, FALSE, TRUE)
@@ -324,7 +324,7 @@
 	throw_speed = 3
 	throw_range = 5
 	flags_1 = CONDUCT_1
-	custom_materials = list(/datum/material/iron=3000)
+	custom_materials = list(/datum/material/iron=400)
 
 /obj/item/storage/bag/tray/ComponentInitialize()
 	. = ..()
@@ -377,6 +377,7 @@
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "foodtray"
 	desc = "A cheap metal tray to pile today's meal onto."
+	custom_materials = list(/datum/material/iron = 400)
 
 /*
  *	Chemistry bag

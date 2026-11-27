@@ -72,6 +72,8 @@
 		jump_destination = new_system
 		jump_coords = newpos
 	else
+		jump_destination = null
+		jump_coords = null
 		priority_announce("Bluespace jump calibration initialized. Exiting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 
@@ -81,19 +83,24 @@
 /obj/machinery/computer/helm/Destroy()
 	. = ..()
 	SStgui.close_uis(src)
-	ASSERT(length(concurrent_users) == 0)
 	QDEL_NULL(ntnet_relay)
 	SSpoints_of_interest.remove_point_of_interest(src)
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
+	if(length(concurrent_users))
+		stack_trace("Helm destroyed with [length(concurrent_users)] concurrent users still registered.")
 
 /obj/machinery/computer/helm/proc/cancel_jump()
 	if(!calibrating)
 		return
+	if(jump_state == JUMP_STATE_FINALIZED)
+		say("Bluespace Pylon already firing. Unable to abort jump.")
+		return
 	say("Exiting jump sequence.")
 	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
+	jump_destination = null
 	jump_coords = null
 	deltimer(jump_timer)
 
@@ -116,6 +123,8 @@
 		qdel(current_ship)
 		return
 
+	calibrating = FALSE
+
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
@@ -131,7 +140,6 @@
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
-	calibrating = FALSE
 
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
@@ -180,6 +188,10 @@
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		// Open UI
+		ui = new(user, src, "HelmConsole", name)
+		if(!ui.open())
+			return
 		var/user_ref = REF(user)
 		var/is_living = isliving(user)
 		// Ghosts shouldn't count towards concurrent users, which produces
@@ -190,10 +202,6 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-
-		// Open UI
-		ui = new(user, src, "HelmConsole", name)
-		ui.open()
 
 		// Register map objects
 		if(current_ship)
@@ -380,6 +388,10 @@
 				say(feedback_text)
 			return
 
+	if(action == "bluespace_jump" && calibrating)
+		cancel_jump()
+		return
+
 	if(jump_state != JUMP_STATE_OFF)
 		say("Bluespace Jump in progress. Controls suspended.")
 		return
@@ -418,37 +430,31 @@
 				current_ship.change_heading(BURN_NONE)
 				return
 			if("bluespace_jump")
-				if(calibrating)
-					cancel_jump()
-					return
-				else
-					if(length(SSovermap.tracked_star_systems) >= 1)
-						var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
-						for(var/datum/overmap_star_system/current_system as anything in choices)
-							if(!current_system.can_jump_to)
-								LAZYREMOVE(choices, current_system)
+				if(length(SSovermap.tracked_star_systems) >= 1)
+					var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+					for(var/datum/overmap_star_system/current_system as anything in choices)
+						if(!current_system.can_jump_to)
+							LAZYREMOVE(choices, current_system)
 
-						LAZYADD(choices, "Out of the Frontier")
-						LAZYREMOVE(choices, current_ship.current_overmap)
-						var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)
-						if(selected_system == "Out of the Frontier")
-							if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
-								return
-							calibrate_jump()
-							return
-						if(!selected_system)
-							return
-						else
-							jump_destination = selected_system
-						calibrate_jump(selected_system)
-						return
-
-
-					else
+					LAZYADD(choices, "Out of the Frontier")
+					LAZYREMOVE(choices, current_ship.current_overmap)
+					var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)
+					if(selected_system == "Out of the Frontier")
 						if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
 							return
 						calibrate_jump()
 						return
+					if(!selected_system)
+						return
+					calibrate_jump(selected_system)
+					return
+
+
+				else
+					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+						return
+					calibrate_jump()
+					return
 			if("dock_empty")
 				current_ship.dock_in_empty_space(usr)
 				return
@@ -465,7 +471,7 @@
 	// Living creature or not, we remove you anyway.
 	concurrent_users -= user_ref
 	// Unregister map objects
-	if(current_ship)
+	if(current_ship && !QDELETED(current_ship))
 		current_ship.token.cam_screen.hide_from(user)
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
