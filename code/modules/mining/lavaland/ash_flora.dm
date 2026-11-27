@@ -545,11 +545,11 @@
 /obj/item/food/grown/berries/poison/stealth //careful eating from random jungle bushes
 	seed = /obj/item/seeds/berry/poison
 	name = "bunch of berries"
-	desc = "Nutritious?"
+	desc = "A tasty bunch of berries, still on the branch. Better look closely, they might be poisonous."
 	icon_state = "berrypile"
 
 /obj/item/food/grown/berries/death/stealth //I warned you!
 	seed = /obj/item/seeds/berry/death
 	name = "bunch of berries"
-	desc = "Nutritious?"
+	desc = "A tasty bunch of berries, still on the branch. Better look closely, they might be poisonous."
 	icon_state = "berrypile"
