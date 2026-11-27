@@ -132,7 +132,6 @@
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
-	var/dwarf_mob = FALSE
 	var/mob_to_spawn //if this legion is suppossed to spawn a specific mob
 	var/mob/living/carbon/human/stored_mob
 	has_clickbox = FALSE
@@ -163,8 +162,6 @@
 			new mob_to_spawn(T)
 		else if(from_nest)
 			new /obj/effect/mob_spawn/human/corpse/charredskeleton(T)
-		else if(dwarf_mob)
-			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf(T)
 		else
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(T)
 	..(gibbed)

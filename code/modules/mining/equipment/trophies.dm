@@ -69,13 +69,6 @@
 	icon_state = "watcher_wing_crystal"
 	gender = NEUTER
 
-//dwarf legion
-/obj/item/mob_trophy/dwarf_skull
-	name = "shrunken skull"
-	desc = "Looks like someone hasn't been drinking their milk. Could be used in crafting."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "shrunk_skull"
-
 //disfigured legion
 /obj/item/mob_trophy/legion_skull_crystal
 	name = "disfigured legion skull"
