@@ -40,7 +40,7 @@
 			if(istype(U) && U.attached_accessory)
 				var/obj/item/clothing/accessory/A = U.attached_accessory
 				if(A.above_suit)
-					. += U.accessory_overlay
+					. += U.build_accessory_overlay(M) // Rebuild the accessory to account for species variations such as offsets
 
 /obj/item/clothing/suit/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)
 	..()
