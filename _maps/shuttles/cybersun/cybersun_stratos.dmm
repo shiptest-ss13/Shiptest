@@ -2152,6 +2152,14 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/machinery/coffeemaker{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_y = 5;
+	pixel_x = -10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "lb" = (
@@ -2785,6 +2793,10 @@
 	},
 /obj/item/bedsheet/black{
 	dir = 1
+	},
+/obj/item/clothing/head/hairbow/maroon{
+	pixel_x = -6;
+	pixel_y = 9
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/engine)
@@ -6781,6 +6793,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/storage)
+"IS" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/clipboard{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "IY" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 1
@@ -7075,6 +7104,8 @@
 	pixel_x = -4;
 	pixel_y = -3
 	},
+/obj/item/pen/fourcolor,
+/obj/item/pen/fourcolor,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/command)
 "KU" = (
@@ -9066,6 +9097,14 @@
 /obj/item/folder/white,
 /obj/item/folder/blue,
 /obj/item/folder/blue,
+/obj/item/pen/fourcolor,
+/obj/item/pen/fourcolor,
+/obj/item/modular_computer/tablet/preset/advanced{
+	pixel_x = 7;
+	pixel_y = -1
+	},
+/obj/item/clipboard,
+/obj/item/clipboard,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/medical)
 "Ye" = (
@@ -10478,7 +10517,7 @@ OC
 aH
 ok
 bC
-ba
+IS
 UT
 aE
 AT
