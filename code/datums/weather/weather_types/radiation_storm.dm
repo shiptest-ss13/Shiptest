@@ -28,9 +28,10 @@
 /datum/weather/rad_storm/affects(mob/living/victim)
 	return !isbasicmob(victim) && !HAS_TRAIT(victim, TRAIT_RADIMMUNE)
 
-/datum/weather/rad_storm/weather_act(mob/living/victim)
-	if(prob(40))
-		victim.rad_act(20)
+/datum/weather/rad_storm/weather_act(mob/living/victim, seconds_per_tick)
+	var/hits = roll_hits(40, seconds_per_tick)
+	if(hits)
+		victim.rad_act(20 * hits)
 
 /datum/weather/rad_storm/end()
 	if(..())

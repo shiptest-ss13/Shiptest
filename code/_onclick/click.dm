@@ -106,7 +106,7 @@
 	if(typing_indicator)
 		set_typing_indicator(FALSE)
 
-	if(incapacitated(ignore_restraints = TRUE))
+	if(is_incapacitated(ignore_restraints = TRUE))
 		return
 
 	face_atom(A)
@@ -356,7 +356,7 @@
 		ML.pulled(src)
 
 /mob/living/carbon/human/CtrlClick(mob/user)
-	if(ishuman(user) && Adjacent(user) && !user.incapacitated())
+	if(ishuman(user) && Adjacent(user) && !user.is_incapacitated())
 		if(world.time < user.next_move)
 			return FALSE
 		var/mob/living/carbon/human/H = user

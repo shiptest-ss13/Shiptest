@@ -180,7 +180,7 @@ RLD
 /obj/item/construction/proc/check_menu(mob/living/user)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.is_incapacitated() || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

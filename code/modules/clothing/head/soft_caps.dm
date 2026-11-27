@@ -49,7 +49,7 @@
 	return TRUE
 
 /obj/item/clothing/head/soft/proc/flip(mob/user)
-	if(!user.incapacitated())
+	if(!user.is_incapacitated())
 		flipped = !flipped
 		if(src.flipped)
 			icon_state = "[base_icon_state]_flipped"

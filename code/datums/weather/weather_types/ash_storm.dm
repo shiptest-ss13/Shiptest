@@ -52,8 +52,8 @@
 /datum/weather/ash_storm/affects(mob/living/victim)
 	return !is_ash_immune(victim)
 
-/datum/weather/ash_storm/weather_act(mob/living/victim)
-	victim.adjustFireLoss(4)
+/datum/weather/ash_storm/weather_act(mob/living/victim, seconds_per_tick)
+	victim.adjustFireLoss(4 * seconds_per_tick)
 
 
 //Emberfalls are the result of an ash storm passing by close to the playable area of lavaland. They have a 10% chance to trigger in place of an ash storm.

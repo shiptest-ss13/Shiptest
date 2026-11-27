@@ -323,7 +323,7 @@
 	return null
 
 ///Is the mob incapacitated
-/mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
+/mob/proc/is_incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
 	return
 
 /**
@@ -524,7 +524,7 @@
 
 /mob/living/blind_examine_check(atom/examined_thing)
 	//need to be next to something and awake
-	if(!in_range(examined_thing, src) || incapacitated())
+	if(!in_range(examined_thing, src) || is_incapacitated())
 		to_chat(src, span_warning("Something is there, but you can't see it!"))
 		return FALSE
 	//also neeed an empty hand, and you can only initiate as many examines as you have hands
@@ -653,7 +653,7 @@
 	if(ismecha(loc))
 		return
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -673,7 +673,7 @@
 		var/obj/mecha/mech = loc
 		return mech.handle_unique_action(src)
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -713,7 +713,7 @@
 
 	if(ismecha(loc))
 		return
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -1374,7 +1374,7 @@
 	VV_DROPDOWN_OPTION(VV_HK_DIRECT_CONTROL, "Assume Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_GIVE_DIRECT_CONTROL, "Give Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_OFFER_GHOSTS, "Offer Control to Ghosts")
-	if(ai_controller)
+	if(istype(ai_controller, /datum/ai_controller/basic_controller))
 		VV_DROPDOWN_OPTION(VV_HK_AI_SET_HOME, "Set AI Home")
 
 /mob/vv_do_topic(list/href_list)
@@ -1430,7 +1430,9 @@
 	if(href_list[VV_HK_AI_SET_HOME])
 		if(!check_rights(R_DEBUG))
 			return
-		ai_controller?.admin_set_home(usr)
+		var/datum/ai_controller/basic_controller/basic_controller = ai_controller
+		if(istype(basic_controller))
+			basic_controller.admin_set_home(usr)
 
 /**
  * extra var handling for the logging var

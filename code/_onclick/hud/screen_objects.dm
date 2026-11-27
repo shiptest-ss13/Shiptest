@@ -53,7 +53,7 @@
 	if(world.time <= usr.next_move)
 		return 1
 
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return 1
 
 	if(ismob(usr))
@@ -85,7 +85,7 @@
 	screen_loc = ui_building
 
 /atom/movable/screen/area_creator/Click()
-	if(usr.incapacitated() || (isobserver(usr) && !isAdminGhostAI(usr)))
+	if(usr.is_incapacitated() || (isobserver(usr) && !isAdminGhostAI(usr)))
 		return TRUE
 	var/area/A = get_area(usr)
 	if(!A.outdoors)
@@ -116,7 +116,7 @@
 	if(world.time <= usr.next_move)
 		return TRUE
 
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return TRUE
 	if(ismecha(usr.loc)) // stops inventory actions in a mech
 		return TRUE
@@ -148,7 +148,7 @@
 	if(hud?.mymob && slot_id)
 		var/obj/item/inv_item = hud.mymob.get_item_by_slot(slot_id)
 		if(inv_item)
-			if(hud?.mymob.incapacitated())
+			if(hud?.mymob.is_incapacitated())
 				inv_item.apply_outline(COLOR_RED_GRAY)
 			else
 				inv_item.apply_outline()
@@ -226,7 +226,7 @@
 		return TRUE
 	if(world.time <= user.next_move)
 		return TRUE
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return TRUE
 	if (ismecha(user.loc)) // stops inventory actions in a mech
 		return TRUE
@@ -309,7 +309,7 @@
 	if(!iscarbon(usr))
 		return
 	var/mob/living/carbon/breather = usr
-	if(breather.incapacitated())
+	if(breather.is_incapacitated())
 		return
 
 	if(breather.internal)

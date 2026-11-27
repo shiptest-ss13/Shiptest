@@ -42,7 +42,7 @@
 // remove the cartridge if we have one
 /obj/item/med_stapler/attack_self(mob/living/user)
 	if(user && cart)
-		if(user.incapacitated())
+		if(user.is_incapacitated())
 			return
 		else
 			cart.forceMove(user.loc)

@@ -383,7 +383,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/effect/proc_holder/ranged_ai/override_machine/InterceptClickOn(mob/living/clicker, params, obj/machinery/target)
 	if(..())
 		return
-	if(ranged_ability_user.incapacitated())
+	if(ranged_ability_user.is_incapacitated())
 		remove_ranged_ability()
 		return
 	if(!istype(target))
@@ -465,7 +465,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/effect/proc_holder/ranged_ai/overload_machine/InterceptClickOn(mob/living/clicker, params, obj/machinery/target)
 	if(..())
 		return
-	if(ranged_ability_user.incapacitated())
+	if(ranged_ability_user.is_incapacitated())
 		remove_ranged_ability()
 		return
 	if(!istype(target))
@@ -565,7 +565,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 		C.images -= I
 
 /mob/living/silicon/ai/proc/can_place_transformer(datum/action/innate/ai/place_transformer/action)
-	if(!eyeobj || !isturf(loc) || incapacitated() || !action)
+	if(!eyeobj || !isturf(loc) || is_incapacitated() || !action)
 		return
 	var/turf/middle = get_turf(eyeobj)
 	var/list/turfs = list(middle, locate(middle.x - 1, middle.y, middle.z), locate(middle.x + 1, middle.y, middle.z))

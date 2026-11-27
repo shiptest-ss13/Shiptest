@@ -448,7 +448,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(isitem(loc))
 		//if so, can we actually access it?
 		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
-		if(ourstorage && !ourstorage.access_check())
+		if(ourstorage && !ourstorage.access_check(user))
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
 			return
 
@@ -679,7 +679,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr))
+	if(usr.is_incapacitated() || !Adjacent(usr))
 		return
 
 	if(isliving(usr))
@@ -941,7 +941,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/user = usr
 		tip_timer = addtimer(CALLBACK(src, PROC_REF(openTip), location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
 	var/mob/living/L = usr
-	if(istype(L) && L.incapacitated())
+	if(istype(L) && L.is_incapacitated())
 		apply_outline(COLOR_RED_GRAY)
 	else
 		apply_outline()

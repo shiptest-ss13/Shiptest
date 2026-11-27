@@ -86,6 +86,11 @@
 	icon_state = "light"
 	color_src = MARKINGCOLORS
 
+/datum/sprite_accessory/moth_markings/midsection
+	name = "Striations (midsection)"
+	icon_state = "mid"
+	color_src = MARKINGCOLORS
+
 //Moth fluff, the bit around the neck
 /datum/sprite_accessory/moth_fluff
 	icon = 'icons/mob/species/moth/moth_fluff.dmi'

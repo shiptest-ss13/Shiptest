@@ -314,11 +314,12 @@
 	if(!on && !self_lighting)
 		. += span_notice("You'll need another flame to light this...")
 
-/obj/item/flashlight/flare/toggle_light()
+//pass forced in for other objects lighting this
+/obj/item/flashlight/flare/toggle_light(forced)
 	if(on || !fuel)
 		return FALSE
 
-	if(!self_lighting)
+	if(!self_lighting && !forced)
 		return FALSE
 
 	name = "lit [initial(name)]"
@@ -358,21 +359,21 @@
 	if(get_temperature())
 		. = span_notice("[user] puts [src]'s flame to [A] and lights it.")
 
-/obj/item/flashlight/flare/proc/ignition(mob/user)
+/obj/item/flashlight/flare/proc/ignition(mob/user, forced = FALSE)
 	if(user && !fuel)
 		to_chat(user, span_warning("[src] is out of fuel!"))
 		return FALSE
 	if(user && on)
 		to_chat(user, span_warning("[src] is already lit!"))
 		return FALSE
-	if(!toggle_light())
+	if(!toggle_light(forced))
 		return FALSE
 	if(fuel != INFINITY)
 		START_PROCESSING(SSobj, src)
 	return TRUE
 
 /obj/item/flashlight/flare/fire_act(exposed_temperature, exposed_volume)
-	ignition()
+	ignition(forced = TRUE)
 	return ..()
 
 /obj/item/flashlight/flare/update_brightness()
@@ -401,6 +402,7 @@
 	trash_type = /obj/item/trash/candle
 	can_be_extinguished = TRUE
 	self_lighting = FALSE
+	toggle_on_sound = 'sound/items/cig_light.ogg'
 
 /obj/item/flashlight/flare/candle/update_icon_state()
 	. = ..()
@@ -416,7 +418,7 @@
 
 /obj/item/flashlight/flare/candle/attackby(obj/item/fire_starter, mob/user, params)
 	var/success_msg = fire_starter.ignition_effect(src, user)
-	if(success_msg && ignition(user))
+	if(success_msg && ignition(user, TRUE))
 		user.visible_message(success_msg)
 	else
 		return ..()
@@ -454,10 +456,11 @@
 	trash_type = /obj/effect/decal/cleanable/ash
 	can_be_extinguished = TRUE
 	self_lighting = FALSE
+	toggle_on_sound = 'sound/items/cig_light.ogg'
 
 /obj/item/flashlight/flare/torch/attackby(obj/item/fire_starter, mob/user, params)
 	var/success_msg = fire_starter.ignition_effect(src, user)
-	if(success_msg && ignition(user))
+	if(success_msg && ignition(user, TRUE))
 		user.visible_message(success_msg)
 	else
 		return ..()

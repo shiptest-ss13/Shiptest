@@ -46,7 +46,7 @@
 	button_icon_state = "wrassle_slam"
 
 /datum/action/slam/Trigger(trigger_flags)
-	if(owner.incapacitated())
+	if(owner.is_incapacitated())
 		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	owner.visible_message(span_danger("[owner] prepares to BODY SLAM!"), "<b><i>Your next attack will be a BODY SLAM.</i></b>")
@@ -58,7 +58,7 @@
 	button_icon_state = "wrassle_throw"
 
 /datum/action/throw_wrassle/Trigger(trigger_flags)
-	if(owner.incapacitated())
+	if(owner.is_incapacitated())
 		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	owner.visible_message(span_danger("[owner] prepares to THROW!"), "<b><i>Your next attack will be a THROW.</i></b>")
@@ -70,7 +70,7 @@
 	button_icon_state = "wrassle_kick"
 
 /datum/action/kick/Trigger(trigger_flags)
-	if(owner.incapacitated())
+	if(owner.is_incapacitated())
 		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	owner.visible_message(span_danger("[owner] prepares to KICK!"), "<b><i>Your next attack will be a KICK.</i></b>")
@@ -82,7 +82,7 @@
 	button_icon_state = "wrassle_strike"
 
 /datum/action/strike/Trigger(trigger_flags)
-	if(owner.incapacitated())
+	if(owner.is_incapacitated())
 		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	owner.visible_message(span_danger("[owner] prepares to STRIKE!"), "<b><i>Your next attack will be a STRIKE.</i></b>")
@@ -94,7 +94,7 @@
 	button_icon_state = "wrassle_drop"
 
 /datum/action/drop/Trigger(trigger_flags)
-	if(owner.incapacitated())
+	if(owner.is_incapacitated())
 		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	owner.visible_message(span_danger("[owner] prepares to LEG DROP!"), "<b><i>Your next attack will be a LEG DROP.</i></b>")

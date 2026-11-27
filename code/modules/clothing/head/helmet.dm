@@ -24,6 +24,8 @@
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
+	unique_reskin_flags = UNIQUE_RESKIN_CHANGES_BASE_ICON
+
 	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
 	var/can_flashlight = FALSE
 	var/obj/item/flashlight/seclite/attached_light
@@ -102,7 +104,7 @@
 			old_attached_light.forceMove(get_turf(src))
 
 /obj/item/clothing/head/helmet/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
+	if(can_toggle && !user.is_incapacitated())
 		if(world.time > cooldown + toggle_cooldown)
 			cooldown = world.time
 			up = !up
@@ -216,7 +218,7 @@
 		action_eyewear = null
 
 /obj/item/clothing/head/helmet/proc/toggle_eyewear(mob/living/carbon/human/user)
-	if(!istype(user) || user.head != src || user.incapacitated())
+	if(!istype(user) || user.head != src || user.is_incapacitated())
 		return
 	var/obj/item/clothing/glasses/stowed = get_stowed_eyewear()
 	var/obj/item/clothing/glasses/worn = user.glasses
@@ -234,7 +236,7 @@
 		slowest = worn
 	if(slowest.equip_delay_self && !slowest.do_equip_wait(user, slowest.equipping_sound))
 		return
-	if(user.head != src || user.incapacitated() || get_stowed_eyewear() != stowed || user.glasses != worn)
+	if(user.head != src || user.is_incapacitated() || get_stowed_eyewear() != stowed || user.glasses != worn)
 		return
 
 	toggling_eyewear = TRUE
@@ -315,7 +317,7 @@
 		return
 
 	var/mob/user = usr
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return
 	attached_light.on = !attached_light.on
 	attached_light.update_brightness()

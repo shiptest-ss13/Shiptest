@@ -279,7 +279,7 @@
 // one of the follow-up shots of a volley after its started
 /datum/component/ranged_attacks/proc/fire_follow_up_shot(datum/weakref/target_ref, turf/fallback_turf, ally_risk_tolerance, ally_watch_range = 0)
 	var/mob/living/basic/firer = parent
-	if(QDELETED(firer) || firer.stat == DEAD || firer.incapacitated())
+	if(QDELETED(firer) || firer.stat == DEAD || firer.is_incapacitated())
 		if(player_follow_ups_owed > 0)
 			player_follow_ups_owed-- // still gone, so a player doesn't get it as a free shot later
 		return

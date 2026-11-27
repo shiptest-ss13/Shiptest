@@ -219,7 +219,7 @@
 /mob/living/silicon/ai/verb/pick_icon()
 	set category = "AI Commands"
 	set name = "Set AI Core Display"
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	var/list/iconstates = GLOB.ai_core_display_screens
 	for(var/option in iconstates)
@@ -231,7 +231,7 @@
 	view_core()
 	var/ai_core_icon = show_radial_menu(src, src , iconstates, radius = 42)
 
-	if(!ai_core_icon || incapacitated())
+	if(!ai_core_icon || is_incapacitated())
 		return
 
 	display_icon_override = ai_core_icon
@@ -323,7 +323,7 @@
 		return // stop
 	if(stat == DEAD)
 		return
-	if(incapacitated())
+	if(is_incapacitated())
 		if(battery < 50)
 			to_chat(src, span_warning("Insufficient backup power!"))
 			return
@@ -344,7 +344,7 @@
 
 /mob/living/silicon/ai/Topic(href, href_list)
 	..()
-	if(usr != src || incapacitated())
+	if(usr != src || is_incapacitated())
 		return
 	if (href_list["mach_close"])
 		if (href_list["mach_close"] == "aialerts")
@@ -552,7 +552,7 @@
 	cameraFollow = null
 	var/cameralist[0]
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	var/mob/living/silicon/ai/U = usr
@@ -591,7 +591,7 @@
 	set category = "AI Commands"
 	set name = "AI Status"
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	var/list/ai_emotions = list("Very Happy", "Happy", "Neutral", "Unsure", "Confused", "Sad", "BSOD", "Blank", "Problems?", "Awesome", "Facepalm", "Thinking", "Friend Computer", "Dorfy", "Blue Glow", "Red Glow")
 	var/emote = input("Please, select a status!", "AI Status", null, null) in sortList(ai_emotions)
@@ -615,7 +615,7 @@
 	set desc = "Change the default hologram available to AI to something else."
 	set category = "AI Commands"
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	var/input
 	switch(alert("Would you like to select a hologram based on a crew member, an animal, or switch to a unique avatar?",,"Crew Member","Unique","Animal"))
@@ -745,7 +745,7 @@
 	set desc = "Allows you to change settings of your radio."
 	set category = "AI Commands"
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 
 	to_chat(src, "Accessing Subspace Transceiver control...")
@@ -757,7 +757,7 @@
 	set desc = "Modify the default radio setting for your automatic announcements."
 	set category = "AI Commands"
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	set_autosay()
 
@@ -788,7 +788,7 @@
 
 
 /mob/living/silicon/ai/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
-	if(control_disabled || incapacitated())
+	if(control_disabled || is_incapacitated())
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -927,7 +927,7 @@
 	set category = "AI Commands"
 	set name = "Deploy to Shell"
 
-	if(incapacitated())
+	if(is_incapacitated())
 		return
 	if(control_disabled)
 		to_chat(src, span_warning("Wireless networking module is offline."))

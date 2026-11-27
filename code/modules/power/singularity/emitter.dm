@@ -398,7 +398,7 @@
 	. = ..()
 
 /obj/machinery/power/emitter/prototype/user_buckle_mob(mob/living/M, mob/living/carbon/user, check_loc = FALSE)
-	if(user.incapacitated() || !istype(user))
+	if(user.is_incapacitated() || !istype(user))
 		return
 	for(var/atom/movable/A in get_turf(src))
 		if(A.density && (A != src && A != M))
