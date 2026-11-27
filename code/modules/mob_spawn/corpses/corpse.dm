@@ -96,6 +96,8 @@
 	name = "Ramzi Angle Grinder Technician"
 	suit = /obj/item/clothing/suit/armor/ramzi
 	back = /obj/item/gear_pack/anglegrinder
+	mask = /obj/item/clothing/mask/breath/facemask
+	head = /obj/item/clothing/head/helmet/ramzi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/doctor
 	name = "Ramzi Field Medic"
