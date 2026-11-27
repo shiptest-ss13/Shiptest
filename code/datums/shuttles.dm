@@ -490,7 +490,7 @@
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
-	name = "Gauze-class Ambulance Pod"
+	name = "Arcus-class Rapid Response Vehicle"
 	faction = /datum/faction/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
