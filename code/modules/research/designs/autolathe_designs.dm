@@ -1145,6 +1145,14 @@
 	build_path = /obj/item/disk/holodisk
 	category = list("initial", "Misc")
 
+/datum/design/holodisk
+	name = "Handheld Catalog"
+	id = "catalog"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000)
+	build_path = /obj/item/catalog_handheld
+	category = list("initial", "Misc")
+
 /datum/design/circuit
 	name = "Blue Circuit Tile"
 	id = "circuit"

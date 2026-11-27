@@ -19,7 +19,8 @@ import { formatMoney } from '../../format';
 export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend(context);
 
-  const { self_paid, app_cost, blockade } = data;
+  const { self_paid, app_cost, blockade, punchcard_order, can_read, console } =
+    data;
 
   const categories = Object.values(data.categories);
   const all_packs = data.all_packs;
@@ -50,6 +51,17 @@ export const CargoCatalog = (props, context) => {
       delete tmpcart[pack_ref];
     }
     setCart(tmpcart);
+  };
+
+  const setOrder = (orderlist) => {
+    let tmpcart = { ...cart };
+    for (let index = 0; index < punchcard_order.length; index++) {
+      const pack_ref = orderlist[index];
+      let count = (tmpcart[pack_ref] ? tmpcart[pack_ref] : 0) + 1;
+      tmpcart[pack_ref] = count;
+    }
+    setCart(tmpcart);
+    act('finish_punchcard');
   };
 
   const itemCount = Object.values(cart).reduce(
@@ -86,6 +98,15 @@ export const CargoCatalog = (props, context) => {
               {itemCount >= 2 && itemCount + ' items'}{' '}
               {cartTotal > 0 && `(${formatMoney(cartTotal)} cr)`}
             </Box>
+            {console && (
+              <Button
+                icon="book"
+                color="green"
+                content="Load Punchcard Data"
+                disabled={!can_read}
+                onClick={() => setOrder(punchcard_order)}
+              />
+            )}
             <Button
               icon="trash"
               color="transparent"

@@ -249,6 +249,12 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "paper_shreds"
 
+/obj/effect/decal/cleanable/paper
+	name = "paper shreds"
+	desc = "Torn pieces of paper."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "paper_shreds"
+
 /obj/effect/decal/cleanable/sprayweb
 	name = "silly string"
 	desc = "Liquid plastic strung about from the aftermath of some festive occasion."

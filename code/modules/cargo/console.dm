@@ -32,6 +32,9 @@
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
 
+	var/list/punchcard_orders = list()
+	var/obj/item/order_punchcard/inserted_card
+
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
 	var/obj/item/circuitboard/computer/cargo/board = circuit
@@ -40,6 +43,11 @@
 		obj_flags |= EMAGGED
 	else
 		obj_flags &= ~EMAGGED
+
+/obj/machinery/computer/cargo/examine(mob/user)
+	. = ..()
+	if(inserted_card)
+		. += span_notice("It has a supply punchcard inserted. <b>Alt-Click</b> to eject it.")
 
 /obj/machinery/computer/cargo/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
@@ -90,7 +98,7 @@
 
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/list/data = list()
-
+	data["console"] = TRUE
 	data["onShip"] = !isnull(current_ship)
 	data["shipFaction"] = current_ship.source_template.faction.name
 	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
@@ -115,6 +123,9 @@
 		if(istype(outpost_docked))
 			for(var/datum/mission/M as anything in outpost_docked.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
+
+	data["can_read"] = (punchcard_orders.len > 0 ? TRUE : FALSE)
+	data["punchcard_order"] = punchcard_orders
 
 	return data
 
@@ -162,7 +173,10 @@
 					unprocessed_packs += pack
 
 			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
-
+		if("finish_punchcard")
+			punchcard_orders = list()
+			qdel(inserted_card)
+			inserted_card = null
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
@@ -191,7 +205,52 @@
 		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
 		return TRUE
+	if(istype(W, /obj/item/catalog_handheld))
+		reconnect()
+		var/obj/item/catalog_handheld/handheld = W
+		handheld.current_ship = current_ship
+		handheld.current_faction = current_faction
+		if(istype(outpost_docked))
+			handheld.parent_outpost = outpost_docked
+		handheld.update_static_data_for_all_viewers()
+		to_chat(user,span_notice("You sync the [handheld.name] to the [name]."))
+		return TRUE
+	if(istype(W, /obj/item/order_punchcard))
+		if(inserted_card)
+			to_chat(user,span_warning("There's already a punchcard inside! Eject it first."))
+			return FALSE
+		var/unfilled_orders = FALSE
+		inserted_card = W
+		punchcard_orders = list()
+		for(var/untreated_order in inserted_card.purchases)
+			var/datum/supply_pack/untreated_pack = untreated_order
+			var/same_faction = untreated_pack.faction ? untreated_pack.faction.allowed_faction(current_faction) : FALSE
+			if(!same_faction && untreated_pack.faction_locked)
+				unfilled_orders = TRUE
+				continue
+			var/treated_order = REF(untreated_order)
+			if(!treated_order)
+				unfilled_orders = TRUE
+				continue
+			punchcard_orders.Add(treated_order)
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+		if(unfilled_orders)
+			say("Some orders could not be loaded due to lack of permissions.")
+		to_chat(user, span_notice("You feed the [inserted_card] into the [name]."))
+		inserted_card.forceMove(src)
+		ui_interact(user)
+		return TRUE
 	..()
+
+/obj/machinery/computer/cargo/AltClick(mob/user)
+	. = ..()
+	if(Adjacent(user))
+		if(inserted_card)
+			to_chat(user,span_notice("You eject the [inserted_card.name] from the [name]."))
+			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+			user.put_in_hands(inserted_card)
+			punchcard_orders = list()
+			inserted_card = null
 
 /obj/machinery/computer/cargo/proc/generate_pack_data()
 	categories_data = list()
