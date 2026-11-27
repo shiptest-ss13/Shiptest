@@ -125,7 +125,7 @@
 
 /obj/item/order_punchcard/examine(mob/user)
 	. = ..()
-	. += span_notice("You could <b>examine<b> it more closely to see the list of orders.")
+	. += span_notice("You could <b>examine</b> it more closely to see the list of orders.")
 	. += span_warning("You could probably tear it apart in your hands if you were feeling paticularly <b>harmful</b>.")
 
 /obj/item/order_punchcard/attack_self(mob/user, modifiers)
@@ -140,7 +140,7 @@
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 		qdel(src)
 	else
-		to_chat(user,span_warning("You need to be more <b>harmful</b> to tear the [name] apart."))
+		to_chat(user,span_red("You need to be more <b>harmful</b> to tear the [name] apart."))
 
 /obj/item/order_punchcard/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
