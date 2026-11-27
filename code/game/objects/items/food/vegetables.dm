@@ -21,7 +21,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("sweet potato" = 1)
-	foodtypes = VEGETABLES | SUGAR
+	foodtypes = VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	//burns_in_oven = TRUE
 
@@ -60,7 +60,7 @@
 		/datum/reagent/consumable/nutriment/protein = 4,
 	)
 	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
-	foodtypes = MEAT | SUGAR | VEGETABLES | DAIRY
+	foodtypes = MEAT | VEGETABLES | DAIRY
 
 // Fries
 /obj/item/food/fries
@@ -69,7 +69,7 @@
 	icon_state = "fries"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("fries" = 3, "salt" = 1)
-	foodtypes = VEGETABLES | FRIED
+	foodtypes = VEGETABLES | HEAVILY_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/fries/Initialize(mapload)
@@ -85,7 +85,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("fries" = 3, "cheese" = 1)
-	foodtypes = VEGETABLES | DAIRY
+	foodtypes = VEGETABLES | DAIRY | HEAVILY_FRIED
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cheesyfries/Initialize(mapload)

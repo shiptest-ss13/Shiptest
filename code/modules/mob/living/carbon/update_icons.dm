@@ -205,7 +205,34 @@
 /mob/living/carbon/update_body()
 	update_body_parts()
 
+
+/// Skips body icon updates until release_icons() is called, otherwise we'd rebuild them for every limb, organ or outfit change. Holds nest; only the last release redraws
+/mob/living/carbon/proc/hold_icons()
+	icon_holds++
+
+/// Ends a hold_icons() call. The last one to release redraws the body once and returns TRUE
+/mob/living/carbon/proc/release_icons()
+	icon_holds = max(icon_holds - 1, 0)
+	if(icon_holds || QDELETED(src))
+		return FALSE
+	update_body()
+	update_hair()
+	var/update_limb_data = held_limb_data
+	held_limb_data = FALSE
+	update_body_parts(update_limb_data)
+	return TRUE
+
+/mob/living/carbon/Login()
+	. = ..()
+	if(icon_holds) // a hold left at login is stuck. set to 1 and release to force a rebuild
+		icon_holds = 1
+		release_icons()
+
 /mob/living/carbon/proc/update_body_parts(update_limb_data)
+	if(icon_holds)
+		if(update_limb_data)
+			held_limb_data = TRUE
+		return
 	//Check the cache to see if it needs a new sprite
 	update_damage_overlays()
 	var/list/needs_update = list()

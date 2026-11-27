@@ -18,6 +18,7 @@
 	var/mopspeed = 15
 	force_string = "robust... against germs"
 	var/insertable = TRUE
+	custom_materials = list(/datum/material/iron = 750)
 
 /obj/item/mop/Initialize()
 	. = ..()

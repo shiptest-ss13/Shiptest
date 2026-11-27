@@ -796,9 +796,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	grind_results = null
 	lefthand_file = null
 	righthand_file = null
-	item_flags = DROPDEL
-	w_class = WEIGHT_CLASS_HUGE
-	force = 0                       //if you want to attack someone with that fire you gotta spit it out first
+	item_flags = DROPDEL | ABSTRACT | NOBLUDGEON
+	slot_flags = null
+	force = 0
 	throwforce = 0
 	throw_range = 0
 	throw_speed = 0

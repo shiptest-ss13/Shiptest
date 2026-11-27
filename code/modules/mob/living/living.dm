@@ -352,8 +352,8 @@
 		set_pull_offsets(M, state)
 	else
 		// We already know it's an object since it's not a mob so no need to typecheck
-		var/obj/O = AM
-		if (O.density || O.drag_slowdown)
+		var/obj/pulled_obj = AM
+		if (!iscarbon(src) && (pulled_obj.density || pulled_obj.drag_slowdown)) // carbons face what they drag while moving instead
 			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
@@ -383,7 +383,7 @@
 
 //same as above
 /mob/living/pointed(atom/A as mob|obj|turf in view(client.view, src))
-	if(incapacitated())
+	if(is_incapacitated())
 		return FALSE
 
 	return ..()
@@ -405,7 +405,7 @@
 		to_chat(src, span_notice("You have given up life and succumbed to death."))
 	death()
 
-/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, ignore_stasis = FALSE)
+/mob/living/is_incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, ignore_stasis = FALSE)
 	if(HAS_TRAIT(src, TRAIT_INCAPACITATED) || (!ignore_restraints && (HAS_TRAIT(src, TRAIT_RESTRAINED) || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE))) || (!ignore_stasis && IS_IN_STASIS(src)))
 		return TRUE
 
@@ -721,7 +721,7 @@
 		if(mind)
 			for(var/S in mind.spell_list)
 				var/obj/effect/proc_holder/spell/spell = S
-				spell.updateButtonIcon()
+				spell.UpdateButtons()
 		if(excess_healing)
 			INVOKE_ASYNC(src, PROC_REF(emote), "gasp")
 			log_combat(src, src, "revived")
@@ -839,8 +839,11 @@
 			var/mob/living/L = pulledby
 			L.set_pull_offsets(src, pulledby.grab_state)
 
-	if(active_storage && !(CanReach(active_storage.parent,view_only = TRUE)))
-		active_storage.close(src)
+	if(active_storage)
+		if(!CanReach(active_storage.parent, view_only = TRUE))
+			active_storage.close(src)
+		else
+			active_storage.update_open_slowdown(src)
 
 	if(body_position == LYING_DOWN && !buckled && prob(getBruteLoss()*200/maxHealth))
 		makeTrail(newloc, T, old_direction)
@@ -942,7 +945,7 @@
 		..(pressure_difference, direction, pressure_resistance_prob_delta)
 
 /mob/living/can_resist()
-	return !((next_move > world.time) || incapacitated(ignore_restraints = TRUE, ignore_stasis = TRUE))
+	return !((next_move > world.time) || is_incapacitated(ignore_restraints = TRUE, ignore_stasis = TRUE))
 
 /mob/living/verb/resist()
 	set name = "Resist"
@@ -1170,7 +1173,7 @@
 	return
 
 /mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
-	if(incapacitated())
+	if(is_incapacitated())
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -1470,8 +1473,8 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	L.put_in_hands(holder)
 
 /mob/living/proc/set_name()
-	numba = rand(1, 1000)
-	name = "[name] ([numba])"
+	mob_id = rand(1, 1000)
+	name = "[name] ([mob_id])"
 	real_name = name
 
 /mob/living/proc/mob_try_pickup(mob/living/user)
@@ -1683,7 +1686,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 
 ///Checks if the user is incapacitated or on cooldown.
 /mob/living/proc/can_look_up()
-	return !(incapacitated(ignore_restraints = TRUE))
+	return !(is_incapacitated(ignore_restraints = TRUE))
 
 /**
  * look_up Changes the perspective of the mob to any openspace turf above the mob
@@ -1971,6 +1974,9 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	. = body_position
 	body_position = new_value
 	SEND_SIGNAL(src, COMSIG_LIVING_SET_BODY_POSITION, new_value, .)
+	if(isliving(pulledby))
+		var/mob/living/puller = pulledby
+		puller.update_pull_movespeed() // update puller pullspeed if pullee position changes
 	if(new_value == LYING_DOWN) // From standing to lying down.
 		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
 			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking

@@ -67,6 +67,10 @@
 	display_name = "two tone coat, colorable"
 	path = /obj/item/clothing/suit/jacket/twotone
 
+/datum/gear/suit/jacket/mil_poncho
+	display_name = "military poncho, colorable"
+	path = /obj/item/clothing/suit/jacket/militaryponcho
+
 /datum/gear/suit/toggle/aclf
 	display_name = "ACLF leather jacket"
 	path = /obj/item/clothing/suit/toggle/aclf

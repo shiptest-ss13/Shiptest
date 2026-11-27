@@ -285,7 +285,7 @@
 			to_chat(wearer,span_warning("Retract parts first!"))
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, FALSE, SILENCED_SOUND_EXTRARANGE)
 			return
-	if(!wearer.incapacitated())
+	if(!wearer.is_incapacitated())
 		var/atom/movable/screen/inventory/hand/ui_hand = over_object
 		if(wearer.putItemFromInventoryInHandIfPossible(src, ui_hand.held_index, FALSE, TRUE))
 			add_fingerprint(usr)

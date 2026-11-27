@@ -38,7 +38,7 @@
 		victim = victim.loc //Check parent items immunities (recurses up to the turf)
 	return FALSE //RIP you
 
-/datum/weather/ash_storm/sand_storm/weather_act(mob/living/victim)
-	victim.adjustBruteLoss(3)
+/datum/weather/ash_storm/sand_storm/weather_act(mob/living/victim, seconds_per_tick)
+	victim.adjustBruteLoss(3 * seconds_per_tick)
 	if(!victim.is_eyes_covered())
-		victim.blind_eyes(3)
+		victim.blind_eyes(3 * seconds_per_tick)

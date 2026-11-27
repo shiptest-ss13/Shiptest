@@ -162,6 +162,7 @@
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "flightinteq"
+	base_icon_state = "flightinteq"
 	unique_reskin = null
 
 /obj/item/clothing/suit/space/inteq
@@ -293,6 +294,7 @@
 	hardsuit_type = "rampart"
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	name = "elite rampart hardsuit"

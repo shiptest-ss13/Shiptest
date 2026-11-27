@@ -20,3 +20,87 @@
   rye-rice:
   - bugfix: Outpost maps should no longer have space in between their borders and
       edges.
+2026-11-18:
+  AnomalousPotato:
+  - bugfix: You can no longer tackle in the middle of space.
+  - bugfix: Tackles will no longer stop in the middle of space.
+  - bugfix: You no longer take bonus damage from being thrown at a wall when you tackle
+      one.
+  - bugfix: Very good tackles now actually grab as stated.
+  - rscadd: Tackling a wall now respects armor.
+  - balance: A very bad tackle will no longer IRREVERSIBLY paralyze you.
+  prodirus:
+  - bugfix: Ships no longer lose the ability to bluespace jump after one of their
+      helm consoles is destroyed.
+  - bugfix: Ships can exit the Frontier while having an accepted mission again.
+2026-11-19:
+  AnomalousPotato:
+  - balance: Adjusted a bunch of autolathe costs. Things are largely cheaper now.
+  - rscadd: You can make pizza cutters in an autolathe now.
+  prodirus:
+  - bugfix: Firing guns should drop clicks less and full auto should not cancel under
+      laggy conditions.
+  - bugfix: Burst fire should now always have consistent timing.
+  - rscadd: Click buffer for firing weapons, so clicking slightly early will fire
+      the gun when ready instead of doing nothing
+  - bugfix: Weapon firerates should now be accurate to their defines.
+  - balance: CM40 and Python slight firerate nerf
+  - bugfix: Fixed firerate delay timing to be correct. This leads to firerate being
+      increased across the board.
+  thearbiber:
+  - rscadd: Ruin difficulty adjustment
+2026-11-20:
+  Gristlebee:
+  - bugfix: Reverse Admin Supply Pods
+2026-11-21:
+  prodirus:
+  - code_imp: Weather effects now only goes over the mob list once and applies it
+      to applicable mobs.
+  - bugfix: Weather controllers should no longer get orphaned as often
+  - bugfix: Ghost images are deleted properly from other clients.
+2026-11-25:
+  AnomalousPotato:
+  - bugfix: Helm consoles no longer tell you that your completed jump cannot be cancelled
+  Erikafox, TheArbiber:
+  - rscadd: Remaps the Cirrus-class and the Gauze-class ambulance.
+  - rscadd: touched up the cybersun namelist
+  - rscadd: wall buzzer. BZZZT
+  cablefish:
+  - balance: You can remove wooden floors normally with a crowbar now.
+2026-11-26:
+  cablefish + anomalouspotato:
+  - rscadd: Talking with something in your mouth now muffles your speech. This includes
+      eating.
+  - bugfix: You can no longer put the sarathi firebreath on your belt.
+2026-11-27:
+  AnomalousPotato:
+  - code_imp: Changed mob/proc/incapacitated() to /mob/proc/is_incapacitated()
+  BrightSheepie:
+  - bugfix: Fixed suit storage offsets not working
+  - rscadd: Added and improved existing offsets for non-species sprited back items/suit
+      storage offsets for Kepori/Vox. No more floating guns and oxygen tanks. Bowman's
+      headsets also don't cover Kepori's eyes anymore.
+  - rscadd: Added fallback offset for vox uniforms in case the fallback uniform does
+      not exist.
+  - rscadd: Added accessory offsets and the functionality for them. Vox and Kepori
+      have them now. No more floating holsters.
+  - code_imp: Ensured layer offsets never override fallback clothing.
+  LemonInTheDark, ported by Erika:
+  - rscadd: Expanded heavily on action buttons
+  - rscadd: Adds an action button dropdown that sits just under the normal list in
+      the top left. You can drag new buttons onto it to insert them. Click on it to
+      show its contents, do what you want to do, then click again anywhere to contract
+      it. Alt click it to reset all button positions
+  - rscadd: Action buttons will now remember their position between rounds. So if
+      you really like your flashlight right next to your player for some reason, we
+      support that now
+  - rscadd: When you start to drag an action button, docking ports will appear in
+      places that it can be inserted into. (Outside of just floating somewhere on
+      your screen of course)
+  - rscdel: Removed action button locking, and the associated preference. I'm reasonably
+      sure literally none uses this, but if you do hit me up
+  - bugfix: You can no longer cause the screen to expand by putting an action button
+      on the edge of widescreen, and then resizing to standard.
+  - refactor: Refactors action and button code significantly. lots of little things.
+  thearbiber:
+  - rscadd: moth sprite fixes+new marking

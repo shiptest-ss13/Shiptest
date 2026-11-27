@@ -148,6 +148,7 @@
 	if(_lifespan)
 		lifespan = _lifespan
 	if(!can_reset_dynamic())
+		schedule_unload_retry()
 		return
 	death_time = world.time + lifespan
 	token.countdown = new /obj/effect/countdown/overmap_event(token)
@@ -170,11 +171,23 @@
 
 	return TRUE
 
+// something on the planet blocked the unload, so check again later
+/datum/overmap/dynamic/proc/schedule_unload_retry()
+	if(preserve_level || !mapzone)
+		return
+	addtimer(CALLBACK(src, PROC_REF(retry_unload)), 1 MINUTES, TIMER_UNIQUE)
+
+/datum/overmap/dynamic/proc/retry_unload()
+	if(!mapzone || token.countdown)
+		return
+	start_countdown()
+
 /datum/overmap/dynamic/proc/reset_dynamic()
 	QDEL_NULL(token.countdown)
 	STOP_PROCESSING(SSfastprocess, src)
 
 	if(!can_reset_dynamic())
+		schedule_unload_retry()
 		return
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
@@ -361,6 +374,7 @@
 
 /datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))
+		schedule_unload_retry()
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	if(mapzone)

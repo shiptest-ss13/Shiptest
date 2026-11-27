@@ -36,8 +36,11 @@
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
 	return !isanimal(victim)
 
-/datum/weather/shroud_storm/weather_act(mob/living/living_mob)
-	if(prob(10))
-		living_mob.electrocute_act(rand(5, 20), "weather", TRUE)
-	if(prob(10))
+/datum/weather/shroud_storm/weather_act(mob/living/living_mob, seconds_per_tick)
+	var/shock_damage = 0
+	for(var/shock in 1 to roll_hits(10, seconds_per_tick))
+		shock_damage += rand(5, 20)
+	if(shock_damage)
+		living_mob.electrocute_act(shock_damage, "weather", TRUE)
+	if(SPT_PROB(10, seconds_per_tick))
 		empulse(living_mob, 0, 3)

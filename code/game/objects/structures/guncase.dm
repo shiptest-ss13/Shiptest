@@ -168,7 +168,7 @@
 		return FALSE
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return FALSE
 	return TRUE
 

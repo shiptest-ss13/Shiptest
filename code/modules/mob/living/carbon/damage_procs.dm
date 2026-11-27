@@ -291,6 +291,7 @@
 			total_weight += part.body_weight
 
 	var/update = 0
+	var/took_stamina = FALSE
 	var/part_weight_ratio
 	while(length(parts) && (brute > 0 || burn > 0 || stamina > 0))
 		var/obj/item/bodypart/picked = pick(parts)
@@ -304,7 +305,9 @@
 		var/burn_was = picked.burn_dam
 		var/stamina_was = picked.stamina_dam
 
-		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status, wound_bonus = CANT_WOUND, ignore_reduction = ignore_reduction)
+		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, updating_health = FALSE, wound_bonus = CANT_WOUND, ignore_reduction = ignore_reduction)
+		if(stamina_per_part > DAMAGE_PRECISION)
+			took_stamina = TRUE
 
 		brute	= round(brute - (picked.brute_dam - brute_was), DAMAGE_PRECISION)
 		burn	= round(burn - (picked.burn_dam - burn_was), DAMAGE_PRECISION)
@@ -315,6 +318,11 @@
 
 	if(updating_health)
 		updatehealth()
+
+	// once here rather than per part, like receive_damage()
+	if(took_stamina)
+		stam_regen_start_time = world.time + STAMINA_REGEN_BLOCK_TIME
+		update = TRUE
 
 	if(update)
 		update_damage_overlays()

@@ -91,7 +91,7 @@
 
 /turf/open/floor/wood/pry_tile(obj/item/C, mob/user, silent = FALSE)
 	C.play_tool_sound(src, 80)
-	return remove_tile(user, silent, (C.tool_behaviour == TOOL_SCREWDRIVER))
+	return remove_tile(user, silent, TRUE)
 
 /turf/open/floor/wood/remove_tile(mob/user, silent = FALSE, make_tile = TRUE)
 	if(broken || burnt)
@@ -102,12 +102,9 @@
 	else
 		if(make_tile)
 			if(user && !silent)
-				to_chat(user, span_notice("You unscrew the planks."))
+				to_chat(user, span_notice("You unseat the planks from the floor."))
 			if(floor_tile)
 				new floor_tile(src)
-		else
-			if(user && !silent)
-				to_chat(user, span_notice("You forcefully pry off the planks, destroying them in the process."))
 	return make_plating()
 
 /turf/open/floor/wood/airless

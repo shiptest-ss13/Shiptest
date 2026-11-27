@@ -67,7 +67,14 @@
 	if(.)
 		return
 	// AI mobs that opens doors can get through
-	return anchored && requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS)
+	return ai_opens_for(requester)
+
+/obj/structure/mineral_door/ai_can_open(mob/living/opener)
+	return anchored
+
+/obj/structure/mineral_door/ai_open(mob/living/opener)
+	if(!isSwitchingStates)
+		Open()
 
 /obj/structure/mineral_door/proc/TryToSwitchState(atom/user)
 	if(isSwitchingStates || !anchored)

@@ -20,13 +20,18 @@
 /obj/item/food/grown/berries
 	seed = /obj/item/seeds/berry
 	name = "bunch of berries"
-	desc = "Nutritious!"
+	desc = "A tasty bunch of berries, still on the branch. Better look closely, they might be poisonous."
 	icon_state = "berrypile"
 	gender = PLURAL
 	foodtypes = FRUIT
 	juice_results = list(/datum/reagent/consumable/berryjuice = 0)
 	tastes = list("berry" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/gin
+	var/examine_more_string = "safe and delicious!"
+
+/obj/item/food/grown/berries/examine_more(mob/user)
+	. = ..()
+	. += span_info("\The [src] looks [examine_more_string]")
 
 // Poison Berries
 /obj/item/seeds/berry/poison
@@ -52,6 +57,7 @@
 	tastes = list("poison-berry" = 1)
 	distill_reagent = null
 	wine_power = 35
+	examine_more_string = "a bit off."
 
 // Death Berries
 /obj/item/seeds/berry/death
@@ -80,6 +86,7 @@
 	distill_reagent = null
 	wine_power = 70
 	wine_flavor = "something breathtaking" //WS edit: new wine flavors
+	examine_more_string = "dangerous!"
 
 // Glow Berries
 /obj/item/seeds/berry/glow
@@ -100,7 +107,7 @@
 /obj/item/food/grown/berries/glow
 	seed = /obj/item/seeds/berry/glow
 	name = "bunch of glow-berries"
-	desc = "Nutritious!"
+	desc = "A tasty bunch of berries, still on the branch. These ones have a gentle glow to them."
 	icon_state = "glowberrypile"
 	bite_consumption_mod = 3
 	foodtypes = FRUIT
@@ -108,6 +115,7 @@
 	distill_reagent = null
 	wine_power = 60
 	wine_flavor = "gentle warmth" //WS edit: new wine flavors
+	examine_more_string = "a bit off. You can taste metal when you get close."
 
 // Cherries
 /obj/item/seeds/cherry

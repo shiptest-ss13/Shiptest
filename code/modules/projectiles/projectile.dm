@@ -670,12 +670,13 @@
 	return TRUE	//Bullets don't drift in space
 
 /obj/projectile/process(seconds_per_tick)
-	last_process = world.time
 	if(!loc || !fired || !trajectory)
 		fired = FALSE
 		return PROCESS_KILL
+	var/time_since_last_process = world.time - last_process
+	last_process = world.time
 	if(paused || !isturf(loc))
-		last_projectile_move += world.time - last_process		//Compensates for pausing, so it doesn't become a hitscan projectile when unpaused from charged up ticks.
+		last_projectile_move += time_since_last_process		//Compensates for pausing, so it doesn't become a hitscan projectile when unpaused from charged up ticks.
 		return
 	var/elapsed_time_deciseconds = (world.time - last_projectile_move) + time_offset
 	time_offset = 0
@@ -963,12 +964,10 @@
 	var/ty = (text2num(screen_loc_Y[1]) - 1) * world.icon_size + text2num(screen_loc_Y[2])
 
 	//Calculate the "resolution" of screen based on client's view and world's icon size. This will work if the user can view more tiles than average.
-	var/list/screenview = getviewsize(user.client.view)
-	var/screenviewX = screenview[1] * world.icon_size
-	var/screenviewY = screenview[2] * world.icon_size
+	var/list/screenview = view_to_pixels(user.client.view)
 
-	var/ox = round(screenviewX/2) - user.client.pixel_x //"origin" x
-	var/oy = round(screenviewY/2) - user.client.pixel_y //"origin" y
+	var/ox = round(screenview[1] / 2) - user.client.pixel_x //"origin" x
+	var/oy = round(screenview[2] / 2) - user.client.pixel_y //"origin" y
 	angle = ATAN2(tx - oy, ty - ox)
 	return list(angle, p_x, p_y)
 

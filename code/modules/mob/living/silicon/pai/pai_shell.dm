@@ -95,7 +95,7 @@
 //Checks if we are allowed to interact with a radial menu
 
 /mob/living/silicon/pai/proc/check_menu(atom/anchor)
-	if(incapacitated())
+	if(is_incapacitated())
 		return FALSE
 	if(get_turf(src) != get_turf(anchor))
 		return FALSE
