@@ -59,4 +59,4 @@
 	desc = "A severed bobbed cat tail. How preposterous."
 	icon_state = "bobbed_tail"
 	limb_id = "bobbed"
-	can_wag = FALSE
+
