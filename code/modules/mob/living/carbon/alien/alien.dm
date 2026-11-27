@@ -160,8 +160,8 @@
 	to_chat(src, span_noticealien("You begin to evolve!"))
 	visible_message(span_alertalien("[src] begins to twist and contort!"))
 	new_xeno.setDir(dir)
-	if(numba && unique_name)
-		new_xeno.numba = numba
+	if(mob_id && unique_name)
+		new_xeno.mob_id = mob_id
 		new_xeno.set_name()
 	if(!alien_name_regex.Find(name))
 		new_xeno.name = name

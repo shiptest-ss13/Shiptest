@@ -255,7 +255,7 @@
 
 /obj/mecha/proc/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(shooter.incapacitated())
+	if(shooter.is_incapacitated())
 		return NONE
 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 	return COMPONENT_AUTOFIRE_SHOT_SUCCESS //All is well, we can continue shooting.

@@ -106,7 +106,7 @@
 	if(typing_indicator)
 		set_typing_indicator(FALSE)
 
-	if(incapacitated(ignore_restraints = TRUE))
+	if(is_incapacitated(ignore_restraints = TRUE))
 		return
 
 	face_atom(A)
@@ -356,7 +356,7 @@
 		ML.pulled(src)
 
 /mob/living/carbon/human/CtrlClick(mob/user)
-	if(ishuman(user) && Adjacent(user) && !user.incapacitated())
+	if(ishuman(user) && Adjacent(user) && !user.is_incapacitated())
 		if(world.time < user.next_move)
 			return FALSE
 		var/mob/living/carbon/human/H = user
@@ -458,6 +458,9 @@
 			modifiers["catcher"] = TRUE
 			click_turf.Click(click_turf, control, list2params(modifiers))
 	. = 1
+
+/atom/movable/screen/click_catcher/MouseMove(location, control, params)
+	return
 
 /// MouseWheelOn
 /mob/proc/MouseWheelOn(atom/A, delta_x, delta_y, params)

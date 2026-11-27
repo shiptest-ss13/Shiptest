@@ -398,7 +398,7 @@
 	. = ..()
 
 /obj/machinery/power/emitter/prototype/user_buckle_mob(mob/living/M, mob/living/carbon/user, check_loc = FALSE)
-	if(user.incapacitated() || !istype(user))
+	if(user.is_incapacitated() || !istype(user))
 		return
 	for(var/atom/movable/A in get_turf(src))
 		if(A.density && (A != src && A != M))
@@ -440,7 +440,7 @@
 		for(var/obj/item/I in U.held_items)
 			if(istype(I, /obj/item/turret_control))
 				qdel(I)
-		UpdateButtonIcon()
+		UpdateButtons()
 		return
 	else
 		playsound(PE,'sound/mecha/mechmove01.ogg', 50, TRUE)
@@ -457,7 +457,7 @@
 			else	//Entries in the list should only ever be items or null, so if it's not an item, we can assume it's an empty hand
 				var/obj/item/turret_control/TC = new /obj/item/turret_control()
 				U.put_in_hands(TC)
-		UpdateButtonIcon()
+		UpdateButtons()
 
 
 /obj/item/turret_control

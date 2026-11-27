@@ -14,6 +14,10 @@
 
 	rotate_on_lying = TRUE
 
+
+	var/icon_holds = 0 	/// Counter of icon holds. While above zero, body icon updates are skipped and redrawn by [/mob/living/carbon/proc/release_icons]
+	var/held_limb_data = FALSE 	/// Whether a skipped update_body_parts() call asked to refresh limb data
+
 	var/list/internal_organs		= list()	///List of [/obj/item/organ] in the mob. They don't go in the contents for some reason I don't want to know.
 	var/list/internal_organs_slot= list() ///Same as [above][/mob/living/carbon/var/internal_organs], but stores "slot ID" - "organ" pairs for easy access.
 	var/silent = 0 		///Can't talk. Value goes down every life proc. NOTE TO FUTURE CODERS: DO NOT INITIALIZE NUMERICAL VARS AS NULL OR I WILL MURDER YOU.

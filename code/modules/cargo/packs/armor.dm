@@ -245,6 +245,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
+	faction_discount = 0
 	faction = /datum/faction/cybersun
 
 /datum/supply_pack/armor/marine_cybersun
@@ -257,6 +258,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
+	faction_discount = 0
 	faction = /datum/faction/cybersun
 
 /datum/supply_pack/armor/medium_marine_cybersun
@@ -269,6 +271,7 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 	faction_locked = TRUE
+	faction_discount = 0
 	faction = /datum/faction/cybersun
 
 //cybersun trauma team

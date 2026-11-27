@@ -129,7 +129,7 @@
 	set name = "empty gibber"
 	set src in oview(1)
 
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return
 	src.go_out()
 	add_fingerprint(usr)

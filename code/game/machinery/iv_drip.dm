@@ -191,7 +191,7 @@
 		to_chat(usr, span_warning("You can't do that!"))
 		return
 
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return
 	if(beaker)
 		beaker.forceMove(drop_location())
@@ -207,7 +207,7 @@
 		to_chat(usr, span_warning("You can't do that!"))
 		return
 
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return
 	mode = !mode
 	to_chat(usr, span_notice("The IV drip is now [mode ? "injecting" : "taking blood"]."))

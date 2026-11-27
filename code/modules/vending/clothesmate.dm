@@ -78,6 +78,8 @@
 		/obj/item/clothing/under/dress/overall_dress = 6,
 		/obj/item/clothing/under/suit/white/skirt = 2,
 		/obj/item/clothing/suit/jacket = 2,
+		/obj/item/clothing/suit/jacket/militaryponcho = 2,
+		/obj/item/clothing/suit/jacket/twotone = 2,
 		/obj/item/clothing/suit/toggle/chorejacket = 3,
 		/obj/item/clothing/suit/hooded/parka = 3,
 		/obj/item/clothing/suit/hooded/hoodie = 3,

@@ -40,7 +40,7 @@
 
 
 /obj/item/tank/jetpack/proc/cycle(mob/living/user)
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		return
 
 	if(!on)

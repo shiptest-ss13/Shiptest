@@ -204,7 +204,7 @@
 
 /// Called when an activated module without a device is used
 /obj/item/mod/module/proc/on_select_use(atom/target)
-	if(mod.wearer.incapacitated(IGNORE_GRAB))
+	if(mod.wearer.is_incapacitated(IGNORE_GRAB))
 		return FALSE
 	mod.wearer.face_atom(target)
 	if(!on_use())

@@ -117,7 +117,7 @@
 	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return
 
-	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
+	if(!M.is_incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
@@ -352,9 +352,11 @@
 	if(!icon_exists(file2use, state2use))
 		return
 
-	var/icon/human_clothing_icon = icon(file2use, state2use)
+	var/cache_key = species_clothing_key(file2use, state2use, layer)
 
-	if("[layer]" in mob_species.offset_clothing)
+	var/has_species_template = greyscale_colors && greyscale_icon_state && mob_species.species_clothing_path && icon_exists(mob_species.species_clothing_path, greyscale_icon_state) // Makes greyscale templated items not be affected by offsets
+
+	if(!has_species_template && ("[layer]" in mob_species.offset_clothing))
 		// This code taken from Baystation 12
 		var/icon/final_I = icon('icons/blanks/64x64.dmi', "nothing")
 		var/list/shifts = mob_species.offset_clothing["[layer]"]
@@ -369,11 +371,13 @@
 			final_I.Insert(canvas, dir = use_dir)
 
 		final_I = fcopy_rsc(final_I)
-		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		GLOB.species_clothing_icons[mob_species.id][cache_key] = final_I
 		return TRUE
 
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
 	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
+		GLOB.species_clothing_icons[mob_species.id][cache_key] = human_clothing_icon
 		return
 
 	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
@@ -401,7 +405,7 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id][cache_key] = species_icon
 
 	return TRUE
 
@@ -602,7 +606,7 @@
 
 /obj/item/clothing/proc/can_use(mob/user)
 	if(user && ismob(user))
-		if(!user.incapacitated())
+		if(!user.is_incapacitated())
 			return 1
 	return 0
 

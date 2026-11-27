@@ -142,7 +142,7 @@
 		return TRUE
 
 /obj/machinery/deployable_turret/spotlight/fire_helper(mob/user)
-	if(user.incapacitated() || !(user in buckled_mobs))
+	if(user.is_incapacitated() || !(user in buckled_mobs))
 		return
 	update_positioning() //REFRESH MOUSE TRACKING!!
 	if(QDELETED(target))

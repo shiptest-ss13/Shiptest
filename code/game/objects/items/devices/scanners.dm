@@ -151,7 +151,7 @@ GENE SCANNER
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, verbose = TRUE, advanced = FALSE, see_all_quirks = FALSE)
-	if(isliving(user) && (user.incapacitated()))
+	if(isliving(user) && (user.is_incapacitated()))
 		return
 
 	if(!istype(M))
@@ -495,7 +495,7 @@ GENE SCANNER
 	set name = "Switch Verbosity"
 	set category = "Object"
 
-	if(usr.incapacitated())
+	if(usr.is_incapacitated())
 		return
 
 	verbose = !verbose

@@ -88,9 +88,9 @@
 	var/atom/movable/AM = parent
 	var/mob/AMM = AM
 	var/kick_us_off
-	if((ride_check_rider_restrained && HAS_TRAIT(M, TRAIT_RESTRAINED)) || (ride_check_rider_incapacitated && M.incapacitated(TRUE, TRUE)))
+	if((ride_check_rider_restrained && HAS_TRAIT(M, TRAIT_RESTRAINED)) || (ride_check_rider_incapacitated && M.is_incapacitated(TRUE, TRUE)))
 		kick_us_off = TRUE
-	if(kick_us_off || (istype(AMM) && ((ride_check_ridden_restrained && HAS_TRAIT(AMM, TRAIT_RESTRAINED)) || (ride_check_ridden_incapacitated && AMM.incapacitated(TRUE, TRUE)))))
+	if(kick_us_off || (istype(AMM) && ((ride_check_ridden_restrained && HAS_TRAIT(AMM, TRAIT_RESTRAINED)) || (ride_check_ridden_incapacitated && AMM.is_incapacitated(TRUE, TRUE)))))
 		M.visible_message(span_warning("[M] falls off of [AM]!"), \
 						span_warning("You fall off of [AM]!"))
 		AM.unbuckle_mob(M)
@@ -184,7 +184,7 @@
 
 /datum/component/riding/proc/handle_ride(mob/user, direction)
 	var/atom/movable/AM = parent
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		Unbuckle(user)
 		return
 
@@ -295,7 +295,7 @@
 
 /datum/component/riding/cyborg/ride_check(mob/user)
 	var/atom/movable/AM = parent
-	if(user.incapacitated())
+	if(user.is_incapacitated())
 		var/kick = TRUE
 		if(iscyborg(AM))
 			var/mob/living/silicon/robot/R = AM
