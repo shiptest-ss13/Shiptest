@@ -14,14 +14,19 @@
 		return FALSE
 	return (viewer in ai_cached_hearers(target, range)) && !ai_sight_blocked(viewer_turf, target_turf)
 
-// z levels with an AI sight blocker on, so we skip the checks if the z level doesnt have one
-GLOBAL_LIST_EMPTY(ai_sight_blocker_z_levels)
+// virtual levels with an AI sight blocker on, so we skip the checks if the virtual level doesnt have one.
+GLOBAL_LIST_EMPTY(ai_sight_blocker_virtual_levels)
+
+/proc/get_ai_sense_line(atom/first, atom/second)
+	if(first.x > second.x || (first.x == second.x && first.y > second.y))
+		return get_line(second, first)
+	return get_line(first, second)
 
 // blocked by mapper vision blocker
 /proc/ai_sight_blocked(turf/viewer_turf, turf/target_turf)
-	if(!GLOB.ai_sight_blocker_z_levels["[viewer_turf.z]"])
+	if(!GLOB.ai_sight_blocker_virtual_levels["[viewer_turf.virtual_z]"])
 		return FALSE
-	for(var/turf/line_turf as anything in get_line(viewer_turf, target_turf))
+	for(var/turf/line_turf as anything in get_ai_sense_line(viewer_turf, target_turf))
 		if(line_turf != viewer_turf && line_turf != target_turf && HAS_TRAIT(line_turf, TRAIT_AI_BLOCKS_SIGHT))
 			return TRUE
 	return FALSE

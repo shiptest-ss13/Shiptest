@@ -10,7 +10,7 @@
 		return null
 	var/turf/source_turf = get_turf(source)
 	var/turf/listener_turf = get_turf(listener)
-	for(var/turf/line_turf as anything in get_line(source, listener))
+	for(var/turf/line_turf as anything in get_ai_sense_line(source, listener))
 		if(line_turf != source_turf && line_turf != listener_turf && HAS_TRAIT(line_turf, TRAIT_AI_BLOCKS_SOUND))
 			return null
 		if(line_turf.density)

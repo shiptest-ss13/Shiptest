@@ -46,7 +46,7 @@
 	var/turf/our_turf = get_turf(src)
 	if(our_turf)
 		ADD_TRAIT(our_turf, TRAIT_AI_BLOCKS_SIGHT, MAPPING_HELPER_TRAIT)
-		GLOB.ai_sight_blocker_z_levels["[our_turf.z]"] = TRUE
+		GLOB.ai_sight_blocker_virtual_levels["[our_turf.virtual_z]"] = TRUE
 	return ..()
 
 ///Basic mob AI can't hear through this tile. Sound "travels" in a line too so cover appropriately.
