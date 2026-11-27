@@ -113,7 +113,7 @@
 	for(var/mob_index in 1 to to_spawn)
 		if(length(spawned_mobs) >= max_mobs)
 			return
-		if(spawn_distance_max > 1)
+		if(spawn_distance_max >= 1)
 			var/origin = spot
 			var/list/peel = turf_peel(spawn_distance_max, spawn_distance_min, origin, view_based = TRUE)
 			if(length(peel))

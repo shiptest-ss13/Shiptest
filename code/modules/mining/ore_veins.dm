@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/spawner_type = /datum/component/spawner
 
 	///how away from the source can mob spawners create something
-	var/spawner_distance_min = 0
+	var/spawner_distance_min = 1
 	var/spawner_distance_max = 1
 
 
