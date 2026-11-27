@@ -8281,7 +8281,7 @@
 	},
 /obj/machinery/telecomms/receiver/preset_right{
 	network = "cybernet";
-	freq_listening = s;
+	freq_listening = list(1213, 1353, 1203);
 	autolinkers = list("receiverB","hub")
 	},
 /obj/machinery/light/directional/north,
