@@ -1,0 +1,12 @@
+author: BrightSheepie
+changes:
+  - {bugfix: Fixed suit storage offsets not working}
+  - {rscadd: Added and improved existing offsets for non-species sprited back 
+      items/suit storage offsets for Kepori/Vox. No more floating guns and 
+      oxygen tanks. Bowman's headsets also don't cover Kepori's eyes anymore.}
+  - {rscadd: Added fallback offset for vox uniforms in case the fallback uniform
+      does not exist.}
+  - {rscadd: Added accessory offsets and the functionality for them. Vox and 
+      Kepori have them now. No more floating holsters.}
+  - {code_imp: Ensured layer offsets never override fallback clothing.}
+delete-after: true
