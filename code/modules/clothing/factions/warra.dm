@@ -7,7 +7,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/warra/uniforms.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/warra/warra_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/warra/warra_righthand.dmi'
-	icon_state = "deckhand"
+	icon_state = "assistant"
 	item_state = "graycloth"
 	vox_override_icon = 'icons/mob/clothing/faction/warra/vox.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
