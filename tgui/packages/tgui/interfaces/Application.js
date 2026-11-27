@@ -29,8 +29,8 @@ export const Application = (props, context) => {
               <br />
               <br />
               Feel free to use OOC chat to communicate with the ship owner if
-               you have questions regarding the application or if a submitted
-               application is not addressed after some time.
+              you have questions regarding the application or if a submitted
+              application is not addressed after some time.
               <br />
               <br />
               Applications are sorted via ckey, but your ckey is only shown to
