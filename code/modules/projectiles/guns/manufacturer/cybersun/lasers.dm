@@ -190,7 +190,7 @@
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	aimed_wield_slowdown = LASER_SMG_SLOWDOWN
 
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
