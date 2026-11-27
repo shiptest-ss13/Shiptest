@@ -291,7 +291,7 @@
 //flare shotgun
 /obj/item/gun/energy/cybersun/lorentz/impactor
 	name = "\improper LS126 Impactor"
-	desc = "A divisor lens makes the LS126 Impactor into a proper shotgun, allowing it to cast multiple Lorentz beams at a time. While not as powerful as an individual beam can be, combined the massed impact causes much more damage to a target. A close quarters combat tool to be reckoned with."
+	desc = "A divisor lens makes the LS126 Impactor into a proper shotgun, allowing it to cast multiple Lorentz beams at a time. While not as powerful as an individual beam can be, combined the massed impact causes much more damage to a target. A close quarters combat tool to be reckoned with. Takes both normal and heavy plasma cells."
 
 	icon_state = "impactor"
 	item_state = "impactor"
@@ -330,7 +330,7 @@
 //flare shotgun
 /obj/item/gun/energy/cybersun/lorentz/inductor
 	name = "\improper LS620 Inductor"
-	desc = "A more traditional energy weapon within Tadeusz's Lorentz line, the Inductor is a heavy rifle made for engaging armored targets in closer quarters. Compared to the Galvanizer rifle, it works off brute force and suffers from the same ranging issues that Lorentz weapons tend to suffer. It is still a fearsome weapon to fight against"
+	desc = "A more traditional energy weapon within Tadeusz's Lorentz line, the Inductor is a heavy rifle made for engaging armored targets in closer quarters. Compared to the Galvanizer rifle, it works off brute force and suffers from the same ranging issues that Lorentz weapons tend to suffer. It is still a fearsome weapon to fight against. Takes both normal and heavy plasma cells."
 
 	icon_state = "fusilier"
 	item_state = "fusilier"
