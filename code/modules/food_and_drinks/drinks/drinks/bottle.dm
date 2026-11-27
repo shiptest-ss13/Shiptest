@@ -681,15 +681,16 @@
 		log_bomber(user, "has primed a", src, "for detonation")
 		if(iscarbon(user))
 			var/mob/living/carbon/thrower = user
-			thrower.toggle_throw_mode()
+			thrower.throw_mode_on()
 			if(thrower.get_inactive_held_item() == src)
 				thrower.swap_hand()
 				to_chat(thrower, span_boldwarning("You raise \the [src] and ready a throw!"))
 	add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 	fire_intensity = reagents.get_total_accelerant_quality()
 	var/timer_length = isGlass ? rand(10, 25) : rand(2, 5)
+	balloon_alert_to_viewers("[timer_length] time to detonate")
 	if(fire_intensity > 1000)
-		timer_length = min((fire_intensity -1000) /3000, 0.6) * timer_length
+		timer_length = timer_length * min((fire_intensity - 1000) / 3000, 0.6)
 
 	addtimer(CALLBACK(src, PROC_REF(explode)), timer_length SECONDS)
 
@@ -707,11 +708,10 @@
 
 /obj/item/reagent_containers/food/drinks/molotov/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
-	if(exposed_temperature >= 300)
-		ready_molly()
-	else if(exposed_temperature >= 750)
-		ready_molly()
+	if(exposed_temperature >= 750)
 		explode()
+	else if(exposed_temperature >= 300)
+		ready_molly()
 
 /obj/item/reagent_containers/food/drinks/molotov/attack_self(mob/user)
 	if(!active)
