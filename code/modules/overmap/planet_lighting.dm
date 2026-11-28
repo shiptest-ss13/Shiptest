@@ -331,6 +331,8 @@
 			new_color = sky[ZTRAIT_LIGHT_COLOR]
 	if(light_range != new_range || light_power != new_power || light_color != new_color)
 		set_light(new_range, new_power, new_color)
+	else if(light_range && light_power)
+		update_light()
 
 // whether this turf has a light of its own that isn't daylight, like plasma
 /turf/proc/is_daylight_break_light()
