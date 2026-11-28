@@ -6,7 +6,7 @@
 	ask_verb = "chitter"
 	exclaim_verb = "chitter"
 	key = "r"
-	flags = NO_STUTTER | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	flags = NO_STUTTER | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE
 
 	icon_state = "spider"
 
