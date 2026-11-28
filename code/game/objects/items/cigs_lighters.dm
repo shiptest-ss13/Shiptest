@@ -790,6 +790,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/liz
 	name = "small blaze"
 	desc = "A little flame of your own, currently located dangerously in your mouth."
+	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "fire"
 	item_state = "fire"
 	overlay_state = "fire"
