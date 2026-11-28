@@ -4,7 +4,7 @@
 /**
  * For when you want to throw a person at something and have fun stuff happen
  *
- * This component is made for carbon mobs (really, humans), and allows its parent to throw themselves and perform tackles. This is done by enabling throw mode, then clicking on your
+ * This component is made for carbon mobs (really, humans), and allows its parent to throw themselves and perform tackles. This is done by enabling throw mode, then right-clicking on your
  *	  intended target with an empty hand. You will then launch toward your target. If you hit a carbon, you'll roll to see how hard you hit them. If you hit a solid non-mob, you'll
  *	  roll to see how badly you just messed yourself up. If, along your journey, you hit a table, you'll slam onto it and send up to MAX_TABLE_MESSES (8) /obj/items on the table flying,
  *	  and take a bit of extra damage and stun for each thing launched.
@@ -43,7 +43,7 @@
 	src.min_distance = min_distance
 
 	var/mob/P = parent
-	to_chat(P, span_notice("You are now able to launch tackles! You can do so by activating throw intent, and clicking on your target with an empty hand."))
+	to_chat(P, span_notice("You are now able to launch tackles! You can do so by activating throw intent, and <b>right-clicking</b> on your target with an empty hand."))
 
 /datum/component/tackler/Destroy()
 	var/mob/P = parent
@@ -103,7 +103,7 @@
 	user.face_atom(atom_target)
 
 	var/list/modifiers = params2list(params)
-	if(LAZYACCESS(modifiers, ALT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, MIDDLE_CLICK))
+	if(!LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, ALT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, MIDDLE_CLICK))
 		return
 
 	tackling = TRUE
@@ -355,8 +355,8 @@
 		return
 
 	var/oopsie_mod = 0
-	var/danger_zone = (speed - 1) * 13 // for every extra speed we have over 1, take away 13 of the safest chance
-	danger_zone = max(min(danger_zone, 100), 1)
+	var/oopsie_minimum = (speed - 1) * 13 // for every extra speed we have over 1, take away 13 of the safest chance
+	oopsie_minimum = max(min(oopsie_minimum, 100), 1)
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/S = user
@@ -370,7 +370,7 @@
 	if(HAS_TRAIT(user, TRAIT_CLUMSY))
 		oopsie_mod += 6 //honk!
 
-	var/oopsie = rand(danger_zone, 100)
+	var/oopsie = rand(oopsie_minimum, 100)
 	if(oopsie >= 94 && oopsie_mod < 0) // good job avoiding getting paralyzed! gold star!
 		to_chat(user, span_usernotice("You're really glad you're wearing protection!"))
 	oopsie += oopsie_mod
@@ -378,7 +378,7 @@
 	switch(oopsie)
 		if(99 to INFINITY)
 			// can you imagine standing around minding your own business when all of the sudden some guy fucking launches himself into a wall at full speed and paralyzes himself?
-			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack! Holy shit!"))
+			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack!"))
 
 			takeTackleDamage(user, stamina = 30, damage = 40, wound = 40, guarantee_head_hit = TRUE)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
