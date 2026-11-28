@@ -620,7 +620,7 @@
 	. = ..()
 	//180 seconds right before you get the overdose
 	M.set_timed_status_effect(reac_volume*12 SECONDS, /datum/status_effect/rewind)
-	if(M.stat == DEAD)
+	if(M.stat == DEAD && reac_volume >= 5)
 		var/datum/status_effect/rewind/reversion = M.has_status_effect(/datum/status_effect/rewind)
 		reversion.rewind()
 
