@@ -736,7 +736,7 @@
 		return
 	var/time_left = max(next_use_time - world.time, 0)
 	if(text_cooldown)
-		button.maptext = MAPTEXT("<b>[round(time_left/10, 0.1)]</b>")
+		button.maptext = MAPTEXT("<b>[ceil(time_left/10)]</b>")
 	if(!owner || time_left == 0)
 		button.maptext = ""
 	if(IsAvailable() && owner.click_intercept == src)
