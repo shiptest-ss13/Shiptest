@@ -46,17 +46,31 @@
 
 /obj/item/stack/ore/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
+	refine_ore()
+
+
+/// call w/ forced set to true for amount_refined to work
+/obj/item/stack/ore/proc/refine_ore(forced = FALSE, amount_refined)
 	if(isnull(refined_type))
 		return
+
+	//if forced do the new behavior
+	if(forced)
+		if(amount_refined >= amount)
+			amount_refined = amount
+		new refined_type(drop_location(), amount_refined)
+		use(amount_refined)
+
+	//otherwise do old behavior
 	else
-		var/probability = (rand(0,100))/100
-		var/burn_value = probability*amount
-		var/amountrefined = round(burn_value, 1)
-		if(amountrefined < 1)
+		var/probability = (rand(0,100)) / 100
+		var/burn_value = probability * amount
+		amount_refined = round(burn_value, 1)
+		if(amount_refined < 1)
 			qdel(src)
 		else
-			new refined_type(drop_location(),amountrefined)
-			qdel(src)
+			new refined_type(drop_location(), amount_refined)
+			use(amount_refined)
 
 /obj/item/stack/ore/iron
 	name = "iron ore"

@@ -16,7 +16,6 @@
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
-
 	for(var/mob/living/carbon/suckee in range(effectrange, src))
 		if(suckee.run_armor_check(attack_flag = "melee") <= 40 )
 			suckee.bleed(20)
