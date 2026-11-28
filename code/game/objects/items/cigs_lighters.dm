@@ -767,7 +767,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(get_temperature())
 		. = span_notice("After some fiddling, [user] manages to light [A] with [src].")
 
-
 /obj/item/lighter/slime
 	name = "slime zippo"
 	desc = "A specialty zippo made from slimes and industry. Has a much hotter flame than normal."
