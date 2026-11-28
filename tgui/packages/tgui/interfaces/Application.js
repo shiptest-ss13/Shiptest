@@ -21,11 +21,16 @@ export const Application = (props, context) => {
             <p>
               This ship is <b>application-only.</b> To join, your application
               must be approved by the current ship owner. This is an
-              <b>OOC</b> utility.
+              <b> OOC</b> utility.
               <br />
               <br />
               <b>You only get one application per ship.</b> Different characters
               use the same application.
+              <br />
+              <br />
+              Feel free to use OOC chat to communicate with the ship owner if
+              you have questions regarding the application or if a submitted
+              application is not addressed after some time.
               <br />
               <br />
               Applications are sorted via ckey, but your ckey is only shown to
