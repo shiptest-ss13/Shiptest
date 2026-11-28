@@ -1531,3 +1531,18 @@
 
 /obj/item/circuitboard/machine/turret/ruin
 	def_components = list(/obj/item/gun/energy = /obj/item/stack/sheet/metal)
+
+/obj/item/circuitboard/machine/slot_machine
+	name = "Slot Machine (Machine Board)"
+	icon_state = "science" // it's because it's purple okay
+	build_path = /obj/machinery/slot_machine
+	req_components = list(
+		/obj/item/gambling_link = 1,
+		/obj/item/stack/sheet/glass = 1)
+
+/obj/item/circuitboard/machine/slot_machine/gun
+	name = "Gun Slot Machine (Machine Board)"
+	build_path = /obj/machinery/slot_machine/gun
+	req_components = list(
+		/obj/item/gun_slot_machine_link = 1,
+		/obj/item/stack/sheet/glass = 1)

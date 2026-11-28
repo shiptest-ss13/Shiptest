@@ -18,7 +18,6 @@
 		/obj/item/circuitboard/machine/microwave,
 		/obj/item/circuitboard/machine/chem_dispenser/drinks,
 		/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
-		/obj/item/circuitboard/computer/slot_machine
 	)
 
 /obj/effect/spawner/random/techstorage/rnd

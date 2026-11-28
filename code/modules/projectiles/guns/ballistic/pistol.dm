@@ -220,11 +220,32 @@
 	default_firemode = FIREMODE_FULLAUTO
 	wear_rate = 0
 	trigger_pull_fail = 0
+	bolt_type = BOLT_TYPE_OPEN // no racking this one
 	autowiki_hidden = TRUE // admin gun
 
-/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/process_fire()
-	. = ..()
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/can_shoot()
 	magazine.top_off(null, TRUE) // experimental bluespace magazine
+	. = ..()
+
+// CHRONO ZIPPY - RARE FROM SLOTS //
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono
+	name = "chronozippy"
+	desc = "It doesn't have to stop."
+	fire_delay = 0.15 SECONDS
+	casing_ejector = FALSE // no infinite 22 for other guns, sorry
+	var/mutable_appearance/glow
+
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono/Initialize()
+	. = ..()
+	glow = mutable_appearance('icons/effects/anomalies.dmi', "chronograph")
+	var/matrix/scoot = matrix()
+	scoot.Translate(-2, 0)
+	glow.transform = scoot
+	update_appearance()
+
+/obj/item/gun/ballistic/automatic/pistol/disposable/infinite_ammo/chrono/update_overlays()
+	. = ..()
+	. += glow
 
 // CHOCOLATE GUN - YOU CAN EAT IT //
 /obj/item/gun/ballistic/automatic/pistol/disposable/chocolate

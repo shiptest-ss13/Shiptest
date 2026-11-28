@@ -203,11 +203,6 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/computer/pod
 
-/obj/item/circuitboard/computer/slot_machine
-	name = "Slot Machine (Computer Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/computer/slot_machine
-
 /obj/item/circuitboard/computer/swfdoor
 	name = "Magix (Computer Board)"
 	icon_state = "generic"
