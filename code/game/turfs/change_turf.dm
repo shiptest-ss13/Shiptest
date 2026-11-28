@@ -75,13 +75,14 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(flags & CHANGETURF_SKIP)
 		return new path(src, virtual_z)
 
-	var/old_dynamic_lighting = dynamic_lighting
+	var/old_space_lit = space_lit
 	var/old_lighting_object = lighting_object
 	var/old_lighting_corner_NE = lighting_corner_NE
 	var/old_lighting_corner_SE = lighting_corner_SE
 	var/old_lighting_corner_SW = lighting_corner_SW
 	var/old_lighting_corner_NW = lighting_corner_NW
 	var/old_directional_opacity = directional_opacity
+	var/list/old_opacity_sources = opacity_sources
 	var/old_dynamic_lumcount = dynamic_lumcount
 	var/old_opacity = opacity
 
@@ -136,14 +137,22 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	dynamic_lumcount = old_dynamic_lumcount
 
+	// Opaque movables stay on the turf, so keep them registered.
+	opacity_sources = old_opacity_sources
+	if(!SSlighting.initialized)
+		recalculate_directional_opacity()
+
 	if(SSlighting.initialized)
 		lighting_object = old_lighting_object
+		var/area/turf_area = loc
+		if(turf_area.base_lighting_is_daylight)
+			queue_lighting_object_update()
 
 		directional_opacity = old_directional_opacity
 		recalculate_directional_opacity()
 
-		if (dynamic_lighting != old_dynamic_lighting)
-			if (IS_DYNAMIC_LIGHTING(W))
+		if (space_lit != old_space_lit)
+			if (!W.space_lit)
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()

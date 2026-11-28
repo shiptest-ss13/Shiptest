@@ -1390,9 +1390,11 @@ GLOBAL_LIST_EMPTY(icon_dimensions)
 
 
 /// Returns a list containing the width and height of an icon file
-
-
 /proc/get_icon_dimensions(icon_path)
+	// Only real files get cached, so a hit can skip the checks below.
+	var/list/cached_dimensions = GLOB.icon_dimensions[icon_path]
+	if (cached_dimensions)
+		return cached_dimensions
 	// Icons can be a real file(), a rsc backed file(), a dynamic rsc (dyn.rsc) reference (known as a cache reference in byond docs), or an /icon which is pointing to one of those.
 	// Runtime generated dynamic icons are an unbounded concept cache identity wise, the same icon can exist millions of ways and holding them in a list as a key can lead to unbounded memory usage if called often by consumers.
 	// Check distinctly that this is something that has this unspecified concept, and thus that we should not cache.

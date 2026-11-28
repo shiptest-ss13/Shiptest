@@ -12,6 +12,7 @@
 	light_power = 1
 	light_color = "#FFFFFF"
 	icon_state = "green"
+	use_ztrait_lighting = TRUE
 
 /area/ruin/moon/bunker/dorms/one
 	name = "Bunker Dorms One"
@@ -82,6 +83,7 @@
 	light_power = 1
 	light_color = "#FFFFFF"
 	icon_state = "green"
+	use_ztrait_lighting = TRUE
 
 /area/ruin/moon/hideout/engineering
 	name = "Hideout Engineering"
@@ -151,6 +153,7 @@
 	light_power = 1
 	light_color = "#FFFFFF"
 	icon_state = "green"
+	use_ztrait_lighting = TRUE
 
 /area/ruin/moon/cybergrind/terrarium
 	name = "Robotics Facility Terrarium"

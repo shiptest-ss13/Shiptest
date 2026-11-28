@@ -48,6 +48,10 @@
 	var/encounters_refresh = FALSE
 	/// which faction "owns" this sector
 	var/datum/faction/faction
+	///These vars completely overide the usual planet colors planets have. Useful for red giants, or events
+	var/dynamic_light_range_override
+	var/dynamic_light_power_override
+	var/dynamic_light_color_override
 
 	///the list of dynamic planets that can spawn in this sector
 	var/list/dynamic_probabilities = list(
@@ -410,10 +414,18 @@
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
+	var/list/level_traits = list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = dynamic_datum.default_baseturf, ZTRAIT_GRAVITY = dynamic_datum.gravity)
+	//only write lighting if the planet has specific lighting
+	if(dynamic_datum.light_range && dynamic_datum.light_power)
+		level_traits[ZTRAIT_PLANETARY_LIGHTING] = list(
+			ZTRAIT_LIGHT_RANGE = dynamic_datum.light_range,
+			ZTRAIT_LIGHT_POWER = dynamic_datum.light_power,
+			ZTRAIT_LIGHT_COLOR = dynamic_datum.light_color,
+		)
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		encounter_name,
-		list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = dynamic_datum.default_baseturf, ZTRAIT_GRAVITY = dynamic_datum.gravity),
+		level_traits,
 		mapzone,
 		dynamic_datum.vlevel_width,
 		dynamic_datum.vlevel_height,
@@ -456,10 +468,7 @@
 	if(dynamic_datum.weather_controller_type)
 		new dynamic_datum.weather_controller_type(mapzone)
 
-	var/list/areas_to_update = get_areas(/area/overmap_encounter/planetoid)
-	for(var/area/overmap_encounter/planetoid as anything in areas_to_update)
-		if(mapzone.is_in_bounds(planetoid))
-			planetoid.update_light()
+	vlevel.apply_planetary_lighting()
 
 
 	// locates the first dock in the bottom left, accounting for padding and the border
@@ -598,6 +607,10 @@
 
 	if(static_datum.weather_controller_type)
 		new static_datum.weather_controller_type(mapzone)
+
+	//only write lighting if the planet has specific lighting
+	if(static_datum.light_range && static_datum.light_power)
+		vlevel.set_planetary_lighting(static_datum.light_range, static_datum.light_power, static_datum.light_color)
 
 	var/list/docking_ports = list()
 
@@ -890,6 +903,9 @@
 			current_data["default_baseturf "] = current_static.default_baseturf
 			current_data["border_size"] = current_static.border_size
 			current_data["landing_sound"] = current_static.landing_sound
+			current_data["light_range"] = current_static.light_range
+			current_data["light_power"] = current_static.light_power
+			current_data["light_color"] = current_static.light_color
 
 		current_data["x"] = current_object.x
 		current_data["y"] = current_object.y
@@ -1022,6 +1038,9 @@
 			current_static.default_baseturf = current_data["default_baseturf "]
 			current_static.border_size = current_data["border_size"]
 			current_static.landing_sound = current_data["landing_sound"]
+			current_static.light_range = current_data["light_range"]
+			current_static.light_power = current_data["light_power"]
+			current_static.light_color = current_data["light_color"]
 
 		//add any spawned outposts to the system's outpost list.
 		if(istype(new_obj, /datum/overmap/outpost))

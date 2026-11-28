@@ -455,7 +455,7 @@
 		// Reset area
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
-		turf.change_area(old_area, space_area)
+		turf.change_area(old_area, space_area, skip_daylight_refresh = TRUE)
 		turf.virtual_z = 0
 		CHECK_TICK
 

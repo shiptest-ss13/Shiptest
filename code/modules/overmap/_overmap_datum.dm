@@ -747,6 +747,7 @@
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
 	VV_DROPDOWN_OPTION(VV_HK_VV_PARENT, "View Variables Of Parent Datum")
+	VV_DROPDOWN_OPTION(VV_HK_UPDATE_PLANET_LIGHT, "Update planet lighting")
 	VV_DROPDOWN_OPTION(VV_HK_UNFSCK_OBJECT, "Unfsck this overmap object | PANIC BUTTON")
 
 /datum/overmap/vv_do_topic(list/href_list)
@@ -763,6 +764,10 @@
 			to_chat(usr, span_bolddanger("fsck() returned nothing, something went very wrong."))
 		catch
 			to_chat(usr, span_bolddanger("fsck() Runtimed. This is very bad check runtimes now."))
+	if(href_list[VV_HK_UPDATE_PLANET_LIGHT])
+		if(!check_rights(R_VAREDIT))
+			return
+		update_planet_lighting_gui()
 
 /datum/overmap/proc/admin_load()
 	return

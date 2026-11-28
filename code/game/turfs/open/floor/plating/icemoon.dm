@@ -8,6 +8,7 @@
 		light_color = COLOR_ICEPLANET_LIGHT;						\
 	}																\
 	/turf/open/floor/##turf_type/iceplanet/lit {					\
+		can_emit_planet_daylight = TRUE;								\
 		light_power = 0.8;											\
 		light_range = 2;											\
 	}																\
@@ -197,6 +198,7 @@
 
 
 /turf/open/floor/plating/ice/icemoon
+	can_emit_planet_daylight = TRUE
 	baseturfs = /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE

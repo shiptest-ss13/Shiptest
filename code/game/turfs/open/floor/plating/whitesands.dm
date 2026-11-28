@@ -149,6 +149,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 
@@ -157,6 +158,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/reinforced/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 
@@ -165,6 +167,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/pavement/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 
@@ -173,6 +176,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/slab_1/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 
@@ -181,6 +185,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/slab_4/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 
@@ -189,6 +194,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/plating/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 
@@ -244,6 +250,7 @@
 	name = "exterior stairs"
 
 /turf/open/floor/plasteel/stairs/whitesand/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_SANDPLANET_LIGHT
@@ -256,6 +263,7 @@
 		light_color = COLOR_SANDPLANET_LIGHT;						\
 	}																\
 	/turf/open/floor/##turf_type/whitesands/lit {					\
+		can_emit_planet_daylight = TRUE;								\
 		light_power = 0.6;											\
 		light_range = 2;											\
 		baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit;	\

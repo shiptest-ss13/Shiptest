@@ -79,6 +79,14 @@
 
 	CHECK_TICK
 
+	var/list/turf/area_moved_turfs = list()
+	for(var/turf_index in 1 to length(old_turfs))
+		var/turf/old_turf = old_turfs[turf_index]
+		if(old_turfs[old_turf] & MOVE_AREA)
+			area_moved_turfs += old_turf
+			area_moved_turfs += new_turfs[turf_index]
+	refresh_planet_daylight_for_turfs(area_moved_turfs)
+
 	//Updating docked properties
 	new_dock.docked = src
 	if(docked) //Shuttles don't have a dock when initially loaded

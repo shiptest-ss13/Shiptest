@@ -110,50 +110,59 @@
 	turf_footstep_type = FOOTSTEP_GRASS
 	layer = HIGH_TURF_LAYER
 	gender = PLURAL
+	can_emit_planet_daylight = TRUE
 	light_power = 1
 	light_range = 2
+	light_color = COLOR_LAVAPLANET_LIGHT
 	pixel_x = -9
 	pixel_y = -9
 
 ///Ruin Turfs (to-do, move all ruin turfs into their own bespoke files)
 
 /turf/open/floor/concrete/pavement/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/concrete/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/concrete/slab_1/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/plating/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/plating/rust/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/plasteel/white/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/plasteel/dark/lava
+	can_emit_planet_daylight = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6

@@ -29,11 +29,6 @@
 	/// If a room is too big it doesn't have beauty.
 	var/beauty_threshold = 150
 
-	/// For space, the asteroid, lavaland, etc. Used with blueprints to determine if we are adding a new area (vs editing a station room)
-	var/outdoors = FALSE
-	///Do we allow weather?
-	var/allow_weather = FALSE
-
 	/// Size of the area in open turfs, only calculated for indoors areas.
 	var/areasize = 0
 
@@ -85,8 +80,12 @@
 	/// The current weather active in this area
 	var/datum/weather/active_weather
 
-	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
-	var/underground = FALSE
+	/// Used with blueprints to determine if we are adding a new area (vs editing a station room). Should probably be renamed 'allow_area_creation'
+	var/outdoors = FALSE
+	/// Do we allow weather in this area?
+	var/allow_weather = FALSE
+	/// Whether area is underground, used for weathers which shouldn't or should affect caves.
+	var/allow_underground_specific_weather = FALSE
 
 
 /**
@@ -147,28 +146,27 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(!ambientsounds)
 		ambientsounds = GLOB.ambience_assoc[ambience_index]
 
-	if(dynamic_lighting == DYNAMIC_LIGHTING_IFSTARLIGHT)
-		dynamic_lighting = CONFIG_GET(flag/starlight) ? DYNAMIC_LIGHTING_ENABLED : DYNAMIC_LIGHTING_DISABLED
+	if(static_lighting_if_starlight && !CONFIG_GET(flag/starlight))
+		static_lighting = FALSE
+		base_lighting_alpha = 255
 
-	if(!requires_power)
+	if(requires_power)
+		luminosity = 0
+	else
 		power_light = TRUE
 		power_equip = TRUE
 		power_environ = TRUE
 
-		if(dynamic_lighting == DYNAMIC_LIGHTING_FORCED)
-			dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-		else
-			dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
-			luminosity = TRUE
+		if(static_lighting)
+			luminosity = 0
 
 	. = ..()
 
 	blend_mode = BLEND_MULTIPLY // Putting this in the constructor so that it stops the icons being screwed up in the map editor.
 
-	if(!IS_DYNAMIC_LIGHTING(src))
-		add_overlay(/obj/effect/fullbright)
-
 	reg_in_areas_in_z()
+
+	update_base_lighting()
 
 	return INITIALIZE_HINT_LATELOAD
 

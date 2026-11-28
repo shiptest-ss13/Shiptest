@@ -22,6 +22,7 @@
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/wood/beach/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.80
 	light_color = COLOR_BEACHPLANET_LIGHT
@@ -57,6 +58,7 @@
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/wood/birch/beach/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.80
 	light_color = COLOR_BEACHPLANET_LIGHT

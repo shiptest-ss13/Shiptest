@@ -264,6 +264,7 @@
 	name = "NGR Mining Colony Refinery"
 
 /area/ruin/rockplanet/ngrcolony/outdoors
+	use_ztrait_lighting = TRUE
 	outdoors = TRUE
 	allow_weather = TRUE
 

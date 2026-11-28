@@ -86,7 +86,6 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/ship/engin
 			return
 		newA = new area_choice
 		newA.setup(str)
-		newA.set_dynamic_lighting()
 		newA.has_gravity = oldA.has_gravity
 	else
 		newA = area_choice
@@ -98,6 +97,9 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/ship/engin
 		thing.change_area(old_area, newA)
 
 	newA.reg_in_areas_in_z()
+
+	if(!isarea(area_choice) && newA.static_lighting)
+		newA.create_area_lighting_objects()
 
 	var/list/firedoors = oldA.firedoors
 	for(var/door in firedoors)

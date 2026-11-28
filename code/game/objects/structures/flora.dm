@@ -584,7 +584,7 @@
 	icon_state = "hell_bush"
 	density = FALSE
 	light_color = "#e08300"
-	light_power = 2
+	light_power = 1
 	light_range = 3
 	resistance_flags = LAVA_PROOF
 
@@ -592,37 +592,28 @@
 	name = "thick hellish grass"
 	desc = "A thick patch of grass tinted red."
 	icon = 'icons/obj/flora/hellflora.dmi'
-	light_range = 2
-	light_power = 3
 	resistance_flags = LAVA_PROOF
 	gender = PLURAL
 
 /obj/structure/flora/ausbushes/fullgrass/hell/Initialize()
 	. = ..()
 	icon_state = "fullgrass_[rand(1, 3)]"
-	light_color = pick("#e87800", "#780606")
 
 /obj/structure/flora/ausbushes/sparsegrass/hell
 	name = "sparse hellish grass"
 	desc = "A sparse patch of grass tinted red."
 	icon = 'icons/obj/flora/hellflora.dmi'
-	light_range = 2
-	light_power = 3
 	resistance_flags = LAVA_PROOF
 	gender = PLURAL
 
 /obj/structure/flora/ausbushes/sparsegrass/hell/Initialize()
 	. = ..()
 	icon_state = "sparsegrass_[rand(1, 3)]"
-	light_color = pick("#e87800", "#780606")
 
 /obj/structure/flora/ausbushes/grassybush/hell
 	name = "crimson bush"
 	desc = "A crimson bush, native to lava planets."
 	icon = 'icons/obj/flora/hellflora.dmi'
-	light_color = "#c70404"
-	light_range = 2
-	light_power = 3
 	resistance_flags = LAVA_PROOF
 
 /obj/structure/flora/ausbushes/hell
@@ -630,7 +621,7 @@
 	desc = "Some kind of orange plant that appears to be slowly burning."
 	icon = 'icons/obj/flora/hellflora.dmi'
 	light_range = 2
-	light_power = 1
+	light_power = 0.6
 	resistance_flags = LAVA_PROOF
 
 /obj/structure/flora/ausbushes/hell/Initialize()
@@ -643,34 +634,28 @@
 	name = "hellish fern"
 	desc = "Some kind of orange fern."
 	icon = 'icons/obj/flora/hellflora.dmi'
-	light_range = 2
-	light_power = 1
 	resistance_flags = LAVA_PROOF
 
 /obj/structure/flora/ausbushes/fernybush/hell/Initialize()
 	. = ..()
 	icon_state = "fernybush_[rand(1, 3)]"
-	light_color = pick("#e87800", "#780606")
 
 /obj/structure/flora/ausbushes/genericbush/hell
 	name = "hellish bush"
 	desc = "A small crimson bush."
 	icon = 'icons/obj/flora/hellflora.dmi'
-	light_range = 2
-	light_power = 2
 	resistance_flags = LAVA_PROOF
 
 /obj/structure/flora/ausbushes/genericbush/hell/Initialize()
 	. = ..()
 	icon_state = "genericbush_[rand(1, 4)]"
-	light_color = pick("#e87800", "#780606")
 
 /obj/structure/flora/ausbushes/ywflowers/hell
 	name = "lavablossom"
 	desc = "Some red and orange flowers. They appear to be faintly glowing."
 	icon = 'icons/obj/flora/hellflora.dmi'
 	light_color = "#aba507"
-	light_power = 3
+	light_power = 0.8
 	light_range = 2
 	resistance_flags = LAVA_PROOF
 	gender = PLURAL
@@ -682,7 +667,7 @@
 	icon_state = "basalt1"
 	base_icon_state = "basalt"
 	light_color = "#ab4907"
-	light_power = 3
+	light_power = 1
 	light_range = 2
 
 /obj/structure/flora/rock/pile/lava

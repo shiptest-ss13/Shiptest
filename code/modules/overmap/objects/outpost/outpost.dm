@@ -290,6 +290,8 @@
 		// give the elevator a first floor
 		plat.master_datum.add_floor_landmarks(anchor_landmark, shaft_li - anchor_landmark)
 
+	vlevel.apply_planetary_lighting()
+
 /datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
 	var/obj/docking_port/stationary/h_dock
 	var/datum/map_template/outpost/h_template = get_hangar_template(dock_requester.shuttle_port)
@@ -472,6 +474,7 @@
 	vlevel.reserve_margin(1)
 
 	h_template.load(vlevel.get_unreserved_bottom_left_turf())
+	vlevel.apply_planetary_lighting()
 
 	var/turf/dock_turf
 	for(var/obj/effect/landmark/outpost/hangar_dock/dock_mark in GLOB.outpost_landmarks)

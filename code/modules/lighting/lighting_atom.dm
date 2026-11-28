@@ -173,3 +173,22 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_SET_LIGHT_FLAGS, new_value)
 	. = light_flags
 	light_flags = new_value
+
+
+/atom/proc/get_light_offset()
+	return list(0, 0)
+
+/// Returns a list of x and y offsets to apply to our visual lighting position
+/proc/calculate_light_offset(atom/get_offset)
+	var/list/hand_back
+	if(!(get_offset.light_flags & LIGHT_IGNORE_OFFSET))
+		hand_back = get_visual_offset(get_offset)
+		hand_back[1] = -hand_back[1] / ICON_SIZE_X
+		hand_back[2] = -hand_back[2] / ICON_SIZE_Y
+	else
+		hand_back = list(0, 0)
+
+	var/list/atoms_opinion = get_offset.get_light_offset()
+	hand_back[1] += atoms_opinion[1]
+	hand_back[2] += atoms_opinion[2]
+	return hand_back

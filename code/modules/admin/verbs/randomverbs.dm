@@ -1423,3 +1423,57 @@
 	else
 		qdel(I)
 		return FALSE
+
+/client/proc/set_all_planetlights()
+	set name = "Set Planetary Lighting on All Planets"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	if(tgui_alert(usr, "This will change the lights on all loaded planets, including ones with no players on them. Continue?", "Set Planetary Lighting", list("Yes", "No"), 20 SECONDS) != "Yes")
+		return
+
+	var/datum/overmap_star_system/selected_system
+	var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+	LAZYADD(choices, "All Overmaps")
+	var/chosen = "All Overmaps"
+	if(length(SSovermap.tracked_star_systems) > 1)
+		chosen = tgui_input_list(usr, "Which star system's planets should change?", "Set Planetary Lighting", choices)
+	if(isnull(chosen))
+		return
+	if(chosen != "All Overmaps")
+		selected_system = chosen
+
+	var/new_light_range = input(usr, "Enter light range", "Set Planetary Lighting", 2) as num|null
+	if(isnull(new_light_range))
+		return
+	var/new_light_power = input(usr, "Enter light power", "Set Planetary Lighting", 0.8) as num|null
+	if(isnull(new_light_power))
+		return
+	var/new_light_color = input(usr, "Enter hex color:", "Set Planetary Lighting", COLOR_WHITE) as color|null
+	if(isnull(new_light_color))
+		return
+
+	var/override_new = tgui_alert(usr, "Should all NEWLY generated planets have their lighting overidden by the selection?", "Set Planetary Lighting", list("Yes", "No"))
+	if(!override_new)
+		return
+	if(override_new == "Yes")
+		if(selected_system)
+			selected_system.dynamic_light_color_override = new_light_color
+			selected_system.dynamic_light_power_override = new_light_power
+			selected_system.dynamic_light_range_override = new_light_range
+		else
+			GLOB.override_new_planet_lighting_color = new_light_color
+			GLOB.override_new_planet_lighting_power = new_light_power
+			GLOB.override_new_planet_lighting_range = new_light_range
+
+	for(var/datum/overmap/dynamic/found_planet as anything in SSovermap.dynamic_encounters)
+		if(selected_system && found_planet.current_overmap != selected_system)
+			continue
+		found_planet.update_planet_lighting(new_light_range, new_light_power, new_light_color, found_planet.rolled_time_of_day ? /datum/time_of_day/anomalous : null)
+		CHECK_TICK
+
+	var/where = selected_system ? "all planets in [selected_system.name]" : "all planets in the round"
+	message_admins("[key_name_admin(usr)] set the lighting of [where] to range [new_light_range], power [new_light_power], colour [new_light_color].")
+	log_admin("[key_name(usr)] set the lighting of [where] to range [new_light_range], power [new_light_power], colour [new_light_color].")
+	BLACKBOX_LOG_ADMIN_VERB("Set Planetary Lighting on All Planets")

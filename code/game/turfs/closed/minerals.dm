@@ -40,30 +40,6 @@
 
 	overlay_layer = ON_EDGED_TURF_LAYER
 
-/turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-
-	var/area/overmap_encounter/selected_area = get_area(src)
-	if(!istype(selected_area))
-		return
-
-	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
-	if(istype(selected_area))
-		light_range = selected_area.light_range
-		light_range = selected_area.light_range
-		light_power = selected_area.light_power
-		update_light()
-
-/turf/closed/mineral/Destroy()
-	. = ..()
-	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-
-/turf/closed/mineral/proc/get_light(obj/item/source, target_light, target_power, target_color,)
-	light_range = target_light
-	light_power = target_power
-	light_color = target_color
-	update_light()
-
 /turf/closed/mineral/proc/Spread_Vein()
 	var/spreadChance = initial(mineralType.spreadChance)
 	if(spreadChance)
@@ -301,8 +277,10 @@
 	baseturfs = /turf/open/floor/plating/asteroid/iceberg/lit
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	opacity = FALSE
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 1
+	light_color = COLOR_ICEPLANET_LIGHT
 	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
@@ -632,6 +610,7 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/random/whitesands/lit
+	can_emit_planet_daylight = TRUE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY

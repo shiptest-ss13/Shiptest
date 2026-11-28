@@ -102,16 +102,21 @@ const SharedContent = (_props, context) => {
         <Table>
           <Table.Row bold>
             <Table.Cell>Name</Table.Cell>
-            {!isViewer && <Table.Cell>Act</Table.Cell>}
-            {!isViewer && <Table.Cell>Dock</Table.Cell>}
+            {!isViewer && <Table.Cell collapsing>Act</Table.Cell>}
+            {!isViewer && <Table.Cell collapsing>Dock</Table.Cell>}
           </Table.Row>
           {otherInfo.map((ship) => (
             <Table.Row key={ship.name}>
               <Table.Cell>
                 {ship.hidden ? 'Unidentified ' + ship.object_class : ship.name}
+                {!!ship.time_of_day && (
+                  <Box color="label" fontSize="11px">
+                    Local time: {ship.time_of_day}
+                  </Box>
+                )}
               </Table.Cell>
               {!isViewer && (
-                <Table.Cell>
+                <Table.Cell collapsing>
                   <Button
                     tooltip="Interact"
                     tooltipPosition="left"
@@ -129,7 +134,7 @@ const SharedContent = (_props, context) => {
                 </Table.Cell>
               )}
               {!isViewer && (
-                <Table.Cell>
+                <Table.Cell collapsing>
                   <Button
                     tooltip="Quick Dock"
                     tooltipPosition="left"

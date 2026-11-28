@@ -43,3 +43,8 @@ GLOBAL_LIST_INIT(major_planets, list(
 	"Terra",
 	"Axilai"
 ))
+
+///overrides all newly generated planet lighting with this
+GLOBAL_VAR(override_new_planet_lighting_color)
+GLOBAL_VAR(override_new_planet_lighting_range)
+GLOBAL_VAR(override_new_planet_lighting_power)
