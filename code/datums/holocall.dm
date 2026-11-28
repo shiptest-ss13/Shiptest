@@ -381,6 +381,9 @@
 /datum/preset_holoimage/miner
 	outfit_type = /datum/outfit/job/miner
 
+/datum/preset_holoimage/montagne
+	outfit_type = /datum/outfit/job/roumain/captain
+
 /obj/item/disk/holodisk/donutstation/whiteship
 	name = "Blackbox Print-out #DS024"
 	desc = "A holodisk containing the last viable recording of DS024's blackbox."
@@ -466,3 +469,21 @@
 	NAME Blackbox Automated Message
 	SAY Connection lost. Dumping audio logs to disk.
 	DELAY 50"}
+
+/obj/item/disk/holodisk/roumain
+	name = "Grand Ideology Sermon"
+	desc = "A holodisk containing an SRM sermon."
+	preset_image_type = /datum/preset_holoimage/montagne
+	preset_record_text = {"
+	NAME Montagne Gehrman
+	SAY Oh ye followers of the Saint-Roumain.
+	DELAY 25
+	SAY Men and women of The Militia, Conquerers of nature, montagne, hunter, and shadow alike.
+	DELAY 25
+	SAY In His name, we maintain dominion over nature,
+	DELAY 25
+	SAY Dominion over the chaos of our lives and dominion over ourselves.
+	DELAY 25
+	DAY By defending ourselves and others, we defend His embers.
+	DELAY 15
+	"}

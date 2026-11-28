@@ -23,52 +23,6 @@
 	set_cap = 2.5
 	light_color = COLOR_SOFT_RED
 
-/**********************Miner Lockers**************************/
-
-/obj/structure/closet/wardrobe/miner
-	name = "mining wardrobe"
-	icon_door = "mixed"
-
-/obj/structure/closet/wardrobe/miner/PopulateContents()
-	new /obj/item/storage/backpack/duffelbag(src)
-	new /obj/item/storage/backpack/explorer(src)
-	new /obj/item/storage/backpack/satchel/explorer(src)
-	new /obj/item/clothing/under/rank/cargo/miner/lavaland(src)
-	new /obj/item/clothing/under/rank/cargo/miner/lavaland(src)
-	new /obj/item/clothing/under/rank/cargo/miner/lavaland(src)
-	new /obj/item/clothing/shoes/workboots/mining(src)
-	new /obj/item/clothing/shoes/workboots/mining(src)
-	new /obj/item/clothing/shoes/workboots/mining(src)
-	new /obj/item/clothing/gloves/color/black(src)
-	new /obj/item/clothing/gloves/color/black(src)
-	new /obj/item/clothing/gloves/color/black(src)
-
-/obj/structure/closet/secure_closet/miner
-	name = "miner's equipment"
-	icon_state = "mining"
-	req_access = list(ACCESS_MINING)
-
-/obj/structure/closet/secure_closet/miner/unlocked
-	locked = FALSE
-
-/obj/structure/closet/secure_closet/miner/PopulateContents()
-	..()
-	new /obj/item/stack/empty_sandbags(src, 15)
-	new /obj/item/storage/box/emptysandbags(src)
-	new /obj/item/shovel(src)
-	new /obj/item/pickaxe/mini(src)
-	new /obj/item/radio/headset/headset_cargo/mining(src)
-	new /obj/item/flashlight/seclite(src)
-	new /obj/item/storage/bag/plants(src)
-	new /obj/item/storage/bag/ore(src)
-	new /obj/item/mining_scanner(src)
-	new /obj/item/gun/energy/kinetic_accelerator(src)
-	new /obj/item/clothing/glasses/meson/prescription(src)
-	new /obj/item/clothing/glasses/meson(src)
-	new /obj/item/survivalcapsule(src)
-	new /obj/item/clothing/head/hardhat/mining(src)
-
-
 /**********************Mining car (Crate like thing, not the rail car)**************************/
 
 /obj/structure/closet/crate/miningcar

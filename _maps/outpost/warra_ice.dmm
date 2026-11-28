@@ -1912,9 +1912,13 @@
 	desc = "Pray for your life, litter!";
 	name = "\improper Elite Custodial Officer"
 	},
-/obj/structure/closet/jcloset,
+/obj/structure/closet,
 /obj/machinery/door/window/brigdoor/northleft,
 /obj/structure/window/reinforced/spawner/west,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/pushbroom,
+/obj/item/storage/bag/trash,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/armory)
 "jL" = (
@@ -2964,7 +2968,7 @@
 /turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "oY" = (
-/obj/structure/closet/secure_closet/contraband,
+/obj/structure/closet/secure_closet,
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 8
 	},
@@ -3946,7 +3950,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms/office)
 "uU" = (
-/obj/structure/closet/secure_closet/ertSec{
+/obj/structure/closet/secure_closet/hos{
 	anchored = 1
 	},
 /obj/machinery/door/window/brigdoor/southleft{
@@ -8207,7 +8211,6 @@
 	dir = 1
 	},
 /obj/structure/chair/office,
-/obj/effect/landmark/salesman,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
@@ -8756,7 +8759,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "Ts" = (
-/obj/structure/closet/secure_closet/ertMed{
+/obj/structure/closet/secure_closet/CMO{
 	anchored = 1
 	},
 /obj/structure/window/reinforced/spawner{
@@ -9512,7 +9515,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "Xu" = (
-/obj/structure/closet/secure_closet/ertEngi{
+/obj/structure/closet/secure_closet/engineering_chief{
 	anchored = 1
 	},
 /obj/machinery/door/window/brigdoor/southleft{
@@ -9821,7 +9824,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet,
 /obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
