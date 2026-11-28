@@ -133,6 +133,9 @@
 	icon_state = "grid"
 	base_icon_state = "grid"
 
+/turf/open/floor/plasteel/patterned/grid/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/patterned/grid/dark
 	icon_state = "grid_dark"
 	base_icon_state = "grid_dark"
