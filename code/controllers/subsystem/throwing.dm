@@ -55,7 +55,9 @@ SUBSYSTEM_DEF(throwing)
 	var/speed
 	var/mob/thrower
 	var/diagonals_first
-	var/dist_travelled = 0
+	var/actual_dist_travelled = 0
+	var/dist_travelled_in_gravity = 0
+	var/init_throw_dist
 	var/start_time
 	var/dist_x
 	var/dist_y
@@ -119,7 +121,7 @@ SUBSYSTEM_DEF(throwing)
 
 	var/atom/movable/actual_target = initial_target?.resolve()
 
-	if(dist_travelled) //to catch sneaky things moving on our tile while we slept
+	if(actual_dist_travelled) //to catch sneaky things moving on our tile while we slept
 		for(var/atom/movable/obstacle as anything in get_turf(thrownthing))
 			if (obstacle == thrownthing || (obstacle == thrower && !ismob(thrownthing)))
 				continue
@@ -134,19 +136,19 @@ SUBSYSTEM_DEF(throwing)
 	last_move = world.time
 
 	//calculate how many tiles to move, making up for any missed ticks.
-	var/tilestomove = CEILING(min(((((world.time+world.tick_lag) - start_time + delayed_time) * speed) - (dist_travelled ? dist_travelled : -1)), speed*MAX_TICKS_TO_MAKE_UP) * (world.tick_lag * SSthrowing.wait), 1)
+	var/tilestomove = CEILING(min(((((world.time+world.tick_lag) - start_time + delayed_time) * speed) - (actual_dist_travelled ? actual_dist_travelled : -1)), speed*MAX_TICKS_TO_MAKE_UP) * (world.tick_lag * SSthrowing.wait), 1)
 	while (tilestomove-- > 0)
-		if ((dist_travelled >= maxrange || AM.loc == target_turf) && AM.has_gravity(AM.loc))
+		if ((dist_travelled_in_gravity >= min(maxrange, init_throw_dist) || AM.loc == target_turf) && AM.has_gravity(AM.loc))
 			finalize()
 			return
 
-		if (dist_travelled <= max(dist_x, dist_y)) //if we haven't reached the target yet we home in on it, otherwise we use the initial direction
+		if (actual_dist_travelled <= max(dist_x, dist_y)) //if we haven't reached the target yet we home in on it, otherwise we use the initial direction
 			step = get_step(AM, get_dir(AM, target_turf))
 		else
 			step = get_step(AM, init_dir)
 
 		if (!pure_diagonal && !diagonals_first) // not a purely diagonal trajectory and we don't want all diagonal moves to be done first
-			if (diagonal_error >= 0 && max(dist_x,dist_y) - dist_travelled != 1) //we do a step forward unless we're right before the target
+			if (diagonal_error >= 0 && max(dist_x,dist_y) - actual_dist_travelled != 1) //we do a step forward unless we're right before the target
 				step = get_step(AM, dx)
 			diagonal_error += (diagonal_error < 0) ? dist_x/2 : -dist_y
 
@@ -163,9 +165,12 @@ SUBSYSTEM_DEF(throwing)
 			finalize(TRUE, actual_target)
 			return
 
-		dist_travelled++
+		actual_dist_travelled++
 
-		if (dist_travelled > MAX_THROWING_DIST)
+		if(AM.has_gravity(AM.loc))
+			dist_travelled_in_gravity++
+
+		if (actual_dist_travelled > MAX_THROWING_DIST)
 			finalize()
 			return
 

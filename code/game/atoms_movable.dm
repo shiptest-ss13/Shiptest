@@ -957,6 +957,7 @@
 	TT.dx = dx
 	TT.dy = dy
 	TT.diagonal_error = dist_x/2 - dist_y
+	TT.init_throw_dist = get_dist(get_turf(src), get_turf(target))
 	TT.start_time = world.time
 
 	if(pulledby)
