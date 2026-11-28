@@ -214,7 +214,7 @@
 
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
-	name = "surgical apron"
-	desc = "A sterile blue surgical apron."
+	name = "blue surgical smock"
+	desc = "A sterile blue surgical smock."
 	icon_state = "surgical"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS

@@ -40,11 +40,9 @@
 /obj/item/clothing/mask/breath/medical
 	desc = "A close-fitting sterile mask that can be connected to an air supply."
 	name = "medical mask"
-	icon_state = "medical"
 	item_state = "m_mask"
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
-	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/mask/breath/facemask
 	name = "face mask"
