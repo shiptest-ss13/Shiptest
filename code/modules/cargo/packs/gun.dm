@@ -1162,7 +1162,7 @@
 
 /datum/supply_pack/gun/troubleshooter
 	name = "Troubleshooter Ionization Pistol"
-	desc = "Contains an IT22 Troubleshooter Ionization Pistol, made as the ultimate in holdout pistols."
+	desc = "Contains an IT22 Troubleshooter Ionization Pistol, made as the ultimate in holdout pistols. Takes micro plasma cells"
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/troubleshooter)
 	crate_name = "troubleshooter crate"
@@ -1172,7 +1172,7 @@
 
 /datum/supply_pack/gun/opportunist
 	name = "Opportunist Lorentz Magnum"
-	desc = "Contains an LS209 Opportunist lorentz pistol. For the discerning manager in need of robust protection."
+	desc = "Contains an LS209 Opportunist lorentz pistol. For the discerning manager in need of robust protection. Takes standard and micro plasma cells."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/opportunist)
 	crate_name = "opportunist crate"
@@ -1182,7 +1182,7 @@
 
 /datum/supply_pack/gun/anode
 	name = "Anode Ionization PDW"
-	desc = "Contains an IT41 Anode Ionization PDW. Steady charge and steady target paint allow for rapid fire relative to other energy weapons in the Cybersun Arsenal."
+	desc = "Contains an IT41 Anode Ionization PDW. Steady charge and steady target paint allow for rapid fire relative to other energy weapons in the Cybersun Arsenal. Takes standard and micro plasma cells"
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/anode)
 	crate_name = "anode crate"
@@ -1192,7 +1192,7 @@
 
 /datum/supply_pack/gun/impactor
 	name = "Impactor Lorentz Shotgun"
-	desc = "Contains an LS126 Impactor lorentz shotgun. Both modes are effective in close quarters combat."
+	desc = "Contains an LS126 Impactor lorentz shotgun. Both modes are effective in close quarters combat. Takes standard and heavy plasma cells."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/impactor)
 	crate_name = "impactor crate"
@@ -1200,9 +1200,19 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/inductor
+	name = "Inductor Lorentz Rifle"
+	desc = "Contains an LS620 Inductor lorentz rifle. Longer reach than lighter Lorentz Weaponry and a slightly tougher punch makes an effective commbat tool. Takes standard and heavy plasma cells."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/inductor)
+	crate_name = "impactor crate"
+	faction = /datum/faction/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/catalyzer
 	name = "Catalyzer Lorentz Rifle"
-	desc = "Contains an LS451 Catalyzer Lorentz Rifle. Adept for assaulting fixed positions."
+	desc = "Contains an LS451 Catalyzer Lorentz Rifle. Adept for assaulting fixed positions. Takes heavy plasma cells."
 	cost = 7000
 	contains = list(/obj/item/storage/guncase/catalyzer)
 	crate_name = "catalyzer crate"
@@ -1212,7 +1222,7 @@
 
 /datum/supply_pack/gun/galvanizer
 	name = "Galvanizer Marksman Rifle"
-	desc = "Contains an IT34 Galvanizer Ionization Rifle. A long reach and steady charge makes for consistent fire support."
+	desc = "Contains an IT34 Galvanizer Ionization Rifle. A long reach and steady charge makes for consistent fire support. Takes standard and heavy plasma cells."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/galvanizer)
 	crate_name = "galvanizer crate"

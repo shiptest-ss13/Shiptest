@@ -190,7 +190,7 @@
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	aimed_wield_slowdown = LASER_SMG_SLOWDOWN
 
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -291,7 +291,7 @@
 //flare shotgun
 /obj/item/gun/energy/cybersun/lorentz/impactor
 	name = "\improper LS126 Impactor"
-	desc = "A divisor lens makes the LS126 Impactor into a proper shotgun, allowing it to cast multiple Lorentz beams at a time. While not as powerful as an individual beam can be, combined the massed impact causes much more damage to a target. A close quarters combat tool to be reckoned with. "
+	desc = "A divisor lens makes the LS126 Impactor into a proper shotgun, allowing it to cast multiple Lorentz beams at a time. While not as powerful as an individual beam can be, combined the massed impact causes much more damage to a target. A close quarters combat tool to be reckoned with. Takes both normal and heavy plasma cells."
 
 	icon_state = "impactor"
 	item_state = "impactor"
@@ -310,7 +310,7 @@
 	latch_icon = 'icons/obj/guns/manufacturer/cybersun/48x32.dmi'
 	latch_icon_state = "impactor"
 
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -326,6 +326,54 @@
 
 /obj/item/gun/energy/cybersun/lorentz/impactor/empty_cell
 	spawn_no_ammo = TRUE
+
+//flare shotgun
+/obj/item/gun/energy/cybersun/lorentz/inductor
+	name = "\improper LS620 Inductor"
+	desc = "A more traditional energy weapon within Tadeusz's Lorentz line, the Inductor is a heavy rifle made for engaging armored targets in closer quarters. Compared to the Galvanizer rifle, it works off brute force and suffers from the same ranging issues that Lorentz weapons tend to suffer. It is still a fearsome weapon to fight against. Takes both normal and heavy plasma cells."
+
+	icon_state = "fusilier"
+	item_state = "fusilier"
+
+	ammo_type = list(/obj/item/ammo_casing/energy/lorentz/skirmish, /obj/item/ammo_casing/energy/flare)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/cybersun,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy,
+		/obj/item/stock_parts/cell/gun/cybersun/empty,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy/empty,
+	)
+
+	latch_icon = 'icons/obj/guns/manufacturer/cybersun/48x32.dmi'
+	latch_icon_state = "fusilier"
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	wield_delay = 0.7 SECONDS
+
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+
+	burst_size = 2
+	burst_delay = 0.2 SECONDS
+
+	default_firemode = FIREMODE_SEMIAUTO
+
+	spread = 2
+	spread_unwielded = 6
+
+	recoil = 2
+	recoil_unwielded = 12
+
+/obj/item/gun/energy/cybersun/lorentz/inductor/empty_cell
+	spawn_no_ammo = TRUE
+
 
 /obj/item/gun/energy/cybersun/lorentz/catalyzer
 	name = "\improper LS451 Catalyzer"
@@ -361,9 +409,9 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 1.5
+	recoil = 0.75
 
-	spread = 5
+	spread = 6
 	spread_unwielded = 20
 
 	///is the bipod deployed?
@@ -372,7 +420,7 @@
 	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
-	var/deploy_recoil_bonus = -1
+	var/deploy_recoil_bonus = -0.5
 	var/deploy_spread_bonus = -4
 
 	var/list/deployable_on_structures = list(

@@ -43,18 +43,23 @@
 	e_cost = 3000
 	delay = 0.5 SECONDS
 	pellets = 12
-	variance = 12
+	variance = 6
+
+/obj/item/ammo_casing/energy/lorentz/skirmish
+	name = "skirmish lorentz lens"
+	projectile_type = /obj/projectile/beam/lorentz/skirmish
+	e_cost = 1000
+	delay = 0.3 SECONDS
 
 /obj/item/ammo_casing/energy/lorentz/mg
 	name = "rapid lorentz lens"
 	fire_sound = 'sound/weapons/gun/cybersun/lorentz_heavy.ogg'
-	delay = 0.25 SECONDS
-	e_cost = 1000
+	delay = 0.1 SECONDS
+	e_cost = 500
 	projectile_type = /obj/projectile/beam/lorentz/mg
 
 /obj/item/ammo_casing/energy/lorentz/heavy
 	name = "lorentz annihilation lens"
-	caliber = "lorentz"
 	projectile_type = /obj/projectile/beam/lorentz/heavy
 	e_cost = 6000
 

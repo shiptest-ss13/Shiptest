@@ -640,6 +640,11 @@
 	mag_type = /obj/item/stock_parts/cell/gun/cybersun
 	mag_count = 2
 
+/obj/item/storage/guncase/inductor
+	gun_type = /obj/item/gun/energy/cybersun/lorentz/inductor
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun
+	mag_count = 2
+
 /obj/item/storage/guncase/catalyzer
 	gun_type = /obj/item/gun/energy/cybersun/lorentz/catalyzer
 	mag_type = /obj/item/stock_parts/cell/gun/cybersun/heavy
