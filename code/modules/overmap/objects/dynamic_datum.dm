@@ -191,7 +191,6 @@
 		return
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	current_overmap.dynamic_probabilities[planet.planet] += 20
 	qdel(src)
 
 /**
@@ -204,7 +203,6 @@
 		planet = force_encounter
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
-		current_overmap.dynamic_probabilities[planet.planet] -= 20
 
 	set_planet_type(planet)
 
