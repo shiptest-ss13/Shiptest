@@ -410,8 +410,8 @@
 							need_mob_update += R.overdose_start(C)
 							log_game("[key_name(C)] has started overdosing on [R.name] at [R.volume] units.")
 					if(R.overdosed)
-						need_mob_update += R.overdose_process(C, seconds_per_tick, times_fired)
-				need_mob_update += R.on_mob_life(C, seconds_per_tick, times_fired)
+						need_mob_update += R.overdose_process(C, seconds_per_tick)
+				need_mob_update += R.on_mob_life(C, seconds_per_tick)
 
 	if(C && need_mob_update) //some of the metabolized reagents had effects on the mob that requires some updates.
 		C.updatehealth()

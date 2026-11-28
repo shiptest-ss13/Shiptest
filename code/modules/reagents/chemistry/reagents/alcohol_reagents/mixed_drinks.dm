@@ -8,7 +8,7 @@
 	glass_name = "glass of green beer"
 	glass_desc = "A pint of green beer. You get the feeling this had some sort of meaning, once."
 
-/datum/reagent/consumable/ethanol/beer/green/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/beer/green/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.color != color)
 		M.add_atom_colour(color, TEMPORARY_COLOUR_PRIORITY)
 	return ..()
@@ -25,7 +25,7 @@
 	glass_desc = "Good for your Imagination."
 	var/hal_amt = 4
 
-/datum/reagent/consumable/ethanol/whiskey/candycorn/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/whiskey/candycorn/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(5, seconds_per_tick))
 		M.hallucination += hal_amt //conscious dreamers can be treasurers to their own currency
 	..()
@@ -42,20 +42,20 @@
 	glass_name = "glass of Vimukti"
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
-/datum/reagent/consumable/ethanol/vimukti/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.drowsyness = max(0,M.drowsyness-7)
-	M.AdjustSleeping(-20 * seconds_per_tick)
+/datum/reagent/consumable/ethanol/vimukti/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.drowsyness = max(0,M.drowsyness-7 * REM * seconds_per_tick)
+	M.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
 	M.adjust_bodytemperature(-0.5 * TEMPERATURE_DAMAGE_COEFFICIENT * seconds_per_tick, M.get_body_temp_normal(), FALSE)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE) && !isvox(M))
-		M.set_timed_status_effect(5 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	return ..()
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("Your entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!"))
-	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Stun(15)
+	M.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.Stun(1.5 SECONDS)
 
-/datum/reagent/consumable/ethanol/vimukti/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/vimukti/overdose_process(mob/living/M, seconds_per_tick)
 	if(SPT_PROB(4, seconds_per_tick) && iscarbon(M))
 		var/obj/item/I = M.get_active_held_item()
 		if(I)
@@ -99,9 +99,9 @@
 	glass_name = "glass of bilk"
 	glass_desc = "A brew of milk and beer. You have to wonder if this was made by accident just from the smell."
 
-/datum/reagent/consumable/ethanol/bilk/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/bilk/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.getBruteLoss() && SPT_PROB(5, seconds_per_tick))
-		M.heal_bodypart_damage(0.5 * seconds_per_tick * REM)
+		M.heal_bodypart_damage(0.5 * REM * seconds_per_tick)
 		. = 1
 	return ..() || .
 
@@ -115,7 +115,7 @@
 	glass_name = "Three Mile Island Ice Tea"
 	glass_desc = "A glass of Three Mile Island Ice Tea, named after a cordoned-off set of islands on Earth, for some reason. You almost can't taste the alcohol in it..."
 
-/datum/reagent/consumable/ethanol/threemileisland/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/threemileisland/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.set_drugginess(50)
 	return ..()
 
@@ -225,8 +225,8 @@
 	glass_name = "Screwdriver"
 	glass_desc = "You won't be turning any screws with this, but you're far from lamenting that."
 
-/datum/reagent/consumable/ethanol/screwdrivercocktail/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.radiation = max(M.radiation - (2.5 * seconds_per_tick * times_fired), 0)
+/datum/reagent/consumable/ethanol/screwdrivercocktail/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.radiation = max(M.radiation - (2.5 * REM * seconds_per_tick), 0)
 	return ..()
 
 /datum/reagent/consumable/ethanol/booger
@@ -249,9 +249,9 @@
 	glass_name = "Bloody Mary"
 	glass_desc = "Tomato juice, mixed with Vodka and a li'l bit of lime. The taste is acquired, and usually acquired through tgrying to use it as a hangover remedy."
 
-/datum/reagent/consumable/ethanol/bloody_mary/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/bloody_mary/on_mob_life(mob/living/carbon/C, seconds_per_tick)
 	if(C.blood_volume < BLOOD_VOLUME_NORMAL)
-		C.blood_volume = min(BLOOD_VOLUME_NORMAL, C.blood_volume + (1.5 * seconds_per_tick)) //Bloody Mary quickly restores blood loss.
+		C.blood_volume = min(BLOOD_VOLUME_NORMAL, C.blood_volume + (3 * REM * seconds_per_tick)) //Bloody Mary quickly restores blood loss.
 	..()
 
 /datum/reagent/consumable/ethanol/brave_bull
@@ -293,7 +293,7 @@
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#FFCC00") //Tequila Sunrise makes you radiate dim light, like a sunrise!
 
-/datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(QDELETED(light_holder))
 		M.reagents.del_reagent(/datum/reagent/consumable/ethanol/tequila_sunrise) //If we lost our light object somehow, remove the reagent
 	else if(light_holder.loc != M)
@@ -314,8 +314,8 @@
 	glass_name = "Toxins Special"
 	glass_desc = "Traditionally lit with a welder while the server is blindfolded, but you don't want to cause an ACTUAL accident here."
 
-/datum/reagent/consumable/ethanol/toxins_special/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(0.5 * seconds_per_tick * REM * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
+/datum/reagent/consumable/ethanol/toxins_special/on_mob_life(mob/living/M, seconds_per_tick)
+	M.adjust_bodytemperature(1 * seconds_per_tick * REM * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/beepsky_smash
@@ -484,8 +484,8 @@
 	glass_name = "Anti-freeze"
 	glass_desc = "Vodka, cream, and ice. No actual antifreeze included, of course."
 
-/datum/reagent/consumable/ethanol/antifreeze/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(0.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
+/datum/reagent/consumable/ethanol/antifreeze/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_bodytemperature(1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/barefoot
@@ -498,11 +498,11 @@
 	glass_name = "Barefoot"
 	glass_desc = "To be enjoyed on the beach or by a pool. You should keep your shoes on, though."
 
-/datum/reagent/consumable/ethanol/barefoot/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/barefoot/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(ishuman(M)) //Barefoot causes the imbiber to quickly regenerate brute trauma if they're not wearing shoes.
 		var/mob/living/carbon/human/H = M
 		if(!H.shoes)
-			H.adjustBruteLoss(-1.5*REM*seconds_per_tick, 0)
+			H.adjustBruteLoss(-3*REM*seconds_per_tick, 0)
 			. = 1
 	return ..() || .
 
@@ -589,8 +589,8 @@
 	glass_name = "Sbiten"
 	glass_desc = "Vodka with capsaicin for the extra feeling of intense warmth. Difficult to take large swallows."
 
-/datum/reagent/consumable/ethanol/sbiten/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(0.5 * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0 , M.dna.species.bodytemp_heat_damage_limit, FALSE) //310.15 is the normal bodytemp.
+/datum/reagent/consumable/ethanol/sbiten/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_bodytemperature(1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0 , M.dna.species.bodytemp_heat_damage_limit, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/red_mead
@@ -623,8 +623,8 @@
 	glass_name = "iced beer"
 	glass_desc = "Iced beer, served in a chilled glass. It's cold enough to leave a trail in the air."
 
-/datum/reagent/consumable/ethanol/iced_beer/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(-0.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, T0C, FALSE) //310.15 is the normal bodytemp.
+/datum/reagent/consumable/ethanol/iced_beer/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_bodytemperature(-1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, T0C, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/grog
@@ -698,7 +698,7 @@
 	glass_name = "Changeling Sting"
 	glass_desc = "Made by the superstitous. Keeps the changelings away... whereever they may be."
 
-/datum/reagent/consumable/ethanol/changelingsting/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/changelingsting/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.mind) //Changeling Sting assists in the recharging of changeling chemicals.
 		var/datum/antagonist/changeling/changeling = M.mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
@@ -727,7 +727,7 @@
 	glass_name = "Gorlex Surprise"
 	glass_desc = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
 
-/datum/reagent/consumable/ethanol/syndicatebomb/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/syndicatebomb/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(5, seconds_per_tick))
 		playsound(get_turf(M), 'sound/effects/explosionfar.ogg', 100, TRUE)
 	return ..()
@@ -819,13 +819,13 @@
 	glass_name = "Hearty Punch"
 	glass_desc = "An aromatic beverage, served piping hot. According to folktales, it can almost wake the dead."
 
-/datum/reagent/consumable/ethanol/hearty_punch/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(M.health <= 0)
-		M.adjustBruteLoss(-1.5 * seconds_per_tick, 0)
-		M.adjustFireLoss(-1.5 * seconds_per_tick, 0)
-		M.adjustCloneLoss(-2.5 * seconds_per_tick, 0)
-		M.adjustOxyLoss(-2 * seconds_per_tick, 0)
-		M.adjustToxLoss(-1.5 * seconds_per_tick, 0)
+/datum/reagent/consumable/ethanol/hearty_punch/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	if(M.health <= 0) // Barman one glass of atropine please
+		M.adjustBruteLoss(-3 * REM * seconds_per_tick, 0)
+		M.adjustFireLoss(-3 * REM * seconds_per_tick, 0)
+		M.adjustCloneLoss(-5 * REM * seconds_per_tick, 0)
+		M.adjustOxyLoss(-4 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(-3 * REM * seconds_per_tick, 0)
 		. = 1
 	return ..() || .
 
@@ -848,21 +848,21 @@
 	glass_name = "Atomic Bomb"
 	glass_desc = "Devastating to you and everyone around you, especially if you get drunk enough from it."
 
-/datum/reagent/consumable/ethanol/atomicbomb/on_mob_life(mob/living/carbon/M)
-	M.set_drugginess(50)
+/datum/reagent/consumable/ethanol/atomicbomb/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.set_drugginess(50) // 1 minute 20
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		M.confused = max(M.confused+2,0)
 		M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if (!M.slurring)
 		M.slurring = 1
-	M.slurring += 3
-	switch(current_cycle)
-		if(51 to 200)
-			M.Sleeping(100)
+	M.slurring += 3 * REM * seconds_per_tick
+	switch(current_time)
+		if(100 to 400)
+			M.Sleeping(10 SECONDS)
 			. = 1
-		if(201 to INFINITY)
-			M.AdjustSleeping(40)
-			M.adjustToxLoss(2, 0)
+		if(401 to INFINITY)
+			M.AdjustSleeping(4 SECONDS * REM * seconds_per_tick)
+			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
 	..()
 
@@ -876,20 +876,20 @@
 	glass_name = "Pan-Galactic Gargle Blaster"
 	glass_desc = "Like having your brain smashed out by a slice of lemon wrapped around a large gold brick."
 
-/datum/reagent/consumable/ethanol/gargle_blaster/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/gargle_blaster/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.set_timed_status_effect(3 SECONDS, /datum/status_effect/dizziness, TRUE)
-	switch(current_cycle)
-		if(15 to 45)
+	switch(current_time)
+		if(40 to 90)
 			if(!M.slurring)
 				M.slurring = 1
-			M.slurring += 3
-		if(45 to 55)
+			M.slurring += 3 * REM * seconds_per_tick
+		if(91 to 110)
 			if(SPT_PROB(25, seconds_per_tick))
 				M.confused = max(M.confused+3,0)
-		if(55 to 200)
-			M.set_drugginess(55)
-		if(200 to INFINITY)
-			M.adjustToxLoss(1 * seconds_per_tick, 0)
+		if(111 to 400)
+			M.set_drugginess(55) // 1 minute 50
+		if(401 to INFINITY)
+			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
 	..()
 
@@ -907,22 +907,22 @@
 /datum/reagent/consumable/ethanol/neurotoxin/proc/pickt()
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG,TRAIT_PARALYSIS_TAIL))
 
-/datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.set_drugginess(50)
+/datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.set_drugginess(50) // 1 minute 40
 	M.set_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5*REM*seconds_per_tick, 150)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick, 150)
 	if(SPT_PROB(10, seconds_per_tick))
-		M.adjustStaminaLoss(5 * seconds_per_tick)
+		M.adjustStaminaLoss(10)
 		M.drop_all_held_items()
 		to_chat(M, span_notice("You can't feel your hands!"))
-	if(current_cycle > 5)
+	if(current_time > 10)
 		if(SPT_PROB(10, seconds_per_tick))
 			var/t = pickt()
 			ADD_TRAIT(M, t, type)
-			M.adjustStaminaLoss(5 * seconds_per_tick)
-		if(current_cycle > 30)
-			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
-			if(current_cycle > 50 && SPT_PROB(7.5, seconds_per_tick))
+			M.adjustStaminaLoss(10)
+		if(current_time > 60)
+			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM * seconds_per_tick)
+			if(current_time > 100 && SPT_PROB(7.5, seconds_per_tick))
 				if(!M.undergoing_cardiac_arrest() && M.can_heartattack())
 					M.set_heartattack(TRUE)
 					if(M.stat == CONSCIOUS)
@@ -951,27 +951,27 @@
 	glass_name = "Between the Mandibles"
 	glass_desc = "Named after a request from a clueless spacer who asked for Rachnid venom to be mixed in a house special. While Rachnids don't have venom glands, this'll have you reeling all the same."
 
-/datum/reagent/consumable/ethanol/hippies_delight/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/hippies_delight/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if (!M.slurring)
 		M.slurring = 1
-	switch(current_cycle)
-		if(1 to 5)
-			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(30)
-		if(5 to 20)
-			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(45)
-		if (20 to 200)
-			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(60)
-		if(200 to INFINITY)
-			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(75)
-			if(prob(30))
-				M.adjustToxLoss(1 * seconds_per_tick, 0)
+	switch(current_time)
+		if(1 to 10)
+			M.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			M.set_drugginess(30) // 1 minute
+		if(11 to 40)
+			M.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			M.set_drugginess(45) // 1 minute 30
+		if (41 to 400)
+			M.set_timed_status_effect(80 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(80 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			M.set_drugginess(60) // 2 minutes
+		if(401 to INFINITY)
+			M.set_timed_status_effect(120 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(120 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			M.set_drugginess(75) /// 2 minutes 30
+			if(SPT_PROB(15, seconds_per_tick))
+				M.adjustToxLoss(2, 0)
 				. = 1
 	..()
 
@@ -1055,13 +1055,13 @@
 	if(!L.stat && heal_points == 20) //brought us out of softcrit
 		L.visible_message(span_danger("[L] lurches to [L.p_their()] feet!"), span_boldnotice("Up and at 'em, kid."))
 
-/datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_life(mob/living/L, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_life(mob/living/L, seconds_per_tick)
 	if(L.health > 0)
-		L.adjustBruteLoss(-0.5 * seconds_per_tick)
-		L.adjustFireLoss(-0.5 * seconds_per_tick)
-		L.adjustToxLoss(-0.25 * seconds_per_tick)
-		L.adjustOxyLoss(-1.5 * seconds_per_tick)
-		L.adjustStaminaLoss(-2.5 * seconds_per_tick)
+		L.adjustBruteLoss(-1 * REM * seconds_per_tick)
+		L.adjustFireLoss(-1 * REM * seconds_per_tick)
+		L.adjustToxLoss(-0.5 * REM * seconds_per_tick)
+		L.adjustOxyLoss(-3 * REM * seconds_per_tick)
+		L.adjustStaminaLoss(-5 * REM * seconds_per_tick)
 		. = TRUE
 	..()
 
@@ -1075,8 +1075,8 @@
 	glass_name = "Squirt Cider"
 	glass_desc = "Squirt cider will toughen you right up. Too bad about the musty aftertaste."
 
-/datum/reagent/consumable/ethanol/squirt_cider/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.satiety += 2.5 * seconds_per_tick //for context, vitamins give 30 satiety per tick
+/datum/reagent/consumable/ethanol/squirt_cider/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.satiety += 5 * REM * seconds_per_tick //for context, vitamins give 30 satiety per tick
 	..()
 	. = TRUE
 
@@ -1103,8 +1103,8 @@
 	glass_name = "Sugar Rush"
 	glass_desc = "If you can't mix a Sugar Rush, you can't tend bar."
 
-/datum/reagent/consumable/ethanol/sugar_rush/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.satiety -= 5 * seconds_per_tick //junky as hell! a whole glass will keep you from being able to eat junk food
+/datum/reagent/consumable/ethanol/sugar_rush/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.satiety -= 10 * REM * seconds_per_tick //junky as hell! a whole glass will keep you from being able to eat junk food
 	..()
 	. = TRUE
 
@@ -1132,9 +1132,9 @@
 	glass_name = "Peppermint Patty"
 	glass_desc = "A boozy, minty hot cocoa that warms your belly on a cold night."
 
-/datum/reagent/consumable/ethanol/peppermint_patty/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/peppermint_patty/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.apply_status_effect(/datum/status_effect/throat_soothed)
-	M.adjust_bodytemperature(0.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
+	M.adjust_bodytemperature(1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/ethanol/alexander
@@ -1157,7 +1157,7 @@
 			to_chat(thehuman, span_notice("[theshield] appears polished, although you don't recall polishing it."))
 			return TRUE
 
-/datum/reagent/consumable/ethanol/alexander/on_mob_life(mob/living/L)
+/datum/reagent/consumable/ethanol/alexander/on_mob_life(mob/living/L, seconds_per_tick)
 	..()
 	if(mighty_shield && !(mighty_shield in L.contents)) //If you had a shield and lose it, you lose the reagent as well. Otherwise this is just a normal drink.
 		L.reagents.del_reagent(/datum/reagent/consumable/ethanol/alexander)
@@ -1199,18 +1199,18 @@
 	glass_name = "Between the Sheets"
 	glass_desc = "Also known as The Maiden's Prayer, if you're not willing to say the original name aloud."
 
-/datum/reagent/consumable/ethanol/between_the_sheets/on_mob_life(mob/living/L, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/between_the_sheets/on_mob_life(mob/living/L, seconds_per_tick)
 	..()
 	if(L.IsSleeping())
 		if(L.getBruteLoss() && L.getFireLoss()) //If you are damaged by both types, slightly increased healing but it only heals one. The more the merrier wink wink.
-			if(SPT_PROB(25, seconds_per_tick))
-				L.adjustBruteLoss(-0.125 * seconds_per_tick)
+			if(prob(50))
+				L.adjustBruteLoss(-0.25 * REM * seconds_per_tick)
 			else
-				L.adjustFireLoss(-0.125 * seconds_per_tick)
+				L.adjustFireLoss(-0.25 * REM * seconds_per_tick)
 		else if(L.getBruteLoss()) //If you have only one, it still heals but not as well.
-			L.adjustBruteLoss(-0.1 * seconds_per_tick)
+			L.adjustBruteLoss(-0.2 * REM * seconds_per_tick)
 		else if(L.getFireLoss())
-			L.adjustFireLoss(-0.1 * seconds_per_tick)
+			L.adjustFireLoss(-0.2 * REM * seconds_per_tick)
 
 /datum/reagent/consumable/ethanol/kamikaze
 	name = "Mothball"
@@ -1243,10 +1243,10 @@
 	glass_desc = "A chilly drink made in remembrance of Gorlex IV. It's not a wise idea to go ordering this when the PGF are in town, though."
 
 
-/datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.5*REM*seconds_per_tick, 0)
-	M.adjust_nutrition(-2.5 * seconds_per_tick)
+		M.adjustToxLoss(1*REM*seconds_per_tick, 0)
+	M.adjust_nutrition(-5 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
 
@@ -1260,10 +1260,10 @@
 	glass_name = "glass of weldline"
 	glass_desc = "A shorn-off cola bottle filled with fernet and cola soft drink. A tradition among cargo workers and hull technicians is to use a welder to cut the cola can in half."
 
-/datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.25*REM*seconds_per_tick, 0)
-	M.adjust_nutrition(-1.5 * seconds_per_tick)
+		M.adjustToxLoss(0.5 * REM * seconds_per_tick, 0)
+	M.adjust_nutrition(-3 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
 
@@ -1277,8 +1277,8 @@
 	glass_name = "glass of fanciulli"
 	glass_desc = "A glass of Fanciulli: a Manhattan with fernet mixed in. Bitter enough to knock some sense into your drunk self."
 
-/datum/reagent/consumable/ethanol/fanciulli/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_nutrition(-2.5 * seconds_per_tick)
+/datum/reagent/consumable/ethanol/fanciulli/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_nutrition(-5 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
 
@@ -1301,7 +1301,7 @@
 	glass_desc = "A glass of fernet and mint creme liquor, enjoyed on the warmer days on Teceti." //Get lazy literally by drinking this
 
 
-/datum/reagent/consumable/ethanol/branca_menta/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/branca_menta/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	M.adjust_bodytemperature(-0.5 * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, T0C, FALSE)
 	return ..()
 
@@ -1363,7 +1363,7 @@
 	glass_name = "Turbo"
 	glass_desc = "A turbulent cocktail for outlaw hoverbikers. Not officially recognized by National Association for Anti-Gravity Automobile Dragracing (NAAGAD)... but they're sticks in the mud, anyway!"
 
-/datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(2, seconds_per_tick))
 		to_chat(M, span_notice("[pick("You feel disregard for the rule of law.", "You feel pumped!", "Your head is pounding.", "Your thoughts are racing...")]"))
 	M.adjustStaminaLoss(-M.get_drunk_amount() * 0.125 * seconds_per_tick)
@@ -1420,7 +1420,7 @@
 	glass_desc = "The glass is seemingly reacting with the bluespace flakes... maybe making this was a poor decision?"
 	var/stored_teleports = 0
 
-/datum/reagent/consumable/ethanol/blazaam/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/blazaam/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(M.get_drunk_amount() > 40)
 		if(stored_teleports)
 			do_teleport(M, get_turf(M), rand(1,3), channel = TELEPORT_CHANNEL_WORMHOLE)
@@ -1473,8 +1473,8 @@
 	glass_name = "glass of pruno"
 	glass_desc = "Fermented prison wine made from fruit, sugar, and despair."
 
-/datum/reagent/consumable/ethanol/pruno/on_mob_life(mob/living/carbon/M)
-	M.adjust_disgust(5)
+/datum/reagent/consumable/ethanol/pruno/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjust_disgust(5 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/ethanol/ginger_amaretto
@@ -1518,17 +1518,17 @@
 	glass_name = "Miner's Milk"
 	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by N+S's mining and survey corps, and often still enjoyed in the New Gorlex Republic."
 
-/datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+/datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(SPT_PROB(0.5, seconds_per_tick))
 		var/drink_message = pick("You feel rugged.", "You feel strong.", "You feel nourished.")
 		to_chat(M, span_notice("[drink_message]"))
 	if(SPT_PROB(7.5, seconds_per_tick))
 		holder.add_reagent(/datum/reagent/consumable/nutriment, 1)
-	M.AdjustStun(-0.5)
-	M.AdjustKnockdown(-0.5)
-	M.AdjustUnconscious(-0.5)
-	M.AdjustParalyzed(-0.5)
-	M.AdjustImmobilized(-0.5)
+	M.AdjustStun(-0.5 * REM * seconds_per_tick)
+	M.AdjustKnockdown(-0.5 * REM * seconds_per_tick)
+	M.AdjustUnconscious(-0.5 * REM * seconds_per_tick)
+	M.AdjustParalyzed(-0.5 * REM * seconds_per_tick)
+	M.AdjustImmobilized(-0.5 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane
@@ -1542,23 +1542,23 @@
 	glass_name = "Spriter's Bane"
 	glass_desc = "Tastes better than it looks."
 
-/datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
-	switch(current_cycle)
-		if(5 to 40)
-			C.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+/datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C, seconds_per_tick)
+	switch(current_time)
+		if(10 to 80)
+			C.set_timed_status_effect(6 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blurry)
 				C.blur_eyes(6)
 				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
-		if(40 to 100)
-			C.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		if(81 to 200)
+			C.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(15))
 				new /datum/hallucination/hudscrew(C)
-		if(100 to INFINITY)
+		if(201 to INFINITY)
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blind)
 				C.blind_eyes(6)
 				to_chat(C, span_userdanger("Your vision fades as your eyes are outlined in black!"))
 			else
-				C.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+				C.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane/expose_atom(atom/A, volume)
@@ -1576,8 +1576,8 @@
 	glass_name = "Hullbreach"
 	glass_desc = "Fire and ice combine in your mouth, like being pulled out into space."
 
-/datum/reagent/consumable/ethanol/freezer_burn/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.2, 0)
+/datum/reagent/consumable/ethanol/freezer_burn/on_mob_life(mob/living/carbon/M, seconds_per_tick)
+	M.adjustFireLoss(-0.2 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -1617,7 +1617,7 @@
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#8000ff")
 
-/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	if(QDELETED(light_holder))
 		M.reagents.del_reagent(/datum/reagent/consumable/ethanol/darkest_chocolate)
 	else if(light_holder.loc != M)
@@ -1695,21 +1695,21 @@
 	glass_name = "Eudaimonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
-/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M, seconds_per_tick)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	if(!mood)
 		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL)
-		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
+		mood.setSanity(min(mood.sanity+2.5*seconds_per_tick, SANITY_GREAT))
 	..()
 
-/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M, seconds_per_tick)
 	//don't mix uppers and downers, kids.
-	if(prob(6) && iscarbon(M))
+	if(SPT_PROB(3, seconds_per_tick) && iscarbon(M))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)
 		to_chat(M, pick("Your head aches as you struggle to grasp the concepts.", "The world slows down for a precious second, a headache forming within you.", "Clusters of pain open and close within your mind's eye.", "Aches and pains fill your head as your comprehension breaks!"))
-	else if(prob(30))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM)
+	else if(SPT_PROB(15, seconds_per_tick))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 		M.adjust_disgust(5)
 
 /datum/reagent/consumable/ethanol/royal_battery_acid
@@ -1724,19 +1724,19 @@
 	glass_icon_state = "royal_battery_acid"
 	var/toxpwr = 0.5
 
-/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/drinking_mob)
+/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/drinking_mob, seconds_per_tick)
 	if(iselzuose(drinking_mob))
 		var/mob/living/carbon/drinking_carbon = drinking_mob
 		var/obj/item/organ/stomach/ethereal/stomach = drinking_carbon.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge((volume * toxpwr) * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+			stomach.adjust_charge((volume * toxpwr) * REM * seconds_per_tick * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 		return ..()
 
 	if(isvox(drinking_mob))
 		return ..()
 
 	if(toxpwr)
-		drinking_mob.adjustToxLoss(toxpwr*REM, 0)
+		drinking_mob.adjustToxLoss(toxpwr * REM * seconds_per_tick, 0)
 		. = TRUE
 		return ..()
 
