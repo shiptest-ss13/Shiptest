@@ -1,0 +1,62 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "VISV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"map_name": "Goshawk-class Security Cutter",
+	"faction": "/datum/faction/warra/vigilitas",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Goshawk-class",
+	"description": "The Goshawk was born during troubled times. With the initial order for a batch of new transports being made just at the cusp of the Inter-Corporate War, the constantly changing scope of the conflict led to numerous revisions. From a fleet combatant, to a stealth carrier, to a counter-insurgency craft. The first Goshawks (which were an extensive compromise between the many priorities) rolled out of the Shipyards mere days before the conclusion of the war - now, they serve Vigilitas Interstellar as one of their largest independently-operating security vessels in the Frontier. The Goshawk has earned a reputation for crew comfort, including many amenities that are rare or nonexistent on other vessels in its weight class.",
+	"tags": [
+		"Combat",
+		"RP Focus"
+	],
+	"starting_funds": 2000,
+	"tranist_x_offset": 0,
+	"tranist_y_offset": 0,
+	"map_path": "_maps/shuttles/warra/warra_goshawk.dmm",
+	"token_icon_state": "ship_big_generic",
+	"limit": 1,
+	"job_slots": {
+		"Security Director": {
+			"outfit": "/datum/outfit/job/warra/captain/vi/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/warra/hos/vi/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Adjunct": {
+			"outfit": "/datum/outfit/job/warra/hos/adjunct",
+			"officer": true,
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/warra/paramedic/empty",
+			"slots": 1
+		},
+		"Security Engineer": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 1
+		},
+		"Security Guard": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 3
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

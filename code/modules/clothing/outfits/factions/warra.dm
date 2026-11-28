@@ -259,6 +259,23 @@
 	belt = null
 	backpack_contents = null
 
+/datum/outfit/job/warra/hos/adjunct
+	name = "Makosso-Warra - Vigilitas Adjunct"
+
+	head = null
+	suit = null
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	ears = null
+	alt_suit = null
+	glasses = null
+	gloves = null
+	neck = null
+	r_pocket = null
+	l_pocket = null
+	belt = null
+	backpack_contents = null
+
 // Security Officer
 /datum/outfit/job/warra/security
 	name = "Makosso-Warra - Security Officer"
