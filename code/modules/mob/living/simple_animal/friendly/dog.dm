@@ -520,7 +520,7 @@
 	maxbodytemp = T0C + 40
 	held_state = "void_puppy"
 
-/mob/living/simple_animal/pet/dog/corgi/puppy/void/Process_Spacemove(movement_dir = 0)
+/mob/living/simple_animal/pet/dog/corgi/puppy/void/Process_Spacemove(movement_dir = 0, continuous_move = FALSE)
 	return 1	//Void puppies can navigate space.
 
 

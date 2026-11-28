@@ -8,21 +8,40 @@
 	w_class = WEIGHT_CLASS_BULKY
 	distribute_pressure = ONE_ATMOSPHERE * O2STANDARD
 	actions_types = list(/datum/action/item_action/set_internals, /datum/action/item_action/toggle_jetpack, /datum/action/item_action/jetpack_stabilization)
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	var/gas_type = GAS_O2
 	var/on = FALSE
-	var/stabilizers = FALSE
 	var/full_speed = TRUE // Whether damage slowdown will affect the jetpack
-	var/datum/effect_system/trail_follow/ion/ion_trail
+	var/stabilize = FALSE
+	var/thrust_callback
 
-/obj/item/tank/jetpack/Initialize()
+/obj/item/tank/jetpack/Initialize(mapload)
 	. = ..()
-	ion_trail = new
-	ion_trail.auto_process = FALSE
-	ion_trail.set_up(src)
+	thrust_callback = CALLBACK(src, PROC_REF(allow_thrust), 0.01)
+	configure_jetpack(stabilize)
 
 /obj/item/tank/jetpack/Destroy()
-	QDEL_NULL(ion_trail)
+	thrust_callback = null
 	return ..()
+
+/**
+ * configures/re-configures the jetpack component
+ *
+ * Arguments
+ * stabilize - Should this jetpack be stabalized
+ */
+/obj/item/tank/jetpack/proc/configure_jetpack(stabilize)
+	src.stabilize = stabilize
+
+	AddComponent( \
+		/datum/component/jetpack, \
+		src.stabilize, \
+		COMSIG_JETPACK_ACTIVATED, \
+		COMSIG_JETPACK_DEACTIVATED, \
+		JETPACK_ACTIVATION_FAILED, \
+		thrust_callback, \
+		/datum/effect_system/trail_follow/ion \
+	)
 
 /obj/item/tank/jetpack/populate_gas()
 	if(gas_type)
@@ -33,11 +52,15 @@
 		cycle(user)
 	else if(istype(action, /datum/action/item_action/jetpack_stabilization))
 		if(on)
-			stabilizers = !stabilizers
-			to_chat(user, span_notice("You turn the jetpack stabilization [stabilizers ? "on" : "off"]."))
+			toggle_stabilization()
 	else
 		toggle_internals(user)
 
+
+/obj/item/tank/jetpack/proc/toggle_stabilization(mob/user)
+	if(on)
+		configure_jetpack(!stabilize)
+		to_chat(user, span_notice("You turn [src]'s stabilization [stabilize ? "on" : "off"]"))
 
 /obj/item/tank/jetpack/proc/cycle(mob/living/user)
 	if(user.is_incapacitated())
@@ -52,45 +75,29 @@
 	update_item_action_buttons()
 
 /obj/item/tank/jetpack/proc/turn_on(mob/living/user)
-	if(!allow_thrust(0.01, user))
-		return
+	if(SEND_SIGNAL(src, COMSIG_JETPACK_ACTIVATED, user) & JETPACK_ACTIVATION_FAILED)
+		return FALSE
+
 	on = TRUE
 	icon_state = "[initial(icon_state)]-on"
-	ion_trail.start()
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(move_react))
-	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(pre_move_react))
 	if(full_speed)
 		user.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown_flying)
 
 /obj/item/tank/jetpack/proc/turn_off(mob/living/user)
 	on = FALSE
-	stabilizers = FALSE
+	SEND_SIGNAL(src, COMSIG_JETPACK_DEACTIVATED, user)
 	icon_state = initial(icon_state)
-	ion_trail.stop()
-	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
 	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown_flying)
 
-/obj/item/tank/jetpack/proc/move_react(mob/living/user)
-	if(!on)//If jet dont work, it dont work
-		return
-	if(!user)//Don't allow jet self using
-		return
-	if(!isturf(user.loc))//You can't use jet in nowhere or from mecha/closet
-		return
-	if(!(user.movement_type & FLOATING) || user.buckled)//You don't want use jet in gravity or while buckled.
-		return
-	if(user.pulledby)//You don't must use jet if someone pull you
-		return
-	if(user.throwing)//You don't must use jet if you thrown
-		return
-	if(length(user.client.keys_held & user.client.movement_keys))//You use jet when press keys. yes.
-		allow_thrust(0.01, user)
+/obj/item/tank/jetpack/dropped(mob/user, silent)
+	. = ..()
+	if(on)
+		turn_off(user)
 
-/obj/item/tank/jetpack/proc/pre_move_react(mob/living/user)
-	ion_trail.oldposition = get_turf(src)
-
-/obj/item/tank/jetpack/proc/allow_thrust(num, mob/living/user)
+/obj/item/tank/jetpack/proc/allow_thrust(num)
+	var/mob/user = get_user()
+	if(!user)
+		return FALSE
 	if((num < 0.005 || air_contents.total_moles() < num))
 		turn_off(user)
 		return
@@ -99,6 +106,8 @@
 
 	return TRUE
 
+/obj/item/tank/jetpack/proc/get_user()
+	return ismob(loc) ? loc : null
 
 /obj/item/tank/jetpack/improvised
 	name = "improvised jetpack"
@@ -140,6 +149,7 @@
 	volume = 40
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 /obj/item/tank/jetpack/oxygen/captain
 	name = "captain's jetpack"
@@ -156,8 +166,6 @@
 	icon_state = "jetpack-sec"
 	item_state = "jetpack-sec"
 
-
-
 /obj/item/tank/jetpack/carbondioxide
 	name = "jetpack (carbon dioxide)"
 	desc = "A tank of compressed carbon dioxide for use as propulsion in zero-gravity areas. Painted black to indicate that it should not be used as a source for internals."
@@ -166,7 +174,7 @@
 	distribute_pressure = 0
 	gas_type = GAS_CO2
 
-
+//its ion jetpack so its cooler
 /obj/item/tank/jetpack/suit
 	name = "hardsuit jetpack upgrade"
 	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It draws propellant from an external air tank."
@@ -179,14 +187,17 @@
 	slot_flags = null
 	gas_type = null
 	custom_price = 2000
-	var/datum/gas_mixture/temp_air_contents
-	var/obj/item/tank/internals/tank = null
+
+	power_use_amount = POWER_CELL_USE_VERY_LOW
+
 	var/mob/living/carbon/human/cur_user
+
+	var/cell_override = /obj/item/stock_parts/cell/high
 
 /obj/item/tank/jetpack/suit/Initialize()
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	temp_air_contents = air_contents
+	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE)
 
 /obj/item/tank/jetpack/suit/attack_self()
 	return
@@ -195,41 +206,17 @@
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit))
 		to_chat(user, span_warning("\The [src] must be connected to a hardsuit!"))
 		return
-
-	var/mob/living/carbon/human/H = user
-	if((!istype(H.s_store, /obj/item/tank/internals)) && (!istype(H.back, /obj/item/tank/internals)) && (!istype(H.belt, /obj/item/tank/internals)) && (!istype(H.l_store, /obj/item/tank/internals)) && (!istype(H.r_store, /obj/item/tank/internals)))
-		to_chat(user, span_warning("You need to equip a tank!"))
-		return
 	..()
 
 /obj/item/tank/jetpack/suit/turn_on(mob/user)
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit) || !ishuman(loc.loc) || loc.loc != user)
 		return
-	var/mob/living/carbon/human/H = user
-
-	//Cascades down a priority list, taking air from first the suit storage slot, then the back, the belt, the left pocket and the right pocket
-	if(istype(H.back, /obj/item/tank))
-		tank = H.back
-	else if(istype(H.s_store, /obj/item/tank))
-		tank = H.s_store
-	else if(istype(H.belt, /obj/item/tank))
-		tank = H.belt
-	else if(istype(H.l_store, /obj/item/tank))
-		tank = H.l_store
-	else if (istype(H.r_store, /obj/item/tank))
-		tank = H.r_store
-	else
-		tank = null
-		return
-
-	air_contents = tank.air_contents
 	START_PROCESSING(SSobj, src)
 	cur_user = user
 	..()
 
 /obj/item/tank/jetpack/suit/turn_off(mob/user)
-	tank = null
-	air_contents = temp_air_contents
+	playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
 	STOP_PROCESSING(SSobj, src)
 	cur_user = null
 	..()
@@ -239,28 +226,20 @@
 		turn_off(cur_user)
 		return
 
-	if(!tank)
+	if(!allow_thrust())
 		to_chat(usr, span_warning("\The [src] shuts down!"))
 		turn_off(cur_user)
 		return
 	..()
 
+/obj/item/tank/jetpack/suit/allow_thrust(num)
+	var/mob/user = get_user()
+	if(!user)
+		return FALSE
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		return FALSE
 
-//Return a jetpack that the mob can use
-//Back worn jetpacks, hardsuit internal packs, and so on.
-//Used in Process_Spacemove() and wherever you want to check for/get a jetpack
+	return TRUE
 
-/mob/proc/get_jetpack()
-	return
-
-/mob/living/carbon/get_jetpack()
-	var/obj/item/tank/jetpack/J = back
-	if(istype(J))
-		return J
-
-/mob/living/carbon/human/get_jetpack()
-	var/obj/item/tank/jetpack/J = ..()
-	if(!istype(J) && istype(wear_suit, /obj/item/clothing/suit/space/hardsuit))
-		var/obj/item/clothing/suit/space/hardsuit/C = wear_suit
-		J = C.jetpack
-	return J
+/obj/item/tank/jetpack/suit/get_user()
+	return cur_user

@@ -200,7 +200,7 @@
 		if(!turf_check(next, current))
 			to_chat(user, span_warning("Your \the [AM] can not go onto [next]!"))
 			return
-		if(!Process_Spacemove(direction) || !isturf(AM.loc))
+		if(GLOB.move_manager.processing_on(user, SSspacedrift) || !isturf(AM.loc))
 			return
 		if(isliving(AM) && respect_mob_mobility)
 			var/mob/living/M = AM

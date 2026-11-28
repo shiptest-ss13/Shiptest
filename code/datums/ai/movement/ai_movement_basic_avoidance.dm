@@ -7,6 +7,7 @@
 	for(var/datum/ai_controller/controller as anything in moving_controllers)
 		// Check if this controller can actually run, so we don't chase people with corpses
 		if(!controller.able_to_run())
+			GLOB.move_manager.stop_looping(controller.pawn) //stop moving
 			stop_moving_towards(controller)
 			continue
 		if(!COOLDOWN_FINISHED(controller, movement_cooldown))

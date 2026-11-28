@@ -173,7 +173,7 @@
 
 /// Color used for default blood
 #define COLOR_BLOOD "#CC0000"
-
+#define COLOR_BLOOD_XENO "#05EE05"
 
 /*Planetary color defines*/
 
