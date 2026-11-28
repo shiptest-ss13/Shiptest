@@ -12,7 +12,24 @@
 		return TRUE
 	if(ai_too_dark_to_see(viewer, target, target_turf, distance, range))
 		return FALSE
-	return viewer in ai_cached_hearers(target, range)
+	return (viewer in ai_cached_hearers(target, range)) && !ai_sight_blocked(viewer_turf, target_turf)
+
+// virtual levels with an AI sight blocker on, so we skip the checks if the virtual level doesnt have one.
+GLOBAL_LIST_EMPTY(ai_sight_blocker_virtual_levels)
+
+/proc/get_ai_sense_line(atom/first, atom/second)
+	if(first.x > second.x || (first.x == second.x && first.y > second.y))
+		return get_line(second, first)
+	return get_line(first, second)
+
+// blocked by mapper vision blocker
+/proc/ai_sight_blocked(turf/viewer_turf, turf/target_turf)
+	if(!GLOB.ai_sight_blocker_virtual_levels["[viewer_turf.virtual_z]"])
+		return FALSE
+	for(var/turf/line_turf as anything in get_ai_sense_line(viewer_turf, target_turf))
+		if(line_turf != viewer_turf && line_turf != target_turf && HAS_TRAIT(line_turf, TRAIT_AI_BLOCKS_SIGHT))
+			return TRUE
+	return FALSE
 
 // through a scope, view pushed out towards looking_at and widened, so only that way, and only while we're facing it.
 // For marksmen spotting whoever's sniping them from further than they'd otherwise see
@@ -62,8 +79,8 @@
 			if(someone == viewer)
 				continue
 			var/turf/their_turf = get_turf(someone)
-			if(ai_too_dark_to_see(viewer, someone, their_turf, get_dist(our_turf, their_turf), range))
-				continue // in sight, but too dark to make out from here
+			if(ai_too_dark_to_see(viewer, someone, their_turf, get_dist(our_turf, their_turf), range) || ai_sight_blocked(our_turf, their_turf))
+				continue // in sight, but too dark to make out from here, or a mapped vision blocker hit
 			visible += someone
 	visible_cache[key] = list(viewer.loc, visible)
 	return visible
