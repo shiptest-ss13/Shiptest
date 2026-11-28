@@ -7,16 +7,9 @@
 				emote("collapse")
 			Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
 			to_chat(src, span_danger("You feel weak."))
-		if(radiation > RAD_MOB_MUTATE)
-			if(prob(1))
-				to_chat(src, span_danger("You mutate!"))
-				easy_randmut(NEGATIVE+MINOR_NEGATIVE)
-				emote("gasp")
-				domutcheck()
-
-				if(radiation > RAD_MOB_MUTATE * 2 && prob(50))
-					gorillize()
-					return
+			if(radiation > RAD_MOB_KNOCKDOWN * 2 && prob(50))
+				gorillize()
+				return
 		if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
 			vomit(10, TRUE)
 	return ..()
