@@ -296,30 +296,30 @@
 	contains = list(/obj/item/storage/box/ammo/a556_42/hp)
 	cost = 375
 
-/* 5.56 caseless */
+/* 6mm caseless */
 
-/datum/supply_pack/ammo/c556mmHITP_ammo_box
-	name = "5.56 Caseless Ammo Box Crate"
-	desc = "Contains a 48-round 5.56mm caseless box for SolGov sidearms like the Pistole C."
-	contains = list(/obj/item/storage/box/ammo/c556mm)
+/datum/supply_pack/ammo/c6mmHITP_ammo_box
+	name = "6mm Caseless Ammo Box Crate"
+	desc = "Contains a 48-round 6mm caseless box for SolGov sidearms like the Pistole C."
+	contains = list(/obj/item/storage/box/ammo/c6mm)
 	cost = 165 //5.7 ammo efficiency at 20 damage
 
-/datum/supply_pack/ammo/c556mmHITPap_ammo_box
-	name = "5.56 Caseless AP Ammo Box Crate"
-	desc = "Contains a 48-round 5.56mm caseless ammo box loaded with armor-piercing ammo."
-	contains = list(/obj/item/storage/box/ammo/c556mm_ap)
+/datum/supply_pack/ammo/c6mmHITPap_ammo_box
+	name = "6mm Caseless AP Ammo Box Crate"
+	desc = "Contains a 48-round 6mm caseless ammo box loaded with armor-piercing ammo."
+	contains = list(/obj/item/storage/box/ammo/c6mm_ap)
 	cost = 205
 
-/datum/supply_pack/ammo/c556mmhitphp_ammo_box
-	name = "5.56 Caseless HP Ammo Box Crate"
-	desc = "Contains a 48-round 5.56mm caseless ammo box loaded with hollow-point ammo, great against unarmored targets."
-	contains = list(/obj/item/storage/box/ammo/c556mm_hp)
+/datum/supply_pack/ammo/c6mmhitphp_ammo_box
+	name = "6mm Caseless HP Ammo Box Crate"
+	desc = "Contains a 48-round 6mm caseless ammo box loaded with hollow-point ammo, great against unarmored targets."
+	contains = list(/obj/item/storage/box/ammo/c6mm_hp)
 	cost = 205
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
-	name = "5.56 Caseless Rubber Ammo Box Crate"
-	desc = "Contains a 48-round 5.56mm caseless ammo box loaded with less-than-lethal rubber rounds."
-	contains = list(/obj/item/storage/box/ammo/c556mm_rubber)
+/datum/supply_pack/ammo/c6HITPrubber_ammo_box
+	name = "6mm Caseless Rubber Ammo Box Crate"
+	desc = "Contains a 48-round 6mm caseless ammo box loaded with less-than-lethal rubber rounds."
+	contains = list(/obj/item/storage/box/ammo/c6mm_rubber)
 	cost = 165
 
 /* .299 */
@@ -404,12 +404,12 @@
 
 /datum/supply_pack/ammo/a858
 	name = "8x58mm Ammo Box Crate"
-	desc = "Contains a 20-round 8x58mm ammo box for Solarian-manufactured sniper rifles, such as the SSG-669C."
+	desc = "Contains a 20-round 8x58mm ammo box for Solarian-manufactured sniper rifles, such as the Jura."
 	contains = list(/obj/item/storage/box/ammo/a858)
 	cost = 200 //4 ammo efficiency at 40 damage //TTD 225
 
 /* 4.73x33mm caseless */
-/datum/supply_pack/ammo/a858
+/datum/supply_pack/ammo/sweese
 	name = "4.73x33mm Caseless Ammo Box Crate"
 	desc = "Contains a 60-round 4.73x33mm caseless ammo box for those lucky enough to have antique Solarian weapons that fire such a round."
 	contains = list(/obj/item/storage/box/ammo/c47x33mm)
@@ -456,21 +456,37 @@
 
 /datum/supply_pack/ammo/ferrolanceboxcrate
 	name = "Ferromagnetic Lance Box Crate"
-	desc = "Contains a 60-round ferromagnetic lance ammo box for high-powered gauss guns such as the GAR assault rifle."
+	desc = "Contains a 60-round ferromagnetic lance ammo box for high-powered gauss guns such as the Lucerne carbine."
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
 	cost = 300 //5 ammo efficiency at 30 damage - I don't know how this formula works so I just eyeballed it to be on par with 556CLIP
 
 /datum/supply_pack/ammo/ferrolanceboxcrate_hc
 	name = "High Conductivity Lance Box Crate"
-	desc = "Contains a 60-round ferromagnetic lance ammo box. These are highly conductive, greatly improving bullet speed and penetration while notably reducing damage."
+	desc = "Contains a 60-round ferromagnetic lance ammo box for high-powered gauss guns such as the Lucerne carbine. These are highly conductive, greatly improving bullet speed and penetration while notably reducing damage."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
 	cost = 380
+
+/* ferro rods */
 
 /datum/supply_pack/ammo/ferrorodboxcrate
 	name = "Ferromagnetic Rod Box Crate"
 	desc = "Contains a 20-round ferromagnetic rod box for high-powered gauss guns such as the Model 'Atelier' Railgun."
 	contains = list(/obj/item/storage/box/ammo/ferrorods)
 	cost = 500
+
+/* ferro flechettes */
+
+/datum/supply_pack/ammo/flechette
+	name = "Ferromagnetic Flechette Box Crate"
+	desc = "Contains 40 bundles of ferromagnetic flechettes for gauss scatterguns such as the Bielersee."
+	contains = list(/obj/item/storage/box/ammo/flechette)
+	cost = 400 // bit over buckshot
+
+/datum/supply_pack/ammo/hcflechette
+	name = "High Conductivity Flechette Box Crate"
+	desc = "Contains 40 bundles of high conductivity flechettes for gauss scatterguns such as the Bielersee."
+	contains = list(/obj/item/storage/box/ammo/flechette/hc)
+	cost = 480
 
 /* cybersun gauss darts */
 

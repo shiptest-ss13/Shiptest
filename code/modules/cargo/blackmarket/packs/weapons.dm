@@ -447,7 +447,7 @@
 /datum/blackmarket_item/weapon/guncase/model_h
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
-	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
+	item = /obj/item/gun/ballistic/sol_gauss/modelh
 	pair_item = list(/datum/blackmarket_item/ammo/model_h_mag, /datum/blackmarket_item/ammo/gauss_cell)
 
 	cost_min = 2000
@@ -455,10 +455,10 @@
 	stock = 2
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/guncase/sgg
-	name = "SSG-669C Rotary Sniper Rifle"
-	desc = "I could tell you its full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
-	item = /obj/item/gun/ballistic/rifle/solgov
+/datum/blackmarket_item/weapon/guncase/modelj
+	name = "Model 'Jura' Marksman Rifle"
+	desc = "Picked up a few of these last time I swung by Mars. Nice caseless sniper, lets you pop someone and get moving without having to pick up brass."
+	item = /obj/item/gun/ballistic/rifle/modelj
 	mag_type = /obj/item/ammo_box/a858
 	pair_item = list(/datum/blackmarket_item/ammo/a858_box)
 
@@ -466,17 +466,6 @@
 	cost_max = 6000
 	stock = 1
 	availability_prob = 20
-
-/datum/blackmarket_item/weapon/guncase/pistole_c
-	name = "Pistole C"
-	desc = "Pistole Compact? Pistole Caseless? Pistole Cheese? Fuck if I know. All I know is these little numbers pack a nasty sting. Chambered in 5.56 caseless."
-	item = /obj/item/gun/ballistic/automatic/pistol/solgov/old
-	pair_item = list(/datum/blackmarket_item/ammo/pistole_c_mag)
-
-	cost_min = 900
-	cost_max = 1600
-	stock_max = 3
-	availability_prob = 30
 
 /datum/blackmarket_item/weapon/guncase/cycler
 	name = "Cycler Shotgun"
@@ -660,12 +649,25 @@
 /datum/blackmarket_item/weapon/guncase/rail_cannon
 	name = "Model 'Atelier' Railgun"
 	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
-	item = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	item = /obj/item/gun/ballistic/sol_gauss/rail_cannon
 	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
 	pair_item = list(/datum/blackmarket_item/ammo/rods)
 
 	cost_min = 6500
 	cost_max = 8000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/bielersee
+	name = "Model 'Bielersee' Magnetic Scattergun"
+	desc = "Two words: Gauss. Shotgun. Yeah I didn't think it was real either til I bought this off some guy from Ganymede. Shoots a bunch of fuckin needles and leaves people lookin like a porcupine. Or something like that."
+	item = /obj/item/gun/ballistic/sol_gauss/bielersee
+	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/flechette
+	pair_item = list(/datum/blackmarket_item/ammo/flechette)
+
+	cost_min = 4000
+	cost_max = 6000
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE

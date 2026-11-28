@@ -11,3 +11,16 @@
 	caliber = "rod"
 	max_ammo = 2
 	instant_load = TRUE
+
+/obj/item/ammo_box/magazine/internal/rutli
+	name = "rutli internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	caliber = "pellet"
+	max_ammo = 44
+	instant_load = TRUE
+
+/obj/item/ammo_box/magazine/internal/bielersee
+	name = "bielersee internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/flechette
+	caliber = "flechette"
+	max_ammo = 8

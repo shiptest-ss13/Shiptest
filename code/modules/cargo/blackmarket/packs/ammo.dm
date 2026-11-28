@@ -143,16 +143,6 @@
 	stock_max = 4
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/pistole_c_mag
-	name = "5.56 Caseless Magazine"
-	desc = "A 12 round magazine for the Pistole Cheese."
-	item = /obj/item/ammo_box/magazine/pistol556mm
-
-	cost_min = 75
-	cost_max = 250
-	stock_max = 6
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/proto_gauss_mag
 	name = "Prototype Gauss Rifle Magazine"
 	desc = "A 25 round ferromagnetic pellet magazine for the prototype gauss rifle. Choking hazard, keep pellets away from children under the age of 5."
@@ -465,6 +455,15 @@
 	stock_max = 6
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/flechette
+	name = "Ferromagnetic flechettes"
+	desc = "40 bundles of ferromagnetic flechettes."
+	item = /obj/item/storage/box/ammo/flechette
+	cost_min = 400
+	cost_max = 600
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0
 
 /datum/blackmarket_item/ammo/a4gflashbang
 	name = "4-Gauge Flashbang Shells"

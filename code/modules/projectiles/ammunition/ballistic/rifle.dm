@@ -26,7 +26,7 @@
 	bullet_skin = "trac"
 	projectile_type = /obj/projectile/bullet/a8_50r/trac
 
-// 8x58mm Caseless (SSG-669C)
+// 8x58mm Caseless (Jura)
 
 /obj/item/ammo_casing/caseless/a858
 	name = "8x58mm caseless round"

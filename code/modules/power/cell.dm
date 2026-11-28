@@ -453,7 +453,8 @@
 	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/solgov
-	name = "SolGov power cell"
+	name = "SolCon power cell"
+	desc = "A cell for powering Solarian gauss weapons. Its distinctive shape comes from its role as a removable stock on older firearms. For best results, keep above half charge."
 	icon_state = "g-sg-cell"
 	maxcharge = 15000
 
