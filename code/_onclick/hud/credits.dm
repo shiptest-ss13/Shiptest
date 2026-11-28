@@ -28,15 +28,18 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 			GLOB.end_titles += "<br>"
 
 		GLOB.end_titles += "<center><h1>Thanks for playing!</h1></center>"
-	for(var/client/C in GLOB.clients)
-		if(C.prefs.show_credits)
-			C.screen += new /atom/movable/screen/credit/title_card(null, null, SSticker.mode.title_icon)
-	for(var/i in 1 to length(GLOB.end_titles))
-		var/C = GLOB.end_titles[i]
-		if(!C)
-			continue
+	for(var/client/viewer in GLOB.clients)
+		if(viewer.prefs.show_credits)
+			viewer.screen += new /atom/movable/screen/credit/title_card(null, null, SSticker.mode.title_icon)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(roll_credit_lines))
 
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(create_credit), C), CREDIT_SPAWN_SPEED * i + (3 * CREDIT_SPAWN_SPEED), TIMER_CLIENT_TIME)
+/proc/roll_credit_lines()
+	sleep(3 * CREDIT_SPAWN_SPEED)
+	for(var/credit in GLOB.end_titles)
+		if(!credit)
+			continue
+		create_credit(credit)
+		sleep(CREDIT_SPAWN_SPEED)
 
 /proc/create_credit(credit)
 	new /atom/movable/screen/credit(null, credit)
@@ -54,24 +57,24 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 	maptext = "<font face='Verdana'>[credited]</font>"
 	maptext_height = world.icon_size * 2
 	maptext_width = world.icon_size * 13
-	var/matrix/M = matrix(transform)
-	M.Translate(0, CREDIT_ANIMATE_HEIGHT)
-	animate(src, transform = M, time = CREDIT_ROLL_SPEED)
-	target = M
+	var/matrix/rolled = matrix(transform)
+	rolled.Translate(0, CREDIT_ANIMATE_HEIGHT)
+	animate(src, transform = rolled, time = CREDIT_ROLL_SPEED)
+	target = rolled
 	animate(src, alpha = 255, time = CREDIT_EASE_DURATION, flags = ANIMATION_PARALLEL)
 	INVOKE_ASYNC(src, PROC_REF(add_to_clients))
 	QDEL_IN(src, CREDIT_ROLL_SPEED)
 
 /atom/movable/screen/credit/proc/add_to_clients()
-	for(var/client/C as anything in GLOB.clients)
-		if(C?.prefs.show_credits)
-			C.screen += src
+	for(var/client/viewer as anything in GLOB.clients)
+		if(viewer?.prefs.show_credits)
+			viewer.screen += src
 
 /atom/movable/screen/credit/Destroy()
-	for(var/client/C as anything in GLOB.clients)
-		if(!C)
+	for(var/client/viewer as anything in GLOB.clients)
+		if(!viewer)
 			continue
-		C.screen -= src
+		viewer.screen -= src
 	screen_loc = null
 	return ..()
 
