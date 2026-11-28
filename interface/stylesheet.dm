@@ -51,7 +51,6 @@ em						{font-style: normal;	font-weight: bold;}
 .syndradio				{color: #612425;}
 .cyradio				{color: #4C9C9C;}
 .ngrradio				{color: #c59973;}
-.sunsradio				{color: #8f67a1;}
 .centcomradio			{color: #686868;}
 .redteamradio			{color: #ff0000;}
 .blueteamradio			{color: #0000ff;}

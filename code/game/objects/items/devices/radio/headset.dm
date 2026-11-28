@@ -7,7 +7,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_SYNDICATE = RADIO_TOKEN_SYNDICATE,
 	RADIO_CHANNEL_CYBERSUN = RADIO_TOKEN_CYBERSUN,
 	RADIO_CHANNEL_NGR = RADIO_TOKEN_NGR,
-	RADIO_CHANNEL_SUNS = RADIO_TOKEN_SUNS,
 	RADIO_CHANNEL_WARRA = RADIO_TOKEN_WARRA,
 	RADIO_CHANNEL_MINUTEMEN = RADIO_TOKEN_MINUTEMEN,
 	RADIO_CHANNEL_PGF = RADIO_TOKEN_PGF,
@@ -122,31 +121,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/syndicate/alt/leader
 	name = "team leader headset"
 	command = TRUE
-
-/obj/item/radio/headset/syndicate/suns
-	name = "SUNS headset"
-	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere."
-	keyslot = /obj/item/encryptionkey/syndicate/suns
-	keyslot2 = /obj/item/encryptionkey/heads/captain
-
-/obj/item/radio/headset/syndicate/suns/command
-	name = "SUNS command headset"
-	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff."
-	command = TRUE
-	keyslot = /obj/item/encryptionkey/syndicate/suns
-	keyslot2 = /obj/item/encryptionkey/heads/captain
-
-/obj/item/radio/headset/syndicate/alt/suns
-	name = "SUNS bowman headset"
-	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. Protects ears from distractions during exams."
-	keyslot = /obj/item/encryptionkey/syndicate/suns
-
-/obj/item/radio/headset/syndicate/alt/suns/command
-	name = "SUNS bowman command headset"
-	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff. Protects ears from distractions during exams."
-	command = TRUE
-	keyslot = /obj/item/encryptionkey/syndicate/suns
-	keyslot2 = /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/cybersun
 	name = "cybersun headset"

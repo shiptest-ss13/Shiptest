@@ -120,9 +120,9 @@
 	availability_prob = 20
 
 /datum/blackmarket_item/weapon/sabre
-	name = "SUNS Dueling Sabre"
-	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp; we had to spend hours stitching our fingers back on after getting it."
-	item = /obj/item/storage/belt/sabre/suns
+	name = "Solarian Officer's Sabre"
+	desc = "A mastercrafted sabre formerly wielded by a Solarian captain. It's very sharp; we had to spend hours stitching our fingers back on after getting it."
+	item = /obj/item/storage/belt/sabre/solgov
 
 	cost_min = 1250
 	cost_max = 2000

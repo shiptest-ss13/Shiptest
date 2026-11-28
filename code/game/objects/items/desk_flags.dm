@@ -31,11 +31,6 @@
 	desc = "A small banner on a pole depicting the sigil of the Pan-Gezenan Federation."
 	icon_state = "gezena"
 
-/obj/item/desk_flag/suns
-	name = "SUNS desk flag"
-	desc = "A little desk decoration in the gold and purple color palette of SUNS."
-	icon_state = "suns"
-
 /obj/item/desk_flag/ngr
 	name = "new gorlexian desk flag"
 	desc = "The crimson, black, and tan flag of the New Gorlex Republic."
