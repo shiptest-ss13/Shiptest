@@ -326,3 +326,61 @@
 	manufacturer = MANUFACTURER_NONE
 
 EMPTY_GUN_HELPER(automatic/pistol/derringer)
+
+/obj/item/gun/ballistic/automatic/pistol/thorn
+	name = "FL-M Thorn"
+	desc = "A machine pistol of Reh'himl origin, recently manufactured by the Lixsur'sha Worskhop. The Thorn exists as an attempt at a smaller sized flechette gun, done by simply cutting down the 5.8x42mm cartridge down. Opinions on the Thorn are mixed, though most agree it is remarkably easy to use."
+
+	icon = 'icons/obj/guns/manufacturer/lixsurworkshop/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/lixsurworkshop/onmob.dmi'
+
+	icon_state = "thorn"
+	item_state = "thorn"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/thorn
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/thorn,
+	)
+	bolt_type = BOLT_TYPE_OPEN
+	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
+	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
+	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+
+	rack_sound = 'sound/weapons/gun/smg/spitter_cocked.ogg'
+
+	show_magazine_on_sprite = TRUE
+
+	manufacturer = MANUFACTURER_WORKSHOP
+	slot_available = list(ATTACHMENT_SLOT_MUZZLE = 1)
+	default_attachments = list(/obj/item/attachment/silencer/cobra) //they'll all be integrally suppressed. They're not getting much attachment freedom
+	unique_attachments = list(/obj/item/attachment/silencer/cobra)
+
+	fire_delay = 0.15 SECONDS
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+NO_MAG_GUN_HELPER(automatic/pistol/thorn)
+
+
+/obj/item/ammo_box/magazine/thorn
+	name = "Thorn magazine (5.8x20mm)"
+	desc = "A long, 25 round magazine for the Thorn flechette pistol. These rounds have poor penetration and diverge quickly."
+	icon_state = "thornmag-1"
+	base_icon_state = "thornmag"
+	ammo_type = /obj/item/ammo_casing/thorn
+	caliber = "thorn"
+	max_ammo = 25
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/thorn/empty
+	start_empty = TRUE

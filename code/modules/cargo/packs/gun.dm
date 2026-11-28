@@ -217,6 +217,13 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/thorn
+	name = "FL-M Thorn Machine Pistol Crate"
+	desc = "Contains an automatic, high capacity flechette pistol. Chambered in 5.8x20mm."
+	cost = 2250
+	contains = list(/obj/item/storage/guncase/thorn)
+	crate_name = "flechette pistol crate"
+
 /*
 		Energy
 */
@@ -843,6 +850,13 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/fa2)
 	crate_name = "auto rifle crate"
+
+/datum/supply_pack/gun/needle
+	name = "FL-R Needle Rifle Crate"
+	desc = "Contains an automatic, high capacity flechette rifle. Chambered in 5.8x42mm."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/needle)
+	crate_name = "flechette rifle crate"
 
 /datum/supply_pack/gun/inteq_fa2
 	name = "FA2 Rifle Crate"

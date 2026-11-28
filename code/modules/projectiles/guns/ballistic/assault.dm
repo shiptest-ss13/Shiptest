@@ -174,3 +174,47 @@
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	else
 		return ..()
+
+/obj/item/gun/ballistic/automatic/assault/needle
+	name = "\improper FL-R Needle"
+	desc = "A rifle of Reh'himl origin, recently manufactured by the Lixsur'sha Worskhop. Firing a barrage of four flechettes, It has excellent hit probability and accuracy at longer distances. While excellent in design, the Needle has been criticized for its lack of modularity and expensive maintenance."
+	icon = 'icons/obj/guns/manufacturer/lixsurworkshop/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/lixsurworkshop/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/lixsurworkshop/onmob.dmi'
+	icon_state = "needle"
+	item_state = "needle"
+	spread = 4
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	default_ammo_type = /obj/item/ammo_box/magazine/needle
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/needle,
+	)
+	wear_rate = 1.5 //not as bad as the literal garbage rifle but its got more than usual
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
+	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+
+	manufacturer = MANUFACTURER_WORKSHOP
+	slot_available = list(ATTACHMENT_SLOT_MUZZLE = 1)
+	default_attachments = list(/obj/item/attachment/silencer/cobra) //they'll all be integrally suppressed. They're not getting much attachment freedom
+	unique_attachments = list(/obj/item/attachment/silencer/cobra)
+
+NO_MAG_GUN_HELPER(automatic/assault/needle)
+
+/obj/item/ammo_box/magazine/needle
+	name = "Needle autorifle magazine (5.8x42mm)"
+	desc = "A 40 round helical magazine for the FL-R Needle."
+	icon_state = "needlemag-1"
+	base_icon_state = "needlemag"
+	ammo_type = /obj/item/ammo_casing/needle
+	caliber = "needle"
+	max_ammo = 40
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/needle/empty
+	start_empty = TRUE

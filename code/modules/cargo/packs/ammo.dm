@@ -523,3 +523,17 @@
 		/obj/item/ammo_casing/caseless/arrow)
 	faction = /datum/faction/srm
 	faction_discount = 10
+
+/* Flechette rounds (rifle edition) */
+
+/datum/supply_pack/ammo/needle_boxcrate
+	name = "5.8x42mm Needle Flechette Ammo Box Crate"
+	desc = "Contains one 80-round 5.8x42mm flechette box for the FL-R Needle."
+	contains = list(/obj/item/storage/box/ammo/needle)
+	cost = 410 //vibes based I'm Not whipping the calc out
+
+/datum/supply_pack/ammo/thorn_boxcrate
+	name = "5.8x20mm Thorn Flechette Ammo Box Crate"
+	desc = "Contains one 100-round 5.8x20mm flechette box for the FL-M Thorn."
+	contains = list(/obj/item/storage/box/ammo/thorn)
+	cost = 375 //vibes based I'm Not whipping the calc out

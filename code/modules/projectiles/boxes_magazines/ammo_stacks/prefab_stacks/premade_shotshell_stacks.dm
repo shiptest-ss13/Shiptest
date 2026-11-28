@@ -199,3 +199,31 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas
 	ammo_type = /obj/item/ammo_casing/shotgun/fourbore/teargas
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/needle
+	ammo_type = /obj/item/ammo_casing/needle
+	max_ammo = 20
+
+/obj/item/storage/box/ammo/needle
+	name = "box of 5.8x42mm needle flechettes"
+	desc = "A box of 5.8x42mm needle flechettes, likely to hit at all ranges."
+	icon_state = "needlebox"
+
+/obj/item/storage/box/ammo/needle/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/needle = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/thorn
+	ammo_type = /obj/item/ammo_casing/thorn
+	max_ammo = 25
+
+/obj/item/storage/box/ammo/thorn
+	name = "box of 5.8x20mm thorn flechettes"
+	desc = "A box of 5.8x20mm thorn flechettes, likely to hit at all ranges."
+	icon_state = "thornbox"
+
+/obj/item/storage/box/ammo/thorn/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/thorn = 4)
+	generate_items_inside(items_inside,src)
