@@ -30,12 +30,8 @@
 	var/heal_burn
 	/// How much we reduce bleeding per application on cut wounds
 	var/stop_bleeding
-	/// How much sanitization to apply to burn wounds on application
-	var/sanitization
 	/// How much we add to flesh_healing for burn wounds on application
 	var/flesh_regeneration
-	/// This is a multiplier used to speed up burn recoveries
-	var/burn_cleanliness_bonus
 
 /obj/item/stack/medical/attack(mob/living/patient, mob/user)
 	. = ..()
@@ -160,7 +156,6 @@
 	amount = 6
 	grind_results = list(/datum/reagent/cellulose = 2)
 	custom_price = 50
-	burn_cleanliness_bonus = 0.35
 	merge_type = /obj/item/stack/medical/gauze
 	var/gauze_type = /datum/bodypart_aid/gauze
 
@@ -225,7 +220,6 @@
 	desc = "A roll of cloth roughly cut from something that does a decent job of stabilizing wounds, but less efficiently so than real medical gauze."
 	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
-	burn_cleanliness_bonus = 0.7
 	merge_type = /obj/item/stack/medical/gauze/improvised
 	gauze_type = /datum/bodypart_aid/gauze/improvised
 
@@ -261,7 +255,7 @@
 
 /obj/item/stack/medical/ointment
 	name = "ointment"
-	desc = "Basic burn ointment, rated effective for second degree burns with proper bandaging, though it's still an effective stabilizer for worse burns. Not terribly good at outright healing burns though."
+	desc = "Burn ointment, intended to stabilize burns and stimulate healing in severe burns in conjuction with bandages. Not terribly effective at clearing up surface burns, however."
 	gender = PLURAL
 	singular_name = "ointment"
 	icon_state = "ointment"
@@ -273,8 +267,7 @@
 	other_delay = 1.5 SECONDS
 
 	heal_burn = 5
-	flesh_regeneration = 2.5
-	sanitization = 0.25
+	flesh_regeneration = 6
 	// grind_results = list(/datum/reagent/medicine/C2/lenturi = 10)
 	merge_type = /obj/item/stack/medical/ointment
 
@@ -290,7 +283,6 @@
 	heal_burn = 10
 	max_amount = 15
 	repeating = TRUE
-	sanitization = 0.75
 	flesh_regeneration = 3
 
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
@@ -345,7 +337,6 @@
 	gender = PLURAL
 	icon_state = "aloe_mesh"
 	heal_burn = 15
-	sanitization = 1.25
 	flesh_regeneration = 3.5
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 	merge_type = /obj/item/stack/medical/mesh/advanced

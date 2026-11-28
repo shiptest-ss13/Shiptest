@@ -160,15 +160,13 @@
 	overlay_prefix = "gauze"
 	desc_prefix = "bandaged"
 	/// How much more can we absorb
-	var/absorption_capacity = 5
+	var/absorption_capacity = 6
 	/// How fast do we absorb
 	var/absorption_rate = 0.06
 	/// How effective the gauze is at stopping current blood flow - see [get_part_bleed_rate()]
 	var/bleed_suppress = 0.4
-	/// How much does the gauze help with keeping infections clean, lower = better
-	var/sanitisation_factor = 0.4
-	/// How much sanitisation we've got after we become fairly stained and worn
-	var/sanitisation_factor_stained = 0.8
+	/// How much does the gauze help with healing burn wounds
+	var/flesh_healing_decrement_modifier = 0.4
 	/// Is it blood stained? For description
 	var/blood_stained = FALSE
 	/// Is it pus stained? For description
@@ -177,6 +175,8 @@
 /datum/bodypart_aid/gauze/get_description()
 	var/desc
 	switch(absorption_capacity)
+		if(-INFINITY to 0)
+			desc = "ruined"
 		if(0 to 1.25)
 			desc = "nearly ruined"
 		if(1.25 to 2.75)
@@ -212,10 +212,10 @@
 		return (absorption_capacity == initial(absorption_capacity))
 
 /**
- * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
+ * seep_gauze() is for when a gauze wrapping absorbs blood from wounds, lowering its absorption capacity.
  *
  * The passed amount of seepage is deducted from the bandage's absorption capacity, and if we reach a negative absorption capacity, the bandage won't help our wounds.
- * When the bandage is left with a low amount of absorption, it'll notify user and act worse as a sanitiser for infections
+ * When the bandage is left with a low amount of absorption, it'll notify user.
  * Returns TRUE if the bandage absorbed anything, FALSE if it's fully stained.
  *
  * Arguments:
@@ -226,12 +226,12 @@
 	if(absorption_capacity > 0)
 		. = TRUE
 		absorption_capacity -= amount
+		flesh_healing_decrement_modifier = initial(flesh_healing_decrement_modifier) * (absorption_capacity / initial(absorption_capacity))
 	else
 		return FALSE
 
-	//If our remaining absorption capacity is low, make so blood and pus stains show
-	if(absorption_capacity < 4)
-		sanitisation_factor = sanitisation_factor_stained
+	//If our remaining absorption capacity is low, make so blood stains show
+	if(absorption_capacity < 3)
 		if(type == GAUZE_STAIN_BLOOD && !blood_stained)
 			blood_stained = TRUE
 			if(bodypart.owner)
@@ -247,3 +247,4 @@
 	absorption_rate = 0.05
 	absorption_capacity = 4
 	bleed_suppress = 0.6
+	flesh_healing_decrement_modifier = 0.2
