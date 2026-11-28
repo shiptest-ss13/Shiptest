@@ -1311,7 +1311,8 @@
 /area/ship/engineering/atmospherics)
 "hk" = (
 /obj/machinery/porta_turret/ship/warra/light{
-	dir = 6
+	dir = 6;
+	id = "goshawk_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/atmospherics)
@@ -3525,13 +3526,18 @@
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_x = 23;
-	pixel_y = -3;
+	pixel_y = -8;
 	id = "goshawk_lockdown";
 	name = "bridge lock"
 	},
 /obj/item/reagent_containers/glass/rag{
 	pixel_x = -8;
 	pixel_y = 9
+	},
+/obj/machinery/turretid/ship{
+	pixel_x = 28;
+	pixel_y = 0;
+	id = "goshawk_grid"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4599,7 +4605,8 @@
 "Av" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/porta_turret/ship/warra/light{
-	dir = 6
+	dir = 6;
+	id = "goshawk_grid"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
@@ -4925,7 +4932,8 @@
 /area/ship/medical)
 "Ci" = (
 /obj/machinery/porta_turret/ship/warra/light{
-	dir = 5
+	dir = 5;
+	id = "goshawk_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/security)
@@ -5872,7 +5880,8 @@
 "Il" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/porta_turret/ship/warra/heavy{
-	dir = 9
+	dir = 9;
+	id = "goshawk_grid"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
@@ -6288,7 +6297,8 @@
 "Kk" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/porta_turret/ship/warra/light{
-	dir = 5
+	dir = 5;
+	id = "goshawk_grid"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
@@ -6695,7 +6705,8 @@
 "NC" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/porta_turret/ship/warra/heavy{
-	dir = 10
+	dir = 10;
+	id = "goshawk_grid"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
