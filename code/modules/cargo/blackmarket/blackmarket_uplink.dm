@@ -8,6 +8,7 @@
 	var/viewing_category
 	var/viewing_market
 	var/selected_item
+	var/item_key
 	var/buying
 
 	/// How much money is inserted into the uplink.
@@ -88,7 +89,8 @@
 						"name" = I.name,
 						"cost" = I.cost,
 						"amount" = I.stock == INFINITY ? "INF" : I.stock,
-						"desc" = I.desc || I.name
+						"desc" = I.desc || I.name,
+						"key"= I.key
 					))
 	return data
 
@@ -105,7 +107,7 @@
 		))
 	return data
 
-/obj/item/blackmarket_uplink/ui_act(action, params)
+/obj/item/blackmarket_uplink/ui_act(action, list/params)
 	. = ..()
 	if(.)
 		return
@@ -139,10 +141,12 @@
 				return
 			var/item = text2path(params["item"])
 			selected_item = item
+			item_key = params["key"]
 			buying = TRUE
 			. = TRUE
 		if("cancel")
 			selected_item = null
+			item_key = null
 			buying = FALSE
 			. = TRUE
 		if("buy")
@@ -152,10 +156,11 @@
 				buying = FALSE
 				return
 			var/datum/blackmarket_market/market = SSblackmarket.markets[viewing_market]
-			market.purchase(selected_item, viewing_category, params["method"], src, usr)
+			market.purchase(selected_item, viewing_category, params["method"], item_key, src, usr)
 
 			buying = FALSE
 			selected_item = null
+			item_key = null
 
 /datum/crafting_recipe/blackmarket_uplink
 	name = "Black Market Uplink"

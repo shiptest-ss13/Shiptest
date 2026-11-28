@@ -89,6 +89,7 @@ export const BlackMarketUplink = (props, context) => {
                       onClick={() =>
                         act('select', {
                           item: item.id,
+                          key: item.key,
                         })
                       }
                     />

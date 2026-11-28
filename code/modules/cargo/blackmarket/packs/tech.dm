@@ -26,10 +26,10 @@
 	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. This handy teleporter will teleport your purchases directly to you once built."
 	item = /obj/item/circuitboard/machine/ltsrbt
 
-	cost_min = 500
-	cost_max = 1000
-	stock_max = 3
-	availability_prob = 20
+	cost_min = 200
+	cost_max = 500
+	stock = INFINITY
+	availability_prob = 50
 
 /datum/blackmarket_item/tech/mrs_pacman
 	name = "MRSPACMAN-type Generator Board"
@@ -137,17 +137,6 @@
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 50
-
-/datum/blackmarket_item/tech/joywire/spawn_item(loc)
-	if(prob(10))
-		var/obj/item/organ/cyberimp/brain/mindscrew/implant = ..()
-		implant.name = "\improper Midi-Sed pleasure vivifier"
-		implant.desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that \
-		stimulates the brain's pleasure centers. \
-		Dramatically increases mood, but interferes with taste reception even if uninstalled. \
-		Its wires seem a little loose."
-		return new implant(loc)
-	return ..()
 
 /datum/blackmarket_item/tech/mindscrew
 	name = "MNDFCK Neural Implant"

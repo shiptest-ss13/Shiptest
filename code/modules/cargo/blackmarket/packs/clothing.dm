@@ -124,7 +124,7 @@
 	item = /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 100
-	cost_max = 400
+	cost_max = 200
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 80
@@ -223,7 +223,7 @@
 
 /datum/blackmarket_item/clothing/gezena_armor/spawn_item(loc)
 	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
-	B.name = "Armor Set Box"
+	B.name = "Armor Set Duffel"
 	B.desc = "A beat up looking duffel with a frayed embroided nametag."
 	new /obj/item/clothing/suit/armor/gezena/marine(B)
 	new /obj/item/clothing/head/helmet/gezena(B)
@@ -254,8 +254,8 @@
 	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
 	item = /obj/item/storage/backpack/duffelbag/syndie
 
-	cost_min = 750
-	cost_max = 2500
+	cost_min = 500
+	cost_max = 1500
 	stock_max = 3
 	availability_prob = 50
 
@@ -310,7 +310,7 @@
 
 /datum/blackmarket_item/clothing/ablative_coat
 	name = "Ablative Trenchcoat"
-	desc = "An fullbody ablative trenchcoat and hood designed to massively disperse the impact of laser weaponry. Will not protect against bullets, knives, or mean words about your choice of outfit."
+	desc = "An full body ablative trenchcoat and hood designed to massively disperse the impact of laser weaponry. Will not protect against bullets, knives, or mean words about your choice of outfit."
 	item = /obj/item/clothing/suit/hooded/ablative
 
 	cost_min = 1000
@@ -323,8 +323,8 @@
 	desc = "A discarded combat medic hardsuit, found in the ruins of a carpet bombed xeno hive. Definitely used, but as sturdy as an anchor."
 	item = /obj/item/clothing/suit/space/hardsuit/combatmedic
 
-	cost_min = 1000
-	cost_max = 2500
+	cost_min = 750
+	cost_max = 1750
 	stock_max = 3
 	availability_prob = 30
 
