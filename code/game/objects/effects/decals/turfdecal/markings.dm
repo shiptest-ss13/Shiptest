@@ -496,3 +496,9 @@ WOOD_SIDING_COLOR_HELPER(yew, WOOD_COLOR_YELLOW)
 
 /obj/effect/turf_decal/radiation/white
 	icon_state = "radiation-w"
+
+/obj/effect/turf_decal/stratos
+	icon_state = "stratos"
+
+/obj/effect/turf_decal/stratos_2
+	icon_state = "stratos2"
