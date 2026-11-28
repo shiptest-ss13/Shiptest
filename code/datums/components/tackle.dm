@@ -355,8 +355,8 @@
 		return
 
 	var/oopsie_mod = 0
-	var/danger_zone = (speed - 1) * 13 // for every extra speed we have over 1, take away 13 of the safest chance
-	danger_zone = max(min(danger_zone, 100), 1)
+	var/oopsie_minimum = (speed - 1) * 13 // for every extra speed we have over 1, take away 13 of the safest chance
+	oopsie_minimum = max(min(oopsie_minimum, 100), 1)
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/S = user
@@ -370,7 +370,7 @@
 	if(HAS_TRAIT(user, TRAIT_CLUMSY))
 		oopsie_mod += 6 //honk!
 
-	var/oopsie = rand(danger_zone, 100)
+	var/oopsie = rand(oopsie_minimum, 100)
 	if(oopsie >= 94 && oopsie_mod < 0) // good job avoiding getting paralyzed! gold star!
 		to_chat(user, span_usernotice("You're really glad you're wearing protection!"))
 	oopsie += oopsie_mod
