@@ -598,6 +598,10 @@
 	name = "Wavy (Alt Bangs)"
 	icon_state = "hair_wavyalt"
 
+/datum/sprite_accessory/hair/wavycurls
+	name = "Wavy (Curls)"
+	icon_state = "hair_wavycurls"
+
 /datum/sprite_accessory/hair/wavyshort
 	name = "Wavy (Short)"
 	icon_state = "hair_wavyshort"
