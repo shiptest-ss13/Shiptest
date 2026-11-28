@@ -303,6 +303,18 @@
 	return
 
 /**
+ * Returns a list of all ships docked to this datum that have been spawned by or had their helm interacted with by a player.
+ */
+/datum/overmap/proc/get_docked_player_ships()
+	var/docked_player_ships = list()
+
+	for(var/datum/overmap/ship/controlled/ship in contents)
+		if(ship.is_player_ship)
+			docked_player_ships += ship
+
+	return docked_player_ships
+
+/**
  * Shows the interaction menu
  * Does not check for distance, that should be handled by the procs being called
  *

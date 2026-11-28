@@ -107,7 +107,7 @@
 	if(preserve_level)
 		return
 
-	if(length(mapzone?.get_mind_mobs()))
+	if(length(mapzone?.get_mind_mobs()) || length(get_docked_player_ships()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 	log_shuttle("[src] [REF(src)] UNLOAD")
 

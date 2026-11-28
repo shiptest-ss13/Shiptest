@@ -166,7 +166,7 @@
 	if(preserve_level)
 		return FALSE
 
-	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
+	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL] || length(get_docked_player_ships()))
 		return FALSE //Dont fuck over stranded people
 
 	return TRUE
@@ -373,15 +373,17 @@
 	current_event.modify_emptyspace_mapgen(src)
 
 /datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
-	if(length(mapzone?.get_mind_mobs()))
+	if(length(mapzone?.get_mind_mobs()) || length(get_docked_player_ships()))
 		schedule_unload_retry()
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+
 	log_shuttle("[src] [REF(src)] UNLOAD")
+
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
-	qdel(src)
 
+	qdel(src)
 
 /datum/overmap/dynamic/proc/set_preservation(preserve)
 	if(!can_preserve)
