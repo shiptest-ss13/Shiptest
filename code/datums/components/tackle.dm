@@ -378,7 +378,7 @@
 	switch(oopsie)
 		if(99 to INFINITY)
 			// can you imagine standing around minding your own business when all of the sudden some guy fucking launches himself into a wall at full speed and paralyzes himself?
-			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack! Holy shit!"))
+			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack!"))
 
 			takeTackleDamage(user, stamina = 30, damage = 40, wound = 40, guarantee_head_hit = TRUE)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
