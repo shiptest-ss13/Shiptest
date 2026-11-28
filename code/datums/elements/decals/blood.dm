@@ -28,7 +28,7 @@
 /datum/element/decal/blood/proc/get_examine_name(atom/source, mob/user, list/override)
 	SIGNAL_HANDLER
 
-	override[EXAMINE_POSITION_BEFORE] = span_boldwarning("blood-stained")
+	override[EXAMINE_POSITION_BEFORE] = span_bolddanger("blood-stained")
 
 ///this is probably quite bad, let me know if you have a better solution for this -S
 /datum/element/decal/blood/proc/redraw(datum/source, mob/user)
